@@ -18,13 +18,17 @@ namespace Model {
 EnvironmentConfigurationUserParameter::EnvironmentConfigurationUserParameter(JsonView jsonValue) { *this = jsonValue; }
 
 EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("environmentConfigurationName")) {
-    m_environmentConfigurationName = jsonValue.GetString("environmentConfigurationName");
-    m_environmentConfigurationNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("environmentId")) {
     m_environmentId = jsonValue.GetString("environmentId");
     m_environmentIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("environmentResolvedAccount")) {
+    m_environmentResolvedAccount = jsonValue.GetObject("environmentResolvedAccount");
+    m_environmentResolvedAccountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("environmentConfigurationName")) {
+    m_environmentConfigurationName = jsonValue.GetString("environmentConfigurationName");
+    m_environmentConfigurationNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("environmentParameters")) {
     Aws::Utils::Array<JsonView> environmentParametersJsonList = jsonValue.GetArray("environmentParameters");
@@ -34,22 +38,22 @@ EnvironmentConfigurationUserParameter& EnvironmentConfigurationUserParameter::op
     }
     m_environmentParametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("environmentResolvedAccount")) {
-    m_environmentResolvedAccount = jsonValue.GetObject("environmentResolvedAccount");
-    m_environmentResolvedAccountHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EnvironmentConfigurationUserParameter::Jsonize() const {
   JsonValue payload;
 
-  if (m_environmentConfigurationNameHasBeenSet) {
-    payload.WithString("environmentConfigurationName", m_environmentConfigurationName);
-  }
-
   if (m_environmentIdHasBeenSet) {
     payload.WithString("environmentId", m_environmentId);
+  }
+
+  if (m_environmentResolvedAccountHasBeenSet) {
+    payload.WithObject("environmentResolvedAccount", m_environmentResolvedAccount.Jsonize());
+  }
+
+  if (m_environmentConfigurationNameHasBeenSet) {
+    payload.WithString("environmentConfigurationName", m_environmentConfigurationName);
   }
 
   if (m_environmentParametersHasBeenSet) {
@@ -59,10 +63,6 @@ JsonValue EnvironmentConfigurationUserParameter::Jsonize() const {
       environmentParametersJsonList[environmentParametersIndex].AsObject(m_environmentParameters[environmentParametersIndex].Jsonize());
     }
     payload.WithArray("environmentParameters", std::move(environmentParametersJsonList));
-  }
-
-  if (m_environmentResolvedAccountHasBeenSet) {
-    payload.WithObject("environmentResolvedAccount", m_environmentResolvedAccount.Jsonize());
   }
 
   return payload;

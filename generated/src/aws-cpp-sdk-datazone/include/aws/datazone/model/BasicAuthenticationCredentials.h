@@ -34,24 +34,6 @@ class BasicAuthenticationCredentials {
 
   ///@{
   /**
-   * <p>The password for a connection.</p>
-   */
-  inline const Aws::String& GetPassword() const { return m_password; }
-  inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-  template <typename PasswordT = Aws::String>
-  void SetPassword(PasswordT&& value) {
-    m_passwordHasBeenSet = true;
-    m_password = std::forward<PasswordT>(value);
-  }
-  template <typename PasswordT = Aws::String>
-  BasicAuthenticationCredentials& WithPassword(PasswordT&& value) {
-    SetPassword(std::forward<PasswordT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The user name for the connecion.</p>
    */
   inline const Aws::String& GetUserName() const { return m_userName; }
@@ -67,12 +49,30 @@ class BasicAuthenticationCredentials {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_password;
 
+  ///@{
+  /**
+   * <p>The password for a connection.</p>
+   */
+  inline const Aws::String& GetPassword() const { return m_password; }
+  inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+  template <typename PasswordT = Aws::String>
+  void SetPassword(PasswordT&& value) {
+    m_passwordHasBeenSet = true;
+    m_password = std::forward<PasswordT>(value);
+  }
+  template <typename PasswordT = Aws::String>
+  BasicAuthenticationCredentials& WithPassword(PasswordT&& value) {
+    SetPassword(std::forward<PasswordT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_userName;
-  bool m_passwordHasBeenSet = false;
+
+  Aws::String m_password;
   bool m_userNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
 };
 
 }  // namespace Model

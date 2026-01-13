@@ -18,6 +18,10 @@ namespace Model {
 Topic::Topic(JsonView jsonValue) { *this = jsonValue; }
 
 Topic& Topic::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("subject")) {
+    m_subject = jsonValue.GetString("subject");
+    m_subjectHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("resource")) {
     m_resource = jsonValue.GetObject("resource");
     m_resourceHasBeenSet = true;
@@ -26,15 +30,15 @@ Topic& Topic::operator=(JsonView jsonValue) {
     m_role = NotificationRoleMapper::GetNotificationRoleForName(jsonValue.GetString("role"));
     m_roleHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("subject")) {
-    m_subject = jsonValue.GetString("subject");
-    m_subjectHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue Topic::Jsonize() const {
   JsonValue payload;
+
+  if (m_subjectHasBeenSet) {
+    payload.WithString("subject", m_subject);
+  }
 
   if (m_resourceHasBeenSet) {
     payload.WithObject("resource", m_resource.Jsonize());
@@ -42,10 +46,6 @@ JsonValue Topic::Jsonize() const {
 
   if (m_roleHasBeenSet) {
     payload.WithString("role", NotificationRoleMapper::GetNameForNotificationRole(m_role));
-  }
-
-  if (m_subjectHasBeenSet) {
-    payload.WithString("subject", m_subject);
   }
 
   return payload;

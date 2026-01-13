@@ -657,6 +657,8 @@
 #include <aws/datazone/model/SubscribedAssetListing.h>
 #include <aws/datazone/model/SubscribedGroup.h>
 #include <aws/datazone/model/SubscribedGroupInput.h>
+#include <aws/datazone/model/SubscribedIamPrincipal.h>
+#include <aws/datazone/model/SubscribedIamPrincipalInput.h>
 #include <aws/datazone/model/SubscribedListing.h>
 #include <aws/datazone/model/SubscribedListingInput.h>
 #include <aws/datazone/model/SubscribedListingItem.h>
@@ -667,6 +669,7 @@
 #include <aws/datazone/model/SubscribedProjectInput.h>
 #include <aws/datazone/model/SubscribedUser.h>
 #include <aws/datazone/model/SubscribedUserInput.h>
+#include <aws/datazone/model/SubscriptionGrantCreationMode.h>
 #include <aws/datazone/model/SubscriptionGrantOverallStatus.h>
 #include <aws/datazone/model/SubscriptionGrantStatus.h>
 #include <aws/datazone/model/SubscriptionGrantSummary.h>

@@ -34,16 +34,36 @@ class CreateProjectProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies whether custom project resource tags are supported.</p>
+   * <p>A domain ID of the project profile.</p>
    */
-  inline bool GetAllowCustomProjectResourceTags() const { return m_allowCustomProjectResourceTags; }
-  inline bool AllowCustomProjectResourceTagsHasBeenSet() const { return m_allowCustomProjectResourceTagsHasBeenSet; }
-  inline void SetAllowCustomProjectResourceTags(bool value) {
-    m_allowCustomProjectResourceTagsHasBeenSet = true;
-    m_allowCustomProjectResourceTags = value;
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
   }
-  inline CreateProjectProfileRequest& WithAllowCustomProjectResourceTags(bool value) {
-    SetAllowCustomProjectResourceTags(value);
+  template <typename DomainIdentifierT = Aws::String>
+  CreateProjectProfileRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Project profile name.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateProjectProfileRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -68,78 +88,16 @@ class CreateProjectProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A domain ID of the project profile.</p>
+   * <p>Project profile status.</p>
    */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  inline Status GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(Status value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename DomainIdentifierT = Aws::String>
-  CreateProjectProfileRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A domain unit ID of the project profile.</p>
-   */
-  inline const Aws::String& GetDomainUnitIdentifier() const { return m_domainUnitIdentifier; }
-  inline bool DomainUnitIdentifierHasBeenSet() const { return m_domainUnitIdentifierHasBeenSet; }
-  template <typename DomainUnitIdentifierT = Aws::String>
-  void SetDomainUnitIdentifier(DomainUnitIdentifierT&& value) {
-    m_domainUnitIdentifierHasBeenSet = true;
-    m_domainUnitIdentifier = std::forward<DomainUnitIdentifierT>(value);
-  }
-  template <typename DomainUnitIdentifierT = Aws::String>
-  CreateProjectProfileRequest& WithDomainUnitIdentifier(DomainUnitIdentifierT&& value) {
-    SetDomainUnitIdentifier(std::forward<DomainUnitIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Environment configurations of the project profile.</p>
-   */
-  inline const Aws::Vector<EnvironmentConfiguration>& GetEnvironmentConfigurations() const { return m_environmentConfigurations; }
-  inline bool EnvironmentConfigurationsHasBeenSet() const { return m_environmentConfigurationsHasBeenSet; }
-  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
-  void SetEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
-    m_environmentConfigurationsHasBeenSet = true;
-    m_environmentConfigurations = std::forward<EnvironmentConfigurationsT>(value);
-  }
-  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
-  CreateProjectProfileRequest& WithEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
-    SetEnvironmentConfigurations(std::forward<EnvironmentConfigurationsT>(value));
-    return *this;
-  }
-  template <typename EnvironmentConfigurationsT = EnvironmentConfiguration>
-  CreateProjectProfileRequest& AddEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
-    m_environmentConfigurationsHasBeenSet = true;
-    m_environmentConfigurations.emplace_back(std::forward<EnvironmentConfigurationsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Project profile name.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateProjectProfileRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  inline CreateProjectProfileRequest& WithStatus(Status value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -170,6 +128,22 @@ class CreateProjectProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>Specifies whether custom project resource tags are supported.</p>
+   */
+  inline bool GetAllowCustomProjectResourceTags() const { return m_allowCustomProjectResourceTags; }
+  inline bool AllowCustomProjectResourceTagsHasBeenSet() const { return m_allowCustomProjectResourceTagsHasBeenSet; }
+  inline void SetAllowCustomProjectResourceTags(bool value) {
+    m_allowCustomProjectResourceTagsHasBeenSet = true;
+    m_allowCustomProjectResourceTags = value;
+  }
+  inline CreateProjectProfileRequest& WithAllowCustomProjectResourceTags(bool value) {
+    SetAllowCustomProjectResourceTags(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Field viewable through the UI that provides a project user with the allowed
    * resource tag specifications.</p>
    */
@@ -189,46 +163,72 @@ class CreateProjectProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Project profile status.</p>
+   * <p>Environment configurations of the project profile.</p>
    */
-  inline Status GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(Status value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::Vector<EnvironmentConfiguration>& GetEnvironmentConfigurations() const { return m_environmentConfigurations; }
+  inline bool EnvironmentConfigurationsHasBeenSet() const { return m_environmentConfigurationsHasBeenSet; }
+  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
+  void SetEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
+    m_environmentConfigurationsHasBeenSet = true;
+    m_environmentConfigurations = std::forward<EnvironmentConfigurationsT>(value);
   }
-  inline CreateProjectProfileRequest& WithStatus(Status value) {
-    SetStatus(value);
+  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
+  CreateProjectProfileRequest& WithEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
+    SetEnvironmentConfigurations(std::forward<EnvironmentConfigurationsT>(value));
+    return *this;
+  }
+  template <typename EnvironmentConfigurationsT = EnvironmentConfiguration>
+  CreateProjectProfileRequest& AddEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
+    m_environmentConfigurationsHasBeenSet = true;
+    m_environmentConfigurations.emplace_back(std::forward<EnvironmentConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A domain unit ID of the project profile.</p>
+   */
+  inline const Aws::String& GetDomainUnitIdentifier() const { return m_domainUnitIdentifier; }
+  inline bool DomainUnitIdentifierHasBeenSet() const { return m_domainUnitIdentifierHasBeenSet; }
+  template <typename DomainUnitIdentifierT = Aws::String>
+  void SetDomainUnitIdentifier(DomainUnitIdentifierT&& value) {
+    m_domainUnitIdentifierHasBeenSet = true;
+    m_domainUnitIdentifier = std::forward<DomainUnitIdentifierT>(value);
+  }
+  template <typename DomainUnitIdentifierT = Aws::String>
+  CreateProjectProfileRequest& WithDomainUnitIdentifier(DomainUnitIdentifierT&& value) {
+    SetDomainUnitIdentifier(std::forward<DomainUnitIdentifierT>(value));
     return *this;
   }
   ///@}
  private:
-  bool m_allowCustomProjectResourceTags{false};
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
-
-  Aws::String m_domainUnitIdentifier;
-
-  Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
+  Status m_status{Status::NOT_SET};
+
   Aws::Vector<ResourceTagParameter> m_projectResourceTags;
+
+  bool m_allowCustomProjectResourceTags{false};
 
   Aws::String m_projectResourceTagsDescription;
 
-  Status m_status{Status::NOT_SET};
-  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
+
+  Aws::String m_domainUnitIdentifier;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_domainUnitIdentifierHasBeenSet = false;
-  bool m_environmentConfigurationsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_projectResourceTagsHasBeenSet = false;
-  bool m_projectResourceTagsDescriptionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_projectResourceTagsHasBeenSet = false;
+  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
+  bool m_projectResourceTagsDescriptionHasBeenSet = false;
+  bool m_environmentConfigurationsHasBeenSet = false;
+  bool m_domainUnitIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

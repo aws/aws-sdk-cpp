@@ -38,24 +38,6 @@ class EnvironmentBlueprintConfigurationItem {
 
   ///@{
   /**
-   * <p>The timestamp of when an environment blueprint was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  EnvironmentBlueprintConfigurationItem& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which an environment
    * blueprint exists.</p>
    */
@@ -75,31 +57,6 @@ class EnvironmentBlueprintConfigurationItem {
 
   ///@{
   /**
-   * <p>The enabled Amazon Web Services Regions specified in a blueprint
-   * configuration.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetEnabledRegions() const { return m_enabledRegions; }
-  inline bool EnabledRegionsHasBeenSet() const { return m_enabledRegionsHasBeenSet; }
-  template <typename EnabledRegionsT = Aws::Vector<Aws::String>>
-  void SetEnabledRegions(EnabledRegionsT&& value) {
-    m_enabledRegionsHasBeenSet = true;
-    m_enabledRegions = std::forward<EnabledRegionsT>(value);
-  }
-  template <typename EnabledRegionsT = Aws::Vector<Aws::String>>
-  EnvironmentBlueprintConfigurationItem& WithEnabledRegions(EnabledRegionsT&& value) {
-    SetEnabledRegions(std::forward<EnabledRegionsT>(value));
-    return *this;
-  }
-  template <typename EnabledRegionsT = Aws::String>
-  EnvironmentBlueprintConfigurationItem& AddEnabledRegions(EnabledRegionsT&& value) {
-    m_enabledRegionsHasBeenSet = true;
-    m_enabledRegions.emplace_back(std::forward<EnabledRegionsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the environment blueprint.</p>
    */
   inline const Aws::String& GetEnvironmentBlueprintId() const { return m_environmentBlueprintId; }
@@ -112,6 +69,25 @@ class EnvironmentBlueprintConfigurationItem {
   template <typename EnvironmentBlueprintIdT = Aws::String>
   EnvironmentBlueprintConfigurationItem& WithEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
     SetEnvironmentBlueprintId(std::forward<EnvironmentBlueprintIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the provisioning role specified in the environment blueprint
+   * configuration.</p>
+   */
+  inline const Aws::String& GetProvisioningRoleArn() const { return m_provisioningRoleArn; }
+  inline bool ProvisioningRoleArnHasBeenSet() const { return m_provisioningRoleArnHasBeenSet; }
+  template <typename ProvisioningRoleArnT = Aws::String>
+  void SetProvisioningRoleArn(ProvisioningRoleArnT&& value) {
+    m_provisioningRoleArnHasBeenSet = true;
+    m_provisioningRoleArn = std::forward<ProvisioningRoleArnT>(value);
+  }
+  template <typename ProvisioningRoleArnT = Aws::String>
+  EnvironmentBlueprintConfigurationItem& WithProvisioningRoleArn(ProvisioningRoleArnT&& value) {
+    SetProvisioningRoleArn(std::forward<ProvisioningRoleArnT>(value));
     return *this;
   }
   ///@}
@@ -155,43 +131,25 @@ class EnvironmentBlueprintConfigurationItem {
 
   ///@{
   /**
-   * <p>The provisioning configuration of a blueprint.</p>
-   */
-  inline const Aws::Vector<ProvisioningConfiguration>& GetProvisioningConfigurations() const { return m_provisioningConfigurations; }
-  inline bool ProvisioningConfigurationsHasBeenSet() const { return m_provisioningConfigurationsHasBeenSet; }
-  template <typename ProvisioningConfigurationsT = Aws::Vector<ProvisioningConfiguration>>
-  void SetProvisioningConfigurations(ProvisioningConfigurationsT&& value) {
-    m_provisioningConfigurationsHasBeenSet = true;
-    m_provisioningConfigurations = std::forward<ProvisioningConfigurationsT>(value);
-  }
-  template <typename ProvisioningConfigurationsT = Aws::Vector<ProvisioningConfiguration>>
-  EnvironmentBlueprintConfigurationItem& WithProvisioningConfigurations(ProvisioningConfigurationsT&& value) {
-    SetProvisioningConfigurations(std::forward<ProvisioningConfigurationsT>(value));
-    return *this;
-  }
-  template <typename ProvisioningConfigurationsT = ProvisioningConfiguration>
-  EnvironmentBlueprintConfigurationItem& AddProvisioningConfigurations(ProvisioningConfigurationsT&& value) {
-    m_provisioningConfigurationsHasBeenSet = true;
-    m_provisioningConfigurations.emplace_back(std::forward<ProvisioningConfigurationsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ARN of the provisioning role specified in the environment blueprint
+   * <p>The enabled Amazon Web Services Regions specified in a blueprint
    * configuration.</p>
    */
-  inline const Aws::String& GetProvisioningRoleArn() const { return m_provisioningRoleArn; }
-  inline bool ProvisioningRoleArnHasBeenSet() const { return m_provisioningRoleArnHasBeenSet; }
-  template <typename ProvisioningRoleArnT = Aws::String>
-  void SetProvisioningRoleArn(ProvisioningRoleArnT&& value) {
-    m_provisioningRoleArnHasBeenSet = true;
-    m_provisioningRoleArn = std::forward<ProvisioningRoleArnT>(value);
+  inline const Aws::Vector<Aws::String>& GetEnabledRegions() const { return m_enabledRegions; }
+  inline bool EnabledRegionsHasBeenSet() const { return m_enabledRegionsHasBeenSet; }
+  template <typename EnabledRegionsT = Aws::Vector<Aws::String>>
+  void SetEnabledRegions(EnabledRegionsT&& value) {
+    m_enabledRegionsHasBeenSet = true;
+    m_enabledRegions = std::forward<EnabledRegionsT>(value);
   }
-  template <typename ProvisioningRoleArnT = Aws::String>
-  EnvironmentBlueprintConfigurationItem& WithProvisioningRoleArn(ProvisioningRoleArnT&& value) {
-    SetProvisioningRoleArn(std::forward<ProvisioningRoleArnT>(value));
+  template <typename EnabledRegionsT = Aws::Vector<Aws::String>>
+  EnvironmentBlueprintConfigurationItem& WithEnabledRegions(EnabledRegionsT&& value) {
+    SetEnabledRegions(std::forward<EnabledRegionsT>(value));
+    return *this;
+  }
+  template <typename EnabledRegionsT = Aws::String>
+  EnvironmentBlueprintConfigurationItem& AddEnabledRegions(EnabledRegionsT&& value) {
+    m_enabledRegionsHasBeenSet = true;
+    m_enabledRegions.emplace_back(std::forward<EnabledRegionsT>(value));
     return *this;
   }
   ///@}
@@ -222,6 +180,24 @@ class EnvironmentBlueprintConfigurationItem {
 
   ///@{
   /**
+   * <p>The timestamp of when an environment blueprint was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  EnvironmentBlueprintConfigurationItem& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the environment blueprint was updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -237,36 +213,60 @@ class EnvironmentBlueprintConfigurationItem {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::DateTime m_createdAt{};
 
+  ///@{
+  /**
+   * <p>The provisioning configuration of a blueprint.</p>
+   */
+  inline const Aws::Vector<ProvisioningConfiguration>& GetProvisioningConfigurations() const { return m_provisioningConfigurations; }
+  inline bool ProvisioningConfigurationsHasBeenSet() const { return m_provisioningConfigurationsHasBeenSet; }
+  template <typename ProvisioningConfigurationsT = Aws::Vector<ProvisioningConfiguration>>
+  void SetProvisioningConfigurations(ProvisioningConfigurationsT&& value) {
+    m_provisioningConfigurationsHasBeenSet = true;
+    m_provisioningConfigurations = std::forward<ProvisioningConfigurationsT>(value);
+  }
+  template <typename ProvisioningConfigurationsT = Aws::Vector<ProvisioningConfiguration>>
+  EnvironmentBlueprintConfigurationItem& WithProvisioningConfigurations(ProvisioningConfigurationsT&& value) {
+    SetProvisioningConfigurations(std::forward<ProvisioningConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ProvisioningConfigurationsT = ProvisioningConfiguration>
+  EnvironmentBlueprintConfigurationItem& AddProvisioningConfigurations(ProvisioningConfigurationsT&& value) {
+    m_provisioningConfigurationsHasBeenSet = true;
+    m_provisioningConfigurations.emplace_back(std::forward<ProvisioningConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainId;
 
-  Aws::Vector<Aws::String> m_enabledRegions;
-
   Aws::String m_environmentBlueprintId;
+
+  Aws::String m_provisioningRoleArn;
 
   Aws::String m_environmentRolePermissionBoundary;
 
   Aws::String m_manageAccessRoleArn;
 
-  Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
-
-  Aws::String m_provisioningRoleArn;
+  Aws::Vector<Aws::String> m_enabledRegions;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_regionalParameters;
 
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_createdAtHasBeenSet = false;
+
+  Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
   bool m_domainIdHasBeenSet = false;
-  bool m_enabledRegionsHasBeenSet = false;
   bool m_environmentBlueprintIdHasBeenSet = false;
+  bool m_provisioningRoleArnHasBeenSet = false;
   bool m_environmentRolePermissionBoundaryHasBeenSet = false;
   bool m_manageAccessRoleArnHasBeenSet = false;
-  bool m_provisioningConfigurationsHasBeenSet = false;
-  bool m_provisioningRoleArnHasBeenSet = false;
+  bool m_enabledRegionsHasBeenSet = false;
   bool m_regionalParametersHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_provisioningConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

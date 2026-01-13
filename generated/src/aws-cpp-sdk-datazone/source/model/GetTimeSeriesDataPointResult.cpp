@@ -33,13 +33,13 @@ GetTimeSeriesDataPointResult& GetTimeSeriesDataPointResult::operator=(const Aws:
     m_entityType = TimeSeriesEntityTypeMapper::GetTimeSeriesEntityTypeForName(jsonValue.GetString("entityType"));
     m_entityTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("form")) {
-    m_form = jsonValue.GetObject("form");
-    m_formHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("formName")) {
     m_formName = jsonValue.GetString("formName");
     m_formNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("form")) {
+    m_form = jsonValue.GetObject("form");
+    m_formHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

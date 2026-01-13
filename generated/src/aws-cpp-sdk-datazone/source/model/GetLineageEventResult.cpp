@@ -23,14 +23,16 @@ GetLineageEventResult& GetLineageEventResult::operator=(Aws::AmazonWebServiceRes
   m_eventHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
-  const auto& createdAtIter = headers.find("created-at");
-  if (createdAtIter != headers.end()) {
-    m_createdAt = DateTime(createdAtIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
-    if (!m_createdAt.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("DataZone::GetLineageEventResult",
-                         "Failed to parse createdAt header as an RFC822 timestamp: " << createdAtIter->second.c_str());
-    }
-    m_createdAtHasBeenSet = true;
+  const auto& domainIdIter = headers.find("domain-id");
+  if (domainIdIter != headers.end()) {
+    m_domainId = domainIdIter->second;
+    m_domainIdHasBeenSet = true;
+  }
+
+  const auto& idIter = headers.find("id");
+  if (idIter != headers.end()) {
+    m_id = idIter->second;
+    m_idHasBeenSet = true;
   }
 
   const auto& createdByIter = headers.find("created-by");
@@ -39,10 +41,10 @@ GetLineageEventResult& GetLineageEventResult::operator=(Aws::AmazonWebServiceRes
     m_createdByHasBeenSet = true;
   }
 
-  const auto& domainIdIter = headers.find("domain-id");
-  if (domainIdIter != headers.end()) {
-    m_domainId = domainIdIter->second;
-    m_domainIdHasBeenSet = true;
+  const auto& processingStatusIter = headers.find("processing-status");
+  if (processingStatusIter != headers.end()) {
+    m_processingStatus = LineageEventProcessingStatusMapper::GetLineageEventProcessingStatusForName(processingStatusIter->second);
+    m_processingStatusHasBeenSet = true;
   }
 
   const auto& eventTimeIter = headers.find("event-time");
@@ -55,16 +57,14 @@ GetLineageEventResult& GetLineageEventResult::operator=(Aws::AmazonWebServiceRes
     m_eventTimeHasBeenSet = true;
   }
 
-  const auto& idIter = headers.find("id");
-  if (idIter != headers.end()) {
-    m_id = idIter->second;
-    m_idHasBeenSet = true;
-  }
-
-  const auto& processingStatusIter = headers.find("processing-status");
-  if (processingStatusIter != headers.end()) {
-    m_processingStatus = LineageEventProcessingStatusMapper::GetLineageEventProcessingStatusForName(processingStatusIter->second);
-    m_processingStatusHasBeenSet = true;
+  const auto& createdAtIter = headers.find("created-at");
+  if (createdAtIter != headers.end()) {
+    m_createdAt = DateTime(createdAtIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
+    if (!m_createdAt.WasParseSuccessful()) {
+      AWS_LOGSTREAM_WARN("DataZone::GetLineageEventResult",
+                         "Failed to parse createdAt header as an RFC822 timestamp: " << createdAtIter->second.c_str());
+    }
+    m_createdAtHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");

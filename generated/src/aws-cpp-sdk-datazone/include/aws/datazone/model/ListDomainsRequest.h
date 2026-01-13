@@ -36,6 +36,22 @@ class ListDomainsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The status of the data source.</p>
+   */
+  inline DomainStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DomainStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListDomainsRequest& WithStatus(DomainStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of domains to return in a single call to
    * <code>ListDomains</code>. When the number of domains to be listed is greater
    * than the value of <code>MaxResults</code>, the response contains a
@@ -76,31 +92,15 @@ class ListDomainsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The status of the data source.</p>
-   */
-  inline DomainStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DomainStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ListDomainsRequest& WithStatus(DomainStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
+  DomainStatus m_status{DomainStatus::NOT_SET};
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  DomainStatus m_status{DomainStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

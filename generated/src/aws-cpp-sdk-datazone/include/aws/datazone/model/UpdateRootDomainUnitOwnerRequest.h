@@ -31,19 +31,18 @@ class UpdateRootDomainUnitOwnerRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
-   * This field is automatically populated if not provided.</p>
+   * <p>The ID of the domain where the root domain unit owner is to be updated.</p>
    */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
   }
-  template <typename ClientTokenT = Aws::String>
-  UpdateRootDomainUnitOwnerRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
+  template <typename DomainIdentifierT = Aws::String>
+  UpdateRootDomainUnitOwnerRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -68,24 +67,6 @@ class UpdateRootDomainUnitOwnerRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the domain where the root domain unit owner is to be updated.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  UpdateRootDomainUnitOwnerRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The new owner of the root domain unit.</p>
    */
   inline const Aws::String& GetNewOwner() const { return m_newOwner; }
@@ -101,18 +82,37 @@ class UpdateRootDomainUnitOwnerRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
+   * This field is automatically populated if not provided.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateRootDomainUnitOwnerRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  Aws::String m_domainIdentifier;
 
   Aws::String m_currentOwner;
 
-  Aws::String m_domainIdentifier;
-
   Aws::String m_newOwner;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_currentOwnerHasBeenSet = false;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_currentOwnerHasBeenSet = false;
   bool m_newOwnerHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

@@ -52,24 +52,18 @@ class OpenLineageRunEventSummary {
 
   ///@{
   /**
-   * <p>The inputs of the open lineage run event summary.</p>
+   * <p>The runID of the open lineage run event summary.</p>
    */
-  inline const Aws::Vector<NameIdentifier>& GetInputs() const { return m_inputs; }
-  inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-  template <typename InputsT = Aws::Vector<NameIdentifier>>
-  void SetInputs(InputsT&& value) {
-    m_inputsHasBeenSet = true;
-    m_inputs = std::forward<InputsT>(value);
+  inline const Aws::String& GetRunId() const { return m_runId; }
+  inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
+  template <typename RunIdT = Aws::String>
+  void SetRunId(RunIdT&& value) {
+    m_runIdHasBeenSet = true;
+    m_runId = std::forward<RunIdT>(value);
   }
-  template <typename InputsT = Aws::Vector<NameIdentifier>>
-  OpenLineageRunEventSummary& WithInputs(InputsT&& value) {
-    SetInputs(std::forward<InputsT>(value));
-    return *this;
-  }
-  template <typename InputsT = NameIdentifier>
-  OpenLineageRunEventSummary& AddInputs(InputsT&& value) {
-    m_inputsHasBeenSet = true;
-    m_inputs.emplace_back(std::forward<InputsT>(value));
+  template <typename RunIdT = Aws::String>
+  OpenLineageRunEventSummary& WithRunId(RunIdT&& value) {
+    SetRunId(std::forward<RunIdT>(value));
     return *this;
   }
   ///@}
@@ -88,6 +82,30 @@ class OpenLineageRunEventSummary {
   template <typename JobT = NameIdentifier>
   OpenLineageRunEventSummary& WithJob(JobT&& value) {
     SetJob(std::forward<JobT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The inputs of the open lineage run event summary.</p>
+   */
+  inline const Aws::Vector<NameIdentifier>& GetInputs() const { return m_inputs; }
+  inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
+  template <typename InputsT = Aws::Vector<NameIdentifier>>
+  void SetInputs(InputsT&& value) {
+    m_inputsHasBeenSet = true;
+    m_inputs = std::forward<InputsT>(value);
+  }
+  template <typename InputsT = Aws::Vector<NameIdentifier>>
+  OpenLineageRunEventSummary& WithInputs(InputsT&& value) {
+    SetInputs(std::forward<InputsT>(value));
+    return *this;
+  }
+  template <typename InputsT = NameIdentifier>
+  OpenLineageRunEventSummary& AddInputs(InputsT&& value) {
+    m_inputsHasBeenSet = true;
+    m_inputs.emplace_back(std::forward<InputsT>(value));
     return *this;
   }
   ///@}
@@ -115,39 +133,21 @@ class OpenLineageRunEventSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The runID of the open lineage run event summary.</p>
-   */
-  inline const Aws::String& GetRunId() const { return m_runId; }
-  inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-  template <typename RunIdT = Aws::String>
-  void SetRunId(RunIdT&& value) {
-    m_runIdHasBeenSet = true;
-    m_runId = std::forward<RunIdT>(value);
-  }
-  template <typename RunIdT = Aws::String>
-  OpenLineageRunEventSummary& WithRunId(RunIdT&& value) {
-    SetRunId(std::forward<RunIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   OpenLineageRunState m_eventType{OpenLineageRunState::NOT_SET};
 
-  Aws::Vector<NameIdentifier> m_inputs;
+  Aws::String m_runId;
 
   NameIdentifier m_job;
 
-  Aws::Vector<NameIdentifier> m_outputs;
+  Aws::Vector<NameIdentifier> m_inputs;
 
-  Aws::String m_runId;
+  Aws::Vector<NameIdentifier> m_outputs;
   bool m_eventTypeHasBeenSet = false;
-  bool m_inputsHasBeenSet = false;
-  bool m_jobHasBeenSet = false;
-  bool m_outputsHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
+  bool m_jobHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
 };
 
 }  // namespace Model

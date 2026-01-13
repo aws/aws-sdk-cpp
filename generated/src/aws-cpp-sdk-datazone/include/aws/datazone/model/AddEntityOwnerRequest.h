@@ -33,25 +33,6 @@ class AddEntityOwnerRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  AddEntityOwnerRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain in which you want to add the entity owner.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -64,6 +45,22 @@ class AddEntityOwnerRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   AddEntityOwnerRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of an entity.</p>
+   */
+  inline DataZoneEntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(DataZoneEntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline AddEntityOwnerRequest& WithEntityType(DataZoneEntityType value) {
+    SetEntityType(value);
     return *this;
   }
   ///@}
@@ -88,22 +85,6 @@ class AddEntityOwnerRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The type of an entity.</p>
-   */
-  inline DataZoneEntityType GetEntityType() const { return m_entityType; }
-  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-  inline void SetEntityType(DataZoneEntityType value) {
-    m_entityTypeHasBeenSet = true;
-    m_entityType = value;
-  }
-  inline AddEntityOwnerRequest& WithEntityType(DataZoneEntityType value) {
-    SetEntityType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The owner that you want to add to the entity.</p>
    */
   inline const OwnerProperties& GetOwner() const { return m_owner; }
@@ -119,21 +100,40 @@ class AddEntityOwnerRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  AddEntityOwnerRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
-
-  Aws::String m_entityIdentifier;
 
   DataZoneEntityType m_entityType{DataZoneEntityType::NOT_SET};
 
+  Aws::String m_entityIdentifier;
+
   OwnerProperties m_owner;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

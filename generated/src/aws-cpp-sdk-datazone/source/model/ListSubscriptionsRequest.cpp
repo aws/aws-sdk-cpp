@@ -19,45 +19,9 @@ Aws::String ListSubscriptionsRequest::SerializePayload() const { return {}; }
 
 void ListSubscriptionsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_approverProjectIdHasBeenSet) {
-    ss << m_approverProjectId;
-    uri.AddQueryStringParameter("approverProjectId", ss.str());
-    ss.str("");
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
-    ss.str("");
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
-  if (m_owningGroupIdHasBeenSet) {
-    ss << m_owningGroupId;
-    uri.AddQueryStringParameter("owningGroupId", ss.str());
-    ss.str("");
-  }
-
-  if (m_owningProjectIdHasBeenSet) {
-    ss << m_owningProjectId;
-    uri.AddQueryStringParameter("owningProjectId", ss.str());
-    ss.str("");
-  }
-
-  if (m_owningUserIdHasBeenSet) {
-    ss << m_owningUserId;
-    uri.AddQueryStringParameter("owningUserId", ss.str());
-    ss.str("");
-  }
-
-  if (m_sortOrderHasBeenSet) {
-    ss << SortOrderMapper::GetNameForSortOrder(m_sortOrder);
-    uri.AddQueryStringParameter("sortOrder", ss.str());
+  if (m_subscriptionRequestIdentifierHasBeenSet) {
+    ss << m_subscriptionRequestIdentifier;
+    uri.AddQueryStringParameter("subscriptionRequestIdentifier", ss.str());
     ss.str("");
   }
 
@@ -73,9 +37,51 @@ void ListSubscriptionsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_subscriptionRequestIdentifierHasBeenSet) {
-    ss << m_subscriptionRequestIdentifier;
-    uri.AddQueryStringParameter("subscriptionRequestIdentifier", ss.str());
+  if (m_owningProjectIdHasBeenSet) {
+    ss << m_owningProjectId;
+    uri.AddQueryStringParameter("owningProjectId", ss.str());
+    ss.str("");
+  }
+
+  if (m_owningIamPrincipalArnHasBeenSet) {
+    ss << m_owningIamPrincipalArn;
+    uri.AddQueryStringParameter("owningIamPrincipalArn", ss.str());
+    ss.str("");
+  }
+
+  if (m_owningUserIdHasBeenSet) {
+    ss << m_owningUserId;
+    uri.AddQueryStringParameter("owningUserId", ss.str());
+    ss.str("");
+  }
+
+  if (m_owningGroupIdHasBeenSet) {
+    ss << m_owningGroupId;
+    uri.AddQueryStringParameter("owningGroupId", ss.str());
+    ss.str("");
+  }
+
+  if (m_approverProjectIdHasBeenSet) {
+    ss << m_approverProjectId;
+    uri.AddQueryStringParameter("approverProjectId", ss.str());
+    ss.str("");
+  }
+
+  if (m_sortOrderHasBeenSet) {
+    ss << SortOrderMapper::GetNameForSortOrder(m_sortOrder);
+    uri.AddQueryStringParameter("sortOrder", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 }

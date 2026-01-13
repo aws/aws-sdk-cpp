@@ -35,24 +35,6 @@ class SingleSignOn {
 
   ///@{
   /**
-   * <p>The ARN of the IDC instance.</p>
-   */
-  inline const Aws::String& GetIdcInstanceArn() const { return m_idcInstanceArn; }
-  inline bool IdcInstanceArnHasBeenSet() const { return m_idcInstanceArnHasBeenSet; }
-  template <typename IdcInstanceArnT = Aws::String>
-  void SetIdcInstanceArn(IdcInstanceArnT&& value) {
-    m_idcInstanceArnHasBeenSet = true;
-    m_idcInstanceArn = std::forward<IdcInstanceArnT>(value);
-  }
-  template <typename IdcInstanceArnT = Aws::String>
-  SingleSignOn& WithIdcInstanceArn(IdcInstanceArnT&& value) {
-    SetIdcInstanceArn(std::forward<IdcInstanceArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type of single sign-on in Amazon DataZone.</p>
    */
   inline AuthType GetType() const { return m_type; }
@@ -82,15 +64,33 @@ class SingleSignOn {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_idcInstanceArn;
 
+  ///@{
+  /**
+   * <p>The ARN of the IDC instance.</p>
+   */
+  inline const Aws::String& GetIdcInstanceArn() const { return m_idcInstanceArn; }
+  inline bool IdcInstanceArnHasBeenSet() const { return m_idcInstanceArnHasBeenSet; }
+  template <typename IdcInstanceArnT = Aws::String>
+  void SetIdcInstanceArn(IdcInstanceArnT&& value) {
+    m_idcInstanceArnHasBeenSet = true;
+    m_idcInstanceArn = std::forward<IdcInstanceArnT>(value);
+  }
+  template <typename IdcInstanceArnT = Aws::String>
+  SingleSignOn& WithIdcInstanceArn(IdcInstanceArnT&& value) {
+    SetIdcInstanceArn(std::forward<IdcInstanceArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   AuthType m_type{AuthType::NOT_SET};
 
   UserAssignment m_userAssignment{UserAssignment::NOT_SET};
-  bool m_idcInstanceArnHasBeenSet = false;
+
+  Aws::String m_idcInstanceArn;
   bool m_typeHasBeenSet = false;
   bool m_userAssignmentHasBeenSet = false;
+  bool m_idcInstanceArnHasBeenSet = false;
 };
 
 }  // namespace Model

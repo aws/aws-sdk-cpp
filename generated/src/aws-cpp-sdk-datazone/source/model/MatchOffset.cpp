@@ -18,13 +18,13 @@ namespace Model {
 MatchOffset::MatchOffset(JsonView jsonValue) { *this = jsonValue; }
 
 MatchOffset& MatchOffset::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("endOffset")) {
-    m_endOffset = jsonValue.GetInteger("endOffset");
-    m_endOffsetHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("startOffset")) {
     m_startOffset = jsonValue.GetInteger("startOffset");
     m_startOffsetHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endOffset")) {
+    m_endOffset = jsonValue.GetInteger("endOffset");
+    m_endOffsetHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ MatchOffset& MatchOffset::operator=(JsonView jsonValue) {
 JsonValue MatchOffset::Jsonize() const {
   JsonValue payload;
 
-  if (m_endOffsetHasBeenSet) {
-    payload.WithInteger("endOffset", m_endOffset);
-  }
-
   if (m_startOffsetHasBeenSet) {
     payload.WithInteger("startOffset", m_startOffset);
+  }
+
+  if (m_endOffsetHasBeenSet) {
+    payload.WithInteger("endOffset", m_endOffset);
   }
 
   return payload;

@@ -18,9 +18,9 @@ namespace Model {
 PolicyGrantPrincipal::PolicyGrantPrincipal(JsonView jsonValue) { *this = jsonValue; }
 
 PolicyGrantPrincipal& PolicyGrantPrincipal::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("domainUnit")) {
-    m_domainUnit = jsonValue.GetObject("domainUnit");
-    m_domainUnitHasBeenSet = true;
+  if (jsonValue.ValueExists("user")) {
+    m_user = jsonValue.GetObject("user");
+    m_userHasBeenSet = true;
   }
   if (jsonValue.ValueExists("group")) {
     m_group = jsonValue.GetObject("group");
@@ -30,9 +30,9 @@ PolicyGrantPrincipal& PolicyGrantPrincipal::operator=(JsonView jsonValue) {
     m_project = jsonValue.GetObject("project");
     m_projectHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("user")) {
-    m_user = jsonValue.GetObject("user");
-    m_userHasBeenSet = true;
+  if (jsonValue.ValueExists("domainUnit")) {
+    m_domainUnit = jsonValue.GetObject("domainUnit");
+    m_domainUnitHasBeenSet = true;
   }
   return *this;
 }
@@ -40,8 +40,8 @@ PolicyGrantPrincipal& PolicyGrantPrincipal::operator=(JsonView jsonValue) {
 JsonValue PolicyGrantPrincipal::Jsonize() const {
   JsonValue payload;
 
-  if (m_domainUnitHasBeenSet) {
-    payload.WithObject("domainUnit", m_domainUnit.Jsonize());
+  if (m_userHasBeenSet) {
+    payload.WithObject("user", m_user.Jsonize());
   }
 
   if (m_groupHasBeenSet) {
@@ -52,8 +52,8 @@ JsonValue PolicyGrantPrincipal::Jsonize() const {
     payload.WithObject("project", m_project.Jsonize());
   }
 
-  if (m_userHasBeenSet) {
-    payload.WithObject("user", m_user.Jsonize());
+  if (m_domainUnitHasBeenSet) {
+    payload.WithObject("domainUnit", m_domainUnit.Jsonize());
   }
 
   return payload;

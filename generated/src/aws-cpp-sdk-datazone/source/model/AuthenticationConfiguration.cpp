@@ -22,13 +22,13 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator=(JsonView jso
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("oAuth2Properties")) {
-    m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
-    m_oAuth2PropertiesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("secretArn")) {
     m_secretArn = jsonValue.GetString("secretArn");
     m_secretArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("oAuth2Properties")) {
+    m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
+    m_oAuth2PropertiesHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue AuthenticationConfiguration::Jsonize() const {
     payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
-  if (m_oAuth2PropertiesHasBeenSet) {
-    payload.WithObject("oAuth2Properties", m_oAuth2Properties.Jsonize());
-  }
-
   if (m_secretArnHasBeenSet) {
     payload.WithString("secretArn", m_secretArn);
+  }
+
+  if (m_oAuth2PropertiesHasBeenSet) {
+    payload.WithObject("oAuth2Properties", m_oAuth2Properties.Jsonize());
   }
 
   return payload;

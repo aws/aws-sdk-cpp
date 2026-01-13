@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String UpdateConnectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_awsLocationHasBeenSet) {
-    payload.WithObject("awsLocation", m_awsLocation.Jsonize());
-  }
-
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_awsLocationHasBeenSet) {
+    payload.WithObject("awsLocation", m_awsLocation.Jsonize());
   }
 
   if (m_propsHasBeenSet) {

@@ -21,6 +21,38 @@ GetFormTypeResult::GetFormTypeResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetFormTypeResult& GetFormTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("revision")) {
+    m_revision = jsonValue.GetString("revision");
+    m_revisionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("model")) {
+    m_model = jsonValue.GetObject("model");
+    m_modelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("originDomainId")) {
+    m_originDomainId = jsonValue.GetString("originDomainId");
+    m_originDomainIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("originProjectId")) {
+    m_originProjectId = jsonValue.GetString("originProjectId");
+    m_originProjectIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = FormTypeStatusMapper::GetFormTypeStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -33,44 +65,12 @@ GetFormTypeResult& GetFormTypeResult::operator=(const Aws::AmazonWebServiceResul
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("imports")) {
     Aws::Utils::Array<JsonView> importsJsonList = jsonValue.GetArray("imports");
     for (unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex) {
       m_imports.push_back(importsJsonList[importsIndex].AsObject());
     }
     m_importsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("model")) {
-    m_model = jsonValue.GetObject("model");
-    m_modelHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("originDomainId")) {
-    m_originDomainId = jsonValue.GetString("originDomainId");
-    m_originDomainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("originProjectId")) {
-    m_originProjectId = jsonValue.GetString("originProjectId");
-    m_originProjectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("revision")) {
-    m_revision = jsonValue.GetString("revision");
-    m_revisionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = FormTypeStatusMapper::GetFormTypeStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

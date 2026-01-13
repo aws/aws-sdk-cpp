@@ -33,6 +33,24 @@ class AggregationOutputItem {
 
   ///@{
   /**
+   * <p>The attribute value of the aggregation output item.</p>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  AggregationOutputItem& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The count of the aggregation output item.</p>
    */
   inline int GetCount() const { return m_count; }
@@ -66,33 +84,15 @@ class AggregationOutputItem {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The attribute value of the aggregation output item.</p>
-   */
-  inline const Aws::String& GetValue() const { return m_value; }
-  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-  template <typename ValueT = Aws::String>
-  void SetValue(ValueT&& value) {
-    m_valueHasBeenSet = true;
-    m_value = std::forward<ValueT>(value);
-  }
-  template <typename ValueT = Aws::String>
-  AggregationOutputItem& WithValue(ValueT&& value) {
-    SetValue(std::forward<ValueT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_value;
+
   int m_count{0};
 
   Aws::String m_displayValue;
-
-  Aws::String m_value;
+  bool m_valueHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_displayValueHasBeenSet = false;
-  bool m_valueHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,6 +33,125 @@ class GetAssetResult {
 
   ///@{
   /**
+   * <p>The ID of the asset.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  GetAssetResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the asset.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetAssetResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the asset type.</p>
+   */
+  inline const Aws::String& GetTypeIdentifier() const { return m_typeIdentifier; }
+  template <typename TypeIdentifierT = Aws::String>
+  void SetTypeIdentifier(TypeIdentifierT&& value) {
+    m_typeIdentifierHasBeenSet = true;
+    m_typeIdentifier = std::forward<TypeIdentifierT>(value);
+  }
+  template <typename TypeIdentifierT = Aws::String>
+  GetAssetResult& WithTypeIdentifier(TypeIdentifierT&& value) {
+    SetTypeIdentifier(std::forward<TypeIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the asset type.</p>
+   */
+  inline const Aws::String& GetTypeRevision() const { return m_typeRevision; }
+  template <typename TypeRevisionT = Aws::String>
+  void SetTypeRevision(TypeRevisionT&& value) {
+    m_typeRevisionHasBeenSet = true;
+    m_typeRevision = std::forward<TypeRevisionT>(value);
+  }
+  template <typename TypeRevisionT = Aws::String>
+  GetAssetResult& WithTypeRevision(TypeRevisionT&& value) {
+    SetTypeRevision(std::forward<TypeRevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The external ID of the asset.</p>
+   */
+  inline const Aws::String& GetExternalIdentifier() const { return m_externalIdentifier; }
+  template <typename ExternalIdentifierT = Aws::String>
+  void SetExternalIdentifier(ExternalIdentifierT&& value) {
+    m_externalIdentifierHasBeenSet = true;
+    m_externalIdentifier = std::forward<ExternalIdentifierT>(value);
+  }
+  template <typename ExternalIdentifierT = Aws::String>
+  GetAssetResult& WithExternalIdentifier(ExternalIdentifierT&& value) {
+    SetExternalIdentifier(std::forward<ExternalIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the asset.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  GetAssetResult& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the Amazon DataZone asset.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetAssetResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the asset was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -67,57 +186,6 @@ class GetAssetResult {
 
   ///@{
   /**
-   * <p>The description of the Amazon DataZone asset.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetAssetResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  GetAssetResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The external ID of the asset.</p>
-   */
-  inline const Aws::String& GetExternalIdentifier() const { return m_externalIdentifier; }
-  template <typename ExternalIdentifierT = Aws::String>
-  void SetExternalIdentifier(ExternalIdentifierT&& value) {
-    m_externalIdentifierHasBeenSet = true;
-    m_externalIdentifier = std::forward<ExternalIdentifierT>(value);
-  }
-  template <typename ExternalIdentifierT = Aws::String>
-  GetAssetResult& WithExternalIdentifier(ExternalIdentifierT&& value) {
-    SetExternalIdentifier(std::forward<ExternalIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp of when the first revision of the asset was created.</p>
    */
   inline const Aws::Utils::DateTime& GetFirstRevisionCreatedAt() const { return m_firstRevisionCreatedAt; }
@@ -146,29 +214,6 @@ class GetAssetResult {
   template <typename FirstRevisionCreatedByT = Aws::String>
   GetAssetResult& WithFirstRevisionCreatedBy(FirstRevisionCreatedByT&& value) {
     SetFirstRevisionCreatedBy(std::forward<FirstRevisionCreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The metadata forms attached to the asset.</p>
-   */
-  inline const Aws::Vector<FormOutput>& GetFormsOutput() const { return m_formsOutput; }
-  template <typename FormsOutputT = Aws::Vector<FormOutput>>
-  void SetFormsOutput(FormsOutputT&& value) {
-    m_formsOutputHasBeenSet = true;
-    m_formsOutput = std::forward<FormsOutputT>(value);
-  }
-  template <typename FormsOutputT = Aws::Vector<FormOutput>>
-  GetAssetResult& WithFormsOutput(FormsOutputT&& value) {
-    SetFormsOutput(std::forward<FormsOutputT>(value));
-    return *this;
-  }
-  template <typename FormsOutputT = FormOutput>
-  GetAssetResult& AddFormsOutput(FormsOutputT&& value) {
-    m_formsOutputHasBeenSet = true;
-    m_formsOutput.emplace_back(std::forward<FormsOutputT>(value));
     return *this;
   }
   ///@}
@@ -221,17 +266,97 @@ class GetAssetResult {
 
   ///@{
   /**
-   * <p>The ID of the asset.</p>
+   * <p>The ID of the project that owns the asset.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
   }
-  template <typename IdT = Aws::String>
-  GetAssetResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename OwningProjectIdT = Aws::String>
+  GetAssetResult& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  GetAssetResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The listing of the asset.</p>
+   */
+  inline const AssetListingDetails& GetListing() const { return m_listing; }
+  template <typename ListingT = AssetListingDetails>
+  void SetListing(ListingT&& value) {
+    m_listingHasBeenSet = true;
+    m_listing = std::forward<ListingT>(value);
+  }
+  template <typename ListingT = AssetListingDetails>
+  GetAssetResult& WithListing(ListingT&& value) {
+    SetListing(std::forward<ListingT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata forms attached to the asset.</p>
+   */
+  inline const Aws::Vector<FormOutput>& GetFormsOutput() const { return m_formsOutput; }
+  template <typename FormsOutputT = Aws::Vector<FormOutput>>
+  void SetFormsOutput(FormsOutputT&& value) {
+    m_formsOutputHasBeenSet = true;
+    m_formsOutput = std::forward<FormsOutputT>(value);
+  }
+  template <typename FormsOutputT = Aws::Vector<FormOutput>>
+  GetAssetResult& WithFormsOutput(FormsOutputT&& value) {
+    SetFormsOutput(std::forward<FormsOutputT>(value));
+    return *this;
+  }
+  template <typename FormsOutputT = FormOutput>
+  GetAssetResult& AddFormsOutput(FormsOutputT&& value) {
+    m_formsOutputHasBeenSet = true;
+    m_formsOutput.emplace_back(std::forward<FormsOutputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The read-only metadata forms attached to the asset.</p>
+   */
+  inline const Aws::Vector<FormOutput>& GetReadOnlyFormsOutput() const { return m_readOnlyFormsOutput; }
+  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
+  void SetReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
+    m_readOnlyFormsOutputHasBeenSet = true;
+    m_readOnlyFormsOutput = std::forward<ReadOnlyFormsOutputT>(value);
+  }
+  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
+  GetAssetResult& WithReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
+    SetReadOnlyFormsOutput(std::forward<ReadOnlyFormsOutputT>(value));
+    return *this;
+  }
+  template <typename ReadOnlyFormsOutputT = FormOutput>
+  GetAssetResult& AddReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
+    m_readOnlyFormsOutputHasBeenSet = true;
+    m_readOnlyFormsOutput.emplace_back(std::forward<ReadOnlyFormsOutputT>(value));
     return *this;
   }
   ///@}
@@ -263,131 +388,6 @@ class GetAssetResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The listing of the asset.</p>
-   */
-  inline const AssetListingDetails& GetListing() const { return m_listing; }
-  template <typename ListingT = AssetListingDetails>
-  void SetListing(ListingT&& value) {
-    m_listingHasBeenSet = true;
-    m_listing = std::forward<ListingT>(value);
-  }
-  template <typename ListingT = AssetListingDetails>
-  GetAssetResult& WithListing(ListingT&& value) {
-    SetListing(std::forward<ListingT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the asset.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GetAssetResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the project that owns the asset.</p>
-   */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
-  }
-  template <typename OwningProjectIdT = Aws::String>
-  GetAssetResult& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The read-only metadata forms attached to the asset.</p>
-   */
-  inline const Aws::Vector<FormOutput>& GetReadOnlyFormsOutput() const { return m_readOnlyFormsOutput; }
-  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
-  void SetReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
-    m_readOnlyFormsOutputHasBeenSet = true;
-    m_readOnlyFormsOutput = std::forward<ReadOnlyFormsOutputT>(value);
-  }
-  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
-  GetAssetResult& WithReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
-    SetReadOnlyFormsOutput(std::forward<ReadOnlyFormsOutputT>(value));
-    return *this;
-  }
-  template <typename ReadOnlyFormsOutputT = FormOutput>
-  GetAssetResult& AddReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
-    m_readOnlyFormsOutputHasBeenSet = true;
-    m_readOnlyFormsOutput.emplace_back(std::forward<ReadOnlyFormsOutputT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the asset.</p>
-   */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
-  }
-  template <typename RevisionT = Aws::String>
-  GetAssetResult& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the asset type.</p>
-   */
-  inline const Aws::String& GetTypeIdentifier() const { return m_typeIdentifier; }
-  template <typename TypeIdentifierT = Aws::String>
-  void SetTypeIdentifier(TypeIdentifierT&& value) {
-    m_typeIdentifierHasBeenSet = true;
-    m_typeIdentifier = std::forward<TypeIdentifierT>(value);
-  }
-  template <typename TypeIdentifierT = Aws::String>
-  GetAssetResult& WithTypeIdentifier(TypeIdentifierT&& value) {
-    SetTypeIdentifier(std::forward<TypeIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the asset type.</p>
-   */
-  inline const Aws::String& GetTypeRevision() const { return m_typeRevision; }
-  template <typename TypeRevisionT = Aws::String>
-  void SetTypeRevision(TypeRevisionT&& value) {
-    m_typeRevisionHasBeenSet = true;
-    m_typeRevision = std::forward<TypeRevisionT>(value);
-  }
-  template <typename TypeRevisionT = Aws::String>
-  GetAssetResult& WithTypeRevision(TypeRevisionT&& value) {
-    SetTypeRevision(std::forward<TypeRevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -402,64 +402,64 @@ class GetAssetResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
-  Aws::String m_domainId;
-
-  Aws::String m_externalIdentifier;
-
-  Aws::Utils::DateTime m_firstRevisionCreatedAt{};
-
-  Aws::String m_firstRevisionCreatedBy;
-
-  Aws::Vector<FormOutput> m_formsOutput;
-
-  Aws::Vector<Aws::String> m_glossaryTerms;
-
-  Aws::Vector<Aws::String> m_governedGlossaryTerms;
-
   Aws::String m_id;
 
-  Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
-
-  AssetListingDetails m_listing;
-
   Aws::String m_name;
-
-  Aws::String m_owningProjectId;
-
-  Aws::Vector<FormOutput> m_readOnlyFormsOutput;
-
-  Aws::String m_revision;
 
   Aws::String m_typeIdentifier;
 
   Aws::String m_typeRevision;
 
+  Aws::String m_externalIdentifier;
+
+  Aws::String m_revision;
+
+  Aws::String m_description;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_firstRevisionCreatedAt{};
+
+  Aws::String m_firstRevisionCreatedBy;
+
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
+  Aws::Vector<Aws::String> m_governedGlossaryTerms;
+
+  Aws::String m_owningProjectId;
+
+  Aws::String m_domainId;
+
+  AssetListingDetails m_listing;
+
+  Aws::Vector<FormOutput> m_formsOutput;
+
+  Aws::Vector<FormOutput> m_readOnlyFormsOutput;
+
+  Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
+
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_externalIdentifierHasBeenSet = false;
-  bool m_firstRevisionCreatedAtHasBeenSet = false;
-  bool m_firstRevisionCreatedByHasBeenSet = false;
-  bool m_formsOutputHasBeenSet = false;
-  bool m_glossaryTermsHasBeenSet = false;
-  bool m_governedGlossaryTermsHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
-  bool m_listingHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_readOnlyFormsOutputHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
   bool m_typeIdentifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
+  bool m_externalIdentifierHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_firstRevisionCreatedAtHasBeenSet = false;
+  bool m_firstRevisionCreatedByHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_governedGlossaryTermsHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_listingHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_readOnlyFormsOutputHasBeenSet = false;
+  bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

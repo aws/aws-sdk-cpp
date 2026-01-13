@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String CreateAssetTypeRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }
@@ -25,10 +29,6 @@ Aws::String CreateAssetTypeRequest::SerializePayload() const {
       formsInputJsonMap.WithObject(formsInputItem.first, formsInputItem.second.Jsonize());
     }
     payload.WithObject("formsInput", std::move(formsInputJsonMap));
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
   }
 
   if (m_owningProjectIdentifierHasBeenSet) {

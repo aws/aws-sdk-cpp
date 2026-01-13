@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/SubscribedGroupInput.h>
+#include <aws/datazone/model/SubscribedIamPrincipalInput.h>
 #include <aws/datazone/model/SubscribedProjectInput.h>
 #include <aws/datazone/model/SubscribedUserInput.h>
 
@@ -33,24 +34,6 @@ class SubscribedPrincipalInput {
   AWS_DATAZONE_API SubscribedPrincipalInput(Aws::Utils::Json::JsonView jsonValue);
   AWS_DATAZONE_API SubscribedPrincipalInput& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>The subscribed group.</p>
-   */
-  inline const SubscribedGroupInput& GetGroup() const { return m_group; }
-  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-  template <typename GroupT = SubscribedGroupInput>
-  void SetGroup(GroupT&& value) {
-    m_groupHasBeenSet = true;
-    m_group = std::forward<GroupT>(value);
-  }
-  template <typename GroupT = SubscribedGroupInput>
-  SubscribedPrincipalInput& WithGroup(GroupT&& value) {
-    SetGroup(std::forward<GroupT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -87,15 +70,54 @@ class SubscribedPrincipalInput {
     return *this;
   }
   ///@}
- private:
-  SubscribedGroupInput m_group;
 
+  ///@{
+  /**
+   * <p>The subscribed group.</p>
+   */
+  inline const SubscribedGroupInput& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = SubscribedGroupInput>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = SubscribedGroupInput>
+  SubscribedPrincipalInput& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The subscribed IAM principal.</p>
+   */
+  inline const SubscribedIamPrincipalInput& GetIam() const { return m_iam; }
+  inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
+  template <typename IamT = SubscribedIamPrincipalInput>
+  void SetIam(IamT&& value) {
+    m_iamHasBeenSet = true;
+    m_iam = std::forward<IamT>(value);
+  }
+  template <typename IamT = SubscribedIamPrincipalInput>
+  SubscribedPrincipalInput& WithIam(IamT&& value) {
+    SetIam(std::forward<IamT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   SubscribedProjectInput m_project;
 
   SubscribedUserInput m_user;
-  bool m_groupHasBeenSet = false;
+
+  SubscribedGroupInput m_group;
+
+  SubscribedIamPrincipalInput m_iam;
   bool m_projectHasBeenSet = false;
   bool m_userHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_iamHasBeenSet = false;
 };
 
 }  // namespace Model

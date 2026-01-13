@@ -18,6 +18,10 @@ namespace Model {
 EnvironmentConfigurationParametersDetails::EnvironmentConfigurationParametersDetails(JsonView jsonValue) { *this = jsonValue; }
 
 EnvironmentConfigurationParametersDetails& EnvironmentConfigurationParametersDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ssmPath")) {
+    m_ssmPath = jsonValue.GetString("ssmPath");
+    m_ssmPathHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("parameterOverrides")) {
     Aws::Utils::Array<JsonView> parameterOverridesJsonList = jsonValue.GetArray("parameterOverrides");
     for (unsigned parameterOverridesIndex = 0; parameterOverridesIndex < parameterOverridesJsonList.GetLength();
@@ -34,15 +38,15 @@ EnvironmentConfigurationParametersDetails& EnvironmentConfigurationParametersDet
     }
     m_resolvedParametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ssmPath")) {
-    m_ssmPath = jsonValue.GetString("ssmPath");
-    m_ssmPathHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EnvironmentConfigurationParametersDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_ssmPathHasBeenSet) {
+    payload.WithString("ssmPath", m_ssmPath);
+  }
 
   if (m_parameterOverridesHasBeenSet) {
     Aws::Utils::Array<JsonValue> parameterOverridesJsonList(m_parameterOverrides.size());
@@ -60,10 +64,6 @@ JsonValue EnvironmentConfigurationParametersDetails::Jsonize() const {
       resolvedParametersJsonList[resolvedParametersIndex].AsObject(m_resolvedParameters[resolvedParametersIndex].Jsonize());
     }
     payload.WithArray("resolvedParameters", std::move(resolvedParametersJsonList));
-  }
-
-  if (m_ssmPathHasBeenSet) {
-    payload.WithString("ssmPath", m_ssmPath);
   }
 
   return payload;

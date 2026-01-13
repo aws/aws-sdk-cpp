@@ -15,20 +15,26 @@ using namespace Aws::Utils;
 Aws::String CreateSubscriptionRequestRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_assetPermissionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> assetPermissionsJsonList(m_assetPermissions.size());
-    for (unsigned assetPermissionsIndex = 0; assetPermissionsIndex < assetPermissionsJsonList.GetLength(); ++assetPermissionsIndex) {
-      assetPermissionsJsonList[assetPermissionsIndex].AsObject(m_assetPermissions[assetPermissionsIndex].Jsonize());
+  if (m_subscribedPrincipalsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subscribedPrincipalsJsonList(m_subscribedPrincipals.size());
+    for (unsigned subscribedPrincipalsIndex = 0; subscribedPrincipalsIndex < subscribedPrincipalsJsonList.GetLength();
+         ++subscribedPrincipalsIndex) {
+      subscribedPrincipalsJsonList[subscribedPrincipalsIndex].AsObject(m_subscribedPrincipals[subscribedPrincipalsIndex].Jsonize());
     }
-    payload.WithArray("assetPermissions", std::move(assetPermissionsJsonList));
+    payload.WithArray("subscribedPrincipals", std::move(subscribedPrincipalsJsonList));
   }
 
-  if (m_assetScopesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> assetScopesJsonList(m_assetScopes.size());
-    for (unsigned assetScopesIndex = 0; assetScopesIndex < assetScopesJsonList.GetLength(); ++assetScopesIndex) {
-      assetScopesJsonList[assetScopesIndex].AsObject(m_assetScopes[assetScopesIndex].Jsonize());
+  if (m_subscribedListingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subscribedListingsJsonList(m_subscribedListings.size());
+    for (unsigned subscribedListingsIndex = 0; subscribedListingsIndex < subscribedListingsJsonList.GetLength();
+         ++subscribedListingsIndex) {
+      subscribedListingsJsonList[subscribedListingsIndex].AsObject(m_subscribedListings[subscribedListingsIndex].Jsonize());
     }
-    payload.WithArray("assetScopes", std::move(assetScopesJsonList));
+    payload.WithArray("subscribedListings", std::move(subscribedListingsJsonList));
+  }
+
+  if (m_requestReasonHasBeenSet) {
+    payload.WithString("requestReason", m_requestReason);
   }
 
   if (m_clientTokenHasBeenSet) {
@@ -43,26 +49,20 @@ Aws::String CreateSubscriptionRequestRequest::SerializePayload() const {
     payload.WithArray("metadataForms", std::move(metadataFormsJsonList));
   }
 
-  if (m_requestReasonHasBeenSet) {
-    payload.WithString("requestReason", m_requestReason);
+  if (m_assetPermissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetPermissionsJsonList(m_assetPermissions.size());
+    for (unsigned assetPermissionsIndex = 0; assetPermissionsIndex < assetPermissionsJsonList.GetLength(); ++assetPermissionsIndex) {
+      assetPermissionsJsonList[assetPermissionsIndex].AsObject(m_assetPermissions[assetPermissionsIndex].Jsonize());
+    }
+    payload.WithArray("assetPermissions", std::move(assetPermissionsJsonList));
   }
 
-  if (m_subscribedListingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> subscribedListingsJsonList(m_subscribedListings.size());
-    for (unsigned subscribedListingsIndex = 0; subscribedListingsIndex < subscribedListingsJsonList.GetLength();
-         ++subscribedListingsIndex) {
-      subscribedListingsJsonList[subscribedListingsIndex].AsObject(m_subscribedListings[subscribedListingsIndex].Jsonize());
+  if (m_assetScopesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetScopesJsonList(m_assetScopes.size());
+    for (unsigned assetScopesIndex = 0; assetScopesIndex < assetScopesJsonList.GetLength(); ++assetScopesIndex) {
+      assetScopesJsonList[assetScopesIndex].AsObject(m_assetScopes[assetScopesIndex].Jsonize());
     }
-    payload.WithArray("subscribedListings", std::move(subscribedListingsJsonList));
-  }
-
-  if (m_subscribedPrincipalsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> subscribedPrincipalsJsonList(m_subscribedPrincipals.size());
-    for (unsigned subscribedPrincipalsIndex = 0; subscribedPrincipalsIndex < subscribedPrincipalsJsonList.GetLength();
-         ++subscribedPrincipalsIndex) {
-      subscribedPrincipalsJsonList[subscribedPrincipalsIndex].AsObject(m_subscribedPrincipals[subscribedPrincipalsIndex].Jsonize());
-    }
-    payload.WithArray("subscribedPrincipals", std::move(subscribedPrincipalsJsonList));
+    payload.WithArray("assetScopes", std::move(assetScopesJsonList));
   }
 
   return payload.View().WriteReadable();

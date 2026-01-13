@@ -35,6 +35,26 @@ class LakeFormationConfiguration {
 
   ///@{
   /**
+   * <p>The role that is used to manage read/write access to the chosen Amazon S3
+   * bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access
+   * mode.</p>
+   */
+  inline const Aws::String& GetLocationRegistrationRole() const { return m_locationRegistrationRole; }
+  inline bool LocationRegistrationRoleHasBeenSet() const { return m_locationRegistrationRoleHasBeenSet; }
+  template <typename LocationRegistrationRoleT = Aws::String>
+  void SetLocationRegistrationRole(LocationRegistrationRoleT&& value) {
+    m_locationRegistrationRoleHasBeenSet = true;
+    m_locationRegistrationRole = std::forward<LocationRegistrationRoleT>(value);
+  }
+  template <typename LocationRegistrationRoleT = Aws::String>
+  LakeFormationConfiguration& WithLocationRegistrationRole(LocationRegistrationRoleT&& value) {
+    SetLocationRegistrationRole(std::forward<LocationRegistrationRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies certain Amazon S3 locations if you do not want Amazon DataZone to
    * automatically register them in hybrid mode. </p>
    */
@@ -59,32 +79,12 @@ class LakeFormationConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The role that is used to manage read/write access to the chosen Amazon S3
-   * bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access
-   * mode.</p>
-   */
-  inline const Aws::String& GetLocationRegistrationRole() const { return m_locationRegistrationRole; }
-  inline bool LocationRegistrationRoleHasBeenSet() const { return m_locationRegistrationRoleHasBeenSet; }
-  template <typename LocationRegistrationRoleT = Aws::String>
-  void SetLocationRegistrationRole(LocationRegistrationRoleT&& value) {
-    m_locationRegistrationRoleHasBeenSet = true;
-    m_locationRegistrationRole = std::forward<LocationRegistrationRoleT>(value);
-  }
-  template <typename LocationRegistrationRoleT = Aws::String>
-  LakeFormationConfiguration& WithLocationRegistrationRole(LocationRegistrationRoleT&& value) {
-    SetLocationRegistrationRole(std::forward<LocationRegistrationRoleT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<Aws::String> m_locationRegistrationExcludeS3Locations;
-
   Aws::String m_locationRegistrationRole;
-  bool m_locationRegistrationExcludeS3LocationsHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_locationRegistrationExcludeS3Locations;
   bool m_locationRegistrationRoleHasBeenSet = false;
+  bool m_locationRegistrationExcludeS3LocationsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -19,9 +19,9 @@ Aws::String ListDataSourceRunActivitiesRequest::SerializePayload() const { retur
 
 void ListDataSourceRunActivitiesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
+  if (m_statusHasBeenSet) {
+    ss << DataAssetActivityStatusMapper::GetNameForDataAssetActivityStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
 
@@ -31,9 +31,9 @@ void ListDataSourceRunActivitiesRequest::AddQueryStringParameters(URI& uri) cons
     ss.str("");
   }
 
-  if (m_statusHasBeenSet) {
-    ss << DataAssetActivityStatusMapper::GetNameForDataAssetActivityStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 }

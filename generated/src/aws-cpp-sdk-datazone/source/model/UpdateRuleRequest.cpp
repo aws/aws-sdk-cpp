@@ -15,8 +15,16 @@ using namespace Aws::Utils;
 Aws::String UpdateRuleRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("scope", m_scope.Jsonize());
   }
 
   if (m_detailHasBeenSet) {
@@ -25,14 +33,6 @@ Aws::String UpdateRuleRequest::SerializePayload() const {
 
   if (m_includeChildDomainUnitsHasBeenSet) {
     payload.WithBool("includeChildDomainUnits", m_includeChildDomainUnits);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_scopeHasBeenSet) {
-    payload.WithObject("scope", m_scope.Jsonize());
   }
 
   return payload.View().WriteReadable();

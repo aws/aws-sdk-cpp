@@ -36,6 +36,24 @@ class ListEnvironmentsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  ListEnvironmentsRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the Amazon Web Services account where you want to list
    * environments.</p>
    */
@@ -49,6 +67,22 @@ class ListEnvironmentsRequest : public DataZoneRequest {
   template <typename AwsAccountIdT = Aws::String>
   ListEnvironmentsRequest& WithAwsAccountId(AwsAccountIdT&& value) {
     SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the environments that you want to list.</p>
+   */
+  inline EnvironmentStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(EnvironmentStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListEnvironmentsRequest& WithStatus(EnvironmentStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -73,18 +107,36 @@ class ListEnvironmentsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
+   * <p>The identifier of the Amazon DataZone project.</p>
    */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
   }
-  template <typename DomainIdentifierT = Aws::String>
-  ListEnvironmentsRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+  template <typename ProjectIdentifierT = Aws::String>
+  ListEnvironmentsRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the environment profile.</p>
+   */
+  inline const Aws::String& GetEnvironmentProfileIdentifier() const { return m_environmentProfileIdentifier; }
+  inline bool EnvironmentProfileIdentifierHasBeenSet() const { return m_environmentProfileIdentifierHasBeenSet; }
+  template <typename EnvironmentProfileIdentifierT = Aws::String>
+  void SetEnvironmentProfileIdentifier(EnvironmentProfileIdentifierT&& value) {
+    m_environmentProfileIdentifierHasBeenSet = true;
+    m_environmentProfileIdentifier = std::forward<EnvironmentProfileIdentifierT>(value);
+  }
+  template <typename EnvironmentProfileIdentifierT = Aws::String>
+  ListEnvironmentsRequest& WithEnvironmentProfileIdentifier(EnvironmentProfileIdentifierT&& value) {
+    SetEnvironmentProfileIdentifier(std::forward<EnvironmentProfileIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -109,18 +161,36 @@ class ListEnvironmentsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the environment profile.</p>
+   * <p>The provider of the environment.</p>
    */
-  inline const Aws::String& GetEnvironmentProfileIdentifier() const { return m_environmentProfileIdentifier; }
-  inline bool EnvironmentProfileIdentifierHasBeenSet() const { return m_environmentProfileIdentifierHasBeenSet; }
-  template <typename EnvironmentProfileIdentifierT = Aws::String>
-  void SetEnvironmentProfileIdentifier(EnvironmentProfileIdentifierT&& value) {
-    m_environmentProfileIdentifierHasBeenSet = true;
-    m_environmentProfileIdentifier = std::forward<EnvironmentProfileIdentifierT>(value);
+  inline const Aws::String& GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  template <typename ProviderT = Aws::String>
+  void SetProvider(ProviderT&& value) {
+    m_providerHasBeenSet = true;
+    m_provider = std::forward<ProviderT>(value);
   }
-  template <typename EnvironmentProfileIdentifierT = Aws::String>
-  ListEnvironmentsRequest& WithEnvironmentProfileIdentifier(EnvironmentProfileIdentifierT&& value) {
-    SetEnvironmentProfileIdentifier(std::forward<EnvironmentProfileIdentifierT>(value));
+  template <typename ProviderT = Aws::String>
+  ListEnvironmentsRequest& WithProvider(ProviderT&& value) {
+    SetProvider(std::forward<ProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the environment.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ListEnvironmentsRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -147,24 +217,6 @@ class ListEnvironmentsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The name of the environment.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ListEnvironmentsRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>When the number of environments is greater than the default value for the
    * <code>MaxResults</code> parameter, or if you explicitly specify a value for
    * <code>MaxResults</code> that is less than the number of environments, the
@@ -185,91 +237,39 @@ class ListEnvironmentsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the Amazon DataZone project.</p>
-   */
-  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
-  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-  template <typename ProjectIdentifierT = Aws::String>
-  void SetProjectIdentifier(ProjectIdentifierT&& value) {
-    m_projectIdentifierHasBeenSet = true;
-    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
-  }
-  template <typename ProjectIdentifierT = Aws::String>
-  ListEnvironmentsRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
-    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The provider of the environment.</p>
-   */
-  inline const Aws::String& GetProvider() const { return m_provider; }
-  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-  template <typename ProviderT = Aws::String>
-  void SetProvider(ProviderT&& value) {
-    m_providerHasBeenSet = true;
-    m_provider = std::forward<ProviderT>(value);
-  }
-  template <typename ProviderT = Aws::String>
-  ListEnvironmentsRequest& WithProvider(ProviderT&& value) {
-    SetProvider(std::forward<ProviderT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the environments that you want to list.</p>
-   */
-  inline EnvironmentStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(EnvironmentStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ListEnvironmentsRequest& WithStatus(EnvironmentStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_domainIdentifier;
+
   Aws::String m_awsAccountId;
+
+  EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
 
   Aws::String m_awsAccountRegion;
 
-  Aws::String m_domainIdentifier;
-
-  Aws::String m_environmentBlueprintIdentifier;
+  Aws::String m_projectIdentifier;
 
   Aws::String m_environmentProfileIdentifier;
 
-  int m_maxResults{0};
-
-  Aws::String m_name;
-
-  Aws::String m_nextToken;
-
-  Aws::String m_projectIdentifier;
+  Aws::String m_environmentBlueprintIdentifier;
 
   Aws::String m_provider;
 
-  EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_awsAccountIdHasBeenSet = false;
-  bool m_awsAccountRegionHasBeenSet = false;
+  Aws::String m_name;
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_environmentBlueprintIdentifierHasBeenSet = false;
-  bool m_environmentProfileIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
-  bool m_projectIdentifierHasBeenSet = false;
-  bool m_providerHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_awsAccountRegionHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
+  bool m_environmentProfileIdentifierHasBeenSet = false;
+  bool m_environmentBlueprintIdentifierHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

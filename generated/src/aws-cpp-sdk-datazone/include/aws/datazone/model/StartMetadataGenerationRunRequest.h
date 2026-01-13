@@ -34,25 +34,6 @@ class StartMetadataGenerationRunRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
-   * This field is automatically populated if not provided.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  StartMetadataGenerationRunRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain where you want to start a metadata
    * generation run.</p>
    */
@@ -66,43 +47,6 @@ class StartMetadataGenerationRunRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   StartMetadataGenerationRunRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the project that owns the asset for which you want to start a
-   * metadata generation run.</p>
-   */
-  inline const Aws::String& GetOwningProjectIdentifier() const { return m_owningProjectIdentifier; }
-  inline bool OwningProjectIdentifierHasBeenSet() const { return m_owningProjectIdentifierHasBeenSet; }
-  template <typename OwningProjectIdentifierT = Aws::String>
-  void SetOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
-    m_owningProjectIdentifierHasBeenSet = true;
-    m_owningProjectIdentifier = std::forward<OwningProjectIdentifierT>(value);
-  }
-  template <typename OwningProjectIdentifierT = Aws::String>
-  StartMetadataGenerationRunRequest& WithOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
-    SetOwningProjectIdentifier(std::forward<OwningProjectIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The asset for which you want to start a metadata generation run.</p>
-   */
-  inline const MetadataGenerationRunTarget& GetTarget() const { return m_target; }
-  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-  template <typename TargetT = MetadataGenerationRunTarget>
-  void SetTarget(TargetT&& value) {
-    m_targetHasBeenSet = true;
-    m_target = std::forward<TargetT>(value);
-  }
-  template <typename TargetT = MetadataGenerationRunTarget>
-  StartMetadataGenerationRunRequest& WithTarget(TargetT&& value) {
-    SetTarget(std::forward<TargetT>(value));
     return *this;
   }
   ///@}
@@ -129,21 +73,77 @@ class StartMetadataGenerationRunRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ///@{
+  /**
+   * <p>The asset for which you want to start a metadata generation run.</p>
+   */
+  inline const MetadataGenerationRunTarget& GetTarget() const { return m_target; }
+  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+  template <typename TargetT = MetadataGenerationRunTarget>
+  void SetTarget(TargetT&& value) {
+    m_targetHasBeenSet = true;
+    m_target = std::forward<TargetT>(value);
+  }
+  template <typename TargetT = MetadataGenerationRunTarget>
+  StartMetadataGenerationRunRequest& WithTarget(TargetT&& value) {
+    SetTarget(std::forward<TargetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
+   * This field is automatically populated if not provided.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  StartMetadataGenerationRunRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project that owns the asset for which you want to start a
+   * metadata generation run.</p>
+   */
+  inline const Aws::String& GetOwningProjectIdentifier() const { return m_owningProjectIdentifier; }
+  inline bool OwningProjectIdentifierHasBeenSet() const { return m_owningProjectIdentifierHasBeenSet; }
+  template <typename OwningProjectIdentifierT = Aws::String>
+  void SetOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
+    m_owningProjectIdentifierHasBeenSet = true;
+    m_owningProjectIdentifier = std::forward<OwningProjectIdentifierT>(value);
+  }
+  template <typename OwningProjectIdentifierT = Aws::String>
+  StartMetadataGenerationRunRequest& WithOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
+    SetOwningProjectIdentifier(std::forward<OwningProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
-  Aws::String m_owningProjectIdentifier;
+  Aws::Vector<MetadataGenerationRunType> m_types;
 
   MetadataGenerationRunTarget m_target;
 
-  Aws::Vector<MetadataGenerationRunType> m_types;
-  bool m_clientTokenHasBeenSet = true;
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::String m_owningProjectIdentifier;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_owningProjectIdentifierHasBeenSet = false;
-  bool m_targetHasBeenSet = false;
   bool m_typesHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_owningProjectIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

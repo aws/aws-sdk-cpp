@@ -18,10 +18,6 @@ namespace Model {
 AmazonQPropertiesOutput::AmazonQPropertiesOutput(JsonView jsonValue) { *this = jsonValue; }
 
 AmazonQPropertiesOutput& AmazonQPropertiesOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("authMode")) {
-    m_authMode = jsonValue.GetString("authMode");
-    m_authModeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("isEnabled")) {
     m_isEnabled = jsonValue.GetBool("isEnabled");
     m_isEnabledHasBeenSet = true;
@@ -30,15 +26,15 @@ AmazonQPropertiesOutput& AmazonQPropertiesOutput::operator=(JsonView jsonValue) 
     m_profileArn = jsonValue.GetString("profileArn");
     m_profileArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authMode")) {
+    m_authMode = jsonValue.GetString("authMode");
+    m_authModeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AmazonQPropertiesOutput::Jsonize() const {
   JsonValue payload;
-
-  if (m_authModeHasBeenSet) {
-    payload.WithString("authMode", m_authMode);
-  }
 
   if (m_isEnabledHasBeenSet) {
     payload.WithBool("isEnabled", m_isEnabled);
@@ -46,6 +42,10 @@ JsonValue AmazonQPropertiesOutput::Jsonize() const {
 
   if (m_profileArnHasBeenSet) {
     payload.WithString("profileArn", m_profileArn);
+  }
+
+  if (m_authModeHasBeenSet) {
+    payload.WithString("authMode", m_authMode);
   }
 
   return payload;

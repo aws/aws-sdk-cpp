@@ -18,13 +18,13 @@ namespace Model {
 GluePropertiesOutput::GluePropertiesOutput(JsonView jsonValue) { *this = jsonValue; }
 
 GluePropertiesOutput& GluePropertiesOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorMessage")) {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("status")) {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorMessage")) {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ GluePropertiesOutput& GluePropertiesOutput::operator=(JsonView jsonValue) {
 JsonValue GluePropertiesOutput::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorMessageHasBeenSet) {
-    payload.WithString("errorMessage", m_errorMessage);
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("status", ConnectionStatusMapper::GetNameForConnectionStatus(m_status));
+  }
+
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;

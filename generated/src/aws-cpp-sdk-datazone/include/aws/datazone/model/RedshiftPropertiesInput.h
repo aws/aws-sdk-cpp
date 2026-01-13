@@ -36,18 +36,18 @@ class RedshiftPropertiesInput {
 
   ///@{
   /**
-   * <p>The Amaon Redshift credentials.</p>
+   * <p>The Amazon Redshift storage.</p>
    */
-  inline const RedshiftCredentials& GetCredentials() const { return m_credentials; }
-  inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
-  template <typename CredentialsT = RedshiftCredentials>
-  void SetCredentials(CredentialsT&& value) {
-    m_credentialsHasBeenSet = true;
-    m_credentials = std::forward<CredentialsT>(value);
+  inline const RedshiftStorageProperties& GetStorage() const { return m_storage; }
+  inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+  template <typename StorageT = RedshiftStorageProperties>
+  void SetStorage(StorageT&& value) {
+    m_storageHasBeenSet = true;
+    m_storage = std::forward<StorageT>(value);
   }
-  template <typename CredentialsT = RedshiftCredentials>
-  RedshiftPropertiesInput& WithCredentials(CredentialsT&& value) {
-    SetCredentials(std::forward<CredentialsT>(value));
+  template <typename StorageT = RedshiftStorageProperties>
+  RedshiftPropertiesInput& WithStorage(StorageT&& value) {
+    SetStorage(std::forward<StorageT>(value));
     return *this;
   }
   ///@}
@@ -90,24 +90,6 @@ class RedshiftPropertiesInput {
 
   ///@{
   /**
-   * <p>The lineage sync of the Amazon Redshift.</p>
-   */
-  inline const RedshiftLineageSyncConfigurationInput& GetLineageSync() const { return m_lineageSync; }
-  inline bool LineageSyncHasBeenSet() const { return m_lineageSyncHasBeenSet; }
-  template <typename LineageSyncT = RedshiftLineageSyncConfigurationInput>
-  void SetLineageSync(LineageSyncT&& value) {
-    m_lineageSyncHasBeenSet = true;
-    m_lineageSync = std::forward<LineageSyncT>(value);
-  }
-  template <typename LineageSyncT = RedshiftLineageSyncConfigurationInput>
-  RedshiftPropertiesInput& WithLineageSync(LineageSyncT&& value) {
-    SetLineageSync(std::forward<LineageSyncT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amaon Redshift port.</p>
    */
   inline int GetPort() const { return m_port; }
@@ -124,39 +106,57 @@ class RedshiftPropertiesInput {
 
   ///@{
   /**
-   * <p>The Amazon Redshift storage.</p>
+   * <p>The Amaon Redshift credentials.</p>
    */
-  inline const RedshiftStorageProperties& GetStorage() const { return m_storage; }
-  inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-  template <typename StorageT = RedshiftStorageProperties>
-  void SetStorage(StorageT&& value) {
-    m_storageHasBeenSet = true;
-    m_storage = std::forward<StorageT>(value);
+  inline const RedshiftCredentials& GetCredentials() const { return m_credentials; }
+  inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
+  template <typename CredentialsT = RedshiftCredentials>
+  void SetCredentials(CredentialsT&& value) {
+    m_credentialsHasBeenSet = true;
+    m_credentials = std::forward<CredentialsT>(value);
   }
-  template <typename StorageT = RedshiftStorageProperties>
-  RedshiftPropertiesInput& WithStorage(StorageT&& value) {
-    SetStorage(std::forward<StorageT>(value));
+  template <typename CredentialsT = RedshiftCredentials>
+  RedshiftPropertiesInput& WithCredentials(CredentialsT&& value) {
+    SetCredentials(std::forward<CredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The lineage sync of the Amazon Redshift.</p>
+   */
+  inline const RedshiftLineageSyncConfigurationInput& GetLineageSync() const { return m_lineageSync; }
+  inline bool LineageSyncHasBeenSet() const { return m_lineageSyncHasBeenSet; }
+  template <typename LineageSyncT = RedshiftLineageSyncConfigurationInput>
+  void SetLineageSync(LineageSyncT&& value) {
+    m_lineageSyncHasBeenSet = true;
+    m_lineageSync = std::forward<LineageSyncT>(value);
+  }
+  template <typename LineageSyncT = RedshiftLineageSyncConfigurationInput>
+  RedshiftPropertiesInput& WithLineageSync(LineageSyncT&& value) {
+    SetLineageSync(std::forward<LineageSyncT>(value));
     return *this;
   }
   ///@}
  private:
-  RedshiftCredentials m_credentials;
+  RedshiftStorageProperties m_storage;
 
   Aws::String m_databaseName;
 
   Aws::String m_host;
 
-  RedshiftLineageSyncConfigurationInput m_lineageSync;
-
   int m_port{0};
 
-  RedshiftStorageProperties m_storage;
-  bool m_credentialsHasBeenSet = false;
+  RedshiftCredentials m_credentials;
+
+  RedshiftLineageSyncConfigurationInput m_lineageSync;
+  bool m_storageHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_hostHasBeenSet = false;
-  bool m_lineageSyncHasBeenSet = false;
   bool m_portHasBeenSet = false;
-  bool m_storageHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_lineageSyncHasBeenSet = false;
 };
 
 }  // namespace Model

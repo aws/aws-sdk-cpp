@@ -34,24 +34,6 @@ class TimeSeriesDataPointFormInput {
 
   ///@{
   /**
-   * <p>The content of the time series data points form.</p>
-   */
-  inline const Aws::String& GetContent() const { return m_content; }
-  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-  template <typename ContentT = Aws::String>
-  void SetContent(ContentT&& value) {
-    m_contentHasBeenSet = true;
-    m_content = std::forward<ContentT>(value);
-  }
-  template <typename ContentT = Aws::String>
-  TimeSeriesDataPointFormInput& WithContent(ContentT&& value) {
-    SetContent(std::forward<ContentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the time series data points form.</p>
    */
   inline const Aws::String& GetFormName() const { return m_formName; }
@@ -64,24 +46,6 @@ class TimeSeriesDataPointFormInput {
   template <typename FormNameT = Aws::String>
   TimeSeriesDataPointFormInput& WithFormName(FormNameT&& value) {
     SetFormName(std::forward<FormNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of the time series data points form.</p>
-   */
-  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
-  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  void SetTimestamp(TimestampT&& value) {
-    m_timestampHasBeenSet = true;
-    m_timestamp = std::forward<TimestampT>(value);
-  }
-  template <typename TimestampT = Aws::Utils::DateTime>
-  TimeSeriesDataPointFormInput& WithTimestamp(TimestampT&& value) {
-    SetTimestamp(std::forward<TimestampT>(value));
     return *this;
   }
   ///@}
@@ -121,21 +85,57 @@ class TimeSeriesDataPointFormInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the time series data points form.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  TimeSeriesDataPointFormInput& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The content of the time series data points form.</p>
+   */
+  inline const Aws::String& GetContent() const { return m_content; }
+  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+  template <typename ContentT = Aws::String>
+  void SetContent(ContentT&& value) {
+    m_contentHasBeenSet = true;
+    m_content = std::forward<ContentT>(value);
+  }
+  template <typename ContentT = Aws::String>
+  TimeSeriesDataPointFormInput& WithContent(ContentT&& value) {
+    SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_content;
-
   Aws::String m_formName;
-
-  Aws::Utils::DateTime m_timestamp{};
 
   Aws::String m_typeIdentifier;
 
   Aws::String m_typeRevision;
-  bool m_contentHasBeenSet = false;
+
+  Aws::Utils::DateTime m_timestamp{};
+
+  Aws::String m_content;
   bool m_formNameHasBeenSet = false;
-  bool m_timestampHasBeenSet = false;
   bool m_typeIdentifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,10 +18,6 @@ namespace Model {
 DataProductListing::DataProductListing(JsonView jsonValue) { *this = jsonValue; }
 
 DataProductListing& DataProductListing::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("dataProductId")) {
     m_dataProductId = jsonValue.GetString("dataProductId");
     m_dataProductIdHasBeenSet = true;
@@ -29,6 +25,10 @@ DataProductListing& DataProductListing::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("dataProductRevision")) {
     m_dataProductRevision = jsonValue.GetString("dataProductRevision");
     m_dataProductRevisionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("forms")) {
     m_forms = jsonValue.GetString("forms");
@@ -41,6 +41,10 @@ DataProductListing& DataProductListing::operator=(JsonView jsonValue) {
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
     for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
@@ -48,19 +52,11 @@ DataProductListing& DataProductListing::operator=(JsonView jsonValue) {
     }
     m_itemsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue DataProductListing::Jsonize() const {
   JsonValue payload;
-
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
 
   if (m_dataProductIdHasBeenSet) {
     payload.WithString("dataProductId", m_dataProductId);
@@ -68,6 +64,10 @@ JsonValue DataProductListing::Jsonize() const {
 
   if (m_dataProductRevisionHasBeenSet) {
     payload.WithString("dataProductRevision", m_dataProductRevision);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if (m_formsHasBeenSet) {
@@ -82,16 +82,16 @@ JsonValue DataProductListing::Jsonize() const {
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
+  if (m_owningProjectIdHasBeenSet) {
+    payload.WithString("owningProjectId", m_owningProjectId);
+  }
+
   if (m_itemsHasBeenSet) {
     Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
     for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
       itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
     }
     payload.WithArray("items", std::move(itemsJsonList));
-  }
-
-  if (m_owningProjectIdHasBeenSet) {
-    payload.WithString("owningProjectId", m_owningProjectId);
   }
 
   return payload;

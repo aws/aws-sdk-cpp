@@ -37,9 +37,9 @@ void ListEnvironmentProfilesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
+  if (m_projectIdentifierHasBeenSet) {
+    ss << m_projectIdentifier;
+    uri.AddQueryStringParameter("projectIdentifier", ss.str());
     ss.str("");
   }
 
@@ -55,9 +55,9 @@ void ListEnvironmentProfilesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_projectIdentifierHasBeenSet) {
-    ss << m_projectIdentifier;
-    uri.AddQueryStringParameter("projectIdentifier", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 }

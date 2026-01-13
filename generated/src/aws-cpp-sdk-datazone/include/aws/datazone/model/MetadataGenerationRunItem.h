@@ -38,42 +38,6 @@ class MetadataGenerationRunItem {
 
   ///@{
   /**
-   * <p>The timestamp at which the metadata generation run was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  MetadataGenerationRunItem& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the metadata generation run.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  MetadataGenerationRunItem& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which the metadata generation run was
    * created.</p>
    */
@@ -111,19 +75,18 @@ class MetadataGenerationRunItem {
 
   ///@{
   /**
-   * <p>The ID of the project that owns the asset for which the metadata generation
-   * was ran.</p>
+   * <p>The asset for which metadata was generated.</p>
    */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  inline const MetadataGenerationRunTarget& GetTarget() const { return m_target; }
+  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+  template <typename TargetT = MetadataGenerationRunTarget>
+  void SetTarget(TargetT&& value) {
+    m_targetHasBeenSet = true;
+    m_target = std::forward<TargetT>(value);
   }
-  template <typename OwningProjectIdT = Aws::String>
-  MetadataGenerationRunItem& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+  template <typename TargetT = MetadataGenerationRunTarget>
+  MetadataGenerationRunItem& WithTarget(TargetT&& value) {
+    SetTarget(std::forward<TargetT>(value));
     return *this;
   }
   ///@}
@@ -140,24 +103,6 @@ class MetadataGenerationRunItem {
   }
   inline MetadataGenerationRunItem& WithStatus(MetadataGenerationRunStatus value) {
     SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The asset for which metadata was generated.</p>
-   */
-  inline const MetadataGenerationRunTarget& GetTarget() const { return m_target; }
-  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-  template <typename TargetT = MetadataGenerationRunTarget>
-  void SetTarget(TargetT&& value) {
-    m_targetHasBeenSet = true;
-    m_target = std::forward<TargetT>(value);
-  }
-  template <typename TargetT = MetadataGenerationRunTarget>
-  MetadataGenerationRunItem& WithTarget(TargetT&& value) {
-    SetTarget(std::forward<TargetT>(value));
     return *this;
   }
   ///@}
@@ -184,30 +129,85 @@ class MetadataGenerationRunItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the metadata generation run was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  MetadataGenerationRunItem& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the metadata generation run.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  MetadataGenerationRunItem& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project that owns the asset for which the metadata generation
+   * was ran.</p>
+   */
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  }
+  template <typename OwningProjectIdT = Aws::String>
+  MetadataGenerationRunItem& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
   Aws::String m_domainId;
 
   Aws::String m_id;
 
-  Aws::String m_owningProjectId;
+  MetadataGenerationRunTarget m_target;
 
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
 
-  MetadataGenerationRunTarget m_target;
-
   Aws::Vector<MetadataGenerationRunType> m_types;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
+
+  Aws::String m_owningProjectId;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_targetHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
 };
 
 }  // namespace Model

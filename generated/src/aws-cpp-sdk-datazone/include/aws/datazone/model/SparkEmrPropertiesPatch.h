@@ -105,24 +105,6 @@ class SparkEmrPropertiesPatch {
 
   ///@{
   /**
-   * <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
-   */
-  inline const Aws::String& GetManagedEndpointArn() const { return m_managedEndpointArn; }
-  inline bool ManagedEndpointArnHasBeenSet() const { return m_managedEndpointArnHasBeenSet; }
-  template <typename ManagedEndpointArnT = Aws::String>
-  void SetManagedEndpointArn(ManagedEndpointArnT&& value) {
-    m_managedEndpointArnHasBeenSet = true;
-    m_managedEndpointArn = std::forward<ManagedEndpointArnT>(value);
-  }
-  template <typename ManagedEndpointArnT = Aws::String>
-  SparkEmrPropertiesPatch& WithManagedEndpointArn(ManagedEndpointArnT&& value) {
-    SetManagedEndpointArn(std::forward<ManagedEndpointArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Python virtual env in the Spark EMR properties patch.</p>
    */
   inline const Aws::String& GetPythonVirtualEnv() const { return m_pythonVirtualEnv; }
@@ -174,6 +156,24 @@ class SparkEmrPropertiesPatch {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The managed endpoint ARN of the EMR on EKS cluster.</p>
+   */
+  inline const Aws::String& GetManagedEndpointArn() const { return m_managedEndpointArn; }
+  inline bool ManagedEndpointArnHasBeenSet() const { return m_managedEndpointArnHasBeenSet; }
+  template <typename ManagedEndpointArnT = Aws::String>
+  void SetManagedEndpointArn(ManagedEndpointArnT&& value) {
+    m_managedEndpointArnHasBeenSet = true;
+    m_managedEndpointArn = std::forward<ManagedEndpointArnT>(value);
+  }
+  template <typename ManagedEndpointArnT = Aws::String>
+  SparkEmrPropertiesPatch& WithManagedEndpointArn(ManagedEndpointArnT&& value) {
+    SetManagedEndpointArn(std::forward<ManagedEndpointArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_computeArn;
 
@@ -183,21 +183,21 @@ class SparkEmrPropertiesPatch {
 
   Aws::String m_logUri;
 
-  Aws::String m_managedEndpointArn;
-
   Aws::String m_pythonVirtualEnv;
 
   Aws::String m_runtimeRole;
 
   Aws::String m_trustedCertificatesS3Uri;
+
+  Aws::String m_managedEndpointArn;
   bool m_computeArnHasBeenSet = false;
   bool m_instanceProfileArnHasBeenSet = false;
   bool m_javaVirtualEnvHasBeenSet = false;
   bool m_logUriHasBeenSet = false;
-  bool m_managedEndpointArnHasBeenSet = false;
   bool m_pythonVirtualEnvHasBeenSet = false;
   bool m_runtimeRoleHasBeenSet = false;
   bool m_trustedCertificatesS3UriHasBeenSet = false;
+  bool m_managedEndpointArnHasBeenSet = false;
 };
 
 }  // namespace Model

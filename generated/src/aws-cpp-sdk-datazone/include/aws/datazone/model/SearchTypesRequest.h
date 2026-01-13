@@ -54,40 +54,6 @@ class SearchTypesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The filters for the <code>SearchTypes</code> action.</p>
-   */
-  inline const FilterClause& GetFilters() const { return m_filters; }
-  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-  template <typename FiltersT = FilterClause>
-  void SetFilters(FiltersT&& value) {
-    m_filtersHasBeenSet = true;
-    m_filters = std::forward<FiltersT>(value);
-  }
-  template <typename FiltersT = FilterClause>
-  SearchTypesRequest& WithFilters(FiltersT&& value) {
-    SetFilters(std::forward<FiltersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the search is managed.</p>
-   */
-  inline bool GetManaged() const { return m_managed; }
-  inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
-  inline void SetManaged(bool value) {
-    m_managedHasBeenSet = true;
-    m_managed = value;
-  }
-  inline SearchTypesRequest& WithManaged(bool value) {
-    SetManaged(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The maximum number of results to return in a single call to
    * <code>SearchTypes</code>. When the number of results to be listed is greater
    * than the value of <code>MaxResults</code>, the response contains a
@@ -131,30 +97,6 @@ class SearchTypesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The details of the search.</p>
-   */
-  inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
-  inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
-  template <typename SearchInT = Aws::Vector<SearchInItem>>
-  void SetSearchIn(SearchInT&& value) {
-    m_searchInHasBeenSet = true;
-    m_searchIn = std::forward<SearchInT>(value);
-  }
-  template <typename SearchInT = Aws::Vector<SearchInItem>>
-  SearchTypesRequest& WithSearchIn(SearchInT&& value) {
-    SetSearchIn(std::forward<SearchInT>(value));
-    return *this;
-  }
-  template <typename SearchInT = SearchInItem>
-  SearchTypesRequest& AddSearchIn(SearchInT&& value) {
-    m_searchInHasBeenSet = true;
-    m_searchIn.emplace_back(std::forward<SearchInT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies the scope of the search for types.</p>
    */
   inline TypesSearchScope GetSearchScope() const { return m_searchScope; }
@@ -189,6 +131,48 @@ class SearchTypesRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The details of the search.</p>
+   */
+  inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
+  inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
+  template <typename SearchInT = Aws::Vector<SearchInItem>>
+  void SetSearchIn(SearchInT&& value) {
+    m_searchInHasBeenSet = true;
+    m_searchIn = std::forward<SearchInT>(value);
+  }
+  template <typename SearchInT = Aws::Vector<SearchInItem>>
+  SearchTypesRequest& WithSearchIn(SearchInT&& value) {
+    SetSearchIn(std::forward<SearchInT>(value));
+    return *this;
+  }
+  template <typename SearchInT = SearchInItem>
+  SearchTypesRequest& AddSearchIn(SearchInT&& value) {
+    m_searchInHasBeenSet = true;
+    m_searchIn.emplace_back(std::forward<SearchInT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The filters for the <code>SearchTypes</code> action.</p>
+   */
+  inline const FilterClause& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = FilterClause>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = FilterClause>
+  SearchTypesRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The specifies the way to sort the <code>SearchTypes</code> results.</p>
    */
   inline const SearchSort& GetSort() const { return m_sort; }
@@ -204,33 +188,49 @@ class SearchTypesRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the search is managed.</p>
+   */
+  inline bool GetManaged() const { return m_managed; }
+  inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
+  inline void SetManaged(bool value) {
+    m_managedHasBeenSet = true;
+    m_managed = value;
+  }
+  inline SearchTypesRequest& WithManaged(bool value) {
+    SetManaged(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
-
-  FilterClause m_filters;
-
-  bool m_managed{false};
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
-  Aws::Vector<SearchInItem> m_searchIn;
-
   TypesSearchScope m_searchScope{TypesSearchScope::NOT_SET};
 
   Aws::String m_searchText;
 
+  Aws::Vector<SearchInItem> m_searchIn;
+
+  FilterClause m_filters;
+
   SearchSort m_sort;
+
+  bool m_managed{false};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_filtersHasBeenSet = false;
-  bool m_managedHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_searchInHasBeenSet = false;
   bool m_searchScopeHasBeenSet = false;
   bool m_searchTextHasBeenSet = false;
+  bool m_searchInHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_sortHasBeenSet = false;
+  bool m_managedHasBeenSet = false;
 };
 
 }  // namespace Model

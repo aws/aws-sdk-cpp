@@ -18,14 +18,6 @@ namespace Model {
 SearchInventoryResultItem::SearchInventoryResultItem(JsonView jsonValue) { *this = jsonValue; }
 
 SearchInventoryResultItem& SearchInventoryResultItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("assetItem")) {
-    m_assetItem = jsonValue.GetObject("assetItem");
-    m_assetItemHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataProductItem")) {
-    m_dataProductItem = jsonValue.GetObject("dataProductItem");
-    m_dataProductItemHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("glossaryItem")) {
     m_glossaryItem = jsonValue.GetObject("glossaryItem");
     m_glossaryItemHasBeenSet = true;
@@ -34,19 +26,19 @@ SearchInventoryResultItem& SearchInventoryResultItem::operator=(JsonView jsonVal
     m_glossaryTermItem = jsonValue.GetObject("glossaryTermItem");
     m_glossaryTermItemHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("assetItem")) {
+    m_assetItem = jsonValue.GetObject("assetItem");
+    m_assetItemHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataProductItem")) {
+    m_dataProductItem = jsonValue.GetObject("dataProductItem");
+    m_dataProductItemHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue SearchInventoryResultItem::Jsonize() const {
   JsonValue payload;
-
-  if (m_assetItemHasBeenSet) {
-    payload.WithObject("assetItem", m_assetItem.Jsonize());
-  }
-
-  if (m_dataProductItemHasBeenSet) {
-    payload.WithObject("dataProductItem", m_dataProductItem.Jsonize());
-  }
 
   if (m_glossaryItemHasBeenSet) {
     payload.WithObject("glossaryItem", m_glossaryItem.Jsonize());
@@ -54,6 +46,14 @@ JsonValue SearchInventoryResultItem::Jsonize() const {
 
   if (m_glossaryTermItemHasBeenSet) {
     payload.WithObject("glossaryTermItem", m_glossaryTermItem.Jsonize());
+  }
+
+  if (m_assetItemHasBeenSet) {
+    payload.WithObject("assetItem", m_assetItem.Jsonize());
+  }
+
+  if (m_dataProductItemHasBeenSet) {
+    payload.WithObject("dataProductItem", m_dataProductItem.Jsonize());
   }
 
   return payload;

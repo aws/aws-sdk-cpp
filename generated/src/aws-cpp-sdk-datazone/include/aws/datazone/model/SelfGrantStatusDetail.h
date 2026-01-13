@@ -52,24 +52,6 @@ class SelfGrantStatusDetail {
 
   ///@{
   /**
-   * <p>The reason for why the operation failed.</p>
-   */
-  inline const Aws::String& GetFailureCause() const { return m_failureCause; }
-  inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
-  template <typename FailureCauseT = Aws::String>
-  void SetFailureCause(FailureCauseT&& value) {
-    m_failureCauseHasBeenSet = true;
-    m_failureCause = std::forward<FailureCauseT>(value);
-  }
-  template <typename FailureCauseT = Aws::String>
-  SelfGrantStatusDetail& WithFailureCause(FailureCauseT&& value) {
-    SetFailureCause(std::forward<FailureCauseT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the schema used in the data source.</p>
    */
   inline const Aws::String& GetSchemaName() const { return m_schemaName; }
@@ -101,18 +83,36 @@ class SelfGrantStatusDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The reason for why the operation failed.</p>
+   */
+  inline const Aws::String& GetFailureCause() const { return m_failureCause; }
+  inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
+  template <typename FailureCauseT = Aws::String>
+  void SetFailureCause(FailureCauseT&& value) {
+    m_failureCauseHasBeenSet = true;
+    m_failureCause = std::forward<FailureCauseT>(value);
+  }
+  template <typename FailureCauseT = Aws::String>
+  SelfGrantStatusDetail& WithFailureCause(FailureCauseT&& value) {
+    SetFailureCause(std::forward<FailureCauseT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_databaseName;
-
-  Aws::String m_failureCause;
 
   Aws::String m_schemaName;
 
   SelfGrantStatus m_status{SelfGrantStatus::NOT_SET};
+
+  Aws::String m_failureCause;
   bool m_databaseNameHasBeenSet = false;
-  bool m_failureCauseHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
 };
 
 }  // namespace Model

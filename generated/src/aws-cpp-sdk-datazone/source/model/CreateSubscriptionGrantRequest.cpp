@@ -15,6 +15,18 @@ using namespace Aws::Utils;
 Aws::String CreateSubscriptionGrantRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_environmentIdentifierHasBeenSet) {
+    payload.WithString("environmentIdentifier", m_environmentIdentifier);
+  }
+
+  if (m_subscriptionTargetIdentifierHasBeenSet) {
+    payload.WithString("subscriptionTargetIdentifier", m_subscriptionTargetIdentifier);
+  }
+
+  if (m_grantedEntityHasBeenSet) {
+    payload.WithObject("grantedEntity", m_grantedEntity.Jsonize());
+  }
+
   if (m_assetTargetNamesHasBeenSet) {
     Aws::Utils::Array<JsonValue> assetTargetNamesJsonList(m_assetTargetNames.size());
     for (unsigned assetTargetNamesIndex = 0; assetTargetNamesIndex < assetTargetNamesJsonList.GetLength(); ++assetTargetNamesIndex) {
@@ -25,18 +37,6 @@ Aws::String CreateSubscriptionGrantRequest::SerializePayload() const {
 
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
-  }
-
-  if (m_environmentIdentifierHasBeenSet) {
-    payload.WithString("environmentIdentifier", m_environmentIdentifier);
-  }
-
-  if (m_grantedEntityHasBeenSet) {
-    payload.WithObject("grantedEntity", m_grantedEntity.Jsonize());
-  }
-
-  if (m_subscriptionTargetIdentifierHasBeenSet) {
-    payload.WithString("subscriptionTargetIdentifier", m_subscriptionTargetIdentifier);
   }
 
   return payload.View().WriteReadable();

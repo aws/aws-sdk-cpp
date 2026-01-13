@@ -19,15 +19,15 @@ Aws::String ListEnvironmentBlueprintsRequest::SerializePayload() const { return 
 
 void ListEnvironmentBlueprintsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_managedHasBeenSet) {
-    ss << m_managed;
-    uri.AddQueryStringParameter("managed", ss.str());
-    ss.str("");
-  }
-
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -37,9 +37,9 @@ void ListEnvironmentBlueprintsRequest::AddQueryStringParameters(URI& uri) const 
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_managedHasBeenSet) {
+    ss << m_managed;
+    uri.AddQueryStringParameter("managed", ss.str());
     ss.str("");
   }
 }

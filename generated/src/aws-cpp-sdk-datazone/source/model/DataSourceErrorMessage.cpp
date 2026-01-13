@@ -18,13 +18,13 @@ namespace Model {
 DataSourceErrorMessage::DataSourceErrorMessage(JsonView jsonValue) { *this = jsonValue; }
 
 DataSourceErrorMessage& DataSourceErrorMessage::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorDetail")) {
-    m_errorDetail = jsonValue.GetString("errorDetail");
-    m_errorDetailHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errorType")) {
     m_errorType = DataSourceErrorTypeMapper::GetDataSourceErrorTypeForName(jsonValue.GetString("errorType"));
     m_errorTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorDetail")) {
+    m_errorDetail = jsonValue.GetString("errorDetail");
+    m_errorDetailHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ DataSourceErrorMessage& DataSourceErrorMessage::operator=(JsonView jsonValue) {
 JsonValue DataSourceErrorMessage::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorDetailHasBeenSet) {
-    payload.WithString("errorDetail", m_errorDetail);
-  }
-
   if (m_errorTypeHasBeenSet) {
     payload.WithString("errorType", DataSourceErrorTypeMapper::GetNameForDataSourceErrorType(m_errorType));
+  }
+
+  if (m_errorDetailHasBeenSet) {
+    payload.WithString("errorDetail", m_errorDetail);
   }
 
   return payload;

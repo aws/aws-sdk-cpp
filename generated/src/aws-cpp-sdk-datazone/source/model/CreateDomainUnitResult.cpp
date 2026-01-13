@@ -21,6 +21,33 @@ CreateDomainUnitResult::CreateDomainUnitResult(const Aws::AmazonWebServiceResult
 
 CreateDomainUnitResult& CreateDomainUnitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parentDomainUnitId")) {
+    m_parentDomainUnitId = jsonValue.GetString("parentDomainUnitId");
+    m_parentDomainUnitIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("owners")) {
+    Aws::Utils::Array<JsonView> ownersJsonList = jsonValue.GetArray("owners");
+    for (unsigned ownersIndex = 0; ownersIndex < ownersJsonList.GetLength(); ++ownersIndex) {
+      m_owners.push_back(ownersJsonList[ownersIndex].AsObject());
+    }
+    m_ownersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ancestorDomainUnitIds")) {
     Aws::Utils::Array<JsonView> ancestorDomainUnitIdsJsonList = jsonValue.GetArray("ancestorDomainUnitIds");
     for (unsigned ancestorDomainUnitIdsIndex = 0; ancestorDomainUnitIdsIndex < ancestorDomainUnitIdsJsonList.GetLength();
@@ -36,33 +63,6 @@ CreateDomainUnitResult& CreateDomainUnitResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("owners")) {
-    Aws::Utils::Array<JsonView> ownersJsonList = jsonValue.GetArray("owners");
-    for (unsigned ownersIndex = 0; ownersIndex < ownersJsonList.GetLength(); ++ownersIndex) {
-      m_owners.push_back(ownersJsonList[ownersIndex].AsObject());
-    }
-    m_ownersHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("parentDomainUnitId")) {
-    m_parentDomainUnitId = jsonValue.GetString("parentDomainUnitId");
-    m_parentDomainUnitIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

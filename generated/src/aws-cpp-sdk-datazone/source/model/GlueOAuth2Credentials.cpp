@@ -18,21 +18,21 @@ namespace Model {
 GlueOAuth2Credentials::GlueOAuth2Credentials(JsonView jsonValue) { *this = jsonValue; }
 
 GlueOAuth2Credentials& GlueOAuth2Credentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userManagedClientApplicationClientSecret")) {
+    m_userManagedClientApplicationClientSecret = jsonValue.GetString("userManagedClientApplicationClientSecret");
+    m_userManagedClientApplicationClientSecretHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("accessToken")) {
     m_accessToken = jsonValue.GetString("accessToken");
     m_accessTokenHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("jwtToken")) {
-    m_jwtToken = jsonValue.GetString("jwtToken");
-    m_jwtTokenHasBeenSet = true;
   }
   if (jsonValue.ValueExists("refreshToken")) {
     m_refreshToken = jsonValue.GetString("refreshToken");
     m_refreshTokenHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("userManagedClientApplicationClientSecret")) {
-    m_userManagedClientApplicationClientSecret = jsonValue.GetString("userManagedClientApplicationClientSecret");
-    m_userManagedClientApplicationClientSecretHasBeenSet = true;
+  if (jsonValue.ValueExists("jwtToken")) {
+    m_jwtToken = jsonValue.GetString("jwtToken");
+    m_jwtTokenHasBeenSet = true;
   }
   return *this;
 }
@@ -40,20 +40,20 @@ GlueOAuth2Credentials& GlueOAuth2Credentials::operator=(JsonView jsonValue) {
 JsonValue GlueOAuth2Credentials::Jsonize() const {
   JsonValue payload;
 
-  if (m_accessTokenHasBeenSet) {
-    payload.WithString("accessToken", m_accessToken);
+  if (m_userManagedClientApplicationClientSecretHasBeenSet) {
+    payload.WithString("userManagedClientApplicationClientSecret", m_userManagedClientApplicationClientSecret);
   }
 
-  if (m_jwtTokenHasBeenSet) {
-    payload.WithString("jwtToken", m_jwtToken);
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("accessToken", m_accessToken);
   }
 
   if (m_refreshTokenHasBeenSet) {
     payload.WithString("refreshToken", m_refreshToken);
   }
 
-  if (m_userManagedClientApplicationClientSecretHasBeenSet) {
-    payload.WithString("userManagedClientApplicationClientSecret", m_userManagedClientApplicationClientSecret);
+  if (m_jwtTokenHasBeenSet) {
+    payload.WithString("jwtToken", m_jwtToken);
   }
 
   return payload;

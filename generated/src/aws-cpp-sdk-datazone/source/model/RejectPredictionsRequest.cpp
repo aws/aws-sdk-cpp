@@ -18,8 +18,8 @@ using namespace Aws::Http;
 Aws::String RejectPredictionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+  if (m_rejectRuleHasBeenSet) {
+    payload.WithObject("rejectRule", m_rejectRule.Jsonize());
   }
 
   if (m_rejectChoicesHasBeenSet) {
@@ -30,8 +30,8 @@ Aws::String RejectPredictionsRequest::SerializePayload() const {
     payload.WithArray("rejectChoices", std::move(rejectChoicesJsonList));
   }
 
-  if (m_rejectRuleHasBeenSet) {
-    payload.WithObject("rejectRule", m_rejectRule.Jsonize());
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

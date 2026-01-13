@@ -66,6 +66,24 @@ class SearchGroupProfilesRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>Specifies the text for which to search.</p>
+   */
+  inline const Aws::String& GetSearchText() const { return m_searchText; }
+  inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
+  template <typename SearchTextT = Aws::String>
+  void SetSearchText(SearchTextT&& value) {
+    m_searchTextHasBeenSet = true;
+    m_searchText = std::forward<SearchTextT>(value);
+  }
+  template <typename SearchTextT = Aws::String>
+  SearchGroupProfilesRequest& WithSearchText(SearchTextT&& value) {
+    SetSearchText(std::forward<SearchTextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of results to return in a single call to
    * <code>SearchGroupProfiles</code>. When the number of results to be listed is
    * greater than the value of <code>MaxResults</code>, the response contains a
@@ -106,39 +124,21 @@ class SearchGroupProfilesRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the text for which to search.</p>
-   */
-  inline const Aws::String& GetSearchText() const { return m_searchText; }
-  inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
-  template <typename SearchTextT = Aws::String>
-  void SetSearchText(SearchTextT&& value) {
-    m_searchTextHasBeenSet = true;
-    m_searchText = std::forward<SearchTextT>(value);
-  }
-  template <typename SearchTextT = Aws::String>
-  SearchGroupProfilesRequest& WithSearchText(SearchTextT&& value) {
-    SetSearchText(std::forward<SearchTextT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
 
   GroupSearchType m_groupType{GroupSearchType::NOT_SET};
 
+  Aws::String m_searchText;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_searchText;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_groupTypeHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_searchTextHasBeenSet = false;
 };
 
 }  // namespace Model

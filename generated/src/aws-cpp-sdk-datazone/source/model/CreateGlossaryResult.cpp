@@ -21,10 +21,6 @@ CreateGlossaryResult::CreateGlossaryResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateGlossaryResult& CreateGlossaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -40,6 +36,10 @@ CreateGlossaryResult& CreateGlossaryResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("owningProjectId")) {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
     m_owningProjectIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = GlossaryStatusMapper::GetGlossaryStatusForName(jsonValue.GetString("status"));

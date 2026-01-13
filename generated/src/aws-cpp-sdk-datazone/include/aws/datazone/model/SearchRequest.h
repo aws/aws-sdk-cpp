@@ -36,29 +36,6 @@ class SearchRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies additional attributes for the <code>Search</code> action.</p>
-   */
-  inline const Aws::Vector<SearchOutputAdditionalAttribute>& GetAdditionalAttributes() const { return m_additionalAttributes; }
-  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
-  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
-  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
-    m_additionalAttributesHasBeenSet = true;
-    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
-  }
-  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
-  SearchRequest& WithAdditionalAttributes(AdditionalAttributesT&& value) {
-    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
-    return *this;
-  }
-  inline SearchRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute value) {
-    m_additionalAttributesHasBeenSet = true;
-    m_additionalAttributes.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -77,18 +54,18 @@ class SearchRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the search filters.</p>
+   * <p>The identifier of the owning project specified for the search.</p>
    */
-  inline const FilterClause& GetFilters() const { return m_filters; }
-  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-  template <typename FiltersT = FilterClause>
-  void SetFilters(FiltersT&& value) {
-    m_filtersHasBeenSet = true;
-    m_filters = std::forward<FiltersT>(value);
+  inline const Aws::String& GetOwningProjectIdentifier() const { return m_owningProjectIdentifier; }
+  inline bool OwningProjectIdentifierHasBeenSet() const { return m_owningProjectIdentifierHasBeenSet; }
+  template <typename OwningProjectIdentifierT = Aws::String>
+  void SetOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
+    m_owningProjectIdentifierHasBeenSet = true;
+    m_owningProjectIdentifier = std::forward<OwningProjectIdentifierT>(value);
   }
-  template <typename FiltersT = FilterClause>
-  SearchRequest& WithFilters(FiltersT&& value) {
-    SetFilters(std::forward<FiltersT>(value));
+  template <typename OwningProjectIdentifierT = Aws::String>
+  SearchRequest& WithOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
+    SetOwningProjectIdentifier(std::forward<OwningProjectIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -138,48 +115,6 @@ class SearchRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the owning project specified for the search.</p>
-   */
-  inline const Aws::String& GetOwningProjectIdentifier() const { return m_owningProjectIdentifier; }
-  inline bool OwningProjectIdentifierHasBeenSet() const { return m_owningProjectIdentifierHasBeenSet; }
-  template <typename OwningProjectIdentifierT = Aws::String>
-  void SetOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
-    m_owningProjectIdentifierHasBeenSet = true;
-    m_owningProjectIdentifier = std::forward<OwningProjectIdentifierT>(value);
-  }
-  template <typename OwningProjectIdentifierT = Aws::String>
-  SearchRequest& WithOwningProjectIdentifier(OwningProjectIdentifierT&& value) {
-    SetOwningProjectIdentifier(std::forward<OwningProjectIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The details of the search.</p>
-   */
-  inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
-  inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
-  template <typename SearchInT = Aws::Vector<SearchInItem>>
-  void SetSearchIn(SearchInT&& value) {
-    m_searchInHasBeenSet = true;
-    m_searchIn = std::forward<SearchInT>(value);
-  }
-  template <typename SearchInT = Aws::Vector<SearchInItem>>
-  SearchRequest& WithSearchIn(SearchInT&& value) {
-    SetSearchIn(std::forward<SearchInT>(value));
-    return *this;
-  }
-  template <typename SearchInT = SearchInItem>
-  SearchRequest& AddSearchIn(SearchInT&& value) {
-    m_searchInHasBeenSet = true;
-    m_searchIn.emplace_back(std::forward<SearchInT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The scope of the search.</p>
    */
   inline InventorySearchScope GetSearchScope() const { return m_searchScope; }
@@ -214,6 +149,48 @@ class SearchRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The details of the search.</p>
+   */
+  inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
+  inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
+  template <typename SearchInT = Aws::Vector<SearchInItem>>
+  void SetSearchIn(SearchInT&& value) {
+    m_searchInHasBeenSet = true;
+    m_searchIn = std::forward<SearchInT>(value);
+  }
+  template <typename SearchInT = Aws::Vector<SearchInItem>>
+  SearchRequest& WithSearchIn(SearchInT&& value) {
+    SetSearchIn(std::forward<SearchInT>(value));
+    return *this;
+  }
+  template <typename SearchInT = SearchInItem>
+  SearchRequest& AddSearchIn(SearchInT&& value) {
+    m_searchInHasBeenSet = true;
+    m_searchIn.emplace_back(std::forward<SearchInT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the search filters.</p>
+   */
+  inline const FilterClause& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = FilterClause>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = FilterClause>
+  SearchRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the way in which the search results are to be sorted.</p>
    */
   inline const SearchSort& GetSort() const { return m_sort; }
@@ -229,36 +206,59 @@ class SearchRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<SearchOutputAdditionalAttribute> m_additionalAttributes;
 
+  ///@{
+  /**
+   * <p>Specifies additional attributes for the <code>Search</code> action.</p>
+   */
+  inline const Aws::Vector<SearchOutputAdditionalAttribute>& GetAdditionalAttributes() const { return m_additionalAttributes; }
+  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
+  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
+  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
+    m_additionalAttributesHasBeenSet = true;
+    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
+  }
+  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
+  SearchRequest& WithAdditionalAttributes(AdditionalAttributesT&& value) {
+    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
+    return *this;
+  }
+  inline SearchRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute value) {
+    m_additionalAttributesHasBeenSet = true;
+    m_additionalAttributes.push_back(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
-  FilterClause m_filters;
+  Aws::String m_owningProjectIdentifier;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
-  Aws::String m_owningProjectIdentifier;
-
-  Aws::Vector<SearchInItem> m_searchIn;
-
   InventorySearchScope m_searchScope{InventorySearchScope::NOT_SET};
 
   Aws::String m_searchText;
 
+  Aws::Vector<SearchInItem> m_searchIn;
+
+  FilterClause m_filters;
+
   SearchSort m_sort;
-  bool m_additionalAttributesHasBeenSet = false;
+
+  Aws::Vector<SearchOutputAdditionalAttribute> m_additionalAttributes;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_filtersHasBeenSet = false;
+  bool m_owningProjectIdentifierHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_owningProjectIdentifierHasBeenSet = false;
-  bool m_searchInHasBeenSet = false;
   bool m_searchScopeHasBeenSet = false;
   bool m_searchTextHasBeenSet = false;
+  bool m_searchInHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_sortHasBeenSet = false;
+  bool m_additionalAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

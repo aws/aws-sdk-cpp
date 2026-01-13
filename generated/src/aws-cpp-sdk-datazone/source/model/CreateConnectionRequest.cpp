@@ -27,10 +27,6 @@ Aws::String CreateConnectionRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
-  if (m_enableTrustedIdentityPropagationHasBeenSet) {
-    payload.WithBool("enableTrustedIdentityPropagation", m_enableTrustedIdentityPropagation);
-  }
-
   if (m_environmentIdentifierHasBeenSet) {
     payload.WithString("environmentIdentifier", m_environmentIdentifier);
   }
@@ -41,6 +37,10 @@ Aws::String CreateConnectionRequest::SerializePayload() const {
 
   if (m_propsHasBeenSet) {
     payload.WithObject("props", m_props.Jsonize());
+  }
+
+  if (m_enableTrustedIdentityPropagationHasBeenSet) {
+    payload.WithBool("enableTrustedIdentityPropagation", m_enableTrustedIdentityPropagation);
   }
 
   if (m_scopeHasBeenSet) {

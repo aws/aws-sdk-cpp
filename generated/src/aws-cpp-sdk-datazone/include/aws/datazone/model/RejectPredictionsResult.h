@@ -28,6 +28,23 @@ class RejectPredictionsResult {
 
   ///@{
   /**
+   * <p>The ID of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  RejectPredictionsResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the asset.</p>
    */
   inline const Aws::String& GetAssetId() const { return m_assetId; }
@@ -61,23 +78,6 @@ class RejectPredictionsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The ID of the Amazon DataZone domain.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  RejectPredictionsResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -92,16 +92,16 @@ class RejectPredictionsResult {
   }
   ///@}
  private:
+  Aws::String m_domainId;
+
   Aws::String m_assetId;
 
   Aws::String m_assetRevision;
 
-  Aws::String m_domainId;
-
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
   bool m_assetRevisionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

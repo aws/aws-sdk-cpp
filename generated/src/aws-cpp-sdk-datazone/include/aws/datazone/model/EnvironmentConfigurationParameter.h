@@ -33,22 +33,6 @@ class EnvironmentConfigurationParameter {
 
   ///@{
   /**
-   * <p>Specifies whether the environment parameter is editable.</p>
-   */
-  inline bool GetIsEditable() const { return m_isEditable; }
-  inline bool IsEditableHasBeenSet() const { return m_isEditableHasBeenSet; }
-  inline void SetIsEditable(bool value) {
-    m_isEditableHasBeenSet = true;
-    m_isEditable = value;
-  }
-  inline EnvironmentConfigurationParameter& WithIsEditable(bool value) {
-    SetIsEditable(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the environment configuration parameter.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -82,15 +66,31 @@ class EnvironmentConfigurationParameter {
     return *this;
   }
   ///@}
- private:
-  bool m_isEditable{false};
 
+  ///@{
+  /**
+   * <p>Specifies whether the environment parameter is editable.</p>
+   */
+  inline bool GetIsEditable() const { return m_isEditable; }
+  inline bool IsEditableHasBeenSet() const { return m_isEditableHasBeenSet; }
+  inline void SetIsEditable(bool value) {
+    m_isEditableHasBeenSet = true;
+    m_isEditable = value;
+  }
+  inline EnvironmentConfigurationParameter& WithIsEditable(bool value) {
+    SetIsEditable(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_name;
 
   Aws::String m_value;
-  bool m_isEditableHasBeenSet = false;
+
+  bool m_isEditable{false};
   bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_isEditableHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,25 +38,6 @@ class ListLineageNodeHistoryRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The direction of the data lineage node refers to the lineage node having
-   * neighbors in that direction. For example, if direction is <code>UPSTREAM</code>,
-   * the <code>ListLineageNodeHistory</code> API responds with historical versions
-   * with upstream neighbors only.</p>
-   */
-  inline EdgeDirection GetDirection() const { return m_direction; }
-  inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-  inline void SetDirection(EdgeDirection value) {
-    m_directionHasBeenSet = true;
-    m_direction = value;
-  }
-  inline ListLineageNodeHistoryRequest& WithDirection(EdgeDirection value) {
-    SetDirection(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to list the history of the specified data
    * lineage node.</p>
    */
@@ -70,62 +51,6 @@ class ListLineageNodeHistoryRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   ListLineageNodeHistoryRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the action is to return data lineage node history from the
-   * time after the event timestamp.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEventTimestampGTE() const { return m_eventTimestampGTE; }
-  inline bool EventTimestampGTEHasBeenSet() const { return m_eventTimestampGTEHasBeenSet; }
-  template <typename EventTimestampGTET = Aws::Utils::DateTime>
-  void SetEventTimestampGTE(EventTimestampGTET&& value) {
-    m_eventTimestampGTEHasBeenSet = true;
-    m_eventTimestampGTE = std::forward<EventTimestampGTET>(value);
-  }
-  template <typename EventTimestampGTET = Aws::Utils::DateTime>
-  ListLineageNodeHistoryRequest& WithEventTimestampGTE(EventTimestampGTET&& value) {
-    SetEventTimestampGTE(std::forward<EventTimestampGTET>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the action is to return data lineage node history from the
-   * time prior of the event timestamp.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEventTimestampLTE() const { return m_eventTimestampLTE; }
-  inline bool EventTimestampLTEHasBeenSet() const { return m_eventTimestampLTEHasBeenSet; }
-  template <typename EventTimestampLTET = Aws::Utils::DateTime>
-  void SetEventTimestampLTE(EventTimestampLTET&& value) {
-    m_eventTimestampLTEHasBeenSet = true;
-    m_eventTimestampLTE = std::forward<EventTimestampLTET>(value);
-  }
-  template <typename EventTimestampLTET = Aws::Utils::DateTime>
-  ListLineageNodeHistoryRequest& WithEventTimestampLTE(EventTimestampLTET&& value) {
-    SetEventTimestampLTE(std::forward<EventTimestampLTET>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the data lineage node whose history you want to list.</p>
-   */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
-  }
-  template <typename IdentifierT = Aws::String>
-  ListLineageNodeHistoryRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
     return *this;
   }
   ///@}
@@ -174,6 +99,81 @@ class ListLineageNodeHistoryRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the data lineage node whose history you want to list.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  ListLineageNodeHistoryRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The direction of the data lineage node refers to the lineage node having
+   * neighbors in that direction. For example, if direction is <code>UPSTREAM</code>,
+   * the <code>ListLineageNodeHistory</code> API responds with historical versions
+   * with upstream neighbors only.</p>
+   */
+  inline EdgeDirection GetDirection() const { return m_direction; }
+  inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
+  inline void SetDirection(EdgeDirection value) {
+    m_directionHasBeenSet = true;
+    m_direction = value;
+  }
+  inline ListLineageNodeHistoryRequest& WithDirection(EdgeDirection value) {
+    SetDirection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the action is to return data lineage node history from the
+   * time after the event timestamp.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEventTimestampGTE() const { return m_eventTimestampGTE; }
+  inline bool EventTimestampGTEHasBeenSet() const { return m_eventTimestampGTEHasBeenSet; }
+  template <typename EventTimestampGTET = Aws::Utils::DateTime>
+  void SetEventTimestampGTE(EventTimestampGTET&& value) {
+    m_eventTimestampGTEHasBeenSet = true;
+    m_eventTimestampGTE = std::forward<EventTimestampGTET>(value);
+  }
+  template <typename EventTimestampGTET = Aws::Utils::DateTime>
+  ListLineageNodeHistoryRequest& WithEventTimestampGTE(EventTimestampGTET&& value) {
+    SetEventTimestampGTE(std::forward<EventTimestampGTET>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the action is to return data lineage node history from the
+   * time prior of the event timestamp.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEventTimestampLTE() const { return m_eventTimestampLTE; }
+  inline bool EventTimestampLTEHasBeenSet() const { return m_eventTimestampLTEHasBeenSet; }
+  template <typename EventTimestampLTET = Aws::Utils::DateTime>
+  void SetEventTimestampLTE(EventTimestampLTET&& value) {
+    m_eventTimestampLTEHasBeenSet = true;
+    m_eventTimestampLTE = std::forward<EventTimestampLTET>(value);
+  }
+  template <typename EventTimestampLTET = Aws::Utils::DateTime>
+  ListLineageNodeHistoryRequest& WithEventTimestampLTE(EventTimestampLTET&& value) {
+    SetEventTimestampLTE(std::forward<EventTimestampLTET>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The order by which you want data lineage node history to be sorted.</p>
    */
   inline SortOrder GetSortOrder() const { return m_sortOrder; }
@@ -188,28 +188,28 @@ class ListLineageNodeHistoryRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  EdgeDirection m_direction{EdgeDirection::NOT_SET};
-
   Aws::String m_domainIdentifier;
-
-  Aws::Utils::DateTime m_eventTimestampGTE{};
-
-  Aws::Utils::DateTime m_eventTimestampLTE{};
-
-  Aws::String m_identifier;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
+  Aws::String m_identifier;
+
+  EdgeDirection m_direction{EdgeDirection::NOT_SET};
+
+  Aws::Utils::DateTime m_eventTimestampGTE{};
+
+  Aws::Utils::DateTime m_eventTimestampLTE{};
+
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_directionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_eventTimestampGTEHasBeenSet = false;
-  bool m_eventTimestampLTEHasBeenSet = false;
-  bool m_identifierHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_eventTimestampGTEHasBeenSet = false;
+  bool m_eventTimestampLTEHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

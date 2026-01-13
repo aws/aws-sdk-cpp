@@ -36,69 +36,6 @@ class UpdateDataSourceRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The asset forms to be updated as part of the <code>UpdateDataSource</code>
-   * action.</p>
-   */
-  inline const Aws::Vector<FormInput>& GetAssetFormsInput() const { return m_assetFormsInput; }
-  inline bool AssetFormsInputHasBeenSet() const { return m_assetFormsInputHasBeenSet; }
-  template <typename AssetFormsInputT = Aws::Vector<FormInput>>
-  void SetAssetFormsInput(AssetFormsInputT&& value) {
-    m_assetFormsInputHasBeenSet = true;
-    m_assetFormsInput = std::forward<AssetFormsInputT>(value);
-  }
-  template <typename AssetFormsInputT = Aws::Vector<FormInput>>
-  UpdateDataSourceRequest& WithAssetFormsInput(AssetFormsInputT&& value) {
-    SetAssetFormsInput(std::forward<AssetFormsInputT>(value));
-    return *this;
-  }
-  template <typename AssetFormsInputT = FormInput>
-  UpdateDataSourceRequest& AddAssetFormsInput(AssetFormsInputT&& value) {
-    m_assetFormsInputHasBeenSet = true;
-    m_assetFormsInput.emplace_back(std::forward<AssetFormsInputT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration to be updated as part of the <code>UpdateDataSource</code>
-   * action.</p>
-   */
-  inline const DataSourceConfigurationInput& GetConfiguration() const { return m_configuration; }
-  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-  template <typename ConfigurationT = DataSourceConfigurationInput>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
-  }
-  template <typename ConfigurationT = DataSourceConfigurationInput>
-  UpdateDataSourceRequest& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description to be updated as part of the <code>UpdateDataSource</code>
-   * action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateDataSourceRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the domain in which to update a data source.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -111,23 +48,6 @@ class UpdateDataSourceRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   UpdateDataSourceRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The enable setting to be updated as part of the <code>UpdateDataSource</code>
-   * action.</p>
-   */
-  inline EnableSetting GetEnableSetting() const { return m_enableSetting; }
-  inline bool EnableSettingHasBeenSet() const { return m_enableSettingHasBeenSet; }
-  inline void SetEnableSetting(EnableSetting value) {
-    m_enableSettingHasBeenSet = true;
-    m_enableSetting = value;
-  }
-  inline UpdateDataSourceRequest& WithEnableSetting(EnableSetting value) {
-    SetEnableSetting(value);
     return *this;
   }
   ///@}
@@ -171,6 +91,42 @@ class UpdateDataSourceRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The description to be updated as part of the <code>UpdateDataSource</code>
+   * action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateDataSourceRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The enable setting to be updated as part of the <code>UpdateDataSource</code>
+   * action.</p>
+   */
+  inline EnableSetting GetEnableSetting() const { return m_enableSetting; }
+  inline bool EnableSettingHasBeenSet() const { return m_enableSettingHasBeenSet; }
+  inline void SetEnableSetting(EnableSetting value) {
+    m_enableSettingHasBeenSet = true;
+    m_enableSetting = value;
+  }
+  inline UpdateDataSourceRequest& WithEnableSetting(EnableSetting value) {
+    SetEnableSetting(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The publish on import setting to be updated as part of the
    * <code>UpdateDataSource</code> action.</p>
    */
@@ -182,6 +138,69 @@ class UpdateDataSourceRequest : public DataZoneRequest {
   }
   inline UpdateDataSourceRequest& WithPublishOnImport(bool value) {
     SetPublishOnImport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset forms to be updated as part of the <code>UpdateDataSource</code>
+   * action.</p>
+   */
+  inline const Aws::Vector<FormInput>& GetAssetFormsInput() const { return m_assetFormsInput; }
+  inline bool AssetFormsInputHasBeenSet() const { return m_assetFormsInputHasBeenSet; }
+  template <typename AssetFormsInputT = Aws::Vector<FormInput>>
+  void SetAssetFormsInput(AssetFormsInputT&& value) {
+    m_assetFormsInputHasBeenSet = true;
+    m_assetFormsInput = std::forward<AssetFormsInputT>(value);
+  }
+  template <typename AssetFormsInputT = Aws::Vector<FormInput>>
+  UpdateDataSourceRequest& WithAssetFormsInput(AssetFormsInputT&& value) {
+    SetAssetFormsInput(std::forward<AssetFormsInputT>(value));
+    return *this;
+  }
+  template <typename AssetFormsInputT = FormInput>
+  UpdateDataSourceRequest& AddAssetFormsInput(AssetFormsInputT&& value) {
+    m_assetFormsInputHasBeenSet = true;
+    m_assetFormsInput.emplace_back(std::forward<AssetFormsInputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schedule to be updated as part of the <code>UpdateDataSource</code>
+   * action.</p>
+   */
+  inline const ScheduleConfiguration& GetSchedule() const { return m_schedule; }
+  inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+  template <typename ScheduleT = ScheduleConfiguration>
+  void SetSchedule(ScheduleT&& value) {
+    m_scheduleHasBeenSet = true;
+    m_schedule = std::forward<ScheduleT>(value);
+  }
+  template <typename ScheduleT = ScheduleConfiguration>
+  UpdateDataSourceRequest& WithSchedule(ScheduleT&& value) {
+    SetSchedule(std::forward<ScheduleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration to be updated as part of the <code>UpdateDataSource</code>
+   * action.</p>
+   */
+  inline const DataSourceConfigurationInput& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = DataSourceConfigurationInput>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = DataSourceConfigurationInput>
+  UpdateDataSourceRequest& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -221,58 +240,39 @@ class UpdateDataSourceRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The schedule to be updated as part of the <code>UpdateDataSource</code>
-   * action.</p>
-   */
-  inline const ScheduleConfiguration& GetSchedule() const { return m_schedule; }
-  inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-  template <typename ScheduleT = ScheduleConfiguration>
-  void SetSchedule(ScheduleT&& value) {
-    m_scheduleHasBeenSet = true;
-    m_schedule = std::forward<ScheduleT>(value);
-  }
-  template <typename ScheduleT = ScheduleConfiguration>
-  UpdateDataSourceRequest& WithSchedule(ScheduleT&& value) {
-    SetSchedule(std::forward<ScheduleT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<FormInput> m_assetFormsInput;
-
-  DataSourceConfigurationInput m_configuration;
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
-
-  EnableSetting m_enableSetting{EnableSetting::NOT_SET};
 
   Aws::String m_identifier;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
+  EnableSetting m_enableSetting{EnableSetting::NOT_SET};
+
   bool m_publishOnImport{false};
+
+  Aws::Vector<FormInput> m_assetFormsInput;
+
+  ScheduleConfiguration m_schedule;
+
+  DataSourceConfigurationInput m_configuration;
 
   RecommendationConfiguration m_recommendation;
 
   bool m_retainPermissionsOnRevokeFailure{false};
-
-  ScheduleConfiguration m_schedule;
-  bool m_assetFormsInputHasBeenSet = false;
-  bool m_configurationHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_enableSettingHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enableSettingHasBeenSet = false;
   bool m_publishOnImportHasBeenSet = false;
+  bool m_assetFormsInputHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_recommendationHasBeenSet = false;
   bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
-  bool m_scheduleHasBeenSet = false;
 };
 
 }  // namespace Model

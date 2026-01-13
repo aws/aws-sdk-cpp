@@ -18,13 +18,13 @@ namespace Model {
 Member::Member(JsonView jsonValue) { *this = jsonValue; }
 
 Member& Member::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("groupIdentifier")) {
-    m_groupIdentifier = jsonValue.GetString("groupIdentifier");
-    m_groupIdentifierHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("userIdentifier")) {
     m_userIdentifier = jsonValue.GetString("userIdentifier");
     m_userIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("groupIdentifier")) {
+    m_groupIdentifier = jsonValue.GetString("groupIdentifier");
+    m_groupIdentifierHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Member& Member::operator=(JsonView jsonValue) {
 JsonValue Member::Jsonize() const {
   JsonValue payload;
 
-  if (m_groupIdentifierHasBeenSet) {
-    payload.WithString("groupIdentifier", m_groupIdentifier);
-  }
-
   if (m_userIdentifierHasBeenSet) {
     payload.WithString("userIdentifier", m_userIdentifier);
+  }
+
+  if (m_groupIdentifierHasBeenSet) {
+    payload.WithString("groupIdentifier", m_groupIdentifier);
   }
 
   return payload;

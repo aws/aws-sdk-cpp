@@ -18,9 +18,9 @@ namespace Model {
 CustomParameter::CustomParameter(JsonView jsonValue) { *this = jsonValue; }
 
 CustomParameter& CustomParameter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("defaultValue")) {
-    m_defaultValue = jsonValue.GetString("defaultValue");
-    m_defaultValueHasBeenSet = true;
+  if (jsonValue.ValueExists("keyName")) {
+    m_keyName = jsonValue.GetString("keyName");
+    m_keyNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
@@ -29,6 +29,10 @@ CustomParameter& CustomParameter::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("fieldType")) {
     m_fieldType = jsonValue.GetString("fieldType");
     m_fieldTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("defaultValue")) {
+    m_defaultValue = jsonValue.GetString("defaultValue");
+    m_defaultValueHasBeenSet = true;
   }
   if (jsonValue.ValueExists("isEditable")) {
     m_isEditable = jsonValue.GetBool("isEditable");
@@ -42,18 +46,14 @@ CustomParameter& CustomParameter::operator=(JsonView jsonValue) {
     m_isUpdateSupported = jsonValue.GetBool("isUpdateSupported");
     m_isUpdateSupportedHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("keyName")) {
-    m_keyName = jsonValue.GetString("keyName");
-    m_keyNameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue CustomParameter::Jsonize() const {
   JsonValue payload;
 
-  if (m_defaultValueHasBeenSet) {
-    payload.WithString("defaultValue", m_defaultValue);
+  if (m_keyNameHasBeenSet) {
+    payload.WithString("keyName", m_keyName);
   }
 
   if (m_descriptionHasBeenSet) {
@@ -62,6 +62,10 @@ JsonValue CustomParameter::Jsonize() const {
 
   if (m_fieldTypeHasBeenSet) {
     payload.WithString("fieldType", m_fieldType);
+  }
+
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("defaultValue", m_defaultValue);
   }
 
   if (m_isEditableHasBeenSet) {
@@ -74,10 +78,6 @@ JsonValue CustomParameter::Jsonize() const {
 
   if (m_isUpdateSupportedHasBeenSet) {
     payload.WithBool("isUpdateSupported", m_isUpdateSupported);
-  }
-
-  if (m_keyNameHasBeenSet) {
-    payload.WithString("keyName", m_keyName);
   }
 
   return payload;

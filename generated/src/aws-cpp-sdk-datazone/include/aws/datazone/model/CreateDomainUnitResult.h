@@ -31,6 +31,114 @@ class CreateDomainUnitResult {
 
   ///@{
   /**
+   * <p>The ID of the domain unit.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CreateDomainUnitResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain where the domain unit was created.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  CreateDomainUnitResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the domain unit.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateDomainUnitResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the parent domain unit.</p>
+   */
+  inline const Aws::String& GetParentDomainUnitId() const { return m_parentDomainUnitId; }
+  template <typename ParentDomainUnitIdT = Aws::String>
+  void SetParentDomainUnitId(ParentDomainUnitIdT&& value) {
+    m_parentDomainUnitIdHasBeenSet = true;
+    m_parentDomainUnitId = std::forward<ParentDomainUnitIdT>(value);
+  }
+  template <typename ParentDomainUnitIdT = Aws::String>
+  CreateDomainUnitResult& WithParentDomainUnitId(ParentDomainUnitIdT&& value) {
+    SetParentDomainUnitId(std::forward<ParentDomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the domain unit.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateDomainUnitResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The owners of the domain unit.</p>
+   */
+  inline const Aws::Vector<DomainUnitOwnerProperties>& GetOwners() const { return m_owners; }
+  template <typename OwnersT = Aws::Vector<DomainUnitOwnerProperties>>
+  void SetOwners(OwnersT&& value) {
+    m_ownersHasBeenSet = true;
+    m_owners = std::forward<OwnersT>(value);
+  }
+  template <typename OwnersT = Aws::Vector<DomainUnitOwnerProperties>>
+  CreateDomainUnitResult& WithOwners(OwnersT&& value) {
+    SetOwners(std::forward<OwnersT>(value));
+    return *this;
+  }
+  template <typename OwnersT = DomainUnitOwnerProperties>
+  CreateDomainUnitResult& AddOwners(OwnersT&& value) {
+    m_ownersHasBeenSet = true;
+    m_owners.emplace_back(std::forward<OwnersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The IDs of the ancestor domain units.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAncestorDomainUnitIds() const { return m_ancestorDomainUnitIds; }
@@ -87,114 +195,6 @@ class CreateDomainUnitResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The description of the domain unit.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateDomainUnitResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where the domain unit was created.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  CreateDomainUnitResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain unit.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  CreateDomainUnitResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the domain unit.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateDomainUnitResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The owners of the domain unit.</p>
-   */
-  inline const Aws::Vector<DomainUnitOwnerProperties>& GetOwners() const { return m_owners; }
-  template <typename OwnersT = Aws::Vector<DomainUnitOwnerProperties>>
-  void SetOwners(OwnersT&& value) {
-    m_ownersHasBeenSet = true;
-    m_owners = std::forward<OwnersT>(value);
-  }
-  template <typename OwnersT = Aws::Vector<DomainUnitOwnerProperties>>
-  CreateDomainUnitResult& WithOwners(OwnersT&& value) {
-    SetOwners(std::forward<OwnersT>(value));
-    return *this;
-  }
-  template <typename OwnersT = DomainUnitOwnerProperties>
-  CreateDomainUnitResult& AddOwners(OwnersT&& value) {
-    m_ownersHasBeenSet = true;
-    m_owners.emplace_back(std::forward<OwnersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the parent domain unit.</p>
-   */
-  inline const Aws::String& GetParentDomainUnitId() const { return m_parentDomainUnitId; }
-  template <typename ParentDomainUnitIdT = Aws::String>
-  void SetParentDomainUnitId(ParentDomainUnitIdT&& value) {
-    m_parentDomainUnitIdHasBeenSet = true;
-    m_parentDomainUnitId = std::forward<ParentDomainUnitIdT>(value);
-  }
-  template <typename ParentDomainUnitIdT = Aws::String>
-  CreateDomainUnitResult& WithParentDomainUnitId(ParentDomainUnitIdT&& value) {
-    SetParentDomainUnitId(std::forward<ParentDomainUnitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -209,34 +209,34 @@ class CreateDomainUnitResult {
   }
   ///@}
  private:
+  Aws::String m_id;
+
+  Aws::String m_domainId;
+
+  Aws::String m_name;
+
+  Aws::String m_parentDomainUnitId;
+
+  Aws::String m_description;
+
+  Aws::Vector<DomainUnitOwnerProperties> m_owners;
+
   Aws::Vector<Aws::String> m_ancestorDomainUnitIds;
 
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
 
-  Aws::String m_description;
-
-  Aws::String m_domainId;
-
-  Aws::String m_id;
-
-  Aws::String m_name;
-
-  Aws::Vector<DomainUnitOwnerProperties> m_owners;
-
-  Aws::String m_parentDomainUnitId;
-
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_parentDomainUnitIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownersHasBeenSet = false;
   bool m_ancestorDomainUnitIdsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_ownersHasBeenSet = false;
-  bool m_parentDomainUnitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -33,41 +33,6 @@ class CreateListingChangeSetRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies whether to publish or unpublish a listing.</p>
-   */
-  inline ChangeAction GetAction() const { return m_action; }
-  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-  inline void SetAction(ChangeAction value) {
-    m_actionHasBeenSet = true;
-    m_action = value;
-  }
-  inline CreateListingChangeSetRequest& WithAction(ChangeAction value) {
-    SetAction(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateListingChangeSetRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -104,6 +69,22 @@ class CreateListingChangeSetRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type of an entity.</p>
+   */
+  inline EntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(EntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline CreateListingChangeSetRequest& WithEntityType(EntityType value) {
+    SetEntityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The revision of an asset.</p>
    */
   inline const Aws::String& GetEntityRevision() const { return m_entityRevision; }
@@ -122,37 +103,56 @@ class CreateListingChangeSetRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The type of an entity.</p>
+   * <p>Specifies whether to publish or unpublish a listing.</p>
    */
-  inline EntityType GetEntityType() const { return m_entityType; }
-  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-  inline void SetEntityType(EntityType value) {
-    m_entityTypeHasBeenSet = true;
-    m_entityType = value;
+  inline ChangeAction GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  inline void SetAction(ChangeAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
   }
-  inline CreateListingChangeSetRequest& WithEntityType(EntityType value) {
-    SetEntityType(value);
+  inline CreateListingChangeSetRequest& WithAction(ChangeAction value) {
+    SetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateListingChangeSetRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  ChangeAction m_action{ChangeAction::NOT_SET};
-
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_entityIdentifier;
 
+  EntityType m_entityType{EntityType::NOT_SET};
+
   Aws::String m_entityRevision;
 
-  EntityType m_entityType{EntityType::NOT_SET};
-  bool m_actionHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
+  ChangeAction m_action{ChangeAction::NOT_SET};
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
-  bool m_entityRevisionHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/SubscriptionGrantCreationMode.h>
 #include <aws/datazone/model/SubscriptionTargetForm.h>
 
 #include <utility>
@@ -29,56 +30,6 @@ class UpdateSubscriptionTargetRequest : public DataZoneRequest {
   inline virtual const char* GetServiceRequestName() const override { return "UpdateSubscriptionTarget"; }
 
   AWS_DATAZONE_API Aws::String SerializePayload() const override;
-
-  ///@{
-  /**
-   * <p>The applicable asset types to be updated as part of the
-   * <code>UpdateSubscriptionTarget</code> action.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetApplicableAssetTypes() const { return m_applicableAssetTypes; }
-  inline bool ApplicableAssetTypesHasBeenSet() const { return m_applicableAssetTypesHasBeenSet; }
-  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
-  void SetApplicableAssetTypes(ApplicableAssetTypesT&& value) {
-    m_applicableAssetTypesHasBeenSet = true;
-    m_applicableAssetTypes = std::forward<ApplicableAssetTypesT>(value);
-  }
-  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
-  UpdateSubscriptionTargetRequest& WithApplicableAssetTypes(ApplicableAssetTypesT&& value) {
-    SetApplicableAssetTypes(std::forward<ApplicableAssetTypesT>(value));
-    return *this;
-  }
-  template <typename ApplicableAssetTypesT = Aws::String>
-  UpdateSubscriptionTargetRequest& AddApplicableAssetTypes(ApplicableAssetTypesT&& value) {
-    m_applicableAssetTypesHasBeenSet = true;
-    m_applicableAssetTypes.emplace_back(std::forward<ApplicableAssetTypesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The authorized principals to be updated as part of the
-   * <code>UpdateSubscriptionTarget</code> action.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetAuthorizedPrincipals() const { return m_authorizedPrincipals; }
-  inline bool AuthorizedPrincipalsHasBeenSet() const { return m_authorizedPrincipalsHasBeenSet; }
-  template <typename AuthorizedPrincipalsT = Aws::Vector<Aws::String>>
-  void SetAuthorizedPrincipals(AuthorizedPrincipalsT&& value) {
-    m_authorizedPrincipalsHasBeenSet = true;
-    m_authorizedPrincipals = std::forward<AuthorizedPrincipalsT>(value);
-  }
-  template <typename AuthorizedPrincipalsT = Aws::Vector<Aws::String>>
-  UpdateSubscriptionTargetRequest& WithAuthorizedPrincipals(AuthorizedPrincipalsT&& value) {
-    SetAuthorizedPrincipals(std::forward<AuthorizedPrincipalsT>(value));
-    return *this;
-  }
-  template <typename AuthorizedPrincipalsT = Aws::String>
-  UpdateSubscriptionTargetRequest& AddAuthorizedPrincipals(AuthorizedPrincipalsT&& value) {
-    m_authorizedPrincipalsHasBeenSet = true;
-    m_authorizedPrincipals.emplace_back(std::forward<AuthorizedPrincipalsT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -138,25 +89,6 @@ class UpdateSubscriptionTargetRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The manage access role to be updated as part of the
-   * <code>UpdateSubscriptionTarget</code> action.</p>
-   */
-  inline const Aws::String& GetManageAccessRole() const { return m_manageAccessRole; }
-  inline bool ManageAccessRoleHasBeenSet() const { return m_manageAccessRoleHasBeenSet; }
-  template <typename ManageAccessRoleT = Aws::String>
-  void SetManageAccessRole(ManageAccessRoleT&& value) {
-    m_manageAccessRoleHasBeenSet = true;
-    m_manageAccessRole = std::forward<ManageAccessRoleT>(value);
-  }
-  template <typename ManageAccessRoleT = Aws::String>
-  UpdateSubscriptionTargetRequest& WithManageAccessRole(ManageAccessRoleT&& value) {
-    SetManageAccessRole(std::forward<ManageAccessRoleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code>
    * action.</p>
    */
@@ -176,19 +108,50 @@ class UpdateSubscriptionTargetRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The provider to be updated as part of the
+   * <p>The authorized principals to be updated as part of the
    * <code>UpdateSubscriptionTarget</code> action.</p>
    */
-  inline const Aws::String& GetProvider() const { return m_provider; }
-  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-  template <typename ProviderT = Aws::String>
-  void SetProvider(ProviderT&& value) {
-    m_providerHasBeenSet = true;
-    m_provider = std::forward<ProviderT>(value);
+  inline const Aws::Vector<Aws::String>& GetAuthorizedPrincipals() const { return m_authorizedPrincipals; }
+  inline bool AuthorizedPrincipalsHasBeenSet() const { return m_authorizedPrincipalsHasBeenSet; }
+  template <typename AuthorizedPrincipalsT = Aws::Vector<Aws::String>>
+  void SetAuthorizedPrincipals(AuthorizedPrincipalsT&& value) {
+    m_authorizedPrincipalsHasBeenSet = true;
+    m_authorizedPrincipals = std::forward<AuthorizedPrincipalsT>(value);
   }
-  template <typename ProviderT = Aws::String>
-  UpdateSubscriptionTargetRequest& WithProvider(ProviderT&& value) {
-    SetProvider(std::forward<ProviderT>(value));
+  template <typename AuthorizedPrincipalsT = Aws::Vector<Aws::String>>
+  UpdateSubscriptionTargetRequest& WithAuthorizedPrincipals(AuthorizedPrincipalsT&& value) {
+    SetAuthorizedPrincipals(std::forward<AuthorizedPrincipalsT>(value));
+    return *this;
+  }
+  template <typename AuthorizedPrincipalsT = Aws::String>
+  UpdateSubscriptionTargetRequest& AddAuthorizedPrincipals(AuthorizedPrincipalsT&& value) {
+    m_authorizedPrincipalsHasBeenSet = true;
+    m_authorizedPrincipals.emplace_back(std::forward<AuthorizedPrincipalsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The applicable asset types to be updated as part of the
+   * <code>UpdateSubscriptionTarget</code> action.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetApplicableAssetTypes() const { return m_applicableAssetTypes; }
+  inline bool ApplicableAssetTypesHasBeenSet() const { return m_applicableAssetTypesHasBeenSet; }
+  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
+  void SetApplicableAssetTypes(ApplicableAssetTypesT&& value) {
+    m_applicableAssetTypesHasBeenSet = true;
+    m_applicableAssetTypes = std::forward<ApplicableAssetTypesT>(value);
+  }
+  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
+  UpdateSubscriptionTargetRequest& WithApplicableAssetTypes(ApplicableAssetTypesT&& value) {
+    SetApplicableAssetTypes(std::forward<ApplicableAssetTypesT>(value));
+    return *this;
+  }
+  template <typename ApplicableAssetTypesT = Aws::String>
+  UpdateSubscriptionTargetRequest& AddApplicableAssetTypes(ApplicableAssetTypesT&& value) {
+    m_applicableAssetTypesHasBeenSet = true;
+    m_applicableAssetTypes.emplace_back(std::forward<ApplicableAssetTypesT>(value));
     return *this;
   }
   ///@}
@@ -217,33 +180,91 @@ class UpdateSubscriptionTargetRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The manage access role to be updated as part of the
+   * <code>UpdateSubscriptionTarget</code> action.</p>
+   */
+  inline const Aws::String& GetManageAccessRole() const { return m_manageAccessRole; }
+  inline bool ManageAccessRoleHasBeenSet() const { return m_manageAccessRoleHasBeenSet; }
+  template <typename ManageAccessRoleT = Aws::String>
+  void SetManageAccessRole(ManageAccessRoleT&& value) {
+    m_manageAccessRoleHasBeenSet = true;
+    m_manageAccessRole = std::forward<ManageAccessRoleT>(value);
+  }
+  template <typename ManageAccessRoleT = Aws::String>
+  UpdateSubscriptionTargetRequest& WithManageAccessRole(ManageAccessRoleT&& value) {
+    SetManageAccessRole(std::forward<ManageAccessRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The provider to be updated as part of the
+   * <code>UpdateSubscriptionTarget</code> action.</p>
+   */
+  inline const Aws::String& GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  template <typename ProviderT = Aws::String>
+  void SetProvider(ProviderT&& value) {
+    m_providerHasBeenSet = true;
+    m_provider = std::forward<ProviderT>(value);
+  }
+  template <typename ProviderT = Aws::String>
+  UpdateSubscriptionTargetRequest& WithProvider(ProviderT&& value) {
+    SetProvider(std::forward<ProviderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Determines the subscription grant creation mode for this target, defining if
+   * grants are auto-created upon subscription approval or managed manually. </p>
+   */
+  inline SubscriptionGrantCreationMode GetSubscriptionGrantCreationMode() const { return m_subscriptionGrantCreationMode; }
+  inline bool SubscriptionGrantCreationModeHasBeenSet() const { return m_subscriptionGrantCreationModeHasBeenSet; }
+  inline void SetSubscriptionGrantCreationMode(SubscriptionGrantCreationMode value) {
+    m_subscriptionGrantCreationModeHasBeenSet = true;
+    m_subscriptionGrantCreationMode = value;
+  }
+  inline UpdateSubscriptionTargetRequest& WithSubscriptionGrantCreationMode(SubscriptionGrantCreationMode value) {
+    SetSubscriptionGrantCreationMode(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<Aws::String> m_applicableAssetTypes;
-
-  Aws::Vector<Aws::String> m_authorizedPrincipals;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_environmentIdentifier;
 
   Aws::String m_identifier;
 
-  Aws::String m_manageAccessRole;
-
   Aws::String m_name;
+
+  Aws::Vector<Aws::String> m_authorizedPrincipals;
+
+  Aws::Vector<Aws::String> m_applicableAssetTypes;
+
+  Aws::Vector<SubscriptionTargetForm> m_subscriptionTargetConfig;
+
+  Aws::String m_manageAccessRole;
 
   Aws::String m_provider;
 
-  Aws::Vector<SubscriptionTargetForm> m_subscriptionTargetConfig;
-  bool m_applicableAssetTypesHasBeenSet = false;
-  bool m_authorizedPrincipalsHasBeenSet = false;
+  SubscriptionGrantCreationMode m_subscriptionGrantCreationMode{SubscriptionGrantCreationMode::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_manageAccessRoleHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_providerHasBeenSet = false;
+  bool m_authorizedPrincipalsHasBeenSet = false;
+  bool m_applicableAssetTypesHasBeenSet = false;
   bool m_subscriptionTargetConfigHasBeenSet = false;
+  bool m_manageAccessRoleHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_subscriptionGrantCreationModeHasBeenSet = false;
 };
 
 }  // namespace Model

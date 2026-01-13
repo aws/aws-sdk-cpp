@@ -18,13 +18,13 @@ namespace Model {
 LineageNodeReference::LineageNodeReference(JsonView jsonValue) { *this = jsonValue; }
 
 LineageNodeReference& LineageNodeReference::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("eventTimestamp")) {
-    m_eventTimestamp = jsonValue.GetDouble("eventTimestamp");
-    m_eventTimestampHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("eventTimestamp")) {
+    m_eventTimestamp = jsonValue.GetDouble("eventTimestamp");
+    m_eventTimestampHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ LineageNodeReference& LineageNodeReference::operator=(JsonView jsonValue) {
 JsonValue LineageNodeReference::Jsonize() const {
   JsonValue payload;
 
-  if (m_eventTimestampHasBeenSet) {
-    payload.WithDouble("eventTimestamp", m_eventTimestamp.SecondsWithMSPrecision());
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
+  }
+
+  if (m_eventTimestampHasBeenSet) {
+    payload.WithDouble("eventTimestamp", m_eventTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

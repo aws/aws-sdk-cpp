@@ -35,6 +35,22 @@ class NotificationResource {
 
   ///@{
   /**
+   * <p>The type of the resource mentioned in a notification.</p>
+   */
+  inline NotificationResourceType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotificationResourceType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline NotificationResource& WithType(NotificationResourceType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the resource mentioned in a notification.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -68,31 +84,15 @@ class NotificationResource {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of the resource mentioned in a notification.</p>
-   */
-  inline NotificationResourceType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(NotificationResourceType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline NotificationResource& WithType(NotificationResourceType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
+  NotificationResourceType m_type{NotificationResourceType::NOT_SET};
+
   Aws::String m_id;
 
   Aws::String m_name;
-
-  NotificationResourceType m_type{NotificationResourceType::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

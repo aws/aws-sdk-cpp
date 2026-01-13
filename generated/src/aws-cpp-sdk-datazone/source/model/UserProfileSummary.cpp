@@ -18,10 +18,6 @@ namespace Model {
 UserProfileSummary::UserProfileSummary(JsonView jsonValue) { *this = jsonValue; }
 
 UserProfileSummary& UserProfileSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("details")) {
-    m_details = jsonValue.GetObject("details");
-    m_detailsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -30,23 +26,23 @@ UserProfileSummary& UserProfileSummary::operator=(JsonView jsonValue) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = UserProfileTypeMapper::GetUserProfileTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = UserProfileStatusMapper::GetUserProfileStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = UserProfileTypeMapper::GetUserProfileTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("details")) {
+    m_details = jsonValue.GetObject("details");
+    m_detailsHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue UserProfileSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_detailsHasBeenSet) {
-    payload.WithObject("details", m_details.Jsonize());
-  }
 
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
@@ -56,12 +52,16 @@ JsonValue UserProfileSummary::Jsonize() const {
     payload.WithString("id", m_id);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", UserProfileTypeMapper::GetNameForUserProfileType(m_type));
+  }
+
   if (m_statusHasBeenSet) {
     payload.WithString("status", UserProfileStatusMapper::GetNameForUserProfileStatus(m_status));
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", UserProfileTypeMapper::GetNameForUserProfileType(m_type));
+  if (m_detailsHasBeenSet) {
+    payload.WithObject("details", m_details.Jsonize());
   }
 
   return payload;

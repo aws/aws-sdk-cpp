@@ -52,24 +52,6 @@ class AuthenticationConfiguration {
 
   ///@{
   /**
-   * <p>The oAuth2 properties of a connection.</p>
-   */
-  inline const OAuth2Properties& GetOAuth2Properties() const { return m_oAuth2Properties; }
-  inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
-  template <typename OAuth2PropertiesT = OAuth2Properties>
-  void SetOAuth2Properties(OAuth2PropertiesT&& value) {
-    m_oAuth2PropertiesHasBeenSet = true;
-    m_oAuth2Properties = std::forward<OAuth2PropertiesT>(value);
-  }
-  template <typename OAuth2PropertiesT = OAuth2Properties>
-  AuthenticationConfiguration& WithOAuth2Properties(OAuth2PropertiesT&& value) {
-    SetOAuth2Properties(std::forward<OAuth2PropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The secret ARN of a connection.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
@@ -85,15 +67,33 @@ class AuthenticationConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The oAuth2 properties of a connection.</p>
+   */
+  inline const OAuth2Properties& GetOAuth2Properties() const { return m_oAuth2Properties; }
+  inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
+  template <typename OAuth2PropertiesT = OAuth2Properties>
+  void SetOAuth2Properties(OAuth2PropertiesT&& value) {
+    m_oAuth2PropertiesHasBeenSet = true;
+    m_oAuth2Properties = std::forward<OAuth2PropertiesT>(value);
+  }
+  template <typename OAuth2PropertiesT = OAuth2Properties>
+  AuthenticationConfiguration& WithOAuth2Properties(OAuth2PropertiesT&& value) {
+    SetOAuth2Properties(std::forward<OAuth2PropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
 
-  OAuth2Properties m_oAuth2Properties;
-
   Aws::String m_secretArn;
+
+  OAuth2Properties m_oAuth2Properties;
   bool m_authenticationTypeHasBeenSet = false;
-  bool m_oAuth2PropertiesHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
+  bool m_oAuth2PropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

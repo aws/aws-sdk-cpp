@@ -56,49 +56,6 @@ class ListProjectMembershipsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of memberships to return in a single call to
-   * <code>ListProjectMemberships</code>. When the number of memberships to be listed
-   * is greater than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListProjectMemberships</code> to list the next set of memberships.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListProjectMembershipsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>When the number of memberships is greater than the default value for the
-   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
-   * <code>MaxResults</code> that is less than the number of memberships, the
-   * response includes a pagination token named <code>NextToken</code>. You can
-   * specify this <code>NextToken</code> value in a subsequent call to
-   * <code>ListProjectMemberships</code> to list the next set of memberships.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListProjectMembershipsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the project whose memberships you want to list.</p>
    */
   inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
@@ -146,24 +103,67 @@ class ListProjectMembershipsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>When the number of memberships is greater than the default value for the
+   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
+   * <code>MaxResults</code> that is less than the number of memberships, the
+   * response includes a pagination token named <code>NextToken</code>. You can
+   * specify this <code>NextToken</code> value in a subsequent call to
+   * <code>ListProjectMemberships</code> to list the next set of memberships.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListProjectMembershipsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of memberships to return in a single call to
+   * <code>ListProjectMemberships</code>. When the number of memberships to be listed
+   * is greater than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListProjectMemberships</code> to list the next set of memberships.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListProjectMembershipsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
-
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
 
   Aws::String m_projectIdentifier;
 
   SortFieldProject m_sortBy{SortFieldProject::NOT_SET};
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

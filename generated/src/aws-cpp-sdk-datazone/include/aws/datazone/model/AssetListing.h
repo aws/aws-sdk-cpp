@@ -130,6 +130,33 @@ class AssetListing {
 
   ///@{
   /**
+   * <p>The latest time series data points forms included in the additional
+   * attributes of an asset.</p>
+   */
+  inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointForms() const {
+    return m_latestTimeSeriesDataPointForms;
+  }
+  inline bool LatestTimeSeriesDataPointFormsHasBeenSet() const { return m_latestTimeSeriesDataPointFormsHasBeenSet; }
+  template <typename LatestTimeSeriesDataPointFormsT = Aws::Vector<TimeSeriesDataPointSummaryFormOutput>>
+  void SetLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) {
+    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
+    m_latestTimeSeriesDataPointForms = std::forward<LatestTimeSeriesDataPointFormsT>(value);
+  }
+  template <typename LatestTimeSeriesDataPointFormsT = Aws::Vector<TimeSeriesDataPointSummaryFormOutput>>
+  AssetListing& WithLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) {
+    SetLatestTimeSeriesDataPointForms(std::forward<LatestTimeSeriesDataPointFormsT>(value));
+    return *this;
+  }
+  template <typename LatestTimeSeriesDataPointFormsT = TimeSeriesDataPointSummaryFormOutput>
+  AssetListing& AddLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) {
+    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
+    m_latestTimeSeriesDataPointForms.emplace_back(std::forward<LatestTimeSeriesDataPointFormsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The glossary terms attached to an asset published in an Amazon DataZone
    * catalog. </p>
    */
@@ -179,33 +206,6 @@ class AssetListing {
 
   ///@{
   /**
-   * <p>The latest time series data points forms included in the additional
-   * attributes of an asset.</p>
-   */
-  inline const Aws::Vector<TimeSeriesDataPointSummaryFormOutput>& GetLatestTimeSeriesDataPointForms() const {
-    return m_latestTimeSeriesDataPointForms;
-  }
-  inline bool LatestTimeSeriesDataPointFormsHasBeenSet() const { return m_latestTimeSeriesDataPointFormsHasBeenSet; }
-  template <typename LatestTimeSeriesDataPointFormsT = Aws::Vector<TimeSeriesDataPointSummaryFormOutput>>
-  void SetLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) {
-    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
-    m_latestTimeSeriesDataPointForms = std::forward<LatestTimeSeriesDataPointFormsT>(value);
-  }
-  template <typename LatestTimeSeriesDataPointFormsT = Aws::Vector<TimeSeriesDataPointSummaryFormOutput>>
-  AssetListing& WithLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) {
-    SetLatestTimeSeriesDataPointForms(std::forward<LatestTimeSeriesDataPointFormsT>(value));
-    return *this;
-  }
-  template <typename LatestTimeSeriesDataPointFormsT = TimeSeriesDataPointSummaryFormOutput>
-  AssetListing& AddLatestTimeSeriesDataPointForms(LatestTimeSeriesDataPointFormsT&& value) {
-    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
-    m_latestTimeSeriesDataPointForms.emplace_back(std::forward<LatestTimeSeriesDataPointFormsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the project where an asset published in an Amazon DataZone
    * catalog exists. </p>
    */
@@ -233,11 +233,11 @@ class AssetListing {
 
   Aws::String m_forms;
 
+  Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
+
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
 
   Aws::Vector<DetailedGlossaryTerm> m_governedGlossaryTerms;
-
-  Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
 
   Aws::String m_owningProjectId;
   bool m_assetIdHasBeenSet = false;
@@ -245,9 +245,9 @@ class AssetListing {
   bool m_assetTypeHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_formsHasBeenSet = false;
+  bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
   bool m_governedGlossaryTermsHasBeenSet = false;
-  bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
 };
 

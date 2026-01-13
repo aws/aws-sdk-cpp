@@ -40,24 +40,6 @@ class ConnectionPropertiesPatch {
 
   ///@{
   /**
-   * <p>The Amazon Q properties of the connection.</p>
-   */
-  inline const AmazonQPropertiesPatch& GetAmazonQProperties() const { return m_amazonQProperties; }
-  inline bool AmazonQPropertiesHasBeenSet() const { return m_amazonQPropertiesHasBeenSet; }
-  template <typename AmazonQPropertiesT = AmazonQPropertiesPatch>
-  void SetAmazonQProperties(AmazonQPropertiesT&& value) {
-    m_amazonQPropertiesHasBeenSet = true;
-    m_amazonQProperties = std::forward<AmazonQPropertiesT>(value);
-  }
-  template <typename AmazonQPropertiesT = AmazonQPropertiesPatch>
-  ConnectionPropertiesPatch& WithAmazonQProperties(AmazonQPropertiesT&& value) {
-    SetAmazonQProperties(std::forward<AmazonQPropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Athena properties of a connection properties patch.</p>
    */
   inline const AthenaPropertiesPatch& GetAthenaProperties() const { return m_athenaProperties; }
@@ -112,24 +94,6 @@ class ConnectionPropertiesPatch {
 
   ///@{
   /**
-   * <p>The MLflow properties of a connection.</p>
-   */
-  inline const MlflowPropertiesPatch& GetMlflowProperties() const { return m_mlflowProperties; }
-  inline bool MlflowPropertiesHasBeenSet() const { return m_mlflowPropertiesHasBeenSet; }
-  template <typename MlflowPropertiesT = MlflowPropertiesPatch>
-  void SetMlflowProperties(MlflowPropertiesT&& value) {
-    m_mlflowPropertiesHasBeenSet = true;
-    m_mlflowProperties = std::forward<MlflowPropertiesT>(value);
-  }
-  template <typename MlflowPropertiesT = MlflowPropertiesPatch>
-  ConnectionPropertiesPatch& WithMlflowProperties(MlflowPropertiesT&& value) {
-    SetMlflowProperties(std::forward<MlflowPropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Redshift properties of a connection properties patch.</p>
    */
   inline const RedshiftPropertiesPatch& GetRedshiftProperties() const { return m_redshiftProperties; }
@@ -142,6 +106,24 @@ class ConnectionPropertiesPatch {
   template <typename RedshiftPropertiesT = RedshiftPropertiesPatch>
   ConnectionPropertiesPatch& WithRedshiftProperties(RedshiftPropertiesT&& value) {
     SetRedshiftProperties(std::forward<RedshiftPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Spark EMR properties of a connection properties patch.</p>
+   */
+  inline const SparkEmrPropertiesPatch& GetSparkEmrProperties() const { return m_sparkEmrProperties; }
+  inline bool SparkEmrPropertiesHasBeenSet() const { return m_sparkEmrPropertiesHasBeenSet; }
+  template <typename SparkEmrPropertiesT = SparkEmrPropertiesPatch>
+  void SetSparkEmrProperties(SparkEmrPropertiesT&& value) {
+    m_sparkEmrPropertiesHasBeenSet = true;
+    m_sparkEmrProperties = std::forward<SparkEmrPropertiesT>(value);
+  }
+  template <typename SparkEmrPropertiesT = SparkEmrPropertiesPatch>
+  ConnectionPropertiesPatch& WithSparkEmrProperties(SparkEmrPropertiesT&& value) {
+    SetSparkEmrProperties(std::forward<SparkEmrPropertiesT>(value));
     return *this;
   }
   ///@}
@@ -166,45 +148,63 @@ class ConnectionPropertiesPatch {
 
   ///@{
   /**
-   * <p>The Spark EMR properties of a connection properties patch.</p>
+   * <p>The Amazon Q properties of the connection.</p>
    */
-  inline const SparkEmrPropertiesPatch& GetSparkEmrProperties() const { return m_sparkEmrProperties; }
-  inline bool SparkEmrPropertiesHasBeenSet() const { return m_sparkEmrPropertiesHasBeenSet; }
-  template <typename SparkEmrPropertiesT = SparkEmrPropertiesPatch>
-  void SetSparkEmrProperties(SparkEmrPropertiesT&& value) {
-    m_sparkEmrPropertiesHasBeenSet = true;
-    m_sparkEmrProperties = std::forward<SparkEmrPropertiesT>(value);
+  inline const AmazonQPropertiesPatch& GetAmazonQProperties() const { return m_amazonQProperties; }
+  inline bool AmazonQPropertiesHasBeenSet() const { return m_amazonQPropertiesHasBeenSet; }
+  template <typename AmazonQPropertiesT = AmazonQPropertiesPatch>
+  void SetAmazonQProperties(AmazonQPropertiesT&& value) {
+    m_amazonQPropertiesHasBeenSet = true;
+    m_amazonQProperties = std::forward<AmazonQPropertiesT>(value);
   }
-  template <typename SparkEmrPropertiesT = SparkEmrPropertiesPatch>
-  ConnectionPropertiesPatch& WithSparkEmrProperties(SparkEmrPropertiesT&& value) {
-    SetSparkEmrProperties(std::forward<SparkEmrPropertiesT>(value));
+  template <typename AmazonQPropertiesT = AmazonQPropertiesPatch>
+  ConnectionPropertiesPatch& WithAmazonQProperties(AmazonQPropertiesT&& value) {
+    SetAmazonQProperties(std::forward<AmazonQPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The MLflow properties of a connection.</p>
+   */
+  inline const MlflowPropertiesPatch& GetMlflowProperties() const { return m_mlflowProperties; }
+  inline bool MlflowPropertiesHasBeenSet() const { return m_mlflowPropertiesHasBeenSet; }
+  template <typename MlflowPropertiesT = MlflowPropertiesPatch>
+  void SetMlflowProperties(MlflowPropertiesT&& value) {
+    m_mlflowPropertiesHasBeenSet = true;
+    m_mlflowProperties = std::forward<MlflowPropertiesT>(value);
+  }
+  template <typename MlflowPropertiesT = MlflowPropertiesPatch>
+  ConnectionPropertiesPatch& WithMlflowProperties(MlflowPropertiesT&& value) {
+    SetMlflowProperties(std::forward<MlflowPropertiesT>(value));
     return *this;
   }
   ///@}
  private:
-  AmazonQPropertiesPatch m_amazonQProperties;
-
   AthenaPropertiesPatch m_athenaProperties;
 
   GluePropertiesPatch m_glueProperties;
 
   IamPropertiesPatch m_iamProperties;
 
-  MlflowPropertiesPatch m_mlflowProperties;
-
   RedshiftPropertiesPatch m_redshiftProperties;
+
+  SparkEmrPropertiesPatch m_sparkEmrProperties;
 
   S3PropertiesPatch m_s3Properties;
 
-  SparkEmrPropertiesPatch m_sparkEmrProperties;
-  bool m_amazonQPropertiesHasBeenSet = false;
+  AmazonQPropertiesPatch m_amazonQProperties;
+
+  MlflowPropertiesPatch m_mlflowProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_iamPropertiesHasBeenSet = false;
-  bool m_mlflowPropertiesHasBeenSet = false;
   bool m_redshiftPropertiesHasBeenSet = false;
-  bool m_s3PropertiesHasBeenSet = false;
   bool m_sparkEmrPropertiesHasBeenSet = false;
+  bool m_s3PropertiesHasBeenSet = false;
+  bool m_amazonQPropertiesHasBeenSet = false;
+  bool m_mlflowPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

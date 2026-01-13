@@ -22,10 +22,6 @@ AssetScope& AssetScope::operator=(JsonView jsonValue) {
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("errorMessage")) {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("filterIds")) {
     Aws::Utils::Array<JsonView> filterIdsJsonList = jsonValue.GetArray("filterIds");
     for (unsigned filterIdsIndex = 0; filterIdsIndex < filterIdsJsonList.GetLength(); ++filterIdsIndex) {
@@ -37,6 +33,10 @@ AssetScope& AssetScope::operator=(JsonView jsonValue) {
     m_status = jsonValue.GetString("status");
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorMessage")) {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,10 +45,6 @@ JsonValue AssetScope::Jsonize() const {
 
   if (m_assetIdHasBeenSet) {
     payload.WithString("assetId", m_assetId);
-  }
-
-  if (m_errorMessageHasBeenSet) {
-    payload.WithString("errorMessage", m_errorMessage);
   }
 
   if (m_filterIdsHasBeenSet) {
@@ -61,6 +57,10 @@ JsonValue AssetScope::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", m_status);
+  }
+
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;

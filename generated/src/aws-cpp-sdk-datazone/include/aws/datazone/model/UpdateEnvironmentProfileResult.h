@@ -31,6 +31,41 @@ class UpdateEnvironmentProfileResult {
 
   ///@{
   /**
+   * <p>The identifier of the environment profile that is to be udpated.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateEnvironmentProfileResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the Amazon DataZone domain in which the environment profile
+   * is to be updated.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  UpdateEnvironmentProfileResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Web Services account in which a specified environment profile is
    * to be udpated.</p>
    */
@@ -67,23 +102,6 @@ class UpdateEnvironmentProfileResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the environment profile was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateEnvironmentProfileResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon DataZone user who created the environment profile.</p>
    */
   inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
@@ -101,71 +119,34 @@ class UpdateEnvironmentProfileResult {
 
   ///@{
   /**
-   * <p>The description to be updated as part of the
-   * <code>UpdateEnvironmentProfile</code> action.</p>
+   * <p>The timestamp of when the environment profile was created.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  UpdateEnvironmentProfileResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateEnvironmentProfileResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain in which the environment profile
-   * is to be updated.</p>
+   * <p>The timestamp of when the environment profile was updated.</p>
    */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
   }
-  template <typename DomainIdT = Aws::String>
-  UpdateEnvironmentProfileResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the blueprint of the environment profile that is to be
-   * updated.</p>
-   */
-  inline const Aws::String& GetEnvironmentBlueprintId() const { return m_environmentBlueprintId; }
-  template <typename EnvironmentBlueprintIdT = Aws::String>
-  void SetEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
-    m_environmentBlueprintIdHasBeenSet = true;
-    m_environmentBlueprintId = std::forward<EnvironmentBlueprintIdT>(value);
-  }
-  template <typename EnvironmentBlueprintIdT = Aws::String>
-  UpdateEnvironmentProfileResult& WithEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
-    SetEnvironmentBlueprintId(std::forward<EnvironmentBlueprintIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the environment profile that is to be udpated.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  UpdateEnvironmentProfileResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  UpdateEnvironmentProfileResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -190,6 +171,42 @@ class UpdateEnvironmentProfileResult {
 
   ///@{
   /**
+   * <p>The description to be updated as part of the
+   * <code>UpdateEnvironmentProfile</code> action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateEnvironmentProfileResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the blueprint of the environment profile that is to be
+   * updated.</p>
+   */
+  inline const Aws::String& GetEnvironmentBlueprintId() const { return m_environmentBlueprintId; }
+  template <typename EnvironmentBlueprintIdT = Aws::String>
+  void SetEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
+    m_environmentBlueprintIdHasBeenSet = true;
+    m_environmentBlueprintId = std::forward<EnvironmentBlueprintIdT>(value);
+  }
+  template <typename EnvironmentBlueprintIdT = Aws::String>
+  UpdateEnvironmentProfileResult& WithEnvironmentBlueprintId(EnvironmentBlueprintIdT&& value) {
+    SetEnvironmentBlueprintId(std::forward<EnvironmentBlueprintIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the project of the environment profile that is to be
    * updated.</p>
    */
@@ -202,23 +219,6 @@ class UpdateEnvironmentProfileResult {
   template <typename ProjectIdT = Aws::String>
   UpdateEnvironmentProfileResult& WithProjectId(ProjectIdT&& value) {
     SetProjectId(std::forward<ProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the environment profile was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
-  }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  UpdateEnvironmentProfileResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -262,42 +262,42 @@ class UpdateEnvironmentProfileResult {
   }
   ///@}
  private:
+  Aws::String m_id;
+
+  Aws::String m_domainId;
+
   Aws::String m_awsAccountId;
 
   Aws::String m_awsAccountRegion;
 
-  Aws::Utils::DateTime m_createdAt{};
-
   Aws::String m_createdBy;
 
-  Aws::String m_description;
+  Aws::Utils::DateTime m_createdAt{};
 
-  Aws::String m_domainId;
-
-  Aws::String m_environmentBlueprintId;
-
-  Aws::String m_id;
+  Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_name;
 
-  Aws::String m_projectId;
+  Aws::String m_description;
 
-  Aws::Utils::DateTime m_updatedAt{};
+  Aws::String m_environmentBlueprintId;
+
+  Aws::String m_projectId;
 
   Aws::Vector<CustomParameter> m_userParameters;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_awsAccountRegionHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_environmentBlueprintIdHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_projectIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentBlueprintIdHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

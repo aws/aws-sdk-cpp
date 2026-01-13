@@ -21,36 +21,33 @@ CreateDataProductResult::CreateDataProductResult(const Aws::AmazonWebServiceResu
 
 CreateDataProductResult& CreateDataProductResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("firstRevisionCreatedAt")) {
-    m_firstRevisionCreatedAt = jsonValue.GetDouble("firstRevisionCreatedAt");
-    m_firstRevisionCreatedAtHasBeenSet = true;
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("firstRevisionCreatedBy")) {
-    m_firstRevisionCreatedBy = jsonValue.GetString("firstRevisionCreatedBy");
-    m_firstRevisionCreatedByHasBeenSet = true;
+  if (jsonValue.ValueExists("revision")) {
+    m_revision = jsonValue.GetString("revision");
+    m_revisionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("formsOutput")) {
-    Aws::Utils::Array<JsonView> formsOutputJsonList = jsonValue.GetArray("formsOutput");
-    for (unsigned formsOutputIndex = 0; formsOutputIndex < formsOutputJsonList.GetLength(); ++formsOutputIndex) {
-      m_formsOutput.push_back(formsOutputJsonList[formsOutputIndex].AsObject());
-    }
-    m_formsOutputHasBeenSet = true;
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = DataProductStatusMapper::GetDataProductStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("glossaryTerms")) {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -59,10 +56,6 @@ CreateDataProductResult& CreateDataProductResult::operator=(const Aws::AmazonWeb
     }
     m_glossaryTermsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
     for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
@@ -70,21 +63,28 @@ CreateDataProductResult& CreateDataProductResult::operator=(const Aws::AmazonWeb
     }
     m_itemsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("formsOutput")) {
+    Aws::Utils::Array<JsonView> formsOutputJsonList = jsonValue.GetArray("formsOutput");
+    for (unsigned formsOutputIndex = 0; formsOutputIndex < formsOutputJsonList.GetLength(); ++formsOutputIndex) {
+      m_formsOutput.push_back(formsOutputJsonList[formsOutputIndex].AsObject());
+    }
+    m_formsOutputHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("revision")) {
-    m_revision = jsonValue.GetString("revision");
-    m_revisionHasBeenSet = true;
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = DataProductStatusMapper::GetDataProductStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("firstRevisionCreatedAt")) {
+    m_firstRevisionCreatedAt = jsonValue.GetDouble("firstRevisionCreatedAt");
+    m_firstRevisionCreatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("firstRevisionCreatedBy")) {
+    m_firstRevisionCreatedBy = jsonValue.GetString("firstRevisionCreatedBy");
+    m_firstRevisionCreatedByHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

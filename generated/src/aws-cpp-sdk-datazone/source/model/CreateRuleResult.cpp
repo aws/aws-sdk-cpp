@@ -21,26 +21,6 @@ CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 CreateRuleResult& CreateRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("action")) {
-    m_action = RuleActionMapper::GetRuleActionForName(jsonValue.GetString("action"));
-    m_actionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("detail")) {
-    m_detail = jsonValue.GetObject("detail");
-    m_detailHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetString("identifier");
     m_identifierHasBeenSet = true;
@@ -53,17 +33,37 @@ CreateRuleResult& CreateRuleResult::operator=(const Aws::AmazonWebServiceResult<
     m_ruleType = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("ruleType"));
     m_ruleTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("scope")) {
-    m_scope = jsonValue.GetObject("scope");
-    m_scopeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("target")) {
     m_target = jsonValue.GetObject("target");
     m_targetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("action")) {
+    m_action = RuleActionMapper::GetRuleActionForName(jsonValue.GetString("action"));
+    m_actionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scope")) {
+    m_scope = jsonValue.GetObject("scope");
+    m_scopeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("detail")) {
+    m_detail = jsonValue.GetObject("detail");
+    m_detailHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("targetType")) {
     m_targetType = RuleTargetTypeMapper::GetRuleTargetTypeForName(jsonValue.GetString("targetType"));
     m_targetTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

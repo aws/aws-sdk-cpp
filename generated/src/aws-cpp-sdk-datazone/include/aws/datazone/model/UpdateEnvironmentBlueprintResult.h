@@ -33,83 +33,6 @@ class UpdateEnvironmentBlueprintResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the environment blueprint was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateEnvironmentBlueprintResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The deployment properties to be updated as part of the
-   * <code>UpdateEnvironmentBlueprint</code> action.</p>
-   */
-  inline const DeploymentProperties& GetDeploymentProperties() const { return m_deploymentProperties; }
-  template <typename DeploymentPropertiesT = DeploymentProperties>
-  void SetDeploymentProperties(DeploymentPropertiesT&& value) {
-    m_deploymentPropertiesHasBeenSet = true;
-    m_deploymentProperties = std::forward<DeploymentPropertiesT>(value);
-  }
-  template <typename DeploymentPropertiesT = DeploymentProperties>
-  UpdateEnvironmentBlueprintResult& WithDeploymentProperties(DeploymentPropertiesT&& value) {
-    SetDeploymentProperties(std::forward<DeploymentPropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description to be updated as part of the
-   * <code>UpdateEnvironmentBlueprint</code> action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateEnvironmentBlueprintResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The glossary terms to be updated as part of the
-   * <code>UpdateEnvironmentBlueprint</code> action.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  void SetGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
-  }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  UpdateEnvironmentBlueprintResult& WithGlossaryTerms(GlossaryTermsT&& value) {
-    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  template <typename GlossaryTermsT = Aws::String>
-  UpdateEnvironmentBlueprintResult& AddGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the blueprint to be updated.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -139,6 +62,24 @@ class UpdateEnvironmentBlueprintResult {
   template <typename NameT = Aws::String>
   UpdateEnvironmentBlueprintResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description to be updated as part of the
+   * <code>UpdateEnvironmentBlueprint</code> action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateEnvironmentBlueprintResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -180,17 +121,18 @@ class UpdateEnvironmentBlueprintResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the blueprint was updated.</p>
+   * <p>The deployment properties to be updated as part of the
+   * <code>UpdateEnvironmentBlueprint</code> action.</p>
    */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
+  inline const DeploymentProperties& GetDeploymentProperties() const { return m_deploymentProperties; }
+  template <typename DeploymentPropertiesT = DeploymentProperties>
+  void SetDeploymentProperties(DeploymentPropertiesT&& value) {
+    m_deploymentPropertiesHasBeenSet = true;
+    m_deploymentProperties = std::forward<DeploymentPropertiesT>(value);
   }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  UpdateEnvironmentBlueprintResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+  template <typename DeploymentPropertiesT = DeploymentProperties>
+  UpdateEnvironmentBlueprintResult& WithDeploymentProperties(DeploymentPropertiesT&& value) {
+    SetDeploymentProperties(std::forward<DeploymentPropertiesT>(value));
     return *this;
   }
   ///@}
@@ -220,6 +162,64 @@ class UpdateEnvironmentBlueprintResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The glossary terms to be updated as part of the
+   * <code>UpdateEnvironmentBlueprint</code> action.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  UpdateEnvironmentBlueprintResult& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = Aws::String>
+  UpdateEnvironmentBlueprintResult& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the environment blueprint was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateEnvironmentBlueprintResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the blueprint was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  UpdateEnvironmentBlueprintResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -234,37 +234,37 @@ class UpdateEnvironmentBlueprintResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  DeploymentProperties m_deploymentProperties;
-
-  Aws::String m_description;
-
-  Aws::Vector<Aws::String> m_glossaryTerms;
-
   Aws::String m_id;
 
   Aws::String m_name;
+
+  Aws::String m_description;
 
   Aws::String m_provider;
 
   ProvisioningProperties m_provisioningProperties;
 
-  Aws::Utils::DateTime m_updatedAt{};
+  DeploymentProperties m_deploymentProperties;
 
   Aws::Vector<CustomParameter> m_userParameters;
 
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_updatedAt{};
+
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_deploymentPropertiesHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_glossaryTermsHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_providerHasBeenSet = false;
   bool m_provisioningPropertiesHasBeenSet = false;
-  bool m_updatedAtHasBeenSet = false;
+  bool m_deploymentPropertiesHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

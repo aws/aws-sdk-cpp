@@ -19,17 +19,17 @@ Aws::String BatchGetAttributesMetadataRequest::SerializePayload() const { return
 
 void BatchGetAttributesMetadataRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_entityRevisionHasBeenSet) {
+    ss << m_entityRevision;
+    uri.AddQueryStringParameter("entityRevision", ss.str());
+    ss.str("");
+  }
+
   if (m_attributeIdentifiersHasBeenSet) {
     for (const auto& item : m_attributeIdentifiers) {
       ss << item;
       uri.AddQueryStringParameter("attributeIdentifier", ss.str());
       ss.str("");
     }
-  }
-
-  if (m_entityRevisionHasBeenSet) {
-    ss << m_entityRevision;
-    uri.AddQueryStringParameter("entityRevision", ss.str());
-    ss.str("");
   }
 }

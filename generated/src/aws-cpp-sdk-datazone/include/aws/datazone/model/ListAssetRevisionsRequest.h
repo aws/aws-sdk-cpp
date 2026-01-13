@@ -71,26 +71,6 @@ class ListAssetRevisionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of revisions to return in a single call to
-   * <code>ListAssetRevisions</code>. When the number of revisions to be listed is
-   * greater than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListAssetRevisions</code> to list the next set of revisions.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListAssetRevisionsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>When the number of revisions is greater than the default value for the
    * <code>MaxResults</code> parameter, or if you explicitly specify a value for
    * <code>MaxResults</code> that is less than the number of revisions, the response
@@ -111,18 +91,38 @@ class ListAssetRevisionsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of revisions to return in a single call to
+   * <code>ListAssetRevisions</code>. When the number of revisions to be listed is
+   * greater than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListAssetRevisions</code> to list the next set of revisions.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListAssetRevisionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
-  int m_maxResults{0};
-
   Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

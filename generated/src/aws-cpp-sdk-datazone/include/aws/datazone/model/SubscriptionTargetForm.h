@@ -34,24 +34,6 @@ class SubscriptionTargetForm {
 
   ///@{
   /**
-   * <p>The content of the subscription target configuration.</p>
-   */
-  inline const Aws::String& GetContent() const { return m_content; }
-  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-  template <typename ContentT = Aws::String>
-  void SetContent(ContentT&& value) {
-    m_contentHasBeenSet = true;
-    m_content = std::forward<ContentT>(value);
-  }
-  template <typename ContentT = Aws::String>
-  SubscriptionTargetForm& WithContent(ContentT&& value) {
-    SetContent(std::forward<ContentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The form name included in the subscription target configuration.</p>
    */
   inline const Aws::String& GetFormName() const { return m_formName; }
@@ -67,12 +49,30 @@ class SubscriptionTargetForm {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_content;
 
+  ///@{
+  /**
+   * <p>The content of the subscription target configuration.</p>
+   */
+  inline const Aws::String& GetContent() const { return m_content; }
+  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+  template <typename ContentT = Aws::String>
+  void SetContent(ContentT&& value) {
+    m_contentHasBeenSet = true;
+    m_content = std::forward<ContentT>(value);
+  }
+  template <typename ContentT = Aws::String>
+  SubscriptionTargetForm& WithContent(ContentT&& value) {
+    SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_formName;
-  bool m_contentHasBeenSet = false;
+
+  Aws::String m_content;
   bool m_formNameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
 };
 
 }  // namespace Model

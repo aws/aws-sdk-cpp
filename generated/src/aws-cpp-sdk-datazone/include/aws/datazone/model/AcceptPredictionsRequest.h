@@ -39,69 +39,6 @@ class AcceptPredictionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
-   * and the target (for example, a column name) that can be accepted.</p>
-   */
-  inline const Aws::Vector<AcceptChoice>& GetAcceptChoices() const { return m_acceptChoices; }
-  inline bool AcceptChoicesHasBeenSet() const { return m_acceptChoicesHasBeenSet; }
-  template <typename AcceptChoicesT = Aws::Vector<AcceptChoice>>
-  void SetAcceptChoices(AcceptChoicesT&& value) {
-    m_acceptChoicesHasBeenSet = true;
-    m_acceptChoices = std::forward<AcceptChoicesT>(value);
-  }
-  template <typename AcceptChoicesT = Aws::Vector<AcceptChoice>>
-  AcceptPredictionsRequest& WithAcceptChoices(AcceptChoicesT&& value) {
-    SetAcceptChoices(std::forward<AcceptChoicesT>(value));
-    return *this;
-  }
-  template <typename AcceptChoicesT = AcceptChoice>
-  AcceptPredictionsRequest& AddAcceptChoices(AcceptChoicesT&& value) {
-    m_acceptChoicesHasBeenSet = true;
-    m_acceptChoices.emplace_back(std::forward<AcceptChoicesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the rule (or the conditions) under which a prediction can be
-   * accepted.</p>
-   */
-  inline const AcceptRule& GetAcceptRule() const { return m_acceptRule; }
-  inline bool AcceptRuleHasBeenSet() const { return m_acceptRuleHasBeenSet; }
-  template <typename AcceptRuleT = AcceptRule>
-  void SetAcceptRule(AcceptRuleT&& value) {
-    m_acceptRuleHasBeenSet = true;
-    m_acceptRule = std::forward<AcceptRuleT>(value);
-  }
-  template <typename AcceptRuleT = AcceptRule>
-  AcceptPredictionsRequest& WithAcceptRule(AcceptRuleT&& value) {
-    SetAcceptRule(std::forward<AcceptRuleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
-   * This field is automatically populated if not provided.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  AcceptPredictionsRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -153,24 +90,87 @@ class AcceptPredictionsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the rule (or the conditions) under which a prediction can be
+   * accepted.</p>
+   */
+  inline const AcceptRule& GetAcceptRule() const { return m_acceptRule; }
+  inline bool AcceptRuleHasBeenSet() const { return m_acceptRuleHasBeenSet; }
+  template <typename AcceptRuleT = AcceptRule>
+  void SetAcceptRule(AcceptRuleT&& value) {
+    m_acceptRuleHasBeenSet = true;
+    m_acceptRule = std::forward<AcceptRuleT>(value);
+  }
+  template <typename AcceptRuleT = AcceptRule>
+  AcceptPredictionsRequest& WithAcceptRule(AcceptRuleT&& value) {
+    SetAcceptRule(std::forward<AcceptRuleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+   * and the target (for example, a column name) that can be accepted.</p>
+   */
+  inline const Aws::Vector<AcceptChoice>& GetAcceptChoices() const { return m_acceptChoices; }
+  inline bool AcceptChoicesHasBeenSet() const { return m_acceptChoicesHasBeenSet; }
+  template <typename AcceptChoicesT = Aws::Vector<AcceptChoice>>
+  void SetAcceptChoices(AcceptChoicesT&& value) {
+    m_acceptChoicesHasBeenSet = true;
+    m_acceptChoices = std::forward<AcceptChoicesT>(value);
+  }
+  template <typename AcceptChoicesT = Aws::Vector<AcceptChoice>>
+  AcceptPredictionsRequest& WithAcceptChoices(AcceptChoicesT&& value) {
+    SetAcceptChoices(std::forward<AcceptChoicesT>(value));
+    return *this;
+  }
+  template <typename AcceptChoicesT = AcceptChoice>
+  AcceptPredictionsRequest& AddAcceptChoices(AcceptChoicesT&& value) {
+    m_acceptChoicesHasBeenSet = true;
+    m_acceptChoices.emplace_back(std::forward<AcceptChoicesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
+   * This field is automatically populated if not provided.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  AcceptPredictionsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<AcceptChoice> m_acceptChoices;
-
-  AcceptRule m_acceptRule;
-
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
   Aws::String m_revision;
-  bool m_acceptChoicesHasBeenSet = false;
-  bool m_acceptRuleHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
+
+  AcceptRule m_acceptRule;
+
+  Aws::Vector<AcceptChoice> m_acceptChoices;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_acceptRuleHasBeenSet = false;
+  bool m_acceptChoicesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

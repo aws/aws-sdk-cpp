@@ -33,25 +33,6 @@ class CreateGlossaryTermRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateGlossaryTermRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which this business glossary term is
    * created.</p>
    */
@@ -89,24 +70,6 @@ class CreateGlossaryTermRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The long description of this business glossary term.</p>
-   */
-  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
-  inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
-  template <typename LongDescriptionT = Aws::String>
-  void SetLongDescription(LongDescriptionT&& value) {
-    m_longDescriptionHasBeenSet = true;
-    m_longDescription = std::forward<LongDescriptionT>(value);
-  }
-  template <typename LongDescriptionT = Aws::String>
-  CreateGlossaryTermRequest& WithLongDescription(LongDescriptionT&& value) {
-    SetLongDescription(std::forward<LongDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of this business glossary term.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -119,6 +82,22 @@ class CreateGlossaryTermRequest : public DataZoneRequest {
   template <typename NameT = Aws::String>
   CreateGlossaryTermRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of this business glossary term.</p>
+   */
+  inline GlossaryTermStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(GlossaryTermStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateGlossaryTermRequest& WithStatus(GlossaryTermStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -143,16 +122,18 @@ class CreateGlossaryTermRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status of this business glossary term.</p>
+   * <p>The long description of this business glossary term.</p>
    */
-  inline GlossaryTermStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(GlossaryTermStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
+  inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
+  template <typename LongDescriptionT = Aws::String>
+  void SetLongDescription(LongDescriptionT&& value) {
+    m_longDescriptionHasBeenSet = true;
+    m_longDescription = std::forward<LongDescriptionT>(value);
   }
-  inline CreateGlossaryTermRequest& WithStatus(GlossaryTermStatus value) {
-    SetStatus(value);
+  template <typename LongDescriptionT = Aws::String>
+  CreateGlossaryTermRequest& WithLongDescription(LongDescriptionT&& value) {
+    SetLongDescription(std::forward<LongDescriptionT>(value));
     return *this;
   }
   ///@}
@@ -174,30 +155,49 @@ class CreateGlossaryTermRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateGlossaryTermRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_glossaryIdentifier;
 
-  Aws::String m_longDescription;
-
   Aws::String m_name;
-
-  Aws::String m_shortDescription;
 
   GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
 
+  Aws::String m_shortDescription;
+
+  Aws::String m_longDescription;
+
   TermRelations m_termRelations;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_glossaryIdentifierHasBeenSet = false;
-  bool m_longDescriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_shortDescriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_termRelationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

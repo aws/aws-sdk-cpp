@@ -51,6 +51,78 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the environment blueprint.</p>
+   */
+  inline const Aws::String& GetEnvironmentBlueprintIdentifier() const { return m_environmentBlueprintIdentifier; }
+  inline bool EnvironmentBlueprintIdentifierHasBeenSet() const { return m_environmentBlueprintIdentifierHasBeenSet; }
+  template <typename EnvironmentBlueprintIdentifierT = Aws::String>
+  void SetEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) {
+    m_environmentBlueprintIdentifierHasBeenSet = true;
+    m_environmentBlueprintIdentifier = std::forward<EnvironmentBlueprintIdentifierT>(value);
+  }
+  template <typename EnvironmentBlueprintIdentifierT = Aws::String>
+  PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) {
+    SetEnvironmentBlueprintIdentifier(std::forward<EnvironmentBlueprintIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the provisioning role.</p>
+   */
+  inline const Aws::String& GetProvisioningRoleArn() const { return m_provisioningRoleArn; }
+  inline bool ProvisioningRoleArnHasBeenSet() const { return m_provisioningRoleArnHasBeenSet; }
+  template <typename ProvisioningRoleArnT = Aws::String>
+  void SetProvisioningRoleArn(ProvisioningRoleArnT&& value) {
+    m_provisioningRoleArnHasBeenSet = true;
+    m_provisioningRoleArn = std::forward<ProvisioningRoleArnT>(value);
+  }
+  template <typename ProvisioningRoleArnT = Aws::String>
+  PutEnvironmentBlueprintConfigurationRequest& WithProvisioningRoleArn(ProvisioningRoleArnT&& value) {
+    SetProvisioningRoleArn(std::forward<ProvisioningRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the manage access role.</p>
+   */
+  inline const Aws::String& GetManageAccessRoleArn() const { return m_manageAccessRoleArn; }
+  inline bool ManageAccessRoleArnHasBeenSet() const { return m_manageAccessRoleArnHasBeenSet; }
+  template <typename ManageAccessRoleArnT = Aws::String>
+  void SetManageAccessRoleArn(ManageAccessRoleArnT&& value) {
+    m_manageAccessRoleArnHasBeenSet = true;
+    m_manageAccessRoleArn = std::forward<ManageAccessRoleArnT>(value);
+  }
+  template <typename ManageAccessRoleArnT = Aws::String>
+  PutEnvironmentBlueprintConfigurationRequest& WithManageAccessRoleArn(ManageAccessRoleArnT&& value) {
+    SetManageAccessRoleArn(std::forward<ManageAccessRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The environment role permissions boundary.</p>
+   */
+  inline const Aws::String& GetEnvironmentRolePermissionBoundary() const { return m_environmentRolePermissionBoundary; }
+  inline bool EnvironmentRolePermissionBoundaryHasBeenSet() const { return m_environmentRolePermissionBoundaryHasBeenSet; }
+  template <typename EnvironmentRolePermissionBoundaryT = Aws::String>
+  void SetEnvironmentRolePermissionBoundary(EnvironmentRolePermissionBoundaryT&& value) {
+    m_environmentRolePermissionBoundaryHasBeenSet = true;
+    m_environmentRolePermissionBoundary = std::forward<EnvironmentRolePermissionBoundaryT>(value);
+  }
+  template <typename EnvironmentRolePermissionBoundaryT = Aws::String>
+  PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentRolePermissionBoundary(EnvironmentRolePermissionBoundaryT&& value) {
+    SetEnvironmentRolePermissionBoundary(std::forward<EnvironmentRolePermissionBoundaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the enabled Amazon Web Services Regions.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEnabledRegions() const { return m_enabledRegions; }
@@ -75,36 +147,24 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the environment blueprint.</p>
+   * <p>The regional parameters in the environment blueprint.</p>
    */
-  inline const Aws::String& GetEnvironmentBlueprintIdentifier() const { return m_environmentBlueprintIdentifier; }
-  inline bool EnvironmentBlueprintIdentifierHasBeenSet() const { return m_environmentBlueprintIdentifierHasBeenSet; }
-  template <typename EnvironmentBlueprintIdentifierT = Aws::String>
-  void SetEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) {
-    m_environmentBlueprintIdentifierHasBeenSet = true;
-    m_environmentBlueprintIdentifier = std::forward<EnvironmentBlueprintIdentifierT>(value);
+  inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetRegionalParameters() const { return m_regionalParameters; }
+  inline bool RegionalParametersHasBeenSet() const { return m_regionalParametersHasBeenSet; }
+  template <typename RegionalParametersT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+  void SetRegionalParameters(RegionalParametersT&& value) {
+    m_regionalParametersHasBeenSet = true;
+    m_regionalParameters = std::forward<RegionalParametersT>(value);
   }
-  template <typename EnvironmentBlueprintIdentifierT = Aws::String>
-  PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) {
-    SetEnvironmentBlueprintIdentifier(std::forward<EnvironmentBlueprintIdentifierT>(value));
+  template <typename RegionalParametersT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+  PutEnvironmentBlueprintConfigurationRequest& WithRegionalParameters(RegionalParametersT&& value) {
+    SetRegionalParameters(std::forward<RegionalParametersT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The environment role permissions boundary.</p>
-   */
-  inline const Aws::String& GetEnvironmentRolePermissionBoundary() const { return m_environmentRolePermissionBoundary; }
-  inline bool EnvironmentRolePermissionBoundaryHasBeenSet() const { return m_environmentRolePermissionBoundaryHasBeenSet; }
-  template <typename EnvironmentRolePermissionBoundaryT = Aws::String>
-  void SetEnvironmentRolePermissionBoundary(EnvironmentRolePermissionBoundaryT&& value) {
-    m_environmentRolePermissionBoundaryHasBeenSet = true;
-    m_environmentRolePermissionBoundary = std::forward<EnvironmentRolePermissionBoundaryT>(value);
-  }
-  template <typename EnvironmentRolePermissionBoundaryT = Aws::String>
-  PutEnvironmentBlueprintConfigurationRequest& WithEnvironmentRolePermissionBoundary(EnvironmentRolePermissionBoundaryT&& value) {
-    SetEnvironmentRolePermissionBoundary(std::forward<EnvironmentRolePermissionBoundaryT>(value));
+  template <typename RegionalParametersKeyT = Aws::String, typename RegionalParametersValueT = Aws::Map<Aws::String, Aws::String>>
+  PutEnvironmentBlueprintConfigurationRequest& AddRegionalParameters(RegionalParametersKeyT&& key, RegionalParametersValueT&& value) {
+    m_regionalParametersHasBeenSet = true;
+    m_regionalParameters.emplace(std::forward<RegionalParametersKeyT>(key), std::forward<RegionalParametersValueT>(value));
     return *this;
   }
   ///@}
@@ -135,24 +195,6 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ARN of the manage access role.</p>
-   */
-  inline const Aws::String& GetManageAccessRoleArn() const { return m_manageAccessRoleArn; }
-  inline bool ManageAccessRoleArnHasBeenSet() const { return m_manageAccessRoleArnHasBeenSet; }
-  template <typename ManageAccessRoleArnT = Aws::String>
-  void SetManageAccessRoleArn(ManageAccessRoleArnT&& value) {
-    m_manageAccessRoleArnHasBeenSet = true;
-    m_manageAccessRoleArn = std::forward<ManageAccessRoleArnT>(value);
-  }
-  template <typename ManageAccessRoleArnT = Aws::String>
-  PutEnvironmentBlueprintConfigurationRequest& WithManageAccessRoleArn(ManageAccessRoleArnT&& value) {
-    SetManageAccessRoleArn(std::forward<ManageAccessRoleArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The provisioning configuration of a blueprint.</p>
    */
   inline const Aws::Vector<ProvisioningConfiguration>& GetProvisioningConfigurations() const { return m_provisioningConfigurations; }
@@ -174,75 +216,33 @@ class PutEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ARN of the provisioning role.</p>
-   */
-  inline const Aws::String& GetProvisioningRoleArn() const { return m_provisioningRoleArn; }
-  inline bool ProvisioningRoleArnHasBeenSet() const { return m_provisioningRoleArnHasBeenSet; }
-  template <typename ProvisioningRoleArnT = Aws::String>
-  void SetProvisioningRoleArn(ProvisioningRoleArnT&& value) {
-    m_provisioningRoleArnHasBeenSet = true;
-    m_provisioningRoleArn = std::forward<ProvisioningRoleArnT>(value);
-  }
-  template <typename ProvisioningRoleArnT = Aws::String>
-  PutEnvironmentBlueprintConfigurationRequest& WithProvisioningRoleArn(ProvisioningRoleArnT&& value) {
-    SetProvisioningRoleArn(std::forward<ProvisioningRoleArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The regional parameters in the environment blueprint.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetRegionalParameters() const { return m_regionalParameters; }
-  inline bool RegionalParametersHasBeenSet() const { return m_regionalParametersHasBeenSet; }
-  template <typename RegionalParametersT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
-  void SetRegionalParameters(RegionalParametersT&& value) {
-    m_regionalParametersHasBeenSet = true;
-    m_regionalParameters = std::forward<RegionalParametersT>(value);
-  }
-  template <typename RegionalParametersT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
-  PutEnvironmentBlueprintConfigurationRequest& WithRegionalParameters(RegionalParametersT&& value) {
-    SetRegionalParameters(std::forward<RegionalParametersT>(value));
-    return *this;
-  }
-  template <typename RegionalParametersKeyT = Aws::String, typename RegionalParametersValueT = Aws::Map<Aws::String, Aws::String>>
-  PutEnvironmentBlueprintConfigurationRequest& AddRegionalParameters(RegionalParametersKeyT&& key, RegionalParametersValueT&& value) {
-    m_regionalParametersHasBeenSet = true;
-    m_regionalParameters.emplace(std::forward<RegionalParametersKeyT>(key), std::forward<RegionalParametersValueT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  Aws::Vector<Aws::String> m_enabledRegions;
-
   Aws::String m_environmentBlueprintIdentifier;
-
-  Aws::String m_environmentRolePermissionBoundary;
-
-  Aws::Map<Aws::String, Aws::String> m_globalParameters;
-
-  Aws::String m_manageAccessRoleArn;
-
-  Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
 
   Aws::String m_provisioningRoleArn;
 
+  Aws::String m_manageAccessRoleArn;
+
+  Aws::String m_environmentRolePermissionBoundary;
+
+  Aws::Vector<Aws::String> m_enabledRegions;
+
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_regionalParameters;
+
+  Aws::Map<Aws::String, Aws::String> m_globalParameters;
+
+  Aws::Vector<ProvisioningConfiguration> m_provisioningConfigurations;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_enabledRegionsHasBeenSet = false;
   bool m_environmentBlueprintIdentifierHasBeenSet = false;
-  bool m_environmentRolePermissionBoundaryHasBeenSet = false;
-  bool m_globalParametersHasBeenSet = false;
-  bool m_manageAccessRoleArnHasBeenSet = false;
-  bool m_provisioningConfigurationsHasBeenSet = false;
   bool m_provisioningRoleArnHasBeenSet = false;
+  bool m_manageAccessRoleArnHasBeenSet = false;
+  bool m_environmentRolePermissionBoundaryHasBeenSet = false;
+  bool m_enabledRegionsHasBeenSet = false;
   bool m_regionalParametersHasBeenSet = false;
+  bool m_globalParametersHasBeenSet = false;
+  bool m_provisioningConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

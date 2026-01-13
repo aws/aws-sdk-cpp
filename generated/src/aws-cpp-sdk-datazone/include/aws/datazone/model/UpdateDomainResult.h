@@ -30,6 +30,40 @@ class UpdateDomainResult {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateDomainResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the root domain unit.</p>
+   */
+  inline const Aws::String& GetRootDomainUnitId() const { return m_rootDomainUnitId; }
+  template <typename RootDomainUnitIdT = Aws::String>
+  void SetRootDomainUnitId(RootDomainUnitIdT&& value) {
+    m_rootDomainUnitIdHasBeenSet = true;
+    m_rootDomainUnitId = std::forward<RootDomainUnitIdT>(value);
+  }
+  template <typename RootDomainUnitIdT = Aws::String>
+  UpdateDomainResult& WithRootDomainUnitId(RootDomainUnitIdT&& value) {
+    SetRootDomainUnitId(std::forward<RootDomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description to be updated as part of the <code>UpdateDomain</code>
    * action.</p>
    */
@@ -42,6 +76,23 @@ class UpdateDomainResult {
   template <typename DescriptionT = Aws::String>
   UpdateDomainResult& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The single sign-on option of the Amazon DataZone domain.</p>
+   */
+  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
+  template <typename SingleSignOnT = SingleSignOn>
+  void SetSingleSignOn(SingleSignOnT&& value) {
+    m_singleSignOnHasBeenSet = true;
+    m_singleSignOn = std::forward<SingleSignOnT>(value);
+  }
+  template <typename SingleSignOnT = SingleSignOn>
+  UpdateDomainResult& WithSingleSignOn(SingleSignOnT&& value) {
+    SetSingleSignOn(std::forward<SingleSignOnT>(value));
     return *this;
   }
   ///@}
@@ -66,34 +117,17 @@ class UpdateDomainResult {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
+   * <p>The service role of the domain.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
+  template <typename ServiceRoleT = Aws::String>
+  void SetServiceRole(ServiceRoleT&& value) {
+    m_serviceRoleHasBeenSet = true;
+    m_serviceRole = std::forward<ServiceRoleT>(value);
   }
-  template <typename IdT = Aws::String>
-  UpdateDomainResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the timestamp of when the domain was last updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
-  }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  UpdateDomainResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+  template <typename ServiceRoleT = Aws::String>
+  UpdateDomainResult& WithServiceRole(ServiceRoleT&& value) {
+    SetServiceRole(std::forward<ServiceRoleT>(value));
     return *this;
   }
   ///@}
@@ -117,51 +151,17 @@ class UpdateDomainResult {
 
   ///@{
   /**
-   * <p>The ID of the root domain unit.</p>
+   * <p>Specifies the timestamp of when the domain was last updated.</p>
    */
-  inline const Aws::String& GetRootDomainUnitId() const { return m_rootDomainUnitId; }
-  template <typename RootDomainUnitIdT = Aws::String>
-  void SetRootDomainUnitId(RootDomainUnitIdT&& value) {
-    m_rootDomainUnitIdHasBeenSet = true;
-    m_rootDomainUnitId = std::forward<RootDomainUnitIdT>(value);
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
   }
-  template <typename RootDomainUnitIdT = Aws::String>
-  UpdateDomainResult& WithRootDomainUnitId(RootDomainUnitIdT&& value) {
-    SetRootDomainUnitId(std::forward<RootDomainUnitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The service role of the domain.</p>
-   */
-  inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
-  template <typename ServiceRoleT = Aws::String>
-  void SetServiceRole(ServiceRoleT&& value) {
-    m_serviceRoleHasBeenSet = true;
-    m_serviceRole = std::forward<ServiceRoleT>(value);
-  }
-  template <typename ServiceRoleT = Aws::String>
-  UpdateDomainResult& WithServiceRole(ServiceRoleT&& value) {
-    SetServiceRole(std::forward<ServiceRoleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The single sign-on option of the Amazon DataZone domain.</p>
-   */
-  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
-  template <typename SingleSignOnT = SingleSignOn>
-  void SetSingleSignOn(SingleSignOnT&& value) {
-    m_singleSignOnHasBeenSet = true;
-    m_singleSignOn = std::forward<SingleSignOnT>(value);
-  }
-  template <typename SingleSignOnT = SingleSignOn>
-  UpdateDomainResult& WithSingleSignOn(SingleSignOnT&& value) {
-    SetSingleSignOn(std::forward<SingleSignOnT>(value));
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  UpdateDomainResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -181,31 +181,31 @@ class UpdateDomainResult {
   }
   ///@}
  private:
-  Aws::String m_description;
-
-  Aws::String m_domainExecutionRole;
-
   Aws::String m_id;
-
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
-  Aws::String m_name;
 
   Aws::String m_rootDomainUnitId;
 
-  Aws::String m_serviceRole;
+  Aws::String m_description;
 
   SingleSignOn m_singleSignOn;
 
+  Aws::String m_domainExecutionRole;
+
+  Aws::String m_serviceRole;
+
+  Aws::String m_name;
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
   Aws::String m_requestId;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainExecutionRoleHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_rootDomainUnitIdHasBeenSet = false;
-  bool m_serviceRoleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_singleSignOnHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

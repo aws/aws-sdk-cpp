@@ -57,24 +57,6 @@ class ListConnectionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the environment where you want to list connections.</p>
-   */
-  inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
-  inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-  template <typename EnvironmentIdentifierT = Aws::String>
-  void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
-    m_environmentIdentifierHasBeenSet = true;
-    m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value);
-  }
-  template <typename EnvironmentIdentifierT = Aws::String>
-  ListConnectionsRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
-    SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The maximum number of connections to return in a single call to
    * ListConnections. When the number of connections to be listed is greater than the
    * value of MaxResults, the response contains a NextToken value that you can use in
@@ -88,24 +70,6 @@ class ListConnectionsRequest : public DataZoneRequest {
   }
   inline ListConnectionsRequest& WithMaxResults(int value) {
     SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the connection.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ListConnectionsRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -128,40 +92,6 @@ class ListConnectionsRequest : public DataZoneRequest {
   template <typename NextTokenT = Aws::String>
   ListConnectionsRequest& WithNextToken(NextTokenT&& value) {
     SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the project where you want to list connections.</p>
-   */
-  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
-  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-  template <typename ProjectIdentifierT = Aws::String>
-  void SetProjectIdentifier(ProjectIdentifierT&& value) {
-    m_projectIdentifierHasBeenSet = true;
-    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
-  }
-  template <typename ProjectIdentifierT = Aws::String>
-  ListConnectionsRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
-    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The scope of the connection.</p>
-   */
-  inline ConnectionScope GetScope() const { return m_scope; }
-  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-  inline void SetScope(ConnectionScope value) {
-    m_scopeHasBeenSet = true;
-    m_scope = value;
-  }
-  inline ListConnectionsRequest& WithScope(ConnectionScope value) {
-    SetScope(value);
     return *this;
   }
   ///@}
@@ -200,6 +130,60 @@ class ListConnectionsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The name of the connection.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ListConnectionsRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the environment where you want to list connections.</p>
+   */
+  inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
+  inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
+  template <typename EnvironmentIdentifierT = Aws::String>
+  void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
+    m_environmentIdentifierHasBeenSet = true;
+    m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value);
+  }
+  template <typename EnvironmentIdentifierT = Aws::String>
+  ListConnectionsRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
+    SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project where you want to list connections.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  ListConnectionsRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of connection.</p>
    */
   inline ConnectionType GetType() const { return m_type; }
@@ -213,36 +197,52 @@ class ListConnectionsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scope of the connection.</p>
+   */
+  inline ConnectionScope GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  inline void SetScope(ConnectionScope value) {
+    m_scopeHasBeenSet = true;
+    m_scope = value;
+  }
+  inline ListConnectionsRequest& WithScope(ConnectionScope value) {
+    SetScope(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  Aws::String m_environmentIdentifier;
-
   int m_maxResults{0};
 
-  Aws::String m_name;
-
   Aws::String m_nextToken;
-
-  Aws::String m_projectIdentifier;
-
-  ConnectionScope m_scope{ConnectionScope::NOT_SET};
 
   SortFieldConnection m_sortBy{SortFieldConnection::NOT_SET};
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
 
+  Aws::String m_name;
+
+  Aws::String m_environmentIdentifier;
+
+  Aws::String m_projectIdentifier;
+
   ConnectionType m_type{ConnectionType::NOT_SET};
+
+  ConnectionScope m_scope{ConnectionScope::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_environmentIdentifierHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_projectIdentifierHasBeenSet = false;
-  bool m_scopeHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
 };
 
 }  // namespace Model

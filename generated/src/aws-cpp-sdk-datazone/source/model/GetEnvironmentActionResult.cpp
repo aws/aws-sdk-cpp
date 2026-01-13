@@ -21,10 +21,6 @@ GetEnvironmentActionResult::GetEnvironmentActionResult(const Aws::AmazonWebServi
 
 GetEnvironmentActionResult& GetEnvironmentActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -44,6 +40,10 @@ GetEnvironmentActionResult& GetEnvironmentActionResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("parameters")) {
     m_parameters = jsonValue.GetObject("parameters");
     m_parametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

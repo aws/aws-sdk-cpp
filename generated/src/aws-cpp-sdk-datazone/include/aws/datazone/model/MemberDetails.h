@@ -34,24 +34,6 @@ class MemberDetails {
 
   ///@{
   /**
-   * <p>The group details of a project member.</p>
-   */
-  inline const GroupDetails& GetGroup() const { return m_group; }
-  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-  template <typename GroupT = GroupDetails>
-  void SetGroup(GroupT&& value) {
-    m_groupHasBeenSet = true;
-    m_group = std::forward<GroupT>(value);
-  }
-  template <typename GroupT = GroupDetails>
-  MemberDetails& WithGroup(GroupT&& value) {
-    SetGroup(std::forward<GroupT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The user details of a project member.</p>
    */
   inline const UserDetails& GetUser() const { return m_user; }
@@ -67,12 +49,30 @@ class MemberDetails {
     return *this;
   }
   ///@}
- private:
-  GroupDetails m_group;
 
+  ///@{
+  /**
+   * <p>The group details of a project member.</p>
+   */
+  inline const GroupDetails& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = GroupDetails>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = GroupDetails>
+  MemberDetails& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   UserDetails m_user;
-  bool m_groupHasBeenSet = false;
+
+  GroupDetails m_group;
   bool m_userHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -19,15 +19,9 @@ Aws::String ListJobRunsRequest::SerializePayload() const { return {}; }
 
 void ListJobRunsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
-    ss.str("");
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_statusHasBeenSet) {
+    ss << JobRunStatusMapper::GetNameForJobRunStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
 
@@ -37,9 +31,15 @@ void ListJobRunsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_statusHasBeenSet) {
-    ss << JobRunStatusMapper::GetNameForJobRunStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 }

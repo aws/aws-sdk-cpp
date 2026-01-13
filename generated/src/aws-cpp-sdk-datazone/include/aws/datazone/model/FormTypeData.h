@@ -38,6 +38,151 @@ class FormTypeData {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone domain in which the form type
+   * exists.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  FormTypeData& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the form type.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  FormTypeData& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the form type.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  FormTypeData& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The model of the form type.</p>
+   */
+  inline const Model& GetModel() const { return m_model; }
+  inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+  template <typename ModelT = Model>
+  void SetModel(ModelT&& value) {
+    m_modelHasBeenSet = true;
+    m_model = std::forward<ModelT>(value);
+  }
+  template <typename ModelT = Model>
+  FormTypeData& WithModel(ModelT&& value) {
+    SetModel(std::forward<ModelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the form type.</p>
+   */
+  inline FormTypeStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(FormTypeStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline FormTypeData& WithStatus(FormTypeStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the project that owns the form type.</p>
+   */
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  }
+  template <typename OwningProjectIdT = Aws::String>
+  FormTypeData& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the Amazon DataZone domain in which the form type was
+   * originally created.</p>
+   */
+  inline const Aws::String& GetOriginDomainId() const { return m_originDomainId; }
+  inline bool OriginDomainIdHasBeenSet() const { return m_originDomainIdHasBeenSet; }
+  template <typename OriginDomainIdT = Aws::String>
+  void SetOriginDomainId(OriginDomainIdT&& value) {
+    m_originDomainIdHasBeenSet = true;
+    m_originDomainId = std::forward<OriginDomainIdT>(value);
+  }
+  template <typename OriginDomainIdT = Aws::String>
+  FormTypeData& WithOriginDomainId(OriginDomainIdT&& value) {
+    SetOriginDomainId(std::forward<OriginDomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the project in which the form type was originally
+   * created.</p>
+   */
+  inline const Aws::String& GetOriginProjectId() const { return m_originProjectId; }
+  inline bool OriginProjectIdHasBeenSet() const { return m_originProjectIdHasBeenSet; }
+  template <typename OriginProjectIdT = Aws::String>
+  void SetOriginProjectId(OriginProjectIdT&& value) {
+    m_originProjectIdHasBeenSet = true;
+    m_originProjectId = std::forward<OriginProjectIdT>(value);
+  }
+  template <typename OriginProjectIdT = Aws::String>
+  FormTypeData& WithOriginProjectId(OriginProjectIdT&& value) {
+    SetOriginProjectId(std::forward<OriginProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp of when the metadata form type was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -92,25 +237,6 @@ class FormTypeData {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain in which the form type
-   * exists.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  FormTypeData& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The imports specified in the form type.</p>
    */
   inline const Aws::Vector<Import>& GetImports() const { return m_imports; }
@@ -132,168 +258,42 @@ class FormTypeData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The model of the form type.</p>
-   */
-  inline const Model& GetModel() const { return m_model; }
-  inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-  template <typename ModelT = Model>
-  void SetModel(ModelT&& value) {
-    m_modelHasBeenSet = true;
-    m_model = std::forward<ModelT>(value);
-  }
-  template <typename ModelT = Model>
-  FormTypeData& WithModel(ModelT&& value) {
-    SetModel(std::forward<ModelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the form type.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  FormTypeData& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the Amazon DataZone domain in which the form type was
-   * originally created.</p>
-   */
-  inline const Aws::String& GetOriginDomainId() const { return m_originDomainId; }
-  inline bool OriginDomainIdHasBeenSet() const { return m_originDomainIdHasBeenSet; }
-  template <typename OriginDomainIdT = Aws::String>
-  void SetOriginDomainId(OriginDomainIdT&& value) {
-    m_originDomainIdHasBeenSet = true;
-    m_originDomainId = std::forward<OriginDomainIdT>(value);
-  }
-  template <typename OriginDomainIdT = Aws::String>
-  FormTypeData& WithOriginDomainId(OriginDomainIdT&& value) {
-    SetOriginDomainId(std::forward<OriginDomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the project in which the form type was originally
-   * created.</p>
-   */
-  inline const Aws::String& GetOriginProjectId() const { return m_originProjectId; }
-  inline bool OriginProjectIdHasBeenSet() const { return m_originProjectIdHasBeenSet; }
-  template <typename OriginProjectIdT = Aws::String>
-  void SetOriginProjectId(OriginProjectIdT&& value) {
-    m_originProjectIdHasBeenSet = true;
-    m_originProjectId = std::forward<OriginProjectIdT>(value);
-  }
-  template <typename OriginProjectIdT = Aws::String>
-  FormTypeData& WithOriginProjectId(OriginProjectIdT&& value) {
-    SetOriginProjectId(std::forward<OriginProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the project that owns the form type.</p>
-   */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
-  }
-  template <typename OwningProjectIdT = Aws::String>
-  FormTypeData& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the form type.</p>
-   */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
-  }
-  template <typename RevisionT = Aws::String>
-  FormTypeData& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the form type.</p>
-   */
-  inline FormTypeStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(FormTypeStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline FormTypeData& WithStatus(FormTypeStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_domainId;
+
+  Aws::String m_name;
+
+  Aws::String m_revision;
+
+  Model m_model;
+
+  FormTypeStatus m_status{FormTypeStatus::NOT_SET};
+
+  Aws::String m_owningProjectId;
+
+  Aws::String m_originDomainId;
+
+  Aws::String m_originProjectId;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
 
   Aws::String m_description;
 
-  Aws::String m_domainId;
-
   Aws::Vector<Import> m_imports;
-
-  Model m_model;
-
-  Aws::String m_name;
-
-  Aws::String m_originDomainId;
-
-  Aws::String m_originProjectId;
-
-  Aws::String m_owningProjectId;
-
-  Aws::String m_revision;
-
-  FormTypeStatus m_status{FormTypeStatus::NOT_SET};
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_originDomainIdHasBeenSet = false;
+  bool m_originProjectIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
   bool m_importsHasBeenSet = false;
-  bool m_modelHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_originDomainIdHasBeenSet = false;
-  bool m_originProjectIdHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

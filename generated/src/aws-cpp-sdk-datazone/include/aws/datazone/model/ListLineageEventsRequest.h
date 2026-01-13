@@ -76,22 +76,36 @@ class ListLineageEventsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>When the number of lineage events is greater than the default value for the
-   * MaxResults parameter, or if you explicitly specify a value for MaxResults that
-   * is less than the number of lineage events, the response includes a pagination
-   * token named NextToken. You can specify this NextToken value in a subsequent call
-   * to ListLineageEvents to list the next set of lineage events.</p>
+   * <p>The after timestamp of a lineage event.</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline const Aws::Utils::DateTime& GetTimestampAfter() const { return m_timestampAfter; }
+  inline bool TimestampAfterHasBeenSet() const { return m_timestampAfterHasBeenSet; }
+  template <typename TimestampAfterT = Aws::Utils::DateTime>
+  void SetTimestampAfter(TimestampAfterT&& value) {
+    m_timestampAfterHasBeenSet = true;
+    m_timestampAfter = std::forward<TimestampAfterT>(value);
   }
-  template <typename NextTokenT = Aws::String>
-  ListLineageEventsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  template <typename TimestampAfterT = Aws::Utils::DateTime>
+  ListLineageEventsRequest& WithTimestampAfter(TimestampAfterT&& value) {
+    SetTimestampAfter(std::forward<TimestampAfterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The before timestamp of a lineage event.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestampBefore() const { return m_timestampBefore; }
+  inline bool TimestampBeforeHasBeenSet() const { return m_timestampBeforeHasBeenSet; }
+  template <typename TimestampBeforeT = Aws::Utils::DateTime>
+  void SetTimestampBefore(TimestampBeforeT&& value) {
+    m_timestampBeforeHasBeenSet = true;
+    m_timestampBefore = std::forward<TimestampBeforeT>(value);
+  }
+  template <typename TimestampBeforeT = Aws::Utils::DateTime>
+  ListLineageEventsRequest& WithTimestampBefore(TimestampBeforeT&& value) {
+    SetTimestampBefore(std::forward<TimestampBeforeT>(value));
     return *this;
   }
   ///@}
@@ -130,36 +144,22 @@ class ListLineageEventsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The after timestamp of a lineage event.</p>
+   * <p>When the number of lineage events is greater than the default value for the
+   * MaxResults parameter, or if you explicitly specify a value for MaxResults that
+   * is less than the number of lineage events, the response includes a pagination
+   * token named NextToken. You can specify this NextToken value in a subsequent call
+   * to ListLineageEvents to list the next set of lineage events.</p>
    */
-  inline const Aws::Utils::DateTime& GetTimestampAfter() const { return m_timestampAfter; }
-  inline bool TimestampAfterHasBeenSet() const { return m_timestampAfterHasBeenSet; }
-  template <typename TimestampAfterT = Aws::Utils::DateTime>
-  void SetTimestampAfter(TimestampAfterT&& value) {
-    m_timestampAfterHasBeenSet = true;
-    m_timestampAfter = std::forward<TimestampAfterT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename TimestampAfterT = Aws::Utils::DateTime>
-  ListLineageEventsRequest& WithTimestampAfter(TimestampAfterT&& value) {
-    SetTimestampAfter(std::forward<TimestampAfterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The before timestamp of a lineage event.</p>
-   */
-  inline const Aws::Utils::DateTime& GetTimestampBefore() const { return m_timestampBefore; }
-  inline bool TimestampBeforeHasBeenSet() const { return m_timestampBeforeHasBeenSet; }
-  template <typename TimestampBeforeT = Aws::Utils::DateTime>
-  void SetTimestampBefore(TimestampBeforeT&& value) {
-    m_timestampBeforeHasBeenSet = true;
-    m_timestampBefore = std::forward<TimestampBeforeT>(value);
-  }
-  template <typename TimestampBeforeT = Aws::Utils::DateTime>
-  ListLineageEventsRequest& WithTimestampBefore(TimestampBeforeT&& value) {
-    SetTimestampBefore(std::forward<TimestampBeforeT>(value));
+  template <typename NextTokenT = Aws::String>
+  ListLineageEventsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -168,22 +168,22 @@ class ListLineageEventsRequest : public DataZoneRequest {
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
+  Aws::Utils::DateTime m_timestampAfter{};
+
+  Aws::Utils::DateTime m_timestampBefore{};
 
   LineageEventProcessingStatus m_processingStatus{LineageEventProcessingStatus::NOT_SET};
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
 
-  Aws::Utils::DateTime m_timestampAfter{};
-
-  Aws::Utils::DateTime m_timestampBefore{};
+  Aws::String m_nextToken;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
-  bool m_processingStatusHasBeenSet = false;
-  bool m_sortOrderHasBeenSet = false;
   bool m_timestampAfterHasBeenSet = false;
   bool m_timestampBeforeHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

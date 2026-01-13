@@ -15,20 +15,16 @@ using namespace Aws::Utils;
 Aws::String CreateDataProductRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_owningProjectIdentifierHasBeenSet) {
+    payload.WithString("owningProjectIdentifier", m_owningProjectIdentifier);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
-  }
-
-  if (m_formsInputHasBeenSet) {
-    Aws::Utils::Array<JsonValue> formsInputJsonList(m_formsInput.size());
-    for (unsigned formsInputIndex = 0; formsInputIndex < formsInputJsonList.GetLength(); ++formsInputIndex) {
-      formsInputJsonList[formsInputIndex].AsObject(m_formsInput[formsInputIndex].Jsonize());
-    }
-    payload.WithArray("formsInput", std::move(formsInputJsonList));
   }
 
   if (m_glossaryTermsHasBeenSet) {
@@ -39,6 +35,14 @@ Aws::String CreateDataProductRequest::SerializePayload() const {
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
+  if (m_formsInputHasBeenSet) {
+    Aws::Utils::Array<JsonValue> formsInputJsonList(m_formsInput.size());
+    for (unsigned formsInputIndex = 0; formsInputIndex < formsInputJsonList.GetLength(); ++formsInputIndex) {
+      formsInputJsonList[formsInputIndex].AsObject(m_formsInput[formsInputIndex].Jsonize());
+    }
+    payload.WithArray("formsInput", std::move(formsInputJsonList));
+  }
+
   if (m_itemsHasBeenSet) {
     Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
     for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
@@ -47,12 +51,8 @@ Aws::String CreateDataProductRequest::SerializePayload() const {
     payload.WithArray("items", std::move(itemsJsonList));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_owningProjectIdentifierHasBeenSet) {
-    payload.WithString("owningProjectIdentifier", m_owningProjectIdentifier);
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

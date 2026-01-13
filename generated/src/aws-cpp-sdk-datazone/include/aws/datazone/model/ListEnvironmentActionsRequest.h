@@ -72,27 +72,6 @@ class ListEnvironmentActionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of environment actions to return in a single call to
-   * <code>ListEnvironmentActions</code>. When the number of environment actions to
-   * be listed is greater than the value of <code>MaxResults</code>, the response
-   * contains a <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListEnvironmentActions</code> to list the next set of environment
-   * actions.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListEnvironmentActionsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>When the number of environment actions is greater than the default value for
    * the <code>MaxResults</code> parameter, or if you explicitly specify a value for
    * <code>MaxResults</code> that is less than the number of environment actions, the
@@ -114,18 +93,39 @@ class ListEnvironmentActionsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of environment actions to return in a single call to
+   * <code>ListEnvironmentActions</code>. When the number of environment actions to
+   * be listed is greater than the value of <code>MaxResults</code>, the response
+   * contains a <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListEnvironmentActions</code> to list the next set of environment
+   * actions.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListEnvironmentActionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_environmentIdentifier;
 
-  int m_maxResults{0};
-
   Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

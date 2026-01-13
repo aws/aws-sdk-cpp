@@ -19,16 +19,16 @@ Aws::String SearchGroupProfilesRequest::SerializePayload() const {
     payload.WithString("groupType", GroupSearchTypeMapper::GetNameForGroupSearchType(m_groupType));
   }
 
+  if (m_searchTextHasBeenSet) {
+    payload.WithString("searchText", m_searchText);
+  }
+
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("maxResults", m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
-  }
-
-  if (m_searchTextHasBeenSet) {
-    payload.WithString("searchText", m_searchText);
   }
 
   return payload.View().WriteReadable();

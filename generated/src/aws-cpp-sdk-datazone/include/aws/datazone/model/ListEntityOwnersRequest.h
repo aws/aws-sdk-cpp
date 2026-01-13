@@ -54,6 +54,22 @@ class ListEntityOwnersRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type of the entity that you want to list.</p>
+   */
+  inline DataZoneEntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(DataZoneEntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline ListEntityOwnersRequest& WithEntityType(DataZoneEntityType value) {
+    SetEntityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the entity that you want to list.</p>
    */
   inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
@@ -66,22 +82,6 @@ class ListEntityOwnersRequest : public DataZoneRequest {
   template <typename EntityIdentifierT = Aws::String>
   ListEntityOwnersRequest& WithEntityIdentifier(EntityIdentifierT&& value) {
     SetEntityIdentifier(std::forward<EntityIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the entity that you want to list.</p>
-   */
-  inline DataZoneEntityType GetEntityType() const { return m_entityType; }
-  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-  inline void SetEntityType(DataZoneEntityType value) {
-    m_entityTypeHasBeenSet = true;
-    m_entityType = value;
-  }
-  inline ListEntityOwnersRequest& WithEntityType(DataZoneEntityType value) {
-    SetEntityType(value);
     return *this;
   }
   ///@}
@@ -131,16 +131,16 @@ class ListEntityOwnersRequest : public DataZoneRequest {
  private:
   Aws::String m_domainIdentifier;
 
-  Aws::String m_entityIdentifier;
-
   DataZoneEntityType m_entityType{DataZoneEntityType::NOT_SET};
+
+  Aws::String m_entityIdentifier;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

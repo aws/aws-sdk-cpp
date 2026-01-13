@@ -22,16 +22,16 @@ TextMatchItem& TextMatchItem::operator=(JsonView jsonValue) {
     m_attribute = jsonValue.GetString("attribute");
     m_attributeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("text")) {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("matchOffsets")) {
     Aws::Utils::Array<JsonView> matchOffsetsJsonList = jsonValue.GetArray("matchOffsets");
     for (unsigned matchOffsetsIndex = 0; matchOffsetsIndex < matchOffsetsJsonList.GetLength(); ++matchOffsetsIndex) {
       m_matchOffsets.push_back(matchOffsetsJsonList[matchOffsetsIndex].AsObject());
     }
     m_matchOffsetsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("text")) {
-    m_text = jsonValue.GetString("text");
-    m_textHasBeenSet = true;
   }
   return *this;
 }
@@ -43,16 +43,16 @@ JsonValue TextMatchItem::Jsonize() const {
     payload.WithString("attribute", m_attribute);
   }
 
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
+  }
+
   if (m_matchOffsetsHasBeenSet) {
     Aws::Utils::Array<JsonValue> matchOffsetsJsonList(m_matchOffsets.size());
     for (unsigned matchOffsetsIndex = 0; matchOffsetsIndex < matchOffsetsJsonList.GetLength(); ++matchOffsetsIndex) {
       matchOffsetsJsonList[matchOffsetsIndex].AsObject(m_matchOffsets[matchOffsetsIndex].Jsonize());
     }
     payload.WithArray("matchOffsets", std::move(matchOffsetsJsonList));
-  }
-
-  if (m_textHasBeenSet) {
-    payload.WithString("text", m_text);
   }
 
   return payload;

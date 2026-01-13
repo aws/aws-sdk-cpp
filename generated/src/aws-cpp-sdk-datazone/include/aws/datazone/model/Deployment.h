@@ -56,22 +56,6 @@ class Deployment {
 
   ///@{
   /**
-   * <p>The status of the last deployment of the environment.</p>
-   */
-  inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
-  inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
-  inline void SetDeploymentStatus(DeploymentStatus value) {
-    m_deploymentStatusHasBeenSet = true;
-    m_deploymentStatus = value;
-  }
-  inline Deployment& WithDeploymentStatus(DeploymentStatus value) {
-    SetDeploymentStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type of the last deployment of the environment.</p>
    */
   inline DeploymentType GetDeploymentType() const { return m_deploymentType; }
@@ -82,6 +66,22 @@ class Deployment {
   }
   inline Deployment& WithDeploymentType(DeploymentType value) {
     SetDeploymentType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the last deployment of the environment.</p>
+   */
+  inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
+  inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
+  inline void SetDeploymentStatus(DeploymentStatus value) {
+    m_deploymentStatusHasBeenSet = true;
+    m_deploymentStatus = value;
+  }
+  inline Deployment& WithDeploymentStatus(DeploymentStatus value) {
+    SetDeploymentStatus(value);
     return *this;
   }
   ///@}
@@ -100,22 +100,6 @@ class Deployment {
   template <typename FailureReasonT = EnvironmentError>
   Deployment& WithFailureReason(FailureReasonT&& value) {
     SetFailureReason(std::forward<FailureReasonT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the last deployment of the environment is complete.</p>
-   */
-  inline bool GetIsDeploymentComplete() const { return m_isDeploymentComplete; }
-  inline bool IsDeploymentCompleteHasBeenSet() const { return m_isDeploymentCompleteHasBeenSet; }
-  inline void SetIsDeploymentComplete(bool value) {
-    m_isDeploymentCompleteHasBeenSet = true;
-    m_isDeploymentComplete = value;
-  }
-  inline Deployment& WithIsDeploymentComplete(bool value) {
-    SetIsDeploymentComplete(value);
     return *this;
   }
   ///@}
@@ -143,24 +127,40 @@ class Deployment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the last deployment of the environment is complete.</p>
+   */
+  inline bool GetIsDeploymentComplete() const { return m_isDeploymentComplete; }
+  inline bool IsDeploymentCompleteHasBeenSet() const { return m_isDeploymentCompleteHasBeenSet; }
+  inline void SetIsDeploymentComplete(bool value) {
+    m_isDeploymentCompleteHasBeenSet = true;
+    m_isDeploymentComplete = value;
+  }
+  inline Deployment& WithIsDeploymentComplete(bool value) {
+    SetIsDeploymentComplete(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_deploymentId;
 
-  DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
+
+  DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
 
   EnvironmentError m_failureReason;
 
-  bool m_isDeploymentComplete{false};
-
   Aws::Vector<Aws::String> m_messages;
+
+  bool m_isDeploymentComplete{false};
   bool m_deploymentIdHasBeenSet = false;
-  bool m_deploymentStatusHasBeenSet = false;
   bool m_deploymentTypeHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
-  bool m_isDeploymentCompleteHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
+  bool m_isDeploymentCompleteHasBeenSet = false;
 };
 
 }  // namespace Model

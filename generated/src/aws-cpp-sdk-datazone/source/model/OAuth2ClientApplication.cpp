@@ -18,13 +18,13 @@ namespace Model {
 OAuth2ClientApplication::OAuth2ClientApplication(JsonView jsonValue) { *this = jsonValue; }
 
 OAuth2ClientApplication& OAuth2ClientApplication::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("aWSManagedClientApplicationReference")) {
-    m_aWSManagedClientApplicationReference = jsonValue.GetString("aWSManagedClientApplicationReference");
-    m_aWSManagedClientApplicationReferenceHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("userManagedClientApplicationClientId")) {
     m_userManagedClientApplicationClientId = jsonValue.GetString("userManagedClientApplicationClientId");
     m_userManagedClientApplicationClientIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("aWSManagedClientApplicationReference")) {
+    m_aWSManagedClientApplicationReference = jsonValue.GetString("aWSManagedClientApplicationReference");
+    m_aWSManagedClientApplicationReferenceHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ OAuth2ClientApplication& OAuth2ClientApplication::operator=(JsonView jsonValue) 
 JsonValue OAuth2ClientApplication::Jsonize() const {
   JsonValue payload;
 
-  if (m_aWSManagedClientApplicationReferenceHasBeenSet) {
-    payload.WithString("aWSManagedClientApplicationReference", m_aWSManagedClientApplicationReference);
-  }
-
   if (m_userManagedClientApplicationClientIdHasBeenSet) {
     payload.WithString("userManagedClientApplicationClientId", m_userManagedClientApplicationClientId);
+  }
+
+  if (m_aWSManagedClientApplicationReferenceHasBeenSet) {
+    payload.WithString("aWSManagedClientApplicationReference", m_aWSManagedClientApplicationReference);
   }
 
   return payload;

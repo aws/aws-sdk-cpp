@@ -73,20 +73,16 @@ class ListDataSourceRunActivitiesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of activities to return in a single call to
-   * <code>ListDataSourceRunActivities</code>. When the number of activities to be
-   * listed is greater than the value of <code>MaxResults</code>, the response
-   * contains a <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListDataSourceRunActivities</code> to list the next set of activities.</p>
+   * <p>The status of the data source run.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline DataAssetActivityStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DataAssetActivityStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  inline ListDataSourceRunActivitiesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  inline ListDataSourceRunActivitiesRequest& WithStatus(DataAssetActivityStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -116,16 +112,20 @@ class ListDataSourceRunActivitiesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status of the data source run.</p>
+   * <p>The maximum number of activities to return in a single call to
+   * <code>ListDataSourceRunActivities</code>. When the number of activities to be
+   * listed is greater than the value of <code>MaxResults</code>, the response
+   * contains a <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListDataSourceRunActivities</code> to list the next set of activities.</p>
    */
-  inline DataAssetActivityStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DataAssetActivityStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListDataSourceRunActivitiesRequest& WithStatus(DataAssetActivityStatus value) {
-    SetStatus(value);
+  inline ListDataSourceRunActivitiesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -134,16 +134,16 @@ class ListDataSourceRunActivitiesRequest : public DataZoneRequest {
 
   Aws::String m_identifier;
 
-  int m_maxResults{0};
+  DataAssetActivityStatus m_status{DataAssetActivityStatus::NOT_SET};
 
   Aws::String m_nextToken;
 
-  DataAssetActivityStatus m_status{DataAssetActivityStatus::NOT_SET};
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

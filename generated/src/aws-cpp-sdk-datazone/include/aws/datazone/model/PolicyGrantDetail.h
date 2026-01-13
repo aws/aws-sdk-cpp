@@ -44,6 +44,42 @@ class PolicyGrantDetail {
 
   ///@{
   /**
+   * <p>Specifies that this is a create domain unit policy.</p>
+   */
+  inline const CreateDomainUnitPolicyGrantDetail& GetCreateDomainUnit() const { return m_createDomainUnit; }
+  inline bool CreateDomainUnitHasBeenSet() const { return m_createDomainUnitHasBeenSet; }
+  template <typename CreateDomainUnitT = CreateDomainUnitPolicyGrantDetail>
+  void SetCreateDomainUnit(CreateDomainUnitT&& value) {
+    m_createDomainUnitHasBeenSet = true;
+    m_createDomainUnit = std::forward<CreateDomainUnitT>(value);
+  }
+  template <typename CreateDomainUnitT = CreateDomainUnitPolicyGrantDetail>
+  PolicyGrantDetail& WithCreateDomainUnit(CreateDomainUnitT&& value) {
+    SetCreateDomainUnit(std::forward<CreateDomainUnitT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to override domain unit owners.</p>
+   */
+  inline const OverrideDomainUnitOwnersPolicyGrantDetail& GetOverrideDomainUnitOwners() const { return m_overrideDomainUnitOwners; }
+  inline bool OverrideDomainUnitOwnersHasBeenSet() const { return m_overrideDomainUnitOwnersHasBeenSet; }
+  template <typename OverrideDomainUnitOwnersT = OverrideDomainUnitOwnersPolicyGrantDetail>
+  void SetOverrideDomainUnitOwners(OverrideDomainUnitOwnersT&& value) {
+    m_overrideDomainUnitOwnersHasBeenSet = true;
+    m_overrideDomainUnitOwners = std::forward<OverrideDomainUnitOwnersT>(value);
+  }
+  template <typename OverrideDomainUnitOwnersT = OverrideDomainUnitOwnersPolicyGrantDetail>
+  PolicyGrantDetail& WithOverrideDomainUnitOwners(OverrideDomainUnitOwnersT&& value) {
+    SetOverrideDomainUnitOwners(std::forward<OverrideDomainUnitOwnersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies that the policy grant is to be added to the members of the
    * project.</p>
    */
@@ -57,6 +93,60 @@ class PolicyGrantDetail {
   template <typename AddToProjectMemberPoolT = AddToProjectMemberPoolPolicyGrantDetail>
   PolicyGrantDetail& WithAddToProjectMemberPool(AddToProjectMemberPoolT&& value) {
     SetAddToProjectMemberPool(std::forward<AddToProjectMemberPoolT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to override project owners.</p>
+   */
+  inline const OverrideProjectOwnersPolicyGrantDetail& GetOverrideProjectOwners() const { return m_overrideProjectOwners; }
+  inline bool OverrideProjectOwnersHasBeenSet() const { return m_overrideProjectOwnersHasBeenSet; }
+  template <typename OverrideProjectOwnersT = OverrideProjectOwnersPolicyGrantDetail>
+  void SetOverrideProjectOwners(OverrideProjectOwnersT&& value) {
+    m_overrideProjectOwnersHasBeenSet = true;
+    m_overrideProjectOwners = std::forward<OverrideProjectOwnersT>(value);
+  }
+  template <typename OverrideProjectOwnersT = OverrideProjectOwnersPolicyGrantDetail>
+  PolicyGrantDetail& WithOverrideProjectOwners(OverrideProjectOwnersT&& value) {
+    SetOverrideProjectOwners(std::forward<OverrideProjectOwnersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Specifies that this is a create glossary policy.</p>
+   */
+  inline const CreateGlossaryPolicyGrantDetail& GetCreateGlossary() const { return m_createGlossary; }
+  inline bool CreateGlossaryHasBeenSet() const { return m_createGlossaryHasBeenSet; }
+  template <typename CreateGlossaryT = CreateGlossaryPolicyGrantDetail>
+  void SetCreateGlossary(CreateGlossaryT&& value) {
+    m_createGlossaryHasBeenSet = true;
+    m_createGlossary = std::forward<CreateGlossaryT>(value);
+  }
+  template <typename CreateGlossaryT = CreateGlossaryPolicyGrantDetail>
+  PolicyGrantDetail& WithCreateGlossary(CreateGlossaryT&& value) {
+    SetCreateGlossary(std::forward<CreateGlossaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies that this is a create form type policy.</p>
+   */
+  inline const CreateFormTypePolicyGrantDetail& GetCreateFormType() const { return m_createFormType; }
+  inline bool CreateFormTypeHasBeenSet() const { return m_createFormTypeHasBeenSet; }
+  template <typename CreateFormTypeT = CreateFormTypePolicyGrantDetail>
+  void SetCreateFormType(CreateFormTypeT&& value) {
+    m_createFormTypeHasBeenSet = true;
+    m_createFormType = std::forward<CreateFormTypeT>(value);
+  }
+  template <typename CreateFormTypeT = CreateFormTypePolicyGrantDetail>
+  PolicyGrantDetail& WithCreateFormType(CreateFormTypeT&& value) {
+    SetCreateFormType(std::forward<CreateFormTypeT>(value));
     return *this;
   }
   ///@}
@@ -81,18 +171,55 @@ class PolicyGrantDetail {
 
   ///@{
   /**
-   * <p>Specifies that this is a create domain unit policy.</p>
+   * <p>Specifies that this is a create project policy.</p>
    */
-  inline const CreateDomainUnitPolicyGrantDetail& GetCreateDomainUnit() const { return m_createDomainUnit; }
-  inline bool CreateDomainUnitHasBeenSet() const { return m_createDomainUnitHasBeenSet; }
-  template <typename CreateDomainUnitT = CreateDomainUnitPolicyGrantDetail>
-  void SetCreateDomainUnit(CreateDomainUnitT&& value) {
-    m_createDomainUnitHasBeenSet = true;
-    m_createDomainUnit = std::forward<CreateDomainUnitT>(value);
+  inline const CreateProjectPolicyGrantDetail& GetCreateProject() const { return m_createProject; }
+  inline bool CreateProjectHasBeenSet() const { return m_createProjectHasBeenSet; }
+  template <typename CreateProjectT = CreateProjectPolicyGrantDetail>
+  void SetCreateProject(CreateProjectT&& value) {
+    m_createProjectHasBeenSet = true;
+    m_createProject = std::forward<CreateProjectT>(value);
   }
-  template <typename CreateDomainUnitT = CreateDomainUnitPolicyGrantDetail>
-  PolicyGrantDetail& WithCreateDomainUnit(CreateDomainUnitT&& value) {
-    SetCreateDomainUnit(std::forward<CreateDomainUnitT>(value));
+  template <typename CreateProjectT = CreateProjectPolicyGrantDetail>
+  PolicyGrantDetail& WithCreateProject(CreateProjectT&& value) {
+    SetCreateProject(std::forward<CreateProjectT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies that this is a create environment profile policy.</p>
+   */
+  inline const CreateEnvironmentProfilePolicyGrantDetail& GetCreateEnvironmentProfile() const { return m_createEnvironmentProfile; }
+  inline bool CreateEnvironmentProfileHasBeenSet() const { return m_createEnvironmentProfileHasBeenSet; }
+  template <typename CreateEnvironmentProfileT = CreateEnvironmentProfilePolicyGrantDetail>
+  void SetCreateEnvironmentProfile(CreateEnvironmentProfileT&& value) {
+    m_createEnvironmentProfileHasBeenSet = true;
+    m_createEnvironmentProfile = std::forward<CreateEnvironmentProfileT>(value);
+  }
+  template <typename CreateEnvironmentProfileT = CreateEnvironmentProfilePolicyGrantDetail>
+  PolicyGrantDetail& WithCreateEnvironmentProfile(CreateEnvironmentProfileT&& value) {
+    SetCreateEnvironmentProfile(std::forward<CreateEnvironmentProfileT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies that this is the delegation of the create environment profile
+   * policy.</p>
+   */
+  inline const Unit& GetDelegateCreateEnvironmentProfile() const { return m_delegateCreateEnvironmentProfile; }
+  inline bool DelegateCreateEnvironmentProfileHasBeenSet() const { return m_delegateCreateEnvironmentProfileHasBeenSet; }
+  template <typename DelegateCreateEnvironmentProfileT = Unit>
+  void SetDelegateCreateEnvironmentProfile(DelegateCreateEnvironmentProfileT&& value) {
+    m_delegateCreateEnvironmentProfileHasBeenSet = true;
+    m_delegateCreateEnvironmentProfile = std::forward<DelegateCreateEnvironmentProfileT>(value);
+  }
+  template <typename DelegateCreateEnvironmentProfileT = Unit>
+  PolicyGrantDetail& WithDelegateCreateEnvironmentProfile(DelegateCreateEnvironmentProfileT&& value) {
+    SetDelegateCreateEnvironmentProfile(std::forward<DelegateCreateEnvironmentProfileT>(value));
     return *this;
   }
   ///@}
@@ -133,78 +260,6 @@ class PolicyGrantDetail {
 
   ///@{
   /**
-   * <p>Specifies that this is a create environment profile policy.</p>
-   */
-  inline const CreateEnvironmentProfilePolicyGrantDetail& GetCreateEnvironmentProfile() const { return m_createEnvironmentProfile; }
-  inline bool CreateEnvironmentProfileHasBeenSet() const { return m_createEnvironmentProfileHasBeenSet; }
-  template <typename CreateEnvironmentProfileT = CreateEnvironmentProfilePolicyGrantDetail>
-  void SetCreateEnvironmentProfile(CreateEnvironmentProfileT&& value) {
-    m_createEnvironmentProfileHasBeenSet = true;
-    m_createEnvironmentProfile = std::forward<CreateEnvironmentProfileT>(value);
-  }
-  template <typename CreateEnvironmentProfileT = CreateEnvironmentProfilePolicyGrantDetail>
-  PolicyGrantDetail& WithCreateEnvironmentProfile(CreateEnvironmentProfileT&& value) {
-    SetCreateEnvironmentProfile(std::forward<CreateEnvironmentProfileT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies that this is a create form type policy.</p>
-   */
-  inline const CreateFormTypePolicyGrantDetail& GetCreateFormType() const { return m_createFormType; }
-  inline bool CreateFormTypeHasBeenSet() const { return m_createFormTypeHasBeenSet; }
-  template <typename CreateFormTypeT = CreateFormTypePolicyGrantDetail>
-  void SetCreateFormType(CreateFormTypeT&& value) {
-    m_createFormTypeHasBeenSet = true;
-    m_createFormType = std::forward<CreateFormTypeT>(value);
-  }
-  template <typename CreateFormTypeT = CreateFormTypePolicyGrantDetail>
-  PolicyGrantDetail& WithCreateFormType(CreateFormTypeT&& value) {
-    SetCreateFormType(std::forward<CreateFormTypeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> Specifies that this is a create glossary policy.</p>
-   */
-  inline const CreateGlossaryPolicyGrantDetail& GetCreateGlossary() const { return m_createGlossary; }
-  inline bool CreateGlossaryHasBeenSet() const { return m_createGlossaryHasBeenSet; }
-  template <typename CreateGlossaryT = CreateGlossaryPolicyGrantDetail>
-  void SetCreateGlossary(CreateGlossaryT&& value) {
-    m_createGlossaryHasBeenSet = true;
-    m_createGlossary = std::forward<CreateGlossaryT>(value);
-  }
-  template <typename CreateGlossaryT = CreateGlossaryPolicyGrantDetail>
-  PolicyGrantDetail& WithCreateGlossary(CreateGlossaryT&& value) {
-    SetCreateGlossary(std::forward<CreateGlossaryT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies that this is a create project policy.</p>
-   */
-  inline const CreateProjectPolicyGrantDetail& GetCreateProject() const { return m_createProject; }
-  inline bool CreateProjectHasBeenSet() const { return m_createProjectHasBeenSet; }
-  template <typename CreateProjectT = CreateProjectPolicyGrantDetail>
-  void SetCreateProject(CreateProjectT&& value) {
-    m_createProjectHasBeenSet = true;
-    m_createProject = std::forward<CreateProjectT>(value);
-  }
-  template <typename CreateProjectT = CreateProjectPolicyGrantDetail>
-  PolicyGrantDetail& WithCreateProject(CreateProjectT&& value) {
-    SetCreateProject(std::forward<CreateProjectT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies whether to create a project from project profile.</p>
    */
   inline const CreateProjectFromProjectProfilePolicyGrantDetail& GetCreateProjectFromProjectProfile() const {
@@ -219,61 +274,6 @@ class PolicyGrantDetail {
   template <typename CreateProjectFromProjectProfileT = CreateProjectFromProjectProfilePolicyGrantDetail>
   PolicyGrantDetail& WithCreateProjectFromProjectProfile(CreateProjectFromProjectProfileT&& value) {
     SetCreateProjectFromProjectProfile(std::forward<CreateProjectFromProjectProfileT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies that this is the delegation of the create environment profile
-   * policy.</p>
-   */
-  inline const Unit& GetDelegateCreateEnvironmentProfile() const { return m_delegateCreateEnvironmentProfile; }
-  inline bool DelegateCreateEnvironmentProfileHasBeenSet() const { return m_delegateCreateEnvironmentProfileHasBeenSet; }
-  template <typename DelegateCreateEnvironmentProfileT = Unit>
-  void SetDelegateCreateEnvironmentProfile(DelegateCreateEnvironmentProfileT&& value) {
-    m_delegateCreateEnvironmentProfileHasBeenSet = true;
-    m_delegateCreateEnvironmentProfile = std::forward<DelegateCreateEnvironmentProfileT>(value);
-  }
-  template <typename DelegateCreateEnvironmentProfileT = Unit>
-  PolicyGrantDetail& WithDelegateCreateEnvironmentProfile(DelegateCreateEnvironmentProfileT&& value) {
-    SetDelegateCreateEnvironmentProfile(std::forward<DelegateCreateEnvironmentProfileT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether to override domain unit owners.</p>
-   */
-  inline const OverrideDomainUnitOwnersPolicyGrantDetail& GetOverrideDomainUnitOwners() const { return m_overrideDomainUnitOwners; }
-  inline bool OverrideDomainUnitOwnersHasBeenSet() const { return m_overrideDomainUnitOwnersHasBeenSet; }
-  template <typename OverrideDomainUnitOwnersT = OverrideDomainUnitOwnersPolicyGrantDetail>
-  void SetOverrideDomainUnitOwners(OverrideDomainUnitOwnersT&& value) {
-    m_overrideDomainUnitOwnersHasBeenSet = true;
-    m_overrideDomainUnitOwners = std::forward<OverrideDomainUnitOwnersT>(value);
-  }
-  template <typename OverrideDomainUnitOwnersT = OverrideDomainUnitOwnersPolicyGrantDetail>
-  PolicyGrantDetail& WithOverrideDomainUnitOwners(OverrideDomainUnitOwnersT&& value) {
-    SetOverrideDomainUnitOwners(std::forward<OverrideDomainUnitOwnersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether to override project owners.</p>
-   */
-  inline const OverrideProjectOwnersPolicyGrantDetail& GetOverrideProjectOwners() const { return m_overrideProjectOwners; }
-  inline bool OverrideProjectOwnersHasBeenSet() const { return m_overrideProjectOwnersHasBeenSet; }
-  template <typename OverrideProjectOwnersT = OverrideProjectOwnersPolicyGrantDetail>
-  void SetOverrideProjectOwners(OverrideProjectOwnersT&& value) {
-    m_overrideProjectOwnersHasBeenSet = true;
-    m_overrideProjectOwners = std::forward<OverrideProjectOwnersT>(value);
-  }
-  template <typename OverrideProjectOwnersT = OverrideProjectOwnersPolicyGrantDetail>
-  PolicyGrantDetail& WithOverrideProjectOwners(OverrideProjectOwnersT&& value) {
-    SetOverrideProjectOwners(std::forward<OverrideProjectOwnersT>(value));
     return *this;
   }
   ///@}
@@ -297,46 +297,46 @@ class PolicyGrantDetail {
   }
   ///@}
  private:
+  CreateDomainUnitPolicyGrantDetail m_createDomainUnit;
+
+  OverrideDomainUnitOwnersPolicyGrantDetail m_overrideDomainUnitOwners;
+
   AddToProjectMemberPoolPolicyGrantDetail m_addToProjectMemberPool;
+
+  OverrideProjectOwnersPolicyGrantDetail m_overrideProjectOwners;
+
+  CreateGlossaryPolicyGrantDetail m_createGlossary;
+
+  CreateFormTypePolicyGrantDetail m_createFormType;
 
   CreateAssetTypePolicyGrantDetail m_createAssetType;
 
-  CreateDomainUnitPolicyGrantDetail m_createDomainUnit;
+  CreateProjectPolicyGrantDetail m_createProject;
+
+  CreateEnvironmentProfilePolicyGrantDetail m_createEnvironmentProfile;
+
+  Unit m_delegateCreateEnvironmentProfile;
 
   Unit m_createEnvironment;
 
   Unit m_createEnvironmentFromBlueprint;
 
-  CreateEnvironmentProfilePolicyGrantDetail m_createEnvironmentProfile;
-
-  CreateFormTypePolicyGrantDetail m_createFormType;
-
-  CreateGlossaryPolicyGrantDetail m_createGlossary;
-
-  CreateProjectPolicyGrantDetail m_createProject;
-
   CreateProjectFromProjectProfilePolicyGrantDetail m_createProjectFromProjectProfile;
 
-  Unit m_delegateCreateEnvironmentProfile;
-
-  OverrideDomainUnitOwnersPolicyGrantDetail m_overrideDomainUnitOwners;
-
-  OverrideProjectOwnersPolicyGrantDetail m_overrideProjectOwners;
-
   UseAssetTypePolicyGrantDetail m_useAssetType;
-  bool m_addToProjectMemberPoolHasBeenSet = false;
-  bool m_createAssetTypeHasBeenSet = false;
   bool m_createDomainUnitHasBeenSet = false;
+  bool m_overrideDomainUnitOwnersHasBeenSet = false;
+  bool m_addToProjectMemberPoolHasBeenSet = false;
+  bool m_overrideProjectOwnersHasBeenSet = false;
+  bool m_createGlossaryHasBeenSet = false;
+  bool m_createFormTypeHasBeenSet = false;
+  bool m_createAssetTypeHasBeenSet = false;
+  bool m_createProjectHasBeenSet = false;
+  bool m_createEnvironmentProfileHasBeenSet = false;
+  bool m_delegateCreateEnvironmentProfileHasBeenSet = false;
   bool m_createEnvironmentHasBeenSet = false;
   bool m_createEnvironmentFromBlueprintHasBeenSet = false;
-  bool m_createEnvironmentProfileHasBeenSet = false;
-  bool m_createFormTypeHasBeenSet = false;
-  bool m_createGlossaryHasBeenSet = false;
-  bool m_createProjectHasBeenSet = false;
   bool m_createProjectFromProjectProfileHasBeenSet = false;
-  bool m_delegateCreateEnvironmentProfileHasBeenSet = false;
-  bool m_overrideDomainUnitOwnersHasBeenSet = false;
-  bool m_overrideProjectOwnersHasBeenSet = false;
   bool m_useAssetTypeHasBeenSet = false;
 };
 

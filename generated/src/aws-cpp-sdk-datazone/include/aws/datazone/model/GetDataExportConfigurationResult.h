@@ -31,17 +31,30 @@ class GetDataExportConfigurationResult {
 
   ///@{
   /**
-   * <p>The timestamp at which the data export configuration report was created.</p>
+   * <p>Specifies whether the export is enabled.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline bool GetIsExportEnabled() const { return m_isExportEnabled; }
+  inline void SetIsExportEnabled(bool value) {
+    m_isExportEnabledHasBeenSet = true;
+    m_isExportEnabled = value;
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetDataExportConfigurationResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  inline GetDataExportConfigurationResult& WithIsExportEnabled(bool value) {
+    SetIsExportEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the data export configuration.</p>
+   */
+  inline ConfigurationStatus GetStatus() const { return m_status; }
+  inline void SetStatus(ConfigurationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline GetDataExportConfigurationResult& WithStatus(ConfigurationStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -66,21 +79,6 @@ class GetDataExportConfigurationResult {
 
   ///@{
   /**
-   * <p>Specifies whether the export is enabled.</p>
-   */
-  inline bool GetIsExportEnabled() const { return m_isExportEnabled; }
-  inline void SetIsExportEnabled(bool value) {
-    m_isExportEnabledHasBeenSet = true;
-    m_isExportEnabled = value;
-  }
-  inline GetDataExportConfigurationResult& WithIsExportEnabled(bool value) {
-    SetIsExportEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon S3 table bucket ARN as part of the data export configuration
    * details.</p>
    */
@@ -99,15 +97,17 @@ class GetDataExportConfigurationResult {
 
   ///@{
   /**
-   * <p>The status of the data export configuration.</p>
+   * <p>The timestamp at which the data export configuration report was created.</p>
    */
-  inline ConfigurationStatus GetStatus() const { return m_status; }
-  inline void SetStatus(ConfigurationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  inline GetDataExportConfigurationResult& WithStatus(ConfigurationStatus value) {
-    SetStatus(value);
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetDataExportConfigurationResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -144,24 +144,24 @@ class GetDataExportConfigurationResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
+  bool m_isExportEnabled{false};
+
+  ConfigurationStatus m_status{ConfigurationStatus::NOT_SET};
 
   EncryptionConfiguration m_encryptionConfiguration;
 
-  bool m_isExportEnabled{false};
-
   Aws::String m_s3TableBucketArn;
 
-  ConfigurationStatus m_status{ConfigurationStatus::NOT_SET};
+  Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_isExportEnabledHasBeenSet = false;
-  bool m_s3TableBucketArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_s3TableBucketArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

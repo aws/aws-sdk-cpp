@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/SubscriptionGrantCreationMode.h>
 #include <aws/datazone/model/SubscriptionTargetForm.h>
 
 #include <utility>
@@ -31,24 +32,17 @@ class UpdateSubscriptionTargetResult {
 
   ///@{
   /**
-   * <p>The applicable asset types to be updated as part of the
-   * <code>UpdateSubscriptionTarget</code> action.</p>
+   * <p>Identifier of the subscription target that is to be updated.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetApplicableAssetTypes() const { return m_applicableAssetTypes; }
-  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
-  void SetApplicableAssetTypes(ApplicableAssetTypesT&& value) {
-    m_applicableAssetTypesHasBeenSet = true;
-    m_applicableAssetTypes = std::forward<ApplicableAssetTypesT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
-  UpdateSubscriptionTargetResult& WithApplicableAssetTypes(ApplicableAssetTypesT&& value) {
-    SetApplicableAssetTypes(std::forward<ApplicableAssetTypesT>(value));
-    return *this;
-  }
-  template <typename ApplicableAssetTypesT = Aws::String>
-  UpdateSubscriptionTargetResult& AddApplicableAssetTypes(ApplicableAssetTypesT&& value) {
-    m_applicableAssetTypesHasBeenSet = true;
-    m_applicableAssetTypes.emplace_back(std::forward<ApplicableAssetTypesT>(value));
+  template <typename IdT = Aws::String>
+  UpdateSubscriptionTargetResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -80,40 +74,6 @@ class UpdateSubscriptionTargetResult {
 
   ///@{
   /**
-   * <p>The timestamp of when a subscription target was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateSubscriptionTargetResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon DataZone user who created the subscription target.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  UpdateSubscriptionTargetResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which a subscription target
    * is to be updated.</p>
    */
@@ -126,77 +86,6 @@ class UpdateSubscriptionTargetResult {
   template <typename DomainIdT = Aws::String>
   UpdateSubscriptionTargetResult& WithDomainId(DomainIdT&& value) {
     SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the environment in which a subscription target is to be
-   * updated.</p>
-   */
-  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
-  template <typename EnvironmentIdT = Aws::String>
-  void SetEnvironmentId(EnvironmentIdT&& value) {
-    m_environmentIdHasBeenSet = true;
-    m_environmentId = std::forward<EnvironmentIdT>(value);
-  }
-  template <typename EnvironmentIdT = Aws::String>
-  UpdateSubscriptionTargetResult& WithEnvironmentId(EnvironmentIdT&& value) {
-    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Identifier of the subscription target that is to be updated.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  UpdateSubscriptionTargetResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The manage access role to be updated as part of the
-   * <code>UpdateSubscriptionTarget</code> action.</p>
-   */
-  inline const Aws::String& GetManageAccessRole() const { return m_manageAccessRole; }
-  template <typename ManageAccessRoleT = Aws::String>
-  void SetManageAccessRole(ManageAccessRoleT&& value) {
-    m_manageAccessRoleHasBeenSet = true;
-    m_manageAccessRole = std::forward<ManageAccessRoleT>(value);
-  }
-  template <typename ManageAccessRoleT = Aws::String>
-  UpdateSubscriptionTargetResult& WithManageAccessRole(ManageAccessRoleT&& value) {
-    SetManageAccessRole(std::forward<ManageAccessRoleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code>
-   * action.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  UpdateSubscriptionTargetResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -221,18 +110,164 @@ class UpdateSubscriptionTargetResult {
 
   ///@{
   /**
-   * <p>The provider to be updated as part of the
+   * <p>The identifier of the environment in which a subscription target is to be
+   * updated.</p>
+   */
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
+  }
+  template <typename EnvironmentIdT = Aws::String>
+  UpdateSubscriptionTargetResult& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name to be updated as part of the <code>UpdateSubscriptionTarget</code>
+   * action.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateSubscriptionTargetResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type to be updated as part of the <code>UpdateSubscriptionTarget</code>
+   * action.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  UpdateSubscriptionTargetResult& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who created the subscription target.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  UpdateSubscriptionTargetResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who updated the subscription target.</p>
+   */
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
+  }
+  template <typename UpdatedByT = Aws::String>
+  UpdateSubscriptionTargetResult& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when a subscription target was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateSubscriptionTargetResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the subscription target was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  UpdateSubscriptionTargetResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The manage access role to be updated as part of the
    * <code>UpdateSubscriptionTarget</code> action.</p>
    */
-  inline const Aws::String& GetProvider() const { return m_provider; }
-  template <typename ProviderT = Aws::String>
-  void SetProvider(ProviderT&& value) {
-    m_providerHasBeenSet = true;
-    m_provider = std::forward<ProviderT>(value);
+  inline const Aws::String& GetManageAccessRole() const { return m_manageAccessRole; }
+  template <typename ManageAccessRoleT = Aws::String>
+  void SetManageAccessRole(ManageAccessRoleT&& value) {
+    m_manageAccessRoleHasBeenSet = true;
+    m_manageAccessRole = std::forward<ManageAccessRoleT>(value);
   }
-  template <typename ProviderT = Aws::String>
-  UpdateSubscriptionTargetResult& WithProvider(ProviderT&& value) {
-    SetProvider(std::forward<ProviderT>(value));
+  template <typename ManageAccessRoleT = Aws::String>
+  UpdateSubscriptionTargetResult& WithManageAccessRole(ManageAccessRoleT&& value) {
+    SetManageAccessRole(std::forward<ManageAccessRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The applicable asset types to be updated as part of the
+   * <code>UpdateSubscriptionTarget</code> action.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetApplicableAssetTypes() const { return m_applicableAssetTypes; }
+  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
+  void SetApplicableAssetTypes(ApplicableAssetTypesT&& value) {
+    m_applicableAssetTypesHasBeenSet = true;
+    m_applicableAssetTypes = std::forward<ApplicableAssetTypesT>(value);
+  }
+  template <typename ApplicableAssetTypesT = Aws::Vector<Aws::String>>
+  UpdateSubscriptionTargetResult& WithApplicableAssetTypes(ApplicableAssetTypesT&& value) {
+    SetApplicableAssetTypes(std::forward<ApplicableAssetTypesT>(value));
+    return *this;
+  }
+  template <typename ApplicableAssetTypesT = Aws::String>
+  UpdateSubscriptionTargetResult& AddApplicableAssetTypes(ApplicableAssetTypesT&& value) {
+    m_applicableAssetTypesHasBeenSet = true;
+    m_applicableAssetTypes.emplace_back(std::forward<ApplicableAssetTypesT>(value));
     return *this;
   }
   ///@}
@@ -263,52 +298,34 @@ class UpdateSubscriptionTargetResult {
 
   ///@{
   /**
-   * <p>The type to be updated as part of the <code>UpdateSubscriptionTarget</code>
-   * action.</p>
+   * <p>The provider to be updated as part of the
+   * <code>UpdateSubscriptionTarget</code> action.</p>
    */
-  inline const Aws::String& GetType() const { return m_type; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
+  inline const Aws::String& GetProvider() const { return m_provider; }
+  template <typename ProviderT = Aws::String>
+  void SetProvider(ProviderT&& value) {
+    m_providerHasBeenSet = true;
+    m_provider = std::forward<ProviderT>(value);
   }
-  template <typename TypeT = Aws::String>
-  UpdateSubscriptionTargetResult& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
+  template <typename ProviderT = Aws::String>
+  UpdateSubscriptionTargetResult& WithProvider(ProviderT&& value) {
+    SetProvider(std::forward<ProviderT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The timestamp of when the subscription target was updated.</p>
+   * <p> Determines the subscription grant creation mode for this target, defining if
+   * grants are auto-created upon subscription approval or managed manually. </p>
    */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
+  inline SubscriptionGrantCreationMode GetSubscriptionGrantCreationMode() const { return m_subscriptionGrantCreationMode; }
+  inline void SetSubscriptionGrantCreationMode(SubscriptionGrantCreationMode value) {
+    m_subscriptionGrantCreationModeHasBeenSet = true;
+    m_subscriptionGrantCreationMode = value;
   }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  UpdateSubscriptionTargetResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon DataZone user who updated the subscription target.</p>
-   */
-  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
-  template <typename UpdatedByT = Aws::String>
-  void SetUpdatedBy(UpdatedByT&& value) {
-    m_updatedByHasBeenSet = true;
-    m_updatedBy = std::forward<UpdatedByT>(value);
-  }
-  template <typename UpdatedByT = Aws::String>
-  UpdateSubscriptionTargetResult& WithUpdatedBy(UpdatedByT&& value) {
-    SetUpdatedBy(std::forward<UpdatedByT>(value));
+  inline UpdateSubscriptionTargetResult& WithSubscriptionGrantCreationMode(SubscriptionGrantCreationMode value) {
+    SetSubscriptionGrantCreationMode(value);
     return *this;
   }
   ///@}
@@ -328,52 +345,55 @@ class UpdateSubscriptionTargetResult {
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_applicableAssetTypes;
+  Aws::String m_id;
 
   Aws::Vector<Aws::String> m_authorizedPrincipals;
 
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
   Aws::String m_domainId;
-
-  Aws::String m_environmentId;
-
-  Aws::String m_id;
-
-  Aws::String m_manageAccessRole;
-
-  Aws::String m_name;
 
   Aws::String m_projectId;
 
-  Aws::String m_provider;
+  Aws::String m_environmentId;
 
-  Aws::Vector<SubscriptionTargetForm> m_subscriptionTargetConfig;
+  Aws::String m_name;
 
   Aws::String m_type;
 
-  Aws::Utils::DateTime m_updatedAt{};
+  Aws::String m_createdBy;
 
   Aws::String m_updatedBy;
 
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::String m_manageAccessRole;
+
+  Aws::Vector<Aws::String> m_applicableAssetTypes;
+
+  Aws::Vector<SubscriptionTargetForm> m_subscriptionTargetConfig;
+
+  Aws::String m_provider;
+
+  SubscriptionGrantCreationMode m_subscriptionGrantCreationMode{SubscriptionGrantCreationMode::NOT_SET};
+
   Aws::String m_requestId;
-  bool m_applicableAssetTypesHasBeenSet = false;
-  bool m_authorizedPrincipalsHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_environmentIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_manageAccessRoleHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
+  bool m_authorizedPrincipalsHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
-  bool m_providerHasBeenSet = false;
-  bool m_subscriptionTargetConfigHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
-  bool m_updatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_manageAccessRoleHasBeenSet = false;
+  bool m_applicableAssetTypesHasBeenSet = false;
+  bool m_subscriptionTargetConfigHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_subscriptionGrantCreationModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -37,30 +37,6 @@ class BatchGetAttributesMetadataRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The attribute identifier.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetAttributeIdentifiers() const { return m_attributeIdentifiers; }
-  inline bool AttributeIdentifiersHasBeenSet() const { return m_attributeIdentifiersHasBeenSet; }
-  template <typename AttributeIdentifiersT = Aws::Vector<Aws::String>>
-  void SetAttributeIdentifiers(AttributeIdentifiersT&& value) {
-    m_attributeIdentifiersHasBeenSet = true;
-    m_attributeIdentifiers = std::forward<AttributeIdentifiersT>(value);
-  }
-  template <typename AttributeIdentifiersT = Aws::Vector<Aws::String>>
-  BatchGetAttributesMetadataRequest& WithAttributeIdentifiers(AttributeIdentifiersT&& value) {
-    SetAttributeIdentifiers(std::forward<AttributeIdentifiersT>(value));
-    return *this;
-  }
-  template <typename AttributeIdentifiersT = Aws::String>
-  BatchGetAttributesMetadataRequest& AddAttributeIdentifiers(AttributeIdentifiersT&& value) {
-    m_attributeIdentifiersHasBeenSet = true;
-    m_attributeIdentifiers.emplace_back(std::forward<AttributeIdentifiersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The domain ID where you want to get the attribute metadata.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -73,6 +49,22 @@ class BatchGetAttributesMetadataRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   BatchGetAttributesMetadataRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The entity type for which you want to get attribute metadata.</p>
+   */
+  inline AttributeEntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(AttributeEntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline BatchGetAttributesMetadataRequest& WithEntityType(AttributeEntityType value) {
+    SetEntityType(value);
     return *this;
   }
   ///@}
@@ -115,34 +107,42 @@ class BatchGetAttributesMetadataRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The entity type for which you want to get attribute metadata.</p>
+   * <p>The attribute identifier.</p>
    */
-  inline AttributeEntityType GetEntityType() const { return m_entityType; }
-  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-  inline void SetEntityType(AttributeEntityType value) {
-    m_entityTypeHasBeenSet = true;
-    m_entityType = value;
+  inline const Aws::Vector<Aws::String>& GetAttributeIdentifiers() const { return m_attributeIdentifiers; }
+  inline bool AttributeIdentifiersHasBeenSet() const { return m_attributeIdentifiersHasBeenSet; }
+  template <typename AttributeIdentifiersT = Aws::Vector<Aws::String>>
+  void SetAttributeIdentifiers(AttributeIdentifiersT&& value) {
+    m_attributeIdentifiersHasBeenSet = true;
+    m_attributeIdentifiers = std::forward<AttributeIdentifiersT>(value);
   }
-  inline BatchGetAttributesMetadataRequest& WithEntityType(AttributeEntityType value) {
-    SetEntityType(value);
+  template <typename AttributeIdentifiersT = Aws::Vector<Aws::String>>
+  BatchGetAttributesMetadataRequest& WithAttributeIdentifiers(AttributeIdentifiersT&& value) {
+    SetAttributeIdentifiers(std::forward<AttributeIdentifiersT>(value));
+    return *this;
+  }
+  template <typename AttributeIdentifiersT = Aws::String>
+  BatchGetAttributesMetadataRequest& AddAttributeIdentifiers(AttributeIdentifiersT&& value) {
+    m_attributeIdentifiersHasBeenSet = true;
+    m_attributeIdentifiers.emplace_back(std::forward<AttributeIdentifiersT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_attributeIdentifiers;
-
   Aws::String m_domainIdentifier;
+
+  AttributeEntityType m_entityType{AttributeEntityType::NOT_SET};
 
   Aws::String m_entityIdentifier;
 
   Aws::String m_entityRevision;
 
-  AttributeEntityType m_entityType{AttributeEntityType::NOT_SET};
-  bool m_attributeIdentifiersHasBeenSet = false;
+  Aws::Vector<Aws::String> m_attributeIdentifiers;
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityRevisionHasBeenSet = false;
-  bool m_entityTypeHasBeenSet = false;
+  bool m_attributeIdentifiersHasBeenSet = false;
 };
 
 }  // namespace Model

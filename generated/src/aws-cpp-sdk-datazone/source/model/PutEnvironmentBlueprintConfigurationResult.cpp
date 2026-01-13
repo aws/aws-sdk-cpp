@@ -25,24 +25,17 @@ PutEnvironmentBlueprintConfigurationResult::PutEnvironmentBlueprintConfiguration
 PutEnvironmentBlueprintConfigurationResult& PutEnvironmentBlueprintConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("enabledRegions")) {
-    Aws::Utils::Array<JsonView> enabledRegionsJsonList = jsonValue.GetArray("enabledRegions");
-    for (unsigned enabledRegionsIndex = 0; enabledRegionsIndex < enabledRegionsJsonList.GetLength(); ++enabledRegionsIndex) {
-      m_enabledRegions.push_back(enabledRegionsJsonList[enabledRegionsIndex].AsString());
-    }
-    m_enabledRegionsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("environmentBlueprintId")) {
     m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
     m_environmentBlueprintIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("provisioningRoleArn")) {
+    m_provisioningRoleArn = jsonValue.GetString("provisioningRoleArn");
+    m_provisioningRoleArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("environmentRolePermissionBoundary")) {
     m_environmentRolePermissionBoundary = jsonValue.GetString("environmentRolePermissionBoundary");
@@ -52,17 +45,12 @@ PutEnvironmentBlueprintConfigurationResult& PutEnvironmentBlueprintConfiguration
     m_manageAccessRoleArn = jsonValue.GetString("manageAccessRoleArn");
     m_manageAccessRoleArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("provisioningConfigurations")) {
-    Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");
-    for (unsigned provisioningConfigurationsIndex = 0; provisioningConfigurationsIndex < provisioningConfigurationsJsonList.GetLength();
-         ++provisioningConfigurationsIndex) {
-      m_provisioningConfigurations.push_back(provisioningConfigurationsJsonList[provisioningConfigurationsIndex].AsObject());
+  if (jsonValue.ValueExists("enabledRegions")) {
+    Aws::Utils::Array<JsonView> enabledRegionsJsonList = jsonValue.GetArray("enabledRegions");
+    for (unsigned enabledRegionsIndex = 0; enabledRegionsIndex < enabledRegionsJsonList.GetLength(); ++enabledRegionsIndex) {
+      m_enabledRegions.push_back(enabledRegionsJsonList[enabledRegionsIndex].AsString());
     }
-    m_provisioningConfigurationsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("provisioningRoleArn")) {
-    m_provisioningRoleArn = jsonValue.GetString("provisioningRoleArn");
-    m_provisioningRoleArnHasBeenSet = true;
+    m_enabledRegionsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("regionalParameters")) {
     Aws::Map<Aws::String, JsonView> regionalParametersJsonMap = jsonValue.GetObject("regionalParameters").GetAllObjects();
@@ -76,9 +64,21 @@ PutEnvironmentBlueprintConfigurationResult& PutEnvironmentBlueprintConfiguration
     }
     m_regionalParametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("provisioningConfigurations")) {
+    Aws::Utils::Array<JsonView> provisioningConfigurationsJsonList = jsonValue.GetArray("provisioningConfigurations");
+    for (unsigned provisioningConfigurationsIndex = 0; provisioningConfigurationsIndex < provisioningConfigurationsJsonList.GetLength();
+         ++provisioningConfigurationsIndex) {
+      m_provisioningConfigurations.push_back(provisioningConfigurationsJsonList[provisioningConfigurationsIndex].AsObject());
+    }
+    m_provisioningConfigurationsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

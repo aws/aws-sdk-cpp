@@ -37,6 +37,22 @@ class EnvironmentDeploymentDetails {
 
   ///@{
   /**
+   * <p>The overall deployment status of the environment.</p>
+   */
+  inline OverallDeploymentStatus GetOverallDeploymentStatus() const { return m_overallDeploymentStatus; }
+  inline bool OverallDeploymentStatusHasBeenSet() const { return m_overallDeploymentStatusHasBeenSet; }
+  inline void SetOverallDeploymentStatus(OverallDeploymentStatus value) {
+    m_overallDeploymentStatusHasBeenSet = true;
+    m_overallDeploymentStatus = value;
+  }
+  inline EnvironmentDeploymentDetails& WithOverallDeploymentStatus(OverallDeploymentStatus value) {
+    SetOverallDeploymentStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Environment failure reasons.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>& GetEnvironmentFailureReasons() const {
@@ -61,28 +77,12 @@ class EnvironmentDeploymentDetails {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The overall deployment status of the environment.</p>
-   */
-  inline OverallDeploymentStatus GetOverallDeploymentStatus() const { return m_overallDeploymentStatus; }
-  inline bool OverallDeploymentStatusHasBeenSet() const { return m_overallDeploymentStatusHasBeenSet; }
-  inline void SetOverallDeploymentStatus(OverallDeploymentStatus value) {
-    m_overallDeploymentStatusHasBeenSet = true;
-    m_overallDeploymentStatus = value;
-  }
-  inline EnvironmentDeploymentDetails& WithOverallDeploymentStatus(OverallDeploymentStatus value) {
-    SetOverallDeploymentStatus(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Map<Aws::String, Aws::Vector<EnvironmentError>> m_environmentFailureReasons;
-
   OverallDeploymentStatus m_overallDeploymentStatus{OverallDeploymentStatus::NOT_SET};
-  bool m_environmentFailureReasonsHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::Vector<EnvironmentError>> m_environmentFailureReasons;
   bool m_overallDeploymentStatusHasBeenSet = false;
+  bool m_environmentFailureReasonsHasBeenSet = false;
 };
 
 }  // namespace Model

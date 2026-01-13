@@ -19,9 +19,9 @@ Aws::String ListDataSourcesRequest::SerializePayload() const { return {}; }
 
 void ListDataSourcesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_connectionIdentifierHasBeenSet) {
-    ss << m_connectionIdentifier;
-    uri.AddQueryStringParameter("connectionIdentifier", ss.str());
+  if (m_projectIdentifierHasBeenSet) {
+    ss << m_projectIdentifier;
+    uri.AddQueryStringParameter("projectIdentifier", ss.str());
     ss.str("");
   }
 
@@ -31,9 +31,21 @@ void ListDataSourcesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
+  if (m_connectionIdentifierHasBeenSet) {
+    ss << m_connectionIdentifier;
+    uri.AddQueryStringParameter("connectionIdentifier", ss.str());
+    ss.str("");
+  }
+
+  if (m_typeHasBeenSet) {
+    ss << m_type;
+    uri.AddQueryStringParameter("type", ss.str());
+    ss.str("");
+  }
+
+  if (m_statusHasBeenSet) {
+    ss << DataSourceStatusMapper::GetNameForDataSourceStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
 
@@ -49,21 +61,9 @@ void ListDataSourcesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_projectIdentifierHasBeenSet) {
-    ss << m_projectIdentifier;
-    uri.AddQueryStringParameter("projectIdentifier", ss.str());
-    ss.str("");
-  }
-
-  if (m_statusHasBeenSet) {
-    ss << DataSourceStatusMapper::GetNameForDataSourceStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
-    ss.str("");
-  }
-
-  if (m_typeHasBeenSet) {
-    ss << m_type;
-    uri.AddQueryStringParameter("type", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 }

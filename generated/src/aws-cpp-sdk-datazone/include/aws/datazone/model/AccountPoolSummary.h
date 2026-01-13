@@ -34,24 +34,6 @@ class AccountPoolSummary {
 
   ///@{
   /**
-   * <p>The user who created the account pool.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  AccountPoolSummary& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -64,24 +46,6 @@ class AccountPoolSummary {
   template <typename DomainIdT = Aws::String>
   AccountPoolSummary& WithDomainId(DomainIdT&& value) {
     SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain unit.</p>
-   */
-  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
-  inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
-  template <typename DomainUnitIdT = Aws::String>
-  void SetDomainUnitId(DomainUnitIdT&& value) {
-    m_domainUnitIdHasBeenSet = true;
-    m_domainUnitId = std::forward<DomainUnitIdT>(value);
-  }
-  template <typename DomainUnitIdT = Aws::String>
-  AccountPoolSummary& WithDomainUnitId(DomainUnitIdT&& value) {
-    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
     return *this;
   }
   ///@}
@@ -141,6 +105,42 @@ class AccountPoolSummary {
 
   ///@{
   /**
+   * <p>The ID of the domain unit.</p>
+   */
+  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+  inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
+  template <typename DomainUnitIdT = Aws::String>
+  void SetDomainUnitId(DomainUnitIdT&& value) {
+    m_domainUnitIdHasBeenSet = true;
+    m_domainUnitId = std::forward<DomainUnitIdT>(value);
+  }
+  template <typename DomainUnitIdT = Aws::String>
+  AccountPoolSummary& WithDomainUnitId(DomainUnitIdT&& value) {
+    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the account pool.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  AccountPoolSummary& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The user who updated the account pool.</p>
    */
   inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
@@ -157,11 +157,7 @@ class AccountPoolSummary {
   }
   ///@}
  private:
-  Aws::String m_createdBy;
-
   Aws::String m_domainId;
-
-  Aws::String m_domainUnitId;
 
   Aws::String m_id;
 
@@ -169,13 +165,17 @@ class AccountPoolSummary {
 
   ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
 
+  Aws::String m_domainUnitId;
+
+  Aws::String m_createdBy;
+
   Aws::String m_updatedBy;
-  bool m_createdByHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_domainUnitIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_resolutionStrategyHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

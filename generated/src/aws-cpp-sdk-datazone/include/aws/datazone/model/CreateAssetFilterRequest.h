@@ -32,6 +32,24 @@ class CreateAssetFilterRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the domain in which you want to create an asset filter.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  CreateAssetFilterRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the data asset.</p>
    */
   inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
@@ -50,37 +68,18 @@ class CreateAssetFilterRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
+   * <p>The name of the asset filter.</p>
    */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename ClientTokenT = Aws::String>
-  CreateAssetFilterRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration of the asset filter.</p>
-   */
-  inline const AssetFilterConfiguration& GetConfiguration() const { return m_configuration; }
-  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-  template <typename ConfigurationT = AssetFilterConfiguration>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
-  }
-  template <typename ConfigurationT = AssetFilterConfiguration>
-  CreateAssetFilterRequest& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
+  template <typename NameT = Aws::String>
+  CreateAssetFilterRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -105,57 +104,58 @@ class CreateAssetFilterRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the domain in which you want to create an asset filter.</p>
+   * <p>The configuration of the asset filter.</p>
    */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  inline const AssetFilterConfiguration& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = AssetFilterConfiguration>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
   }
-  template <typename DomainIdentifierT = Aws::String>
-  CreateAssetFilterRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+  template <typename ConfigurationT = AssetFilterConfiguration>
+  CreateAssetFilterRequest& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The name of the asset filter.</p>
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
   }
-  template <typename NameT = Aws::String>
-  CreateAssetFilterRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename ClientTokenT = Aws::String>
+  CreateAssetFilterRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
+  Aws::String m_domainIdentifier;
+
   Aws::String m_assetIdentifier;
 
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  AssetFilterConfiguration m_configuration;
+  Aws::String m_name;
 
   Aws::String m_description;
 
-  Aws::String m_domainIdentifier;
+  AssetFilterConfiguration m_configuration;
 
-  Aws::String m_name;
-  bool m_assetIdentifierHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_configurationHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

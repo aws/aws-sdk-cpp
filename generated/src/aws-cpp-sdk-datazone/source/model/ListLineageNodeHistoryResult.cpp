@@ -21,16 +21,16 @@ ListLineageNodeHistoryResult::ListLineageNodeHistoryResult(const Aws::AmazonWebS
 
 ListLineageNodeHistoryResult& ListLineageNodeHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("nodes")) {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
     for (unsigned nodesIndex = 0; nodesIndex < nodesJsonList.GetLength(); ++nodesIndex) {
       m_nodes.push_back(nodesJsonList[nodesIndex].AsObject());
     }
     m_nodesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -19,6 +19,12 @@ Aws::String ListNotificationsRequest::SerializePayload() const { return {}; }
 
 void ListNotificationsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_typeHasBeenSet) {
+    ss << NotificationTypeMapper::GetNameForNotificationType(m_type);
+    uri.AddQueryStringParameter("type", ss.str());
+    ss.str("");
+  }
+
   if (m_afterTimestampHasBeenSet) {
     ss << m_afterTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
     uri.AddQueryStringParameter("afterTimestamp", ss.str());
@@ -28,18 +34,6 @@ void ListNotificationsRequest::AddQueryStringParameters(URI& uri) const {
   if (m_beforeTimestampHasBeenSet) {
     ss << m_beforeTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
     uri.AddQueryStringParameter("beforeTimestamp", ss.str());
-    ss.str("");
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
-    ss.str("");
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -57,9 +51,15 @@ void ListNotificationsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_typeHasBeenSet) {
-    ss << NotificationTypeMapper::GetNameForNotificationType(m_type);
-    uri.AddQueryStringParameter("type", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 }

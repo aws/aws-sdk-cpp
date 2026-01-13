@@ -38,24 +38,6 @@ class SubscribedAssetListing {
 
   ///@{
   /**
-   * <p>The asset scope of the subscribed asset listing.</p>
-   */
-  inline const AssetScope& GetAssetScope() const { return m_assetScope; }
-  inline bool AssetScopeHasBeenSet() const { return m_assetScopeHasBeenSet; }
-  template <typename AssetScopeT = AssetScope>
-  void SetAssetScope(AssetScopeT&& value) {
-    m_assetScopeHasBeenSet = true;
-    m_assetScope = std::forward<AssetScopeT>(value);
-  }
-  template <typename AssetScopeT = AssetScope>
-  SubscribedAssetListing& WithAssetScope(AssetScopeT&& value) {
-    SetAssetScope(std::forward<AssetScopeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the published asset for which the subscription grant is
    * created.</p>
    */
@@ -157,6 +139,24 @@ class SubscribedAssetListing {
 
   ///@{
   /**
+   * <p>The asset scope of the subscribed asset listing.</p>
+   */
+  inline const AssetScope& GetAssetScope() const { return m_assetScope; }
+  inline bool AssetScopeHasBeenSet() const { return m_assetScopeHasBeenSet; }
+  template <typename AssetScopeT = AssetScope>
+  void SetAssetScope(AssetScopeT&& value) {
+    m_assetScopeHasBeenSet = true;
+    m_assetScope = std::forward<AssetScopeT>(value);
+  }
+  template <typename AssetScopeT = AssetScope>
+  SubscribedAssetListing& WithAssetScope(AssetScopeT&& value) {
+    SetAssetScope(std::forward<AssetScopeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The asset permissions.</p>
    */
   inline const Permissions& GetPermissions() const { return m_permissions; }
@@ -173,8 +173,6 @@ class SubscribedAssetListing {
   }
   ///@}
  private:
-  AssetScope m_assetScope;
-
   Aws::String m_entityId;
 
   Aws::String m_entityRevision;
@@ -185,13 +183,15 @@ class SubscribedAssetListing {
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
 
+  AssetScope m_assetScope;
+
   Permissions m_permissions;
-  bool m_assetScopeHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
   bool m_entityRevisionHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
   bool m_formsHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
+  bool m_assetScopeHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

@@ -36,36 +36,18 @@ class LineageEventSummary {
 
   ///@{
   /**
-   * <p>The timestamp at which data lineage event was created.</p>
+   * <p>The ID of the data lineage event.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  LineageEventSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the data lineage event.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  LineageEventSummary& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
+  template <typename IdT = Aws::String>
+  LineageEventSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -90,18 +72,16 @@ class LineageEventSummary {
 
   ///@{
   /**
-   * <p>The summary of the data lineate event.</p>
+   * <p>The processing status of the data lineage event.</p>
    */
-  inline const EventSummary& GetEventSummary() const { return m_eventSummary; }
-  inline bool EventSummaryHasBeenSet() const { return m_eventSummaryHasBeenSet; }
-  template <typename EventSummaryT = EventSummary>
-  void SetEventSummary(EventSummaryT&& value) {
-    m_eventSummaryHasBeenSet = true;
-    m_eventSummary = std::forward<EventSummaryT>(value);
+  inline LineageEventProcessingStatus GetProcessingStatus() const { return m_processingStatus; }
+  inline bool ProcessingStatusHasBeenSet() const { return m_processingStatusHasBeenSet; }
+  inline void SetProcessingStatus(LineageEventProcessingStatus value) {
+    m_processingStatusHasBeenSet = true;
+    m_processingStatus = value;
   }
-  template <typename EventSummaryT = EventSummary>
-  LineageEventSummary& WithEventSummary(EventSummaryT&& value) {
-    SetEventSummary(std::forward<EventSummaryT>(value));
+  inline LineageEventSummary& WithProcessingStatus(LineageEventProcessingStatus value) {
+    SetProcessingStatus(value);
     return *this;
   }
   ///@}
@@ -126,58 +106,78 @@ class LineageEventSummary {
 
   ///@{
   /**
-   * <p>The ID of the data lineage event.</p>
+   * <p>The summary of the data lineate event.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline const EventSummary& GetEventSummary() const { return m_eventSummary; }
+  inline bool EventSummaryHasBeenSet() const { return m_eventSummaryHasBeenSet; }
+  template <typename EventSummaryT = EventSummary>
+  void SetEventSummary(EventSummaryT&& value) {
+    m_eventSummaryHasBeenSet = true;
+    m_eventSummary = std::forward<EventSummaryT>(value);
   }
-  template <typename IdT = Aws::String>
-  LineageEventSummary& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename EventSummaryT = EventSummary>
+  LineageEventSummary& WithEventSummary(EventSummaryT&& value) {
+    SetEventSummary(std::forward<EventSummaryT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The processing status of the data lineage event.</p>
+   * <p>The user who created the data lineage event.</p>
    */
-  inline LineageEventProcessingStatus GetProcessingStatus() const { return m_processingStatus; }
-  inline bool ProcessingStatusHasBeenSet() const { return m_processingStatusHasBeenSet; }
-  inline void SetProcessingStatus(LineageEventProcessingStatus value) {
-    m_processingStatusHasBeenSet = true;
-    m_processingStatus = value;
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
   }
-  inline LineageEventSummary& WithProcessingStatus(LineageEventProcessingStatus value) {
-    SetProcessingStatus(value);
+  template <typename CreatedByT = Aws::String>
+  LineageEventSummary& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which data lineage event was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  LineageEventSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
+  Aws::String m_id;
 
   Aws::String m_domainId;
 
-  EventSummary m_eventSummary;
+  LineageEventProcessingStatus m_processingStatus{LineageEventProcessingStatus::NOT_SET};
 
   Aws::Utils::DateTime m_eventTime{};
 
-  Aws::String m_id;
+  EventSummary m_eventSummary;
 
-  LineageEventProcessingStatus m_processingStatus{LineageEventProcessingStatus::NOT_SET};
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_eventSummaryHasBeenSet = false;
-  bool m_eventTimeHasBeenSet = false;
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_createdAt{};
   bool m_idHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_processingStatusHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_eventSummaryHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
 };
 
 }  // namespace Model

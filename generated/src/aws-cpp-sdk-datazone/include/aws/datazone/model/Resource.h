@@ -34,24 +34,6 @@ class Resource {
 
   ///@{
   /**
-   * <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  Resource& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The provider of a provisioned resource of this Amazon DataZone
    * environment.</p>
    */
@@ -71,18 +53,18 @@ class Resource {
 
   ///@{
   /**
-   * <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
+   * <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
    */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename TypeT = Aws::String>
-  Resource& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
+  template <typename NameT = Aws::String>
+  Resource& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -104,18 +86,36 @@ class Resource {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_name;
 
+  ///@{
+  /**
+   * <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  Resource& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_provider;
 
-  Aws::String m_type;
+  Aws::String m_name;
 
   Aws::String m_value;
-  bool m_nameHasBeenSet = false;
+
+  Aws::String m_type;
   bool m_providerHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

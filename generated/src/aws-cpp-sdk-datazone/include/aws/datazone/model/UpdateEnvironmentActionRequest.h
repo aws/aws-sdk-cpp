@@ -31,24 +31,6 @@ class UpdateEnvironmentActionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The description of the environment action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateEnvironmentActionRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The domain ID of the environment action.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -103,6 +85,24 @@ class UpdateEnvironmentActionRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The parameters of the environment action.</p>
+   */
+  inline const ActionParameters& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = ActionParameters>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = ActionParameters>
+  UpdateEnvironmentActionRequest& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the environment action.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -121,39 +121,39 @@ class UpdateEnvironmentActionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The parameters of the environment action.</p>
+   * <p>The description of the environment action.</p>
    */
-  inline const ActionParameters& GetParameters() const { return m_parameters; }
-  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-  template <typename ParametersT = ActionParameters>
-  void SetParameters(ParametersT&& value) {
-    m_parametersHasBeenSet = true;
-    m_parameters = std::forward<ParametersT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename ParametersT = ActionParameters>
-  UpdateEnvironmentActionRequest& WithParameters(ParametersT&& value) {
-    SetParameters(std::forward<ParametersT>(value));
+  template <typename DescriptionT = Aws::String>
+  UpdateEnvironmentActionRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_environmentIdentifier;
 
   Aws::String m_identifier;
 
+  ActionParameters m_parameters;
+
   Aws::String m_name;
 
-  ActionParameters m_parameters;
-  bool m_descriptionHasBeenSet = false;
+  Aws::String m_description;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
 };
 
 }  // namespace Model

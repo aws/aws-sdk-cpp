@@ -18,6 +18,10 @@ namespace Model {
 NotificationResource::NotificationResource(JsonView jsonValue) { *this = jsonValue; }
 
 NotificationResource& NotificationResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = NotificationResourceTypeMapper::GetNotificationResourceTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
@@ -26,15 +30,15 @@ NotificationResource& NotificationResource::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = NotificationResourceTypeMapper::GetNotificationResourceTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue NotificationResource::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", NotificationResourceTypeMapper::GetNameForNotificationResourceType(m_type));
+  }
 
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
@@ -42,10 +46,6 @@ JsonValue NotificationResource::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", NotificationResourceTypeMapper::GetNameForNotificationResourceType(m_type));
   }
 
   return payload;

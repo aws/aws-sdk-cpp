@@ -18,10 +18,6 @@ namespace Model {
 SubscribedAssetListing::SubscribedAssetListing(JsonView jsonValue) { *this = jsonValue; }
 
 SubscribedAssetListing& SubscribedAssetListing::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("assetScope")) {
-    m_assetScope = jsonValue.GetObject("assetScope");
-    m_assetScopeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("entityId")) {
     m_entityId = jsonValue.GetString("entityId");
     m_entityIdHasBeenSet = true;
@@ -45,6 +41,10 @@ SubscribedAssetListing& SubscribedAssetListing::operator=(JsonView jsonValue) {
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("assetScope")) {
+    m_assetScope = jsonValue.GetObject("assetScope");
+    m_assetScopeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("permissions")) {
     m_permissions = jsonValue.GetObject("permissions");
     m_permissionsHasBeenSet = true;
@@ -54,10 +54,6 @@ SubscribedAssetListing& SubscribedAssetListing::operator=(JsonView jsonValue) {
 
 JsonValue SubscribedAssetListing::Jsonize() const {
   JsonValue payload;
-
-  if (m_assetScopeHasBeenSet) {
-    payload.WithObject("assetScope", m_assetScope.Jsonize());
-  }
 
   if (m_entityIdHasBeenSet) {
     payload.WithString("entityId", m_entityId);
@@ -81,6 +77,10 @@ JsonValue SubscribedAssetListing::Jsonize() const {
       glossaryTermsJsonList[glossaryTermsIndex].AsObject(m_glossaryTerms[glossaryTermsIndex].Jsonize());
     }
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
+  }
+
+  if (m_assetScopeHasBeenSet) {
+    payload.WithObject("assetScope", m_assetScope.Jsonize());
   }
 
   if (m_permissionsHasBeenSet) {

@@ -18,6 +18,46 @@ namespace Model {
 SubscriptionGrantSummary::SubscriptionGrantSummary(JsonView jsonValue) { *this = jsonValue; }
 
 SubscriptionGrantSummary& SubscriptionGrantSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedBy")) {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+    m_updatedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("environmentId")) {
+    m_environmentId = jsonValue.GetString("environmentId");
+    m_environmentIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("subscriptionTargetId")) {
+    m_subscriptionTargetId = jsonValue.GetString("subscriptionTargetId");
+    m_subscriptionTargetIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("grantedEntity")) {
+    m_grantedEntity = jsonValue.GetObject("grantedEntity");
+    m_grantedEntityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = SubscriptionGrantOverallStatusMapper::GetSubscriptionGrantOverallStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("assets")) {
     Aws::Utils::Array<JsonView> assetsJsonList = jsonValue.GetArray("assets");
     for (unsigned assetsIndex = 0; assetsIndex < assetsJsonList.GetLength(); ++assetsIndex) {
@@ -25,51 +65,51 @@ SubscriptionGrantSummary& SubscriptionGrantSummary::operator=(JsonView jsonValue
     }
     m_assetsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("environmentId")) {
-    m_environmentId = jsonValue.GetString("environmentId");
-    m_environmentIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("grantedEntity")) {
-    m_grantedEntity = jsonValue.GetObject("grantedEntity");
-    m_grantedEntityHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = SubscriptionGrantOverallStatusMapper::GetSubscriptionGrantOverallStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("subscriptionTargetId")) {
-    m_subscriptionTargetId = jsonValue.GetString("subscriptionTargetId");
-    m_subscriptionTargetIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedAt")) {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedBy")) {
-    m_updatedBy = jsonValue.GetString("updatedBy");
-    m_updatedByHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue SubscriptionGrantSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
+  }
+
+  if (m_updatedByHasBeenSet) {
+    payload.WithString("updatedBy", m_updatedBy);
+  }
+
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("domainId", m_domainId);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_environmentIdHasBeenSet) {
+    payload.WithString("environmentId", m_environmentId);
+  }
+
+  if (m_subscriptionTargetIdHasBeenSet) {
+    payload.WithString("subscriptionTargetId", m_subscriptionTargetId);
+  }
+
+  if (m_grantedEntityHasBeenSet) {
+    payload.WithObject("grantedEntity", m_grantedEntity.Jsonize());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", SubscriptionGrantOverallStatusMapper::GetNameForSubscriptionGrantOverallStatus(m_status));
+  }
 
   if (m_assetsHasBeenSet) {
     Aws::Utils::Array<JsonValue> assetsJsonList(m_assets.size());
@@ -77,46 +117,6 @@ JsonValue SubscriptionGrantSummary::Jsonize() const {
       assetsJsonList[assetsIndex].AsObject(m_assets[assetsIndex].Jsonize());
     }
     payload.WithArray("assets", std::move(assetsJsonList));
-  }
-
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if (m_createdByHasBeenSet) {
-    payload.WithString("createdBy", m_createdBy);
-  }
-
-  if (m_domainIdHasBeenSet) {
-    payload.WithString("domainId", m_domainId);
-  }
-
-  if (m_environmentIdHasBeenSet) {
-    payload.WithString("environmentId", m_environmentId);
-  }
-
-  if (m_grantedEntityHasBeenSet) {
-    payload.WithObject("grantedEntity", m_grantedEntity.Jsonize());
-  }
-
-  if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
-  }
-
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", SubscriptionGrantOverallStatusMapper::GetNameForSubscriptionGrantOverallStatus(m_status));
-  }
-
-  if (m_subscriptionTargetIdHasBeenSet) {
-    payload.WithString("subscriptionTargetId", m_subscriptionTargetId);
-  }
-
-  if (m_updatedAtHasBeenSet) {
-    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
-  }
-
-  if (m_updatedByHasBeenSet) {
-    payload.WithString("updatedBy", m_updatedBy);
   }
 
   return payload;

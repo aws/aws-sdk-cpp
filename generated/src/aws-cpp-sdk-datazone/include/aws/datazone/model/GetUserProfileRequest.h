@@ -55,22 +55,6 @@ class GetUserProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The type of the user profile.</p>
-   */
-  inline UserProfileType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(UserProfileType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline GetUserProfileRequest& WithType(UserProfileType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the user for which you want to get the user profile.</p>
    */
   inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
@@ -86,15 +70,31 @@ class GetUserProfileRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the user profile.</p>
+   */
+  inline UserProfileType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(UserProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline GetUserProfileRequest& WithType(UserProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  UserProfileType m_type{UserProfileType::NOT_SET};
-
   Aws::String m_userIdentifier;
+
+  UserProfileType m_type{UserProfileType::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

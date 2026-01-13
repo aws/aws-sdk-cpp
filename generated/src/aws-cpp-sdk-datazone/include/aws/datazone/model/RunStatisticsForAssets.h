@@ -46,32 +46,16 @@ class RunStatisticsForAssets {
 
   ///@{
   /**
-   * <p>The <code>failed</code> statistic for the data source run.</p>
+   * <p>The <code>updated</code> statistic for the data source run.</p>
    */
-  inline int GetFailed() const { return m_failed; }
-  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
-  inline void SetFailed(int value) {
-    m_failedHasBeenSet = true;
-    m_failed = value;
+  inline int GetUpdated() const { return m_updated; }
+  inline bool UpdatedHasBeenSet() const { return m_updatedHasBeenSet; }
+  inline void SetUpdated(int value) {
+    m_updatedHasBeenSet = true;
+    m_updated = value;
   }
-  inline RunStatisticsForAssets& WithFailed(int value) {
-    SetFailed(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The <code>skipped</code> statistic for the data source run.</p>
-   */
-  inline int GetSkipped() const { return m_skipped; }
-  inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
-  inline void SetSkipped(int value) {
-    m_skippedHasBeenSet = true;
-    m_skipped = value;
-  }
-  inline RunStatisticsForAssets& WithSkipped(int value) {
-    SetSkipped(value);
+  inline RunStatisticsForAssets& WithUpdated(int value) {
+    SetUpdated(value);
     return *this;
   }
   ///@}
@@ -94,34 +78,50 @@ class RunStatisticsForAssets {
 
   ///@{
   /**
-   * <p>The <code>updated</code> statistic for the data source run.</p>
+   * <p>The <code>skipped</code> statistic for the data source run.</p>
    */
-  inline int GetUpdated() const { return m_updated; }
-  inline bool UpdatedHasBeenSet() const { return m_updatedHasBeenSet; }
-  inline void SetUpdated(int value) {
-    m_updatedHasBeenSet = true;
-    m_updated = value;
+  inline int GetSkipped() const { return m_skipped; }
+  inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
+  inline void SetSkipped(int value) {
+    m_skippedHasBeenSet = true;
+    m_skipped = value;
   }
-  inline RunStatisticsForAssets& WithUpdated(int value) {
-    SetUpdated(value);
+  inline RunStatisticsForAssets& WithSkipped(int value) {
+    SetSkipped(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>failed</code> statistic for the data source run.</p>
+   */
+  inline int GetFailed() const { return m_failed; }
+  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
+  inline void SetFailed(int value) {
+    m_failedHasBeenSet = true;
+    m_failed = value;
+  }
+  inline RunStatisticsForAssets& WithFailed(int value) {
+    SetFailed(value);
     return *this;
   }
   ///@}
  private:
   int m_added{0};
 
-  int m_failed{0};
-
-  int m_skipped{0};
+  int m_updated{0};
 
   int m_unchanged{0};
 
-  int m_updated{0};
+  int m_skipped{0};
+
+  int m_failed{0};
   bool m_addedHasBeenSet = false;
-  bool m_failedHasBeenSet = false;
-  bool m_skippedHasBeenSet = false;
-  bool m_unchangedHasBeenSet = false;
   bool m_updatedHasBeenSet = false;
+  bool m_unchangedHasBeenSet = false;
+  bool m_skippedHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
 };
 
 }  // namespace Model

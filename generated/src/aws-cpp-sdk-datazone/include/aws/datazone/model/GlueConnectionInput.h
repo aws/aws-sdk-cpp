@@ -39,49 +39,6 @@ class GlueConnectionInput {
 
   ///@{
   /**
-   * <p>The Amazon Athena properties of the Amazon Web Services Glue connection.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::String>& GetAthenaProperties() const { return m_athenaProperties; }
-  inline bool AthenaPropertiesHasBeenSet() const { return m_athenaPropertiesHasBeenSet; }
-  template <typename AthenaPropertiesT = Aws::Map<Aws::String, Aws::String>>
-  void SetAthenaProperties(AthenaPropertiesT&& value) {
-    m_athenaPropertiesHasBeenSet = true;
-    m_athenaProperties = std::forward<AthenaPropertiesT>(value);
-  }
-  template <typename AthenaPropertiesT = Aws::Map<Aws::String, Aws::String>>
-  GlueConnectionInput& WithAthenaProperties(AthenaPropertiesT&& value) {
-    SetAthenaProperties(std::forward<AthenaPropertiesT>(value));
-    return *this;
-  }
-  template <typename AthenaPropertiesKeyT = Aws::String, typename AthenaPropertiesValueT = Aws::String>
-  GlueConnectionInput& AddAthenaProperties(AthenaPropertiesKeyT&& key, AthenaPropertiesValueT&& value) {
-    m_athenaPropertiesHasBeenSet = true;
-    m_athenaProperties.emplace(std::forward<AthenaPropertiesKeyT>(key), std::forward<AthenaPropertiesValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The authentication configuration of the Amazon Web Services Glue
-   * connection.</p>
-   */
-  inline const AuthenticationConfigurationInput& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
-  inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
-  template <typename AuthenticationConfigurationT = AuthenticationConfigurationInput>
-  void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
-    m_authenticationConfigurationHasBeenSet = true;
-    m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value);
-  }
-  template <typename AuthenticationConfigurationT = AuthenticationConfigurationInput>
-  GlueConnectionInput& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
-    SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The connection properties of the Amazon Web Services Glue connection.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetConnectionProperties() const { return m_connectionProperties; }
@@ -100,76 +57,6 @@ class GlueConnectionInput {
   GlueConnectionInput& AddConnectionProperties(ConnectionPropertiesKeyT&& key, ConnectionPropertiesValueT&& value) {
     m_connectionPropertiesHasBeenSet = true;
     m_connectionProperties.emplace(std::forward<ConnectionPropertiesKeyT>(key), std::forward<ConnectionPropertiesValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The connection type of the Amazon Web Services Glue connection.</p>
-   */
-  inline GlueConnectionType GetConnectionType() const { return m_connectionType; }
-  inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-  inline void SetConnectionType(GlueConnectionType value) {
-    m_connectionTypeHasBeenSet = true;
-    m_connectionType = value;
-  }
-  inline GlueConnectionInput& WithConnectionType(GlueConnectionType value) {
-    SetConnectionType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the Amazon Web Services Glue connection.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GlueConnectionInput& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The match criteria of the Amazon Web Services Glue connection.</p>
-   */
-  inline const Aws::String& GetMatchCriteria() const { return m_matchCriteria; }
-  inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
-  template <typename MatchCriteriaT = Aws::String>
-  void SetMatchCriteria(MatchCriteriaT&& value) {
-    m_matchCriteriaHasBeenSet = true;
-    m_matchCriteria = std::forward<MatchCriteriaT>(value);
-  }
-  template <typename MatchCriteriaT = Aws::String>
-  GlueConnectionInput& WithMatchCriteria(MatchCriteriaT&& value) {
-    SetMatchCriteria(std::forward<MatchCriteriaT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the Amazon Web Services Glue connection.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GlueConnectionInput& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -195,48 +82,70 @@ class GlueConnectionInput {
 
   ///@{
   /**
-   * <p>The Python properties of the Amazon Web Services Glue connection.</p>
+   * <p>The name of the Amazon Web Services Glue connection.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetPythonProperties() const { return m_pythonProperties; }
-  inline bool PythonPropertiesHasBeenSet() const { return m_pythonPropertiesHasBeenSet; }
-  template <typename PythonPropertiesT = Aws::Map<Aws::String, Aws::String>>
-  void SetPythonProperties(PythonPropertiesT&& value) {
-    m_pythonPropertiesHasBeenSet = true;
-    m_pythonProperties = std::forward<PythonPropertiesT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename PythonPropertiesT = Aws::Map<Aws::String, Aws::String>>
-  GlueConnectionInput& WithPythonProperties(PythonPropertiesT&& value) {
-    SetPythonProperties(std::forward<PythonPropertiesT>(value));
-    return *this;
-  }
-  template <typename PythonPropertiesKeyT = Aws::String, typename PythonPropertiesValueT = Aws::String>
-  GlueConnectionInput& AddPythonProperties(PythonPropertiesKeyT&& key, PythonPropertiesValueT&& value) {
-    m_pythonPropertiesHasBeenSet = true;
-    m_pythonProperties.emplace(std::forward<PythonPropertiesKeyT>(key), std::forward<PythonPropertiesValueT>(value));
+  template <typename NameT = Aws::String>
+  GlueConnectionInput& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The Spark properties of the Amazon Web Services Glue connection.</p>
+   * <p>The description of the Amazon Web Services Glue connection.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const { return m_sparkProperties; }
-  inline bool SparkPropertiesHasBeenSet() const { return m_sparkPropertiesHasBeenSet; }
-  template <typename SparkPropertiesT = Aws::Map<Aws::String, Aws::String>>
-  void SetSparkProperties(SparkPropertiesT&& value) {
-    m_sparkPropertiesHasBeenSet = true;
-    m_sparkProperties = std::forward<SparkPropertiesT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename SparkPropertiesT = Aws::Map<Aws::String, Aws::String>>
-  GlueConnectionInput& WithSparkProperties(SparkPropertiesT&& value) {
-    SetSparkProperties(std::forward<SparkPropertiesT>(value));
+  template <typename DescriptionT = Aws::String>
+  GlueConnectionInput& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
-  template <typename SparkPropertiesKeyT = Aws::String, typename SparkPropertiesValueT = Aws::String>
-  GlueConnectionInput& AddSparkProperties(SparkPropertiesKeyT&& key, SparkPropertiesValueT&& value) {
-    m_sparkPropertiesHasBeenSet = true;
-    m_sparkProperties.emplace(std::forward<SparkPropertiesKeyT>(key), std::forward<SparkPropertiesValueT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>The connection type of the Amazon Web Services Glue connection.</p>
+   */
+  inline GlueConnectionType GetConnectionType() const { return m_connectionType; }
+  inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
+  inline void SetConnectionType(GlueConnectionType value) {
+    m_connectionTypeHasBeenSet = true;
+    m_connectionType = value;
+  }
+  inline GlueConnectionInput& WithConnectionType(GlueConnectionType value) {
+    SetConnectionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The match criteria of the Amazon Web Services Glue connection.</p>
+   */
+  inline const Aws::String& GetMatchCriteria() const { return m_matchCriteria; }
+  inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
+  template <typename MatchCriteriaT = Aws::String>
+  void SetMatchCriteria(MatchCriteriaT&& value) {
+    m_matchCriteriaHasBeenSet = true;
+    m_matchCriteria = std::forward<MatchCriteriaT>(value);
+  }
+  template <typename MatchCriteriaT = Aws::String>
+  GlueConnectionInput& WithMatchCriteria(MatchCriteriaT&& value) {
+    SetMatchCriteria(std::forward<MatchCriteriaT>(value));
     return *this;
   }
   ///@}
@@ -281,42 +190,133 @@ class GlueConnectionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Spark properties of the Amazon Web Services Glue connection.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const { return m_sparkProperties; }
+  inline bool SparkPropertiesHasBeenSet() const { return m_sparkPropertiesHasBeenSet; }
+  template <typename SparkPropertiesT = Aws::Map<Aws::String, Aws::String>>
+  void SetSparkProperties(SparkPropertiesT&& value) {
+    m_sparkPropertiesHasBeenSet = true;
+    m_sparkProperties = std::forward<SparkPropertiesT>(value);
+  }
+  template <typename SparkPropertiesT = Aws::Map<Aws::String, Aws::String>>
+  GlueConnectionInput& WithSparkProperties(SparkPropertiesT&& value) {
+    SetSparkProperties(std::forward<SparkPropertiesT>(value));
+    return *this;
+  }
+  template <typename SparkPropertiesKeyT = Aws::String, typename SparkPropertiesValueT = Aws::String>
+  GlueConnectionInput& AddSparkProperties(SparkPropertiesKeyT&& key, SparkPropertiesValueT&& value) {
+    m_sparkPropertiesHasBeenSet = true;
+    m_sparkProperties.emplace(std::forward<SparkPropertiesKeyT>(key), std::forward<SparkPropertiesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Athena properties of the Amazon Web Services Glue connection.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetAthenaProperties() const { return m_athenaProperties; }
+  inline bool AthenaPropertiesHasBeenSet() const { return m_athenaPropertiesHasBeenSet; }
+  template <typename AthenaPropertiesT = Aws::Map<Aws::String, Aws::String>>
+  void SetAthenaProperties(AthenaPropertiesT&& value) {
+    m_athenaPropertiesHasBeenSet = true;
+    m_athenaProperties = std::forward<AthenaPropertiesT>(value);
+  }
+  template <typename AthenaPropertiesT = Aws::Map<Aws::String, Aws::String>>
+  GlueConnectionInput& WithAthenaProperties(AthenaPropertiesT&& value) {
+    SetAthenaProperties(std::forward<AthenaPropertiesT>(value));
+    return *this;
+  }
+  template <typename AthenaPropertiesKeyT = Aws::String, typename AthenaPropertiesValueT = Aws::String>
+  GlueConnectionInput& AddAthenaProperties(AthenaPropertiesKeyT&& key, AthenaPropertiesValueT&& value) {
+    m_athenaPropertiesHasBeenSet = true;
+    m_athenaProperties.emplace(std::forward<AthenaPropertiesKeyT>(key), std::forward<AthenaPropertiesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Python properties of the Amazon Web Services Glue connection.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetPythonProperties() const { return m_pythonProperties; }
+  inline bool PythonPropertiesHasBeenSet() const { return m_pythonPropertiesHasBeenSet; }
+  template <typename PythonPropertiesT = Aws::Map<Aws::String, Aws::String>>
+  void SetPythonProperties(PythonPropertiesT&& value) {
+    m_pythonPropertiesHasBeenSet = true;
+    m_pythonProperties = std::forward<PythonPropertiesT>(value);
+  }
+  template <typename PythonPropertiesT = Aws::Map<Aws::String, Aws::String>>
+  GlueConnectionInput& WithPythonProperties(PythonPropertiesT&& value) {
+    SetPythonProperties(std::forward<PythonPropertiesT>(value));
+    return *this;
+  }
+  template <typename PythonPropertiesKeyT = Aws::String, typename PythonPropertiesValueT = Aws::String>
+  GlueConnectionInput& AddPythonProperties(PythonPropertiesKeyT&& key, PythonPropertiesValueT&& value) {
+    m_pythonPropertiesHasBeenSet = true;
+    m_pythonProperties.emplace(std::forward<PythonPropertiesKeyT>(key), std::forward<PythonPropertiesValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The authentication configuration of the Amazon Web Services Glue
+   * connection.</p>
+   */
+  inline const AuthenticationConfigurationInput& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
+  inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
+  template <typename AuthenticationConfigurationT = AuthenticationConfigurationInput>
+  void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
+    m_authenticationConfigurationHasBeenSet = true;
+    m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value);
+  }
+  template <typename AuthenticationConfigurationT = AuthenticationConfigurationInput>
+  GlueConnectionInput& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
+    SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Map<Aws::String, Aws::String> m_athenaProperties;
-
-  AuthenticationConfigurationInput m_authenticationConfiguration;
-
   Aws::Map<Aws::String, Aws::String> m_connectionProperties;
-
-  GlueConnectionType m_connectionType{GlueConnectionType::NOT_SET};
-
-  Aws::String m_description;
-
-  Aws::String m_matchCriteria;
-
-  Aws::String m_name;
 
   PhysicalConnectionRequirements m_physicalConnectionRequirements;
 
-  Aws::Map<Aws::String, Aws::String> m_pythonProperties;
+  Aws::String m_name;
 
-  Aws::Map<Aws::String, Aws::String> m_sparkProperties;
+  Aws::String m_description;
+
+  GlueConnectionType m_connectionType{GlueConnectionType::NOT_SET};
+
+  Aws::String m_matchCriteria;
 
   bool m_validateCredentials{false};
 
   Aws::Vector<ComputeEnvironments> m_validateForComputeEnvironments;
-  bool m_athenaPropertiesHasBeenSet = false;
-  bool m_authenticationConfigurationHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_sparkProperties;
+
+  Aws::Map<Aws::String, Aws::String> m_athenaProperties;
+
+  Aws::Map<Aws::String, Aws::String> m_pythonProperties;
+
+  AuthenticationConfigurationInput m_authenticationConfiguration;
   bool m_connectionPropertiesHasBeenSet = false;
-  bool m_connectionTypeHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_matchCriteriaHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_physicalConnectionRequirementsHasBeenSet = false;
-  bool m_pythonPropertiesHasBeenSet = false;
-  bool m_sparkPropertiesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_matchCriteriaHasBeenSet = false;
   bool m_validateCredentialsHasBeenSet = false;
   bool m_validateForComputeEnvironmentsHasBeenSet = false;
+  bool m_sparkPropertiesHasBeenSet = false;
+  bool m_athenaPropertiesHasBeenSet = false;
+  bool m_pythonPropertiesHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

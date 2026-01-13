@@ -33,6 +33,24 @@ class GlueOAuth2Credentials {
 
   ///@{
   /**
+   * <p>The user managed client application client secret of the connection. </p>
+   */
+  inline const Aws::String& GetUserManagedClientApplicationClientSecret() const { return m_userManagedClientApplicationClientSecret; }
+  inline bool UserManagedClientApplicationClientSecretHasBeenSet() const { return m_userManagedClientApplicationClientSecretHasBeenSet; }
+  template <typename UserManagedClientApplicationClientSecretT = Aws::String>
+  void SetUserManagedClientApplicationClientSecret(UserManagedClientApplicationClientSecretT&& value) {
+    m_userManagedClientApplicationClientSecretHasBeenSet = true;
+    m_userManagedClientApplicationClientSecret = std::forward<UserManagedClientApplicationClientSecretT>(value);
+  }
+  template <typename UserManagedClientApplicationClientSecretT = Aws::String>
+  GlueOAuth2Credentials& WithUserManagedClientApplicationClientSecret(UserManagedClientApplicationClientSecretT&& value) {
+    SetUserManagedClientApplicationClientSecret(std::forward<UserManagedClientApplicationClientSecretT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The access token of a connection.</p>
    */
   inline const Aws::String& GetAccessToken() const { return m_accessToken; }
@@ -45,24 +63,6 @@ class GlueOAuth2Credentials {
   template <typename AccessTokenT = Aws::String>
   GlueOAuth2Credentials& WithAccessToken(AccessTokenT&& value) {
     SetAccessToken(std::forward<AccessTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The jwt token of the connection.</p>
-   */
-  inline const Aws::String& GetJwtToken() const { return m_jwtToken; }
-  inline bool JwtTokenHasBeenSet() const { return m_jwtTokenHasBeenSet; }
-  template <typename JwtTokenT = Aws::String>
-  void SetJwtToken(JwtTokenT&& value) {
-    m_jwtTokenHasBeenSet = true;
-    m_jwtToken = std::forward<JwtTokenT>(value);
-  }
-  template <typename JwtTokenT = Aws::String>
-  GlueOAuth2Credentials& WithJwtToken(JwtTokenT&& value) {
-    SetJwtToken(std::forward<JwtTokenT>(value));
     return *this;
   }
   ///@}
@@ -87,33 +87,33 @@ class GlueOAuth2Credentials {
 
   ///@{
   /**
-   * <p>The user managed client application client secret of the connection. </p>
+   * <p>The jwt token of the connection.</p>
    */
-  inline const Aws::String& GetUserManagedClientApplicationClientSecret() const { return m_userManagedClientApplicationClientSecret; }
-  inline bool UserManagedClientApplicationClientSecretHasBeenSet() const { return m_userManagedClientApplicationClientSecretHasBeenSet; }
-  template <typename UserManagedClientApplicationClientSecretT = Aws::String>
-  void SetUserManagedClientApplicationClientSecret(UserManagedClientApplicationClientSecretT&& value) {
-    m_userManagedClientApplicationClientSecretHasBeenSet = true;
-    m_userManagedClientApplicationClientSecret = std::forward<UserManagedClientApplicationClientSecretT>(value);
+  inline const Aws::String& GetJwtToken() const { return m_jwtToken; }
+  inline bool JwtTokenHasBeenSet() const { return m_jwtTokenHasBeenSet; }
+  template <typename JwtTokenT = Aws::String>
+  void SetJwtToken(JwtTokenT&& value) {
+    m_jwtTokenHasBeenSet = true;
+    m_jwtToken = std::forward<JwtTokenT>(value);
   }
-  template <typename UserManagedClientApplicationClientSecretT = Aws::String>
-  GlueOAuth2Credentials& WithUserManagedClientApplicationClientSecret(UserManagedClientApplicationClientSecretT&& value) {
-    SetUserManagedClientApplicationClientSecret(std::forward<UserManagedClientApplicationClientSecretT>(value));
+  template <typename JwtTokenT = Aws::String>
+  GlueOAuth2Credentials& WithJwtToken(JwtTokenT&& value) {
+    SetJwtToken(std::forward<JwtTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accessToken;
+  Aws::String m_userManagedClientApplicationClientSecret;
 
-  Aws::String m_jwtToken;
+  Aws::String m_accessToken;
 
   Aws::String m_refreshToken;
 
-  Aws::String m_userManagedClientApplicationClientSecret;
-  bool m_accessTokenHasBeenSet = false;
-  bool m_jwtTokenHasBeenSet = false;
-  bool m_refreshTokenHasBeenSet = false;
+  Aws::String m_jwtToken;
   bool m_userManagedClientApplicationClientSecretHasBeenSet = false;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
+  bool m_jwtTokenHasBeenSet = false;
 };
 
 }  // namespace Model

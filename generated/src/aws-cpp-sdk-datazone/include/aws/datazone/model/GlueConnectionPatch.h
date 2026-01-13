@@ -35,19 +35,18 @@ class GlueConnectionPatch {
 
   ///@{
   /**
-   * <p>The authentication configuration of the Amazon Web Services Glue connection
-   * patch.</p>
+   * <p>The description of the Amazon Web Services Glue connection patch.</p>
    */
-  inline const AuthenticationConfigurationPatch& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
-  inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
-  template <typename AuthenticationConfigurationT = AuthenticationConfigurationPatch>
-  void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
-    m_authenticationConfigurationHasBeenSet = true;
-    m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename AuthenticationConfigurationT = AuthenticationConfigurationPatch>
-  GlueConnectionPatch& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
-    SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value));
+  template <typename DescriptionT = Aws::String>
+  GlueConnectionPatch& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -78,30 +77,31 @@ class GlueConnectionPatch {
 
   ///@{
   /**
-   * <p>The description of the Amazon Web Services Glue connection patch.</p>
+   * <p>The authentication configuration of the Amazon Web Services Glue connection
+   * patch.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const AuthenticationConfigurationPatch& GetAuthenticationConfiguration() const { return m_authenticationConfiguration; }
+  inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
+  template <typename AuthenticationConfigurationT = AuthenticationConfigurationPatch>
+  void SetAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
+    m_authenticationConfigurationHasBeenSet = true;
+    m_authenticationConfiguration = std::forward<AuthenticationConfigurationT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  GlueConnectionPatch& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename AuthenticationConfigurationT = AuthenticationConfigurationPatch>
+  GlueConnectionPatch& WithAuthenticationConfiguration(AuthenticationConfigurationT&& value) {
+    SetAuthenticationConfiguration(std::forward<AuthenticationConfigurationT>(value));
     return *this;
   }
   ///@}
  private:
-  AuthenticationConfigurationPatch m_authenticationConfiguration;
+  Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_connectionProperties;
 
-  Aws::String m_description;
-  bool m_authenticationConfigurationHasBeenSet = false;
-  bool m_connectionPropertiesHasBeenSet = false;
+  AuthenticationConfigurationPatch m_authenticationConfiguration;
   bool m_descriptionHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

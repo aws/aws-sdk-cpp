@@ -34,18 +34,18 @@ class CustomParameter {
 
   ///@{
   /**
-   * <p>The default value of the parameter.</p>
+   * <p>The key name of the parameter.</p>
    */
-  inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
-  inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-  template <typename DefaultValueT = Aws::String>
-  void SetDefaultValue(DefaultValueT&& value) {
-    m_defaultValueHasBeenSet = true;
-    m_defaultValue = std::forward<DefaultValueT>(value);
+  inline const Aws::String& GetKeyName() const { return m_keyName; }
+  inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+  template <typename KeyNameT = Aws::String>
+  void SetKeyName(KeyNameT&& value) {
+    m_keyNameHasBeenSet = true;
+    m_keyName = std::forward<KeyNameT>(value);
   }
-  template <typename DefaultValueT = Aws::String>
-  CustomParameter& WithDefaultValue(DefaultValueT&& value) {
-    SetDefaultValue(std::forward<DefaultValueT>(value));
+  template <typename KeyNameT = Aws::String>
+  CustomParameter& WithKeyName(KeyNameT&& value) {
+    SetKeyName(std::forward<KeyNameT>(value));
     return *this;
   }
   ///@}
@@ -82,6 +82,24 @@ class CustomParameter {
   template <typename FieldTypeT = Aws::String>
   CustomParameter& WithFieldType(FieldTypeT&& value) {
     SetFieldType(std::forward<FieldTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default value of the parameter.</p>
+   */
+  inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
+  inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+  template <typename DefaultValueT = Aws::String>
+  void SetDefaultValue(DefaultValueT&& value) {
+    m_defaultValueHasBeenSet = true;
+    m_defaultValue = std::forward<DefaultValueT>(value);
+  }
+  template <typename DefaultValueT = Aws::String>
+  CustomParameter& WithDefaultValue(DefaultValueT&& value) {
+    SetDefaultValue(std::forward<DefaultValueT>(value));
     return *this;
   }
   ///@}
@@ -133,45 +151,27 @@ class CustomParameter {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The key name of the parameter.</p>
-   */
-  inline const Aws::String& GetKeyName() const { return m_keyName; }
-  inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-  template <typename KeyNameT = Aws::String>
-  void SetKeyName(KeyNameT&& value) {
-    m_keyNameHasBeenSet = true;
-    m_keyName = std::forward<KeyNameT>(value);
-  }
-  template <typename KeyNameT = Aws::String>
-  CustomParameter& WithKeyName(KeyNameT&& value) {
-    SetKeyName(std::forward<KeyNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_defaultValue;
+  Aws::String m_keyName;
 
   Aws::String m_description;
 
   Aws::String m_fieldType;
+
+  Aws::String m_defaultValue;
 
   bool m_isEditable{false};
 
   bool m_isOptional{false};
 
   bool m_isUpdateSupported{false};
-
-  Aws::String m_keyName;
-  bool m_defaultValueHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_fieldTypeHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
   bool m_isEditableHasBeenSet = false;
   bool m_isOptionalHasBeenSet = false;
   bool m_isUpdateSupportedHasBeenSet = false;
-  bool m_keyNameHasBeenSet = false;
 };
 
 }  // namespace Model

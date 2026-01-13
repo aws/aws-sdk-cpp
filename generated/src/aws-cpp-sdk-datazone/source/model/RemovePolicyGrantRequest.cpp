@@ -15,20 +15,20 @@ using namespace Aws::Utils;
 Aws::String RemovePolicyGrantRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
-  if (m_grantIdentifierHasBeenSet) {
-    payload.WithString("grantIdentifier", m_grantIdentifier);
-  }
-
   if (m_policyTypeHasBeenSet) {
     payload.WithString("policyType", ManagedPolicyTypeMapper::GetNameForManagedPolicyType(m_policyType));
   }
 
   if (m_principalHasBeenSet) {
     payload.WithObject("principal", m_principal.Jsonize());
+  }
+
+  if (m_grantIdentifierHasBeenSet) {
+    payload.WithString("grantIdentifier", m_grantIdentifier);
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

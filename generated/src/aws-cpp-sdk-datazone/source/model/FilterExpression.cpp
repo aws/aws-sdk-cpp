@@ -18,13 +18,13 @@ namespace Model {
 FilterExpression::FilterExpression(JsonView jsonValue) { *this = jsonValue; }
 
 FilterExpression& FilterExpression::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("expression")) {
-    m_expression = jsonValue.GetString("expression");
-    m_expressionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = FilterExpressionTypeMapper::GetFilterExpressionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("expression")) {
+    m_expression = jsonValue.GetString("expression");
+    m_expressionHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ FilterExpression& FilterExpression::operator=(JsonView jsonValue) {
 JsonValue FilterExpression::Jsonize() const {
   JsonValue payload;
 
-  if (m_expressionHasBeenSet) {
-    payload.WithString("expression", m_expression);
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", FilterExpressionTypeMapper::GetNameForFilterExpressionType(m_type));
+  }
+
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
   }
 
   return payload;

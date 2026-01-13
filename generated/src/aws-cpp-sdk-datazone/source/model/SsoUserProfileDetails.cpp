@@ -18,6 +18,10 @@ namespace Model {
 SsoUserProfileDetails::SsoUserProfileDetails(JsonView jsonValue) { *this = jsonValue; }
 
 SsoUserProfileDetails& SsoUserProfileDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("username")) {
+    m_username = jsonValue.GetString("username");
+    m_usernameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("firstName")) {
     m_firstName = jsonValue.GetString("firstName");
     m_firstNameHasBeenSet = true;
@@ -26,15 +30,15 @@ SsoUserProfileDetails& SsoUserProfileDetails::operator=(JsonView jsonValue) {
     m_lastName = jsonValue.GetString("lastName");
     m_lastNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("username")) {
-    m_username = jsonValue.GetString("username");
-    m_usernameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue SsoUserProfileDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_usernameHasBeenSet) {
+    payload.WithString("username", m_username);
+  }
 
   if (m_firstNameHasBeenSet) {
     payload.WithString("firstName", m_firstName);
@@ -42,10 +46,6 @@ JsonValue SsoUserProfileDetails::Jsonize() const {
 
   if (m_lastNameHasBeenSet) {
     payload.WithString("lastName", m_lastName);
-  }
-
-  if (m_usernameHasBeenSet) {
-    payload.WithString("username", m_username);
   }
 
   return payload;

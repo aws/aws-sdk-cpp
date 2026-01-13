@@ -19,10 +19,24 @@ Aws::String ListRulesRequest::SerializePayload() const { return {}; }
 
 void ListRulesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_ruleTypeHasBeenSet) {
+    ss << RuleTypeMapper::GetNameForRuleType(m_ruleType);
+    uri.AddQueryStringParameter("ruleType", ss.str());
+    ss.str("");
+  }
+
   if (m_actionHasBeenSet) {
     ss << RuleActionMapper::GetNameForRuleAction(m_action);
     uri.AddQueryStringParameter("ruleAction", ss.str());
     ss.str("");
+  }
+
+  if (m_projectIdsHasBeenSet) {
+    for (const auto& item : m_projectIds) {
+      ss << item;
+      uri.AddQueryStringParameter("projectIds", ss.str());
+      ss.str("");
+    }
   }
 
   if (m_assetTypesHasBeenSet) {
@@ -54,20 +68,6 @@ void ListRulesRequest::AddQueryStringParameters(URI& uri) const {
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
-  if (m_projectIdsHasBeenSet) {
-    for (const auto& item : m_projectIds) {
-      ss << item;
-      uri.AddQueryStringParameter("projectIds", ss.str());
-      ss.str("");
-    }
-  }
-
-  if (m_ruleTypeHasBeenSet) {
-    ss << RuleTypeMapper::GetNameForRuleType(m_ruleType);
-    uri.AddQueryStringParameter("ruleType", ss.str());
     ss.str("");
   }
 }

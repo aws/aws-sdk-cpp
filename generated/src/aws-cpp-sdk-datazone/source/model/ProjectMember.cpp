@@ -18,13 +18,13 @@ namespace Model {
 ProjectMember::ProjectMember(JsonView jsonValue) { *this = jsonValue; }
 
 ProjectMember& ProjectMember::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("designation")) {
-    m_designation = UserDesignationMapper::GetUserDesignationForName(jsonValue.GetString("designation"));
-    m_designationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("memberDetails")) {
     m_memberDetails = jsonValue.GetObject("memberDetails");
     m_memberDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("designation")) {
+    m_designation = UserDesignationMapper::GetUserDesignationForName(jsonValue.GetString("designation"));
+    m_designationHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ProjectMember& ProjectMember::operator=(JsonView jsonValue) {
 JsonValue ProjectMember::Jsonize() const {
   JsonValue payload;
 
-  if (m_designationHasBeenSet) {
-    payload.WithString("designation", UserDesignationMapper::GetNameForUserDesignation(m_designation));
-  }
-
   if (m_memberDetailsHasBeenSet) {
     payload.WithObject("memberDetails", m_memberDetails.Jsonize());
+  }
+
+  if (m_designationHasBeenSet) {
+    payload.WithString("designation", UserDesignationMapper::GetNameForUserDesignation(m_designation));
   }
 
   return payload;

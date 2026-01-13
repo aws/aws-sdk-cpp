@@ -56,6 +56,33 @@ class RedshiftRunConfigurationInput {
   ///@}
 
   ///@{
+  /**
+   * <p>The relational filger configurations included in the configuration details of
+   * the Amazon Redshift data source.</p>
+   */
+  inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const {
+    return m_relationalFilterConfigurations;
+  }
+  inline bool RelationalFilterConfigurationsHasBeenSet() const { return m_relationalFilterConfigurationsHasBeenSet; }
+  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
+  void SetRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
+    m_relationalFilterConfigurationsHasBeenSet = true;
+    m_relationalFilterConfigurations = std::forward<RelationalFilterConfigurationsT>(value);
+  }
+  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
+  RedshiftRunConfigurationInput& WithRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
+    SetRelationalFilterConfigurations(std::forward<RelationalFilterConfigurationsT>(value));
+    return *this;
+  }
+  template <typename RelationalFilterConfigurationsT = RelationalFilterConfiguration>
+  RedshiftRunConfigurationInput& AddRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
+    m_relationalFilterConfigurationsHasBeenSet = true;
+    m_relationalFilterConfigurations.emplace_back(std::forward<RelationalFilterConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const RedshiftCredentialConfiguration& GetRedshiftCredentialConfiguration() const { return m_redshiftCredentialConfiguration; }
   inline bool RedshiftCredentialConfigurationHasBeenSet() const { return m_redshiftCredentialConfigurationHasBeenSet; }
@@ -86,45 +113,18 @@ class RedshiftRunConfigurationInput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The relational filger configurations included in the configuration details of
-   * the Amazon Redshift data source.</p>
-   */
-  inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const {
-    return m_relationalFilterConfigurations;
-  }
-  inline bool RelationalFilterConfigurationsHasBeenSet() const { return m_relationalFilterConfigurationsHasBeenSet; }
-  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
-  void SetRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
-    m_relationalFilterConfigurationsHasBeenSet = true;
-    m_relationalFilterConfigurations = std::forward<RelationalFilterConfigurationsT>(value);
-  }
-  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
-  RedshiftRunConfigurationInput& WithRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
-    SetRelationalFilterConfigurations(std::forward<RelationalFilterConfigurationsT>(value));
-    return *this;
-  }
-  template <typename RelationalFilterConfigurationsT = RelationalFilterConfiguration>
-  RedshiftRunConfigurationInput& AddRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
-    m_relationalFilterConfigurationsHasBeenSet = true;
-    m_relationalFilterConfigurations.emplace_back(std::forward<RelationalFilterConfigurationsT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_dataAccessRole;
+
+  Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
 
   RedshiftCredentialConfiguration m_redshiftCredentialConfiguration;
 
   RedshiftStorage m_redshiftStorage;
-
-  Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
   bool m_dataAccessRoleHasBeenSet = false;
+  bool m_relationalFilterConfigurationsHasBeenSet = false;
   bool m_redshiftCredentialConfigurationHasBeenSet = false;
   bool m_redshiftStorageHasBeenSet = false;
-  bool m_relationalFilterConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,14 +21,6 @@ StartMetadataGenerationRunResult::StartMetadataGenerationRunResult(const Aws::Am
 
 StartMetadataGenerationRunResult& StartMetadataGenerationRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -36,10 +28,6 @@ StartMetadataGenerationRunResult& StartMetadataGenerationRunResult::operator=(co
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = MetadataGenerationRunStatusMapper::GetMetadataGenerationRunStatusForName(jsonValue.GetString("status"));
@@ -51,6 +39,18 @@ StartMetadataGenerationRunResult& StartMetadataGenerationRunResult::operator=(co
       m_types.push_back(MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(typesJsonList[typesIndex].AsString()));
     }
     m_typesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

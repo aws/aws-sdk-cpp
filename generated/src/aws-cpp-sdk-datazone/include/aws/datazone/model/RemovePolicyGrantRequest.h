@@ -34,25 +34,6 @@ class RemovePolicyGrantRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  RemovePolicyGrantRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to remove a policy grant.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -65,24 +46,6 @@ class RemovePolicyGrantRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   RemovePolicyGrantRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the entity from which you want to remove a policy grant.</p>
-   */
-  inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
-  inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
-  template <typename EntityIdentifierT = Aws::String>
-  void SetEntityIdentifier(EntityIdentifierT&& value) {
-    m_entityIdentifierHasBeenSet = true;
-    m_entityIdentifier = std::forward<EntityIdentifierT>(value);
-  }
-  template <typename EntityIdentifierT = Aws::String>
-  RemovePolicyGrantRequest& WithEntityIdentifier(EntityIdentifierT&& value) {
-    SetEntityIdentifier(std::forward<EntityIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -105,18 +68,18 @@ class RemovePolicyGrantRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+   * <p>The ID of the entity from which you want to remove a policy grant.</p>
    */
-  inline const Aws::String& GetGrantIdentifier() const { return m_grantIdentifier; }
-  inline bool GrantIdentifierHasBeenSet() const { return m_grantIdentifierHasBeenSet; }
-  template <typename GrantIdentifierT = Aws::String>
-  void SetGrantIdentifier(GrantIdentifierT&& value) {
-    m_grantIdentifierHasBeenSet = true;
-    m_grantIdentifier = std::forward<GrantIdentifierT>(value);
+  inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
+  inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
+  template <typename EntityIdentifierT = Aws::String>
+  void SetEntityIdentifier(EntityIdentifierT&& value) {
+    m_entityIdentifierHasBeenSet = true;
+    m_entityIdentifier = std::forward<EntityIdentifierT>(value);
   }
-  template <typename GrantIdentifierT = Aws::String>
-  RemovePolicyGrantRequest& WithGrantIdentifier(GrantIdentifierT&& value) {
-    SetGrantIdentifier(std::forward<GrantIdentifierT>(value));
+  template <typename EntityIdentifierT = Aws::String>
+  RemovePolicyGrantRequest& WithEntityIdentifier(EntityIdentifierT&& value) {
+    SetEntityIdentifier(std::forward<EntityIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -154,27 +117,64 @@ class RemovePolicyGrantRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the policy grant that is to be removed from a specified entity.</p>
+   */
+  inline const Aws::String& GetGrantIdentifier() const { return m_grantIdentifier; }
+  inline bool GrantIdentifierHasBeenSet() const { return m_grantIdentifierHasBeenSet; }
+  template <typename GrantIdentifierT = Aws::String>
+  void SetGrantIdentifier(GrantIdentifierT&& value) {
+    m_grantIdentifierHasBeenSet = true;
+    m_grantIdentifier = std::forward<GrantIdentifierT>(value);
+  }
+  template <typename GrantIdentifierT = Aws::String>
+  RemovePolicyGrantRequest& WithGrantIdentifier(GrantIdentifierT&& value) {
+    SetGrantIdentifier(std::forward<GrantIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  RemovePolicyGrantRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
-
-  Aws::String m_entityIdentifier;
 
   TargetEntityType m_entityType{TargetEntityType::NOT_SET};
 
-  Aws::String m_grantIdentifier;
+  Aws::String m_entityIdentifier;
 
   ManagedPolicyType m_policyType{ManagedPolicyType::NOT_SET};
 
   PolicyGrantPrincipal m_principal;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_grantIdentifier;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
-  bool m_grantIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_principalHasBeenSet = false;
+  bool m_grantIdentifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

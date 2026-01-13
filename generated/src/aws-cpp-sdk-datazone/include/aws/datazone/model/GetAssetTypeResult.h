@@ -31,34 +31,51 @@ class GetAssetTypeResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the asset type was created.</p>
+   * <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetAssetTypeResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename DomainIdT = Aws::String>
+  GetAssetTypeResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The Amazon DataZone user who created the asset type.</p>
+   * <p>The name of the asset type.</p>
    */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreatedByT = Aws::String>
-  GetAssetTypeResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
+  template <typename NameT = Aws::String>
+  GetAssetTypeResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the asset type.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  GetAssetTypeResult& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
@@ -76,23 +93,6 @@ class GetAssetTypeResult {
   template <typename DescriptionT = Aws::String>
   GetAssetTypeResult& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  GetAssetTypeResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
     return *this;
   }
   ///@}
@@ -122,17 +122,17 @@ class GetAssetTypeResult {
 
   ///@{
   /**
-   * <p>The name of the asset type.</p>
+   * <p>The ID of the Amazon DataZone project that owns the asset type.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
   }
-  template <typename NameT = Aws::String>
-  GetAssetTypeResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename OwningProjectIdT = Aws::String>
+  GetAssetTypeResult& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
     return *this;
   }
   ///@}
@@ -175,34 +175,34 @@ class GetAssetTypeResult {
 
   ///@{
   /**
-   * <p>The ID of the Amazon DataZone project that owns the asset type.</p>
+   * <p>The timestamp of when the asset type was created.</p>
    */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename OwningProjectIdT = Aws::String>
-  GetAssetTypeResult& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetAssetTypeResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The revision of the asset type.</p>
+   * <p>The Amazon DataZone user who created the asset type.</p>
    */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
   }
-  template <typename RevisionT = Aws::String>
-  GetAssetTypeResult& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
+  template <typename CreatedByT = Aws::String>
+  GetAssetTypeResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
     return *this;
   }
   ///@}
@@ -256,41 +256,41 @@ class GetAssetTypeResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_domainId;
 
-  Aws::String m_createdBy;
+  Aws::String m_name;
+
+  Aws::String m_revision;
 
   Aws::String m_description;
 
-  Aws::String m_domainId;
-
   Aws::Map<Aws::String, FormEntryOutput> m_formsOutput;
 
-  Aws::String m_name;
+  Aws::String m_owningProjectId;
 
   Aws::String m_originDomainId;
 
   Aws::String m_originProjectId;
 
-  Aws::String m_owningProjectId;
+  Aws::Utils::DateTime m_createdAt{};
 
-  Aws::String m_revision;
+  Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_formsOutputHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
   bool m_originDomainIdHasBeenSet = false;
   bool m_originProjectIdHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

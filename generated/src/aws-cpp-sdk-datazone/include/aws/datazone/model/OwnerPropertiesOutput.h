@@ -34,24 +34,6 @@ class OwnerPropertiesOutput {
 
   ///@{
   /**
-   * <p>Specifies that the domain unit owner is a group.</p>
-   */
-  inline const OwnerGroupPropertiesOutput& GetGroup() const { return m_group; }
-  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-  template <typename GroupT = OwnerGroupPropertiesOutput>
-  void SetGroup(GroupT&& value) {
-    m_groupHasBeenSet = true;
-    m_group = std::forward<GroupT>(value);
-  }
-  template <typename GroupT = OwnerGroupPropertiesOutput>
-  OwnerPropertiesOutput& WithGroup(GroupT&& value) {
-    SetGroup(std::forward<GroupT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies that the domain unit owner is a user.</p>
    */
   inline const OwnerUserPropertiesOutput& GetUser() const { return m_user; }
@@ -67,12 +49,30 @@ class OwnerPropertiesOutput {
     return *this;
   }
   ///@}
- private:
-  OwnerGroupPropertiesOutput m_group;
 
+  ///@{
+  /**
+   * <p>Specifies that the domain unit owner is a group.</p>
+   */
+  inline const OwnerGroupPropertiesOutput& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = OwnerGroupPropertiesOutput>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = OwnerGroupPropertiesOutput>
+  OwnerPropertiesOutput& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   OwnerUserPropertiesOutput m_user;
-  bool m_groupHasBeenSet = false;
+
+  OwnerGroupPropertiesOutput m_group;
   bool m_userHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
 };
 
 }  // namespace Model

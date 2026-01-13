@@ -35,6 +35,23 @@ class DataSourceErrorMessage {
 
   ///@{
   /**
+   * <p>The type of the error message that is returned if the operation cannot be
+   * successfully completed.</p>
+   */
+  inline DataSourceErrorType GetErrorType() const { return m_errorType; }
+  inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
+  inline void SetErrorType(DataSourceErrorType value) {
+    m_errorTypeHasBeenSet = true;
+    m_errorType = value;
+  }
+  inline DataSourceErrorMessage& WithErrorType(DataSourceErrorType value) {
+    SetErrorType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The details of the error message that is returned if the operation cannot be
    * successfully completed.</p>
    */
@@ -51,29 +68,12 @@ class DataSourceErrorMessage {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of the error message that is returned if the operation cannot be
-   * successfully completed.</p>
-   */
-  inline DataSourceErrorType GetErrorType() const { return m_errorType; }
-  inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-  inline void SetErrorType(DataSourceErrorType value) {
-    m_errorTypeHasBeenSet = true;
-    m_errorType = value;
-  }
-  inline DataSourceErrorMessage& WithErrorType(DataSourceErrorType value) {
-    SetErrorType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_errorDetail;
-
   DataSourceErrorType m_errorType{DataSourceErrorType::NOT_SET};
-  bool m_errorDetailHasBeenSet = false;
+
+  Aws::String m_errorDetail;
   bool m_errorTypeHasBeenSet = false;
+  bool m_errorDetailHasBeenSet = false;
 };
 
 }  // namespace Model

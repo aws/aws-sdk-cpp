@@ -33,34 +33,51 @@ class GetDomainResult {
 
   ///@{
   /**
-   * <p>The ARN of the specified Amazon DataZone domain.</p>
+   * <p>The identifier of the specified Amazon DataZone domain.</p>
    */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename ArnT = Aws::String>
-  GetDomainResult& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
+  template <typename IdT = Aws::String>
+  GetDomainResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The timestamp of when the Amazon DataZone domain was created.</p>
+   * <p>The ID of the root domain in Amazon Datazone.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetRootDomainUnitId() const { return m_rootDomainUnitId; }
+  template <typename RootDomainUnitIdT = Aws::String>
+  void SetRootDomainUnitId(RootDomainUnitIdT&& value) {
+    m_rootDomainUnitIdHasBeenSet = true;
+    m_rootDomainUnitId = std::forward<RootDomainUnitIdT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetDomainResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename RootDomainUnitIdT = Aws::String>
+  GetDomainResult& WithRootDomainUnitId(RootDomainUnitIdT&& value) {
+    SetRootDomainUnitId(std::forward<RootDomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetDomainResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -78,6 +95,23 @@ class GetDomainResult {
   template <typename DescriptionT = Aws::String>
   GetDomainResult& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The single sing-on option of the specified Amazon DataZone domain.</p>
+   */
+  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
+  template <typename SingleSignOnT = SingleSignOn>
+  void SetSingleSignOn(SingleSignOnT&& value) {
+    m_singleSignOnHasBeenSet = true;
+    m_singleSignOn = std::forward<SingleSignOnT>(value);
+  }
+  template <typename SingleSignOnT = SingleSignOn>
+  GetDomainResult& WithSingleSignOn(SingleSignOnT&& value) {
+    SetSingleSignOn(std::forward<SingleSignOnT>(value));
     return *this;
   }
   ///@}
@@ -102,32 +136,17 @@ class GetDomainResult {
 
   ///@{
   /**
-   * <p>The version of the domain.</p>
+   * <p>The ARN of the specified Amazon DataZone domain.</p>
    */
-  inline DomainVersion GetDomainVersion() const { return m_domainVersion; }
-  inline void SetDomainVersion(DomainVersion value) {
-    m_domainVersionHasBeenSet = true;
-    m_domainVersion = value;
+  inline const Aws::String& GetArn() const { return m_arn; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
   }
-  inline GetDomainResult& WithDomainVersion(DomainVersion value) {
-    SetDomainVersion(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the specified Amazon DataZone domain.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  GetDomainResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename ArnT = Aws::String>
+  GetDomainResult& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -153,34 +172,15 @@ class GetDomainResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
+   * <p>The status of the specified Amazon DataZone domain.</p>
    */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  inline DomainStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DomainStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  GetDomainResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the Amazon DataZone domain.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GetDomainResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  inline GetDomainResult& WithStatus(DomainStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -204,66 +204,34 @@ class GetDomainResult {
 
   ///@{
   /**
-   * <p>The ID of the root domain in Amazon Datazone.</p>
+   * <p>The timestamp of when the Amazon DataZone domain was created.</p>
    */
-  inline const Aws::String& GetRootDomainUnitId() const { return m_rootDomainUnitId; }
-  template <typename RootDomainUnitIdT = Aws::String>
-  void SetRootDomainUnitId(RootDomainUnitIdT&& value) {
-    m_rootDomainUnitIdHasBeenSet = true;
-    m_rootDomainUnitId = std::forward<RootDomainUnitIdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename RootDomainUnitIdT = Aws::String>
-  GetDomainResult& WithRootDomainUnitId(RootDomainUnitIdT&& value) {
-    SetRootDomainUnitId(std::forward<RootDomainUnitIdT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetDomainResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The service role of the domain.</p>
+   * <p>The timestamp of when the Amazon DataZone domain was last updated.</p>
    */
-  inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
-  template <typename ServiceRoleT = Aws::String>
-  void SetServiceRole(ServiceRoleT&& value) {
-    m_serviceRoleHasBeenSet = true;
-    m_serviceRole = std::forward<ServiceRoleT>(value);
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
   }
-  template <typename ServiceRoleT = Aws::String>
-  GetDomainResult& WithServiceRole(ServiceRoleT&& value) {
-    SetServiceRole(std::forward<ServiceRoleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The single sing-on option of the specified Amazon DataZone domain.</p>
-   */
-  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
-  template <typename SingleSignOnT = SingleSignOn>
-  void SetSingleSignOn(SingleSignOnT&& value) {
-    m_singleSignOnHasBeenSet = true;
-    m_singleSignOn = std::forward<SingleSignOnT>(value);
-  }
-  template <typename SingleSignOnT = SingleSignOn>
-  GetDomainResult& WithSingleSignOn(SingleSignOnT&& value) {
-    SetSingleSignOn(std::forward<SingleSignOnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the specified Amazon DataZone domain.</p>
-   */
-  inline DomainStatus GetStatus() const { return m_status; }
-  inline void SetStatus(DomainStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline GetDomainResult& WithStatus(DomainStatus value) {
-    SetStatus(value);
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  GetDomainResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -292,6 +260,38 @@ class GetDomainResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The version of the domain.</p>
+   */
+  inline DomainVersion GetDomainVersion() const { return m_domainVersion; }
+  inline void SetDomainVersion(DomainVersion value) {
+    m_domainVersionHasBeenSet = true;
+    m_domainVersion = value;
+  }
+  inline GetDomainResult& WithDomainVersion(DomainVersion value) {
+    SetDomainVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The service role of the domain.</p>
+   */
+  inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
+  template <typename ServiceRoleT = Aws::String>
+  void SetServiceRole(ServiceRoleT&& value) {
+    m_serviceRoleHasBeenSet = true;
+    m_serviceRole = std::forward<ServiceRoleT>(value);
+  }
+  template <typename ServiceRoleT = Aws::String>
+  GetDomainResult& WithServiceRole(ServiceRoleT&& value) {
+    SetServiceRole(std::forward<ServiceRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -306,52 +306,52 @@ class GetDomainResult {
   }
   ///@}
  private:
-  Aws::String m_arn;
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_description;
-
-  Aws::String m_domainExecutionRole;
-
-  DomainVersion m_domainVersion{DomainVersion::NOT_SET};
-
   Aws::String m_id;
-
-  Aws::String m_kmsKeyIdentifier;
-
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
-  Aws::String m_name;
-
-  Aws::String m_portalUrl;
 
   Aws::String m_rootDomainUnitId;
 
-  Aws::String m_serviceRole;
+  Aws::String m_name;
+
+  Aws::String m_description;
 
   SingleSignOn m_singleSignOn;
 
+  Aws::String m_domainExecutionRole;
+
+  Aws::String m_arn;
+
+  Aws::String m_kmsKeyIdentifier;
+
   DomainStatus m_status{DomainStatus::NOT_SET};
+
+  Aws::String m_portalUrl;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  DomainVersion m_domainVersion{DomainVersion::NOT_SET};
+
+  Aws::String m_serviceRole;
+
   Aws::String m_requestId;
-  bool m_arnHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainExecutionRoleHasBeenSet = false;
-  bool m_domainVersionHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_portalUrlHasBeenSet = false;
   bool m_rootDomainUnitIdHasBeenSet = false;
-  bool m_serviceRoleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_singleSignOnHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_portalUrlHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_domainVersionHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

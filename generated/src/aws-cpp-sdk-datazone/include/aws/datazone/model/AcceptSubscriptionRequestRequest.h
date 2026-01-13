@@ -33,73 +33,6 @@ class AcceptSubscriptionRequestRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The asset permissions of the accept subscription request.</p>
-   */
-  inline const Aws::Vector<AssetPermission>& GetAssetPermissions() const { return m_assetPermissions; }
-  inline bool AssetPermissionsHasBeenSet() const { return m_assetPermissionsHasBeenSet; }
-  template <typename AssetPermissionsT = Aws::Vector<AssetPermission>>
-  void SetAssetPermissions(AssetPermissionsT&& value) {
-    m_assetPermissionsHasBeenSet = true;
-    m_assetPermissions = std::forward<AssetPermissionsT>(value);
-  }
-  template <typename AssetPermissionsT = Aws::Vector<AssetPermission>>
-  AcceptSubscriptionRequestRequest& WithAssetPermissions(AssetPermissionsT&& value) {
-    SetAssetPermissions(std::forward<AssetPermissionsT>(value));
-    return *this;
-  }
-  template <typename AssetPermissionsT = AssetPermission>
-  AcceptSubscriptionRequestRequest& AddAssetPermissions(AssetPermissionsT&& value) {
-    m_assetPermissionsHasBeenSet = true;
-    m_assetPermissions.emplace_back(std::forward<AssetPermissionsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The asset scopes of the accept subscription request.</p>
-   */
-  inline const Aws::Vector<AcceptedAssetScope>& GetAssetScopes() const { return m_assetScopes; }
-  inline bool AssetScopesHasBeenSet() const { return m_assetScopesHasBeenSet; }
-  template <typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
-  void SetAssetScopes(AssetScopesT&& value) {
-    m_assetScopesHasBeenSet = true;
-    m_assetScopes = std::forward<AssetScopesT>(value);
-  }
-  template <typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
-  AcceptSubscriptionRequestRequest& WithAssetScopes(AssetScopesT&& value) {
-    SetAssetScopes(std::forward<AssetScopesT>(value));
-    return *this;
-  }
-  template <typename AssetScopesT = AcceptedAssetScope>
-  AcceptSubscriptionRequestRequest& AddAssetScopes(AssetScopesT&& value) {
-    m_assetScopesHasBeenSet = true;
-    m_assetScopes.emplace_back(std::forward<AssetScopesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A description that specifies the reason for accepting the specified
-   * subscription request.</p>
-   */
-  inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
-  inline bool DecisionCommentHasBeenSet() const { return m_decisionCommentHasBeenSet; }
-  template <typename DecisionCommentT = Aws::String>
-  void SetDecisionComment(DecisionCommentT&& value) {
-    m_decisionCommentHasBeenSet = true;
-    m_decisionComment = std::forward<DecisionCommentT>(value);
-  }
-  template <typename DecisionCommentT = Aws::String>
-  AcceptSubscriptionRequestRequest& WithDecisionComment(DecisionCommentT&& value) {
-    SetDecisionComment(std::forward<DecisionCommentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon DataZone domain where the specified subscription request is being
    * accepted.</p>
    */
@@ -134,21 +67,88 @@ class AcceptSubscriptionRequestRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A description that specifies the reason for accepting the specified
+   * subscription request.</p>
+   */
+  inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
+  inline bool DecisionCommentHasBeenSet() const { return m_decisionCommentHasBeenSet; }
+  template <typename DecisionCommentT = Aws::String>
+  void SetDecisionComment(DecisionCommentT&& value) {
+    m_decisionCommentHasBeenSet = true;
+    m_decisionComment = std::forward<DecisionCommentT>(value);
+  }
+  template <typename DecisionCommentT = Aws::String>
+  AcceptSubscriptionRequestRequest& WithDecisionComment(DecisionCommentT&& value) {
+    SetDecisionComment(std::forward<DecisionCommentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset scopes of the accept subscription request.</p>
+   */
+  inline const Aws::Vector<AcceptedAssetScope>& GetAssetScopes() const { return m_assetScopes; }
+  inline bool AssetScopesHasBeenSet() const { return m_assetScopesHasBeenSet; }
+  template <typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
+  void SetAssetScopes(AssetScopesT&& value) {
+    m_assetScopesHasBeenSet = true;
+    m_assetScopes = std::forward<AssetScopesT>(value);
+  }
+  template <typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
+  AcceptSubscriptionRequestRequest& WithAssetScopes(AssetScopesT&& value) {
+    SetAssetScopes(std::forward<AssetScopesT>(value));
+    return *this;
+  }
+  template <typename AssetScopesT = AcceptedAssetScope>
+  AcceptSubscriptionRequestRequest& AddAssetScopes(AssetScopesT&& value) {
+    m_assetScopesHasBeenSet = true;
+    m_assetScopes.emplace_back(std::forward<AssetScopesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset permissions of the accept subscription request.</p>
+   */
+  inline const Aws::Vector<AssetPermission>& GetAssetPermissions() const { return m_assetPermissions; }
+  inline bool AssetPermissionsHasBeenSet() const { return m_assetPermissionsHasBeenSet; }
+  template <typename AssetPermissionsT = Aws::Vector<AssetPermission>>
+  void SetAssetPermissions(AssetPermissionsT&& value) {
+    m_assetPermissionsHasBeenSet = true;
+    m_assetPermissions = std::forward<AssetPermissionsT>(value);
+  }
+  template <typename AssetPermissionsT = Aws::Vector<AssetPermission>>
+  AcceptSubscriptionRequestRequest& WithAssetPermissions(AssetPermissionsT&& value) {
+    SetAssetPermissions(std::forward<AssetPermissionsT>(value));
+    return *this;
+  }
+  template <typename AssetPermissionsT = AssetPermission>
+  AcceptSubscriptionRequestRequest& AddAssetPermissions(AssetPermissionsT&& value) {
+    m_assetPermissionsHasBeenSet = true;
+    m_assetPermissions.emplace_back(std::forward<AssetPermissionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<AssetPermission> m_assetPermissions;
-
-  Aws::Vector<AcceptedAssetScope> m_assetScopes;
-
-  Aws::String m_decisionComment;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
-  bool m_assetPermissionsHasBeenSet = false;
-  bool m_assetScopesHasBeenSet = false;
-  bool m_decisionCommentHasBeenSet = false;
+
+  Aws::String m_decisionComment;
+
+  Aws::Vector<AcceptedAssetScope> m_assetScopes;
+
+  Aws::Vector<AssetPermission> m_assetPermissions;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
+  bool m_decisionCommentHasBeenSet = false;
+  bool m_assetScopesHasBeenSet = false;
+  bool m_assetPermissionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,40 +33,6 @@ class GetGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the business glossary term was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetGlossaryTermResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon DataZone user who created the business glossary.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  GetGlossaryTermResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which this business glossary term
    * exists.</p>
    */
@@ -119,23 +85,6 @@ class GetGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The long description of the business glossary term.</p>
-   */
-  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
-  template <typename LongDescriptionT = Aws::String>
-  void SetLongDescription(LongDescriptionT&& value) {
-    m_longDescriptionHasBeenSet = true;
-    m_longDescription = std::forward<LongDescriptionT>(value);
-  }
-  template <typename LongDescriptionT = Aws::String>
-  GetGlossaryTermResult& WithLongDescription(LongDescriptionT&& value) {
-    SetLongDescription(std::forward<LongDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the business glossary term.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -170,15 +119,17 @@ class GetGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The status of the business glossary term.</p>
+   * <p>The long description of the business glossary term.</p>
    */
-  inline GlossaryTermStatus GetStatus() const { return m_status; }
-  inline void SetStatus(GlossaryTermStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
+  template <typename LongDescriptionT = Aws::String>
+  void SetLongDescription(LongDescriptionT&& value) {
+    m_longDescriptionHasBeenSet = true;
+    m_longDescription = std::forward<LongDescriptionT>(value);
   }
-  inline GetGlossaryTermResult& WithStatus(GlossaryTermStatus value) {
-    SetStatus(value);
+  template <typename LongDescriptionT = Aws::String>
+  GetGlossaryTermResult& WithLongDescription(LongDescriptionT&& value) {
+    SetLongDescription(std::forward<LongDescriptionT>(value));
     return *this;
   }
   ///@}
@@ -196,6 +147,55 @@ class GetGlossaryTermResult {
   template <typename TermRelationsT = TermRelations>
   GetGlossaryTermResult& WithTermRelations(TermRelationsT&& value) {
     SetTermRelations(std::forward<TermRelationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the business glossary term.</p>
+   */
+  inline GlossaryTermStatus GetStatus() const { return m_status; }
+  inline void SetStatus(GlossaryTermStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline GetGlossaryTermResult& WithStatus(GlossaryTermStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the business glossary term was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetGlossaryTermResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who created the business glossary.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  GetGlossaryTermResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
     return *this;
   }
   ///@}
@@ -271,25 +271,25 @@ class GetGlossaryTermResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
   Aws::String m_domainId;
 
   Aws::String m_glossaryId;
 
   Aws::String m_id;
 
-  Aws::String m_longDescription;
-
   Aws::String m_name;
 
   Aws::String m_shortDescription;
 
-  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
+  Aws::String m_longDescription;
 
   TermRelations m_termRelations;
+
+  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_updatedAt{};
 
@@ -298,16 +298,16 @@ class GetGlossaryTermResult {
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
 
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_glossaryIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_longDescriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_shortDescriptionHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_termRelationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
   bool m_usageRestrictionsHasBeenSet = false;

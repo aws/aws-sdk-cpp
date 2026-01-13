@@ -35,77 +35,6 @@ class CreateRuleRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The action of the rule.</p>
-   */
-  inline RuleAction GetAction() const { return m_action; }
-  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-  inline void SetAction(RuleAction value) {
-    m_actionHasBeenSet = true;
-    m_action = value;
-  }
-  inline CreateRuleRequest& WithAction(RuleAction value) {
-    SetAction(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateRuleRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the rule.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateRuleRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The detail of the rule.</p>
-   */
-  inline const RuleDetail& GetDetail() const { return m_detail; }
-  inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-  template <typename DetailT = RuleDetail>
-  void SetDetail(DetailT&& value) {
-    m_detailHasBeenSet = true;
-    m_detail = std::forward<DetailT>(value);
-  }
-  template <typename DetailT = RuleDetail>
-  CreateRuleRequest& WithDetail(DetailT&& value) {
-    SetDetail(std::forward<DetailT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where the rule is created.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -142,6 +71,40 @@ class CreateRuleRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The target of the rule.</p>
+   */
+  inline const RuleTarget& GetTarget() const { return m_target; }
+  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+  template <typename TargetT = RuleTarget>
+  void SetTarget(TargetT&& value) {
+    m_targetHasBeenSet = true;
+    m_target = std::forward<TargetT>(value);
+  }
+  template <typename TargetT = RuleTarget>
+  CreateRuleRequest& WithTarget(TargetT&& value) {
+    SetTarget(std::forward<TargetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The action of the rule.</p>
+   */
+  inline RuleAction GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  inline void SetAction(RuleAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
+  }
+  inline CreateRuleRequest& WithAction(RuleAction value) {
+    SetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The scope of the rule.</p>
    */
   inline const RuleScope& GetScope() const { return m_scope; }
@@ -160,45 +123,82 @@ class CreateRuleRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The target of the rule.</p>
+   * <p>The detail of the rule.</p>
    */
-  inline const RuleTarget& GetTarget() const { return m_target; }
-  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-  template <typename TargetT = RuleTarget>
-  void SetTarget(TargetT&& value) {
-    m_targetHasBeenSet = true;
-    m_target = std::forward<TargetT>(value);
+  inline const RuleDetail& GetDetail() const { return m_detail; }
+  inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
+  template <typename DetailT = RuleDetail>
+  void SetDetail(DetailT&& value) {
+    m_detailHasBeenSet = true;
+    m_detail = std::forward<DetailT>(value);
   }
-  template <typename TargetT = RuleTarget>
-  CreateRuleRequest& WithTarget(TargetT&& value) {
-    SetTarget(std::forward<TargetT>(value));
+  template <typename DetailT = RuleDetail>
+  CreateRuleRequest& WithDetail(DetailT&& value) {
+    SetDetail(std::forward<DetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the rule.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateRuleRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateRuleRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  RuleAction m_action{RuleAction::NOT_SET};
-
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  Aws::String m_description;
-
-  RuleDetail m_detail;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_name;
 
+  RuleTarget m_target;
+
+  RuleAction m_action{RuleAction::NOT_SET};
+
   RuleScope m_scope;
 
-  RuleTarget m_target;
-  bool m_actionHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_descriptionHasBeenSet = false;
-  bool m_detailHasBeenSet = false;
+  RuleDetail m_detail;
+
+  Aws::String m_description;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_scopeHasBeenSet = false;
   bool m_targetHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

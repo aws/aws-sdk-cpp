@@ -31,23 +31,6 @@ class CreateUserProfileResult {
 
   ///@{
   /**
-   * <p>The user profile details.</p>
-   */
-  inline const UserProfileDetails& GetDetails() const { return m_details; }
-  template <typename DetailsT = UserProfileDetails>
-  void SetDetails(DetailsT&& value) {
-    m_detailsHasBeenSet = true;
-    m_details = std::forward<DetailsT>(value);
-  }
-  template <typename DetailsT = UserProfileDetails>
-  CreateUserProfileResult& WithDetails(DetailsT&& value) {
-    SetDetails(std::forward<DetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which a user profile is
    * created.</p>
    */
@@ -83,6 +66,21 @@ class CreateUserProfileResult {
 
   ///@{
   /**
+   * <p>The type of the user profile.</p>
+   */
+  inline UserProfileType GetType() const { return m_type; }
+  inline void SetType(UserProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline CreateUserProfileResult& WithType(UserProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the user profile.</p>
    */
   inline UserProfileStatus GetStatus() const { return m_status; }
@@ -98,15 +96,17 @@ class CreateUserProfileResult {
 
   ///@{
   /**
-   * <p>The type of the user profile.</p>
+   * <p>The user profile details.</p>
    */
-  inline UserProfileType GetType() const { return m_type; }
-  inline void SetType(UserProfileType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const UserProfileDetails& GetDetails() const { return m_details; }
+  template <typename DetailsT = UserProfileDetails>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
   }
-  inline CreateUserProfileResult& WithType(UserProfileType value) {
-    SetType(value);
+  template <typename DetailsT = UserProfileDetails>
+  CreateUserProfileResult& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
     return *this;
   }
   ///@}
@@ -126,22 +126,22 @@ class CreateUserProfileResult {
   }
   ///@}
  private:
-  UserProfileDetails m_details;
-
   Aws::String m_domainId;
 
   Aws::String m_id;
 
-  UserProfileStatus m_status{UserProfileStatus::NOT_SET};
-
   UserProfileType m_type{UserProfileType::NOT_SET};
 
+  UserProfileStatus m_status{UserProfileStatus::NOT_SET};
+
+  UserProfileDetails m_details;
+
   Aws::String m_requestId;
-  bool m_detailsHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

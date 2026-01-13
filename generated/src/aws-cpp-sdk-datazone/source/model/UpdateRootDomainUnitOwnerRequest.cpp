@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String UpdateRootDomainUnitOwnerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_currentOwnerHasBeenSet) {
     payload.WithString("currentOwner", m_currentOwner);
   }
 
   if (m_newOwnerHasBeenSet) {
     payload.WithString("newOwner", m_newOwner);
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

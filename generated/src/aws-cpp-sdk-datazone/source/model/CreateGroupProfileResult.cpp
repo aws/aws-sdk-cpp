@@ -25,10 +25,6 @@ CreateGroupProfileResult& CreateGroupProfileResult::operator=(const Aws::AmazonW
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("groupName")) {
-    m_groupName = jsonValue.GetString("groupName");
-    m_groupNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
@@ -36,6 +32,10 @@ CreateGroupProfileResult& CreateGroupProfileResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("status")) {
     m_status = GroupProfileStatusMapper::GetGroupProfileStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("groupName")) {
+    m_groupName = jsonValue.GetString("groupName");
+    m_groupNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

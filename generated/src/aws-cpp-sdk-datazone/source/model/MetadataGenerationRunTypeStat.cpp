@@ -18,17 +18,17 @@ namespace Model {
 MetadataGenerationRunTypeStat::MetadataGenerationRunTypeStat(JsonView jsonValue) { *this = jsonValue; }
 
 MetadataGenerationRunTypeStat& MetadataGenerationRunTypeStat::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorMessage")) {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
+  if (jsonValue.ValueExists("type")) {
+    m_type = MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = MetadataGenerationRunStatusMapper::GetMetadataGenerationRunStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = MetadataGenerationRunTypeMapper::GetMetadataGenerationRunTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("errorMessage")) {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
@@ -36,16 +36,16 @@ MetadataGenerationRunTypeStat& MetadataGenerationRunTypeStat::operator=(JsonView
 JsonValue MetadataGenerationRunTypeStat::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorMessageHasBeenSet) {
-    payload.WithString("errorMessage", m_errorMessage);
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type));
   }
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", MetadataGenerationRunStatusMapper::GetNameForMetadataGenerationRunStatus(m_status));
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type));
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;

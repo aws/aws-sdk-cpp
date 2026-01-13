@@ -36,6 +36,24 @@ class EnvironmentConfigurationParametersDetails {
 
   ///@{
   /**
+   * <p>Ssm path environment configuration parameters.</p>
+   */
+  inline const Aws::String& GetSsmPath() const { return m_ssmPath; }
+  inline bool SsmPathHasBeenSet() const { return m_ssmPathHasBeenSet; }
+  template <typename SsmPathT = Aws::String>
+  void SetSsmPath(SsmPathT&& value) {
+    m_ssmPathHasBeenSet = true;
+    m_ssmPath = std::forward<SsmPathT>(value);
+  }
+  template <typename SsmPathT = Aws::String>
+  EnvironmentConfigurationParametersDetails& WithSsmPath(SsmPathT&& value) {
+    SetSsmPath(std::forward<SsmPathT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The parameter overrides.</p>
    */
   inline const Aws::Vector<EnvironmentConfigurationParameter>& GetParameterOverrides() const { return m_parameterOverrides; }
@@ -81,33 +99,15 @@ class EnvironmentConfigurationParametersDetails {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Ssm path environment configuration parameters.</p>
-   */
-  inline const Aws::String& GetSsmPath() const { return m_ssmPath; }
-  inline bool SsmPathHasBeenSet() const { return m_ssmPathHasBeenSet; }
-  template <typename SsmPathT = Aws::String>
-  void SetSsmPath(SsmPathT&& value) {
-    m_ssmPathHasBeenSet = true;
-    m_ssmPath = std::forward<SsmPathT>(value);
-  }
-  template <typename SsmPathT = Aws::String>
-  EnvironmentConfigurationParametersDetails& WithSsmPath(SsmPathT&& value) {
-    SetSsmPath(std::forward<SsmPathT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_ssmPath;
+
   Aws::Vector<EnvironmentConfigurationParameter> m_parameterOverrides;
 
   Aws::Vector<EnvironmentConfigurationParameter> m_resolvedParameters;
-
-  Aws::String m_ssmPath;
+  bool m_ssmPathHasBeenSet = false;
   bool m_parameterOverridesHasBeenSet = false;
   bool m_resolvedParametersHasBeenSet = false;
-  bool m_ssmPathHasBeenSet = false;
 };
 
 }  // namespace Model

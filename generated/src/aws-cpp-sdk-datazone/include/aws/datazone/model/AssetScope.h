@@ -52,24 +52,6 @@ class AssetScope {
 
   ///@{
   /**
-   * <p>The error message of the asset scope.</p>
-   */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
-  }
-  template <typename ErrorMessageT = Aws::String>
-  AssetScope& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The filter IDs of the asset scope.</p>
    */
   inline const Aws::Vector<Aws::String>& GetFilterIds() const { return m_filterIds; }
@@ -109,18 +91,36 @@ class AssetScope {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The error message of the asset scope.</p>
+   */
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = Aws::String>
+  AssetScope& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assetId;
-
-  Aws::String m_errorMessage;
 
   Aws::Vector<Aws::String> m_filterIds;
 
   Aws::String m_status;
+
+  Aws::String m_errorMessage;
   bool m_assetIdHasBeenSet = false;
-  bool m_errorMessageHasBeenSet = false;
   bool m_filterIdsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
 };
 
 }  // namespace Model

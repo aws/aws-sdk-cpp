@@ -22,16 +22,16 @@ AccountInfo& AccountInfo::operator=(JsonView jsonValue) {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
     m_awsAccountIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("awsAccountName")) {
-    m_awsAccountName = jsonValue.GetString("awsAccountName");
-    m_awsAccountNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("supportedRegions")) {
     Aws::Utils::Array<JsonView> supportedRegionsJsonList = jsonValue.GetArray("supportedRegions");
     for (unsigned supportedRegionsIndex = 0; supportedRegionsIndex < supportedRegionsJsonList.GetLength(); ++supportedRegionsIndex) {
       m_supportedRegions.push_back(supportedRegionsJsonList[supportedRegionsIndex].AsString());
     }
     m_supportedRegionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("awsAccountName")) {
+    m_awsAccountName = jsonValue.GetString("awsAccountName");
+    m_awsAccountNameHasBeenSet = true;
   }
   return *this;
 }
@@ -43,16 +43,16 @@ JsonValue AccountInfo::Jsonize() const {
     payload.WithString("awsAccountId", m_awsAccountId);
   }
 
-  if (m_awsAccountNameHasBeenSet) {
-    payload.WithString("awsAccountName", m_awsAccountName);
-  }
-
   if (m_supportedRegionsHasBeenSet) {
     Aws::Utils::Array<JsonValue> supportedRegionsJsonList(m_supportedRegions.size());
     for (unsigned supportedRegionsIndex = 0; supportedRegionsIndex < supportedRegionsJsonList.GetLength(); ++supportedRegionsIndex) {
       supportedRegionsJsonList[supportedRegionsIndex].AsString(m_supportedRegions[supportedRegionsIndex]);
     }
     payload.WithArray("supportedRegions", std::move(supportedRegionsJsonList));
+  }
+
+  if (m_awsAccountNameHasBeenSet) {
+    payload.WithString("awsAccountName", m_awsAccountName);
   }
 
   return payload;

@@ -61,6 +61,31 @@ class AssetItemAdditionalAttributes {
 
   ///@{
   /**
+   * <p>The read-only forms included in the additional attributes of an inventory
+   * asset.</p>
+   */
+  inline const Aws::Vector<FormOutput>& GetReadOnlyFormsOutput() const { return m_readOnlyFormsOutput; }
+  inline bool ReadOnlyFormsOutputHasBeenSet() const { return m_readOnlyFormsOutputHasBeenSet; }
+  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
+  void SetReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
+    m_readOnlyFormsOutputHasBeenSet = true;
+    m_readOnlyFormsOutput = std::forward<ReadOnlyFormsOutputT>(value);
+  }
+  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
+  AssetItemAdditionalAttributes& WithReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
+    SetReadOnlyFormsOutput(std::forward<ReadOnlyFormsOutputT>(value));
+    return *this;
+  }
+  template <typename ReadOnlyFormsOutputT = FormOutput>
+  AssetItemAdditionalAttributes& AddReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
+    m_readOnlyFormsOutputHasBeenSet = true;
+    m_readOnlyFormsOutput.emplace_back(std::forward<ReadOnlyFormsOutputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The latest time series data points forms included in the additional
    * attributes of an asset.</p>
    */
@@ -109,43 +134,18 @@ class AssetItemAdditionalAttributes {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The read-only forms included in the additional attributes of an inventory
-   * asset.</p>
-   */
-  inline const Aws::Vector<FormOutput>& GetReadOnlyFormsOutput() const { return m_readOnlyFormsOutput; }
-  inline bool ReadOnlyFormsOutputHasBeenSet() const { return m_readOnlyFormsOutputHasBeenSet; }
-  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
-  void SetReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
-    m_readOnlyFormsOutputHasBeenSet = true;
-    m_readOnlyFormsOutput = std::forward<ReadOnlyFormsOutputT>(value);
-  }
-  template <typename ReadOnlyFormsOutputT = Aws::Vector<FormOutput>>
-  AssetItemAdditionalAttributes& WithReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
-    SetReadOnlyFormsOutput(std::forward<ReadOnlyFormsOutputT>(value));
-    return *this;
-  }
-  template <typename ReadOnlyFormsOutputT = FormOutput>
-  AssetItemAdditionalAttributes& AddReadOnlyFormsOutput(ReadOnlyFormsOutputT&& value) {
-    m_readOnlyFormsOutputHasBeenSet = true;
-    m_readOnlyFormsOutput.emplace_back(std::forward<ReadOnlyFormsOutputT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::Vector<FormOutput> m_formsOutput;
+
+  Aws::Vector<FormOutput> m_readOnlyFormsOutput;
 
   Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
 
   Aws::Vector<MatchRationaleItem> m_matchRationale;
-
-  Aws::Vector<FormOutput> m_readOnlyFormsOutput;
   bool m_formsOutputHasBeenSet = false;
+  bool m_readOnlyFormsOutputHasBeenSet = false;
   bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
   bool m_matchRationaleHasBeenSet = false;
-  bool m_readOnlyFormsOutputHasBeenSet = false;
 };
 
 }  // namespace Model

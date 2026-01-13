@@ -49,24 +49,6 @@ class DeleteProjectMembershipRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The project member whose project membership is deleted.</p>
-   */
-  inline const Member& GetMember() const { return m_member; }
-  inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-  template <typename MemberT = Member>
-  void SetMember(MemberT&& value) {
-    m_memberHasBeenSet = true;
-    m_member = std::forward<MemberT>(value);
-  }
-  template <typename MemberT = Member>
-  DeleteProjectMembershipRequest& WithMember(MemberT&& value) {
-    SetMember(std::forward<MemberT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
    */
   inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
@@ -82,15 +64,33 @@ class DeleteProjectMembershipRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The project member whose project membership is deleted.</p>
+   */
+  inline const Member& GetMember() const { return m_member; }
+  inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
+  template <typename MemberT = Member>
+  void SetMember(MemberT&& value) {
+    m_memberHasBeenSet = true;
+    m_member = std::forward<MemberT>(value);
+  }
+  template <typename MemberT = Member>
+  DeleteProjectMembershipRequest& WithMember(MemberT&& value) {
+    SetMember(std::forward<MemberT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  Member m_member;
-
   Aws::String m_projectIdentifier;
+
+  Member m_member;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_memberHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
 };
 
 }  // namespace Model

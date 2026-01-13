@@ -56,24 +56,6 @@ class ListTimeSeriesDataPointsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The timestamp at which the data points that you wanted to list ended.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
-  inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-  template <typename EndedAtT = Aws::Utils::DateTime>
-  void SetEndedAt(EndedAtT&& value) {
-    m_endedAtHasBeenSet = true;
-    m_endedAt = std::forward<EndedAtT>(value);
-  }
-  template <typename EndedAtT = Aws::Utils::DateTime>
-  ListTimeSeriesDataPointsRequest& WithEndedAt(EndedAtT&& value) {
-    SetEndedAt(std::forward<EndedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the asset for which you want to list data points.</p>
    */
   inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
@@ -126,20 +108,36 @@ class ListTimeSeriesDataPointsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of data points to return in a single call to
-   * ListTimeSeriesDataPoints. When the number of data points to be listed is greater
-   * than the value of MaxResults, the response contains a NextToken value that you
-   * can use in a subsequent call to ListTimeSeriesDataPoints to list the next set of
-   * data points.</p>
+   * <p>The timestamp at which the data points that you want to list started.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
+  inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+  template <typename StartedAtT = Aws::Utils::DateTime>
+  void SetStartedAt(StartedAtT&& value) {
+    m_startedAtHasBeenSet = true;
+    m_startedAt = std::forward<StartedAtT>(value);
   }
-  inline ListTimeSeriesDataPointsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename StartedAtT = Aws::Utils::DateTime>
+  ListTimeSeriesDataPointsRequest& WithStartedAt(StartedAtT&& value) {
+    SetStartedAt(std::forward<StartedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the data points that you wanted to list ended.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+  inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+  template <typename EndedAtT = Aws::Utils::DateTime>
+  void SetEndedAt(EndedAtT&& value) {
+    m_endedAtHasBeenSet = true;
+    m_endedAt = std::forward<EndedAtT>(value);
+  }
+  template <typename EndedAtT = Aws::Utils::DateTime>
+  ListTimeSeriesDataPointsRequest& WithEndedAt(EndedAtT&& value) {
+    SetEndedAt(std::forward<EndedAtT>(value));
     return *this;
   }
   ///@}
@@ -168,25 +166,25 @@ class ListTimeSeriesDataPointsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The timestamp at which the data points that you want to list started.</p>
+   * <p>The maximum number of data points to return in a single call to
+   * ListTimeSeriesDataPoints. When the number of data points to be listed is greater
+   * than the value of MaxResults, the response contains a NextToken value that you
+   * can use in a subsequent call to ListTimeSeriesDataPoints to list the next set of
+   * data points.</p>
    */
-  inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
-  inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-  template <typename StartedAtT = Aws::Utils::DateTime>
-  void SetStartedAt(StartedAtT&& value) {
-    m_startedAtHasBeenSet = true;
-    m_startedAt = std::forward<StartedAtT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename StartedAtT = Aws::Utils::DateTime>
-  ListTimeSeriesDataPointsRequest& WithStartedAt(StartedAtT&& value) {
-    SetStartedAt(std::forward<StartedAtT>(value));
+  inline ListTimeSeriesDataPointsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
  private:
   Aws::String m_domainIdentifier;
-
-  Aws::Utils::DateTime m_endedAt{};
 
   Aws::String m_entityIdentifier;
 
@@ -194,19 +192,21 @@ class ListTimeSeriesDataPointsRequest : public DataZoneRequest {
 
   Aws::String m_formName;
 
-  int m_maxResults{0};
+  Aws::Utils::DateTime m_startedAt{};
+
+  Aws::Utils::DateTime m_endedAt{};
 
   Aws::String m_nextToken;
 
-  Aws::Utils::DateTime m_startedAt{};
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_endedAtHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
   bool m_formNameHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

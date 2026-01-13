@@ -39,18 +39,18 @@ class DataSourceRunSummary {
 
   ///@{
   /**
-   * <p>The timestamp of when a data source run was created.</p>
+   * <p>The identifier of the data source run.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  DataSourceRunSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename IdT = Aws::String>
+  DataSourceRunSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -74,53 +74,33 @@ class DataSourceRunSummary {
   ///@}
 
   ///@{
-
-  inline const DataSourceErrorMessage& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = DataSourceErrorMessage>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
+  /**
+   * <p>The type of the data source run.</p>
+   */
+  inline DataSourceRunType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(DataSourceRunType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  template <typename ErrorMessageT = DataSourceErrorMessage>
-  DataSourceRunSummary& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
+  inline DataSourceRunSummary& WithType(DataSourceRunType value) {
+    SetType(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The identifier of the data source run.</p>
+   * <p>The status of the data source run.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline DataSourceRunStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DataSourceRunStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename IdT = Aws::String>
-  DataSourceRunSummary& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The run lineage summary of a data source.</p>
-   */
-  inline const DataSourceRunLineageSummary& GetLineageSummary() const { return m_lineageSummary; }
-  inline bool LineageSummaryHasBeenSet() const { return m_lineageSummaryHasBeenSet; }
-  template <typename LineageSummaryT = DataSourceRunLineageSummary>
-  void SetLineageSummary(LineageSummaryT&& value) {
-    m_lineageSummaryHasBeenSet = true;
-    m_lineageSummary = std::forward<LineageSummaryT>(value);
-  }
-  template <typename LineageSummaryT = DataSourceRunLineageSummary>
-  DataSourceRunSummary& WithLineageSummary(LineageSummaryT&& value) {
-    SetLineageSummary(std::forward<LineageSummaryT>(value));
+  inline DataSourceRunSummary& WithStatus(DataSourceRunStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -160,6 +140,58 @@ class DataSourceRunSummary {
   ///@}
 
   ///@{
+
+  inline const DataSourceErrorMessage& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = DataSourceErrorMessage>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = DataSourceErrorMessage>
+  DataSourceRunSummary& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when a data source run was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DataSourceRunSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when a data source run was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  DataSourceRunSummary& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The timestamp of when a data source run was started.</p>
    */
@@ -173,22 +205,6 @@ class DataSourceRunSummary {
   template <typename StartedAtT = Aws::Utils::DateTime>
   DataSourceRunSummary& WithStartedAt(StartedAtT&& value) {
     SetStartedAt(std::forward<StartedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the data source run.</p>
-   */
-  inline DataSourceRunStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DataSourceRunStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline DataSourceRunSummary& WithStatus(DataSourceRunStatus value) {
-    SetStatus(value);
     return *this;
   }
   ///@}
@@ -213,73 +229,57 @@ class DataSourceRunSummary {
 
   ///@{
   /**
-   * <p>The type of the data source run.</p>
+   * <p>The run lineage summary of a data source.</p>
    */
-  inline DataSourceRunType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(DataSourceRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const DataSourceRunLineageSummary& GetLineageSummary() const { return m_lineageSummary; }
+  inline bool LineageSummaryHasBeenSet() const { return m_lineageSummaryHasBeenSet; }
+  template <typename LineageSummaryT = DataSourceRunLineageSummary>
+  void SetLineageSummary(LineageSummaryT&& value) {
+    m_lineageSummaryHasBeenSet = true;
+    m_lineageSummary = std::forward<LineageSummaryT>(value);
   }
-  inline DataSourceRunSummary& WithType(DataSourceRunType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when a data source run was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
-  }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  DataSourceRunSummary& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+  template <typename LineageSummaryT = DataSourceRunLineageSummary>
+  DataSourceRunSummary& WithLineageSummary(LineageSummaryT&& value) {
+    SetLineageSummary(std::forward<LineageSummaryT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_id;
 
   Aws::String m_dataSourceId;
 
-  DataSourceErrorMessage m_errorMessage;
+  DataSourceRunType m_type{DataSourceRunType::NOT_SET};
 
-  Aws::String m_id;
-
-  DataSourceRunLineageSummary m_lineageSummary;
+  DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
 
   Aws::String m_projectId;
 
   RunStatisticsForAssets m_runStatisticsForAssets;
 
-  Aws::Utils::DateTime m_startedAt{};
+  DataSourceErrorMessage m_errorMessage;
 
-  DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::Utils::DateTime m_startedAt{};
 
   Aws::Utils::DateTime m_stoppedAt{};
 
-  DataSourceRunType m_type{DataSourceRunType::NOT_SET};
-
-  Aws::Utils::DateTime m_updatedAt{};
-  bool m_createdAtHasBeenSet = false;
-  bool m_dataSourceIdHasBeenSet = false;
-  bool m_errorMessageHasBeenSet = false;
+  DataSourceRunLineageSummary m_lineageSummary;
   bool m_idHasBeenSet = false;
-  bool m_lineageSummaryHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
   bool m_runStatisticsForAssetsHasBeenSet = false;
-  bool m_startedAtHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_stoppedAtHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_lineageSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

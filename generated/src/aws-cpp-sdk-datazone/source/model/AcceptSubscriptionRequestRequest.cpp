@@ -15,12 +15,8 @@ using namespace Aws::Utils;
 Aws::String AcceptSubscriptionRequestRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_assetPermissionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> assetPermissionsJsonList(m_assetPermissions.size());
-    for (unsigned assetPermissionsIndex = 0; assetPermissionsIndex < assetPermissionsJsonList.GetLength(); ++assetPermissionsIndex) {
-      assetPermissionsJsonList[assetPermissionsIndex].AsObject(m_assetPermissions[assetPermissionsIndex].Jsonize());
-    }
-    payload.WithArray("assetPermissions", std::move(assetPermissionsJsonList));
+  if (m_decisionCommentHasBeenSet) {
+    payload.WithString("decisionComment", m_decisionComment);
   }
 
   if (m_assetScopesHasBeenSet) {
@@ -31,8 +27,12 @@ Aws::String AcceptSubscriptionRequestRequest::SerializePayload() const {
     payload.WithArray("assetScopes", std::move(assetScopesJsonList));
   }
 
-  if (m_decisionCommentHasBeenSet) {
-    payload.WithString("decisionComment", m_decisionComment);
+  if (m_assetPermissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetPermissionsJsonList(m_assetPermissions.size());
+    for (unsigned assetPermissionsIndex = 0; assetPermissionsIndex < assetPermissionsJsonList.GetLength(); ++assetPermissionsIndex) {
+      assetPermissionsJsonList[assetPermissionsIndex].AsObject(m_assetPermissions[assetPermissionsIndex].Jsonize());
+    }
+    payload.WithArray("assetPermissions", std::move(assetPermissionsJsonList));
   }
 
   return payload.View().WriteReadable();

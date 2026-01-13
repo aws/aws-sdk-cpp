@@ -31,24 +31,6 @@ class UpdateGlossaryResult {
 
   ///@{
   /**
-   * <p>The description to be updated as part of the <code>UpdateGlossary</code>
-   * action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateGlossaryResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which a business glossary is
    * to be updated.</p>
    */
@@ -118,6 +100,24 @@ class UpdateGlossaryResult {
 
   ///@{
   /**
+   * <p>The description to be updated as part of the <code>UpdateGlossary</code>
+   * action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateGlossaryResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status to be updated as part of the <code>UpdateGlossary</code>
    * action.</p>
    */
@@ -169,8 +169,6 @@ class UpdateGlossaryResult {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainId;
 
   Aws::String m_id;
@@ -179,16 +177,18 @@ class UpdateGlossaryResult {
 
   Aws::String m_owningProjectId;
 
+  Aws::String m_description;
+
   GlossaryStatus m_status{GlossaryStatus::NOT_SET};
 
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
 
   Aws::String m_requestId;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_usageRestrictionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

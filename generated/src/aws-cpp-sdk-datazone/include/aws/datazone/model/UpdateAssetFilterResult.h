@@ -32,6 +32,40 @@ class UpdateAssetFilterResult {
 
   ///@{
   /**
+   * <p>The ID of the asset filter.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateAssetFilterResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain where the asset filter was created.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  UpdateAssetFilterResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the data asset.</p>
    */
   inline const Aws::String& GetAssetId() const { return m_assetId; }
@@ -43,6 +77,55 @@ class UpdateAssetFilterResult {
   template <typename AssetIdT = Aws::String>
   UpdateAssetFilterResult& WithAssetId(AssetIdT&& value) {
     SetAssetId(std::forward<AssetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the asset filter.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateAssetFilterResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the asset filter.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateAssetFilterResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the asset filter.</p>
+   */
+  inline FilterStatus GetStatus() const { return m_status; }
+  inline void SetStatus(FilterStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateAssetFilterResult& WithStatus(FilterStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -83,34 +166,18 @@ class UpdateAssetFilterResult {
 
   ///@{
   /**
-   * <p>The description of the asset filter.</p>
+   * <p>The error message that is displayed if the action is not completed
+   * successfully.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  UpdateAssetFilterResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where the asset filter was created.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  UpdateAssetFilterResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
+  template <typename ErrorMessageT = Aws::String>
+  UpdateAssetFilterResult& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
     return *this;
   }
   ///@}
@@ -156,73 +223,6 @@ class UpdateAssetFilterResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The error message that is displayed if the action is not completed
-   * successfully.</p>
-   */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
-  }
-  template <typename ErrorMessageT = Aws::String>
-  UpdateAssetFilterResult& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the asset filter.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  UpdateAssetFilterResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the asset filter.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  UpdateAssetFilterResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the asset filter.</p>
-   */
-  inline FilterStatus GetStatus() const { return m_status; }
-  inline void SetStatus(FilterStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline UpdateAssetFilterResult& WithStatus(FilterStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -237,40 +237,40 @@ class UpdateAssetFilterResult {
   }
   ///@}
  private:
+  Aws::String m_id;
+
+  Aws::String m_domainId;
+
   Aws::String m_assetId;
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  FilterStatus m_status{FilterStatus::NOT_SET};
 
   AssetFilterConfiguration m_configuration;
 
   Aws::Utils::DateTime m_createdAt{};
 
-  Aws::String m_description;
-
-  Aws::String m_domainId;
+  Aws::String m_errorMessage;
 
   Aws::Vector<Aws::String> m_effectiveColumnNames;
 
   Aws::String m_effectiveRowFilter;
 
-  Aws::String m_errorMessage;
-
-  Aws::String m_id;
-
-  Aws::String m_name;
-
-  FilterStatus m_status{FilterStatus::NOT_SET};
-
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_effectiveColumnNamesHasBeenSet = false;
   bool m_effectiveRowFilterHasBeenSet = false;
-  bool m_errorMessageHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

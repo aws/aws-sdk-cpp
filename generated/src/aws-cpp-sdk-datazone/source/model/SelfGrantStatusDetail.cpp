@@ -22,10 +22,6 @@ SelfGrantStatusDetail& SelfGrantStatusDetail::operator=(JsonView jsonValue) {
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("failureCause")) {
-    m_failureCause = jsonValue.GetString("failureCause");
-    m_failureCauseHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("schemaName")) {
     m_schemaName = jsonValue.GetString("schemaName");
     m_schemaNameHasBeenSet = true;
@@ -33,6 +29,10 @@ SelfGrantStatusDetail& SelfGrantStatusDetail::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("status")) {
     m_status = SelfGrantStatusMapper::GetSelfGrantStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureCause")) {
+    m_failureCause = jsonValue.GetString("failureCause");
+    m_failureCauseHasBeenSet = true;
   }
   return *this;
 }
@@ -44,16 +44,16 @@ JsonValue SelfGrantStatusDetail::Jsonize() const {
     payload.WithString("databaseName", m_databaseName);
   }
 
-  if (m_failureCauseHasBeenSet) {
-    payload.WithString("failureCause", m_failureCause);
-  }
-
   if (m_schemaNameHasBeenSet) {
     payload.WithString("schemaName", m_schemaName);
   }
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", SelfGrantStatusMapper::GetNameForSelfGrantStatus(m_status));
+  }
+
+  if (m_failureCauseHasBeenSet) {
+    payload.WithString("failureCause", m_failureCause);
   }
 
   return payload;

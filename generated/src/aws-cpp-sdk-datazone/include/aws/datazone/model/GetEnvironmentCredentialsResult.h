@@ -46,23 +46,6 @@ class GetEnvironmentCredentialsResult {
 
   ///@{
   /**
-   * <p>The expiration timestamp of the environment credentials.</p>
-   */
-  inline const Aws::Utils::DateTime& GetExpiration() const { return m_expiration; }
-  template <typename ExpirationT = Aws::Utils::DateTime>
-  void SetExpiration(ExpirationT&& value) {
-    m_expirationHasBeenSet = true;
-    m_expiration = std::forward<ExpirationT>(value);
-  }
-  template <typename ExpirationT = Aws::Utils::DateTime>
-  GetEnvironmentCredentialsResult& WithExpiration(ExpirationT&& value) {
-    SetExpiration(std::forward<ExpirationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The secret access key of the environment credentials.</p>
    */
   inline const Aws::String& GetSecretAccessKey() const { return m_secretAccessKey; }
@@ -96,6 +79,23 @@ class GetEnvironmentCredentialsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The expiration timestamp of the environment credentials.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpiration() const { return m_expiration; }
+  template <typename ExpirationT = Aws::Utils::DateTime>
+  void SetExpiration(ExpirationT&& value) {
+    m_expirationHasBeenSet = true;
+    m_expiration = std::forward<ExpirationT>(value);
+  }
+  template <typename ExpirationT = Aws::Utils::DateTime>
+  GetEnvironmentCredentialsResult& WithExpiration(ExpirationT&& value) {
+    SetExpiration(std::forward<ExpirationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -112,17 +112,17 @@ class GetEnvironmentCredentialsResult {
  private:
   Aws::String m_accessKeyId;
 
-  Aws::Utils::DateTime m_expiration{};
-
   Aws::String m_secretAccessKey;
 
   Aws::String m_sessionToken;
 
+  Aws::Utils::DateTime m_expiration{};
+
   Aws::String m_requestId;
   bool m_accessKeyIdHasBeenSet = false;
-  bool m_expirationHasBeenSet = false;
   bool m_secretAccessKeyHasBeenSet = false;
   bool m_sessionTokenHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

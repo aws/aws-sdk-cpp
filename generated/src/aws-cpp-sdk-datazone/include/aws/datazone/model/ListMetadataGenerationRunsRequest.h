@@ -56,20 +56,32 @@ class ListMetadataGenerationRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of metadata generation runs to return in a single call to
-   * ListMetadataGenerationRuns. When the number of metadata generation runs to be
-   * listed is greater than the value of MaxResults, the response contains a
-   * NextToken value that you can use in a subsequent call to
-   * ListMetadataGenerationRuns to list the next set of revisions.</p>
+   * <p>The status of the metadata generation runs.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline MetadataGenerationRunStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(MetadataGenerationRunStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  inline ListMetadataGenerationRunsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  inline ListMetadataGenerationRunsRequest& WithStatus(MetadataGenerationRunStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the metadata generation runs.</p>
+   */
+  inline MetadataGenerationRunType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(MetadataGenerationRunType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ListMetadataGenerationRunsRequest& WithType(MetadataGenerationRunType value) {
+    SetType(value);
     return *this;
   }
   ///@}
@@ -99,16 +111,20 @@ class ListMetadataGenerationRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status of the metadata generation runs.</p>
+   * <p>The maximum number of metadata generation runs to return in a single call to
+   * ListMetadataGenerationRuns. When the number of metadata generation runs to be
+   * listed is greater than the value of MaxResults, the response contains a
+   * NextToken value that you can use in a subsequent call to
+   * ListMetadataGenerationRuns to list the next set of revisions.</p>
    */
-  inline MetadataGenerationRunStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(MetadataGenerationRunStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListMetadataGenerationRunsRequest& WithStatus(MetadataGenerationRunStatus value) {
-    SetStatus(value);
+  inline ListMetadataGenerationRunsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -130,40 +146,24 @@ class ListMetadataGenerationRunsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of the metadata generation runs.</p>
-   */
-  inline MetadataGenerationRunType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(MetadataGenerationRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline ListMetadataGenerationRunsRequest& WithType(MetadataGenerationRunType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  int m_maxResults{0};
+  MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
+
+  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
 
   Aws::String m_nextToken;
 
-  MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
+  int m_maxResults{0};
 
   Aws::String m_targetIdentifier;
-
-  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_targetIdentifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

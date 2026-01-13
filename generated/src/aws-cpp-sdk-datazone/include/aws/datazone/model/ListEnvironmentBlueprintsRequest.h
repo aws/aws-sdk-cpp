@@ -53,23 +53,6 @@ class ListEnvironmentBlueprintsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies whether the environment blueprint is managed by Amazon
-   * DataZone.</p>
-   */
-  inline bool GetManaged() const { return m_managed; }
-  inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
-  inline void SetManaged(bool value) {
-    m_managedHasBeenSet = true;
-    m_managed = value;
-  }
-  inline ListEnvironmentBlueprintsRequest& WithManaged(bool value) {
-    SetManaged(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The maximum number of blueprints to return in a single call to
    * <code>ListEnvironmentBlueprints</code>. When the number of blueprints to be
    * listed is greater than the value of <code>MaxResults</code>, the response
@@ -84,24 +67,6 @@ class ListEnvironmentBlueprintsRequest : public DataZoneRequest {
   }
   inline ListEnvironmentBlueprintsRequest& WithMaxResults(int value) {
     SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the Amazon DataZone environment.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ListEnvironmentBlueprintsRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -129,21 +94,56 @@ class ListEnvironmentBlueprintsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon DataZone environment.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ListEnvironmentBlueprintsRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the environment blueprint is managed by Amazon
+   * DataZone.</p>
+   */
+  inline bool GetManaged() const { return m_managed; }
+  inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
+  inline void SetManaged(bool value) {
+    m_managedHasBeenSet = true;
+    m_managed = value;
+  }
+  inline ListEnvironmentBlueprintsRequest& WithManaged(bool value) {
+    SetManaged(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  bool m_managed{false};
-
   int m_maxResults{0};
+
+  Aws::String m_nextToken;
 
   Aws::String m_name;
 
-  Aws::String m_nextToken;
+  bool m_managed{false};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_managedHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_managedHasBeenSet = false;
 };
 
 }  // namespace Model

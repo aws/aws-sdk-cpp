@@ -22,6 +22,14 @@ OpenLineageRunEventSummary& OpenLineageRunEventSummary::operator=(JsonView jsonV
     m_eventType = OpenLineageRunStateMapper::GetOpenLineageRunStateForName(jsonValue.GetString("eventType"));
     m_eventTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("runId")) {
+    m_runId = jsonValue.GetString("runId");
+    m_runIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("job")) {
+    m_job = jsonValue.GetObject("job");
+    m_jobHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("inputs")) {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for (unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex) {
@@ -29,20 +37,12 @@ OpenLineageRunEventSummary& OpenLineageRunEventSummary::operator=(JsonView jsonV
     }
     m_inputsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("job")) {
-    m_job = jsonValue.GetObject("job");
-    m_jobHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("outputs")) {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
     for (unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex) {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
     }
     m_outputsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("runId")) {
-    m_runId = jsonValue.GetString("runId");
-    m_runIdHasBeenSet = true;
   }
   return *this;
 }
@@ -54,6 +54,14 @@ JsonValue OpenLineageRunEventSummary::Jsonize() const {
     payload.WithString("eventType", OpenLineageRunStateMapper::GetNameForOpenLineageRunState(m_eventType));
   }
 
+  if (m_runIdHasBeenSet) {
+    payload.WithString("runId", m_runId);
+  }
+
+  if (m_jobHasBeenSet) {
+    payload.WithObject("job", m_job.Jsonize());
+  }
+
   if (m_inputsHasBeenSet) {
     Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
     for (unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex) {
@@ -62,20 +70,12 @@ JsonValue OpenLineageRunEventSummary::Jsonize() const {
     payload.WithArray("inputs", std::move(inputsJsonList));
   }
 
-  if (m_jobHasBeenSet) {
-    payload.WithObject("job", m_job.Jsonize());
-  }
-
   if (m_outputsHasBeenSet) {
     Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
     for (unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex) {
       outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
     }
     payload.WithArray("outputs", std::move(outputsJsonList));
-  }
-
-  if (m_runIdHasBeenSet) {
-    payload.WithString("runId", m_runId);
   }
 
   return payload;

@@ -52,24 +52,6 @@ class AccountInfo {
 
   ///@{
   /**
-   * <p>The account name.</p>
-   */
-  inline const Aws::String& GetAwsAccountName() const { return m_awsAccountName; }
-  inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
-  template <typename AwsAccountNameT = Aws::String>
-  void SetAwsAccountName(AwsAccountNameT&& value) {
-    m_awsAccountNameHasBeenSet = true;
-    m_awsAccountName = std::forward<AwsAccountNameT>(value);
-  }
-  template <typename AwsAccountNameT = Aws::String>
-  AccountInfo& WithAwsAccountName(AwsAccountNameT&& value) {
-    SetAwsAccountName(std::forward<AwsAccountNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The regions supported for an account within an account pool. </p>
    */
   inline const Aws::Vector<Aws::String>& GetSupportedRegions() const { return m_supportedRegions; }
@@ -91,15 +73,33 @@ class AccountInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The account name.</p>
+   */
+  inline const Aws::String& GetAwsAccountName() const { return m_awsAccountName; }
+  inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
+  template <typename AwsAccountNameT = Aws::String>
+  void SetAwsAccountName(AwsAccountNameT&& value) {
+    m_awsAccountNameHasBeenSet = true;
+    m_awsAccountName = std::forward<AwsAccountNameT>(value);
+  }
+  template <typename AwsAccountNameT = Aws::String>
+  AccountInfo& WithAwsAccountName(AwsAccountNameT&& value) {
+    SetAwsAccountName(std::forward<AwsAccountNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_awsAccountId;
 
-  Aws::String m_awsAccountName;
-
   Aws::Vector<Aws::String> m_supportedRegions;
+
+  Aws::String m_awsAccountName;
   bool m_awsAccountIdHasBeenSet = false;
-  bool m_awsAccountNameHasBeenSet = false;
   bool m_supportedRegionsHasBeenSet = false;
+  bool m_awsAccountNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,23 +34,6 @@ class RedshiftLineageSyncConfigurationOutput {
 
   ///@{
   /**
-   * <p>Specifies whether the Amaon Redshift lineage sync configuration is
-   * enabled.</p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline RedshiftLineageSyncConfigurationOutput& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The lineage job ID of the Amaon Redshift lineage sync configuration.</p>
    */
   inline const Aws::String& GetLineageJobId() const { return m_lineageJobId; }
@@ -63,6 +46,23 @@ class RedshiftLineageSyncConfigurationOutput {
   template <typename LineageJobIdT = Aws::String>
   RedshiftLineageSyncConfigurationOutput& WithLineageJobId(LineageJobIdT&& value) {
     SetLineageJobId(std::forward<LineageJobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the Amaon Redshift lineage sync configuration is
+   * enabled.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline RedshiftLineageSyncConfigurationOutput& WithEnabled(bool value) {
+    SetEnabled(value);
     return *this;
   }
   ///@}
@@ -85,13 +85,13 @@ class RedshiftLineageSyncConfigurationOutput {
   }
   ///@}
  private:
-  bool m_enabled{false};
-
   Aws::String m_lineageJobId;
 
+  bool m_enabled{false};
+
   LineageSyncSchedule m_schedule;
-  bool m_enabledHasBeenSet = false;
   bool m_lineageJobIdHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

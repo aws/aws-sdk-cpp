@@ -18,14 +18,6 @@ namespace Model {
 DataProductRevision::DataProductRevision(JsonView jsonValue) { *this = jsonValue; }
 
 DataProductRevision& DataProductRevision::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -38,19 +30,19 @@ DataProductRevision& DataProductRevision::operator=(JsonView jsonValue) {
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue DataProductRevision::Jsonize() const {
   JsonValue payload;
-
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if (m_createdByHasBeenSet) {
-    payload.WithString("createdBy", m_createdBy);
-  }
 
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
@@ -62,6 +54,14 @@ JsonValue DataProductRevision::Jsonize() const {
 
   if (m_revisionHasBeenSet) {
     payload.WithString("revision", m_revision);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
   return payload;

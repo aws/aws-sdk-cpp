@@ -22,20 +22,20 @@ Aws::String UpdateDomainRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
-  if (m_domainExecutionRoleHasBeenSet) {
-    payload.WithString("domainExecutionRole", m_domainExecutionRole);
+  if (m_singleSignOnHasBeenSet) {
+    payload.WithObject("singleSignOn", m_singleSignOn.Jsonize());
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_domainExecutionRoleHasBeenSet) {
+    payload.WithString("domainExecutionRole", m_domainExecutionRole);
   }
 
   if (m_serviceRoleHasBeenSet) {
     payload.WithString("serviceRole", m_serviceRole);
   }
 
-  if (m_singleSignOnHasBeenSet) {
-    payload.WithObject("singleSignOn", m_singleSignOn.Jsonize());
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload.View().WriteReadable();

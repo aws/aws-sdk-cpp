@@ -21,18 +21,6 @@ GetListingResult::GetListingResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetListingResult& GetListingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -41,29 +29,41 @@ GetListingResult& GetListingResult::operator=(const Aws::AmazonWebServiceResult<
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("item")) {
-    m_item = jsonValue.GetObject("item");
-    m_itemHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("listingRevision")) {
     m_listingRevision = jsonValue.GetString("listingRevision");
     m_listingRevisionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = ListingStatusMapper::GetListingStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("updatedBy")) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("item")) {
+    m_item = jsonValue.GetObject("item");
+    m_itemHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = ListingStatusMapper::GetListingStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

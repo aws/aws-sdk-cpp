@@ -54,6 +54,60 @@ class AuthenticationConfigurationInput {
 
   ///@{
   /**
+   * <p>The oAuth2 properties of a connection.</p>
+   */
+  inline const OAuth2Properties& GetOAuth2Properties() const { return m_oAuth2Properties; }
+  inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
+  template <typename OAuth2PropertiesT = OAuth2Properties>
+  void SetOAuth2Properties(OAuth2PropertiesT&& value) {
+    m_oAuth2PropertiesHasBeenSet = true;
+    m_oAuth2Properties = std::forward<OAuth2PropertiesT>(value);
+  }
+  template <typename OAuth2PropertiesT = OAuth2Properties>
+  AuthenticationConfigurationInput& WithOAuth2Properties(OAuth2PropertiesT&& value) {
+    SetOAuth2Properties(std::forward<OAuth2PropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The secret ARN of a connection.</p>
+   */
+  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
+  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+  template <typename SecretArnT = Aws::String>
+  void SetSecretArn(SecretArnT&& value) {
+    m_secretArnHasBeenSet = true;
+    m_secretArn = std::forward<SecretArnT>(value);
+  }
+  template <typename SecretArnT = Aws::String>
+  AuthenticationConfigurationInput& WithSecretArn(SecretArnT&& value) {
+    SetSecretArn(std::forward<SecretArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The KMS key ARN of a connection.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  AuthenticationConfigurationInput& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The basic authentication credentials of a connection.</p>
    */
   inline const BasicAuthenticationCredentials& GetBasicAuthenticationCredentials() const { return m_basicAuthenticationCredentials; }
@@ -95,78 +149,24 @@ class AuthenticationConfigurationInput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The KMS key ARN of a connection.</p>
-   */
-  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-  template <typename KmsKeyArnT = Aws::String>
-  void SetKmsKeyArn(KmsKeyArnT&& value) {
-    m_kmsKeyArnHasBeenSet = true;
-    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
-  }
-  template <typename KmsKeyArnT = Aws::String>
-  AuthenticationConfigurationInput& WithKmsKeyArn(KmsKeyArnT&& value) {
-    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The oAuth2 properties of a connection.</p>
-   */
-  inline const OAuth2Properties& GetOAuth2Properties() const { return m_oAuth2Properties; }
-  inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
-  template <typename OAuth2PropertiesT = OAuth2Properties>
-  void SetOAuth2Properties(OAuth2PropertiesT&& value) {
-    m_oAuth2PropertiesHasBeenSet = true;
-    m_oAuth2Properties = std::forward<OAuth2PropertiesT>(value);
-  }
-  template <typename OAuth2PropertiesT = OAuth2Properties>
-  AuthenticationConfigurationInput& WithOAuth2Properties(OAuth2PropertiesT&& value) {
-    SetOAuth2Properties(std::forward<OAuth2PropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The secret ARN of a connection.</p>
-   */
-  inline const Aws::String& GetSecretArn() const { return m_secretArn; }
-  inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-  template <typename SecretArnT = Aws::String>
-  void SetSecretArn(SecretArnT&& value) {
-    m_secretArnHasBeenSet = true;
-    m_secretArn = std::forward<SecretArnT>(value);
-  }
-  template <typename SecretArnT = Aws::String>
-  AuthenticationConfigurationInput& WithSecretArn(SecretArnT&& value) {
-    SetSecretArn(std::forward<SecretArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-
-  BasicAuthenticationCredentials m_basicAuthenticationCredentials;
-
-  Aws::Map<Aws::String, Aws::String> m_customAuthenticationCredentials;
-
-  Aws::String m_kmsKeyArn;
 
   OAuth2Properties m_oAuth2Properties;
 
   Aws::String m_secretArn;
+
+  Aws::String m_kmsKeyArn;
+
+  BasicAuthenticationCredentials m_basicAuthenticationCredentials;
+
+  Aws::Map<Aws::String, Aws::String> m_customAuthenticationCredentials;
   bool m_authenticationTypeHasBeenSet = false;
-  bool m_basicAuthenticationCredentialsHasBeenSet = false;
-  bool m_customAuthenticationCredentialsHasBeenSet = false;
-  bool m_kmsKeyArnHasBeenSet = false;
   bool m_oAuth2PropertiesHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_basicAuthenticationCredentialsHasBeenSet = false;
+  bool m_customAuthenticationCredentialsHasBeenSet = false;
 };
 
 }  // namespace Model

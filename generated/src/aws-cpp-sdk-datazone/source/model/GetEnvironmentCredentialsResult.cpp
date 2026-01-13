@@ -25,10 +25,6 @@ GetEnvironmentCredentialsResult& GetEnvironmentCredentialsResult::operator=(cons
     m_accessKeyId = jsonValue.GetString("accessKeyId");
     m_accessKeyIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("expiration")) {
-    m_expiration = jsonValue.GetString("expiration");
-    m_expirationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("secretAccessKey")) {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
     m_secretAccessKeyHasBeenSet = true;
@@ -36,6 +32,10 @@ GetEnvironmentCredentialsResult& GetEnvironmentCredentialsResult::operator=(cons
   if (jsonValue.ValueExists("sessionToken")) {
     m_sessionToken = jsonValue.GetString("sessionToken");
     m_sessionTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("expiration")) {
+    m_expiration = jsonValue.GetString("expiration");
+    m_expirationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

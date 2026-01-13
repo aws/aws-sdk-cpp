@@ -34,6 +34,22 @@ class MetadataGenerationRunTarget {
 
   ///@{
   /**
+   * <p>The type of the asset for which metadata was generated.</p>
+   */
+  inline MetadataGenerationTargetType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(MetadataGenerationTargetType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline MetadataGenerationRunTarget& WithType(MetadataGenerationTargetType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the metadata generation run's target.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
@@ -67,31 +83,15 @@ class MetadataGenerationRunTarget {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of the asset for which metadata was generated.</p>
-   */
-  inline MetadataGenerationTargetType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(MetadataGenerationTargetType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline MetadataGenerationRunTarget& WithType(MetadataGenerationTargetType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
+  MetadataGenerationTargetType m_type{MetadataGenerationTargetType::NOT_SET};
+
   Aws::String m_identifier;
 
   Aws::String m_revision;
-
-  MetadataGenerationTargetType m_type{MetadataGenerationTargetType::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

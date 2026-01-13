@@ -37,19 +37,18 @@ class UpdateDomainRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
+   * <p>The ID of the Amazon Web Services domain that is to be updated.</p>
    */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
   }
-  template <typename ClientTokenT = Aws::String>
-  UpdateDomainRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
+  template <typename IdentifierT = Aws::String>
+  UpdateDomainRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
     return *this;
   }
   ///@}
@@ -75,6 +74,25 @@ class UpdateDomainRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The single sign-on option to be updated as part of the
+   * <code>UpdateDomain</code> action.</p>
+   */
+  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
+  inline bool SingleSignOnHasBeenSet() const { return m_singleSignOnHasBeenSet; }
+  template <typename SingleSignOnT = SingleSignOn>
+  void SetSingleSignOn(SingleSignOnT&& value) {
+    m_singleSignOnHasBeenSet = true;
+    m_singleSignOn = std::forward<SingleSignOnT>(value);
+  }
+  template <typename SingleSignOnT = SingleSignOn>
+  UpdateDomainRequest& WithSingleSignOn(SingleSignOnT&& value) {
+    SetSingleSignOn(std::forward<SingleSignOnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The domain execution role to be updated as part of the
    * <code>UpdateDomain</code> action.</p>
    */
@@ -88,42 +106,6 @@ class UpdateDomainRequest : public DataZoneRequest {
   template <typename DomainExecutionRoleT = Aws::String>
   UpdateDomainRequest& WithDomainExecutionRole(DomainExecutionRoleT&& value) {
     SetDomainExecutionRole(std::forward<DomainExecutionRoleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Amazon Web Services domain that is to be updated.</p>
-   */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
-  }
-  template <typename IdentifierT = Aws::String>
-  UpdateDomainRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  UpdateDomainRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -148,43 +130,61 @@ class UpdateDomainRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The single sign-on option to be updated as part of the
-   * <code>UpdateDomain</code> action.</p>
+   * <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
    */
-  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
-  inline bool SingleSignOnHasBeenSet() const { return m_singleSignOnHasBeenSet; }
-  template <typename SingleSignOnT = SingleSignOn>
-  void SetSingleSignOn(SingleSignOnT&& value) {
-    m_singleSignOnHasBeenSet = true;
-    m_singleSignOn = std::forward<SingleSignOnT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename SingleSignOnT = SingleSignOn>
-  UpdateDomainRequest& WithSingleSignOn(SingleSignOnT&& value) {
-    SetSingleSignOn(std::forward<SingleSignOnT>(value));
+  template <typename NameT = Aws::String>
+  UpdateDomainRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdateDomainRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  Aws::String m_identifier;
 
   Aws::String m_description;
 
+  SingleSignOn m_singleSignOn;
+
   Aws::String m_domainExecutionRole;
-
-  Aws::String m_identifier;
-
-  Aws::String m_name;
 
   Aws::String m_serviceRole;
 
-  SingleSignOn m_singleSignOn;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainExecutionRoleHasBeenSet = false;
+  Aws::String m_name;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_identifierHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_serviceRoleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_singleSignOnHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

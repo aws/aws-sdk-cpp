@@ -107,22 +107,6 @@ class CreateConnectionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies whether the trusted identity propagation is enabled.</p>
-   */
-  inline bool GetEnableTrustedIdentityPropagation() const { return m_enableTrustedIdentityPropagation; }
-  inline bool EnableTrustedIdentityPropagationHasBeenSet() const { return m_enableTrustedIdentityPropagationHasBeenSet; }
-  inline void SetEnableTrustedIdentityPropagation(bool value) {
-    m_enableTrustedIdentityPropagationHasBeenSet = true;
-    m_enableTrustedIdentityPropagation = value;
-  }
-  inline CreateConnectionRequest& WithEnableTrustedIdentityPropagation(bool value) {
-    SetEnableTrustedIdentityPropagation(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the environment where the connection is created.</p>
    */
   inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
@@ -177,6 +161,22 @@ class CreateConnectionRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>Specifies whether the trusted identity propagation is enabled.</p>
+   */
+  inline bool GetEnableTrustedIdentityPropagation() const { return m_enableTrustedIdentityPropagation; }
+  inline bool EnableTrustedIdentityPropagationHasBeenSet() const { return m_enableTrustedIdentityPropagationHasBeenSet; }
+  inline void SetEnableTrustedIdentityPropagation(bool value) {
+    m_enableTrustedIdentityPropagationHasBeenSet = true;
+    m_enableTrustedIdentityPropagation = value;
+  }
+  inline CreateConnectionRequest& WithEnableTrustedIdentityPropagation(bool value) {
+    SetEnableTrustedIdentityPropagation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The scope of the connection.</p>
    */
   inline ConnectionScope GetScope() const { return m_scope; }
@@ -199,23 +199,23 @@ class CreateConnectionRequest : public DataZoneRequest {
 
   Aws::String m_domainIdentifier;
 
-  bool m_enableTrustedIdentityPropagation{false};
-
   Aws::String m_environmentIdentifier;
 
   Aws::String m_name;
 
   ConnectionPropertiesInput m_props;
 
+  bool m_enableTrustedIdentityPropagation{false};
+
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
   bool m_awsLocationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_propsHasBeenSet = false;
+  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

@@ -18,10 +18,6 @@ namespace Model {
 FormOutput::FormOutput(JsonView jsonValue) { *this = jsonValue; }
 
 FormOutput& FormOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("content")) {
-    m_content = jsonValue.GetString("content");
-    m_contentHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("formName")) {
     m_formName = jsonValue.GetString("formName");
     m_formNameHasBeenSet = true;
@@ -34,15 +30,15 @@ FormOutput& FormOutput::operator=(JsonView jsonValue) {
     m_typeRevision = jsonValue.GetString("typeRevision");
     m_typeRevisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("content")) {
+    m_content = jsonValue.GetString("content");
+    m_contentHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FormOutput::Jsonize() const {
   JsonValue payload;
-
-  if (m_contentHasBeenSet) {
-    payload.WithString("content", m_content);
-  }
 
   if (m_formNameHasBeenSet) {
     payload.WithString("formName", m_formName);
@@ -54,6 +50,10 @@ JsonValue FormOutput::Jsonize() const {
 
   if (m_typeRevisionHasBeenSet) {
     payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
   return payload;

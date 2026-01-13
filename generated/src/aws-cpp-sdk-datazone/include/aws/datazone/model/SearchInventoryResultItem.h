@@ -36,42 +36,6 @@ class SearchInventoryResultItem {
 
   ///@{
   /**
-   * <p>The asset item included in the search results.</p>
-   */
-  inline const AssetItem& GetAssetItem() const { return m_assetItem; }
-  inline bool AssetItemHasBeenSet() const { return m_assetItemHasBeenSet; }
-  template <typename AssetItemT = AssetItem>
-  void SetAssetItem(AssetItemT&& value) {
-    m_assetItemHasBeenSet = true;
-    m_assetItem = std::forward<AssetItemT>(value);
-  }
-  template <typename AssetItemT = AssetItem>
-  SearchInventoryResultItem& WithAssetItem(AssetItemT&& value) {
-    SetAssetItem(std::forward<AssetItemT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The data product.</p>
-   */
-  inline const DataProductResultItem& GetDataProductItem() const { return m_dataProductItem; }
-  inline bool DataProductItemHasBeenSet() const { return m_dataProductItemHasBeenSet; }
-  template <typename DataProductItemT = DataProductResultItem>
-  void SetDataProductItem(DataProductItemT&& value) {
-    m_dataProductItemHasBeenSet = true;
-    m_dataProductItem = std::forward<DataProductItemT>(value);
-  }
-  template <typename DataProductItemT = DataProductResultItem>
-  SearchInventoryResultItem& WithDataProductItem(DataProductItemT&& value) {
-    SetDataProductItem(std::forward<DataProductItemT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The glossary item included in the search results.</p>
    */
   inline const GlossaryItem& GetGlossaryItem() const { return m_glossaryItem; }
@@ -105,18 +69,54 @@ class SearchInventoryResultItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The asset item included in the search results.</p>
+   */
+  inline const AssetItem& GetAssetItem() const { return m_assetItem; }
+  inline bool AssetItemHasBeenSet() const { return m_assetItemHasBeenSet; }
+  template <typename AssetItemT = AssetItem>
+  void SetAssetItem(AssetItemT&& value) {
+    m_assetItemHasBeenSet = true;
+    m_assetItem = std::forward<AssetItemT>(value);
+  }
+  template <typename AssetItemT = AssetItem>
+  SearchInventoryResultItem& WithAssetItem(AssetItemT&& value) {
+    SetAssetItem(std::forward<AssetItemT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The data product.</p>
+   */
+  inline const DataProductResultItem& GetDataProductItem() const { return m_dataProductItem; }
+  inline bool DataProductItemHasBeenSet() const { return m_dataProductItemHasBeenSet; }
+  template <typename DataProductItemT = DataProductResultItem>
+  void SetDataProductItem(DataProductItemT&& value) {
+    m_dataProductItemHasBeenSet = true;
+    m_dataProductItem = std::forward<DataProductItemT>(value);
+  }
+  template <typename DataProductItemT = DataProductResultItem>
+  SearchInventoryResultItem& WithDataProductItem(DataProductItemT&& value) {
+    SetDataProductItem(std::forward<DataProductItemT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  AssetItem m_assetItem;
-
-  DataProductResultItem m_dataProductItem;
-
   GlossaryItem m_glossaryItem;
 
   GlossaryTermItem m_glossaryTermItem;
-  bool m_assetItemHasBeenSet = false;
-  bool m_dataProductItemHasBeenSet = false;
+
+  AssetItem m_assetItem;
+
+  DataProductResultItem m_dataProductItem;
   bool m_glossaryItemHasBeenSet = false;
   bool m_glossaryTermItemHasBeenSet = false;
+  bool m_assetItemHasBeenSet = false;
+  bool m_dataProductItemHasBeenSet = false;
 };
 
 }  // namespace Model

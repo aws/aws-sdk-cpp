@@ -34,18 +34,19 @@ class S3PropertiesOutput {
 
   ///@{
   /**
-   * <p>The error message that gets displayed.</p>
+   * <p>The Amazon S3 URI that's part of the Amazon S3 properties of a
+   * connection.</p>
    */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
+  inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
+  inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
+  template <typename S3UriT = Aws::String>
+  void SetS3Uri(S3UriT&& value) {
+    m_s3UriHasBeenSet = true;
+    m_s3Uri = std::forward<S3UriT>(value);
   }
-  template <typename ErrorMessageT = Aws::String>
-  S3PropertiesOutput& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
+  template <typename S3UriT = Aws::String>
+  S3PropertiesOutput& WithS3Uri(S3UriT&& value) {
+    SetS3Uri(std::forward<S3UriT>(value));
     return *this;
   }
   ///@}
@@ -71,25 +72,6 @@ class S3PropertiesOutput {
 
   ///@{
   /**
-   * <p>The Amazon S3 URI that's part of the Amazon S3 properties of a
-   * connection.</p>
-   */
-  inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
-  inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-  template <typename S3UriT = Aws::String>
-  void SetS3Uri(S3UriT&& value) {
-    m_s3UriHasBeenSet = true;
-    m_s3Uri = std::forward<S3UriT>(value);
-  }
-  template <typename S3UriT = Aws::String>
-  S3PropertiesOutput& WithS3Uri(S3UriT&& value) {
-    SetS3Uri(std::forward<S3UriT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The status of the Amazon S3 connection.</p>
    */
   inline ConnectionStatus GetStatus() const { return m_status; }
@@ -103,18 +85,36 @@ class S3PropertiesOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The error message that gets displayed.</p>
+   */
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = Aws::String>
+  S3PropertiesOutput& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_errorMessage;
+  Aws::String m_s3Uri;
 
   Aws::String m_s3AccessGrantLocationId;
 
-  Aws::String m_s3Uri;
-
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_errorMessageHasBeenSet = false;
-  bool m_s3AccessGrantLocationIdHasBeenSet = false;
+
+  Aws::String m_errorMessage;
   bool m_s3UriHasBeenSet = false;
+  bool m_s3AccessGrantLocationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
 };
 
 }  // namespace Model

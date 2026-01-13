@@ -32,38 +32,37 @@ class CreateEnvironmentProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account in which the Amazon DataZone environment is
+   * <p>The ID of the Amazon DataZone domain in which this environment profile is
    * created.</p>
    */
-  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
-  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-  template <typename AwsAccountIdT = Aws::String>
-  void SetAwsAccountId(AwsAccountIdT&& value) {
-    m_awsAccountIdHasBeenSet = true;
-    m_awsAccountId = std::forward<AwsAccountIdT>(value);
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
   }
-  template <typename AwsAccountIdT = Aws::String>
-  CreateEnvironmentProfileRequest& WithAwsAccountId(AwsAccountIdT&& value) {
-    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+  template <typename DomainIdentifierT = Aws::String>
+  CreateEnvironmentProfileRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The Amazon Web Services region in which this environment profile is
-   * created.</p>
+   * <p>The name of this Amazon DataZone environment profile.</p>
    */
-  inline const Aws::String& GetAwsAccountRegion() const { return m_awsAccountRegion; }
-  inline bool AwsAccountRegionHasBeenSet() const { return m_awsAccountRegionHasBeenSet; }
-  template <typename AwsAccountRegionT = Aws::String>
-  void SetAwsAccountRegion(AwsAccountRegionT&& value) {
-    m_awsAccountRegionHasBeenSet = true;
-    m_awsAccountRegion = std::forward<AwsAccountRegionT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename AwsAccountRegionT = Aws::String>
-  CreateEnvironmentProfileRequest& WithAwsAccountRegion(AwsAccountRegionT&& value) {
-    SetAwsAccountRegion(std::forward<AwsAccountRegionT>(value));
+  template <typename NameT = Aws::String>
+  CreateEnvironmentProfileRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -88,25 +87,6 @@ class CreateEnvironmentProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the Amazon DataZone domain in which this environment profile is
-   * created.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  CreateEnvironmentProfileRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the blueprint with which this environment profile is created.</p>
    */
   inline const Aws::String& GetEnvironmentBlueprintIdentifier() const { return m_environmentBlueprintIdentifier; }
@@ -119,24 +99,6 @@ class CreateEnvironmentProfileRequest : public DataZoneRequest {
   template <typename EnvironmentBlueprintIdentifierT = Aws::String>
   CreateEnvironmentProfileRequest& WithEnvironmentBlueprintIdentifier(EnvironmentBlueprintIdentifierT&& value) {
     SetEnvironmentBlueprintIdentifier(std::forward<EnvironmentBlueprintIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of this Amazon DataZone environment profile.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateEnvironmentProfileRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -182,30 +144,68 @@ class CreateEnvironmentProfileRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_awsAccountId;
 
-  Aws::String m_awsAccountRegion;
+  ///@{
+  /**
+   * <p>The Amazon Web Services account in which the Amazon DataZone environment is
+   * created.</p>
+   */
+  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+  template <typename AwsAccountIdT = Aws::String>
+  void SetAwsAccountId(AwsAccountIdT&& value) {
+    m_awsAccountIdHasBeenSet = true;
+    m_awsAccountId = std::forward<AwsAccountIdT>(value);
+  }
+  template <typename AwsAccountIdT = Aws::String>
+  CreateEnvironmentProfileRequest& WithAwsAccountId(AwsAccountIdT&& value) {
+    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services region in which this environment profile is
+   * created.</p>
+   */
+  inline const Aws::String& GetAwsAccountRegion() const { return m_awsAccountRegion; }
+  inline bool AwsAccountRegionHasBeenSet() const { return m_awsAccountRegionHasBeenSet; }
+  template <typename AwsAccountRegionT = Aws::String>
+  void SetAwsAccountRegion(AwsAccountRegionT&& value) {
+    m_awsAccountRegionHasBeenSet = true;
+    m_awsAccountRegion = std::forward<AwsAccountRegionT>(value);
+  }
+  template <typename AwsAccountRegionT = Aws::String>
+  CreateEnvironmentProfileRequest& WithAwsAccountRegion(AwsAccountRegionT&& value) {
+    SetAwsAccountRegion(std::forward<AwsAccountRegionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainIdentifier;
+
+  Aws::String m_name;
 
   Aws::String m_description;
 
-  Aws::String m_domainIdentifier;
-
   Aws::String m_environmentBlueprintIdentifier;
-
-  Aws::String m_name;
 
   Aws::String m_projectIdentifier;
 
   Aws::Vector<EnvironmentParameter> m_userParameters;
-  bool m_awsAccountIdHasBeenSet = false;
-  bool m_awsAccountRegionHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_awsAccountId;
+
+  Aws::String m_awsAccountRegion;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_environmentBlueprintIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentBlueprintIdentifierHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsAccountRegionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 Aws::String UpdateEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_blueprintVersionHasBeenSet) {
-    payload.WithString("blueprintVersion", m_blueprintVersion);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
@@ -31,8 +31,8 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const {
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_blueprintVersionHasBeenSet) {
+    payload.WithString("blueprintVersion", m_blueprintVersion);
   }
 
   if (m_userParametersHasBeenSet) {

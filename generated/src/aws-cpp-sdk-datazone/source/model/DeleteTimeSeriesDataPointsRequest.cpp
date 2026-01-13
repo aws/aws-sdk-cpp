@@ -19,15 +19,15 @@ Aws::String DeleteTimeSeriesDataPointsRequest::SerializePayload() const { return
 
 void DeleteTimeSeriesDataPointsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_clientTokenHasBeenSet) {
-    ss << m_clientToken;
-    uri.AddQueryStringParameter("clientToken", ss.str());
-    ss.str("");
-  }
-
   if (m_formNameHasBeenSet) {
     ss << m_formName;
     uri.AddQueryStringParameter("formName", ss.str());
+    ss.str("");
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
     ss.str("");
   }
 }

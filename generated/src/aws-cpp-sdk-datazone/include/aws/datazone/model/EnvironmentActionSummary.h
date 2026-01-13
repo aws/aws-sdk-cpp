@@ -36,24 +36,6 @@ class EnvironmentActionSummary {
 
   ///@{
   /**
-   * <p>The environment action description.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  EnvironmentActionSummary& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon DataZone domain ID of the environment action.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -141,9 +123,25 @@ class EnvironmentActionSummary {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_description;
 
+  ///@{
+  /**
+   * <p>The environment action description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  EnvironmentActionSummary& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainId;
 
   Aws::String m_environmentId;
@@ -153,12 +151,14 @@ class EnvironmentActionSummary {
   Aws::String m_name;
 
   ActionParameters m_parameters;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_description;
   bool m_domainIdHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
 };
 
 }  // namespace Model

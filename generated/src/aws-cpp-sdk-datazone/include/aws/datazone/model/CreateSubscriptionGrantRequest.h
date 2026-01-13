@@ -34,6 +34,80 @@ class CreateSubscriptionGrantRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the Amazon DataZone domain in which the subscription grant is
+   * created.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  CreateSubscriptionGrantRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the environment in which the subscription grant is created.</p>
+   */
+  inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
+  inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
+  template <typename EnvironmentIdentifierT = Aws::String>
+  void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
+    m_environmentIdentifierHasBeenSet = true;
+    m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value);
+  }
+  template <typename EnvironmentIdentifierT = Aws::String>
+  CreateSubscriptionGrantRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
+    SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the subscription target for which the subscription grant is
+   * created.</p>
+   */
+  inline const Aws::String& GetSubscriptionTargetIdentifier() const { return m_subscriptionTargetIdentifier; }
+  inline bool SubscriptionTargetIdentifierHasBeenSet() const { return m_subscriptionTargetIdentifierHasBeenSet; }
+  template <typename SubscriptionTargetIdentifierT = Aws::String>
+  void SetSubscriptionTargetIdentifier(SubscriptionTargetIdentifierT&& value) {
+    m_subscriptionTargetIdentifierHasBeenSet = true;
+    m_subscriptionTargetIdentifier = std::forward<SubscriptionTargetIdentifierT>(value);
+  }
+  template <typename SubscriptionTargetIdentifierT = Aws::String>
+  CreateSubscriptionGrantRequest& WithSubscriptionTargetIdentifier(SubscriptionTargetIdentifierT&& value) {
+    SetSubscriptionTargetIdentifier(std::forward<SubscriptionTargetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The entity to which the subscription is to be granted.</p>
+   */
+  inline const GrantedEntityInput& GetGrantedEntity() const { return m_grantedEntity; }
+  inline bool GrantedEntityHasBeenSet() const { return m_grantedEntityHasBeenSet; }
+  template <typename GrantedEntityT = GrantedEntityInput>
+  void SetGrantedEntity(GrantedEntityT&& value) {
+    m_grantedEntityHasBeenSet = true;
+    m_grantedEntity = std::forward<GrantedEntityT>(value);
+  }
+  template <typename GrantedEntityT = GrantedEntityInput>
+  CreateSubscriptionGrantRequest& WithGrantedEntity(GrantedEntityT&& value) {
+    SetGrantedEntity(std::forward<GrantedEntityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The names of the assets for which the subscription grant is created.</p>
    */
   inline const Aws::Vector<AssetTargetNameMap>& GetAssetTargetNames() const { return m_assetTargetNames; }
@@ -74,98 +148,24 @@ class CreateSubscriptionGrantRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the Amazon DataZone domain in which the subscription grant is
-   * created.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  CreateSubscriptionGrantRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the environment in which the subscription grant is created.</p>
-   */
-  inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
-  inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-  template <typename EnvironmentIdentifierT = Aws::String>
-  void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
-    m_environmentIdentifierHasBeenSet = true;
-    m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value);
-  }
-  template <typename EnvironmentIdentifierT = Aws::String>
-  CreateSubscriptionGrantRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
-    SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The entity to which the subscription is to be granted.</p>
-   */
-  inline const GrantedEntityInput& GetGrantedEntity() const { return m_grantedEntity; }
-  inline bool GrantedEntityHasBeenSet() const { return m_grantedEntityHasBeenSet; }
-  template <typename GrantedEntityT = GrantedEntityInput>
-  void SetGrantedEntity(GrantedEntityT&& value) {
-    m_grantedEntityHasBeenSet = true;
-    m_grantedEntity = std::forward<GrantedEntityT>(value);
-  }
-  template <typename GrantedEntityT = GrantedEntityInput>
-  CreateSubscriptionGrantRequest& WithGrantedEntity(GrantedEntityT&& value) {
-    SetGrantedEntity(std::forward<GrantedEntityT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the subscription target for which the subscription grant is
-   * created.</p>
-   */
-  inline const Aws::String& GetSubscriptionTargetIdentifier() const { return m_subscriptionTargetIdentifier; }
-  inline bool SubscriptionTargetIdentifierHasBeenSet() const { return m_subscriptionTargetIdentifierHasBeenSet; }
-  template <typename SubscriptionTargetIdentifierT = Aws::String>
-  void SetSubscriptionTargetIdentifier(SubscriptionTargetIdentifierT&& value) {
-    m_subscriptionTargetIdentifierHasBeenSet = true;
-    m_subscriptionTargetIdentifier = std::forward<SubscriptionTargetIdentifierT>(value);
-  }
-  template <typename SubscriptionTargetIdentifierT = Aws::String>
-  CreateSubscriptionGrantRequest& WithSubscriptionTargetIdentifier(SubscriptionTargetIdentifierT&& value) {
-    SetSubscriptionTargetIdentifier(std::forward<SubscriptionTargetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<AssetTargetNameMap> m_assetTargetNames;
-
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_environmentIdentifier;
 
+  Aws::String m_subscriptionTargetIdentifier;
+
   GrantedEntityInput m_grantedEntity;
 
-  Aws::String m_subscriptionTargetIdentifier;
-  bool m_assetTargetNamesHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = true;
+  Aws::Vector<AssetTargetNameMap> m_assetTargetNames;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
-  bool m_grantedEntityHasBeenSet = false;
   bool m_subscriptionTargetIdentifierHasBeenSet = false;
+  bool m_grantedEntityHasBeenSet = false;
+  bool m_assetTargetNamesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

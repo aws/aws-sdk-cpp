@@ -54,6 +54,24 @@ class ListDomainUnitsForParentRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the parent domain unit.</p>
+   */
+  inline const Aws::String& GetParentDomainUnitIdentifier() const { return m_parentDomainUnitIdentifier; }
+  inline bool ParentDomainUnitIdentifierHasBeenSet() const { return m_parentDomainUnitIdentifierHasBeenSet; }
+  template <typename ParentDomainUnitIdentifierT = Aws::String>
+  void SetParentDomainUnitIdentifier(ParentDomainUnitIdentifierT&& value) {
+    m_parentDomainUnitIdentifierHasBeenSet = true;
+    m_parentDomainUnitIdentifier = std::forward<ParentDomainUnitIdentifierT>(value);
+  }
+  template <typename ParentDomainUnitIdentifierT = Aws::String>
+  ListDomainUnitsForParentRequest& WithParentDomainUnitIdentifier(ParentDomainUnitIdentifierT&& value) {
+    SetParentDomainUnitIdentifier(std::forward<ParentDomainUnitIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of domain units to return in a single call to
    * ListDomainUnitsForParent. When the number of domain units to be listed is
    * greater than the value of MaxResults, the response contains a NextToken value
@@ -93,36 +111,18 @@ class ListDomainUnitsForParentRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the parent domain unit.</p>
-   */
-  inline const Aws::String& GetParentDomainUnitIdentifier() const { return m_parentDomainUnitIdentifier; }
-  inline bool ParentDomainUnitIdentifierHasBeenSet() const { return m_parentDomainUnitIdentifierHasBeenSet; }
-  template <typename ParentDomainUnitIdentifierT = Aws::String>
-  void SetParentDomainUnitIdentifier(ParentDomainUnitIdentifierT&& value) {
-    m_parentDomainUnitIdentifierHasBeenSet = true;
-    m_parentDomainUnitIdentifier = std::forward<ParentDomainUnitIdentifierT>(value);
-  }
-  template <typename ParentDomainUnitIdentifierT = Aws::String>
-  ListDomainUnitsForParentRequest& WithParentDomainUnitIdentifier(ParentDomainUnitIdentifierT&& value) {
-    SetParentDomainUnitIdentifier(std::forward<ParentDomainUnitIdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
+
+  Aws::String m_parentDomainUnitIdentifier;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_parentDomainUnitIdentifier;
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_parentDomainUnitIdentifierHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_parentDomainUnitIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

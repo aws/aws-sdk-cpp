@@ -31,30 +31,6 @@ class SearchListingsResult {
 
   ///@{
   /**
-   * <p>Contains computed counts grouped by field values based on the requested
-   * aggregation attributes for the matching listings.</p>
-   */
-  inline const Aws::Vector<AggregationOutput>& GetAggregates() const { return m_aggregates; }
-  template <typename AggregatesT = Aws::Vector<AggregationOutput>>
-  void SetAggregates(AggregatesT&& value) {
-    m_aggregatesHasBeenSet = true;
-    m_aggregates = std::forward<AggregatesT>(value);
-  }
-  template <typename AggregatesT = Aws::Vector<AggregationOutput>>
-  SearchListingsResult& WithAggregates(AggregatesT&& value) {
-    SetAggregates(std::forward<AggregatesT>(value));
-    return *this;
-  }
-  template <typename AggregatesT = AggregationOutput>
-  SearchListingsResult& AddAggregates(AggregatesT&& value) {
-    m_aggregatesHasBeenSet = true;
-    m_aggregates.emplace_back(std::forward<AggregatesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The results of the <code>SearchListings</code> action.</p>
    */
   inline const Aws::Vector<SearchResultItem>& GetItems() const { return m_items; }
@@ -114,6 +90,30 @@ class SearchListingsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Contains computed counts grouped by field values based on the requested
+   * aggregation attributes for the matching listings.</p>
+   */
+  inline const Aws::Vector<AggregationOutput>& GetAggregates() const { return m_aggregates; }
+  template <typename AggregatesT = Aws::Vector<AggregationOutput>>
+  void SetAggregates(AggregatesT&& value) {
+    m_aggregatesHasBeenSet = true;
+    m_aggregates = std::forward<AggregatesT>(value);
+  }
+  template <typename AggregatesT = Aws::Vector<AggregationOutput>>
+  SearchListingsResult& WithAggregates(AggregatesT&& value) {
+    SetAggregates(std::forward<AggregatesT>(value));
+    return *this;
+  }
+  template <typename AggregatesT = AggregationOutput>
+  SearchListingsResult& AddAggregates(AggregatesT&& value) {
+    m_aggregatesHasBeenSet = true;
+    m_aggregates.emplace_back(std::forward<AggregatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -128,19 +128,19 @@ class SearchListingsResult {
   }
   ///@}
  private:
-  Aws::Vector<AggregationOutput> m_aggregates;
-
   Aws::Vector<SearchResultItem> m_items;
 
   Aws::String m_nextToken;
 
   int m_totalMatchCount{0};
 
+  Aws::Vector<AggregationOutput> m_aggregates;
+
   Aws::String m_requestId;
-  bool m_aggregatesHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_totalMatchCountHasBeenSet = false;
+  bool m_aggregatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

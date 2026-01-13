@@ -34,17 +34,17 @@ class UpdateSubscriptionRequestResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the subscription request was created.</p>
+   * <p>The identifier of the subscription request that is to be updated.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateSubscriptionRequestResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename IdT = Aws::String>
+  UpdateSubscriptionRequestResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -68,18 +68,17 @@ class UpdateSubscriptionRequestResult {
 
   ///@{
   /**
-   * <p>The decision comment of the <code>UpdateSubscriptionRequest</code>
-   * action.</p>
+   * <p>The Amazon DataZone user who updated the subscription request.</p>
    */
-  inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
-  template <typename DecisionCommentT = Aws::String>
-  void SetDecisionComment(DecisionCommentT&& value) {
-    m_decisionCommentHasBeenSet = true;
-    m_decisionComment = std::forward<DecisionCommentT>(value);
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
   }
-  template <typename DecisionCommentT = Aws::String>
-  UpdateSubscriptionRequestResult& WithDecisionComment(DecisionCommentT&& value) {
-    SetDecisionComment(std::forward<DecisionCommentT>(value));
+  template <typename UpdatedByT = Aws::String>
+  UpdateSubscriptionRequestResult& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
     return *this;
   }
   ///@}
@@ -104,57 +103,49 @@ class UpdateSubscriptionRequestResult {
 
   ///@{
   /**
-   * <p>The ID of the existing subscription.</p>
+   * <p>The status of the subscription request.</p>
    */
-  inline const Aws::String& GetExistingSubscriptionId() const { return m_existingSubscriptionId; }
-  template <typename ExistingSubscriptionIdT = Aws::String>
-  void SetExistingSubscriptionId(ExistingSubscriptionIdT&& value) {
-    m_existingSubscriptionIdHasBeenSet = true;
-    m_existingSubscriptionId = std::forward<ExistingSubscriptionIdT>(value);
+  inline SubscriptionRequestStatus GetStatus() const { return m_status; }
+  inline void SetStatus(SubscriptionRequestStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename ExistingSubscriptionIdT = Aws::String>
-  UpdateSubscriptionRequestResult& WithExistingSubscriptionId(ExistingSubscriptionIdT&& value) {
-    SetExistingSubscriptionId(std::forward<ExistingSubscriptionIdT>(value));
+  inline UpdateSubscriptionRequestResult& WithStatus(SubscriptionRequestStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The identifier of the subscription request that is to be updated.</p>
+   * <p>The timestamp of when the subscription request was created.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename IdT = Aws::String>
-  UpdateSubscriptionRequestResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateSubscriptionRequestResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Metadata forms included in the subscription request.</p>
+   * <p>The timestamp of when the subscription request was updated.</p>
    */
-  inline const Aws::Vector<FormOutput>& GetMetadataForms() const { return m_metadataForms; }
-  template <typename MetadataFormsT = Aws::Vector<FormOutput>>
-  void SetMetadataForms(MetadataFormsT&& value) {
-    m_metadataFormsHasBeenSet = true;
-    m_metadataForms = std::forward<MetadataFormsT>(value);
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
   }
-  template <typename MetadataFormsT = Aws::Vector<FormOutput>>
-  UpdateSubscriptionRequestResult& WithMetadataForms(MetadataFormsT&& value) {
-    SetMetadataForms(std::forward<MetadataFormsT>(value));
-    return *this;
-  }
-  template <typename MetadataFormsT = FormOutput>
-  UpdateSubscriptionRequestResult& AddMetadataForms(MetadataFormsT&& value) {
-    m_metadataFormsHasBeenSet = true;
-    m_metadataForms.emplace_back(std::forward<MetadataFormsT>(value));
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  UpdateSubscriptionRequestResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -172,62 +163,6 @@ class UpdateSubscriptionRequestResult {
   template <typename RequestReasonT = Aws::String>
   UpdateSubscriptionRequestResult& WithRequestReason(RequestReasonT&& value) {
     SetRequestReason(std::forward<RequestReasonT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the Amazon DataZone user who reviews the subscription
-   * request.</p>
-   */
-  inline const Aws::String& GetReviewerId() const { return m_reviewerId; }
-  template <typename ReviewerIdT = Aws::String>
-  void SetReviewerId(ReviewerIdT&& value) {
-    m_reviewerIdHasBeenSet = true;
-    m_reviewerId = std::forward<ReviewerIdT>(value);
-  }
-  template <typename ReviewerIdT = Aws::String>
-  UpdateSubscriptionRequestResult& WithReviewerId(ReviewerIdT&& value) {
-    SetReviewerId(std::forward<ReviewerIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the subscription request.</p>
-   */
-  inline SubscriptionRequestStatus GetStatus() const { return m_status; }
-  inline void SetStatus(SubscriptionRequestStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline UpdateSubscriptionRequestResult& WithStatus(SubscriptionRequestStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The subscribed listings of the subscription request.</p>
-   */
-  inline const Aws::Vector<SubscribedListing>& GetSubscribedListings() const { return m_subscribedListings; }
-  template <typename SubscribedListingsT = Aws::Vector<SubscribedListing>>
-  void SetSubscribedListings(SubscribedListingsT&& value) {
-    m_subscribedListingsHasBeenSet = true;
-    m_subscribedListings = std::forward<SubscribedListingsT>(value);
-  }
-  template <typename SubscribedListingsT = Aws::Vector<SubscribedListing>>
-  UpdateSubscriptionRequestResult& WithSubscribedListings(SubscribedListingsT&& value) {
-    SetSubscribedListings(std::forward<SubscribedListingsT>(value));
-    return *this;
-  }
-  template <typename SubscribedListingsT = SubscribedListing>
-  UpdateSubscriptionRequestResult& AddSubscribedListings(SubscribedListingsT&& value) {
-    m_subscribedListingsHasBeenSet = true;
-    m_subscribedListings.emplace_back(std::forward<SubscribedListingsT>(value));
     return *this;
   }
   ///@}
@@ -257,34 +192,99 @@ class UpdateSubscriptionRequestResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the subscription request was updated.</p>
+   * <p>The subscribed listings of the subscription request.</p>
    */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
+  inline const Aws::Vector<SubscribedListing>& GetSubscribedListings() const { return m_subscribedListings; }
+  template <typename SubscribedListingsT = Aws::Vector<SubscribedListing>>
+  void SetSubscribedListings(SubscribedListingsT&& value) {
+    m_subscribedListingsHasBeenSet = true;
+    m_subscribedListings = std::forward<SubscribedListingsT>(value);
   }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  UpdateSubscriptionRequestResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+  template <typename SubscribedListingsT = Aws::Vector<SubscribedListing>>
+  UpdateSubscriptionRequestResult& WithSubscribedListings(SubscribedListingsT&& value) {
+    SetSubscribedListings(std::forward<SubscribedListingsT>(value));
+    return *this;
+  }
+  template <typename SubscribedListingsT = SubscribedListing>
+  UpdateSubscriptionRequestResult& AddSubscribedListings(SubscribedListingsT&& value) {
+    m_subscribedListingsHasBeenSet = true;
+    m_subscribedListings.emplace_back(std::forward<SubscribedListingsT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The Amazon DataZone user who updated the subscription request.</p>
+   * <p>The identifier of the Amazon DataZone user who reviews the subscription
+   * request.</p>
    */
-  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
-  template <typename UpdatedByT = Aws::String>
-  void SetUpdatedBy(UpdatedByT&& value) {
-    m_updatedByHasBeenSet = true;
-    m_updatedBy = std::forward<UpdatedByT>(value);
+  inline const Aws::String& GetReviewerId() const { return m_reviewerId; }
+  template <typename ReviewerIdT = Aws::String>
+  void SetReviewerId(ReviewerIdT&& value) {
+    m_reviewerIdHasBeenSet = true;
+    m_reviewerId = std::forward<ReviewerIdT>(value);
   }
-  template <typename UpdatedByT = Aws::String>
-  UpdateSubscriptionRequestResult& WithUpdatedBy(UpdatedByT&& value) {
-    SetUpdatedBy(std::forward<UpdatedByT>(value));
+  template <typename ReviewerIdT = Aws::String>
+  UpdateSubscriptionRequestResult& WithReviewerId(ReviewerIdT&& value) {
+    SetReviewerId(std::forward<ReviewerIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The decision comment of the <code>UpdateSubscriptionRequest</code>
+   * action.</p>
+   */
+  inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
+  template <typename DecisionCommentT = Aws::String>
+  void SetDecisionComment(DecisionCommentT&& value) {
+    m_decisionCommentHasBeenSet = true;
+    m_decisionComment = std::forward<DecisionCommentT>(value);
+  }
+  template <typename DecisionCommentT = Aws::String>
+  UpdateSubscriptionRequestResult& WithDecisionComment(DecisionCommentT&& value) {
+    SetDecisionComment(std::forward<DecisionCommentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the existing subscription.</p>
+   */
+  inline const Aws::String& GetExistingSubscriptionId() const { return m_existingSubscriptionId; }
+  template <typename ExistingSubscriptionIdT = Aws::String>
+  void SetExistingSubscriptionId(ExistingSubscriptionIdT&& value) {
+    m_existingSubscriptionIdHasBeenSet = true;
+    m_existingSubscriptionId = std::forward<ExistingSubscriptionIdT>(value);
+  }
+  template <typename ExistingSubscriptionIdT = Aws::String>
+  UpdateSubscriptionRequestResult& WithExistingSubscriptionId(ExistingSubscriptionIdT&& value) {
+    SetExistingSubscriptionId(std::forward<ExistingSubscriptionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Metadata forms included in the subscription request.</p>
+   */
+  inline const Aws::Vector<FormOutput>& GetMetadataForms() const { return m_metadataForms; }
+  template <typename MetadataFormsT = Aws::Vector<FormOutput>>
+  void SetMetadataForms(MetadataFormsT&& value) {
+    m_metadataFormsHasBeenSet = true;
+    m_metadataForms = std::forward<MetadataFormsT>(value);
+  }
+  template <typename MetadataFormsT = Aws::Vector<FormOutput>>
+  UpdateSubscriptionRequestResult& WithMetadataForms(MetadataFormsT&& value) {
+    SetMetadataForms(std::forward<MetadataFormsT>(value));
+    return *this;
+  }
+  template <typename MetadataFormsT = FormOutput>
+  UpdateSubscriptionRequestResult& AddMetadataForms(MetadataFormsT&& value) {
+    m_metadataFormsHasBeenSet = true;
+    m_metadataForms.emplace_back(std::forward<MetadataFormsT>(value));
     return *this;
   }
   ///@}
@@ -304,49 +304,49 @@ class UpdateSubscriptionRequestResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_id;
 
   Aws::String m_createdBy;
 
-  Aws::String m_decisionComment;
+  Aws::String m_updatedBy;
 
   Aws::String m_domainId;
 
-  Aws::String m_existingSubscriptionId;
-
-  Aws::String m_id;
-
-  Aws::Vector<FormOutput> m_metadataForms;
-
-  Aws::String m_requestReason;
-
-  Aws::String m_reviewerId;
-
   SubscriptionRequestStatus m_status{SubscriptionRequestStatus::NOT_SET};
 
-  Aws::Vector<SubscribedListing> m_subscribedListings;
-
-  Aws::Vector<SubscribedPrincipal> m_subscribedPrincipals;
+  Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
 
-  Aws::String m_updatedBy;
+  Aws::String m_requestReason;
+
+  Aws::Vector<SubscribedPrincipal> m_subscribedPrincipals;
+
+  Aws::Vector<SubscribedListing> m_subscribedListings;
+
+  Aws::String m_reviewerId;
+
+  Aws::String m_decisionComment;
+
+  Aws::String m_existingSubscriptionId;
+
+  Aws::Vector<FormOutput> m_metadataForms;
 
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_decisionCommentHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_existingSubscriptionIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_metadataFormsHasBeenSet = false;
-  bool m_requestReasonHasBeenSet = false;
-  bool m_reviewerIdHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_subscribedListingsHasBeenSet = false;
-  bool m_subscribedPrincipalsHasBeenSet = false;
-  bool m_updatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_requestReasonHasBeenSet = false;
+  bool m_subscribedPrincipalsHasBeenSet = false;
+  bool m_subscribedListingsHasBeenSet = false;
+  bool m_reviewerIdHasBeenSet = false;
+  bool m_decisionCommentHasBeenSet = false;
+  bool m_existingSubscriptionIdHasBeenSet = false;
+  bool m_metadataFormsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

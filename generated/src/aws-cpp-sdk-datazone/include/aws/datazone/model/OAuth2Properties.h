@@ -38,18 +38,16 @@ class OAuth2Properties {
 
   ///@{
   /**
-   * <p>The authorization code properties of the OAuth2 properties.</p>
+   * <p>The OAuth2 grant type of the OAuth2 properties.</p>
    */
-  inline const AuthorizationCodeProperties& GetAuthorizationCodeProperties() const { return m_authorizationCodeProperties; }
-  inline bool AuthorizationCodePropertiesHasBeenSet() const { return m_authorizationCodePropertiesHasBeenSet; }
-  template <typename AuthorizationCodePropertiesT = AuthorizationCodeProperties>
-  void SetAuthorizationCodeProperties(AuthorizationCodePropertiesT&& value) {
-    m_authorizationCodePropertiesHasBeenSet = true;
-    m_authorizationCodeProperties = std::forward<AuthorizationCodePropertiesT>(value);
+  inline OAuth2GrantType GetOAuth2GrantType() const { return m_oAuth2GrantType; }
+  inline bool OAuth2GrantTypeHasBeenSet() const { return m_oAuth2GrantTypeHasBeenSet; }
+  inline void SetOAuth2GrantType(OAuth2GrantType value) {
+    m_oAuth2GrantTypeHasBeenSet = true;
+    m_oAuth2GrantType = value;
   }
-  template <typename AuthorizationCodePropertiesT = AuthorizationCodeProperties>
-  OAuth2Properties& WithAuthorizationCodeProperties(AuthorizationCodePropertiesT&& value) {
-    SetAuthorizationCodeProperties(std::forward<AuthorizationCodePropertiesT>(value));
+  inline OAuth2Properties& WithOAuth2GrantType(OAuth2GrantType value) {
+    SetOAuth2GrantType(value);
     return *this;
   }
   ///@}
@@ -68,40 +66,6 @@ class OAuth2Properties {
   template <typename OAuth2ClientApplicationT = OAuth2ClientApplication>
   OAuth2Properties& WithOAuth2ClientApplication(OAuth2ClientApplicationT&& value) {
     SetOAuth2ClientApplication(std::forward<OAuth2ClientApplicationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The OAuth2 credentials of the OAuth2 properties.</p>
-   */
-  inline const GlueOAuth2Credentials& GetOAuth2Credentials() const { return m_oAuth2Credentials; }
-  inline bool OAuth2CredentialsHasBeenSet() const { return m_oAuth2CredentialsHasBeenSet; }
-  template <typename OAuth2CredentialsT = GlueOAuth2Credentials>
-  void SetOAuth2Credentials(OAuth2CredentialsT&& value) {
-    m_oAuth2CredentialsHasBeenSet = true;
-    m_oAuth2Credentials = std::forward<OAuth2CredentialsT>(value);
-  }
-  template <typename OAuth2CredentialsT = GlueOAuth2Credentials>
-  OAuth2Properties& WithOAuth2Credentials(OAuth2CredentialsT&& value) {
-    SetOAuth2Credentials(std::forward<OAuth2CredentialsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The OAuth2 grant type of the OAuth2 properties.</p>
-   */
-  inline OAuth2GrantType GetOAuth2GrantType() const { return m_oAuth2GrantType; }
-  inline bool OAuth2GrantTypeHasBeenSet() const { return m_oAuth2GrantTypeHasBeenSet; }
-  inline void SetOAuth2GrantType(OAuth2GrantType value) {
-    m_oAuth2GrantTypeHasBeenSet = true;
-    m_oAuth2GrantType = value;
-  }
-  inline OAuth2Properties& WithOAuth2GrantType(OAuth2GrantType value) {
-    SetOAuth2GrantType(value);
     return *this;
   }
   ///@}
@@ -147,24 +111,60 @@ class OAuth2Properties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The authorization code properties of the OAuth2 properties.</p>
+   */
+  inline const AuthorizationCodeProperties& GetAuthorizationCodeProperties() const { return m_authorizationCodeProperties; }
+  inline bool AuthorizationCodePropertiesHasBeenSet() const { return m_authorizationCodePropertiesHasBeenSet; }
+  template <typename AuthorizationCodePropertiesT = AuthorizationCodeProperties>
+  void SetAuthorizationCodeProperties(AuthorizationCodePropertiesT&& value) {
+    m_authorizationCodePropertiesHasBeenSet = true;
+    m_authorizationCodeProperties = std::forward<AuthorizationCodePropertiesT>(value);
+  }
+  template <typename AuthorizationCodePropertiesT = AuthorizationCodeProperties>
+  OAuth2Properties& WithAuthorizationCodeProperties(AuthorizationCodePropertiesT&& value) {
+    SetAuthorizationCodeProperties(std::forward<AuthorizationCodePropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The OAuth2 credentials of the OAuth2 properties.</p>
+   */
+  inline const GlueOAuth2Credentials& GetOAuth2Credentials() const { return m_oAuth2Credentials; }
+  inline bool OAuth2CredentialsHasBeenSet() const { return m_oAuth2CredentialsHasBeenSet; }
+  template <typename OAuth2CredentialsT = GlueOAuth2Credentials>
+  void SetOAuth2Credentials(OAuth2CredentialsT&& value) {
+    m_oAuth2CredentialsHasBeenSet = true;
+    m_oAuth2Credentials = std::forward<OAuth2CredentialsT>(value);
+  }
+  template <typename OAuth2CredentialsT = GlueOAuth2Credentials>
+  OAuth2Properties& WithOAuth2Credentials(OAuth2CredentialsT&& value) {
+    SetOAuth2Credentials(std::forward<OAuth2CredentialsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  AuthorizationCodeProperties m_authorizationCodeProperties;
+  OAuth2GrantType m_oAuth2GrantType{OAuth2GrantType::NOT_SET};
 
   OAuth2ClientApplication m_oAuth2ClientApplication;
-
-  GlueOAuth2Credentials m_oAuth2Credentials;
-
-  OAuth2GrantType m_oAuth2GrantType{OAuth2GrantType::NOT_SET};
 
   Aws::String m_tokenUrl;
 
   Aws::Map<Aws::String, Aws::String> m_tokenUrlParametersMap;
-  bool m_authorizationCodePropertiesHasBeenSet = false;
-  bool m_oAuth2ClientApplicationHasBeenSet = false;
-  bool m_oAuth2CredentialsHasBeenSet = false;
+
+  AuthorizationCodeProperties m_authorizationCodeProperties;
+
+  GlueOAuth2Credentials m_oAuth2Credentials;
   bool m_oAuth2GrantTypeHasBeenSet = false;
+  bool m_oAuth2ClientApplicationHasBeenSet = false;
   bool m_tokenUrlHasBeenSet = false;
   bool m_tokenUrlParametersMapHasBeenSet = false;
+  bool m_authorizationCodePropertiesHasBeenSet = false;
+  bool m_oAuth2CredentialsHasBeenSet = false;
 };
 
 }  // namespace Model

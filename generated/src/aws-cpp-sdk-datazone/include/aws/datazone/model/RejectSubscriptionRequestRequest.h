@@ -30,24 +30,6 @@ class RejectSubscriptionRequestRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The decision comment of the rejected subscription request.</p>
-   */
-  inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
-  inline bool DecisionCommentHasBeenSet() const { return m_decisionCommentHasBeenSet; }
-  template <typename DecisionCommentT = Aws::String>
-  void SetDecisionComment(DecisionCommentT&& value) {
-    m_decisionCommentHasBeenSet = true;
-    m_decisionComment = std::forward<DecisionCommentT>(value);
-  }
-  template <typename DecisionCommentT = Aws::String>
-  RejectSubscriptionRequestRequest& WithDecisionComment(DecisionCommentT&& value) {
-    SetDecisionComment(std::forward<DecisionCommentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which the subscription
    * request was rejected.</p>
    */
@@ -82,15 +64,33 @@ class RejectSubscriptionRequestRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_decisionComment;
 
+  ///@{
+  /**
+   * <p>The decision comment of the rejected subscription request.</p>
+   */
+  inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
+  inline bool DecisionCommentHasBeenSet() const { return m_decisionCommentHasBeenSet; }
+  template <typename DecisionCommentT = Aws::String>
+  void SetDecisionComment(DecisionCommentT&& value) {
+    m_decisionCommentHasBeenSet = true;
+    m_decisionComment = std::forward<DecisionCommentT>(value);
+  }
+  template <typename DecisionCommentT = Aws::String>
+  RejectSubscriptionRequestRequest& WithDecisionComment(DecisionCommentT&& value) {
+    SetDecisionComment(std::forward<DecisionCommentT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
-  bool m_decisionCommentHasBeenSet = false;
+
+  Aws::String m_decisionComment;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
+  bool m_decisionCommentHasBeenSet = false;
 };
 
 }  // namespace Model

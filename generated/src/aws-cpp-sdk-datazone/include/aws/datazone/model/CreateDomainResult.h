@@ -32,17 +32,51 @@ class CreateDomainResult {
 
   ///@{
   /**
-   * <p>The ARN of the Amazon DataZone domain.</p>
+   * <p>The identifier of the Amazon DataZone domain.</p>
    */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename ArnT = Aws::String>
-  CreateDomainResult& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
+  template <typename IdT = Aws::String>
+  CreateDomainResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the root domain unit.</p>
+   */
+  inline const Aws::String& GetRootDomainUnitId() const { return m_rootDomainUnitId; }
+  template <typename RootDomainUnitIdT = Aws::String>
+  void SetRootDomainUnitId(RootDomainUnitIdT&& value) {
+    m_rootDomainUnitIdHasBeenSet = true;
+    m_rootDomainUnitId = std::forward<RootDomainUnitIdT>(value);
+  }
+  template <typename RootDomainUnitIdT = Aws::String>
+  CreateDomainResult& WithRootDomainUnitId(RootDomainUnitIdT&& value) {
+    SetRootDomainUnitId(std::forward<RootDomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateDomainResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -60,6 +94,23 @@ class CreateDomainResult {
   template <typename DescriptionT = Aws::String>
   CreateDomainResult& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The single-sign on configuration of the Amazon DataZone domain.</p>
+   */
+  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
+  template <typename SingleSignOnT = SingleSignOn>
+  void SetSingleSignOn(SingleSignOnT&& value) {
+    m_singleSignOnHasBeenSet = true;
+    m_singleSignOn = std::forward<SingleSignOnT>(value);
+  }
+  template <typename SingleSignOnT = SingleSignOn>
+  CreateDomainResult& WithSingleSignOn(SingleSignOnT&& value) {
+    SetSingleSignOn(std::forward<SingleSignOnT>(value));
     return *this;
   }
   ///@}
@@ -85,32 +136,17 @@ class CreateDomainResult {
 
   ///@{
   /**
-   * <p>The version of the domain that is created.</p>
+   * <p>The ARN of the Amazon DataZone domain.</p>
    */
-  inline DomainVersion GetDomainVersion() const { return m_domainVersion; }
-  inline void SetDomainVersion(DomainVersion value) {
-    m_domainVersionHasBeenSet = true;
-    m_domainVersion = value;
+  inline const Aws::String& GetArn() const { return m_arn; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
   }
-  inline CreateDomainResult& WithDomainVersion(DomainVersion value) {
-    SetDomainVersion(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  CreateDomainResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename ArnT = Aws::String>
+  CreateDomainResult& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -136,17 +172,15 @@ class CreateDomainResult {
 
   ///@{
   /**
-   * <p>The name of the Amazon DataZone domain.</p>
+   * <p>The status of the Amazon DataZone domain.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline DomainStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DomainStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename NameT = Aws::String>
-  CreateDomainResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  inline CreateDomainResult& WithStatus(DomainStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -164,72 +198,6 @@ class CreateDomainResult {
   template <typename PortalUrlT = Aws::String>
   CreateDomainResult& WithPortalUrl(PortalUrlT&& value) {
     SetPortalUrl(std::forward<PortalUrlT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the root domain unit.</p>
-   */
-  inline const Aws::String& GetRootDomainUnitId() const { return m_rootDomainUnitId; }
-  template <typename RootDomainUnitIdT = Aws::String>
-  void SetRootDomainUnitId(RootDomainUnitIdT&& value) {
-    m_rootDomainUnitIdHasBeenSet = true;
-    m_rootDomainUnitId = std::forward<RootDomainUnitIdT>(value);
-  }
-  template <typename RootDomainUnitIdT = Aws::String>
-  CreateDomainResult& WithRootDomainUnitId(RootDomainUnitIdT&& value) {
-    SetRootDomainUnitId(std::forward<RootDomainUnitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Te service role of the domain that is created.</p>
-   */
-  inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
-  template <typename ServiceRoleT = Aws::String>
-  void SetServiceRole(ServiceRoleT&& value) {
-    m_serviceRoleHasBeenSet = true;
-    m_serviceRole = std::forward<ServiceRoleT>(value);
-  }
-  template <typename ServiceRoleT = Aws::String>
-  CreateDomainResult& WithServiceRole(ServiceRoleT&& value) {
-    SetServiceRole(std::forward<ServiceRoleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The single-sign on configuration of the Amazon DataZone domain.</p>
-   */
-  inline const SingleSignOn& GetSingleSignOn() const { return m_singleSignOn; }
-  template <typename SingleSignOnT = SingleSignOn>
-  void SetSingleSignOn(SingleSignOnT&& value) {
-    m_singleSignOnHasBeenSet = true;
-    m_singleSignOn = std::forward<SingleSignOnT>(value);
-  }
-  template <typename SingleSignOnT = SingleSignOn>
-  CreateDomainResult& WithSingleSignOn(SingleSignOnT&& value) {
-    SetSingleSignOn(std::forward<SingleSignOnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the Amazon DataZone domain.</p>
-   */
-  inline DomainStatus GetStatus() const { return m_status; }
-  inline void SetStatus(DomainStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline CreateDomainResult& WithStatus(DomainStatus value) {
-    SetStatus(value);
     return *this;
   }
   ///@}
@@ -258,6 +226,38 @@ class CreateDomainResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The version of the domain that is created.</p>
+   */
+  inline DomainVersion GetDomainVersion() const { return m_domainVersion; }
+  inline void SetDomainVersion(DomainVersion value) {
+    m_domainVersionHasBeenSet = true;
+    m_domainVersion = value;
+  }
+  inline CreateDomainResult& WithDomainVersion(DomainVersion value) {
+    SetDomainVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Te service role of the domain that is created.</p>
+   */
+  inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
+  template <typename ServiceRoleT = Aws::String>
+  void SetServiceRole(ServiceRoleT&& value) {
+    m_serviceRoleHasBeenSet = true;
+    m_serviceRole = std::forward<ServiceRoleT>(value);
+  }
+  template <typename ServiceRoleT = Aws::String>
+  CreateDomainResult& WithServiceRole(ServiceRoleT&& value) {
+    SetServiceRole(std::forward<ServiceRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -272,46 +272,46 @@ class CreateDomainResult {
   }
   ///@}
  private:
-  Aws::String m_arn;
-
-  Aws::String m_description;
-
-  Aws::String m_domainExecutionRole;
-
-  DomainVersion m_domainVersion{DomainVersion::NOT_SET};
-
   Aws::String m_id;
-
-  Aws::String m_kmsKeyIdentifier;
-
-  Aws::String m_name;
-
-  Aws::String m_portalUrl;
 
   Aws::String m_rootDomainUnitId;
 
-  Aws::String m_serviceRole;
+  Aws::String m_name;
+
+  Aws::String m_description;
 
   SingleSignOn m_singleSignOn;
 
+  Aws::String m_domainExecutionRole;
+
+  Aws::String m_arn;
+
+  Aws::String m_kmsKeyIdentifier;
+
   DomainStatus m_status{DomainStatus::NOT_SET};
+
+  Aws::String m_portalUrl;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  DomainVersion m_domainVersion{DomainVersion::NOT_SET};
+
+  Aws::String m_serviceRole;
+
   Aws::String m_requestId;
-  bool m_arnHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainExecutionRoleHasBeenSet = false;
-  bool m_domainVersionHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_portalUrlHasBeenSet = false;
   bool m_rootDomainUnitIdHasBeenSet = false;
-  bool m_serviceRoleHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_singleSignOnHasBeenSet = false;
+  bool m_domainExecutionRoleHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_portalUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_domainVersionHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

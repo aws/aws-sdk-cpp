@@ -32,25 +32,6 @@ class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the asset the subscription grant status of which is to be
-   * updated.</p>
-   */
-  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
-  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
-  template <typename AssetIdentifierT = Aws::String>
-  void SetAssetIdentifier(AssetIdentifierT&& value) {
-    m_assetIdentifierHasBeenSet = true;
-    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
-  }
-  template <typename AssetIdentifierT = Aws::String>
-  UpdateSubscriptionGrantStatusRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
-    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which a subscription grant
    * status is to be updated.</p>
    */
@@ -64,25 +45,6 @@ class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   UpdateSubscriptionGrantStatusRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the error message that is returned if the operation cannot be
-   * successfully completed.</p>
-   */
-  inline const FailureCause& GetFailureCause() const { return m_failureCause; }
-  inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
-  template <typename FailureCauseT = FailureCause>
-  void SetFailureCause(FailureCauseT&& value) {
-    m_failureCauseHasBeenSet = true;
-    m_failureCause = std::forward<FailureCauseT>(value);
-  }
-  template <typename FailureCauseT = FailureCause>
-  UpdateSubscriptionGrantStatusRequest& WithFailureCause(FailureCauseT&& value) {
-    SetFailureCause(std::forward<FailureCauseT>(value));
     return *this;
   }
   ///@}
@@ -108,6 +70,25 @@ class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the asset the subscription grant status of which is to be
+   * updated.</p>
+   */
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
+  }
+  template <typename AssetIdentifierT = Aws::String>
+  UpdateSubscriptionGrantStatusRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status to be updated as part of the
    * <code>UpdateSubscriptionGrantStatus</code> action.</p>
    */
@@ -119,6 +100,25 @@ class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest {
   }
   inline UpdateSubscriptionGrantStatusRequest& WithStatus(SubscriptionGrantStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the error message that is returned if the operation cannot be
+   * successfully completed.</p>
+   */
+  inline const FailureCause& GetFailureCause() const { return m_failureCause; }
+  inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
+  template <typename FailureCauseT = FailureCause>
+  void SetFailureCause(FailureCauseT&& value) {
+    m_failureCauseHasBeenSet = true;
+    m_failureCause = std::forward<FailureCauseT>(value);
+  }
+  template <typename FailureCauseT = FailureCause>
+  UpdateSubscriptionGrantStatusRequest& WithFailureCause(FailureCauseT&& value) {
+    SetFailureCause(std::forward<FailureCauseT>(value));
     return *this;
   }
   ///@}
@@ -142,22 +142,22 @@ class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_assetIdentifier;
-
   Aws::String m_domainIdentifier;
-
-  FailureCause m_failureCause;
 
   Aws::String m_identifier;
 
+  Aws::String m_assetIdentifier;
+
   SubscriptionGrantStatus m_status{SubscriptionGrantStatus::NOT_SET};
 
+  FailureCause m_failureCause;
+
   Aws::String m_targetName;
-  bool m_assetIdentifierHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_failureCauseHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

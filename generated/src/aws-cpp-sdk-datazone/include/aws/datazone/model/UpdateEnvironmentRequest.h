@@ -32,44 +32,6 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The blueprint version to which the environment should be updated. You can
-   * only specify the following string for this parameter: <code>latest</code>.</p>
-   */
-  inline const Aws::String& GetBlueprintVersion() const { return m_blueprintVersion; }
-  inline bool BlueprintVersionHasBeenSet() const { return m_blueprintVersionHasBeenSet; }
-  template <typename BlueprintVersionT = Aws::String>
-  void SetBlueprintVersion(BlueprintVersionT&& value) {
-    m_blueprintVersionHasBeenSet = true;
-    m_blueprintVersion = std::forward<BlueprintVersionT>(value);
-  }
-  template <typename BlueprintVersionT = Aws::String>
-  UpdateEnvironmentRequest& WithBlueprintVersion(BlueprintVersionT&& value) {
-    SetBlueprintVersion(std::forward<BlueprintVersionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description to be updated as part of the <code>UpdateEnvironment</code>
-   * action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateEnvironmentRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the domain in which the environment is to be updated.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -82,31 +44,6 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   UpdateEnvironmentRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The glossary terms to be updated as part of the
-   * <code>UpdateEnvironment</code> action.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
-  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  void SetGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
-  }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  UpdateEnvironmentRequest& WithGlossaryTerms(GlossaryTermsT&& value) {
-    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  template <typename GlossaryTermsT = Aws::String>
-  UpdateEnvironmentRequest& AddGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
     return *this;
   }
   ///@}
@@ -150,6 +87,69 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The description to be updated as part of the <code>UpdateEnvironment</code>
+   * action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateEnvironmentRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The glossary terms to be updated as part of the
+   * <code>UpdateEnvironment</code> action.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  UpdateEnvironmentRequest& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = Aws::String>
+  UpdateEnvironmentRequest& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The blueprint version to which the environment should be updated. You can
+   * only specify the following string for this parameter: <code>latest</code>.</p>
+   */
+  inline const Aws::String& GetBlueprintVersion() const { return m_blueprintVersion; }
+  inline bool BlueprintVersionHasBeenSet() const { return m_blueprintVersionHasBeenSet; }
+  template <typename BlueprintVersionT = Aws::String>
+  void SetBlueprintVersion(BlueprintVersionT&& value) {
+    m_blueprintVersionHasBeenSet = true;
+    m_blueprintVersion = std::forward<BlueprintVersionT>(value);
+  }
+  template <typename BlueprintVersionT = Aws::String>
+  UpdateEnvironmentRequest& WithBlueprintVersion(BlueprintVersionT&& value) {
+    SetBlueprintVersion(std::forward<BlueprintVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The user parameters of the environment.</p>
    */
   inline const Aws::Vector<EnvironmentParameter>& GetUserParameters() const { return m_userParameters; }
@@ -172,25 +172,25 @@ class UpdateEnvironmentRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_blueprintVersion;
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
-
-  Aws::Vector<Aws::String> m_glossaryTerms;
 
   Aws::String m_identifier;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
+  Aws::String m_blueprintVersion;
+
   Aws::Vector<EnvironmentParameter> m_userParameters;
-  bool m_blueprintVersionHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_glossaryTermsHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_blueprintVersionHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
 };
 

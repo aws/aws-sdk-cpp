@@ -19,6 +19,18 @@ Aws::String ListLineageNodeHistoryRequest::SerializePayload() const { return {};
 
 void ListLineageNodeHistoryRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
   if (m_directionHasBeenSet) {
     ss << EdgeDirectionMapper::GetNameForEdgeDirection(m_direction);
     uri.AddQueryStringParameter("direction", ss.str());
@@ -34,18 +46,6 @@ void ListLineageNodeHistoryRequest::AddQueryStringParameters(URI& uri) const {
   if (m_eventTimestampLTEHasBeenSet) {
     ss << m_eventTimestampLTE.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
     uri.AddQueryStringParameter("timestampLTE", ss.str());
-    ss.str("");
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
-    ss.str("");
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 

@@ -18,22 +18,6 @@ namespace Model {
 GlossaryItem::GlossaryItem(JsonView jsonValue) { *this = jsonValue; }
 
 GlossaryItem& GlossaryItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("additionalAttributes")) {
-    m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
-    m_additionalAttributesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -50,17 +34,13 @@ GlossaryItem& GlossaryItem::operator=(JsonView jsonValue) {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
     m_owningProjectIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = GlossaryStatusMapper::GetGlossaryStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedAt")) {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedBy")) {
-    m_updatedBy = jsonValue.GetString("updatedBy");
-    m_updatedByHasBeenSet = true;
   }
   if (jsonValue.ValueExists("usageRestrictions")) {
     Aws::Utils::Array<JsonView> usageRestrictionsJsonList = jsonValue.GetArray("usageRestrictions");
@@ -70,27 +50,31 @@ GlossaryItem& GlossaryItem::operator=(JsonView jsonValue) {
     }
     m_usageRestrictionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedBy")) {
+    m_updatedBy = jsonValue.GetString("updatedBy");
+    m_updatedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("additionalAttributes")) {
+    m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
+    m_additionalAttributesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue GlossaryItem::Jsonize() const {
   JsonValue payload;
-
-  if (m_additionalAttributesHasBeenSet) {
-    payload.WithObject("additionalAttributes", m_additionalAttributes.Jsonize());
-  }
-
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if (m_createdByHasBeenSet) {
-    payload.WithString("createdBy", m_createdBy);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
 
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
@@ -108,8 +92,29 @@ JsonValue GlossaryItem::Jsonize() const {
     payload.WithString("owningProjectId", m_owningProjectId);
   }
 
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
   if (m_statusHasBeenSet) {
     payload.WithString("status", GlossaryStatusMapper::GetNameForGlossaryStatus(m_status));
+  }
+
+  if (m_usageRestrictionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> usageRestrictionsJsonList(m_usageRestrictions.size());
+    for (unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex) {
+      usageRestrictionsJsonList[usageRestrictionsIndex].AsString(
+          GlossaryUsageRestrictionMapper::GetNameForGlossaryUsageRestriction(m_usageRestrictions[usageRestrictionsIndex]));
+    }
+    payload.WithArray("usageRestrictions", std::move(usageRestrictionsJsonList));
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
   if (m_updatedAtHasBeenSet) {
@@ -120,13 +125,8 @@ JsonValue GlossaryItem::Jsonize() const {
     payload.WithString("updatedBy", m_updatedBy);
   }
 
-  if (m_usageRestrictionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> usageRestrictionsJsonList(m_usageRestrictions.size());
-    for (unsigned usageRestrictionsIndex = 0; usageRestrictionsIndex < usageRestrictionsJsonList.GetLength(); ++usageRestrictionsIndex) {
-      usageRestrictionsJsonList[usageRestrictionsIndex].AsString(
-          GlossaryUsageRestrictionMapper::GetNameForGlossaryUsageRestriction(m_usageRestrictions[usageRestrictionsIndex]));
-    }
-    payload.WithArray("usageRestrictions", std::move(usageRestrictionsJsonList));
+  if (m_additionalAttributesHasBeenSet) {
+    payload.WithObject("additionalAttributes", m_additionalAttributes.Jsonize());
   }
 
   return payload;

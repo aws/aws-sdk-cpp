@@ -18,16 +18,16 @@ namespace Model {
 RowFilter::RowFilter(JsonView jsonValue) { *this = jsonValue; }
 
 RowFilter& RowFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("expression")) {
+    m_expression = jsonValue.GetObject("expression");
+    m_expressionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("and")) {
     Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("and");
     for (unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex) {
       m_and.push_back(andJsonList[andIndex].AsObject());
     }
     m_andHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("expression")) {
-    m_expression = jsonValue.GetObject("expression");
-    m_expressionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("or")) {
     Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("or");
@@ -42,16 +42,16 @@ RowFilter& RowFilter::operator=(JsonView jsonValue) {
 JsonValue RowFilter::Jsonize() const {
   JsonValue payload;
 
+  if (m_expressionHasBeenSet) {
+    payload.WithObject("expression", m_expression.Jsonize());
+  }
+
   if (m_andHasBeenSet) {
     Aws::Utils::Array<JsonValue> andJsonList(m_and.size());
     for (unsigned andIndex = 0; andIndex < andJsonList.GetLength(); ++andIndex) {
       andJsonList[andIndex].AsObject(m_and[andIndex].Jsonize());
     }
     payload.WithArray("and", std::move(andJsonList));
-  }
-
-  if (m_expressionHasBeenSet) {
-    payload.WithObject("expression", m_expression.Jsonize());
   }
 
   if (m_orHasBeenSet) {

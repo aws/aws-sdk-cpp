@@ -15,24 +15,24 @@ using namespace Aws::Utils;
 Aws::String CreateListingChangeSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_actionHasBeenSet) {
-    payload.WithString("action", ChangeActionMapper::GetNameForChangeAction(m_action));
-  }
-
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_entityIdentifierHasBeenSet) {
     payload.WithString("entityIdentifier", m_entityIdentifier);
+  }
+
+  if (m_entityTypeHasBeenSet) {
+    payload.WithString("entityType", EntityTypeMapper::GetNameForEntityType(m_entityType));
   }
 
   if (m_entityRevisionHasBeenSet) {
     payload.WithString("entityRevision", m_entityRevision);
   }
 
-  if (m_entityTypeHasBeenSet) {
-    payload.WithString("entityType", EntityTypeMapper::GetNameForEntityType(m_entityType));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", ChangeActionMapper::GetNameForChangeAction(m_action));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

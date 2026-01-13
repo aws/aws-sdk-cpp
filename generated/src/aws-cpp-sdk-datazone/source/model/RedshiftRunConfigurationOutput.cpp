@@ -22,21 +22,13 @@ RedshiftRunConfigurationOutput& RedshiftRunConfigurationOutput::operator=(JsonVi
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("dataAccessRole")) {
-    m_dataAccessRole = jsonValue.GetString("dataAccessRole");
-    m_dataAccessRoleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("redshiftCredentialConfiguration")) {
-    m_redshiftCredentialConfiguration = jsonValue.GetObject("redshiftCredentialConfiguration");
-    m_redshiftCredentialConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("redshiftStorage")) {
-    m_redshiftStorage = jsonValue.GetObject("redshiftStorage");
-    m_redshiftStorageHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataAccessRole")) {
+    m_dataAccessRole = jsonValue.GetString("dataAccessRole");
+    m_dataAccessRoleHasBeenSet = true;
   }
   if (jsonValue.ValueExists("relationalFilterConfigurations")) {
     Aws::Utils::Array<JsonView> relationalFilterConfigurationsJsonList = jsonValue.GetArray("relationalFilterConfigurations");
@@ -45,6 +37,14 @@ RedshiftRunConfigurationOutput& RedshiftRunConfigurationOutput::operator=(JsonVi
       m_relationalFilterConfigurations.push_back(relationalFilterConfigurationsJsonList[relationalFilterConfigurationsIndex].AsObject());
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("redshiftCredentialConfiguration")) {
+    m_redshiftCredentialConfiguration = jsonValue.GetObject("redshiftCredentialConfiguration");
+    m_redshiftCredentialConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("redshiftStorage")) {
+    m_redshiftStorage = jsonValue.GetObject("redshiftStorage");
+    m_redshiftStorageHasBeenSet = true;
   }
   return *this;
 }
@@ -56,20 +56,12 @@ JsonValue RedshiftRunConfigurationOutput::Jsonize() const {
     payload.WithString("accountId", m_accountId);
   }
 
-  if (m_dataAccessRoleHasBeenSet) {
-    payload.WithString("dataAccessRole", m_dataAccessRole);
-  }
-
-  if (m_redshiftCredentialConfigurationHasBeenSet) {
-    payload.WithObject("redshiftCredentialConfiguration", m_redshiftCredentialConfiguration.Jsonize());
-  }
-
-  if (m_redshiftStorageHasBeenSet) {
-    payload.WithObject("redshiftStorage", m_redshiftStorage.Jsonize());
-  }
-
   if (m_regionHasBeenSet) {
     payload.WithString("region", m_region);
+  }
+
+  if (m_dataAccessRoleHasBeenSet) {
+    payload.WithString("dataAccessRole", m_dataAccessRole);
   }
 
   if (m_relationalFilterConfigurationsHasBeenSet) {
@@ -80,6 +72,14 @@ JsonValue RedshiftRunConfigurationOutput::Jsonize() const {
           m_relationalFilterConfigurations[relationalFilterConfigurationsIndex].Jsonize());
     }
     payload.WithArray("relationalFilterConfigurations", std::move(relationalFilterConfigurationsJsonList));
+  }
+
+  if (m_redshiftCredentialConfigurationHasBeenSet) {
+    payload.WithObject("redshiftCredentialConfiguration", m_redshiftCredentialConfiguration.Jsonize());
+  }
+
+  if (m_redshiftStorageHasBeenSet) {
+    payload.WithObject("redshiftStorage", m_redshiftStorage.Jsonize());
   }
 
   return payload;

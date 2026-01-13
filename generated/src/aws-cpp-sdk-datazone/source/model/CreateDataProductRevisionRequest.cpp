@@ -15,20 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateDataProductRevisionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
-  }
-
-  if (m_formsInputHasBeenSet) {
-    Aws::Utils::Array<JsonValue> formsInputJsonList(m_formsInput.size());
-    for (unsigned formsInputIndex = 0; formsInputIndex < formsInputJsonList.GetLength(); ++formsInputIndex) {
-      formsInputJsonList[formsInputIndex].AsObject(m_formsInput[formsInputIndex].Jsonize());
-    }
-    payload.WithArray("formsInput", std::move(formsInputJsonList));
   }
 
   if (m_glossaryTermsHasBeenSet) {
@@ -47,8 +39,16 @@ Aws::String CreateDataProductRevisionRequest::SerializePayload() const {
     payload.WithArray("items", std::move(itemsJsonList));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_formsInputHasBeenSet) {
+    Aws::Utils::Array<JsonValue> formsInputJsonList(m_formsInput.size());
+    for (unsigned formsInputIndex = 0; formsInputIndex < formsInputJsonList.GetLength(); ++formsInputIndex) {
+      formsInputJsonList[formsInputIndex].AsObject(m_formsInput[formsInputIndex].Jsonize());
+    }
+    payload.WithArray("formsInput", std::move(formsInputJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

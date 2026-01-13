@@ -18,6 +18,11 @@ namespace Model {
 EnvironmentDeploymentDetails::EnvironmentDeploymentDetails(JsonView jsonValue) { *this = jsonValue; }
 
 EnvironmentDeploymentDetails& EnvironmentDeploymentDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("overallDeploymentStatus")) {
+    m_overallDeploymentStatus =
+        OverallDeploymentStatusMapper::GetOverallDeploymentStatusForName(jsonValue.GetString("overallDeploymentStatus"));
+    m_overallDeploymentStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("environmentFailureReasons")) {
     Aws::Map<Aws::String, JsonView> environmentFailureReasonsJsonMap = jsonValue.GetObject("environmentFailureReasons").GetAllObjects();
     for (auto& environmentFailureReasonsItem : environmentFailureReasonsJsonMap) {
@@ -32,16 +37,16 @@ EnvironmentDeploymentDetails& EnvironmentDeploymentDetails::operator=(JsonView j
     }
     m_environmentFailureReasonsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("overallDeploymentStatus")) {
-    m_overallDeploymentStatus =
-        OverallDeploymentStatusMapper::GetOverallDeploymentStatusForName(jsonValue.GetString("overallDeploymentStatus"));
-    m_overallDeploymentStatusHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EnvironmentDeploymentDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_overallDeploymentStatusHasBeenSet) {
+    payload.WithString("overallDeploymentStatus",
+                       OverallDeploymentStatusMapper::GetNameForOverallDeploymentStatus(m_overallDeploymentStatus));
+  }
 
   if (m_environmentFailureReasonsHasBeenSet) {
     JsonValue environmentFailureReasonsJsonMap;
@@ -55,11 +60,6 @@ JsonValue EnvironmentDeploymentDetails::Jsonize() const {
       environmentFailureReasonsJsonMap.WithArray(environmentFailureReasonsItem.first, std::move(environmentFailureReasonsListJsonList));
     }
     payload.WithObject("environmentFailureReasons", std::move(environmentFailureReasonsJsonMap));
-  }
-
-  if (m_overallDeploymentStatusHasBeenSet) {
-    payload.WithString("overallDeploymentStatus",
-                       OverallDeploymentStatusMapper::GetNameForOverallDeploymentStatus(m_overallDeploymentStatus));
   }
 
   return payload;

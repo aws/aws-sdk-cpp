@@ -32,44 +32,6 @@ class UpdateAccountPoolRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The source of accounts for the account pool. In the current release, it's
-   * either a static list of accounts provided by the customer or a custom Amazon Web
-   * Services Lambda handler. </p>
-   */
-  inline const AccountSource& GetAccountSource() const { return m_accountSource; }
-  inline bool AccountSourceHasBeenSet() const { return m_accountSourceHasBeenSet; }
-  template <typename AccountSourceT = AccountSource>
-  void SetAccountSource(AccountSourceT&& value) {
-    m_accountSourceHasBeenSet = true;
-    m_accountSource = std::forward<AccountSourceT>(value);
-  }
-  template <typename AccountSourceT = AccountSource>
-  UpdateAccountPoolRequest& WithAccountSource(AccountSourceT&& value) {
-    SetAccountSource(std::forward<AccountSourceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the account pool that is to be udpated.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateAccountPoolRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The domain ID where the account pool that is to be updated lives.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -124,6 +86,24 @@ class UpdateAccountPoolRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The description of the account pool that is to be udpated.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateAccountPoolRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The mechanism used to resolve the account selection from the account
    * pool.</p>
    */
@@ -138,24 +118,44 @@ class UpdateAccountPoolRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The source of accounts for the account pool. In the current release, it's
+   * either a static list of accounts provided by the customer or a custom Amazon Web
+   * Services Lambda handler. </p>
+   */
+  inline const AccountSource& GetAccountSource() const { return m_accountSource; }
+  inline bool AccountSourceHasBeenSet() const { return m_accountSourceHasBeenSet; }
+  template <typename AccountSourceT = AccountSource>
+  void SetAccountSource(AccountSourceT&& value) {
+    m_accountSourceHasBeenSet = true;
+    m_accountSource = std::forward<AccountSourceT>(value);
+  }
+  template <typename AccountSourceT = AccountSource>
+  UpdateAccountPoolRequest& WithAccountSource(AccountSourceT&& value) {
+    SetAccountSource(std::forward<AccountSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  AccountSource m_accountSource;
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
   ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
-  bool m_accountSourceHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  AccountSource m_accountSource;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_resolutionStrategyHasBeenSet = false;
+  bool m_accountSourceHasBeenSet = false;
 };
 
 }  // namespace Model

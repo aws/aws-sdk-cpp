@@ -87,25 +87,6 @@ class UpdateGlossaryTermRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The long description to be updated as part of the
-   * <code>UpdateGlossaryTerm</code> action.</p>
-   */
-  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
-  inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
-  template <typename LongDescriptionT = Aws::String>
-  void SetLongDescription(LongDescriptionT&& value) {
-    m_longDescriptionHasBeenSet = true;
-    m_longDescription = std::forward<LongDescriptionT>(value);
-  }
-  template <typename LongDescriptionT = Aws::String>
-  UpdateGlossaryTermRequest& WithLongDescription(LongDescriptionT&& value) {
-    SetLongDescription(std::forward<LongDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name to be updated as part of the <code>UpdateGlossaryTerm</code>
    * action.</p>
    */
@@ -144,17 +125,19 @@ class UpdateGlossaryTermRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code>
-   * action.</p>
+   * <p>The long description to be updated as part of the
+   * <code>UpdateGlossaryTerm</code> action.</p>
    */
-  inline GlossaryTermStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(GlossaryTermStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
+  inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
+  template <typename LongDescriptionT = Aws::String>
+  void SetLongDescription(LongDescriptionT&& value) {
+    m_longDescriptionHasBeenSet = true;
+    m_longDescription = std::forward<LongDescriptionT>(value);
   }
-  inline UpdateGlossaryTermRequest& WithStatus(GlossaryTermStatus value) {
-    SetStatus(value);
+  template <typename LongDescriptionT = Aws::String>
+  UpdateGlossaryTermRequest& WithLongDescription(LongDescriptionT&& value) {
+    SetLongDescription(std::forward<LongDescriptionT>(value));
     return *this;
   }
   ///@}
@@ -177,6 +160,23 @@ class UpdateGlossaryTermRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code>
+   * action.</p>
+   */
+  inline GlossaryTermStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(GlossaryTermStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateGlossaryTermRequest& WithStatus(GlossaryTermStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -184,23 +184,23 @@ class UpdateGlossaryTermRequest : public DataZoneRequest {
 
   Aws::String m_identifier;
 
-  Aws::String m_longDescription;
-
   Aws::String m_name;
 
   Aws::String m_shortDescription;
 
-  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
+  Aws::String m_longDescription;
 
   TermRelations m_termRelations;
+
+  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_glossaryIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_longDescriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_shortDescriptionHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_termRelationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

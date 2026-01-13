@@ -28,23 +28,6 @@ class CreateFormTypeResult {
 
   ///@{
   /**
-   * <p>The description of this Amazon DataZone metadata form type.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateFormTypeResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which this metadata form type is
    * created.</p>
    */
@@ -74,6 +57,57 @@ class CreateFormTypeResult {
   template <typename NameT = Aws::String>
   CreateFormTypeResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of this Amazon DataZone metadata form type.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  CreateFormTypeResult& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of this Amazon DataZone metadata form type.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateFormTypeResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project that owns this Amazon DataZone metadata form type.</p>
+   */
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  }
+  template <typename OwningProjectIdT = Aws::String>
+  CreateFormTypeResult& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
     return *this;
   }
   ///@}
@@ -115,40 +149,6 @@ class CreateFormTypeResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The ID of the project that owns this Amazon DataZone metadata form type.</p>
-   */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
-  }
-  template <typename OwningProjectIdT = Aws::String>
-  CreateFormTypeResult& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of this Amazon DataZone metadata form type.</p>
-   */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
-  }
-  template <typename RevisionT = Aws::String>
-  CreateFormTypeResult& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -163,28 +163,28 @@ class CreateFormTypeResult {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainId;
 
   Aws::String m_name;
+
+  Aws::String m_revision;
+
+  Aws::String m_description;
+
+  Aws::String m_owningProjectId;
 
   Aws::String m_originDomainId;
 
   Aws::String m_originProjectId;
 
-  Aws::String m_owningProjectId;
-
-  Aws::String m_revision;
-
   Aws::String m_requestId;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
   bool m_originDomainIdHasBeenSet = false;
   bool m_originProjectIdHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

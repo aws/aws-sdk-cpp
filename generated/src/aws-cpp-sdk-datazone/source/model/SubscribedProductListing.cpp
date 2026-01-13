@@ -18,17 +18,6 @@ namespace Model {
 SubscribedProductListing::SubscribedProductListing(JsonView jsonValue) { *this = jsonValue; }
 
 SubscribedProductListing& SubscribedProductListing::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("assetListings")) {
-    Aws::Utils::Array<JsonView> assetListingsJsonList = jsonValue.GetArray("assetListings");
-    for (unsigned assetListingsIndex = 0; assetListingsIndex < assetListingsJsonList.GetLength(); ++assetListingsIndex) {
-      m_assetListings.push_back(assetListingsJsonList[assetListingsIndex].AsObject());
-    }
-    m_assetListingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("entityId")) {
     m_entityId = jsonValue.GetString("entityId");
     m_entityIdHasBeenSet = true;
@@ -48,23 +37,22 @@ SubscribedProductListing& SubscribedProductListing::operator=(JsonView jsonValue
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("assetListings")) {
+    Aws::Utils::Array<JsonView> assetListingsJsonList = jsonValue.GetArray("assetListings");
+    for (unsigned assetListingsIndex = 0; assetListingsIndex < assetListingsJsonList.GetLength(); ++assetListingsIndex) {
+      m_assetListings.push_back(assetListingsJsonList[assetListingsIndex].AsObject());
+    }
+    m_assetListingsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue SubscribedProductListing::Jsonize() const {
   JsonValue payload;
-
-  if (m_assetListingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> assetListingsJsonList(m_assetListings.size());
-    for (unsigned assetListingsIndex = 0; assetListingsIndex < assetListingsJsonList.GetLength(); ++assetListingsIndex) {
-      assetListingsJsonList[assetListingsIndex].AsObject(m_assetListings[assetListingsIndex].Jsonize());
-    }
-    payload.WithArray("assetListings", std::move(assetListingsJsonList));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
 
   if (m_entityIdHasBeenSet) {
     payload.WithString("entityId", m_entityId);
@@ -84,6 +72,18 @@ JsonValue SubscribedProductListing::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_assetListingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetListingsJsonList(m_assetListings.size());
+    for (unsigned assetListingsIndex = 0; assetListingsIndex < assetListingsJsonList.GetLength(); ++assetListingsIndex) {
+      assetListingsJsonList[assetListingsIndex].AsObject(m_assetListings[assetListingsIndex].Jsonize());
+    }
+    payload.WithArray("assetListings", std::move(assetListingsJsonList));
   }
 
   return payload;

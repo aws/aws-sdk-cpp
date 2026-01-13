@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String AddEntityOwnerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_ownerHasBeenSet) {
     payload.WithObject("owner", m_owner.Jsonize());
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

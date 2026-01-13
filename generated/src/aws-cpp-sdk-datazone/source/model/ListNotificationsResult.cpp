@@ -21,16 +21,16 @@ ListNotificationsResult::ListNotificationsResult(const Aws::AmazonWebServiceResu
 
 ListNotificationsResult& ListNotificationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("notifications")) {
     Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
     for (unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex) {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
     }
     m_notificationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

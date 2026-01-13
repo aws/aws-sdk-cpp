@@ -36,24 +36,6 @@ class EnvironmentConfigurationUserParameter {
 
   ///@{
   /**
-   * <p>The environment configuration name.</p>
-   */
-  inline const Aws::String& GetEnvironmentConfigurationName() const { return m_environmentConfigurationName; }
-  inline bool EnvironmentConfigurationNameHasBeenSet() const { return m_environmentConfigurationNameHasBeenSet; }
-  template <typename EnvironmentConfigurationNameT = Aws::String>
-  void SetEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
-    m_environmentConfigurationNameHasBeenSet = true;
-    m_environmentConfigurationName = std::forward<EnvironmentConfigurationNameT>(value);
-  }
-  template <typename EnvironmentConfigurationNameT = Aws::String>
-  EnvironmentConfigurationUserParameter& WithEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
-    SetEnvironmentConfigurationName(std::forward<EnvironmentConfigurationNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the environment.</p>
    */
   inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
@@ -66,6 +48,43 @@ class EnvironmentConfigurationUserParameter {
   template <typename EnvironmentIdT = Aws::String>
   EnvironmentConfigurationUserParameter& WithEnvironmentId(EnvironmentIdT&& value) {
     SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the account/Region that is to be used during project creation for a
+   * particular blueprint.</p>
+   */
+  inline const EnvironmentResolvedAccount& GetEnvironmentResolvedAccount() const { return m_environmentResolvedAccount; }
+  inline bool EnvironmentResolvedAccountHasBeenSet() const { return m_environmentResolvedAccountHasBeenSet; }
+  template <typename EnvironmentResolvedAccountT = EnvironmentResolvedAccount>
+  void SetEnvironmentResolvedAccount(EnvironmentResolvedAccountT&& value) {
+    m_environmentResolvedAccountHasBeenSet = true;
+    m_environmentResolvedAccount = std::forward<EnvironmentResolvedAccountT>(value);
+  }
+  template <typename EnvironmentResolvedAccountT = EnvironmentResolvedAccount>
+  EnvironmentConfigurationUserParameter& WithEnvironmentResolvedAccount(EnvironmentResolvedAccountT&& value) {
+    SetEnvironmentResolvedAccount(std::forward<EnvironmentResolvedAccountT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The environment configuration name.</p>
+   */
+  inline const Aws::String& GetEnvironmentConfigurationName() const { return m_environmentConfigurationName; }
+  inline bool EnvironmentConfigurationNameHasBeenSet() const { return m_environmentConfigurationNameHasBeenSet; }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  void SetEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    m_environmentConfigurationNameHasBeenSet = true;
+    m_environmentConfigurationName = std::forward<EnvironmentConfigurationNameT>(value);
+  }
+  template <typename EnvironmentConfigurationNameT = Aws::String>
+  EnvironmentConfigurationUserParameter& WithEnvironmentConfigurationName(EnvironmentConfigurationNameT&& value) {
+    SetEnvironmentConfigurationName(std::forward<EnvironmentConfigurationNameT>(value));
     return *this;
   }
   ///@}
@@ -93,37 +112,18 @@ class EnvironmentConfigurationUserParameter {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the account/Region that is to be used during project creation for a
-   * particular blueprint.</p>
-   */
-  inline const EnvironmentResolvedAccount& GetEnvironmentResolvedAccount() const { return m_environmentResolvedAccount; }
-  inline bool EnvironmentResolvedAccountHasBeenSet() const { return m_environmentResolvedAccountHasBeenSet; }
-  template <typename EnvironmentResolvedAccountT = EnvironmentResolvedAccount>
-  void SetEnvironmentResolvedAccount(EnvironmentResolvedAccountT&& value) {
-    m_environmentResolvedAccountHasBeenSet = true;
-    m_environmentResolvedAccount = std::forward<EnvironmentResolvedAccountT>(value);
-  }
-  template <typename EnvironmentResolvedAccountT = EnvironmentResolvedAccount>
-  EnvironmentConfigurationUserParameter& WithEnvironmentResolvedAccount(EnvironmentResolvedAccountT&& value) {
-    SetEnvironmentResolvedAccount(std::forward<EnvironmentResolvedAccountT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_environmentConfigurationName;
-
   Aws::String m_environmentId;
 
-  Aws::Vector<EnvironmentParameter> m_environmentParameters;
-
   EnvironmentResolvedAccount m_environmentResolvedAccount;
-  bool m_environmentConfigurationNameHasBeenSet = false;
+
+  Aws::String m_environmentConfigurationName;
+
+  Aws::Vector<EnvironmentParameter> m_environmentParameters;
   bool m_environmentIdHasBeenSet = false;
-  bool m_environmentParametersHasBeenSet = false;
   bool m_environmentResolvedAccountHasBeenSet = false;
+  bool m_environmentConfigurationNameHasBeenSet = false;
+  bool m_environmentParametersHasBeenSet = false;
 };
 
 }  // namespace Model

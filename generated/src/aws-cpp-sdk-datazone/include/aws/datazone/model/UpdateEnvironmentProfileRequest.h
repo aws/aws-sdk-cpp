@@ -32,63 +32,6 @@ class UpdateEnvironmentProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account in which a specified environment profile is
-   * to be udpated.</p>
-   */
-  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
-  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-  template <typename AwsAccountIdT = Aws::String>
-  void SetAwsAccountId(AwsAccountIdT&& value) {
-    m_awsAccountIdHasBeenSet = true;
-    m_awsAccountId = std::forward<AwsAccountIdT>(value);
-  }
-  template <typename AwsAccountIdT = Aws::String>
-  UpdateEnvironmentProfileRequest& WithAwsAccountId(AwsAccountIdT&& value) {
-    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Web Services Region in which a specified environment profile is to
-   * be updated.</p>
-   */
-  inline const Aws::String& GetAwsAccountRegion() const { return m_awsAccountRegion; }
-  inline bool AwsAccountRegionHasBeenSet() const { return m_awsAccountRegionHasBeenSet; }
-  template <typename AwsAccountRegionT = Aws::String>
-  void SetAwsAccountRegion(AwsAccountRegionT&& value) {
-    m_awsAccountRegionHasBeenSet = true;
-    m_awsAccountRegion = std::forward<AwsAccountRegionT>(value);
-  }
-  template <typename AwsAccountRegionT = Aws::String>
-  UpdateEnvironmentProfileRequest& WithAwsAccountRegion(AwsAccountRegionT&& value) {
-    SetAwsAccountRegion(std::forward<AwsAccountRegionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description to be updated as part of the
-   * <code>UpdateEnvironmentProfile</code> action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateEnvironmentProfileRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which an environment profile
    * is to be updated.</p>
    */
@@ -145,6 +88,25 @@ class UpdateEnvironmentProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The description to be updated as part of the
+   * <code>UpdateEnvironmentProfile</code> action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateEnvironmentProfileRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The user parameters to be updated as part of the
    * <code>UpdateEnvironmentProfile</code> action.</p>
    */
@@ -167,27 +129,65 @@ class UpdateEnvironmentProfileRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account in which a specified environment profile is
+   * to be udpated.</p>
+   */
+  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+  template <typename AwsAccountIdT = Aws::String>
+  void SetAwsAccountId(AwsAccountIdT&& value) {
+    m_awsAccountIdHasBeenSet = true;
+    m_awsAccountId = std::forward<AwsAccountIdT>(value);
+  }
+  template <typename AwsAccountIdT = Aws::String>
+  UpdateEnvironmentProfileRequest& WithAwsAccountId(AwsAccountIdT&& value) {
+    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region in which a specified environment profile is to
+   * be updated.</p>
+   */
+  inline const Aws::String& GetAwsAccountRegion() const { return m_awsAccountRegion; }
+  inline bool AwsAccountRegionHasBeenSet() const { return m_awsAccountRegionHasBeenSet; }
+  template <typename AwsAccountRegionT = Aws::String>
+  void SetAwsAccountRegion(AwsAccountRegionT&& value) {
+    m_awsAccountRegionHasBeenSet = true;
+    m_awsAccountRegion = std::forward<AwsAccountRegionT>(value);
+  }
+  template <typename AwsAccountRegionT = Aws::String>
+  UpdateEnvironmentProfileRequest& WithAwsAccountRegion(AwsAccountRegionT&& value) {
+    SetAwsAccountRegion(std::forward<AwsAccountRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_awsAccountId;
-
-  Aws::String m_awsAccountRegion;
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
   Aws::Vector<EnvironmentParameter> m_userParameters;
-  bool m_awsAccountIdHasBeenSet = false;
-  bool m_awsAccountRegionHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_awsAccountId;
+
+  Aws::String m_awsAccountRegion;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsAccountRegionHasBeenSet = false;
 };
 
 }  // namespace Model

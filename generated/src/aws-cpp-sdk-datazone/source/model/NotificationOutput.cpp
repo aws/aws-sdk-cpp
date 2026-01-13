@@ -18,6 +18,34 @@ namespace Model {
 NotificationOutput::NotificationOutput(JsonView jsonValue) { *this = jsonValue; }
 
 NotificationOutput& NotificationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("identifier")) {
+    m_identifier = jsonValue.GetString("identifier");
+    m_identifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainIdentifier")) {
+    m_domainIdentifier = jsonValue.GetString("domainIdentifier");
+    m_domainIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("topic")) {
+    m_topic = jsonValue.GetObject("topic");
+    m_topicHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("title")) {
+    m_title = jsonValue.GetString("title");
+    m_titleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("actionLink")) {
     m_actionLink = jsonValue.GetString("actionLink");
     m_actionLinkHasBeenSet = true;
@@ -26,21 +54,9 @@ NotificationOutput& NotificationOutput::operator=(JsonView jsonValue) {
     m_creationTimestamp = jsonValue.GetDouble("creationTimestamp");
     m_creationTimestampHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("domainIdentifier")) {
-    m_domainIdentifier = jsonValue.GetString("domainIdentifier");
-    m_domainIdentifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("identifier")) {
-    m_identifier = jsonValue.GetString("identifier");
-    m_identifierHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lastUpdatedTimestamp")) {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("lastUpdatedTimestamp");
     m_lastUpdatedTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("message")) {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
   }
   if (jsonValue.ValueExists("metadata")) {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -49,27 +65,39 @@ NotificationOutput& NotificationOutput::operator=(JsonView jsonValue) {
     }
     m_metadataHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("title")) {
-    m_title = jsonValue.GetString("title");
-    m_titleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("topic")) {
-    m_topic = jsonValue.GetObject("topic");
-    m_topicHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("type")) {
-    m_type = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue NotificationOutput::Jsonize() const {
   JsonValue payload;
+
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
+  }
+
+  if (m_domainIdentifierHasBeenSet) {
+    payload.WithString("domainIdentifier", m_domainIdentifier);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", NotificationTypeMapper::GetNameForNotificationType(m_type));
+  }
+
+  if (m_topicHasBeenSet) {
+    payload.WithObject("topic", m_topic.Jsonize());
+  }
+
+  if (m_titleHasBeenSet) {
+    payload.WithString("title", m_title);
+  }
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TaskStatusMapper::GetNameForTaskStatus(m_status));
+  }
 
   if (m_actionLinkHasBeenSet) {
     payload.WithString("actionLink", m_actionLink);
@@ -79,20 +107,8 @@ JsonValue NotificationOutput::Jsonize() const {
     payload.WithDouble("creationTimestamp", m_creationTimestamp.SecondsWithMSPrecision());
   }
 
-  if (m_domainIdentifierHasBeenSet) {
-    payload.WithString("domainIdentifier", m_domainIdentifier);
-  }
-
-  if (m_identifierHasBeenSet) {
-    payload.WithString("identifier", m_identifier);
-  }
-
   if (m_lastUpdatedTimestampHasBeenSet) {
     payload.WithDouble("lastUpdatedTimestamp", m_lastUpdatedTimestamp.SecondsWithMSPrecision());
-  }
-
-  if (m_messageHasBeenSet) {
-    payload.WithString("message", m_message);
   }
 
   if (m_metadataHasBeenSet) {
@@ -101,22 +117,6 @@ JsonValue NotificationOutput::Jsonize() const {
       metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
     }
     payload.WithObject("metadata", std::move(metadataJsonMap));
-  }
-
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", TaskStatusMapper::GetNameForTaskStatus(m_status));
-  }
-
-  if (m_titleHasBeenSet) {
-    payload.WithString("title", m_title);
-  }
-
-  if (m_topicHasBeenSet) {
-    payload.WithObject("topic", m_topic.Jsonize());
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", NotificationTypeMapper::GetNameForNotificationType(m_type));
   }
 
   return payload;

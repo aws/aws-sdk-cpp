@@ -18,13 +18,6 @@ namespace Model {
 ListingSummary::ListingSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ListingSummary& ListingSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("glossaryTerms")) {
-    Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
-    for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
-      m_glossaryTerms.push_back(glossaryTermsJsonList[glossaryTermsIndex].AsObject());
-    }
-    m_glossaryTermsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("listingId")) {
     m_listingId = jsonValue.GetString("listingId");
     m_listingIdHasBeenSet = true;
@@ -33,19 +26,18 @@ ListingSummary& ListingSummary::operator=(JsonView jsonValue) {
     m_listingRevision = jsonValue.GetString("listingRevision");
     m_listingRevisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("glossaryTerms")) {
+    Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
+    for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
+      m_glossaryTerms.push_back(glossaryTermsJsonList[glossaryTermsIndex].AsObject());
+    }
+    m_glossaryTermsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ListingSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_glossaryTermsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> glossaryTermsJsonList(m_glossaryTerms.size());
-    for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
-      glossaryTermsJsonList[glossaryTermsIndex].AsObject(m_glossaryTerms[glossaryTermsIndex].Jsonize());
-    }
-    payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
-  }
 
   if (m_listingIdHasBeenSet) {
     payload.WithString("listingId", m_listingId);
@@ -53,6 +45,14 @@ JsonValue ListingSummary::Jsonize() const {
 
   if (m_listingRevisionHasBeenSet) {
     payload.WithString("listingRevision", m_listingRevision);
+  }
+
+  if (m_glossaryTermsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> glossaryTermsJsonList(m_glossaryTerms.size());
+    for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
+      glossaryTermsJsonList[glossaryTermsIndex].AsObject(m_glossaryTerms[glossaryTermsIndex].Jsonize());
+    }
+    payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
   return payload;

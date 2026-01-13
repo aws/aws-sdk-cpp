@@ -22,13 +22,13 @@ DomainUnitPolicyGrantPrincipal& DomainUnitPolicyGrantPrincipal::operator=(JsonVi
     m_domainUnitDesignation = DomainUnitDesignationMapper::GetDomainUnitDesignationForName(jsonValue.GetString("domainUnitDesignation"));
     m_domainUnitDesignationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("domainUnitGrantFilter")) {
-    m_domainUnitGrantFilter = jsonValue.GetObject("domainUnitGrantFilter");
-    m_domainUnitGrantFilterHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainUnitIdentifier")) {
     m_domainUnitIdentifier = jsonValue.GetString("domainUnitIdentifier");
     m_domainUnitIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainUnitGrantFilter")) {
+    m_domainUnitGrantFilter = jsonValue.GetObject("domainUnitGrantFilter");
+    m_domainUnitGrantFilterHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue DomainUnitPolicyGrantPrincipal::Jsonize() const {
     payload.WithString("domainUnitDesignation", DomainUnitDesignationMapper::GetNameForDomainUnitDesignation(m_domainUnitDesignation));
   }
 
-  if (m_domainUnitGrantFilterHasBeenSet) {
-    payload.WithObject("domainUnitGrantFilter", m_domainUnitGrantFilter.Jsonize());
-  }
-
   if (m_domainUnitIdentifierHasBeenSet) {
     payload.WithString("domainUnitIdentifier", m_domainUnitIdentifier);
+  }
+
+  if (m_domainUnitGrantFilterHasBeenSet) {
+    payload.WithObject("domainUnitGrantFilter", m_domainUnitGrantFilter.Jsonize());
   }
 
   return payload;

@@ -32,24 +32,6 @@ class CreateFormTypeRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The description of this Amazon DataZone metadata form type.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateFormTypeRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which this metadata form type is
    * created.</p>
    */
@@ -69,24 +51,6 @@ class CreateFormTypeRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The model of this Amazon DataZone metadata form type.</p>
-   */
-  inline const Model& GetModel() const { return m_model; }
-  inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-  template <typename ModelT = Model>
-  void SetModel(ModelT&& value) {
-    m_modelHasBeenSet = true;
-    m_model = std::forward<ModelT>(value);
-  }
-  template <typename ModelT = Model>
-  CreateFormTypeRequest& WithModel(ModelT&& value) {
-    SetModel(std::forward<ModelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of this Amazon DataZone metadata form type.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -99,6 +63,24 @@ class CreateFormTypeRequest : public DataZoneRequest {
   template <typename NameT = Aws::String>
   CreateFormTypeRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The model of this Amazon DataZone metadata form type.</p>
+   */
+  inline const Model& GetModel() const { return m_model; }
+  inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+  template <typename ModelT = Model>
+  void SetModel(ModelT&& value) {
+    m_modelHasBeenSet = true;
+    m_model = std::forward<ModelT>(value);
+  }
+  template <typename ModelT = Model>
+  CreateFormTypeRequest& WithModel(ModelT&& value) {
+    SetModel(std::forward<ModelT>(value));
     return *this;
   }
   ///@}
@@ -136,24 +118,42 @@ class CreateFormTypeRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_description;
 
+  ///@{
+  /**
+   * <p>The description of this Amazon DataZone metadata form type.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateFormTypeRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
-  Model m_model;
-
   Aws::String m_name;
+
+  Model m_model;
 
   Aws::String m_owningProjectIdentifier;
 
   FormTypeStatus m_status{FormTypeStatus::NOT_SET};
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_description;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_modelHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
   bool m_owningProjectIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
 };
 
 }  // namespace Model
