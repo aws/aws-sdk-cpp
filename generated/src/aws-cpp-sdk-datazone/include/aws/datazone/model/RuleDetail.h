@@ -34,6 +34,24 @@ class RuleDetail {
 
   ///@{
   /**
+   * <p>The enforcement detail of the metadata form.</p>
+   */
+  inline const MetadataFormEnforcementDetail& GetMetadataFormEnforcementDetail() const { return m_metadataFormEnforcementDetail; }
+  inline bool MetadataFormEnforcementDetailHasBeenSet() const { return m_metadataFormEnforcementDetailHasBeenSet; }
+  template <typename MetadataFormEnforcementDetailT = MetadataFormEnforcementDetail>
+  void SetMetadataFormEnforcementDetail(MetadataFormEnforcementDetailT&& value) {
+    m_metadataFormEnforcementDetailHasBeenSet = true;
+    m_metadataFormEnforcementDetail = std::forward<MetadataFormEnforcementDetailT>(value);
+  }
+  template <typename MetadataFormEnforcementDetailT = MetadataFormEnforcementDetail>
+  RuleDetail& WithMetadataFormEnforcementDetail(MetadataFormEnforcementDetailT&& value) {
+    SetMetadataFormEnforcementDetail(std::forward<MetadataFormEnforcementDetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The enforcement details of a glossary term that's part of the metadata
    * rule.</p>
    */
@@ -50,30 +68,12 @@ class RuleDetail {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The enforcement detail of the metadata form.</p>
-   */
-  inline const MetadataFormEnforcementDetail& GetMetadataFormEnforcementDetail() const { return m_metadataFormEnforcementDetail; }
-  inline bool MetadataFormEnforcementDetailHasBeenSet() const { return m_metadataFormEnforcementDetailHasBeenSet; }
-  template <typename MetadataFormEnforcementDetailT = MetadataFormEnforcementDetail>
-  void SetMetadataFormEnforcementDetail(MetadataFormEnforcementDetailT&& value) {
-    m_metadataFormEnforcementDetailHasBeenSet = true;
-    m_metadataFormEnforcementDetail = std::forward<MetadataFormEnforcementDetailT>(value);
-  }
-  template <typename MetadataFormEnforcementDetailT = MetadataFormEnforcementDetail>
-  RuleDetail& WithMetadataFormEnforcementDetail(MetadataFormEnforcementDetailT&& value) {
-    SetMetadataFormEnforcementDetail(std::forward<MetadataFormEnforcementDetailT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  GlossaryTermEnforcementDetail m_glossaryTermEnforcementDetail;
-
   MetadataFormEnforcementDetail m_metadataFormEnforcementDetail;
-  bool m_glossaryTermEnforcementDetailHasBeenSet = false;
+
+  GlossaryTermEnforcementDetail m_glossaryTermEnforcementDetail;
   bool m_metadataFormEnforcementDetailHasBeenSet = false;
+  bool m_glossaryTermEnforcementDetailHasBeenSet = false;
 };
 
 }  // namespace Model

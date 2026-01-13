@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateProjectMembershipRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_designationHasBeenSet) {
-    payload.WithString("designation", UserDesignationMapper::GetNameForUserDesignation(m_designation));
-  }
-
   if (m_memberHasBeenSet) {
     payload.WithObject("member", m_member.Jsonize());
+  }
+
+  if (m_designationHasBeenSet) {
+    payload.WithString("designation", UserDesignationMapper::GetNameForUserDesignation(m_designation));
   }
 
   return payload.View().WriteReadable();

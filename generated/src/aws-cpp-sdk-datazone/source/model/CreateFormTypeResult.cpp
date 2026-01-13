@@ -21,10 +21,6 @@ CreateFormTypeResult::CreateFormTypeResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateFormTypeResult& CreateFormTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -33,6 +29,18 @@ CreateFormTypeResult& CreateFormTypeResult::operator=(const Aws::AmazonWebServic
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("revision")) {
+    m_revision = jsonValue.GetString("revision");
+    m_revisionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("originDomainId")) {
     m_originDomainId = jsonValue.GetString("originDomainId");
     m_originDomainIdHasBeenSet = true;
@@ -40,14 +48,6 @@ CreateFormTypeResult& CreateFormTypeResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("originProjectId")) {
     m_originProjectId = jsonValue.GetString("originProjectId");
     m_originProjectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("revision")) {
-    m_revision = jsonValue.GetString("revision");
-    m_revisionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

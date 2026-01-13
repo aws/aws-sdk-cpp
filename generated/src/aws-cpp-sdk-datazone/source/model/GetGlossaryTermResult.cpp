@@ -21,14 +21,6 @@ GetGlossaryTermResult::GetGlossaryTermResult(const Aws::AmazonWebServiceResult<J
 
 GetGlossaryTermResult& GetGlossaryTermResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -41,10 +33,6 @@ GetGlossaryTermResult& GetGlossaryTermResult::operator=(const Aws::AmazonWebServ
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("longDescription")) {
-    m_longDescription = jsonValue.GetString("longDescription");
-    m_longDescriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -53,13 +41,25 @@ GetGlossaryTermResult& GetGlossaryTermResult::operator=(const Aws::AmazonWebServ
     m_shortDescription = jsonValue.GetString("shortDescription");
     m_shortDescriptionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("status")) {
-    m_status = GlossaryTermStatusMapper::GetGlossaryTermStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+  if (jsonValue.ValueExists("longDescription")) {
+    m_longDescription = jsonValue.GetString("longDescription");
+    m_longDescriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("termRelations")) {
     m_termRelations = jsonValue.GetObject("termRelations");
     m_termRelationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = GlossaryTermStatusMapper::GetGlossaryTermStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");

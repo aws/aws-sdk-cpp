@@ -19,15 +19,15 @@ Aws::String ListProjectsRequest::SerializePayload() const { return {}; }
 
 void ListProjectsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_groupIdentifierHasBeenSet) {
-    ss << m_groupIdentifier;
-    uri.AddQueryStringParameter("groupIdentifier", ss.str());
+  if (m_userIdentifierHasBeenSet) {
+    ss << m_userIdentifier;
+    uri.AddQueryStringParameter("userIdentifier", ss.str());
     ss.str("");
   }
 
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
+  if (m_groupIdentifierHasBeenSet) {
+    ss << m_groupIdentifier;
+    uri.AddQueryStringParameter("groupIdentifier", ss.str());
     ss.str("");
   }
 
@@ -43,9 +43,9 @@ void ListProjectsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_userIdentifierHasBeenSet) {
-    ss << m_userIdentifier;
-    uri.AddQueryStringParameter("userIdentifier", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 }

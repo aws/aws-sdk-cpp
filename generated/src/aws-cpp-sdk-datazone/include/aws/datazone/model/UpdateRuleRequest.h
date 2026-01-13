@@ -32,42 +32,6 @@ class UpdateRuleRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The description of the rule.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateRuleRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The detail of the rule.</p>
-   */
-  inline const RuleDetail& GetDetail() const { return m_detail; }
-  inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-  template <typename DetailT = RuleDetail>
-  void SetDetail(DetailT&& value) {
-    m_detailHasBeenSet = true;
-    m_detail = std::forward<DetailT>(value);
-  }
-  template <typename DetailT = RuleDetail>
-  UpdateRuleRequest& WithDetail(DetailT&& value) {
-    SetDetail(std::forward<DetailT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain in which a rule is to be updated.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -104,22 +68,6 @@ class UpdateRuleRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies whether to update this rule in the child domain units.</p>
-   */
-  inline bool GetIncludeChildDomainUnits() const { return m_includeChildDomainUnits; }
-  inline bool IncludeChildDomainUnitsHasBeenSet() const { return m_includeChildDomainUnitsHasBeenSet; }
-  inline void SetIncludeChildDomainUnits(bool value) {
-    m_includeChildDomainUnitsHasBeenSet = true;
-    m_includeChildDomainUnits = value;
-  }
-  inline UpdateRuleRequest& WithIncludeChildDomainUnits(bool value) {
-    SetIncludeChildDomainUnits(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the rule.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -132,6 +80,24 @@ class UpdateRuleRequest : public DataZoneRequest {
   template <typename NameT = Aws::String>
   UpdateRuleRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the rule.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateRuleRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -153,27 +119,61 @@ class UpdateRuleRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The detail of the rule.</p>
+   */
+  inline const RuleDetail& GetDetail() const { return m_detail; }
+  inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
+  template <typename DetailT = RuleDetail>
+  void SetDetail(DetailT&& value) {
+    m_detailHasBeenSet = true;
+    m_detail = std::forward<DetailT>(value);
+  }
+  template <typename DetailT = RuleDetail>
+  UpdateRuleRequest& WithDetail(DetailT&& value) {
+    SetDetail(std::forward<DetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to update this rule in the child domain units.</p>
+   */
+  inline bool GetIncludeChildDomainUnits() const { return m_includeChildDomainUnits; }
+  inline bool IncludeChildDomainUnitsHasBeenSet() const { return m_includeChildDomainUnitsHasBeenSet; }
+  inline void SetIncludeChildDomainUnits(bool value) {
+    m_includeChildDomainUnitsHasBeenSet = true;
+    m_includeChildDomainUnits = value;
+  }
+  inline UpdateRuleRequest& WithIncludeChildDomainUnits(bool value) {
+    SetIncludeChildDomainUnits(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_description;
-
-  RuleDetail m_detail;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
-  bool m_includeChildDomainUnits{false};
-
   Aws::String m_name;
 
+  Aws::String m_description;
+
   RuleScope m_scope;
-  bool m_descriptionHasBeenSet = false;
-  bool m_detailHasBeenSet = false;
+
+  RuleDetail m_detail;
+
+  bool m_includeChildDomainUnits{false};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_includeChildDomainUnitsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_includeChildDomainUnitsHasBeenSet = false;
 };
 
 }  // namespace Model

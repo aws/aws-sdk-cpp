@@ -15,12 +15,20 @@ using namespace Aws::Utils;
 Aws::String CreateProjectRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }
 
-  if (m_domainUnitIdHasBeenSet) {
-    payload.WithString("domainUnitId", m_domainUnitId);
+  if (m_resourceTagsHasBeenSet) {
+    JsonValue resourceTagsJsonMap;
+    for (auto& resourceTagsItem : m_resourceTags) {
+      resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+    }
+    payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
   }
 
   if (m_glossaryTermsHasBeenSet) {
@@ -31,20 +39,12 @@ Aws::String CreateProjectRequest::SerializePayload() const {
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_domainUnitIdHasBeenSet) {
+    payload.WithString("domainUnitId", m_domainUnitId);
   }
 
   if (m_projectProfileIdHasBeenSet) {
     payload.WithString("projectProfileId", m_projectProfileId);
-  }
-
-  if (m_resourceTagsHasBeenSet) {
-    JsonValue resourceTagsJsonMap;
-    for (auto& resourceTagsItem : m_resourceTags) {
-      resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
-    }
-    payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
   }
 
   if (m_userParametersHasBeenSet) {

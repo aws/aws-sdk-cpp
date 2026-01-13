@@ -39,74 +39,66 @@ class GetDataSourceResult {
 
   ///@{
   /**
-   * <p>The metadata forms attached to the assets created by this data source.</p>
+   * <p>The ID of the data source.</p>
    */
-  inline const Aws::Vector<FormOutput>& GetAssetFormsOutput() const { return m_assetFormsOutput; }
-  template <typename AssetFormsOutputT = Aws::Vector<FormOutput>>
-  void SetAssetFormsOutput(AssetFormsOutputT&& value) {
-    m_assetFormsOutputHasBeenSet = true;
-    m_assetFormsOutput = std::forward<AssetFormsOutputT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename AssetFormsOutputT = Aws::Vector<FormOutput>>
-  GetDataSourceResult& WithAssetFormsOutput(AssetFormsOutputT&& value) {
-    SetAssetFormsOutput(std::forward<AssetFormsOutputT>(value));
-    return *this;
-  }
-  template <typename AssetFormsOutputT = FormOutput>
-  GetDataSourceResult& AddAssetFormsOutput(AssetFormsOutputT&& value) {
-    m_assetFormsOutputHasBeenSet = true;
-    m_assetFormsOutput.emplace_back(std::forward<AssetFormsOutputT>(value));
+  template <typename IdT = Aws::String>
+  GetDataSourceResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The configuration of the data source.</p>
+   * <p>The status of the data source.</p>
    */
-  inline const DataSourceConfigurationOutput& GetConfiguration() const { return m_configuration; }
-  template <typename ConfigurationT = DataSourceConfigurationOutput>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
+  inline DataSourceStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DataSourceStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename ConfigurationT = DataSourceConfigurationOutput>
-  GetDataSourceResult& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
+  inline GetDataSourceResult& WithStatus(DataSourceStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The ID of the connection.</p>
+   * <p>The type of the data source.</p>
    */
-  inline const Aws::String& GetConnectionId() const { return m_connectionId; }
-  template <typename ConnectionIdT = Aws::String>
-  void SetConnectionId(ConnectionIdT&& value) {
-    m_connectionIdHasBeenSet = true;
-    m_connectionId = std::forward<ConnectionIdT>(value);
+  inline const Aws::String& GetType() const { return m_type; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
   }
-  template <typename ConnectionIdT = Aws::String>
-  GetDataSourceResult& WithConnectionId(ConnectionIdT&& value) {
-    SetConnectionId(std::forward<ConnectionIdT>(value));
+  template <typename TypeT = Aws::String>
+  GetDataSourceResult& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The timestamp of when the data source was created.</p>
+   * <p>The name of the data source.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetDataSourceResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename NameT = Aws::String>
+  GetDataSourceResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -147,15 +139,17 @@ class GetDataSourceResult {
 
   ///@{
   /**
-   * <p>Specifies whether this data source is enabled or not.</p>
+   * <p>The ID of the project where the data source creates and publishes assets.</p>
    */
-  inline EnableSetting GetEnableSetting() const { return m_enableSetting; }
-  inline void SetEnableSetting(EnableSetting value) {
-    m_enableSettingHasBeenSet = true;
-    m_enableSetting = value;
+  inline const Aws::String& GetProjectId() const { return m_projectId; }
+  template <typename ProjectIdT = Aws::String>
+  void SetProjectId(ProjectIdT&& value) {
+    m_projectIdHasBeenSet = true;
+    m_projectId = std::forward<ProjectIdT>(value);
   }
-  inline GetDataSourceResult& WithEnableSetting(EnableSetting value) {
-    SetEnableSetting(value);
+  template <typename ProjectIdT = Aws::String>
+  GetDataSourceResult& WithProjectId(ProjectIdT&& value) {
+    SetProjectId(std::forward<ProjectIdT>(value));
     return *this;
   }
   ///@}
@@ -180,50 +174,137 @@ class GetDataSourceResult {
 
   ///@{
   /**
-   * <p>Specifies the error message that is returned if the operation cannot be
-   * successfully completed.</p>
+   * <p>The ID of the connection.</p>
    */
-  inline const DataSourceErrorMessage& GetErrorMessage() const { return m_errorMessage; }
-  template <typename ErrorMessageT = DataSourceErrorMessage>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
+  inline const Aws::String& GetConnectionId() const { return m_connectionId; }
+  template <typename ConnectionIdT = Aws::String>
+  void SetConnectionId(ConnectionIdT&& value) {
+    m_connectionIdHasBeenSet = true;
+    m_connectionId = std::forward<ConnectionIdT>(value);
   }
-  template <typename ErrorMessageT = DataSourceErrorMessage>
-  GetDataSourceResult& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
+  template <typename ConnectionIdT = Aws::String>
+  GetDataSourceResult& WithConnectionId(ConnectionIdT&& value) {
+    SetConnectionId(std::forward<ConnectionIdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The ID of the data source.</p>
+   * <p>The configuration of the data source.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline const DataSourceConfigurationOutput& GetConfiguration() const { return m_configuration; }
+  template <typename ConfigurationT = DataSourceConfigurationOutput>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
   }
-  template <typename IdT = Aws::String>
-  GetDataSourceResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename ConfigurationT = DataSourceConfigurationOutput>
+  GetDataSourceResult& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The number of assets created by the data source during its last run.</p>
+   * <p>The recommendation configuration of the data source.</p>
    */
-  inline int GetLastRunAssetCount() const { return m_lastRunAssetCount; }
-  inline void SetLastRunAssetCount(int value) {
-    m_lastRunAssetCountHasBeenSet = true;
-    m_lastRunAssetCount = value;
+  inline const RecommendationConfiguration& GetRecommendation() const { return m_recommendation; }
+  template <typename RecommendationT = RecommendationConfiguration>
+  void SetRecommendation(RecommendationT&& value) {
+    m_recommendationHasBeenSet = true;
+    m_recommendation = std::forward<RecommendationT>(value);
   }
-  inline GetDataSourceResult& WithLastRunAssetCount(int value) {
-    SetLastRunAssetCount(value);
+  template <typename RecommendationT = RecommendationConfiguration>
+  GetDataSourceResult& WithRecommendation(RecommendationT&& value) {
+    SetRecommendation(std::forward<RecommendationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this data source is enabled or not.</p>
+   */
+  inline EnableSetting GetEnableSetting() const { return m_enableSetting; }
+  inline void SetEnableSetting(EnableSetting value) {
+    m_enableSettingHasBeenSet = true;
+    m_enableSetting = value;
+  }
+  inline GetDataSourceResult& WithEnableSetting(EnableSetting value) {
+    SetEnableSetting(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the assets that this data source creates in the inventory
+   * are to be also automatically published to the catalog.</p>
+   */
+  inline bool GetPublishOnImport() const { return m_publishOnImport; }
+  inline void SetPublishOnImport(bool value) {
+    m_publishOnImportHasBeenSet = true;
+    m_publishOnImport = value;
+  }
+  inline GetDataSourceResult& WithPublishOnImport(bool value) {
+    SetPublishOnImport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata forms attached to the assets created by this data source.</p>
+   */
+  inline const Aws::Vector<FormOutput>& GetAssetFormsOutput() const { return m_assetFormsOutput; }
+  template <typename AssetFormsOutputT = Aws::Vector<FormOutput>>
+  void SetAssetFormsOutput(AssetFormsOutputT&& value) {
+    m_assetFormsOutputHasBeenSet = true;
+    m_assetFormsOutput = std::forward<AssetFormsOutputT>(value);
+  }
+  template <typename AssetFormsOutputT = Aws::Vector<FormOutput>>
+  GetDataSourceResult& WithAssetFormsOutput(AssetFormsOutputT&& value) {
+    SetAssetFormsOutput(std::forward<AssetFormsOutputT>(value));
+    return *this;
+  }
+  template <typename AssetFormsOutputT = FormOutput>
+  GetDataSourceResult& AddAssetFormsOutput(AssetFormsOutputT&& value) {
+    m_assetFormsOutputHasBeenSet = true;
+    m_assetFormsOutput.emplace_back(std::forward<AssetFormsOutputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The schedule of the data source runs.</p>
+   */
+  inline const ScheduleConfiguration& GetSchedule() const { return m_schedule; }
+  template <typename ScheduleT = ScheduleConfiguration>
+  void SetSchedule(ScheduleT&& value) {
+    m_scheduleHasBeenSet = true;
+    m_schedule = std::forward<ScheduleT>(value);
+  }
+  template <typename ScheduleT = ScheduleConfiguration>
+  GetDataSourceResult& WithSchedule(ScheduleT&& value) {
+    SetSchedule(std::forward<ScheduleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the last run of the data source.</p>
+   */
+  inline DataSourceRunStatus GetLastRunStatus() const { return m_lastRunStatus; }
+  inline void SetLastRunStatus(DataSourceRunStatus value) {
+    m_lastRunStatusHasBeenSet = true;
+    m_lastRunStatus = value;
+  }
+  inline GetDataSourceResult& WithLastRunStatus(DataSourceRunStatus value) {
+    SetLastRunStatus(value);
     return *this;
   }
   ///@}
@@ -265,148 +346,50 @@ class GetDataSourceResult {
 
   ///@{
   /**
-   * <p>The status of the last run of the data source.</p>
+   * <p>The number of assets created by the data source during its last run.</p>
    */
-  inline DataSourceRunStatus GetLastRunStatus() const { return m_lastRunStatus; }
-  inline void SetLastRunStatus(DataSourceRunStatus value) {
-    m_lastRunStatusHasBeenSet = true;
-    m_lastRunStatus = value;
+  inline int GetLastRunAssetCount() const { return m_lastRunAssetCount; }
+  inline void SetLastRunAssetCount(int value) {
+    m_lastRunAssetCountHasBeenSet = true;
+    m_lastRunAssetCount = value;
   }
-  inline GetDataSourceResult& WithLastRunStatus(DataSourceRunStatus value) {
-    SetLastRunStatus(value);
+  inline GetDataSourceResult& WithLastRunAssetCount(int value) {
+    SetLastRunAssetCount(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The name of the data source.</p>
+   * <p>Specifies the error message that is returned if the operation cannot be
+   * successfully completed.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const DataSourceErrorMessage& GetErrorMessage() const { return m_errorMessage; }
+  template <typename ErrorMessageT = DataSourceErrorMessage>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
   }
-  template <typename NameT = Aws::String>
-  GetDataSourceResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename ErrorMessageT = DataSourceErrorMessage>
+  GetDataSourceResult& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The ID of the project where the data source creates and publishes assets.</p>
+   * <p>The timestamp of when the data source was created.</p>
    */
-  inline const Aws::String& GetProjectId() const { return m_projectId; }
-  template <typename ProjectIdT = Aws::String>
-  void SetProjectId(ProjectIdT&& value) {
-    m_projectIdHasBeenSet = true;
-    m_projectId = std::forward<ProjectIdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename ProjectIdT = Aws::String>
-  GetDataSourceResult& WithProjectId(ProjectIdT&& value) {
-    SetProjectId(std::forward<ProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the assets that this data source creates in the inventory
-   * are to be also automatically published to the catalog.</p>
-   */
-  inline bool GetPublishOnImport() const { return m_publishOnImport; }
-  inline void SetPublishOnImport(bool value) {
-    m_publishOnImportHasBeenSet = true;
-    m_publishOnImport = value;
-  }
-  inline GetDataSourceResult& WithPublishOnImport(bool value) {
-    SetPublishOnImport(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The recommendation configuration of the data source.</p>
-   */
-  inline const RecommendationConfiguration& GetRecommendation() const { return m_recommendation; }
-  template <typename RecommendationT = RecommendationConfiguration>
-  void SetRecommendation(RecommendationT&& value) {
-    m_recommendationHasBeenSet = true;
-    m_recommendation = std::forward<RecommendationT>(value);
-  }
-  template <typename RecommendationT = RecommendationConfiguration>
-  GetDataSourceResult& WithRecommendation(RecommendationT&& value) {
-    SetRecommendation(std::forward<RecommendationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The schedule of the data source runs.</p>
-   */
-  inline const ScheduleConfiguration& GetSchedule() const { return m_schedule; }
-  template <typename ScheduleT = ScheduleConfiguration>
-  void SetSchedule(ScheduleT&& value) {
-    m_scheduleHasBeenSet = true;
-    m_schedule = std::forward<ScheduleT>(value);
-  }
-  template <typename ScheduleT = ScheduleConfiguration>
-  GetDataSourceResult& WithSchedule(ScheduleT&& value) {
-    SetSchedule(std::forward<ScheduleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the status of the self-granting functionality.</p>
-   */
-  inline const SelfGrantStatusOutput& GetSelfGrantStatus() const { return m_selfGrantStatus; }
-  template <typename SelfGrantStatusT = SelfGrantStatusOutput>
-  void SetSelfGrantStatus(SelfGrantStatusT&& value) {
-    m_selfGrantStatusHasBeenSet = true;
-    m_selfGrantStatus = std::forward<SelfGrantStatusT>(value);
-  }
-  template <typename SelfGrantStatusT = SelfGrantStatusOutput>
-  GetDataSourceResult& WithSelfGrantStatus(SelfGrantStatusT&& value) {
-    SetSelfGrantStatus(std::forward<SelfGrantStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the data source.</p>
-   */
-  inline DataSourceStatus GetStatus() const { return m_status; }
-  inline void SetStatus(DataSourceStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline GetDataSourceResult& WithStatus(DataSourceStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the data source.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  GetDataSourceResult& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetDataSourceResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -429,6 +412,23 @@ class GetDataSourceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies the status of the self-granting functionality.</p>
+   */
+  inline const SelfGrantStatusOutput& GetSelfGrantStatus() const { return m_selfGrantStatus; }
+  template <typename SelfGrantStatusT = SelfGrantStatusOutput>
+  void SetSelfGrantStatus(SelfGrantStatusT&& value) {
+    m_selfGrantStatusHasBeenSet = true;
+    m_selfGrantStatus = std::forward<SelfGrantStatusT>(value);
+  }
+  template <typename SelfGrantStatusT = SelfGrantStatusOutput>
+  GetDataSourceResult& WithSelfGrantStatus(SelfGrantStatusT&& value) {
+    SetSelfGrantStatus(std::forward<SelfGrantStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -443,76 +443,76 @@ class GetDataSourceResult {
   }
   ///@}
  private:
-  Aws::Vector<FormOutput> m_assetFormsOutput;
-
-  DataSourceConfigurationOutput m_configuration;
-
-  Aws::String m_connectionId;
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_description;
-
-  Aws::String m_domainId;
-
-  EnableSetting m_enableSetting{EnableSetting::NOT_SET};
-
-  Aws::String m_environmentId;
-
-  DataSourceErrorMessage m_errorMessage;
-
   Aws::String m_id;
-
-  int m_lastRunAssetCount{0};
-
-  Aws::Utils::DateTime m_lastRunAt{};
-
-  DataSourceErrorMessage m_lastRunErrorMessage;
-
-  DataSourceRunStatus m_lastRunStatus{DataSourceRunStatus::NOT_SET};
-
-  Aws::String m_name;
-
-  Aws::String m_projectId;
-
-  bool m_publishOnImport{false};
-
-  RecommendationConfiguration m_recommendation;
-
-  ScheduleConfiguration m_schedule;
-
-  SelfGrantStatusOutput m_selfGrantStatus;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
 
   Aws::String m_type;
 
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  Aws::String m_domainId;
+
+  Aws::String m_projectId;
+
+  Aws::String m_environmentId;
+
+  Aws::String m_connectionId;
+
+  DataSourceConfigurationOutput m_configuration;
+
+  RecommendationConfiguration m_recommendation;
+
+  EnableSetting m_enableSetting{EnableSetting::NOT_SET};
+
+  bool m_publishOnImport{false};
+
+  Aws::Vector<FormOutput> m_assetFormsOutput;
+
+  ScheduleConfiguration m_schedule;
+
+  DataSourceRunStatus m_lastRunStatus{DataSourceRunStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_lastRunAt{};
+
+  DataSourceErrorMessage m_lastRunErrorMessage;
+
+  int m_lastRunAssetCount{0};
+
+  DataSourceErrorMessage m_errorMessage;
+
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::Utils::DateTime m_updatedAt{};
 
+  SelfGrantStatusOutput m_selfGrantStatus;
+
   Aws::String m_requestId;
-  bool m_assetFormsOutputHasBeenSet = false;
-  bool m_configurationHasBeenSet = false;
-  bool m_connectionIdHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_enableSettingHasBeenSet = false;
-  bool m_environmentIdHasBeenSet = false;
-  bool m_errorMessageHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_lastRunAssetCountHasBeenSet = false;
-  bool m_lastRunAtHasBeenSet = false;
-  bool m_lastRunErrorMessageHasBeenSet = false;
-  bool m_lastRunStatusHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_projectIdHasBeenSet = false;
-  bool m_publishOnImportHasBeenSet = false;
-  bool m_recommendationHasBeenSet = false;
-  bool m_scheduleHasBeenSet = false;
-  bool m_selfGrantStatusHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_enableSettingHasBeenSet = false;
+  bool m_publishOnImportHasBeenSet = false;
+  bool m_assetFormsOutputHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_lastRunStatusHasBeenSet = false;
+  bool m_lastRunAtHasBeenSet = false;
+  bool m_lastRunErrorMessageHasBeenSet = false;
+  bool m_lastRunAssetCountHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_selfGrantStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

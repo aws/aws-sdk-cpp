@@ -39,6 +39,40 @@ class ListNotificationsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  ListNotificationsRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of notifications.</p>
+   */
+  inline NotificationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotificationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ListNotificationsRequest& WithType(NotificationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time after which you want to list notifications.</p>
    */
   inline const Aws::Utils::DateTime& GetAfterTimestamp() const { return m_afterTimestamp; }
@@ -69,67 +103,6 @@ class ListNotificationsRequest : public DataZoneRequest {
   template <typename BeforeTimestampT = Aws::Utils::DateTime>
   ListNotificationsRequest& WithBeforeTimestamp(BeforeTimestampT&& value) {
     SetBeforeTimestamp(std::forward<BeforeTimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  ListNotificationsRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of notifications to return in a single call to
-   * <code>ListNotifications</code>. When the number of notifications to be listed is
-   * greater than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListNotifications</code> to list the next set of notifications.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListNotificationsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>When the number of notifications is greater than the default value for the
-   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
-   * <code>MaxResults</code> that is less than the number of notifications, the
-   * response includes a pagination token named <code>NextToken</code>. You can
-   * specify this <code>NextToken</code> value in a subsequent call to
-   * <code>ListNotifications</code> to list the next set of notifications.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListNotificationsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -176,43 +149,70 @@ class ListNotificationsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The type of notifications.</p>
+   * <p>The maximum number of notifications to return in a single call to
+   * <code>ListNotifications</code>. When the number of notifications to be listed is
+   * greater than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListNotifications</code> to list the next set of notifications.</p>
    */
-  inline NotificationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(NotificationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListNotificationsRequest& WithType(NotificationType value) {
-    SetType(value);
+  inline ListNotificationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>When the number of notifications is greater than the default value for the
+   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
+   * <code>MaxResults</code> that is less than the number of notifications, the
+   * response includes a pagination token named <code>NextToken</code>. You can
+   * specify this <code>NextToken</code> value in a subsequent call to
+   * <code>ListNotifications</code> to list the next set of notifications.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListNotificationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
  private:
+  Aws::String m_domainIdentifier;
+
+  NotificationType m_type{NotificationType::NOT_SET};
+
   Aws::Utils::DateTime m_afterTimestamp{};
 
   Aws::Utils::DateTime m_beforeTimestamp{};
-
-  Aws::String m_domainIdentifier;
-
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
 
   Aws::Vector<Aws::String> m_subjects;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
 
-  NotificationType m_type{NotificationType::NOT_SET};
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_afterTimestampHasBeenSet = false;
   bool m_beforeTimestampHasBeenSet = false;
-  bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_subjectsHasBeenSet = false;
   bool m_taskStatusHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

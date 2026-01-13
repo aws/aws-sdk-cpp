@@ -32,6 +32,24 @@ class PostLineageEventRequest : public StreamingDataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the domain where you want to post a data lineage event.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  PostLineageEventRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that is provided to ensure the
    * idempotency of the request.</p>
    */
@@ -48,31 +66,12 @@ class PostLineageEventRequest : public StreamingDataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where you want to post a data lineage event.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  PostLineageEventRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
 
-  bool m_clientTokenHasBeenSet = true;
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

@@ -50,6 +50,40 @@ class SearchUserProfilesRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
+   */
+  inline UserSearchType GetUserType() const { return m_userType; }
+  inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
+  inline void SetUserType(UserSearchType value) {
+    m_userTypeHasBeenSet = true;
+    m_userType = value;
+  }
+  inline SearchUserProfilesRequest& WithUserType(UserSearchType value) {
+    SetUserType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the text for which to search.</p>
+   */
+  inline const Aws::String& GetSearchText() const { return m_searchText; }
+  inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
+  template <typename SearchTextT = Aws::String>
+  void SetSearchText(SearchTextT&& value) {
+    m_searchTextHasBeenSet = true;
+    m_searchText = std::forward<SearchTextT>(value);
+  }
+  template <typename SearchTextT = Aws::String>
+  SearchUserProfilesRequest& WithSearchText(SearchTextT&& value) {
+    SetSearchText(std::forward<SearchTextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of results to return in a single call to
    * <code>SearchUserProfiles</code>. When the number of results to be listed is
    * greater than the value of <code>MaxResults</code>, the response contains a
@@ -90,55 +124,21 @@ class SearchUserProfilesRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the text for which to search.</p>
-   */
-  inline const Aws::String& GetSearchText() const { return m_searchText; }
-  inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
-  template <typename SearchTextT = Aws::String>
-  void SetSearchText(SearchTextT&& value) {
-    m_searchTextHasBeenSet = true;
-    m_searchText = std::forward<SearchTextT>(value);
-  }
-  template <typename SearchTextT = Aws::String>
-  SearchUserProfilesRequest& WithSearchText(SearchTextT&& value) {
-    SetSearchText(std::forward<SearchTextT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
-   */
-  inline UserSearchType GetUserType() const { return m_userType; }
-  inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
-  inline void SetUserType(UserSearchType value) {
-    m_userTypeHasBeenSet = true;
-    m_userType = value;
-  }
-  inline SearchUserProfilesRequest& WithUserType(UserSearchType value) {
-    SetUserType(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
+
+  UserSearchType m_userType{UserSearchType::NOT_SET};
+
+  Aws::String m_searchText;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_searchText;
-
-  UserSearchType m_userType{UserSearchType::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_searchTextHasBeenSet = false;
-  bool m_userTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String CreateUserProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_userIdentifierHasBeenSet) {
     payload.WithString("userIdentifier", m_userIdentifier);
   }
 
   if (m_userTypeHasBeenSet) {
     payload.WithString("userType", UserTypeMapper::GetNameForUserType(m_userType));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

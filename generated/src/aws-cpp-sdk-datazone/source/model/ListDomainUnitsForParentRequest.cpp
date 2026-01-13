@@ -19,6 +19,12 @@ Aws::String ListDomainUnitsForParentRequest::SerializePayload() const { return {
 
 void ListDomainUnitsForParentRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_parentDomainUnitIdentifierHasBeenSet) {
+    ss << m_parentDomainUnitIdentifier;
+    uri.AddQueryStringParameter("parentDomainUnitIdentifier", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
@@ -28,12 +34,6 @@ void ListDomainUnitsForParentRequest::AddQueryStringParameters(URI& uri) const {
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
-  if (m_parentDomainUnitIdentifierHasBeenSet) {
-    ss << m_parentDomainUnitIdentifier;
-    uri.AddQueryStringParameter("parentDomainUnitIdentifier", ss.str());
     ss.str("");
   }
 }

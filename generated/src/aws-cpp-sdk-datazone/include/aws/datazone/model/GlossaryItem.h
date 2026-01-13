@@ -38,78 +38,6 @@ class GlossaryItem {
 
   ///@{
   /**
-   * <p>The additional attributes of an Amazon DataZone glossary.</p>
-   */
-  inline const GlossaryItemAdditionalAttributes& GetAdditionalAttributes() const { return m_additionalAttributes; }
-  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
-  template <typename AdditionalAttributesT = GlossaryItemAdditionalAttributes>
-  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
-    m_additionalAttributesHasBeenSet = true;
-    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
-  }
-  template <typename AdditionalAttributesT = GlossaryItemAdditionalAttributes>
-  GlossaryItem& WithAdditionalAttributes(AdditionalAttributesT&& value) {
-    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the glossary was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GlossaryItem& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon DataZone user who created the glossary.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  GlossaryItem& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The business glossary description.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GlossaryItem& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which the business glossary
    * exists.</p>
    */
@@ -183,6 +111,24 @@ class GlossaryItem {
 
   ///@{
   /**
+   * <p>The business glossary description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GlossaryItem& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The business glossary status.</p>
    */
   inline GlossaryStatus GetStatus() const { return m_status; }
@@ -193,6 +139,65 @@ class GlossaryItem {
   }
   inline GlossaryItem& WithStatus(GlossaryStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The usage restrictions associated with a goverened glossary term.</p>
+   */
+  inline const Aws::Vector<GlossaryUsageRestriction>& GetUsageRestrictions() const { return m_usageRestrictions; }
+  inline bool UsageRestrictionsHasBeenSet() const { return m_usageRestrictionsHasBeenSet; }
+  template <typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+  void SetUsageRestrictions(UsageRestrictionsT&& value) {
+    m_usageRestrictionsHasBeenSet = true;
+    m_usageRestrictions = std::forward<UsageRestrictionsT>(value);
+  }
+  template <typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
+  GlossaryItem& WithUsageRestrictions(UsageRestrictionsT&& value) {
+    SetUsageRestrictions(std::forward<UsageRestrictionsT>(value));
+    return *this;
+  }
+  inline GlossaryItem& AddUsageRestrictions(GlossaryUsageRestriction value) {
+    m_usageRestrictionsHasBeenSet = true;
+    m_usageRestrictions.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the glossary was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GlossaryItem& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who created the glossary.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  GlossaryItem& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
     return *this;
   }
   ///@}
@@ -235,35 +240,22 @@ class GlossaryItem {
 
   ///@{
   /**
-   * <p>The usage restrictions associated with a goverened glossary term.</p>
+   * <p>The additional attributes of an Amazon DataZone glossary.</p>
    */
-  inline const Aws::Vector<GlossaryUsageRestriction>& GetUsageRestrictions() const { return m_usageRestrictions; }
-  inline bool UsageRestrictionsHasBeenSet() const { return m_usageRestrictionsHasBeenSet; }
-  template <typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
-  void SetUsageRestrictions(UsageRestrictionsT&& value) {
-    m_usageRestrictionsHasBeenSet = true;
-    m_usageRestrictions = std::forward<UsageRestrictionsT>(value);
+  inline const GlossaryItemAdditionalAttributes& GetAdditionalAttributes() const { return m_additionalAttributes; }
+  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
+  template <typename AdditionalAttributesT = GlossaryItemAdditionalAttributes>
+  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
+    m_additionalAttributesHasBeenSet = true;
+    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
   }
-  template <typename UsageRestrictionsT = Aws::Vector<GlossaryUsageRestriction>>
-  GlossaryItem& WithUsageRestrictions(UsageRestrictionsT&& value) {
-    SetUsageRestrictions(std::forward<UsageRestrictionsT>(value));
-    return *this;
-  }
-  inline GlossaryItem& AddUsageRestrictions(GlossaryUsageRestriction value) {
-    m_usageRestrictionsHasBeenSet = true;
-    m_usageRestrictions.push_back(value);
+  template <typename AdditionalAttributesT = GlossaryItemAdditionalAttributes>
+  GlossaryItem& WithAdditionalAttributes(AdditionalAttributesT&& value) {
+    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
     return *this;
   }
   ///@}
  private:
-  GlossaryItemAdditionalAttributes m_additionalAttributes;
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
   Aws::String m_domainId;
 
   Aws::String m_id;
@@ -272,25 +264,33 @@ class GlossaryItem {
 
   Aws::String m_owningProjectId;
 
+  Aws::String m_description;
+
   GlossaryStatus m_status{GlossaryStatus::NOT_SET};
+
+  Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
 
-  Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
-  bool m_additionalAttributesHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  GlossaryItemAdditionalAttributes m_additionalAttributes;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_usageRestrictionsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
-  bool m_usageRestrictionsHasBeenSet = false;
+  bool m_additionalAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

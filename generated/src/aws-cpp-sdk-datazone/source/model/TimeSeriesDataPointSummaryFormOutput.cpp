@@ -18,21 +18,9 @@ namespace Model {
 TimeSeriesDataPointSummaryFormOutput::TimeSeriesDataPointSummaryFormOutput(JsonView jsonValue) { *this = jsonValue; }
 
 TimeSeriesDataPointSummaryFormOutput& TimeSeriesDataPointSummaryFormOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("contentSummary")) {
-    m_contentSummary = jsonValue.GetString("contentSummary");
-    m_contentSummaryHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("formName")) {
     m_formName = jsonValue.GetString("formName");
     m_formNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("timestamp")) {
-    m_timestamp = jsonValue.GetDouble("timestamp");
-    m_timestampHasBeenSet = true;
   }
   if (jsonValue.ValueExists("typeIdentifier")) {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
@@ -42,26 +30,26 @@ TimeSeriesDataPointSummaryFormOutput& TimeSeriesDataPointSummaryFormOutput::oper
     m_typeRevision = jsonValue.GetString("typeRevision");
     m_typeRevisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_timestampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("contentSummary")) {
+    m_contentSummary = jsonValue.GetString("contentSummary");
+    m_contentSummaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TimeSeriesDataPointSummaryFormOutput::Jsonize() const {
   JsonValue payload;
 
-  if (m_contentSummaryHasBeenSet) {
-    payload.WithString("contentSummary", m_contentSummary);
-  }
-
   if (m_formNameHasBeenSet) {
     payload.WithString("formName", m_formName);
-  }
-
-  if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
-  }
-
-  if (m_timestampHasBeenSet) {
-    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   if (m_typeIdentifierHasBeenSet) {
@@ -70,6 +58,18 @@ JsonValue TimeSeriesDataPointSummaryFormOutput::Jsonize() const {
 
   if (m_typeRevisionHasBeenSet) {
     payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_contentSummaryHasBeenSet) {
+    payload.WithString("contentSummary", m_contentSummary);
+  }
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;

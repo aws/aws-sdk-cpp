@@ -15,13 +15,8 @@ using namespace Aws::Utils;
 Aws::String UpdateSubscriptionTargetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_applicableAssetTypesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> applicableAssetTypesJsonList(m_applicableAssetTypes.size());
-    for (unsigned applicableAssetTypesIndex = 0; applicableAssetTypesIndex < applicableAssetTypesJsonList.GetLength();
-         ++applicableAssetTypesIndex) {
-      applicableAssetTypesJsonList[applicableAssetTypesIndex].AsString(m_applicableAssetTypes[applicableAssetTypesIndex]);
-    }
-    payload.WithArray("applicableAssetTypes", std::move(applicableAssetTypesJsonList));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_authorizedPrincipalsHasBeenSet) {
@@ -33,16 +28,13 @@ Aws::String UpdateSubscriptionTargetRequest::SerializePayload() const {
     payload.WithArray("authorizedPrincipals", std::move(authorizedPrincipalsJsonList));
   }
 
-  if (m_manageAccessRoleHasBeenSet) {
-    payload.WithString("manageAccessRole", m_manageAccessRole);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_providerHasBeenSet) {
-    payload.WithString("provider", m_provider);
+  if (m_applicableAssetTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> applicableAssetTypesJsonList(m_applicableAssetTypes.size());
+    for (unsigned applicableAssetTypesIndex = 0; applicableAssetTypesIndex < applicableAssetTypesJsonList.GetLength();
+         ++applicableAssetTypesIndex) {
+      applicableAssetTypesJsonList[applicableAssetTypesIndex].AsString(m_applicableAssetTypes[applicableAssetTypesIndex]);
+    }
+    payload.WithArray("applicableAssetTypes", std::move(applicableAssetTypesJsonList));
   }
 
   if (m_subscriptionTargetConfigHasBeenSet) {
@@ -53,6 +45,19 @@ Aws::String UpdateSubscriptionTargetRequest::SerializePayload() const {
           m_subscriptionTargetConfig[subscriptionTargetConfigIndex].Jsonize());
     }
     payload.WithArray("subscriptionTargetConfig", std::move(subscriptionTargetConfigJsonList));
+  }
+
+  if (m_manageAccessRoleHasBeenSet) {
+    payload.WithString("manageAccessRole", m_manageAccessRole);
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", m_provider);
+  }
+
+  if (m_subscriptionGrantCreationModeHasBeenSet) {
+    payload.WithString("subscriptionGrantCreationMode",
+                       SubscriptionGrantCreationModeMapper::GetNameForSubscriptionGrantCreationMode(m_subscriptionGrantCreationMode));
   }
 
   return payload.View().WriteReadable();

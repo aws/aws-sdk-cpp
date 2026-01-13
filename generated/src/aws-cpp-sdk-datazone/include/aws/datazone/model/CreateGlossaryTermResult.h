@@ -32,6 +32,23 @@ class CreateGlossaryTermResult {
 
   ///@{
   /**
+   * <p>The ID of this business glossary term.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CreateGlossaryTermResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the Amazon DataZone domain in which this business glossary term is
    * created.</p>
    */
@@ -67,40 +84,6 @@ class CreateGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The ID of this business glossary term.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  CreateGlossaryTermResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The long description of this business glossary term.</p>
-   */
-  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
-  template <typename LongDescriptionT = Aws::String>
-  void SetLongDescription(LongDescriptionT&& value) {
-    m_longDescriptionHasBeenSet = true;
-    m_longDescription = std::forward<LongDescriptionT>(value);
-  }
-  template <typename LongDescriptionT = Aws::String>
-  CreateGlossaryTermResult& WithLongDescription(LongDescriptionT&& value) {
-    SetLongDescription(std::forward<LongDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of this business glossary term.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -112,6 +95,21 @@ class CreateGlossaryTermResult {
   template <typename NameT = Aws::String>
   CreateGlossaryTermResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of this business glossary term.</p>
+   */
+  inline GlossaryTermStatus GetStatus() const { return m_status; }
+  inline void SetStatus(GlossaryTermStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateGlossaryTermResult& WithStatus(GlossaryTermStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -135,15 +133,17 @@ class CreateGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The status of this business glossary term.</p>
+   * <p>The long description of this business glossary term.</p>
    */
-  inline GlossaryTermStatus GetStatus() const { return m_status; }
-  inline void SetStatus(GlossaryTermStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
+  template <typename LongDescriptionT = Aws::String>
+  void SetLongDescription(LongDescriptionT&& value) {
+    m_longDescriptionHasBeenSet = true;
+    m_longDescription = std::forward<LongDescriptionT>(value);
   }
-  inline CreateGlossaryTermResult& WithStatus(GlossaryTermStatus value) {
-    SetStatus(value);
+  template <typename LongDescriptionT = Aws::String>
+  CreateGlossaryTermResult& WithLongDescription(LongDescriptionT&& value) {
+    SetLongDescription(std::forward<LongDescriptionT>(value));
     return *this;
   }
   ///@}
@@ -202,32 +202,32 @@ class CreateGlossaryTermResult {
   }
   ///@}
  private:
+  Aws::String m_id;
+
   Aws::String m_domainId;
 
   Aws::String m_glossaryId;
 
-  Aws::String m_id;
-
-  Aws::String m_longDescription;
-
   Aws::String m_name;
+
+  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
 
   Aws::String m_shortDescription;
 
-  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
+  Aws::String m_longDescription;
 
   TermRelations m_termRelations;
 
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_glossaryIdHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_longDescriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_shortDescriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_termRelationsHasBeenSet = false;
   bool m_usageRestrictionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

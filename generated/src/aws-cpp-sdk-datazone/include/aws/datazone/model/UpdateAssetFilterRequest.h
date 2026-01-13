@@ -31,60 +31,6 @@ class UpdateAssetFilterRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the data asset.</p>
-   */
-  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
-  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
-  template <typename AssetIdentifierT = Aws::String>
-  void SetAssetIdentifier(AssetIdentifierT&& value) {
-    m_assetIdentifierHasBeenSet = true;
-    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
-  }
-  template <typename AssetIdentifierT = Aws::String>
-  UpdateAssetFilterRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
-    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration of the asset filter.</p>
-   */
-  inline const AssetFilterConfiguration& GetConfiguration() const { return m_configuration; }
-  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-  template <typename ConfigurationT = AssetFilterConfiguration>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
-  }
-  template <typename ConfigurationT = AssetFilterConfiguration>
-  UpdateAssetFilterRequest& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the asset filter.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateAssetFilterRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to update an asset filter.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -97,6 +43,24 @@ class UpdateAssetFilterRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   UpdateAssetFilterRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the data asset.</p>
+   */
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
+  }
+  template <typename AssetIdentifierT = Aws::String>
+  UpdateAssetFilterRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -136,24 +100,60 @@ class UpdateAssetFilterRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The description of the asset filter.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateAssetFilterRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the asset filter.</p>
+   */
+  inline const AssetFilterConfiguration& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = AssetFilterConfiguration>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = AssetFilterConfiguration>
+  UpdateAssetFilterRequest& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_assetIdentifier;
-
-  AssetFilterConfiguration m_configuration;
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
+
+  Aws::String m_assetIdentifier;
 
   Aws::String m_identifier;
 
   Aws::String m_name;
-  bool m_assetIdentifierHasBeenSet = false;
-  bool m_configurationHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_description;
+
+  AssetFilterConfiguration m_configuration;
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
 };
 
 }  // namespace Model

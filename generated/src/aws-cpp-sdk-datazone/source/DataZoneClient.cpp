@@ -408,15 +408,15 @@ AddEntityOwnerOutcome DataZoneClient::AddEntityOwner(const AddEntityOwnerRequest
     return AddEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("AddEntityOwner", "Required field: EntityIdentifier, is not set");
-    return AddEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                       "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AddEntityOwner", "Required field: EntityType, is not set");
     return AddEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AddEntityOwner", "Required field: EntityIdentifier, is not set");
+    return AddEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [EntityIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AddEntityOwner, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -459,15 +459,15 @@ AddPolicyGrantOutcome DataZoneClient::AddPolicyGrant(const AddPolicyGrantRequest
     return AddPolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("AddPolicyGrant", "Required field: EntityIdentifier, is not set");
-    return AddPolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                       "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AddPolicyGrant", "Required field: EntityType, is not set");
     return AddPolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AddPolicyGrant", "Required field: EntityIdentifier, is not set");
+    return AddPolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [EntityIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AddPolicyGrant, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -605,25 +605,25 @@ AssociateGovernedTermsOutcome DataZoneClient::AssociateGovernedTerms(const Assoc
 BatchGetAttributesMetadataOutcome DataZoneClient::BatchGetAttributesMetadata(const BatchGetAttributesMetadataRequest& request) const {
   AWS_OPERATION_GUARD(BatchGetAttributesMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAttributesMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AttributeIdentifiersHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: AttributeIdentifiers, is not set");
-    return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                   "Missing required field [AttributeIdentifiers]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: DomainIdentifier, is not set");
     return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.EntityTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: EntityType, is not set");
+    return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EntityType]", false));
   }
   if (!request.EntityIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: EntityIdentifier, is not set");
     return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [EntityIdentifier]", false));
   }
-  if (!request.EntityTypeHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: EntityType, is not set");
+  if (!request.AttributeIdentifiersHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetAttributesMetadata", "Required field: AttributeIdentifiers, is not set");
     return BatchGetAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                   "Missing required field [EntityType]", false));
+                                                                                   "Missing required field [AttributeIdentifiers]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchGetAttributesMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -666,15 +666,15 @@ BatchPutAttributesMetadataOutcome DataZoneClient::BatchPutAttributesMetadata(con
     return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("BatchPutAttributesMetadata", "Required field: EntityIdentifier, is not set");
-    return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                   "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchPutAttributesMetadata", "Required field: EntityType, is not set");
     return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                    "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchPutAttributesMetadata", "Required field: EntityIdentifier, is not set");
+    return BatchPutAttributesMetadataOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                   "Missing required field [EntityIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchPutAttributesMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -874,15 +874,15 @@ CreateAssetOutcome DataZoneClient::CreateAsset(const CreateAssetRequest& request
 CreateAssetFilterOutcome DataZoneClient::CreateAssetFilter(const CreateAssetFilterRequest& request) const {
   AWS_OPERATION_GUARD(CreateAssetFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssetFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("CreateAssetFilter", "Required field: AssetIdentifier, is not set");
-    return CreateAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [AssetIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateAssetFilter", "Required field: DomainIdentifier, is not set");
     return CreateAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.AssetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateAssetFilter", "Required field: AssetIdentifier, is not set");
+    return CreateAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AssetIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateAssetFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -1957,15 +1957,15 @@ DeleteAssetOutcome DataZoneClient::DeleteAsset(const DeleteAssetRequest& request
 DeleteAssetFilterOutcome DataZoneClient::DeleteAssetFilter(const DeleteAssetFilterRequest& request) const {
   AWS_OPERATION_GUARD(DeleteAssetFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssetFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteAssetFilter", "Required field: AssetIdentifier, is not set");
-    return DeleteAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [AssetIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAssetFilter", "Required field: DomainIdentifier, is not set");
     return DeleteAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.AssetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAssetFilter", "Required field: AssetIdentifier, is not set");
+    return DeleteAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AssetIdentifier]", false));
   }
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAssetFilter", "Required field: Identifier, is not set");
@@ -3205,15 +3205,15 @@ GetAssetOutcome DataZoneClient::GetAsset(const GetAssetRequest& request) const {
 GetAssetFilterOutcome DataZoneClient::GetAssetFilter(const GetAssetFilterRequest& request) const {
   AWS_OPERATION_GUARD(GetAssetFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetAssetFilter", "Required field: AssetIdentifier, is not set");
-    return GetAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                       "Missing required field [AssetIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetAssetFilter", "Required field: DomainIdentifier, is not set");
     return GetAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.AssetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetAssetFilter", "Required field: AssetIdentifier, is not set");
+    return GetAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [AssetIdentifier]", false));
   }
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetAssetFilter", "Required field: Identifier, is not set");
@@ -4601,15 +4601,15 @@ GetTimeSeriesDataPointOutcome DataZoneClient::GetTimeSeriesDataPoint(const GetTi
     return GetTimeSeriesDataPointOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [EntityType]", false));
   }
-  if (!request.FormNameHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("GetTimeSeriesDataPoint", "Required field: FormName, is not set");
-    return GetTimeSeriesDataPointOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [FormName]", false));
-  }
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetTimeSeriesDataPoint", "Required field: Identifier, is not set");
     return GetTimeSeriesDataPointOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [Identifier]", false));
+  }
+  if (!request.FormNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTimeSeriesDataPoint", "Required field: FormName, is not set");
+    return GetTimeSeriesDataPointOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [FormName]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTimeSeriesDataPoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -4772,15 +4772,15 @@ ListAccountsInAccountPoolOutcome DataZoneClient::ListAccountsInAccountPool(const
 ListAssetFiltersOutcome DataZoneClient::ListAssetFilters(const ListAssetFiltersRequest& request) const {
   AWS_OPERATION_GUARD(ListAssetFilters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListAssetFilters", "Required field: AssetIdentifier, is not set");
-    return ListAssetFiltersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                         "Missing required field [AssetIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListAssetFilters", "Required field: DomainIdentifier, is not set");
     return ListAssetFiltersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.AssetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAssetFilters", "Required field: AssetIdentifier, is not set");
+    return ListAssetFiltersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [AssetIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAssetFilters, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -4985,15 +4985,15 @@ ListDataSourceRunActivitiesOutcome DataZoneClient::ListDataSourceRunActivities(c
 ListDataSourceRunsOutcome DataZoneClient::ListDataSourceRuns(const ListDataSourceRunsRequest& request) const {
   AWS_OPERATION_GUARD(ListDataSourceRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSourceRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListDataSourceRuns", "Required field: DataSourceIdentifier, is not set");
-    return ListDataSourceRunsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [DataSourceIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListDataSourceRuns", "Required field: DomainIdentifier, is not set");
     return ListDataSourceRunsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.DataSourceIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDataSourceRuns", "Required field: DataSourceIdentifier, is not set");
+    return ListDataSourceRunsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DataSourceIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataSourceRuns, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -5148,15 +5148,15 @@ ListEntityOwnersOutcome DataZoneClient::ListEntityOwners(const ListEntityOwnersR
     return ListEntityOwnersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListEntityOwners", "Required field: EntityIdentifier, is not set");
-    return ListEntityOwnersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                         "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListEntityOwners", "Required field: EntityType, is not set");
     return ListEntityOwnersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListEntityOwners", "Required field: EntityIdentifier, is not set");
+    return ListEntityOwnersOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [EntityIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListEntityOwners, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -5601,15 +5601,15 @@ ListPolicyGrantsOutcome DataZoneClient::ListPolicyGrants(const ListPolicyGrantsR
     return ListPolicyGrantsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListPolicyGrants", "Required field: EntityIdentifier, is not set");
-    return ListPolicyGrantsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                         "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListPolicyGrants", "Required field: EntityType, is not set");
     return ListPolicyGrantsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                          "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPolicyGrants", "Required field: EntityIdentifier, is not set");
+    return ListPolicyGrantsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [EntityIdentifier]", false));
   }
   if (!request.PolicyTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListPolicyGrants", "Required field: PolicyType, is not set");
@@ -5774,15 +5774,15 @@ ListRulesOutcome DataZoneClient::ListRules(const ListRulesRequest& request) cons
     return ListRulesOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.TargetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListRules", "Required field: TargetIdentifier, is not set");
-    return ListRulesOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                  "Missing required field [TargetIdentifier]", false));
-  }
   if (!request.TargetTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListRules", "Required field: TargetType, is not set");
     return ListRulesOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                   "Missing required field [TargetType]", false));
+  }
+  if (!request.TargetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRules", "Required field: TargetIdentifier, is not set");
+    return ListRulesOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                  "Missing required field [TargetIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRules, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -6327,15 +6327,15 @@ RemoveEntityOwnerOutcome DataZoneClient::RemoveEntityOwner(const RemoveEntityOwn
     return RemoveEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("RemoveEntityOwner", "Required field: EntityIdentifier, is not set");
-    return RemoveEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("RemoveEntityOwner", "Required field: EntityType, is not set");
     return RemoveEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RemoveEntityOwner", "Required field: EntityIdentifier, is not set");
+    return RemoveEntityOwnerOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [EntityIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RemoveEntityOwner, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -6378,15 +6378,15 @@ RemovePolicyGrantOutcome DataZoneClient::RemovePolicyGrant(const RemovePolicyGra
     return RemovePolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [DomainIdentifier]", false));
   }
-  if (!request.EntityIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("RemovePolicyGrant", "Required field: EntityIdentifier, is not set");
-    return RemovePolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [EntityIdentifier]", false));
-  }
   if (!request.EntityTypeHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("RemovePolicyGrant", "Required field: EntityType, is not set");
     return RemovePolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [EntityType]", false));
+  }
+  if (!request.EntityIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RemovePolicyGrant", "Required field: EntityIdentifier, is not set");
+    return RemovePolicyGrantOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [EntityIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RemovePolicyGrant, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -6652,15 +6652,15 @@ SearchUserProfilesOutcome DataZoneClient::SearchUserProfiles(const SearchUserPro
 StartDataSourceRunOutcome DataZoneClient::StartDataSourceRun(const StartDataSourceRunRequest& request) const {
   AWS_OPERATION_GUARD(StartDataSourceRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDataSourceRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.DataSourceIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("StartDataSourceRun", "Required field: DataSourceIdentifier, is not set");
-    return StartDataSourceRunOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                           "Missing required field [DataSourceIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartDataSourceRun", "Required field: DomainIdentifier, is not set");
     return StartDataSourceRunOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                            "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.DataSourceIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartDataSourceRun", "Required field: DataSourceIdentifier, is not set");
+    return StartDataSourceRunOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [DataSourceIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartDataSourceRun, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -6853,15 +6853,15 @@ UpdateAccountPoolOutcome DataZoneClient::UpdateAccountPool(const UpdateAccountPo
 UpdateAssetFilterOutcome DataZoneClient::UpdateAssetFilter(const UpdateAssetFilterRequest& request) const {
   AWS_OPERATION_GUARD(UpdateAssetFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssetFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateAssetFilter", "Required field: AssetIdentifier, is not set");
-    return UpdateAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                          "Missing required field [AssetIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateAssetFilter", "Required field: DomainIdentifier, is not set");
     return UpdateAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.AssetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAssetFilter", "Required field: AssetIdentifier, is not set");
+    return UpdateAssetFilterOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AssetIdentifier]", false));
   }
   if (!request.IdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateAssetFilter", "Required field: Identifier, is not set");
@@ -7543,11 +7543,6 @@ UpdateSubscriptionGrantStatusOutcome DataZoneClient::UpdateSubscriptionGrantStat
     const UpdateSubscriptionGrantStatusRequest& request) const {
   AWS_OPERATION_GUARD(UpdateSubscriptionGrantStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSubscriptionGrantStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AssetIdentifierHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateSubscriptionGrantStatus", "Required field: AssetIdentifier, is not set");
-    return UpdateSubscriptionGrantStatusOutcome(Aws::Client::AWSError<DataZoneErrors>(
-        DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetIdentifier]", false));
-  }
   if (!request.DomainIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateSubscriptionGrantStatus", "Required field: DomainIdentifier, is not set");
     return UpdateSubscriptionGrantStatusOutcome(Aws::Client::AWSError<DataZoneErrors>(
@@ -7557,6 +7552,11 @@ UpdateSubscriptionGrantStatusOutcome DataZoneClient::UpdateSubscriptionGrantStat
     AWS_LOGSTREAM_ERROR("UpdateSubscriptionGrantStatus", "Required field: Identifier, is not set");
     return UpdateSubscriptionGrantStatusOutcome(Aws::Client::AWSError<DataZoneErrors>(
         DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  if (!request.AssetIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateSubscriptionGrantStatus", "Required field: AssetIdentifier, is not set");
+    return UpdateSubscriptionGrantStatusOutcome(Aws::Client::AWSError<DataZoneErrors>(
+        DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetIdentifier]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateSubscriptionGrantStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

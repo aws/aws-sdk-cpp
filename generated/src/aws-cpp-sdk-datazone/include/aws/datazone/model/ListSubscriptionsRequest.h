@@ -37,6 +37,152 @@ class ListSubscriptionsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  ListSubscriptionsRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the subscription request for the subscriptions that you
+   * want to list.</p>
+   */
+  inline const Aws::String& GetSubscriptionRequestIdentifier() const { return m_subscriptionRequestIdentifier; }
+  inline bool SubscriptionRequestIdentifierHasBeenSet() const { return m_subscriptionRequestIdentifierHasBeenSet; }
+  template <typename SubscriptionRequestIdentifierT = Aws::String>
+  void SetSubscriptionRequestIdentifier(SubscriptionRequestIdentifierT&& value) {
+    m_subscriptionRequestIdentifierHasBeenSet = true;
+    m_subscriptionRequestIdentifier = std::forward<SubscriptionRequestIdentifierT>(value);
+  }
+  template <typename SubscriptionRequestIdentifierT = Aws::String>
+  ListSubscriptionsRequest& WithSubscriptionRequestIdentifier(SubscriptionRequestIdentifierT&& value) {
+    SetSubscriptionRequestIdentifier(std::forward<SubscriptionRequestIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the subscriptions that you want to list.</p>  <p>This is
+   * not a required parameter, but if not provided, by default, Amazon DataZone
+   * returns only <code>APPROVED</code> subscriptions. </p>
+   */
+  inline SubscriptionStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(SubscriptionStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListSubscriptionsRequest& WithStatus(SubscriptionStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the subscribed listing for the subscriptions that you want
+   * to list.</p>
+   */
+  inline const Aws::String& GetSubscribedListingId() const { return m_subscribedListingId; }
+  inline bool SubscribedListingIdHasBeenSet() const { return m_subscribedListingIdHasBeenSet; }
+  template <typename SubscribedListingIdT = Aws::String>
+  void SetSubscribedListingId(SubscribedListingIdT&& value) {
+    m_subscribedListingIdHasBeenSet = true;
+    m_subscribedListingId = std::forward<SubscribedListingIdT>(value);
+  }
+  template <typename SubscribedListingIdT = Aws::String>
+  ListSubscriptionsRequest& WithSubscribedListingId(SubscribedListingIdT&& value) {
+    SetSubscribedListingId(std::forward<SubscribedListingIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the owning project.</p>
+   */
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  }
+  template <typename OwningProjectIdT = Aws::String>
+  ListSubscriptionsRequest& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the owning IAM principal.</p>
+   */
+  inline const Aws::String& GetOwningIamPrincipalArn() const { return m_owningIamPrincipalArn; }
+  inline bool OwningIamPrincipalArnHasBeenSet() const { return m_owningIamPrincipalArnHasBeenSet; }
+  template <typename OwningIamPrincipalArnT = Aws::String>
+  void SetOwningIamPrincipalArn(OwningIamPrincipalArnT&& value) {
+    m_owningIamPrincipalArnHasBeenSet = true;
+    m_owningIamPrincipalArn = std::forward<OwningIamPrincipalArnT>(value);
+  }
+  template <typename OwningIamPrincipalArnT = Aws::String>
+  ListSubscriptionsRequest& WithOwningIamPrincipalArn(OwningIamPrincipalArnT&& value) {
+    SetOwningIamPrincipalArn(std::forward<OwningIamPrincipalArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the owning user.</p>
+   */
+  inline const Aws::String& GetOwningUserId() const { return m_owningUserId; }
+  inline bool OwningUserIdHasBeenSet() const { return m_owningUserIdHasBeenSet; }
+  template <typename OwningUserIdT = Aws::String>
+  void SetOwningUserId(OwningUserIdT&& value) {
+    m_owningUserIdHasBeenSet = true;
+    m_owningUserId = std::forward<OwningUserIdT>(value);
+  }
+  template <typename OwningUserIdT = Aws::String>
+  ListSubscriptionsRequest& WithOwningUserId(OwningUserIdT&& value) {
+    SetOwningUserId(std::forward<OwningUserIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the owning group.</p>
+   */
+  inline const Aws::String& GetOwningGroupId() const { return m_owningGroupId; }
+  inline bool OwningGroupIdHasBeenSet() const { return m_owningGroupIdHasBeenSet; }
+  template <typename OwningGroupIdT = Aws::String>
+  void SetOwningGroupId(OwningGroupIdT&& value) {
+    m_owningGroupIdHasBeenSet = true;
+    m_owningGroupId = std::forward<OwningGroupIdT>(value);
+  }
+  template <typename OwningGroupIdT = Aws::String>
+  ListSubscriptionsRequest& WithOwningGroupId(OwningGroupIdT&& value) {
+    SetOwningGroupId(std::forward<OwningGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the project for the subscription's approver.</p>
    */
   inline const Aws::String& GetApproverProjectId() const { return m_approverProjectId; }
@@ -55,18 +201,16 @@ class ListSubscriptionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
+   * <p>Specifies the sort order for the results of this action.</p>
    */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  inline SortOrder GetSortOrder() const { return m_sortOrder; }
+  inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+  inline void SetSortOrder(SortOrder value) {
+    m_sortOrderHasBeenSet = true;
+    m_sortOrder = value;
   }
-  template <typename DomainIdentifierT = Aws::String>
-  ListSubscriptionsRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+  inline ListSubscriptionsRequest& WithSortOrder(SortOrder value) {
+    SetSortOrder(value);
     return *this;
   }
   ///@}
@@ -113,165 +257,42 @@ class ListSubscriptionsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the owning group.</p>
-   */
-  inline const Aws::String& GetOwningGroupId() const { return m_owningGroupId; }
-  inline bool OwningGroupIdHasBeenSet() const { return m_owningGroupIdHasBeenSet; }
-  template <typename OwningGroupIdT = Aws::String>
-  void SetOwningGroupId(OwningGroupIdT&& value) {
-    m_owningGroupIdHasBeenSet = true;
-    m_owningGroupId = std::forward<OwningGroupIdT>(value);
-  }
-  template <typename OwningGroupIdT = Aws::String>
-  ListSubscriptionsRequest& WithOwningGroupId(OwningGroupIdT&& value) {
-    SetOwningGroupId(std::forward<OwningGroupIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the owning project.</p>
-   */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
-  }
-  template <typename OwningProjectIdT = Aws::String>
-  ListSubscriptionsRequest& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the owning user.</p>
-   */
-  inline const Aws::String& GetOwningUserId() const { return m_owningUserId; }
-  inline bool OwningUserIdHasBeenSet() const { return m_owningUserIdHasBeenSet; }
-  template <typename OwningUserIdT = Aws::String>
-  void SetOwningUserId(OwningUserIdT&& value) {
-    m_owningUserIdHasBeenSet = true;
-    m_owningUserId = std::forward<OwningUserIdT>(value);
-  }
-  template <typename OwningUserIdT = Aws::String>
-  ListSubscriptionsRequest& WithOwningUserId(OwningUserIdT&& value) {
-    SetOwningUserId(std::forward<OwningUserIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the sort order for the results of this action.</p>
-   */
-  inline SortOrder GetSortOrder() const { return m_sortOrder; }
-  inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-  inline void SetSortOrder(SortOrder value) {
-    m_sortOrderHasBeenSet = true;
-    m_sortOrder = value;
-  }
-  inline ListSubscriptionsRequest& WithSortOrder(SortOrder value) {
-    SetSortOrder(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the subscriptions that you want to list.</p>  <p>This is
-   * not a required parameter, but if not provided, by default, Amazon DataZone
-   * returns only <code>APPROVED</code> subscriptions. </p>
-   */
-  inline SubscriptionStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(SubscriptionStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ListSubscriptionsRequest& WithStatus(SubscriptionStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the subscribed listing for the subscriptions that you want
-   * to list.</p>
-   */
-  inline const Aws::String& GetSubscribedListingId() const { return m_subscribedListingId; }
-  inline bool SubscribedListingIdHasBeenSet() const { return m_subscribedListingIdHasBeenSet; }
-  template <typename SubscribedListingIdT = Aws::String>
-  void SetSubscribedListingId(SubscribedListingIdT&& value) {
-    m_subscribedListingIdHasBeenSet = true;
-    m_subscribedListingId = std::forward<SubscribedListingIdT>(value);
-  }
-  template <typename SubscribedListingIdT = Aws::String>
-  ListSubscriptionsRequest& WithSubscribedListingId(SubscribedListingIdT&& value) {
-    SetSubscribedListingId(std::forward<SubscribedListingIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the subscription request for the subscriptions that you
-   * want to list.</p>
-   */
-  inline const Aws::String& GetSubscriptionRequestIdentifier() const { return m_subscriptionRequestIdentifier; }
-  inline bool SubscriptionRequestIdentifierHasBeenSet() const { return m_subscriptionRequestIdentifierHasBeenSet; }
-  template <typename SubscriptionRequestIdentifierT = Aws::String>
-  void SetSubscriptionRequestIdentifier(SubscriptionRequestIdentifierT&& value) {
-    m_subscriptionRequestIdentifierHasBeenSet = true;
-    m_subscriptionRequestIdentifier = std::forward<SubscriptionRequestIdentifierT>(value);
-  }
-  template <typename SubscriptionRequestIdentifierT = Aws::String>
-  ListSubscriptionsRequest& WithSubscriptionRequestIdentifier(SubscriptionRequestIdentifierT&& value) {
-    SetSubscriptionRequestIdentifier(std::forward<SubscriptionRequestIdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_approverProjectId;
-
   Aws::String m_domainIdentifier;
 
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
-
-  Aws::String m_owningGroupId;
-
-  Aws::String m_owningProjectId;
-
-  Aws::String m_owningUserId;
-
-  SortOrder m_sortOrder{SortOrder::NOT_SET};
+  Aws::String m_subscriptionRequestIdentifier;
 
   SubscriptionStatus m_status{SubscriptionStatus::NOT_SET};
 
   Aws::String m_subscribedListingId;
 
-  Aws::String m_subscriptionRequestIdentifier;
-  bool m_approverProjectIdHasBeenSet = false;
+  Aws::String m_owningProjectId;
+
+  Aws::String m_owningIamPrincipalArn;
+
+  Aws::String m_owningUserId;
+
+  Aws::String m_owningGroupId;
+
+  Aws::String m_approverProjectId;
+
+  SortOrder m_sortOrder{SortOrder::NOT_SET};
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
-  bool m_owningGroupIdHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_owningUserIdHasBeenSet = false;
-  bool m_sortOrderHasBeenSet = false;
+  bool m_subscriptionRequestIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_subscribedListingIdHasBeenSet = false;
-  bool m_subscriptionRequestIdentifierHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_owningIamPrincipalArnHasBeenSet = false;
+  bool m_owningUserIdHasBeenSet = false;
+  bool m_owningGroupIdHasBeenSet = false;
+  bool m_approverProjectIdHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

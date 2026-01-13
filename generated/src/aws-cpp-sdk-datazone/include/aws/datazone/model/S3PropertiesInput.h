@@ -33,25 +33,6 @@ class S3PropertiesInput {
 
   ///@{
   /**
-   * <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3
-   * properties of a connection.</p>
-   */
-  inline const Aws::String& GetS3AccessGrantLocationId() const { return m_s3AccessGrantLocationId; }
-  inline bool S3AccessGrantLocationIdHasBeenSet() const { return m_s3AccessGrantLocationIdHasBeenSet; }
-  template <typename S3AccessGrantLocationIdT = Aws::String>
-  void SetS3AccessGrantLocationId(S3AccessGrantLocationIdT&& value) {
-    m_s3AccessGrantLocationIdHasBeenSet = true;
-    m_s3AccessGrantLocationId = std::forward<S3AccessGrantLocationIdT>(value);
-  }
-  template <typename S3AccessGrantLocationIdT = Aws::String>
-  S3PropertiesInput& WithS3AccessGrantLocationId(S3AccessGrantLocationIdT&& value) {
-    SetS3AccessGrantLocationId(std::forward<S3AccessGrantLocationIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon S3 URI that's part of the Amazon S3 properties of a
    * connection.</p>
    */
@@ -68,12 +49,31 @@ class S3PropertiesInput {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_s3AccessGrantLocationId;
 
+  ///@{
+  /**
+   * <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3
+   * properties of a connection.</p>
+   */
+  inline const Aws::String& GetS3AccessGrantLocationId() const { return m_s3AccessGrantLocationId; }
+  inline bool S3AccessGrantLocationIdHasBeenSet() const { return m_s3AccessGrantLocationIdHasBeenSet; }
+  template <typename S3AccessGrantLocationIdT = Aws::String>
+  void SetS3AccessGrantLocationId(S3AccessGrantLocationIdT&& value) {
+    m_s3AccessGrantLocationIdHasBeenSet = true;
+    m_s3AccessGrantLocationId = std::forward<S3AccessGrantLocationIdT>(value);
+  }
+  template <typename S3AccessGrantLocationIdT = Aws::String>
+  S3PropertiesInput& WithS3AccessGrantLocationId(S3AccessGrantLocationIdT&& value) {
+    SetS3AccessGrantLocationId(std::forward<S3AccessGrantLocationIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_s3Uri;
-  bool m_s3AccessGrantLocationIdHasBeenSet = false;
+
+  Aws::String m_s3AccessGrantLocationId;
   bool m_s3UriHasBeenSet = false;
+  bool m_s3AccessGrantLocationIdHasBeenSet = false;
 };
 
 }  // namespace Model

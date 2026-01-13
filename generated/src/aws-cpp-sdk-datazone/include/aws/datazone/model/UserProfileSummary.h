@@ -36,24 +36,6 @@ class UserProfileSummary {
 
   ///@{
   /**
-   * <p>The details of the user profile.</p>
-   */
-  inline const UserProfileDetails& GetDetails() const { return m_details; }
-  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-  template <typename DetailsT = UserProfileDetails>
-  void SetDetails(DetailsT&& value) {
-    m_detailsHasBeenSet = true;
-    m_details = std::forward<DetailsT>(value);
-  }
-  template <typename DetailsT = UserProfileDetails>
-  UserProfileSummary& WithDetails(DetailsT&& value) {
-    SetDetails(std::forward<DetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain of the user profile.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -90,6 +72,22 @@ class UserProfileSummary {
 
   ///@{
   /**
+   * <p>The type of the user profile.</p>
+   */
+  inline UserProfileType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(UserProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline UserProfileSummary& WithType(UserProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the user profile.</p>
    */
   inline UserProfileStatus GetStatus() const { return m_status; }
@@ -106,34 +104,36 @@ class UserProfileSummary {
 
   ///@{
   /**
-   * <p>The type of the user profile.</p>
+   * <p>The details of the user profile.</p>
    */
-  inline UserProfileType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(UserProfileType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const UserProfileDetails& GetDetails() const { return m_details; }
+  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+  template <typename DetailsT = UserProfileDetails>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
   }
-  inline UserProfileSummary& WithType(UserProfileType value) {
-    SetType(value);
+  template <typename DetailsT = UserProfileDetails>
+  UserProfileSummary& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
     return *this;
   }
   ///@}
  private:
-  UserProfileDetails m_details;
-
   Aws::String m_domainId;
 
   Aws::String m_id;
 
+  UserProfileType m_type{UserProfileType::NOT_SET};
+
   UserProfileStatus m_status{UserProfileStatus::NOT_SET};
 
-  UserProfileType m_type{UserProfileType::NOT_SET};
-  bool m_detailsHasBeenSet = false;
+  UserProfileDetails m_details;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,21 +22,21 @@ RunStatisticsForAssets& RunStatisticsForAssets::operator=(JsonView jsonValue) {
     m_added = jsonValue.GetInteger("added");
     m_addedHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("failed")) {
-    m_failed = jsonValue.GetInteger("failed");
-    m_failedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("skipped")) {
-    m_skipped = jsonValue.GetInteger("skipped");
-    m_skippedHasBeenSet = true;
+  if (jsonValue.ValueExists("updated")) {
+    m_updated = jsonValue.GetInteger("updated");
+    m_updatedHasBeenSet = true;
   }
   if (jsonValue.ValueExists("unchanged")) {
     m_unchanged = jsonValue.GetInteger("unchanged");
     m_unchangedHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("updated")) {
-    m_updated = jsonValue.GetInteger("updated");
-    m_updatedHasBeenSet = true;
+  if (jsonValue.ValueExists("skipped")) {
+    m_skipped = jsonValue.GetInteger("skipped");
+    m_skippedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failed")) {
+    m_failed = jsonValue.GetInteger("failed");
+    m_failedHasBeenSet = true;
   }
   return *this;
 }
@@ -48,20 +48,20 @@ JsonValue RunStatisticsForAssets::Jsonize() const {
     payload.WithInteger("added", m_added);
   }
 
-  if (m_failedHasBeenSet) {
-    payload.WithInteger("failed", m_failed);
-  }
-
-  if (m_skippedHasBeenSet) {
-    payload.WithInteger("skipped", m_skipped);
+  if (m_updatedHasBeenSet) {
+    payload.WithInteger("updated", m_updated);
   }
 
   if (m_unchangedHasBeenSet) {
     payload.WithInteger("unchanged", m_unchanged);
   }
 
-  if (m_updatedHasBeenSet) {
-    payload.WithInteger("updated", m_updated);
+  if (m_skippedHasBeenSet) {
+    payload.WithInteger("skipped", m_skipped);
+  }
+
+  if (m_failedHasBeenSet) {
+    payload.WithInteger("failed", m_failed);
   }
 
   return payload;

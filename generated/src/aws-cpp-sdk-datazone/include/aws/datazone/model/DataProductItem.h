@@ -35,24 +35,16 @@ class DataProductItem {
 
   ///@{
   /**
-   * <p>The glossary terms of the data product.</p>
+   * <p>The type of the data product.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
-  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  void SetGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  inline DataProductItemType GetItemType() const { return m_itemType; }
+  inline bool ItemTypeHasBeenSet() const { return m_itemTypeHasBeenSet; }
+  inline void SetItemType(DataProductItemType value) {
+    m_itemTypeHasBeenSet = true;
+    m_itemType = value;
   }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  DataProductItem& WithGlossaryTerms(GlossaryTermsT&& value) {
-    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  template <typename GlossaryTermsT = Aws::String>
-  DataProductItem& AddGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+  inline DataProductItem& WithItemType(DataProductItemType value) {
+    SetItemType(value);
     return *this;
   }
   ///@}
@@ -77,22 +69,6 @@ class DataProductItem {
 
   ///@{
   /**
-   * <p>The type of the data product.</p>
-   */
-  inline DataProductItemType GetItemType() const { return m_itemType; }
-  inline bool ItemTypeHasBeenSet() const { return m_itemTypeHasBeenSet; }
-  inline void SetItemType(DataProductItemType value) {
-    m_itemTypeHasBeenSet = true;
-    m_itemType = value;
-  }
-  inline DataProductItem& WithItemType(DataProductItemType value) {
-    SetItemType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The revision of the data product.</p>
    */
   inline const Aws::String& GetRevision() const { return m_revision; }
@@ -108,18 +84,42 @@ class DataProductItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The glossary terms of the data product.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  DataProductItem& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = Aws::String>
+  DataProductItem& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<Aws::String> m_glossaryTerms;
+  DataProductItemType m_itemType{DataProductItemType::NOT_SET};
 
   Aws::String m_identifier;
 
-  DataProductItemType m_itemType{DataProductItemType::NOT_SET};
-
   Aws::String m_revision;
-  bool m_glossaryTermsHasBeenSet = false;
-  bool m_identifierHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_glossaryTerms;
   bool m_itemTypeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
 };
 
 }  // namespace Model

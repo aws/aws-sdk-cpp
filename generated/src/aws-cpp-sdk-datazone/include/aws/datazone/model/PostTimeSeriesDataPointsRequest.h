@@ -34,25 +34,6 @@ class PostTimeSeriesDataPointsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  PostTimeSeriesDataPointsRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which you want to post time series
    * data points.</p>
    */
@@ -127,9 +108,26 @@ class PostTimeSeriesDataPointsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  PostTimeSeriesDataPointsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_entityIdentifier;
@@ -137,11 +135,13 @@ class PostTimeSeriesDataPointsRequest : public DataZoneRequest {
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
 
   Aws::Vector<TimeSeriesDataPointFormInput> m_forms;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
   bool m_formsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

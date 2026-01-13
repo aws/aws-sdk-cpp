@@ -34,89 +34,6 @@ class UpdateRuleResult {
 
   ///@{
   /**
-   * <p>The action of the rule.</p>
-   */
-  inline RuleAction GetAction() const { return m_action; }
-  inline void SetAction(RuleAction value) {
-    m_actionHasBeenSet = true;
-    m_action = value;
-  }
-  inline UpdateRuleResult& WithAction(RuleAction value) {
-    SetAction(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp at which the rule was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateRuleResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the rule.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  UpdateRuleResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the rule.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateRuleResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The detail of the rule.</p>
-   */
-  inline const RuleDetail& GetDetail() const { return m_detail; }
-  template <typename DetailT = RuleDetail>
-  void SetDetail(DetailT&& value) {
-    m_detailHasBeenSet = true;
-    m_detail = std::forward<DetailT>(value);
-  }
-  template <typename DetailT = RuleDetail>
-  UpdateRuleResult& WithDetail(DetailT&& value) {
-    SetDetail(std::forward<DetailT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the rule.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
@@ -128,40 +45,6 @@ class UpdateRuleResult {
   template <typename IdentifierT = Aws::String>
   UpdateRuleResult& WithIdentifier(IdentifierT&& value) {
     SetIdentifier(std::forward<IdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp at which the rule was last updated.</p>
-   */
-  inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
-  template <typename LastUpdatedByT = Aws::String>
-  void SetLastUpdatedBy(LastUpdatedByT&& value) {
-    m_lastUpdatedByHasBeenSet = true;
-    m_lastUpdatedBy = std::forward<LastUpdatedByT>(value);
-  }
-  template <typename LastUpdatedByT = Aws::String>
-  UpdateRuleResult& WithLastUpdatedBy(LastUpdatedByT&& value) {
-    SetLastUpdatedBy(std::forward<LastUpdatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the rule.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  UpdateRuleResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -185,6 +68,23 @@ class UpdateRuleResult {
 
   ///@{
   /**
+   * <p>The name of the rule.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateRuleResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of the rule.</p>
    */
   inline RuleType GetRuleType() const { return m_ruleType; }
@@ -194,23 +94,6 @@ class UpdateRuleResult {
   }
   inline UpdateRuleResult& WithRuleType(RuleType value) {
     SetRuleType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The scope of the rule.</p>
-   */
-  inline const RuleScope& GetScope() const { return m_scope; }
-  template <typename ScopeT = RuleScope>
-  void SetScope(ScopeT&& value) {
-    m_scopeHasBeenSet = true;
-    m_scope = std::forward<ScopeT>(value);
-  }
-  template <typename ScopeT = RuleScope>
-  UpdateRuleResult& WithScope(ScopeT&& value) {
-    SetScope(std::forward<ScopeT>(value));
     return *this;
   }
   ///@}
@@ -234,6 +117,89 @@ class UpdateRuleResult {
 
   ///@{
   /**
+   * <p>The action of the rule.</p>
+   */
+  inline RuleAction GetAction() const { return m_action; }
+  inline void SetAction(RuleAction value) {
+    m_actionHasBeenSet = true;
+    m_action = value;
+  }
+  inline UpdateRuleResult& WithAction(RuleAction value) {
+    SetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope of the rule.</p>
+   */
+  inline const RuleScope& GetScope() const { return m_scope; }
+  template <typename ScopeT = RuleScope>
+  void SetScope(ScopeT&& value) {
+    m_scopeHasBeenSet = true;
+    m_scope = std::forward<ScopeT>(value);
+  }
+  template <typename ScopeT = RuleScope>
+  UpdateRuleResult& WithScope(ScopeT&& value) {
+    SetScope(std::forward<ScopeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The detail of the rule.</p>
+   */
+  inline const RuleDetail& GetDetail() const { return m_detail; }
+  template <typename DetailT = RuleDetail>
+  void SetDetail(DetailT&& value) {
+    m_detailHasBeenSet = true;
+    m_detail = std::forward<DetailT>(value);
+  }
+  template <typename DetailT = RuleDetail>
+  UpdateRuleResult& WithDetail(DetailT&& value) {
+    SetDetail(std::forward<DetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the rule.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateRuleResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the rule was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateRuleResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp at which the rule was last updated.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
@@ -245,6 +211,40 @@ class UpdateRuleResult {
   template <typename UpdatedAtT = Aws::Utils::DateTime>
   UpdateRuleResult& WithUpdatedAt(UpdatedAtT&& value) {
     SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the rule.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  UpdateRuleResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the rule was last updated.</p>
+   */
+  inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
+  template <typename LastUpdatedByT = Aws::String>
+  void SetLastUpdatedBy(LastUpdatedByT&& value) {
+    m_lastUpdatedByHasBeenSet = true;
+    m_lastUpdatedBy = std::forward<LastUpdatedByT>(value);
+  }
+  template <typename LastUpdatedByT = Aws::String>
+  UpdateRuleResult& WithLastUpdatedBy(LastUpdatedByT&& value) {
+    SetLastUpdatedBy(std::forward<LastUpdatedByT>(value));
     return *this;
   }
   ///@}
@@ -264,46 +264,46 @@ class UpdateRuleResult {
   }
   ///@}
  private:
-  RuleAction m_action{RuleAction::NOT_SET};
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
-  RuleDetail m_detail;
-
   Aws::String m_identifier;
-
-  Aws::String m_lastUpdatedBy;
-
-  Aws::String m_name;
 
   Aws::String m_revision;
 
-  RuleType m_ruleType{RuleType::NOT_SET};
+  Aws::String m_name;
 
-  RuleScope m_scope;
+  RuleType m_ruleType{RuleType::NOT_SET};
 
   RuleTarget m_target;
 
+  RuleAction m_action{RuleAction::NOT_SET};
+
+  RuleScope m_scope;
+
+  RuleDetail m_detail;
+
+  Aws::String m_description;
+
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::String m_createdBy;
+
+  Aws::String m_lastUpdatedBy;
+
   Aws::String m_requestId;
-  bool m_actionHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_detailHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_lastUpdatedByHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_ruleTypeHasBeenSet = false;
-  bool m_scopeHasBeenSet = false;
   bool m_targetHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

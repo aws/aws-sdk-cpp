@@ -18,21 +18,9 @@ namespace Model {
 TimeSeriesDataPointFormOutput::TimeSeriesDataPointFormOutput(JsonView jsonValue) { *this = jsonValue; }
 
 TimeSeriesDataPointFormOutput& TimeSeriesDataPointFormOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("content")) {
-    m_content = jsonValue.GetString("content");
-    m_contentHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("formName")) {
     m_formName = jsonValue.GetString("formName");
     m_formNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("timestamp")) {
-    m_timestamp = jsonValue.GetDouble("timestamp");
-    m_timestampHasBeenSet = true;
   }
   if (jsonValue.ValueExists("typeIdentifier")) {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
@@ -42,26 +30,26 @@ TimeSeriesDataPointFormOutput& TimeSeriesDataPointFormOutput::operator=(JsonView
     m_typeRevision = jsonValue.GetString("typeRevision");
     m_typeRevisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_timestampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("content")) {
+    m_content = jsonValue.GetString("content");
+    m_contentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TimeSeriesDataPointFormOutput::Jsonize() const {
   JsonValue payload;
 
-  if (m_contentHasBeenSet) {
-    payload.WithString("content", m_content);
-  }
-
   if (m_formNameHasBeenSet) {
     payload.WithString("formName", m_formName);
-  }
-
-  if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
-  }
-
-  if (m_timestampHasBeenSet) {
-    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   if (m_typeIdentifierHasBeenSet) {
@@ -70,6 +58,18 @@ JsonValue TimeSeriesDataPointFormOutput::Jsonize() const {
 
   if (m_typeRevisionHasBeenSet) {
     payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
+  }
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;

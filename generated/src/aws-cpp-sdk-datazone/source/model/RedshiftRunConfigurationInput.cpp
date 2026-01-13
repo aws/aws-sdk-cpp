@@ -22,14 +22,6 @@ RedshiftRunConfigurationInput& RedshiftRunConfigurationInput::operator=(JsonView
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
     m_dataAccessRoleHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("redshiftCredentialConfiguration")) {
-    m_redshiftCredentialConfiguration = jsonValue.GetObject("redshiftCredentialConfiguration");
-    m_redshiftCredentialConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("redshiftStorage")) {
-    m_redshiftStorage = jsonValue.GetObject("redshiftStorage");
-    m_redshiftStorageHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("relationalFilterConfigurations")) {
     Aws::Utils::Array<JsonView> relationalFilterConfigurationsJsonList = jsonValue.GetArray("relationalFilterConfigurations");
     for (unsigned relationalFilterConfigurationsIndex = 0;
@@ -37,6 +29,14 @@ RedshiftRunConfigurationInput& RedshiftRunConfigurationInput::operator=(JsonView
       m_relationalFilterConfigurations.push_back(relationalFilterConfigurationsJsonList[relationalFilterConfigurationsIndex].AsObject());
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("redshiftCredentialConfiguration")) {
+    m_redshiftCredentialConfiguration = jsonValue.GetObject("redshiftCredentialConfiguration");
+    m_redshiftCredentialConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("redshiftStorage")) {
+    m_redshiftStorage = jsonValue.GetObject("redshiftStorage");
+    m_redshiftStorageHasBeenSet = true;
   }
   return *this;
 }
@@ -48,14 +48,6 @@ JsonValue RedshiftRunConfigurationInput::Jsonize() const {
     payload.WithString("dataAccessRole", m_dataAccessRole);
   }
 
-  if (m_redshiftCredentialConfigurationHasBeenSet) {
-    payload.WithObject("redshiftCredentialConfiguration", m_redshiftCredentialConfiguration.Jsonize());
-  }
-
-  if (m_redshiftStorageHasBeenSet) {
-    payload.WithObject("redshiftStorage", m_redshiftStorage.Jsonize());
-  }
-
   if (m_relationalFilterConfigurationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> relationalFilterConfigurationsJsonList(m_relationalFilterConfigurations.size());
     for (unsigned relationalFilterConfigurationsIndex = 0;
@@ -64,6 +56,14 @@ JsonValue RedshiftRunConfigurationInput::Jsonize() const {
           m_relationalFilterConfigurations[relationalFilterConfigurationsIndex].Jsonize());
     }
     payload.WithArray("relationalFilterConfigurations", std::move(relationalFilterConfigurationsJsonList));
+  }
+
+  if (m_redshiftCredentialConfigurationHasBeenSet) {
+    payload.WithObject("redshiftCredentialConfiguration", m_redshiftCredentialConfiguration.Jsonize());
+  }
+
+  if (m_redshiftStorageHasBeenSet) {
+    payload.WithObject("redshiftStorage", m_redshiftStorage.Jsonize());
   }
 
   return payload;

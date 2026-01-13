@@ -18,21 +18,21 @@ namespace Model {
 AssetTypeItem::AssetTypeItem(JsonView jsonValue) { *this = jsonValue; }
 
 AssetTypeItem& AssetTypeItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("revision")) {
+    m_revision = jsonValue.GetString("revision");
+    m_revisionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("formsOutput")) {
     Aws::Map<Aws::String, JsonView> formsOutputJsonMap = jsonValue.GetObject("formsOutput").GetAllObjects();
@@ -41,9 +41,9 @@ AssetTypeItem& AssetTypeItem::operator=(JsonView jsonValue) {
     }
     m_formsOutputHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("originDomainId")) {
     m_originDomainId = jsonValue.GetString("originDomainId");
@@ -53,13 +53,13 @@ AssetTypeItem& AssetTypeItem::operator=(JsonView jsonValue) {
     m_originProjectId = jsonValue.GetString("originProjectId");
     m_originProjectIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("revision")) {
-    m_revision = jsonValue.GetString("revision");
-    m_revisionHasBeenSet = true;
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
@@ -75,20 +75,20 @@ AssetTypeItem& AssetTypeItem::operator=(JsonView jsonValue) {
 JsonValue AssetTypeItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("domainId", m_domainId);
   }
 
-  if (m_createdByHasBeenSet) {
-    payload.WithString("createdBy", m_createdBy);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_revisionHasBeenSet) {
+    payload.WithString("revision", m_revision);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
-  }
-
-  if (m_domainIdHasBeenSet) {
-    payload.WithString("domainId", m_domainId);
   }
 
   if (m_formsOutputHasBeenSet) {
@@ -99,8 +99,8 @@ JsonValue AssetTypeItem::Jsonize() const {
     payload.WithObject("formsOutput", std::move(formsOutputJsonMap));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_owningProjectIdHasBeenSet) {
+    payload.WithString("owningProjectId", m_owningProjectId);
   }
 
   if (m_originDomainIdHasBeenSet) {
@@ -111,12 +111,12 @@ JsonValue AssetTypeItem::Jsonize() const {
     payload.WithString("originProjectId", m_originProjectId);
   }
 
-  if (m_owningProjectIdHasBeenSet) {
-    payload.WithString("owningProjectId", m_owningProjectId);
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if (m_revisionHasBeenSet) {
-    payload.WithString("revision", m_revision);
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
   if (m_updatedAtHasBeenSet) {

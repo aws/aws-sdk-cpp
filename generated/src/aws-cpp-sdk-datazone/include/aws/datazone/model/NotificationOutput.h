@@ -39,6 +39,129 @@ class NotificationOutput {
 
   ///@{
   /**
+   * <p>The identifier of the notification.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  NotificationOutput& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of a Amazon DataZone domain in which the notification
+   * exists.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  NotificationOutput& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the notification.</p>
+   */
+  inline NotificationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotificationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline NotificationOutput& WithType(NotificationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The topic of the notification.</p>
+   */
+  inline const Topic& GetTopic() const { return m_topic; }
+  inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
+  template <typename TopicT = Topic>
+  void SetTopic(TopicT&& value) {
+    m_topicHasBeenSet = true;
+    m_topic = std::forward<TopicT>(value);
+  }
+  template <typename TopicT = Topic>
+  NotificationOutput& WithTopic(TopicT&& value) {
+    SetTopic(std::forward<TopicT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The title of the notification.</p>
+   */
+  inline const Aws::String& GetTitle() const { return m_title; }
+  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+  template <typename TitleT = Aws::String>
+  void SetTitle(TitleT&& value) {
+    m_titleHasBeenSet = true;
+    m_title = std::forward<TitleT>(value);
+  }
+  template <typename TitleT = Aws::String>
+  NotificationOutput& WithTitle(TitleT&& value) {
+    SetTitle(std::forward<TitleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The message included in the notification.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  NotificationOutput& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status included in the notification.</p>
+   */
+  inline TaskStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(TaskStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline NotificationOutput& WithStatus(TaskStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The action link included in the notification.</p>
    */
   inline const Aws::String& GetActionLink() const { return m_actionLink; }
@@ -75,43 +198,6 @@ class NotificationOutput {
 
   ///@{
   /**
-   * <p>The identifier of a Amazon DataZone domain in which the notification
-   * exists.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  NotificationOutput& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the notification.</p>
-   */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
-  }
-  template <typename IdentifierT = Aws::String>
-  NotificationOutput& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp of when the notification was last updated.</p>
    */
   inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
@@ -124,24 +210,6 @@ class NotificationOutput {
   template <typename LastUpdatedTimestampT = Aws::Utils::DateTime>
   NotificationOutput& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) {
     SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The message included in the notification.</p>
-   */
-  inline const Aws::String& GetMessage() const { return m_message; }
-  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-  template <typename MessageT = Aws::String>
-  void SetMessage(MessageT&& value) {
-    m_messageHasBeenSet = true;
-    m_message = std::forward<MessageT>(value);
-  }
-  template <typename MessageT = Aws::String>
-  NotificationOutput& WithMessage(MessageT&& value) {
-    SetMessage(std::forward<MessageT>(value));
     return *this;
   }
   ///@}
@@ -169,107 +237,39 @@ class NotificationOutput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The status included in the notification.</p>
-   */
-  inline TaskStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(TaskStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline NotificationOutput& WithStatus(TaskStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The title of the notification.</p>
-   */
-  inline const Aws::String& GetTitle() const { return m_title; }
-  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-  template <typename TitleT = Aws::String>
-  void SetTitle(TitleT&& value) {
-    m_titleHasBeenSet = true;
-    m_title = std::forward<TitleT>(value);
-  }
-  template <typename TitleT = Aws::String>
-  NotificationOutput& WithTitle(TitleT&& value) {
-    SetTitle(std::forward<TitleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The topic of the notification.</p>
-   */
-  inline const Topic& GetTopic() const { return m_topic; }
-  inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-  template <typename TopicT = Topic>
-  void SetTopic(TopicT&& value) {
-    m_topicHasBeenSet = true;
-    m_topic = std::forward<TopicT>(value);
-  }
-  template <typename TopicT = Topic>
-  NotificationOutput& WithTopic(TopicT&& value) {
-    SetTopic(std::forward<TopicT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the notification.</p>
-   */
-  inline NotificationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(NotificationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline NotificationOutput& WithType(NotificationType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_identifier;
+
+  Aws::String m_domainIdentifier;
+
+  NotificationType m_type{NotificationType::NOT_SET};
+
+  Topic m_topic;
+
+  Aws::String m_title;
+
+  Aws::String m_message;
+
+  TaskStatus m_status{TaskStatus::NOT_SET};
+
   Aws::String m_actionLink;
 
   Aws::Utils::DateTime m_creationTimestamp{};
 
-  Aws::String m_domainIdentifier;
-
-  Aws::String m_identifier;
-
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
-  Aws::String m_message;
-
   Aws::Map<Aws::String, Aws::String> m_metadata;
-
-  TaskStatus m_status{TaskStatus::NOT_SET};
-
-  Aws::String m_title;
-
-  Topic m_topic;
-
-  NotificationType m_type{NotificationType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_actionLinkHasBeenSet = false;
   bool m_creationTimestampHasBeenSet = false;
-  bool m_domainIdentifierHasBeenSet = false;
-  bool m_identifierHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
-  bool m_messageHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_titleHasBeenSet = false;
-  bool m_topicHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

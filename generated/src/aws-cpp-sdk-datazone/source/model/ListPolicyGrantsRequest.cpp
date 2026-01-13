@@ -19,6 +19,12 @@ Aws::String ListPolicyGrantsRequest::SerializePayload() const { return {}; }
 
 void ListPolicyGrantsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_policyTypeHasBeenSet) {
+    ss << ManagedPolicyTypeMapper::GetNameForManagedPolicyType(m_policyType);
+    uri.AddQueryStringParameter("policyType", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
@@ -28,12 +34,6 @@ void ListPolicyGrantsRequest::AddQueryStringParameters(URI& uri) const {
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
-  if (m_policyTypeHasBeenSet) {
-    ss << ManagedPolicyTypeMapper::GetNameForManagedPolicyType(m_policyType);
-    uri.AddQueryStringParameter("policyType", ss.str());
     ss.str("");
   }
 }

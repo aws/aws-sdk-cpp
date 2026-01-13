@@ -18,13 +18,13 @@ namespace Model {
 SubscriptionTargetForm::SubscriptionTargetForm(JsonView jsonValue) { *this = jsonValue; }
 
 SubscriptionTargetForm& SubscriptionTargetForm::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("content")) {
-    m_content = jsonValue.GetString("content");
-    m_contentHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("formName")) {
     m_formName = jsonValue.GetString("formName");
     m_formNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("content")) {
+    m_content = jsonValue.GetString("content");
+    m_contentHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ SubscriptionTargetForm& SubscriptionTargetForm::operator=(JsonView jsonValue) {
 JsonValue SubscriptionTargetForm::Jsonize() const {
   JsonValue payload;
 
-  if (m_contentHasBeenSet) {
-    payload.WithString("content", m_content);
-  }
-
   if (m_formNameHasBeenSet) {
     payload.WithString("formName", m_formName);
+  }
+
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
   return payload;

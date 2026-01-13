@@ -33,24 +33,6 @@ class FormInput {
 
   ///@{
   /**
-   * <p>The content of the metadata form.</p>
-   */
-  inline const Aws::String& GetContent() const { return m_content; }
-  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-  template <typename ContentT = Aws::String>
-  void SetContent(ContentT&& value) {
-    m_contentHasBeenSet = true;
-    m_content = std::forward<ContentT>(value);
-  }
-  template <typename ContentT = Aws::String>
-  FormInput& WithContent(ContentT&& value) {
-    SetContent(std::forward<ContentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the metadata form.</p>
    */
   inline const Aws::String& GetFormName() const { return m_formName; }
@@ -102,18 +84,36 @@ class FormInput {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_content;
 
+  ///@{
+  /**
+   * <p>The content of the metadata form.</p>
+   */
+  inline const Aws::String& GetContent() const { return m_content; }
+  inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+  template <typename ContentT = Aws::String>
+  void SetContent(ContentT&& value) {
+    m_contentHasBeenSet = true;
+    m_content = std::forward<ContentT>(value);
+  }
+  template <typename ContentT = Aws::String>
+  FormInput& WithContent(ContentT&& value) {
+    SetContent(std::forward<ContentT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_formName;
 
   Aws::String m_typeIdentifier;
 
   Aws::String m_typeRevision;
-  bool m_contentHasBeenSet = false;
+
+  Aws::String m_content;
   bool m_formNameHasBeenSet = false;
   bool m_typeIdentifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
 };
 
 }  // namespace Model

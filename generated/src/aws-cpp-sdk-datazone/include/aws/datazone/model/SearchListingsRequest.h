@@ -36,54 +36,6 @@ class SearchListingsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies additional attributes for the search.</p>
-   */
-  inline const Aws::Vector<SearchOutputAdditionalAttribute>& GetAdditionalAttributes() const { return m_additionalAttributes; }
-  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
-  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
-  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
-    m_additionalAttributesHasBeenSet = true;
-    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
-  }
-  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
-  SearchListingsRequest& WithAdditionalAttributes(AdditionalAttributesT&& value) {
-    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
-    return *this;
-  }
-  inline SearchListingsRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute value) {
-    m_additionalAttributesHasBeenSet = true;
-    m_additionalAttributes.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Enables you to specify one or more attributes to compute and return counts
-   * grouped by field values.</p>
-   */
-  inline const Aws::Vector<AggregationListItem>& GetAggregations() const { return m_aggregations; }
-  inline bool AggregationsHasBeenSet() const { return m_aggregationsHasBeenSet; }
-  template <typename AggregationsT = Aws::Vector<AggregationListItem>>
-  void SetAggregations(AggregationsT&& value) {
-    m_aggregationsHasBeenSet = true;
-    m_aggregations = std::forward<AggregationsT>(value);
-  }
-  template <typename AggregationsT = Aws::Vector<AggregationListItem>>
-  SearchListingsRequest& WithAggregations(AggregationsT&& value) {
-    SetAggregations(std::forward<AggregationsT>(value));
-    return *this;
-  }
-  template <typename AggregationsT = AggregationListItem>
-  SearchListingsRequest& AddAggregations(AggregationsT&& value) {
-    m_aggregationsHasBeenSet = true;
-    m_aggregations.emplace_back(std::forward<AggregationsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the domain in which to search listings.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -102,18 +54,42 @@ class SearchListingsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the filters for the search of listings.</p>
+   * <p>Specifies the text for which to search.</p>
    */
-  inline const FilterClause& GetFilters() const { return m_filters; }
-  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-  template <typename FiltersT = FilterClause>
-  void SetFilters(FiltersT&& value) {
-    m_filtersHasBeenSet = true;
-    m_filters = std::forward<FiltersT>(value);
+  inline const Aws::String& GetSearchText() const { return m_searchText; }
+  inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
+  template <typename SearchTextT = Aws::String>
+  void SetSearchText(SearchTextT&& value) {
+    m_searchTextHasBeenSet = true;
+    m_searchText = std::forward<SearchTextT>(value);
   }
-  template <typename FiltersT = FilterClause>
-  SearchListingsRequest& WithFilters(FiltersT&& value) {
-    SetFilters(std::forward<FiltersT>(value));
+  template <typename SearchTextT = Aws::String>
+  SearchListingsRequest& WithSearchText(SearchTextT&& value) {
+    SetSearchText(std::forward<SearchTextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The details of the search.</p>
+   */
+  inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
+  inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
+  template <typename SearchInT = Aws::Vector<SearchInItem>>
+  void SetSearchIn(SearchInT&& value) {
+    m_searchInHasBeenSet = true;
+    m_searchIn = std::forward<SearchInT>(value);
+  }
+  template <typename SearchInT = Aws::Vector<SearchInItem>>
+  SearchListingsRequest& WithSearchIn(SearchInT&& value) {
+    SetSearchIn(std::forward<SearchInT>(value));
+    return *this;
+  }
+  template <typename SearchInT = SearchInItem>
+  SearchListingsRequest& AddSearchIn(SearchInT&& value) {
+    m_searchInHasBeenSet = true;
+    m_searchIn.emplace_back(std::forward<SearchInT>(value));
     return *this;
   }
   ///@}
@@ -163,42 +139,43 @@ class SearchListingsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The details of the search.</p>
+   * <p>Specifies the filters for the search of listings.</p>
    */
-  inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
-  inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
-  template <typename SearchInT = Aws::Vector<SearchInItem>>
-  void SetSearchIn(SearchInT&& value) {
-    m_searchInHasBeenSet = true;
-    m_searchIn = std::forward<SearchInT>(value);
+  inline const FilterClause& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = FilterClause>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
   }
-  template <typename SearchInT = Aws::Vector<SearchInItem>>
-  SearchListingsRequest& WithSearchIn(SearchInT&& value) {
-    SetSearchIn(std::forward<SearchInT>(value));
-    return *this;
-  }
-  template <typename SearchInT = SearchInItem>
-  SearchListingsRequest& AddSearchIn(SearchInT&& value) {
-    m_searchInHasBeenSet = true;
-    m_searchIn.emplace_back(std::forward<SearchInT>(value));
+  template <typename FiltersT = FilterClause>
+  SearchListingsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Specifies the text for which to search.</p>
+   * <p>Enables you to specify one or more attributes to compute and return counts
+   * grouped by field values.</p>
    */
-  inline const Aws::String& GetSearchText() const { return m_searchText; }
-  inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
-  template <typename SearchTextT = Aws::String>
-  void SetSearchText(SearchTextT&& value) {
-    m_searchTextHasBeenSet = true;
-    m_searchText = std::forward<SearchTextT>(value);
+  inline const Aws::Vector<AggregationListItem>& GetAggregations() const { return m_aggregations; }
+  inline bool AggregationsHasBeenSet() const { return m_aggregationsHasBeenSet; }
+  template <typename AggregationsT = Aws::Vector<AggregationListItem>>
+  void SetAggregations(AggregationsT&& value) {
+    m_aggregationsHasBeenSet = true;
+    m_aggregations = std::forward<AggregationsT>(value);
   }
-  template <typename SearchTextT = Aws::String>
-  SearchListingsRequest& WithSearchText(SearchTextT&& value) {
-    SetSearchText(std::forward<SearchTextT>(value));
+  template <typename AggregationsT = Aws::Vector<AggregationListItem>>
+  SearchListingsRequest& WithAggregations(AggregationsT&& value) {
+    SetAggregations(std::forward<AggregationsT>(value));
+    return *this;
+  }
+  template <typename AggregationsT = AggregationListItem>
+  SearchListingsRequest& AddAggregations(AggregationsT&& value) {
+    m_aggregationsHasBeenSet = true;
+    m_aggregations.emplace_back(std::forward<AggregationsT>(value));
     return *this;
   }
   ///@}
@@ -220,33 +197,56 @@ class SearchListingsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies additional attributes for the search.</p>
+   */
+  inline const Aws::Vector<SearchOutputAdditionalAttribute>& GetAdditionalAttributes() const { return m_additionalAttributes; }
+  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
+  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
+  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
+    m_additionalAttributesHasBeenSet = true;
+    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
+  }
+  template <typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
+  SearchListingsRequest& WithAdditionalAttributes(AdditionalAttributesT&& value) {
+    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
+    return *this;
+  }
+  inline SearchListingsRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute value) {
+    m_additionalAttributesHasBeenSet = true;
+    m_additionalAttributes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<SearchOutputAdditionalAttribute> m_additionalAttributes;
-
-  Aws::Vector<AggregationListItem> m_aggregations;
-
   Aws::String m_domainIdentifier;
 
-  FilterClause m_filters;
+  Aws::String m_searchText;
+
+  Aws::Vector<SearchInItem> m_searchIn;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
-  Aws::Vector<SearchInItem> m_searchIn;
+  FilterClause m_filters;
 
-  Aws::String m_searchText;
+  Aws::Vector<AggregationListItem> m_aggregations;
 
   SearchSort m_sort;
-  bool m_additionalAttributesHasBeenSet = false;
-  bool m_aggregationsHasBeenSet = false;
+
+  Aws::Vector<SearchOutputAdditionalAttribute> m_additionalAttributes;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_filtersHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
+  bool m_searchInHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_searchInHasBeenSet = false;
-  bool m_searchTextHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_aggregationsHasBeenSet = false;
   bool m_sortHasBeenSet = false;
+  bool m_additionalAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -36,24 +36,6 @@ class ListDataSourceRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the data source.</p>
-   */
-  inline const Aws::String& GetDataSourceIdentifier() const { return m_dataSourceIdentifier; }
-  inline bool DataSourceIdentifierHasBeenSet() const { return m_dataSourceIdentifierHasBeenSet; }
-  template <typename DataSourceIdentifierT = Aws::String>
-  void SetDataSourceIdentifier(DataSourceIdentifierT&& value) {
-    m_dataSourceIdentifierHasBeenSet = true;
-    m_dataSourceIdentifier = std::forward<DataSourceIdentifierT>(value);
-  }
-  template <typename DataSourceIdentifierT = Aws::String>
-  ListDataSourceRunsRequest& WithDataSourceIdentifier(DataSourceIdentifierT&& value) {
-    SetDataSourceIdentifier(std::forward<DataSourceIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which to invoke the
    * <code>ListDataSourceRuns</code> action.</p>
    */
@@ -73,20 +55,34 @@ class ListDataSourceRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of runs to return in a single call to
-   * <code>ListDataSourceRuns</code>. When the number of runs to be listed is greater
-   * than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListDataSourceRuns</code> to list the next set of runs.</p>
+   * <p>The identifier of the data source.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::String& GetDataSourceIdentifier() const { return m_dataSourceIdentifier; }
+  inline bool DataSourceIdentifierHasBeenSet() const { return m_dataSourceIdentifierHasBeenSet; }
+  template <typename DataSourceIdentifierT = Aws::String>
+  void SetDataSourceIdentifier(DataSourceIdentifierT&& value) {
+    m_dataSourceIdentifierHasBeenSet = true;
+    m_dataSourceIdentifier = std::forward<DataSourceIdentifierT>(value);
   }
-  inline ListDataSourceRunsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename DataSourceIdentifierT = Aws::String>
+  ListDataSourceRunsRequest& WithDataSourceIdentifier(DataSourceIdentifierT&& value) {
+    SetDataSourceIdentifier(std::forward<DataSourceIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the data source.</p>
+   */
+  inline DataSourceRunStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DataSourceRunStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListDataSourceRunsRequest& WithStatus(DataSourceRunStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -116,34 +112,38 @@ class ListDataSourceRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status of the data source.</p>
+   * <p>The maximum number of runs to return in a single call to
+   * <code>ListDataSourceRuns</code>. When the number of runs to be listed is greater
+   * than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListDataSourceRuns</code> to list the next set of runs.</p>
    */
-  inline DataSourceRunStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DataSourceRunStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListDataSourceRunsRequest& WithStatus(DataSourceRunStatus value) {
-    SetStatus(value);
+  inline ListDataSourceRunsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_dataSourceIdentifier;
-
   Aws::String m_domainIdentifier;
 
-  int m_maxResults{0};
+  Aws::String m_dataSourceIdentifier;
+
+  DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
 
   Aws::String m_nextToken;
 
-  DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
-  bool m_dataSourceIdentifierHasBeenSet = false;
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
+  bool m_dataSourceIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

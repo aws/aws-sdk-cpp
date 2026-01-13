@@ -21,13 +21,13 @@ PostLineageEventResult::PostLineageEventResult(const Aws::AmazonWebServiceResult
 
 PostLineageEventResult& PostLineageEventResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

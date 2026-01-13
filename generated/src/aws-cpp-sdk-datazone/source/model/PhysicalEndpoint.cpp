@@ -22,17 +22,17 @@ PhysicalEndpoint& PhysicalEndpoint::operator=(JsonView jsonValue) {
     m_awsLocation = jsonValue.GetObject("awsLocation");
     m_awsLocationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("enableTrustedIdentityPropagation")) {
-    m_enableTrustedIdentityPropagation = jsonValue.GetBool("enableTrustedIdentityPropagation");
-    m_enableTrustedIdentityPropagationHasBeenSet = true;
+  if (jsonValue.ValueExists("glueConnectionName")) {
+    m_glueConnectionName = jsonValue.GetString("glueConnectionName");
+    m_glueConnectionNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("glueConnection")) {
     m_glueConnection = jsonValue.GetObject("glueConnection");
     m_glueConnectionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("glueConnectionName")) {
-    m_glueConnectionName = jsonValue.GetString("glueConnectionName");
-    m_glueConnectionNameHasBeenSet = true;
+  if (jsonValue.ValueExists("enableTrustedIdentityPropagation")) {
+    m_enableTrustedIdentityPropagation = jsonValue.GetBool("enableTrustedIdentityPropagation");
+    m_enableTrustedIdentityPropagationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("host")) {
     m_host = jsonValue.GetString("host");
@@ -60,16 +60,16 @@ JsonValue PhysicalEndpoint::Jsonize() const {
     payload.WithObject("awsLocation", m_awsLocation.Jsonize());
   }
 
-  if (m_enableTrustedIdentityPropagationHasBeenSet) {
-    payload.WithBool("enableTrustedIdentityPropagation", m_enableTrustedIdentityPropagation);
+  if (m_glueConnectionNameHasBeenSet) {
+    payload.WithString("glueConnectionName", m_glueConnectionName);
   }
 
   if (m_glueConnectionHasBeenSet) {
     payload.WithObject("glueConnection", m_glueConnection.Jsonize());
   }
 
-  if (m_glueConnectionNameHasBeenSet) {
-    payload.WithString("glueConnectionName", m_glueConnectionName);
+  if (m_enableTrustedIdentityPropagationHasBeenSet) {
+    payload.WithBool("enableTrustedIdentityPropagation", m_enableTrustedIdentityPropagation);
   }
 
   if (m_hostHasBeenSet) {

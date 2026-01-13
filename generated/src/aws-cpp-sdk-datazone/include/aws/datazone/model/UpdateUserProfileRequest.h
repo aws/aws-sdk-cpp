@@ -51,16 +51,18 @@ class UpdateUserProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status of the user profile that are to be updated.</p>
+   * <p>The identifier of the user whose user profile is to be updated.</p>
    */
-  inline UserProfileStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(UserProfileStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
+  inline bool UserIdentifierHasBeenSet() const { return m_userIdentifierHasBeenSet; }
+  template <typename UserIdentifierT = Aws::String>
+  void SetUserIdentifier(UserIdentifierT&& value) {
+    m_userIdentifierHasBeenSet = true;
+    m_userIdentifier = std::forward<UserIdentifierT>(value);
   }
-  inline UpdateUserProfileRequest& WithStatus(UserProfileStatus value) {
-    SetStatus(value);
+  template <typename UserIdentifierT = Aws::String>
+  UpdateUserProfileRequest& WithUserIdentifier(UserIdentifierT&& value) {
+    SetUserIdentifier(std::forward<UserIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -83,33 +85,31 @@ class UpdateUserProfileRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the user whose user profile is to be updated.</p>
+   * <p>The status of the user profile that are to be updated.</p>
    */
-  inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
-  inline bool UserIdentifierHasBeenSet() const { return m_userIdentifierHasBeenSet; }
-  template <typename UserIdentifierT = Aws::String>
-  void SetUserIdentifier(UserIdentifierT&& value) {
-    m_userIdentifierHasBeenSet = true;
-    m_userIdentifier = std::forward<UserIdentifierT>(value);
+  inline UserProfileStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(UserProfileStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename UserIdentifierT = Aws::String>
-  UpdateUserProfileRequest& WithUserIdentifier(UserIdentifierT&& value) {
-    SetUserIdentifier(std::forward<UserIdentifierT>(value));
+  inline UpdateUserProfileRequest& WithStatus(UserProfileStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  UserProfileStatus m_status{UserProfileStatus::NOT_SET};
+  Aws::String m_userIdentifier;
 
   UserProfileType m_type{UserProfileType::NOT_SET};
 
-  Aws::String m_userIdentifier;
+  UserProfileStatus m_status{UserProfileStatus::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

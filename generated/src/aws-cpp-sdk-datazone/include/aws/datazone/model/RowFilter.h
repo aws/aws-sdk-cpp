@@ -34,6 +34,24 @@ class RowFilter {
 
   ///@{
   /**
+   * <p>The expression of the row filter.</p>
+   */
+  inline const RowFilterExpression& GetExpression() const { return m_expression; }
+  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+  template <typename ExpressionT = RowFilterExpression>
+  void SetExpression(ExpressionT&& value) {
+    m_expressionHasBeenSet = true;
+    m_expression = std::forward<ExpressionT>(value);
+  }
+  template <typename ExpressionT = RowFilterExpression>
+  RowFilter& WithExpression(ExpressionT&& value) {
+    SetExpression(std::forward<ExpressionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The 'and' clause of the row filter.</p>
    */
   inline const Aws::Vector<RowFilter>& GetAnd() const { return m_and; }
@@ -52,24 +70,6 @@ class RowFilter {
   RowFilter& AddAnd(AndT&& value) {
     m_andHasBeenSet = true;
     m_and.emplace_back(std::forward<AndT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The expression of the row filter.</p>
-   */
-  inline const RowFilterExpression& GetExpression() const { return m_expression; }
-  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-  template <typename ExpressionT = RowFilterExpression>
-  void SetExpression(ExpressionT&& value) {
-    m_expressionHasBeenSet = true;
-    m_expression = std::forward<ExpressionT>(value);
-  }
-  template <typename ExpressionT = RowFilterExpression>
-  RowFilter& WithExpression(ExpressionT&& value) {
-    SetExpression(std::forward<ExpressionT>(value));
     return *this;
   }
   ///@}
@@ -98,13 +98,13 @@ class RowFilter {
   }
   ///@}
  private:
-  Aws::Vector<RowFilter> m_and;
-
   RowFilterExpression m_expression;
 
+  Aws::Vector<RowFilter> m_and;
+
   Aws::Vector<RowFilter> m_or;
-  bool m_andHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
+  bool m_andHasBeenSet = false;
   bool m_orHasBeenSet = false;
 };
 

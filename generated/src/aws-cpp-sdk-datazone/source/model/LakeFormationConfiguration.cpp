@@ -18,6 +18,10 @@ namespace Model {
 LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 LakeFormationConfiguration& LakeFormationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("locationRegistrationRole")) {
+    m_locationRegistrationRole = jsonValue.GetString("locationRegistrationRole");
+    m_locationRegistrationRoleHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("locationRegistrationExcludeS3Locations")) {
     Aws::Utils::Array<JsonView> locationRegistrationExcludeS3LocationsJsonList =
         jsonValue.GetArray("locationRegistrationExcludeS3Locations");
@@ -29,15 +33,15 @@ LakeFormationConfiguration& LakeFormationConfiguration::operator=(JsonView jsonV
     }
     m_locationRegistrationExcludeS3LocationsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("locationRegistrationRole")) {
-    m_locationRegistrationRole = jsonValue.GetString("locationRegistrationRole");
-    m_locationRegistrationRoleHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue LakeFormationConfiguration::Jsonize() const {
   JsonValue payload;
+
+  if (m_locationRegistrationRoleHasBeenSet) {
+    payload.WithString("locationRegistrationRole", m_locationRegistrationRole);
+  }
 
   if (m_locationRegistrationExcludeS3LocationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> locationRegistrationExcludeS3LocationsJsonList(m_locationRegistrationExcludeS3Locations.size());
@@ -48,10 +52,6 @@ JsonValue LakeFormationConfiguration::Jsonize() const {
           m_locationRegistrationExcludeS3Locations[locationRegistrationExcludeS3LocationsIndex]);
     }
     payload.WithArray("locationRegistrationExcludeS3Locations", std::move(locationRegistrationExcludeS3LocationsJsonList));
-  }
-
-  if (m_locationRegistrationRoleHasBeenSet) {
-    payload.WithString("locationRegistrationRole", m_locationRegistrationRole);
   }
 
   return payload;

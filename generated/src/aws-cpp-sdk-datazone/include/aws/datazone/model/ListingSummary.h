@@ -35,30 +35,6 @@ class ListingSummary {
 
   ///@{
   /**
-   * <p>The glossary terms of the data product.</p>
-   */
-  inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const { return m_glossaryTerms; }
-  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-  template <typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
-  void SetGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
-  }
-  template <typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
-  ListingSummary& WithGlossaryTerms(GlossaryTermsT&& value) {
-    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  template <typename GlossaryTermsT = DetailedGlossaryTerm>
-  ListingSummary& AddGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the data product listing.</p>
    */
   inline const Aws::String& GetListingId() const { return m_listingId; }
@@ -92,15 +68,39 @@ class ListingSummary {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
 
+  ///@{
+  /**
+   * <p>The glossary terms of the data product.</p>
+   */
+  inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
+  template <typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+  ListingSummary& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = DetailedGlossaryTerm>
+  ListingSummary& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_listingId;
 
   Aws::String m_listingRevision;
-  bool m_glossaryTermsHasBeenSet = false;
+
+  Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
   bool m_listingIdHasBeenSet = false;
   bool m_listingRevisionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
 };
 
 }  // namespace Model

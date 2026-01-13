@@ -35,24 +35,6 @@ class LineageNodeReference {
 
   ///@{
   /**
-   * <p>The event timestamp of the data lineage node.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEventTimestamp() const { return m_eventTimestamp; }
-  inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
-  template <typename EventTimestampT = Aws::Utils::DateTime>
-  void SetEventTimestamp(EventTimestampT&& value) {
-    m_eventTimestampHasBeenSet = true;
-    m_eventTimestamp = std::forward<EventTimestampT>(value);
-  }
-  template <typename EventTimestampT = Aws::Utils::DateTime>
-  LineageNodeReference& WithEventTimestamp(EventTimestampT&& value) {
-    SetEventTimestamp(std::forward<EventTimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the data lineage node.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -68,12 +50,30 @@ class LineageNodeReference {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::DateTime m_eventTimestamp{};
 
+  ///@{
+  /**
+   * <p>The event timestamp of the data lineage node.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEventTimestamp() const { return m_eventTimestamp; }
+  inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
+  template <typename EventTimestampT = Aws::Utils::DateTime>
+  void SetEventTimestamp(EventTimestampT&& value) {
+    m_eventTimestampHasBeenSet = true;
+    m_eventTimestamp = std::forward<EventTimestampT>(value);
+  }
+  template <typename EventTimestampT = Aws::Utils::DateTime>
+  LineageNodeReference& WithEventTimestamp(EventTimestampT&& value) {
+    SetEventTimestamp(std::forward<EventTimestampT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_id;
-  bool m_eventTimestampHasBeenSet = false;
+
+  Aws::Utils::DateTime m_eventTimestamp{};
   bool m_idHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
 };
 
 }  // namespace Model

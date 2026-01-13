@@ -39,6 +39,74 @@ class ListRulesRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the domain in which the rules are to be listed.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  ListRulesRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The target type of the rule.</p>
+   */
+  inline RuleTargetType GetTargetType() const { return m_targetType; }
+  inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+  inline void SetTargetType(RuleTargetType value) {
+    m_targetTypeHasBeenSet = true;
+    m_targetType = value;
+  }
+  inline ListRulesRequest& WithTargetType(RuleTargetType value) {
+    SetTargetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The target ID of the rule.</p>
+   */
+  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
+  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
+  template <typename TargetIdentifierT = Aws::String>
+  void SetTargetIdentifier(TargetIdentifierT&& value) {
+    m_targetIdentifierHasBeenSet = true;
+    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
+  }
+  template <typename TargetIdentifierT = Aws::String>
+  ListRulesRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
+    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the rule.</p>
+   */
+  inline RuleType GetRuleType() const { return m_ruleType; }
+  inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
+  inline void SetRuleType(RuleType value) {
+    m_ruleTypeHasBeenSet = true;
+    m_ruleType = value;
+  }
+  inline ListRulesRequest& WithRuleType(RuleType value) {
+    SetRuleType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The action of the rule.</p>
    */
   inline RuleAction GetAction() const { return m_action; }
@@ -49,6 +117,30 @@ class ListRulesRequest : public DataZoneRequest {
   }
   inline ListRulesRequest& WithAction(RuleAction value) {
     SetAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IDs of projects in which rules are to be listed.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetProjectIds() const { return m_projectIds; }
+  inline bool ProjectIdsHasBeenSet() const { return m_projectIdsHasBeenSet; }
+  template <typename ProjectIdsT = Aws::Vector<Aws::String>>
+  void SetProjectIds(ProjectIdsT&& value) {
+    m_projectIdsHasBeenSet = true;
+    m_projectIds = std::forward<ProjectIdsT>(value);
+  }
+  template <typename ProjectIdsT = Aws::Vector<Aws::String>>
+  ListRulesRequest& WithProjectIds(ProjectIdsT&& value) {
+    SetProjectIds(std::forward<ProjectIdsT>(value));
+    return *this;
+  }
+  template <typename ProjectIdsT = Aws::String>
+  ListRulesRequest& AddProjectIds(ProjectIdsT&& value) {
+    m_projectIdsHasBeenSet = true;
+    m_projectIds.emplace_back(std::forward<ProjectIdsT>(value));
     return *this;
   }
   ///@}
@@ -89,24 +181,6 @@ class ListRulesRequest : public DataZoneRequest {
   }
   inline ListRulesRequest& WithDataProduct(bool value) {
     SetDataProduct(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain in which the rules are to be listed.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  ListRulesRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -169,113 +243,39 @@ class ListRulesRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The IDs of projects in which rules are to be listed.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetProjectIds() const { return m_projectIds; }
-  inline bool ProjectIdsHasBeenSet() const { return m_projectIdsHasBeenSet; }
-  template <typename ProjectIdsT = Aws::Vector<Aws::String>>
-  void SetProjectIds(ProjectIdsT&& value) {
-    m_projectIdsHasBeenSet = true;
-    m_projectIds = std::forward<ProjectIdsT>(value);
-  }
-  template <typename ProjectIdsT = Aws::Vector<Aws::String>>
-  ListRulesRequest& WithProjectIds(ProjectIdsT&& value) {
-    SetProjectIds(std::forward<ProjectIdsT>(value));
-    return *this;
-  }
-  template <typename ProjectIdsT = Aws::String>
-  ListRulesRequest& AddProjectIds(ProjectIdsT&& value) {
-    m_projectIdsHasBeenSet = true;
-    m_projectIds.emplace_back(std::forward<ProjectIdsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the rule.</p>
-   */
-  inline RuleType GetRuleType() const { return m_ruleType; }
-  inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
-  inline void SetRuleType(RuleType value) {
-    m_ruleTypeHasBeenSet = true;
-    m_ruleType = value;
-  }
-  inline ListRulesRequest& WithRuleType(RuleType value) {
-    SetRuleType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The target ID of the rule.</p>
-   */
-  inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
-  inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-  template <typename TargetIdentifierT = Aws::String>
-  void SetTargetIdentifier(TargetIdentifierT&& value) {
-    m_targetIdentifierHasBeenSet = true;
-    m_targetIdentifier = std::forward<TargetIdentifierT>(value);
-  }
-  template <typename TargetIdentifierT = Aws::String>
-  ListRulesRequest& WithTargetIdentifier(TargetIdentifierT&& value) {
-    SetTargetIdentifier(std::forward<TargetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The target type of the rule.</p>
-   */
-  inline RuleTargetType GetTargetType() const { return m_targetType; }
-  inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-  inline void SetTargetType(RuleTargetType value) {
-    m_targetTypeHasBeenSet = true;
-    m_targetType = value;
-  }
-  inline ListRulesRequest& WithTargetType(RuleTargetType value) {
-    SetTargetType(value);
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_domainIdentifier;
+
+  RuleTargetType m_targetType{RuleTargetType::NOT_SET};
+
+  Aws::String m_targetIdentifier;
+
+  RuleType m_ruleType{RuleType::NOT_SET};
+
   RuleAction m_action{RuleAction::NOT_SET};
+
+  Aws::Vector<Aws::String> m_projectIds;
 
   Aws::Vector<Aws::String> m_assetTypes;
 
   bool m_dataProduct{false};
-
-  Aws::String m_domainIdentifier;
 
   bool m_includeCascaded{false};
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::Vector<Aws::String> m_projectIds;
-
-  RuleType m_ruleType{RuleType::NOT_SET};
-
-  Aws::String m_targetIdentifier;
-
-  RuleTargetType m_targetType{RuleTargetType::NOT_SET};
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
   bool m_actionHasBeenSet = false;
+  bool m_projectIdsHasBeenSet = false;
   bool m_assetTypesHasBeenSet = false;
   bool m_dataProductHasBeenSet = false;
-  bool m_domainIdentifierHasBeenSet = false;
   bool m_includeCascadedHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_projectIdsHasBeenSet = false;
-  bool m_ruleTypeHasBeenSet = false;
-  bool m_targetIdentifierHasBeenSet = false;
-  bool m_targetTypeHasBeenSet = false;
 };
 
 }  // namespace Model

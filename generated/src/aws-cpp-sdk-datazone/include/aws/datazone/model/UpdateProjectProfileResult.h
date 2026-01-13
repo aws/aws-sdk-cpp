@@ -33,72 +33,6 @@ class UpdateProjectProfileResult {
 
   ///@{
   /**
-   * <p>Specifies whether custom project resource tags are supported.</p>
-   */
-  inline bool GetAllowCustomProjectResourceTags() const { return m_allowCustomProjectResourceTags; }
-  inline void SetAllowCustomProjectResourceTags(bool value) {
-    m_allowCustomProjectResourceTagsHasBeenSet = true;
-    m_allowCustomProjectResourceTags = value;
-  }
-  inline UpdateProjectProfileResult& WithAllowCustomProjectResourceTags(bool value) {
-    SetAllowCustomProjectResourceTags(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp at which a project profile is created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateProjectProfileResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created a project profile.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  UpdateProjectProfileResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of a project profile.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateProjectProfileResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where project profile is to be updated.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -110,46 +44,6 @@ class UpdateProjectProfileResult {
   template <typename DomainIdT = Aws::String>
   UpdateProjectProfileResult& WithDomainId(DomainIdT&& value) {
     SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The domain unit ID of the project profile to be updated.</p>
-   */
-  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
-  template <typename DomainUnitIdT = Aws::String>
-  void SetDomainUnitId(DomainUnitIdT&& value) {
-    m_domainUnitIdHasBeenSet = true;
-    m_domainUnitId = std::forward<DomainUnitIdT>(value);
-  }
-  template <typename DomainUnitIdT = Aws::String>
-  UpdateProjectProfileResult& WithDomainUnitId(DomainUnitIdT&& value) {
-    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The environment configurations of a project profile.</p>
-   */
-  inline const Aws::Vector<EnvironmentConfiguration>& GetEnvironmentConfigurations() const { return m_environmentConfigurations; }
-  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
-  void SetEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
-    m_environmentConfigurationsHasBeenSet = true;
-    m_environmentConfigurations = std::forward<EnvironmentConfigurationsT>(value);
-  }
-  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
-  UpdateProjectProfileResult& WithEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
-    SetEnvironmentConfigurations(std::forward<EnvironmentConfigurationsT>(value));
-    return *this;
-  }
-  template <typename EnvironmentConfigurationsT = EnvironmentConfiguration>
-  UpdateProjectProfileResult& AddEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
-    m_environmentConfigurationsHasBeenSet = true;
-    m_environmentConfigurations.emplace_back(std::forward<EnvironmentConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -173,23 +67,6 @@ class UpdateProjectProfileResult {
 
   ///@{
   /**
-   * <p>The timestamp at which a project profile was last updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
-  }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  UpdateProjectProfileResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the project profile.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -201,6 +78,38 @@ class UpdateProjectProfileResult {
   template <typename NameT = Aws::String>
   UpdateProjectProfileResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of a project profile.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateProjectProfileResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the project profile.</p>
+   */
+  inline Status GetStatus() const { return m_status; }
+  inline void SetStatus(Status value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateProjectProfileResult& WithStatus(Status value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -230,6 +139,21 @@ class UpdateProjectProfileResult {
 
   ///@{
   /**
+   * <p>Specifies whether custom project resource tags are supported.</p>
+   */
+  inline bool GetAllowCustomProjectResourceTags() const { return m_allowCustomProjectResourceTags; }
+  inline void SetAllowCustomProjectResourceTags(bool value) {
+    m_allowCustomProjectResourceTagsHasBeenSet = true;
+    m_allowCustomProjectResourceTags = value;
+  }
+  inline UpdateProjectProfileResult& WithAllowCustomProjectResourceTags(bool value) {
+    SetAllowCustomProjectResourceTags(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Field viewable through the UI that provides a project user with the allowed
    * resource tag specifications.</p>
    */
@@ -248,15 +172,91 @@ class UpdateProjectProfileResult {
 
   ///@{
   /**
-   * <p>The status of the project profile.</p>
+   * <p>The environment configurations of a project profile.</p>
    */
-  inline Status GetStatus() const { return m_status; }
-  inline void SetStatus(Status value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::Vector<EnvironmentConfiguration>& GetEnvironmentConfigurations() const { return m_environmentConfigurations; }
+  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
+  void SetEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
+    m_environmentConfigurationsHasBeenSet = true;
+    m_environmentConfigurations = std::forward<EnvironmentConfigurationsT>(value);
   }
-  inline UpdateProjectProfileResult& WithStatus(Status value) {
-    SetStatus(value);
+  template <typename EnvironmentConfigurationsT = Aws::Vector<EnvironmentConfiguration>>
+  UpdateProjectProfileResult& WithEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
+    SetEnvironmentConfigurations(std::forward<EnvironmentConfigurationsT>(value));
+    return *this;
+  }
+  template <typename EnvironmentConfigurationsT = EnvironmentConfiguration>
+  UpdateProjectProfileResult& AddEnvironmentConfigurations(EnvironmentConfigurationsT&& value) {
+    m_environmentConfigurationsHasBeenSet = true;
+    m_environmentConfigurations.emplace_back(std::forward<EnvironmentConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created a project profile.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  UpdateProjectProfileResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which a project profile is created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateProjectProfileResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which a project profile was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  UpdateProjectProfileResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The domain unit ID of the project profile to be updated.</p>
+   */
+  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+  template <typename DomainUnitIdT = Aws::String>
+  void SetDomainUnitId(DomainUnitIdT&& value) {
+    m_domainUnitIdHasBeenSet = true;
+    m_domainUnitId = std::forward<DomainUnitIdT>(value);
+  }
+  template <typename DomainUnitIdT = Aws::String>
+  UpdateProjectProfileResult& WithDomainUnitId(DomainUnitIdT&& value) {
+    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
     return *this;
   }
   ///@}
@@ -276,46 +276,46 @@ class UpdateProjectProfileResult {
   }
   ///@}
  private:
-  bool m_allowCustomProjectResourceTags{false};
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
   Aws::String m_domainId;
-
-  Aws::String m_domainUnitId;
-
-  Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
 
   Aws::String m_id;
 
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
   Aws::String m_name;
 
-  Aws::Vector<ResourceTagParameter> m_projectResourceTags;
-
-  Aws::String m_projectResourceTagsDescription;
+  Aws::String m_description;
 
   Status m_status{Status::NOT_SET};
 
+  Aws::Vector<ResourceTagParameter> m_projectResourceTags;
+
+  bool m_allowCustomProjectResourceTags{false};
+
+  Aws::String m_projectResourceTagsDescription;
+
+  Aws::Vector<EnvironmentConfiguration> m_environmentConfigurations;
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  Aws::String m_domainUnitId;
+
   Aws::String m_requestId;
-  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_domainUnitIdHasBeenSet = false;
-  bool m_environmentConfigurationsHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_projectResourceTagsHasBeenSet = false;
-  bool m_projectResourceTagsDescriptionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_projectResourceTagsHasBeenSet = false;
+  bool m_allowCustomProjectResourceTagsHasBeenSet = false;
+  bool m_projectResourceTagsDescriptionHasBeenSet = false;
+  bool m_environmentConfigurationsHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

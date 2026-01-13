@@ -22,21 +22,13 @@ GlueRunConfigurationOutput& GlueRunConfigurationOutput::operator=(JsonView jsonV
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("autoImportDataQualityResult")) {
-    m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
-    m_autoImportDataQualityResultHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("catalogName")) {
-    m_catalogName = jsonValue.GetString("catalogName");
-    m_catalogNameHasBeenSet = true;
+  if (jsonValue.ValueExists("region")) {
+    m_region = jsonValue.GetString("region");
+    m_regionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("dataAccessRole")) {
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
     m_dataAccessRoleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("region")) {
-    m_region = jsonValue.GetString("region");
-    m_regionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("relationalFilterConfigurations")) {
     Aws::Utils::Array<JsonView> relationalFilterConfigurationsJsonList = jsonValue.GetArray("relationalFilterConfigurations");
@@ -45,6 +37,14 @@ GlueRunConfigurationOutput& GlueRunConfigurationOutput::operator=(JsonView jsonV
       m_relationalFilterConfigurations.push_back(relationalFilterConfigurationsJsonList[relationalFilterConfigurationsIndex].AsObject());
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("autoImportDataQualityResult")) {
+    m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
+    m_autoImportDataQualityResultHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("catalogName")) {
+    m_catalogName = jsonValue.GetString("catalogName");
+    m_catalogNameHasBeenSet = true;
   }
   return *this;
 }
@@ -56,20 +56,12 @@ JsonValue GlueRunConfigurationOutput::Jsonize() const {
     payload.WithString("accountId", m_accountId);
   }
 
-  if (m_autoImportDataQualityResultHasBeenSet) {
-    payload.WithBool("autoImportDataQualityResult", m_autoImportDataQualityResult);
-  }
-
-  if (m_catalogNameHasBeenSet) {
-    payload.WithString("catalogName", m_catalogName);
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", m_region);
   }
 
   if (m_dataAccessRoleHasBeenSet) {
     payload.WithString("dataAccessRole", m_dataAccessRole);
-  }
-
-  if (m_regionHasBeenSet) {
-    payload.WithString("region", m_region);
   }
 
   if (m_relationalFilterConfigurationsHasBeenSet) {
@@ -80,6 +72,14 @@ JsonValue GlueRunConfigurationOutput::Jsonize() const {
           m_relationalFilterConfigurations[relationalFilterConfigurationsIndex].Jsonize());
     }
     payload.WithArray("relationalFilterConfigurations", std::move(relationalFilterConfigurationsJsonList));
+  }
+
+  if (m_autoImportDataQualityResultHasBeenSet) {
+    payload.WithBool("autoImportDataQualityResult", m_autoImportDataQualityResult);
+  }
+
+  if (m_catalogNameHasBeenSet) {
+    payload.WithString("catalogName", m_catalogName);
   }
 
   return payload;

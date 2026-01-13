@@ -75,98 +75,6 @@ class SubscribedAsset {
 
   ///@{
   /**
-   * <p>The asset scope of the subscribed asset.</p>
-   */
-  inline const AssetScope& GetAssetScope() const { return m_assetScope; }
-  inline bool AssetScopeHasBeenSet() const { return m_assetScopeHasBeenSet; }
-  template <typename AssetScopeT = AssetScope>
-  void SetAssetScope(AssetScopeT&& value) {
-    m_assetScopeHasBeenSet = true;
-    m_assetScope = std::forward<AssetScopeT>(value);
-  }
-  template <typename AssetScopeT = AssetScope>
-  SubscribedAsset& WithAssetScope(AssetScopeT&& value) {
-    SetAssetScope(std::forward<AssetScopeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The failure cause included in the details of the asset for which the
-   * subscription grant is created.</p>
-   */
-  inline const FailureCause& GetFailureCause() const { return m_failureCause; }
-  inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
-  template <typename FailureCauseT = FailureCause>
-  void SetFailureCause(FailureCauseT&& value) {
-    m_failureCauseHasBeenSet = true;
-    m_failureCause = std::forward<FailureCauseT>(value);
-  }
-  template <typename FailureCauseT = FailureCause>
-  SubscribedAsset& WithFailureCause(FailureCauseT&& value) {
-    SetFailureCause(std::forward<FailureCauseT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The failure timestamp included in the details of the asset for which the
-   * subscription grant is created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetFailureTimestamp() const { return m_failureTimestamp; }
-  inline bool FailureTimestampHasBeenSet() const { return m_failureTimestampHasBeenSet; }
-  template <typename FailureTimestampT = Aws::Utils::DateTime>
-  void SetFailureTimestamp(FailureTimestampT&& value) {
-    m_failureTimestampHasBeenSet = true;
-    m_failureTimestamp = std::forward<FailureTimestampT>(value);
-  }
-  template <typename FailureTimestampT = Aws::Utils::DateTime>
-  SubscribedAsset& WithFailureTimestamp(FailureTimestampT&& value) {
-    SetFailureTimestamp(std::forward<FailureTimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the subscription grant to the asset is created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetGrantedTimestamp() const { return m_grantedTimestamp; }
-  inline bool GrantedTimestampHasBeenSet() const { return m_grantedTimestampHasBeenSet; }
-  template <typename GrantedTimestampT = Aws::Utils::DateTime>
-  void SetGrantedTimestamp(GrantedTimestampT&& value) {
-    m_grantedTimestampHasBeenSet = true;
-    m_grantedTimestamp = std::forward<GrantedTimestampT>(value);
-  }
-  template <typename GrantedTimestampT = Aws::Utils::DateTime>
-  SubscribedAsset& WithGrantedTimestamp(GrantedTimestampT&& value) {
-    SetGrantedTimestamp(std::forward<GrantedTimestampT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The asset permissions.</p>
-   */
-  inline const Permissions& GetPermissions() const { return m_permissions; }
-  inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-  template <typename PermissionsT = Permissions>
-  void SetPermissions(PermissionsT&& value) {
-    m_permissionsHasBeenSet = true;
-    m_permissions = std::forward<PermissionsT>(value);
-  }
-  template <typename PermissionsT = Permissions>
-  SubscribedAsset& WithPermissions(PermissionsT&& value) {
-    SetPermissions(std::forward<PermissionsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The status of the asset for which the subscription grant is created.</p>
    */
   inline SubscriptionGrantStatus GetStatus() const { return m_status; }
@@ -198,33 +106,125 @@ class SubscribedAsset {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The failure cause included in the details of the asset for which the
+   * subscription grant is created.</p>
+   */
+  inline const FailureCause& GetFailureCause() const { return m_failureCause; }
+  inline bool FailureCauseHasBeenSet() const { return m_failureCauseHasBeenSet; }
+  template <typename FailureCauseT = FailureCause>
+  void SetFailureCause(FailureCauseT&& value) {
+    m_failureCauseHasBeenSet = true;
+    m_failureCause = std::forward<FailureCauseT>(value);
+  }
+  template <typename FailureCauseT = FailureCause>
+  SubscribedAsset& WithFailureCause(FailureCauseT&& value) {
+    SetFailureCause(std::forward<FailureCauseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the subscription grant to the asset is created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetGrantedTimestamp() const { return m_grantedTimestamp; }
+  inline bool GrantedTimestampHasBeenSet() const { return m_grantedTimestampHasBeenSet; }
+  template <typename GrantedTimestampT = Aws::Utils::DateTime>
+  void SetGrantedTimestamp(GrantedTimestampT&& value) {
+    m_grantedTimestampHasBeenSet = true;
+    m_grantedTimestamp = std::forward<GrantedTimestampT>(value);
+  }
+  template <typename GrantedTimestampT = Aws::Utils::DateTime>
+  SubscribedAsset& WithGrantedTimestamp(GrantedTimestampT&& value) {
+    SetGrantedTimestamp(std::forward<GrantedTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The failure timestamp included in the details of the asset for which the
+   * subscription grant is created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetFailureTimestamp() const { return m_failureTimestamp; }
+  inline bool FailureTimestampHasBeenSet() const { return m_failureTimestampHasBeenSet; }
+  template <typename FailureTimestampT = Aws::Utils::DateTime>
+  void SetFailureTimestamp(FailureTimestampT&& value) {
+    m_failureTimestampHasBeenSet = true;
+    m_failureTimestamp = std::forward<FailureTimestampT>(value);
+  }
+  template <typename FailureTimestampT = Aws::Utils::DateTime>
+  SubscribedAsset& WithFailureTimestamp(FailureTimestampT&& value) {
+    SetFailureTimestamp(std::forward<FailureTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset scope of the subscribed asset.</p>
+   */
+  inline const AssetScope& GetAssetScope() const { return m_assetScope; }
+  inline bool AssetScopeHasBeenSet() const { return m_assetScopeHasBeenSet; }
+  template <typename AssetScopeT = AssetScope>
+  void SetAssetScope(AssetScopeT&& value) {
+    m_assetScopeHasBeenSet = true;
+    m_assetScope = std::forward<AssetScopeT>(value);
+  }
+  template <typename AssetScopeT = AssetScope>
+  SubscribedAsset& WithAssetScope(AssetScopeT&& value) {
+    SetAssetScope(std::forward<AssetScopeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset permissions.</p>
+   */
+  inline const Permissions& GetPermissions() const { return m_permissions; }
+  inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
+  template <typename PermissionsT = Permissions>
+  void SetPermissions(PermissionsT&& value) {
+    m_permissionsHasBeenSet = true;
+    m_permissions = std::forward<PermissionsT>(value);
+  }
+  template <typename PermissionsT = Permissions>
+  SubscribedAsset& WithPermissions(PermissionsT&& value) {
+    SetPermissions(std::forward<PermissionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assetId;
 
   Aws::String m_assetRevision;
 
-  AssetScope m_assetScope;
-
-  FailureCause m_failureCause;
-
-  Aws::Utils::DateTime m_failureTimestamp{};
-
-  Aws::Utils::DateTime m_grantedTimestamp{};
-
-  Permissions m_permissions;
-
   SubscriptionGrantStatus m_status{SubscriptionGrantStatus::NOT_SET};
 
   Aws::String m_targetName;
+
+  FailureCause m_failureCause;
+
+  Aws::Utils::DateTime m_grantedTimestamp{};
+
+  Aws::Utils::DateTime m_failureTimestamp{};
+
+  AssetScope m_assetScope;
+
+  Permissions m_permissions;
   bool m_assetIdHasBeenSet = false;
   bool m_assetRevisionHasBeenSet = false;
-  bool m_assetScopeHasBeenSet = false;
-  bool m_failureCauseHasBeenSet = false;
-  bool m_failureTimestampHasBeenSet = false;
-  bool m_grantedTimestampHasBeenSet = false;
-  bool m_permissionsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
+  bool m_grantedTimestampHasBeenSet = false;
+  bool m_failureTimestampHasBeenSet = false;
+  bool m_assetScopeHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
 };
 
 }  // namespace Model

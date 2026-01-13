@@ -30,24 +30,6 @@ class GetAssetFilterRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the data asset.</p>
-   */
-  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
-  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
-  template <typename AssetIdentifierT = Aws::String>
-  void SetAssetIdentifier(AssetIdentifierT&& value) {
-    m_assetIdentifierHasBeenSet = true;
-    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
-  }
-  template <typename AssetIdentifierT = Aws::String>
-  GetAssetFilterRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
-    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to get an asset filter.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -60,6 +42,24 @@ class GetAssetFilterRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   GetAssetFilterRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the data asset.</p>
+   */
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
+  }
+  template <typename AssetIdentifierT = Aws::String>
+  GetAssetFilterRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -82,13 +82,13 @@ class GetAssetFilterRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_assetIdentifier;
-
   Aws::String m_domainIdentifier;
 
+  Aws::String m_assetIdentifier;
+
   Aws::String m_identifier;
-  bool m_assetIdentifierHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

@@ -26,26 +26,6 @@ SubscribedAsset& SubscribedAsset::operator=(JsonView jsonValue) {
     m_assetRevision = jsonValue.GetString("assetRevision");
     m_assetRevisionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("assetScope")) {
-    m_assetScope = jsonValue.GetObject("assetScope");
-    m_assetScopeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("failureCause")) {
-    m_failureCause = jsonValue.GetObject("failureCause");
-    m_failureCauseHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("failureTimestamp")) {
-    m_failureTimestamp = jsonValue.GetDouble("failureTimestamp");
-    m_failureTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("grantedTimestamp")) {
-    m_grantedTimestamp = jsonValue.GetDouble("grantedTimestamp");
-    m_grantedTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("permissions")) {
-    m_permissions = jsonValue.GetObject("permissions");
-    m_permissionsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("status")) {
     m_status = SubscriptionGrantStatusMapper::GetSubscriptionGrantStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -53,6 +33,26 @@ SubscribedAsset& SubscribedAsset::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("targetName")) {
     m_targetName = jsonValue.GetString("targetName");
     m_targetNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureCause")) {
+    m_failureCause = jsonValue.GetObject("failureCause");
+    m_failureCauseHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("grantedTimestamp")) {
+    m_grantedTimestamp = jsonValue.GetDouble("grantedTimestamp");
+    m_grantedTimestampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureTimestamp")) {
+    m_failureTimestamp = jsonValue.GetDouble("failureTimestamp");
+    m_failureTimestampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("assetScope")) {
+    m_assetScope = jsonValue.GetObject("assetScope");
+    m_assetScopeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("permissions")) {
+    m_permissions = jsonValue.GetObject("permissions");
+    m_permissionsHasBeenSet = true;
   }
   return *this;
 }
@@ -68,32 +68,32 @@ JsonValue SubscribedAsset::Jsonize() const {
     payload.WithString("assetRevision", m_assetRevision);
   }
 
-  if (m_assetScopeHasBeenSet) {
-    payload.WithObject("assetScope", m_assetScope.Jsonize());
-  }
-
-  if (m_failureCauseHasBeenSet) {
-    payload.WithObject("failureCause", m_failureCause.Jsonize());
-  }
-
-  if (m_failureTimestampHasBeenSet) {
-    payload.WithDouble("failureTimestamp", m_failureTimestamp.SecondsWithMSPrecision());
-  }
-
-  if (m_grantedTimestampHasBeenSet) {
-    payload.WithDouble("grantedTimestamp", m_grantedTimestamp.SecondsWithMSPrecision());
-  }
-
-  if (m_permissionsHasBeenSet) {
-    payload.WithObject("permissions", m_permissions.Jsonize());
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("status", SubscriptionGrantStatusMapper::GetNameForSubscriptionGrantStatus(m_status));
   }
 
   if (m_targetNameHasBeenSet) {
     payload.WithString("targetName", m_targetName);
+  }
+
+  if (m_failureCauseHasBeenSet) {
+    payload.WithObject("failureCause", m_failureCause.Jsonize());
+  }
+
+  if (m_grantedTimestampHasBeenSet) {
+    payload.WithDouble("grantedTimestamp", m_grantedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_failureTimestampHasBeenSet) {
+    payload.WithDouble("failureTimestamp", m_failureTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_assetScopeHasBeenSet) {
+    payload.WithObject("assetScope", m_assetScope.Jsonize());
+  }
+
+  if (m_permissionsHasBeenSet) {
+    payload.WithObject("permissions", m_permissions.Jsonize());
   }
 
   return payload;

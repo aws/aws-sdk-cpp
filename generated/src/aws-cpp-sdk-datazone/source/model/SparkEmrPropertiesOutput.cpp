@@ -18,10 +18,6 @@ namespace Model {
 SparkEmrPropertiesOutput::SparkEmrPropertiesOutput(JsonView jsonValue) { *this = jsonValue; }
 
 SparkEmrPropertiesOutput& SparkEmrPropertiesOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("certificateData")) {
-    m_certificateData = jsonValue.GetString("certificateData");
-    m_certificateDataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("computeArn")) {
     m_computeArn = jsonValue.GetString("computeArn");
     m_computeArnHasBeenSet = true;
@@ -54,14 +50,6 @@ SparkEmrPropertiesOutput& SparkEmrPropertiesOutput::operator=(JsonView jsonValue
     m_logUri = jsonValue.GetString("logUri");
     m_logUriHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("managedEndpointArn")) {
-    m_managedEndpointArn = jsonValue.GetString("managedEndpointArn");
-    m_managedEndpointArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("managedEndpointCredentials")) {
-    m_managedEndpointCredentials = jsonValue.GetObject("managedEndpointCredentials");
-    m_managedEndpointCredentialsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("pythonVirtualEnv")) {
     m_pythonVirtualEnv = jsonValue.GetString("pythonVirtualEnv");
     m_pythonVirtualEnvHasBeenSet = true;
@@ -74,15 +62,23 @@ SparkEmrPropertiesOutput& SparkEmrPropertiesOutput::operator=(JsonView jsonValue
     m_trustedCertificatesS3Uri = jsonValue.GetString("trustedCertificatesS3Uri");
     m_trustedCertificatesS3UriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("certificateData")) {
+    m_certificateData = jsonValue.GetString("certificateData");
+    m_certificateDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("managedEndpointArn")) {
+    m_managedEndpointArn = jsonValue.GetString("managedEndpointArn");
+    m_managedEndpointArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("managedEndpointCredentials")) {
+    m_managedEndpointCredentials = jsonValue.GetObject("managedEndpointCredentials");
+    m_managedEndpointCredentialsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue SparkEmrPropertiesOutput::Jsonize() const {
   JsonValue payload;
-
-  if (m_certificateDataHasBeenSet) {
-    payload.WithString("certificateData", m_certificateData);
-  }
 
   if (m_computeArnHasBeenSet) {
     payload.WithString("computeArn", m_computeArn);
@@ -116,14 +112,6 @@ JsonValue SparkEmrPropertiesOutput::Jsonize() const {
     payload.WithString("logUri", m_logUri);
   }
 
-  if (m_managedEndpointArnHasBeenSet) {
-    payload.WithString("managedEndpointArn", m_managedEndpointArn);
-  }
-
-  if (m_managedEndpointCredentialsHasBeenSet) {
-    payload.WithObject("managedEndpointCredentials", m_managedEndpointCredentials.Jsonize());
-  }
-
   if (m_pythonVirtualEnvHasBeenSet) {
     payload.WithString("pythonVirtualEnv", m_pythonVirtualEnv);
   }
@@ -134,6 +122,18 @@ JsonValue SparkEmrPropertiesOutput::Jsonize() const {
 
   if (m_trustedCertificatesS3UriHasBeenSet) {
     payload.WithString("trustedCertificatesS3Uri", m_trustedCertificatesS3Uri);
+  }
+
+  if (m_certificateDataHasBeenSet) {
+    payload.WithString("certificateData", m_certificateData);
+  }
+
+  if (m_managedEndpointArnHasBeenSet) {
+    payload.WithString("managedEndpointArn", m_managedEndpointArn);
+  }
+
+  if (m_managedEndpointCredentialsHasBeenSet) {
+    payload.WithObject("managedEndpointCredentials", m_managedEndpointCredentials.Jsonize());
   }
 
   return payload;

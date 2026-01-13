@@ -33,24 +33,6 @@ class Member {
 
   ///@{
   /**
-   * <p>The ID of the group of a project member.</p>
-   */
-  inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
-  inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
-  template <typename GroupIdentifierT = Aws::String>
-  void SetGroupIdentifier(GroupIdentifierT&& value) {
-    m_groupIdentifierHasBeenSet = true;
-    m_groupIdentifier = std::forward<GroupIdentifierT>(value);
-  }
-  template <typename GroupIdentifierT = Aws::String>
-  Member& WithGroupIdentifier(GroupIdentifierT&& value) {
-    SetGroupIdentifier(std::forward<GroupIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The user ID of a project member.</p>
    */
   inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
@@ -66,12 +48,30 @@ class Member {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_groupIdentifier;
 
+  ///@{
+  /**
+   * <p>The ID of the group of a project member.</p>
+   */
+  inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
+  inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
+  template <typename GroupIdentifierT = Aws::String>
+  void SetGroupIdentifier(GroupIdentifierT&& value) {
+    m_groupIdentifierHasBeenSet = true;
+    m_groupIdentifier = std::forward<GroupIdentifierT>(value);
+  }
+  template <typename GroupIdentifierT = Aws::String>
+  Member& WithGroupIdentifier(GroupIdentifierT&& value) {
+    SetGroupIdentifier(std::forward<GroupIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_userIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
+
+  Aws::String m_groupIdentifier;
   bool m_userIdentifierHasBeenSet = false;
+  bool m_groupIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,9 +18,9 @@ namespace Model {
 GlueConnectionPatch::GlueConnectionPatch(JsonView jsonValue) { *this = jsonValue; }
 
 GlueConnectionPatch& GlueConnectionPatch::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("authenticationConfiguration")) {
-    m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
-    m_authenticationConfigurationHasBeenSet = true;
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("connectionProperties")) {
     Aws::Map<Aws::String, JsonView> connectionPropertiesJsonMap = jsonValue.GetObject("connectionProperties").GetAllObjects();
@@ -29,9 +29,9 @@ GlueConnectionPatch& GlueConnectionPatch::operator=(JsonView jsonValue) {
     }
     m_connectionPropertiesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+  if (jsonValue.ValueExists("authenticationConfiguration")) {
+    m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
+    m_authenticationConfigurationHasBeenSet = true;
   }
   return *this;
 }
@@ -39,8 +39,8 @@ GlueConnectionPatch& GlueConnectionPatch::operator=(JsonView jsonValue) {
 JsonValue GlueConnectionPatch::Jsonize() const {
   JsonValue payload;
 
-  if (m_authenticationConfigurationHasBeenSet) {
-    payload.WithObject("authenticationConfiguration", m_authenticationConfiguration.Jsonize());
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   if (m_connectionPropertiesHasBeenSet) {
@@ -51,8 +51,8 @@ JsonValue GlueConnectionPatch::Jsonize() const {
     payload.WithObject("connectionProperties", std::move(connectionPropertiesJsonMap));
   }
 
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
+  if (m_authenticationConfigurationHasBeenSet) {
+    payload.WithObject("authenticationConfiguration", m_authenticationConfiguration.Jsonize());
   }
 
   return payload;

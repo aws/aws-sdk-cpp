@@ -34,6 +34,22 @@ class FilterExpression {
 
   ///@{
   /**
+   * <p>The search filter explresison type.</p>
+   */
+  inline FilterExpressionType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(FilterExpressionType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline FilterExpression& WithType(FilterExpressionType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The search filter expression.</p>
    */
   inline const Aws::String& GetExpression() const { return m_expression; }
@@ -49,28 +65,12 @@ class FilterExpression {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The search filter explresison type.</p>
-   */
-  inline FilterExpressionType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(FilterExpressionType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline FilterExpression& WithType(FilterExpressionType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_expression;
-
   FilterExpressionType m_type{FilterExpressionType::NOT_SET};
-  bool m_expressionHasBeenSet = false;
+
+  Aws::String m_expression;
   bool m_typeHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
 };
 
 }  // namespace Model

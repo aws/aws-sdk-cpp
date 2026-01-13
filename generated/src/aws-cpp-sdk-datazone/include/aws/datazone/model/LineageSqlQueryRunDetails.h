@@ -36,41 +36,18 @@ class LineageSqlQueryRunDetails {
 
   ///@{
   /**
-   * <p>The error message of the SQL query run details of a data lineage run.</p>
+   * <p>The query start time in the SQL query run details of a data lineage run.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetErrorMessages() const { return m_errorMessages; }
-  inline bool ErrorMessagesHasBeenSet() const { return m_errorMessagesHasBeenSet; }
-  template <typename ErrorMessagesT = Aws::Vector<Aws::String>>
-  void SetErrorMessages(ErrorMessagesT&& value) {
-    m_errorMessagesHasBeenSet = true;
-    m_errorMessages = std::forward<ErrorMessagesT>(value);
+  inline const Aws::Utils::DateTime& GetQueryStartTime() const { return m_queryStartTime; }
+  inline bool QueryStartTimeHasBeenSet() const { return m_queryStartTimeHasBeenSet; }
+  template <typename QueryStartTimeT = Aws::Utils::DateTime>
+  void SetQueryStartTime(QueryStartTimeT&& value) {
+    m_queryStartTimeHasBeenSet = true;
+    m_queryStartTime = std::forward<QueryStartTimeT>(value);
   }
-  template <typename ErrorMessagesT = Aws::Vector<Aws::String>>
-  LineageSqlQueryRunDetails& WithErrorMessages(ErrorMessagesT&& value) {
-    SetErrorMessages(std::forward<ErrorMessagesT>(value));
-    return *this;
-  }
-  template <typename ErrorMessagesT = Aws::String>
-  LineageSqlQueryRunDetails& AddErrorMessages(ErrorMessagesT&& value) {
-    m_errorMessagesHasBeenSet = true;
-    m_errorMessages.emplace_back(std::forward<ErrorMessagesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The number of queries that failed in the SQL query run details of a data
-   * lineage run.</p>
-   */
-  inline int GetNumQueriesFailed() const { return m_numQueriesFailed; }
-  inline bool NumQueriesFailedHasBeenSet() const { return m_numQueriesFailedHasBeenSet; }
-  inline void SetNumQueriesFailed(int value) {
-    m_numQueriesFailedHasBeenSet = true;
-    m_numQueriesFailed = value;
-  }
-  inline LineageSqlQueryRunDetails& WithNumQueriesFailed(int value) {
-    SetNumQueriesFailed(value);
+  template <typename QueryStartTimeT = Aws::Utils::DateTime>
+  LineageSqlQueryRunDetails& WithQueryStartTime(QueryStartTimeT&& value) {
+    SetQueryStartTime(std::forward<QueryStartTimeT>(value));
     return *this;
   }
   ///@}
@@ -95,24 +72,6 @@ class LineageSqlQueryRunDetails {
 
   ///@{
   /**
-   * <p>The query start time in the SQL query run details of a data lineage run.</p>
-   */
-  inline const Aws::Utils::DateTime& GetQueryStartTime() const { return m_queryStartTime; }
-  inline bool QueryStartTimeHasBeenSet() const { return m_queryStartTimeHasBeenSet; }
-  template <typename QueryStartTimeT = Aws::Utils::DateTime>
-  void SetQueryStartTime(QueryStartTimeT&& value) {
-    m_queryStartTimeHasBeenSet = true;
-    m_queryStartTime = std::forward<QueryStartTimeT>(value);
-  }
-  template <typename QueryStartTimeT = Aws::Utils::DateTime>
-  LineageSqlQueryRunDetails& WithQueryStartTime(QueryStartTimeT&& value) {
-    SetQueryStartTime(std::forward<QueryStartTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The total queries processed in the SQL query run details of a data lineage
    * run.</p>
    */
@@ -127,21 +86,62 @@ class LineageSqlQueryRunDetails {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<Aws::String> m_errorMessages;
 
-  int m_numQueriesFailed{0};
+  ///@{
+  /**
+   * <p>The number of queries that failed in the SQL query run details of a data
+   * lineage run.</p>
+   */
+  inline int GetNumQueriesFailed() const { return m_numQueriesFailed; }
+  inline bool NumQueriesFailedHasBeenSet() const { return m_numQueriesFailedHasBeenSet; }
+  inline void SetNumQueriesFailed(int value) {
+    m_numQueriesFailedHasBeenSet = true;
+    m_numQueriesFailed = value;
+  }
+  inline LineageSqlQueryRunDetails& WithNumQueriesFailed(int value) {
+    SetNumQueriesFailed(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The error message of the SQL query run details of a data lineage run.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetErrorMessages() const { return m_errorMessages; }
+  inline bool ErrorMessagesHasBeenSet() const { return m_errorMessagesHasBeenSet; }
+  template <typename ErrorMessagesT = Aws::Vector<Aws::String>>
+  void SetErrorMessages(ErrorMessagesT&& value) {
+    m_errorMessagesHasBeenSet = true;
+    m_errorMessages = std::forward<ErrorMessagesT>(value);
+  }
+  template <typename ErrorMessagesT = Aws::Vector<Aws::String>>
+  LineageSqlQueryRunDetails& WithErrorMessages(ErrorMessagesT&& value) {
+    SetErrorMessages(std::forward<ErrorMessagesT>(value));
+    return *this;
+  }
+  template <typename ErrorMessagesT = Aws::String>
+  LineageSqlQueryRunDetails& AddErrorMessages(ErrorMessagesT&& value) {
+    m_errorMessagesHasBeenSet = true;
+    m_errorMessages.emplace_back(std::forward<ErrorMessagesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::DateTime m_queryStartTime{};
 
   Aws::Utils::DateTime m_queryEndTime{};
 
-  Aws::Utils::DateTime m_queryStartTime{};
-
   int m_totalQueriesProcessed{0};
-  bool m_errorMessagesHasBeenSet = false;
-  bool m_numQueriesFailedHasBeenSet = false;
-  bool m_queryEndTimeHasBeenSet = false;
+
+  int m_numQueriesFailed{0};
+
+  Aws::Vector<Aws::String> m_errorMessages;
   bool m_queryStartTimeHasBeenSet = false;
+  bool m_queryEndTimeHasBeenSet = false;
   bool m_totalQueriesProcessedHasBeenSet = false;
+  bool m_numQueriesFailedHasBeenSet = false;
+  bool m_errorMessagesHasBeenSet = false;
 };
 
 }  // namespace Model

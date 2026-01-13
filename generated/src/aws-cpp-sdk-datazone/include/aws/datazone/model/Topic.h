@@ -34,6 +34,24 @@ class Topic {
   AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
+  /**
+   * <p>The subject of the resource mentioned in a notification.</p>
+   */
+  inline const Aws::String& GetSubject() const { return m_subject; }
+  inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+  template <typename SubjectT = Aws::String>
+  void SetSubject(SubjectT&& value) {
+    m_subjectHasBeenSet = true;
+    m_subject = std::forward<SubjectT>(value);
+  }
+  template <typename SubjectT = Aws::String>
+  Topic& WithSubject(SubjectT&& value) {
+    SetSubject(std::forward<SubjectT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const NotificationResource& GetResource() const { return m_resource; }
   inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
@@ -64,33 +82,15 @@ class Topic {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The subject of the resource mentioned in a notification.</p>
-   */
-  inline const Aws::String& GetSubject() const { return m_subject; }
-  inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-  template <typename SubjectT = Aws::String>
-  void SetSubject(SubjectT&& value) {
-    m_subjectHasBeenSet = true;
-    m_subject = std::forward<SubjectT>(value);
-  }
-  template <typename SubjectT = Aws::String>
-  Topic& WithSubject(SubjectT&& value) {
-    SetSubject(std::forward<SubjectT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_subject;
+
   NotificationResource m_resource;
 
   NotificationRole m_role{NotificationRole::NOT_SET};
-
-  Aws::String m_subject;
+  bool m_subjectHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
   bool m_roleHasBeenSet = false;
-  bool m_subjectHasBeenSet = false;
 };
 
 }  // namespace Model

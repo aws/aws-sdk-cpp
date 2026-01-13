@@ -36,6 +36,42 @@ class AssetFilterSummary {
 
   ///@{
   /**
+   * <p>The ID of the asset filter.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  AssetFilterSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain where the asset filter lives.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  AssetFilterSummary& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the data asset.</p>
    */
   inline const Aws::String& GetAssetId() const { return m_assetId; }
@@ -54,18 +90,18 @@ class AssetFilterSummary {
 
   ///@{
   /**
-   * <p>The timestamp at which the asset filter was created.</p>
+   * <p>The name of the asset filter.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  AssetFilterSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename NameT = Aws::String>
+  AssetFilterSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -90,18 +126,16 @@ class AssetFilterSummary {
 
   ///@{
   /**
-   * <p>The ID of the domain where the asset filter lives.</p>
+   * <p>The status of the asset filter.</p>
    */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
+  inline FilterStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(FilterStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename DomainIdT = Aws::String>
-  AssetFilterSummary& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
+  inline AssetFilterSummary& WithStatus(FilterStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -150,6 +184,24 @@ class AssetFilterSummary {
 
   ///@{
   /**
+   * <p>The timestamp at which the asset filter was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  AssetFilterSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error message that is displayed if the action does not succeed.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
@@ -165,88 +217,36 @@ class AssetFilterSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the asset filter.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  AssetFilterSummary& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the asset filter.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AssetFilterSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the asset filter.</p>
-   */
-  inline FilterStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(FilterStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline AssetFilterSummary& WithStatus(FilterStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_id;
+
+  Aws::String m_domainId;
+
   Aws::String m_assetId;
 
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_name;
 
   Aws::String m_description;
 
-  Aws::String m_domainId;
+  FilterStatus m_status{FilterStatus::NOT_SET};
 
   Aws::Vector<Aws::String> m_effectiveColumnNames;
 
   Aws::String m_effectiveRowFilter;
 
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::String m_errorMessage;
-
-  Aws::String m_id;
-
-  Aws::String m_name;
-
-  FilterStatus m_status{FilterStatus::NOT_SET};
-  bool m_assetIdHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_effectiveColumnNamesHasBeenSet = false;
   bool m_effectiveRowFilterHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

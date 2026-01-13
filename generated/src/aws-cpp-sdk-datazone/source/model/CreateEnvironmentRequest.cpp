@@ -15,12 +15,36 @@ using namespace Aws::Utils;
 Aws::String CreateEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_deploymentOrderHasBeenSet) {
-    payload.WithInteger("deploymentOrder", m_deploymentOrder);
+  if (m_projectIdentifierHasBeenSet) {
+    payload.WithString("projectIdentifier", m_projectIdentifier);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_environmentProfileIdentifierHasBeenSet) {
+    payload.WithString("environmentProfileIdentifier", m_environmentProfileIdentifier);
+  }
+
+  if (m_userParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userParametersJsonList(m_userParameters.size());
+    for (unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex) {
+      userParametersJsonList[userParametersIndex].AsObject(m_userParameters[userParametersIndex].Jsonize());
+    }
+    payload.WithArray("userParameters", std::move(userParametersJsonList));
+  }
+
+  if (m_glossaryTermsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> glossaryTermsJsonList(m_glossaryTerms.size());
+    for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
+      glossaryTermsJsonList[glossaryTermsIndex].AsString(m_glossaryTerms[glossaryTermsIndex]);
+    }
+    payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
   if (m_environmentAccountIdentifierHasBeenSet) {
@@ -35,36 +59,12 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const {
     payload.WithString("environmentBlueprintIdentifier", m_environmentBlueprintIdentifier);
   }
 
+  if (m_deploymentOrderHasBeenSet) {
+    payload.WithInteger("deploymentOrder", m_deploymentOrder);
+  }
+
   if (m_environmentConfigurationIdHasBeenSet) {
     payload.WithString("environmentConfigurationId", m_environmentConfigurationId);
-  }
-
-  if (m_environmentProfileIdentifierHasBeenSet) {
-    payload.WithString("environmentProfileIdentifier", m_environmentProfileIdentifier);
-  }
-
-  if (m_glossaryTermsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> glossaryTermsJsonList(m_glossaryTerms.size());
-    for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
-      glossaryTermsJsonList[glossaryTermsIndex].AsString(m_glossaryTerms[glossaryTermsIndex]);
-    }
-    payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_projectIdentifierHasBeenSet) {
-    payload.WithString("projectIdentifier", m_projectIdentifier);
-  }
-
-  if (m_userParametersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> userParametersJsonList(m_userParameters.size());
-    for (unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex) {
-      userParametersJsonList[userParametersIndex].AsObject(m_userParameters[userParametersIndex].Jsonize());
-    }
-    payload.WithArray("userParameters", std::move(userParametersJsonList));
   }
 
   return payload.View().WriteReadable();

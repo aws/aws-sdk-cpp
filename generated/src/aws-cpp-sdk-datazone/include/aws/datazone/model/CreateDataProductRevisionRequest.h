@@ -34,43 +34,6 @@ class CreateDataProductRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateDataProductRevisionRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the data product revision.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateDataProductRevisionRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where the data product revision is created.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -89,24 +52,54 @@ class CreateDataProductRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The metadata forms of the data product revision.</p>
+   * <p>The ID of the data product revision.</p>
    */
-  inline const Aws::Vector<FormInput>& GetFormsInput() const { return m_formsInput; }
-  inline bool FormsInputHasBeenSet() const { return m_formsInputHasBeenSet; }
-  template <typename FormsInputT = Aws::Vector<FormInput>>
-  void SetFormsInput(FormsInputT&& value) {
-    m_formsInputHasBeenSet = true;
-    m_formsInput = std::forward<FormsInputT>(value);
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
   }
-  template <typename FormsInputT = Aws::Vector<FormInput>>
-  CreateDataProductRevisionRequest& WithFormsInput(FormsInputT&& value) {
-    SetFormsInput(std::forward<FormsInputT>(value));
+  template <typename IdentifierT = Aws::String>
+  CreateDataProductRevisionRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
     return *this;
   }
-  template <typename FormsInputT = FormInput>
-  CreateDataProductRevisionRequest& AddFormsInput(FormsInputT&& value) {
-    m_formsInputHasBeenSet = true;
-    m_formsInput.emplace_back(std::forward<FormsInputT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the data product revision.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateDataProductRevisionRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the data product revision.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateDataProductRevisionRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -137,24 +130,6 @@ class CreateDataProductRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the data product revision.</p>
-   */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
-  }
-  template <typename IdentifierT = Aws::String>
-  CreateDataProductRevisionRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The data assets of the data product revision.</p>
    */
   inline const Aws::Vector<DataProductItem>& GetItems() const { return m_items; }
@@ -179,45 +154,70 @@ class CreateDataProductRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The name of the data product revision.</p>
+   * <p>The metadata forms of the data product revision.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::Vector<FormInput>& GetFormsInput() const { return m_formsInput; }
+  inline bool FormsInputHasBeenSet() const { return m_formsInputHasBeenSet; }
+  template <typename FormsInputT = Aws::Vector<FormInput>>
+  void SetFormsInput(FormsInputT&& value) {
+    m_formsInputHasBeenSet = true;
+    m_formsInput = std::forward<FormsInputT>(value);
   }
-  template <typename NameT = Aws::String>
-  CreateDataProductRevisionRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename FormsInputT = Aws::Vector<FormInput>>
+  CreateDataProductRevisionRequest& WithFormsInput(FormsInputT&& value) {
+    SetFormsInput(std::forward<FormsInputT>(value));
+    return *this;
+  }
+  template <typename FormsInputT = FormInput>
+  CreateDataProductRevisionRequest& AddFormsInput(FormsInputT&& value) {
+    m_formsInputHasBeenSet = true;
+    m_formsInput.emplace_back(std::forward<FormsInputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateDataProductRevisionRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
-
-  Aws::Vector<FormInput> m_formsInput;
-
-  Aws::Vector<Aws::String> m_glossaryTerms;
 
   Aws::String m_identifier;
 
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
   Aws::Vector<DataProductItem> m_items;
 
-  Aws::String m_name;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_descriptionHasBeenSet = false;
+  Aws::Vector<FormInput> m_formsInput;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_formsInputHasBeenSet = false;
-  bool m_glossaryTermsHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_itemsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_formsInputHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

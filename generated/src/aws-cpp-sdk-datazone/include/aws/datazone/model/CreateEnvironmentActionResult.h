@@ -29,23 +29,6 @@ class CreateEnvironmentActionResult {
 
   ///@{
   /**
-   * <p>The description of the environment action.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateEnvironmentActionResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain in which the environment action is created.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -130,6 +113,23 @@ class CreateEnvironmentActionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The description of the environment action.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateEnvironmentActionResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -144,8 +144,6 @@ class CreateEnvironmentActionResult {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainId;
 
   Aws::String m_environmentId;
@@ -156,13 +154,15 @@ class CreateEnvironmentActionResult {
 
   ActionParameters m_parameters;
 
+  Aws::String m_description;
+
   Aws::String m_requestId;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

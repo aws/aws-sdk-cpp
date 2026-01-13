@@ -52,22 +52,6 @@ class ResourceTag {
 
   ///@{
   /**
-   * <p>The source of the resource tag of the project.</p>
-   */
-  inline ResourceTagSource GetSource() const { return m_source; }
-  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-  inline void SetSource(ResourceTagSource value) {
-    m_sourceHasBeenSet = true;
-    m_source = value;
-  }
-  inline ResourceTag& WithSource(ResourceTagSource value) {
-    SetSource(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The value of the resource tag of the project.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
@@ -83,15 +67,31 @@ class ResourceTag {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The source of the resource tag of the project.</p>
+   */
+  inline ResourceTagSource GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  inline void SetSource(ResourceTagSource value) {
+    m_sourceHasBeenSet = true;
+    m_source = value;
+  }
+  inline ResourceTag& WithSource(ResourceTagSource value) {
+    SetSource(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_key;
 
-  ResourceTagSource m_source{ResourceTagSource::NOT_SET};
-
   Aws::String m_value;
+
+  ResourceTagSource m_source{ResourceTagSource::NOT_SET};
   bool m_keyHasBeenSet = false;
-  bool m_sourceHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
 };
 
 }  // namespace Model

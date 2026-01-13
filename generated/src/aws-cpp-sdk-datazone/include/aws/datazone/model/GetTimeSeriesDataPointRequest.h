@@ -89,6 +89,24 @@ class GetTimeSeriesDataPointRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The ID of the data point that you want to get.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  GetTimeSeriesDataPointRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the time series form that houses the data point that you want to
    * get.</p>
    */
@@ -105,24 +123,6 @@ class GetTimeSeriesDataPointRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the data point that you want to get.</p>
-   */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
-  }
-  template <typename IdentifierT = Aws::String>
-  GetTimeSeriesDataPointRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -130,14 +130,14 @@ class GetTimeSeriesDataPointRequest : public DataZoneRequest {
 
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
 
-  Aws::String m_formName;
-
   Aws::String m_identifier;
+
+  Aws::String m_formName;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
-  bool m_formNameHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
+  bool m_formNameHasBeenSet = false;
 };
 
 }  // namespace Model

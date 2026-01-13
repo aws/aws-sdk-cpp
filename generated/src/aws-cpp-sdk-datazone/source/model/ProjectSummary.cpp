@@ -18,32 +18,9 @@ namespace Model {
 ProjectSummary::ProjectSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ProjectSummary& ProjectSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainUnitId")) {
-    m_domainUnitId = jsonValue.GetString("domainUnitId");
-    m_domainUnitIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("failureReasons")) {
-    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
-    for (unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex) {
-      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsObject());
-    }
-    m_failureReasonsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
@@ -53,13 +30,36 @@ ProjectSummary& ProjectSummary::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("projectStatus")) {
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("projectStatus"));
     m_projectStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failureReasons")) {
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    for (unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex) {
+      m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsObject());
+    }
+    m_failureReasonsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainUnitId")) {
+    m_domainUnitId = jsonValue.GetString("domainUnitId");
+    m_domainUnitIdHasBeenSet = true;
   }
   return *this;
 }
@@ -67,32 +67,8 @@ ProjectSummary& ProjectSummary::operator=(JsonView jsonValue) {
 JsonValue ProjectSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_createdByHasBeenSet) {
-    payload.WithString("createdBy", m_createdBy);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
-  }
-
-  if (m_domainUnitIdHasBeenSet) {
-    payload.WithString("domainUnitId", m_domainUnitId);
-  }
-
-  if (m_failureReasonsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> failureReasonsJsonList(m_failureReasons.size());
-    for (unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex) {
-      failureReasonsJsonList[failureReasonsIndex].AsObject(m_failureReasons[failureReasonsIndex].Jsonize());
-    }
-    payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
   }
 
   if (m_idHasBeenSet) {
@@ -103,12 +79,36 @@ JsonValue ProjectSummary::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
   if (m_projectStatusHasBeenSet) {
     payload.WithString("projectStatus", ProjectStatusMapper::GetNameForProjectStatus(m_projectStatus));
   }
 
+  if (m_failureReasonsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> failureReasonsJsonList(m_failureReasons.size());
+    for (unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex) {
+      failureReasonsJsonList[failureReasonsIndex].AsObject(m_failureReasons[failureReasonsIndex].Jsonize());
+    }
+    payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_domainUnitIdHasBeenSet) {
+    payload.WithString("domainUnitId", m_domainUnitId);
   }
 
   return payload;

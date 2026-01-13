@@ -25,39 +25,15 @@ void ListEnvironmentsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_statusHasBeenSet) {
+    ss << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
+    ss.str("");
+  }
+
   if (m_awsAccountRegionHasBeenSet) {
     ss << m_awsAccountRegion;
     uri.AddQueryStringParameter("awsAccountRegion", ss.str());
-    ss.str("");
-  }
-
-  if (m_environmentBlueprintIdentifierHasBeenSet) {
-    ss << m_environmentBlueprintIdentifier;
-    uri.AddQueryStringParameter("environmentBlueprintIdentifier", ss.str());
-    ss.str("");
-  }
-
-  if (m_environmentProfileIdentifierHasBeenSet) {
-    ss << m_environmentProfileIdentifier;
-    uri.AddQueryStringParameter("environmentProfileIdentifier", ss.str());
-    ss.str("");
-  }
-
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
-    ss.str("");
-  }
-
-  if (m_nameHasBeenSet) {
-    ss << m_name;
-    uri.AddQueryStringParameter("name", ss.str());
-    ss.str("");
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -67,15 +43,39 @@ void ListEnvironmentsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_environmentProfileIdentifierHasBeenSet) {
+    ss << m_environmentProfileIdentifier;
+    uri.AddQueryStringParameter("environmentProfileIdentifier", ss.str());
+    ss.str("");
+  }
+
+  if (m_environmentBlueprintIdentifierHasBeenSet) {
+    ss << m_environmentBlueprintIdentifier;
+    uri.AddQueryStringParameter("environmentBlueprintIdentifier", ss.str());
+    ss.str("");
+  }
+
   if (m_providerHasBeenSet) {
     ss << m_provider;
     uri.AddQueryStringParameter("provider", ss.str());
     ss.str("");
   }
 
-  if (m_statusHasBeenSet) {
-    ss << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
+  if (m_nameHasBeenSet) {
+    ss << m_name;
+    uri.AddQueryStringParameter("name", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 }

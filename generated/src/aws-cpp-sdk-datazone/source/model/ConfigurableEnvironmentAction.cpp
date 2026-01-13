@@ -18,6 +18,10 @@ namespace Model {
 ConfigurableEnvironmentAction::ConfigurableEnvironmentAction(JsonView jsonValue) { *this = jsonValue; }
 
 ConfigurableEnvironmentAction& ConfigurableEnvironmentAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("auth")) {
     m_auth = ConfigurableActionTypeAuthorizationMapper::GetConfigurableActionTypeAuthorizationForName(jsonValue.GetString("auth"));
     m_authHasBeenSet = true;
@@ -29,15 +33,15 @@ ConfigurableEnvironmentAction& ConfigurableEnvironmentAction::operator=(JsonView
     }
     m_parametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ConfigurableEnvironmentAction::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
+  }
 
   if (m_authHasBeenSet) {
     payload.WithString("auth", ConfigurableActionTypeAuthorizationMapper::GetNameForConfigurableActionTypeAuthorization(m_auth));
@@ -49,10 +53,6 @@ JsonValue ConfigurableEnvironmentAction::Jsonize() const {
       parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
     }
     payload.WithArray("parameters", std::move(parametersJsonList));
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", m_type);
   }
 
   return payload;

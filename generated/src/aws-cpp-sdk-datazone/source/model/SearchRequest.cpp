@@ -15,19 +15,8 @@ using namespace Aws::Utils;
 Aws::String SearchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_additionalAttributesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
-    for (unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength();
-         ++additionalAttributesIndex) {
-      additionalAttributesJsonList[additionalAttributesIndex].AsString(
-          SearchOutputAdditionalAttributeMapper::GetNameForSearchOutputAdditionalAttribute(
-              m_additionalAttributes[additionalAttributesIndex]));
-    }
-    payload.WithArray("additionalAttributes", std::move(additionalAttributesJsonList));
-  }
-
-  if (m_filtersHasBeenSet) {
-    payload.WithObject("filters", m_filters.Jsonize());
+  if (m_owningProjectIdentifierHasBeenSet) {
+    payload.WithString("owningProjectIdentifier", m_owningProjectIdentifier);
   }
 
   if (m_maxResultsHasBeenSet) {
@@ -38,8 +27,12 @@ Aws::String SearchRequest::SerializePayload() const {
     payload.WithString("nextToken", m_nextToken);
   }
 
-  if (m_owningProjectIdentifierHasBeenSet) {
-    payload.WithString("owningProjectIdentifier", m_owningProjectIdentifier);
+  if (m_searchScopeHasBeenSet) {
+    payload.WithString("searchScope", InventorySearchScopeMapper::GetNameForInventorySearchScope(m_searchScope));
+  }
+
+  if (m_searchTextHasBeenSet) {
+    payload.WithString("searchText", m_searchText);
   }
 
   if (m_searchInHasBeenSet) {
@@ -50,16 +43,23 @@ Aws::String SearchRequest::SerializePayload() const {
     payload.WithArray("searchIn", std::move(searchInJsonList));
   }
 
-  if (m_searchScopeHasBeenSet) {
-    payload.WithString("searchScope", InventorySearchScopeMapper::GetNameForInventorySearchScope(m_searchScope));
-  }
-
-  if (m_searchTextHasBeenSet) {
-    payload.WithString("searchText", m_searchText);
+  if (m_filtersHasBeenSet) {
+    payload.WithObject("filters", m_filters.Jsonize());
   }
 
   if (m_sortHasBeenSet) {
     payload.WithObject("sort", m_sort.Jsonize());
+  }
+
+  if (m_additionalAttributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
+    for (unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength();
+         ++additionalAttributesIndex) {
+      additionalAttributesJsonList[additionalAttributesIndex].AsString(
+          SearchOutputAdditionalAttributeMapper::GetNameForSearchOutputAdditionalAttribute(
+              m_additionalAttributes[additionalAttributesIndex]));
+    }
+    payload.WithArray("additionalAttributes", std::move(additionalAttributesJsonList));
   }
 
   return payload.View().WriteReadable();

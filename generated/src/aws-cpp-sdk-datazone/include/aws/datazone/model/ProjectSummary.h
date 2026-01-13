@@ -37,60 +37,6 @@ class ProjectSummary {
 
   ///@{
   /**
-   * <p>The timestamp of when a project was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  ProjectSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon DataZone user who created the project.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  ProjectSummary& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of a project.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  ProjectSummary& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of a Amazon DataZone domain where the project exists.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -103,49 +49,6 @@ class ProjectSummary {
   template <typename DomainIdT = Aws::String>
   ProjectSummary& WithDomainId(DomainIdT&& value) {
     SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain unit.</p>
-   */
-  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
-  inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
-  template <typename DomainUnitIdT = Aws::String>
-  void SetDomainUnitId(DomainUnitIdT&& value) {
-    m_domainUnitIdHasBeenSet = true;
-    m_domainUnitId = std::forward<DomainUnitIdT>(value);
-  }
-  template <typename DomainUnitIdT = Aws::String>
-  ProjectSummary& WithDomainUnitId(DomainUnitIdT&& value) {
-    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the error message that is returned if the operation cannot be
-   * successfully completed.</p>
-   */
-  inline const Aws::Vector<ProjectDeletionError>& GetFailureReasons() const { return m_failureReasons; }
-  inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
-  template <typename FailureReasonsT = Aws::Vector<ProjectDeletionError>>
-  void SetFailureReasons(FailureReasonsT&& value) {
-    m_failureReasonsHasBeenSet = true;
-    m_failureReasons = std::forward<FailureReasonsT>(value);
-  }
-  template <typename FailureReasonsT = Aws::Vector<ProjectDeletionError>>
-  ProjectSummary& WithFailureReasons(FailureReasonsT&& value) {
-    SetFailureReasons(std::forward<FailureReasonsT>(value));
-    return *this;
-  }
-  template <typename FailureReasonsT = ProjectDeletionError>
-  ProjectSummary& AddFailureReasons(FailureReasonsT&& value) {
-    m_failureReasonsHasBeenSet = true;
-    m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value));
     return *this;
   }
   ///@}
@@ -188,6 +91,24 @@ class ProjectSummary {
 
   ///@{
   /**
+   * <p>The description of a project.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  ProjectSummary& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The status of the project.</p>
    */
   inline ProjectStatus GetProjectStatus() const { return m_projectStatus; }
@@ -198,6 +119,67 @@ class ProjectSummary {
   }
   inline ProjectSummary& WithProjectStatus(ProjectStatus value) {
     SetProjectStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the error message that is returned if the operation cannot be
+   * successfully completed.</p>
+   */
+  inline const Aws::Vector<ProjectDeletionError>& GetFailureReasons() const { return m_failureReasons; }
+  inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
+  template <typename FailureReasonsT = Aws::Vector<ProjectDeletionError>>
+  void SetFailureReasons(FailureReasonsT&& value) {
+    m_failureReasonsHasBeenSet = true;
+    m_failureReasons = std::forward<FailureReasonsT>(value);
+  }
+  template <typename FailureReasonsT = Aws::Vector<ProjectDeletionError>>
+  ProjectSummary& WithFailureReasons(FailureReasonsT&& value) {
+    SetFailureReasons(std::forward<FailureReasonsT>(value));
+    return *this;
+  }
+  template <typename FailureReasonsT = ProjectDeletionError>
+  ProjectSummary& AddFailureReasons(FailureReasonsT&& value) {
+    m_failureReasonsHasBeenSet = true;
+    m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who created the project.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  ProjectSummary& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when a project was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  ProjectSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -219,36 +201,54 @@ class ProjectSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain unit.</p>
+   */
+  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+  inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
+  template <typename DomainUnitIdT = Aws::String>
+  void SetDomainUnitId(DomainUnitIdT&& value) {
+    m_domainUnitIdHasBeenSet = true;
+    m_domainUnitId = std::forward<DomainUnitIdT>(value);
+  }
+  template <typename DomainUnitIdT = Aws::String>
+  ProjectSummary& WithDomainUnitId(DomainUnitIdT&& value) {
+    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
   Aws::String m_domainId;
-
-  Aws::String m_domainUnitId;
-
-  Aws::Vector<ProjectDeletionError> m_failureReasons;
 
   Aws::String m_id;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
   ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
 
+  Aws::Vector<ProjectDeletionError> m_failureReasons;
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_domainUnitId;
   bool m_domainIdHasBeenSet = false;
-  bool m_domainUnitIdHasBeenSet = false;
-  bool m_failureReasonsHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_projectStatusHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
 };
 
 }  // namespace Model

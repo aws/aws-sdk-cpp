@@ -22,21 +22,17 @@ Deployment& Deployment::operator=(JsonView jsonValue) {
     m_deploymentId = jsonValue.GetString("deploymentId");
     m_deploymentIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("deploymentStatus")) {
-    m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
-    m_deploymentStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("deploymentType")) {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("deploymentType"));
     m_deploymentTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("deploymentStatus")) {
+    m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
+    m_deploymentStatusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("failureReason")) {
     m_failureReason = jsonValue.GetObject("failureReason");
     m_failureReasonHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("isDeploymentComplete")) {
-    m_isDeploymentComplete = jsonValue.GetBool("isDeploymentComplete");
-    m_isDeploymentCompleteHasBeenSet = true;
   }
   if (jsonValue.ValueExists("messages")) {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -44,6 +40,10 @@ Deployment& Deployment::operator=(JsonView jsonValue) {
       m_messages.push_back(messagesJsonList[messagesIndex].AsString());
     }
     m_messagesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("isDeploymentComplete")) {
+    m_isDeploymentComplete = jsonValue.GetBool("isDeploymentComplete");
+    m_isDeploymentCompleteHasBeenSet = true;
   }
   return *this;
 }
@@ -55,20 +55,16 @@ JsonValue Deployment::Jsonize() const {
     payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if (m_deploymentStatusHasBeenSet) {
-    payload.WithString("deploymentStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_deploymentStatus));
-  }
-
   if (m_deploymentTypeHasBeenSet) {
     payload.WithString("deploymentType", DeploymentTypeMapper::GetNameForDeploymentType(m_deploymentType));
   }
 
-  if (m_failureReasonHasBeenSet) {
-    payload.WithObject("failureReason", m_failureReason.Jsonize());
+  if (m_deploymentStatusHasBeenSet) {
+    payload.WithString("deploymentStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_deploymentStatus));
   }
 
-  if (m_isDeploymentCompleteHasBeenSet) {
-    payload.WithBool("isDeploymentComplete", m_isDeploymentComplete);
+  if (m_failureReasonHasBeenSet) {
+    payload.WithObject("failureReason", m_failureReason.Jsonize());
   }
 
   if (m_messagesHasBeenSet) {
@@ -77,6 +73,10 @@ JsonValue Deployment::Jsonize() const {
       messagesJsonList[messagesIndex].AsString(m_messages[messagesIndex]);
     }
     payload.WithArray("messages", std::move(messagesJsonList));
+  }
+
+  if (m_isDeploymentCompleteHasBeenSet) {
+    payload.WithBool("isDeploymentComplete", m_isDeploymentComplete);
   }
 
   return payload;

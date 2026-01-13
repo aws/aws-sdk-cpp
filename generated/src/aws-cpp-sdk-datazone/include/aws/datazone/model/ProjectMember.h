@@ -34,22 +34,6 @@ class ProjectMember {
 
   ///@{
   /**
-   * <p>The designated role of a project member.</p>
-   */
-  inline UserDesignation GetDesignation() const { return m_designation; }
-  inline bool DesignationHasBeenSet() const { return m_designationHasBeenSet; }
-  inline void SetDesignation(UserDesignation value) {
-    m_designationHasBeenSet = true;
-    m_designation = value;
-  }
-  inline ProjectMember& WithDesignation(UserDesignation value) {
-    SetDesignation(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The membership details of a project member.</p>
    */
   inline const MemberDetails& GetMemberDetails() const { return m_memberDetails; }
@@ -65,12 +49,28 @@ class ProjectMember {
     return *this;
   }
   ///@}
- private:
-  UserDesignation m_designation{UserDesignation::NOT_SET};
 
+  ///@{
+  /**
+   * <p>The designated role of a project member.</p>
+   */
+  inline UserDesignation GetDesignation() const { return m_designation; }
+  inline bool DesignationHasBeenSet() const { return m_designationHasBeenSet; }
+  inline void SetDesignation(UserDesignation value) {
+    m_designationHasBeenSet = true;
+    m_designation = value;
+  }
+  inline ProjectMember& WithDesignation(UserDesignation value) {
+    SetDesignation(value);
+    return *this;
+  }
+  ///@}
+ private:
   MemberDetails m_memberDetails;
-  bool m_designationHasBeenSet = false;
+
+  UserDesignation m_designation{UserDesignation::NOT_SET};
   bool m_memberDetailsHasBeenSet = false;
+  bool m_designationHasBeenSet = false;
 };
 
 }  // namespace Model

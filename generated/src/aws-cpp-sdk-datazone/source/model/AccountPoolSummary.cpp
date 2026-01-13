@@ -18,17 +18,9 @@ namespace Model {
 AccountPoolSummary::AccountPoolSummary(JsonView jsonValue) { *this = jsonValue; }
 
 AccountPoolSummary& AccountPoolSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainUnitId")) {
-    m_domainUnitId = jsonValue.GetString("domainUnitId");
-    m_domainUnitIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
@@ -42,6 +34,14 @@ AccountPoolSummary& AccountPoolSummary::operator=(JsonView jsonValue) {
     m_resolutionStrategy = ResolutionStrategyMapper::GetResolutionStrategyForName(jsonValue.GetString("resolutionStrategy"));
     m_resolutionStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("domainUnitId")) {
+    m_domainUnitId = jsonValue.GetString("domainUnitId");
+    m_domainUnitIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("updatedBy")) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
@@ -52,16 +52,8 @@ AccountPoolSummary& AccountPoolSummary::operator=(JsonView jsonValue) {
 JsonValue AccountPoolSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdByHasBeenSet) {
-    payload.WithString("createdBy", m_createdBy);
-  }
-
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
-  }
-
-  if (m_domainUnitIdHasBeenSet) {
-    payload.WithString("domainUnitId", m_domainUnitId);
   }
 
   if (m_idHasBeenSet) {
@@ -74,6 +66,14 @@ JsonValue AccountPoolSummary::Jsonize() const {
 
   if (m_resolutionStrategyHasBeenSet) {
     payload.WithString("resolutionStrategy", ResolutionStrategyMapper::GetNameForResolutionStrategy(m_resolutionStrategy));
+  }
+
+  if (m_domainUnitIdHasBeenSet) {
+    payload.WithString("domainUnitId", m_domainUnitId);
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
   if (m_updatedByHasBeenSet) {

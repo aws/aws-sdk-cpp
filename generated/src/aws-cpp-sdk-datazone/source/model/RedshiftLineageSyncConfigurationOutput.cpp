@@ -18,13 +18,13 @@ namespace Model {
 RedshiftLineageSyncConfigurationOutput::RedshiftLineageSyncConfigurationOutput(JsonView jsonValue) { *this = jsonValue; }
 
 RedshiftLineageSyncConfigurationOutput& RedshiftLineageSyncConfigurationOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("enabled")) {
-    m_enabled = jsonValue.GetBool("enabled");
-    m_enabledHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lineageJobId")) {
     m_lineageJobId = jsonValue.GetString("lineageJobId");
     m_lineageJobIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enabled")) {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
   }
   if (jsonValue.ValueExists("schedule")) {
     m_schedule = jsonValue.GetObject("schedule");
@@ -36,12 +36,12 @@ RedshiftLineageSyncConfigurationOutput& RedshiftLineageSyncConfigurationOutput::
 JsonValue RedshiftLineageSyncConfigurationOutput::Jsonize() const {
   JsonValue payload;
 
-  if (m_enabledHasBeenSet) {
-    payload.WithBool("enabled", m_enabled);
-  }
-
   if (m_lineageJobIdHasBeenSet) {
     payload.WithString("lineageJobId", m_lineageJobId);
+  }
+
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
   if (m_scheduleHasBeenSet) {

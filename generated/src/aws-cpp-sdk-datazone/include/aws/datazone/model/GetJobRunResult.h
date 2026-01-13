@@ -34,57 +34,6 @@ class GetJobRunResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the job run was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetJobRunResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the job run.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  GetJobRunResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The details of the job run.</p>
-   */
-  inline const JobRunDetails& GetDetails() const { return m_details; }
-  template <typename DetailsT = JobRunDetails>
-  void SetDetails(DetailsT&& value) {
-    m_detailsHasBeenSet = true;
-    m_details = std::forward<DetailsT>(value);
-  }
-  template <typename DetailsT = JobRunDetails>
-  GetJobRunResult& WithDetails(DetailsT&& value) {
-    SetDetails(std::forward<DetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -96,40 +45,6 @@ class GetJobRunResult {
   template <typename DomainIdT = Aws::String>
   GetJobRunResult& WithDomainId(DomainIdT&& value) {
     SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the job run ended.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  void SetEndTime(EndTimeT&& value) {
-    m_endTimeHasBeenSet = true;
-    m_endTime = std::forward<EndTimeT>(value);
-  }
-  template <typename EndTimeT = Aws::Utils::DateTime>
-  GetJobRunResult& WithEndTime(EndTimeT&& value) {
-    SetEndTime(std::forward<EndTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The error generated if the action is not completed successfully.</p>
-   */
-  inline const JobRunError& GetError() const { return m_error; }
-  template <typename ErrorT = JobRunError>
-  void SetError(ErrorT&& value) {
-    m_errorHasBeenSet = true;
-    m_error = std::forward<ErrorT>(value);
-  }
-  template <typename ErrorT = JobRunError>
-  GetJobRunResult& WithError(ErrorT&& value) {
-    SetError(std::forward<ErrorT>(value));
     return *this;
   }
   ///@}
@@ -200,17 +115,17 @@ class GetJobRunResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the job run started.</p>
+   * <p>The details of the job run.</p>
    */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
+  inline const JobRunDetails& GetDetails() const { return m_details; }
+  template <typename DetailsT = JobRunDetails>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
   }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  GetJobRunResult& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
+  template <typename DetailsT = JobRunDetails>
+  GetJobRunResult& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
     return *this;
   }
   ///@}
@@ -231,6 +146,91 @@ class GetJobRunResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The error generated if the action is not completed successfully.</p>
+   */
+  inline const JobRunError& GetError() const { return m_error; }
+  template <typename ErrorT = JobRunError>
+  void SetError(ErrorT&& value) {
+    m_errorHasBeenSet = true;
+    m_error = std::forward<ErrorT>(value);
+  }
+  template <typename ErrorT = JobRunError>
+  GetJobRunResult& WithError(ErrorT&& value) {
+    SetError(std::forward<ErrorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the job run.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  GetJobRunResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the job run was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetJobRunResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the job run started.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  GetJobRunResult& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the job run ended.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  void SetEndTime(EndTimeT&& value) {
+    m_endTimeHasBeenSet = true;
+    m_endTime = std::forward<EndTimeT>(value);
+  }
+  template <typename EndTimeT = Aws::Utils::DateTime>
+  GetJobRunResult& WithEndTime(EndTimeT&& value) {
+    SetEndTime(std::forward<EndTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -245,17 +245,7 @@ class GetJobRunResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  JobRunDetails m_details;
-
   Aws::String m_domainId;
-
-  Aws::Utils::DateTime m_endTime{};
-
-  JobRunError m_error;
 
   Aws::String m_id;
 
@@ -265,23 +255,33 @@ class GetJobRunResult {
 
   JobRunMode m_runMode{JobRunMode::NOT_SET};
 
-  Aws::Utils::DateTime m_startTime{};
+  JobRunDetails m_details;
 
   JobRunStatus m_status{JobRunStatus::NOT_SET};
 
+  JobRunError m_error;
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_startTime{};
+
+  Aws::Utils::DateTime m_endTime{};
+
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_detailsHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_endTimeHasBeenSet = false;
-  bool m_errorHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
   bool m_runModeHasBeenSet = false;
-  bool m_startTimeHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

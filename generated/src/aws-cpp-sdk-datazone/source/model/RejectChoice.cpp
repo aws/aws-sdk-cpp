@@ -18,6 +18,10 @@ namespace Model {
 RejectChoice::RejectChoice(JsonView jsonValue) { *this = jsonValue; }
 
 RejectChoice& RejectChoice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("predictionTarget")) {
+    m_predictionTarget = jsonValue.GetString("predictionTarget");
+    m_predictionTargetHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("predictionChoices")) {
     Aws::Utils::Array<JsonView> predictionChoicesJsonList = jsonValue.GetArray("predictionChoices");
     for (unsigned predictionChoicesIndex = 0; predictionChoicesIndex < predictionChoicesJsonList.GetLength(); ++predictionChoicesIndex) {
@@ -25,15 +29,15 @@ RejectChoice& RejectChoice::operator=(JsonView jsonValue) {
     }
     m_predictionChoicesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("predictionTarget")) {
-    m_predictionTarget = jsonValue.GetString("predictionTarget");
-    m_predictionTargetHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue RejectChoice::Jsonize() const {
   JsonValue payload;
+
+  if (m_predictionTargetHasBeenSet) {
+    payload.WithString("predictionTarget", m_predictionTarget);
+  }
 
   if (m_predictionChoicesHasBeenSet) {
     Aws::Utils::Array<JsonValue> predictionChoicesJsonList(m_predictionChoices.size());
@@ -41,10 +45,6 @@ JsonValue RejectChoice::Jsonize() const {
       predictionChoicesJsonList[predictionChoicesIndex].AsInteger(m_predictionChoices[predictionChoicesIndex]);
     }
     payload.WithArray("predictionChoices", std::move(predictionChoicesJsonList));
-  }
-
-  if (m_predictionTargetHasBeenSet) {
-    payload.WithString("predictionTarget", m_predictionTarget);
   }
 
   return payload;

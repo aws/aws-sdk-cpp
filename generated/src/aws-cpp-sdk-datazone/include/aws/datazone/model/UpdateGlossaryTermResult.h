@@ -32,6 +32,23 @@ class UpdateGlossaryTermResult {
 
   ///@{
   /**
+   * <p>The identifier of the business glossary term that is to be updated.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateGlossaryTermResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the Amazon DataZone domain in which a business glossary
    * term is to be updated.</p>
    */
@@ -67,41 +84,6 @@ class UpdateGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The identifier of the business glossary term that is to be updated.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  UpdateGlossaryTermResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The long description to be updated as part of the
-   * <code>UpdateGlossaryTerm</code> action.</p>
-   */
-  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
-  template <typename LongDescriptionT = Aws::String>
-  void SetLongDescription(LongDescriptionT&& value) {
-    m_longDescriptionHasBeenSet = true;
-    m_longDescription = std::forward<LongDescriptionT>(value);
-  }
-  template <typename LongDescriptionT = Aws::String>
-  UpdateGlossaryTermResult& WithLongDescription(LongDescriptionT&& value) {
-    SetLongDescription(std::forward<LongDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name to be updated as part of the <code>UpdateGlossaryTerm</code>
    * action.</p>
    */
@@ -114,6 +96,22 @@ class UpdateGlossaryTermResult {
   template <typename NameT = Aws::String>
   UpdateGlossaryTermResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code>
+   * action.</p>
+   */
+  inline GlossaryTermStatus GetStatus() const { return m_status; }
+  inline void SetStatus(GlossaryTermStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateGlossaryTermResult& WithStatus(GlossaryTermStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -138,16 +136,18 @@ class UpdateGlossaryTermResult {
 
   ///@{
   /**
-   * <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code>
-   * action.</p>
+   * <p>The long description to be updated as part of the
+   * <code>UpdateGlossaryTerm</code> action.</p>
    */
-  inline GlossaryTermStatus GetStatus() const { return m_status; }
-  inline void SetStatus(GlossaryTermStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetLongDescription() const { return m_longDescription; }
+  template <typename LongDescriptionT = Aws::String>
+  void SetLongDescription(LongDescriptionT&& value) {
+    m_longDescriptionHasBeenSet = true;
+    m_longDescription = std::forward<LongDescriptionT>(value);
   }
-  inline UpdateGlossaryTermResult& WithStatus(GlossaryTermStatus value) {
-    SetStatus(value);
+  template <typename LongDescriptionT = Aws::String>
+  UpdateGlossaryTermResult& WithLongDescription(LongDescriptionT&& value) {
+    SetLongDescription(std::forward<LongDescriptionT>(value));
     return *this;
   }
   ///@}
@@ -207,32 +207,32 @@ class UpdateGlossaryTermResult {
   }
   ///@}
  private:
+  Aws::String m_id;
+
   Aws::String m_domainId;
 
   Aws::String m_glossaryId;
 
-  Aws::String m_id;
-
-  Aws::String m_longDescription;
-
   Aws::String m_name;
+
+  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
 
   Aws::String m_shortDescription;
 
-  GlossaryTermStatus m_status{GlossaryTermStatus::NOT_SET};
+  Aws::String m_longDescription;
 
   TermRelations m_termRelations;
 
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_glossaryIdHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_longDescriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_shortDescriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_termRelationsHasBeenSet = false;
   bool m_usageRestrictionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

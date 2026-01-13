@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/SubscribedGroup.h>
+#include <aws/datazone/model/SubscribedIamPrincipal.h>
 #include <aws/datazone/model/SubscribedProject.h>
 #include <aws/datazone/model/SubscribedUser.h>
 
@@ -33,24 +34,6 @@ class SubscribedPrincipal {
   AWS_DATAZONE_API SubscribedPrincipal(Aws::Utils::Json::JsonView jsonValue);
   AWS_DATAZONE_API SubscribedPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>The subscribed group.</p>
-   */
-  inline const SubscribedGroup& GetGroup() const { return m_group; }
-  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-  template <typename GroupT = SubscribedGroup>
-  void SetGroup(GroupT&& value) {
-    m_groupHasBeenSet = true;
-    m_group = std::forward<GroupT>(value);
-  }
-  template <typename GroupT = SubscribedGroup>
-  SubscribedPrincipal& WithGroup(GroupT&& value) {
-    SetGroup(std::forward<GroupT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -87,15 +70,54 @@ class SubscribedPrincipal {
     return *this;
   }
   ///@}
- private:
-  SubscribedGroup m_group;
 
+  ///@{
+  /**
+   * <p>The subscribed group.</p>
+   */
+  inline const SubscribedGroup& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = SubscribedGroup>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = SubscribedGroup>
+  SubscribedPrincipal& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The subscribed IAM principal.</p>
+   */
+  inline const SubscribedIamPrincipal& GetIam() const { return m_iam; }
+  inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
+  template <typename IamT = SubscribedIamPrincipal>
+  void SetIam(IamT&& value) {
+    m_iamHasBeenSet = true;
+    m_iam = std::forward<IamT>(value);
+  }
+  template <typename IamT = SubscribedIamPrincipal>
+  SubscribedPrincipal& WithIam(IamT&& value) {
+    SetIam(std::forward<IamT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   SubscribedProject m_project;
 
   SubscribedUser m_user;
-  bool m_groupHasBeenSet = false;
+
+  SubscribedGroup m_group;
+
+  SubscribedIamPrincipal m_iam;
   bool m_projectHasBeenSet = false;
   bool m_userHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_iamHasBeenSet = false;
 };
 
 }  // namespace Model

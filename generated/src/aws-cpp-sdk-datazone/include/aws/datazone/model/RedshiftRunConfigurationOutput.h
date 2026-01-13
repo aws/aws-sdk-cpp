@@ -57,6 +57,25 @@ class RedshiftRunConfigurationOutput {
 
   ///@{
   /**
+   * <p>The Amazon Web Services region included in the configuration details of the
+   * Amazon Redshift data source.</p>
+   */
+  inline const Aws::String& GetRegion() const { return m_region; }
+  inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+  template <typename RegionT = Aws::String>
+  void SetRegion(RegionT&& value) {
+    m_regionHasBeenSet = true;
+    m_region = std::forward<RegionT>(value);
+  }
+  template <typename RegionT = Aws::String>
+  RedshiftRunConfigurationOutput& WithRegion(RegionT&& value) {
+    SetRegion(std::forward<RegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data access role included in the configuration details of the Amazon
    * Redshift data source.</p>
    */
@@ -70,6 +89,33 @@ class RedshiftRunConfigurationOutput {
   template <typename DataAccessRoleT = Aws::String>
   RedshiftRunConfigurationOutput& WithDataAccessRole(DataAccessRoleT&& value) {
     SetDataAccessRole(std::forward<DataAccessRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The relational filger configurations included in the configuration details of
+   * the Amazon Redshift data source.</p>
+   */
+  inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const {
+    return m_relationalFilterConfigurations;
+  }
+  inline bool RelationalFilterConfigurationsHasBeenSet() const { return m_relationalFilterConfigurationsHasBeenSet; }
+  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
+  void SetRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
+    m_relationalFilterConfigurationsHasBeenSet = true;
+    m_relationalFilterConfigurations = std::forward<RelationalFilterConfigurationsT>(value);
+  }
+  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
+  RedshiftRunConfigurationOutput& WithRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
+    SetRelationalFilterConfigurations(std::forward<RelationalFilterConfigurationsT>(value));
+    return *this;
+  }
+  template <typename RelationalFilterConfigurationsT = RelationalFilterConfiguration>
+  RedshiftRunConfigurationOutput& AddRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
+    m_relationalFilterConfigurationsHasBeenSet = true;
+    m_relationalFilterConfigurations.emplace_back(std::forward<RelationalFilterConfigurationsT>(value));
     return *this;
   }
   ///@}
@@ -105,70 +151,24 @@ class RedshiftRunConfigurationOutput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Web Services region included in the configuration details of the
-   * Amazon Redshift data source.</p>
-   */
-  inline const Aws::String& GetRegion() const { return m_region; }
-  inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-  template <typename RegionT = Aws::String>
-  void SetRegion(RegionT&& value) {
-    m_regionHasBeenSet = true;
-    m_region = std::forward<RegionT>(value);
-  }
-  template <typename RegionT = Aws::String>
-  RedshiftRunConfigurationOutput& WithRegion(RegionT&& value) {
-    SetRegion(std::forward<RegionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The relational filger configurations included in the configuration details of
-   * the Amazon Redshift data source.</p>
-   */
-  inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const {
-    return m_relationalFilterConfigurations;
-  }
-  inline bool RelationalFilterConfigurationsHasBeenSet() const { return m_relationalFilterConfigurationsHasBeenSet; }
-  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
-  void SetRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
-    m_relationalFilterConfigurationsHasBeenSet = true;
-    m_relationalFilterConfigurations = std::forward<RelationalFilterConfigurationsT>(value);
-  }
-  template <typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
-  RedshiftRunConfigurationOutput& WithRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
-    SetRelationalFilterConfigurations(std::forward<RelationalFilterConfigurationsT>(value));
-    return *this;
-  }
-  template <typename RelationalFilterConfigurationsT = RelationalFilterConfiguration>
-  RedshiftRunConfigurationOutput& AddRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) {
-    m_relationalFilterConfigurationsHasBeenSet = true;
-    m_relationalFilterConfigurations.emplace_back(std::forward<RelationalFilterConfigurationsT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_accountId;
 
+  Aws::String m_region;
+
   Aws::String m_dataAccessRole;
+
+  Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
 
   RedshiftCredentialConfiguration m_redshiftCredentialConfiguration;
 
   RedshiftStorage m_redshiftStorage;
-
-  Aws::String m_region;
-
-  Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
   bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_dataAccessRoleHasBeenSet = false;
+  bool m_relationalFilterConfigurationsHasBeenSet = false;
   bool m_redshiftCredentialConfigurationHasBeenSet = false;
   bool m_redshiftStorageHasBeenSet = false;
-  bool m_regionHasBeenSet = false;
-  bool m_relationalFilterConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

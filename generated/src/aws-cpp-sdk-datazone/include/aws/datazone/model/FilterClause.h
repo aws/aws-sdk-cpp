@@ -34,6 +34,24 @@ class FilterClause {
 
   ///@{
   /**
+   * <p>A search filter in Amazon DataZone.</p>
+   */
+  inline const Filter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = Filter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = Filter>
+  FilterClause& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The 'and' search filter clause in Amazon DataZone.</p>
    */
   inline const Aws::Vector<FilterClause>& GetAnd() const { return m_and; }
@@ -52,24 +70,6 @@ class FilterClause {
   FilterClause& AddAnd(AndT&& value) {
     m_andHasBeenSet = true;
     m_and.emplace_back(std::forward<AndT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A search filter in Amazon DataZone.</p>
-   */
-  inline const Filter& GetFilter() const { return m_filter; }
-  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-  template <typename FilterT = Filter>
-  void SetFilter(FilterT&& value) {
-    m_filterHasBeenSet = true;
-    m_filter = std::forward<FilterT>(value);
-  }
-  template <typename FilterT = Filter>
-  FilterClause& WithFilter(FilterT&& value) {
-    SetFilter(std::forward<FilterT>(value));
     return *this;
   }
   ///@}
@@ -98,13 +98,13 @@ class FilterClause {
   }
   ///@}
  private:
-  Aws::Vector<FilterClause> m_and;
-
   Filter m_filter;
 
+  Aws::Vector<FilterClause> m_and;
+
   Aws::Vector<FilterClause> m_or;
-  bool m_andHasBeenSet = false;
   bool m_filterHasBeenSet = false;
+  bool m_andHasBeenSet = false;
   bool m_orHasBeenSet = false;
 };
 

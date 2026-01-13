@@ -18,10 +18,6 @@ namespace Model {
 ResourceTagParameter::ResourceTagParameter(JsonView jsonValue) { *this = jsonValue; }
 
 ResourceTagParameter& ResourceTagParameter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("isValueEditable")) {
-    m_isValueEditable = jsonValue.GetBool("isValueEditable");
-    m_isValueEditableHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
@@ -30,15 +26,15 @@ ResourceTagParameter& ResourceTagParameter::operator=(JsonView jsonValue) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isValueEditable")) {
+    m_isValueEditable = jsonValue.GetBool("isValueEditable");
+    m_isValueEditableHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ResourceTagParameter::Jsonize() const {
   JsonValue payload;
-
-  if (m_isValueEditableHasBeenSet) {
-    payload.WithBool("isValueEditable", m_isValueEditable);
-  }
 
   if (m_keyHasBeenSet) {
     payload.WithString("key", m_key);
@@ -46,6 +42,10 @@ JsonValue ResourceTagParameter::Jsonize() const {
 
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_isValueEditableHasBeenSet) {
+    payload.WithBool("isValueEditable", m_isValueEditable);
   }
 
   return payload;

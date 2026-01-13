@@ -54,17 +54,18 @@ class PhysicalEndpoint {
 
   ///@{
   /**
-   * <p>Specified whether trusted identity propagation for the connection is
-   * enabled.</p>
+   * <p>The Amazon Web Services Glue connection name.</p>
    */
-  inline bool GetEnableTrustedIdentityPropagation() const { return m_enableTrustedIdentityPropagation; }
-  inline bool EnableTrustedIdentityPropagationHasBeenSet() const { return m_enableTrustedIdentityPropagationHasBeenSet; }
-  inline void SetEnableTrustedIdentityPropagation(bool value) {
-    m_enableTrustedIdentityPropagationHasBeenSet = true;
-    m_enableTrustedIdentityPropagation = value;
+  inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
+  inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
+  template <typename GlueConnectionNameT = Aws::String>
+  void SetGlueConnectionName(GlueConnectionNameT&& value) {
+    m_glueConnectionNameHasBeenSet = true;
+    m_glueConnectionName = std::forward<GlueConnectionNameT>(value);
   }
-  inline PhysicalEndpoint& WithEnableTrustedIdentityPropagation(bool value) {
-    SetEnableTrustedIdentityPropagation(value);
+  template <typename GlueConnectionNameT = Aws::String>
+  PhysicalEndpoint& WithGlueConnectionName(GlueConnectionNameT&& value) {
+    SetGlueConnectionName(std::forward<GlueConnectionNameT>(value));
     return *this;
   }
   ///@}
@@ -89,18 +90,17 @@ class PhysicalEndpoint {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Glue connection name.</p>
+   * <p>Specified whether trusted identity propagation for the connection is
+   * enabled.</p>
    */
-  inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
-  inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
-  template <typename GlueConnectionNameT = Aws::String>
-  void SetGlueConnectionName(GlueConnectionNameT&& value) {
-    m_glueConnectionNameHasBeenSet = true;
-    m_glueConnectionName = std::forward<GlueConnectionNameT>(value);
+  inline bool GetEnableTrustedIdentityPropagation() const { return m_enableTrustedIdentityPropagation; }
+  inline bool EnableTrustedIdentityPropagationHasBeenSet() const { return m_enableTrustedIdentityPropagationHasBeenSet; }
+  inline void SetEnableTrustedIdentityPropagation(bool value) {
+    m_enableTrustedIdentityPropagationHasBeenSet = true;
+    m_enableTrustedIdentityPropagation = value;
   }
-  template <typename GlueConnectionNameT = Aws::String>
-  PhysicalEndpoint& WithGlueConnectionName(GlueConnectionNameT&& value) {
-    SetGlueConnectionName(std::forward<GlueConnectionNameT>(value));
+  inline PhysicalEndpoint& WithEnableTrustedIdentityPropagation(bool value) {
+    SetEnableTrustedIdentityPropagation(value);
     return *this;
   }
   ///@}
@@ -175,11 +175,11 @@ class PhysicalEndpoint {
  private:
   AwsLocation m_awsLocation;
 
-  bool m_enableTrustedIdentityPropagation{false};
+  Aws::String m_glueConnectionName;
 
   GlueConnection m_glueConnection;
 
-  Aws::String m_glueConnectionName;
+  bool m_enableTrustedIdentityPropagation{false};
 
   Aws::String m_host;
 
@@ -189,9 +189,9 @@ class PhysicalEndpoint {
 
   Aws::String m_stage;
   bool m_awsLocationHasBeenSet = false;
-  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
-  bool m_glueConnectionHasBeenSet = false;
   bool m_glueConnectionNameHasBeenSet = false;
+  bool m_glueConnectionHasBeenSet = false;
+  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
   bool m_hostHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;

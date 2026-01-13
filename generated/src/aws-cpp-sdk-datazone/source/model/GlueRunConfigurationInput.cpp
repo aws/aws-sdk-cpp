@@ -18,14 +18,6 @@ namespace Model {
 GlueRunConfigurationInput::GlueRunConfigurationInput(JsonView jsonValue) { *this = jsonValue; }
 
 GlueRunConfigurationInput& GlueRunConfigurationInput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("autoImportDataQualityResult")) {
-    m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
-    m_autoImportDataQualityResultHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("catalogName")) {
-    m_catalogName = jsonValue.GetString("catalogName");
-    m_catalogNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("dataAccessRole")) {
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
     m_dataAccessRoleHasBeenSet = true;
@@ -38,19 +30,19 @@ GlueRunConfigurationInput& GlueRunConfigurationInput::operator=(JsonView jsonVal
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoImportDataQualityResult")) {
+    m_autoImportDataQualityResult = jsonValue.GetBool("autoImportDataQualityResult");
+    m_autoImportDataQualityResultHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("catalogName")) {
+    m_catalogName = jsonValue.GetString("catalogName");
+    m_catalogNameHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue GlueRunConfigurationInput::Jsonize() const {
   JsonValue payload;
-
-  if (m_autoImportDataQualityResultHasBeenSet) {
-    payload.WithBool("autoImportDataQualityResult", m_autoImportDataQualityResult);
-  }
-
-  if (m_catalogNameHasBeenSet) {
-    payload.WithString("catalogName", m_catalogName);
-  }
 
   if (m_dataAccessRoleHasBeenSet) {
     payload.WithString("dataAccessRole", m_dataAccessRole);
@@ -64,6 +56,14 @@ JsonValue GlueRunConfigurationInput::Jsonize() const {
           m_relationalFilterConfigurations[relationalFilterConfigurationsIndex].Jsonize());
     }
     payload.WithArray("relationalFilterConfigurations", std::move(relationalFilterConfigurationsJsonList));
+  }
+
+  if (m_autoImportDataQualityResultHasBeenSet) {
+    payload.WithBool("autoImportDataQualityResult", m_autoImportDataQualityResult);
+  }
+
+  if (m_catalogNameHasBeenSet) {
+    payload.WithString("catalogName", m_catalogName);
   }
 
   return payload;

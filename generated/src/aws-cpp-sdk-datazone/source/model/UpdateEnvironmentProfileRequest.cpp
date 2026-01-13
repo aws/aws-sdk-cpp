@@ -15,20 +15,12 @@ using namespace Aws::Utils;
 Aws::String UpdateEnvironmentProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_awsAccountIdHasBeenSet) {
-    payload.WithString("awsAccountId", m_awsAccountId);
-  }
-
-  if (m_awsAccountRegionHasBeenSet) {
-    payload.WithString("awsAccountRegion", m_awsAccountRegion);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
   }
 
   if (m_userParametersHasBeenSet) {
@@ -37,6 +29,14 @@ Aws::String UpdateEnvironmentProfileRequest::SerializePayload() const {
       userParametersJsonList[userParametersIndex].AsObject(m_userParameters[userParametersIndex].Jsonize());
     }
     payload.WithArray("userParameters", std::move(userParametersJsonList));
+  }
+
+  if (m_awsAccountIdHasBeenSet) {
+    payload.WithString("awsAccountId", m_awsAccountId);
+  }
+
+  if (m_awsAccountRegionHasBeenSet) {
+    payload.WithString("awsAccountRegion", m_awsAccountRegion);
   }
 
   return payload.View().WriteReadable();

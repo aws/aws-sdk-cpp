@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String PostTimeSeriesDataPointsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_formsHasBeenSet) {
     Aws::Utils::Array<JsonValue> formsJsonList(m_forms.size());
     for (unsigned formsIndex = 0; formsIndex < formsJsonList.GetLength(); ++formsIndex) {
       formsJsonList[formsIndex].AsObject(m_forms[formsIndex].Jsonize());
     }
     payload.WithArray("forms", std::move(formsJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

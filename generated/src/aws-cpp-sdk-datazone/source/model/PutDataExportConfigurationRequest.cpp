@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String PutDataExportConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_enableExportHasBeenSet) {
     payload.WithBool("enableExport", m_enableExport);
   }
 
   if (m_encryptionConfigurationHasBeenSet) {
     payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

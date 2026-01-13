@@ -19,10 +19,6 @@ Aws::String UpdateGlossaryTermRequest::SerializePayload() const {
     payload.WithString("glossaryIdentifier", m_glossaryIdentifier);
   }
 
-  if (m_longDescriptionHasBeenSet) {
-    payload.WithString("longDescription", m_longDescription);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
@@ -31,12 +27,16 @@ Aws::String UpdateGlossaryTermRequest::SerializePayload() const {
     payload.WithString("shortDescription", m_shortDescription);
   }
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", GlossaryTermStatusMapper::GetNameForGlossaryTermStatus(m_status));
+  if (m_longDescriptionHasBeenSet) {
+    payload.WithString("longDescription", m_longDescription);
   }
 
   if (m_termRelationsHasBeenSet) {
     payload.WithObject("termRelations", m_termRelations.Jsonize());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", GlossaryTermStatusMapper::GetNameForGlossaryTermStatus(m_status));
   }
 
   return payload.View().WriteReadable();

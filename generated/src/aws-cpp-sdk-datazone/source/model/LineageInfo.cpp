@@ -18,10 +18,6 @@ namespace Model {
 LineageInfo::LineageInfo(JsonView jsonValue) { *this = jsonValue; }
 
 LineageInfo& LineageInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorMessage")) {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-    m_errorMessageHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("eventId")) {
     m_eventId = jsonValue.GetString("eventId");
     m_eventIdHasBeenSet = true;
@@ -30,15 +26,15 @@ LineageInfo& LineageInfo::operator=(JsonView jsonValue) {
     m_eventStatus = LineageEventProcessingStatusMapper::GetLineageEventProcessingStatusForName(jsonValue.GetString("eventStatus"));
     m_eventStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorMessage")) {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+    m_errorMessageHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue LineageInfo::Jsonize() const {
   JsonValue payload;
-
-  if (m_errorMessageHasBeenSet) {
-    payload.WithString("errorMessage", m_errorMessage);
-  }
 
   if (m_eventIdHasBeenSet) {
     payload.WithString("eventId", m_eventId);
@@ -46,6 +42,10 @@ JsonValue LineageInfo::Jsonize() const {
 
   if (m_eventStatusHasBeenSet) {
     payload.WithString("eventStatus", LineageEventProcessingStatusMapper::GetNameForLineageEventProcessingStatus(m_eventStatus));
+  }
+
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;

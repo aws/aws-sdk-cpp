@@ -35,6 +35,22 @@ class GluePropertiesOutput {
 
   ///@{
   /**
+   * <p>The status of a connection.</p>
+   */
+  inline ConnectionStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ConnectionStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline GluePropertiesOutput& WithStatus(ConnectionStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The error message generated if the action is not completed successfully.</p>
    */
   inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
@@ -50,28 +66,12 @@ class GluePropertiesOutput {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The status of a connection.</p>
-   */
-  inline ConnectionStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(ConnectionStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline GluePropertiesOutput& WithStatus(ConnectionStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_errorMessage;
-
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_errorMessageHasBeenSet = false;
+
+  Aws::String m_errorMessage;
   bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
 };
 
 }  // namespace Model

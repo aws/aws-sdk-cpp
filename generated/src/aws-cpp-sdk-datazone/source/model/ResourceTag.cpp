@@ -22,13 +22,13 @@ ResourceTag& ResourceTag::operator=(JsonView jsonValue) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("source")) {
-    m_source = ResourceTagSourceMapper::GetResourceTagSourceForName(jsonValue.GetString("source"));
-    m_sourceHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("source")) {
+    m_source = ResourceTagSourceMapper::GetResourceTagSourceForName(jsonValue.GetString("source"));
+    m_sourceHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue ResourceTag::Jsonize() const {
     payload.WithString("key", m_key);
   }
 
-  if (m_sourceHasBeenSet) {
-    payload.WithString("source", ResourceTagSourceMapper::GetNameForResourceTagSource(m_source));
-  }
-
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", ResourceTagSourceMapper::GetNameForResourceTagSource(m_source));
   }
 
   return payload;

@@ -18,9 +18,33 @@ namespace Model {
 AssetItem::AssetItem(JsonView jsonValue) { *this = jsonValue; }
 
 AssetItem& AssetItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("additionalAttributes")) {
-    m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
-    m_additionalAttributesHasBeenSet = true;
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("identifier")) {
+    m_identifier = jsonValue.GetString("identifier");
+    m_identifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("typeIdentifier")) {
+    m_typeIdentifier = jsonValue.GetString("typeIdentifier");
+    m_typeIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("typeRevision")) {
+    m_typeRevision = jsonValue.GetString("typeRevision");
+    m_typeRevisionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("externalIdentifier")) {
+    m_externalIdentifier = jsonValue.GetString("externalIdentifier");
+    m_externalIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -29,18 +53,6 @@ AssetItem& AssetItem::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("externalIdentifier")) {
-    m_externalIdentifier = jsonValue.GetString("externalIdentifier");
-    m_externalIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("firstRevisionCreatedAt")) {
     m_firstRevisionCreatedAt = jsonValue.GetDouble("firstRevisionCreatedAt");
@@ -57,6 +69,14 @@ AssetItem& AssetItem::operator=(JsonView jsonValue) {
     }
     m_glossaryTermsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("additionalAttributes")) {
+    m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
+    m_additionalAttributesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("governedGlossaryTerms")) {
     Aws::Utils::Array<JsonView> governedGlossaryTermsJsonList = jsonValue.GetArray("governedGlossaryTerms");
     for (unsigned governedGlossaryTermsIndex = 0; governedGlossaryTermsIndex < governedGlossaryTermsJsonList.GetLength();
@@ -65,34 +85,38 @@ AssetItem& AssetItem::operator=(JsonView jsonValue) {
     }
     m_governedGlossaryTermsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("identifier")) {
-    m_identifier = jsonValue.GetString("identifier");
-    m_identifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("typeIdentifier")) {
-    m_typeIdentifier = jsonValue.GetString("typeIdentifier");
-    m_typeIdentifierHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("typeRevision")) {
-    m_typeRevision = jsonValue.GetString("typeRevision");
-    m_typeRevisionHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue AssetItem::Jsonize() const {
   JsonValue payload;
 
-  if (m_additionalAttributesHasBeenSet) {
-    payload.WithObject("additionalAttributes", m_additionalAttributes.Jsonize());
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("domainId", m_domainId);
+  }
+
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_typeIdentifierHasBeenSet) {
+    payload.WithString("typeIdentifier", m_typeIdentifier);
+  }
+
+  if (m_typeRevisionHasBeenSet) {
+    payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_externalIdentifierHasBeenSet) {
+    payload.WithString("externalIdentifier", m_externalIdentifier);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   if (m_createdAtHasBeenSet) {
@@ -101,18 +125,6 @@ JsonValue AssetItem::Jsonize() const {
 
   if (m_createdByHasBeenSet) {
     payload.WithString("createdBy", m_createdBy);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
-  if (m_domainIdHasBeenSet) {
-    payload.WithString("domainId", m_domainId);
-  }
-
-  if (m_externalIdentifierHasBeenSet) {
-    payload.WithString("externalIdentifier", m_externalIdentifier);
   }
 
   if (m_firstRevisionCreatedAtHasBeenSet) {
@@ -131,6 +143,14 @@ JsonValue AssetItem::Jsonize() const {
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
+  if (m_owningProjectIdHasBeenSet) {
+    payload.WithString("owningProjectId", m_owningProjectId);
+  }
+
+  if (m_additionalAttributesHasBeenSet) {
+    payload.WithObject("additionalAttributes", m_additionalAttributes.Jsonize());
+  }
+
   if (m_governedGlossaryTermsHasBeenSet) {
     Aws::Utils::Array<JsonValue> governedGlossaryTermsJsonList(m_governedGlossaryTerms.size());
     for (unsigned governedGlossaryTermsIndex = 0; governedGlossaryTermsIndex < governedGlossaryTermsJsonList.GetLength();
@@ -138,26 +158,6 @@ JsonValue AssetItem::Jsonize() const {
       governedGlossaryTermsJsonList[governedGlossaryTermsIndex].AsString(m_governedGlossaryTerms[governedGlossaryTermsIndex]);
     }
     payload.WithArray("governedGlossaryTerms", std::move(governedGlossaryTermsJsonList));
-  }
-
-  if (m_identifierHasBeenSet) {
-    payload.WithString("identifier", m_identifier);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_owningProjectIdHasBeenSet) {
-    payload.WithString("owningProjectId", m_owningProjectId);
-  }
-
-  if (m_typeIdentifierHasBeenSet) {
-    payload.WithString("typeIdentifier", m_typeIdentifier);
-  }
-
-  if (m_typeRevisionHasBeenSet) {
-    payload.WithString("typeRevision", m_typeRevision);
   }
 
   return payload;

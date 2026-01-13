@@ -37,25 +37,6 @@ class DeleteTimeSeriesDataPointsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
-   * This field is automatically populated if not provided.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  DeleteTimeSeriesDataPointsRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain that houses the asset for which you want
    * to delete a time series form.</p>
    */
@@ -124,9 +105,26 @@ class DeleteTimeSeriesDataPointsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
+   * This field is automatically populated if not provided.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  DeleteTimeSeriesDataPointsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_entityIdentifier;
@@ -134,11 +132,13 @@ class DeleteTimeSeriesDataPointsRequest : public DataZoneRequest {
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
 
   Aws::String m_formName;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
   bool m_formNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

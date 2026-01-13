@@ -192,21 +192,6 @@ class CreateConnectionResult {
 
   ///@{
   /**
-   * <p>The scope of the connection.</p>
-   */
-  inline ConnectionScope GetScope() const { return m_scope; }
-  inline void SetScope(ConnectionScope value) {
-    m_scopeHasBeenSet = true;
-    m_scope = value;
-  }
-  inline CreateConnectionResult& WithScope(ConnectionScope value) {
-    SetScope(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The connection type.</p>
    */
   inline ConnectionType GetType() const { return m_type; }
@@ -216,6 +201,21 @@ class CreateConnectionResult {
   }
   inline CreateConnectionResult& WithType(ConnectionType value) {
     SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope of the connection.</p>
+   */
+  inline ConnectionScope GetScope() const { return m_scope; }
+  inline void SetScope(ConnectionScope value) {
+    m_scopeHasBeenSet = true;
+    m_scope = value;
+  }
+  inline CreateConnectionResult& WithScope(ConnectionScope value) {
+    SetScope(value);
     return *this;
   }
   ///@}
@@ -253,9 +253,9 @@ class CreateConnectionResult {
 
   ConnectionPropertiesOutput m_props;
 
-  ConnectionScope m_scope{ConnectionScope::NOT_SET};
-
   ConnectionType m_type{ConnectionType::NOT_SET};
+
+  ConnectionScope m_scope{ConnectionScope::NOT_SET};
 
   Aws::String m_requestId;
   bool m_connectionIdHasBeenSet = false;
@@ -267,8 +267,8 @@ class CreateConnectionResult {
   bool m_physicalEndpointsHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
   bool m_propsHasBeenSet = false;
-  bool m_scopeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

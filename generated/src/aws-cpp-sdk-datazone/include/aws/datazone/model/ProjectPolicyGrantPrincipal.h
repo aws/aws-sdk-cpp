@@ -51,24 +51,6 @@ class ProjectPolicyGrantPrincipal {
 
   ///@{
   /**
-   * <p>The project grant filter of the project policy grant principal.</p>
-   */
-  inline const ProjectGrantFilter& GetProjectGrantFilter() const { return m_projectGrantFilter; }
-  inline bool ProjectGrantFilterHasBeenSet() const { return m_projectGrantFilterHasBeenSet; }
-  template <typename ProjectGrantFilterT = ProjectGrantFilter>
-  void SetProjectGrantFilter(ProjectGrantFilterT&& value) {
-    m_projectGrantFilterHasBeenSet = true;
-    m_projectGrantFilter = std::forward<ProjectGrantFilterT>(value);
-  }
-  template <typename ProjectGrantFilterT = ProjectGrantFilter>
-  ProjectPolicyGrantPrincipal& WithProjectGrantFilter(ProjectGrantFilterT&& value) {
-    SetProjectGrantFilter(std::forward<ProjectGrantFilterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The project ID of the project policy grant principal.</p>
    */
   inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
@@ -84,15 +66,33 @@ class ProjectPolicyGrantPrincipal {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The project grant filter of the project policy grant principal.</p>
+   */
+  inline const ProjectGrantFilter& GetProjectGrantFilter() const { return m_projectGrantFilter; }
+  inline bool ProjectGrantFilterHasBeenSet() const { return m_projectGrantFilterHasBeenSet; }
+  template <typename ProjectGrantFilterT = ProjectGrantFilter>
+  void SetProjectGrantFilter(ProjectGrantFilterT&& value) {
+    m_projectGrantFilterHasBeenSet = true;
+    m_projectGrantFilter = std::forward<ProjectGrantFilterT>(value);
+  }
+  template <typename ProjectGrantFilterT = ProjectGrantFilter>
+  ProjectPolicyGrantPrincipal& WithProjectGrantFilter(ProjectGrantFilterT&& value) {
+    SetProjectGrantFilter(std::forward<ProjectGrantFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ProjectDesignation m_projectDesignation{ProjectDesignation::NOT_SET};
 
-  ProjectGrantFilter m_projectGrantFilter;
-
   Aws::String m_projectIdentifier;
+
+  ProjectGrantFilter m_projectGrantFilter;
   bool m_projectDesignationHasBeenSet = false;
-  bool m_projectGrantFilterHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
+  bool m_projectGrantFilterHasBeenSet = false;
 };
 
 }  // namespace Model

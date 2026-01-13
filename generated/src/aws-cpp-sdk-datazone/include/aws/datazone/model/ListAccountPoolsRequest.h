@@ -55,26 +55,6 @@ class ListAccountPoolsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of account pools to return in a single call to
-   * ListAccountPools. When the number of account pools to be listed is greater than
-   * the value of MaxResults, the response contains a NextToken value that you can
-   * use in a subsequent call to ListAccountPools to list the next set of account
-   * pools.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListAccountPoolsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the account pool to be listed.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -87,28 +67,6 @@ class ListAccountPoolsRequest : public DataZoneRequest {
   template <typename NameT = Aws::String>
   ListAccountPoolsRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>When the number of account pools is greater than the default value for the
-   * MaxResults parameter, or if you explicitly specify a value for MaxResults that
-   * is less than the number of account pools, the response includes a pagination
-   * token named NextToken. You can specify this NextToken value in a subsequent call
-   * to ListAccountPools to list the next set of account pools.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListAccountPoolsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -145,24 +103,66 @@ class ListAccountPoolsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>When the number of account pools is greater than the default value for the
+   * MaxResults parameter, or if you explicitly specify a value for MaxResults that
+   * is less than the number of account pools, the response includes a pagination
+   * token named NextToken. You can specify this NextToken value in a subsequent call
+   * to ListAccountPools to list the next set of account pools.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListAccountPoolsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of account pools to return in a single call to
+   * ListAccountPools. When the number of account pools to be listed is greater than
+   * the value of MaxResults, the response contains a NextToken value that you can
+   * use in a subsequent call to ListAccountPools to list the next set of account
+   * pools.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListAccountPoolsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  int m_maxResults{0};
-
   Aws::String m_name;
-
-  Aws::String m_nextToken;
 
   SortFieldAccountPool m_sortBy{SortFieldAccountPool::NOT_SET};
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

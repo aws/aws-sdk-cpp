@@ -32,6 +32,57 @@ class GetLineageNodeResult {
 
   ///@{
   /**
+   * <p>The ID of the domain where you're getting the data lineage node.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  GetLineageNodeResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the data lineage node.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetLineageNodeResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the data lineage node.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetLineageNodeResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp at which the data lineage node was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -66,57 +117,102 @@ class GetLineageNodeResult {
 
   ///@{
   /**
-   * <p>The description of the data lineage node.</p>
+   * <p>The timestamp at which the data lineage node was updated.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  GetLineageNodeResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  GetLineageNodeResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The ID of the domain where you're getting the data lineage node.</p>
+   * <p>The user who updated the data lineage node.</p>
    */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
   }
-  template <typename DomainIdT = Aws::String>
-  GetLineageNodeResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
+  template <typename UpdatedByT = Aws::String>
+  GetLineageNodeResult& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The downsteam nodes of the specified data lineage node.</p>
+   * <p>The ID of the data lineage node.</p>
    */
-  inline const Aws::Vector<LineageNodeReference>& GetDownstreamNodes() const { return m_downstreamNodes; }
-  template <typename DownstreamNodesT = Aws::Vector<LineageNodeReference>>
-  void SetDownstreamNodes(DownstreamNodesT&& value) {
-    m_downstreamNodesHasBeenSet = true;
-    m_downstreamNodes = std::forward<DownstreamNodesT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename DownstreamNodesT = Aws::Vector<LineageNodeReference>>
-  GetLineageNodeResult& WithDownstreamNodes(DownstreamNodesT&& value) {
-    SetDownstreamNodes(std::forward<DownstreamNodesT>(value));
+  template <typename IdT = Aws::String>
+  GetLineageNodeResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
-  template <typename DownstreamNodesT = LineageNodeReference>
-  GetLineageNodeResult& AddDownstreamNodes(DownstreamNodesT&& value) {
-    m_downstreamNodesHasBeenSet = true;
-    m_downstreamNodes.emplace_back(std::forward<DownstreamNodesT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the type of the specified data lineage node.</p>
+   */
+  inline const Aws::String& GetTypeName() const { return m_typeName; }
+  template <typename TypeNameT = Aws::String>
+  void SetTypeName(TypeNameT&& value) {
+    m_typeNameHasBeenSet = true;
+    m_typeName = std::forward<TypeNameT>(value);
+  }
+  template <typename TypeNameT = Aws::String>
+  GetLineageNodeResult& WithTypeName(TypeNameT&& value) {
+    SetTypeName(std::forward<TypeNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision type of the specified data lineage node.</p>
+   */
+  inline const Aws::String& GetTypeRevision() const { return m_typeRevision; }
+  template <typename TypeRevisionT = Aws::String>
+  void SetTypeRevision(TypeRevisionT&& value) {
+    m_typeRevisionHasBeenSet = true;
+    m_typeRevision = std::forward<TypeRevisionT>(value);
+  }
+  template <typename TypeRevisionT = Aws::String>
+  GetLineageNodeResult& WithTypeRevision(TypeRevisionT&& value) {
+    SetTypeRevision(std::forward<TypeRevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source identifier of the data lineage node.</p>
+   */
+  inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
+  template <typename SourceIdentifierT = Aws::String>
+  void SetSourceIdentifier(SourceIdentifierT&& value) {
+    m_sourceIdentifierHasBeenSet = true;
+    m_sourceIdentifier = std::forward<SourceIdentifierT>(value);
+  }
+  template <typename SourceIdentifierT = Aws::String>
+  GetLineageNodeResult& WithSourceIdentifier(SourceIdentifierT&& value) {
+    SetSourceIdentifier(std::forward<SourceIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -163,125 +259,6 @@ class GetLineageNodeResult {
 
   ///@{
   /**
-   * <p>The ID of the data lineage node.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  GetLineageNodeResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the data lineage node.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GetLineageNodeResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The source identifier of the data lineage node.</p>
-   */
-  inline const Aws::String& GetSourceIdentifier() const { return m_sourceIdentifier; }
-  template <typename SourceIdentifierT = Aws::String>
-  void SetSourceIdentifier(SourceIdentifierT&& value) {
-    m_sourceIdentifierHasBeenSet = true;
-    m_sourceIdentifier = std::forward<SourceIdentifierT>(value);
-  }
-  template <typename SourceIdentifierT = Aws::String>
-  GetLineageNodeResult& WithSourceIdentifier(SourceIdentifierT&& value) {
-    SetSourceIdentifier(std::forward<SourceIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the type of the specified data lineage node.</p>
-   */
-  inline const Aws::String& GetTypeName() const { return m_typeName; }
-  template <typename TypeNameT = Aws::String>
-  void SetTypeName(TypeNameT&& value) {
-    m_typeNameHasBeenSet = true;
-    m_typeName = std::forward<TypeNameT>(value);
-  }
-  template <typename TypeNameT = Aws::String>
-  GetLineageNodeResult& WithTypeName(TypeNameT&& value) {
-    SetTypeName(std::forward<TypeNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision type of the specified data lineage node.</p>
-   */
-  inline const Aws::String& GetTypeRevision() const { return m_typeRevision; }
-  template <typename TypeRevisionT = Aws::String>
-  void SetTypeRevision(TypeRevisionT&& value) {
-    m_typeRevisionHasBeenSet = true;
-    m_typeRevision = std::forward<TypeRevisionT>(value);
-  }
-  template <typename TypeRevisionT = Aws::String>
-  GetLineageNodeResult& WithTypeRevision(TypeRevisionT&& value) {
-    SetTypeRevision(std::forward<TypeRevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp at which the data lineage node was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
-  }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  GetLineageNodeResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who updated the data lineage node.</p>
-   */
-  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
-  template <typename UpdatedByT = Aws::String>
-  void SetUpdatedBy(UpdatedByT&& value) {
-    m_updatedByHasBeenSet = true;
-    m_updatedBy = std::forward<UpdatedByT>(value);
-  }
-  template <typename UpdatedByT = Aws::String>
-  GetLineageNodeResult& WithUpdatedBy(UpdatedByT&& value) {
-    SetUpdatedBy(std::forward<UpdatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The upstream nodes of the specified data lineage node.</p>
    */
   inline const Aws::Vector<LineageNodeReference>& GetUpstreamNodes() const { return m_upstreamNodes; }
@@ -304,6 +281,29 @@ class GetLineageNodeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The downsteam nodes of the specified data lineage node.</p>
+   */
+  inline const Aws::Vector<LineageNodeReference>& GetDownstreamNodes() const { return m_downstreamNodes; }
+  template <typename DownstreamNodesT = Aws::Vector<LineageNodeReference>>
+  void SetDownstreamNodes(DownstreamNodesT&& value) {
+    m_downstreamNodesHasBeenSet = true;
+    m_downstreamNodes = std::forward<DownstreamNodesT>(value);
+  }
+  template <typename DownstreamNodesT = Aws::Vector<LineageNodeReference>>
+  GetLineageNodeResult& WithDownstreamNodes(DownstreamNodesT&& value) {
+    SetDownstreamNodes(std::forward<DownstreamNodesT>(value));
+    return *this;
+  }
+  template <typename DownstreamNodesT = LineageNodeReference>
+  GetLineageNodeResult& AddDownstreamNodes(DownstreamNodesT&& value) {
+    m_downstreamNodesHasBeenSet = true;
+    m_downstreamNodes.emplace_back(std::forward<DownstreamNodesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -318,52 +318,52 @@ class GetLineageNodeResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
   Aws::String m_domainId;
-
-  Aws::Vector<LineageNodeReference> m_downstreamNodes;
-
-  Aws::Utils::DateTime m_eventTimestamp{};
-
-  Aws::Vector<FormOutput> m_formsOutput;
-
-  Aws::String m_id;
 
   Aws::String m_name;
 
-  Aws::String m_sourceIdentifier;
+  Aws::String m_description;
 
-  Aws::String m_typeName;
+  Aws::Utils::DateTime m_createdAt{};
 
-  Aws::String m_typeRevision;
+  Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
 
+  Aws::String m_id;
+
+  Aws::String m_typeName;
+
+  Aws::String m_typeRevision;
+
+  Aws::String m_sourceIdentifier;
+
+  Aws::Utils::DateTime m_eventTimestamp{};
+
+  Aws::Vector<FormOutput> m_formsOutput;
+
   Aws::Vector<LineageNodeReference> m_upstreamNodes;
 
+  Aws::Vector<LineageNodeReference> m_downstreamNodes;
+
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_downstreamNodesHasBeenSet = false;
-  bool m_eventTimestampHasBeenSet = false;
-  bool m_formsOutputHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_sourceIdentifierHasBeenSet = false;
-  bool m_typeNameHasBeenSet = false;
-  bool m_typeRevisionHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeRevisionHasBeenSet = false;
+  bool m_sourceIdentifierHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
   bool m_upstreamNodesHasBeenSet = false;
+  bool m_downstreamNodesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

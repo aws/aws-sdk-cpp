@@ -18,13 +18,13 @@ namespace Model {
 AuthenticationConfigurationPatch::AuthenticationConfigurationPatch(JsonView jsonValue) { *this = jsonValue; }
 
 AuthenticationConfigurationPatch& AuthenticationConfigurationPatch::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("basicAuthenticationCredentials")) {
-    m_basicAuthenticationCredentials = jsonValue.GetObject("basicAuthenticationCredentials");
-    m_basicAuthenticationCredentialsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("secretArn")) {
     m_secretArn = jsonValue.GetString("secretArn");
     m_secretArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("basicAuthenticationCredentials")) {
+    m_basicAuthenticationCredentials = jsonValue.GetObject("basicAuthenticationCredentials");
+    m_basicAuthenticationCredentialsHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ AuthenticationConfigurationPatch& AuthenticationConfigurationPatch::operator=(Js
 JsonValue AuthenticationConfigurationPatch::Jsonize() const {
   JsonValue payload;
 
-  if (m_basicAuthenticationCredentialsHasBeenSet) {
-    payload.WithObject("basicAuthenticationCredentials", m_basicAuthenticationCredentials.Jsonize());
-  }
-
   if (m_secretArnHasBeenSet) {
     payload.WithString("secretArn", m_secretArn);
+  }
+
+  if (m_basicAuthenticationCredentialsHasBeenSet) {
+    payload.WithObject("basicAuthenticationCredentials", m_basicAuthenticationCredentials.Jsonize());
   }
 
   return payload;

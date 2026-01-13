@@ -30,27 +30,6 @@ class ListLineageNodeHistoryResult {
 
   ///@{
   /**
-   * <p>When the number of history items is greater than the default value for the
-   * MaxResults parameter, or if you explicitly specify a value for MaxResults that
-   * is less than the number of items, the response includes a pagination token named
-   * NextToken. You can specify this NextToken value in a subsequent call to
-   * ListLineageNodeHistory to list the next set of items.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListLineageNodeHistoryResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The nodes returned by the ListLineageNodeHistory action.</p>
    */
   inline const Aws::Vector<LineageNodeSummary>& GetNodes() const { return m_nodes; }
@@ -73,6 +52,27 @@ class ListLineageNodeHistoryResult {
   ///@}
 
   ///@{
+  /**
+   * <p>When the number of history items is greater than the default value for the
+   * MaxResults parameter, or if you explicitly specify a value for MaxResults that
+   * is less than the number of items, the response includes a pagination token named
+   * NextToken. You can specify this NextToken value in a subsequent call to
+   * ListLineageNodeHistory to list the next set of items.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListLineageNodeHistoryResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -87,13 +87,13 @@ class ListLineageNodeHistoryResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<LineageNodeSummary> m_nodes;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
   bool m_nodesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

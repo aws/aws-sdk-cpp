@@ -34,30 +34,6 @@ class TermRelations {
 
   ///@{
   /**
-   * <p>The classifies of the term relations.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetClassifies() const { return m_classifies; }
-  inline bool ClassifiesHasBeenSet() const { return m_classifiesHasBeenSet; }
-  template <typename ClassifiesT = Aws::Vector<Aws::String>>
-  void SetClassifies(ClassifiesT&& value) {
-    m_classifiesHasBeenSet = true;
-    m_classifies = std::forward<ClassifiesT>(value);
-  }
-  template <typename ClassifiesT = Aws::Vector<Aws::String>>
-  TermRelations& WithClassifies(ClassifiesT&& value) {
-    SetClassifies(std::forward<ClassifiesT>(value));
-    return *this;
-  }
-  template <typename ClassifiesT = Aws::String>
-  TermRelations& AddClassifies(ClassifiesT&& value) {
-    m_classifiesHasBeenSet = true;
-    m_classifies.emplace_back(std::forward<ClassifiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The <code>isA</code> property of the term relations.</p>
    */
   inline const Aws::Vector<Aws::String>& GetIsA() const { return m_isA; }
@@ -79,12 +55,36 @@ class TermRelations {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<Aws::String> m_classifies;
 
+  ///@{
+  /**
+   * <p>The classifies of the term relations.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetClassifies() const { return m_classifies; }
+  inline bool ClassifiesHasBeenSet() const { return m_classifiesHasBeenSet; }
+  template <typename ClassifiesT = Aws::Vector<Aws::String>>
+  void SetClassifies(ClassifiesT&& value) {
+    m_classifiesHasBeenSet = true;
+    m_classifies = std::forward<ClassifiesT>(value);
+  }
+  template <typename ClassifiesT = Aws::Vector<Aws::String>>
+  TermRelations& WithClassifies(ClassifiesT&& value) {
+    SetClassifies(std::forward<ClassifiesT>(value));
+    return *this;
+  }
+  template <typename ClassifiesT = Aws::String>
+  TermRelations& AddClassifies(ClassifiesT&& value) {
+    m_classifiesHasBeenSet = true;
+    m_classifies.emplace_back(std::forward<ClassifiesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<Aws::String> m_isA;
-  bool m_classifiesHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_classifies;
   bool m_isAHasBeenSet = false;
+  bool m_classifiesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,10 +18,6 @@ namespace Model {
 SubscribedPrincipalInput::SubscribedPrincipalInput(JsonView jsonValue) { *this = jsonValue; }
 
 SubscribedPrincipalInput& SubscribedPrincipalInput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("group")) {
-    m_group = jsonValue.GetObject("group");
-    m_groupHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("project")) {
     m_project = jsonValue.GetObject("project");
     m_projectHasBeenSet = true;
@@ -30,15 +26,19 @@ SubscribedPrincipalInput& SubscribedPrincipalInput::operator=(JsonView jsonValue
     m_user = jsonValue.GetObject("user");
     m_userHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("group")) {
+    m_group = jsonValue.GetObject("group");
+    m_groupHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("iam")) {
+    m_iam = jsonValue.GetObject("iam");
+    m_iamHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue SubscribedPrincipalInput::Jsonize() const {
   JsonValue payload;
-
-  if (m_groupHasBeenSet) {
-    payload.WithObject("group", m_group.Jsonize());
-  }
 
   if (m_projectHasBeenSet) {
     payload.WithObject("project", m_project.Jsonize());
@@ -46,6 +46,14 @@ JsonValue SubscribedPrincipalInput::Jsonize() const {
 
   if (m_userHasBeenSet) {
     payload.WithObject("user", m_user.Jsonize());
+  }
+
+  if (m_groupHasBeenSet) {
+    payload.WithObject("group", m_group.Jsonize());
+  }
+
+  if (m_iamHasBeenSet) {
+    payload.WithObject("iam", m_iam.Jsonize());
   }
 
   return payload;

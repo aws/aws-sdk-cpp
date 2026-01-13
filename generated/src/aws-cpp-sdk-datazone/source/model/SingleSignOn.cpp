@@ -18,10 +18,6 @@ namespace Model {
 SingleSignOn::SingleSignOn(JsonView jsonValue) { *this = jsonValue; }
 
 SingleSignOn& SingleSignOn::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("idcInstanceArn")) {
-    m_idcInstanceArn = jsonValue.GetString("idcInstanceArn");
-    m_idcInstanceArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
@@ -30,15 +26,15 @@ SingleSignOn& SingleSignOn::operator=(JsonView jsonValue) {
     m_userAssignment = UserAssignmentMapper::GetUserAssignmentForName(jsonValue.GetString("userAssignment"));
     m_userAssignmentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("idcInstanceArn")) {
+    m_idcInstanceArn = jsonValue.GetString("idcInstanceArn");
+    m_idcInstanceArnHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue SingleSignOn::Jsonize() const {
   JsonValue payload;
-
-  if (m_idcInstanceArnHasBeenSet) {
-    payload.WithString("idcInstanceArn", m_idcInstanceArn);
-  }
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", AuthTypeMapper::GetNameForAuthType(m_type));
@@ -46,6 +42,10 @@ JsonValue SingleSignOn::Jsonize() const {
 
   if (m_userAssignmentHasBeenSet) {
     payload.WithString("userAssignment", UserAssignmentMapper::GetNameForUserAssignment(m_userAssignment));
+  }
+
+  if (m_idcInstanceArnHasBeenSet) {
+    payload.WithString("idcInstanceArn", m_idcInstanceArn);
   }
 
   return payload;

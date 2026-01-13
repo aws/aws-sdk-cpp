@@ -39,25 +39,6 @@ class RejectPredictionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  RejectPredictionsRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -94,25 +75,18 @@ class RejectPredictionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
-   * and the target (for example, a column name) that can be rejected.</p>
+   * <p>The revision that is to be made to the asset.</p>
    */
-  inline const Aws::Vector<RejectChoice>& GetRejectChoices() const { return m_rejectChoices; }
-  inline bool RejectChoicesHasBeenSet() const { return m_rejectChoicesHasBeenSet; }
-  template <typename RejectChoicesT = Aws::Vector<RejectChoice>>
-  void SetRejectChoices(RejectChoicesT&& value) {
-    m_rejectChoicesHasBeenSet = true;
-    m_rejectChoices = std::forward<RejectChoicesT>(value);
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
   }
-  template <typename RejectChoicesT = Aws::Vector<RejectChoice>>
-  RejectPredictionsRequest& WithRejectChoices(RejectChoicesT&& value) {
-    SetRejectChoices(std::forward<RejectChoicesT>(value));
-    return *this;
-  }
-  template <typename RejectChoicesT = RejectChoice>
-  RejectPredictionsRequest& AddRejectChoices(RejectChoicesT&& value) {
-    m_rejectChoicesHasBeenSet = true;
-    m_rejectChoices.emplace_back(std::forward<RejectChoicesT>(value));
+  template <typename RevisionT = Aws::String>
+  RejectPredictionsRequest& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
@@ -138,39 +112,65 @@ class RejectPredictionsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The revision that is to be made to the asset.</p>
+   * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+   * and the target (for example, a column name) that can be rejected.</p>
    */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
+  inline const Aws::Vector<RejectChoice>& GetRejectChoices() const { return m_rejectChoices; }
+  inline bool RejectChoicesHasBeenSet() const { return m_rejectChoicesHasBeenSet; }
+  template <typename RejectChoicesT = Aws::Vector<RejectChoice>>
+  void SetRejectChoices(RejectChoicesT&& value) {
+    m_rejectChoicesHasBeenSet = true;
+    m_rejectChoices = std::forward<RejectChoicesT>(value);
   }
-  template <typename RevisionT = Aws::String>
-  RejectPredictionsRequest& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
+  template <typename RejectChoicesT = Aws::Vector<RejectChoice>>
+  RejectPredictionsRequest& WithRejectChoices(RejectChoicesT&& value) {
+    SetRejectChoices(std::forward<RejectChoicesT>(value));
+    return *this;
+  }
+  template <typename RejectChoicesT = RejectChoice>
+  RejectPredictionsRequest& AddRejectChoices(RejectChoicesT&& value) {
+    m_rejectChoicesHasBeenSet = true;
+    m_rejectChoices.emplace_back(std::forward<RejectChoicesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  RejectPredictionsRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
-  Aws::Vector<RejectChoice> m_rejectChoices;
+  Aws::String m_revision;
 
   RejectRule m_rejectRule;
 
-  Aws::String m_revision;
-  bool m_clientTokenHasBeenSet = true;
+  Aws::Vector<RejectChoice> m_rejectChoices;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_rejectChoicesHasBeenSet = false;
-  bool m_rejectRuleHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_rejectRuleHasBeenSet = false;
+  bool m_rejectChoicesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

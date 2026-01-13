@@ -30,28 +30,6 @@ class ListEntityOwnersResult {
 
   ///@{
   /**
-   * <p>When the number of entities is greater than the default value for the
-   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
-   * <code>MaxResults</code> that is less than the number of entities, the response
-   * includes a pagination token named <code>NextToken</code>. You can specify this
-   * <code>NextToken</code> value in a subsequent call to
-   * <code>ListEntityOwners</code> to list the next set of entities.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListEntityOwnersResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The owners of the entity.</p>
    */
   inline const Aws::Vector<OwnerPropertiesOutput>& GetOwners() const { return m_owners; }
@@ -74,6 +52,28 @@ class ListEntityOwnersResult {
   ///@}
 
   ///@{
+  /**
+   * <p>When the number of entities is greater than the default value for the
+   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
+   * <code>MaxResults</code> that is less than the number of entities, the response
+   * includes a pagination token named <code>NextToken</code>. You can specify this
+   * <code>NextToken</code> value in a subsequent call to
+   * <code>ListEntityOwners</code> to list the next set of entities.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListEntityOwnersResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -88,13 +88,13 @@ class ListEntityOwnersResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<OwnerPropertiesOutput> m_owners;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
   bool m_ownersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

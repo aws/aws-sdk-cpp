@@ -34,10 +34,6 @@ SparkEmrPropertiesPatch& SparkEmrPropertiesPatch::operator=(JsonView jsonValue) 
     m_logUri = jsonValue.GetString("logUri");
     m_logUriHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("managedEndpointArn")) {
-    m_managedEndpointArn = jsonValue.GetString("managedEndpointArn");
-    m_managedEndpointArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("pythonVirtualEnv")) {
     m_pythonVirtualEnv = jsonValue.GetString("pythonVirtualEnv");
     m_pythonVirtualEnvHasBeenSet = true;
@@ -49,6 +45,10 @@ SparkEmrPropertiesPatch& SparkEmrPropertiesPatch::operator=(JsonView jsonValue) 
   if (jsonValue.ValueExists("trustedCertificatesS3Uri")) {
     m_trustedCertificatesS3Uri = jsonValue.GetString("trustedCertificatesS3Uri");
     m_trustedCertificatesS3UriHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("managedEndpointArn")) {
+    m_managedEndpointArn = jsonValue.GetString("managedEndpointArn");
+    m_managedEndpointArnHasBeenSet = true;
   }
   return *this;
 }
@@ -72,10 +72,6 @@ JsonValue SparkEmrPropertiesPatch::Jsonize() const {
     payload.WithString("logUri", m_logUri);
   }
 
-  if (m_managedEndpointArnHasBeenSet) {
-    payload.WithString("managedEndpointArn", m_managedEndpointArn);
-  }
-
   if (m_pythonVirtualEnvHasBeenSet) {
     payload.WithString("pythonVirtualEnv", m_pythonVirtualEnv);
   }
@@ -86,6 +82,10 @@ JsonValue SparkEmrPropertiesPatch::Jsonize() const {
 
   if (m_trustedCertificatesS3UriHasBeenSet) {
     payload.WithString("trustedCertificatesS3Uri", m_trustedCertificatesS3Uri);
+  }
+
+  if (m_managedEndpointArnHasBeenSet) {
+    payload.WithString("managedEndpointArn", m_managedEndpointArn);
   }
 
   return payload;

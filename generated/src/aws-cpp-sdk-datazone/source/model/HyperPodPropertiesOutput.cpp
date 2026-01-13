@@ -18,13 +18,13 @@ namespace Model {
 HyperPodPropertiesOutput::HyperPodPropertiesOutput(JsonView jsonValue) { *this = jsonValue; }
 
 HyperPodPropertiesOutput& HyperPodPropertiesOutput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("clusterArn")) {
-    m_clusterArn = jsonValue.GetString("clusterArn");
-    m_clusterArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");
     m_clusterNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clusterArn")) {
+    m_clusterArn = jsonValue.GetString("clusterArn");
+    m_clusterArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("orchestrator")) {
     m_orchestrator = HyperPodOrchestratorMapper::GetHyperPodOrchestratorForName(jsonValue.GetString("orchestrator"));
@@ -36,12 +36,12 @@ HyperPodPropertiesOutput& HyperPodPropertiesOutput::operator=(JsonView jsonValue
 JsonValue HyperPodPropertiesOutput::Jsonize() const {
   JsonValue payload;
 
-  if (m_clusterArnHasBeenSet) {
-    payload.WithString("clusterArn", m_clusterArn);
-  }
-
   if (m_clusterNameHasBeenSet) {
     payload.WithString("clusterName", m_clusterName);
+  }
+
+  if (m_clusterArnHasBeenSet) {
+    payload.WithString("clusterArn", m_clusterArn);
   }
 
   if (m_orchestratorHasBeenSet) {

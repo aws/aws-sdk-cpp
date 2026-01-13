@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateGroupProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
   if (m_groupIdentifierHasBeenSet) {
     payload.WithString("groupIdentifier", m_groupIdentifier);
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

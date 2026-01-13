@@ -31,29 +31,6 @@ class BatchPutAttributesMetadataResult {
 
   ///@{
   /**
-   * <p>The results of the BatchPutAttributeMetadata action.</p>
-   */
-  inline const Aws::Vector<BatchPutAttributeOutput>& GetAttributes() const { return m_attributes; }
-  template <typename AttributesT = Aws::Vector<BatchPutAttributeOutput>>
-  void SetAttributes(AttributesT&& value) {
-    m_attributesHasBeenSet = true;
-    m_attributes = std::forward<AttributesT>(value);
-  }
-  template <typename AttributesT = Aws::Vector<BatchPutAttributeOutput>>
-  BatchPutAttributesMetadataResult& WithAttributes(AttributesT&& value) {
-    SetAttributes(std::forward<AttributesT>(value));
-    return *this;
-  }
-  template <typename AttributesT = BatchPutAttributeOutput>
-  BatchPutAttributesMetadataResult& AddAttributes(AttributesT&& value) {
-    m_attributesHasBeenSet = true;
-    m_attributes.emplace_back(std::forward<AttributesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The errors generated when the BatchPutAttributeMetadata action is
    * invoked.</p>
    */
@@ -77,6 +54,29 @@ class BatchPutAttributesMetadataResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The results of the BatchPutAttributeMetadata action.</p>
+   */
+  inline const Aws::Vector<BatchPutAttributeOutput>& GetAttributes() const { return m_attributes; }
+  template <typename AttributesT = Aws::Vector<BatchPutAttributeOutput>>
+  void SetAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes = std::forward<AttributesT>(value);
+  }
+  template <typename AttributesT = Aws::Vector<BatchPutAttributeOutput>>
+  BatchPutAttributesMetadataResult& WithAttributes(AttributesT&& value) {
+    SetAttributes(std::forward<AttributesT>(value));
+    return *this;
+  }
+  template <typename AttributesT = BatchPutAttributeOutput>
+  BatchPutAttributesMetadataResult& AddAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes.emplace_back(std::forward<AttributesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -91,13 +91,13 @@ class BatchPutAttributesMetadataResult {
   }
   ///@}
  private:
-  Aws::Vector<BatchPutAttributeOutput> m_attributes;
-
   Aws::Vector<AttributeError> m_errors;
 
+  Aws::Vector<BatchPutAttributeOutput> m_attributes;
+
   Aws::String m_requestId;
-  bool m_attributesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -18,17 +18,9 @@ namespace Model {
 TimeSeriesDataPointFormInput::TimeSeriesDataPointFormInput(JsonView jsonValue) { *this = jsonValue; }
 
 TimeSeriesDataPointFormInput& TimeSeriesDataPointFormInput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("content")) {
-    m_content = jsonValue.GetString("content");
-    m_contentHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("formName")) {
     m_formName = jsonValue.GetString("formName");
     m_formNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("timestamp")) {
-    m_timestamp = jsonValue.GetDouble("timestamp");
-    m_timestampHasBeenSet = true;
   }
   if (jsonValue.ValueExists("typeIdentifier")) {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
@@ -38,22 +30,22 @@ TimeSeriesDataPointFormInput& TimeSeriesDataPointFormInput::operator=(JsonView j
     m_typeRevision = jsonValue.GetString("typeRevision");
     m_typeRevisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_timestampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("content")) {
+    m_content = jsonValue.GetString("content");
+    m_contentHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TimeSeriesDataPointFormInput::Jsonize() const {
   JsonValue payload;
 
-  if (m_contentHasBeenSet) {
-    payload.WithString("content", m_content);
-  }
-
   if (m_formNameHasBeenSet) {
     payload.WithString("formName", m_formName);
-  }
-
-  if (m_timestampHasBeenSet) {
-    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   if (m_typeIdentifierHasBeenSet) {
@@ -62,6 +54,14 @@ JsonValue TimeSeriesDataPointFormInput::Jsonize() const {
 
   if (m_typeRevisionHasBeenSet) {
     payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
   return payload;

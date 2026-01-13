@@ -30,23 +30,6 @@ class MatchOffset {
 
   ///@{
   /**
-   * <p>The 0-indexed number indicating the end position (exclusive) of a matched
-   * term.</p>
-   */
-  inline int GetEndOffset() const { return m_endOffset; }
-  inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
-  inline void SetEndOffset(int value) {
-    m_endOffsetHasBeenSet = true;
-    m_endOffset = value;
-  }
-  inline MatchOffset& WithEndOffset(int value) {
-    SetEndOffset(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The 0-indexed number indicating the start position (inclusive) of a matched
    * term.</p>
    */
@@ -61,12 +44,29 @@ class MatchOffset {
     return *this;
   }
   ///@}
- private:
-  int m_endOffset{0};
 
+  ///@{
+  /**
+   * <p>The 0-indexed number indicating the end position (exclusive) of a matched
+   * term.</p>
+   */
+  inline int GetEndOffset() const { return m_endOffset; }
+  inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
+  inline void SetEndOffset(int value) {
+    m_endOffsetHasBeenSet = true;
+    m_endOffset = value;
+  }
+  inline MatchOffset& WithEndOffset(int value) {
+    SetEndOffset(value);
+    return *this;
+  }
+  ///@}
+ private:
   int m_startOffset{0};
-  bool m_endOffsetHasBeenSet = false;
+
+  int m_endOffset{0};
   bool m_startOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
 };
 
 }  // namespace Model

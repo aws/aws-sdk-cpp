@@ -34,23 +34,6 @@ class ResourceTagParameter {
 
   ///@{
   /**
-   * <p>Specifies whether the value of the resource tag parameter of the project
-   * profile is editable at the project level.</p>
-   */
-  inline bool GetIsValueEditable() const { return m_isValueEditable; }
-  inline bool IsValueEditableHasBeenSet() const { return m_isValueEditableHasBeenSet; }
-  inline void SetIsValueEditable(bool value) {
-    m_isValueEditableHasBeenSet = true;
-    m_isValueEditable = value;
-  }
-  inline ResourceTagParameter& WithIsValueEditable(bool value) {
-    SetIsValueEditable(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The key of the resource tag parameter of the project profile.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
@@ -84,15 +67,32 @@ class ResourceTagParameter {
     return *this;
   }
   ///@}
- private:
-  bool m_isValueEditable{false};
 
+  ///@{
+  /**
+   * <p>Specifies whether the value of the resource tag parameter of the project
+   * profile is editable at the project level.</p>
+   */
+  inline bool GetIsValueEditable() const { return m_isValueEditable; }
+  inline bool IsValueEditableHasBeenSet() const { return m_isValueEditableHasBeenSet; }
+  inline void SetIsValueEditable(bool value) {
+    m_isValueEditableHasBeenSet = true;
+    m_isValueEditable = value;
+  }
+  inline ResourceTagParameter& WithIsValueEditable(bool value) {
+    SetIsValueEditable(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_key;
 
   Aws::String m_value;
-  bool m_isValueEditableHasBeenSet = false;
+
+  bool m_isValueEditable{false};
   bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_isValueEditableHasBeenSet = false;
 };
 
 }  // namespace Model

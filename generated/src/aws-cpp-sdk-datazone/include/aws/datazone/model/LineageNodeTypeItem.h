@@ -36,6 +36,60 @@ class LineageNodeTypeItem {
 
   ///@{
   /**
+   * <p>The ID of the domain where the data lineage node type lives.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  LineageNodeTypeItem& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the data lineage node type.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  LineageNodeTypeItem& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the data lineage node type.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  LineageNodeTypeItem& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp at which the data lineage node type was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -66,102 +120,6 @@ class LineageNodeTypeItem {
   template <typename CreatedByT = Aws::String>
   LineageNodeTypeItem& WithCreatedBy(CreatedByT&& value) {
     SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the data lineage node type.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  LineageNodeTypeItem& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where the data lineage node type lives.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  LineageNodeTypeItem& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The forms output of the data lineage node type.</p>
-   */
-  inline const Aws::Map<Aws::String, FormEntryOutput>& GetFormsOutput() const { return m_formsOutput; }
-  inline bool FormsOutputHasBeenSet() const { return m_formsOutputHasBeenSet; }
-  template <typename FormsOutputT = Aws::Map<Aws::String, FormEntryOutput>>
-  void SetFormsOutput(FormsOutputT&& value) {
-    m_formsOutputHasBeenSet = true;
-    m_formsOutput = std::forward<FormsOutputT>(value);
-  }
-  template <typename FormsOutputT = Aws::Map<Aws::String, FormEntryOutput>>
-  LineageNodeTypeItem& WithFormsOutput(FormsOutputT&& value) {
-    SetFormsOutput(std::forward<FormsOutputT>(value));
-    return *this;
-  }
-  template <typename FormsOutputKeyT = Aws::String, typename FormsOutputValueT = FormEntryOutput>
-  LineageNodeTypeItem& AddFormsOutput(FormsOutputKeyT&& key, FormsOutputValueT&& value) {
-    m_formsOutputHasBeenSet = true;
-    m_formsOutput.emplace(std::forward<FormsOutputKeyT>(key), std::forward<FormsOutputValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the data lineage node type.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  LineageNodeTypeItem& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the data lineage node type.</p>
-   */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
-  }
-  template <typename RevisionT = Aws::String>
-  LineageNodeTypeItem& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
@@ -201,33 +159,75 @@ class LineageNodeTypeItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the data lineage node type.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  LineageNodeTypeItem& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The forms output of the data lineage node type.</p>
+   */
+  inline const Aws::Map<Aws::String, FormEntryOutput>& GetFormsOutput() const { return m_formsOutput; }
+  inline bool FormsOutputHasBeenSet() const { return m_formsOutputHasBeenSet; }
+  template <typename FormsOutputT = Aws::Map<Aws::String, FormEntryOutput>>
+  void SetFormsOutput(FormsOutputT&& value) {
+    m_formsOutputHasBeenSet = true;
+    m_formsOutput = std::forward<FormsOutputT>(value);
+  }
+  template <typename FormsOutputT = Aws::Map<Aws::String, FormEntryOutput>>
+  LineageNodeTypeItem& WithFormsOutput(FormsOutputT&& value) {
+    SetFormsOutput(std::forward<FormsOutputT>(value));
+    return *this;
+  }
+  template <typename FormsOutputKeyT = Aws::String, typename FormsOutputValueT = FormEntryOutput>
+  LineageNodeTypeItem& AddFormsOutput(FormsOutputKeyT&& key, FormsOutputValueT&& value) {
+    m_formsOutputHasBeenSet = true;
+    m_formsOutput.emplace(std::forward<FormsOutputKeyT>(key), std::forward<FormsOutputValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_domainId;
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
 
-  Aws::String m_description;
-
-  Aws::String m_domainId;
-
-  Aws::Map<Aws::String, FormEntryOutput> m_formsOutput;
-
-  Aws::String m_name;
-
-  Aws::String m_revision;
-
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
+
+  Aws::String m_revision;
+
+  Aws::Map<Aws::String, FormEntryOutput> m_formsOutput;
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_formsOutputHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
 };
 
 }  // namespace Model

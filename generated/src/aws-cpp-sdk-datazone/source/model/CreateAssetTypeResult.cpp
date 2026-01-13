@@ -21,21 +21,21 @@ CreateAssetTypeResult::CreateAssetTypeResult(const Aws::AmazonWebServiceResult<J
 
 CreateAssetTypeResult& CreateAssetTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("revision")) {
+    m_revision = jsonValue.GetString("revision");
+    m_revisionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("formsOutput")) {
     Aws::Map<Aws::String, JsonView> formsOutputJsonMap = jsonValue.GetObject("formsOutput").GetAllObjects();
@@ -44,9 +44,9 @@ CreateAssetTypeResult& CreateAssetTypeResult::operator=(const Aws::AmazonWebServ
     }
     m_formsOutputHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("owningProjectId")) {
+    m_owningProjectId = jsonValue.GetString("owningProjectId");
+    m_owningProjectIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("originDomainId")) {
     m_originDomainId = jsonValue.GetString("originDomainId");
@@ -56,13 +56,13 @@ CreateAssetTypeResult& CreateAssetTypeResult::operator=(const Aws::AmazonWebServ
     m_originProjectId = jsonValue.GetString("originProjectId");
     m_originProjectIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("owningProjectId")) {
-    m_owningProjectId = jsonValue.GetString("owningProjectId");
-    m_owningProjectIdHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("revision")) {
-    m_revision = jsonValue.GetString("revision");
-    m_revisionHasBeenSet = true;
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");

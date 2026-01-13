@@ -28,23 +28,6 @@ class PostLineageEventResult {
 
   ///@{
   /**
-   * <p>The ID of the domain.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  PostLineageEventResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the lineage event.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -56,6 +39,23 @@ class PostLineageEventResult {
   template <typename IdT = Aws::String>
   PostLineageEventResult& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  PostLineageEventResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
     return *this;
   }
   ///@}
@@ -75,13 +75,13 @@ class PostLineageEventResult {
   }
   ///@}
  private:
-  Aws::String m_domainId;
-
   Aws::String m_id;
 
+  Aws::String m_domainId;
+
   Aws::String m_requestId;
-  bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

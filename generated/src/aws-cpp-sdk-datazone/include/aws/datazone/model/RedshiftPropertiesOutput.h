@@ -37,6 +37,24 @@ class RedshiftPropertiesOutput {
 
   ///@{
   /**
+   * <p>The storage in the Amazon Redshift properties.</p>
+   */
+  inline const RedshiftStorageProperties& GetStorage() const { return m_storage; }
+  inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+  template <typename StorageT = RedshiftStorageProperties>
+  void SetStorage(StorageT&& value) {
+    m_storageHasBeenSet = true;
+    m_storage = std::forward<StorageT>(value);
+  }
+  template <typename StorageT = RedshiftStorageProperties>
+  RedshiftPropertiesOutput& WithStorage(StorageT&& value) {
+    SetStorage(std::forward<StorageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Redshift credentials.</p>
    */
   inline const RedshiftCredentials& GetCredentials() const { return m_credentials; }
@@ -49,24 +67,6 @@ class RedshiftPropertiesOutput {
   template <typename CredentialsT = RedshiftCredentials>
   RedshiftPropertiesOutput& WithCredentials(CredentialsT&& value) {
     SetCredentials(std::forward<CredentialsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Redshift database name.</p>
-   */
-  inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
-  inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-  template <typename DatabaseNameT = Aws::String>
-  void SetDatabaseName(DatabaseNameT&& value) {
-    m_databaseNameHasBeenSet = true;
-    m_databaseName = std::forward<DatabaseNameT>(value);
-  }
-  template <typename DatabaseNameT = Aws::String>
-  RedshiftPropertiesOutput& WithDatabaseName(DatabaseNameT&& value) {
-    SetDatabaseName(std::forward<DatabaseNameT>(value));
     return *this;
   }
   ///@}
@@ -125,24 +125,6 @@ class RedshiftPropertiesOutput {
 
   ///@{
   /**
-   * <p>The lineage syn of the Amazon Redshift properties.</p>
-   */
-  inline const RedshiftLineageSyncConfigurationOutput& GetLineageSync() const { return m_lineageSync; }
-  inline bool LineageSyncHasBeenSet() const { return m_lineageSyncHasBeenSet; }
-  template <typename LineageSyncT = RedshiftLineageSyncConfigurationOutput>
-  void SetLineageSync(LineageSyncT&& value) {
-    m_lineageSyncHasBeenSet = true;
-    m_lineageSync = std::forward<LineageSyncT>(value);
-  }
-  template <typename LineageSyncT = RedshiftLineageSyncConfigurationOutput>
-  RedshiftPropertiesOutput& WithLineageSync(LineageSyncT&& value) {
-    SetLineageSync(std::forward<LineageSyncT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The redshiftTempDir of the Amazon Redshift properties.</p>
    */
   inline const Aws::String& GetRedshiftTempDir() const { return m_redshiftTempDir; }
@@ -155,6 +137,24 @@ class RedshiftPropertiesOutput {
   template <typename RedshiftTempDirT = Aws::String>
   RedshiftPropertiesOutput& WithRedshiftTempDir(RedshiftTempDirT&& value) {
     SetRedshiftTempDir(std::forward<RedshiftTempDirT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The lineage syn of the Amazon Redshift properties.</p>
+   */
+  inline const RedshiftLineageSyncConfigurationOutput& GetLineageSync() const { return m_lineageSync; }
+  inline bool LineageSyncHasBeenSet() const { return m_lineageSyncHasBeenSet; }
+  template <typename LineageSyncT = RedshiftLineageSyncConfigurationOutput>
+  void SetLineageSync(LineageSyncT&& value) {
+    m_lineageSyncHasBeenSet = true;
+    m_lineageSync = std::forward<LineageSyncT>(value);
+  }
+  template <typename LineageSyncT = RedshiftLineageSyncConfigurationOutput>
+  RedshiftPropertiesOutput& WithLineageSync(LineageSyncT&& value) {
+    SetLineageSync(std::forward<LineageSyncT>(value));
     return *this;
   }
   ///@}
@@ -177,25 +177,25 @@ class RedshiftPropertiesOutput {
 
   ///@{
   /**
-   * <p>The storage in the Amazon Redshift properties.</p>
+   * <p>The Amazon Redshift database name.</p>
    */
-  inline const RedshiftStorageProperties& GetStorage() const { return m_storage; }
-  inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-  template <typename StorageT = RedshiftStorageProperties>
-  void SetStorage(StorageT&& value) {
-    m_storageHasBeenSet = true;
-    m_storage = std::forward<StorageT>(value);
+  inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
+  inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+  template <typename DatabaseNameT = Aws::String>
+  void SetDatabaseName(DatabaseNameT&& value) {
+    m_databaseNameHasBeenSet = true;
+    m_databaseName = std::forward<DatabaseNameT>(value);
   }
-  template <typename StorageT = RedshiftStorageProperties>
-  RedshiftPropertiesOutput& WithStorage(StorageT&& value) {
-    SetStorage(std::forward<StorageT>(value));
+  template <typename DatabaseNameT = Aws::String>
+  RedshiftPropertiesOutput& WithDatabaseName(DatabaseNameT&& value) {
+    SetDatabaseName(std::forward<DatabaseNameT>(value));
     return *this;
   }
   ///@}
  private:
-  RedshiftCredentials m_credentials;
+  RedshiftStorageProperties m_storage;
 
-  Aws::String m_databaseName;
+  RedshiftCredentials m_credentials;
 
   bool m_isProvisionedSecret{false};
 
@@ -203,22 +203,22 @@ class RedshiftPropertiesOutput {
 
   Aws::String m_jdbcUrl;
 
-  RedshiftLineageSyncConfigurationOutput m_lineageSync;
-
   Aws::String m_redshiftTempDir;
+
+  RedshiftLineageSyncConfigurationOutput m_lineageSync;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
 
-  RedshiftStorageProperties m_storage;
+  Aws::String m_databaseName;
+  bool m_storageHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
-  bool m_databaseNameHasBeenSet = false;
   bool m_isProvisionedSecretHasBeenSet = false;
   bool m_jdbcIamUrlHasBeenSet = false;
   bool m_jdbcUrlHasBeenSet = false;
-  bool m_lineageSyncHasBeenSet = false;
   bool m_redshiftTempDirHasBeenSet = false;
+  bool m_lineageSyncHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_storageHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
 };
 
 }  // namespace Model

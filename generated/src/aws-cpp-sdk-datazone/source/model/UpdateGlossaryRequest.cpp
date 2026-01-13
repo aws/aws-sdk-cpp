@@ -15,20 +15,20 @@ using namespace Aws::Utils;
 Aws::String UpdateGlossaryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("status", GlossaryStatusMapper::GetNameForGlossaryStatus(m_status));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

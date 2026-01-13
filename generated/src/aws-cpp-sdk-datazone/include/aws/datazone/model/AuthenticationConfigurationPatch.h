@@ -35,24 +35,6 @@ class AuthenticationConfigurationPatch {
 
   ///@{
   /**
-   * <p>The basic authentication credentials of a connection.</p>
-   */
-  inline const BasicAuthenticationCredentials& GetBasicAuthenticationCredentials() const { return m_basicAuthenticationCredentials; }
-  inline bool BasicAuthenticationCredentialsHasBeenSet() const { return m_basicAuthenticationCredentialsHasBeenSet; }
-  template <typename BasicAuthenticationCredentialsT = BasicAuthenticationCredentials>
-  void SetBasicAuthenticationCredentials(BasicAuthenticationCredentialsT&& value) {
-    m_basicAuthenticationCredentialsHasBeenSet = true;
-    m_basicAuthenticationCredentials = std::forward<BasicAuthenticationCredentialsT>(value);
-  }
-  template <typename BasicAuthenticationCredentialsT = BasicAuthenticationCredentials>
-  AuthenticationConfigurationPatch& WithBasicAuthenticationCredentials(BasicAuthenticationCredentialsT&& value) {
-    SetBasicAuthenticationCredentials(std::forward<BasicAuthenticationCredentialsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The secret ARN of a connection.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
@@ -68,12 +50,30 @@ class AuthenticationConfigurationPatch {
     return *this;
   }
   ///@}
- private:
-  BasicAuthenticationCredentials m_basicAuthenticationCredentials;
 
+  ///@{
+  /**
+   * <p>The basic authentication credentials of a connection.</p>
+   */
+  inline const BasicAuthenticationCredentials& GetBasicAuthenticationCredentials() const { return m_basicAuthenticationCredentials; }
+  inline bool BasicAuthenticationCredentialsHasBeenSet() const { return m_basicAuthenticationCredentialsHasBeenSet; }
+  template <typename BasicAuthenticationCredentialsT = BasicAuthenticationCredentials>
+  void SetBasicAuthenticationCredentials(BasicAuthenticationCredentialsT&& value) {
+    m_basicAuthenticationCredentialsHasBeenSet = true;
+    m_basicAuthenticationCredentials = std::forward<BasicAuthenticationCredentialsT>(value);
+  }
+  template <typename BasicAuthenticationCredentialsT = BasicAuthenticationCredentials>
+  AuthenticationConfigurationPatch& WithBasicAuthenticationCredentials(BasicAuthenticationCredentialsT&& value) {
+    SetBasicAuthenticationCredentials(std::forward<BasicAuthenticationCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_secretArn;
-  bool m_basicAuthenticationCredentialsHasBeenSet = false;
+
+  BasicAuthenticationCredentials m_basicAuthenticationCredentials;
   bool m_secretArnHasBeenSet = false;
+  bool m_basicAuthenticationCredentialsHasBeenSet = false;
 };
 
 }  // namespace Model

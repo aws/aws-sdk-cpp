@@ -80,23 +80,6 @@ class GetTimeSeriesDataPointResult {
 
   ///@{
   /**
-   * <p>The time series form that houses the data point that you want to get.</p>
-   */
-  inline const TimeSeriesDataPointFormOutput& GetForm() const { return m_form; }
-  template <typename FormT = TimeSeriesDataPointFormOutput>
-  void SetForm(FormT&& value) {
-    m_formHasBeenSet = true;
-    m_form = std::forward<FormT>(value);
-  }
-  template <typename FormT = TimeSeriesDataPointFormOutput>
-  GetTimeSeriesDataPointResult& WithForm(FormT&& value) {
-    SetForm(std::forward<FormT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the time series form that houses the data point that you want to
    * get.</p>
    */
@@ -109,6 +92,23 @@ class GetTimeSeriesDataPointResult {
   template <typename FormNameT = Aws::String>
   GetTimeSeriesDataPointResult& WithFormName(FormNameT&& value) {
     SetFormName(std::forward<FormNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time series form that houses the data point that you want to get.</p>
+   */
+  inline const TimeSeriesDataPointFormOutput& GetForm() const { return m_form; }
+  template <typename FormT = TimeSeriesDataPointFormOutput>
+  void SetForm(FormT&& value) {
+    m_formHasBeenSet = true;
+    m_form = std::forward<FormT>(value);
+  }
+  template <typename FormT = TimeSeriesDataPointFormOutput>
+  GetTimeSeriesDataPointResult& WithForm(FormT&& value) {
+    SetForm(std::forward<FormT>(value));
     return *this;
   }
   ///@}
@@ -134,16 +134,16 @@ class GetTimeSeriesDataPointResult {
 
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
 
-  TimeSeriesDataPointFormOutput m_form;
-
   Aws::String m_formName;
+
+  TimeSeriesDataPointFormOutput m_form;
 
   Aws::String m_requestId;
   bool m_domainIdHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
-  bool m_formHasBeenSet = false;
   bool m_formNameHasBeenSet = false;
+  bool m_formHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

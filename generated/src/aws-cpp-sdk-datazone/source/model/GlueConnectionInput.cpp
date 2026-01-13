@@ -18,17 +18,6 @@ namespace Model {
 GlueConnectionInput::GlueConnectionInput(JsonView jsonValue) { *this = jsonValue; }
 
 GlueConnectionInput& GlueConnectionInput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("athenaProperties")) {
-    Aws::Map<Aws::String, JsonView> athenaPropertiesJsonMap = jsonValue.GetObject("athenaProperties").GetAllObjects();
-    for (auto& athenaPropertiesItem : athenaPropertiesJsonMap) {
-      m_athenaProperties[athenaPropertiesItem.first] = athenaPropertiesItem.second.AsString();
-    }
-    m_athenaPropertiesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("authenticationConfiguration")) {
-    m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
-    m_authenticationConfigurationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("connectionProperties")) {
     Aws::Map<Aws::String, JsonView> connectionPropertiesJsonMap = jsonValue.GetObject("connectionProperties").GetAllObjects();
     for (auto& connectionPropertiesItem : connectionPropertiesJsonMap) {
@@ -36,39 +25,25 @@ GlueConnectionInput& GlueConnectionInput::operator=(JsonView jsonValue) {
     }
     m_connectionPropertiesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("connectionType")) {
-    m_connectionType = GlueConnectionTypeMapper::GetGlueConnectionTypeForName(jsonValue.GetString("connectionType"));
-    m_connectionTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("matchCriteria")) {
-    m_matchCriteria = jsonValue.GetString("matchCriteria");
-    m_matchCriteriaHasBeenSet = true;
+  if (jsonValue.ValueExists("physicalConnectionRequirements")) {
+    m_physicalConnectionRequirements = jsonValue.GetObject("physicalConnectionRequirements");
+    m_physicalConnectionRequirementsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("physicalConnectionRequirements")) {
-    m_physicalConnectionRequirements = jsonValue.GetObject("physicalConnectionRequirements");
-    m_physicalConnectionRequirementsHasBeenSet = true;
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("pythonProperties")) {
-    Aws::Map<Aws::String, JsonView> pythonPropertiesJsonMap = jsonValue.GetObject("pythonProperties").GetAllObjects();
-    for (auto& pythonPropertiesItem : pythonPropertiesJsonMap) {
-      m_pythonProperties[pythonPropertiesItem.first] = pythonPropertiesItem.second.AsString();
-    }
-    m_pythonPropertiesHasBeenSet = true;
+  if (jsonValue.ValueExists("connectionType")) {
+    m_connectionType = GlueConnectionTypeMapper::GetGlueConnectionTypeForName(jsonValue.GetString("connectionType"));
+    m_connectionTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sparkProperties")) {
-    Aws::Map<Aws::String, JsonView> sparkPropertiesJsonMap = jsonValue.GetObject("sparkProperties").GetAllObjects();
-    for (auto& sparkPropertiesItem : sparkPropertiesJsonMap) {
-      m_sparkProperties[sparkPropertiesItem.first] = sparkPropertiesItem.second.AsString();
-    }
-    m_sparkPropertiesHasBeenSet = true;
+  if (jsonValue.ValueExists("matchCriteria")) {
+    m_matchCriteria = jsonValue.GetString("matchCriteria");
+    m_matchCriteriaHasBeenSet = true;
   }
   if (jsonValue.ValueExists("validateCredentials")) {
     m_validateCredentials = jsonValue.GetBool("validateCredentials");
@@ -83,23 +58,36 @@ GlueConnectionInput& GlueConnectionInput::operator=(JsonView jsonValue) {
     }
     m_validateForComputeEnvironmentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sparkProperties")) {
+    Aws::Map<Aws::String, JsonView> sparkPropertiesJsonMap = jsonValue.GetObject("sparkProperties").GetAllObjects();
+    for (auto& sparkPropertiesItem : sparkPropertiesJsonMap) {
+      m_sparkProperties[sparkPropertiesItem.first] = sparkPropertiesItem.second.AsString();
+    }
+    m_sparkPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("athenaProperties")) {
+    Aws::Map<Aws::String, JsonView> athenaPropertiesJsonMap = jsonValue.GetObject("athenaProperties").GetAllObjects();
+    for (auto& athenaPropertiesItem : athenaPropertiesJsonMap) {
+      m_athenaProperties[athenaPropertiesItem.first] = athenaPropertiesItem.second.AsString();
+    }
+    m_athenaPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("pythonProperties")) {
+    Aws::Map<Aws::String, JsonView> pythonPropertiesJsonMap = jsonValue.GetObject("pythonProperties").GetAllObjects();
+    for (auto& pythonPropertiesItem : pythonPropertiesJsonMap) {
+      m_pythonProperties[pythonPropertiesItem.first] = pythonPropertiesItem.second.AsString();
+    }
+    m_pythonPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("authenticationConfiguration")) {
+    m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
+    m_authenticationConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue GlueConnectionInput::Jsonize() const {
   JsonValue payload;
-
-  if (m_athenaPropertiesHasBeenSet) {
-    JsonValue athenaPropertiesJsonMap;
-    for (auto& athenaPropertiesItem : m_athenaProperties) {
-      athenaPropertiesJsonMap.WithString(athenaPropertiesItem.first, athenaPropertiesItem.second);
-    }
-    payload.WithObject("athenaProperties", std::move(athenaPropertiesJsonMap));
-  }
-
-  if (m_authenticationConfigurationHasBeenSet) {
-    payload.WithObject("authenticationConfiguration", m_authenticationConfiguration.Jsonize());
-  }
 
   if (m_connectionPropertiesHasBeenSet) {
     JsonValue connectionPropertiesJsonMap;
@@ -109,40 +97,24 @@ JsonValue GlueConnectionInput::Jsonize() const {
     payload.WithObject("connectionProperties", std::move(connectionPropertiesJsonMap));
   }
 
-  if (m_connectionTypeHasBeenSet) {
-    payload.WithString("connectionType", GlueConnectionTypeMapper::GetNameForGlueConnectionType(m_connectionType));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
-  if (m_matchCriteriaHasBeenSet) {
-    payload.WithString("matchCriteria", m_matchCriteria);
+  if (m_physicalConnectionRequirementsHasBeenSet) {
+    payload.WithObject("physicalConnectionRequirements", m_physicalConnectionRequirements.Jsonize());
   }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
-  if (m_physicalConnectionRequirementsHasBeenSet) {
-    payload.WithObject("physicalConnectionRequirements", m_physicalConnectionRequirements.Jsonize());
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if (m_pythonPropertiesHasBeenSet) {
-    JsonValue pythonPropertiesJsonMap;
-    for (auto& pythonPropertiesItem : m_pythonProperties) {
-      pythonPropertiesJsonMap.WithString(pythonPropertiesItem.first, pythonPropertiesItem.second);
-    }
-    payload.WithObject("pythonProperties", std::move(pythonPropertiesJsonMap));
+  if (m_connectionTypeHasBeenSet) {
+    payload.WithString("connectionType", GlueConnectionTypeMapper::GetNameForGlueConnectionType(m_connectionType));
   }
 
-  if (m_sparkPropertiesHasBeenSet) {
-    JsonValue sparkPropertiesJsonMap;
-    for (auto& sparkPropertiesItem : m_sparkProperties) {
-      sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
-    }
-    payload.WithObject("sparkProperties", std::move(sparkPropertiesJsonMap));
+  if (m_matchCriteriaHasBeenSet) {
+    payload.WithString("matchCriteria", m_matchCriteria);
   }
 
   if (m_validateCredentialsHasBeenSet) {
@@ -157,6 +129,34 @@ JsonValue GlueConnectionInput::Jsonize() const {
           ComputeEnvironmentsMapper::GetNameForComputeEnvironments(m_validateForComputeEnvironments[validateForComputeEnvironmentsIndex]));
     }
     payload.WithArray("validateForComputeEnvironments", std::move(validateForComputeEnvironmentsJsonList));
+  }
+
+  if (m_sparkPropertiesHasBeenSet) {
+    JsonValue sparkPropertiesJsonMap;
+    for (auto& sparkPropertiesItem : m_sparkProperties) {
+      sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
+    }
+    payload.WithObject("sparkProperties", std::move(sparkPropertiesJsonMap));
+  }
+
+  if (m_athenaPropertiesHasBeenSet) {
+    JsonValue athenaPropertiesJsonMap;
+    for (auto& athenaPropertiesItem : m_athenaProperties) {
+      athenaPropertiesJsonMap.WithString(athenaPropertiesItem.first, athenaPropertiesItem.second);
+    }
+    payload.WithObject("athenaProperties", std::move(athenaPropertiesJsonMap));
+  }
+
+  if (m_pythonPropertiesHasBeenSet) {
+    JsonValue pythonPropertiesJsonMap;
+    for (auto& pythonPropertiesItem : m_pythonProperties) {
+      pythonPropertiesJsonMap.WithString(pythonPropertiesItem.first, pythonPropertiesItem.second);
+    }
+    payload.WithObject("pythonProperties", std::move(pythonPropertiesJsonMap));
+  }
+
+  if (m_authenticationConfigurationHasBeenSet) {
+    payload.WithObject("authenticationConfiguration", m_authenticationConfiguration.Jsonize());
   }
 
   return payload;

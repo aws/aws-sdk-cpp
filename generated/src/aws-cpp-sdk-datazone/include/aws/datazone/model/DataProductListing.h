@@ -37,24 +37,6 @@ class DataProductListing {
 
   ///@{
   /**
-   * <p>The timestamp at which the data product listing was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  DataProductListing& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the data product listing.</p>
    */
   inline const Aws::String& GetDataProductId() const { return m_dataProductId; }
@@ -85,6 +67,24 @@ class DataProductListing {
   template <typename DataProductRevisionT = Aws::String>
   DataProductListing& WithDataProductRevision(DataProductRevisionT&& value) {
     SetDataProductRevision(std::forward<DataProductRevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the data product listing was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DataProductListing& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -133,6 +133,24 @@ class DataProductListing {
 
   ///@{
   /**
+   * <p>The ID of the owning project of the data product listing.</p>
+   */
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  }
+  template <typename OwningProjectIdT = Aws::String>
+  DataProductListing& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data assets of the data product listing.</p>
    */
   inline const Aws::Vector<ListingSummary>& GetItems() const { return m_items; }
@@ -154,45 +172,27 @@ class DataProductListing {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the owning project of the data product listing.</p>
-   */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
-  }
-  template <typename OwningProjectIdT = Aws::String>
-  DataProductListing& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
   Aws::String m_dataProductId;
 
   Aws::String m_dataProductRevision;
+
+  Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_forms;
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
 
-  Aws::Vector<ListingSummary> m_items;
-
   Aws::String m_owningProjectId;
-  bool m_createdAtHasBeenSet = false;
+
+  Aws::Vector<ListingSummary> m_items;
   bool m_dataProductIdHasBeenSet = false;
   bool m_dataProductRevisionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_formsHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
-  bool m_itemsHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
 };
 
 }  // namespace Model

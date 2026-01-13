@@ -60,13 +60,13 @@ UpdateConnectionResult& UpdateConnectionResult::operator=(const Aws::AmazonWebSe
     m_props = jsonValue.GetObject("props");
     m_propsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("scope")) {
-    m_scope = ConnectionScopeMapper::GetConnectionScopeForName(jsonValue.GetString("scope"));
-    m_scopeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scope")) {
+    m_scope = ConnectionScopeMapper::GetConnectionScopeForName(jsonValue.GetString("scope"));
+    m_scopeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -34,6 +34,25 @@ class CustomAccountPoolHandler {
 
   ///@{
   /**
+   * <p>The ARN of the Amazon Web Services Lambda function for the custom Amazon Web
+   * Services Lambda handler.</p>
+   */
+  inline const Aws::String& GetLambdaFunctionArn() const { return m_lambdaFunctionArn; }
+  inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
+  template <typename LambdaFunctionArnT = Aws::String>
+  void SetLambdaFunctionArn(LambdaFunctionArnT&& value) {
+    m_lambdaFunctionArnHasBeenSet = true;
+    m_lambdaFunctionArn = std::forward<LambdaFunctionArnT>(value);
+  }
+  template <typename LambdaFunctionArnT = Aws::String>
+  CustomAccountPoolHandler& WithLambdaFunctionArn(LambdaFunctionArnT&& value) {
+    SetLambdaFunctionArn(std::forward<LambdaFunctionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the IAM role that enables Amazon SageMaker Unified Studio to
    * invoke the Amazon Web Services Lambda funtion if the account source is the
    * custom account pool handler.</p>
@@ -51,31 +70,12 @@ class CustomAccountPoolHandler {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ARN of the Amazon Web Services Lambda function for the custom Amazon Web
-   * Services Lambda handler.</p>
-   */
-  inline const Aws::String& GetLambdaFunctionArn() const { return m_lambdaFunctionArn; }
-  inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
-  template <typename LambdaFunctionArnT = Aws::String>
-  void SetLambdaFunctionArn(LambdaFunctionArnT&& value) {
-    m_lambdaFunctionArnHasBeenSet = true;
-    m_lambdaFunctionArn = std::forward<LambdaFunctionArnT>(value);
-  }
-  template <typename LambdaFunctionArnT = Aws::String>
-  CustomAccountPoolHandler& WithLambdaFunctionArn(LambdaFunctionArnT&& value) {
-    SetLambdaFunctionArn(std::forward<LambdaFunctionArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_lambdaExecutionRoleArn;
-
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaExecutionRoleArnHasBeenSet = false;
+
+  Aws::String m_lambdaExecutionRoleArn;
   bool m_lambdaFunctionArnHasBeenSet = false;
+  bool m_lambdaExecutionRoleArnHasBeenSet = false;
 };
 
 }  // namespace Model

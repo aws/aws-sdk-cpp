@@ -36,6 +36,24 @@ class DeleteDomainRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon Web Services domain that is to be deleted.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  DeleteDomainRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier that is provided to ensure the
    * idempotency of the request.</p>
    */
@@ -49,24 +67,6 @@ class DeleteDomainRequest : public DataZoneRequest {
   template <typename ClientTokenT = Aws::String>
   DeleteDomainRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the Amazon Web Services domain that is to be deleted.</p>
-   */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
-  }
-  template <typename IdentifierT = Aws::String>
-  DeleteDomainRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
     return *this;
   }
   ///@}
@@ -88,13 +88,13 @@ class DeleteDomainRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_identifier;
 
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
   bool m_skipDeletionCheck{false};
-  bool m_clientTokenHasBeenSet = true;
   bool m_identifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_skipDeletionCheckHasBeenSet = false;
 };
 

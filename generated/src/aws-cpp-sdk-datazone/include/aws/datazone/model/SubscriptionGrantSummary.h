@@ -38,42 +38,18 @@ class SubscriptionGrantSummary {
 
   ///@{
   /**
-   * <p>The assets included in the subscription grant.</p>
+   * <p>The identifier of the subscription grant.</p>
    */
-  inline const Aws::Vector<SubscribedAsset>& GetAssets() const { return m_assets; }
-  inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
-  template <typename AssetsT = Aws::Vector<SubscribedAsset>>
-  void SetAssets(AssetsT&& value) {
-    m_assetsHasBeenSet = true;
-    m_assets = std::forward<AssetsT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename AssetsT = Aws::Vector<SubscribedAsset>>
-  SubscriptionGrantSummary& WithAssets(AssetsT&& value) {
-    SetAssets(std::forward<AssetsT>(value));
-    return *this;
-  }
-  template <typename AssetsT = SubscribedAsset>
-  SubscriptionGrantSummary& AddAssets(AssetsT&& value) {
-    m_assetsHasBeenSet = true;
-    m_assets.emplace_back(std::forward<AssetsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when a subscription grant was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  SubscriptionGrantSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename IdT = Aws::String>
+  SubscriptionGrantSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
     return *this;
   }
   ///@}
@@ -92,6 +68,24 @@ class SubscriptionGrantSummary {
   template <typename CreatedByT = Aws::String>
   SubscriptionGrantSummary& WithCreatedBy(CreatedByT&& value) {
     SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who updated the subscription grant.</p>
+   */
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
+  }
+  template <typename UpdatedByT = Aws::String>
+  SubscriptionGrantSummary& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
     return *this;
   }
   ///@}
@@ -117,88 +111,18 @@ class SubscriptionGrantSummary {
 
   ///@{
   /**
-   * <p>The environment ID of the subscription grant.</p>
+   * <p>The timestamp of when a subscription grant was created.</p>
    */
-  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
-  inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-  template <typename EnvironmentIdT = Aws::String>
-  void SetEnvironmentId(EnvironmentIdT&& value) {
-    m_environmentIdHasBeenSet = true;
-    m_environmentId = std::forward<EnvironmentIdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename EnvironmentIdT = Aws::String>
-  SubscriptionGrantSummary& WithEnvironmentId(EnvironmentIdT&& value) {
-    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The entity to which the subscription is granted.</p>
-   */
-  inline const GrantedEntity& GetGrantedEntity() const { return m_grantedEntity; }
-  inline bool GrantedEntityHasBeenSet() const { return m_grantedEntityHasBeenSet; }
-  template <typename GrantedEntityT = GrantedEntity>
-  void SetGrantedEntity(GrantedEntityT&& value) {
-    m_grantedEntityHasBeenSet = true;
-    m_grantedEntity = std::forward<GrantedEntityT>(value);
-  }
-  template <typename GrantedEntityT = GrantedEntity>
-  SubscriptionGrantSummary& WithGrantedEntity(GrantedEntityT&& value) {
-    SetGrantedEntity(std::forward<GrantedEntityT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the subscription grant.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  SubscriptionGrantSummary& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the subscription grant.</p>
-   */
-  inline SubscriptionGrantOverallStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(SubscriptionGrantOverallStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline SubscriptionGrantSummary& WithStatus(SubscriptionGrantOverallStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the target of the subscription grant.</p>
-   */
-  inline const Aws::String& GetSubscriptionTargetId() const { return m_subscriptionTargetId; }
-  inline bool SubscriptionTargetIdHasBeenSet() const { return m_subscriptionTargetIdHasBeenSet; }
-  template <typename SubscriptionTargetIdT = Aws::String>
-  void SetSubscriptionTargetId(SubscriptionTargetIdT&& value) {
-    m_subscriptionTargetIdHasBeenSet = true;
-    m_subscriptionTargetId = std::forward<SubscriptionTargetIdT>(value);
-  }
-  template <typename SubscriptionTargetIdT = Aws::String>
-  SubscriptionGrantSummary& WithSubscriptionTargetId(SubscriptionTargetIdT&& value) {
-    SetSubscriptionTargetId(std::forward<SubscriptionTargetIdT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  SubscriptionGrantSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -223,54 +147,130 @@ class SubscriptionGrantSummary {
 
   ///@{
   /**
-   * <p>The Amazon DataZone user who updated the subscription grant.</p>
+   * <p>The environment ID of the subscription grant.</p>
    */
-  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
-  inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
-  template <typename UpdatedByT = Aws::String>
-  void SetUpdatedBy(UpdatedByT&& value) {
-    m_updatedByHasBeenSet = true;
-    m_updatedBy = std::forward<UpdatedByT>(value);
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
   }
-  template <typename UpdatedByT = Aws::String>
-  SubscriptionGrantSummary& WithUpdatedBy(UpdatedByT&& value) {
-    SetUpdatedBy(std::forward<UpdatedByT>(value));
+  template <typename EnvironmentIdT = Aws::String>
+  SubscriptionGrantSummary& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the target of the subscription grant.</p>
+   */
+  inline const Aws::String& GetSubscriptionTargetId() const { return m_subscriptionTargetId; }
+  inline bool SubscriptionTargetIdHasBeenSet() const { return m_subscriptionTargetIdHasBeenSet; }
+  template <typename SubscriptionTargetIdT = Aws::String>
+  void SetSubscriptionTargetId(SubscriptionTargetIdT&& value) {
+    m_subscriptionTargetIdHasBeenSet = true;
+    m_subscriptionTargetId = std::forward<SubscriptionTargetIdT>(value);
+  }
+  template <typename SubscriptionTargetIdT = Aws::String>
+  SubscriptionGrantSummary& WithSubscriptionTargetId(SubscriptionTargetIdT&& value) {
+    SetSubscriptionTargetId(std::forward<SubscriptionTargetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The entity to which the subscription is granted.</p>
+   */
+  inline const GrantedEntity& GetGrantedEntity() const { return m_grantedEntity; }
+  inline bool GrantedEntityHasBeenSet() const { return m_grantedEntityHasBeenSet; }
+  template <typename GrantedEntityT = GrantedEntity>
+  void SetGrantedEntity(GrantedEntityT&& value) {
+    m_grantedEntityHasBeenSet = true;
+    m_grantedEntity = std::forward<GrantedEntityT>(value);
+  }
+  template <typename GrantedEntityT = GrantedEntity>
+  SubscriptionGrantSummary& WithGrantedEntity(GrantedEntityT&& value) {
+    SetGrantedEntity(std::forward<GrantedEntityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the subscription grant.</p>
+   */
+  inline SubscriptionGrantOverallStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(SubscriptionGrantOverallStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline SubscriptionGrantSummary& WithStatus(SubscriptionGrantOverallStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The assets included in the subscription grant.</p>
+   */
+  inline const Aws::Vector<SubscribedAsset>& GetAssets() const { return m_assets; }
+  inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
+  template <typename AssetsT = Aws::Vector<SubscribedAsset>>
+  void SetAssets(AssetsT&& value) {
+    m_assetsHasBeenSet = true;
+    m_assets = std::forward<AssetsT>(value);
+  }
+  template <typename AssetsT = Aws::Vector<SubscribedAsset>>
+  SubscriptionGrantSummary& WithAssets(AssetsT&& value) {
+    SetAssets(std::forward<AssetsT>(value));
+    return *this;
+  }
+  template <typename AssetsT = SubscribedAsset>
+  SubscriptionGrantSummary& AddAssets(AssetsT&& value) {
+    m_assetsHasBeenSet = true;
+    m_assets.emplace_back(std::forward<AssetsT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<SubscribedAsset> m_assets;
-
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_id;
 
   Aws::String m_createdBy;
 
+  Aws::String m_updatedBy;
+
   Aws::String m_domainId;
 
-  Aws::String m_environmentId;
-
-  GrantedEntity m_grantedEntity;
-
-  Aws::String m_id;
-
-  SubscriptionGrantOverallStatus m_status{SubscriptionGrantOverallStatus::NOT_SET};
-
-  Aws::String m_subscriptionTargetId;
+  Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
 
-  Aws::String m_updatedBy;
-  bool m_assetsHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
-  bool m_environmentIdHasBeenSet = false;
-  bool m_grantedEntityHasBeenSet = false;
+  Aws::String m_environmentId;
+
+  Aws::String m_subscriptionTargetId;
+
+  GrantedEntity m_grantedEntity;
+
+  SubscriptionGrantOverallStatus m_status{SubscriptionGrantOverallStatus::NOT_SET};
+
+  Aws::Vector<SubscribedAsset> m_assets;
   bool m_idHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_subscriptionTargetIdHasBeenSet = false;
-  bool m_updatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_subscriptionTargetIdHasBeenSet = false;
+  bool m_grantedEntityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_assetsHasBeenSet = false;
 };
 
 }  // namespace Model

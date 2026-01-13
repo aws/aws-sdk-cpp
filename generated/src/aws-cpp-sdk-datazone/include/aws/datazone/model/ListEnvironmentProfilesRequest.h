@@ -35,6 +35,24 @@ class ListEnvironmentProfilesRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  ListEnvironmentProfilesRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the Amazon Web Services account where you want to list
    * environment profiles.</p>
    */
@@ -73,24 +91,6 @@ class ListEnvironmentProfilesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone domain.</p>
-   */
-  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-  template <typename DomainIdentifierT = Aws::String>
-  void SetDomainIdentifier(DomainIdentifierT&& value) {
-    m_domainIdentifierHasBeenSet = true;
-    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
-  }
-  template <typename DomainIdentifierT = Aws::String>
-  ListEnvironmentProfilesRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
-    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the blueprint that was used to create the environment
    * profiles that you want to list.</p>
    */
@@ -110,21 +110,18 @@ class ListEnvironmentProfilesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of environment profiles to return in a single call to
-   * <code>ListEnvironmentProfiles</code>. When the number of environment profiles to
-   * be listed is greater than the value of <code>MaxResults</code>, the response
-   * contains a <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListEnvironmentProfiles</code> to list the next set of environment
-   * profiles.</p>
+   * <p>The identifier of the Amazon DataZone project.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
   }
-  inline ListEnvironmentProfilesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename ProjectIdentifierT = Aws::String>
+  ListEnvironmentProfilesRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -173,45 +170,48 @@ class ListEnvironmentProfilesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone project.</p>
+   * <p>The maximum number of environment profiles to return in a single call to
+   * <code>ListEnvironmentProfiles</code>. When the number of environment profiles to
+   * be listed is greater than the value of <code>MaxResults</code>, the response
+   * contains a <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListEnvironmentProfiles</code> to list the next set of environment
+   * profiles.</p>
    */
-  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
-  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-  template <typename ProjectIdentifierT = Aws::String>
-  void SetProjectIdentifier(ProjectIdentifierT&& value) {
-    m_projectIdentifierHasBeenSet = true;
-    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename ProjectIdentifierT = Aws::String>
-  ListEnvironmentProfilesRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
-    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+  inline ListEnvironmentProfilesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
  private:
+  Aws::String m_domainIdentifier;
+
   Aws::String m_awsAccountId;
 
   Aws::String m_awsAccountRegion;
 
-  Aws::String m_domainIdentifier;
-
   Aws::String m_environmentBlueprintIdentifier;
 
-  int m_maxResults{0};
+  Aws::String m_projectIdentifier;
 
   Aws::String m_name;
 
   Aws::String m_nextToken;
 
-  Aws::String m_projectIdentifier;
+  int m_maxResults{0};
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_awsAccountRegionHasBeenSet = false;
-  bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentBlueprintIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_projectIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -32,22 +32,6 @@ class CreateProjectMembershipRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The designation of the project membership.</p>
-   */
-  inline UserDesignation GetDesignation() const { return m_designation; }
-  inline bool DesignationHasBeenSet() const { return m_designationHasBeenSet; }
-  inline void SetDesignation(UserDesignation value) {
-    m_designationHasBeenSet = true;
-    m_designation = value;
-  }
-  inline CreateProjectMembershipRequest& WithDesignation(UserDesignation value) {
-    SetDesignation(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Amazon DataZone domain in which project membership is
    * created.</p>
    */
@@ -61,6 +45,24 @@ class CreateProjectMembershipRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   CreateProjectMembershipRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project for which this project membership was created.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  CreateProjectMembershipRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -85,33 +87,31 @@ class CreateProjectMembershipRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the project for which this project membership was created.</p>
+   * <p>The designation of the project membership.</p>
    */
-  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
-  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-  template <typename ProjectIdentifierT = Aws::String>
-  void SetProjectIdentifier(ProjectIdentifierT&& value) {
-    m_projectIdentifierHasBeenSet = true;
-    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  inline UserDesignation GetDesignation() const { return m_designation; }
+  inline bool DesignationHasBeenSet() const { return m_designationHasBeenSet; }
+  inline void SetDesignation(UserDesignation value) {
+    m_designationHasBeenSet = true;
+    m_designation = value;
   }
-  template <typename ProjectIdentifierT = Aws::String>
-  CreateProjectMembershipRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
-    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
+  inline CreateProjectMembershipRequest& WithDesignation(UserDesignation value) {
+    SetDesignation(value);
     return *this;
   }
   ///@}
  private:
-  UserDesignation m_designation{UserDesignation::NOT_SET};
-
   Aws::String m_domainIdentifier;
+
+  Aws::String m_projectIdentifier;
 
   Member m_member;
 
-  Aws::String m_projectIdentifier;
-  bool m_designationHasBeenSet = false;
+  UserDesignation m_designation{UserDesignation::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_memberHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
+  bool m_designationHasBeenSet = false;
 };
 
 }  // namespace Model

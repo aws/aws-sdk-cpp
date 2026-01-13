@@ -18,13 +18,13 @@ namespace Model {
 ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 ScheduleConfiguration& ScheduleConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("schedule")) {
-    m_schedule = jsonValue.GetString("schedule");
-    m_scheduleHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("timezone")) {
     m_timezone = TimezoneMapper::GetTimezoneForName(jsonValue.GetString("timezone"));
     m_timezoneHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("schedule")) {
+    m_schedule = jsonValue.GetString("schedule");
+    m_scheduleHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ScheduleConfiguration& ScheduleConfiguration::operator=(JsonView jsonValue) {
 JsonValue ScheduleConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_scheduleHasBeenSet) {
-    payload.WithString("schedule", m_schedule);
-  }
-
   if (m_timezoneHasBeenSet) {
     payload.WithString("timezone", TimezoneMapper::GetNameForTimezone(m_timezone));
+  }
+
+  if (m_scheduleHasBeenSet) {
+    payload.WithString("schedule", m_schedule);
   }
 
   return payload;

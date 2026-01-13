@@ -19,21 +19,21 @@ Aws::String ListTimeSeriesDataPointsRequest::SerializePayload() const { return {
 
 void ListTimeSeriesDataPointsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_endedAtHasBeenSet) {
-    ss << m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    uri.AddQueryStringParameter("endedAt", ss.str());
-    ss.str("");
-  }
-
   if (m_formNameHasBeenSet) {
     ss << m_formName;
     uri.AddQueryStringParameter("formName", ss.str());
     ss.str("");
   }
 
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
+  if (m_startedAtHasBeenSet) {
+    ss << m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("startedAt", ss.str());
+    ss.str("");
+  }
+
+  if (m_endedAtHasBeenSet) {
+    ss << m_endedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("endedAt", ss.str());
     ss.str("");
   }
 
@@ -43,9 +43,9 @@ void ListTimeSeriesDataPointsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_startedAtHasBeenSet) {
-    ss << m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    uri.AddQueryStringParameter("startedAt", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 }

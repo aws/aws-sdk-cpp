@@ -18,21 +18,21 @@ namespace Model {
 Resource::Resource(JsonView jsonValue) { *this = jsonValue; }
 
 Resource& Resource::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("provider")) {
     m_provider = jsonValue.GetString("provider");
     m_providerHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = jsonValue.GetString("type");
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
   }
   return *this;
 }
@@ -40,20 +40,20 @@ Resource& Resource::operator=(JsonView jsonValue) {
 JsonValue Resource::Jsonize() const {
   JsonValue payload;
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   if (m_providerHasBeenSet) {
     payload.WithString("provider", m_provider);
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", m_type);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;

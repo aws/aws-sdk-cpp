@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String UpdateUserProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", UserProfileStatusMapper::GetNameForUserProfileStatus(m_status));
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", UserProfileTypeMapper::GetNameForUserProfileType(m_type));
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", UserProfileStatusMapper::GetNameForUserProfileStatus(m_status));
   }
 
   return payload.View().WriteReadable();

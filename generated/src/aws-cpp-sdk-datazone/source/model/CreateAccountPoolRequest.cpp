@@ -15,20 +15,20 @@ using namespace Aws::Utils;
 Aws::String CreateAccountPoolRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountSourceHasBeenSet) {
-    payload.WithObject("accountSource", m_accountSource.Jsonize());
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   if (m_resolutionStrategyHasBeenSet) {
     payload.WithString("resolutionStrategy", ResolutionStrategyMapper::GetNameForResolutionStrategy(m_resolutionStrategy));
+  }
+
+  if (m_accountSourceHasBeenSet) {
+    payload.WithObject("accountSource", m_accountSource.Jsonize());
   }
 
   return payload.View().WriteReadable();

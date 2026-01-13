@@ -35,6 +35,22 @@ class ScheduleConfiguration {
 
   ///@{
   /**
+   * <p>The timezone of the data source run. </p>
+   */
+  inline Timezone GetTimezone() const { return m_timezone; }
+  inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+  inline void SetTimezone(Timezone value) {
+    m_timezoneHasBeenSet = true;
+    m_timezone = value;
+  }
+  inline ScheduleConfiguration& WithTimezone(Timezone value) {
+    SetTimezone(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The schedule of the data source runs.</p>
    */
   inline const Aws::String& GetSchedule() const { return m_schedule; }
@@ -50,28 +66,12 @@ class ScheduleConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The timezone of the data source run. </p>
-   */
-  inline Timezone GetTimezone() const { return m_timezone; }
-  inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-  inline void SetTimezone(Timezone value) {
-    m_timezoneHasBeenSet = true;
-    m_timezone = value;
-  }
-  inline ScheduleConfiguration& WithTimezone(Timezone value) {
-    SetTimezone(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_schedule;
-
   Timezone m_timezone{Timezone::NOT_SET};
-  bool m_scheduleHasBeenSet = false;
+
+  Aws::String m_schedule;
   bool m_timezoneHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
 };
 
 }  // namespace Model

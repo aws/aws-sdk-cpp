@@ -18,18 +18,6 @@ namespace Model {
 PhysicalConnectionRequirements::PhysicalConnectionRequirements(JsonView jsonValue) { *this = jsonValue; }
 
 PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("availabilityZone")) {
-    m_availabilityZone = jsonValue.GetString("availabilityZone");
-    m_availabilityZoneHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("securityGroupIdList")) {
-    Aws::Utils::Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("securityGroupIdList");
-    for (unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength();
-         ++securityGroupIdListIndex) {
-      m_securityGroupIdList.push_back(securityGroupIdListJsonList[securityGroupIdListIndex].AsString());
-    }
-    m_securityGroupIdListHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("subnetId")) {
     m_subnetId = jsonValue.GetString("subnetId");
     m_subnetIdHasBeenSet = true;
@@ -41,24 +29,23 @@ PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator=(JsonVi
     }
     m_subnetIdListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("securityGroupIdList")) {
+    Aws::Utils::Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("securityGroupIdList");
+    for (unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength();
+         ++securityGroupIdListIndex) {
+      m_securityGroupIdList.push_back(securityGroupIdListJsonList[securityGroupIdListIndex].AsString());
+    }
+    m_securityGroupIdListHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("availabilityZone")) {
+    m_availabilityZone = jsonValue.GetString("availabilityZone");
+    m_availabilityZoneHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue PhysicalConnectionRequirements::Jsonize() const {
   JsonValue payload;
-
-  if (m_availabilityZoneHasBeenSet) {
-    payload.WithString("availabilityZone", m_availabilityZone);
-  }
-
-  if (m_securityGroupIdListHasBeenSet) {
-    Aws::Utils::Array<JsonValue> securityGroupIdListJsonList(m_securityGroupIdList.size());
-    for (unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength();
-         ++securityGroupIdListIndex) {
-      securityGroupIdListJsonList[securityGroupIdListIndex].AsString(m_securityGroupIdList[securityGroupIdListIndex]);
-    }
-    payload.WithArray("securityGroupIdList", std::move(securityGroupIdListJsonList));
-  }
 
   if (m_subnetIdHasBeenSet) {
     payload.WithString("subnetId", m_subnetId);
@@ -70,6 +57,19 @@ JsonValue PhysicalConnectionRequirements::Jsonize() const {
       subnetIdListJsonList[subnetIdListIndex].AsString(m_subnetIdList[subnetIdListIndex]);
     }
     payload.WithArray("subnetIdList", std::move(subnetIdListJsonList));
+  }
+
+  if (m_securityGroupIdListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupIdListJsonList(m_securityGroupIdList.size());
+    for (unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength();
+         ++securityGroupIdListIndex) {
+      securityGroupIdListJsonList[securityGroupIdListIndex].AsString(m_securityGroupIdList[securityGroupIdListIndex]);
+    }
+    payload.WithArray("securityGroupIdList", std::move(securityGroupIdListJsonList));
+  }
+
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("availabilityZone", m_availabilityZone);
   }
 
   return payload;

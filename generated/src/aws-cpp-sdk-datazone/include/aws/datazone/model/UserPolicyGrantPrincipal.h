@@ -34,24 +34,6 @@ class UserPolicyGrantPrincipal {
 
   ///@{
   /**
-   * <p>The all users grant filter of the user policy grant principal.</p>
-   */
-  inline const AllUsersGrantFilter& GetAllUsersGrantFilter() const { return m_allUsersGrantFilter; }
-  inline bool AllUsersGrantFilterHasBeenSet() const { return m_allUsersGrantFilterHasBeenSet; }
-  template <typename AllUsersGrantFilterT = AllUsersGrantFilter>
-  void SetAllUsersGrantFilter(AllUsersGrantFilterT&& value) {
-    m_allUsersGrantFilterHasBeenSet = true;
-    m_allUsersGrantFilter = std::forward<AllUsersGrantFilterT>(value);
-  }
-  template <typename AllUsersGrantFilterT = AllUsersGrantFilter>
-  UserPolicyGrantPrincipal& WithAllUsersGrantFilter(AllUsersGrantFilterT&& value) {
-    SetAllUsersGrantFilter(std::forward<AllUsersGrantFilterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The user ID of the user policy grant principal.</p>
    */
   inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
@@ -67,12 +49,30 @@ class UserPolicyGrantPrincipal {
     return *this;
   }
   ///@}
- private:
-  AllUsersGrantFilter m_allUsersGrantFilter;
 
+  ///@{
+  /**
+   * <p>The all users grant filter of the user policy grant principal.</p>
+   */
+  inline const AllUsersGrantFilter& GetAllUsersGrantFilter() const { return m_allUsersGrantFilter; }
+  inline bool AllUsersGrantFilterHasBeenSet() const { return m_allUsersGrantFilterHasBeenSet; }
+  template <typename AllUsersGrantFilterT = AllUsersGrantFilter>
+  void SetAllUsersGrantFilter(AllUsersGrantFilterT&& value) {
+    m_allUsersGrantFilterHasBeenSet = true;
+    m_allUsersGrantFilter = std::forward<AllUsersGrantFilterT>(value);
+  }
+  template <typename AllUsersGrantFilterT = AllUsersGrantFilter>
+  UserPolicyGrantPrincipal& WithAllUsersGrantFilter(AllUsersGrantFilterT&& value) {
+    SetAllUsersGrantFilter(std::forward<AllUsersGrantFilterT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_userIdentifier;
-  bool m_allUsersGrantFilterHasBeenSet = false;
+
+  AllUsersGrantFilter m_allUsersGrantFilter;
   bool m_userIdentifierHasBeenSet = false;
+  bool m_allUsersGrantFilterHasBeenSet = false;
 };
 
 }  // namespace Model

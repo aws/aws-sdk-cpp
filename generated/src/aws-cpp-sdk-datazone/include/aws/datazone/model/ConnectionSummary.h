@@ -188,22 +188,6 @@ class ConnectionSummary {
 
   ///@{
   /**
-   * <p>The scope of the connection.</p>
-   */
-  inline ConnectionScope GetScope() const { return m_scope; }
-  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-  inline void SetScope(ConnectionScope value) {
-    m_scopeHasBeenSet = true;
-    m_scope = value;
-  }
-  inline ConnectionSummary& WithScope(ConnectionScope value) {
-    SetScope(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The connection type.</p>
    */
   inline ConnectionType GetType() const { return m_type; }
@@ -214,6 +198,22 @@ class ConnectionSummary {
   }
   inline ConnectionSummary& WithType(ConnectionType value) {
     SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The scope of the connection.</p>
+   */
+  inline ConnectionScope GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  inline void SetScope(ConnectionScope value) {
+    m_scopeHasBeenSet = true;
+    m_scope = value;
+  }
+  inline ConnectionSummary& WithScope(ConnectionScope value) {
+    SetScope(value);
     return *this;
   }
   ///@}
@@ -234,9 +234,9 @@ class ConnectionSummary {
 
   ConnectionPropertiesOutput m_props;
 
-  ConnectionScope m_scope{ConnectionScope::NOT_SET};
-
   ConnectionType m_type{ConnectionType::NOT_SET};
+
+  ConnectionScope m_scope{ConnectionScope::NOT_SET};
   bool m_connectionIdHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_domainUnitIdHasBeenSet = false;
@@ -245,8 +245,8 @@ class ConnectionSummary {
   bool m_physicalEndpointsHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
   bool m_propsHasBeenSet = false;
-  bool m_scopeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
 };
 
 }  // namespace Model

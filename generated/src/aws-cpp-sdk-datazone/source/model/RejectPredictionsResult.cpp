@@ -21,6 +21,10 @@ RejectPredictionsResult::RejectPredictionsResult(const Aws::AmazonWebServiceResu
 
 RejectPredictionsResult& RejectPredictionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("assetId")) {
     m_assetId = jsonValue.GetString("assetId");
     m_assetIdHasBeenSet = true;
@@ -28,10 +32,6 @@ RejectPredictionsResult& RejectPredictionsResult::operator=(const Aws::AmazonWeb
   if (jsonValue.ValueExists("assetRevision")) {
     m_assetRevision = jsonValue.GetString("assetRevision");
     m_assetRevisionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

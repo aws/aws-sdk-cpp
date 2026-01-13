@@ -34,37 +34,18 @@ class CreateAssetRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
+   * <p>Te revised name of the asset.</p>
    */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename ClientTokenT = Aws::String>
-  CreateAssetRevisionRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revised description of the asset.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateAssetRevisionRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename NameT = Aws::String>
+  CreateAssetRevisionRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -89,24 +70,54 @@ class CreateAssetRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The metadata forms to be attached to the asset as part of asset revision.</p>
+   * <p>The identifier of the asset.</p>
    */
-  inline const Aws::Vector<FormInput>& GetFormsInput() const { return m_formsInput; }
-  inline bool FormsInputHasBeenSet() const { return m_formsInputHasBeenSet; }
-  template <typename FormsInputT = Aws::Vector<FormInput>>
-  void SetFormsInput(FormsInputT&& value) {
-    m_formsInputHasBeenSet = true;
-    m_formsInput = std::forward<FormsInputT>(value);
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
   }
-  template <typename FormsInputT = Aws::Vector<FormInput>>
-  CreateAssetRevisionRequest& WithFormsInput(FormsInputT&& value) {
-    SetFormsInput(std::forward<FormsInputT>(value));
+  template <typename IdentifierT = Aws::String>
+  CreateAssetRevisionRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
     return *this;
   }
-  template <typename FormsInputT = FormInput>
-  CreateAssetRevisionRequest& AddFormsInput(FormsInputT&& value) {
-    m_formsInputHasBeenSet = true;
-    m_formsInput.emplace_back(std::forward<FormsInputT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision type of the asset.</p>
+   */
+  inline const Aws::String& GetTypeRevision() const { return m_typeRevision; }
+  inline bool TypeRevisionHasBeenSet() const { return m_typeRevisionHasBeenSet; }
+  template <typename TypeRevisionT = Aws::String>
+  void SetTypeRevision(TypeRevisionT&& value) {
+    m_typeRevisionHasBeenSet = true;
+    m_typeRevision = std::forward<TypeRevisionT>(value);
+  }
+  template <typename TypeRevisionT = Aws::String>
+  CreateAssetRevisionRequest& WithTypeRevision(TypeRevisionT&& value) {
+    SetTypeRevision(std::forward<TypeRevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revised description of the asset.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateAssetRevisionRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -137,36 +148,24 @@ class CreateAssetRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the asset.</p>
+   * <p>The metadata forms to be attached to the asset as part of asset revision.</p>
    */
-  inline const Aws::String& GetIdentifier() const { return m_identifier; }
-  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-  template <typename IdentifierT = Aws::String>
-  void SetIdentifier(IdentifierT&& value) {
-    m_identifierHasBeenSet = true;
-    m_identifier = std::forward<IdentifierT>(value);
+  inline const Aws::Vector<FormInput>& GetFormsInput() const { return m_formsInput; }
+  inline bool FormsInputHasBeenSet() const { return m_formsInputHasBeenSet; }
+  template <typename FormsInputT = Aws::Vector<FormInput>>
+  void SetFormsInput(FormsInputT&& value) {
+    m_formsInputHasBeenSet = true;
+    m_formsInput = std::forward<FormsInputT>(value);
   }
-  template <typename IdentifierT = Aws::String>
-  CreateAssetRevisionRequest& WithIdentifier(IdentifierT&& value) {
-    SetIdentifier(std::forward<IdentifierT>(value));
+  template <typename FormsInputT = Aws::Vector<FormInput>>
+  CreateAssetRevisionRequest& WithFormsInput(FormsInputT&& value) {
+    SetFormsInput(std::forward<FormsInputT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Te revised name of the asset.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateAssetRevisionRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename FormsInputT = FormInput>
+  CreateAssetRevisionRequest& AddFormsInput(FormsInputT&& value) {
+    m_formsInputHasBeenSet = true;
+    m_formsInput.emplace_back(std::forward<FormsInputT>(value));
     return *this;
   }
   ///@}
@@ -192,48 +191,49 @@ class CreateAssetRevisionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The revision type of the asset.</p>
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
    */
-  inline const Aws::String& GetTypeRevision() const { return m_typeRevision; }
-  inline bool TypeRevisionHasBeenSet() const { return m_typeRevisionHasBeenSet; }
-  template <typename TypeRevisionT = Aws::String>
-  void SetTypeRevision(TypeRevisionT&& value) {
-    m_typeRevisionHasBeenSet = true;
-    m_typeRevision = std::forward<TypeRevisionT>(value);
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
   }
-  template <typename TypeRevisionT = Aws::String>
-  CreateAssetRevisionRequest& WithTypeRevision(TypeRevisionT&& value) {
-    SetTypeRevision(std::forward<TypeRevisionT>(value));
+  template <typename ClientTokenT = Aws::String>
+  CreateAssetRevisionRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  Aws::String m_description;
+  Aws::String m_name;
 
   Aws::String m_domainIdentifier;
 
-  Aws::Vector<FormInput> m_formsInput;
+  Aws::String m_identifier;
+
+  Aws::String m_typeRevision;
+
+  Aws::String m_description;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
 
-  Aws::String m_identifier;
-
-  Aws::String m_name;
+  Aws::Vector<FormInput> m_formsInput;
 
   PredictionConfiguration m_predictionConfiguration;
 
-  Aws::String m_typeRevision;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdentifierHasBeenSet = false;
-  bool m_formsInputHasBeenSet = false;
-  bool m_glossaryTermsHasBeenSet = false;
-  bool m_identifierHasBeenSet = false;
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
-  bool m_predictionConfigurationHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_formsInputHasBeenSet = false;
+  bool m_predictionConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

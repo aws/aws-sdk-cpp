@@ -36,24 +36,6 @@ class ListDataSourcesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the connection.</p>
-   */
-  inline const Aws::String& GetConnectionIdentifier() const { return m_connectionIdentifier; }
-  inline bool ConnectionIdentifierHasBeenSet() const { return m_connectionIdentifierHasBeenSet; }
-  template <typename ConnectionIdentifierT = Aws::String>
-  void SetConnectionIdentifier(ConnectionIdentifierT&& value) {
-    m_connectionIdentifierHasBeenSet = true;
-    m_connectionIdentifier = std::forward<ConnectionIdentifierT>(value);
-  }
-  template <typename ConnectionIdentifierT = Aws::String>
-  ListDataSourcesRequest& WithConnectionIdentifier(ConnectionIdentifierT&& value) {
-    SetConnectionIdentifier(std::forward<ConnectionIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which to list the data
    * sources.</p>
    */
@@ -67,6 +49,24 @@ class ListDataSourcesRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   ListDataSourcesRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the project in which to list data sources.</p>
+   */
+  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
+  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
+  template <typename ProjectIdentifierT = Aws::String>
+  void SetProjectIdentifier(ProjectIdentifierT&& value) {
+    m_projectIdentifierHasBeenSet = true;
+    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  }
+  template <typename ProjectIdentifierT = Aws::String>
+  ListDataSourcesRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
+    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -91,20 +91,52 @@ class ListDataSourcesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of data sources to return in a single call to
-   * <code>ListDataSources</code>. When the number of data sources to be listed is
-   * greater than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListDataSources</code> to list the next set of data sources.</p>
+   * <p>The ID of the connection.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::String& GetConnectionIdentifier() const { return m_connectionIdentifier; }
+  inline bool ConnectionIdentifierHasBeenSet() const { return m_connectionIdentifierHasBeenSet; }
+  template <typename ConnectionIdentifierT = Aws::String>
+  void SetConnectionIdentifier(ConnectionIdentifierT&& value) {
+    m_connectionIdentifierHasBeenSet = true;
+    m_connectionIdentifier = std::forward<ConnectionIdentifierT>(value);
   }
-  inline ListDataSourcesRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename ConnectionIdentifierT = Aws::String>
+  ListDataSourcesRequest& WithConnectionIdentifier(ConnectionIdentifierT&& value) {
+    SetConnectionIdentifier(std::forward<ConnectionIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the data source.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  ListDataSourcesRequest& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the data source.</p>
+   */
+  inline DataSourceStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DataSourceStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListDataSourcesRequest& WithStatus(DataSourceStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -152,82 +184,50 @@ class ListDataSourcesRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the project in which to list data sources.</p>
+   * <p>The maximum number of data sources to return in a single call to
+   * <code>ListDataSources</code>. When the number of data sources to be listed is
+   * greater than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListDataSources</code> to list the next set of data sources.</p>
    */
-  inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
-  inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-  template <typename ProjectIdentifierT = Aws::String>
-  void SetProjectIdentifier(ProjectIdentifierT&& value) {
-    m_projectIdentifierHasBeenSet = true;
-    m_projectIdentifier = std::forward<ProjectIdentifierT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename ProjectIdentifierT = Aws::String>
-  ListDataSourcesRequest& WithProjectIdentifier(ProjectIdentifierT&& value) {
-    SetProjectIdentifier(std::forward<ProjectIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the data source.</p>
-   */
-  inline DataSourceStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DataSourceStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ListDataSourcesRequest& WithStatus(DataSourceStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the data source.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  ListDataSourcesRequest& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
+  inline ListDataSourcesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_connectionIdentifier;
-
   Aws::String m_domainIdentifier;
+
+  Aws::String m_projectIdentifier;
 
   Aws::String m_environmentIdentifier;
 
-  int m_maxResults{0};
+  Aws::String m_connectionIdentifier;
+
+  Aws::String m_type;
+
+  DataSourceStatus m_status{DataSourceStatus::NOT_SET};
 
   Aws::String m_name;
 
   Aws::String m_nextToken;
 
-  Aws::String m_projectIdentifier;
-
-  DataSourceStatus m_status{DataSourceStatus::NOT_SET};
-
-  Aws::String m_type;
-  bool m_connectionIdentifierHasBeenSet = false;
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_projectIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+  bool m_connectionIdentifierHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_projectIdentifierHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

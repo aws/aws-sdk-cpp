@@ -19,9 +19,15 @@ Aws::String ListMetadataGenerationRunsRequest::SerializePayload() const { return
 
 void ListMetadataGenerationRunsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
+  if (m_statusHasBeenSet) {
+    ss << MetadataGenerationRunStatusMapper::GetNameForMetadataGenerationRunStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
+    ss.str("");
+  }
+
+  if (m_typeHasBeenSet) {
+    ss << MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type);
+    uri.AddQueryStringParameter("type", ss.str());
     ss.str("");
   }
 
@@ -31,21 +37,15 @@ void ListMetadataGenerationRunsRequest::AddQueryStringParameters(URI& uri) const
     ss.str("");
   }
 
-  if (m_statusHasBeenSet) {
-    ss << MetadataGenerationRunStatusMapper::GetNameForMetadataGenerationRunStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
     ss.str("");
   }
 
   if (m_targetIdentifierHasBeenSet) {
     ss << m_targetIdentifier;
     uri.AddQueryStringParameter("targetIdentifier", ss.str());
-    ss.str("");
-  }
-
-  if (m_typeHasBeenSet) {
-    ss << MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_type);
-    uri.AddQueryStringParameter("type", ss.str());
     ss.str("");
   }
 }

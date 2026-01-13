@@ -33,6 +33,192 @@ class CreateDataProductRevisionResult {
 
   ///@{
   /**
+   * <p>The ID of the domain where data product revision is created.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  CreateDataProductRevisionResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the data product revision.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CreateDataProductRevisionResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The revision of the data product revision.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  CreateDataProductRevisionResult& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the owning project of the data product revision.</p>
+   */
+  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
+  template <typename OwningProjectIdT = Aws::String>
+  void SetOwningProjectId(OwningProjectIdT&& value) {
+    m_owningProjectIdHasBeenSet = true;
+    m_owningProjectId = std::forward<OwningProjectIdT>(value);
+  }
+  template <typename OwningProjectIdT = Aws::String>
+  CreateDataProductRevisionResult& WithOwningProjectId(OwningProjectIdT&& value) {
+    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the data product revision.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateDataProductRevisionResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the data product revision.</p>
+   */
+  inline DataProductStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DataProductStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateDataProductRevisionResult& WithStatus(DataProductStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the data product revision.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateDataProductRevisionResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The glossary terms of the data product revision.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  CreateDataProductRevisionResult& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = Aws::String>
+  CreateDataProductRevisionResult& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The data assets of the data product revision.</p>
+   */
+  inline const Aws::Vector<DataProductItem>& GetItems() const { return m_items; }
+  template <typename ItemsT = Aws::Vector<DataProductItem>>
+  void SetItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items = std::forward<ItemsT>(value);
+  }
+  template <typename ItemsT = Aws::Vector<DataProductItem>>
+  CreateDataProductRevisionResult& WithItems(ItemsT&& value) {
+    SetItems(std::forward<ItemsT>(value));
+    return *this;
+  }
+  template <typename ItemsT = DataProductItem>
+  CreateDataProductRevisionResult& AddItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items.emplace_back(std::forward<ItemsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata forms of the data product revision.</p>
+   */
+  inline const Aws::Vector<FormOutput>& GetFormsOutput() const { return m_formsOutput; }
+  template <typename FormsOutputT = Aws::Vector<FormOutput>>
+  void SetFormsOutput(FormsOutputT&& value) {
+    m_formsOutputHasBeenSet = true;
+    m_formsOutput = std::forward<FormsOutputT>(value);
+  }
+  template <typename FormsOutputT = Aws::Vector<FormOutput>>
+  CreateDataProductRevisionResult& WithFormsOutput(FormsOutputT&& value) {
+    SetFormsOutput(std::forward<FormsOutputT>(value));
+    return *this;
+  }
+  template <typename FormsOutputT = FormOutput>
+  CreateDataProductRevisionResult& AddFormsOutput(FormsOutputT&& value) {
+    m_formsOutputHasBeenSet = true;
+    m_formsOutput.emplace_back(std::forward<FormsOutputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp at which the data product revision is created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -61,40 +247,6 @@ class CreateDataProductRevisionResult {
   template <typename CreatedByT = Aws::String>
   CreateDataProductRevisionResult& WithCreatedBy(CreatedByT&& value) {
     SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the data product revision.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateDataProductRevisionResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where data product revision is created.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  CreateDataProductRevisionResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
     return *this;
   }
   ///@}
@@ -134,158 +286,6 @@ class CreateDataProductRevisionResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The metadata forms of the data product revision.</p>
-   */
-  inline const Aws::Vector<FormOutput>& GetFormsOutput() const { return m_formsOutput; }
-  template <typename FormsOutputT = Aws::Vector<FormOutput>>
-  void SetFormsOutput(FormsOutputT&& value) {
-    m_formsOutputHasBeenSet = true;
-    m_formsOutput = std::forward<FormsOutputT>(value);
-  }
-  template <typename FormsOutputT = Aws::Vector<FormOutput>>
-  CreateDataProductRevisionResult& WithFormsOutput(FormsOutputT&& value) {
-    SetFormsOutput(std::forward<FormsOutputT>(value));
-    return *this;
-  }
-  template <typename FormsOutputT = FormOutput>
-  CreateDataProductRevisionResult& AddFormsOutput(FormsOutputT&& value) {
-    m_formsOutputHasBeenSet = true;
-    m_formsOutput.emplace_back(std::forward<FormsOutputT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The glossary terms of the data product revision.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  void SetGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
-  }
-  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
-  CreateDataProductRevisionResult& WithGlossaryTerms(GlossaryTermsT&& value) {
-    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  template <typename GlossaryTermsT = Aws::String>
-  CreateDataProductRevisionResult& AddGlossaryTerms(GlossaryTermsT&& value) {
-    m_glossaryTermsHasBeenSet = true;
-    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the data product revision.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  CreateDataProductRevisionResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The data assets of the data product revision.</p>
-   */
-  inline const Aws::Vector<DataProductItem>& GetItems() const { return m_items; }
-  template <typename ItemsT = Aws::Vector<DataProductItem>>
-  void SetItems(ItemsT&& value) {
-    m_itemsHasBeenSet = true;
-    m_items = std::forward<ItemsT>(value);
-  }
-  template <typename ItemsT = Aws::Vector<DataProductItem>>
-  CreateDataProductRevisionResult& WithItems(ItemsT&& value) {
-    SetItems(std::forward<ItemsT>(value));
-    return *this;
-  }
-  template <typename ItemsT = DataProductItem>
-  CreateDataProductRevisionResult& AddItems(ItemsT&& value) {
-    m_itemsHasBeenSet = true;
-    m_items.emplace_back(std::forward<ItemsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the data product revision.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateDataProductRevisionResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the owning project of the data product revision.</p>
-   */
-  inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
-  template <typename OwningProjectIdT = Aws::String>
-  void SetOwningProjectId(OwningProjectIdT&& value) {
-    m_owningProjectIdHasBeenSet = true;
-    m_owningProjectId = std::forward<OwningProjectIdT>(value);
-  }
-  template <typename OwningProjectIdT = Aws::String>
-  CreateDataProductRevisionResult& WithOwningProjectId(OwningProjectIdT&& value) {
-    SetOwningProjectId(std::forward<OwningProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the data product revision.</p>
-   */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
-  }
-  template <typename RevisionT = Aws::String>
-  CreateDataProductRevisionResult& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the data product revision.</p>
-   */
-  inline DataProductStatus GetStatus() const { return m_status; }
-  inline void SetStatus(DataProductStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline CreateDataProductRevisionResult& WithStatus(DataProductStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -300,49 +300,49 @@ class CreateDataProductRevisionResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_domainId;
 
-  Aws::String m_createdBy;
+  Aws::String m_id;
+
+  Aws::String m_revision;
+
+  Aws::String m_owningProjectId;
+
+  Aws::String m_name;
+
+  DataProductStatus m_status{DataProductStatus::NOT_SET};
 
   Aws::String m_description;
 
-  Aws::String m_domainId;
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
+  Aws::Vector<DataProductItem> m_items;
+
+  Aws::Vector<FormOutput> m_formsOutput;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
 
   Aws::Utils::DateTime m_firstRevisionCreatedAt{};
 
   Aws::String m_firstRevisionCreatedBy;
 
-  Aws::Vector<FormOutput> m_formsOutput;
-
-  Aws::Vector<Aws::String> m_glossaryTerms;
-
-  Aws::String m_id;
-
-  Aws::Vector<DataProductItem> m_items;
-
-  Aws::String m_name;
-
-  Aws::String m_owningProjectId;
-
-  Aws::String m_revision;
-
-  DataProductStatus m_status{DataProductStatus::NOT_SET};
-
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
   bool m_firstRevisionCreatedAtHasBeenSet = false;
   bool m_firstRevisionCreatedByHasBeenSet = false;
-  bool m_formsOutputHasBeenSet = false;
-  bool m_glossaryTermsHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_itemsHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_owningProjectIdHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -31,75 +31,6 @@ class UpdateDomainUnitResult {
 
   ///@{
   /**
-   * <p>The time stamp at which the domain unit that you want to update was
-   * created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  UpdateDomainUnitResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the domain unit that you want to update.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  UpdateDomainUnitResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the domain unit that you want to update.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateDomainUnitResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where you want to update the domain unit.</p>
-   */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
-  }
-  template <typename DomainIdT = Aws::String>
-  UpdateDomainUnitResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain unit that you want to update.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -117,34 +48,17 @@ class UpdateDomainUnitResult {
 
   ///@{
   /**
-   * <p>The timestamp at which the domain unit was last updated.</p>
+   * <p>The ID of the domain where you want to update the domain unit.</p>
    */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
   }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  UpdateDomainUnitResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who last updated the domain unit.</p>
-   */
-  inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
-  template <typename LastUpdatedByT = Aws::String>
-  void SetLastUpdatedBy(LastUpdatedByT&& value) {
-    m_lastUpdatedByHasBeenSet = true;
-    m_lastUpdatedBy = std::forward<LastUpdatedByT>(value);
-  }
-  template <typename LastUpdatedByT = Aws::String>
-  UpdateDomainUnitResult& WithLastUpdatedBy(LastUpdatedByT&& value) {
-    SetLastUpdatedBy(std::forward<LastUpdatedByT>(value));
+  template <typename DomainIdT = Aws::String>
+  UpdateDomainUnitResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
     return *this;
   }
   ///@}
@@ -191,6 +105,23 @@ class UpdateDomainUnitResult {
 
   ///@{
   /**
+   * <p>The description of the domain unit that you want to update.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateDomainUnitResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the parent domain unit.</p>
    */
   inline const Aws::String& GetParentDomainUnitId() const { return m_parentDomainUnitId; }
@@ -202,6 +133,75 @@ class UpdateDomainUnitResult {
   template <typename ParentDomainUnitIdT = Aws::String>
   UpdateDomainUnitResult& WithParentDomainUnitId(ParentDomainUnitIdT&& value) {
     SetParentDomainUnitId(std::forward<ParentDomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time stamp at which the domain unit that you want to update was
+   * created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateDomainUnitResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the domain unit was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  UpdateDomainUnitResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the domain unit that you want to update.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  UpdateDomainUnitResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who last updated the domain unit.</p>
+   */
+  inline const Aws::String& GetLastUpdatedBy() const { return m_lastUpdatedBy; }
+  template <typename LastUpdatedByT = Aws::String>
+  void SetLastUpdatedBy(LastUpdatedByT&& value) {
+    m_lastUpdatedByHasBeenSet = true;
+    m_lastUpdatedBy = std::forward<LastUpdatedByT>(value);
+  }
+  template <typename LastUpdatedByT = Aws::String>
+  UpdateDomainUnitResult& WithLastUpdatedBy(LastUpdatedByT&& value) {
+    SetLastUpdatedBy(std::forward<LastUpdatedByT>(value));
     return *this;
   }
   ///@}
@@ -221,37 +221,37 @@ class UpdateDomainUnitResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
-  Aws::String m_domainId;
-
   Aws::String m_id;
 
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
-  Aws::String m_lastUpdatedBy;
+  Aws::String m_domainId;
 
   Aws::String m_name;
 
   Aws::Vector<DomainUnitOwnerProperties> m_owners;
 
+  Aws::String m_description;
+
   Aws::String m_parentDomainUnitId;
 
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  Aws::String m_createdBy;
+
+  Aws::String m_lastUpdatedBy;
+
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
-  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ownersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_parentDomainUnitIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

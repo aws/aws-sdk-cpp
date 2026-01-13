@@ -22,13 +22,13 @@ ProjectPolicyGrantPrincipal& ProjectPolicyGrantPrincipal::operator=(JsonView jso
     m_projectDesignation = ProjectDesignationMapper::GetProjectDesignationForName(jsonValue.GetString("projectDesignation"));
     m_projectDesignationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("projectGrantFilter")) {
-    m_projectGrantFilter = jsonValue.GetObject("projectGrantFilter");
-    m_projectGrantFilterHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("projectIdentifier")) {
     m_projectIdentifier = jsonValue.GetString("projectIdentifier");
     m_projectIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("projectGrantFilter")) {
+    m_projectGrantFilter = jsonValue.GetObject("projectGrantFilter");
+    m_projectGrantFilterHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue ProjectPolicyGrantPrincipal::Jsonize() const {
     payload.WithString("projectDesignation", ProjectDesignationMapper::GetNameForProjectDesignation(m_projectDesignation));
   }
 
-  if (m_projectGrantFilterHasBeenSet) {
-    payload.WithObject("projectGrantFilter", m_projectGrantFilter.Jsonize());
-  }
-
   if (m_projectIdentifierHasBeenSet) {
     payload.WithString("projectIdentifier", m_projectIdentifier);
+  }
+
+  if (m_projectGrantFilterHasBeenSet) {
+    payload.WithObject("projectGrantFilter", m_projectGrantFilter.Jsonize());
   }
 
   return payload;

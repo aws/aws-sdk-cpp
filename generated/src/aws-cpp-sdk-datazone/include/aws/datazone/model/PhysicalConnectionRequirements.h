@@ -35,50 +35,6 @@ class PhysicalConnectionRequirements {
 
   ///@{
   /**
-   * <p>The availability zone of the physical connection requirements of a
-   * connection. </p>
-   */
-  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
-  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-  template <typename AvailabilityZoneT = Aws::String>
-  void SetAvailabilityZone(AvailabilityZoneT&& value) {
-    m_availabilityZoneHasBeenSet = true;
-    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
-  }
-  template <typename AvailabilityZoneT = Aws::String>
-  PhysicalConnectionRequirements& WithAvailabilityZone(AvailabilityZoneT&& value) {
-    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The group ID list of the physical connection requirements of a connection.
-   * </p>
-   */
-  inline const Aws::Vector<Aws::String>& GetSecurityGroupIdList() const { return m_securityGroupIdList; }
-  inline bool SecurityGroupIdListHasBeenSet() const { return m_securityGroupIdListHasBeenSet; }
-  template <typename SecurityGroupIdListT = Aws::Vector<Aws::String>>
-  void SetSecurityGroupIdList(SecurityGroupIdListT&& value) {
-    m_securityGroupIdListHasBeenSet = true;
-    m_securityGroupIdList = std::forward<SecurityGroupIdListT>(value);
-  }
-  template <typename SecurityGroupIdListT = Aws::Vector<Aws::String>>
-  PhysicalConnectionRequirements& WithSecurityGroupIdList(SecurityGroupIdListT&& value) {
-    SetSecurityGroupIdList(std::forward<SecurityGroupIdListT>(value));
-    return *this;
-  }
-  template <typename SecurityGroupIdListT = Aws::String>
-  PhysicalConnectionRequirements& AddSecurityGroupIdList(SecurityGroupIdListT&& value) {
-    m_securityGroupIdListHasBeenSet = true;
-    m_securityGroupIdList.emplace_back(std::forward<SecurityGroupIdListT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The subnet ID of the physical connection requirements of a connection. </p>
    */
   inline const Aws::String& GetSubnetId() const { return m_subnetId; }
@@ -119,18 +75,62 @@ class PhysicalConnectionRequirements {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The group ID list of the physical connection requirements of a connection.
+   * </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSecurityGroupIdList() const { return m_securityGroupIdList; }
+  inline bool SecurityGroupIdListHasBeenSet() const { return m_securityGroupIdListHasBeenSet; }
+  template <typename SecurityGroupIdListT = Aws::Vector<Aws::String>>
+  void SetSecurityGroupIdList(SecurityGroupIdListT&& value) {
+    m_securityGroupIdListHasBeenSet = true;
+    m_securityGroupIdList = std::forward<SecurityGroupIdListT>(value);
+  }
+  template <typename SecurityGroupIdListT = Aws::Vector<Aws::String>>
+  PhysicalConnectionRequirements& WithSecurityGroupIdList(SecurityGroupIdListT&& value) {
+    SetSecurityGroupIdList(std::forward<SecurityGroupIdListT>(value));
+    return *this;
+  }
+  template <typename SecurityGroupIdListT = Aws::String>
+  PhysicalConnectionRequirements& AddSecurityGroupIdList(SecurityGroupIdListT&& value) {
+    m_securityGroupIdListHasBeenSet = true;
+    m_securityGroupIdList.emplace_back(std::forward<SecurityGroupIdListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The availability zone of the physical connection requirements of a
+   * connection. </p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  PhysicalConnectionRequirements& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_availabilityZone;
-
-  Aws::Vector<Aws::String> m_securityGroupIdList;
-
   Aws::String m_subnetId;
 
   Aws::Vector<Aws::String> m_subnetIdList;
-  bool m_availabilityZoneHasBeenSet = false;
-  bool m_securityGroupIdListHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_securityGroupIdList;
+
+  Aws::String m_availabilityZone;
   bool m_subnetIdHasBeenSet = false;
   bool m_subnetIdListHasBeenSet = false;
+  bool m_securityGroupIdListHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
 };
 
 }  // namespace Model

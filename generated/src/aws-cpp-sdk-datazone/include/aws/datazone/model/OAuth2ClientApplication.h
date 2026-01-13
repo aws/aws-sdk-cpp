@@ -33,25 +33,6 @@ class OAuth2ClientApplication {
 
   ///@{
   /**
-   * <p>The Amazon Web Services managed client application reference in the
-   * OAuth2Client application.</p>
-   */
-  inline const Aws::String& GetAWSManagedClientApplicationReference() const { return m_aWSManagedClientApplicationReference; }
-  inline bool AWSManagedClientApplicationReferenceHasBeenSet() const { return m_aWSManagedClientApplicationReferenceHasBeenSet; }
-  template <typename AWSManagedClientApplicationReferenceT = Aws::String>
-  void SetAWSManagedClientApplicationReference(AWSManagedClientApplicationReferenceT&& value) {
-    m_aWSManagedClientApplicationReferenceHasBeenSet = true;
-    m_aWSManagedClientApplicationReference = std::forward<AWSManagedClientApplicationReferenceT>(value);
-  }
-  template <typename AWSManagedClientApplicationReferenceT = Aws::String>
-  OAuth2ClientApplication& WithAWSManagedClientApplicationReference(AWSManagedClientApplicationReferenceT&& value) {
-    SetAWSManagedClientApplicationReference(std::forward<AWSManagedClientApplicationReferenceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The user managed client application client ID in the OAuth2Client
    * application.</p>
    */
@@ -68,12 +49,31 @@ class OAuth2ClientApplication {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_aWSManagedClientApplicationReference;
 
+  ///@{
+  /**
+   * <p>The Amazon Web Services managed client application reference in the
+   * OAuth2Client application.</p>
+   */
+  inline const Aws::String& GetAWSManagedClientApplicationReference() const { return m_aWSManagedClientApplicationReference; }
+  inline bool AWSManagedClientApplicationReferenceHasBeenSet() const { return m_aWSManagedClientApplicationReferenceHasBeenSet; }
+  template <typename AWSManagedClientApplicationReferenceT = Aws::String>
+  void SetAWSManagedClientApplicationReference(AWSManagedClientApplicationReferenceT&& value) {
+    m_aWSManagedClientApplicationReferenceHasBeenSet = true;
+    m_aWSManagedClientApplicationReference = std::forward<AWSManagedClientApplicationReferenceT>(value);
+  }
+  template <typename AWSManagedClientApplicationReferenceT = Aws::String>
+  OAuth2ClientApplication& WithAWSManagedClientApplicationReference(AWSManagedClientApplicationReferenceT&& value) {
+    SetAWSManagedClientApplicationReference(std::forward<AWSManagedClientApplicationReferenceT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_userManagedClientApplicationClientId;
-  bool m_aWSManagedClientApplicationReferenceHasBeenSet = false;
+
+  Aws::String m_aWSManagedClientApplicationReference;
   bool m_userManagedClientApplicationClientIdHasBeenSet = false;
+  bool m_aWSManagedClientApplicationReferenceHasBeenSet = false;
 };
 
 }  // namespace Model

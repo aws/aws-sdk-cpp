@@ -18,13 +18,13 @@ namespace Model {
 CustomAccountPoolHandler::CustomAccountPoolHandler(JsonView jsonValue) { *this = jsonValue; }
 
 CustomAccountPoolHandler& CustomAccountPoolHandler::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("lambdaExecutionRoleArn")) {
-    m_lambdaExecutionRoleArn = jsonValue.GetString("lambdaExecutionRoleArn");
-    m_lambdaExecutionRoleArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lambdaFunctionArn")) {
     m_lambdaFunctionArn = jsonValue.GetString("lambdaFunctionArn");
     m_lambdaFunctionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lambdaExecutionRoleArn")) {
+    m_lambdaExecutionRoleArn = jsonValue.GetString("lambdaExecutionRoleArn");
+    m_lambdaExecutionRoleArnHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ CustomAccountPoolHandler& CustomAccountPoolHandler::operator=(JsonView jsonValue
 JsonValue CustomAccountPoolHandler::Jsonize() const {
   JsonValue payload;
 
-  if (m_lambdaExecutionRoleArnHasBeenSet) {
-    payload.WithString("lambdaExecutionRoleArn", m_lambdaExecutionRoleArn);
-  }
-
   if (m_lambdaFunctionArnHasBeenSet) {
     payload.WithString("lambdaFunctionArn", m_lambdaFunctionArn);
+  }
+
+  if (m_lambdaExecutionRoleArnHasBeenSet) {
+    payload.WithString("lambdaExecutionRoleArn", m_lambdaExecutionRoleArn);
   }
 
   return payload;

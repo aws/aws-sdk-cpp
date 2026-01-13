@@ -72,26 +72,6 @@ class ListAccountsInAccountPoolRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of accounts to return in a single call to
-   * ListAccountsInAccountPool. When the number of accounts to be listed is greater
-   * than the value of MaxResults, the response contains a NextToken value that you
-   * can use in a subsequent call to ListAccountsInAccountPool to list the next set
-   * of accounts.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListAccountsInAccountPoolRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>When the number of accounts is greater than the default value for the
    * MaxResults parameter, or if you explicitly specify a value for MaxResults that
    * is less than the number of accounts, the response includes a pagination token
@@ -111,18 +91,38 @@ class ListAccountsInAccountPoolRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of accounts to return in a single call to
+   * ListAccountsInAccountPool. When the number of accounts to be listed is greater
+   * than the value of MaxResults, the response contains a NextToken value that you
+   * can use in a subsequent call to ListAccountsInAccountPool to list the next set
+   * of accounts.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListAccountsInAccountPoolRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
-  int m_maxResults{0};
-
   Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

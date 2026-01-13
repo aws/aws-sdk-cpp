@@ -21,16 +21,16 @@ ListEntityOwnersResult::ListEntityOwnersResult(const Aws::AmazonWebServiceResult
 
 ListEntityOwnersResult& ListEntityOwnersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("owners")) {
     Aws::Utils::Array<JsonView> ownersJsonList = jsonValue.GetArray("owners");
     for (unsigned ownersIndex = 0; ownersIndex < ownersJsonList.GetLength(); ++ownersIndex) {
       m_owners.push_back(ownersJsonList[ownersIndex].AsObject());
     }
     m_ownersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

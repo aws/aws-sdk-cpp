@@ -35,24 +35,6 @@ class HyperPodPropertiesOutput {
 
   ///@{
   /**
-   * <p>The cluster ARN of the hyper pod properties.</p>
-   */
-  inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
-  inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-  template <typename ClusterArnT = Aws::String>
-  void SetClusterArn(ClusterArnT&& value) {
-    m_clusterArnHasBeenSet = true;
-    m_clusterArn = std::forward<ClusterArnT>(value);
-  }
-  template <typename ClusterArnT = Aws::String>
-  HyperPodPropertiesOutput& WithClusterArn(ClusterArnT&& value) {
-    SetClusterArn(std::forward<ClusterArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The cluster name the hyper pod properties.</p>
    */
   inline const Aws::String& GetClusterName() const { return m_clusterName; }
@@ -65,6 +47,24 @@ class HyperPodPropertiesOutput {
   template <typename ClusterNameT = Aws::String>
   HyperPodPropertiesOutput& WithClusterName(ClusterNameT&& value) {
     SetClusterName(std::forward<ClusterNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The cluster ARN of the hyper pod properties.</p>
+   */
+  inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+  inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+  template <typename ClusterArnT = Aws::String>
+  void SetClusterArn(ClusterArnT&& value) {
+    m_clusterArnHasBeenSet = true;
+    m_clusterArn = std::forward<ClusterArnT>(value);
+  }
+  template <typename ClusterArnT = Aws::String>
+  HyperPodPropertiesOutput& WithClusterArn(ClusterArnT&& value) {
+    SetClusterArn(std::forward<ClusterArnT>(value));
     return *this;
   }
   ///@}
@@ -85,13 +85,13 @@ class HyperPodPropertiesOutput {
   }
   ///@}
  private:
-  Aws::String m_clusterArn;
-
   Aws::String m_clusterName;
 
+  Aws::String m_clusterArn;
+
   HyperPodOrchestrator m_orchestrator{HyperPodOrchestrator::NOT_SET};
-  bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
   bool m_orchestratorHasBeenSet = false;
 };
 

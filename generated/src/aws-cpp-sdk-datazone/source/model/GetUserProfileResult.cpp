@@ -21,10 +21,6 @@ GetUserProfileResult::GetUserProfileResult(const Aws::AmazonWebServiceResult<Jso
 
 GetUserProfileResult& GetUserProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("details")) {
-    m_details = jsonValue.GetObject("details");
-    m_detailsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -33,13 +29,17 @@ GetUserProfileResult& GetUserProfileResult::operator=(const Aws::AmazonWebServic
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = UserProfileTypeMapper::GetUserProfileTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = UserProfileStatusMapper::GetUserProfileStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = UserProfileTypeMapper::GetUserProfileTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
+  if (jsonValue.ValueExists("details")) {
+    m_details = jsonValue.GetObject("details");
+    m_detailsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

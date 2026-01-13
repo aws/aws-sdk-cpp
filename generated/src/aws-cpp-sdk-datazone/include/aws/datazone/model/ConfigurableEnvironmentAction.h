@@ -37,6 +37,24 @@ class ConfigurableEnvironmentAction {
 
   ///@{
   /**
+   * <p>The type of a configurable action in a Amazon DataZone environment.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  ConfigurableEnvironmentAction& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The authentication type of a configurable action of a Amazon DataZone
    * environment. </p>
    */
@@ -75,33 +93,15 @@ class ConfigurableEnvironmentAction {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of a configurable action in a Amazon DataZone environment.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  ConfigurableEnvironmentAction& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_type;
+
   ConfigurableActionTypeAuthorization m_auth{ConfigurableActionTypeAuthorization::NOT_SET};
 
   Aws::Vector<ConfigurableActionParameter> m_parameters;
-
-  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
   bool m_authHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
-  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

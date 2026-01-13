@@ -37,52 +37,18 @@ class DataSourceRunActivity {
 
   ///@{
   /**
-   * <p>The timestamp of when data source run activity was created.</p>
+   * <p>The database included in the data source run activity.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetDatabase() const { return m_database; }
+  inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+  template <typename DatabaseT = Aws::String>
+  void SetDatabase(DatabaseT&& value) {
+    m_databaseHasBeenSet = true;
+    m_database = std::forward<DatabaseT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  DataSourceRunActivity& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the asset included in the data source run activity.</p>
-   */
-  inline const Aws::String& GetDataAssetId() const { return m_dataAssetId; }
-  inline bool DataAssetIdHasBeenSet() const { return m_dataAssetIdHasBeenSet; }
-  template <typename DataAssetIdT = Aws::String>
-  void SetDataAssetId(DataAssetIdT&& value) {
-    m_dataAssetIdHasBeenSet = true;
-    m_dataAssetId = std::forward<DataAssetIdT>(value);
-  }
-  template <typename DataAssetIdT = Aws::String>
-  DataSourceRunActivity& WithDataAssetId(DataAssetIdT&& value) {
-    SetDataAssetId(std::forward<DataAssetIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the asset included in the data source run activity.</p>
-   */
-  inline DataAssetActivityStatus GetDataAssetStatus() const { return m_dataAssetStatus; }
-  inline bool DataAssetStatusHasBeenSet() const { return m_dataAssetStatusHasBeenSet; }
-  inline void SetDataAssetStatus(DataAssetActivityStatus value) {
-    m_dataAssetStatusHasBeenSet = true;
-    m_dataAssetStatus = value;
-  }
-  inline DataSourceRunActivity& WithDataAssetStatus(DataAssetActivityStatus value) {
-    SetDataAssetStatus(value);
+  template <typename DatabaseT = Aws::String>
+  DataSourceRunActivity& WithDatabase(DatabaseT&& value) {
+    SetDatabase(std::forward<DatabaseT>(value));
     return *this;
   }
   ///@}
@@ -107,18 +73,88 @@ class DataSourceRunActivity {
 
   ///@{
   /**
-   * <p>The database included in the data source run activity.</p>
+   * <p>The technical name included in the data source run activity.</p>
    */
-  inline const Aws::String& GetDatabase() const { return m_database; }
-  inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-  template <typename DatabaseT = Aws::String>
-  void SetDatabase(DatabaseT&& value) {
-    m_databaseHasBeenSet = true;
-    m_database = std::forward<DatabaseT>(value);
+  inline const Aws::String& GetTechnicalName() const { return m_technicalName; }
+  inline bool TechnicalNameHasBeenSet() const { return m_technicalNameHasBeenSet; }
+  template <typename TechnicalNameT = Aws::String>
+  void SetTechnicalName(TechnicalNameT&& value) {
+    m_technicalNameHasBeenSet = true;
+    m_technicalName = std::forward<TechnicalNameT>(value);
   }
-  template <typename DatabaseT = Aws::String>
-  DataSourceRunActivity& WithDatabase(DatabaseT&& value) {
-    SetDatabase(std::forward<DatabaseT>(value));
+  template <typename TechnicalNameT = Aws::String>
+  DataSourceRunActivity& WithTechnicalName(TechnicalNameT&& value) {
+    SetTechnicalName(std::forward<TechnicalNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the asset included in the data source run activity.</p>
+   */
+  inline DataAssetActivityStatus GetDataAssetStatus() const { return m_dataAssetStatus; }
+  inline bool DataAssetStatusHasBeenSet() const { return m_dataAssetStatusHasBeenSet; }
+  inline void SetDataAssetStatus(DataAssetActivityStatus value) {
+    m_dataAssetStatusHasBeenSet = true;
+    m_dataAssetStatus = value;
+  }
+  inline DataSourceRunActivity& WithDataAssetStatus(DataAssetActivityStatus value) {
+    SetDataAssetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The project ID included in the data source run activity.</p>
+   */
+  inline const Aws::String& GetProjectId() const { return m_projectId; }
+  inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+  template <typename ProjectIdT = Aws::String>
+  void SetProjectId(ProjectIdT&& value) {
+    m_projectIdHasBeenSet = true;
+    m_projectId = std::forward<ProjectIdT>(value);
+  }
+  template <typename ProjectIdT = Aws::String>
+  DataSourceRunActivity& WithProjectId(ProjectIdT&& value) {
+    SetProjectId(std::forward<ProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the asset included in the data source run activity.</p>
+   */
+  inline const Aws::String& GetDataAssetId() const { return m_dataAssetId; }
+  inline bool DataAssetIdHasBeenSet() const { return m_dataAssetIdHasBeenSet; }
+  template <typename DataAssetIdT = Aws::String>
+  void SetDataAssetId(DataAssetIdT&& value) {
+    m_dataAssetIdHasBeenSet = true;
+    m_dataAssetId = std::forward<DataAssetIdT>(value);
+  }
+  template <typename DataAssetIdT = Aws::String>
+  DataSourceRunActivity& WithDataAssetId(DataAssetIdT&& value) {
+    SetDataAssetId(std::forward<DataAssetIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The technical description included in the data source run activity.</p>
+   */
+  inline const Aws::String& GetTechnicalDescription() const { return m_technicalDescription; }
+  inline bool TechnicalDescriptionHasBeenSet() const { return m_technicalDescriptionHasBeenSet; }
+  template <typename TechnicalDescriptionT = Aws::String>
+  void SetTechnicalDescription(TechnicalDescriptionT&& value) {
+    m_technicalDescriptionHasBeenSet = true;
+    m_technicalDescription = std::forward<TechnicalDescriptionT>(value);
+  }
+  template <typename TechnicalDescriptionT = Aws::String>
+  DataSourceRunActivity& WithTechnicalDescription(TechnicalDescriptionT&& value) {
+    SetTechnicalDescription(std::forward<TechnicalDescriptionT>(value));
     return *this;
   }
   ///@}
@@ -159,54 +195,18 @@ class DataSourceRunActivity {
 
   ///@{
   /**
-   * <p>The project ID included in the data source run activity.</p>
+   * <p>The timestamp of when data source run activity was created.</p>
    */
-  inline const Aws::String& GetProjectId() const { return m_projectId; }
-  inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-  template <typename ProjectIdT = Aws::String>
-  void SetProjectId(ProjectIdT&& value) {
-    m_projectIdHasBeenSet = true;
-    m_projectId = std::forward<ProjectIdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename ProjectIdT = Aws::String>
-  DataSourceRunActivity& WithProjectId(ProjectIdT&& value) {
-    SetProjectId(std::forward<ProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The technical description included in the data source run activity.</p>
-   */
-  inline const Aws::String& GetTechnicalDescription() const { return m_technicalDescription; }
-  inline bool TechnicalDescriptionHasBeenSet() const { return m_technicalDescriptionHasBeenSet; }
-  template <typename TechnicalDescriptionT = Aws::String>
-  void SetTechnicalDescription(TechnicalDescriptionT&& value) {
-    m_technicalDescriptionHasBeenSet = true;
-    m_technicalDescription = std::forward<TechnicalDescriptionT>(value);
-  }
-  template <typename TechnicalDescriptionT = Aws::String>
-  DataSourceRunActivity& WithTechnicalDescription(TechnicalDescriptionT&& value) {
-    SetTechnicalDescription(std::forward<TechnicalDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The technical name included in the data source run activity.</p>
-   */
-  inline const Aws::String& GetTechnicalName() const { return m_technicalName; }
-  inline bool TechnicalNameHasBeenSet() const { return m_technicalNameHasBeenSet; }
-  template <typename TechnicalNameT = Aws::String>
-  void SetTechnicalName(TechnicalNameT&& value) {
-    m_technicalNameHasBeenSet = true;
-    m_technicalName = std::forward<TechnicalNameT>(value);
-  }
-  template <typename TechnicalNameT = Aws::String>
-  DataSourceRunActivity& WithTechnicalName(TechnicalNameT&& value) {
-    SetTechnicalName(std::forward<TechnicalNameT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DataSourceRunActivity& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
@@ -229,37 +229,37 @@ class DataSourceRunActivity {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_dataAssetId;
-
-  DataAssetActivityStatus m_dataAssetStatus{DataAssetActivityStatus::NOT_SET};
+  Aws::String m_database;
 
   Aws::String m_dataSourceRunId;
 
-  Aws::String m_database;
+  Aws::String m_technicalName;
+
+  DataAssetActivityStatus m_dataAssetStatus{DataAssetActivityStatus::NOT_SET};
+
+  Aws::String m_projectId;
+
+  Aws::String m_dataAssetId;
+
+  Aws::String m_technicalDescription;
 
   DataSourceErrorMessage m_errorMessage;
 
   LineageInfo m_lineageSummary;
 
-  Aws::String m_projectId;
-
-  Aws::String m_technicalDescription;
-
-  Aws::String m_technicalName;
+  Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_createdAtHasBeenSet = false;
-  bool m_dataAssetIdHasBeenSet = false;
-  bool m_dataAssetStatusHasBeenSet = false;
-  bool m_dataSourceRunIdHasBeenSet = false;
   bool m_databaseHasBeenSet = false;
+  bool m_dataSourceRunIdHasBeenSet = false;
+  bool m_technicalNameHasBeenSet = false;
+  bool m_dataAssetStatusHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_dataAssetIdHasBeenSet = false;
+  bool m_technicalDescriptionHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
   bool m_lineageSummaryHasBeenSet = false;
-  bool m_projectIdHasBeenSet = false;
-  bool m_technicalDescriptionHasBeenSet = false;
-  bool m_technicalNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

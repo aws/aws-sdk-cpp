@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String UpdateSubscriptionGrantStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_failureCauseHasBeenSet) {
-    payload.WithObject("failureCause", m_failureCause.Jsonize());
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("status", SubscriptionGrantStatusMapper::GetNameForSubscriptionGrantStatus(m_status));
+  }
+
+  if (m_failureCauseHasBeenSet) {
+    payload.WithObject("failureCause", m_failureCause.Jsonize());
   }
 
   if (m_targetNameHasBeenSet) {

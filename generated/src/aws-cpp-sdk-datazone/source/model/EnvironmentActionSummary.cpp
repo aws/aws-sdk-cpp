@@ -18,10 +18,6 @@ namespace Model {
 EnvironmentActionSummary::EnvironmentActionSummary(JsonView jsonValue) { *this = jsonValue; }
 
 EnvironmentActionSummary& EnvironmentActionSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
@@ -42,15 +38,15 @@ EnvironmentActionSummary& EnvironmentActionSummary::operator=(JsonView jsonValue
     m_parameters = jsonValue.GetObject("parameters");
     m_parametersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue EnvironmentActionSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
 
   if (m_domainIdHasBeenSet) {
     payload.WithString("domainId", m_domainId);
@@ -70,6 +66,10 @@ JsonValue EnvironmentActionSummary::Jsonize() const {
 
   if (m_parametersHasBeenSet) {
     payload.WithObject("parameters", m_parameters.Jsonize());
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;

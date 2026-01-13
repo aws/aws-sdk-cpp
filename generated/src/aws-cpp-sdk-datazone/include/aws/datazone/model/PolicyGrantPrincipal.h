@@ -36,18 +36,18 @@ class PolicyGrantPrincipal {
 
   ///@{
   /**
-   * <p>The domain unit of the policy grant principal.</p>
+   * <p>The user of the policy grant principal.</p>
    */
-  inline const DomainUnitPolicyGrantPrincipal& GetDomainUnit() const { return m_domainUnit; }
-  inline bool DomainUnitHasBeenSet() const { return m_domainUnitHasBeenSet; }
-  template <typename DomainUnitT = DomainUnitPolicyGrantPrincipal>
-  void SetDomainUnit(DomainUnitT&& value) {
-    m_domainUnitHasBeenSet = true;
-    m_domainUnit = std::forward<DomainUnitT>(value);
+  inline const UserPolicyGrantPrincipal& GetUser() const { return m_user; }
+  inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
+  template <typename UserT = UserPolicyGrantPrincipal>
+  void SetUser(UserT&& value) {
+    m_userHasBeenSet = true;
+    m_user = std::forward<UserT>(value);
   }
-  template <typename DomainUnitT = DomainUnitPolicyGrantPrincipal>
-  PolicyGrantPrincipal& WithDomainUnit(DomainUnitT&& value) {
-    SetDomainUnit(std::forward<DomainUnitT>(value));
+  template <typename UserT = UserPolicyGrantPrincipal>
+  PolicyGrantPrincipal& WithUser(UserT&& value) {
+    SetUser(std::forward<UserT>(value));
     return *this;
   }
   ///@}
@@ -90,33 +90,33 @@ class PolicyGrantPrincipal {
 
   ///@{
   /**
-   * <p>The user of the policy grant principal.</p>
+   * <p>The domain unit of the policy grant principal.</p>
    */
-  inline const UserPolicyGrantPrincipal& GetUser() const { return m_user; }
-  inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-  template <typename UserT = UserPolicyGrantPrincipal>
-  void SetUser(UserT&& value) {
-    m_userHasBeenSet = true;
-    m_user = std::forward<UserT>(value);
+  inline const DomainUnitPolicyGrantPrincipal& GetDomainUnit() const { return m_domainUnit; }
+  inline bool DomainUnitHasBeenSet() const { return m_domainUnitHasBeenSet; }
+  template <typename DomainUnitT = DomainUnitPolicyGrantPrincipal>
+  void SetDomainUnit(DomainUnitT&& value) {
+    m_domainUnitHasBeenSet = true;
+    m_domainUnit = std::forward<DomainUnitT>(value);
   }
-  template <typename UserT = UserPolicyGrantPrincipal>
-  PolicyGrantPrincipal& WithUser(UserT&& value) {
-    SetUser(std::forward<UserT>(value));
+  template <typename DomainUnitT = DomainUnitPolicyGrantPrincipal>
+  PolicyGrantPrincipal& WithDomainUnit(DomainUnitT&& value) {
+    SetDomainUnit(std::forward<DomainUnitT>(value));
     return *this;
   }
   ///@}
  private:
-  DomainUnitPolicyGrantPrincipal m_domainUnit;
+  UserPolicyGrantPrincipal m_user;
 
   GroupPolicyGrantPrincipal m_group;
 
   ProjectPolicyGrantPrincipal m_project;
 
-  UserPolicyGrantPrincipal m_user;
-  bool m_domainUnitHasBeenSet = false;
+  DomainUnitPolicyGrantPrincipal m_domainUnit;
+  bool m_userHasBeenSet = false;
   bool m_groupHasBeenSet = false;
   bool m_projectHasBeenSet = false;
-  bool m_userHasBeenSet = false;
+  bool m_domainUnitHasBeenSet = false;
 };
 
 }  // namespace Model

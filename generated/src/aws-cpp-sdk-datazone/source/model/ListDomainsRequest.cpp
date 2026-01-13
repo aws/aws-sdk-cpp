@@ -19,6 +19,12 @@ Aws::String ListDomainsRequest::SerializePayload() const { return {}; }
 
 void ListDomainsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
+  if (m_statusHasBeenSet) {
+    ss << DomainStatusMapper::GetNameForDomainStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
+    ss.str("");
+  }
+
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
@@ -28,12 +34,6 @@ void ListDomainsRequest::AddQueryStringParameters(URI& uri) const {
   if (m_nextTokenHasBeenSet) {
     ss << m_nextToken;
     uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
-  if (m_statusHasBeenSet) {
-    ss << DomainStatusMapper::GetNameForDomainStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
     ss.str("");
   }
 }

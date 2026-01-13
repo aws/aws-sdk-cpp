@@ -34,24 +34,6 @@ class SubscribedUser {
 
   ///@{
   /**
-   * <p>The subscribed user details.</p>
-   */
-  inline const UserProfileDetails& GetDetails() const { return m_details; }
-  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-  template <typename DetailsT = UserProfileDetails>
-  void SetDetails(DetailsT&& value) {
-    m_detailsHasBeenSet = true;
-    m_details = std::forward<DetailsT>(value);
-  }
-  template <typename DetailsT = UserProfileDetails>
-  SubscribedUser& WithDetails(DetailsT&& value) {
-    SetDetails(std::forward<DetailsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the subscribed user.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -67,12 +49,30 @@ class SubscribedUser {
     return *this;
   }
   ///@}
- private:
-  UserProfileDetails m_details;
 
+  ///@{
+  /**
+   * <p>The subscribed user details.</p>
+   */
+  inline const UserProfileDetails& GetDetails() const { return m_details; }
+  inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+  template <typename DetailsT = UserProfileDetails>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
+  }
+  template <typename DetailsT = UserProfileDetails>
+  SubscribedUser& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_id;
-  bool m_detailsHasBeenSet = false;
+
+  UserProfileDetails m_details;
   bool m_idHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
 };
 
 }  // namespace Model

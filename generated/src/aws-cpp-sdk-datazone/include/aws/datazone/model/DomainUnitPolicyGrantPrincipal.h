@@ -52,24 +52,6 @@ class DomainUnitPolicyGrantPrincipal {
 
   ///@{
   /**
-   * <p>The grant filter for the domain unit.</p>
-   */
-  inline const DomainUnitGrantFilter& GetDomainUnitGrantFilter() const { return m_domainUnitGrantFilter; }
-  inline bool DomainUnitGrantFilterHasBeenSet() const { return m_domainUnitGrantFilterHasBeenSet; }
-  template <typename DomainUnitGrantFilterT = DomainUnitGrantFilter>
-  void SetDomainUnitGrantFilter(DomainUnitGrantFilterT&& value) {
-    m_domainUnitGrantFilterHasBeenSet = true;
-    m_domainUnitGrantFilter = std::forward<DomainUnitGrantFilterT>(value);
-  }
-  template <typename DomainUnitGrantFilterT = DomainUnitGrantFilter>
-  DomainUnitPolicyGrantPrincipal& WithDomainUnitGrantFilter(DomainUnitGrantFilterT&& value) {
-    SetDomainUnitGrantFilter(std::forward<DomainUnitGrantFilterT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain unit.</p>
    */
   inline const Aws::String& GetDomainUnitIdentifier() const { return m_domainUnitIdentifier; }
@@ -85,15 +67,33 @@ class DomainUnitPolicyGrantPrincipal {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The grant filter for the domain unit.</p>
+   */
+  inline const DomainUnitGrantFilter& GetDomainUnitGrantFilter() const { return m_domainUnitGrantFilter; }
+  inline bool DomainUnitGrantFilterHasBeenSet() const { return m_domainUnitGrantFilterHasBeenSet; }
+  template <typename DomainUnitGrantFilterT = DomainUnitGrantFilter>
+  void SetDomainUnitGrantFilter(DomainUnitGrantFilterT&& value) {
+    m_domainUnitGrantFilterHasBeenSet = true;
+    m_domainUnitGrantFilter = std::forward<DomainUnitGrantFilterT>(value);
+  }
+  template <typename DomainUnitGrantFilterT = DomainUnitGrantFilter>
+  DomainUnitPolicyGrantPrincipal& WithDomainUnitGrantFilter(DomainUnitGrantFilterT&& value) {
+    SetDomainUnitGrantFilter(std::forward<DomainUnitGrantFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DomainUnitDesignation m_domainUnitDesignation{DomainUnitDesignation::NOT_SET};
 
-  DomainUnitGrantFilter m_domainUnitGrantFilter;
-
   Aws::String m_domainUnitIdentifier;
+
+  DomainUnitGrantFilter m_domainUnitGrantFilter;
   bool m_domainUnitDesignationHasBeenSet = false;
-  bool m_domainUnitGrantFilterHasBeenSet = false;
   bool m_domainUnitIdentifierHasBeenSet = false;
+  bool m_domainUnitGrantFilterHasBeenSet = false;
 };
 
 }  // namespace Model

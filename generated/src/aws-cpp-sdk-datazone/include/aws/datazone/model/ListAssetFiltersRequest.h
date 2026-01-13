@@ -36,24 +36,6 @@ class ListAssetFiltersRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The ID of the data asset.</p>
-   */
-  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
-  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
-  template <typename AssetIdentifierT = Aws::String>
-  void SetAssetIdentifier(AssetIdentifierT&& value) {
-    m_assetIdentifierHasBeenSet = true;
-    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
-  }
-  template <typename AssetIdentifierT = Aws::String>
-  ListAssetFiltersRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
-    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to list asset filters.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -72,20 +54,34 @@ class ListAssetFiltersRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of asset filters to return in a single call to
-   * <code>ListAssetFilters</code>. When the number of asset filters to be listed is
-   * greater than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListAssetFilters</code> to list the next set of asset filters.</p>
+   * <p>The ID of the data asset.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
+  inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
+  template <typename AssetIdentifierT = Aws::String>
+  void SetAssetIdentifier(AssetIdentifierT&& value) {
+    m_assetIdentifierHasBeenSet = true;
+    m_assetIdentifier = std::forward<AssetIdentifierT>(value);
   }
-  inline ListAssetFiltersRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename AssetIdentifierT = Aws::String>
+  ListAssetFiltersRequest& WithAssetIdentifier(AssetIdentifierT&& value) {
+    SetAssetIdentifier(std::forward<AssetIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the asset filter.</p>
+   */
+  inline FilterStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(FilterStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListAssetFiltersRequest& WithStatus(FilterStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -115,34 +111,38 @@ class ListAssetFiltersRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The status of the asset filter.</p>
+   * <p>The maximum number of asset filters to return in a single call to
+   * <code>ListAssetFilters</code>. When the number of asset filters to be listed is
+   * greater than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListAssetFilters</code> to list the next set of asset filters.</p>
    */
-  inline FilterStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(FilterStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListAssetFiltersRequest& WithStatus(FilterStatus value) {
-    SetStatus(value);
+  inline ListAssetFiltersRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_assetIdentifier;
-
   Aws::String m_domainIdentifier;
 
-  int m_maxResults{0};
+  Aws::String m_assetIdentifier;
+
+  FilterStatus m_status{FilterStatus::NOT_SET};
 
   Aws::String m_nextToken;
 
-  FilterStatus m_status{FilterStatus::NOT_SET};
-  bool m_assetIdentifierHasBeenSet = false;
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
+  bool m_assetIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

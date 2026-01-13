@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String UpdateAssetFilterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_configurationHasBeenSet) {
-    payload.WithObject("configuration", m_configuration.Jsonize());
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload.View().WriteReadable();

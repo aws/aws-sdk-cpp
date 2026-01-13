@@ -54,6 +54,24 @@ class TextMatchItem {
 
   ///@{
   /**
+   * <p>Snippet of attribute text containing highlighted content.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  TextMatchItem& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of offsets indicating matching terms in the TextMatchItem text.</p>
    */
   inline const Aws::Vector<MatchOffset>& GetMatchOffsets() const { return m_matchOffsets; }
@@ -75,33 +93,15 @@ class TextMatchItem {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Snippet of attribute text containing highlighted content.</p>
-   */
-  inline const Aws::String& GetText() const { return m_text; }
-  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-  template <typename TextT = Aws::String>
-  void SetText(TextT&& value) {
-    m_textHasBeenSet = true;
-    m_text = std::forward<TextT>(value);
-  }
-  template <typename TextT = Aws::String>
-  TextMatchItem& WithText(TextT&& value) {
-    SetText(std::forward<TextT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_attribute;
 
-  Aws::Vector<MatchOffset> m_matchOffsets;
-
   Aws::String m_text;
+
+  Aws::Vector<MatchOffset> m_matchOffsets;
   bool m_attributeHasBeenSet = false;
-  bool m_matchOffsetsHasBeenSet = false;
   bool m_textHasBeenSet = false;
+  bool m_matchOffsetsHasBeenSet = false;
 };
 
 }  // namespace Model

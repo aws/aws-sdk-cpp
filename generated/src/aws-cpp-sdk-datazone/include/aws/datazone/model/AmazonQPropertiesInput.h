@@ -33,24 +33,6 @@ class AmazonQPropertiesInput {
 
   ///@{
   /**
-   * <p>The authentication mode of the connection's Amazon Q properties.</p>
-   */
-  inline const Aws::String& GetAuthMode() const { return m_authMode; }
-  inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
-  template <typename AuthModeT = Aws::String>
-  void SetAuthMode(AuthModeT&& value) {
-    m_authModeHasBeenSet = true;
-    m_authMode = std::forward<AuthModeT>(value);
-  }
-  template <typename AuthModeT = Aws::String>
-  AmazonQPropertiesInput& WithAuthMode(AuthModeT&& value) {
-    SetAuthMode(std::forward<AuthModeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies whether Amazon Q is enabled for the connection.</p>
    */
   inline bool GetIsEnabled() const { return m_isEnabled; }
@@ -82,15 +64,33 @@ class AmazonQPropertiesInput {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_authMode;
 
+  ///@{
+  /**
+   * <p>The authentication mode of the connection's Amazon Q properties.</p>
+   */
+  inline const Aws::String& GetAuthMode() const { return m_authMode; }
+  inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
+  template <typename AuthModeT = Aws::String>
+  void SetAuthMode(AuthModeT&& value) {
+    m_authModeHasBeenSet = true;
+    m_authMode = std::forward<AuthModeT>(value);
+  }
+  template <typename AuthModeT = Aws::String>
+  AmazonQPropertiesInput& WithAuthMode(AuthModeT&& value) {
+    SetAuthMode(std::forward<AuthModeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   bool m_isEnabled{false};
 
   Aws::String m_profileArn;
-  bool m_authModeHasBeenSet = false;
+
+  Aws::String m_authMode;
   bool m_isEnabledHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
+  bool m_authModeHasBeenSet = false;
 };
 
 }  // namespace Model

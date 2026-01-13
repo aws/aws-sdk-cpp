@@ -34,24 +34,6 @@ class LineageInfo {
 
   ///@{
   /**
-   * <p>The data lineage error message.</p>
-   */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
-  }
-  template <typename ErrorMessageT = Aws::String>
-  LineageInfo& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The data lineage event ID.</p>
    */
   inline const Aws::String& GetEventId() const { return m_eventId; }
@@ -83,15 +65,33 @@ class LineageInfo {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_errorMessage;
 
+  ///@{
+  /**
+   * <p>The data lineage error message.</p>
+   */
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = Aws::String>
+  LineageInfo& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_eventId;
 
   LineageEventProcessingStatus m_eventStatus{LineageEventProcessingStatus::NOT_SET};
-  bool m_errorMessageHasBeenSet = false;
+
+  Aws::String m_errorMessage;
   bool m_eventIdHasBeenSet = false;
   bool m_eventStatusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
 };
 
 }  // namespace Model

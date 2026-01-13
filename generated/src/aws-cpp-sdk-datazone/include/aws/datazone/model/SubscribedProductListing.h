@@ -36,48 +36,6 @@ class SubscribedProductListing {
 
   ///@{
   /**
-   * <p>The data assets of the data product listing.</p>
-   */
-  inline const Aws::Vector<AssetInDataProductListingItem>& GetAssetListings() const { return m_assetListings; }
-  inline bool AssetListingsHasBeenSet() const { return m_assetListingsHasBeenSet; }
-  template <typename AssetListingsT = Aws::Vector<AssetInDataProductListingItem>>
-  void SetAssetListings(AssetListingsT&& value) {
-    m_assetListingsHasBeenSet = true;
-    m_assetListings = std::forward<AssetListingsT>(value);
-  }
-  template <typename AssetListingsT = Aws::Vector<AssetInDataProductListingItem>>
-  SubscribedProductListing& WithAssetListings(AssetListingsT&& value) {
-    SetAssetListings(std::forward<AssetListingsT>(value));
-    return *this;
-  }
-  template <typename AssetListingsT = AssetInDataProductListingItem>
-  SubscribedProductListing& AddAssetListings(AssetListingsT&& value) {
-    m_assetListingsHasBeenSet = true;
-    m_assetListings.emplace_back(std::forward<AssetListingsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the data product listing.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  SubscribedProductListing& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the data product listing.</p>
    */
   inline const Aws::String& GetEntityId() const { return m_entityId; }
@@ -153,11 +111,49 @@ class SubscribedProductListing {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The description of the data product listing.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  SubscribedProductListing& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The data assets of the data product listing.</p>
+   */
+  inline const Aws::Vector<AssetInDataProductListingItem>& GetAssetListings() const { return m_assetListings; }
+  inline bool AssetListingsHasBeenSet() const { return m_assetListingsHasBeenSet; }
+  template <typename AssetListingsT = Aws::Vector<AssetInDataProductListingItem>>
+  void SetAssetListings(AssetListingsT&& value) {
+    m_assetListingsHasBeenSet = true;
+    m_assetListings = std::forward<AssetListingsT>(value);
+  }
+  template <typename AssetListingsT = Aws::Vector<AssetInDataProductListingItem>>
+  SubscribedProductListing& WithAssetListings(AssetListingsT&& value) {
+    SetAssetListings(std::forward<AssetListingsT>(value));
+    return *this;
+  }
+  template <typename AssetListingsT = AssetInDataProductListingItem>
+  SubscribedProductListing& AddAssetListings(AssetListingsT&& value) {
+    m_assetListingsHasBeenSet = true;
+    m_assetListings.emplace_back(std::forward<AssetListingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Vector<AssetInDataProductListingItem> m_assetListings;
-
-  Aws::String m_description;
-
   Aws::String m_entityId;
 
   Aws::String m_entityRevision;
@@ -165,12 +161,16 @@ class SubscribedProductListing {
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
 
   Aws::String m_name;
-  bool m_assetListingsHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_description;
+
+  Aws::Vector<AssetInDataProductListingItem> m_assetListings;
   bool m_entityIdHasBeenSet = false;
   bool m_entityRevisionHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_assetListingsHasBeenSet = false;
 };
 
 }  // namespace Model

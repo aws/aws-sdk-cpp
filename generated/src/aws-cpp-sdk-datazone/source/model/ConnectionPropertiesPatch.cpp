@@ -18,10 +18,6 @@ namespace Model {
 ConnectionPropertiesPatch::ConnectionPropertiesPatch(JsonView jsonValue) { *this = jsonValue; }
 
 ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("amazonQProperties")) {
-    m_amazonQProperties = jsonValue.GetObject("amazonQProperties");
-    m_amazonQPropertiesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("athenaProperties")) {
     m_athenaProperties = jsonValue.GetObject("athenaProperties");
     m_athenaPropertiesHasBeenSet = true;
@@ -34,31 +30,31 @@ ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator=(JsonView jsonVal
     m_iamProperties = jsonValue.GetObject("iamProperties");
     m_iamPropertiesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("mlflowProperties")) {
-    m_mlflowProperties = jsonValue.GetObject("mlflowProperties");
-    m_mlflowPropertiesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("redshiftProperties")) {
     m_redshiftProperties = jsonValue.GetObject("redshiftProperties");
     m_redshiftPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sparkEmrProperties")) {
+    m_sparkEmrProperties = jsonValue.GetObject("sparkEmrProperties");
+    m_sparkEmrPropertiesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("s3Properties")) {
     m_s3Properties = jsonValue.GetObject("s3Properties");
     m_s3PropertiesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sparkEmrProperties")) {
-    m_sparkEmrProperties = jsonValue.GetObject("sparkEmrProperties");
-    m_sparkEmrPropertiesHasBeenSet = true;
+  if (jsonValue.ValueExists("amazonQProperties")) {
+    m_amazonQProperties = jsonValue.GetObject("amazonQProperties");
+    m_amazonQPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mlflowProperties")) {
+    m_mlflowProperties = jsonValue.GetObject("mlflowProperties");
+    m_mlflowPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue ConnectionPropertiesPatch::Jsonize() const {
   JsonValue payload;
-
-  if (m_amazonQPropertiesHasBeenSet) {
-    payload.WithObject("amazonQProperties", m_amazonQProperties.Jsonize());
-  }
 
   if (m_athenaPropertiesHasBeenSet) {
     payload.WithObject("athenaProperties", m_athenaProperties.Jsonize());
@@ -72,20 +68,24 @@ JsonValue ConnectionPropertiesPatch::Jsonize() const {
     payload.WithObject("iamProperties", m_iamProperties.Jsonize());
   }
 
-  if (m_mlflowPropertiesHasBeenSet) {
-    payload.WithObject("mlflowProperties", m_mlflowProperties.Jsonize());
-  }
-
   if (m_redshiftPropertiesHasBeenSet) {
     payload.WithObject("redshiftProperties", m_redshiftProperties.Jsonize());
+  }
+
+  if (m_sparkEmrPropertiesHasBeenSet) {
+    payload.WithObject("sparkEmrProperties", m_sparkEmrProperties.Jsonize());
   }
 
   if (m_s3PropertiesHasBeenSet) {
     payload.WithObject("s3Properties", m_s3Properties.Jsonize());
   }
 
-  if (m_sparkEmrPropertiesHasBeenSet) {
-    payload.WithObject("sparkEmrProperties", m_sparkEmrProperties.Jsonize());
+  if (m_amazonQPropertiesHasBeenSet) {
+    payload.WithObject("amazonQProperties", m_amazonQProperties.Jsonize());
+  }
+
+  if (m_mlflowPropertiesHasBeenSet) {
+    payload.WithObject("mlflowProperties", m_mlflowProperties.Jsonize());
   }
 
   return payload;

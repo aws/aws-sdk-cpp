@@ -34,34 +34,17 @@ class GetDataSourceRunResult {
 
   ///@{
   /**
-   * <p>The timestamp of when the data source run was created.</p>
+   * <p>The ID of the domain in which this data source run was performed.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  GetDataSourceRunResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration snapshot of the data source run.</p>
-   */
-  inline const Aws::String& GetDataSourceConfigurationSnapshot() const { return m_dataSourceConfigurationSnapshot; }
-  template <typename DataSourceConfigurationSnapshotT = Aws::String>
-  void SetDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
-    m_dataSourceConfigurationSnapshotHasBeenSet = true;
-    m_dataSourceConfigurationSnapshot = std::forward<DataSourceConfigurationSnapshotT>(value);
-  }
-  template <typename DataSourceConfigurationSnapshotT = Aws::String>
-  GetDataSourceRunResult& WithDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
-    SetDataSourceConfigurationSnapshot(std::forward<DataSourceConfigurationSnapshotT>(value));
+  template <typename DomainIdT = Aws::String>
+  GetDataSourceRunResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
     return *this;
   }
   ///@}
@@ -85,17 +68,115 @@ class GetDataSourceRunResult {
 
   ///@{
   /**
-   * <p>The ID of the domain in which this data source run was performed.</p>
+   * <p>The ID of the data source run.</p>
    */
-  inline const Aws::String& GetDomainId() const { return m_domainId; }
-  template <typename DomainIdT = Aws::String>
-  void SetDomainId(DomainIdT&& value) {
-    m_domainIdHasBeenSet = true;
-    m_domainId = std::forward<DomainIdT>(value);
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
   }
-  template <typename DomainIdT = Aws::String>
-  GetDataSourceRunResult& WithDomainId(DomainIdT&& value) {
-    SetDomainId(std::forward<DomainIdT>(value));
+  template <typename IdT = Aws::String>
+  GetDataSourceRunResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project in which this data source run occured.</p>
+   */
+  inline const Aws::String& GetProjectId() const { return m_projectId; }
+  template <typename ProjectIdT = Aws::String>
+  void SetProjectId(ProjectIdT&& value) {
+    m_projectIdHasBeenSet = true;
+    m_projectId = std::forward<ProjectIdT>(value);
+  }
+  template <typename ProjectIdT = Aws::String>
+  GetDataSourceRunResult& WithProjectId(ProjectIdT&& value) {
+    SetProjectId(std::forward<ProjectIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of this data source run.</p>
+   */
+  inline DataSourceRunStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DataSourceRunStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline GetDataSourceRunResult& WithStatus(DataSourceRunStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of this data source run.</p>
+   */
+  inline DataSourceRunType GetType() const { return m_type; }
+  inline void SetType(DataSourceRunType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline GetDataSourceRunResult& WithType(DataSourceRunType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration snapshot of the data source run.</p>
+   */
+  inline const Aws::String& GetDataSourceConfigurationSnapshot() const { return m_dataSourceConfigurationSnapshot; }
+  template <typename DataSourceConfigurationSnapshotT = Aws::String>
+  void SetDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
+    m_dataSourceConfigurationSnapshotHasBeenSet = true;
+    m_dataSourceConfigurationSnapshot = std::forward<DataSourceConfigurationSnapshotT>(value);
+  }
+  template <typename DataSourceConfigurationSnapshotT = Aws::String>
+  GetDataSourceRunResult& WithDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
+    SetDataSourceConfigurationSnapshot(std::forward<DataSourceConfigurationSnapshotT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset statistics from this data source run.</p>
+   */
+  inline const RunStatisticsForAssets& GetRunStatisticsForAssets() const { return m_runStatisticsForAssets; }
+  template <typename RunStatisticsForAssetsT = RunStatisticsForAssets>
+  void SetRunStatisticsForAssets(RunStatisticsForAssetsT&& value) {
+    m_runStatisticsForAssetsHasBeenSet = true;
+    m_runStatisticsForAssets = std::forward<RunStatisticsForAssetsT>(value);
+  }
+  template <typename RunStatisticsForAssetsT = RunStatisticsForAssets>
+  GetDataSourceRunResult& WithRunStatisticsForAssets(RunStatisticsForAssetsT&& value) {
+    SetRunStatisticsForAssets(std::forward<RunStatisticsForAssetsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The summary of the data lineage.</p>
+   */
+  inline const DataSourceRunLineageSummary& GetLineageSummary() const { return m_lineageSummary; }
+  template <typename LineageSummaryT = DataSourceRunLineageSummary>
+  void SetLineageSummary(LineageSummaryT&& value) {
+    m_lineageSummaryHasBeenSet = true;
+    m_lineageSummary = std::forward<LineageSummaryT>(value);
+  }
+  template <typename LineageSummaryT = DataSourceRunLineageSummary>
+  GetDataSourceRunResult& WithLineageSummary(LineageSummaryT&& value) {
+    SetLineageSummary(std::forward<LineageSummaryT>(value));
     return *this;
   }
   ///@}
@@ -120,68 +201,34 @@ class GetDataSourceRunResult {
 
   ///@{
   /**
-   * <p>The ID of the data source run.</p>
+   * <p>The timestamp of when the data source run was created.</p>
    */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename IdT = Aws::String>
-  GetDataSourceRunResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  GetDataSourceRunResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The summary of the data lineage.</p>
+   * <p>The timestamp of when this data source run was updated.</p>
    */
-  inline const DataSourceRunLineageSummary& GetLineageSummary() const { return m_lineageSummary; }
-  template <typename LineageSummaryT = DataSourceRunLineageSummary>
-  void SetLineageSummary(LineageSummaryT&& value) {
-    m_lineageSummaryHasBeenSet = true;
-    m_lineageSummary = std::forward<LineageSummaryT>(value);
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
   }
-  template <typename LineageSummaryT = DataSourceRunLineageSummary>
-  GetDataSourceRunResult& WithLineageSummary(LineageSummaryT&& value) {
-    SetLineageSummary(std::forward<LineageSummaryT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the project in which this data source run occured.</p>
-   */
-  inline const Aws::String& GetProjectId() const { return m_projectId; }
-  template <typename ProjectIdT = Aws::String>
-  void SetProjectId(ProjectIdT&& value) {
-    m_projectIdHasBeenSet = true;
-    m_projectId = std::forward<ProjectIdT>(value);
-  }
-  template <typename ProjectIdT = Aws::String>
-  GetDataSourceRunResult& WithProjectId(ProjectIdT&& value) {
-    SetProjectId(std::forward<ProjectIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The asset statistics from this data source run.</p>
-   */
-  inline const RunStatisticsForAssets& GetRunStatisticsForAssets() const { return m_runStatisticsForAssets; }
-  template <typename RunStatisticsForAssetsT = RunStatisticsForAssets>
-  void SetRunStatisticsForAssets(RunStatisticsForAssetsT&& value) {
-    m_runStatisticsForAssetsHasBeenSet = true;
-    m_runStatisticsForAssets = std::forward<RunStatisticsForAssetsT>(value);
-  }
-  template <typename RunStatisticsForAssetsT = RunStatisticsForAssets>
-  GetDataSourceRunResult& WithRunStatisticsForAssets(RunStatisticsForAssetsT&& value) {
-    SetRunStatisticsForAssets(std::forward<RunStatisticsForAssetsT>(value));
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  GetDataSourceRunResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -205,21 +252,6 @@ class GetDataSourceRunResult {
 
   ///@{
   /**
-   * <p>The status of this data source run.</p>
-   */
-  inline DataSourceRunStatus GetStatus() const { return m_status; }
-  inline void SetStatus(DataSourceRunStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline GetDataSourceRunResult& WithStatus(DataSourceRunStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp of when this data source run stopped.</p>
    */
   inline const Aws::Utils::DateTime& GetStoppedAt() const { return m_stoppedAt; }
@@ -231,38 +263,6 @@ class GetDataSourceRunResult {
   template <typename StoppedAtT = Aws::Utils::DateTime>
   GetDataSourceRunResult& WithStoppedAt(StoppedAtT&& value) {
     SetStoppedAt(std::forward<StoppedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of this data source run.</p>
-   */
-  inline DataSourceRunType GetType() const { return m_type; }
-  inline void SetType(DataSourceRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline GetDataSourceRunResult& WithType(DataSourceRunType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when this data source run was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
-  }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  GetDataSourceRunResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -282,49 +282,49 @@ class GetDataSourceRunResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_dataSourceConfigurationSnapshot;
+  Aws::String m_domainId;
 
   Aws::String m_dataSourceId;
 
-  Aws::String m_domainId;
-
-  DataSourceErrorMessage m_errorMessage;
-
   Aws::String m_id;
-
-  DataSourceRunLineageSummary m_lineageSummary;
 
   Aws::String m_projectId;
 
-  RunStatisticsForAssets m_runStatisticsForAssets;
-
-  Aws::Utils::DateTime m_startedAt{};
-
   DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
-
-  Aws::Utils::DateTime m_stoppedAt{};
 
   DataSourceRunType m_type{DataSourceRunType::NOT_SET};
 
+  Aws::String m_dataSourceConfigurationSnapshot;
+
+  RunStatisticsForAssets m_runStatisticsForAssets;
+
+  DataSourceRunLineageSummary m_lineageSummary;
+
+  DataSourceErrorMessage m_errorMessage;
+
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::Utils::DateTime m_startedAt{};
+
+  Aws::Utils::DateTime m_stoppedAt{};
+
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_dataSourceConfigurationSnapshotHasBeenSet = false;
-  bool m_dataSourceIdHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_errorMessageHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_lineageSummaryHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
-  bool m_runStatisticsForAssetsHasBeenSet = false;
-  bool m_startedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_stoppedAtHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_dataSourceConfigurationSnapshotHasBeenSet = false;
+  bool m_runStatisticsForAssetsHasBeenSet = false;
+  bool m_lineageSummaryHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -32,24 +32,6 @@ class CreateAssetTypeRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The descripton of the custom asset type.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateAssetTypeRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique identifier of the Amazon DataZone domain where the custom asset
    * type is being created.</p>
    */
@@ -63,6 +45,42 @@ class CreateAssetTypeRequest : public DataZoneRequest {
   template <typename DomainIdentifierT = Aws::String>
   CreateAssetTypeRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
     SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the custom asset type.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateAssetTypeRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The descripton of the custom asset type.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateAssetTypeRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -93,24 +111,6 @@ class CreateAssetTypeRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The name of the custom asset type.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateAssetTypeRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone project that is to own the custom asset
    * type.</p>
    */
@@ -128,19 +128,19 @@ class CreateAssetTypeRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
-
-  Aws::Map<Aws::String, FormEntryInput> m_formsInput;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
+  Aws::Map<Aws::String, FormEntryInput> m_formsInput;
+
   Aws::String m_owningProjectIdentifier;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_formsInputHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_formsInputHasBeenSet = false;
   bool m_owningProjectIdentifierHasBeenSet = false;
 };
 

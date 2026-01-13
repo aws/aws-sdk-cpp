@@ -54,6 +54,30 @@ class AssetListingItemAdditionalAttributes {
 
   ///@{
   /**
+   * <p>List of rationales indicating why this item was matched by search.</p>
+   */
+  inline const Aws::Vector<MatchRationaleItem>& GetMatchRationale() const { return m_matchRationale; }
+  inline bool MatchRationaleHasBeenSet() const { return m_matchRationaleHasBeenSet; }
+  template <typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+  void SetMatchRationale(MatchRationaleT&& value) {
+    m_matchRationaleHasBeenSet = true;
+    m_matchRationale = std::forward<MatchRationaleT>(value);
+  }
+  template <typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
+  AssetListingItemAdditionalAttributes& WithMatchRationale(MatchRationaleT&& value) {
+    SetMatchRationale(std::forward<MatchRationaleT>(value));
+    return *this;
+  }
+  template <typename MatchRationaleT = MatchRationaleItem>
+  AssetListingItemAdditionalAttributes& AddMatchRationale(MatchRationaleT&& value) {
+    m_matchRationaleHasBeenSet = true;
+    m_matchRationale.emplace_back(std::forward<MatchRationaleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The latest time series data points forms included in the additional
    * attributes of an asset.</p>
    */
@@ -78,39 +102,15 @@ class AssetListingItemAdditionalAttributes {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>List of rationales indicating why this item was matched by search.</p>
-   */
-  inline const Aws::Vector<MatchRationaleItem>& GetMatchRationale() const { return m_matchRationale; }
-  inline bool MatchRationaleHasBeenSet() const { return m_matchRationaleHasBeenSet; }
-  template <typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
-  void SetMatchRationale(MatchRationaleT&& value) {
-    m_matchRationaleHasBeenSet = true;
-    m_matchRationale = std::forward<MatchRationaleT>(value);
-  }
-  template <typename MatchRationaleT = Aws::Vector<MatchRationaleItem>>
-  AssetListingItemAdditionalAttributes& WithMatchRationale(MatchRationaleT&& value) {
-    SetMatchRationale(std::forward<MatchRationaleT>(value));
-    return *this;
-  }
-  template <typename MatchRationaleT = MatchRationaleItem>
-  AssetListingItemAdditionalAttributes& AddMatchRationale(MatchRationaleT&& value) {
-    m_matchRationaleHasBeenSet = true;
-    m_matchRationale.emplace_back(std::forward<MatchRationaleT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_forms;
 
-  Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
-
   Aws::Vector<MatchRationaleItem> m_matchRationale;
+
+  Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointForms;
   bool m_formsHasBeenSet = false;
-  bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
   bool m_matchRationaleHasBeenSet = false;
+  bool m_latestTimeSeriesDataPointFormsHasBeenSet = false;
 };
 
 }  // namespace Model

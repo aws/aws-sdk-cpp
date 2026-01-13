@@ -52,24 +52,6 @@ class GroupProfileSummary {
 
   ///@{
   /**
-   * <p>The group name of a group profile.</p>
-   */
-  inline const Aws::String& GetGroupName() const { return m_groupName; }
-  inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-  template <typename GroupNameT = Aws::String>
-  void SetGroupName(GroupNameT&& value) {
-    m_groupNameHasBeenSet = true;
-    m_groupName = std::forward<GroupNameT>(value);
-  }
-  template <typename GroupNameT = Aws::String>
-  GroupProfileSummary& WithGroupName(GroupNameT&& value) {
-    SetGroupName(std::forward<GroupNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of a group profile.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -101,18 +83,36 @@ class GroupProfileSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The group name of a group profile.</p>
+   */
+  inline const Aws::String& GetGroupName() const { return m_groupName; }
+  inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+  template <typename GroupNameT = Aws::String>
+  void SetGroupName(GroupNameT&& value) {
+    m_groupNameHasBeenSet = true;
+    m_groupName = std::forward<GroupNameT>(value);
+  }
+  template <typename GroupNameT = Aws::String>
+  GroupProfileSummary& WithGroupName(GroupNameT&& value) {
+    SetGroupName(std::forward<GroupNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
-
-  Aws::String m_groupName;
 
   Aws::String m_id;
 
   GroupProfileStatus m_status{GroupProfileStatus::NOT_SET};
+
+  Aws::String m_groupName;
   bool m_domainIdHasBeenSet = false;
-  bool m_groupNameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
 };
 
 }  // namespace Model

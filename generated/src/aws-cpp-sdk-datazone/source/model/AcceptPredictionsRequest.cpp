@@ -18,16 +18,16 @@ using namespace Aws::Http;
 Aws::String AcceptPredictionsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_acceptRuleHasBeenSet) {
+    payload.WithObject("acceptRule", m_acceptRule.Jsonize());
+  }
+
   if (m_acceptChoicesHasBeenSet) {
     Aws::Utils::Array<JsonValue> acceptChoicesJsonList(m_acceptChoices.size());
     for (unsigned acceptChoicesIndex = 0; acceptChoicesIndex < acceptChoicesJsonList.GetLength(); ++acceptChoicesIndex) {
       acceptChoicesJsonList[acceptChoicesIndex].AsObject(m_acceptChoices[acceptChoicesIndex].Jsonize());
     }
     payload.WithArray("acceptChoices", std::move(acceptChoicesJsonList));
-  }
-
-  if (m_acceptRuleHasBeenSet) {
-    payload.WithObject("acceptRule", m_acceptRule.Jsonize());
   }
 
   if (m_clientTokenHasBeenSet) {

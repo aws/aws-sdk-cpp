@@ -35,25 +35,6 @@ class SubscribedListing {
 
   ///@{
   /**
-   * <p>The description of the published asset for which the subscription grant is
-   * created.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  SubscribedListing& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the published asset for which the subscription grant is
    * created.</p>
    */
@@ -73,18 +54,19 @@ class SubscribedListing {
 
   ///@{
   /**
-   * <p>The published asset for which the subscription grant is created.</p>
+   * <p>The revision of the published asset for which the subscription grant is
+   * created.</p>
    */
-  inline const SubscribedListingItem& GetItem() const { return m_item; }
-  inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-  template <typename ItemT = SubscribedListingItem>
-  void SetItem(ItemT&& value) {
-    m_itemHasBeenSet = true;
-    m_item = std::forward<ItemT>(value);
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
   }
-  template <typename ItemT = SubscribedListingItem>
-  SubscribedListing& WithItem(ItemT&& value) {
-    SetItem(std::forward<ItemT>(value));
+  template <typename RevisionT = Aws::String>
+  SubscribedListing& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
     return *this;
   }
   ///@}
@@ -104,6 +86,43 @@ class SubscribedListing {
   template <typename NameT = Aws::String>
   SubscribedListing& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the published asset for which the subscription grant is
+   * created.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  SubscribedListing& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The published asset for which the subscription grant is created.</p>
+   */
+  inline const SubscribedListingItem& GetItem() const { return m_item; }
+  inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+  template <typename ItemT = SubscribedListingItem>
+  void SetItem(ItemT&& value) {
+    m_itemHasBeenSet = true;
+    m_item = std::forward<ItemT>(value);
+  }
+  template <typename ItemT = SubscribedListingItem>
+  SubscribedListing& WithItem(ItemT&& value) {
+    SetItem(std::forward<ItemT>(value));
     return *this;
   }
   ///@}
@@ -145,46 +164,27 @@ class SubscribedListing {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the published asset for which the subscription grant is
-   * created.</p>
-   */
-  inline const Aws::String& GetRevision() const { return m_revision; }
-  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-  template <typename RevisionT = Aws::String>
-  void SetRevision(RevisionT&& value) {
-    m_revisionHasBeenSet = true;
-    m_revision = std::forward<RevisionT>(value);
-  }
-  template <typename RevisionT = Aws::String>
-  SubscribedListing& WithRevision(RevisionT&& value) {
-    SetRevision(std::forward<RevisionT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_id;
 
-  SubscribedListingItem m_item;
+  Aws::String m_revision;
 
   Aws::String m_name;
+
+  Aws::String m_description;
+
+  SubscribedListingItem m_item;
 
   Aws::String m_ownerProjectId;
 
   Aws::String m_ownerProjectName;
-
-  Aws::String m_revision;
-  bool m_descriptionHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_itemHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_itemHasBeenSet = false;
   bool m_ownerProjectIdHasBeenSet = false;
   bool m_ownerProjectNameHasBeenSet = false;
-  bool m_revisionHasBeenSet = false;
 };
 
 }  // namespace Model

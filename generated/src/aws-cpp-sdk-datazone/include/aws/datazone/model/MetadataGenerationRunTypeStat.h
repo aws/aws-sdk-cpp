@@ -36,18 +36,16 @@ class MetadataGenerationRunTypeStat {
 
   ///@{
   /**
-   * <p>The error message displayed if the action fails to run.</p>
+   * <p>The type of the metadata generation run type statistics.</p>
    */
-  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
-  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-  template <typename ErrorMessageT = Aws::String>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
+  inline MetadataGenerationRunType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(MetadataGenerationRunType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
   }
-  template <typename ErrorMessageT = Aws::String>
-  MetadataGenerationRunTypeStat& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
+  inline MetadataGenerationRunTypeStat& WithType(MetadataGenerationRunType value) {
+    SetType(value);
     return *this;
   }
   ///@}
@@ -70,28 +68,30 @@ class MetadataGenerationRunTypeStat {
 
   ///@{
   /**
-   * <p>The type of the metadata generation run type statistics.</p>
+   * <p>The error message displayed if the action fails to run.</p>
    */
-  inline MetadataGenerationRunType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(MetadataGenerationRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
+  inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+  inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+  template <typename ErrorMessageT = Aws::String>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
   }
-  inline MetadataGenerationRunTypeStat& WithType(MetadataGenerationRunType value) {
-    SetType(value);
+  template <typename ErrorMessageT = Aws::String>
+  MetadataGenerationRunTypeStat& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_errorMessage;
+  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
 
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
 
-  MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
-  bool m_errorMessageHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  Aws::String m_errorMessage;
   bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
 };
 
 }  // namespace Model

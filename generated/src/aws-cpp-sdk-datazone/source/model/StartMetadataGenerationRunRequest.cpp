@@ -15,24 +15,24 @@ using namespace Aws::Utils;
 Aws::String StartMetadataGenerationRunRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
-  }
-
-  if (m_owningProjectIdentifierHasBeenSet) {
-    payload.WithString("owningProjectIdentifier", m_owningProjectIdentifier);
-  }
-
-  if (m_targetHasBeenSet) {
-    payload.WithObject("target", m_target.Jsonize());
-  }
-
   if (m_typesHasBeenSet) {
     Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
     for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
       typesJsonList[typesIndex].AsString(MetadataGenerationRunTypeMapper::GetNameForMetadataGenerationRunType(m_types[typesIndex]));
     }
     payload.WithArray("types", std::move(typesJsonList));
+  }
+
+  if (m_targetHasBeenSet) {
+    payload.WithObject("target", m_target.Jsonize());
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  if (m_owningProjectIdentifierHasBeenSet) {
+    payload.WithString("owningProjectIdentifier", m_owningProjectIdentifier);
   }
 
   return payload.View().WriteReadable();

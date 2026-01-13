@@ -75,6 +75,38 @@ class ListSubscriptionTargetsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>Specifies the way in which the results of this action are to be sorted.</p>
+   */
+  inline SortKey GetSortBy() const { return m_sortBy; }
+  inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+  inline void SetSortBy(SortKey value) {
+    m_sortByHasBeenSet = true;
+    m_sortBy = value;
+  }
+  inline ListSubscriptionTargetsRequest& WithSortBy(SortKey value) {
+    SetSortBy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the sort order for the results of this action.</p>
+   */
+  inline SortOrder GetSortOrder() const { return m_sortOrder; }
+  inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+  inline void SetSortOrder(SortOrder value) {
+    m_sortOrderHasBeenSet = true;
+    m_sortOrder = value;
+  }
+  inline ListSubscriptionTargetsRequest& WithSortOrder(SortOrder value) {
+    SetSortOrder(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of subscription targets to return in a single call to
    * <code>ListSubscriptionTargets</code>. When the number of subscription targets to
    * be listed is greater than the value of <code>MaxResults</code>, the response
@@ -117,56 +149,24 @@ class ListSubscriptionTargetsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the way in which the results of this action are to be sorted.</p>
-   */
-  inline SortKey GetSortBy() const { return m_sortBy; }
-  inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-  inline void SetSortBy(SortKey value) {
-    m_sortByHasBeenSet = true;
-    m_sortBy = value;
-  }
-  inline ListSubscriptionTargetsRequest& WithSortBy(SortKey value) {
-    SetSortBy(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the sort order for the results of this action.</p>
-   */
-  inline SortOrder GetSortOrder() const { return m_sortOrder; }
-  inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-  inline void SetSortOrder(SortOrder value) {
-    m_sortOrderHasBeenSet = true;
-    m_sortOrder = value;
-  }
-  inline ListSubscriptionTargetsRequest& WithSortOrder(SortOrder value) {
-    SetSortOrder(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
 
   Aws::String m_environmentIdentifier;
 
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
-
   SortKey m_sortBy{SortKey::NOT_SET};
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

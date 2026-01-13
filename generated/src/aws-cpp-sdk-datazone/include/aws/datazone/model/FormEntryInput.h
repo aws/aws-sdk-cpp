@@ -33,22 +33,6 @@ class FormEntryInput {
 
   ///@{
   /**
-   * <p>Specifies whether a form entry is required.</p>
-   */
-  inline bool GetRequired() const { return m_required; }
-  inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-  inline void SetRequired(bool value) {
-    m_requiredHasBeenSet = true;
-    m_required = value;
-  }
-  inline FormEntryInput& WithRequired(bool value) {
-    SetRequired(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type ID of the form entry.</p>
    */
   inline const Aws::String& GetTypeIdentifier() const { return m_typeIdentifier; }
@@ -82,15 +66,31 @@ class FormEntryInput {
     return *this;
   }
   ///@}
- private:
-  bool m_required{false};
 
+  ///@{
+  /**
+   * <p>Specifies whether a form entry is required.</p>
+   */
+  inline bool GetRequired() const { return m_required; }
+  inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
+  inline void SetRequired(bool value) {
+    m_requiredHasBeenSet = true;
+    m_required = value;
+  }
+  inline FormEntryInput& WithRequired(bool value) {
+    SetRequired(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_typeIdentifier;
 
   Aws::String m_typeRevision;
-  bool m_requiredHasBeenSet = false;
+
+  bool m_required{false};
   bool m_typeIdentifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
 };
 
 }  // namespace Model

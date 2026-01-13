@@ -18,6 +18,10 @@ namespace Model {
 AggregationOutputItem::AggregationOutputItem(JsonView jsonValue) { *this = jsonValue; }
 
 AggregationOutputItem& AggregationOutputItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
+    m_value = jsonValue.GetString("value");
+    m_valueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInteger("count");
     m_countHasBeenSet = true;
@@ -26,15 +30,15 @@ AggregationOutputItem& AggregationOutputItem::operator=(JsonView jsonValue) {
     m_displayValue = jsonValue.GetString("displayValue");
     m_displayValueHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("value")) {
-    m_value = jsonValue.GetString("value");
-    m_valueHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue AggregationOutputItem::Jsonize() const {
   JsonValue payload;
+
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
+  }
 
   if (m_countHasBeenSet) {
     payload.WithInteger("count", m_count);
@@ -42,10 +46,6 @@ JsonValue AggregationOutputItem::Jsonize() const {
 
   if (m_displayValueHasBeenSet) {
     payload.WithString("displayValue", m_displayValue);
-  }
-
-  if (m_valueHasBeenSet) {
-    payload.WithString("value", m_value);
   }
 
   return payload;

@@ -55,6 +55,25 @@ class RelationalFilterConfiguration {
 
   ///@{
   /**
+   * <p>The schema name specified in the relational filter configuration for the data
+   * source.</p>
+   */
+  inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+  inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
+  template <typename SchemaNameT = Aws::String>
+  void SetSchemaName(SchemaNameT&& value) {
+    m_schemaNameHasBeenSet = true;
+    m_schemaName = std::forward<SchemaNameT>(value);
+  }
+  template <typename SchemaNameT = Aws::String>
+  RelationalFilterConfiguration& WithSchemaName(SchemaNameT&& value) {
+    SetSchemaName(std::forward<SchemaNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The filter expressions specified in the relational filter configuration for
    * the data source.</p>
    */
@@ -77,34 +96,15 @@ class RelationalFilterConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The schema name specified in the relational filter configuration for the data
-   * source.</p>
-   */
-  inline const Aws::String& GetSchemaName() const { return m_schemaName; }
-  inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-  template <typename SchemaNameT = Aws::String>
-  void SetSchemaName(SchemaNameT&& value) {
-    m_schemaNameHasBeenSet = true;
-    m_schemaName = std::forward<SchemaNameT>(value);
-  }
-  template <typename SchemaNameT = Aws::String>
-  RelationalFilterConfiguration& WithSchemaName(SchemaNameT&& value) {
-    SetSchemaName(std::forward<SchemaNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_databaseName;
 
-  Aws::Vector<FilterExpression> m_filterExpressions;
-
   Aws::String m_schemaName;
+
+  Aws::Vector<FilterExpression> m_filterExpressions;
   bool m_databaseNameHasBeenSet = false;
-  bool m_filterExpressionsHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;
+  bool m_filterExpressionsHasBeenSet = false;
 };
 
 }  // namespace Model

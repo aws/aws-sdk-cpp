@@ -30,24 +30,6 @@ class UpdateDomainUnitRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The description of the domain unit that you want to update.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateDomainUnitRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to update a domain unit.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -84,6 +66,24 @@ class UpdateDomainUnitRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The description of the domain unit that you want to update.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateDomainUnitRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the domain unit that you want to update.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -100,16 +100,16 @@ class UpdateDomainUnitRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
+  Aws::String m_description;
+
   Aws::String m_name;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

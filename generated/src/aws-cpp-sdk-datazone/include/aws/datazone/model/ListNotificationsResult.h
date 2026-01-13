@@ -30,28 +30,6 @@ class ListNotificationsResult {
 
   ///@{
   /**
-   * <p>When the number of notifications is greater than the default value for the
-   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
-   * <code>MaxResults</code> that is less than the number of notifications, the
-   * response includes a pagination token named <code>NextToken</code>. You can
-   * specify this <code>NextToken</code> value in a subsequent call to
-   * <code>ListNotifications</code> to list the next set of notifications.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListNotificationsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The results of the <code>ListNotifications</code> action.</p>
    */
   inline const Aws::Vector<NotificationOutput>& GetNotifications() const { return m_notifications; }
@@ -74,6 +52,28 @@ class ListNotificationsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>When the number of notifications is greater than the default value for the
+   * <code>MaxResults</code> parameter, or if you explicitly specify a value for
+   * <code>MaxResults</code> that is less than the number of notifications, the
+   * response includes a pagination token named <code>NextToken</code>. You can
+   * specify this <code>NextToken</code> value in a subsequent call to
+   * <code>ListNotifications</code> to list the next set of notifications.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListNotificationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -88,13 +88,13 @@ class ListNotificationsResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<NotificationOutput> m_notifications;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
   bool m_notificationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

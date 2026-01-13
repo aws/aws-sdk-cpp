@@ -33,24 +33,6 @@ class CreateEnvironmentBlueprintRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The description of the Amazon DataZone blueprint.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateEnvironmentBlueprintRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the domain in which this blueprint is created.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -81,6 +63,24 @@ class CreateEnvironmentBlueprintRequest : public DataZoneRequest {
   template <typename NameT = Aws::String>
   CreateEnvironmentBlueprintRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the Amazon DataZone blueprint.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateEnvironmentBlueprintRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -127,18 +127,18 @@ class CreateEnvironmentBlueprintRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
   ProvisioningProperties m_provisioningProperties;
 
   Aws::Vector<CustomParameter> m_userParameters;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_provisioningPropertiesHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
 };

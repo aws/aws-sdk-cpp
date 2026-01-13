@@ -38,56 +38,55 @@ class AssetListingItem {
 
   ///@{
   /**
-   * <p>The additional attributes of an asset published in an Amazon DataZone
-   * catalog.</p>
+   * <p>The identifier of the listing (asset published in Amazon DataZone
+   * catalog).</p>
    */
-  inline const AssetListingItemAdditionalAttributes& GetAdditionalAttributes() const { return m_additionalAttributes; }
-  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
-  template <typename AdditionalAttributesT = AssetListingItemAdditionalAttributes>
-  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
-    m_additionalAttributesHasBeenSet = true;
-    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
+  inline const Aws::String& GetListingId() const { return m_listingId; }
+  inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
+  template <typename ListingIdT = Aws::String>
+  void SetListingId(ListingIdT&& value) {
+    m_listingIdHasBeenSet = true;
+    m_listingId = std::forward<ListingIdT>(value);
   }
-  template <typename AdditionalAttributesT = AssetListingItemAdditionalAttributes>
-  AssetListingItem& WithAdditionalAttributes(AdditionalAttributesT&& value) {
-    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
+  template <typename ListingIdT = Aws::String>
+  AssetListingItem& WithListingId(ListingIdT&& value) {
+    SetListingId(std::forward<ListingIdT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The timestamp of when an asset published in an Amazon DataZone catalog was
-   * created.</p>
+   * <p>The revision of the listing (asset published in Amazon DataZone catalog).</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetListingRevision() const { return m_listingRevision; }
+  inline bool ListingRevisionHasBeenSet() const { return m_listingRevisionHasBeenSet; }
+  template <typename ListingRevisionT = Aws::String>
+  void SetListingRevision(ListingRevisionT&& value) {
+    m_listingRevisionHasBeenSet = true;
+    m_listingRevision = std::forward<ListingRevisionT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  AssetListingItem& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename ListingRevisionT = Aws::String>
+  AssetListingItem& WithListingRevision(ListingRevisionT&& value) {
+    SetListingRevision(std::forward<ListingRevisionT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The description of an asset published in an Amazon DataZone catalog.</p>
+   * <p>The name of the inventory asset.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  AssetListingItem& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename NameT = Aws::String>
+  AssetListingItem& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -148,6 +147,79 @@ class AssetListingItem {
 
   ///@{
   /**
+   * <p>The description of an asset published in an Amazon DataZone catalog.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  AssetListingItem& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when an asset published in an Amazon DataZone catalog was
+   * created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  AssetListingItem& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who created the listing.</p>
+   */
+  inline const Aws::String& GetListingCreatedBy() const { return m_listingCreatedBy; }
+  inline bool ListingCreatedByHasBeenSet() const { return m_listingCreatedByHasBeenSet; }
+  template <typename ListingCreatedByT = Aws::String>
+  void SetListingCreatedBy(ListingCreatedByT&& value) {
+    m_listingCreatedByHasBeenSet = true;
+    m_listingCreatedBy = std::forward<ListingCreatedByT>(value);
+  }
+  template <typename ListingCreatedByT = Aws::String>
+  AssetListingItem& WithListingCreatedBy(ListingCreatedByT&& value) {
+    SetListingCreatedBy(std::forward<ListingCreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who updated the listing.</p>
+   */
+  inline const Aws::String& GetListingUpdatedBy() const { return m_listingUpdatedBy; }
+  inline bool ListingUpdatedByHasBeenSet() const { return m_listingUpdatedByHasBeenSet; }
+  template <typename ListingUpdatedByT = Aws::String>
+  void SetListingUpdatedBy(ListingUpdatedByT&& value) {
+    m_listingUpdatedByHasBeenSet = true;
+    m_listingUpdatedBy = std::forward<ListingUpdatedByT>(value);
+  }
+  template <typename ListingUpdatedByT = Aws::String>
+  AssetListingItem& WithListingUpdatedBy(ListingUpdatedByT&& value) {
+    SetListingUpdatedBy(std::forward<ListingUpdatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Glossary terms attached to the inventory asset.</p>
    */
   inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const { return m_glossaryTerms; }
@@ -196,97 +268,6 @@ class AssetListingItem {
 
   ///@{
   /**
-   * <p>The Amazon DataZone user who created the listing.</p>
-   */
-  inline const Aws::String& GetListingCreatedBy() const { return m_listingCreatedBy; }
-  inline bool ListingCreatedByHasBeenSet() const { return m_listingCreatedByHasBeenSet; }
-  template <typename ListingCreatedByT = Aws::String>
-  void SetListingCreatedBy(ListingCreatedByT&& value) {
-    m_listingCreatedByHasBeenSet = true;
-    m_listingCreatedBy = std::forward<ListingCreatedByT>(value);
-  }
-  template <typename ListingCreatedByT = Aws::String>
-  AssetListingItem& WithListingCreatedBy(ListingCreatedByT&& value) {
-    SetListingCreatedBy(std::forward<ListingCreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the listing (asset published in Amazon DataZone
-   * catalog).</p>
-   */
-  inline const Aws::String& GetListingId() const { return m_listingId; }
-  inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
-  template <typename ListingIdT = Aws::String>
-  void SetListingId(ListingIdT&& value) {
-    m_listingIdHasBeenSet = true;
-    m_listingId = std::forward<ListingIdT>(value);
-  }
-  template <typename ListingIdT = Aws::String>
-  AssetListingItem& WithListingId(ListingIdT&& value) {
-    SetListingId(std::forward<ListingIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The revision of the listing (asset published in Amazon DataZone catalog).</p>
-   */
-  inline const Aws::String& GetListingRevision() const { return m_listingRevision; }
-  inline bool ListingRevisionHasBeenSet() const { return m_listingRevisionHasBeenSet; }
-  template <typename ListingRevisionT = Aws::String>
-  void SetListingRevision(ListingRevisionT&& value) {
-    m_listingRevisionHasBeenSet = true;
-    m_listingRevision = std::forward<ListingRevisionT>(value);
-  }
-  template <typename ListingRevisionT = Aws::String>
-  AssetListingItem& WithListingRevision(ListingRevisionT&& value) {
-    SetListingRevision(std::forward<ListingRevisionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon DataZone user who updated the listing.</p>
-   */
-  inline const Aws::String& GetListingUpdatedBy() const { return m_listingUpdatedBy; }
-  inline bool ListingUpdatedByHasBeenSet() const { return m_listingUpdatedByHasBeenSet; }
-  template <typename ListingUpdatedByT = Aws::String>
-  void SetListingUpdatedBy(ListingUpdatedByT&& value) {
-    m_listingUpdatedByHasBeenSet = true;
-    m_listingUpdatedBy = std::forward<ListingUpdatedByT>(value);
-  }
-  template <typename ListingUpdatedByT = Aws::String>
-  AssetListingItem& WithListingUpdatedBy(ListingUpdatedByT&& value) {
-    SetListingUpdatedBy(std::forward<ListingUpdatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the inventory asset.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AssetListingItem& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the project that owns the inventory asset.</p>
    */
   inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
@@ -302,12 +283,31 @@ class AssetListingItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The additional attributes of an asset published in an Amazon DataZone
+   * catalog.</p>
+   */
+  inline const AssetListingItemAdditionalAttributes& GetAdditionalAttributes() const { return m_additionalAttributes; }
+  inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
+  template <typename AdditionalAttributesT = AssetListingItemAdditionalAttributes>
+  void SetAdditionalAttributes(AdditionalAttributesT&& value) {
+    m_additionalAttributesHasBeenSet = true;
+    m_additionalAttributes = std::forward<AdditionalAttributesT>(value);
+  }
+  template <typename AdditionalAttributesT = AssetListingItemAdditionalAttributes>
+  AssetListingItem& WithAdditionalAttributes(AdditionalAttributesT&& value) {
+    SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  AssetListingItemAdditionalAttributes m_additionalAttributes;
+  Aws::String m_listingId;
 
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_listingRevision;
 
-  Aws::String m_description;
+  Aws::String m_name;
 
   Aws::String m_entityId;
 
@@ -315,35 +315,35 @@ class AssetListingItem {
 
   Aws::String m_entityType;
 
+  Aws::String m_description;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_listingCreatedBy;
+
+  Aws::String m_listingUpdatedBy;
+
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
 
   Aws::Vector<DetailedGlossaryTerm> m_governedGlossaryTerms;
 
-  Aws::String m_listingCreatedBy;
-
-  Aws::String m_listingId;
-
-  Aws::String m_listingRevision;
-
-  Aws::String m_listingUpdatedBy;
-
-  Aws::String m_name;
-
   Aws::String m_owningProjectId;
-  bool m_additionalAttributesHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  AssetListingItemAdditionalAttributes m_additionalAttributes;
+  bool m_listingIdHasBeenSet = false;
+  bool m_listingRevisionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
   bool m_entityRevisionHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_listingCreatedByHasBeenSet = false;
+  bool m_listingUpdatedByHasBeenSet = false;
   bool m_glossaryTermsHasBeenSet = false;
   bool m_governedGlossaryTermsHasBeenSet = false;
-  bool m_listingCreatedByHasBeenSet = false;
-  bool m_listingIdHasBeenSet = false;
-  bool m_listingRevisionHasBeenSet = false;
-  bool m_listingUpdatedByHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_owningProjectIdHasBeenSet = false;
+  bool m_additionalAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

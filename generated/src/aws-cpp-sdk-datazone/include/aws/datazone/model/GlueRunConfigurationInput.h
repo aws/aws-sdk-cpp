@@ -36,41 +36,6 @@ class GlueRunConfigurationInput {
 
   ///@{
   /**
-   * <p>Specifies whether to automatically import data quality metrics as part of the
-   * data source run.</p>
-   */
-  inline bool GetAutoImportDataQualityResult() const { return m_autoImportDataQualityResult; }
-  inline bool AutoImportDataQualityResultHasBeenSet() const { return m_autoImportDataQualityResultHasBeenSet; }
-  inline void SetAutoImportDataQualityResult(bool value) {
-    m_autoImportDataQualityResultHasBeenSet = true;
-    m_autoImportDataQualityResult = value;
-  }
-  inline GlueRunConfigurationInput& WithAutoImportDataQualityResult(bool value) {
-    SetAutoImportDataQualityResult(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
-   */
-  inline const Aws::String& GetCatalogName() const { return m_catalogName; }
-  inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
-  template <typename CatalogNameT = Aws::String>
-  void SetCatalogName(CatalogNameT&& value) {
-    m_catalogNameHasBeenSet = true;
-    m_catalogName = std::forward<CatalogNameT>(value);
-  }
-  template <typename CatalogNameT = Aws::String>
-  GlueRunConfigurationInput& WithCatalogName(CatalogNameT&& value) {
-    SetCatalogName(std::forward<CatalogNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The data access role included in the configuration details of the Amazon Web
    * Services Glue data source.</p>
    */
@@ -114,18 +79,53 @@ class GlueRunConfigurationInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to automatically import data quality metrics as part of the
+   * data source run.</p>
+   */
+  inline bool GetAutoImportDataQualityResult() const { return m_autoImportDataQualityResult; }
+  inline bool AutoImportDataQualityResultHasBeenSet() const { return m_autoImportDataQualityResultHasBeenSet; }
+  inline void SetAutoImportDataQualityResult(bool value) {
+    m_autoImportDataQualityResultHasBeenSet = true;
+    m_autoImportDataQualityResult = value;
+  }
+  inline GlueRunConfigurationInput& WithAutoImportDataQualityResult(bool value) {
+    SetAutoImportDataQualityResult(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+   */
+  inline const Aws::String& GetCatalogName() const { return m_catalogName; }
+  inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
+  template <typename CatalogNameT = Aws::String>
+  void SetCatalogName(CatalogNameT&& value) {
+    m_catalogNameHasBeenSet = true;
+    m_catalogName = std::forward<CatalogNameT>(value);
+  }
+  template <typename CatalogNameT = Aws::String>
+  GlueRunConfigurationInput& WithCatalogName(CatalogNameT&& value) {
+    SetCatalogName(std::forward<CatalogNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  bool m_autoImportDataQualityResult{false};
-
-  Aws::String m_catalogName;
-
   Aws::String m_dataAccessRole;
 
   Aws::Vector<RelationalFilterConfiguration> m_relationalFilterConfigurations;
-  bool m_autoImportDataQualityResultHasBeenSet = false;
-  bool m_catalogNameHasBeenSet = false;
+
+  bool m_autoImportDataQualityResult{false};
+
+  Aws::String m_catalogName;
   bool m_dataAccessRoleHasBeenSet = false;
   bool m_relationalFilterConfigurationsHasBeenSet = false;
+  bool m_autoImportDataQualityResultHasBeenSet = false;
+  bool m_catalogNameHasBeenSet = false;
 };
 
 }  // namespace Model

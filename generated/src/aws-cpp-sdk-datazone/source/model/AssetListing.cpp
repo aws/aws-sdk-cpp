@@ -38,6 +38,14 @@ AssetListing& AssetListing::operator=(JsonView jsonValue) {
     m_forms = jsonValue.GetString("forms");
     m_formsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestTimeSeriesDataPointForms")) {
+    Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsJsonList = jsonValue.GetArray("latestTimeSeriesDataPointForms");
+    for (unsigned latestTimeSeriesDataPointFormsIndex = 0;
+         latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex) {
+      m_latestTimeSeriesDataPointForms.push_back(latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject());
+    }
+    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("glossaryTerms")) {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
     for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
@@ -52,14 +60,6 @@ AssetListing& AssetListing::operator=(JsonView jsonValue) {
       m_governedGlossaryTerms.push_back(governedGlossaryTermsJsonList[governedGlossaryTermsIndex].AsObject());
     }
     m_governedGlossaryTermsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("latestTimeSeriesDataPointForms")) {
-    Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsJsonList = jsonValue.GetArray("latestTimeSeriesDataPointForms");
-    for (unsigned latestTimeSeriesDataPointFormsIndex = 0;
-         latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex) {
-      m_latestTimeSeriesDataPointForms.push_back(latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject());
-    }
-    m_latestTimeSeriesDataPointFormsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("owningProjectId")) {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
@@ -91,6 +91,16 @@ JsonValue AssetListing::Jsonize() const {
     payload.WithString("forms", m_forms);
   }
 
+  if (m_latestTimeSeriesDataPointFormsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> latestTimeSeriesDataPointFormsJsonList(m_latestTimeSeriesDataPointForms.size());
+    for (unsigned latestTimeSeriesDataPointFormsIndex = 0;
+         latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex) {
+      latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject(
+          m_latestTimeSeriesDataPointForms[latestTimeSeriesDataPointFormsIndex].Jsonize());
+    }
+    payload.WithArray("latestTimeSeriesDataPointForms", std::move(latestTimeSeriesDataPointFormsJsonList));
+  }
+
   if (m_glossaryTermsHasBeenSet) {
     Aws::Utils::Array<JsonValue> glossaryTermsJsonList(m_glossaryTerms.size());
     for (unsigned glossaryTermsIndex = 0; glossaryTermsIndex < glossaryTermsJsonList.GetLength(); ++glossaryTermsIndex) {
@@ -106,16 +116,6 @@ JsonValue AssetListing::Jsonize() const {
       governedGlossaryTermsJsonList[governedGlossaryTermsIndex].AsObject(m_governedGlossaryTerms[governedGlossaryTermsIndex].Jsonize());
     }
     payload.WithArray("governedGlossaryTerms", std::move(governedGlossaryTermsJsonList));
-  }
-
-  if (m_latestTimeSeriesDataPointFormsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> latestTimeSeriesDataPointFormsJsonList(m_latestTimeSeriesDataPointForms.size());
-    for (unsigned latestTimeSeriesDataPointFormsIndex = 0;
-         latestTimeSeriesDataPointFormsIndex < latestTimeSeriesDataPointFormsJsonList.GetLength(); ++latestTimeSeriesDataPointFormsIndex) {
-      latestTimeSeriesDataPointFormsJsonList[latestTimeSeriesDataPointFormsIndex].AsObject(
-          m_latestTimeSeriesDataPointForms[latestTimeSeriesDataPointFormsIndex].Jsonize());
-    }
-    payload.WithArray("latestTimeSeriesDataPointForms", std::move(latestTimeSeriesDataPointFormsJsonList));
   }
 
   if (m_owningProjectIdHasBeenSet) {

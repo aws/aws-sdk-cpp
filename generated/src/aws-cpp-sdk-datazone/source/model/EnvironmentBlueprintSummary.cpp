@@ -18,14 +18,6 @@ namespace Model {
 EnvironmentBlueprintSummary::EnvironmentBlueprintSummary(JsonView jsonValue) { *this = jsonValue; }
 
 EnvironmentBlueprintSummary& EnvironmentBlueprintSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
@@ -34,6 +26,10 @@ EnvironmentBlueprintSummary& EnvironmentBlueprintSummary::operator=(JsonView jso
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("provider")) {
     m_provider = jsonValue.GetString("provider");
     m_providerHasBeenSet = true;
@@ -41,6 +37,10 @@ EnvironmentBlueprintSummary& EnvironmentBlueprintSummary::operator=(JsonView jso
   if (jsonValue.ValueExists("provisioningProperties")) {
     m_provisioningProperties = jsonValue.GetObject("provisioningProperties");
     m_provisioningPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -52,14 +52,6 @@ EnvironmentBlueprintSummary& EnvironmentBlueprintSummary::operator=(JsonView jso
 JsonValue EnvironmentBlueprintSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
   }
@@ -68,12 +60,20 @@ JsonValue EnvironmentBlueprintSummary::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
   if (m_providerHasBeenSet) {
     payload.WithString("provider", m_provider);
   }
 
   if (m_provisioningPropertiesHasBeenSet) {
     payload.WithObject("provisioningProperties", m_provisioningProperties.Jsonize());
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_updatedAtHasBeenSet) {

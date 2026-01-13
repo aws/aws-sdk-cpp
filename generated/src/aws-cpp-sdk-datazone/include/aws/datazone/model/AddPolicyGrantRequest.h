@@ -35,43 +35,6 @@ class AddPolicyGrantRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>A unique, case-sensitive identifier that is provided to ensure the
-   * idempotency of the request.</p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  AddPolicyGrantRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The details of the policy grant.</p>
-   */
-  inline const PolicyGrantDetail& GetDetail() const { return m_detail; }
-  inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-  template <typename DetailT = PolicyGrantDetail>
-  void SetDetail(DetailT&& value) {
-    m_detailHasBeenSet = true;
-    m_detail = std::forward<DetailT>(value);
-  }
-  template <typename DetailT = PolicyGrantDetail>
-  AddPolicyGrantRequest& WithDetail(DetailT&& value) {
-    SetDetail(std::forward<DetailT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where you want to add a policy grant.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -90,6 +53,22 @@ class AddPolicyGrantRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type of entity (resource) to which the grant is added.</p>
+   */
+  inline TargetEntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(TargetEntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline AddPolicyGrantRequest& WithEntityType(TargetEntityType value) {
+    SetEntityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the entity (resource) to which you want to add a policy grant.</p>
    */
   inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
@@ -102,22 +81,6 @@ class AddPolicyGrantRequest : public DataZoneRequest {
   template <typename EntityIdentifierT = Aws::String>
   AddPolicyGrantRequest& WithEntityIdentifier(EntityIdentifierT&& value) {
     SetEntityIdentifier(std::forward<EntityIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of entity (resource) to which the grant is added.</p>
-   */
-  inline TargetEntityType GetEntityType() const { return m_entityType; }
-  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-  inline void SetEntityType(TargetEntityType value) {
-    m_entityTypeHasBeenSet = true;
-    m_entityType = value;
-  }
-  inline AddPolicyGrantRequest& WithEntityType(TargetEntityType value) {
-    SetEntityType(value);
     return *this;
   }
   ///@}
@@ -155,27 +118,64 @@ class AddPolicyGrantRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The details of the policy grant.</p>
+   */
+  inline const PolicyGrantDetail& GetDetail() const { return m_detail; }
+  inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
+  template <typename DetailT = PolicyGrantDetail>
+  void SetDetail(DetailT&& value) {
+    m_detailHasBeenSet = true;
+    m_detail = std::forward<DetailT>(value);
+  }
+  template <typename DetailT = PolicyGrantDetail>
+  AddPolicyGrantRequest& WithDetail(DetailT&& value) {
+    SetDetail(std::forward<DetailT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  AddPolicyGrantRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  PolicyGrantDetail m_detail;
-
   Aws::String m_domainIdentifier;
 
-  Aws::String m_entityIdentifier;
-
   TargetEntityType m_entityType{TargetEntityType::NOT_SET};
+
+  Aws::String m_entityIdentifier;
 
   ManagedPolicyType m_policyType{ManagedPolicyType::NOT_SET};
 
   PolicyGrantPrincipal m_principal;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_detailHasBeenSet = false;
+
+  PolicyGrantDetail m_detail;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_principalHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

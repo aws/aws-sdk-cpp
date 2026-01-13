@@ -18,25 +18,33 @@ namespace Model {
 DataSourceRunActivity::DataSourceRunActivity(JsonView jsonValue) { *this = jsonValue; }
 
 DataSourceRunActivity& DataSourceRunActivity::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataAssetId")) {
-    m_dataAssetId = jsonValue.GetString("dataAssetId");
-    m_dataAssetIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataAssetStatus")) {
-    m_dataAssetStatus = DataAssetActivityStatusMapper::GetDataAssetActivityStatusForName(jsonValue.GetString("dataAssetStatus"));
-    m_dataAssetStatusHasBeenSet = true;
+  if (jsonValue.ValueExists("database")) {
+    m_database = jsonValue.GetString("database");
+    m_databaseHasBeenSet = true;
   }
   if (jsonValue.ValueExists("dataSourceRunId")) {
     m_dataSourceRunId = jsonValue.GetString("dataSourceRunId");
     m_dataSourceRunIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("database")) {
-    m_database = jsonValue.GetString("database");
-    m_databaseHasBeenSet = true;
+  if (jsonValue.ValueExists("technicalName")) {
+    m_technicalName = jsonValue.GetString("technicalName");
+    m_technicalNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataAssetStatus")) {
+    m_dataAssetStatus = DataAssetActivityStatusMapper::GetDataAssetActivityStatusForName(jsonValue.GetString("dataAssetStatus"));
+    m_dataAssetStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("projectId")) {
+    m_projectId = jsonValue.GetString("projectId");
+    m_projectIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataAssetId")) {
+    m_dataAssetId = jsonValue.GetString("dataAssetId");
+    m_dataAssetIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("technicalDescription")) {
+    m_technicalDescription = jsonValue.GetString("technicalDescription");
+    m_technicalDescriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetObject("errorMessage");
@@ -46,17 +54,9 @@ DataSourceRunActivity& DataSourceRunActivity::operator=(JsonView jsonValue) {
     m_lineageSummary = jsonValue.GetObject("lineageSummary");
     m_lineageSummaryHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("projectId")) {
-    m_projectId = jsonValue.GetString("projectId");
-    m_projectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("technicalDescription")) {
-    m_technicalDescription = jsonValue.GetString("technicalDescription");
-    m_technicalDescriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("technicalName")) {
-    m_technicalName = jsonValue.GetString("technicalName");
-    m_technicalNameHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -68,24 +68,32 @@ DataSourceRunActivity& DataSourceRunActivity::operator=(JsonView jsonValue) {
 JsonValue DataSourceRunActivity::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_dataAssetIdHasBeenSet) {
-    payload.WithString("dataAssetId", m_dataAssetId);
-  }
-
-  if (m_dataAssetStatusHasBeenSet) {
-    payload.WithString("dataAssetStatus", DataAssetActivityStatusMapper::GetNameForDataAssetActivityStatus(m_dataAssetStatus));
+  if (m_databaseHasBeenSet) {
+    payload.WithString("database", m_database);
   }
 
   if (m_dataSourceRunIdHasBeenSet) {
     payload.WithString("dataSourceRunId", m_dataSourceRunId);
   }
 
-  if (m_databaseHasBeenSet) {
-    payload.WithString("database", m_database);
+  if (m_technicalNameHasBeenSet) {
+    payload.WithString("technicalName", m_technicalName);
+  }
+
+  if (m_dataAssetStatusHasBeenSet) {
+    payload.WithString("dataAssetStatus", DataAssetActivityStatusMapper::GetNameForDataAssetActivityStatus(m_dataAssetStatus));
+  }
+
+  if (m_projectIdHasBeenSet) {
+    payload.WithString("projectId", m_projectId);
+  }
+
+  if (m_dataAssetIdHasBeenSet) {
+    payload.WithString("dataAssetId", m_dataAssetId);
+  }
+
+  if (m_technicalDescriptionHasBeenSet) {
+    payload.WithString("technicalDescription", m_technicalDescription);
   }
 
   if (m_errorMessageHasBeenSet) {
@@ -96,16 +104,8 @@ JsonValue DataSourceRunActivity::Jsonize() const {
     payload.WithObject("lineageSummary", m_lineageSummary.Jsonize());
   }
 
-  if (m_projectIdHasBeenSet) {
-    payload.WithString("projectId", m_projectId);
-  }
-
-  if (m_technicalDescriptionHasBeenSet) {
-    payload.WithString("technicalDescription", m_technicalDescription);
-  }
-
-  if (m_technicalNameHasBeenSet) {
-    payload.WithString("technicalName", m_technicalName);
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_updatedAtHasBeenSet) {

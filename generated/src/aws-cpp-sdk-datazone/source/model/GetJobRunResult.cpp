@@ -21,29 +21,9 @@ GetJobRunResult::GetJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetJobRunResult& GetJobRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdBy")) {
-    m_createdBy = jsonValue.GetString("createdBy");
-    m_createdByHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("details")) {
-    m_details = jsonValue.GetObject("details");
-    m_detailsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("endTime")) {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("error")) {
-    m_error = jsonValue.GetObject("error");
-    m_errorHasBeenSet = true;
   }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
@@ -61,13 +41,33 @@ GetJobRunResult& GetJobRunResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_runMode = JobRunModeMapper::GetJobRunModeForName(jsonValue.GetString("runMode"));
     m_runModeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("startTime")) {
-    m_startTime = jsonValue.GetDouble("startTime");
-    m_startTimeHasBeenSet = true;
+  if (jsonValue.ValueExists("details")) {
+    m_details = jsonValue.GetObject("details");
+    m_detailsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = JobRunStatusMapper::GetJobRunStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("error")) {
+    m_error = jsonValue.GetObject("error");
+    m_errorHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdBy")) {
+    m_createdBy = jsonValue.GetString("createdBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("startTime")) {
+    m_startTime = jsonValue.GetDouble("startTime");
+    m_startTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endTime")) {
+    m_endTime = jsonValue.GetDouble("endTime");
+    m_endTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

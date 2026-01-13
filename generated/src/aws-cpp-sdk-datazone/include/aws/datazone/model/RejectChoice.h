@@ -35,6 +35,25 @@ class RejectChoice {
 
   ///@{
   /**
+   * <p>Specifies the target (for example, a column name) where a prediction can be
+   * rejected.</p>
+   */
+  inline const Aws::String& GetPredictionTarget() const { return m_predictionTarget; }
+  inline bool PredictionTargetHasBeenSet() const { return m_predictionTargetHasBeenSet; }
+  template <typename PredictionTargetT = Aws::String>
+  void SetPredictionTarget(PredictionTargetT&& value) {
+    m_predictionTargetHasBeenSet = true;
+    m_predictionTarget = std::forward<PredictionTargetT>(value);
+  }
+  template <typename PredictionTargetT = Aws::String>
+  RejectChoice& WithPredictionTarget(PredictionTargetT&& value) {
+    SetPredictionTarget(std::forward<PredictionTargetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the the automatically generated business metadata that can be
    * rejected.</p>
    */
@@ -56,31 +75,12 @@ class RejectChoice {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the target (for example, a column name) where a prediction can be
-   * rejected.</p>
-   */
-  inline const Aws::String& GetPredictionTarget() const { return m_predictionTarget; }
-  inline bool PredictionTargetHasBeenSet() const { return m_predictionTargetHasBeenSet; }
-  template <typename PredictionTargetT = Aws::String>
-  void SetPredictionTarget(PredictionTargetT&& value) {
-    m_predictionTargetHasBeenSet = true;
-    m_predictionTarget = std::forward<PredictionTargetT>(value);
-  }
-  template <typename PredictionTargetT = Aws::String>
-  RejectChoice& WithPredictionTarget(PredictionTargetT&& value) {
-    SetPredictionTarget(std::forward<PredictionTargetT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<int> m_predictionChoices;
-
   Aws::String m_predictionTarget;
-  bool m_predictionChoicesHasBeenSet = false;
+
+  Aws::Vector<int> m_predictionChoices;
   bool m_predictionTargetHasBeenSet = false;
+  bool m_predictionChoicesHasBeenSet = false;
 };
 
 }  // namespace Model

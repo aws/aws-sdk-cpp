@@ -53,13 +53,13 @@ ConnectionSummary& ConnectionSummary::operator=(JsonView jsonValue) {
     m_props = jsonValue.GetObject("props");
     m_propsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("scope")) {
-    m_scope = ConnectionScopeMapper::GetConnectionScopeForName(jsonValue.GetString("scope"));
-    m_scopeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scope")) {
+    m_scope = ConnectionScopeMapper::GetConnectionScopeForName(jsonValue.GetString("scope"));
+    m_scopeHasBeenSet = true;
   }
   return *this;
 }
@@ -103,12 +103,12 @@ JsonValue ConnectionSummary::Jsonize() const {
     payload.WithObject("props", m_props.Jsonize());
   }
 
-  if (m_scopeHasBeenSet) {
-    payload.WithString("scope", ConnectionScopeMapper::GetNameForConnectionScope(m_scope));
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", ConnectionTypeMapper::GetNameForConnectionType(m_type));
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithString("scope", ConnectionScopeMapper::GetNameForConnectionScope(m_scope));
   }
 
   return payload;

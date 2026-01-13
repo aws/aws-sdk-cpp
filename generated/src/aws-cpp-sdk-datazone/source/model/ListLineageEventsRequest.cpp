@@ -25,9 +25,15 @@ void ListLineageEventsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_timestampAfterHasBeenSet) {
+    ss << m_timestampAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("timestampAfter", ss.str());
+    ss.str("");
+  }
+
+  if (m_timestampBeforeHasBeenSet) {
+    ss << m_timestampBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("timestampBefore", ss.str());
     ss.str("");
   }
 
@@ -43,15 +49,9 @@ void ListLineageEventsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_timestampAfterHasBeenSet) {
-    ss << m_timestampAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    uri.AddQueryStringParameter("timestampAfter", ss.str());
-    ss.str("");
-  }
-
-  if (m_timestampBeforeHasBeenSet) {
-    ss << m_timestampBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    uri.AddQueryStringParameter("timestampBefore", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 }

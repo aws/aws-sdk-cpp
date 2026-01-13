@@ -33,57 +33,6 @@ class StartDataSourceRunResult {
 
   ///@{
   /**
-   * <p>The timestamp of when data source run was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  StartDataSourceRunResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration snapshot of the data source that is being run.</p>
-   */
-  inline const Aws::String& GetDataSourceConfigurationSnapshot() const { return m_dataSourceConfigurationSnapshot; }
-  template <typename DataSourceConfigurationSnapshotT = Aws::String>
-  void SetDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
-    m_dataSourceConfigurationSnapshotHasBeenSet = true;
-    m_dataSourceConfigurationSnapshot = std::forward<DataSourceConfigurationSnapshotT>(value);
-  }
-  template <typename DataSourceConfigurationSnapshotT = Aws::String>
-  StartDataSourceRunResult& WithDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
-    SetDataSourceConfigurationSnapshot(std::forward<DataSourceConfigurationSnapshotT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the data source.</p>
-   */
-  inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
-  template <typename DataSourceIdT = Aws::String>
-  void SetDataSourceId(DataSourceIdT&& value) {
-    m_dataSourceIdHasBeenSet = true;
-    m_dataSourceId = std::forward<DataSourceIdT>(value);
-  }
-  template <typename DataSourceIdT = Aws::String>
-  StartDataSourceRunResult& WithDataSourceId(DataSourceIdT&& value) {
-    SetDataSourceId(std::forward<DataSourceIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The identifier of the Amazon DataZone domain in which to start a data source
    * run.</p>
    */
@@ -102,18 +51,17 @@ class StartDataSourceRunResult {
 
   ///@{
   /**
-   * <p>Specifies the error message that is returned if the operation cannot be
-   * successfully completed.</p>
+   * <p>The identifier of the data source.</p>
    */
-  inline const DataSourceErrorMessage& GetErrorMessage() const { return m_errorMessage; }
-  template <typename ErrorMessageT = DataSourceErrorMessage>
-  void SetErrorMessage(ErrorMessageT&& value) {
-    m_errorMessageHasBeenSet = true;
-    m_errorMessage = std::forward<ErrorMessageT>(value);
+  inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+  template <typename DataSourceIdT = Aws::String>
+  void SetDataSourceId(DataSourceIdT&& value) {
+    m_dataSourceIdHasBeenSet = true;
+    m_dataSourceId = std::forward<DataSourceIdT>(value);
   }
-  template <typename ErrorMessageT = DataSourceErrorMessage>
-  StartDataSourceRunResult& WithErrorMessage(ErrorMessageT&& value) {
-    SetErrorMessage(std::forward<ErrorMessageT>(value));
+  template <typename DataSourceIdT = Aws::String>
+  StartDataSourceRunResult& WithDataSourceId(DataSourceIdT&& value) {
+    SetDataSourceId(std::forward<DataSourceIdT>(value));
     return *this;
   }
   ///@}
@@ -154,6 +102,53 @@ class StartDataSourceRunResult {
 
   ///@{
   /**
+   * <p>The status of the data source run.</p>
+   */
+  inline DataSourceRunStatus GetStatus() const { return m_status; }
+  inline void SetStatus(DataSourceRunStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline StartDataSourceRunResult& WithStatus(DataSourceRunStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the data source run.</p>
+   */
+  inline DataSourceRunType GetType() const { return m_type; }
+  inline void SetType(DataSourceRunType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline StartDataSourceRunResult& WithType(DataSourceRunType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration snapshot of the data source that is being run.</p>
+   */
+  inline const Aws::String& GetDataSourceConfigurationSnapshot() const { return m_dataSourceConfigurationSnapshot; }
+  template <typename DataSourceConfigurationSnapshotT = Aws::String>
+  void SetDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
+    m_dataSourceConfigurationSnapshotHasBeenSet = true;
+    m_dataSourceConfigurationSnapshot = std::forward<DataSourceConfigurationSnapshotT>(value);
+  }
+  template <typename DataSourceConfigurationSnapshotT = Aws::String>
+  StartDataSourceRunResult& WithDataSourceConfigurationSnapshot(DataSourceConfigurationSnapshotT&& value) {
+    SetDataSourceConfigurationSnapshot(std::forward<DataSourceConfigurationSnapshotT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies run statistics for assets.</p>
    */
   inline const RunStatisticsForAssets& GetRunStatisticsForAssets() const { return m_runStatisticsForAssets; }
@@ -165,6 +160,58 @@ class StartDataSourceRunResult {
   template <typename RunStatisticsForAssetsT = RunStatisticsForAssets>
   StartDataSourceRunResult& WithRunStatisticsForAssets(RunStatisticsForAssetsT&& value) {
     SetRunStatisticsForAssets(std::forward<RunStatisticsForAssetsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the error message that is returned if the operation cannot be
+   * successfully completed.</p>
+   */
+  inline const DataSourceErrorMessage& GetErrorMessage() const { return m_errorMessage; }
+  template <typename ErrorMessageT = DataSourceErrorMessage>
+  void SetErrorMessage(ErrorMessageT&& value) {
+    m_errorMessageHasBeenSet = true;
+    m_errorMessage = std::forward<ErrorMessageT>(value);
+  }
+  template <typename ErrorMessageT = DataSourceErrorMessage>
+  StartDataSourceRunResult& WithErrorMessage(ErrorMessageT&& value) {
+    SetErrorMessage(std::forward<ErrorMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when data source run was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  StartDataSourceRunResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the data source run was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  StartDataSourceRunResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -188,21 +235,6 @@ class StartDataSourceRunResult {
 
   ///@{
   /**
-   * <p>The status of the data source run.</p>
-   */
-  inline DataSourceRunStatus GetStatus() const { return m_status; }
-  inline void SetStatus(DataSourceRunStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline StartDataSourceRunResult& WithStatus(DataSourceRunStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The timestamp of when the data source run was stopped.</p>
    */
   inline const Aws::Utils::DateTime& GetStoppedAt() const { return m_stoppedAt; }
@@ -214,38 +246,6 @@ class StartDataSourceRunResult {
   template <typename StoppedAtT = Aws::Utils::DateTime>
   StartDataSourceRunResult& WithStoppedAt(StoppedAtT&& value) {
     SetStoppedAt(std::forward<StoppedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the data source run.</p>
-   */
-  inline DataSourceRunType GetType() const { return m_type; }
-  inline void SetType(DataSourceRunType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline StartDataSourceRunResult& WithType(DataSourceRunType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the data source run was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
-  }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  StartDataSourceRunResult& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -265,46 +265,46 @@ class StartDataSourceRunResult {
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_dataSourceConfigurationSnapshot;
-
-  Aws::String m_dataSourceId;
-
   Aws::String m_domainId;
 
-  DataSourceErrorMessage m_errorMessage;
+  Aws::String m_dataSourceId;
 
   Aws::String m_id;
 
   Aws::String m_projectId;
 
-  RunStatisticsForAssets m_runStatisticsForAssets;
-
-  Aws::Utils::DateTime m_startedAt{};
-
   DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
-
-  Aws::Utils::DateTime m_stoppedAt{};
 
   DataSourceRunType m_type{DataSourceRunType::NOT_SET};
 
+  Aws::String m_dataSourceConfigurationSnapshot;
+
+  RunStatisticsForAssets m_runStatisticsForAssets;
+
+  DataSourceErrorMessage m_errorMessage;
+
+  Aws::Utils::DateTime m_createdAt{};
+
   Aws::Utils::DateTime m_updatedAt{};
 
+  Aws::Utils::DateTime m_startedAt{};
+
+  Aws::Utils::DateTime m_stoppedAt{};
+
   Aws::String m_requestId;
-  bool m_createdAtHasBeenSet = false;
-  bool m_dataSourceConfigurationSnapshotHasBeenSet = false;
-  bool m_dataSourceIdHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_errorMessageHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_projectIdHasBeenSet = false;
-  bool m_runStatisticsForAssetsHasBeenSet = false;
-  bool m_startedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_stoppedAtHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_dataSourceConfigurationSnapshotHasBeenSet = false;
+  bool m_runStatisticsForAssetsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

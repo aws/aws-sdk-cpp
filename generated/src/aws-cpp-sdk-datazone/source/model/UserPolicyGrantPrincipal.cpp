@@ -18,13 +18,13 @@ namespace Model {
 UserPolicyGrantPrincipal::UserPolicyGrantPrincipal(JsonView jsonValue) { *this = jsonValue; }
 
 UserPolicyGrantPrincipal& UserPolicyGrantPrincipal::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("allUsersGrantFilter")) {
-    m_allUsersGrantFilter = jsonValue.GetObject("allUsersGrantFilter");
-    m_allUsersGrantFilterHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("userIdentifier")) {
     m_userIdentifier = jsonValue.GetString("userIdentifier");
     m_userIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("allUsersGrantFilter")) {
+    m_allUsersGrantFilter = jsonValue.GetObject("allUsersGrantFilter");
+    m_allUsersGrantFilterHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ UserPolicyGrantPrincipal& UserPolicyGrantPrincipal::operator=(JsonView jsonValue
 JsonValue UserPolicyGrantPrincipal::Jsonize() const {
   JsonValue payload;
 
-  if (m_allUsersGrantFilterHasBeenSet) {
-    payload.WithObject("allUsersGrantFilter", m_allUsersGrantFilter.Jsonize());
-  }
-
   if (m_userIdentifierHasBeenSet) {
     payload.WithString("userIdentifier", m_userIdentifier);
+  }
+
+  if (m_allUsersGrantFilterHasBeenSet) {
+    payload.WithObject("allUsersGrantFilter", m_allUsersGrantFilter.Jsonize());
   }
 
   return payload;

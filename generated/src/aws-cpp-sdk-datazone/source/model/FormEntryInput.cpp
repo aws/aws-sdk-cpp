@@ -18,10 +18,6 @@ namespace Model {
 FormEntryInput::FormEntryInput(JsonView jsonValue) { *this = jsonValue; }
 
 FormEntryInput& FormEntryInput::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("required")) {
-    m_required = jsonValue.GetBool("required");
-    m_requiredHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("typeIdentifier")) {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
     m_typeIdentifierHasBeenSet = true;
@@ -30,15 +26,15 @@ FormEntryInput& FormEntryInput::operator=(JsonView jsonValue) {
     m_typeRevision = jsonValue.GetString("typeRevision");
     m_typeRevisionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("required")) {
+    m_required = jsonValue.GetBool("required");
+    m_requiredHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue FormEntryInput::Jsonize() const {
   JsonValue payload;
-
-  if (m_requiredHasBeenSet) {
-    payload.WithBool("required", m_required);
-  }
 
   if (m_typeIdentifierHasBeenSet) {
     payload.WithString("typeIdentifier", m_typeIdentifier);
@@ -46,6 +42,10 @@ JsonValue FormEntryInput::Jsonize() const {
 
   if (m_typeRevisionHasBeenSet) {
     payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_requiredHasBeenSet) {
+    payload.WithBool("required", m_required);
   }
 
   return payload;

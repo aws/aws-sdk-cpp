@@ -21,6 +21,14 @@ UpdateEnvironmentProfileResult::UpdateEnvironmentProfileResult(const Aws::Amazon
 
 UpdateEnvironmentProfileResult& UpdateEnvironmentProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("domainId")) {
+    m_domainId = jsonValue.GetString("domainId");
+    m_domainIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("awsAccountId")) {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
     m_awsAccountIdHasBeenSet = true;
@@ -29,41 +37,33 @@ UpdateEnvironmentProfileResult& UpdateEnvironmentProfileResult::operator=(const 
     m_awsAccountRegion = jsonValue.GetString("awsAccountRegion");
     m_awsAccountRegionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("domainId")) {
-    m_domainId = jsonValue.GetString("domainId");
-    m_domainIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("environmentBlueprintId")) {
-    m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
-    m_environmentBlueprintIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
+  if (jsonValue.ValueExists("updatedAt")) {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_updatedAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("environmentBlueprintId")) {
+    m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
+    m_environmentBlueprintIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("projectId")) {
     m_projectId = jsonValue.GetString("projectId");
     m_projectIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedAt")) {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-    m_updatedAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("userParameters")) {
     Aws::Utils::Array<JsonView> userParametersJsonList = jsonValue.GetArray("userParameters");

@@ -33,6 +33,24 @@ class SsoUserProfileDetails {
 
   ///@{
   /**
+   * <p>The username as part of the SSO user profile detail. </p>
+   */
+  inline const Aws::String& GetUsername() const { return m_username; }
+  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+  template <typename UsernameT = Aws::String>
+  void SetUsername(UsernameT&& value) {
+    m_usernameHasBeenSet = true;
+    m_username = std::forward<UsernameT>(value);
+  }
+  template <typename UsernameT = Aws::String>
+  SsoUserProfileDetails& WithUsername(UsernameT&& value) {
+    SetUsername(std::forward<UsernameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The first name as part of the SSO user profile detail.</p>
    */
   inline const Aws::String& GetFirstName() const { return m_firstName; }
@@ -66,33 +84,15 @@ class SsoUserProfileDetails {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The username as part of the SSO user profile detail. </p>
-   */
-  inline const Aws::String& GetUsername() const { return m_username; }
-  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-  template <typename UsernameT = Aws::String>
-  void SetUsername(UsernameT&& value) {
-    m_usernameHasBeenSet = true;
-    m_username = std::forward<UsernameT>(value);
-  }
-  template <typename UsernameT = Aws::String>
-  SsoUserProfileDetails& WithUsername(UsernameT&& value) {
-    SetUsername(std::forward<UsernameT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_username;
+
   Aws::String m_firstName;
 
   Aws::String m_lastName;
-
-  Aws::String m_username;
+  bool m_usernameHasBeenSet = false;
   bool m_firstNameHasBeenSet = false;
   bool m_lastNameHasBeenSet = false;
-  bool m_usernameHasBeenSet = false;
 };
 
 }  // namespace Model

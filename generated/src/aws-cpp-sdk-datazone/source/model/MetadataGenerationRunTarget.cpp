@@ -18,6 +18,10 @@ namespace Model {
 MetadataGenerationRunTarget::MetadataGenerationRunTarget(JsonView jsonValue) { *this = jsonValue; }
 
 MetadataGenerationRunTarget& MetadataGenerationRunTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = MetadataGenerationTargetTypeMapper::GetMetadataGenerationTargetTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetString("identifier");
     m_identifierHasBeenSet = true;
@@ -26,15 +30,15 @@ MetadataGenerationRunTarget& MetadataGenerationRunTarget::operator=(JsonView jso
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("type")) {
-    m_type = MetadataGenerationTargetTypeMapper::GetMetadataGenerationTargetTypeForName(jsonValue.GetString("type"));
-    m_typeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue MetadataGenerationRunTarget::Jsonize() const {
   JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", MetadataGenerationTargetTypeMapper::GetNameForMetadataGenerationTargetType(m_type));
+  }
 
   if (m_identifierHasBeenSet) {
     payload.WithString("identifier", m_identifier);
@@ -42,10 +46,6 @@ JsonValue MetadataGenerationRunTarget::Jsonize() const {
 
   if (m_revisionHasBeenSet) {
     payload.WithString("revision", m_revision);
-  }
-
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", MetadataGenerationTargetTypeMapper::GetNameForMetadataGenerationTargetType(m_type));
   }
 
   return payload;

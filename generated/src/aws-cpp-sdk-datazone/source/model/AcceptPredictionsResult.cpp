@@ -21,13 +21,13 @@ AcceptPredictionsResult::AcceptPredictionsResult(const Aws::AmazonWebServiceResu
 
 AcceptPredictionsResult& AcceptPredictionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("assetId")) {
-    m_assetId = jsonValue.GetString("assetId");
-    m_assetIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("assetId")) {
+    m_assetId = jsonValue.GetString("assetId");
+    m_assetIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetString("revision");

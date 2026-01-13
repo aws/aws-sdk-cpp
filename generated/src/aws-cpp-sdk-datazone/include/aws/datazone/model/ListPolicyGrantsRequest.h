@@ -55,6 +55,22 @@ class ListPolicyGrantsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type of entity for which you want to list policy grants.</p>
+   */
+  inline TargetEntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(TargetEntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline ListPolicyGrantsRequest& WithEntityType(TargetEntityType value) {
+    SetEntityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the entity for which you want to list policy grants.</p>
    */
   inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
@@ -73,16 +89,16 @@ class ListPolicyGrantsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The type of entity for which you want to list policy grants.</p>
+   * <p>The type of policy that you want to list.</p>
    */
-  inline TargetEntityType GetEntityType() const { return m_entityType; }
-  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-  inline void SetEntityType(TargetEntityType value) {
-    m_entityTypeHasBeenSet = true;
-    m_entityType = value;
+  inline ManagedPolicyType GetPolicyType() const { return m_policyType; }
+  inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
+  inline void SetPolicyType(ManagedPolicyType value) {
+    m_policyTypeHasBeenSet = true;
+    m_policyType = value;
   }
-  inline ListPolicyGrantsRequest& WithEntityType(TargetEntityType value) {
-    SetEntityType(value);
+  inline ListPolicyGrantsRequest& WithPolicyType(ManagedPolicyType value) {
+    SetPolicyType(value);
     return *this;
   }
   ///@}
@@ -129,40 +145,24 @@ class ListPolicyGrantsRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of policy that you want to list.</p>
-   */
-  inline ManagedPolicyType GetPolicyType() const { return m_policyType; }
-  inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-  inline void SetPolicyType(ManagedPolicyType value) {
-    m_policyTypeHasBeenSet = true;
-    m_policyType = value;
-  }
-  inline ListPolicyGrantsRequest& WithPolicyType(ManagedPolicyType value) {
-    SetPolicyType(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_domainIdentifier;
 
+  TargetEntityType m_entityType{TargetEntityType::NOT_SET};
+
   Aws::String m_entityIdentifier;
 
-  TargetEntityType m_entityType{TargetEntityType::NOT_SET};
+  ManagedPolicyType m_policyType{ManagedPolicyType::NOT_SET};
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  ManagedPolicyType m_policyType{ManagedPolicyType::NOT_SET};
   bool m_domainIdentifierHasBeenSet = false;
-  bool m_entityIdentifierHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_policyTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -73,19 +73,32 @@ class ListJobRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The maximum number of job runs to return in a single call to ListJobRuns.
-   * When the number of job runs to be listed is greater than the value of
-   * MaxResults, the response contains a NextToken value that you can use in a
-   * subsequent call to ListJobRuns to list the next set of job runs.</p>
+   * <p>The status of a job run.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline JobRunStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(JobRunStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  inline ListJobRunsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  inline ListJobRunsRequest& WithStatus(JobRunStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the order in which job runs are to be sorted.</p>
+   */
+  inline SortOrder GetSortOrder() const { return m_sortOrder; }
+  inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+  inline void SetSortOrder(SortOrder value) {
+    m_sortOrderHasBeenSet = true;
+    m_sortOrder = value;
+  }
+  inline ListJobRunsRequest& WithSortOrder(SortOrder value) {
+    SetSortOrder(value);
     return *this;
   }
   ///@}
@@ -114,32 +127,19 @@ class ListJobRunsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Specifies the order in which job runs are to be sorted.</p>
+   * <p>The maximum number of job runs to return in a single call to ListJobRuns.
+   * When the number of job runs to be listed is greater than the value of
+   * MaxResults, the response contains a NextToken value that you can use in a
+   * subsequent call to ListJobRuns to list the next set of job runs.</p>
    */
-  inline SortOrder GetSortOrder() const { return m_sortOrder; }
-  inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-  inline void SetSortOrder(SortOrder value) {
-    m_sortOrderHasBeenSet = true;
-    m_sortOrder = value;
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  inline ListJobRunsRequest& WithSortOrder(SortOrder value) {
-    SetSortOrder(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of a job run.</p>
-   */
-  inline JobRunStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(JobRunStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ListJobRunsRequest& WithStatus(JobRunStatus value) {
-    SetStatus(value);
+  inline ListJobRunsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -148,19 +148,19 @@ class ListJobRunsRequest : public DataZoneRequest {
 
   Aws::String m_jobIdentifier;
 
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
+  JobRunStatus m_status{JobRunStatus::NOT_SET};
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
 
-  JobRunStatus m_status{JobRunStatus::NOT_SET};
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_jobIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
-  bool m_sortOrderHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

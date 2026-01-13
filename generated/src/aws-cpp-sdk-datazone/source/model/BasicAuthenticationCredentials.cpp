@@ -18,13 +18,13 @@ namespace Model {
 BasicAuthenticationCredentials::BasicAuthenticationCredentials(JsonView jsonValue) { *this = jsonValue; }
 
 BasicAuthenticationCredentials& BasicAuthenticationCredentials::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("password")) {
-    m_password = jsonValue.GetString("password");
-    m_passwordHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("userName")) {
     m_userName = jsonValue.GetString("userName");
     m_userNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("password")) {
+    m_password = jsonValue.GetString("password");
+    m_passwordHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ BasicAuthenticationCredentials& BasicAuthenticationCredentials::operator=(JsonVi
 JsonValue BasicAuthenticationCredentials::Jsonize() const {
   JsonValue payload;
 
-  if (m_passwordHasBeenSet) {
-    payload.WithString("password", m_password);
-  }
-
   if (m_userNameHasBeenSet) {
     payload.WithString("userName", m_userName);
+  }
+
+  if (m_passwordHasBeenSet) {
+    payload.WithString("password", m_password);
   }
 
   return payload;

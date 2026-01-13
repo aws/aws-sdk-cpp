@@ -21,19 +21,19 @@ BatchPutAttributesMetadataResult::BatchPutAttributesMetadataResult(const Aws::Am
 
 BatchPutAttributesMetadataResult& BatchPutAttributesMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("attributes")) {
-    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
-    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
-      m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
-    }
-    m_attributesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
     m_errorsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("attributes")) {
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
+    }
+    m_attributesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

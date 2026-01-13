@@ -18,10 +18,6 @@ namespace Model {
 EnvironmentConfigurationParameter::EnvironmentConfigurationParameter(JsonView jsonValue) { *this = jsonValue; }
 
 EnvironmentConfigurationParameter& EnvironmentConfigurationParameter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("isEditable")) {
-    m_isEditable = jsonValue.GetBool("isEditable");
-    m_isEditableHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -30,15 +26,15 @@ EnvironmentConfigurationParameter& EnvironmentConfigurationParameter::operator=(
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isEditable")) {
+    m_isEditable = jsonValue.GetBool("isEditable");
+    m_isEditableHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue EnvironmentConfigurationParameter::Jsonize() const {
   JsonValue payload;
-
-  if (m_isEditableHasBeenSet) {
-    payload.WithBool("isEditable", m_isEditable);
-  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
@@ -46,6 +42,10 @@ JsonValue EnvironmentConfigurationParameter::Jsonize() const {
 
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_isEditableHasBeenSet) {
+    payload.WithBool("isEditable", m_isEditable);
   }
 
   return payload;

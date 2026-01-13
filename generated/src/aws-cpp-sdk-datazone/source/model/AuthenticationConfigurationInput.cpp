@@ -22,6 +22,18 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator=(Js
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("oAuth2Properties")) {
+    m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
+    m_oAuth2PropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("secretArn")) {
+    m_secretArn = jsonValue.GetString("secretArn");
+    m_secretArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("basicAuthenticationCredentials")) {
     m_basicAuthenticationCredentials = jsonValue.GetObject("basicAuthenticationCredentials");
     m_basicAuthenticationCredentialsHasBeenSet = true;
@@ -34,18 +46,6 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator=(Js
     }
     m_customAuthenticationCredentialsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("kmsKeyArn")) {
-    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-    m_kmsKeyArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("oAuth2Properties")) {
-    m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
-    m_oAuth2PropertiesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("secretArn")) {
-    m_secretArn = jsonValue.GetString("secretArn");
-    m_secretArnHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -54,6 +54,18 @@ JsonValue AuthenticationConfigurationInput::Jsonize() const {
 
   if (m_authenticationTypeHasBeenSet) {
     payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
+
+  if (m_oAuth2PropertiesHasBeenSet) {
+    payload.WithObject("oAuth2Properties", m_oAuth2Properties.Jsonize());
+  }
+
+  if (m_secretArnHasBeenSet) {
+    payload.WithString("secretArn", m_secretArn);
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_basicAuthenticationCredentialsHasBeenSet) {
@@ -67,18 +79,6 @@ JsonValue AuthenticationConfigurationInput::Jsonize() const {
                                                         customAuthenticationCredentialsItem.second);
     }
     payload.WithObject("customAuthenticationCredentials", std::move(customAuthenticationCredentialsJsonMap));
-  }
-
-  if (m_kmsKeyArnHasBeenSet) {
-    payload.WithString("kmsKeyArn", m_kmsKeyArn);
-  }
-
-  if (m_oAuth2PropertiesHasBeenSet) {
-    payload.WithObject("oAuth2Properties", m_oAuth2Properties.Jsonize());
-  }
-
-  if (m_secretArnHasBeenSet) {
-    payload.WithString("secretArn", m_secretArn);
   }
 
   return payload;

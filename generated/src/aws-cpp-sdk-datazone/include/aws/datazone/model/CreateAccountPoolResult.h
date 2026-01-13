@@ -31,76 +31,6 @@ class CreateAccountPoolResult {
 
   ///@{
   /**
-   * <p>The source of accounts for the account pool. In the current release, it's
-   * either a static list of accounts provided by the customer or a custom Amazon Web
-   * Services Lambda handler. </p>
-   */
-  inline const AccountSource& GetAccountSource() const { return m_accountSource; }
-  template <typename AccountSourceT = AccountSource>
-  void SetAccountSource(AccountSourceT&& value) {
-    m_accountSourceHasBeenSet = true;
-    m_accountSource = std::forward<AccountSourceT>(value);
-  }
-  template <typename AccountSourceT = AccountSource>
-  CreateAccountPoolResult& WithAccountSource(AccountSourceT&& value) {
-    SetAccountSource(std::forward<AccountSourceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp at which the account pool was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  CreateAccountPoolResult& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the account pool.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  CreateAccountPoolResult& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the account pool.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  CreateAccountPoolResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where the account pool is created.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -112,57 +42,6 @@ class CreateAccountPoolResult {
   template <typename DomainIdT = Aws::String>
   CreateAccountPoolResult& WithDomainId(DomainIdT&& value) {
     SetDomainId(std::forward<DomainIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the domain where the account pool is created.</p>
-   */
-  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
-  template <typename DomainUnitIdT = Aws::String>
-  void SetDomainUnitId(DomainUnitIdT&& value) {
-    m_domainUnitIdHasBeenSet = true;
-    m_domainUnitId = std::forward<DomainUnitIdT>(value);
-  }
-  template <typename DomainUnitIdT = Aws::String>
-  CreateAccountPoolResult& WithDomainUnitId(DomainUnitIdT&& value) {
-    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the account pool.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  CreateAccountPoolResult& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp at which the account pool was last updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
-  }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  CreateAccountPoolResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -186,6 +65,40 @@ class CreateAccountPoolResult {
 
   ///@{
   /**
+   * <p>The ID of the account pool.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CreateAccountPoolResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the account pool.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateAccountPoolResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The mechanism used to resolve the account selection from the account
    * pool.</p>
    */
@@ -196,6 +109,76 @@ class CreateAccountPoolResult {
   }
   inline CreateAccountPoolResult& WithResolutionStrategy(ResolutionStrategy value) {
     SetResolutionStrategy(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The source of accounts for the account pool. In the current release, it's
+   * either a static list of accounts provided by the customer or a custom Amazon Web
+   * Services Lambda handler. </p>
+   */
+  inline const AccountSource& GetAccountSource() const { return m_accountSource; }
+  template <typename AccountSourceT = AccountSource>
+  void SetAccountSource(AccountSourceT&& value) {
+    m_accountSourceHasBeenSet = true;
+    m_accountSource = std::forward<AccountSourceT>(value);
+  }
+  template <typename AccountSourceT = AccountSource>
+  CreateAccountPoolResult& WithAccountSource(AccountSourceT&& value) {
+    SetAccountSource(std::forward<AccountSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the account pool.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  CreateAccountPoolResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the account pool was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  CreateAccountPoolResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the account pool was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  CreateAccountPoolResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
     return *this;
   }
   ///@}
@@ -218,6 +201,23 @@ class CreateAccountPoolResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ID of the domain where the account pool is created.</p>
+   */
+  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+  template <typename DomainUnitIdT = Aws::String>
+  void SetDomainUnitId(DomainUnitIdT&& value) {
+    m_domainUnitIdHasBeenSet = true;
+    m_domainUnitId = std::forward<DomainUnitIdT>(value);
+  }
+  template <typename DomainUnitIdT = Aws::String>
+  CreateAccountPoolResult& WithDomainUnitId(DomainUnitIdT&& value) {
+    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -232,40 +232,40 @@ class CreateAccountPoolResult {
   }
   ///@}
  private:
-  AccountSource m_accountSource;
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
-  Aws::String m_description;
-
   Aws::String m_domainId;
-
-  Aws::String m_domainUnitId;
-
-  Aws::String m_id;
-
-  Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_name;
 
+  Aws::String m_id;
+
+  Aws::String m_description;
+
   ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
+
+  AccountSource m_accountSource;
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_updatedBy;
 
+  Aws::String m_domainUnitId;
+
   Aws::String m_requestId;
-  bool m_accountSourceHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
-  bool m_domainUnitIdHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_resolutionStrategyHasBeenSet = false;
+  bool m_accountSourceHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

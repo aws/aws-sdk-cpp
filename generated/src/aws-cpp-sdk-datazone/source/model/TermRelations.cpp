@@ -18,13 +18,6 @@ namespace Model {
 TermRelations::TermRelations(JsonView jsonValue) { *this = jsonValue; }
 
 TermRelations& TermRelations::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("classifies")) {
-    Aws::Utils::Array<JsonView> classifiesJsonList = jsonValue.GetArray("classifies");
-    for (unsigned classifiesIndex = 0; classifiesIndex < classifiesJsonList.GetLength(); ++classifiesIndex) {
-      m_classifies.push_back(classifiesJsonList[classifiesIndex].AsString());
-    }
-    m_classifiesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("isA")) {
     Aws::Utils::Array<JsonView> isAJsonList = jsonValue.GetArray("isA");
     for (unsigned isAIndex = 0; isAIndex < isAJsonList.GetLength(); ++isAIndex) {
@@ -32,19 +25,18 @@ TermRelations& TermRelations::operator=(JsonView jsonValue) {
     }
     m_isAHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("classifies")) {
+    Aws::Utils::Array<JsonView> classifiesJsonList = jsonValue.GetArray("classifies");
+    for (unsigned classifiesIndex = 0; classifiesIndex < classifiesJsonList.GetLength(); ++classifiesIndex) {
+      m_classifies.push_back(classifiesJsonList[classifiesIndex].AsString());
+    }
+    m_classifiesHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TermRelations::Jsonize() const {
   JsonValue payload;
-
-  if (m_classifiesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> classifiesJsonList(m_classifies.size());
-    for (unsigned classifiesIndex = 0; classifiesIndex < classifiesJsonList.GetLength(); ++classifiesIndex) {
-      classifiesJsonList[classifiesIndex].AsString(m_classifies[classifiesIndex]);
-    }
-    payload.WithArray("classifies", std::move(classifiesJsonList));
-  }
 
   if (m_isAHasBeenSet) {
     Aws::Utils::Array<JsonValue> isAJsonList(m_isA.size());
@@ -52,6 +44,14 @@ JsonValue TermRelations::Jsonize() const {
       isAJsonList[isAIndex].AsString(m_isA[isAIndex]);
     }
     payload.WithArray("isA", std::move(isAJsonList));
+  }
+
+  if (m_classifiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> classifiesJsonList(m_classifies.size());
+    for (unsigned classifiesIndex = 0; classifiesIndex < classifiesJsonList.GetLength(); ++classifiesIndex) {
+      classifiesJsonList[classifiesIndex].AsString(m_classifies[classifiesIndex]);
+    }
+    payload.WithArray("classifies", std::move(classifiesJsonList));
   }
 
   return payload;

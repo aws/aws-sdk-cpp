@@ -34,42 +34,6 @@ class DataProductRevision {
 
   ///@{
   /**
-   * <p>The timestamp at which the data product revision was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  DataProductRevision& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The user who created the data product revision.</p>
-   */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
-  }
-  template <typename CreatedByT = Aws::String>
-  DataProductRevision& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where the data product revision lives.</p>
    */
   inline const Aws::String& GetDomainId() const { return m_domainId; }
@@ -121,21 +85,57 @@ class DataProductRevision {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the data product revision was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DataProductRevision& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user who created the data product revision.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  DataProductRevision& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::String m_createdBy;
-
   Aws::String m_domainId;
 
   Aws::String m_id;
 
   Aws::String m_revision;
-  bool m_createdAtHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::String m_createdBy;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
 };
 
 }  // namespace Model

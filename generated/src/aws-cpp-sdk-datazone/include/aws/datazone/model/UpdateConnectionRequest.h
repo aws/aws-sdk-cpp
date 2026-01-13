@@ -32,42 +32,6 @@ class UpdateConnectionRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The location where a connection is to be updated.</p>
-   */
-  inline const AwsLocation& GetAwsLocation() const { return m_awsLocation; }
-  inline bool AwsLocationHasBeenSet() const { return m_awsLocationHasBeenSet; }
-  template <typename AwsLocationT = AwsLocation>
-  void SetAwsLocation(AwsLocationT&& value) {
-    m_awsLocationHasBeenSet = true;
-    m_awsLocation = std::forward<AwsLocationT>(value);
-  }
-  template <typename AwsLocationT = AwsLocation>
-  UpdateConnectionRequest& WithAwsLocation(AwsLocationT&& value) {
-    SetAwsLocation(std::forward<AwsLocationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of a connection.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateConnectionRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the domain where a connection is to be updated.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
@@ -104,6 +68,42 @@ class UpdateConnectionRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The description of a connection.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateConnectionRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The location where a connection is to be updated.</p>
+   */
+  inline const AwsLocation& GetAwsLocation() const { return m_awsLocation; }
+  inline bool AwsLocationHasBeenSet() const { return m_awsLocationHasBeenSet; }
+  template <typename AwsLocationT = AwsLocation>
+  void SetAwsLocation(AwsLocationT&& value) {
+    m_awsLocationHasBeenSet = true;
+    m_awsLocation = std::forward<AwsLocationT>(value);
+  }
+  template <typename AwsLocationT = AwsLocation>
+  UpdateConnectionRequest& WithAwsLocation(AwsLocationT&& value) {
+    SetAwsLocation(std::forward<AwsLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The connection props.</p>
    */
   inline const ConnectionPropertiesPatch& GetProps() const { return m_props; }
@@ -120,19 +120,19 @@ class UpdateConnectionRequest : public DataZoneRequest {
   }
   ///@}
  private:
-  AwsLocation m_awsLocation;
-
-  Aws::String m_description;
-
   Aws::String m_domainIdentifier;
 
   Aws::String m_identifier;
 
+  Aws::String m_description;
+
+  AwsLocation m_awsLocation;
+
   ConnectionPropertiesPatch m_props;
-  bool m_awsLocationHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_awsLocationHasBeenSet = false;
   bool m_propsHasBeenSet = false;
 };
 

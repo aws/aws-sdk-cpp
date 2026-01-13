@@ -15,20 +15,16 @@ using namespace Aws::Utils;
 Aws::String CreateAssetRevisionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_typeRevisionHasBeenSet) {
+    payload.WithString("typeRevision", m_typeRevision);
   }
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
-  }
-
-  if (m_formsInputHasBeenSet) {
-    Aws::Utils::Array<JsonValue> formsInputJsonList(m_formsInput.size());
-    for (unsigned formsInputIndex = 0; formsInputIndex < formsInputJsonList.GetLength(); ++formsInputIndex) {
-      formsInputJsonList[formsInputIndex].AsObject(m_formsInput[formsInputIndex].Jsonize());
-    }
-    payload.WithArray("formsInput", std::move(formsInputJsonList));
   }
 
   if (m_glossaryTermsHasBeenSet) {
@@ -39,16 +35,20 @@ Aws::String CreateAssetRevisionRequest::SerializePayload() const {
     payload.WithArray("glossaryTerms", std::move(glossaryTermsJsonList));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_formsInputHasBeenSet) {
+    Aws::Utils::Array<JsonValue> formsInputJsonList(m_formsInput.size());
+    for (unsigned formsInputIndex = 0; formsInputIndex < formsInputJsonList.GetLength(); ++formsInputIndex) {
+      formsInputJsonList[formsInputIndex].AsObject(m_formsInput[formsInputIndex].Jsonize());
+    }
+    payload.WithArray("formsInput", std::move(formsInputJsonList));
   }
 
   if (m_predictionConfigurationHasBeenSet) {
     payload.WithObject("predictionConfiguration", m_predictionConfiguration.Jsonize());
   }
 
-  if (m_typeRevisionHasBeenSet) {
-    payload.WithString("typeRevision", m_typeRevision);
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

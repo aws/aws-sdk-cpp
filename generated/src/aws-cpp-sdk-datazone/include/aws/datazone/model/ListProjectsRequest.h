@@ -53,6 +53,24 @@ class ListProjectsRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The identifier of the Amazon DataZone user.</p>
+   */
+  inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
+  inline bool UserIdentifierHasBeenSet() const { return m_userIdentifierHasBeenSet; }
+  template <typename UserIdentifierT = Aws::String>
+  void SetUserIdentifier(UserIdentifierT&& value) {
+    m_userIdentifierHasBeenSet = true;
+    m_userIdentifier = std::forward<UserIdentifierT>(value);
+  }
+  template <typename UserIdentifierT = Aws::String>
+  ListProjectsRequest& WithUserIdentifier(UserIdentifierT&& value) {
+    SetUserIdentifier(std::forward<UserIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of a group.</p>
    */
   inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
@@ -65,26 +83,6 @@ class ListProjectsRequest : public DataZoneRequest {
   template <typename GroupIdentifierT = Aws::String>
   ListProjectsRequest& WithGroupIdentifier(GroupIdentifierT&& value) {
     SetGroupIdentifier(std::forward<GroupIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The maximum number of projects to return in a single call to
-   * <code>ListProjects</code>. When the number of projects to be listed is greater
-   * than the value of <code>MaxResults</code>, the response contains a
-   * <code>NextToken</code> value that you can use in a subsequent call to
-   * <code>ListProjects</code> to list the next set of projects.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListProjectsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
     return *this;
   }
   ///@}
@@ -132,39 +130,41 @@ class ListProjectsRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon DataZone user.</p>
+   * <p>The maximum number of projects to return in a single call to
+   * <code>ListProjects</code>. When the number of projects to be listed is greater
+   * than the value of <code>MaxResults</code>, the response contains a
+   * <code>NextToken</code> value that you can use in a subsequent call to
+   * <code>ListProjects</code> to list the next set of projects.</p>
    */
-  inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
-  inline bool UserIdentifierHasBeenSet() const { return m_userIdentifierHasBeenSet; }
-  template <typename UserIdentifierT = Aws::String>
-  void SetUserIdentifier(UserIdentifierT&& value) {
-    m_userIdentifierHasBeenSet = true;
-    m_userIdentifier = std::forward<UserIdentifierT>(value);
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
   }
-  template <typename UserIdentifierT = Aws::String>
-  ListProjectsRequest& WithUserIdentifier(UserIdentifierT&& value) {
-    SetUserIdentifier(std::forward<UserIdentifierT>(value));
+  inline ListProjectsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
     return *this;
   }
   ///@}
  private:
   Aws::String m_domainIdentifier;
 
-  Aws::String m_groupIdentifier;
+  Aws::String m_userIdentifier;
 
-  int m_maxResults{0};
+  Aws::String m_groupIdentifier;
 
   Aws::String m_name;
 
   Aws::String m_nextToken;
 
-  Aws::String m_userIdentifier;
+  int m_maxResults{0};
   bool m_domainIdentifierHasBeenSet = false;
+  bool m_userIdentifierHasBeenSet = false;
   bool m_groupIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_userIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model
