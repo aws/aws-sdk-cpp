@@ -17,7 +17,7 @@ namespace Pagination
 {
 
 template <class ServiceClient, class OperationRequest, class OperationTraits>
-class PagePaginator
+class Paginator
 {
 private:
   struct EndSentinel {};
@@ -25,7 +25,7 @@ public:
     using OutcomeType = typename OperationTraits::OutcomeType;
     using ResultType = typename OperationTraits::ResultType;
 
-    class PageIterator
+    class Iterator
     {
     public:
         using iterator_category = std::input_iterator_tag;
@@ -34,15 +34,15 @@ public:
         using pointer = const OutcomeType*;
         using reference = const OutcomeType&;
 
-        PageIterator(std::shared_ptr<ServiceClient> client, const OperationRequest& firstReq)
+        Iterator(ServiceClient& client, const OperationRequest& firstReq)
             : m_client(client),
               m_request(firstReq),
-              m_currentOutcome{OperationTraits::Invoke(*m_client, m_request)}
+              m_currentOutcome{OperationTraits::Invoke(m_client, m_request)}
         {}
 
         const OutcomeType& operator*() const { return m_currentOutcome; }
 
-        PageIterator& operator++()
+        Iterator& operator++()
         {
             if (m_atEnd) return *this;
 
@@ -59,40 +59,40 @@ public:
             }
 
             OperationTraits::SetNextRequest(m_currentOutcome.GetResult(), m_request);
-            FetchPage();
+            Fetch();
 
             return *this;
         }
 
-        friend bool operator==(const PageIterator& lhs, const EndSentinel&) {
+        friend bool operator==(const Iterator& lhs, const EndSentinel&) {
           return lhs.m_atEnd;
         }
 
-        friend bool operator!=(const PageIterator& lhs, const EndSentinel& rhs) {
+        friend bool operator!=(const Iterator& lhs, const EndSentinel& rhs) {
           return !(lhs == rhs);
         }
 
        private:
-        void FetchPage()
+        void Fetch()
         {
-            m_currentOutcome = OperationTraits::Invoke(*m_client, m_request);
+            m_currentOutcome = OperationTraits::Invoke(m_client, m_request);
         }
 
-        std::shared_ptr<ServiceClient> m_client;
+        ServiceClient& m_client;
         OperationRequest m_request{};
         OutcomeType m_currentOutcome{};
         bool m_atEnd{false};
     };
 
-    PagePaginator(std::shared_ptr<ServiceClient> client, const OperationRequest& firstReq)
+    Paginator(ServiceClient& client, const OperationRequest& firstReq)
         : m_client(client),
           m_firstRequest(firstReq) {}
 
-    PageIterator begin() const { return PageIterator(m_client, m_firstRequest); }
+    Iterator begin() const { return Iterator(m_client, m_firstRequest); }
     EndSentinel end() const { return EndSentinel{}; }
 
 private:
-    std::shared_ptr<ServiceClient> m_client;
+    ServiceClient& m_client;
     OperationRequest m_firstRequest{};
 };
 

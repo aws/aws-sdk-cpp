@@ -16,7 +16,6 @@ import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
 
-from codegen.format_util import format_directories
 from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ServiceModel
 
@@ -149,12 +148,6 @@ class LegacyC2jCppGen(object):
             return -1
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
-        
-        # Format generated client code
-        generated_clients = [service for service in self.c2j_models.keys()]
-        if generated_clients:
-            client_dirs = [f"{self.output_location}/src/aws-cpp-sdk-{client}" for client in generated_clients]
-            format_directories(client_dirs)
         
         return 0
 
