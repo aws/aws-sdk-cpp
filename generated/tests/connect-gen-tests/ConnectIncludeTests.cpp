@@ -63,6 +63,7 @@
 #include <aws/connect/model/AssociateEmailAddressAliasResult.h>
 #include <aws/connect/model/AssociateFlowRequest.h>
 #include <aws/connect/model/AssociateFlowResult.h>
+#include <aws/connect/model/AssociateHoursOfOperationsRequest.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigResult.h>
 #include <aws/connect/model/AssociateLambdaFunctionRequest.h>
@@ -421,6 +422,7 @@
 #include <aws/connect/model/DisassociateEmailAddressAliasResult.h>
 #include <aws/connect/model/DisassociateFlowRequest.h>
 #include <aws/connect/model/DisassociateFlowResult.h>
+#include <aws/connect/model/DisassociateHoursOfOperationsRequest.h>
 #include <aws/connect/model/DisassociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DisassociateLambdaFunctionRequest.h>
 #include <aws/connect/model/DisassociateLexBotRequest.h>
@@ -442,6 +444,7 @@
 #include <aws/connect/model/Distribution.h>
 #include <aws/connect/model/DownloadUrlMetadata.h>
 #include <aws/connect/model/EffectiveHoursOfOperations.h>
+#include <aws/connect/model/EffectiveOverrideHours.h>
 #include <aws/connect/model/EmailAddressInfo.h>
 #include <aws/connect/model/EmailAddressMetadata.h>
 #include <aws/connect/model/EmailAddressSearchCriteria.h>
@@ -616,6 +619,7 @@
 #include <aws/connect/model/HoursOfOperationSearchFilter.h>
 #include <aws/connect/model/HoursOfOperationSummary.h>
 #include <aws/connect/model/HoursOfOperationTimeSlice.h>
+#include <aws/connect/model/HoursOfOperationsIdentifier.h>
 #include <aws/connect/model/ImagesLogo.h>
 #include <aws/connect/model/ImportPhoneNumberRequest.h>
 #include <aws/connect/model/ImportPhoneNumberResult.h>
@@ -666,6 +670,8 @@
 #include <aws/connect/model/ListAuthenticationProfilesResult.h>
 #include <aws/connect/model/ListBotsRequest.h>
 #include <aws/connect/model/ListBotsResult.h>
+#include <aws/connect/model/ListChildHoursOfOperationsRequest.h>
+#include <aws/connect/model/ListChildHoursOfOperationsResult.h>
 #include <aws/connect/model/ListCondition.h>
 #include <aws/connect/model/ListContactEvaluationsRequest.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
@@ -810,6 +816,7 @@
 #include <aws/connect/model/NumericQuestionPropertyAutomationLabel.h>
 #include <aws/connect/model/NumericQuestionPropertyValueAutomation.h>
 #include <aws/connect/model/OperationalHour.h>
+#include <aws/connect/model/OperationalStatus.h>
 #include <aws/connect/model/OutboundAdditionalRecipients.h>
 #include <aws/connect/model/OutboundCallerConfig.h>
 #include <aws/connect/model/OutboundEmailConfig.h>
@@ -820,11 +827,14 @@
 #include <aws/connect/model/OutboundStrategyConfig.h>
 #include <aws/connect/model/OutboundStrategyType.h>
 #include <aws/connect/model/OverrideDays.h>
+#include <aws/connect/model/OverrideHour.h>
 #include <aws/connect/model/OverrideTimeSlice.h>
+#include <aws/connect/model/OverrideType.h>
 #include <aws/connect/model/PaletteCanvas.h>
 #include <aws/connect/model/PaletteHeader.h>
 #include <aws/connect/model/PaletteNavigation.h>
 #include <aws/connect/model/PalettePrimary.h>
+#include <aws/connect/model/ParentHoursOfOperationConfig.h>
 #include <aws/connect/model/ParticipantCapabilities.h>
 #include <aws/connect/model/ParticipantConfiguration.h>
 #include <aws/connect/model/ParticipantDetails.h>
@@ -917,6 +927,9 @@
 #include <aws/connect/model/RecordPrimaryValue.h>
 #include <aws/connect/model/RecordingInfo.h>
 #include <aws/connect/model/RecordingStatus.h>
+#include <aws/connect/model/RecurrenceConfig.h>
+#include <aws/connect/model/RecurrenceFrequency.h>
+#include <aws/connect/model/RecurrencePattern.h>
 #include <aws/connect/model/Reference.h>
 #include <aws/connect/model/ReferenceStatus.h>
 #include <aws/connect/model/ReferenceSummary.h>

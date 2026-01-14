@@ -257,17 +257,17 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator=(const XmlNode& x
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsDedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_supportsDedicatedLogVolumeHasBeenSet = true;
     }
-    XmlNode supportsHttpEndpointNode = resultNode.FirstChild("SupportsHttpEndpoint");
-    if (!supportsHttpEndpointNode.IsNull()) {
-      m_supportsHttpEndpoint = StringUtils::ConvertToBool(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsHttpEndpointNode.GetText()).c_str()).c_str());
-      m_supportsHttpEndpointHasBeenSet = true;
-    }
     XmlNode supportsAdditionalStorageVolumesNode = resultNode.FirstChild("SupportsAdditionalStorageVolumes");
     if (!supportsAdditionalStorageVolumesNode.IsNull()) {
       m_supportsAdditionalStorageVolumes = StringUtils::ConvertToBool(
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsAdditionalStorageVolumesNode.GetText()).c_str()).c_str());
       m_supportsAdditionalStorageVolumesHasBeenSet = true;
+    }
+    XmlNode supportsHttpEndpointNode = resultNode.FirstChild("SupportsHttpEndpoint");
+    if (!supportsHttpEndpointNode.IsNull()) {
+      m_supportsHttpEndpoint = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsHttpEndpointNode.GetText()).c_str()).c_str());
+      m_supportsHttpEndpointHasBeenSet = true;
     }
     XmlNode availableAdditionalStorageVolumesOptionsNode = resultNode.FirstChild("AvailableAdditionalStorageVolumesOptions");
     if (!availableAdditionalStorageVolumesOptionsNode.IsNull()) {
@@ -465,13 +465,13 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
             << "&";
   }
 
-  if (m_supportsHttpEndpointHasBeenSet) {
-    oStream << location << index << locationValue << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
-  }
-
   if (m_supportsAdditionalStorageVolumesHasBeenSet) {
     oStream << location << index << locationValue << ".SupportsAdditionalStorageVolumes=" << std::boolalpha
             << m_supportsAdditionalStorageVolumes << "&";
+  }
+
+  if (m_supportsHttpEndpointHasBeenSet) {
+    oStream << location << index << locationValue << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
   }
 
   if (m_availableAdditionalStorageVolumesOptionsHasBeenSet) {
@@ -618,11 +618,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if (m_supportsDedicatedLogVolumeHasBeenSet) {
     oStream << location << ".SupportsDedicatedLogVolume=" << std::boolalpha << m_supportsDedicatedLogVolume << "&";
   }
-  if (m_supportsHttpEndpointHasBeenSet) {
-    oStream << location << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
-  }
   if (m_supportsAdditionalStorageVolumesHasBeenSet) {
     oStream << location << ".SupportsAdditionalStorageVolumes=" << std::boolalpha << m_supportsAdditionalStorageVolumes << "&";
+  }
+  if (m_supportsHttpEndpointHasBeenSet) {
+    oStream << location << ".SupportsHttpEndpoint=" << std::boolalpha << m_supportsHttpEndpoint << "&";
   }
   if (m_availableAdditionalStorageVolumesOptionsHasBeenSet) {
     unsigned availableAdditionalStorageVolumesOptionsIdx = 1;

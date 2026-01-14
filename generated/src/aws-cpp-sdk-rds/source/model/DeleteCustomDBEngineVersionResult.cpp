@@ -55,6 +55,17 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator=(
       m_databaseInstallationFilesS3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3PrefixNode.GetText());
       m_databaseInstallationFilesS3PrefixHasBeenSet = true;
     }
+    XmlNode databaseInstallationFilesNode = resultNode.FirstChild("DatabaseInstallationFiles");
+    if (!databaseInstallationFilesNode.IsNull()) {
+      XmlNode databaseInstallationFilesMember = databaseInstallationFilesNode.FirstChild("member");
+      m_databaseInstallationFilesHasBeenSet = !databaseInstallationFilesMember.IsNull();
+      while (!databaseInstallationFilesMember.IsNull()) {
+        m_databaseInstallationFiles.push_back(databaseInstallationFilesMember.GetText());
+        databaseInstallationFilesMember = databaseInstallationFilesMember.NextNode("member");
+      }
+
+      m_databaseInstallationFilesHasBeenSet = true;
+    }
     XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
     if (!customDBEngineVersionManifestNode.IsNull()) {
       m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
@@ -84,6 +95,11 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator=(
     if (!defaultCharacterSetNode.IsNull()) {
       m_defaultCharacterSet = defaultCharacterSetNode;
       m_defaultCharacterSetHasBeenSet = true;
+    }
+    XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
+    if (!failureReasonNode.IsNull()) {
+      m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
+      m_failureReasonHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("Image");
     if (!imageNode.IsNull()) {
@@ -269,22 +285,6 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator=(
     if (!serverlessV2FeaturesSupportNode.IsNull()) {
       m_serverlessV2FeaturesSupport = serverlessV2FeaturesSupportNode;
       m_serverlessV2FeaturesSupportHasBeenSet = true;
-    }
-    XmlNode databaseInstallationFilesNode = resultNode.FirstChild("DatabaseInstallationFiles");
-    if (!databaseInstallationFilesNode.IsNull()) {
-      XmlNode databaseInstallationFilesMember = databaseInstallationFilesNode.FirstChild("member");
-      m_databaseInstallationFilesHasBeenSet = !databaseInstallationFilesMember.IsNull();
-      while (!databaseInstallationFilesMember.IsNull()) {
-        m_databaseInstallationFiles.push_back(databaseInstallationFilesMember.GetText());
-        databaseInstallationFilesMember = databaseInstallationFilesMember.NextNode("member");
-      }
-
-      m_databaseInstallationFilesHasBeenSet = true;
-    }
-    XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
-    if (!failureReasonNode.IsNull()) {
-      m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
-      m_failureReasonHasBeenSet = true;
     }
   }
 

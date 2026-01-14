@@ -7,6 +7,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/HoursOfOperationConfig.h>
+#include <aws/connect/model/ParentHoursOfOperationConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -132,6 +133,36 @@ class CreateHoursOfOperationRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>Configuration for parent hours of operations. Eg: ResourceArn. </p> <p>For
+   * more information about parent hours of operations, see <a
+   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
+   * overrides from different hours of operation</a> in the <i> Administrator
+   * Guide</i>.</p>
+   */
+  inline const Aws::Vector<ParentHoursOfOperationConfig>& GetParentHoursOfOperationConfigs() const {
+    return m_parentHoursOfOperationConfigs;
+  }
+  inline bool ParentHoursOfOperationConfigsHasBeenSet() const { return m_parentHoursOfOperationConfigsHasBeenSet; }
+  template <typename ParentHoursOfOperationConfigsT = Aws::Vector<ParentHoursOfOperationConfig>>
+  void SetParentHoursOfOperationConfigs(ParentHoursOfOperationConfigsT&& value) {
+    m_parentHoursOfOperationConfigsHasBeenSet = true;
+    m_parentHoursOfOperationConfigs = std::forward<ParentHoursOfOperationConfigsT>(value);
+  }
+  template <typename ParentHoursOfOperationConfigsT = Aws::Vector<ParentHoursOfOperationConfig>>
+  CreateHoursOfOperationRequest& WithParentHoursOfOperationConfigs(ParentHoursOfOperationConfigsT&& value) {
+    SetParentHoursOfOperationConfigs(std::forward<ParentHoursOfOperationConfigsT>(value));
+    return *this;
+  }
+  template <typename ParentHoursOfOperationConfigsT = ParentHoursOfOperationConfig>
+  CreateHoursOfOperationRequest& AddParentHoursOfOperationConfigs(ParentHoursOfOperationConfigsT&& value) {
+    m_parentHoursOfOperationConfigsHasBeenSet = true;
+    m_parentHoursOfOperationConfigs.emplace_back(std::forward<ParentHoursOfOperationConfigsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -165,12 +196,15 @@ class CreateHoursOfOperationRequest : public ConnectRequest {
 
   Aws::Vector<HoursOfOperationConfig> m_config;
 
+  Aws::Vector<ParentHoursOfOperationConfig> m_parentHoursOfOperationConfigs;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_instanceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
   bool m_configHasBeenSet = false;
+  bool m_parentHoursOfOperationConfigsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

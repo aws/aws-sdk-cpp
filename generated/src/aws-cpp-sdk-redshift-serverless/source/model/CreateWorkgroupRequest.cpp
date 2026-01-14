@@ -31,6 +31,10 @@ Aws::String CreateWorkgroupRequest::SerializePayload() const {
     payload.WithBool("enhancedVpcRouting", m_enhancedVpcRouting);
   }
 
+  if (m_extraComputeForAutomaticOptimizationHasBeenSet) {
+    payload.WithBool("extraComputeForAutomaticOptimization", m_extraComputeForAutomaticOptimization);
+  }
+
   if (m_ipAddressTypeHasBeenSet) {
     payload.WithString("ipAddressType", m_ipAddressType);
   }

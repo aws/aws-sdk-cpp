@@ -91,7 +91,7 @@ class ListCostCategoryDefinitionsRequest : public CostExplorerRequest {
    * based on the latest version. If the filter is present, the result only includes
    * Cost Categories that supports input resource type. If the filter isn't provided,
    * no filtering is applied. The valid values are
-   * <code>billing:rispgroupsharing</code>. </p>
+   * <code>billing:rispgroupsharing</code> and <code>billing:billingview</code>. </p>
    */
   inline const Aws::Vector<Aws::String>& GetSupportedResourceTypes() const { return m_supportedResourceTypes; }
   inline bool SupportedResourceTypesHasBeenSet() const { return m_supportedResourceTypesHasBeenSet; }

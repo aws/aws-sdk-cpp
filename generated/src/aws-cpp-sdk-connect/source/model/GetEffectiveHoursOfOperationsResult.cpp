@@ -31,6 +31,14 @@ GetEffectiveHoursOfOperationsResult& GetEffectiveHoursOfOperationsResult::operat
     }
     m_effectiveHoursOfOperationListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EffectiveOverrideHoursList")) {
+    Aws::Utils::Array<JsonView> effectiveOverrideHoursListJsonList = jsonValue.GetArray("EffectiveOverrideHoursList");
+    for (unsigned effectiveOverrideHoursListIndex = 0; effectiveOverrideHoursListIndex < effectiveOverrideHoursListJsonList.GetLength();
+         ++effectiveOverrideHoursListIndex) {
+      m_effectiveOverrideHoursList.push_back(effectiveOverrideHoursListJsonList[effectiveOverrideHoursListIndex].AsObject());
+    }
+    m_effectiveOverrideHoursListHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TimeZone")) {
     m_timeZone = jsonValue.GetString("TimeZone");
     m_timeZoneHasBeenSet = true;

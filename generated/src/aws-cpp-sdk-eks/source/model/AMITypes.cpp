@@ -25,6 +25,8 @@ static const int BOTTLEROCKET_ARM_64_FIPS_HASH = HashingUtils::HashString("BOTTL
 static const int BOTTLEROCKET_x86_64_FIPS_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_FIPS");
 static const int BOTTLEROCKET_ARM_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA");
 static const int BOTTLEROCKET_x86_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA");
+static const int BOTTLEROCKET_ARM_64_NVIDIA_FIPS_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA_FIPS");
+static const int BOTTLEROCKET_x86_64_NVIDIA_FIPS_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA_FIPS");
 static const int WINDOWS_CORE_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2019_x86_64");
 static const int WINDOWS_FULL_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2019_x86_64");
 static const int WINDOWS_CORE_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2022_x86_64");
@@ -57,6 +59,10 @@ AMITypes GetAMITypesForName(const Aws::String& name) {
     return AMITypes::BOTTLEROCKET_ARM_64_NVIDIA;
   } else if (hashCode == BOTTLEROCKET_x86_64_NVIDIA_HASH) {
     return AMITypes::BOTTLEROCKET_x86_64_NVIDIA;
+  } else if (hashCode == BOTTLEROCKET_ARM_64_NVIDIA_FIPS_HASH) {
+    return AMITypes::BOTTLEROCKET_ARM_64_NVIDIA_FIPS;
+  } else if (hashCode == BOTTLEROCKET_x86_64_NVIDIA_FIPS_HASH) {
+    return AMITypes::BOTTLEROCKET_x86_64_NVIDIA_FIPS;
   } else if (hashCode == WINDOWS_CORE_2019_x86_64_HASH) {
     return AMITypes::WINDOWS_CORE_2019_x86_64;
   } else if (hashCode == WINDOWS_FULL_2019_x86_64_HASH) {
@@ -109,6 +115,10 @@ Aws::String GetNameForAMITypes(AMITypes enumValue) {
       return "BOTTLEROCKET_ARM_64_NVIDIA";
     case AMITypes::BOTTLEROCKET_x86_64_NVIDIA:
       return "BOTTLEROCKET_x86_64_NVIDIA";
+    case AMITypes::BOTTLEROCKET_ARM_64_NVIDIA_FIPS:
+      return "BOTTLEROCKET_ARM_64_NVIDIA_FIPS";
+    case AMITypes::BOTTLEROCKET_x86_64_NVIDIA_FIPS:
+      return "BOTTLEROCKET_x86_64_NVIDIA_FIPS";
     case AMITypes::WINDOWS_CORE_2019_x86_64:
       return "WINDOWS_CORE_2019_x86_64";
     case AMITypes::WINDOWS_FULL_2019_x86_64:

@@ -381,6 +381,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Associates a set of hours of operations with another hours of operation.
+   * Refer to Administrator Guide <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+   * here </a> for more information on inheriting overrides from parent hours of
+   * operation(s).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateHoursOfOperations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateHoursOfOperationsOutcome AssociateHoursOfOperations(
+      const Model::AssociateHoursOfOperationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateHoursOfOperations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateHoursOfOperationsRequestT = Model::AssociateHoursOfOperationsRequest>
+  Model::AssociateHoursOfOperationsOutcomeCallable AssociateHoursOfOperationsCallable(
+      const AssociateHoursOfOperationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::AssociateHoursOfOperations, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateHoursOfOperations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateHoursOfOperationsRequestT = Model::AssociateHoursOfOperationsRequest>
+  void AssociateHoursOfOperationsAsync(const AssociateHoursOfOperationsRequestT& request,
+                                       const AssociateHoursOfOperationsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::AssociateHoursOfOperations, request, handler, context);
+  }
+
+  /**
    * <p>This API is in preview release for Amazon Connect and is subject to
    * change.</p> <p>Associates a storage resource type for the first time. You can
    * only associate one type of storage configuration in a single call. This means,
@@ -4316,6 +4349,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Disassociates a set of hours of operations with another hours of operation.
+   * Refer to Administrator Guide <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">
+   * here </a> for more information on inheriting overrides from parent hours of
+   * operation(s).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateHoursOfOperations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateHoursOfOperationsOutcome DisassociateHoursOfOperations(
+      const Model::DisassociateHoursOfOperationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateHoursOfOperations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateHoursOfOperationsRequestT = Model::DisassociateHoursOfOperationsRequest>
+  Model::DisassociateHoursOfOperationsOutcomeCallable DisassociateHoursOfOperationsCallable(
+      const DisassociateHoursOfOperationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DisassociateHoursOfOperations, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateHoursOfOperations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DisassociateHoursOfOperationsRequestT = Model::DisassociateHoursOfOperationsRequest>
+  void DisassociateHoursOfOperationsAsync(const DisassociateHoursOfOperationsRequestT& request,
+                                          const DisassociateHoursOfOperationsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DisassociateHoursOfOperations, request, handler, context);
+  }
+
+  /**
    * <p>This API is in preview release for Amazon Connect and is subject to
    * change.</p> <p>Removes the storage type configurations for the specified
    * resource type and association ID.</p><p><h3>See Also:</h3>   <a
@@ -5411,6 +5477,40 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void ListBotsAsync(const ListBotsRequestT& request, const ListBotsResponseReceivedHandler& handler,
                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListBots, request, handler, context);
+  }
+
+  /**
+   * <p>Provides information about the child hours of operations for the specified
+   * parent hours of operation.</p> <p>For more information about child hours of
+   * operations, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Link overrides
+   * from different hours of operation</a> in the <i> Administrator
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListChildHoursOfOperations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListChildHoursOfOperationsOutcome ListChildHoursOfOperations(
+      const Model::ListChildHoursOfOperationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListChildHoursOfOperations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListChildHoursOfOperationsRequestT = Model::ListChildHoursOfOperationsRequest>
+  Model::ListChildHoursOfOperationsOutcomeCallable ListChildHoursOfOperationsCallable(
+      const ListChildHoursOfOperationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListChildHoursOfOperations, request);
+  }
+
+  /**
+   * An Async wrapper for ListChildHoursOfOperations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListChildHoursOfOperationsRequestT = Model::ListChildHoursOfOperationsRequest>
+  void ListChildHoursOfOperationsAsync(const ListChildHoursOfOperationsRequestT& request,
+                                       const ListChildHoursOfOperationsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListChildHoursOfOperations, request, handler, context);
   }
 
   /**

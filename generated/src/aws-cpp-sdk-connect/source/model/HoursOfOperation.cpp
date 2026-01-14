@@ -45,6 +45,14 @@ HoursOfOperation& HoursOfOperation::operator=(JsonView jsonValue) {
     }
     m_configHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ParentHoursOfOperations")) {
+    Aws::Utils::Array<JsonView> parentHoursOfOperationsJsonList = jsonValue.GetArray("ParentHoursOfOperations");
+    for (unsigned parentHoursOfOperationsIndex = 0; parentHoursOfOperationsIndex < parentHoursOfOperationsJsonList.GetLength();
+         ++parentHoursOfOperationsIndex) {
+      m_parentHoursOfOperations.push_back(parentHoursOfOperationsJsonList[parentHoursOfOperationsIndex].AsObject());
+    }
+    m_parentHoursOfOperationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -92,6 +100,16 @@ JsonValue HoursOfOperation::Jsonize() const {
       configJsonList[configIndex].AsObject(m_config[configIndex].Jsonize());
     }
     payload.WithArray("Config", std::move(configJsonList));
+  }
+
+  if (m_parentHoursOfOperationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parentHoursOfOperationsJsonList(m_parentHoursOfOperations.size());
+    for (unsigned parentHoursOfOperationsIndex = 0; parentHoursOfOperationsIndex < parentHoursOfOperationsJsonList.GetLength();
+         ++parentHoursOfOperationsIndex) {
+      parentHoursOfOperationsJsonList[parentHoursOfOperationsIndex].AsObject(
+          m_parentHoursOfOperations[parentHoursOfOperationsIndex].Jsonize());
+    }
+    payload.WithArray("ParentHoursOfOperations", std::move(parentHoursOfOperationsJsonList));
   }
 
   if (m_tagsHasBeenSet) {

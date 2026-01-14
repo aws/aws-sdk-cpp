@@ -52,7 +52,13 @@ class S3File {
 
   ///@{
   /**
-   * <p>The object key of the media file.</p>
+   * <p>The S3 key prefix that defines the storage location of your media files. The
+   * prefix works like a folder path in S3, and is combined with the WhatsApp mediaId
+   * to create the final file path.</p> <p>For example, if a media file's WhatsApp
+   * mediaId is <code>123.ogg</code>, and the key is <code>audio/example.ogg</code>,
+   * the final file path is <code>audio/example.ogg123.ogg</code>.</p> <p>For the
+   * same mediaId, a key of <code>audio/</code> results in the file path
+   * <code>audio/123.ogg</code>.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

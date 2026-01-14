@@ -399,6 +399,11 @@ Cluster& Cluster::operator=(const XmlNode& xmlNode) {
       m_catalogArn = Aws::Utils::Xml::DecodeEscapedXmlText(catalogArnNode.GetText());
       m_catalogArnHasBeenSet = true;
     }
+    XmlNode extraComputeForAutomaticOptimizationNode = resultNode.FirstChild("ExtraComputeForAutomaticOptimization");
+    if (!extraComputeForAutomaticOptimizationNode.IsNull()) {
+      m_extraComputeForAutomaticOptimization = Aws::Utils::Xml::DecodeEscapedXmlText(extraComputeForAutomaticOptimizationNode.GetText());
+      m_extraComputeForAutomaticOptimizationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -738,6 +743,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   if (m_catalogArnHasBeenSet) {
     oStream << location << index << locationValue << ".CatalogArn=" << StringUtils::URLEncode(m_catalogArn.c_str()) << "&";
   }
+
+  if (m_extraComputeForAutomaticOptimizationHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ExtraComputeForAutomaticOptimization=" << StringUtils::URLEncode(m_extraComputeForAutomaticOptimization.c_str()) << "&";
+  }
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -998,6 +1008,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const 
   }
   if (m_catalogArnHasBeenSet) {
     oStream << location << ".CatalogArn=" << StringUtils::URLEncode(m_catalogArn.c_str()) << "&";
+  }
+  if (m_extraComputeForAutomaticOptimizationHasBeenSet) {
+    oStream << location
+            << ".ExtraComputeForAutomaticOptimization=" << StringUtils::URLEncode(m_extraComputeForAutomaticOptimization.c_str()) << "&";
   }
 }
 

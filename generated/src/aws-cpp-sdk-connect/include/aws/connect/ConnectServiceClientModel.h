@@ -152,6 +152,7 @@
 #include <aws/connect/model/ListAssociatedContactsResult.h>
 #include <aws/connect/model/ListAuthenticationProfilesResult.h>
 #include <aws/connect/model/ListBotsResult.h>
+#include <aws/connect/model/ListChildHoursOfOperationsResult.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesResult.h>
 #include <aws/connect/model/ListContactFlowModuleVersionsResult.h>
@@ -335,6 +336,7 @@ class AssociateContactWithUserRequest;
 class AssociateDefaultVocabularyRequest;
 class AssociateEmailAddressAliasRequest;
 class AssociateFlowRequest;
+class AssociateHoursOfOperationsRequest;
 class AssociateInstanceStorageConfigRequest;
 class AssociateLambdaFunctionRequest;
 class AssociateLexBotRequest;
@@ -463,6 +465,7 @@ class DisassociateApprovedOriginRequest;
 class DisassociateBotRequest;
 class DisassociateEmailAddressAliasRequest;
 class DisassociateFlowRequest;
+class DisassociateHoursOfOperationsRequest;
 class DisassociateInstanceStorageConfigRequest;
 class DisassociateLambdaFunctionRequest;
 class DisassociateLexBotRequest;
@@ -498,6 +501,7 @@ class ListApprovedOriginsRequest;
 class ListAssociatedContactsRequest;
 class ListAuthenticationProfilesRequest;
 class ListBotsRequest;
+class ListChildHoursOfOperationsRequest;
 class ListContactEvaluationsRequest;
 class ListContactFlowModuleAliasesRequest;
 class ListContactFlowModuleVersionsRequest;
@@ -679,6 +683,7 @@ typedef Aws::Utils::Outcome<AssociateContactWithUserResult, ConnectError> Associ
 typedef Aws::Utils::Outcome<AssociateDefaultVocabularyResult, ConnectError> AssociateDefaultVocabularyOutcome;
 typedef Aws::Utils::Outcome<AssociateEmailAddressAliasResult, ConnectError> AssociateEmailAddressAliasOutcome;
 typedef Aws::Utils::Outcome<AssociateFlowResult, ConnectError> AssociateFlowOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateHoursOfOperationsOutcome;
 typedef Aws::Utils::Outcome<AssociateInstanceStorageConfigResult, ConnectError> AssociateInstanceStorageConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLambdaFunctionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLexBotOutcome;
@@ -807,6 +812,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateApprovedOri
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateBotOutcome;
 typedef Aws::Utils::Outcome<DisassociateEmailAddressAliasResult, ConnectError> DisassociateEmailAddressAliasOutcome;
 typedef Aws::Utils::Outcome<DisassociateFlowResult, ConnectError> DisassociateFlowOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateHoursOfOperationsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateInstanceStorageConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLambdaFunctionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLexBotOutcome;
@@ -842,6 +848,7 @@ typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprove
 typedef Aws::Utils::Outcome<ListAssociatedContactsResult, ConnectError> ListAssociatedContactsOutcome;
 typedef Aws::Utils::Outcome<ListAuthenticationProfilesResult, ConnectError> ListAuthenticationProfilesOutcome;
 typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
+typedef Aws::Utils::Outcome<ListChildHoursOfOperationsResult, ConnectError> ListChildHoursOfOperationsOutcome;
 typedef Aws::Utils::Outcome<ListContactEvaluationsResult, ConnectError> ListContactEvaluationsOutcome;
 typedef Aws::Utils::Outcome<ListContactFlowModuleAliasesResult, ConnectError> ListContactFlowModuleAliasesOutcome;
 typedef Aws::Utils::Outcome<ListContactFlowModuleVersionsResult, ConnectError> ListContactFlowModuleVersionsOutcome;
@@ -1023,6 +1030,7 @@ typedef std::future<AssociateContactWithUserOutcome> AssociateContactWithUserOut
 typedef std::future<AssociateDefaultVocabularyOutcome> AssociateDefaultVocabularyOutcomeCallable;
 typedef std::future<AssociateEmailAddressAliasOutcome> AssociateEmailAddressAliasOutcomeCallable;
 typedef std::future<AssociateFlowOutcome> AssociateFlowOutcomeCallable;
+typedef std::future<AssociateHoursOfOperationsOutcome> AssociateHoursOfOperationsOutcomeCallable;
 typedef std::future<AssociateInstanceStorageConfigOutcome> AssociateInstanceStorageConfigOutcomeCallable;
 typedef std::future<AssociateLambdaFunctionOutcome> AssociateLambdaFunctionOutcomeCallable;
 typedef std::future<AssociateLexBotOutcome> AssociateLexBotOutcomeCallable;
@@ -1151,6 +1159,7 @@ typedef std::future<DisassociateApprovedOriginOutcome> DisassociateApprovedOrigi
 typedef std::future<DisassociateBotOutcome> DisassociateBotOutcomeCallable;
 typedef std::future<DisassociateEmailAddressAliasOutcome> DisassociateEmailAddressAliasOutcomeCallable;
 typedef std::future<DisassociateFlowOutcome> DisassociateFlowOutcomeCallable;
+typedef std::future<DisassociateHoursOfOperationsOutcome> DisassociateHoursOfOperationsOutcomeCallable;
 typedef std::future<DisassociateInstanceStorageConfigOutcome> DisassociateInstanceStorageConfigOutcomeCallable;
 typedef std::future<DisassociateLambdaFunctionOutcome> DisassociateLambdaFunctionOutcomeCallable;
 typedef std::future<DisassociateLexBotOutcome> DisassociateLexBotOutcomeCallable;
@@ -1186,6 +1195,7 @@ typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallab
 typedef std::future<ListAssociatedContactsOutcome> ListAssociatedContactsOutcomeCallable;
 typedef std::future<ListAuthenticationProfilesOutcome> ListAuthenticationProfilesOutcomeCallable;
 typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
+typedef std::future<ListChildHoursOfOperationsOutcome> ListChildHoursOfOperationsOutcomeCallable;
 typedef std::future<ListContactEvaluationsOutcome> ListContactEvaluationsOutcomeCallable;
 typedef std::future<ListContactFlowModuleAliasesOutcome> ListContactFlowModuleAliasesOutcomeCallable;
 typedef std::future<ListContactFlowModuleVersionsOutcome> ListContactFlowModuleVersionsOutcomeCallable;
@@ -1386,6 +1396,9 @@ typedef std::function<void(const ConnectClient*, const Model::AssociateEmailAddr
 typedef std::function<void(const ConnectClient*, const Model::AssociateFlowRequest&, const Model::AssociateFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateFlowResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::AssociateHoursOfOperationsRequest&,
+                           const Model::AssociateHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateHoursOfOperationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::AssociateInstanceStorageConfigRequest&,
                            const Model::AssociateInstanceStorageConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1798,6 +1811,10 @@ typedef std::function<void(const ConnectClient*, const Model::DisassociateEmailA
 typedef std::function<void(const ConnectClient*, const Model::DisassociateFlowRequest&, const Model::DisassociateFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateFlowResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DisassociateHoursOfOperationsRequest&,
+                           const Model::DisassociateHoursOfOperationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateHoursOfOperationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DisassociateInstanceStorageConfigRequest&,
                            const Model::DisassociateInstanceStorageConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1913,6 +1930,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListAuthentication
 typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBotsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListChildHoursOfOperationsRequest&,
+                           const Model::ListChildHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListChildHoursOfOperationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListContactEvaluationsRequest&, const Model::ListContactEvaluationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListContactEvaluationsResponseReceivedHandler;

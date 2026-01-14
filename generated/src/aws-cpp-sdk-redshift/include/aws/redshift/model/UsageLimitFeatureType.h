@@ -10,7 +10,13 @@
 namespace Aws {
 namespace Redshift {
 namespace Model {
-enum class UsageLimitFeatureType { NOT_SET, spectrum, concurrency_scaling, cross_region_datasharing };
+enum class UsageLimitFeatureType {
+  NOT_SET,
+  spectrum,
+  concurrency_scaling,
+  cross_region_datasharing,
+  extra_compute_for_automatic_optimization
+};
 
 namespace UsageLimitFeatureTypeMapper {
 AWS_REDSHIFT_API UsageLimitFeatureType GetUsageLimitFeatureTypeForName(const Aws::String& name);

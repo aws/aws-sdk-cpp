@@ -60,6 +60,10 @@ Workgroup& Workgroup::operator=(JsonView jsonValue) {
     m_enhancedVpcRouting = jsonValue.GetBool("enhancedVpcRouting");
     m_enhancedVpcRoutingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("extraComputeForAutomaticOptimization")) {
+    m_extraComputeForAutomaticOptimization = jsonValue.GetBool("extraComputeForAutomaticOptimization");
+    m_extraComputeForAutomaticOptimizationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ipAddressType")) {
     m_ipAddressType = jsonValue.GetString("ipAddressType");
     m_ipAddressTypeHasBeenSet = true;
@@ -179,6 +183,10 @@ JsonValue Workgroup::Jsonize() const {
 
   if (m_enhancedVpcRoutingHasBeenSet) {
     payload.WithBool("enhancedVpcRouting", m_enhancedVpcRouting);
+  }
+
+  if (m_extraComputeForAutomaticOptimizationHasBeenSet) {
+    payload.WithBool("extraComputeForAutomaticOptimization", m_extraComputeForAutomaticOptimization);
   }
 
   if (m_ipAddressTypeHasBeenSet) {

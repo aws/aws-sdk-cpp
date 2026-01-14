@@ -39,13 +39,13 @@ class Issue {
    * <p>A brief description of the error.</p> <ul> <li> <p> <b>AccessDenied</b>:
    * Amazon EKS or one or more of your managed nodes is failing to authenticate or
    * authorize with your Kubernetes cluster API server.</p> </li> <li> <p>
-   * <b>AsgInstanceLaunchFailures</b>: Your Amazon EC2 Auto Scaling group is
-   * experiencing failures while attempting to launch instances.</p> </li> <li> <p>
-   * <b>AutoScalingGroupNotFound</b>: We couldn't find the Amazon EC2 Auto Scaling
-   * group associated with the managed node group. You may be able to recreate an
-   * Amazon EC2 Auto Scaling group with the same settings to recover.</p> </li> <li>
-   * <p> <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes
-   * is unable to to communicate with your Kubernetes cluster API server. This can
+   * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing
+   * failures while attempting to launch instances.</p> </li> <li> <p>
+   * <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group
+   * associated with the managed node group. You may be able to recreate an Auto
+   * Scaling group with the same settings to recover.</p> </li> <li> <p>
+   * <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is
+   * unable to to communicate with your Kubernetes cluster API server. This can
    * happen if there are network disruptions or if API servers are timing out
    * processing requests. </p> </li> <li> <p> <b>Ec2InstanceTypeDoesNotExist</b>: One
    * or more of the supplied Amazon EC2 instance types do not exist. Amazon EKS

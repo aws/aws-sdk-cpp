@@ -53,6 +53,14 @@ HoursOfOperationOverride& HoursOfOperationOverride::operator=(JsonView jsonValue
     m_effectiveTill = jsonValue.GetString("EffectiveTill");
     m_effectiveTillHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RecurrenceConfig")) {
+    m_recurrenceConfig = jsonValue.GetObject("RecurrenceConfig");
+    m_recurrenceConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OverrideType")) {
+    m_overrideType = OverrideTypeMapper::GetOverrideTypeForName(jsonValue.GetString("OverrideType"));
+    m_overrideTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +101,14 @@ JsonValue HoursOfOperationOverride::Jsonize() const {
 
   if (m_effectiveTillHasBeenSet) {
     payload.WithString("EffectiveTill", m_effectiveTill);
+  }
+
+  if (m_recurrenceConfigHasBeenSet) {
+    payload.WithObject("RecurrenceConfig", m_recurrenceConfig.Jsonize());
+  }
+
+  if (m_overrideTypeHasBeenSet) {
+    payload.WithString("OverrideType", OverrideTypeMapper::GetNameForOverrideType(m_overrideType));
   }
 
   return payload;

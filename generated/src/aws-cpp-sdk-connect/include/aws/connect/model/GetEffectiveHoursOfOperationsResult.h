@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EffectiveHoursOfOperations.h>
+#include <aws/connect/model/EffectiveOverrideHours.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -53,6 +54,33 @@ class GetEffectiveHoursOfOperationsResult {
 
   ///@{
   /**
+   * <p>Information about override configurations applied to the base hours of
+   * operation to calculate the effective hours.</p> <p>For more information about
+   * how override types are applied, see <a
+   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
+   * your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+   */
+  inline const Aws::Vector<EffectiveOverrideHours>& GetEffectiveOverrideHoursList() const { return m_effectiveOverrideHoursList; }
+  template <typename EffectiveOverrideHoursListT = Aws::Vector<EffectiveOverrideHours>>
+  void SetEffectiveOverrideHoursList(EffectiveOverrideHoursListT&& value) {
+    m_effectiveOverrideHoursListHasBeenSet = true;
+    m_effectiveOverrideHoursList = std::forward<EffectiveOverrideHoursListT>(value);
+  }
+  template <typename EffectiveOverrideHoursListT = Aws::Vector<EffectiveOverrideHours>>
+  GetEffectiveHoursOfOperationsResult& WithEffectiveOverrideHoursList(EffectiveOverrideHoursListT&& value) {
+    SetEffectiveOverrideHoursList(std::forward<EffectiveOverrideHoursListT>(value));
+    return *this;
+  }
+  template <typename EffectiveOverrideHoursListT = EffectiveOverrideHours>
+  GetEffectiveHoursOfOperationsResult& AddEffectiveOverrideHoursList(EffectiveOverrideHoursListT&& value) {
+    m_effectiveOverrideHoursListHasBeenSet = true;
+    m_effectiveOverrideHoursList.emplace_back(std::forward<EffectiveOverrideHoursListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time zone for the hours of operation.</p>
    */
   inline const Aws::String& GetTimeZone() const { return m_timeZone; }
@@ -85,10 +113,13 @@ class GetEffectiveHoursOfOperationsResult {
  private:
   Aws::Vector<EffectiveHoursOfOperations> m_effectiveHoursOfOperationList;
 
+  Aws::Vector<EffectiveOverrideHours> m_effectiveOverrideHoursList;
+
   Aws::String m_timeZone;
 
   Aws::String m_requestId;
   bool m_effectiveHoursOfOperationListHasBeenSet = false;
+  bool m_effectiveOverrideHoursListHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

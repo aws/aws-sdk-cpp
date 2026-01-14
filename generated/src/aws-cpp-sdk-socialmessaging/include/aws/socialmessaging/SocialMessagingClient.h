@@ -145,8 +145,9 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Creates a new WhatsApp message template from a custom
-   * definition.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new WhatsApp message template from a custom definition.</p>
+   * <p>Amazon Web Services End User Messaging Social does not store any WhatsApp
+   * message template content.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplate">AWS
    * API Reference</a></p>
    */
@@ -356,8 +357,8 @@ class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p>Use your WhatsApp phone number id to get the WABA account id and phone number
-   * details.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieve the WABA account id and phone number details of a WhatsApp business
+   * account phone number.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetLinkedWhatsAppBusinessAccountPhoneNumber">AWS
    * API Reference</a></p>
    */

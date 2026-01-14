@@ -58,8 +58,14 @@ class CreateWorkgroupRequest : public RedshiftServerlessRequest {
    * <code>enable_case_sensitive_identifier</code>,
    * <code>enable_user_activity_logging</code>, <code>query_group</code>,
    * <code>search_path</code>, <code>require_ssl</code>, <code>use_fips_ssl</code>,
-   * and query monitoring metrics that let you define performance boundaries. For
-   * more information about query monitoring rules and available metrics, see <a
+   * and either <code>wlm_json_configuration</code> or query monitoring metrics that
+   * let you define performance boundaries. You can either specify individual query
+   * monitoring metrics (such as <code>max_scan_row_count</code>,
+   * <code>max_query_execution_time</code>) or use
+   * <code>wlm_json_configuration</code> to define query queues with rules, but not
+   * both. If you're using <code>wlm_json_configuration</code>, the maximum size of
+   * <code>parameterValue</code> is 8000 characters. For more information about query
+   * monitoring rules and available metrics, see <a
    * href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
    * Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
    */
@@ -97,6 +103,23 @@ class CreateWorkgroupRequest : public RedshiftServerlessRequest {
   }
   inline CreateWorkgroupRequest& WithEnhancedVpcRouting(bool value) {
     SetEnhancedVpcRouting(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, allocates additional compute resources for running
+   * automatic optimization operations.</p> <p>Default: false</p>
+   */
+  inline bool GetExtraComputeForAutomaticOptimization() const { return m_extraComputeForAutomaticOptimization; }
+  inline bool ExtraComputeForAutomaticOptimizationHasBeenSet() const { return m_extraComputeForAutomaticOptimizationHasBeenSet; }
+  inline void SetExtraComputeForAutomaticOptimization(bool value) {
+    m_extraComputeForAutomaticOptimizationHasBeenSet = true;
+    m_extraComputeForAutomaticOptimization = value;
+  }
+  inline CreateWorkgroupRequest& WithExtraComputeForAutomaticOptimization(bool value) {
+    SetExtraComputeForAutomaticOptimization(value);
     return *this;
   }
   ///@}
@@ -324,6 +347,8 @@ class CreateWorkgroupRequest : public RedshiftServerlessRequest {
 
   bool m_enhancedVpcRouting{false};
 
+  bool m_extraComputeForAutomaticOptimization{false};
+
   Aws::String m_ipAddressType;
 
   int m_maxCapacity{0};
@@ -348,6 +373,7 @@ class CreateWorkgroupRequest : public RedshiftServerlessRequest {
   bool m_baseCapacityHasBeenSet = false;
   bool m_configParametersHasBeenSet = false;
   bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_extraComputeForAutomaticOptimizationHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_maxCapacityHasBeenSet = false;
   bool m_namespaceNameHasBeenSet = false;

@@ -24,12 +24,20 @@ Aws::String UpdateWhatsAppMessageTemplateRequest::SerializePayload() const {
     payload.WithString("metaTemplateId", m_metaTemplateId);
   }
 
+  if (m_parameterFormatHasBeenSet) {
+    payload.WithString("parameterFormat", m_parameterFormat);
+  }
+
   if (m_templateCategoryHasBeenSet) {
     payload.WithString("templateCategory", m_templateCategory);
   }
 
   if (m_templateComponentsHasBeenSet) {
     payload.WithString("templateComponents", HashingUtils::Base64Encode(m_templateComponents));
+  }
+
+  if (m_ctaUrlLinkTrackingOptedOutHasBeenSet) {
+    payload.WithBool("ctaUrlLinkTrackingOptedOut", m_ctaUrlLinkTrackingOptedOut);
   }
 
   return payload.View().WriteReadable();

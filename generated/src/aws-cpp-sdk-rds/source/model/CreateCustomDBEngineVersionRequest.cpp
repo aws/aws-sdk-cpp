@@ -29,6 +29,18 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const {
     ss << "DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
   }
 
+  if (m_databaseInstallationFilesHasBeenSet) {
+    if (m_databaseInstallationFiles.empty()) {
+      ss << "DatabaseInstallationFiles=&";
+    } else {
+      unsigned databaseInstallationFilesCount = 1;
+      for (auto& item : m_databaseInstallationFiles) {
+        ss << "DatabaseInstallationFiles.member." << databaseInstallationFilesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        databaseInstallationFilesCount++;
+      }
+    }
+  }
+
   if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
@@ -61,18 +73,6 @@ Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const {
       for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
-      }
-    }
-  }
-
-  if (m_databaseInstallationFilesHasBeenSet) {
-    if (m_databaseInstallationFiles.empty()) {
-      ss << "DatabaseInstallationFiles=&";
-    } else {
-      unsigned databaseInstallationFilesCount = 1;
-      for (auto& item : m_databaseInstallationFiles) {
-        ss << "DatabaseInstallationFiles.member." << databaseInstallationFilesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        databaseInstallationFilesCount++;
       }
     }
   }

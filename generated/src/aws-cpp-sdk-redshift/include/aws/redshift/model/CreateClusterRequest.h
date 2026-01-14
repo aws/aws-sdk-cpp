@@ -909,6 +909,23 @@ class CreateClusterRequest : public RedshiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, allocates additional compute resources for running
+   * automatic optimization operations.</p> <p>Default: false</p>
+   */
+  inline bool GetExtraComputeForAutomaticOptimization() const { return m_extraComputeForAutomaticOptimization; }
+  inline bool ExtraComputeForAutomaticOptimizationHasBeenSet() const { return m_extraComputeForAutomaticOptimizationHasBeenSet; }
+  inline void SetExtraComputeForAutomaticOptimization(bool value) {
+    m_extraComputeForAutomaticOptimizationHasBeenSet = true;
+    m_extraComputeForAutomaticOptimization = value;
+  }
+  inline CreateClusterRequest& WithExtraComputeForAutomaticOptimization(bool value) {
+    SetExtraComputeForAutomaticOptimization(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBName;
 
@@ -989,6 +1006,8 @@ class CreateClusterRequest : public RedshiftRequest {
   Aws::String m_redshiftIdcApplicationArn;
 
   Aws::String m_catalogName;
+
+  bool m_extraComputeForAutomaticOptimization{false};
   bool m_dBNameHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_clusterTypeHasBeenSet = false;
@@ -1029,6 +1048,7 @@ class CreateClusterRequest : public RedshiftRequest {
   bool m_multiAZHasBeenSet = false;
   bool m_redshiftIdcApplicationArnHasBeenSet = false;
   bool m_catalogNameHasBeenSet = false;
+  bool m_extraComputeForAutomaticOptimizationHasBeenSet = false;
 };
 
 }  // namespace Model

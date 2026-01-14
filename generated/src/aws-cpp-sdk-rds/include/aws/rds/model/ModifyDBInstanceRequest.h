@@ -1638,6 +1638,32 @@ class ModifyDBInstanceRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>A list of additional storage volumes to modify or delete for the DB instance.
+   * You can create up to 3 additional storage volumes. Additional storage volumes
+   * are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+   */
+  inline const Aws::Vector<ModifyAdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
+  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<ModifyAdditionalStorageVolume>>
+  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
+  }
+  template <typename AdditionalStorageVolumesT = Aws::Vector<ModifyAdditionalStorageVolume>>
+  ModifyDBInstanceRequest& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  template <typename AdditionalStorageVolumesT = ModifyAdditionalStorageVolume>
+  ModifyDBInstanceRequest& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
+    m_additionalStorageVolumesHasBeenSet = true;
+    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Tags to assign to resources associated with the DB instance.</p> <p>Valid
    * Values: </p> <ul> <li> <p> <code>auto-backup</code> - The DB instance's
    * automated backup.</p> </li> </ul>
@@ -1680,32 +1706,6 @@ class ModifyDBInstanceRequest : public RDSRequest {
   }
   inline ModifyDBInstanceRequest& WithMasterUserAuthenticationType(MasterUserAuthenticationType value) {
     SetMasterUserAuthenticationType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A list of additional storage volumes to modify or delete for the DB instance.
-   * You can create up to 3 additional storage volumes. Additional storage volumes
-   * are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-   */
-  inline const Aws::Vector<ModifyAdditionalStorageVolume>& GetAdditionalStorageVolumes() const { return m_additionalStorageVolumes; }
-  inline bool AdditionalStorageVolumesHasBeenSet() const { return m_additionalStorageVolumesHasBeenSet; }
-  template <typename AdditionalStorageVolumesT = Aws::Vector<ModifyAdditionalStorageVolume>>
-  void SetAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
-    m_additionalStorageVolumesHasBeenSet = true;
-    m_additionalStorageVolumes = std::forward<AdditionalStorageVolumesT>(value);
-  }
-  template <typename AdditionalStorageVolumesT = Aws::Vector<ModifyAdditionalStorageVolume>>
-  ModifyDBInstanceRequest& WithAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
-    SetAdditionalStorageVolumes(std::forward<AdditionalStorageVolumesT>(value));
-    return *this;
-  }
-  template <typename AdditionalStorageVolumesT = ModifyAdditionalStorageVolume>
-  ModifyDBInstanceRequest& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
-    m_additionalStorageVolumesHasBeenSet = true;
-    m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
     return *this;
   }
   ///@}
@@ -1832,11 +1832,11 @@ class ModifyDBInstanceRequest : public RDSRequest {
 
   Aws::String m_engine;
 
+  Aws::Vector<ModifyAdditionalStorageVolume> m_additionalStorageVolumes;
+
   Aws::Vector<TagSpecification> m_tagSpecifications;
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
-
-  Aws::Vector<ModifyAdditionalStorageVolume> m_additionalStorageVolumes;
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_dBInstanceClassHasBeenSet = false;
@@ -1898,9 +1898,9 @@ class ModifyDBInstanceRequest : public RDSRequest {
   bool m_multiTenantHasBeenSet = false;
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_engineHasBeenSet = false;
+  bool m_additionalStorageVolumesHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
-  bool m_additionalStorageVolumesHasBeenSet = false;
 };
 
 }  // namespace Model

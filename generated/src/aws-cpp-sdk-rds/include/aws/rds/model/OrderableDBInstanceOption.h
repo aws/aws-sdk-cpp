@@ -692,22 +692,6 @@ class OrderableDBInstanceOption {
 
   ///@{
   /**
-   * <p>Indicates whether a DB instance supports HTTP endpoints.</p>
-   */
-  inline bool GetSupportsHttpEndpoint() const { return m_supportsHttpEndpoint; }
-  inline bool SupportsHttpEndpointHasBeenSet() const { return m_supportsHttpEndpointHasBeenSet; }
-  inline void SetSupportsHttpEndpoint(bool value) {
-    m_supportsHttpEndpointHasBeenSet = true;
-    m_supportsHttpEndpoint = value;
-  }
-  inline OrderableDBInstanceOption& WithSupportsHttpEndpoint(bool value) {
-    SetSupportsHttpEndpoint(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Indicates whether the DB instance class supports additional storage
    * volumes.</p>
    */
@@ -719,6 +703,22 @@ class OrderableDBInstanceOption {
   }
   inline OrderableDBInstanceOption& WithSupportsAdditionalStorageVolumes(bool value) {
     SetSupportsAdditionalStorageVolumes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+   */
+  inline bool GetSupportsHttpEndpoint() const { return m_supportsHttpEndpoint; }
+  inline bool SupportsHttpEndpointHasBeenSet() const { return m_supportsHttpEndpointHasBeenSet; }
+  inline void SetSupportsHttpEndpoint(bool value) {
+    m_supportsHttpEndpointHasBeenSet = true;
+    m_supportsHttpEndpoint = value;
+  }
+  inline OrderableDBInstanceOption& WithSupportsHttpEndpoint(bool value) {
+    SetSupportsHttpEndpoint(value);
     return *this;
   }
   ///@}
@@ -822,9 +822,9 @@ class OrderableDBInstanceOption {
 
   bool m_supportsDedicatedLogVolume{false};
 
-  bool m_supportsHttpEndpoint{false};
-
   bool m_supportsAdditionalStorageVolumes{false};
+
+  bool m_supportsHttpEndpoint{false};
 
   Aws::Vector<AvailableAdditionalStorageVolumesOption> m_availableAdditionalStorageVolumesOptions;
   bool m_engineHasBeenSet = false;
@@ -863,8 +863,8 @@ class OrderableDBInstanceOption {
   bool m_supportedNetworkTypesHasBeenSet = false;
   bool m_supportsClustersHasBeenSet = false;
   bool m_supportsDedicatedLogVolumeHasBeenSet = false;
-  bool m_supportsHttpEndpointHasBeenSet = false;
   bool m_supportsAdditionalStorageVolumesHasBeenSet = false;
+  bool m_supportsHttpEndpointHasBeenSet = false;
   bool m_availableAdditionalStorageVolumesOptionsHasBeenSet = false;
 };
 

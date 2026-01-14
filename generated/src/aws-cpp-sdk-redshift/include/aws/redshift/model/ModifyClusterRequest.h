@@ -666,6 +666,23 @@ class ModifyClusterRequest : public RedshiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, allocates additional compute resources for running
+   * automatic optimization operations.</p> <p>Default: false</p>
+   */
+  inline bool GetExtraComputeForAutomaticOptimization() const { return m_extraComputeForAutomaticOptimization; }
+  inline bool ExtraComputeForAutomaticOptimizationHasBeenSet() const { return m_extraComputeForAutomaticOptimizationHasBeenSet; }
+  inline void SetExtraComputeForAutomaticOptimization(bool value) {
+    m_extraComputeForAutomaticOptimizationHasBeenSet = true;
+    m_extraComputeForAutomaticOptimization = value;
+  }
+  inline ModifyClusterRequest& WithExtraComputeForAutomaticOptimization(bool value) {
+    SetExtraComputeForAutomaticOptimization(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
 
@@ -724,6 +741,8 @@ class ModifyClusterRequest : public RedshiftRequest {
   Aws::String m_ipAddressType;
 
   bool m_multiAZ{false};
+
+  bool m_extraComputeForAutomaticOptimization{false};
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_clusterTypeHasBeenSet = false;
   bool m_nodeTypeHasBeenSet = false;
@@ -753,6 +772,7 @@ class ModifyClusterRequest : public RedshiftRequest {
   bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_multiAZHasBeenSet = false;
+  bool m_extraComputeForAutomaticOptimizationHasBeenSet = false;
 };
 
 }  // namespace Model

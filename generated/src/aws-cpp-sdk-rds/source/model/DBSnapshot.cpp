@@ -230,11 +230,6 @@ DBSnapshot& DBSnapshot::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
       m_dedicatedLogVolumeHasBeenSet = true;
     }
-    XmlNode snapshotAvailabilityZoneNode = resultNode.FirstChild("SnapshotAvailabilityZone");
-    if (!snapshotAvailabilityZoneNode.IsNull()) {
-      m_snapshotAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotAvailabilityZoneNode.GetText());
-      m_snapshotAvailabilityZoneHasBeenSet = true;
-    }
     XmlNode additionalStorageVolumesNode = resultNode.FirstChild("AdditionalStorageVolumes");
     if (!additionalStorageVolumesNode.IsNull()) {
       XmlNode additionalStorageVolumesMember = additionalStorageVolumesNode.FirstChild("member");
@@ -245,6 +240,11 @@ DBSnapshot& DBSnapshot::operator=(const XmlNode& xmlNode) {
       }
 
       m_additionalStorageVolumesHasBeenSet = true;
+    }
+    XmlNode snapshotAvailabilityZoneNode = resultNode.FirstChild("SnapshotAvailabilityZone");
+    if (!snapshotAvailabilityZoneNode.IsNull()) {
+      m_snapshotAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotAvailabilityZoneNode.GetText());
+      m_snapshotAvailabilityZoneHasBeenSet = true;
     }
   }
 
@@ -416,11 +416,6 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
-  if (m_snapshotAvailabilityZoneHasBeenSet) {
-    oStream << location << index << locationValue
-            << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
-  }
-
   if (m_additionalStorageVolumesHasBeenSet) {
     unsigned additionalStorageVolumesIdx = 1;
     for (auto& item : m_additionalStorageVolumes) {
@@ -429,6 +424,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
                                  << additionalStorageVolumesIdx++;
       item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
     }
+  }
+
+  if (m_snapshotAvailabilityZoneHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
   }
 }
 
@@ -557,9 +557,6 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if (m_dedicatedLogVolumeHasBeenSet) {
     oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
-  if (m_snapshotAvailabilityZoneHasBeenSet) {
-    oStream << location << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
-  }
   if (m_additionalStorageVolumesHasBeenSet) {
     unsigned additionalStorageVolumesIdx = 1;
     for (auto& item : m_additionalStorageVolumes) {
@@ -567,6 +564,9 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
       additionalStorageVolumesSs << location << ".AdditionalStorageVolumes.member." << additionalStorageVolumesIdx++;
       item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
     }
+  }
+  if (m_snapshotAvailabilityZoneHasBeenSet) {
+    oStream << location << ".SnapshotAvailabilityZone=" << StringUtils::URLEncode(m_snapshotAvailabilityZone.c_str()) << "&";
   }
 }
 

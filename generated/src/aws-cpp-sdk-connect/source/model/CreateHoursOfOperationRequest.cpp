@@ -35,6 +35,16 @@ Aws::String CreateHoursOfOperationRequest::SerializePayload() const {
     payload.WithArray("Config", std::move(configJsonList));
   }
 
+  if (m_parentHoursOfOperationConfigsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parentHoursOfOperationConfigsJsonList(m_parentHoursOfOperationConfigs.size());
+    for (unsigned parentHoursOfOperationConfigsIndex = 0;
+         parentHoursOfOperationConfigsIndex < parentHoursOfOperationConfigsJsonList.GetLength(); ++parentHoursOfOperationConfigsIndex) {
+      parentHoursOfOperationConfigsJsonList[parentHoursOfOperationConfigsIndex].AsObject(
+          m_parentHoursOfOperationConfigs[parentHoursOfOperationConfigsIndex].Jsonize());
+    }
+    payload.WithArray("ParentHoursOfOperationConfigs", std::move(parentHoursOfOperationConfigsJsonList));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
