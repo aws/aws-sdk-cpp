@@ -60,7 +60,7 @@
     "lex-model-building-service":"lex-models",
     "cloudwatch-logs":"logs",
     "directory-service":"ds",
-    "elasticsearch-service ":"es",
+    "elasticsearch-service":"es",
     "importexport":"importexport",
     "sdb":"sdb",
     "transcribe-streaming":"transcribestreaming"
