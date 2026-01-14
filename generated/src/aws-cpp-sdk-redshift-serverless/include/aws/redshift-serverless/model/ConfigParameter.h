@@ -38,8 +38,13 @@ class ConfigParameter {
    * <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>,
    * <code>enable_user_activity_logging</code>, <code>query_group</code>,
    * <code>search_path</code>, <code>require_ssl</code>, <code>use_fips_ssl</code>,
-   * and query monitoring metrics that let you define performance boundaries. For
-   * more information about query monitoring rules and available metrics, see <a
+   * and either <code>wlm_json_configuration</code> or query monitoring metrics that
+   * let you define performance boundaries. You can either specify individual query
+   * monitoring metrics (such as <code>max_scan_row_count</code>,
+   * <code>max_query_execution_time</code>) or use
+   * <code>wlm_json_configuration</code> to define query queues with rules, but not
+   * both. For more information about query monitoring rules and available metrics,
+   * see <a
    * href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
    * monitoring metrics for Amazon Redshift Serverless</a>.</p>
    */

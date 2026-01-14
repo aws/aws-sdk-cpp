@@ -45,7 +45,7 @@ class GetWhatsAppMessageMediaResult {
 
   ///@{
   /**
-   * <p>The file size of the media, in KB.</p>
+   * <p>The size of the media file, in KB.</p>
    */
   inline long long GetFileSize() const { return m_fileSize; }
   inline void SetFileSize(long long value) {

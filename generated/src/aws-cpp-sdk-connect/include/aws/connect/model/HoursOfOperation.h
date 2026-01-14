@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/HoursOfOperationConfig.h>
+#include <aws/connect/model/HoursOfOperationsIdentifier.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -151,6 +152,30 @@ class HoursOfOperation {
 
   ///@{
   /**
+   * <p>Information about parent hours of operations.</p>
+   */
+  inline const Aws::Vector<HoursOfOperationsIdentifier>& GetParentHoursOfOperations() const { return m_parentHoursOfOperations; }
+  inline bool ParentHoursOfOperationsHasBeenSet() const { return m_parentHoursOfOperationsHasBeenSet; }
+  template <typename ParentHoursOfOperationsT = Aws::Vector<HoursOfOperationsIdentifier>>
+  void SetParentHoursOfOperations(ParentHoursOfOperationsT&& value) {
+    m_parentHoursOfOperationsHasBeenSet = true;
+    m_parentHoursOfOperations = std::forward<ParentHoursOfOperationsT>(value);
+  }
+  template <typename ParentHoursOfOperationsT = Aws::Vector<HoursOfOperationsIdentifier>>
+  HoursOfOperation& WithParentHoursOfOperations(ParentHoursOfOperationsT&& value) {
+    SetParentHoursOfOperations(std::forward<ParentHoursOfOperationsT>(value));
+    return *this;
+  }
+  template <typename ParentHoursOfOperationsT = HoursOfOperationsIdentifier>
+  HoursOfOperation& AddParentHoursOfOperations(ParentHoursOfOperationsT&& value) {
+    m_parentHoursOfOperationsHasBeenSet = true;
+    m_parentHoursOfOperations.emplace_back(std::forward<ParentHoursOfOperationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -222,6 +247,8 @@ class HoursOfOperation {
 
   Aws::Vector<HoursOfOperationConfig> m_config;
 
+  Aws::Vector<HoursOfOperationsIdentifier> m_parentHoursOfOperations;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
@@ -233,6 +260,7 @@ class HoursOfOperation {
   bool m_descriptionHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
   bool m_configHasBeenSet = false;
+  bool m_parentHoursOfOperationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;

@@ -67,6 +67,25 @@ class UpdateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
 
   ///@{
   /**
+   * <p>The format specification for parameters in the template, this can be either
+   * 'named' or 'positional'.</p>
+   */
+  inline const Aws::String& GetParameterFormat() const { return m_parameterFormat; }
+  inline bool ParameterFormatHasBeenSet() const { return m_parameterFormatHasBeenSet; }
+  template <typename ParameterFormatT = Aws::String>
+  void SetParameterFormat(ParameterFormatT&& value) {
+    m_parameterFormatHasBeenSet = true;
+    m_parameterFormat = std::forward<ParameterFormatT>(value);
+  }
+  template <typename ParameterFormatT = Aws::String>
+  UpdateWhatsAppMessageTemplateRequest& WithParameterFormat(ParameterFormatT&& value) {
+    SetParameterFormat(std::forward<ParameterFormatT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The new category for the template (for example, UTILITY or MARKETING).</p>
    */
   inline const Aws::String& GetTemplateCategory() const { return m_templateCategory; }
@@ -101,18 +120,41 @@ class UpdateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>When true, disables click tracking for call-to-action URL buttons in the
+   * template.</p>
+   */
+  inline bool GetCtaUrlLinkTrackingOptedOut() const { return m_ctaUrlLinkTrackingOptedOut; }
+  inline bool CtaUrlLinkTrackingOptedOutHasBeenSet() const { return m_ctaUrlLinkTrackingOptedOutHasBeenSet; }
+  inline void SetCtaUrlLinkTrackingOptedOut(bool value) {
+    m_ctaUrlLinkTrackingOptedOutHasBeenSet = true;
+    m_ctaUrlLinkTrackingOptedOut = value;
+  }
+  inline UpdateWhatsAppMessageTemplateRequest& WithCtaUrlLinkTrackingOptedOut(bool value) {
+    SetCtaUrlLinkTrackingOptedOut(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
   Aws::String m_metaTemplateId;
 
+  Aws::String m_parameterFormat;
+
   Aws::String m_templateCategory;
 
   Aws::Utils::ByteBuffer m_templateComponents{};
+
+  bool m_ctaUrlLinkTrackingOptedOut{false};
   bool m_idHasBeenSet = false;
   bool m_metaTemplateIdHasBeenSet = false;
+  bool m_parameterFormatHasBeenSet = false;
   bool m_templateCategoryHasBeenSet = false;
   bool m_templateComponentsHasBeenSet = false;
+  bool m_ctaUrlLinkTrackingOptedOutHasBeenSet = false;
 };
 
 }  // namespace Model

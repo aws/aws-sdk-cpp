@@ -7,6 +7,8 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/HoursOfOperationOverrideConfig.h>
+#include <aws/connect/model/OverrideType.h>
+#include <aws/connect/model/RecurrenceConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -180,6 +182,44 @@ class UpdateHoursOfOperationOverrideRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for a recurring event.</p>
+   */
+  inline const RecurrenceConfig& GetRecurrenceConfig() const { return m_recurrenceConfig; }
+  inline bool RecurrenceConfigHasBeenSet() const { return m_recurrenceConfigHasBeenSet; }
+  template <typename RecurrenceConfigT = RecurrenceConfig>
+  void SetRecurrenceConfig(RecurrenceConfigT&& value) {
+    m_recurrenceConfigHasBeenSet = true;
+    m_recurrenceConfig = std::forward<RecurrenceConfigT>(value);
+  }
+  template <typename RecurrenceConfigT = RecurrenceConfig>
+  UpdateHoursOfOperationOverrideRequest& WithRecurrenceConfig(RecurrenceConfigT&& value) {
+    SetRecurrenceConfig(std::forward<RecurrenceConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether the override will be defined as a <i>standard</i> or as a
+   * <i>recurring event</i>.</p> <p>For more information about how override types are
+   * applied, see <a
+   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
+   * your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+   */
+  inline OverrideType GetOverrideType() const { return m_overrideType; }
+  inline bool OverrideTypeHasBeenSet() const { return m_overrideTypeHasBeenSet; }
+  inline void SetOverrideType(OverrideType value) {
+    m_overrideTypeHasBeenSet = true;
+    m_overrideType = value;
+  }
+  inline UpdateHoursOfOperationOverrideRequest& WithOverrideType(OverrideType value) {
+    SetOverrideType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -196,6 +236,10 @@ class UpdateHoursOfOperationOverrideRequest : public ConnectRequest {
   Aws::String m_effectiveFrom;
 
   Aws::String m_effectiveTill;
+
+  RecurrenceConfig m_recurrenceConfig;
+
+  OverrideType m_overrideType{OverrideType::NOT_SET};
   bool m_instanceIdHasBeenSet = false;
   bool m_hoursOfOperationIdHasBeenSet = false;
   bool m_hoursOfOperationOverrideIdHasBeenSet = false;
@@ -204,6 +248,8 @@ class UpdateHoursOfOperationOverrideRequest : public ConnectRequest {
   bool m_configHasBeenSet = false;
   bool m_effectiveFromHasBeenSet = false;
   bool m_effectiveTillHasBeenSet = false;
+  bool m_recurrenceConfigHasBeenSet = false;
+  bool m_overrideTypeHasBeenSet = false;
 };
 
 }  // namespace Model

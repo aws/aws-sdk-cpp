@@ -39,5 +39,13 @@ Aws::String CreateHoursOfOperationOverrideRequest::SerializePayload() const {
     payload.WithString("EffectiveTill", m_effectiveTill);
   }
 
+  if (m_recurrenceConfigHasBeenSet) {
+    payload.WithObject("RecurrenceConfig", m_recurrenceConfig.Jsonize());
+  }
+
+  if (m_overrideTypeHasBeenSet) {
+    payload.WithString("OverrideType", OverrideTypeMapper::GetNameForOverrideType(m_overrideType));
+  }
+
   return payload.View().WriteReadable();
 }

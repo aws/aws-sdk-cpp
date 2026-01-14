@@ -713,26 +713,6 @@ class DBSnapshot {
 
   ///@{
   /**
-   * <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot.
-   * This value is valid only for snapshots that RDS stores on a Dedicated Local
-   * Zone.</p>
-   */
-  inline const Aws::String& GetSnapshotAvailabilityZone() const { return m_snapshotAvailabilityZone; }
-  inline bool SnapshotAvailabilityZoneHasBeenSet() const { return m_snapshotAvailabilityZoneHasBeenSet; }
-  template <typename SnapshotAvailabilityZoneT = Aws::String>
-  void SetSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) {
-    m_snapshotAvailabilityZoneHasBeenSet = true;
-    m_snapshotAvailabilityZone = std::forward<SnapshotAvailabilityZoneT>(value);
-  }
-  template <typename SnapshotAvailabilityZoneT = Aws::String>
-  DBSnapshot& WithSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) {
-    SetSnapshotAvailabilityZone(std::forward<SnapshotAvailabilityZoneT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The additional storage volumes associated with the DB snapshot. RDS supports
    * additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
    */
@@ -752,6 +732,26 @@ class DBSnapshot {
   DBSnapshot& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
     m_additionalStorageVolumesHasBeenSet = true;
     m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot.
+   * This value is valid only for snapshots that RDS stores on a Dedicated Local
+   * Zone.</p>
+   */
+  inline const Aws::String& GetSnapshotAvailabilityZone() const { return m_snapshotAvailabilityZone; }
+  inline bool SnapshotAvailabilityZoneHasBeenSet() const { return m_snapshotAvailabilityZoneHasBeenSet; }
+  template <typename SnapshotAvailabilityZoneT = Aws::String>
+  void SetSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) {
+    m_snapshotAvailabilityZoneHasBeenSet = true;
+    m_snapshotAvailabilityZone = std::forward<SnapshotAvailabilityZoneT>(value);
+  }
+  template <typename SnapshotAvailabilityZoneT = Aws::String>
+  DBSnapshot& WithSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) {
+    SetSnapshotAvailabilityZone(std::forward<SnapshotAvailabilityZoneT>(value));
     return *this;
   }
   ///@}
@@ -828,9 +828,9 @@ class DBSnapshot {
 
   bool m_dedicatedLogVolume{false};
 
-  Aws::String m_snapshotAvailabilityZone;
-
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+
+  Aws::String m_snapshotAvailabilityZone;
   bool m_dBSnapshotIdentifierHasBeenSet = false;
   bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_snapshotCreateTimeHasBeenSet = false;
@@ -867,8 +867,8 @@ class DBSnapshot {
   bool m_dBSystemIdHasBeenSet = false;
   bool m_multiTenantHasBeenSet = false;
   bool m_dedicatedLogVolumeHasBeenSet = false;
-  bool m_snapshotAvailabilityZoneHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
+  bool m_snapshotAvailabilityZoneHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -1275,6 +1275,26 @@ class Cluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A boolean value that, if <code>true</code>, indicates that the cluster
+   * allocates additional compute resources to run automatic optimization
+   * operations.</p> <p>Default: false</p>
+   */
+  inline const Aws::String& GetExtraComputeForAutomaticOptimization() const { return m_extraComputeForAutomaticOptimization; }
+  inline bool ExtraComputeForAutomaticOptimizationHasBeenSet() const { return m_extraComputeForAutomaticOptimizationHasBeenSet; }
+  template <typename ExtraComputeForAutomaticOptimizationT = Aws::String>
+  void SetExtraComputeForAutomaticOptimization(ExtraComputeForAutomaticOptimizationT&& value) {
+    m_extraComputeForAutomaticOptimizationHasBeenSet = true;
+    m_extraComputeForAutomaticOptimization = std::forward<ExtraComputeForAutomaticOptimizationT>(value);
+  }
+  template <typename ExtraComputeForAutomaticOptimizationT = Aws::String>
+  Cluster& WithExtraComputeForAutomaticOptimization(ExtraComputeForAutomaticOptimizationT&& value) {
+    SetExtraComputeForAutomaticOptimization(std::forward<ExtraComputeForAutomaticOptimizationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterIdentifier;
 
@@ -1399,6 +1419,8 @@ class Cluster {
   Aws::String m_lakehouseRegistrationStatus;
 
   Aws::String m_catalogArn;
+
+  Aws::String m_extraComputeForAutomaticOptimization;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_nodeTypeHasBeenSet = false;
   bool m_clusterStatusHasBeenSet = false;
@@ -1461,6 +1483,7 @@ class Cluster {
   bool m_multiAZSecondaryHasBeenSet = false;
   bool m_lakehouseRegistrationStatusHasBeenSet = false;
   bool m_catalogArnHasBeenSet = false;
+  bool m_extraComputeForAutomaticOptimizationHasBeenSet = false;
 };
 
 }  // namespace Model

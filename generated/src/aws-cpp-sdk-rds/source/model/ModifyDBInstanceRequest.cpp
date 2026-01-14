@@ -290,6 +290,18 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
+  if (m_additionalStorageVolumesHasBeenSet) {
+    if (m_additionalStorageVolumes.empty()) {
+      ss << "AdditionalStorageVolumes=&";
+    } else {
+      unsigned additionalStorageVolumesCount = 1;
+      for (auto& item : m_additionalStorageVolumes) {
+        item.OutputToStream(ss, "AdditionalStorageVolumes.member.", additionalStorageVolumesCount, "");
+        additionalStorageVolumesCount++;
+      }
+    }
+  }
+
   if (m_tagSpecificationsHasBeenSet) {
     if (m_tagSpecifications.empty()) {
       ss << "TagSpecifications=&";
@@ -306,18 +318,6 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const {
     ss << "MasterUserAuthenticationType="
        << StringUtils::URLEncode(MasterUserAuthenticationTypeMapper::GetNameForMasterUserAuthenticationType(m_masterUserAuthenticationType))
        << "&";
-  }
-
-  if (m_additionalStorageVolumesHasBeenSet) {
-    if (m_additionalStorageVolumes.empty()) {
-      ss << "AdditionalStorageVolumes=&";
-    } else {
-      unsigned additionalStorageVolumesCount = 1;
-      for (auto& item : m_additionalStorageVolumes) {
-        item.OutputToStream(ss, "AdditionalStorageVolumes.member.", additionalStorageVolumesCount, "");
-        additionalStorageVolumesCount++;
-      }
-    }
   }
 
   ss << "Version=2014-10-31";

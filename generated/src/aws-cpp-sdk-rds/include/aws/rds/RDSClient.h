@@ -15,7 +15,7 @@
 namespace Aws {
 namespace RDS {
 /**
- * <fullname>Amazon Relational Database Service</fullname> <p/> <p>Amazon
+ * <p><fullname>Amazon Relational Database Service</fullname> <p/> <p>Amazon
  * Relational Database Service (Amazon RDS) is a web service that makes it easier
  * to set up, operate, and scale a relational database in the cloud. It provides
  * cost-efficient, resizeable capacity for an industry-standard relational database
@@ -51,7 +51,7 @@ namespace RDS {
  * RDS Interfaces</a>.</p> </li> <li> <p>For more information about how to use the
  * Query API, see <a
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
- * the Query API</a>.</p> </li> </ul>
+ * the Query API</a>.</p> </li> </ul></p>
  */
 class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSClient> {
  public:

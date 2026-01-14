@@ -22,6 +22,9 @@ namespace RDS {
 namespace Model {
 
 /**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplicaMessage">AWS
+ * API Reference</a></p>
  */
 class CreateDBInstanceReadReplicaRequest : public RDSRequest {
  public:
@@ -1197,32 +1200,6 @@ class CreateDBInstanceReadReplicaRequest : public RDSRequest {
 
   ///@{
   /**
-   * <p>Tags to assign to resources associated with the DB instance.</p> <p>Valid
-   * Values: </p> <ul> <li> <p> <code>auto-backup</code> - The DB instance's
-   * automated backup.</p> </li> </ul>
-   */
-  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
-  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
-  void SetTagSpecifications(TagSpecificationsT&& value) {
-    m_tagSpecificationsHasBeenSet = true;
-    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
-  }
-  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
-  CreateDBInstanceReadReplicaRequest& WithTagSpecifications(TagSpecificationsT&& value) {
-    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
-    return *this;
-  }
-  template <typename TagSpecificationsT = TagSpecification>
-  CreateDBInstanceReadReplicaRequest& AddTagSpecifications(TagSpecificationsT&& value) {
-    m_tagSpecificationsHasBeenSet = true;
-    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A list of additional storage volumes to create for the DB instance. You can
    * create up to three additional storage volumes using the names
    * <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>.
@@ -1245,6 +1222,32 @@ class CreateDBInstanceReadReplicaRequest : public RDSRequest {
   CreateDBInstanceReadReplicaRequest& AddAdditionalStorageVolumes(AdditionalStorageVolumesT&& value) {
     m_additionalStorageVolumesHasBeenSet = true;
     m_additionalStorageVolumes.emplace_back(std::forward<AdditionalStorageVolumesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Tags to assign to resources associated with the DB instance.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>auto-backup</code> - The DB instance's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  CreateDBInstanceReadReplicaRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  CreateDBInstanceReadReplicaRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
     return *this;
   }
   ///@}
@@ -1361,9 +1364,9 @@ class CreateDBInstanceReadReplicaRequest : public RDSRequest {
 
   Aws::String m_cACertificateIdentifier;
 
-  Aws::Vector<TagSpecification> m_tagSpecifications;
-
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
 
   Aws::String m_sourceRegion;
   bool m_dBInstanceIdentifierHasBeenSet = false;
@@ -1413,8 +1416,8 @@ class CreateDBInstanceReadReplicaRequest : public RDSRequest {
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_upgradeStorageConfigHasBeenSet = false;
   bool m_cACertificateIdentifierHasBeenSet = false;
-  bool m_tagSpecificationsHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

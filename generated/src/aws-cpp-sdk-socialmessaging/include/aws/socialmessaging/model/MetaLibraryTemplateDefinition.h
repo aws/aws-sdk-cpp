@@ -225,6 +225,31 @@ class MetaLibraryTemplateDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Example parameter values for the template body, used to demonstrate how
+   * dynamic content appears in the template.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTemplateBodyExampleParams() const { return m_templateBodyExampleParams; }
+  inline bool TemplateBodyExampleParamsHasBeenSet() const { return m_templateBodyExampleParamsHasBeenSet; }
+  template <typename TemplateBodyExampleParamsT = Aws::Vector<Aws::String>>
+  void SetTemplateBodyExampleParams(TemplateBodyExampleParamsT&& value) {
+    m_templateBodyExampleParamsHasBeenSet = true;
+    m_templateBodyExampleParams = std::forward<TemplateBodyExampleParamsT>(value);
+  }
+  template <typename TemplateBodyExampleParamsT = Aws::Vector<Aws::String>>
+  MetaLibraryTemplateDefinition& WithTemplateBodyExampleParams(TemplateBodyExampleParamsT&& value) {
+    SetTemplateBodyExampleParams(std::forward<TemplateBodyExampleParamsT>(value));
+    return *this;
+  }
+  template <typename TemplateBodyExampleParamsT = Aws::String>
+  MetaLibraryTemplateDefinition& AddTemplateBodyExampleParams(TemplateBodyExampleParamsT&& value) {
+    m_templateBodyExampleParamsHasBeenSet = true;
+    m_templateBodyExampleParams.emplace_back(std::forward<TemplateBodyExampleParamsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_templateName;
 
@@ -245,6 +270,8 @@ class MetaLibraryTemplateDefinition {
   Aws::Vector<LibraryTemplateButtonList> m_templateButtons;
 
   Aws::String m_templateId;
+
+  Aws::Vector<Aws::String> m_templateBodyExampleParams;
   bool m_templateNameHasBeenSet = false;
   bool m_templateLanguageHasBeenSet = false;
   bool m_templateCategoryHasBeenSet = false;
@@ -255,6 +282,7 @@ class MetaLibraryTemplateDefinition {
   bool m_templateBodyHasBeenSet = false;
   bool m_templateButtonsHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
+  bool m_templateBodyExampleParamsHasBeenSet = false;
 };
 
 }  // namespace Model

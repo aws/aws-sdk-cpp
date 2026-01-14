@@ -130,6 +130,31 @@ class ModifyCustomDBEngineVersionResult {
 
   ///@{
   /**
+   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
+   * database engine version to import to Amazon RDS. Required for
+   * <code>sqlserver-dev-ee</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  void SetDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles = std::forward<DatabaseInstallationFilesT>(value);
+  }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  ModifyCustomDBEngineVersionResult& WithDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    SetDatabaseInstallationFiles(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  template <typename DatabaseInstallationFilesT = Aws::String>
+  ModifyCustomDBEngineVersionResult& AddDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles.emplace_back(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>JSON string that lists the installation files and parameters that RDS Custom
    * uses to create a custom engine version (CEV). RDS Custom applies the patches in
    * the order in which they're listed in the manifest. You can set the Oracle home,
@@ -234,6 +259,25 @@ class ModifyCustomDBEngineVersionResult {
   template <typename DefaultCharacterSetT = CharacterSet>
   ModifyCustomDBEngineVersionResult& WithDefaultCharacterSet(DefaultCharacterSetT&& value) {
     SetDefaultCharacterSet(std::forward<DefaultCharacterSetT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The reason that the custom engine version creation for
+   * <code>sqlserver-dev-ee</code> failed with an
+   * <code>incompatible-installation-media</code> status.</p>
+   */
+  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+  template <typename FailureReasonT = Aws::String>
+  void SetFailureReason(FailureReasonT&& value) {
+    m_failureReasonHasBeenSet = true;
+    m_failureReason = std::forward<FailureReasonT>(value);
+  }
+  template <typename FailureReasonT = Aws::String>
+  ModifyCustomDBEngineVersionResult& WithFailureReason(FailureReasonT&& value) {
+    SetFailureReason(std::forward<FailureReasonT>(value));
     return *this;
   }
   ///@}
@@ -722,50 +766,6 @@ class ModifyCustomDBEngineVersionResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
-   * database engine version to import to Amazon RDS. Required for
-   * <code>sqlserver-dev-ee</code>.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
-  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
-  void SetDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
-    m_databaseInstallationFilesHasBeenSet = true;
-    m_databaseInstallationFiles = std::forward<DatabaseInstallationFilesT>(value);
-  }
-  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
-  ModifyCustomDBEngineVersionResult& WithDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
-    SetDatabaseInstallationFiles(std::forward<DatabaseInstallationFilesT>(value));
-    return *this;
-  }
-  template <typename DatabaseInstallationFilesT = Aws::String>
-  ModifyCustomDBEngineVersionResult& AddDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
-    m_databaseInstallationFilesHasBeenSet = true;
-    m_databaseInstallationFiles.emplace_back(std::forward<DatabaseInstallationFilesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The reason that the custom engine version creation for
-   * <code>sqlserver-dev-ee</code> failed with an
-   * <code>incompatible-installation-media</code> status.</p>
-   */
-  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
-  template <typename FailureReasonT = Aws::String>
-  void SetFailureReason(FailureReasonT&& value) {
-    m_failureReasonHasBeenSet = true;
-    m_failureReason = std::forward<FailureReasonT>(value);
-  }
-  template <typename FailureReasonT = Aws::String>
-  ModifyCustomDBEngineVersionResult& WithFailureReason(FailureReasonT&& value) {
-    SetFailureReason(std::forward<FailureReasonT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -790,6 +790,8 @@ class ModifyCustomDBEngineVersionResult {
 
   Aws::String m_databaseInstallationFilesS3Prefix;
 
+  Aws::Vector<Aws::String> m_databaseInstallationFiles;
+
   Aws::String m_customDBEngineVersionManifest;
 
   Aws::String m_dBParameterGroupFamily;
@@ -801,6 +803,8 @@ class ModifyCustomDBEngineVersionResult {
   Aws::String m_dBEngineVersionDescription;
 
   CharacterSet m_defaultCharacterSet;
+
+  Aws::String m_failureReason;
 
   CustomDBEngineVersionAMI m_image;
 
@@ -850,22 +854,20 @@ class ModifyCustomDBEngineVersionResult {
 
   ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
 
-  Aws::Vector<Aws::String> m_databaseInstallationFiles;
-
-  Aws::String m_failureReason;
-
   ResponseMetadata m_responseMetadata;
   bool m_engineHasBeenSet = false;
   bool m_majorEngineVersionHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
   bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
   bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
+  bool m_databaseInstallationFilesHasBeenSet = false;
   bool m_customDBEngineVersionManifestHasBeenSet = false;
   bool m_dBParameterGroupFamilyHasBeenSet = false;
   bool m_dBEngineDescriptionHasBeenSet = false;
   bool m_dBEngineVersionArnHasBeenSet = false;
   bool m_dBEngineVersionDescriptionHasBeenSet = false;
   bool m_defaultCharacterSetHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_imageHasBeenSet = false;
   bool m_dBEngineMediaTypeHasBeenSet = false;
   bool m_kMSKeyIdHasBeenSet = false;
@@ -890,8 +892,6 @@ class ModifyCustomDBEngineVersionResult {
   bool m_supportsLocalWriteForwardingHasBeenSet = false;
   bool m_supportsIntegrationsHasBeenSet = false;
   bool m_serverlessV2FeaturesSupportHasBeenSet = false;
-  bool m_databaseInstallationFilesHasBeenSet = false;
-  bool m_failureReasonHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -128,6 +128,31 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
+   * database engine version to import to Amazon RDS.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
+  inline bool DatabaseInstallationFilesHasBeenSet() const { return m_databaseInstallationFilesHasBeenSet; }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  void SetDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles = std::forward<DatabaseInstallationFilesT>(value);
+  }
+  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
+  CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    SetDatabaseInstallationFiles(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  template <typename DatabaseInstallationFilesT = Aws::String>
+  CreateCustomDBEngineVersionRequest& AddDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
+    m_databaseInstallationFilesHasBeenSet = true;
+    m_databaseInstallationFiles.emplace_back(std::forward<DatabaseInstallationFilesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
    * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
    * the most recent AMI available, but you can specify an AMI ID that was used in a
@@ -288,31 +313,6 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your
-   * database engine version to import to Amazon RDS.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetDatabaseInstallationFiles() const { return m_databaseInstallationFiles; }
-  inline bool DatabaseInstallationFilesHasBeenSet() const { return m_databaseInstallationFilesHasBeenSet; }
-  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
-  void SetDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
-    m_databaseInstallationFilesHasBeenSet = true;
-    m_databaseInstallationFiles = std::forward<DatabaseInstallationFilesT>(value);
-  }
-  template <typename DatabaseInstallationFilesT = Aws::Vector<Aws::String>>
-  CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
-    SetDatabaseInstallationFiles(std::forward<DatabaseInstallationFilesT>(value));
-    return *this;
-  }
-  template <typename DatabaseInstallationFilesT = Aws::String>
-  CreateCustomDBEngineVersionRequest& AddDatabaseInstallationFiles(DatabaseInstallationFilesT&& value) {
-    m_databaseInstallationFilesHasBeenSet = true;
-    m_databaseInstallationFiles.emplace_back(std::forward<DatabaseInstallationFilesT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_engine;
 
@@ -321,6 +321,8 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
   Aws::String m_databaseInstallationFilesS3BucketName;
 
   Aws::String m_databaseInstallationFilesS3Prefix;
+
+  Aws::Vector<Aws::String> m_databaseInstallationFiles;
 
   Aws::String m_imageId;
 
@@ -335,12 +337,11 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
   Aws::String m_manifest;
 
   Aws::Vector<Tag> m_tags;
-
-  Aws::Vector<Aws::String> m_databaseInstallationFiles;
   bool m_engineHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
   bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
   bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
+  bool m_databaseInstallationFilesHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_kMSKeyIdHasBeenSet = false;
   bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
@@ -348,7 +349,6 @@ class CreateCustomDBEngineVersionRequest : public RDSRequest {
   bool m_descriptionHasBeenSet = false;
   bool m_manifestHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_databaseInstallationFilesHasBeenSet = false;
 };
 
 }  // namespace Model

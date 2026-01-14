@@ -17,6 +17,9 @@ namespace RDS {
 namespace Model {
 
 /**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersionsMessage">AWS
+ * API Reference</a></p>
  */
 class DescribeDBEngineVersionsRequest : public RDSRequest {
  public:

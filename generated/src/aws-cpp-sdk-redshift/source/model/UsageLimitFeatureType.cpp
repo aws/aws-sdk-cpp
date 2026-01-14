@@ -18,6 +18,7 @@ namespace UsageLimitFeatureTypeMapper {
 static const int spectrum_HASH = HashingUtils::HashString("spectrum");
 static const int concurrency_scaling_HASH = HashingUtils::HashString("concurrency-scaling");
 static const int cross_region_datasharing_HASH = HashingUtils::HashString("cross-region-datasharing");
+static const int extra_compute_for_automatic_optimization_HASH = HashingUtils::HashString("extra-compute-for-automatic-optimization");
 
 UsageLimitFeatureType GetUsageLimitFeatureTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ UsageLimitFeatureType GetUsageLimitFeatureTypeForName(const Aws::String& name) {
     return UsageLimitFeatureType::concurrency_scaling;
   } else if (hashCode == cross_region_datasharing_HASH) {
     return UsageLimitFeatureType::cross_region_datasharing;
+  } else if (hashCode == extra_compute_for_automatic_optimization_HASH) {
+    return UsageLimitFeatureType::extra_compute_for_automatic_optimization;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForUsageLimitFeatureType(UsageLimitFeatureType enumValue) {
       return "concurrency-scaling";
     case UsageLimitFeatureType::cross_region_datasharing:
       return "cross-region-datasharing";
+    case UsageLimitFeatureType::extra_compute_for_automatic_optimization:
+      return "extra-compute-for-automatic-optimization";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

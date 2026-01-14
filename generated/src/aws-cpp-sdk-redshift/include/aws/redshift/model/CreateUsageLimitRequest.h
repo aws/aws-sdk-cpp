@@ -80,7 +80,9 @@ class CreateUsageLimitRequest : public RedshiftRequest {
    * <code>FeatureType</code> is <code>concurrency-scaling</code>, then
    * <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code> is
    * <code>cross-region-datasharing</code>, then <code>LimitType</code> must be
-   * <code>data-scanned</code>. </p>
+   * <code>data-scanned</code>. If <code>FeatureType</code> is
+   * <code>extra-compute-for-automatic-optimization</code>, then
+   * <code>LimitType</code> must be <code>time</code>. </p>
    */
   inline UsageLimitLimitType GetLimitType() const { return m_limitType; }
   inline bool LimitTypeHasBeenSet() const { return m_limitTypeHasBeenSet; }

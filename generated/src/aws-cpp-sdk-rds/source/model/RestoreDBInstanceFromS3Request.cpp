@@ -263,18 +263,6 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const {
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
-  if (m_tagSpecificationsHasBeenSet) {
-    if (m_tagSpecifications.empty()) {
-      ss << "TagSpecifications=&";
-    } else {
-      unsigned tagSpecificationsCount = 1;
-      for (auto& item : m_tagSpecifications) {
-        item.OutputToStream(ss, "TagSpecifications.item.", tagSpecificationsCount, "");
-        tagSpecificationsCount++;
-      }
-    }
-  }
-
   if (m_additionalStorageVolumesHasBeenSet) {
     if (m_additionalStorageVolumes.empty()) {
       ss << "AdditionalStorageVolumes=&";
@@ -283,6 +271,18 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const {
       for (auto& item : m_additionalStorageVolumes) {
         item.OutputToStream(ss, "AdditionalStorageVolumes.member.", additionalStorageVolumesCount, "");
         additionalStorageVolumesCount++;
+      }
+    }
+  }
+
+  if (m_tagSpecificationsHasBeenSet) {
+    if (m_tagSpecifications.empty()) {
+      ss << "TagSpecifications=&";
+    } else {
+      unsigned tagSpecificationsCount = 1;
+      for (auto& item : m_tagSpecifications) {
+        item.OutputToStream(ss, "TagSpecifications.item.", tagSpecificationsCount, "");
+        tagSpecificationsCount++;
       }
     }
   }

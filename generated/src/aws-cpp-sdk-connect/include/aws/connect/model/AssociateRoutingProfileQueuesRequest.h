@@ -96,6 +96,8 @@ class AssociateRoutingProfileQueuesRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The manual assignment queues to associate with this routing profile.</p>
+   * <p>Note: Use this config for chat, email, and task contacts. It does not support
+   * voice contacts.</p>
    */
   inline const Aws::Vector<RoutingProfileManualAssignmentQueueConfig>& GetManualAssignmentQueueConfigs() const {
     return m_manualAssignmentQueueConfigs;

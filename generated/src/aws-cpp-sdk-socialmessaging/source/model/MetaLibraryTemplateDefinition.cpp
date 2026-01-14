@@ -64,6 +64,14 @@ MetaLibraryTemplateDefinition& MetaLibraryTemplateDefinition::operator=(JsonView
     m_templateId = jsonValue.GetString("templateId");
     m_templateIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("templateBodyExampleParams")) {
+    Aws::Utils::Array<JsonView> templateBodyExampleParamsJsonList = jsonValue.GetArray("templateBodyExampleParams");
+    for (unsigned templateBodyExampleParamsIndex = 0; templateBodyExampleParamsIndex < templateBodyExampleParamsJsonList.GetLength();
+         ++templateBodyExampleParamsIndex) {
+      m_templateBodyExampleParams.push_back(templateBodyExampleParamsJsonList[templateBodyExampleParamsIndex].AsString());
+    }
+    m_templateBodyExampleParamsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -116,6 +124,16 @@ JsonValue MetaLibraryTemplateDefinition::Jsonize() const {
 
   if (m_templateIdHasBeenSet) {
     payload.WithString("templateId", m_templateId);
+  }
+
+  if (m_templateBodyExampleParamsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> templateBodyExampleParamsJsonList(m_templateBodyExampleParams.size());
+    for (unsigned templateBodyExampleParamsIndex = 0; templateBodyExampleParamsIndex < templateBodyExampleParamsJsonList.GetLength();
+         ++templateBodyExampleParamsIndex) {
+      templateBodyExampleParamsJsonList[templateBodyExampleParamsIndex].AsString(
+          m_templateBodyExampleParams[templateBodyExampleParamsIndex]);
+    }
+    payload.WithArray("templateBodyExampleParams", std::move(templateBodyExampleParamsJsonList));
   }
 
   return payload;

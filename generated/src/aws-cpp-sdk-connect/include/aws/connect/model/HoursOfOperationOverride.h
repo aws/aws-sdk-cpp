@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/HoursOfOperationOverrideConfig.h>
+#include <aws/connect/model/OverrideType.h>
+#include <aws/connect/model/RecurrenceConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -184,6 +186,41 @@ class HoursOfOperationOverride {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for a recurring event.</p>
+   */
+  inline const RecurrenceConfig& GetRecurrenceConfig() const { return m_recurrenceConfig; }
+  inline bool RecurrenceConfigHasBeenSet() const { return m_recurrenceConfigHasBeenSet; }
+  template <typename RecurrenceConfigT = RecurrenceConfig>
+  void SetRecurrenceConfig(RecurrenceConfigT&& value) {
+    m_recurrenceConfigHasBeenSet = true;
+    m_recurrenceConfig = std::forward<RecurrenceConfigT>(value);
+  }
+  template <typename RecurrenceConfigT = RecurrenceConfig>
+  HoursOfOperationOverride& WithRecurrenceConfig(RecurrenceConfigT&& value) {
+    SetRecurrenceConfig(std::forward<RecurrenceConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether the override will be defined as a <i>standard</i> or as a
+   * <i>recurring event</i>.</p>
+   */
+  inline OverrideType GetOverrideType() const { return m_overrideType; }
+  inline bool OverrideTypeHasBeenSet() const { return m_overrideTypeHasBeenSet; }
+  inline void SetOverrideType(OverrideType value) {
+    m_overrideTypeHasBeenSet = true;
+    m_overrideType = value;
+  }
+  inline HoursOfOperationOverride& WithOverrideType(OverrideType value) {
+    SetOverrideType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_hoursOfOperationOverrideId;
 
@@ -200,6 +237,10 @@ class HoursOfOperationOverride {
   Aws::String m_effectiveFrom;
 
   Aws::String m_effectiveTill;
+
+  RecurrenceConfig m_recurrenceConfig;
+
+  OverrideType m_overrideType{OverrideType::NOT_SET};
   bool m_hoursOfOperationOverrideIdHasBeenSet = false;
   bool m_hoursOfOperationIdHasBeenSet = false;
   bool m_hoursOfOperationArnHasBeenSet = false;
@@ -208,6 +249,8 @@ class HoursOfOperationOverride {
   bool m_configHasBeenSet = false;
   bool m_effectiveFromHasBeenSet = false;
   bool m_effectiveTillHasBeenSet = false;
+  bool m_recurrenceConfigHasBeenSet = false;
+  bool m_overrideTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -207,6 +207,10 @@ Aws::String CreateClusterRequest::SerializePayload() const {
     ss << "CatalogName=" << StringUtils::URLEncode(m_catalogName.c_str()) << "&";
   }
 
+  if (m_extraComputeForAutomaticOptimizationHasBeenSet) {
+    ss << "ExtraComputeForAutomaticOptimization=" << std::boolalpha << m_extraComputeForAutomaticOptimization << "&";
+  }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

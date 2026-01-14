@@ -40,15 +40,15 @@ class FailoverState {
   ///@{
   /**
    * <p>The current status of the global cluster. Possible values are as follows:</p>
-   * <ul> <li> <p>pending &#x96; The service received a request to switch over or
+   * <ul> <li> <p>pending &#150; The service received a request to switch over or
    * fail over the global cluster. The global cluster's primary DB cluster and the
    * specified secondary DB cluster are being verified before the operation
-   * starts.</p> </li> <li> <p>failing-over &#x96; Aurora is promoting the chosen
+   * starts.</p> </li> <li> <p>failing-over &#150; Aurora is promoting the chosen
    * secondary Aurora DB cluster to become the new primary DB cluster to fail over
-   * the global cluster.</p> </li> <li> <p>cancelling &#x96; The request to switch
+   * the global cluster.</p> </li> <li> <p>cancelling &#150; The request to switch
    * over or fail over the global cluster was cancelled and the primary Aurora DB
    * cluster and the selected secondary Aurora DB cluster are returning to their
-   * previous states.</p> </li> <li> <p>switching-over &#x96; This status covers the
+   * previous states.</p> </li> <li> <p>switching-over &#150; This status covers the
    * range of Aurora internal operations that take place during the switchover
    * process, such as demoting the primary Aurora DB cluster, promoting the secondary
    * Aurora DB cluster, and synchronizing replicas.</p> </li> </ul>

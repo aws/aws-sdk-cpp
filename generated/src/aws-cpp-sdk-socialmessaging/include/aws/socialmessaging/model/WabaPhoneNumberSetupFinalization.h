@@ -38,9 +38,9 @@ class WabaPhoneNumberSetupFinalization {
   /**
    * <p>The unique identifier of the originating phone number associated with the
    * media. Phone number identifiers are formatted as
-   * <code>phone-number-id-01234567890123456789012345678901</code>. Use <a
-   * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
-   * to find a phone number's id.</p>
+   * <code>phone-number-id-01234567890123456789012345678901</code>. Use the <a
+   * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccount.html">GetLinkedWhatsAppBusinessAccount</a>
+   * API action to find a phone number's id.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
