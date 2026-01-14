@@ -16,11 +16,13 @@ public class PaginationHeaderWriter {
     private final PluginContext context;
     private final ServiceShape service;
     private final List<PaginationData> paginatedOps;
+    private final String c2jServiceName;
 
-    public PaginationHeaderWriter(PluginContext context, ServiceShape service, List<PaginationData> paginatedOps) {
+    public PaginationHeaderWriter(PluginContext context, ServiceShape service, List<PaginationData> paginatedOps, String c2jServiceName) {
         this.context = context;
         this.service = service;
         this.paginatedOps = paginatedOps;
+        this.c2jServiceName = c2jServiceName;
     }
 
     public void write() {
@@ -30,7 +32,7 @@ public class PaginationHeaderWriter {
             .replace(" ", "")
             .replace("-", "");
         Path outputPath = context.getFileManifest().getBaseDir()
-                .resolve("include/aws/" + serviceName.toLowerCase() + "/model/pagination");
+                .resolve("include/aws/" + c2jServiceName + "/model/pagination");
 
         for (PaginationData data : paginatedOps) {
             String content = generateTraitsHeader(data, serviceName);
@@ -56,10 +58,10 @@ public class PaginationHeaderWriter {
         sb.append(" * SPDX-License-Identifier: Apache-2.0.\n");
         sb.append(" */\n\n");
         sb.append("#pragma once\n");
-        sb.append("#include <aws/").append(serviceName.toLowerCase()).append("/").append(serviceName).append("_EXPORTS.h>\n");
-        sb.append("#include <aws/").append(serviceName.toLowerCase()).append("/model/").append(opName).append("Request.h>\n");
-        sb.append("#include <aws/").append(serviceName.toLowerCase()).append("/model/").append(opName).append("Result.h>\n");
-        sb.append("#include <aws/").append(serviceName.toLowerCase()).append("/").append(serviceName).append("Client.h>\n\n");
+        sb.append("#include <aws/").append(c2jServiceName).append("/").append(serviceName).append("_EXPORTS.h>\n");
+        sb.append("#include <aws/").append(c2jServiceName).append("/model/").append(opName).append("Request.h>\n");
+        sb.append("#include <aws/").append(c2jServiceName).append("/model/").append(opName).append("Result.h>\n");
+        sb.append("#include <aws/").append(c2jServiceName).append("/").append(serviceName).append("Client.h>\n\n");
         sb.append("namespace Aws\n{\nnamespace ").append(serviceName).append("\n{\nnamespace Pagination\n{\n\n");
         sb.append("struct ").append(opName).append("PaginationTraits\n{\n");
         sb.append("    using RequestType = Model::").append(opName).append("Request;\n");
