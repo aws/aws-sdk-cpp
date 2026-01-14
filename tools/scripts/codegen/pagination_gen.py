@@ -64,6 +64,7 @@ class PaginationGen(object):
             print("Pagination codegen successful!")
             if self.debug:
                 print(process.stdout)
+            print(f"Pagination generation done, (re)generated {len(smithy_services)} package(s).")
             return True
 
         except subprocess.CalledProcessError as e:
@@ -77,9 +78,12 @@ class PaginationGen(object):
                 
                 # Extract service name from the projection directory
                 projection_dir = os.path.basename(os.path.dirname(source_dir))
-                service_name = projection_dir.split('.')[0]  # e.g., "s3.2006-03-01" -> "s3"
+                smithy_service_name = projection_dir.split('.')[0]  # e.g., "api-gateway.2017-11-27" -> "api-gateway"
                 
-                service_target_dir = os.path.join(target_dir, f"aws-cpp-sdk-{service_name}")
+                # Map to c2j service name
+                c2j_service_name = self.smithy_c2j_data.get(smithy_service_name, smithy_service_name)
+                
+                service_target_dir = os.path.join(target_dir, f"aws-cpp-sdk-{c2j_service_name}")
                 os.makedirs(service_target_dir, exist_ok=True)
                 
                 for item in os.listdir(source_dir):
