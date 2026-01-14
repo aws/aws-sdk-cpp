@@ -6,6 +6,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.node.Node;
+import software.amazon.smithy.model.node.ObjectNode;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import com.amazonaws.util.awsclientsmithygenerator.CppWriterDelegator;
@@ -17,12 +19,27 @@ public class PaginationParser {
     private final Model model;
     private final PaginationShapeDiscovery shapeDiscovery;
     private final CppWriterDelegator writerDelegator;
+    private Map<String, String> c2jMap;
 
     public PaginationParser(PluginContext context) {
         this.context = context;
         this.model = context.getModel();
         this.shapeDiscovery = new PaginationShapeDiscovery(model);
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
+        
+        // Initialize c2j map
+        this.c2jMap = new HashMap<>();
+        ObjectNode settings = context.getSettings();
+        if (settings.containsMember("c2jMap")) {
+            Node c2jMapNode = settings.expectMember("c2jMap");
+            if (c2jMapNode.isStringNode()) {
+                String jsonStr = c2jMapNode.expectStringNode().getValue();
+                ObjectNode mapNode = Node.parseJsonWithComments(jsonStr).expectObjectNode();
+                mapNode.getMembers().forEach((key, value) -> {
+                    this.c2jMap.put(key.getValue(), value.expectStringNode().getValue());
+                });
+            }
+        }
     }
 
     public void run() {
@@ -38,10 +55,11 @@ public class PaginationParser {
     
     private void generatePaginationFiles(ServiceShape service, List<PaginationData> paginatedOps) {
         String serviceName = getServiceName(service);
+        String c2jServiceName = getC2jServiceName(service);
         
         // Generate client pagination header
         writerDelegator.useFileWriter(
-            "include/aws/" + serviceName.toLowerCase() + "/" + serviceName + "ClientPagination.h",
+            "include/aws/" + c2jServiceName + "/" + serviceName + "ClientPagination.h",
             writer -> new PaginationClientTemplate(service, paginatedOps).render(writer)
         );
         
@@ -56,5 +74,16 @@ public class PaginationParser {
             .orElse(service.getId().getName())
             .replace(" ", "")
             .replace("-", "");
+    }
+    
+    private String getC2jServiceName(ServiceShape service) {
+        String sdkId = service.getTrait(ServiceTrait.class)
+            .map(ServiceTrait::getSdkId)
+            .orElse(service.getId().getName())
+            .trim()
+            .toLowerCase()
+            .replace(" ", "-");
+        
+        return c2jMap.getOrDefault(sdkId, sdkId);
     }
 }
