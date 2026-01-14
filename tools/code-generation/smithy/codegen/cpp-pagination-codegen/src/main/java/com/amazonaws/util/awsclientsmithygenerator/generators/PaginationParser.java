@@ -64,7 +64,7 @@ public class PaginationParser {
         );
         
         // Generate pagination traits headers
-        PaginationHeaderWriter headerWriter = new PaginationHeaderWriter(context, service, paginatedOps);
+        PaginationHeaderWriter headerWriter = new PaginationHeaderWriter(context, service, paginatedOps, c2jServiceName);
         headerWriter.write();
     }
     
