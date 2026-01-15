@@ -4,36 +4,39 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
-import java.util.function.Consumer;
+import software.amazon.smithy.codegen.core.SymbolWriter;
 
-public class CppWriter {
-    private final StringBuilder content = new StringBuilder();
+public class CppWriter extends SymbolWriter<CppWriter, CppImportContainer> {
     
-    public CppWriter write(String text, Object... args) {
-        content.append(String.format(text, args)).append("\n");
-        return this;
-    }
-    
-    public void openBlock(String opener, String closer, Consumer<Void> block) {
-        write(opener);
-        block.accept(null);
-        write(closer);
+    public CppWriter() {
+        super(new CppImportContainer());
+        
+        // Add custom formatter for symbols
+        putFormatter('T', (arg, indent) -> {
+            if (!(arg instanceof software.amazon.smithy.codegen.core.Symbol symbol)) {
+                throw new software.amazon.smithy.codegen.core.CodegenException("Expected a symbol but got " + arg);
+            }
+            
+            // Record our symbol so we can generate appropriate includes later if needed
+            getImportContainer().importSymbol(symbol, null);
+            
+            // For C++, use namespace::name syntax (e.g. Aws::S3::Model::ListBucketsRequest)
+            if (symbol.getNamespace() != null && !symbol.getNamespace().isEmpty()) {
+                return symbol.getNamespace() + "::" + symbol.getName();
+            }
+            return symbol.getName();
+        });
     }
     
     public void writeInclude(String header) {
-        write("#include <%s>", header);
+        write("#include <$L>", header);
     }
     
     public void writeNamespaceOpen(String namespace) {
-        write("namespace %s\n{", namespace);
+        write("namespace $L\n{", namespace);
     }
     
     public void writeNamespaceClose(String namespace) {
-        write("} // namespace %s", namespace);
-    }
-    
-    @Override
-    public String toString() {
-        return content.toString();
+        write("} // namespace $L", namespace);
     }
 }
