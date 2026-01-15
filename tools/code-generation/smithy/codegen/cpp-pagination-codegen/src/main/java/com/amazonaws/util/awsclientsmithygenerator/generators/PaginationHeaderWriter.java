@@ -9,6 +9,7 @@ import software.amazon.smithy.codegen.core.SymbolProvider;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.aws.traits.ServiceTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
 import java.nio.file.*;
 import java.util.*;
 
@@ -73,8 +74,21 @@ public class PaginationHeaderWriter {
         sb.append("        return client.").append(opName).append("(request);\n    }\n\n");
         
         sb.append("    static bool HasMoreResults(const ResultType& result)\n    {\n");
-        // Check if there's a truncated field first, otherwise fall back to token check
-        sb.append("        return result.GetIsTruncated();\n");
+        // Use the output token to determine if there are more results
+        if (trait.getOutputToken().isPresent()) {
+            String outToken = trait.getOutputToken().get();
+            // Handle different token types - strings use .empty(), numbers check for non-zero
+            if (outToken.toLowerCase().contains("marker") || outToken.toLowerCase().contains("number")) {
+                // Numeric tokens - check if they exist/are set
+                sb.append("        return result.Get").append(capitalize(outToken)).append("() != 0;\n");
+            } else {
+                // String tokens - check if not empty
+                sb.append("        return !result.Get").append(capitalize(outToken)).append("().empty();\n");
+            }
+        } else {
+            // Fallback to checking for IsTruncated if no output token
+            sb.append("        return result.GetIsTruncated();\n");
+        }
         sb.append("    }\n\n");
         
         sb.append("    static void SetNextRequest(const ResultType& result, RequestType& request)\n    {\n");

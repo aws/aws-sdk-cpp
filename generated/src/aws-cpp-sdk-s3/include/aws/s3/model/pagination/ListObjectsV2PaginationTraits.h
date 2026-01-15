@@ -21,7 +21,7 @@ struct ListObjectsV2PaginationTraits {
 
   static OutcomeType Invoke(ClientType& client, const RequestType& request) { return client.ListObjectsV2(request); }
 
-  static bool HasMoreResults(const ResultType& result) { return result.GetIsTruncated(); }
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextContinuationToken().empty(); }
 
   static void SetNextRequest(const ResultType& result, RequestType& request) {
     request.SetContinuationToken(result.GetNextContinuationToken());
