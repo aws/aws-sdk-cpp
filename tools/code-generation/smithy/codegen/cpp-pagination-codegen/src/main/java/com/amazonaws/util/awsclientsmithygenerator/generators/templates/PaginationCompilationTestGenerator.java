@@ -4,23 +4,37 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
 
+import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.model.shapes.*;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.CompilationTestParser;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.*;
 
 public class PaginationCompilationTestGenerator {
-    private final List<ServiceShape> services;
+    private final CompilationTestParser<OperationData<PaginatedTrait>> parser;
     private final List<OperationData<PaginatedTrait>> allPaginatedOps;
 
-    public PaginationCompilationTestGenerator(List<ServiceShape> services, List<OperationData<PaginatedTrait>> allPaginatedOps) {
-        this.services = services;
+    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps) {
         this.allPaginatedOps = allPaginatedOps;
+        this.parser = new CompilationTestParser<>(
+            context,
+            service,
+            allPaginatedOps,
+            "Pagination",
+            this::render
+        );
+    }
+
+    public void run() {
+        parser.run();
     }
 
     public void render(CppWriter writer) {
-        String serviceName = getServiceName(services.get(0));
+        // Get service from the first operation since all operations belong to the same service
+        ServiceShape service = allPaginatedOps.get(0).getService();
+        String serviceName = getServiceName(service);
         
         writer.write("/**")
               .write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")
@@ -71,5 +85,6 @@ public class PaginationCompilationTestGenerator {
             .replace(" ", "")
             .replace("-", "");
     }
+
 
 }
