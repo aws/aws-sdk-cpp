@@ -8,25 +8,24 @@ import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import java.util.*;
 import java.util.function.Consumer;
 
 public class CompilationTestParser<T> {
-    private final PluginContext context;
     private final ServiceShape service;
-    private final List<T> operations;
     private final CppWriterDelegator writerDelegator;
     private final String testType;
     private final Consumer<CppWriter> renderFunction;
+    private final Map<String, String> c2jMap;
 
     public CompilationTestParser(PluginContext context, ServiceShape service, List<T> operations, 
-                                String testType, Consumer<CppWriter> renderFunction) {
-        this.context = context;
+                                String testType, Consumer<CppWriter> renderFunction, Map<String, String> c2jMap) {
         this.service = service;
-        this.operations = operations;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
         this.testType = testType;
         this.renderFunction = renderFunction;
+        this.c2jMap = c2jMap;
     }
 
     public void run() {
@@ -35,29 +34,12 @@ public class CompilationTestParser<T> {
     }
     
     private void generateCompilationTest() {
-        String serviceName = getServiceName(service);
-        String c2jServiceName = getC2jServiceName(service);
+        String serviceName = ServiceNameUtil.getServiceName(service);
+        String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
         
         writerDelegator.useFileWriter(
             "generated/tests/" + c2jServiceName + "-gen-tests/" + serviceName + testType + "CompilationTests.cpp",
             renderFunction
         );
-    }
-    
-    private String getServiceName(ServiceShape service) {
-        return service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .replace(" ", "")
-            .replace("-", "");
-    }
-    
-    private String getC2jServiceName(ServiceShape service) {
-        return service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .trim()
-            .toLowerCase()
-            .replace(" ", "-");
     }
 }

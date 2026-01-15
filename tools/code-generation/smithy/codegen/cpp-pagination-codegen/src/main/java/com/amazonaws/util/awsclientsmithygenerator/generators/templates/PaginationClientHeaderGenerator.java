@@ -9,19 +9,24 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.model.traits.PaginatedTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import java.util.List;
+import java.util.Map;
 
 public class PaginationClientHeaderGenerator {
     private final ServiceShape service;
     private final List<OperationData<PaginatedTrait>> paginatedOps;
+    private final Map<String, String> c2jMap;
     
-    public PaginationClientHeaderGenerator(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
+    public PaginationClientHeaderGenerator(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, Map<String, String> c2jMap) {
         this.service = service;
         this.paginatedOps = paginatedOps;
+        this.c2jMap = c2jMap;
     }
     
     public void render(CppWriter writer) {
-        String serviceName = getServiceName();
+        String serviceName = ServiceNameUtil.getServiceName(service);
+        String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
         
         // Header and includes
         writer.write("/**");
@@ -31,17 +36,17 @@ public class PaginationClientHeaderGenerator {
         writer.write("");
         writer.write("#pragma once");
         
-        renderIncludes(writer, serviceName);
+        renderIncludes(writer, serviceName, c2jServiceName);
         renderNamespaces(writer, serviceName);
     }
     
-    private void renderIncludes(CppWriter writer, String serviceName) {
-        writer.writeInclude("aws/" + serviceName.toLowerCase() + "/" + serviceName + "Client.h");
+    private void renderIncludes(CppWriter writer, String serviceName, String c2jServiceName) {
+        writer.writeInclude("aws/" + c2jServiceName + "/" + serviceName + "Client.h");
         writer.writeInclude("aws/core/utils/pagination/Paginator.h");
         
         for (OperationData<PaginatedTrait> data : paginatedOps) {
             String opName = data.getOperation().getId().getName();
-            writer.writeInclude("aws/" + serviceName.toLowerCase() + "/model/pagination/" + opName + "PaginationTraits.h");
+            writer.writeInclude("aws/" + c2jServiceName + "/model/pagination/" + opName + "PaginationTraits.h");
         }
         writer.write("");
     }
@@ -60,13 +65,5 @@ public class PaginationClientHeaderGenerator {
         writer.write("");
         writer.writeNamespaceClose(serviceName);
         writer.writeNamespaceClose("Aws");
-    }
-    
-    private String getServiceName() {
-        return service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .replace(" ", "")
-            .replace("-", "");
     }
 }

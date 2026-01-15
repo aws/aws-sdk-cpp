@@ -9,21 +9,25 @@ import software.amazon.smithy.model.shapes.*;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CompilationTestParser;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.*;
 
 public class PaginationCompilationTestGenerator {
     private final CompilationTestParser<OperationData<PaginatedTrait>> parser;
     private final List<OperationData<PaginatedTrait>> allPaginatedOps;
+    private final Map<String, String> c2jMap;
 
-    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps) {
+    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps, Map<String, String> c2jMap) {
         this.allPaginatedOps = allPaginatedOps;
+        this.c2jMap = c2jMap;
         this.parser = new CompilationTestParser<>(
             context,
             service,
             allPaginatedOps,
             "Pagination",
-            this::render
+            this::render,
+            c2jMap
         );
     }
 
@@ -34,7 +38,7 @@ public class PaginationCompilationTestGenerator {
     public void render(CppWriter writer) {
         // Get service from the first operation since all operations belong to the same service
         ServiceShape service = allPaginatedOps.get(0).getService();
-        String serviceName = getServiceName(service);
+        String serviceName = ServiceNameUtil.getServiceName(service);
         
         writer.write("/**")
               .write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")
@@ -65,26 +69,30 @@ public class PaginationCompilationTestGenerator {
     }
 
     private void writeIncludes(CppWriter writer) {
+        Set<String> clientHeaders = new HashSet<>();
+        Set<String> traitHeaders = new HashSet<>();
+        
         for (OperationData<PaginatedTrait> paginationData : allPaginatedOps) {
             ServiceShape service = paginationData.getService();
-            String serviceName = getServiceName(service);
+            String serviceName = ServiceNameUtil.getServiceName(service);
+            String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
             
-            // Include pagination client header
-            writer.writeInclude("aws/" + serviceName.toLowerCase() + "/" + serviceName + "ClientPagination.h");
+            // Collect unique client headers
+            clientHeaders.add("aws/" + c2jServiceName + "/" + serviceName + "ClientPagination.h");
             
-            // Include pagination traits headers
+            // Collect unique trait headers
             String operationName = paginationData.getOperation().getId().getName();
-            writer.writeInclude("aws/" + serviceName.toLowerCase() + "/model/pagination/" + operationName + "PaginationTraits.h");
+            traitHeaders.add("aws/" + c2jServiceName + "/model/pagination/" + operationName + "PaginationTraits.h");
+        }
+        
+        // Write unique client headers
+        for (String header : clientHeaders) {
+            writer.writeInclude(header);
+        }
+        
+        // Write unique trait headers
+        for (String header : traitHeaders) {
+            writer.writeInclude(header);
         }
     }
-    
-    private String getServiceName(ServiceShape service) {
-        return service.getTrait(software.amazon.smithy.aws.traits.ServiceTrait.class)
-            .map(software.amazon.smithy.aws.traits.ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .replace(" ", "")
-            .replace("-", "");
-    }
-
-
 }
