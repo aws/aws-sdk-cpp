@@ -7,42 +7,42 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationCompilationTestGenerator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
-import software.amazon.smithy.model.traits.PaginatedTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import java.util.*;
+import java.util.function.Consumer;
 
-public class PaginationCompilationTestParser {
+public class CompilationTestParser<T> {
     private final PluginContext context;
     private final ServiceShape service;
-    private final List<OperationData<PaginatedTrait>> paginatedOps;
+    private final List<T> operations;
     private final CppWriterDelegator writerDelegator;
+    private final String testType;
+    private final Consumer<CppWriter> renderFunction;
 
-    public PaginationCompilationTestParser(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
+    public CompilationTestParser(PluginContext context, ServiceShape service, List<T> operations, 
+                                String testType, Consumer<CppWriter> renderFunction) {
         this.context = context;
         this.service = service;
-        this.paginatedOps = paginatedOps;
+        this.operations = operations;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
+        this.testType = testType;
+        this.renderFunction = renderFunction;
     }
 
     public void run() {
-        List<ServiceShape> services = List.of(service);
-        generateSingleHeaderCompilationTest(services, paginatedOps);
+        generateCompilationTest();
         writerDelegator.flushWriters();
     }
     
-    private void generateSingleHeaderCompilationTest(List<ServiceShape> services, List<OperationData<PaginatedTrait>> allPaginatedOps) {
+    private void generateCompilationTest() {
         String serviceName = getServiceName(service);
         String c2jServiceName = getC2jServiceName(service);
         
-        // Generate single compilation test for all pagination headers in service's client-gen-tests
         writerDelegator.useFileWriter(
-            "generated/tests/" + c2jServiceName + "-gen-tests/" + serviceName + "PaginationCompilationTests.cpp",
-            writer -> new PaginationCompilationTestGenerator(services, allPaginatedOps).render(writer)
+            "generated/tests/" + c2jServiceName + "-gen-tests/" + serviceName + testType + "CompilationTests.cpp",
+            renderFunction
         );
     }
-
     
     private String getServiceName(ServiceShape service) {
         return service.getTrait(ServiceTrait.class)
