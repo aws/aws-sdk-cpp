@@ -10,8 +10,11 @@ import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.model.shapes.*;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationTraitsGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationClientHeaderGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationCompilationTestGenerator;
 import software.amazon.smithy.model.traits.PaginatedTrait;
-import com.amazonaws.util.awsclientsmithygenerator.generators.PaginationCompilationTestParser;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,12 +38,29 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
             
             if (!paginatedOps.isEmpty()) {
                 // Generate pagination files
-                PaginationParser parser = new PaginationParser(context, service, paginatedOps);
-                parser.run();
+                FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, service, paginatedOps, "Pagination");
+                parser.run(featureParser -> {
+                    String serviceName = featureParser.getServiceName();
+                    
+                    // Generate client pagination header
+                    featureParser.generateClientHeader(
+                        serviceName + "ClientPagination.h",
+                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations()).render(writer)
+                    );
+                    
+                    // Generate pagination traits headers
+                    PaginationTraitsGenerator headerWriter = new PaginationTraitsGenerator(
+                        featureParser.getContext(), 
+                        featureParser.getService(), 
+                        featureParser.getOperations(), 
+                        featureParser.getC2jServiceName()
+                    );
+                    headerWriter.write();
+                });
                 
                 // Generate header compilation test
-                PaginationCompilationTestParser headerParser = new PaginationCompilationTestParser(context, service, paginatedOps);
-                headerParser.run();
+                PaginationCompilationTestGenerator headerGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps);
+                headerGenerator.run();
             }
         }
     }

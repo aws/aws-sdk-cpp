@@ -11,11 +11,11 @@ import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.List;
 
-public class PaginationClientTemplate {
+public class PaginationClientHeaderGenerator {
     private final ServiceShape service;
     private final List<OperationData<PaginatedTrait>> paginatedOps;
     
-    public PaginationClientTemplate(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
+    public PaginationClientHeaderGenerator(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
         this.service = service;
         this.paginatedOps = paginatedOps;
     }

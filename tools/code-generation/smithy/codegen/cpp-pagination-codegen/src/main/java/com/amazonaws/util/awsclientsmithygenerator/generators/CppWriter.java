@@ -28,15 +28,18 @@ public class CppWriter extends SymbolWriter<CppWriter, CppImportContainer> {
         });
     }
     
-    public void writeInclude(String header) {
+    public CppWriter writeInclude(String header) {
         write("#include <$L>", header);
+        return this;
     }
     
-    public void writeNamespaceOpen(String namespace) {
+    public CppWriter writeNamespaceOpen(String namespace) {
         write("namespace $L\n{", namespace);
+        return this;
     }
     
-    public void writeNamespaceClose(String namespace) {
+    public CppWriter writeNamespaceClose(String namespace) {
         write("} // namespace $L", namespace);
+        return this;
     }
 }

@@ -10,26 +10,24 @@ import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.ObjectNode;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
-import software.amazon.smithy.model.traits.PaginatedTrait;
-import com.amazonaws.util.awsclientsmithygenerator.generators.PaginationHeaderWriter;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationClientTemplate;
 import java.util.*;
+import java.util.function.Consumer;
 
-public class PaginationParser {
+public class FeatureParser<T> {
     private final PluginContext context;
     private final Model model;
     private final ServiceShape service;
-    private final List<OperationData<PaginatedTrait>> paginatedOps;
+    private final List<T> operations;
     private final CppWriterDelegator writerDelegator;
-    private Map<String, String> c2jMap;
+    private final Map<String, String> c2jMap;
+    private final String featureName;
 
-    public PaginationParser(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
+    public FeatureParser(PluginContext context, ServiceShape service, List<T> operations, String featureName) {
         this.context = context;
         this.model = context.getModel();
         this.service = service;
-        this.paginatedOps = paginatedOps;
+        this.operations = operations;
+        this.featureName = featureName;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
         
         // Initialize c2j map
@@ -47,25 +45,27 @@ public class PaginationParser {
         }
     }
 
-    public void run() {
-        generatePaginationFiles(service, paginatedOps);
+    public void run(Consumer<FeatureParser<T>> generationLogic) {
+        generationLogic.accept(this);
         writerDelegator.flushWriters();
     }
     
-    private void generatePaginationFiles(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
+    public void generateClientHeader(String fileName, Consumer<CppWriter> generator) {
         String serviceName = getServiceName(service);
         String c2jServiceName = getC2jServiceName(service);
         
-        // Generate client pagination header
         writerDelegator.useFileWriter(
-            "include/aws/" + c2jServiceName + "/" + serviceName + "ClientPagination.h",
-            writer -> new PaginationClientTemplate(service, paginatedOps).render(writer)
+            "include/aws/" + c2jServiceName + "/" + fileName,
+            generator
         );
-        
-        // Generate pagination traits headers
-        PaginationHeaderWriter headerWriter = new PaginationHeaderWriter(context, service, paginatedOps, c2jServiceName);
-        headerWriter.write();
     }
+    
+    public PluginContext getContext() { return context; }
+    public ServiceShape getService() { return service; }
+    public List<T> getOperations() { return operations; }
+    public String getFeatureName() { return featureName; }
+    public String getServiceName() { return getServiceName(service); }
+    public String getC2jServiceName() { return getC2jServiceName(service); }
     
     private String getServiceName(ServiceShape service) {
         return service.getTrait(ServiceTrait.class)
