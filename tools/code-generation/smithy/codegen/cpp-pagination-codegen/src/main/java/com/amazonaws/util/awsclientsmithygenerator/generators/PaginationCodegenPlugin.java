@@ -8,6 +8,7 @@ import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.traits.PaginatedTrait;
+import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.shapes.*;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
@@ -29,9 +30,10 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
         var model = context.getModel();
         
         for (ServiceShape service : model.getServiceShapes()) {
-            // Find paginated operations using TopDownIndex
+            // Find paginated operations using TopDownIndex, excluding deprecated operations
             List<OperationData<PaginatedTrait>> paginatedOps = TopDownIndex.of(model).getContainedOperations(service).stream()
                 .filter(op -> op.hasTrait(PaginatedTrait.class))
+                .filter(op -> !op.hasTrait(DeprecatedTrait.class))
                 .map(op -> new OperationData<>(op, op.expectTrait(PaginatedTrait.class), service))
                 .collect(Collectors.toList());
             
