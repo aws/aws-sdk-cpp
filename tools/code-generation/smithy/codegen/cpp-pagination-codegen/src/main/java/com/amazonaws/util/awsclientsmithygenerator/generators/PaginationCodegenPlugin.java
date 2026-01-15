@@ -9,7 +9,9 @@ import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.model.shapes.*;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
+import software.amazon.smithy.model.traits.PaginatedTrait;
+import com.amazonaws.util.awsclientsmithygenerator.generators.PaginationCompilationTestParser;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,9 +28,9 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
         
         for (ServiceShape service : model.getServiceShapes()) {
             // Find paginated operations using TopDownIndex
-            List<PaginationData> paginatedOps = TopDownIndex.of(model).getContainedOperations(service).stream()
+            List<OperationData<PaginatedTrait>> paginatedOps = TopDownIndex.of(model).getContainedOperations(service).stream()
                 .filter(op -> op.hasTrait(PaginatedTrait.class))
-                .map(op -> new PaginationData(op, op.expectTrait(PaginatedTrait.class), service))
+                .map(op -> new OperationData<>(op, op.expectTrait(PaginatedTrait.class), service))
                 .collect(Collectors.toList());
             
             if (!paginatedOps.isEmpty()) {
@@ -37,7 +39,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                 parser.run();
                 
                 // Generate header compilation test
-                HeaderCompilationParser headerParser = new HeaderCompilationParser(context, service, paginatedOps);
+                PaginationCompilationTestParser headerParser = new PaginationCompilationTestParser(context, service, paginatedOps);
                 headerParser.run();
             }
         }

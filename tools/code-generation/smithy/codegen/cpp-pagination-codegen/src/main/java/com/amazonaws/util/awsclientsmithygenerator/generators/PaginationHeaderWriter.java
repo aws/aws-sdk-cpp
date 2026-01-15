@@ -9,17 +9,18 @@ import software.amazon.smithy.codegen.core.SymbolProvider;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
+import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.nio.file.*;
 import java.util.*;
 
 public class PaginationHeaderWriter {
     private final PluginContext context;
     private final ServiceShape service;
-    private final List<PaginationData> paginatedOps;
+    private final List<OperationData<PaginatedTrait>> paginatedOps;
     private final String c2jServiceName;
 
-    public PaginationHeaderWriter(PluginContext context, ServiceShape service, List<PaginationData> paginatedOps, String c2jServiceName) {
+    public PaginationHeaderWriter(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, String c2jServiceName) {
         this.context = context;
         this.service = service;
         this.paginatedOps = paginatedOps;
@@ -35,7 +36,7 @@ public class PaginationHeaderWriter {
         Path outputPath = context.getFileManifest().getBaseDir()
                 .resolve("include/aws/" + c2jServiceName + "/model/pagination");
 
-        for (PaginationData data : paginatedOps) {
+        for (OperationData<PaginatedTrait> data : paginatedOps) {
             String content = generateTraitsHeader(data, serviceName);
             String fileName = data.getOperation().getId().getName() + "PaginationTraits.h";
             
@@ -48,7 +49,7 @@ public class PaginationHeaderWriter {
         }
     }
 
-    private String generateTraitsHeader(PaginationData data, String serviceName) {
+    private String generateTraitsHeader(OperationData<PaginatedTrait> data, String serviceName) {
         OperationShape op = data.getOperation();
         PaginatedTrait trait = data.getTrait();
         String opName = op.getId().getName();

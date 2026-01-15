@@ -5,23 +5,21 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.build.PluginContext;
-import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.HeaderCompilationTemplate;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.HeaderCompilationCMakeTemplate;
-import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationCompilationTestGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
+import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.*;
 
-public class HeaderCompilationParser {
+public class PaginationCompilationTestParser {
     private final PluginContext context;
     private final ServiceShape service;
-    private final List<PaginationData> paginatedOps;
+    private final List<OperationData<PaginatedTrait>> paginatedOps;
     private final CppWriterDelegator writerDelegator;
 
-    public HeaderCompilationParser(PluginContext context, ServiceShape service, List<PaginationData> paginatedOps) {
+    public PaginationCompilationTestParser(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
         this.context = context;
         this.service = service;
         this.paginatedOps = paginatedOps;
@@ -34,14 +32,14 @@ public class HeaderCompilationParser {
         writerDelegator.flushWriters();
     }
     
-    private void generateSingleHeaderCompilationTest(List<ServiceShape> services, List<PaginationData> allPaginatedOps) {
+    private void generateSingleHeaderCompilationTest(List<ServiceShape> services, List<OperationData<PaginatedTrait>> allPaginatedOps) {
         String serviceName = getServiceName(service);
         String c2jServiceName = getC2jServiceName(service);
         
         // Generate single compilation test for all pagination headers in service's client-gen-tests
         writerDelegator.useFileWriter(
-            "generated/tests/" + c2jServiceName + "-gen-tests/AllPaginationHeadersCompilationTest.cpp",
-            writer -> new HeaderCompilationTemplate(services, allPaginatedOps).render(writer)
+            "generated/tests/" + c2jServiceName + "-gen-tests/" + serviceName + "PaginationCompilationTests.cpp",
+            writer -> new PaginationCompilationTestGenerator(services, allPaginatedOps).render(writer)
         );
     }
 
