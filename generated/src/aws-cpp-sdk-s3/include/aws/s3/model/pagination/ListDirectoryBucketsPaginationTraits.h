@@ -21,7 +21,7 @@ struct ListDirectoryBucketsPaginationTraits {
 
   static OutcomeType Invoke(ClientType& client, const RequestType& request) { return client.ListDirectoryBuckets(request); }
 
-  static bool HasMoreResults(const ResultType& result) { return result.GetIsTruncated(); }
+  static bool HasMoreResults(const ResultType& result) { return !result.GetContinuationToken().empty(); }
 
   static void SetNextRequest(const ResultType& result, RequestType& request) {
     request.SetContinuationToken(result.GetContinuationToken());

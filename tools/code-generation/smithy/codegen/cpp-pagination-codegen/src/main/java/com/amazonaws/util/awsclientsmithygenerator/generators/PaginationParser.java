@@ -10,21 +10,25 @@ import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.ObjectNode;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.aws.traits.ServiceTrait;
-import com.amazonaws.util.awsclientsmithygenerator.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.PaginationHeaderWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationClientTemplate;
 import java.util.*;
 
 public class PaginationParser {
     private final PluginContext context;
     private final Model model;
-    private final PaginationShapeDiscovery shapeDiscovery;
+    private final ServiceShape service;
+    private final List<PaginationData> paginatedOps;
     private final CppWriterDelegator writerDelegator;
     private Map<String, String> c2jMap;
 
-    public PaginationParser(PluginContext context) {
+    public PaginationParser(PluginContext context, ServiceShape service, List<PaginationData> paginatedOps) {
         this.context = context;
         this.model = context.getModel();
-        this.shapeDiscovery = new PaginationShapeDiscovery(model);
+        this.service = service;
+        this.paginatedOps = paginatedOps;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
         
         // Initialize c2j map
@@ -43,13 +47,7 @@ public class PaginationParser {
     }
 
     public void run() {
-        for (ServiceShape service : model.getServiceShapes()) {
-            List<PaginationData> paginatedOps = shapeDiscovery.findPaginatedOperations(service);
-
-            if (!paginatedOps.isEmpty()) {
-                generatePaginationFiles(service, paginatedOps);
-            }
-        }
+        generatePaginationFiles(service, paginatedOps);
         writerDelegator.flushWriters();
     }
     
