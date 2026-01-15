@@ -90,7 +90,7 @@ class AssignedSessionActionDefinition {
 
   ///@{
   /**
-   * <p>The job attachment to sync with an assigned session action.</p>
+   * <p>The job attachments to sync for the assigned session action.</p>
    */
   inline const AssignedSyncInputJobAttachmentsSessionActionDefinition& GetSyncInputJobAttachments() const {
     return m_syncInputJobAttachments;

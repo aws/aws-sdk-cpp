@@ -25,7 +25,7 @@ namespace EVS {
 namespace Model {
 
 /**
- * <p>An ESXi host that runs on an Amazon EC2 bare metal instance. Four hosts are
+ * <p>An ESX host that runs on an Amazon EC2 bare metal instance. Four hosts are
  * created in an Amazon EVS environment during environment creation. You can add
  * hosts to an environment using the <code>CreateEnvironmentHost</code> operation.
  * Amazon EVS supports 4-16 hosts per environment.</p><p><h3>See Also:</h3>   <a
@@ -96,9 +96,10 @@ class Host {
 
   ///@{
   /**
-   * <p>The EC2 instance type of the host.</p>  <p>EC2 instances created
-   * through Amazon EVS do not support associating an IAM instance profile.</p>
-   *
+   * <p>The EC2 instance type of the host.</p>  <p>Currently, Amazon EVS
+   * supports only the <code>i4i.metal</code> instance type.</p>
+   * <p>EC2 instances created through Amazon EVS do not support associating an IAM
+   * instance profile.</p>
    */
   inline InstanceType GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

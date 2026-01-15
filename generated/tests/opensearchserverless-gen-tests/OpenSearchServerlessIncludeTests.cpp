@@ -19,6 +19,8 @@
 #include <aws/opensearchserverless/model/AccessPolicySummary.h>
 #include <aws/opensearchserverless/model/AccessPolicyType.h>
 #include <aws/opensearchserverless/model/AccountSettingsDetail.h>
+#include <aws/opensearchserverless/model/BatchGetCollectionGroupRequest.h>
+#include <aws/opensearchserverless/model/BatchGetCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionRequest.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionResult.h>
 #include <aws/opensearchserverless/model/BatchGetEffectiveLifecyclePolicyRequest.h>
@@ -31,12 +33,19 @@
 #include <aws/opensearchserverless/model/CollectionDetail.h>
 #include <aws/opensearchserverless/model/CollectionErrorDetail.h>
 #include <aws/opensearchserverless/model/CollectionFilters.h>
+#include <aws/opensearchserverless/model/CollectionGroupCapacityLimits.h>
+#include <aws/opensearchserverless/model/CollectionGroupDetail.h>
+#include <aws/opensearchserverless/model/CollectionGroupErrorDetail.h>
+#include <aws/opensearchserverless/model/CollectionGroupSummary.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionSummary.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
 #include <aws/opensearchserverless/model/CreateAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/CreateAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/CreateCollectionDetail.h>
+#include <aws/opensearchserverless/model/CreateCollectionGroupDetail.h>
+#include <aws/opensearchserverless/model/CreateCollectionGroupRequest.h>
+#include <aws/opensearchserverless/model/CreateCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/CreateCollectionRequest.h>
 #include <aws/opensearchserverless/model/CreateCollectionResult.h>
 #include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
@@ -54,6 +63,8 @@
 #include <aws/opensearchserverless/model/DeleteAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/DeleteAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/DeleteCollectionDetail.h>
+#include <aws/opensearchserverless/model/DeleteCollectionGroupRequest.h>
+#include <aws/opensearchserverless/model/DeleteCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/DeleteCollectionRequest.h>
 #include <aws/opensearchserverless/model/DeleteCollectionResult.h>
 #include <aws/opensearchserverless/model/DeleteIndexRequest.h>
@@ -69,6 +80,7 @@
 #include <aws/opensearchserverless/model/DeleteVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/EffectiveLifecyclePolicyDetail.h>
 #include <aws/opensearchserverless/model/EffectiveLifecyclePolicyErrorDetail.h>
+#include <aws/opensearchserverless/model/EncryptionConfig.h>
 #include <aws/opensearchserverless/model/FipsEndpoints.h>
 #include <aws/opensearchserverless/model/GetAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/GetAccessPolicyResult.h>
@@ -95,6 +107,8 @@
 #include <aws/opensearchserverless/model/LifecyclePolicyType.h>
 #include <aws/opensearchserverless/model/ListAccessPoliciesRequest.h>
 #include <aws/opensearchserverless/model/ListAccessPoliciesResult.h>
+#include <aws/opensearchserverless/model/ListCollectionGroupsRequest.h>
+#include <aws/opensearchserverless/model/ListCollectionGroupsResult.h>
 #include <aws/opensearchserverless/model/ListCollectionsRequest.h>
 #include <aws/opensearchserverless/model/ListCollectionsResult.h>
 #include <aws/opensearchserverless/model/ListLifecyclePoliciesRequest.h>
@@ -130,6 +144,9 @@
 #include <aws/opensearchserverless/model/UpdateAccountSettingsRequest.h>
 #include <aws/opensearchserverless/model/UpdateAccountSettingsResult.h>
 #include <aws/opensearchserverless/model/UpdateCollectionDetail.h>
+#include <aws/opensearchserverless/model/UpdateCollectionGroupDetail.h>
+#include <aws/opensearchserverless/model/UpdateCollectionGroupRequest.h>
+#include <aws/opensearchserverless/model/UpdateCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/UpdateCollectionRequest.h>
 #include <aws/opensearchserverless/model/UpdateCollectionResult.h>
 #include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>

@@ -309,6 +309,7 @@
 #include <aws/deadline/model/QueueMember.h>
 #include <aws/deadline/model/QueueStatus.h>
 #include <aws/deadline/model/QueueSummary.h>
+#include <aws/deadline/model/RangeConstraint.h>
 #include <aws/deadline/model/ResourceNotFoundException.h>
 #include <aws/deadline/model/ResponseBudgetAction.h>
 #include <aws/deadline/model/RunAs.h>
@@ -355,6 +356,7 @@
 #include <aws/deadline/model/StepDetailsIdentifiers.h>
 #include <aws/deadline/model/StepLifecycleStatus.h>
 #include <aws/deadline/model/StepParameter.h>
+#include <aws/deadline/model/StepParameterChunks.h>
 #include <aws/deadline/model/StepParameterType.h>
 #include <aws/deadline/model/StepRequiredCapabilities.h>
 #include <aws/deadline/model/StepSearchSummary.h>
@@ -363,6 +365,7 @@
 #include <aws/deadline/model/StorageProfileOperatingSystemFamily.h>
 #include <aws/deadline/model/StorageProfileSummary.h>
 #include <aws/deadline/model/StringFilterExpression.h>
+#include <aws/deadline/model/StringListFilterExpression.h>
 #include <aws/deadline/model/SyncInputJobAttachmentsSessionActionDefinition.h>
 #include <aws/deadline/model/SyncInputJobAttachmentsSessionActionDefinitionSummary.h>
 #include <aws/deadline/model/TagPropagationMode.h>

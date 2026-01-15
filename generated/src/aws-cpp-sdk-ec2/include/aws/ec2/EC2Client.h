@@ -21896,10 +21896,14 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * the progress of volume modifications</a> in the <i>Amazon EBS User
    * Guide</i>.</p> <p>With previous-generation instance types, resizing an EBS
    * volume might require detaching and reattaching the volume or stopping and
-   * restarting the instance.</p> <p>After modifying a volume, you must wait at least
-   * six hours and ensure that the volume is in the <code>in-use</code> or
-   * <code>available</code> state before you can modify the same volume. This is
-   * sometimes referred to as a cooldown period.</p><p><h3>See Also:</h3>   <a
+   * restarting the instance.</p> <p>After you initiate a volume modification, you
+   * must wait for that modification to reach the <code>completed</code> state before
+   * you can initiate another modification for the same volume. You can modify a
+   * volume up to four times within a rolling 24-hour period, as long as the volume
+   * is in the <code>in-use</code> or <code>available</code> state, and all previous
+   * modifications for that volume are <code>completed</code>. If you exceed this
+   * limit, you get an error message that indicates when you can perform your next
+   * modification.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
    * API Reference</a></p>
    */

@@ -34,6 +34,14 @@ CollectionSummary& CollectionSummary::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("collectionGroupName")) {
+    m_collectionGroupName = jsonValue.GetString("collectionGroupName");
+    m_collectionGroupNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +62,14 @@ JsonValue CollectionSummary::Jsonize() const {
 
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
+  if (m_collectionGroupNameHasBeenSet) {
+    payload.WithString("collectionGroupName", m_collectionGroupName);
   }
 
   return payload;

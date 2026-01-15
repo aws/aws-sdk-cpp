@@ -38,7 +38,7 @@ class InitialVlans {
   ///@{
   /**
    * <p> The host VMkernel management VLAN subnet. This VLAN subnet carries traffic
-   * for managing ESXi hosts and communicating with VMware vCenter Server.</p>
+   * for managing ESX hosts and communicating with VMware vCenter Server.</p>
    */
   inline const InitialVlanInfo& GetVmkManagement() const { return m_vmkManagement; }
   inline bool VmkManagementHasBeenSet() const { return m_vmkManagementHasBeenSet; }
@@ -94,8 +94,8 @@ class InitialVlans {
 
   ///@{
   /**
-   * <p> The vSAN VLAN subnet. This VLAN subnet carries the communication between
-   * ESXi hosts to implement a vSAN shared storage pool.</p>
+   * <p> The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX
+   * hosts to implement a vSAN shared storage pool.</p>
    */
   inline const InitialVlanInfo& GetVSan() const { return m_vSan; }
   inline bool VSanHasBeenSet() const { return m_vSanHasBeenSet; }
@@ -177,7 +177,7 @@ class InitialVlans {
    * requirements must be met:</p> <ul> <li> <p>Must have a /28 netmask and be
    * allocated from the IPAM public pool. Required for HCX internet access
    * configuration.</p> </li> <li> <p>The HCX public VLAN CIDR block must be added to
-   * the VPC as a secondary CIDR block.</p> </li> <li> <p>Must have at least three
+   * the VPC as a secondary CIDR block.</p> </li> <li> <p>Must have at least two
    * Elastic IP addresses to be allocated from the public IPAM pool for HCX
    * components.</p> </li> </ul>
    */

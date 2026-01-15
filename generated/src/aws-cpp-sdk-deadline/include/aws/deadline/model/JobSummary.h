@@ -258,7 +258,7 @@ class JobSummary {
 
   ///@{
   /**
-   * <p>The task status to start with on the job.</p>
+   * <p>The task status to update the job's tasks to.</p>
    */
   inline JobTargetTaskRunStatus GetTargetTaskRunStatus() const { return m_targetTaskRunStatus; }
   inline bool TargetTaskRunStatusHasBeenSet() const { return m_targetTaskRunStatusHasBeenSet; }

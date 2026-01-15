@@ -44,7 +44,8 @@ enum class EVSErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  SERVICE_QUOTA_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  SERVICE_QUOTA_EXCEEDED,
   TAG_POLICY,
   TOO_MANY_TAGS
 };

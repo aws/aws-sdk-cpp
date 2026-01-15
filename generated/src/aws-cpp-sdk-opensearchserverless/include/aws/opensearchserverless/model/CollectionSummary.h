@@ -102,6 +102,43 @@ class CollectionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the Amazon Web Services Key Management Service key used to encrypt
+   * the collection.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  CollectionSummary& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the collection group that contains this collection.</p>
+   */
+  inline const Aws::String& GetCollectionGroupName() const { return m_collectionGroupName; }
+  inline bool CollectionGroupNameHasBeenSet() const { return m_collectionGroupNameHasBeenSet; }
+  template <typename CollectionGroupNameT = Aws::String>
+  void SetCollectionGroupName(CollectionGroupNameT&& value) {
+    m_collectionGroupNameHasBeenSet = true;
+    m_collectionGroupName = std::forward<CollectionGroupNameT>(value);
+  }
+  template <typename CollectionGroupNameT = Aws::String>
+  CollectionSummary& WithCollectionGroupName(CollectionGroupNameT&& value) {
+    SetCollectionGroupName(std::forward<CollectionGroupNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -110,10 +147,16 @@ class CollectionSummary {
   CollectionStatus m_status{CollectionStatus::NOT_SET};
 
   Aws::String m_arn;
+
+  Aws::String m_kmsKeyArn;
+
+  Aws::String m_collectionGroupName;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_collectionGroupNameHasBeenSet = false;
 };
 
 }  // namespace Model

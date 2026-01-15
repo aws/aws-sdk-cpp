@@ -75,9 +75,7 @@ class SearchWorkersRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when
-   * searching among a group of search strings in a resource. <p>You can use two
-   * groupings per search each within parenthesis <code>()</code>.</p></p>
+   * <p>The search terms for a resource.</p>
    */
   inline const SearchGroupedFilterExpressions& GetFilterExpressions() const { return m_filterExpressions; }
   inline bool FilterExpressionsHasBeenSet() const { return m_filterExpressionsHasBeenSet; }
@@ -119,7 +117,7 @@ class SearchWorkersRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>Defines how far into the scrollable list to start the return of results.</p>
+   * <p>The offset for the search results.</p>
    */
   inline int GetItemOffset() const { return m_itemOffset; }
   inline bool ItemOffsetHasBeenSet() const { return m_itemOffsetHasBeenSet; }
@@ -135,7 +133,7 @@ class SearchWorkersRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>Specifies the number of items per page for the resource.</p>
+   * <p>Specifies the number of results to return.</p>
    */
   inline int GetPageSize() const { return m_pageSize; }
   inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }

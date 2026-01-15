@@ -20,9 +20,9 @@ namespace EVS {
 namespace Model {
 
 /**
- * <p>The operation couldn't be performed because the service is throttling
- * requests. This exception is thrown when there are too many requests accepted
- * concurrently from the service endpoint.</p><p><h3>See Also:</h3>   <a
+ * <p>The operation could not be performed because the service is throttling
+ * requests. This exception is thrown when the service endpoint receives too many
+ * concurrent requests.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ThrottlingException">AWS
  * API Reference</a></p>
  */

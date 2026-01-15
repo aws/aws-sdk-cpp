@@ -22,6 +22,13 @@ ProtectedJobParameters& ProtectedJobParameters::operator=(JsonView jsonValue) {
     m_analysisTemplateArn = jsonValue.GetString("analysisTemplateArn");
     m_analysisTemplateArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("parameters")) {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for (auto& parametersItem : parametersJsonMap) {
+      m_parameters[parametersItem.first] = parametersItem.second.AsString();
+    }
+    m_parametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +37,14 @@ JsonValue ProtectedJobParameters::Jsonize() const {
 
   if (m_analysisTemplateArnHasBeenSet) {
     payload.WithString("analysisTemplateArn", m_analysisTemplateArn);
+  }
+
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
   return payload;

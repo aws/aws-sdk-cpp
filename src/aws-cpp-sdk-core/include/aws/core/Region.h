@@ -50,7 +50,7 @@ namespace Aws
         static const char EU_WEST_1[] = "eu-west-1"; // Europe (Ireland)
         static const char EU_WEST_2[] = "eu-west-2"; // Europe (London)
         static const char EU_WEST_3[] = "eu-west-3"; // Europe (Paris)
-        static const char EUSC_DE_EAST_1[] = "eusc-de-east-1"; // EU (Germany)
+        static const char EUSC_DE_EAST_1[] = "eusc-de-east-1"; // AWS European Sovereign Cloud (Germany)
         static const char IL_CENTRAL_1[] = "il-central-1"; // Israel (Tel Aviv)
         static const char ME_CENTRAL_1[] = "me-central-1"; // Middle East (UAE)
         static const char ME_SOUTH_1[] = "me-south-1"; // Middle East (Bahrain)

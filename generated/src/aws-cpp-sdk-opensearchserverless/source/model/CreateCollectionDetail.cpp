@@ -62,6 +62,10 @@ CreateCollectionDetail& CreateCollectionDetail::operator=(JsonView jsonValue) {
     m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("collectionGroupName")) {
+    m_collectionGroupName = jsonValue.GetString("collectionGroupName");
+    m_collectionGroupNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue CreateCollectionDetail::Jsonize() const {
 
   if (m_lastModifiedDateHasBeenSet) {
     payload.WithInt64("lastModifiedDate", m_lastModifiedDate);
+  }
+
+  if (m_collectionGroupNameHasBeenSet) {
+    payload.WithString("collectionGroupName", m_collectionGroupName);
   }
 
   return payload;

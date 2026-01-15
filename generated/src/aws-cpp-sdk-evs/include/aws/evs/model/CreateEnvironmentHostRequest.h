@@ -89,15 +89,36 @@ class CreateEnvironmentHostRequest : public EVSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ESX version to use for the host.</p>
+   */
+  inline const Aws::String& GetEsxVersion() const { return m_esxVersion; }
+  inline bool EsxVersionHasBeenSet() const { return m_esxVersionHasBeenSet; }
+  template <typename EsxVersionT = Aws::String>
+  void SetEsxVersion(EsxVersionT&& value) {
+    m_esxVersionHasBeenSet = true;
+    m_esxVersion = std::forward<EsxVersionT>(value);
+  }
+  template <typename EsxVersionT = Aws::String>
+  CreateEnvironmentHostRequest& WithEsxVersion(EsxVersionT&& value) {
+    SetEsxVersion(std::forward<EsxVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_environmentId;
 
   HostInfoForCreate m_host;
+
+  Aws::String m_esxVersion;
   bool m_clientTokenHasBeenSet = true;
   bool m_environmentIdHasBeenSet = false;
   bool m_hostHasBeenSet = false;
+  bool m_esxVersionHasBeenSet = false;
 };
 
 }  // namespace Model

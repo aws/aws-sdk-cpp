@@ -27,6 +27,10 @@ Aws::String CreateEnvironmentHostRequest::SerializePayload() const {
     payload.WithObject("host", m_host.Jsonize());
   }
 
+  if (m_esxVersionHasBeenSet) {
+    payload.WithString("esxVersion", m_esxVersion);
+  }
+
   return payload.View().WriteReadable();
 }
 

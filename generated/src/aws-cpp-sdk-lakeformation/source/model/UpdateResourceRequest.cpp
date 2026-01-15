@@ -31,5 +31,9 @@ Aws::String UpdateResourceRequest::SerializePayload() const {
     payload.WithBool("HybridAccessEnabled", m_hybridAccessEnabled);
   }
 
+  if (m_expectedResourceOwnerAccountHasBeenSet) {
+    payload.WithString("ExpectedResourceOwnerAccount", m_expectedResourceOwnerAccount);
+  }
+
   return payload.View().WriteReadable();
 }

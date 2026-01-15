@@ -419,7 +419,6 @@
 #include <aws/qconnect/model/TagResourceRequest.h>
 #include <aws/qconnect/model/TagResourceResult.h>
 #include <aws/qconnect/model/TargetType.h>
-#include <aws/qconnect/model/TextAIPromptInferenceConfiguration.h>
 #include <aws/qconnect/model/TextData.h>
 #include <aws/qconnect/model/TextFullAIPromptEditTemplateConfiguration.h>
 #include <aws/qconnect/model/TextMessage.h>

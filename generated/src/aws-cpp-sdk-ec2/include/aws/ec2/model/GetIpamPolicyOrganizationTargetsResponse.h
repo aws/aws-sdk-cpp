@@ -31,7 +31,9 @@ class GetIpamPolicyOrganizationTargetsResponse {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Organizations targets for an IPAM policy.</p>
+   * <p>The IDs of the Amazon Web Services Organizations targets.</p> <p>A target can
+   * be an individual Amazon Web Services account or an entity within an Amazon Web
+   * Services Organization to which an IPAM policy can be applied.</p>
    */
   inline const Aws::Vector<IpamPolicyOrganizationTarget>& GetOrganizationTargets() const { return m_organizationTargets; }
   template <typename OrganizationTargetsT = Aws::Vector<IpamPolicyOrganizationTarget>>

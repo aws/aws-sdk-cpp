@@ -23,8 +23,8 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>The configuration details for a service managed Amazon EC2
- * fleet.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration details for a service managed EC2 fleet.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ServiceManagedEc2FleetConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,7 +37,7 @@ class ServiceManagedEc2FleetConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon EC2 instance capabilities.</p>
+   * <p>The instance capabilities for the service managed EC2 fleet.</p>
    */
   inline const ServiceManagedEc2InstanceCapabilities& GetInstanceCapabilities() const { return m_instanceCapabilities; }
   inline bool InstanceCapabilitiesHasBeenSet() const { return m_instanceCapabilitiesHasBeenSet; }
@@ -55,7 +55,7 @@ class ServiceManagedEc2FleetConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon EC2 market type.</p>
+   * <p>The instance market options for the service managed EC2 fleet.</p>
    */
   inline const ServiceManagedEc2InstanceMarketOptions& GetInstanceMarketOptions() const { return m_instanceMarketOptions; }
   inline bool InstanceMarketOptionsHasBeenSet() const { return m_instanceMarketOptionsHasBeenSet; }
@@ -73,7 +73,7 @@ class ServiceManagedEc2FleetConfiguration {
 
   ///@{
   /**
-   * <p>The VPC configuration details for a service managed Amazon EC2 fleet.</p>
+   * <p>The VPC configuration for the service managed EC2 fleet.</p>
    */
   inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
   inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
@@ -91,7 +91,7 @@ class ServiceManagedEc2FleetConfiguration {
 
   ///@{
   /**
-   * <p>The storage profile ID.</p>
+   * <p>The storage profile ID for the service managed EC2 fleet.</p>
    */
   inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
   inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }

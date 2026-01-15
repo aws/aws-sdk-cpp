@@ -19,12 +19,15 @@
 /* End of generic header includes */
 
 /* Service model headers required in OpenSearchServerlessClient header */
+#include <aws/opensearchserverless/model/BatchGetCollectionGroupRequest.h>
+#include <aws/opensearchserverless/model/BatchGetCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionRequest.h>
 #include <aws/opensearchserverless/model/BatchGetCollectionResult.h>
 #include <aws/opensearchserverless/model/BatchGetEffectiveLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/BatchGetLifecyclePolicyResult.h>
 #include <aws/opensearchserverless/model/BatchGetVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/CreateAccessPolicyResult.h>
+#include <aws/opensearchserverless/model/CreateCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/CreateCollectionResult.h>
 #include <aws/opensearchserverless/model/CreateIndexResult.h>
 #include <aws/opensearchserverless/model/CreateLifecyclePolicyResult.h>
@@ -32,6 +35,7 @@
 #include <aws/opensearchserverless/model/CreateSecurityPolicyResult.h>
 #include <aws/opensearchserverless/model/CreateVpcEndpointResult.h>
 #include <aws/opensearchserverless/model/DeleteAccessPolicyResult.h>
+#include <aws/opensearchserverless/model/DeleteCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/DeleteCollectionResult.h>
 #include <aws/opensearchserverless/model/DeleteIndexResult.h>
 #include <aws/opensearchserverless/model/DeleteLifecyclePolicyResult.h>
@@ -47,6 +51,8 @@
 #include <aws/opensearchserverless/model/GetSecurityConfigResult.h>
 #include <aws/opensearchserverless/model/GetSecurityPolicyResult.h>
 #include <aws/opensearchserverless/model/ListAccessPoliciesResult.h>
+#include <aws/opensearchserverless/model/ListCollectionGroupsRequest.h>
+#include <aws/opensearchserverless/model/ListCollectionGroupsResult.h>
 #include <aws/opensearchserverless/model/ListCollectionsRequest.h>
 #include <aws/opensearchserverless/model/ListCollectionsResult.h>
 #include <aws/opensearchserverless/model/ListLifecyclePoliciesResult.h>
@@ -60,6 +66,7 @@
 #include <aws/opensearchserverless/model/UpdateAccessPolicyResult.h>
 #include <aws/opensearchserverless/model/UpdateAccountSettingsRequest.h>
 #include <aws/opensearchserverless/model/UpdateAccountSettingsResult.h>
+#include <aws/opensearchserverless/model/UpdateCollectionGroupResult.h>
 #include <aws/opensearchserverless/model/UpdateCollectionResult.h>
 #include <aws/opensearchserverless/model/UpdateIndexResult.h>
 #include <aws/opensearchserverless/model/UpdateLifecyclePolicyResult.h>
@@ -100,11 +107,13 @@ using OpenSearchServerlessEndpointProvider = Aws::OpenSearchServerless::Endpoint
 namespace Model {
 /* Service model forward declarations required in OpenSearchServerlessClient header */
 class BatchGetCollectionRequest;
+class BatchGetCollectionGroupRequest;
 class BatchGetEffectiveLifecyclePolicyRequest;
 class BatchGetLifecyclePolicyRequest;
 class BatchGetVpcEndpointRequest;
 class CreateAccessPolicyRequest;
 class CreateCollectionRequest;
+class CreateCollectionGroupRequest;
 class CreateIndexRequest;
 class CreateLifecyclePolicyRequest;
 class CreateSecurityConfigRequest;
@@ -112,6 +121,7 @@ class CreateSecurityPolicyRequest;
 class CreateVpcEndpointRequest;
 class DeleteAccessPolicyRequest;
 class DeleteCollectionRequest;
+class DeleteCollectionGroupRequest;
 class DeleteIndexRequest;
 class DeleteLifecyclePolicyRequest;
 class DeleteSecurityConfigRequest;
@@ -124,6 +134,7 @@ class GetPoliciesStatsRequest;
 class GetSecurityConfigRequest;
 class GetSecurityPolicyRequest;
 class ListAccessPoliciesRequest;
+class ListCollectionGroupsRequest;
 class ListCollectionsRequest;
 class ListLifecyclePoliciesRequest;
 class ListSecurityConfigsRequest;
@@ -135,6 +146,7 @@ class UntagResourceRequest;
 class UpdateAccessPolicyRequest;
 class UpdateAccountSettingsRequest;
 class UpdateCollectionRequest;
+class UpdateCollectionGroupRequest;
 class UpdateIndexRequest;
 class UpdateLifecyclePolicyRequest;
 class UpdateSecurityConfigRequest;
@@ -144,11 +156,13 @@ class UpdateVpcEndpointRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<BatchGetCollectionResult, OpenSearchServerlessError> BatchGetCollectionOutcome;
+typedef Aws::Utils::Outcome<BatchGetCollectionGroupResult, OpenSearchServerlessError> BatchGetCollectionGroupOutcome;
 typedef Aws::Utils::Outcome<BatchGetEffectiveLifecyclePolicyResult, OpenSearchServerlessError> BatchGetEffectiveLifecyclePolicyOutcome;
 typedef Aws::Utils::Outcome<BatchGetLifecyclePolicyResult, OpenSearchServerlessError> BatchGetLifecyclePolicyOutcome;
 typedef Aws::Utils::Outcome<BatchGetVpcEndpointResult, OpenSearchServerlessError> BatchGetVpcEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateAccessPolicyResult, OpenSearchServerlessError> CreateAccessPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateCollectionResult, OpenSearchServerlessError> CreateCollectionOutcome;
+typedef Aws::Utils::Outcome<CreateCollectionGroupResult, OpenSearchServerlessError> CreateCollectionGroupOutcome;
 typedef Aws::Utils::Outcome<CreateIndexResult, OpenSearchServerlessError> CreateIndexOutcome;
 typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, OpenSearchServerlessError> CreateLifecyclePolicyOutcome;
 typedef Aws::Utils::Outcome<CreateSecurityConfigResult, OpenSearchServerlessError> CreateSecurityConfigOutcome;
@@ -156,6 +170,7 @@ typedef Aws::Utils::Outcome<CreateSecurityPolicyResult, OpenSearchServerlessErro
 typedef Aws::Utils::Outcome<CreateVpcEndpointResult, OpenSearchServerlessError> CreateVpcEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteAccessPolicyResult, OpenSearchServerlessError> DeleteAccessPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteCollectionResult, OpenSearchServerlessError> DeleteCollectionOutcome;
+typedef Aws::Utils::Outcome<DeleteCollectionGroupResult, OpenSearchServerlessError> DeleteCollectionGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteIndexResult, OpenSearchServerlessError> DeleteIndexOutcome;
 typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, OpenSearchServerlessError> DeleteLifecyclePolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteSecurityConfigResult, OpenSearchServerlessError> DeleteSecurityConfigOutcome;
@@ -168,6 +183,7 @@ typedef Aws::Utils::Outcome<GetPoliciesStatsResult, OpenSearchServerlessError> G
 typedef Aws::Utils::Outcome<GetSecurityConfigResult, OpenSearchServerlessError> GetSecurityConfigOutcome;
 typedef Aws::Utils::Outcome<GetSecurityPolicyResult, OpenSearchServerlessError> GetSecurityPolicyOutcome;
 typedef Aws::Utils::Outcome<ListAccessPoliciesResult, OpenSearchServerlessError> ListAccessPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListCollectionGroupsResult, OpenSearchServerlessError> ListCollectionGroupsOutcome;
 typedef Aws::Utils::Outcome<ListCollectionsResult, OpenSearchServerlessError> ListCollectionsOutcome;
 typedef Aws::Utils::Outcome<ListLifecyclePoliciesResult, OpenSearchServerlessError> ListLifecyclePoliciesOutcome;
 typedef Aws::Utils::Outcome<ListSecurityConfigsResult, OpenSearchServerlessError> ListSecurityConfigsOutcome;
@@ -179,6 +195,7 @@ typedef Aws::Utils::Outcome<UntagResourceResult, OpenSearchServerlessError> Unta
 typedef Aws::Utils::Outcome<UpdateAccessPolicyResult, OpenSearchServerlessError> UpdateAccessPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, OpenSearchServerlessError> UpdateAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<UpdateCollectionResult, OpenSearchServerlessError> UpdateCollectionOutcome;
+typedef Aws::Utils::Outcome<UpdateCollectionGroupResult, OpenSearchServerlessError> UpdateCollectionGroupOutcome;
 typedef Aws::Utils::Outcome<UpdateIndexResult, OpenSearchServerlessError> UpdateIndexOutcome;
 typedef Aws::Utils::Outcome<UpdateLifecyclePolicyResult, OpenSearchServerlessError> UpdateLifecyclePolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityConfigResult, OpenSearchServerlessError> UpdateSecurityConfigOutcome;
@@ -188,11 +205,13 @@ typedef Aws::Utils::Outcome<UpdateVpcEndpointResult, OpenSearchServerlessError> 
 
 /* Service model Outcome callable definitions */
 typedef std::future<BatchGetCollectionOutcome> BatchGetCollectionOutcomeCallable;
+typedef std::future<BatchGetCollectionGroupOutcome> BatchGetCollectionGroupOutcomeCallable;
 typedef std::future<BatchGetEffectiveLifecyclePolicyOutcome> BatchGetEffectiveLifecyclePolicyOutcomeCallable;
 typedef std::future<BatchGetLifecyclePolicyOutcome> BatchGetLifecyclePolicyOutcomeCallable;
 typedef std::future<BatchGetVpcEndpointOutcome> BatchGetVpcEndpointOutcomeCallable;
 typedef std::future<CreateAccessPolicyOutcome> CreateAccessPolicyOutcomeCallable;
 typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
+typedef std::future<CreateCollectionGroupOutcome> CreateCollectionGroupOutcomeCallable;
 typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
 typedef std::future<CreateLifecyclePolicyOutcome> CreateLifecyclePolicyOutcomeCallable;
 typedef std::future<CreateSecurityConfigOutcome> CreateSecurityConfigOutcomeCallable;
@@ -200,6 +219,7 @@ typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCall
 typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
 typedef std::future<DeleteAccessPolicyOutcome> DeleteAccessPolicyOutcomeCallable;
 typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
+typedef std::future<DeleteCollectionGroupOutcome> DeleteCollectionGroupOutcomeCallable;
 typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
 typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
 typedef std::future<DeleteSecurityConfigOutcome> DeleteSecurityConfigOutcomeCallable;
@@ -212,6 +232,7 @@ typedef std::future<GetPoliciesStatsOutcome> GetPoliciesStatsOutcomeCallable;
 typedef std::future<GetSecurityConfigOutcome> GetSecurityConfigOutcomeCallable;
 typedef std::future<GetSecurityPolicyOutcome> GetSecurityPolicyOutcomeCallable;
 typedef std::future<ListAccessPoliciesOutcome> ListAccessPoliciesOutcomeCallable;
+typedef std::future<ListCollectionGroupsOutcome> ListCollectionGroupsOutcomeCallable;
 typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
 typedef std::future<ListLifecyclePoliciesOutcome> ListLifecyclePoliciesOutcomeCallable;
 typedef std::future<ListSecurityConfigsOutcome> ListSecurityConfigsOutcomeCallable;
@@ -223,6 +244,7 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAccessPolicyOutcome> UpdateAccessPolicyOutcomeCallable;
 typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
 typedef std::future<UpdateCollectionOutcome> UpdateCollectionOutcomeCallable;
+typedef std::future<UpdateCollectionGroupOutcome> UpdateCollectionGroupOutcomeCallable;
 typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
 typedef std::future<UpdateLifecyclePolicyOutcome> UpdateLifecyclePolicyOutcomeCallable;
 typedef std::future<UpdateSecurityConfigOutcome> UpdateSecurityConfigOutcomeCallable;
@@ -237,6 +259,9 @@ class OpenSearchServerlessClient;
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::BatchGetCollectionRequest&,
                            const Model::BatchGetCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetCollectionResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServerlessClient*, const Model::BatchGetCollectionGroupRequest&,
+                           const Model::BatchGetCollectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchGetCollectionGroupResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::BatchGetEffectiveLifecyclePolicyRequest&,
                            const Model::BatchGetEffectiveLifecyclePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -253,6 +278,9 @@ typedef std::function<void(const OpenSearchServerlessClient*, const Model::Creat
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCollectionResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateCollectionGroupRequest&,
+                           const Model::CreateCollectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateCollectionGroupResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIndexResponseReceivedHandler;
@@ -274,6 +302,9 @@ typedef std::function<void(const OpenSearchServerlessClient*, const Model::Delet
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCollectionResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteCollectionGroupRequest&,
+                           const Model::DeleteCollectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteCollectionGroupResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::DeleteIndexRequest&, const Model::DeleteIndexOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIndexResponseReceivedHandler;
@@ -310,6 +341,9 @@ typedef std::function<void(const OpenSearchServerlessClient*, const Model::GetSe
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::ListAccessPoliciesRequest&,
                            const Model::ListAccessPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAccessPoliciesResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServerlessClient*, const Model::ListCollectionGroupsRequest&,
+                           const Model::ListCollectionGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCollectionGroupsResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCollectionsResponseReceivedHandler;
@@ -343,6 +377,9 @@ typedef std::function<void(const OpenSearchServerlessClient*, const Model::Updat
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateCollectionRequest&, const Model::UpdateCollectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCollectionResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateCollectionGroupRequest&,
+                           const Model::UpdateCollectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCollectionGroupResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServerlessClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateIndexResponseReceivedHandler;

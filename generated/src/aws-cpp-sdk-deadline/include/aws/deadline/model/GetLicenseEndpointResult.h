@@ -79,7 +79,7 @@ class GetLicenseEndpointResult {
 
   ///@{
   /**
-   * <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+   * <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
    */
   inline const Aws::String& GetVpcId() const { return m_vpcId; }
   template <typename VpcIdT = Aws::String>
