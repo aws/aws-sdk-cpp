@@ -5,7 +5,6 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.build.PluginContext;
-import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.ObjectNode;
 import software.amazon.smithy.model.shapes.*;
@@ -15,7 +14,6 @@ import java.util.function.Consumer;
 
 public class FeatureParser<T> {
     private final PluginContext context;
-    private final Model model;
     private final ServiceShape service;
     private final List<T> operations;
     private final CppWriterDelegator writerDelegator;
@@ -24,7 +22,6 @@ public class FeatureParser<T> {
 
     public FeatureParser(PluginContext context, ServiceShape service, List<T> operations, String featureName) {
         this.context = context;
-        this.model = context.getModel();
         this.service = service;
         this.operations = operations;
         this.featureName = featureName;
@@ -51,8 +48,8 @@ public class FeatureParser<T> {
     }
     
     public void generateClientHeader(String fileName, Consumer<CppWriter> generator) {
-        String serviceName = getServiceName(service);
-        String c2jServiceName = getC2jServiceName(service);
+        String serviceName = ServiceNameUtil.getServiceName(service);
+        String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
         
         writerDelegator.useFileWriter(
             "include/aws/" + c2jServiceName + "/" + fileName,
@@ -64,25 +61,7 @@ public class FeatureParser<T> {
     public ServiceShape getService() { return service; }
     public List<T> getOperations() { return operations; }
     public String getFeatureName() { return featureName; }
-    public String getServiceName() { return getServiceName(service); }
-    public String getC2jServiceName() { return getC2jServiceName(service); }
-    
-    private String getServiceName(ServiceShape service) {
-        return service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .replace(" ", "")
-            .replace("-", "");
-    }
-    
-    private String getC2jServiceName(ServiceShape service) {
-        String sdkId = service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .trim()
-            .toLowerCase()
-            .replace(" ", "-");
-        
-        return c2jMap.getOrDefault(sdkId, sdkId);
-    }
+    public Map<String, String> getC2jMap() { return c2jMap; }
+    public String getServiceName() { return ServiceNameUtil.getServiceName(service); }
+    public String getC2jServiceName() { return ServiceNameUtil.getC2jServiceName(service, c2jMap); }
 }
