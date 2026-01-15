@@ -74,7 +74,7 @@ class CreateMonitorRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance that
+   * <p>The Amazon Resource Name of the IAM Identity Center instance that
    * authenticates monitor users.</p>
    */
   inline const Aws::String& GetIdentityCenterInstanceArn() const { return m_identityCenterInstanceArn; }
@@ -112,9 +112,9 @@ class CreateMonitorRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to
-   * connect to Deadline Cloud. Every user that signs in to the monitor using IAM
-   * Identity Center uses this role to access Deadline Cloud resources.</p>
+   * <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to
+   * Deadline Cloud. Every user that signs in to the monitor using IAM Identity
+   * Center uses this role to access Deadline Cloud resources.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

@@ -20,7 +20,8 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>The job attachment in a session action to sync.</p><p><h3>See Also:</h3>   <a
+ * <p>The session action definition for syncing input job
+ * attachments.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SyncInputJobAttachmentsSessionActionDefinition">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,7 @@ class SyncInputJobAttachmentsSessionActionDefinition {
 
   ///@{
   /**
-   * <p>The step ID for the step in the job attachment.</p>
+   * <p>The step ID for the sync input job attachments session action.</p>
    */
   inline const Aws::String& GetStepId() const { return m_stepId; }
   inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }

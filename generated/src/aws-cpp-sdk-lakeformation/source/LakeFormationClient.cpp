@@ -52,6 +52,7 @@
 #include <aws/lakeformation/model/GetQueryStatisticsRequest.h>
 #include <aws/lakeformation/model/GetResourceLFTagsRequest.h>
 #include <aws/lakeformation/model/GetTableObjectsRequest.h>
+#include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryGluePartitionCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryGlueTableCredentialsRequest.h>
 #include <aws/lakeformation/model/GetWorkUnitResultsRequest.h>
@@ -1162,6 +1163,37 @@ GetTableObjectsOutcome LakeFormationClient::GetTableObjects(const GetTableObject
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/GetTableObjects");
         return GetTableObjectsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetTemporaryDataLocationCredentialsOutcome LakeFormationClient::GetTemporaryDataLocationCredentials(
+    const GetTemporaryDataLocationCredentialsRequest& request) const {
+  AWS_OPERATION_GUARD(GetTemporaryDataLocationCredentials);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTemporaryDataLocationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTemporaryDataLocationCredentials, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTemporaryDataLocationCredentials, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTemporaryDataLocationCredentials",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTemporaryDataLocationCredentialsOutcome>(
+      [&]() -> GetTemporaryDataLocationCredentialsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTemporaryDataLocationCredentials, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/GetTemporaryDataLocationCredentials");
+        return GetTemporaryDataLocationCredentialsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

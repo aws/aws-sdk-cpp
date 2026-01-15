@@ -108,11 +108,15 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * Amazon EVS performs validations on DNS settings, provisions VLAN subnets and
    * hosts, and deploys the supplied version of VCF.</p> <p>It can take several hours
    * to create an environment. After the deployment completes, you can configure VCF
-   * in the vSphere user interface according to your needs.</p>  <p>You cannot
-   * use the <code>dedicatedHostId</code> and <code>placementGroupId</code>
-   * parameters together in the same <code>CreateEnvironment</code> action. This
-   * results in a <code>ValidationException</code> response.</p> <p><h3>See
-   * Also:</h3>   <a
+   * in the vSphere user interface according to your needs.</p>  <p>When
+   * creating a new environment, the default ESX version for the selected VCF version
+   * will be used, you cannot choose a specific ESX version in
+   * <code>CreateEnvironment</code> action. When a host has been added with a
+   * specific ESX version, it can only be upgraded using vCenter Lifecycle
+   * Manager.</p>   <p>You cannot use the
+   * <code>dedicatedHostId</code> and <code>placementGroupId</code> parameters
+   * together in the same <code>CreateEnvironment</code> action. This results in a
+   * <code>ValidationException</code> response.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironment">AWS
    * API Reference</a></p>
    */
@@ -138,16 +142,21 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS
+   * <p>Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS
    * supports 4-16 hosts per environment.</p> <p>This action can only be used after
    * the Amazon EVS environment is deployed.</p> <p>You can use the
    * <code>dedicatedHostId</code> parameter to specify an Amazon EC2 Dedicated Host
-   * for ESXi host creation.</p> <p> You can use the <code>placementGroupId</code>
+   * for ESX host creation.</p> <p> You can use the <code>placementGroupId</code>
    * parameter to specify a cluster or partition placement group to launch EC2
-   * instances into.</p>  <p>You cannot use the <code>dedicatedHostId</code>
-   * and <code>placementGroupId</code> parameters together in the same
-   * <code>CreateEnvironmentHost</code> action. This results in a
-   * <code>ValidationException</code> response.</p> <p><h3>See Also:</h3>   <a
+   * instances into.</p>  <p>If you don't specify an ESX version when adding
+   * hosts using <code>CreateEnvironmentHost</code> action, Amazon EVS automatically
+   * uses the default ESX version associated with your environment's VCF version. To
+   * find the default ESX version for a particular VCF version, use the
+   * <code>GetVersions</code> action.</p>   <p>You cannot use the
+   * <code>dedicatedHostId</code> and <code>placementGroupId</code> parameters
+   * together in the same <code>CreateEnvironmentHost</code> action. This results in
+   * a <code>ValidationException</code> response.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironmentHost">AWS
    * API Reference</a></p>
    */
@@ -285,6 +294,34 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   void GetEnvironmentAsync(const GetEnvironmentRequestT& request, const GetEnvironmentResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EVSClient::GetEnvironment, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about VCF versions, ESX versions and EC2 instance types
+   * provided by Amazon EVS. For each VCF version, the response also includes the
+   * default ESX version and provided EC2 instance types.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetVersionsOutcome GetVersions(const Model::GetVersionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetVersionsRequestT = Model::GetVersionsRequest>
+  Model::GetVersionsOutcomeCallable GetVersionsCallable(const GetVersionsRequestT& request = {}) const {
+    return SubmitCallable(&EVSClient::GetVersions, request);
+  }
+
+  /**
+   * An Async wrapper for GetVersions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetVersionsRequestT = Model::GetVersionsRequest>
+  void GetVersionsAsync(const GetVersionsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                        const GetVersionsRequestT& request = {}) const {
+    return SubmitAsync(&EVSClient::GetVersions, request, handler, context);
   }
 
   /**

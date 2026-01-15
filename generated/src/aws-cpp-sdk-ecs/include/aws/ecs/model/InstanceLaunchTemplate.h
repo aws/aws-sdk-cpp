@@ -172,6 +172,27 @@ class InstanceLaunchTemplate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on
+   * EC2 instances launched by the capacity provider. If <code>true</code>, instances
+   * use FIPS-compliant cryptographic algorithms and modules for enhanced security
+   * compliance. If <code>false</code>, instances use standard cryptographic
+   * implementations.</p> <p>If not specified, instances are launched with FIPS
+   * enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+   */
+  inline bool GetFipsEnabled() const { return m_fipsEnabled; }
+  inline bool FipsEnabledHasBeenSet() const { return m_fipsEnabledHasBeenSet; }
+  inline void SetFipsEnabled(bool value) {
+    m_fipsEnabledHasBeenSet = true;
+    m_fipsEnabled = value;
+  }
+  inline InstanceLaunchTemplate& WithFipsEnabled(bool value) {
+    SetFipsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ec2InstanceProfileArn;
 
@@ -184,12 +205,15 @@ class InstanceLaunchTemplate {
   CapacityOptionType m_capacityOptionType{CapacityOptionType::NOT_SET};
 
   InstanceRequirementsRequest m_instanceRequirements;
+
+  bool m_fipsEnabled{false};
   bool m_ec2InstanceProfileArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_capacityOptionTypeHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
+  bool m_fipsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

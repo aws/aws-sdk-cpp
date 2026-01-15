@@ -10,6 +10,7 @@
 #include <aws/deadline/model/ParameterFilterExpression.h>
 #include <aws/deadline/model/SearchTermFilterExpression.h>
 #include <aws/deadline/model/StringFilterExpression.h>
+#include <aws/deadline/model/StringListFilterExpression.h>
 
 #include <utility>
 
@@ -110,6 +111,24 @@ class SearchFilterExpression {
 
   ///@{
   /**
+   * <p>Filters by a list of string values.</p>
+   */
+  inline const StringListFilterExpression& GetStringListFilter() const { return m_stringListFilter; }
+  inline bool StringListFilterHasBeenSet() const { return m_stringListFilterHasBeenSet; }
+  template <typename StringListFilterT = StringListFilterExpression>
+  void SetStringListFilter(StringListFilterT&& value) {
+    m_stringListFilterHasBeenSet = true;
+    m_stringListFilter = std::forward<StringListFilterT>(value);
+  }
+  template <typename StringListFilterT = StringListFilterExpression>
+  SearchFilterExpression& WithStringListFilter(StringListFilterT&& value) {
+    SetStringListFilter(std::forward<StringListFilterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Filters by group.</p>
    */
   inline const SearchGroupedFilterExpressions& GetGroupFilter() const { return *m_groupFilter; }
@@ -134,11 +153,14 @@ class SearchFilterExpression {
 
   StringFilterExpression m_stringFilter;
 
+  StringListFilterExpression m_stringListFilter;
+
   std::shared_ptr<SearchGroupedFilterExpressions> m_groupFilter;
   bool m_dateTimeFilterHasBeenSet = false;
   bool m_parameterFilterHasBeenSet = false;
   bool m_searchTermFilterHasBeenSet = false;
   bool m_stringFilterHasBeenSet = false;
+  bool m_stringListFilterHasBeenSet = false;
   bool m_groupFilterHasBeenSet = false;
 };
 

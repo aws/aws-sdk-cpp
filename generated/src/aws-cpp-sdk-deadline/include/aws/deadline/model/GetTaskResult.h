@@ -220,7 +220,7 @@ class GetTaskResult {
 
   ///@{
   /**
-   * <p>The latest session ID for the task.</p>
+   * <p>The latest session action ID for the task.</p>
    */
   inline const Aws::String& GetLatestSessionActionId() const { return m_latestSessionActionId; }
   template <typename LatestSessionActionIdT = Aws::String>

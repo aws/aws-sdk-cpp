@@ -90,7 +90,7 @@ class SessionActionDefinitionSummary {
 
   ///@{
   /**
-   * <p>The job attachments to sync with the session action definition.</p>
+   * <p>The session action definition summary for syncing input job attachments.</p>
    */
   inline const SyncInputJobAttachmentsSessionActionDefinitionSummary& GetSyncInputJobAttachments() const {
     return m_syncInputJobAttachments;

@@ -26,6 +26,10 @@ CollectionFilters& CollectionFilters::operator=(JsonView jsonValue) {
     m_status = CollectionStatusMapper::GetCollectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("collectionGroupName")) {
+    m_collectionGroupName = jsonValue.GetString("collectionGroupName");
+    m_collectionGroupNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue CollectionFilters::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", CollectionStatusMapper::GetNameForCollectionStatus(m_status));
+  }
+
+  if (m_collectionGroupNameHasBeenSet) {
+    payload.WithString("collectionGroupName", m_collectionGroupName);
   }
 
   return payload;

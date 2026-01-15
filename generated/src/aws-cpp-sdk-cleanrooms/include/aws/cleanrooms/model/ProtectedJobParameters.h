@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -48,9 +49,37 @@ class ProtectedJobParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Runtime configuration values passed to the PySpark analysis script. Parameter
+   * names and types must match those defined in the analysis template.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+  ProtectedJobParameters& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+  ProtectedJobParameters& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_analysisTemplateArn;
+
+  Aws::Map<Aws::String, Aws::String> m_parameters;
   bool m_analysisTemplateArnHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

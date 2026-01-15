@@ -43,6 +43,14 @@ Aws::String CreateCollectionRequest::SerializePayload() const {
     payload.WithObject("vectorOptions", m_vectorOptions.Jsonize());
   }
 
+  if (m_collectionGroupNameHasBeenSet) {
+    payload.WithString("collectionGroupName", m_collectionGroupName);
+  }
+
+  if (m_encryptionConfigHasBeenSet) {
+    payload.WithObject("encryptionConfig", m_encryptionConfig.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

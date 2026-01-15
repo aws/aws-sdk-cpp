@@ -1001,6 +1001,51 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Allows a user or application in a secure environment to access data in a
+   * specific Amazon S3 location registered with Lake Formation by providing
+   * temporary scoped credentials that are limited to the requested data location and
+   * the caller's authorized access level.</p> <p> The API operation returns an error
+   * in the following scenarios:</p> <ul> <li> <p>The data location is not registered
+   * with Lake Formation. </p> </li> <li> <p>No Glue table is associated with the
+   * data location.</p> </li> <li> <p>The caller doesn't have required permissions on
+   * the associated table. The caller must have <code>SELECT</code> or
+   * <code>SUPER</code> permissions on the associated table, and credential vending
+   * for full table access must be enabled in the data lake settings. </p> <p>For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/lake-formation/latest/dg/full-table-credential-vending.html">Application
+   * integration for full table access</a>.</p> </li> <li> <p>The data location is in
+   * a different Amazon Web Services Region. Lake Formation doesn't support
+   * cross-Region access when vending credentials for a data location. Lake Formation
+   * only supports Amazon S3 paths registered within the same Region as the API call.
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryDataLocationCredentials">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTemporaryDataLocationCredentialsOutcome GetTemporaryDataLocationCredentials(
+      const Model::GetTemporaryDataLocationCredentialsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetTemporaryDataLocationCredentials that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTemporaryDataLocationCredentialsRequestT = Model::GetTemporaryDataLocationCredentialsRequest>
+  Model::GetTemporaryDataLocationCredentialsOutcomeCallable GetTemporaryDataLocationCredentialsCallable(
+      const GetTemporaryDataLocationCredentialsRequestT& request = {}) const {
+    return SubmitCallable(&LakeFormationClient::GetTemporaryDataLocationCredentials, request);
+  }
+
+  /**
+   * An Async wrapper for GetTemporaryDataLocationCredentials that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTemporaryDataLocationCredentialsRequestT = Model::GetTemporaryDataLocationCredentialsRequest>
+  void GetTemporaryDataLocationCredentialsAsync(const GetTemporaryDataLocationCredentialsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                const GetTemporaryDataLocationCredentialsRequestT& request = {}) const {
+    return SubmitAsync(&LakeFormationClient::GetTemporaryDataLocationCredentials, request, handler, context);
+  }
+
+  /**
    * <p>This API is identical to <code>GetTemporaryTableCredentials</code> except
    * that this is used when the target Data Catalog resource is of type Partition.
    * Lake Formation restricts the permission of the vended credentials with the same

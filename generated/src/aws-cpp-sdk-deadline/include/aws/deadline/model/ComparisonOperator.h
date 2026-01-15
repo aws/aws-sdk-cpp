@@ -10,7 +10,17 @@
 namespace Aws {
 namespace deadline {
 namespace Model {
-enum class ComparisonOperator { NOT_SET, EQUAL, NOT_EQUAL, GREATER_THAN_EQUAL_TO, GREATER_THAN, LESS_THAN_EQUAL_TO, LESS_THAN };
+enum class ComparisonOperator {
+  NOT_SET,
+  EQUAL,
+  NOT_EQUAL,
+  GREATER_THAN_EQUAL_TO,
+  GREATER_THAN,
+  LESS_THAN_EQUAL_TO,
+  LESS_THAN,
+  ANY_EQUALS,
+  ALL_NOT_EQUALS
+};
 
 namespace ComparisonOperatorMapper {
 AWS_DEADLINE_API ComparisonOperator GetComparisonOperatorForName(const Aws::String& name);

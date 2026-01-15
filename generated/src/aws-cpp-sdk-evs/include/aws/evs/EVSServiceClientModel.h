@@ -26,6 +26,8 @@
 #include <aws/evs/model/DeleteEnvironmentResult.h>
 #include <aws/evs/model/DisassociateEipFromVlanResult.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
+#include <aws/evs/model/GetVersionsRequest.h>
+#include <aws/evs/model/GetVersionsResult.h>
 #include <aws/evs/model/ListEnvironmentHostsResult.h>
 #include <aws/evs/model/ListEnvironmentVlansResult.h>
 #include <aws/evs/model/ListEnvironmentsRequest.h>
@@ -73,6 +75,7 @@ class DeleteEnvironmentRequest;
 class DeleteEnvironmentHostRequest;
 class DisassociateEipFromVlanRequest;
 class GetEnvironmentRequest;
+class GetVersionsRequest;
 class ListEnvironmentHostsRequest;
 class ListEnvironmentVlansRequest;
 class ListEnvironmentsRequest;
@@ -89,6 +92,7 @@ typedef Aws::Utils::Outcome<DeleteEnvironmentResult, EVSError> DeleteEnvironment
 typedef Aws::Utils::Outcome<DeleteEnvironmentHostResult, EVSError> DeleteEnvironmentHostOutcome;
 typedef Aws::Utils::Outcome<DisassociateEipFromVlanResult, EVSError> DisassociateEipFromVlanOutcome;
 typedef Aws::Utils::Outcome<GetEnvironmentResult, EVSError> GetEnvironmentOutcome;
+typedef Aws::Utils::Outcome<GetVersionsResult, EVSError> GetVersionsOutcome;
 typedef Aws::Utils::Outcome<ListEnvironmentHostsResult, EVSError> ListEnvironmentHostsOutcome;
 typedef Aws::Utils::Outcome<ListEnvironmentVlansResult, EVSError> ListEnvironmentVlansOutcome;
 typedef Aws::Utils::Outcome<ListEnvironmentsResult, EVSError> ListEnvironmentsOutcome;
@@ -105,6 +109,7 @@ typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
 typedef std::future<DeleteEnvironmentHostOutcome> DeleteEnvironmentHostOutcomeCallable;
 typedef std::future<DisassociateEipFromVlanOutcome> DisassociateEipFromVlanOutcomeCallable;
 typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
+typedef std::future<GetVersionsOutcome> GetVersionsOutcomeCallable;
 typedef std::future<ListEnvironmentHostsOutcome> ListEnvironmentHostsOutcomeCallable;
 typedef std::future<ListEnvironmentVlansOutcome> ListEnvironmentVlansOutcomeCallable;
 typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
@@ -138,6 +143,9 @@ typedef std::function<void(const EVSClient*, const Model::DisassociateEipFromVla
 typedef std::function<void(const EVSClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEnvironmentResponseReceivedHandler;
+typedef std::function<void(const EVSClient*, const Model::GetVersionsRequest&, const Model::GetVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetVersionsResponseReceivedHandler;
 typedef std::function<void(const EVSClient*, const Model::ListEnvironmentHostsRequest&, const Model::ListEnvironmentHostsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListEnvironmentHostsResponseReceivedHandler;

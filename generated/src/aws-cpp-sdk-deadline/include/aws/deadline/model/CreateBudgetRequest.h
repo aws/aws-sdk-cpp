@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/DeadlineRequest.h>
@@ -187,6 +188,31 @@ class CreateBudgetRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Each tag consists of a tag key and a tag value. Tag keys and values are both
+   * required, but tag values can be empty strings.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateBudgetRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateBudgetRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -203,6 +229,8 @@ class CreateBudgetRequest : public DeadlineRequest {
   Aws::Vector<BudgetActionToAdd> m_actions;
 
   BudgetSchedule m_schedule;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_farmIdHasBeenSet = false;
   bool m_usageTrackingResourceHasBeenSet = false;
@@ -211,6 +239,7 @@ class CreateBudgetRequest : public DeadlineRequest {
   bool m_approximateDollarLimitHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

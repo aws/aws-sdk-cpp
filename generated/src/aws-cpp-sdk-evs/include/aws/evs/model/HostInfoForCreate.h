@@ -74,7 +74,8 @@ class HostInfoForCreate {
 
   ///@{
   /**
-   * <p>The EC2 instance type that represents the host.</p>
+   * <p>The EC2 instance type that represents the host.</p>  <p>Currently,
+   * Amazon EVS supports only the <code>i4i.metal</code> instance type.</p>
    */
   inline InstanceType GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

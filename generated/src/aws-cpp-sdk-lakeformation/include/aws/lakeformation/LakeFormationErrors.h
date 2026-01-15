@@ -46,6 +46,7 @@ enum class LakeFormationErrors {
 
   ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
+  CONFLICT,
   ENTITY_NOT_FOUND,
   EXPIRED,
   GLUE_ENCRYPTION,

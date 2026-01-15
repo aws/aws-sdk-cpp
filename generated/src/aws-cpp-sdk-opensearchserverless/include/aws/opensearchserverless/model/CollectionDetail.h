@@ -319,6 +319,24 @@ class CollectionDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the collection group that contains this collection.</p>
+   */
+  inline const Aws::String& GetCollectionGroupName() const { return m_collectionGroupName; }
+  inline bool CollectionGroupNameHasBeenSet() const { return m_collectionGroupNameHasBeenSet; }
+  template <typename CollectionGroupNameT = Aws::String>
+  void SetCollectionGroupName(CollectionGroupNameT&& value) {
+    m_collectionGroupNameHasBeenSet = true;
+    m_collectionGroupName = std::forward<CollectionGroupNameT>(value);
+  }
+  template <typename CollectionGroupNameT = Aws::String>
+  CollectionDetail& WithCollectionGroupName(CollectionGroupNameT&& value) {
+    SetCollectionGroupName(std::forward<CollectionGroupNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -351,6 +369,8 @@ class CollectionDetail {
   Aws::String m_failureCode;
 
   Aws::String m_failureMessage;
+
+  Aws::String m_collectionGroupName;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -367,6 +387,7 @@ class CollectionDetail {
   bool m_fipsEndpointsHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
+  bool m_collectionGroupNameHasBeenSet = false;
 };
 
 }  // namespace Model

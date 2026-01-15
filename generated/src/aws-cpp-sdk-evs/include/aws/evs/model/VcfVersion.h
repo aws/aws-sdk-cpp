@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EVS {
 namespace Model {
-enum class VcfVersion { NOT_SET, VCF_5_2_1 };
+enum class VcfVersion { NOT_SET, VCF_5_2_1, VCF_5_2_2 };
 
 namespace VcfVersionMapper {
 AWS_EVS_API VcfVersion GetVcfVersionForName(const Aws::String& name);

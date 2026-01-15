@@ -82,6 +82,10 @@ CollectionDetail& CollectionDetail::operator=(JsonView jsonValue) {
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("collectionGroupName")) {
+    m_collectionGroupName = jsonValue.GetString("collectionGroupName");
+    m_collectionGroupNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +154,10 @@ JsonValue CollectionDetail::Jsonize() const {
 
   if (m_failureMessageHasBeenSet) {
     payload.WithString("failureMessage", m_failureMessage);
+  }
+
+  if (m_collectionGroupNameHasBeenSet) {
+    payload.WithString("collectionGroupName", m_collectionGroupName);
   }
 
   return payload;

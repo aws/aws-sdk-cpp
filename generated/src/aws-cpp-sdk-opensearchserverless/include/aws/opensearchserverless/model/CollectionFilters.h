@@ -66,12 +66,33 @@ class CollectionFilters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the collection group to filter by.</p>
+   */
+  inline const Aws::String& GetCollectionGroupName() const { return m_collectionGroupName; }
+  inline bool CollectionGroupNameHasBeenSet() const { return m_collectionGroupNameHasBeenSet; }
+  template <typename CollectionGroupNameT = Aws::String>
+  void SetCollectionGroupName(CollectionGroupNameT&& value) {
+    m_collectionGroupNameHasBeenSet = true;
+    m_collectionGroupName = std::forward<CollectionGroupNameT>(value);
+  }
+  template <typename CollectionGroupNameT = Aws::String>
+  CollectionFilters& WithCollectionGroupName(CollectionGroupNameT&& value) {
+    SetCollectionGroupName(std::forward<CollectionGroupNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   CollectionStatus m_status{CollectionStatus::NOT_SET};
+
+  Aws::String m_collectionGroupName;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_collectionGroupNameHasBeenSet = false;
 };
 
 }  // namespace Model
