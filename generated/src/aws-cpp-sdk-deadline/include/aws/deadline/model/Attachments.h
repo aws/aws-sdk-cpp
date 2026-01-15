@@ -22,7 +22,7 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>The attachments for jobs.</p><p><h3>See Also:</h3>   <a
+ * <p>The job attachments.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/Attachments">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class Attachments {
 
   ///@{
   /**
-   * <p>A list of manifests which describe job attachment configurations.</p>
+   * <p>The manifest properties for the attachments.</p>
    */
   inline const Aws::Vector<ManifestProperties>& GetManifests() const { return m_manifests; }
   inline bool ManifestsHasBeenSet() const { return m_manifestsHasBeenSet; }
@@ -59,7 +59,7 @@ class Attachments {
 
   ///@{
   /**
-   * <p>The file system.</p>
+   * <p>The file system location for the attachments.</p>
    */
   inline JobAttachmentsFileSystem GetFileSystem() const { return m_fileSystem; }
   inline bool FileSystemHasBeenSet() const { return m_fileSystemHasBeenSet; }

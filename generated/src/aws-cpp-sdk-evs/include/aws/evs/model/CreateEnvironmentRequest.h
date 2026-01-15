@@ -170,7 +170,7 @@ class CreateEnvironmentRequest : public EVSRequest {
    * options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3
    * gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway
    * associations.</p>  <p>Ensure that you specify a VPC that is adequately
-   * sized to accommodate the {evws} subnets.</p>
+   * sized to accommodate the Amazon EVS subnets.</p>
    */
   inline const Aws::String& GetVpcId() const { return m_vpcId; }
   inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
@@ -208,8 +208,7 @@ class CreateEnvironmentRequest : public EVSRequest {
 
   ///@{
   /**
-   * <p> The VCF version to use for the environment. Amazon EVS only supports VCF
-   * version 5.2.1 at this time.</p>
+   * <p> The VCF version to use for the environment.</p>
    */
   inline VcfVersion GetVcfVersion() const { return m_vcfVersion; }
   inline bool VcfVersionHasBeenSet() const { return m_vcfVersionHasBeenSet; }
@@ -297,9 +296,9 @@ class CreateEnvironmentRequest : public EVSRequest {
 
   ///@{
   /**
-   * <p>The ESXi hosts to add to the environment. Amazon EVS requires that you
-   * provide details for a minimum of 4 hosts during environment creation.</p> <p>For
-   * each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2
+   * <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide
+   * details for a minimum of 4 hosts during environment creation.</p> <p>For each
+   * host, you must provide the desired hostname, EC2 SSH keypair name, and EC2
    * instance type. Optionally, you can also provide a partition or cluster placement
    * group to use, or use Amazon EC2 Dedicated Hosts.</p>
    */

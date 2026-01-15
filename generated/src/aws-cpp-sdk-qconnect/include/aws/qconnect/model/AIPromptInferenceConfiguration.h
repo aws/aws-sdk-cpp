@@ -5,9 +5,6 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
-#include <aws/qconnect/model/TextAIPromptInferenceConfiguration.h>
-
-#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -34,26 +31,80 @@ class AIPromptInferenceConfiguration {
 
   ///@{
   /**
-   * <p>The inference configuration for text-based AI Prompts.</p>
+   * <p>The temperature setting for controlling randomness in the generated
+   * response.</p>
    */
-  inline const TextAIPromptInferenceConfiguration& GetTextAIPromptInferenceConfiguration() const {
-    return m_textAIPromptInferenceConfiguration;
+  inline double GetTemperature() const { return m_temperature; }
+  inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
+  inline void SetTemperature(double value) {
+    m_temperatureHasBeenSet = true;
+    m_temperature = value;
   }
-  inline bool TextAIPromptInferenceConfigurationHasBeenSet() const { return m_textAIPromptInferenceConfigurationHasBeenSet; }
-  template <typename TextAIPromptInferenceConfigurationT = TextAIPromptInferenceConfiguration>
-  void SetTextAIPromptInferenceConfiguration(TextAIPromptInferenceConfigurationT&& value) {
-    m_textAIPromptInferenceConfigurationHasBeenSet = true;
-    m_textAIPromptInferenceConfiguration = std::forward<TextAIPromptInferenceConfigurationT>(value);
+  inline AIPromptInferenceConfiguration& WithTemperature(double value) {
+    SetTemperature(value);
+    return *this;
   }
-  template <typename TextAIPromptInferenceConfigurationT = TextAIPromptInferenceConfiguration>
-  AIPromptInferenceConfiguration& WithTextAIPromptInferenceConfiguration(TextAIPromptInferenceConfigurationT&& value) {
-    SetTextAIPromptInferenceConfiguration(std::forward<TextAIPromptInferenceConfigurationT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>The top-P sampling parameter for nucleus sampling.</p>
+   */
+  inline double GetTopP() const { return m_topP; }
+  inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
+  inline void SetTopP(double value) {
+    m_topPHasBeenSet = true;
+    m_topP = value;
+  }
+  inline AIPromptInferenceConfiguration& WithTopP(double value) {
+    SetTopP(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The top-K sampling parameter for token selection.</p>
+   */
+  inline int GetTopK() const { return m_topK; }
+  inline bool TopKHasBeenSet() const { return m_topKHasBeenSet; }
+  inline void SetTopK(int value) {
+    m_topKHasBeenSet = true;
+    m_topK = value;
+  }
+  inline AIPromptInferenceConfiguration& WithTopK(int value) {
+    SetTopK(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of tokens to generate in the response.</p>
+   */
+  inline int GetMaxTokensToSample() const { return m_maxTokensToSample; }
+  inline bool MaxTokensToSampleHasBeenSet() const { return m_maxTokensToSampleHasBeenSet; }
+  inline void SetMaxTokensToSample(int value) {
+    m_maxTokensToSampleHasBeenSet = true;
+    m_maxTokensToSample = value;
+  }
+  inline AIPromptInferenceConfiguration& WithMaxTokensToSample(int value) {
+    SetMaxTokensToSample(value);
     return *this;
   }
   ///@}
  private:
-  TextAIPromptInferenceConfiguration m_textAIPromptInferenceConfiguration;
-  bool m_textAIPromptInferenceConfigurationHasBeenSet = false;
+  double m_temperature{0.0};
+
+  double m_topP{0.0};
+
+  int m_topK{0};
+
+  int m_maxTokensToSample{0};
+  bool m_temperatureHasBeenSet = false;
+  bool m_topPHasBeenSet = false;
+  bool m_topKHasBeenSet = false;
+  bool m_maxTokensToSampleHasBeenSet = false;
 };
 
 }  // namespace Model

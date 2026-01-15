@@ -87,8 +87,7 @@ class UpdateMonitorRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the new IAM role to use with the
-   * monitor.</p>
+   * <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

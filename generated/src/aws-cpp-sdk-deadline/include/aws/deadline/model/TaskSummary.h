@@ -236,7 +236,7 @@ class TaskSummary {
 
   ///@{
   /**
-   * <p>The latest session action for the task.</p>
+   * <p>The latest session action ID for the task.</p>
    */
   inline const Aws::String& GetLatestSessionActionId() const { return m_latestSessionActionId; }
   inline bool LatestSessionActionIdHasBeenSet() const { return m_latestSessionActionIdHasBeenSet; }

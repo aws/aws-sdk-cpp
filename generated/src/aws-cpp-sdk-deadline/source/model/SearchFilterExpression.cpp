@@ -35,6 +35,10 @@ SearchFilterExpression& SearchFilterExpression::operator=(JsonView jsonValue) {
     m_stringFilter = jsonValue.GetObject("stringFilter");
     m_stringFilterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("stringListFilter")) {
+    m_stringListFilter = jsonValue.GetObject("stringListFilter");
+    m_stringListFilterHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("groupFilter")) {
     m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", jsonValue.GetObject("groupFilter"));
     m_groupFilterHasBeenSet = true;
@@ -59,6 +63,10 @@ JsonValue SearchFilterExpression::Jsonize() const {
 
   if (m_stringFilterHasBeenSet) {
     payload.WithObject("stringFilter", m_stringFilter.Jsonize());
+  }
+
+  if (m_stringListFilterHasBeenSet) {
+    payload.WithObject("stringListFilter", m_stringListFilter.Jsonize());
   }
 
   if (m_groupFilterHasBeenSet) {

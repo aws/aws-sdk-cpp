@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/model/StepParameterChunks.h>
 #include <aws/deadline/model/StepParameterType.h>
 
 #include <utility>
@@ -65,12 +66,33 @@ class StepParameter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for task chunking.</p>
+   */
+  inline const StepParameterChunks& GetChunks() const { return m_chunks; }
+  inline bool ChunksHasBeenSet() const { return m_chunksHasBeenSet; }
+  template <typename ChunksT = StepParameterChunks>
+  void SetChunks(ChunksT&& value) {
+    m_chunksHasBeenSet = true;
+    m_chunks = std::forward<ChunksT>(value);
+  }
+  template <typename ChunksT = StepParameterChunks>
+  StepParameter& WithChunks(ChunksT&& value) {
+    SetChunks(std::forward<ChunksT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   StepParameterType m_type{StepParameterType::NOT_SET};
+
+  StepParameterChunks m_chunks;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_chunksHasBeenSet = false;
 };
 
 }  // namespace Model

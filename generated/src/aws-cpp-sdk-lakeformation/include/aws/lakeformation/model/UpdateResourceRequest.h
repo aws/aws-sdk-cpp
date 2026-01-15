@@ -97,6 +97,25 @@ class UpdateResourceRequest : public LakeFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account that owns the Glue tables associated with
+   * specific Amazon S3 locations. </p>
+   */
+  inline const Aws::String& GetExpectedResourceOwnerAccount() const { return m_expectedResourceOwnerAccount; }
+  inline bool ExpectedResourceOwnerAccountHasBeenSet() const { return m_expectedResourceOwnerAccountHasBeenSet; }
+  template <typename ExpectedResourceOwnerAccountT = Aws::String>
+  void SetExpectedResourceOwnerAccount(ExpectedResourceOwnerAccountT&& value) {
+    m_expectedResourceOwnerAccountHasBeenSet = true;
+    m_expectedResourceOwnerAccount = std::forward<ExpectedResourceOwnerAccountT>(value);
+  }
+  template <typename ExpectedResourceOwnerAccountT = Aws::String>
+  UpdateResourceRequest& WithExpectedResourceOwnerAccount(ExpectedResourceOwnerAccountT&& value) {
+    SetExpectedResourceOwnerAccount(std::forward<ExpectedResourceOwnerAccountT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_roleArn;
 
@@ -105,10 +124,13 @@ class UpdateResourceRequest : public LakeFormationRequest {
   bool m_withFederation{false};
 
   bool m_hybridAccessEnabled{false};
+
+  Aws::String m_expectedResourceOwnerAccount;
   bool m_roleArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_withFederationHasBeenSet = false;
   bool m_hybridAccessEnabledHasBeenSet = false;
+  bool m_expectedResourceOwnerAccountHasBeenSet = false;
 };
 
 }  // namespace Model

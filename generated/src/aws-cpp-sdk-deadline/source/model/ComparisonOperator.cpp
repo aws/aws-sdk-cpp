@@ -21,6 +21,8 @@ static const int GREATER_THAN_EQUAL_TO_HASH = HashingUtils::HashString("GREATER_
 static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
 static const int LESS_THAN_EQUAL_TO_HASH = HashingUtils::HashString("LESS_THAN_EQUAL_TO");
 static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
+static const int ANY_EQUALS_HASH = HashingUtils::HashString("ANY_EQUALS");
+static const int ALL_NOT_EQUALS_HASH = HashingUtils::HashString("ALL_NOT_EQUALS");
 
 ComparisonOperator GetComparisonOperatorForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name) {
     return ComparisonOperator::LESS_THAN_EQUAL_TO;
   } else if (hashCode == LESS_THAN_HASH) {
     return ComparisonOperator::LESS_THAN;
+  } else if (hashCode == ANY_EQUALS_HASH) {
+    return ComparisonOperator::ANY_EQUALS;
+  } else if (hashCode == ALL_NOT_EQUALS_HASH) {
+    return ComparisonOperator::ALL_NOT_EQUALS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue) {
       return "LESS_THAN_EQUAL_TO";
     case ComparisonOperator::LESS_THAN:
       return "LESS_THAN";
+    case ComparisonOperator::ANY_EQUALS:
+      return "ANY_EQUALS";
+    case ComparisonOperator::ALL_NOT_EQUALS:
+      return "ALL_NOT_EQUALS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

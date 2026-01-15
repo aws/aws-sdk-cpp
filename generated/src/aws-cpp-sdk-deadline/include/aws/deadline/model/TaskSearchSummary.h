@@ -251,6 +251,24 @@ class TaskSearchSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The latest session action ID for the task.</p>
+   */
+  inline const Aws::String& GetLatestSessionActionId() const { return m_latestSessionActionId; }
+  inline bool LatestSessionActionIdHasBeenSet() const { return m_latestSessionActionIdHasBeenSet; }
+  template <typename LatestSessionActionIdT = Aws::String>
+  void SetLatestSessionActionId(LatestSessionActionIdT&& value) {
+    m_latestSessionActionIdHasBeenSet = true;
+    m_latestSessionActionId = std::forward<LatestSessionActionIdT>(value);
+  }
+  template <typename LatestSessionActionIdT = Aws::String>
+  TaskSearchSummary& WithLatestSessionActionId(LatestSessionActionIdT&& value) {
+    SetLatestSessionActionId(std::forward<LatestSessionActionIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_taskId;
 
@@ -275,6 +293,8 @@ class TaskSearchSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
+
+  Aws::String m_latestSessionActionId;
   bool m_taskIdHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
@@ -287,6 +307,7 @@ class TaskSearchSummary {
   bool m_endedAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_latestSessionActionIdHasBeenSet = false;
 };
 
 }  // namespace Model

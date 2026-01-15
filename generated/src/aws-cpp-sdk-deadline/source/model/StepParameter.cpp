@@ -26,6 +26,10 @@ StepParameter& StepParameter::operator=(JsonView jsonValue) {
     m_type = StepParameterTypeMapper::GetStepParameterTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("chunks")) {
+    m_chunks = jsonValue.GetObject("chunks");
+    m_chunksHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue StepParameter::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", StepParameterTypeMapper::GetNameForStepParameterType(m_type));
+  }
+
+  if (m_chunksHasBeenSet) {
+    payload.WithObject("chunks", m_chunks.Jsonize());
   }
 
   return payload;

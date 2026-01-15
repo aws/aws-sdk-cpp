@@ -53,8 +53,7 @@ class SearchJobsResult {
 
   ///@{
   /**
-   * <p>The next incremental starting point after the defined
-   * <code>itemOffset</code>.</p>
+   * <p>The next item offset for the search results.</p>
    */
   inline int GetNextItemOffset() const { return m_nextItemOffset; }
   inline void SetNextItemOffset(int value) {

@@ -118,6 +118,37 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   }
 
   /**
+   * <p>Returns attributes for one or more collection groups, including capacity
+   * limits and the number of collections in each group. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+   * and managing Amazon OpenSearch Serverless collections</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetCollectionGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetCollectionGroupOutcome BatchGetCollectionGroup(const Model::BatchGetCollectionGroupRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for BatchGetCollectionGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetCollectionGroupRequestT = Model::BatchGetCollectionGroupRequest>
+  Model::BatchGetCollectionGroupOutcomeCallable BatchGetCollectionGroupCallable(const BatchGetCollectionGroupRequestT& request = {}) const {
+    return SubmitCallable(&OpenSearchServerlessClient::BatchGetCollectionGroup, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetCollectionGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetCollectionGroupRequestT = Model::BatchGetCollectionGroupRequest>
+  void BatchGetCollectionGroupAsync(const BatchGetCollectionGroupResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const BatchGetCollectionGroupRequestT& request = {}) const {
+    return SubmitAsync(&OpenSearchServerlessClient::BatchGetCollectionGroup, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of successful and failed retrievals for the OpenSearch
    * Serverless indexes. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list">Viewing
@@ -268,6 +299,37 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   void CreateCollectionAsync(const CreateCollectionRequestT& request, const CreateCollectionResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServerlessClient::CreateCollection, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a collection group within OpenSearch Serverless. Collection groups
+   * let you manage OpenSearch Compute Units (OCUs) at a group level, with multiple
+   * collections sharing the group's capacity limits.</p> <p>For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-collection-groups.html">Managing
+   * collection groups</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateCollectionGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateCollectionGroupOutcome CreateCollectionGroup(const Model::CreateCollectionGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateCollectionGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateCollectionGroupRequestT = Model::CreateCollectionGroupRequest>
+  Model::CreateCollectionGroupOutcomeCallable CreateCollectionGroupCallable(const CreateCollectionGroupRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::CreateCollectionGroup, request);
+  }
+
+  /**
+   * An Async wrapper for CreateCollectionGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateCollectionGroupRequestT = Model::CreateCollectionGroupRequest>
+  void CreateCollectionGroupAsync(const CreateCollectionGroupRequestT& request, const CreateCollectionGroupResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::CreateCollectionGroup, request, handler, context);
   }
 
   /**
@@ -481,6 +543,36 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   void DeleteCollectionAsync(const DeleteCollectionRequestT& request, const DeleteCollectionResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServerlessClient::DeleteCollection, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a collection group. You can only delete empty collection groups that
+   * contain no collections. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+   * and managing Amazon OpenSearch Serverless collections</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollectionGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteCollectionGroupOutcome DeleteCollectionGroup(const Model::DeleteCollectionGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteCollectionGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteCollectionGroupRequestT = Model::DeleteCollectionGroupRequest>
+  Model::DeleteCollectionGroupOutcomeCallable DeleteCollectionGroupCallable(const DeleteCollectionGroupRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::DeleteCollectionGroup, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteCollectionGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteCollectionGroupRequestT = Model::DeleteCollectionGroupRequest>
+  void DeleteCollectionGroupAsync(const DeleteCollectionGroupRequestT& request, const DeleteCollectionGroupResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::DeleteCollectionGroup, request, handler, context);
   }
 
   /**
@@ -831,6 +923,36 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   }
 
   /**
+   * <p>Returns a list of collection groups. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+   * and managing Amazon OpenSearch Serverless collections</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListCollectionGroups">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCollectionGroupsOutcome ListCollectionGroups(const Model::ListCollectionGroupsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCollectionGroups that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListCollectionGroupsRequestT = Model::ListCollectionGroupsRequest>
+  Model::ListCollectionGroupsOutcomeCallable ListCollectionGroupsCallable(const ListCollectionGroupsRequestT& request = {}) const {
+    return SubmitCallable(&OpenSearchServerlessClient::ListCollectionGroups, request);
+  }
+
+  /**
+   * An Async wrapper for ListCollectionGroups that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListCollectionGroupsRequestT = Model::ListCollectionGroupsRequest>
+  void ListCollectionGroupsAsync(const ListCollectionGroupsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListCollectionGroupsRequestT& request = {}) const {
+    return SubmitAsync(&OpenSearchServerlessClient::ListCollectionGroups, request, handler, context);
+  }
+
+  /**
    * <p>Lists all OpenSearch Serverless collections. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
    * and managing Amazon OpenSearch Serverless collections</a>.</p>  <p>Make
@@ -1146,6 +1268,33 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   void UpdateCollectionAsync(const UpdateCollectionRequestT& request, const UpdateCollectionResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServerlessClient::UpdateCollection, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the description and capacity limits of a collection
+   * group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollectionGroup">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCollectionGroupOutcome UpdateCollectionGroup(const Model::UpdateCollectionGroupRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCollectionGroup that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateCollectionGroupRequestT = Model::UpdateCollectionGroupRequest>
+  Model::UpdateCollectionGroupOutcomeCallable UpdateCollectionGroupCallable(const UpdateCollectionGroupRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::UpdateCollectionGroup, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCollectionGroup that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateCollectionGroupRequestT = Model::UpdateCollectionGroupRequest>
+  void UpdateCollectionGroupAsync(const UpdateCollectionGroupRequestT& request, const UpdateCollectionGroupResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::UpdateCollectionGroup, request, handler, context);
   }
 
   /**

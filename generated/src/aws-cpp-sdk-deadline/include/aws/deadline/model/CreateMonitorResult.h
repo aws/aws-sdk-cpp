@@ -45,8 +45,7 @@ class CreateMonitorResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the
-   * monitor.</p>
+   * <p>The Amazon Resource Name that IAM Identity Center assigns to the monitor.</p>
    */
   inline const Aws::String& GetIdentityCenterApplicationArn() const { return m_identityCenterApplicationArn; }
   template <typename IdentityCenterApplicationArnT = Aws::String>

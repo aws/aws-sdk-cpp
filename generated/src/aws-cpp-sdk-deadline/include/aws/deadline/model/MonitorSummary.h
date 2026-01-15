@@ -112,7 +112,7 @@ class MonitorSummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM role for the monitor. Users of the
+   * <p>The Amazon Resource Name of the IAM role for the monitor. Users of the
    * monitor use this role to access Deadline Cloud resources.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
@@ -131,8 +131,8 @@ class MonitorSummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance
-   * responsible for authenticating monitor users.</p>
+   * <p>The Amazon Resource Name of the IAM Identity Center instance responsible for
+   * authenticating monitor users.</p>
    */
   inline const Aws::String& GetIdentityCenterInstanceArn() const { return m_identityCenterInstanceArn; }
   inline bool IdentityCenterInstanceArnHasBeenSet() const { return m_identityCenterInstanceArnHasBeenSet; }
@@ -150,8 +150,8 @@ class MonitorSummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) that the IAM Identity Center assigned to the
-   * monitor when it was created.</p>
+   * <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor
+   * when it was created.</p>
    */
   inline const Aws::String& GetIdentityCenterApplicationArn() const { return m_identityCenterApplicationArn; }
   inline bool IdentityCenterApplicationArnHasBeenSet() const { return m_identityCenterApplicationArnHasBeenSet; }

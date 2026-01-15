@@ -36,12 +36,15 @@
 #include <aws/evs/model/EnvironmentSummary.h>
 #include <aws/evs/model/GetEnvironmentRequest.h>
 #include <aws/evs/model/GetEnvironmentResult.h>
+#include <aws/evs/model/GetVersionsRequest.h>
+#include <aws/evs/model/GetVersionsResult.h>
 #include <aws/evs/model/Host.h>
 #include <aws/evs/model/HostInfoForCreate.h>
 #include <aws/evs/model/HostState.h>
 #include <aws/evs/model/InitialVlanInfo.h>
 #include <aws/evs/model/InitialVlans.h>
 #include <aws/evs/model/InstanceType.h>
+#include <aws/evs/model/InstanceTypeEsxVersionsInfo.h>
 #include <aws/evs/model/LicenseInfo.h>
 #include <aws/evs/model/ListEnvironmentHostsRequest.h>
 #include <aws/evs/model/ListEnvironmentHostsResult.h>
@@ -65,6 +68,7 @@
 #include <aws/evs/model/ValidationExceptionReason.h>
 #include <aws/evs/model/VcfHostnames.h>
 #include <aws/evs/model/VcfVersion.h>
+#include <aws/evs/model/VcfVersionInfo.h>
 #include <aws/evs/model/Vlan.h>
 #include <aws/evs/model/VlanState.h>
 

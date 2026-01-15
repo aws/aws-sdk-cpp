@@ -69,6 +69,10 @@ TaskSearchSummary& TaskSearchSummary::operator=(JsonView jsonValue) {
     m_updatedBy = jsonValue.GetString("updatedBy");
     m_updatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("latestSessionActionId")) {
+    m_latestSessionActionId = jsonValue.GetString("latestSessionActionId");
+    m_latestSessionActionIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +129,10 @@ JsonValue TaskSearchSummary::Jsonize() const {
 
   if (m_updatedByHasBeenSet) {
     payload.WithString("updatedBy", m_updatedBy);
+  }
+
+  if (m_latestSessionActionIdHasBeenSet) {
+    payload.WithString("latestSessionActionId", m_latestSessionActionId);
   }
 
   return payload;

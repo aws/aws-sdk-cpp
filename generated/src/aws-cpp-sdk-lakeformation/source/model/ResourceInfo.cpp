@@ -42,6 +42,14 @@ ResourceInfo& ResourceInfo::operator=(JsonView jsonValue) {
     m_withPrivilegedAccess = jsonValue.GetBool("WithPrivilegedAccess");
     m_withPrivilegedAccessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VerificationStatus")) {
+    m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("VerificationStatus"));
+    m_verificationStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExpectedResourceOwnerAccount")) {
+    m_expectedResourceOwnerAccount = jsonValue.GetString("ExpectedResourceOwnerAccount");
+    m_expectedResourceOwnerAccountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue ResourceInfo::Jsonize() const {
 
   if (m_withPrivilegedAccessHasBeenSet) {
     payload.WithBool("WithPrivilegedAccess", m_withPrivilegedAccess);
+  }
+
+  if (m_verificationStatusHasBeenSet) {
+    payload.WithString("VerificationStatus", VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus));
+  }
+
+  if (m_expectedResourceOwnerAccountHasBeenSet) {
+    payload.WithString("ExpectedResourceOwnerAccount", m_expectedResourceOwnerAccount);
   }
 
   return payload;

@@ -17,6 +17,7 @@ namespace LakeFormationErrorMapper {
 
 static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int TRANSACTION_CANCELED_HASH = HashingUtils::HashString("TransactionCanceledException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
@@ -39,6 +40,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::OPERATION_TIMEOUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_NOT_READY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TRANSACTION_CANCELED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::TRANSACTION_CANCELED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {

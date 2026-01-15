@@ -10,6 +10,7 @@
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/EncryptionConfig.h>
 #include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/Tag.h>
 #include <aws/opensearchserverless/model/VectorOptions.h>
@@ -149,6 +150,42 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
+   * <p>The name of the collection group to associate with the collection.</p>
+   */
+  inline const Aws::String& GetCollectionGroupName() const { return m_collectionGroupName; }
+  inline bool CollectionGroupNameHasBeenSet() const { return m_collectionGroupNameHasBeenSet; }
+  template <typename CollectionGroupNameT = Aws::String>
+  void SetCollectionGroupName(CollectionGroupNameT&& value) {
+    m_collectionGroupNameHasBeenSet = true;
+    m_collectionGroupName = std::forward<CollectionGroupNameT>(value);
+  }
+  template <typename CollectionGroupNameT = Aws::String>
+  CreateCollectionRequest& WithCollectionGroupName(CollectionGroupNameT&& value) {
+    SetCollectionGroupName(std::forward<CollectionGroupNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Encryption settings for the collection.</p>
+   */
+  inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+  inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  void SetEncryptionConfig(EncryptionConfigT&& value) {
+    m_encryptionConfigHasBeenSet = true;
+    m_encryptionConfig = std::forward<EncryptionConfigT>(value);
+  }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  CreateCollectionRequest& WithEncryptionConfig(EncryptionConfigT&& value) {
+    SetEncryptionConfig(std::forward<EncryptionConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -177,6 +214,10 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
 
   VectorOptions m_vectorOptions;
 
+  Aws::String m_collectionGroupName;
+
+  EncryptionConfig m_encryptionConfig;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
@@ -184,6 +225,8 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
   bool m_tagsHasBeenSet = false;
   bool m_standbyReplicasHasBeenSet = false;
   bool m_vectorOptionsHasBeenSet = false;
+  bool m_collectionGroupNameHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

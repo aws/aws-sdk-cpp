@@ -23,7 +23,7 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>The details of a customer managed fleet configuration.</p><p><h3>See
+ * <p>The configuration details for a customer managed fleet.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CustomerManagedFleetConfiguration">AWS
  * API Reference</a></p>
@@ -37,7 +37,7 @@ class CustomerManagedFleetConfiguration {
 
   ///@{
   /**
-   * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
+   * <p>The Auto Scaling mode for the customer managed fleet.</p>
    */
   inline AutoScalingMode GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
@@ -53,7 +53,7 @@ class CustomerManagedFleetConfiguration {
 
   ///@{
   /**
-   * <p>The worker capabilities for a customer managed fleet configuration.</p>
+   * <p>The worker capabilities for the customer managed fleet.</p>
    */
   inline const CustomerManagedWorkerCapabilities& GetWorkerCapabilities() const { return m_workerCapabilities; }
   inline bool WorkerCapabilitiesHasBeenSet() const { return m_workerCapabilitiesHasBeenSet; }
@@ -71,7 +71,7 @@ class CustomerManagedFleetConfiguration {
 
   ///@{
   /**
-   * <p>The storage profile ID.</p>
+   * <p>The storage profile ID for the customer managed fleet.</p>
    */
   inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
   inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
@@ -89,13 +89,7 @@ class CustomerManagedFleetConfiguration {
 
   ///@{
   /**
-   * <p>Specifies whether tags associated with a fleet are attached to workers when
-   * the worker is launched. </p> <p>When the <code>tagPropagationMode</code> is set
-   * to <code>PROPAGATE_TAGS_TO_WORKERS_AT_LAUNCH</code> any tag associated with a
-   * fleet is attached to workers when they launch. If the tags for a fleet change,
-   * the tags associated with running workers <b>do not</b> change.</p> <p>If you
-   * don't specify <code>tagPropagationMode</code>, the default is
-   * <code>NO_PROPAGATION</code>.</p>
+   * <p>The tag propagation mode for the customer managed fleet.</p>
    */
   inline TagPropagationMode GetTagPropagationMode() const { return m_tagPropagationMode; }
   inline bool TagPropagationModeHasBeenSet() const { return m_tagPropagationModeHasBeenSet; }

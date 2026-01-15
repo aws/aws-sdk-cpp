@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
+#include <aws/lakeformation/model/VerificationStatus.h>
 
 #include <utility>
 
@@ -137,6 +138,47 @@ class ResourceInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the registered role has sufficient permissions to access
+   * registered Amazon S3 location. Verification Status can be one of the following:
+   * </p> <ul> <li> <p>VERIFIED - Registered role has sufficient permissions to
+   * access registered Amazon S3 location.</p> </li> <li> <p>NOT_VERIFIED -
+   * Registered role does not have sufficient permissions to access registered Amazon
+   * S3 location.</p> </li> <li> <p>VERIFICATION_FAILED - Unable to verify if the
+   * registered role can access the registered Amazon S3 location.</p> </li> </ul>
+   */
+  inline VerificationStatus GetVerificationStatus() const { return m_verificationStatus; }
+  inline bool VerificationStatusHasBeenSet() const { return m_verificationStatusHasBeenSet; }
+  inline void SetVerificationStatus(VerificationStatus value) {
+    m_verificationStatusHasBeenSet = true;
+    m_verificationStatus = value;
+  }
+  inline ResourceInfo& WithVerificationStatus(VerificationStatus value) {
+    SetVerificationStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account that owns the Glue tables associated with
+   * specific Amazon S3 locations. </p>
+   */
+  inline const Aws::String& GetExpectedResourceOwnerAccount() const { return m_expectedResourceOwnerAccount; }
+  inline bool ExpectedResourceOwnerAccountHasBeenSet() const { return m_expectedResourceOwnerAccountHasBeenSet; }
+  template <typename ExpectedResourceOwnerAccountT = Aws::String>
+  void SetExpectedResourceOwnerAccount(ExpectedResourceOwnerAccountT&& value) {
+    m_expectedResourceOwnerAccountHasBeenSet = true;
+    m_expectedResourceOwnerAccount = std::forward<ExpectedResourceOwnerAccountT>(value);
+  }
+  template <typename ExpectedResourceOwnerAccountT = Aws::String>
+  ResourceInfo& WithExpectedResourceOwnerAccount(ExpectedResourceOwnerAccountT&& value) {
+    SetExpectedResourceOwnerAccount(std::forward<ExpectedResourceOwnerAccountT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceArn;
 
@@ -149,12 +191,18 @@ class ResourceInfo {
   bool m_hybridAccessEnabled{false};
 
   bool m_withPrivilegedAccess{false};
+
+  VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
+
+  Aws::String m_expectedResourceOwnerAccount;
   bool m_resourceArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_withFederationHasBeenSet = false;
   bool m_hybridAccessEnabledHasBeenSet = false;
   bool m_withPrivilegedAccessHasBeenSet = false;
+  bool m_verificationStatusHasBeenSet = false;
+  bool m_expectedResourceOwnerAccountHasBeenSet = false;
 };
 
 }  // namespace Model

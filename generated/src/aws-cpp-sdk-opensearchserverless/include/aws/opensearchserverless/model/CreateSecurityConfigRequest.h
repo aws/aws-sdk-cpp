@@ -89,9 +89,8 @@ class CreateSecurityConfigRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
-   * <p>Describes SAML options in in the form of a key-value map. This field is
-   * required if you specify <code>SAML</code> for the <code>type</code>
-   * parameter.</p>
+   * <p>Describes SAML options in the form of a key-value map. This field is required
+   * if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
    */
   inline const SamlConfigOptions& GetSamlOptions() const { return m_samlOptions; }
   inline bool SamlOptionsHasBeenSet() const { return m_samlOptionsHasBeenSet; }
@@ -110,7 +109,8 @@ class CreateSecurityConfigRequest : public OpenSearchServerlessRequest {
   ///@{
   /**
    * <p>Describes IAM Identity Center options in the form of a key-value map. This
-   * field is required if you specify iamidentitycenter for the type parameter.</p>
+   * field is required if you specify <code>iamidentitycenter</code> for the
+   * <code>type</code> parameter.</p>
    */
   inline const CreateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const { return m_iamIdentityCenterOptions; }
   inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }

@@ -39,5 +39,9 @@ Aws::String RegisterResourceRequest::SerializePayload() const {
     payload.WithBool("WithPrivilegedAccess", m_withPrivilegedAccess);
   }
 
+  if (m_expectedResourceOwnerAccountHasBeenSet) {
+    payload.WithString("ExpectedResourceOwnerAccount", m_expectedResourceOwnerAccount);
+  }
+
   return payload.View().WriteReadable();
 }
