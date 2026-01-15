@@ -14,7 +14,6 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationTraitsGenerator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationClientHeaderGenerator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationCompilationTestGenerator;
-import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,22 +44,22 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                     // Generate client pagination header
                     featureParser.generateClientHeader(
                         serviceName + "ClientPagination.h",
-                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations()).render(writer)
+                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getC2jMap()).render(writer)
                     );
                     
                     // Generate pagination traits headers
-                    PaginationTraitsGenerator headerWriter = new PaginationTraitsGenerator(
+                    PaginationTraitsGenerator traitsGenerator = new PaginationTraitsGenerator(
                         featureParser.getContext(), 
                         featureParser.getService(), 
                         featureParser.getOperations(), 
                         featureParser.getC2jServiceName()
                     );
-                    headerWriter.write();
+                    traitsGenerator.write();
                 });
                 
-                // Generate header compilation test
-                PaginationCompilationTestGenerator headerGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps);
-                headerGenerator.run();
+                // Generate compilation test
+                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps, parser.getC2jMap());
+                testGenerator.run();
             }
         }
     }

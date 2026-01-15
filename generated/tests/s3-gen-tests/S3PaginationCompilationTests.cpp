@@ -8,12 +8,9 @@
 
 #include <aws/s3/S3ClientPagination.h>
 #include <aws/s3/model/pagination/ListBucketsPaginationTraits.h>
-#include <aws/s3/S3ClientPagination.h>
 #include <aws/s3/model/pagination/ListDirectoryBucketsPaginationTraits.h>
-#include <aws/s3/S3ClientPagination.h>
-#include <aws/s3/model/pagination/ListObjectsV2PaginationTraits.h>
-#include <aws/s3/S3ClientPagination.h>
 #include <aws/s3/model/pagination/ListPartsPaginationTraits.h>
+#include <aws/s3/model/pagination/ListObjectsV2PaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

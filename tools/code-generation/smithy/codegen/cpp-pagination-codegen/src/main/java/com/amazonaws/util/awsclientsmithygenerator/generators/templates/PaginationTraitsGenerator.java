@@ -5,13 +5,13 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
 
 import software.amazon.smithy.build.PluginContext;
-import software.amazon.smithy.codegen.core.SymbolProvider;
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import java.util.*;
 
 public class PaginationTraitsGenerator {
@@ -31,11 +31,7 @@ public class PaginationTraitsGenerator {
     }
 
     public void write() {
-        String serviceName = service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .replace(" ", "")
-            .replace("-", "");
+        String serviceName = ServiceNameUtil.getServiceName(service);
 
         for (OperationData<PaginatedTrait> data : paginatedOps) {
             String fileName = "include/aws/" + c2jServiceName + "/model/pagination/" + data.getOperation().getId().getName() + "PaginationTraits.h";
