@@ -4,8 +4,8 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
 
-import com.amazonaws.util.awsclientsmithygenerator.CppWriter;
-import com.amazonaws.util.awsclientsmithygenerator.generators.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import java.util.List;

@@ -2,15 +2,16 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-package com.amazonaws.util.awsclientsmithygenerator;
+package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import java.util.function.Consumer;
 
 public class CppWriter {
     private final StringBuilder content = new StringBuilder();
     
-    public void write(String text, Object... args) {
+    public CppWriter write(String text, Object... args) {
         content.append(String.format(text, args)).append("\n");
+        return this;
     }
     
     public void openBlock(String opener, String closer, Consumer<Void> block) {

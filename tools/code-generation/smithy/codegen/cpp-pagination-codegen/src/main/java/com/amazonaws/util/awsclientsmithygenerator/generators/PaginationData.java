@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-package com.amazonaws.util.awsclientsmithygenerator.generators;
+package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
 
 import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.model.traits.PaginatedTrait;

@@ -88,11 +88,24 @@ class PaginationGen(object):
                 
                 for item in os.listdir(source_dir):
                     source_item = os.path.join(source_dir, item)
+                    
+                    # Handle test directories separately - move to generated/tests
+                    if item == "generated" and os.path.isdir(source_item):
+                        generated_source = os.path.join(source_item, "tests")
+                        if os.path.exists(generated_source):
+                            test_target_dir = os.path.abspath("generated/tests")
+                            os.makedirs(test_target_dir, exist_ok=True)
+                            shutil.copytree(generated_source, test_target_dir, dirs_exist_ok=True)
+                            if self.debug:
+                                print(f"Copied tests from '{generated_source}' to '{test_target_dir}'")
+                        continue
+                    
                     target_item = os.path.join(service_target_dir, item)
                     if os.path.isdir(source_item):
                         shutil.copytree(source_item, target_item, dirs_exist_ok=True)
                     else:
                         shutil.copy2(source_item, target_item)
+                        
                 if self.debug:
                     print(f"Copied from '{source_dir}' to '{service_target_dir}'")
         
