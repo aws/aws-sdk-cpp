@@ -6,25 +6,28 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
 
 import software.amazon.smithy.model.shapes.*;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
+import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.*;
 
-public class HeaderCompilationTemplate {
+public class PaginationCompilationTestGenerator {
     private final List<ServiceShape> services;
-    private final List<PaginationData> allPaginatedOps;
+    private final List<OperationData<PaginatedTrait>> allPaginatedOps;
 
-    public HeaderCompilationTemplate(List<ServiceShape> services, List<PaginationData> allPaginatedOps) {
+    public PaginationCompilationTestGenerator(List<ServiceShape> services, List<OperationData<PaginatedTrait>> allPaginatedOps) {
         this.services = services;
         this.allPaginatedOps = allPaginatedOps;
     }
 
     public void render(CppWriter writer) {
+        String serviceName = getServiceName(services.get(0));
+        
         writer.write("/**")
               .write(" * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")
               .write(" * SPDX-License-Identifier: Apache-2.0.")
               .write(" */")
               .write("")
-              .write("// Header compilation test for ALL pagination headers")
+              .write("// Header compilation test for " + serviceName + " pagination headers")
               .write("// This test ensures all generated pagination headers compile successfully")
               .write("");
 
@@ -33,20 +36,22 @@ public class HeaderCompilationTemplate {
         
         writer.write("")
               .write("#include <aws/testing/AwsCppSdkGTestSuite.h>")
-              .write("")
-              .write("class AllPaginationHeadersCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite")
-              .write("{")
-              .write("};")
-              .write("")
-              .write("TEST_F(AllPaginationHeadersCompilationTest, AllPaginationHeadersCompile)")
-              .write("{")
-              .write("    // Test passes if compilation succeeds")
-              .write("    SUCCEED();")
-              .write("}");
+              .write("");
+        
+        writer.openBlock("class " + serviceName + "PaginationCompilationTest : public Aws::Testing::AwsCppSdkGTestSuite\n{", "};", () -> {
+            // Empty class body
+        });
+        
+        writer.write("");
+        
+        writer.openBlock("TEST_F(" + serviceName + "PaginationCompilationTest, " + serviceName + "PaginationHeadersCompile)\n{", "}", () -> {
+            writer.write("    // Test passes if compilation succeeds")
+                  .write("    SUCCEED();");
+        });
     }
 
     private void writeIncludes(CppWriter writer) {
-        for (PaginationData paginationData : allPaginatedOps) {
+        for (OperationData<PaginatedTrait> paginationData : allPaginatedOps) {
             ServiceShape service = paginationData.getService();
             String serviceName = getServiceName(service);
             

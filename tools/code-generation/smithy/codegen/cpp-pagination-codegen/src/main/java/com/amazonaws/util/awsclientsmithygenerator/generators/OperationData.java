@@ -2,17 +2,17 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
+package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.model.shapes.*;
-import software.amazon.smithy.model.traits.PaginatedTrait;
+import software.amazon.smithy.model.traits.Trait;
 
-public class PaginationData {
+public class OperationData<T extends Trait> {
     private final OperationShape operation;
-    private final PaginatedTrait trait;
+    private final T trait;
     private final ServiceShape service;
 
-    public PaginationData(OperationShape operation, PaginatedTrait trait, ServiceShape service) {
+    public OperationData(OperationShape operation, T trait, ServiceShape service) {
         this.operation = operation;
         this.trait = trait;
         this.service = service;
@@ -22,7 +22,7 @@ public class PaginationData {
         return operation;
     }
 
-    public PaginatedTrait getTrait() {
+    public T getTrait() {
         return trait;
     }
 

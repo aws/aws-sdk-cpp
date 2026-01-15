@@ -5,16 +5,17 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationData;
+import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
+import software.amazon.smithy.model.traits.PaginatedTrait;
 import java.util.List;
 
 public class PaginationClientTemplate {
     private final ServiceShape service;
-    private final List<PaginationData> paginatedOps;
+    private final List<OperationData<PaginatedTrait>> paginatedOps;
     
-    public PaginationClientTemplate(ServiceShape service, List<PaginationData> paginatedOps) {
+    public PaginationClientTemplate(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps) {
         this.service = service;
         this.paginatedOps = paginatedOps;
     }
@@ -38,7 +39,7 @@ public class PaginationClientTemplate {
         writer.writeInclude("aws/" + serviceName.toLowerCase() + "/" + serviceName + "Client.h");
         writer.writeInclude("aws/core/utils/pagination/Paginator.h");
         
-        for (PaginationData data : paginatedOps) {
+        for (OperationData<PaginatedTrait> data : paginatedOps) {
             String opName = data.getOperation().getId().getName();
             writer.writeInclude("aws/" + serviceName.toLowerCase() + "/model/pagination/" + opName + "PaginationTraits.h");
         }
@@ -50,9 +51,9 @@ public class PaginationClientTemplate {
         writer.writeNamespaceOpen(serviceName);
         writer.write("");
         
-        for (PaginationData data : paginatedOps) {
+        for (OperationData<PaginatedTrait> data : paginatedOps) {
             String opName = data.getOperation().getId().getName();
-            writer.write("using %sPaginator = Aws::Utils::Pagination::PagePaginator<%sClient, Model::%sRequest, Pagination::%sPaginationTraits>;",
+            writer.write("using $LPaginator = Aws::Utils::Pagination::PagePaginator<$LClient, Model::$LRequest, Pagination::$LPaginationTraits>;",
                 opName, serviceName, opName, opName);
         }
         
