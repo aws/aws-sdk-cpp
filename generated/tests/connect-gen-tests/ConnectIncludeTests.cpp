@@ -528,6 +528,12 @@
 #include <aws/connect/model/EvaluationQuestionAnswerAnalysisDetails.h>
 #include <aws/connect/model/EvaluationQuestionAnswerAnalysisType.h>
 #include <aws/connect/model/EvaluationQuestionInputDetails.h>
+#include <aws/connect/model/EvaluationReviewConfiguration.h>
+#include <aws/connect/model/EvaluationReviewMetadata.h>
+#include <aws/connect/model/EvaluationReviewNotificationRecipient.h>
+#include <aws/connect/model/EvaluationReviewNotificationRecipientType.h>
+#include <aws/connect/model/EvaluationReviewNotificationRecipientValue.h>
+#include <aws/connect/model/EvaluationReviewRequestComment.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/connect/model/EvaluationSearchCriteria.h>
 #include <aws/connect/model/EvaluationSearchFilter.h>

@@ -37,6 +37,24 @@ class WorkloadDeploymentPatternData {
 
   ///@{
   /**
+   * <p>The workload name of the deployment pattern.</p>
+   */
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
+  }
+  template <typename WorkloadNameT = Aws::String>
+  WorkloadDeploymentPatternData& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the deployment pattern.</p>
    */
   inline const Aws::String& GetDeploymentPatternName() const { return m_deploymentPatternName; }
@@ -55,18 +73,36 @@ class WorkloadDeploymentPatternData {
 
   ///@{
   /**
-   * <p>The description of the deployment pattern.</p>
+   * <p>The workload version name of the deployment pattern.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::String& GetWorkloadVersionName() const { return m_workloadVersionName; }
+  inline bool WorkloadVersionNameHasBeenSet() const { return m_workloadVersionNameHasBeenSet; }
+  template <typename WorkloadVersionNameT = Aws::String>
+  void SetWorkloadVersionName(WorkloadVersionNameT&& value) {
+    m_workloadVersionNameHasBeenSet = true;
+    m_workloadVersionName = std::forward<WorkloadVersionNameT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  WorkloadDeploymentPatternData& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename WorkloadVersionNameT = Aws::String>
+  WorkloadDeploymentPatternData& WithWorkloadVersionName(WorkloadVersionNameT&& value) {
+    SetWorkloadVersionName(std::forward<WorkloadVersionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version name of the deployment pattern.</p>
+   */
+  inline const Aws::String& GetDeploymentPatternVersionName() const { return m_deploymentPatternVersionName; }
+  inline bool DeploymentPatternVersionNameHasBeenSet() const { return m_deploymentPatternVersionNameHasBeenSet; }
+  template <typename DeploymentPatternVersionNameT = Aws::String>
+  void SetDeploymentPatternVersionName(DeploymentPatternVersionNameT&& value) {
+    m_deploymentPatternVersionNameHasBeenSet = true;
+    m_deploymentPatternVersionName = std::forward<DeploymentPatternVersionNameT>(value);
+  }
+  template <typename DeploymentPatternVersionNameT = Aws::String>
+  WorkloadDeploymentPatternData& WithDeploymentPatternVersionName(DeploymentPatternVersionNameT&& value) {
+    SetDeploymentPatternVersionName(std::forward<DeploymentPatternVersionNameT>(value));
     return *this;
   }
   ///@}
@@ -91,32 +127,18 @@ class WorkloadDeploymentPatternData {
 
   ///@{
   /**
-   * <p>The settings specified for the deployment. These settings define how to
-   * deploy and configure your resources created by the deployment. For more
-   * information about the specifications required for creating a deployment for a
-   * SAP workload, see <a
-   * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
-   * deployment specifications</a>. To retrieve the specifications required to create
-   * a deployment for other workloads, use the <a
-   * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
-   * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
+   * <p>The description of the deployment pattern.</p>
    */
-  inline const Aws::Vector<DeploymentSpecificationsField>& GetSpecifications() const { return m_specifications; }
-  inline bool SpecificationsHasBeenSet() const { return m_specificationsHasBeenSet; }
-  template <typename SpecificationsT = Aws::Vector<DeploymentSpecificationsField>>
-  void SetSpecifications(SpecificationsT&& value) {
-    m_specificationsHasBeenSet = true;
-    m_specifications = std::forward<SpecificationsT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename SpecificationsT = Aws::Vector<DeploymentSpecificationsField>>
-  WorkloadDeploymentPatternData& WithSpecifications(SpecificationsT&& value) {
-    SetSpecifications(std::forward<SpecificationsT>(value));
-    return *this;
-  }
-  template <typename SpecificationsT = DeploymentSpecificationsField>
-  WorkloadDeploymentPatternData& AddSpecifications(SpecificationsT&& value) {
-    m_specificationsHasBeenSet = true;
-    m_specifications.emplace_back(std::forward<SpecificationsT>(value));
+  template <typename DescriptionT = Aws::String>
+  WorkloadDeploymentPatternData& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -157,63 +179,62 @@ class WorkloadDeploymentPatternData {
 
   ///@{
   /**
-   * <p>The workload name of the deployment pattern.</p>
+   * <p>The settings specified for the deployment. These settings define how to
+   * deploy and configure your resources created by the deployment. For more
+   * information about the specifications required for creating a deployment for a
+   * SAP workload, see <a
+   * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP
+   * deployment specifications</a>. To retrieve the specifications required to create
+   * a deployment for other workloads, use the <a
+   * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html">
+   * <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
    */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
+  inline const Aws::Vector<DeploymentSpecificationsField>& GetSpecifications() const { return m_specifications; }
+  inline bool SpecificationsHasBeenSet() const { return m_specificationsHasBeenSet; }
+  template <typename SpecificationsT = Aws::Vector<DeploymentSpecificationsField>>
+  void SetSpecifications(SpecificationsT&& value) {
+    m_specificationsHasBeenSet = true;
+    m_specifications = std::forward<SpecificationsT>(value);
   }
-  template <typename WorkloadNameT = Aws::String>
-  WorkloadDeploymentPatternData& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
+  template <typename SpecificationsT = Aws::Vector<DeploymentSpecificationsField>>
+  WorkloadDeploymentPatternData& WithSpecifications(SpecificationsT&& value) {
+    SetSpecifications(std::forward<SpecificationsT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The workload version name of the deployment pattern.</p>
-   */
-  inline const Aws::String& GetWorkloadVersionName() const { return m_workloadVersionName; }
-  inline bool WorkloadVersionNameHasBeenSet() const { return m_workloadVersionNameHasBeenSet; }
-  template <typename WorkloadVersionNameT = Aws::String>
-  void SetWorkloadVersionName(WorkloadVersionNameT&& value) {
-    m_workloadVersionNameHasBeenSet = true;
-    m_workloadVersionName = std::forward<WorkloadVersionNameT>(value);
-  }
-  template <typename WorkloadVersionNameT = Aws::String>
-  WorkloadDeploymentPatternData& WithWorkloadVersionName(WorkloadVersionNameT&& value) {
-    SetWorkloadVersionName(std::forward<WorkloadVersionNameT>(value));
+  template <typename SpecificationsT = DeploymentSpecificationsField>
+  WorkloadDeploymentPatternData& AddSpecifications(SpecificationsT&& value) {
+    m_specificationsHasBeenSet = true;
+    m_specifications.emplace_back(std::forward<SpecificationsT>(value));
     return *this;
   }
   ///@}
  private:
+  Aws::String m_workloadName;
+
   Aws::String m_deploymentPatternName;
 
-  Aws::String m_description;
+  Aws::String m_workloadVersionName;
+
+  Aws::String m_deploymentPatternVersionName;
 
   Aws::String m_displayName;
 
-  Aws::Vector<DeploymentSpecificationsField> m_specifications;
+  Aws::String m_description;
 
   WorkloadDeploymentPatternStatus m_status{WorkloadDeploymentPatternStatus::NOT_SET};
 
   Aws::String m_statusMessage;
 
-  Aws::String m_workloadName;
-
-  Aws::String m_workloadVersionName;
+  Aws::Vector<DeploymentSpecificationsField> m_specifications;
+  bool m_workloadNameHasBeenSet = false;
   bool m_deploymentPatternNameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  bool m_workloadVersionNameHasBeenSet = false;
+  bool m_deploymentPatternVersionNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
-  bool m_specificationsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
-  bool m_workloadNameHasBeenSet = false;
-  bool m_workloadVersionNameHasBeenSet = false;
+  bool m_specificationsHasBeenSet = false;
 };
 
 }  // namespace Model

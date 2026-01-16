@@ -34,6 +34,24 @@ class WorkloadDeploymentPatternDataSummary {
 
   ///@{
   /**
+   * <p>The name of the workload.</p>
+   */
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
+  }
+  template <typename WorkloadNameT = Aws::String>
+  WorkloadDeploymentPatternDataSummary& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of a workload deployment pattern.</p>
    */
   inline const Aws::String& GetDeploymentPatternName() const { return m_deploymentPatternName; }
@@ -52,18 +70,36 @@ class WorkloadDeploymentPatternDataSummary {
 
   ///@{
   /**
-   * <p>The description of a workload deployment pattern.</p>
+   * <p>The name of the workload deployment pattern version.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::String& GetWorkloadVersionName() const { return m_workloadVersionName; }
+  inline bool WorkloadVersionNameHasBeenSet() const { return m_workloadVersionNameHasBeenSet; }
+  template <typename WorkloadVersionNameT = Aws::String>
+  void SetWorkloadVersionName(WorkloadVersionNameT&& value) {
+    m_workloadVersionNameHasBeenSet = true;
+    m_workloadVersionName = std::forward<WorkloadVersionNameT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  WorkloadDeploymentPatternDataSummary& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename WorkloadVersionNameT = Aws::String>
+  WorkloadDeploymentPatternDataSummary& WithWorkloadVersionName(WorkloadVersionNameT&& value) {
+    SetWorkloadVersionName(std::forward<WorkloadVersionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version name of a workload deployment pattern.</p>
+   */
+  inline const Aws::String& GetDeploymentPatternVersionName() const { return m_deploymentPatternVersionName; }
+  inline bool DeploymentPatternVersionNameHasBeenSet() const { return m_deploymentPatternVersionNameHasBeenSet; }
+  template <typename DeploymentPatternVersionNameT = Aws::String>
+  void SetDeploymentPatternVersionName(DeploymentPatternVersionNameT&& value) {
+    m_deploymentPatternVersionNameHasBeenSet = true;
+    m_deploymentPatternVersionName = std::forward<DeploymentPatternVersionNameT>(value);
+  }
+  template <typename DeploymentPatternVersionNameT = Aws::String>
+  WorkloadDeploymentPatternDataSummary& WithDeploymentPatternVersionName(DeploymentPatternVersionNameT&& value) {
+    SetDeploymentPatternVersionName(std::forward<DeploymentPatternVersionNameT>(value));
     return *this;
   }
   ///@}
@@ -82,6 +118,24 @@ class WorkloadDeploymentPatternDataSummary {
   template <typename DisplayNameT = Aws::String>
   WorkloadDeploymentPatternDataSummary& WithDisplayName(DisplayNameT&& value) {
     SetDisplayName(std::forward<DisplayNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of a workload deployment pattern.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  WorkloadDeploymentPatternDataSummary& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -119,63 +173,30 @@ class WorkloadDeploymentPatternDataSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the workload.</p>
-   */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
-  }
-  template <typename WorkloadNameT = Aws::String>
-  WorkloadDeploymentPatternDataSummary& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the workload deployment pattern version.</p>
-   */
-  inline const Aws::String& GetWorkloadVersionName() const { return m_workloadVersionName; }
-  inline bool WorkloadVersionNameHasBeenSet() const { return m_workloadVersionNameHasBeenSet; }
-  template <typename WorkloadVersionNameT = Aws::String>
-  void SetWorkloadVersionName(WorkloadVersionNameT&& value) {
-    m_workloadVersionNameHasBeenSet = true;
-    m_workloadVersionName = std::forward<WorkloadVersionNameT>(value);
-  }
-  template <typename WorkloadVersionNameT = Aws::String>
-  WorkloadDeploymentPatternDataSummary& WithWorkloadVersionName(WorkloadVersionNameT&& value) {
-    SetWorkloadVersionName(std::forward<WorkloadVersionNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_workloadName;
+
   Aws::String m_deploymentPatternName;
 
-  Aws::String m_description;
+  Aws::String m_workloadVersionName;
+
+  Aws::String m_deploymentPatternVersionName;
 
   Aws::String m_displayName;
+
+  Aws::String m_description;
 
   WorkloadDeploymentPatternStatus m_status{WorkloadDeploymentPatternStatus::NOT_SET};
 
   Aws::String m_statusMessage;
-
-  Aws::String m_workloadName;
-
-  Aws::String m_workloadVersionName;
+  bool m_workloadNameHasBeenSet = false;
   bool m_deploymentPatternNameHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+  bool m_workloadVersionNameHasBeenSet = false;
+  bool m_deploymentPatternVersionNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
-  bool m_workloadNameHasBeenSet = false;
-  bool m_workloadVersionNameHasBeenSet = false;
 };
 
 }  // namespace Model

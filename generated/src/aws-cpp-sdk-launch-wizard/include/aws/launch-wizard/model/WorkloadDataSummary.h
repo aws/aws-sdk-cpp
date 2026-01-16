@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
+#include <aws/launch-wizard/model/WorkloadStatus.h>
 
 #include <utility>
 
@@ -33,6 +34,24 @@ class WorkloadDataSummary {
 
   ///@{
   /**
+   * <p>The name of the workload.</p>
+   */
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
+  }
+  template <typename WorkloadNameT = Aws::String>
+  WorkloadDataSummary& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The display name of the workload data.</p>
    */
   inline const Aws::String& GetDisplayName() const { return m_displayName; }
@@ -51,27 +70,28 @@ class WorkloadDataSummary {
 
   ///@{
   /**
-   * <p>The name of the workload.</p>
+   * <p>The status of the workload.</p>
    */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
+  inline WorkloadStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(WorkloadStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename WorkloadNameT = Aws::String>
-  WorkloadDataSummary& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
+  inline WorkloadDataSummary& WithStatus(WorkloadStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
  private:
+  Aws::String m_workloadName;
+
   Aws::String m_displayName;
 
-  Aws::String m_workloadName;
-  bool m_displayNameHasBeenSet = false;
+  WorkloadStatus m_status{WorkloadStatus::NOT_SET};
   bool m_workloadNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

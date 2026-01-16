@@ -31,24 +31,6 @@ class ListWorkloadDeploymentPatternsResult {
 
   ///@{
   /**
-   * <p>The token to include in another request to get the next page of items. This
-   * value is <code>null</code> when there are no more items to return.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListWorkloadDeploymentPatternsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Describes the workload deployment patterns.</p>
    */
   inline const Aws::Vector<WorkloadDeploymentPatternDataSummary>& GetWorkloadDeploymentPatterns() const {
@@ -73,6 +55,24 @@ class ListWorkloadDeploymentPatternsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to include in another request to get the next page of items. This
+   * value is <code>null</code> when there are no more items to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListWorkloadDeploymentPatternsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -87,13 +87,13 @@ class ListWorkloadDeploymentPatternsResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<WorkloadDeploymentPatternDataSummary> m_workloadDeploymentPatterns;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
   bool m_workloadDeploymentPatternsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

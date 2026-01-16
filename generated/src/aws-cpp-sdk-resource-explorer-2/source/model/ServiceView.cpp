@@ -22,6 +22,10 @@ ServiceView& ServiceView::operator=(JsonView jsonValue) {
     m_serviceViewArn = jsonValue.GetString("ServiceViewArn");
     m_serviceViewArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServiceViewName")) {
+    m_serviceViewName = jsonValue.GetString("ServiceViewName");
+    m_serviceViewNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Filters")) {
     m_filters = jsonValue.GetObject("Filters");
     m_filtersHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue ServiceView::Jsonize() const {
 
   if (m_serviceViewArnHasBeenSet) {
     payload.WithString("ServiceViewArn", m_serviceViewArn);
+  }
+
+  if (m_serviceViewNameHasBeenSet) {
+    payload.WithString("ServiceViewName", m_serviceViewName);
   }
 
   if (m_filtersHasBeenSet) {

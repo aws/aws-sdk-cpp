@@ -10,6 +10,7 @@
 #include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/connect/model/EvaluationFormTargetConfiguration.h>
+#include <aws/connect/model/EvaluationReviewConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -223,6 +224,25 @@ class EvaluationFormContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for evaluation review settings of this evaluation form
+   * content.</p>
+   */
+  inline const EvaluationReviewConfiguration& GetReviewConfiguration() const { return m_reviewConfiguration; }
+  inline bool ReviewConfigurationHasBeenSet() const { return m_reviewConfigurationHasBeenSet; }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  void SetReviewConfiguration(ReviewConfigurationT&& value) {
+    m_reviewConfigurationHasBeenSet = true;
+    m_reviewConfiguration = std::forward<ReviewConfigurationT>(value);
+  }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  EvaluationFormContent& WithReviewConfiguration(ReviewConfigurationT&& value) {
+    SetReviewConfiguration(std::forward<ReviewConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_evaluationFormVersion{0};
 
@@ -243,6 +263,8 @@ class EvaluationFormContent {
   EvaluationFormTargetConfiguration m_targetConfiguration;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
+
+  EvaluationReviewConfiguration m_reviewConfiguration;
   bool m_evaluationFormVersionHasBeenSet = false;
   bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormArnHasBeenSet = false;
@@ -253,6 +275,7 @@ class EvaluationFormContent {
   bool m_autoEvaluationConfigurationHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
+  bool m_reviewConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

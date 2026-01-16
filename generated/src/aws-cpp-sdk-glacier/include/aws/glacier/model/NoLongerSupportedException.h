@@ -19,6 +19,14 @@ class JsonView;
 namespace Glacier {
 namespace Model {
 
+/**
+ * <p>Returned if the request was made by a customer with no Amazon Glacier
+ * storage. The request is denied as the API is no longer supported for new
+ * customers. Please use Amazon S3 Glacier storage classes instead.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/NoLongerSupportedException">AWS
+ * API Reference</a></p>
+ */
 class NoLongerSupportedException {
  public:
   AWS_GLACIER_API NoLongerSupportedException() = default;
@@ -27,7 +35,9 @@ class NoLongerSupportedException {
   AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p>Client</p>
+   */
   inline const Aws::String& GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
   template <typename TypeT = Aws::String>
@@ -43,7 +53,9 @@ class NoLongerSupportedException {
   ///@}
 
   ///@{
-
+  /**
+   * <p>400 Bad Request</p>
+   */
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
   template <typename CodeT = Aws::String>
@@ -59,7 +71,10 @@ class NoLongerSupportedException {
   ///@}
 
   ///@{
-
+  /**
+   * <p>This API is no longer supported for new accounts. Please use Amazon S3
+   * Glacier storage classes instead.</p>
+   */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>

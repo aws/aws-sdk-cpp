@@ -30,24 +30,6 @@ class GetWorkloadDeploymentPatternRequest : public LaunchWizardRequest {
 
   ///@{
   /**
-   * <p>The name of the deployment pattern.</p>
-   */
-  inline const Aws::String& GetDeploymentPatternName() const { return m_deploymentPatternName; }
-  inline bool DeploymentPatternNameHasBeenSet() const { return m_deploymentPatternNameHasBeenSet; }
-  template <typename DeploymentPatternNameT = Aws::String>
-  void SetDeploymentPatternName(DeploymentPatternNameT&& value) {
-    m_deploymentPatternNameHasBeenSet = true;
-    m_deploymentPatternName = std::forward<DeploymentPatternNameT>(value);
-  }
-  template <typename DeploymentPatternNameT = Aws::String>
-  GetWorkloadDeploymentPatternRequest& WithDeploymentPatternName(DeploymentPatternNameT&& value) {
-    SetDeploymentPatternName(std::forward<DeploymentPatternNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the workload.</p>
    */
   inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
@@ -63,12 +45,30 @@ class GetWorkloadDeploymentPatternRequest : public LaunchWizardRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_deploymentPatternName;
 
+  ///@{
+  /**
+   * <p>The name of the deployment pattern.</p>
+   */
+  inline const Aws::String& GetDeploymentPatternName() const { return m_deploymentPatternName; }
+  inline bool DeploymentPatternNameHasBeenSet() const { return m_deploymentPatternNameHasBeenSet; }
+  template <typename DeploymentPatternNameT = Aws::String>
+  void SetDeploymentPatternName(DeploymentPatternNameT&& value) {
+    m_deploymentPatternNameHasBeenSet = true;
+    m_deploymentPatternName = std::forward<DeploymentPatternNameT>(value);
+  }
+  template <typename DeploymentPatternNameT = Aws::String>
+  GetWorkloadDeploymentPatternRequest& WithDeploymentPatternName(DeploymentPatternNameT&& value) {
+    SetDeploymentPatternName(std::forward<DeploymentPatternNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_workloadName;
-  bool m_deploymentPatternNameHasBeenSet = false;
+
+  Aws::String m_deploymentPatternName;
   bool m_workloadNameHasBeenSet = false;
+  bool m_deploymentPatternNameHasBeenSet = false;
 };
 
 }  // namespace Model

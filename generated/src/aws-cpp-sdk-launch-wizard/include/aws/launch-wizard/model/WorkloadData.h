@@ -34,18 +34,18 @@ class WorkloadData {
 
   ///@{
   /**
-   * <p>The description of a workload.</p>
+   * <p>The name of the workload.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
   }
-  template <typename DescriptionT = Aws::String>
-  WorkloadData& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename WorkloadNameT = Aws::String>
+  WorkloadData& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
     return *this;
   }
   ///@}
@@ -64,6 +64,41 @@ class WorkloadData {
   template <typename DisplayNameT = Aws::String>
   WorkloadData& WithDisplayName(DisplayNameT&& value) {
     SetDisplayName(std::forward<DisplayNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of a workload.</p> <p> <i>You can list deployments in the
+   * <code>DISABLED</code> status.</i> </p>
+   */
+  inline WorkloadStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(WorkloadStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline WorkloadData& WithStatus(WorkloadStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of a workload.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  WorkloadData& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -106,22 +141,6 @@ class WorkloadData {
 
   ///@{
   /**
-   * <p>The status of a workload.</p>
-   */
-  inline WorkloadStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(WorkloadStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline WorkloadData& WithStatus(WorkloadStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The message about a workload's status.</p>
    */
   inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
@@ -137,45 +156,27 @@ class WorkloadData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the workload.</p>
-   */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
-  }
-  template <typename WorkloadNameT = Aws::String>
-  WorkloadData& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_description;
+  Aws::String m_workloadName;
 
   Aws::String m_displayName;
+
+  WorkloadStatus m_status{WorkloadStatus::NOT_SET};
+
+  Aws::String m_description;
 
   Aws::String m_documentationUrl;
 
   Aws::String m_iconUrl;
 
-  WorkloadStatus m_status{WorkloadStatus::NOT_SET};
-
   Aws::String m_statusMessage;
-
-  Aws::String m_workloadName;
-  bool m_descriptionHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_documentationUrlHasBeenSet = false;
   bool m_iconUrlHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
-  bool m_workloadNameHasBeenSet = false;
 };
 
 }  // namespace Model

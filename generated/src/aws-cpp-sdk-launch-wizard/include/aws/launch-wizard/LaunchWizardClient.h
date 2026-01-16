@@ -157,6 +157,36 @@ class AWS_LAUNCHWIZARD_API LaunchWizardClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Returns information about a deployment pattern version.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetDeploymentPatternVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDeploymentPatternVersionOutcome GetDeploymentPatternVersion(
+      const Model::GetDeploymentPatternVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDeploymentPatternVersion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetDeploymentPatternVersionRequestT = Model::GetDeploymentPatternVersionRequest>
+  Model::GetDeploymentPatternVersionOutcomeCallable GetDeploymentPatternVersionCallable(
+      const GetDeploymentPatternVersionRequestT& request) const {
+    return SubmitCallable(&LaunchWizardClient::GetDeploymentPatternVersion, request);
+  }
+
+  /**
+   * An Async wrapper for GetDeploymentPatternVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDeploymentPatternVersionRequestT = Model::GetDeploymentPatternVersionRequest>
+  void GetDeploymentPatternVersionAsync(const GetDeploymentPatternVersionRequestT& request,
+                                        const GetDeploymentPatternVersionResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LaunchWizardClient::GetDeploymentPatternVersion, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about a workload.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkload">AWS
    * API Reference</a></p>
@@ -240,6 +270,35 @@ class AWS_LAUNCHWIZARD_API LaunchWizardClient : public Aws::Client::AWSJsonClien
   void ListDeploymentEventsAsync(const ListDeploymentEventsRequestT& request, const ListDeploymentEventsResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LaunchWizardClient::ListDeploymentEvents, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the deployment pattern versions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListDeploymentPatternVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDeploymentPatternVersionsOutcome ListDeploymentPatternVersions(
+      const Model::ListDeploymentPatternVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDeploymentPatternVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListDeploymentPatternVersionsRequestT = Model::ListDeploymentPatternVersionsRequest>
+  Model::ListDeploymentPatternVersionsOutcomeCallable ListDeploymentPatternVersionsCallable(
+      const ListDeploymentPatternVersionsRequestT& request) const {
+    return SubmitCallable(&LaunchWizardClient::ListDeploymentPatternVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListDeploymentPatternVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDeploymentPatternVersionsRequestT = Model::ListDeploymentPatternVersionsRequest>
+  void ListDeploymentPatternVersionsAsync(const ListDeploymentPatternVersionsRequestT& request,
+                                          const ListDeploymentPatternVersionsResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LaunchWizardClient::ListDeploymentPatternVersions, request, handler, context);
   }
 
   /**
@@ -406,6 +465,32 @@ class AWS_LAUNCHWIZARD_API LaunchWizardClient : public Aws::Client::AWSJsonClien
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LaunchWizardClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a deployment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UpdateDeployment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDeploymentOutcome UpdateDeployment(const Model::UpdateDeploymentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDeployment that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDeploymentRequestT = Model::UpdateDeploymentRequest>
+  Model::UpdateDeploymentOutcomeCallable UpdateDeploymentCallable(const UpdateDeploymentRequestT& request) const {
+    return SubmitCallable(&LaunchWizardClient::UpdateDeployment, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDeployment that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateDeploymentRequestT = Model::UpdateDeploymentRequest>
+  void UpdateDeploymentAsync(const UpdateDeploymentRequestT& request, const UpdateDeploymentResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LaunchWizardClient::UpdateDeployment, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

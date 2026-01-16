@@ -30,24 +30,6 @@ class ListWorkloadsResult {
 
   ///@{
   /**
-   * <p>The token to include in another request to get the next page of items. This
-   * value is <code>null</code> when there are no more items to return.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListWorkloadsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Information about the workloads.</p>
    */
   inline const Aws::Vector<WorkloadDataSummary>& GetWorkloads() const { return m_workloads; }
@@ -70,6 +52,24 @@ class ListWorkloadsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to include in another request to get the next page of items. This
+   * value is <code>null</code> when there are no more items to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListWorkloadsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -84,13 +84,13 @@ class ListWorkloadsResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<WorkloadDataSummary> m_workloads;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
   bool m_workloadsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

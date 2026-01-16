@@ -18,17 +18,17 @@ namespace Model {
 DeploymentDataSummary::DeploymentDataSummary(JsonView jsonValue) { *this = jsonValue; }
 
 DeploymentDataSummary& DeploymentDataSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("workloadName")) {
+    m_workloadName = jsonValue.GetString("workloadName");
+    m_workloadNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("patternName")) {
     m_patternName = jsonValue.GetString("patternName");
@@ -38,9 +38,13 @@ DeploymentDataSummary& DeploymentDataSummary::operator=(JsonView jsonValue) {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("workloadName")) {
-    m_workloadName = jsonValue.GetString("workloadName");
-    m_workloadNameHasBeenSet = true;
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("modifiedAt")) {
+    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
+    m_modifiedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -48,16 +52,16 @@ DeploymentDataSummary& DeploymentDataSummary::operator=(JsonView jsonValue) {
 JsonValue DeploymentDataSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
   }
 
   if (m_patternNameHasBeenSet) {
@@ -68,8 +72,12 @@ JsonValue DeploymentDataSummary::Jsonize() const {
     payload.WithString("status", DeploymentStatusMapper::GetNameForDeploymentStatus(m_status));
   }
 
-  if (m_workloadNameHasBeenSet) {
-    payload.WithString("workloadName", m_workloadName);
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if (m_modifiedAtHasBeenSet) {
+    payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
   return payload;

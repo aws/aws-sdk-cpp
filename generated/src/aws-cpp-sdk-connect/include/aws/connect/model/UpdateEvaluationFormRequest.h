@@ -11,6 +11,7 @@
 #include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/connect/model/EvaluationFormTargetConfiguration.h>
+#include <aws/connect/model/EvaluationReviewConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -205,6 +206,24 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>Configuration for evaluation review settings of the evaluation form.</p>
+   */
+  inline const EvaluationReviewConfiguration& GetReviewConfiguration() const { return m_reviewConfiguration; }
+  inline bool ReviewConfigurationHasBeenSet() const { return m_reviewConfigurationHasBeenSet; }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  void SetReviewConfiguration(ReviewConfigurationT&& value) {
+    m_reviewConfigurationHasBeenSet = true;
+    m_reviewConfiguration = std::forward<ReviewConfigurationT>(value);
+  }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  UpdateEvaluationFormRequest& WithReviewConfiguration(ReviewConfigurationT&& value) {
+    SetReviewConfiguration(std::forward<ReviewConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A boolean flag indicating whether to update evaluation form to draft
    * state.</p>
    */
@@ -296,6 +315,8 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
 
   EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
 
+  EvaluationReviewConfiguration m_reviewConfiguration;
+
   bool m_asDraft{false};
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -312,6 +333,7 @@ class UpdateEvaluationFormRequest : public ConnectRequest {
   bool m_itemsHasBeenSet = false;
   bool m_scoringStrategyHasBeenSet = false;
   bool m_autoEvaluationConfigurationHasBeenSet = false;
+  bool m_reviewConfigurationHasBeenSet = false;
   bool m_asDraftHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_targetConfigurationHasBeenSet = false;

@@ -18,10 +18,6 @@ namespace Model {
 DeploymentConditionalField::DeploymentConditionalField(JsonView jsonValue) { *this = jsonValue; }
 
 DeploymentConditionalField& DeploymentConditionalField::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("comparator")) {
-    m_comparator = jsonValue.GetString("comparator");
-    m_comparatorHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -30,15 +26,15 @@ DeploymentConditionalField& DeploymentConditionalField::operator=(JsonView jsonV
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("comparator")) {
+    m_comparator = jsonValue.GetString("comparator");
+    m_comparatorHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue DeploymentConditionalField::Jsonize() const {
   JsonValue payload;
-
-  if (m_comparatorHasBeenSet) {
-    payload.WithString("comparator", m_comparator);
-  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
@@ -46,6 +42,10 @@ JsonValue DeploymentConditionalField::Jsonize() const {
 
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_comparatorHasBeenSet) {
+    payload.WithString("comparator", m_comparator);
   }
 
   return payload;

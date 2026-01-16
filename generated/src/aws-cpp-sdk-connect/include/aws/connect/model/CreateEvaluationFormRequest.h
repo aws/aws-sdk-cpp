@@ -11,6 +11,7 @@
 #include <aws/connect/model/EvaluationFormLanguageConfiguration.h>
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/connect/model/EvaluationFormTargetConfiguration.h>
+#include <aws/connect/model/EvaluationReviewConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -220,6 +221,24 @@ class CreateEvaluationFormRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>Configuration information about evaluation reviews.</p>
+   */
+  inline const EvaluationReviewConfiguration& GetReviewConfiguration() const { return m_reviewConfiguration; }
+  inline bool ReviewConfigurationHasBeenSet() const { return m_reviewConfigurationHasBeenSet; }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  void SetReviewConfiguration(ReviewConfigurationT&& value) {
+    m_reviewConfigurationHasBeenSet = true;
+    m_reviewConfiguration = std::forward<ReviewConfigurationT>(value);
+  }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  CreateEvaluationFormRequest& WithReviewConfiguration(ReviewConfigurationT&& value) {
+    SetReviewConfiguration(std::forward<ReviewConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Configuration that specifies the target for the evaluation form.</p>
    */
   inline const EvaluationFormTargetConfiguration& GetTargetConfiguration() const { return m_targetConfiguration; }
@@ -272,6 +291,8 @@ class CreateEvaluationFormRequest : public ConnectRequest {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  EvaluationReviewConfiguration m_reviewConfiguration;
+
   EvaluationFormTargetConfiguration m_targetConfiguration;
 
   EvaluationFormLanguageConfiguration m_languageConfiguration;
@@ -284,6 +305,7 @@ class CreateEvaluationFormRequest : public ConnectRequest {
   bool m_clientTokenHasBeenSet = true;
   bool m_asDraftHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_reviewConfigurationHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;
 };

@@ -8,6 +8,7 @@
 #include <aws/connect/model/AutoEvaluationDetails.h>
 #include <aws/connect/model/EvaluationAcknowledgement.h>
 #include <aws/connect/model/EvaluationContactParticipant.h>
+#include <aws/connect/model/EvaluationReviewMetadata.h>
 #include <aws/connect/model/EvaluationScore.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -165,6 +166,24 @@ class EvaluationMetadata {
 
   ///@{
   /**
+   * <p>Information about reviews of this evaluation.</p>
+   */
+  inline const EvaluationReviewMetadata& GetReview() const { return m_review; }
+  inline bool ReviewHasBeenSet() const { return m_reviewHasBeenSet; }
+  template <typename ReviewT = EvaluationReviewMetadata>
+  void SetReview(ReviewT&& value) {
+    m_reviewHasBeenSet = true;
+    m_review = std::forward<ReviewT>(value);
+  }
+  template <typename ReviewT = EvaluationReviewMetadata>
+  EvaluationMetadata& WithReview(ReviewT&& value) {
+    SetReview(std::forward<ReviewT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about a contact participant in this evaluation.</p>
    */
   inline const EvaluationContactParticipant& GetContactParticipant() const { return m_contactParticipant; }
@@ -213,6 +232,8 @@ class EvaluationMetadata {
 
   EvaluationAcknowledgement m_acknowledgement;
 
+  EvaluationReviewMetadata m_review;
+
   EvaluationContactParticipant m_contactParticipant;
 
   Aws::String m_samplingJobId;
@@ -223,6 +244,7 @@ class EvaluationMetadata {
   bool m_scoreHasBeenSet = false;
   bool m_autoEvaluationHasBeenSet = false;
   bool m_acknowledgementHasBeenSet = false;
+  bool m_reviewHasBeenSet = false;
   bool m_contactParticipantHasBeenSet = false;
   bool m_samplingJobIdHasBeenSet = false;
 };

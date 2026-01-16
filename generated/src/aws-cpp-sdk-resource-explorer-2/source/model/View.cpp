@@ -22,6 +22,10 @@ View& View::operator=(JsonView jsonValue) {
     m_viewArn = jsonValue.GetString("ViewArn");
     m_viewArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ViewName")) {
+    m_viewName = jsonValue.GetString("ViewName");
+    m_viewNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Owner")) {
     m_owner = jsonValue.GetString("Owner");
     m_ownerHasBeenSet = true;
@@ -54,6 +58,10 @@ JsonValue View::Jsonize() const {
 
   if (m_viewArnHasBeenSet) {
     payload.WithString("ViewArn", m_viewArn);
+  }
+
+  if (m_viewNameHasBeenSet) {
+    payload.WithString("ViewName", m_viewName);
   }
 
   if (m_ownerHasBeenSet) {

@@ -54,6 +54,24 @@ class ServiceView {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the service view.</p>
+   */
+  inline const Aws::String& GetServiceViewName() const { return m_serviceViewName; }
+  inline bool ServiceViewNameHasBeenSet() const { return m_serviceViewNameHasBeenSet; }
+  template <typename ServiceViewNameT = Aws::String>
+  void SetServiceViewName(ServiceViewNameT&& value) {
+    m_serviceViewNameHasBeenSet = true;
+    m_serviceViewName = std::forward<ServiceViewNameT>(value);
+  }
+  template <typename ServiceViewNameT = Aws::String>
+  ServiceView& WithServiceViewName(ServiceViewNameT&& value) {
+    SetServiceViewName(std::forward<ServiceViewNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const SearchFilter& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -134,6 +152,8 @@ class ServiceView {
  private:
   Aws::String m_serviceViewArn;
 
+  Aws::String m_serviceViewName;
+
   SearchFilter m_filters;
 
   Aws::Vector<IncludedProperty> m_includedProperties;
@@ -142,6 +162,7 @@ class ServiceView {
 
   Aws::String m_scopeType;
   bool m_serviceViewArnHasBeenSet = false;
+  bool m_serviceViewNameHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_includedPropertiesHasBeenSet = false;
   bool m_streamingAccessForServiceHasBeenSet = false;

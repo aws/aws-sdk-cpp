@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateDeploymentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_deploymentPatternNameHasBeenSet) {
-    payload.WithString("deploymentPatternName", m_deploymentPatternName);
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
   }
 
-  if (m_dryRunHasBeenSet) {
-    payload.WithBool("dryRun", m_dryRun);
+  if (m_deploymentPatternNameHasBeenSet) {
+    payload.WithString("deploymentPatternName", m_deploymentPatternName);
   }
 
   if (m_nameHasBeenSet) {
@@ -35,16 +35,16 @@ Aws::String CreateDeploymentRequest::SerializePayload() const {
     payload.WithObject("specifications", std::move(specificationsJsonMap));
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_workloadNameHasBeenSet) {
-    payload.WithString("workloadName", m_workloadName);
   }
 
   return payload.View().WriteReadable();

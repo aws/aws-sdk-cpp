@@ -36,54 +36,18 @@ class DeploymentData {
 
   ///@{
   /**
-   * <p>The time the deployment was created.</p>
+   * <p>The name of the deployment.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  DeploymentData& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The time the deployment was deleted.</p>
-   */
-  inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
-  inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-  template <typename DeletedAtT = Aws::Utils::DateTime>
-  void SetDeletedAt(DeletedAtT&& value) {
-    m_deletedAtHasBeenSet = true;
-    m_deletedAt = std::forward<DeletedAtT>(value);
-  }
-  template <typename DeletedAtT = Aws::Utils::DateTime>
-  DeploymentData& WithDeletedAt(DeletedAtT&& value) {
-    SetDeletedAt(std::forward<DeletedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the deployment.</p>
-   */
-  inline const Aws::String& GetDeploymentArn() const { return m_deploymentArn; }
-  inline bool DeploymentArnHasBeenSet() const { return m_deploymentArnHasBeenSet; }
-  template <typename DeploymentArnT = Aws::String>
-  void SetDeploymentArn(DeploymentArnT&& value) {
-    m_deploymentArnHasBeenSet = true;
-    m_deploymentArn = std::forward<DeploymentArnT>(value);
-  }
-  template <typename DeploymentArnT = Aws::String>
-  DeploymentData& WithDeploymentArn(DeploymentArnT&& value) {
-    SetDeploymentArn(std::forward<DeploymentArnT>(value));
+  template <typename NameT = Aws::String>
+  DeploymentData& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -108,18 +72,18 @@ class DeploymentData {
 
   ///@{
   /**
-   * <p>The name of the deployment.</p>
+   * <p>The name of the workload.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
   }
-  template <typename NameT = Aws::String>
-  DeploymentData& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename WorkloadNameT = Aws::String>
+  DeploymentData& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
     return *this;
   }
   ///@}
@@ -144,18 +108,52 @@ class DeploymentData {
 
   ///@{
   /**
-   * <p>The resource group of the deployment.</p>
+   * <p>The status of the deployment.</p>
    */
-  inline const Aws::String& GetResourceGroup() const { return m_resourceGroup; }
-  inline bool ResourceGroupHasBeenSet() const { return m_resourceGroupHasBeenSet; }
-  template <typename ResourceGroupT = Aws::String>
-  void SetResourceGroup(ResourceGroupT&& value) {
-    m_resourceGroupHasBeenSet = true;
-    m_resourceGroup = std::forward<ResourceGroupT>(value);
+  inline DeploymentStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(DeploymentStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename ResourceGroupT = Aws::String>
-  DeploymentData& WithResourceGroup(ResourceGroupT&& value) {
-    SetResourceGroup(std::forward<ResourceGroupT>(value));
+  inline DeploymentData& WithStatus(DeploymentStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time the deployment was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DeploymentData& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time the deployment was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+  inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  void SetModifiedAt(ModifiedAtT&& value) {
+    m_modifiedAtHasBeenSet = true;
+    m_modifiedAt = std::forward<ModifiedAtT>(value);
+  }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  DeploymentData& WithModifiedAt(ModifiedAtT&& value) {
+    SetModifiedAt(std::forward<ModifiedAtT>(value));
     return *this;
   }
   ///@}
@@ -194,16 +192,36 @@ class DeploymentData {
 
   ///@{
   /**
-   * <p>The status of the deployment.</p>
+   * <p>The resource group of the deployment.</p>
    */
-  inline DeploymentStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(DeploymentStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetResourceGroup() const { return m_resourceGroup; }
+  inline bool ResourceGroupHasBeenSet() const { return m_resourceGroupHasBeenSet; }
+  template <typename ResourceGroupT = Aws::String>
+  void SetResourceGroup(ResourceGroupT&& value) {
+    m_resourceGroupHasBeenSet = true;
+    m_resourceGroup = std::forward<ResourceGroupT>(value);
   }
-  inline DeploymentData& WithStatus(DeploymentStatus value) {
-    SetStatus(value);
+  template <typename ResourceGroupT = Aws::String>
+  DeploymentData& WithResourceGroup(ResourceGroupT&& value) {
+    SetResourceGroup(std::forward<ResourceGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time the deployment was deleted.</p>
+   */
+  inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
+  inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
+  template <typename DeletedAtT = Aws::Utils::DateTime>
+  void SetDeletedAt(DeletedAtT&& value) {
+    m_deletedAtHasBeenSet = true;
+    m_deletedAt = std::forward<DeletedAtT>(value);
+  }
+  template <typename DeletedAtT = Aws::Utils::DateTime>
+  DeploymentData& WithDeletedAt(DeletedAtT&& value) {
+    SetDeletedAt(std::forward<DeletedAtT>(value));
     return *this;
   }
   ///@}
@@ -234,54 +252,57 @@ class DeploymentData {
 
   ///@{
   /**
-   * <p>The name of the workload.</p>
+   * <p>The Amazon Resource Name (ARN) of the deployment.</p>
    */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
+  inline const Aws::String& GetDeploymentArn() const { return m_deploymentArn; }
+  inline bool DeploymentArnHasBeenSet() const { return m_deploymentArnHasBeenSet; }
+  template <typename DeploymentArnT = Aws::String>
+  void SetDeploymentArn(DeploymentArnT&& value) {
+    m_deploymentArnHasBeenSet = true;
+    m_deploymentArn = std::forward<DeploymentArnT>(value);
   }
-  template <typename WorkloadNameT = Aws::String>
-  DeploymentData& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
+  template <typename DeploymentArnT = Aws::String>
+  DeploymentData& WithDeploymentArn(DeploymentArnT&& value) {
+    SetDeploymentArn(std::forward<DeploymentArnT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::Utils::DateTime m_deletedAt{};
-
-  Aws::String m_deploymentArn;
+  Aws::String m_name;
 
   Aws::String m_id;
 
-  Aws::String m_name;
+  Aws::String m_workloadName;
 
   Aws::String m_patternName;
 
-  Aws::String m_resourceGroup;
+  DeploymentStatus m_status{DeploymentStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::Map<Aws::String, Aws::String> m_specifications;
 
-  DeploymentStatus m_status{DeploymentStatus::NOT_SET};
+  Aws::String m_resourceGroup;
+
+  Aws::Utils::DateTime m_deletedAt{};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
-  Aws::String m_workloadName;
-  bool m_createdAtHasBeenSet = false;
-  bool m_deletedAtHasBeenSet = false;
-  bool m_deploymentArnHasBeenSet = false;
-  bool m_idHasBeenSet = false;
+  Aws::String m_deploymentArn;
   bool m_nameHasBeenSet = false;
-  bool m_patternNameHasBeenSet = false;
-  bool m_resourceGroupHasBeenSet = false;
-  bool m_specificationsHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
+  bool m_patternNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_specificationsHasBeenSet = false;
+  bool m_resourceGroupHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_deploymentArnHasBeenSet = false;
 };
 
 }  // namespace Model

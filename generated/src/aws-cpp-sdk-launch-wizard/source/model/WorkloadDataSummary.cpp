@@ -18,13 +18,17 @@ namespace Model {
 WorkloadDataSummary::WorkloadDataSummary(JsonView jsonValue) { *this = jsonValue; }
 
 WorkloadDataSummary& WorkloadDataSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workloadName")) {
+    m_workloadName = jsonValue.GetString("workloadName");
+    m_workloadNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("workloadName")) {
-    m_workloadName = jsonValue.GetString("workloadName");
-    m_workloadNameHasBeenSet = true;
+  if (jsonValue.ValueExists("status")) {
+    m_status = WorkloadStatusMapper::GetWorkloadStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +36,16 @@ WorkloadDataSummary& WorkloadDataSummary::operator=(JsonView jsonValue) {
 JsonValue WorkloadDataSummary::Jsonize() const {
   JsonValue payload;
 
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
+  }
+
   if (m_displayNameHasBeenSet) {
     payload.WithString("displayName", m_displayName);
   }
 
-  if (m_workloadNameHasBeenSet) {
-    payload.WithString("workloadName", m_workloadName);
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", WorkloadStatusMapper::GetNameForWorkloadStatus(m_status));
   }
 
   return payload;

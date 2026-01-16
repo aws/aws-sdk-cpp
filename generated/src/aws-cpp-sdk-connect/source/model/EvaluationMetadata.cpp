@@ -46,6 +46,10 @@ EvaluationMetadata& EvaluationMetadata::operator=(JsonView jsonValue) {
     m_acknowledgement = jsonValue.GetObject("Acknowledgement");
     m_acknowledgementHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Review")) {
+    m_review = jsonValue.GetObject("Review");
+    m_reviewHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ContactParticipant")) {
     m_contactParticipant = jsonValue.GetObject("ContactParticipant");
     m_contactParticipantHasBeenSet = true;
@@ -86,6 +90,10 @@ JsonValue EvaluationMetadata::Jsonize() const {
 
   if (m_acknowledgementHasBeenSet) {
     payload.WithObject("Acknowledgement", m_acknowledgement.Jsonize());
+  }
+
+  if (m_reviewHasBeenSet) {
+    payload.WithObject("Review", m_review.Jsonize());
   }
 
   if (m_contactParticipantHasBeenSet) {

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class EvaluationStatus { NOT_SET, DRAFT, SUBMITTED };
+enum class EvaluationStatus { NOT_SET, DRAFT, SUBMITTED, REVIEW_REQUESTED, UNDER_REVIEW };
 
 namespace EvaluationStatusMapper {
 AWS_CONNECT_API EvaluationStatus GetEvaluationStatusForName(const Aws::String& name);
