@@ -24,9 +24,14 @@
 #include <aws/launch-wizard/model/DeploymentEventDataSummary.h>
 #include <aws/launch-wizard/model/DeploymentFilter.h>
 #include <aws/launch-wizard/model/DeploymentFilterKey.h>
+#include <aws/launch-wizard/model/DeploymentPatternVersionDataSummary.h>
+#include <aws/launch-wizard/model/DeploymentPatternVersionFilter.h>
+#include <aws/launch-wizard/model/DeploymentPatternVersionFilterKey.h>
 #include <aws/launch-wizard/model/DeploymentSpecificationsField.h>
 #include <aws/launch-wizard/model/DeploymentStatus.h>
 #include <aws/launch-wizard/model/EventStatus.h>
+#include <aws/launch-wizard/model/GetDeploymentPatternVersionRequest.h>
+#include <aws/launch-wizard/model/GetDeploymentPatternVersionResult.h>
 #include <aws/launch-wizard/model/GetDeploymentRequest.h>
 #include <aws/launch-wizard/model/GetDeploymentResult.h>
 #include <aws/launch-wizard/model/GetWorkloadDeploymentPatternRequest.h>
@@ -35,6 +40,8 @@
 #include <aws/launch-wizard/model/GetWorkloadResult.h>
 #include <aws/launch-wizard/model/ListDeploymentEventsRequest.h>
 #include <aws/launch-wizard/model/ListDeploymentEventsResult.h>
+#include <aws/launch-wizard/model/ListDeploymentPatternVersionsRequest.h>
+#include <aws/launch-wizard/model/ListDeploymentPatternVersionsResult.h>
 #include <aws/launch-wizard/model/ListDeploymentsRequest.h>
 #include <aws/launch-wizard/model/ListDeploymentsResult.h>
 #include <aws/launch-wizard/model/ListTagsForResourceRequest.h>
@@ -47,6 +54,8 @@
 #include <aws/launch-wizard/model/TagResourceResult.h>
 #include <aws/launch-wizard/model/UntagResourceRequest.h>
 #include <aws/launch-wizard/model/UntagResourceResult.h>
+#include <aws/launch-wizard/model/UpdateDeploymentRequest.h>
+#include <aws/launch-wizard/model/UpdateDeploymentResult.h>
 #include <aws/launch-wizard/model/WorkloadData.h>
 #include <aws/launch-wizard/model/WorkloadDataSummary.h>
 #include <aws/launch-wizard/model/WorkloadDeploymentPatternData.h>

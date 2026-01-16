@@ -30,6 +30,24 @@ class ListWorkloadDeploymentPatternsRequest : public LaunchWizardRequest {
 
   ///@{
   /**
+   * <p>The name of the workload.</p>
+   */
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
+  }
+  template <typename WorkloadNameT = Aws::String>
+  ListWorkloadDeploymentPatternsRequest& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of items to return for this request. To get the next page
    * of items, make another request with the token returned in the output.</p>
    */
@@ -63,33 +81,15 @@ class ListWorkloadDeploymentPatternsRequest : public LaunchWizardRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the workload.</p>
-   */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
-  }
-  template <typename WorkloadNameT = Aws::String>
-  ListWorkloadDeploymentPatternsRequest& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_workloadName;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_workloadName;
+  bool m_workloadNameHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_workloadNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,24 +18,29 @@ namespace Model {
 WorkloadDeploymentPatternData::WorkloadDeploymentPatternData(JsonView jsonValue) { *this = jsonValue; }
 
 WorkloadDeploymentPatternData& WorkloadDeploymentPatternData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workloadName")) {
+    m_workloadName = jsonValue.GetString("workloadName");
+    m_workloadNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deploymentPatternName")) {
     m_deploymentPatternName = jsonValue.GetString("deploymentPatternName");
     m_deploymentPatternNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+  if (jsonValue.ValueExists("workloadVersionName")) {
+    m_workloadVersionName = jsonValue.GetString("workloadVersionName");
+    m_workloadVersionNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deploymentPatternVersionName")) {
+    m_deploymentPatternVersionName = jsonValue.GetString("deploymentPatternVersionName");
+    m_deploymentPatternVersionNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("specifications")) {
-    Aws::Utils::Array<JsonView> specificationsJsonList = jsonValue.GetArray("specifications");
-    for (unsigned specificationsIndex = 0; specificationsIndex < specificationsJsonList.GetLength(); ++specificationsIndex) {
-      m_specifications.push_back(specificationsJsonList[specificationsIndex].AsObject());
-    }
-    m_specificationsHasBeenSet = true;
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = WorkloadDeploymentPatternStatusMapper::GetWorkloadDeploymentPatternStatusForName(jsonValue.GetString("status"));
@@ -45,13 +50,12 @@ WorkloadDeploymentPatternData& WorkloadDeploymentPatternData::operator=(JsonView
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("workloadName")) {
-    m_workloadName = jsonValue.GetString("workloadName");
-    m_workloadNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("workloadVersionName")) {
-    m_workloadVersionName = jsonValue.GetString("workloadVersionName");
-    m_workloadVersionNameHasBeenSet = true;
+  if (jsonValue.ValueExists("specifications")) {
+    Aws::Utils::Array<JsonView> specificationsJsonList = jsonValue.GetArray("specifications");
+    for (unsigned specificationsIndex = 0; specificationsIndex < specificationsJsonList.GetLength(); ++specificationsIndex) {
+      m_specifications.push_back(specificationsJsonList[specificationsIndex].AsObject());
+    }
+    m_specificationsHasBeenSet = true;
   }
   return *this;
 }
@@ -59,24 +63,28 @@ WorkloadDeploymentPatternData& WorkloadDeploymentPatternData::operator=(JsonView
 JsonValue WorkloadDeploymentPatternData::Jsonize() const {
   JsonValue payload;
 
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
+  }
+
   if (m_deploymentPatternNameHasBeenSet) {
     payload.WithString("deploymentPatternName", m_deploymentPatternName);
   }
 
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
+  if (m_workloadVersionNameHasBeenSet) {
+    payload.WithString("workloadVersionName", m_workloadVersionName);
+  }
+
+  if (m_deploymentPatternVersionNameHasBeenSet) {
+    payload.WithString("deploymentPatternVersionName", m_deploymentPatternVersionName);
   }
 
   if (m_displayNameHasBeenSet) {
     payload.WithString("displayName", m_displayName);
   }
 
-  if (m_specificationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> specificationsJsonList(m_specifications.size());
-    for (unsigned specificationsIndex = 0; specificationsIndex < specificationsJsonList.GetLength(); ++specificationsIndex) {
-      specificationsJsonList[specificationsIndex].AsObject(m_specifications[specificationsIndex].Jsonize());
-    }
-    payload.WithArray("specifications", std::move(specificationsJsonList));
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   if (m_statusHasBeenSet) {
@@ -87,12 +95,12 @@ JsonValue WorkloadDeploymentPatternData::Jsonize() const {
     payload.WithString("statusMessage", m_statusMessage);
   }
 
-  if (m_workloadNameHasBeenSet) {
-    payload.WithString("workloadName", m_workloadName);
-  }
-
-  if (m_workloadVersionNameHasBeenSet) {
-    payload.WithString("workloadVersionName", m_workloadVersionName);
+  if (m_specificationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> specificationsJsonList(m_specifications.size());
+    for (unsigned specificationsIndex = 0; specificationsIndex < specificationsJsonList.GetLength(); ++specificationsIndex) {
+      specificationsJsonList[specificationsIndex].AsObject(m_specifications[specificationsIndex].Jsonize());
+    }
+    payload.WithArray("specifications", std::move(specificationsJsonList));
   }
 
   return payload;

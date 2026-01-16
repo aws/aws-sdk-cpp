@@ -24,6 +24,11 @@ static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
 static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
+static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+static const int UPDATE_COMPLETED_HASH = HashingUtils::HashString("UPDATE_COMPLETED");
+static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+static const int UPDATE_ROLLBACK_COMPLETED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETED");
+static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
 
 DeploymentStatus GetDeploymentStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +50,16 @@ DeploymentStatus GetDeploymentStatusForName(const Aws::String& name) {
     return DeploymentStatus::IN_PROGRESS;
   } else if (hashCode == VALIDATING_HASH) {
     return DeploymentStatus::VALIDATING;
+  } else if (hashCode == UPDATE_IN_PROGRESS_HASH) {
+    return DeploymentStatus::UPDATE_IN_PROGRESS;
+  } else if (hashCode == UPDATE_COMPLETED_HASH) {
+    return DeploymentStatus::UPDATE_COMPLETED;
+  } else if (hashCode == UPDATE_FAILED_HASH) {
+    return DeploymentStatus::UPDATE_FAILED;
+  } else if (hashCode == UPDATE_ROLLBACK_COMPLETED_HASH) {
+    return DeploymentStatus::UPDATE_ROLLBACK_COMPLETED;
+  } else if (hashCode == UPDATE_ROLLBACK_FAILED_HASH) {
+    return DeploymentStatus::UPDATE_ROLLBACK_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +92,16 @@ Aws::String GetNameForDeploymentStatus(DeploymentStatus enumValue) {
       return "IN_PROGRESS";
     case DeploymentStatus::VALIDATING:
       return "VALIDATING";
+    case DeploymentStatus::UPDATE_IN_PROGRESS:
+      return "UPDATE_IN_PROGRESS";
+    case DeploymentStatus::UPDATE_COMPLETED:
+      return "UPDATE_COMPLETED";
+    case DeploymentStatus::UPDATE_FAILED:
+      return "UPDATE_FAILED";
+    case DeploymentStatus::UPDATE_ROLLBACK_COMPLETED:
+      return "UPDATE_ROLLBACK_COMPLETED";
+    case DeploymentStatus::UPDATE_ROLLBACK_FAILED:
+      return "UPDATE_ROLLBACK_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

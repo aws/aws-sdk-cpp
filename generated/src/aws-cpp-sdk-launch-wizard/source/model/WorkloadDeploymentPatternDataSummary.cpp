@@ -18,17 +18,29 @@ namespace Model {
 WorkloadDeploymentPatternDataSummary::WorkloadDeploymentPatternDataSummary(JsonView jsonValue) { *this = jsonValue; }
 
 WorkloadDeploymentPatternDataSummary& WorkloadDeploymentPatternDataSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workloadName")) {
+    m_workloadName = jsonValue.GetString("workloadName");
+    m_workloadNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deploymentPatternName")) {
     m_deploymentPatternName = jsonValue.GetString("deploymentPatternName");
     m_deploymentPatternNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
+  if (jsonValue.ValueExists("workloadVersionName")) {
+    m_workloadVersionName = jsonValue.GetString("workloadVersionName");
+    m_workloadVersionNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deploymentPatternVersionName")) {
+    m_deploymentPatternVersionName = jsonValue.GetString("deploymentPatternVersionName");
+    m_deploymentPatternVersionNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");
     m_displayNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = WorkloadDeploymentPatternStatusMapper::GetWorkloadDeploymentPatternStatusForName(jsonValue.GetString("status"));
@@ -38,30 +50,34 @@ WorkloadDeploymentPatternDataSummary& WorkloadDeploymentPatternDataSummary::oper
     m_statusMessage = jsonValue.GetString("statusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("workloadName")) {
-    m_workloadName = jsonValue.GetString("workloadName");
-    m_workloadNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("workloadVersionName")) {
-    m_workloadVersionName = jsonValue.GetString("workloadVersionName");
-    m_workloadVersionNameHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue WorkloadDeploymentPatternDataSummary::Jsonize() const {
   JsonValue payload;
 
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
+  }
+
   if (m_deploymentPatternNameHasBeenSet) {
     payload.WithString("deploymentPatternName", m_deploymentPatternName);
   }
 
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
+  if (m_workloadVersionNameHasBeenSet) {
+    payload.WithString("workloadVersionName", m_workloadVersionName);
+  }
+
+  if (m_deploymentPatternVersionNameHasBeenSet) {
+    payload.WithString("deploymentPatternVersionName", m_deploymentPatternVersionName);
   }
 
   if (m_displayNameHasBeenSet) {
     payload.WithString("displayName", m_displayName);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   if (m_statusHasBeenSet) {
@@ -70,14 +86,6 @@ JsonValue WorkloadDeploymentPatternDataSummary::Jsonize() const {
 
   if (m_statusMessageHasBeenSet) {
     payload.WithString("statusMessage", m_statusMessage);
-  }
-
-  if (m_workloadNameHasBeenSet) {
-    payload.WithString("workloadName", m_workloadName);
-  }
-
-  if (m_workloadVersionNameHasBeenSet) {
-    payload.WithString("workloadVersionName", m_workloadVersionName);
   }
 
   return payload;

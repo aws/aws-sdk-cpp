@@ -26,6 +26,14 @@ Filter& Filter::operator=(JsonView jsonValue) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("intValue")) {
+    m_intValue = jsonValue.GetInt64("intValue");
+    m_intValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("operator")) {
+    m_operator = FilterOperatorMapper::GetFilterOperatorForName(jsonValue.GetString("operator"));
+    m_operatorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue Filter::Jsonize() const {
 
   if (m_valueHasBeenSet) {
     payload.WithString("value", m_value);
+  }
+
+  if (m_intValueHasBeenSet) {
+    payload.WithInt64("intValue", m_intValue);
+  }
+
+  if (m_operatorHasBeenSet) {
+    payload.WithString("operator", FilterOperatorMapper::GetNameForFilterOperator(m_operator));
   }
 
   return payload;

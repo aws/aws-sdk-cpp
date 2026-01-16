@@ -35,24 +35,6 @@ class DeploymentEventDataSummary {
 
   ///@{
   /**
-   * <p>The description of the deployment event.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  DeploymentEventDataSummary& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the deployment event.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -65,6 +47,24 @@ class DeploymentEventDataSummary {
   template <typename NameT = Aws::String>
   DeploymentEventDataSummary& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the deployment event.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  DeploymentEventDataSummary& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -121,17 +121,17 @@ class DeploymentEventDataSummary {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_name;
+
+  Aws::String m_description;
 
   EventStatus m_status{EventStatus::NOT_SET};
 
   Aws::String m_statusReason;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_timestampHasBeenSet = false;

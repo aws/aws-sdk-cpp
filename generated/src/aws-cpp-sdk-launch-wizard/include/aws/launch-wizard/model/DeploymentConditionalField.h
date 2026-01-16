@@ -34,25 +34,6 @@ class DeploymentConditionalField {
 
   ///@{
   /**
-   * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-   * NotEqual</code> </p>
-   */
-  inline const Aws::String& GetComparator() const { return m_comparator; }
-  inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-  template <typename ComparatorT = Aws::String>
-  void SetComparator(ComparatorT&& value) {
-    m_comparatorHasBeenSet = true;
-    m_comparator = std::forward<ComparatorT>(value);
-  }
-  template <typename ComparatorT = Aws::String>
-  DeploymentConditionalField& WithComparator(ComparatorT&& value) {
-    SetComparator(std::forward<ComparatorT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the deployment condition.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -86,15 +67,34 @@ class DeploymentConditionalField {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_comparator;
 
+  ///@{
+  /**
+   * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
+   * NotEqual</code> </p>
+   */
+  inline const Aws::String& GetComparator() const { return m_comparator; }
+  inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
+  template <typename ComparatorT = Aws::String>
+  void SetComparator(ComparatorT&& value) {
+    m_comparatorHasBeenSet = true;
+    m_comparator = std::forward<ComparatorT>(value);
+  }
+  template <typename ComparatorT = Aws::String>
+  DeploymentConditionalField& WithComparator(ComparatorT&& value) {
+    SetComparator(std::forward<ComparatorT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_name;
 
   Aws::String m_value;
-  bool m_comparatorHasBeenSet = false;
+
+  Aws::String m_comparator;
   bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_comparatorHasBeenSet = false;
 };
 
 }  // namespace Model

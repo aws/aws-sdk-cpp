@@ -21,16 +21,16 @@ ListWorkloadsResult::ListWorkloadsResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListWorkloadsResult& ListWorkloadsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("workloads")) {
     Aws::Utils::Array<JsonView> workloadsJsonList = jsonValue.GetArray("workloads");
     for (unsigned workloadsIndex = 0; workloadsIndex < workloadsJsonList.GetLength(); ++workloadsIndex) {
       m_workloads.push_back(workloadsJsonList[workloadsIndex].AsObject());
     }
     m_workloadsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

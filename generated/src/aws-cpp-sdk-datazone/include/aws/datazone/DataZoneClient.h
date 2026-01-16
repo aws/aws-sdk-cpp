@@ -4200,7 +4200,31 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
    * specified domain.</p> </li> <li> <p>If using --filters, ensure that the JSON is
    * well-formed and that each filter includes valid attribute and value keys. </p>
    * </li> <li> <p>For paginated results, be prepared to use --next-token to fetch
-   * additional pages.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * additional pages.</p> </li> </ul> <p>To run a standard free-text search, the
+   * <code>searchText</code> parameter must be supplied. By default, all searchable
+   * fields are indexed for semantic search and will return semantic matches for
+   * SearchListings queries. To prevent semantic search indexing for a custom form
+   * attribute, see the <a
+   * href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+   * API documentation</a>. To run a lexical search query, enclose the query with
+   * double quotes (""). This will disable semantic search even for fields that have
+   * semantic search enabled and will only return results that contain the keywords
+   * wrapped by double quotes (order of tokens in the query is not enforced).
+   * Free-text search is supported for all attributes annotated with
+   * @amazon.datazone#searchable.</p> <p>To run a filtered search, provide filter
+   * clause using the <code>filters</code> parameter. To filter on glossary terms,
+   * use the special attribute <code>__DataZoneGlossaryTerms</code>. To filter on an
+   * indexed numeric attribute (i.e., a numeric attribute annotated with
+   * <code>@amazon.datazone#sortable</code>), provide a filter using the
+   * <code>intValue</code> parameter. The filters parameter can also be used to run
+   * more advanced free-text searches that target specific attributes (attributes
+   * must be annotated with <code>@amazon.datazone#searchable</code> for free-text
+   * search). Create/update timestamp filtering is supported using the special
+   * <code>creationTime</code>/<code>lastUpdatedTime</code> attributes. Filter types
+   * can be mixed and matched to power complex queries.</p> <p> To find out whether
+   * an attribute has been annotated and indexed for a given search type, use the
+   * GetFormType API to retrieve the form containing the attribute.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/Search">AWS API
    * Reference</a></p>
    */
@@ -4263,10 +4287,10 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
    * the result set is large, the response will include a nextToken, which can be
    * used to retrieve the next page of results.</p> <p>The SearchListings API gives
    * users flexibility in specifying what kind of search is run.</p> <p>To run a
-   * free-text search, the <code>searchText</code> parameter must be supplied. By
-   * default, all searchable fields are indexed for semantic search and will return
-   * semantic matches for SearchListings queries. To prevent semantic search indexing
-   * for a custom form attribute, see the <a
+   * standard free-text search, the <code>searchText</code> parameter must be
+   * supplied. By default, all searchable fields are indexed for semantic search and
+   * will return semantic matches for SearchListings queries. To prevent semantic
+   * search indexing for a custom form attribute, see the <a
    * href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
    * API documentation</a>. To run a lexical search query, enclose the query with
    * double quotes (""). This will disable semantic search even for fields that have
@@ -4274,9 +4298,17 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
    * wrapped by double quotes (order of tokens in the query is not enforced).
    * Free-text search is supported for all attributes annotated with
    * @amazon.datazone#searchable.</p> <p>To run a filtered search, provide filter
-   * clause using the filters parameter. To filter on glossary terms, use the special
-   * attribute <code>__DataZoneGlossaryTerms</code>.</p> <p> To find out whether an
-   * attribute has been annotated and indexed for a given search type, use the
+   * clause using the <code>filters</code> parameter. To filter on glossary terms,
+   * use the special attribute <code>__DataZoneGlossaryTerms</code>. To filter on an
+   * indexed numeric attribute (i.e., a numeric attribute annotated with
+   * <code>@amazon.datazone#sortable</code>), provide a filter using the
+   * <code>intValue</code> parameter. The filters parameter can also be used to run
+   * more advanced free-text searches that target specific attributes (attributes
+   * must be annotated with <code>@amazon.datazone#searchable</code> for free-text
+   * search). Create/update timestamp filtering is supported using the special
+   * <code>creationTime</code>/<code>lastUpdatedTime</code> attributes. Filter types
+   * can be mixed and matched to power complex queries.</p> <p> To find out whether
+   * an attribute has been annotated and indexed for a given search type, use the
    * GetFormType API to retrieve the form containing the attribute.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchListings">AWS

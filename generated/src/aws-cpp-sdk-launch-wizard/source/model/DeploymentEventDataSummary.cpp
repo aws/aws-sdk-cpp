@@ -18,13 +18,13 @@ namespace Model {
 DeploymentEventDataSummary::DeploymentEventDataSummary(JsonView jsonValue) { *this = jsonValue; }
 
 DeploymentEventDataSummary& DeploymentEventDataSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = EventStatusMapper::GetEventStatusForName(jsonValue.GetString("status"));
@@ -44,12 +44,12 @@ DeploymentEventDataSummary& DeploymentEventDataSummary::operator=(JsonView jsonV
 JsonValue DeploymentEventDataSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   if (m_statusHasBeenSet) {

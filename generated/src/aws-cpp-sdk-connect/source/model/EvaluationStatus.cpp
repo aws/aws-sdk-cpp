@@ -17,6 +17,8 @@ namespace EvaluationStatusMapper {
 
 static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
 static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+static const int REVIEW_REQUESTED_HASH = HashingUtils::HashString("REVIEW_REQUESTED");
+static const int UNDER_REVIEW_HASH = HashingUtils::HashString("UNDER_REVIEW");
 
 EvaluationStatus GetEvaluationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ EvaluationStatus GetEvaluationStatusForName(const Aws::String& name) {
     return EvaluationStatus::DRAFT;
   } else if (hashCode == SUBMITTED_HASH) {
     return EvaluationStatus::SUBMITTED;
+  } else if (hashCode == REVIEW_REQUESTED_HASH) {
+    return EvaluationStatus::REVIEW_REQUESTED;
+  } else if (hashCode == UNDER_REVIEW_HASH) {
+    return EvaluationStatus::UNDER_REVIEW;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForEvaluationStatus(EvaluationStatus enumValue) {
       return "DRAFT";
     case EvaluationStatus::SUBMITTED:
       return "SUBMITTED";
+    case EvaluationStatus::REVIEW_REQUESTED:
+      return "REVIEW_REQUESTED";
+    case EvaluationStatus::UNDER_REVIEW:
+      return "UNDER_REVIEW";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

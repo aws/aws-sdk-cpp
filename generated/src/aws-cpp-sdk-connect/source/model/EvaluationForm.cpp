@@ -77,6 +77,10 @@ EvaluationForm& EvaluationForm::operator=(JsonView jsonValue) {
     m_autoEvaluationConfiguration = jsonValue.GetObject("AutoEvaluationConfiguration");
     m_autoEvaluationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ReviewConfiguration")) {
+    m_reviewConfiguration = jsonValue.GetObject("ReviewConfiguration");
+    m_reviewConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -156,6 +160,10 @@ JsonValue EvaluationForm::Jsonize() const {
 
   if (m_autoEvaluationConfigurationHasBeenSet) {
     payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
+  }
+
+  if (m_reviewConfigurationHasBeenSet) {
+    payload.WithObject("ReviewConfiguration", m_reviewConfiguration.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

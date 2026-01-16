@@ -55,6 +55,10 @@ Aws::String CreateEvaluationFormRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
+  if (m_reviewConfigurationHasBeenSet) {
+    payload.WithObject("ReviewConfiguration", m_reviewConfiguration.Jsonize());
+  }
+
   if (m_targetConfigurationHasBeenSet) {
     payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
   }

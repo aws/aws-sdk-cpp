@@ -280,6 +280,7 @@
 #include <aws/datazone/model/FilterClause.h>
 #include <aws/datazone/model/FilterExpression.h>
 #include <aws/datazone/model/FilterExpressionType.h>
+#include <aws/datazone/model/FilterOperator.h>
 #include <aws/datazone/model/FilterStatus.h>
 #include <aws/datazone/model/FormEntryInput.h>
 #include <aws/datazone/model/FormEntryOutput.h>

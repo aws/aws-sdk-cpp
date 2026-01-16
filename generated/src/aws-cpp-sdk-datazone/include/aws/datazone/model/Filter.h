@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/FilterOperator.h>
 
 #include <utility>
 
@@ -51,7 +52,7 @@ class Filter {
 
   ///@{
   /**
-   * <p>A search filter value in Amazon DataZone.</p>
+   * <p>A search filter string value in Amazon DataZone.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -66,12 +67,50 @@ class Filter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A search filter integer value in Amazon DataZone.</p>
+   */
+  inline long long GetIntValue() const { return m_intValue; }
+  inline bool IntValueHasBeenSet() const { return m_intValueHasBeenSet; }
+  inline void SetIntValue(long long value) {
+    m_intValueHasBeenSet = true;
+    m_intValue = value;
+  }
+  inline Filter& WithIntValue(long long value) {
+    SetIntValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the search filter operator.</p>
+   */
+  inline FilterOperator GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  inline void SetOperator(FilterOperator value) {
+    m_operatorHasBeenSet = true;
+    m_operator = value;
+  }
+  inline Filter& WithOperator(FilterOperator value) {
+    SetOperator(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_attribute;
 
   Aws::String m_value;
+
+  long long m_intValue{0};
+
+  FilterOperator m_operator{FilterOperator::NOT_SET};
   bool m_attributeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
+  bool m_intValueHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
 };
 
 }  // namespace Model

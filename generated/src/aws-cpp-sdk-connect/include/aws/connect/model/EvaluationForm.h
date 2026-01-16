@@ -11,6 +11,7 @@
 #include <aws/connect/model/EvaluationFormScoringStrategy.h>
 #include <aws/connect/model/EvaluationFormTargetConfiguration.h>
 #include <aws/connect/model/EvaluationFormVersionStatus.h>
+#include <aws/connect/model/EvaluationReviewConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -298,6 +299,24 @@ class EvaluationForm {
 
   ///@{
   /**
+   * <p>Configuration for evaluation review settings of this evaluation form.</p>
+   */
+  inline const EvaluationReviewConfiguration& GetReviewConfiguration() const { return m_reviewConfiguration; }
+  inline bool ReviewConfigurationHasBeenSet() const { return m_reviewConfigurationHasBeenSet; }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  void SetReviewConfiguration(ReviewConfigurationT&& value) {
+    m_reviewConfigurationHasBeenSet = true;
+    m_reviewConfiguration = std::forward<ReviewConfigurationT>(value);
+  }
+  template <typename ReviewConfigurationT = EvaluationReviewConfiguration>
+  EvaluationForm& WithReviewConfiguration(ReviewConfigurationT&& value) {
+    SetReviewConfiguration(std::forward<ReviewConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -385,6 +404,8 @@ class EvaluationForm {
 
   EvaluationFormAutoEvaluationConfiguration m_autoEvaluationConfiguration;
 
+  EvaluationReviewConfiguration m_reviewConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   EvaluationFormTargetConfiguration m_targetConfiguration;
@@ -404,6 +425,7 @@ class EvaluationForm {
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
   bool m_autoEvaluationConfigurationHasBeenSet = false;
+  bool m_reviewConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_targetConfigurationHasBeenSet = false;
   bool m_languageConfigurationHasBeenSet = false;

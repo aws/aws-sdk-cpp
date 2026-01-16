@@ -24,10 +24,6 @@ ListWorkloadDeploymentPatternsResult::ListWorkloadDeploymentPatternsResult(const
 ListWorkloadDeploymentPatternsResult& ListWorkloadDeploymentPatternsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("workloadDeploymentPatterns")) {
     Aws::Utils::Array<JsonView> workloadDeploymentPatternsJsonList = jsonValue.GetArray("workloadDeploymentPatterns");
     for (unsigned workloadDeploymentPatternsIndex = 0; workloadDeploymentPatternsIndex < workloadDeploymentPatternsJsonList.GetLength();
@@ -35,6 +31,10 @@ ListWorkloadDeploymentPatternsResult& ListWorkloadDeploymentPatternsResult::oper
       m_workloadDeploymentPatterns.push_back(workloadDeploymentPatternsJsonList[workloadDeploymentPatternsIndex].AsObject());
     }
     m_workloadDeploymentPatternsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

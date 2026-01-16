@@ -31,6 +31,27 @@ class CreateDeploymentRequest : public LaunchWizardRequest {
 
   ///@{
   /**
+   * <p>The name of the workload. You can use the <a
+   * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
+   * <code>ListWorkloads</code> </a> operation to discover supported values for this
+   * parameter.</p>
+   */
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
+  }
+  template <typename WorkloadNameT = Aws::String>
+  CreateDeploymentRequest& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the deployment pattern supported by a given workload. You can use
    * the <a
    * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
@@ -47,25 +68,6 @@ class CreateDeploymentRequest : public LaunchWizardRequest {
   template <typename DeploymentPatternNameT = Aws::String>
   CreateDeploymentRequest& WithDeploymentPatternName(DeploymentPatternNameT&& value) {
     SetDeploymentPatternName(std::forward<DeploymentPatternNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Checks whether you have the required permissions for the action, without
-   * actually making the request, and provides an error response. If you have the
-   * required permissions, the error response is <code>DryRunOperation</code>.
-   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   */
-  inline bool GetDryRun() const { return m_dryRun; }
-  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-  inline void SetDryRun(bool value) {
-    m_dryRunHasBeenSet = true;
-    m_dryRun = value;
-  }
-  inline CreateDeploymentRequest& WithDryRun(bool value) {
-    SetDryRun(value);
     return *this;
   }
   ///@}
@@ -122,6 +124,25 @@ class CreateDeploymentRequest : public LaunchWizardRequest {
 
   ///@{
   /**
+   * <p>Checks whether you have the required permissions for the action, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline CreateDeploymentRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to add to the deployment.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -143,45 +164,24 @@ class CreateDeploymentRequest : public LaunchWizardRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the workload. You can use the <a
-   * href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">
-   * <code>ListWorkloads</code> </a> operation to discover supported values for this
-   * parameter.</p>
-   */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
-  }
-  template <typename WorkloadNameT = Aws::String>
-  CreateDeploymentRequest& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_deploymentPatternName;
+  Aws::String m_workloadName;
 
-  bool m_dryRun{false};
+  Aws::String m_deploymentPatternName;
 
   Aws::String m_name;
 
   Aws::Map<Aws::String, Aws::String> m_specifications;
 
-  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_dryRun{false};
 
-  Aws::String m_workloadName;
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_workloadNameHasBeenSet = false;
   bool m_deploymentPatternNameHasBeenSet = false;
-  bool m_dryRunHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_specificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_workloadNameHasBeenSet = false;
 };
 
 }  // namespace Model

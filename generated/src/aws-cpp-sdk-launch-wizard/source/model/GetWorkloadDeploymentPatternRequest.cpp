@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String GetWorkloadDeploymentPatternRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_deploymentPatternNameHasBeenSet) {
-    payload.WithString("deploymentPatternName", m_deploymentPatternName);
-  }
-
   if (m_workloadNameHasBeenSet) {
     payload.WithString("workloadName", m_workloadName);
+  }
+
+  if (m_deploymentPatternNameHasBeenSet) {
+    payload.WithString("deploymentPatternName", m_deploymentPatternName);
   }
 
   return payload.View().WriteReadable();

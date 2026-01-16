@@ -36,6 +36,42 @@ class DeploymentSpecificationsField {
 
   ///@{
   /**
+   * <p>The name of the deployment specification.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DeploymentSpecificationsField& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the deployment specification.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  DeploymentSpecificationsField& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The allowed values of the deployment specification.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAllowedValues() const { return m_allowedValues; }
@@ -54,6 +90,24 @@ class DeploymentSpecificationsField {
   DeploymentSpecificationsField& AddAllowedValues(AllowedValuesT&& value) {
     m_allowedValuesHasBeenSet = true;
     m_allowedValues.emplace_back(std::forward<AllowedValuesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates if the deployment specification is required.</p>
+   */
+  inline const Aws::String& GetRequired() const { return m_required; }
+  inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
+  template <typename RequiredT = Aws::String>
+  void SetRequired(RequiredT&& value) {
+    m_requiredHasBeenSet = true;
+    m_required = std::forward<RequiredT>(value);
+  }
+  template <typename RequiredT = Aws::String>
+  DeploymentSpecificationsField& WithRequired(RequiredT&& value) {
+    SetRequired(std::forward<RequiredT>(value));
     return *this;
   }
   ///@}
@@ -81,75 +135,21 @@ class DeploymentSpecificationsField {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The description of the deployment specification.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  DeploymentSpecificationsField& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the deployment specification.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  DeploymentSpecificationsField& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Indicates if the deployment specification is required.</p>
-   */
-  inline const Aws::String& GetRequired() const { return m_required; }
-  inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-  template <typename RequiredT = Aws::String>
-  void SetRequired(RequiredT&& value) {
-    m_requiredHasBeenSet = true;
-    m_required = std::forward<RequiredT>(value);
-  }
-  template <typename RequiredT = Aws::String>
-  DeploymentSpecificationsField& WithRequired(RequiredT&& value) {
-    SetRequired(std::forward<RequiredT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<Aws::String> m_allowedValues;
-
-  Aws::Vector<DeploymentConditionalField> m_conditionals;
+  Aws::String m_name;
 
   Aws::String m_description;
 
-  Aws::String m_name;
+  Aws::Vector<Aws::String> m_allowedValues;
 
   Aws::String m_required;
-  bool m_allowedValuesHasBeenSet = false;
-  bool m_conditionalsHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::Vector<DeploymentConditionalField> m_conditionals;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
+  bool m_conditionalsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -35,18 +35,18 @@ class DeploymentDataSummary {
 
   ///@{
   /**
-   * <p>The time the deployment was created.</p>
+   * <p>The name of the deployment</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  DeploymentDataSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
+  template <typename NameT = Aws::String>
+  DeploymentDataSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -71,18 +71,18 @@ class DeploymentDataSummary {
 
   ///@{
   /**
-   * <p>The name of the deployment</p>
+   * <p>The name of the workload.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
+  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
+  template <typename WorkloadNameT = Aws::String>
+  void SetWorkloadName(WorkloadNameT&& value) {
+    m_workloadNameHasBeenSet = true;
+    m_workloadName = std::forward<WorkloadNameT>(value);
   }
-  template <typename NameT = Aws::String>
-  DeploymentDataSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename WorkloadNameT = Aws::String>
+  DeploymentDataSummary& WithWorkloadName(WorkloadNameT&& value) {
+    SetWorkloadName(std::forward<WorkloadNameT>(value));
     return *this;
   }
   ///@}
@@ -123,39 +123,60 @@ class DeploymentDataSummary {
 
   ///@{
   /**
-   * <p>The name of the workload.</p>
+   * <p>The time the deployment was created.</p>
    */
-  inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
-  inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-  template <typename WorkloadNameT = Aws::String>
-  void SetWorkloadName(WorkloadNameT&& value) {
-    m_workloadNameHasBeenSet = true;
-    m_workloadName = std::forward<WorkloadNameT>(value);
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
   }
-  template <typename WorkloadNameT = Aws::String>
-  DeploymentDataSummary& WithWorkloadName(WorkloadNameT&& value) {
-    SetWorkloadName(std::forward<WorkloadNameT>(value));
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  DeploymentDataSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time the deployment was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+  inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  void SetModifiedAt(ModifiedAtT&& value) {
+    m_modifiedAtHasBeenSet = true;
+    m_modifiedAt = std::forward<ModifiedAtT>(value);
+  }
+  template <typename ModifiedAtT = Aws::Utils::DateTime>
+  DeploymentDataSummary& WithModifiedAt(ModifiedAtT&& value) {
+    SetModifiedAt(std::forward<ModifiedAtT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
+  Aws::String m_name;
 
   Aws::String m_id;
 
-  Aws::String m_name;
+  Aws::String m_workloadName;
 
   Aws::String m_patternName;
 
   DeploymentStatus m_status{DeploymentStatus::NOT_SET};
 
-  Aws::String m_workloadName;
-  bool m_createdAtHasBeenSet = false;
-  bool m_idHasBeenSet = false;
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_modifiedAt{};
   bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
   bool m_patternNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_workloadNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
 };
 
 }  // namespace Model

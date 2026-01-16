@@ -21,10 +21,12 @@
 /* Service model headers required in LaunchWizardClient header */
 #include <aws/launch-wizard/model/CreateDeploymentResult.h>
 #include <aws/launch-wizard/model/DeleteDeploymentResult.h>
+#include <aws/launch-wizard/model/GetDeploymentPatternVersionResult.h>
 #include <aws/launch-wizard/model/GetDeploymentResult.h>
 #include <aws/launch-wizard/model/GetWorkloadDeploymentPatternResult.h>
 #include <aws/launch-wizard/model/GetWorkloadResult.h>
 #include <aws/launch-wizard/model/ListDeploymentEventsResult.h>
+#include <aws/launch-wizard/model/ListDeploymentPatternVersionsResult.h>
 #include <aws/launch-wizard/model/ListDeploymentsRequest.h>
 #include <aws/launch-wizard/model/ListDeploymentsResult.h>
 #include <aws/launch-wizard/model/ListTagsForResourceResult.h>
@@ -33,6 +35,7 @@
 #include <aws/launch-wizard/model/ListWorkloadsResult.h>
 #include <aws/launch-wizard/model/TagResourceResult.h>
 #include <aws/launch-wizard/model/UntagResourceResult.h>
+#include <aws/launch-wizard/model/UpdateDeploymentResult.h>
 /* End of service model headers required in LaunchWizardClient header */
 
 namespace Aws {
@@ -69,45 +72,54 @@ namespace Model {
 class CreateDeploymentRequest;
 class DeleteDeploymentRequest;
 class GetDeploymentRequest;
+class GetDeploymentPatternVersionRequest;
 class GetWorkloadRequest;
 class GetWorkloadDeploymentPatternRequest;
 class ListDeploymentEventsRequest;
+class ListDeploymentPatternVersionsRequest;
 class ListDeploymentsRequest;
 class ListTagsForResourceRequest;
 class ListWorkloadDeploymentPatternsRequest;
 class ListWorkloadsRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateDeploymentRequest;
 /* End of service model forward declarations required in LaunchWizardClient header */
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<CreateDeploymentResult, LaunchWizardError> CreateDeploymentOutcome;
 typedef Aws::Utils::Outcome<DeleteDeploymentResult, LaunchWizardError> DeleteDeploymentOutcome;
 typedef Aws::Utils::Outcome<GetDeploymentResult, LaunchWizardError> GetDeploymentOutcome;
+typedef Aws::Utils::Outcome<GetDeploymentPatternVersionResult, LaunchWizardError> GetDeploymentPatternVersionOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadResult, LaunchWizardError> GetWorkloadOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadDeploymentPatternResult, LaunchWizardError> GetWorkloadDeploymentPatternOutcome;
 typedef Aws::Utils::Outcome<ListDeploymentEventsResult, LaunchWizardError> ListDeploymentEventsOutcome;
+typedef Aws::Utils::Outcome<ListDeploymentPatternVersionsResult, LaunchWizardError> ListDeploymentPatternVersionsOutcome;
 typedef Aws::Utils::Outcome<ListDeploymentsResult, LaunchWizardError> ListDeploymentsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, LaunchWizardError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadDeploymentPatternsResult, LaunchWizardError> ListWorkloadDeploymentPatternsOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadsResult, LaunchWizardError> ListWorkloadsOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, LaunchWizardError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, LaunchWizardError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateDeploymentResult, LaunchWizardError> UpdateDeploymentOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
 typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
 typedef std::future<DeleteDeploymentOutcome> DeleteDeploymentOutcomeCallable;
 typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
+typedef std::future<GetDeploymentPatternVersionOutcome> GetDeploymentPatternVersionOutcomeCallable;
 typedef std::future<GetWorkloadOutcome> GetWorkloadOutcomeCallable;
 typedef std::future<GetWorkloadDeploymentPatternOutcome> GetWorkloadDeploymentPatternOutcomeCallable;
 typedef std::future<ListDeploymentEventsOutcome> ListDeploymentEventsOutcomeCallable;
+typedef std::future<ListDeploymentPatternVersionsOutcome> ListDeploymentPatternVersionsOutcomeCallable;
 typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkloadDeploymentPatternsOutcome> ListWorkloadDeploymentPatternsOutcomeCallable;
 typedef std::future<ListWorkloadsOutcome> ListWorkloadsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateDeploymentOutcome> UpdateDeploymentOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -123,6 +135,9 @@ typedef std::function<void(const LaunchWizardClient*, const Model::DeleteDeploym
 typedef std::function<void(const LaunchWizardClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDeploymentResponseReceivedHandler;
+typedef std::function<void(const LaunchWizardClient*, const Model::GetDeploymentPatternVersionRequest&,
+                           const Model::GetDeploymentPatternVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDeploymentPatternVersionResponseReceivedHandler;
 typedef std::function<void(const LaunchWizardClient*, const Model::GetWorkloadRequest&, const Model::GetWorkloadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWorkloadResponseReceivedHandler;
@@ -133,6 +148,10 @@ typedef std::function<void(const LaunchWizardClient*, const Model::GetWorkloadDe
 typedef std::function<void(const LaunchWizardClient*, const Model::ListDeploymentEventsRequest&, const Model::ListDeploymentEventsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDeploymentEventsResponseReceivedHandler;
+typedef std::function<void(const LaunchWizardClient*, const Model::ListDeploymentPatternVersionsRequest&,
+                           const Model::ListDeploymentPatternVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDeploymentPatternVersionsResponseReceivedHandler;
 typedef std::function<void(const LaunchWizardClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDeploymentsResponseReceivedHandler;
@@ -152,6 +171,9 @@ typedef std::function<void(const LaunchWizardClient*, const Model::TagResourceRe
 typedef std::function<void(const LaunchWizardClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const LaunchWizardClient*, const Model::UpdateDeploymentRequest&, const Model::UpdateDeploymentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDeploymentResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace LaunchWizard
 }  // namespace Aws

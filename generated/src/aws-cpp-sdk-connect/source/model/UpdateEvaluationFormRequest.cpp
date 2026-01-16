@@ -47,6 +47,10 @@ Aws::String UpdateEvaluationFormRequest::SerializePayload() const {
     payload.WithObject("AutoEvaluationConfiguration", m_autoEvaluationConfiguration.Jsonize());
   }
 
+  if (m_reviewConfigurationHasBeenSet) {
+    payload.WithObject("ReviewConfiguration", m_reviewConfiguration.Jsonize());
+  }
+
   if (m_asDraftHasBeenSet) {
     payload.WithBool("AsDraft", m_asDraft);
   }

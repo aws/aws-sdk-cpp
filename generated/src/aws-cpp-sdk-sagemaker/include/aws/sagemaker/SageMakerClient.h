@@ -2133,7 +2133,13 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    * started.</p> <p>For information about notebook instance lifestyle
    * configurations, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
-   * 2.1: (Optional) Customize a Notebook Instance</a>.</p><p><h3>See Also:</h3>   <a
+   * 2.1: (Optional) Customize a Notebook Instance</a>.</p>  <p>Lifecycle
+   * configuration scripts execute with root access and the notebook instance's IAM
+   * execution role privileges. Grant this permission only to trusted principals. See
+   * <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+   * a Notebook Instance Using a Lifecycle Configuration Script</a> for security best
+   * practices.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">AWS
    * API Reference</a></p>
    */
@@ -11122,7 +11128,14 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Updates a notebook instance. NotebookInstance updates include upgrading or
    * downgrading the ML compute instance used for your notebook instance to
-   * accommodate changes in your workload requirements.</p><p><h3>See Also:</h3>   <a
+   * accommodate changes in your workload requirements.</p>  <p>This API can
+   * attach lifecycle configurations to notebook instances. Lifecycle configuration
+   * scripts execute with root access and the notebook instance's IAM execution role
+   * privileges. Principals with this permission and access to lifecycle
+   * configurations can execute code with the execution role's credentials. See <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+   * a Notebook Instance Using a Lifecycle Configuration Script</a> for security best
+   * practices.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstance">AWS
    * API Reference</a></p>
    */
@@ -11151,7 +11164,14 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Updates a notebook instance lifecycle configuration created with the <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
-   * API.</p><p><h3>See Also:</h3>   <a
+   * API.</p>  <p>Updates to lifecycle configurations affect all notebook
+   * instances using that configuration upon their next start. Lifecycle
+   * configuration scripts execute with root access and the notebook instance's IAM
+   * execution role privileges. Grant this permission only to trusted principals. See
+   * <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Customize
+   * a Notebook Instance Using a Lifecycle Configuration Script</a> for security best
+   * practices.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
    * API Reference</a></p>
    */

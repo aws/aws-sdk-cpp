@@ -63,6 +63,24 @@ class View {
 
   ///@{
   /**
+   * <p>The name of the view.</p>
+   */
+  inline const Aws::String& GetViewName() const { return m_viewName; }
+  inline bool ViewNameHasBeenSet() const { return m_viewNameHasBeenSet; }
+  template <typename ViewNameT = Aws::String>
+  void SetViewName(ViewNameT&& value) {
+    m_viewNameHasBeenSet = true;
+    m_viewName = std::forward<ViewNameT>(value);
+  }
+  template <typename ViewNameT = Aws::String>
+  View& WithViewName(ViewNameT&& value) {
+    SetViewName(std::forward<ViewNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Web Services account that owns this view.</p>
    */
   inline const Aws::String& GetOwner() const { return m_owner; }
@@ -167,6 +185,8 @@ class View {
  private:
   Aws::String m_viewArn;
 
+  Aws::String m_viewName;
+
   Aws::String m_owner;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
@@ -177,6 +197,7 @@ class View {
 
   SearchFilter m_filters;
   bool m_viewArnHasBeenSet = false;
+  bool m_viewNameHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_scopeHasBeenSet = false;

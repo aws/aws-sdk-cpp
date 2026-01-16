@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String ListWorkloadDeploymentPatternsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("workloadName", m_workloadName);
+  }
+
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("maxResults", m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
-  }
-
-  if (m_workloadNameHasBeenSet) {
-    payload.WithString("workloadName", m_workloadName);
   }
 
   return payload.View().WriteReadable();
