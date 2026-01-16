@@ -120,6 +120,8 @@ public class PaginationTraitsGenerator {
               .writeNamespaceClose("Aws");
     }
 
+    // TODO: This EC2 protocol detection logic should be moved to a shared utility or configuration
+    // Currently duplicated from Ec2CppClientGenerator.legacyPatchEc2Model logic
     // Mimic EC2's legacyPatchEc2Model logic - EC2 protocol renames all Result shapes to Response
     private String getResultSuffix(String opName) {
         // Check if this service uses EC2 protocol which renames Result to Response
