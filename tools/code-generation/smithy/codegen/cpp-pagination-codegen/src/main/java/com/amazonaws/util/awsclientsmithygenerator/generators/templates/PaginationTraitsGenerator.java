@@ -98,7 +98,21 @@ public class PaginationTraitsGenerator {
                         writer.write("        return !result.Get$L().empty();", capitalize(outToken));
                     }
                 } else {
-                    writer.write("        return result.GetIsTruncated();");
+                    // TODO: Check how legacy C2J code generation handles service-level pagination
+                    // This is a temporary fix for AccessAnalyzer which uses service-level pagination config.
+                    // We should investigate how the legacy generator in C2jModelToGeneratorModelTransformer
+                    // or other legacy components handle service-level vs operation-level pagination traits
+                    // and implement a more comprehensive solution that matches that behavior.
+                    String serviceLevelOutputToken = getServiceLevelOutputToken();
+                    if (serviceLevelOutputToken != null) {
+                        if (serviceLevelOutputToken.toLowerCase().contains("marker") || serviceLevelOutputToken.toLowerCase().contains("number")) {
+                            writer.write("        return result.Get$L() != 0;", capitalize(serviceLevelOutputToken));
+                        } else {
+                            writer.write("        return !result.Get$L().empty();", capitalize(serviceLevelOutputToken));
+                        }
+                    } else {
+                        writer.write("        return result.GetIsTruncated();");
+                    }
                 }
             });
             
@@ -106,10 +120,33 @@ public class PaginationTraitsGenerator {
             
             // SetNextRequest method
             writer.openBlock("    static void SetNextRequest(const ResultType& result, RequestType& request)\n    {", "    }", () -> {
+                String inToken = null;
+                String outToken = null;
+                
                 if (trait.getInputToken().isPresent() && trait.getOutputToken().isPresent()) {
-                    String inToken = trait.getInputToken().get();
-                    String outToken = trait.getOutputToken().get();
+                    inToken = trait.getInputToken().get();
+                    outToken = trait.getOutputToken().get();
+                } else {
+                    // TODO: Check how legacy C2J code generation handles service-level pagination
+                    // This is a temporary fix for AccessAnalyzer which uses service-level pagination config.
+                    // We should investigate how the legacy generator in C2jModelToGeneratorModelTransformer
+                    // or other legacy components handle service-level vs operation-level pagination traits
+                    // and implement a more comprehensive solution that matches that behavior.
+                    String serviceLevelInputToken = getServiceLevelInputToken();
+                    String serviceLevelOutputToken = getServiceLevelOutputToken();
+                    if (serviceLevelInputToken != null && serviceLevelOutputToken != null) {
+                        inToken = serviceLevelInputToken;
+                        outToken = serviceLevelOutputToken;
+                    }
+                }
+                
+                if (inToken != null && outToken != null) {
                     writer.write("        request.Set$L(result.Get$L());", capitalize(inToken), capitalize(outToken));
+                } else {
+                    // TODO: Check AWS SDK C++ standard for handling null pagination tokens
+                    // Should we throw an exception, log a warning, or silently ignore?
+                    // Verify behavior with other AWS SDK implementations.
+                    writer.write("        (void)result; (void)request; // Unused parameters");
                 }
             });
         });
@@ -135,6 +172,27 @@ public class PaginationTraitsGenerator {
         // EC2 protocol services rename all Result shapes to Response
         // This matches the logic in Ec2CppClientGenerator.legacyPatchEc2Model
         return "ec2".equals(c2jServiceName);
+    }
+
+    // TODO: These service-level pagination helper methods are a temporary solution.
+    // We should investigate how the legacy C2J code generation system handles the precedence
+    // between operation-level and service-level pagination traits, and implement a solution
+    // that matches that behavior. This may involve:
+    // 1. Checking how C2jModelToGeneratorModelTransformer processes pagination
+    // 2. Understanding the inheritance model for pagination traits
+    // 3. Implementing proper trait resolution that matches legacy behavior
+    private String getServiceLevelInputToken() {
+        // Check if service has service-level pagination configuration
+        return service.getTrait(software.amazon.smithy.model.traits.PaginatedTrait.class)
+                .map(trait -> trait.getInputToken().orElse(null))
+                .orElse(null);
+    }
+    
+    private String getServiceLevelOutputToken() {
+        // Check if service has service-level pagination configuration
+        return service.getTrait(software.amazon.smithy.model.traits.PaginatedTrait.class)
+                .map(trait -> trait.getOutputToken().orElse(null))
+                .orElse(null);
     }
 
     private String capitalize(String str) {

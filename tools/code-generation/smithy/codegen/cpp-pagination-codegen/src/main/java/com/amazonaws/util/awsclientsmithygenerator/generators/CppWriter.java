@@ -34,12 +34,12 @@ public class CppWriter extends SymbolWriter<CppWriter, CppImportContainer> {
     }
     
     public CppWriter writeNamespaceOpen(String namespace) {
-        write("namespace $L\n{", namespace);
+        openBlock("namespace $L\n{", namespace);
         return this;
     }
     
     public CppWriter writeNamespaceClose(String namespace) {
-        write("} // namespace $L", namespace);
+        closeBlock("} // namespace $L", namespace);
         return this;
     }
 }
