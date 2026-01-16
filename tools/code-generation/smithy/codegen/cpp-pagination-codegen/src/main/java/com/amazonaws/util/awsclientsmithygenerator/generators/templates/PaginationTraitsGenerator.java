@@ -13,6 +13,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import java.util.*;
+import java.util.Arrays;
 
 public class PaginationTraitsGenerator {
     private final PluginContext context;
@@ -57,10 +58,11 @@ public class PaginationTraitsGenerator {
               .write("")
               .write("#pragma once");
         
-        // Includes
+        // Includes - detect suffix like C2J renameShape logic
+        String resultSuffix = getResultSuffix(opName);
         writer.writeInclude("aws/" + c2jServiceName + "/" + serviceName + "_EXPORTS.h")
               .writeInclude("aws/" + c2jServiceName + "/model/" + opName + "Request.h")
-              .writeInclude("aws/" + c2jServiceName + "/model/" + opName + "Result.h")
+              .writeInclude("aws/" + c2jServiceName + "/model/" + opName + resultSuffix + ".h")
               .writeInclude("aws/" + c2jServiceName + "/" + serviceName + "Client.h")
               .write("");
         
@@ -72,8 +74,9 @@ public class PaginationTraitsGenerator {
         
         // Struct definition
         writer.openBlock("struct " + opName + "PaginationTraits\n{", "};", () -> {
+            // Use detected suffix to match C2J renameShape logic
             writer.write("    using RequestType = Model::$LRequest;", opName)
-                  .write("    using ResultType = Model::$LResult;", opName)
+                  .write("    using ResultType = Model::$L$L;", opName, resultSuffix)
                   .write("    using OutcomeType = Model::$LOutcome;", opName)
                   .write("    using ClientType = $LClient;", serviceName)
                   .write("");
@@ -115,6 +118,21 @@ public class PaginationTraitsGenerator {
               .writeNamespaceClose("Pagination")
               .writeNamespaceClose(serviceName)
               .writeNamespaceClose("Aws");
+    }
+
+    // Mimic EC2's legacyPatchEc2Model logic - EC2 protocol renames all Result shapes to Response
+    private String getResultSuffix(String opName) {
+        // Check if this service uses EC2 protocol which renames Result to Response
+        if (isEc2Protocol()) {
+            return "Response";
+        }
+        return "Result";
+    }
+    
+    private boolean isEc2Protocol() {
+        // EC2 protocol services rename all Result shapes to Response
+        // This matches the logic in Ec2CppClientGenerator.legacyPatchEc2Model
+        return "ec2".equals(c2jServiceName);
     }
 
     private String capitalize(String str) {
