@@ -35,6 +35,14 @@ public final class ServiceNameUtil {
         String serviceId = service.getTrait(ServiceTrait.class)
             .map(ServiceTrait::getSdkId)
             .orElse(service.getId().getName());
+
+        //TODO: bandage fix
+        // For B2BI and other services, check if we have a serviceAbbreviation equivalent
+        // The main generator uses serviceAbbreviation ("AWS B2BI") -> sanitized -> "B2BI"
+        // We need to simulate this for consistency
+        if ("b2bi".equals(serviceId.toLowerCase())) {
+            return "B2BI"; // Match the main generator's output
+        }
         
         if (LEGACY_SERVICE_IDS.contains(serviceId.toLowerCase())) {
             // For legacy services, use title trait (serviceFullName equivalent) which includes "Service" suffix
