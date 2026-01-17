@@ -179,8 +179,11 @@ public class PaginationTraitsGenerator {
                     // Found a shape with the same name - check if it's a data model
                     if (shape instanceof StructureShape) {
                         StructureShape structShape = (StructureShape) shape;
-                        // If it doesn't have NextToken, it's likely a data model
-                        return !structShape.getAllMembers().keySet().contains("NextToken");
+                        // If it doesn't have NextToken/nextToken, it's likely a data model
+                        Set<String> memberNames = structShape.getAllMembers().keySet();
+                        // TODO: Sanitize member names for other edge cases (e.g., different casing, underscores, etc.)
+                        boolean hasNextToken = memberNames.contains("NextToken") || memberNames.contains("nextToken");
+                        return !hasNextToken;
                     }
                 }
                 return false;
