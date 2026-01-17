@@ -17,7 +17,7 @@ public final class ServiceNameUtil {
     private static final Set<String> LEGACY_SERVICE_IDS = Set.of(
         "amp", "appintegrations", "amazonappintegrationservice", "billingconductor", "clouddirectory", "cloudfront",
         "cloudsearch", "cloudsearchdomain", "codeartifact", "codestar-notifications",
-        "config", "databrew", "ec2", "elasticache", "emr-containers",
+        "config", "databrew", "elasticache", "emr-containers",
         "entitlement.marketplace", "events", "evidently", "forecast", "forecastquery",
         "grafana", "importexport", "inspector", "lambda", "location", "lookoutvision",
         "m2", "migrationhubstrategy", "mobile", "mobileanalytics", "mq", "nimble",
@@ -29,23 +29,30 @@ public final class ServiceNameUtil {
     );
     
     public static String getServiceName(ServiceShape service) {
-        String serviceName = service.getId().getName().toLowerCase();
-        if (LEGACY_SERVICE_IDS.contains(serviceName)) {
-            // For legacy services, use title trait which includes "Service" suffix
+        // TODO: This logic should match C2jModelToGeneratorModelTransformer.convertMetadata()
+        // to ensure consistent service name generation between legacy and new generators
+        
+        String serviceId = service.getTrait(ServiceTrait.class)
+            .map(ServiceTrait::getSdkId)
+            .orElse(service.getId().getName());
+        
+        if (LEGACY_SERVICE_IDS.contains(serviceId.toLowerCase())) {
+            // For legacy services, use title trait (serviceFullName equivalent) which includes "Service" suffix
             String title = service.getTrait(TitleTrait.class)
                 .map(TitleTrait::getValue)
                 .orElse(null);
             if (title != null) {
-                return title.replace(" ", "").replace("-", "").replace("Amazon", "").replace("AWS", "");
+                return sanitizeServiceAbbreviation(title);
             }
         }
         
         // For new services or legacy without title, use serviceId trait
-        return service.getTrait(ServiceTrait.class)
-            .map(ServiceTrait::getSdkId)
-            .orElse(service.getId().getName())
-            .replace(" ", "")
-            .replace("-", "");
+        return sanitizeServiceAbbreviation(serviceId);
+    }
+    
+    // Match C2jModelToGeneratorModelTransformer.sanitizeServiceAbbreviation() exactly
+    private static String sanitizeServiceAbbreviation(String serviceAbbreviation) {
+        return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
     }
     
     public static String getC2jServiceName(ServiceShape service, Map<String, String> c2jMap) {
