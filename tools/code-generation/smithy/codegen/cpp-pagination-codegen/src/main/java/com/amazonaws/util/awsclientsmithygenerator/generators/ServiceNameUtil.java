@@ -28,24 +28,44 @@ public final class ServiceNameUtil {
         "dynamodbstreams"
     );
     
+    // TODO: Remove hardcoded mappings once Smithy models include serviceAbbreviation trait
+    // Smithy sdkId matches C2J serviceId, but C2J prioritizes serviceAbbreviation (which Smithy lacks).
+    // 18 of 66 services where C2J abbrev != serviceId require these mappings to match C2J output.
+    // Hardcoded mappings where Smithy sdkId doesn't match C2J serviceAbbreviation
+    private static final Map<String, String> SMITHY_TO_C2J_NAMESPACE = Map.ofEntries(
+        Map.entry("b2bi", "B2BI"),
+        Map.entry("cloudcontrol", "CloudControlApi"),
+        Map.entry("ecrpublic", "ECRPublic"),
+        Map.entry("evs", "EVS"),
+        Map.entry("finspacedata", "FinSpaceData"),
+        Map.entry("fis", "FIS"),
+        Map.entry("identitystore", "IdentityStore"),
+        Map.entry("inspectorscan", "inspectorscan"),
+        Map.entry("iotdeviceadvisor", "IoTDeviceAdvisor"),
+        Map.entry("ivs", "IVS"),
+        Map.entry("ivsrealtime", "ivsrealtime"),
+        Map.entry("kinesisvideosignaling", "KinesisVideoSignalingChannels"),
+        Map.entry("marketplaceagreement", "AgreementService"),
+        Map.entry("mediapackagev2", "mediapackagev2"),
+        Map.entry("savingsplans", "SavingsPlans"),
+        Map.entry("servicecatalogappregistry", "AppRegistry"),
+        Map.entry("sesv2", "SESV2"),
+        Map.entry("synthetics", "Synthetics")
+    );
+    
     public static String getServiceName(ServiceShape service) {
-        // TODO: This logic should match C2jModelToGeneratorModelTransformer.convertMetadata()
-        // to ensure consistent service name generation between legacy and new generators
-        
         String serviceId = service.getTrait(ServiceTrait.class)
             .map(ServiceTrait::getSdkId)
             .orElse(service.getId().getName());
-
-        //TODO: bandage fix
-        // For B2BI and other services, check if we have a serviceAbbreviation equivalent
-        // The main generator uses serviceAbbreviation ("AWS B2BI") -> sanitized -> "B2BI"
-        // We need to simulate this for consistency
-        if ("b2bi".equals(serviceId.toLowerCase())) {
-            return "B2BI"; // Match the main generator's output
+        
+        // Check hardcoded mappings first
+        String sanitized = sanitizeServiceAbbreviation(serviceId);
+        String mapped = SMITHY_TO_C2J_NAMESPACE.get(sanitized.toLowerCase());
+        if (mapped != null) {
+            return mapped;
         }
         
         if (LEGACY_SERVICE_IDS.contains(serviceId.toLowerCase())) {
-            // For legacy services, use title trait (serviceFullName equivalent) which includes "Service" suffix
             String title = service.getTrait(TitleTrait.class)
                 .map(TitleTrait::getValue)
                 .orElse(null);
@@ -54,8 +74,7 @@ public final class ServiceNameUtil {
             }
         }
         
-        // For new services or legacy without title, use serviceId trait
-        return sanitizeServiceAbbreviation(serviceId);
+        return sanitized;
     }
     
     // Match C2jModelToGeneratorModelTransformer.sanitizeServiceAbbreviation() exactly
