@@ -157,22 +157,68 @@ public class PaginationTraitsGenerator {
               .writeNamespaceClose("Aws");
     }
 
-    // TODO: This EC2 protocol detection logic should be moved to a shared utility or configuration
-    // Currently duplicated from Ec2CppClientGenerator.legacyPatchEc2Model logic
-    // Mimic EC2's legacyPatchEc2Model logic - EC2 protocol renames all Result shapes to Response
+    // Replicate C2J renameShape conflict detection logic
+    // TODO: This conflict detection logic may need to be moved to a shared utility class
+    // to avoid duplication between C2J and Smithy generators and ensure consistency.
+    // Consider reusing the already implemented ShapeUtil class for shape name operations.
     private String getResultSuffix(String opName) {
         // Check if this service uses EC2 protocol which renames Result to Response
         if (isEc2Protocol()) {
             return "Response";
         }
+        
+        // Replicate C2jModelToGeneratorModelTransformer.renameShape logic
+        // Try suffixes in order: "Result", "SdkResult", "CppSdkResult"
+        List<String> suffixOptions = Arrays.asList("Result", "SdkResult", "CppSdkResult");
+        
+        for (String suffix : suffixOptions) {
+            String candidateName = opName + suffix;
+            
+            // Check if there would be a naming conflict with this suffix
+            if (!hasNamingConflict(candidateName, opName)) {
+                return suffix;
+            }
+        }
+        
+        // Fallback to "Result" if no conflicts detected
         return "Result";
     }
+    
+    // Replicate the conflict detection logic from C2jModelToGeneratorModelTransformer
+    private boolean hasNamingConflict(String candidateName, String opName) {
+        // Check if there's a shape that would conflict with this name
+        // This mimics the conflict detection in renameShape method lines 771-775
+        
+        // Get all shapes in the model to check for conflicts
+        Set<Shape> allShapes = context.getModel().toSet();
+        
+        for (Shape shape : allShapes) {
+            String shapeName = shape.getId().getName();
+            
+            // Check if the candidate name conflicts with existing shape names
+            if (candidateName.equals(shapeName)) {
+                // There's a direct name conflict, need to use next suffix
+                return true;
+            }
+            
+            // Check for "Get" + shapeName pattern conflicts (from C2J logic)
+            if (candidateName.equals("Get" + shapeName) || candidateName.equals("Set" + shapeName)) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    // Remove the hardcoded method - no longer needed
+    // private boolean isKnownConflictingOperation(String opName) { ... }
     
     private boolean isEc2Protocol() {
         // EC2 protocol services rename all Result shapes to Response
         // This matches the logic in Ec2CppClientGenerator.legacyPatchEc2Model
         return "ec2".equals(c2jServiceName);
     }
+
 
     // TODO: These service-level pagination helper methods are a temporary solution.
     // We should investigate how the legacy C2J code generation system handles the precedence
