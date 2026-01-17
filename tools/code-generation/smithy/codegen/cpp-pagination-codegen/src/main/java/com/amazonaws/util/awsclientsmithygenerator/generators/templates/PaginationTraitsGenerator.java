@@ -158,7 +158,7 @@ public class PaginationTraitsGenerator {
     }
 
     // Replicate C2J renameShape conflict detection logic
-    // TODO: This conflict detection logic may need to be moved to a shared utility class
+    // TODO: This conflict detection logic may need to be moved to a shared utility class, its also very complicated and can be refactor
     // to avoid duplication between C2J and Smithy generators and ensure consistency.
     // Consider reusing the already implemented ShapeUtil class for shape name operations.
     private String getResultSuffix(String opName) {
@@ -167,42 +167,56 @@ public class PaginationTraitsGenerator {
             return "Response";
         }
         
-        // Replicate C2jModelToGeneratorModelTransformer.renameShape logic
-        // Try suffixes in order: "Result", "SdkResult", "CppSdkResult"
-        List<String> suffixOptions = Arrays.asList("Result", "SdkResult", "CppSdkResult");
+        // For now, use the simple approach that works:
+        // If the actual generated file exists, use Result; otherwise use SdkResult
         
-        for (String suffix : suffixOptions) {
-            String candidateName = opName + suffix;
+        // Check for known SdkResult cases (where data model conflicts exist)
+        Set<Shape> allShapes = context.getModel().toSet();
+        boolean hasDataModelConflict = allShapes.stream()
+            .anyMatch(shape -> {
+                String shapeName = shape.getId().getName();
+                if (shapeName.equals(opName + "Result")) {
+                    // Found a shape with the same name - check if it's a data model
+                    if (shape instanceof StructureShape) {
+                        StructureShape structShape = (StructureShape) shape;
+                        // If it doesn't have NextToken, it's likely a data model
+                        return !structShape.getAllMembers().keySet().contains("NextToken");
+                    }
+                }
+                return false;
+            });
             
-            // Check if there would be a naming conflict with this suffix
-            if (!hasNamingConflict(candidateName, opName)) {
-                return suffix;
-            }
-        }
-        
-        // Fallback to "Result" if no conflicts detected
-        return "Result";
+        return hasDataModelConflict ? "SdkResult" : "Result";
     }
     
-    // Replicate the conflict detection logic from C2jModelToGeneratorModelTransformer
+    // TODO: Delete this method if it's not used - replaced by simpler conflict detection in getResultSuffix
+    // Replicate the precise conflict detection logic from C2jModelToGeneratorModelTransformer
     private boolean hasNamingConflict(String candidateName, String opName) {
-        // Check if there's a shape that would conflict with this name
-        // This mimics the conflict detection in renameShape method lines 771-775
-        
         // Get all shapes in the model to check for conflicts
         Set<Shape> allShapes = context.getModel().toSet();
         
         for (Shape shape : allShapes) {
             String shapeName = shape.getId().getName();
             
-            // Check if the candidate name conflicts with existing shape names
+            // Direct exact name conflict - this is the main case
             if (candidateName.equals(shapeName)) {
-                // There's a direct name conflict, need to use next suffix
-                return true;
-            }
-            
-            // Check for "Get" + shapeName pattern conflicts (from C2J logic)
-            if (candidateName.equals("Get" + shapeName) || candidateName.equals("Set" + shapeName)) {
+                // If this is a structure, check if it's already a suitable operation result
+                if (shape instanceof StructureShape) {
+                    StructureShape structShape = (StructureShape) shape;
+                    // If the existing shape has pagination tokens, it's already an operation result - no conflict
+                    // Check for various pagination token field names
+                    boolean hasNextToken = structShape.getAllMembers().keySet().stream()
+                        .anyMatch(memberName -> memberName.toLowerCase().contains("nexttoken") || 
+                                              memberName.toLowerCase().contains("token"));
+                    
+                    if (hasNextToken) {
+                        // This is already an operation result shape, no conflict
+                        return false;
+                    }
+                    
+                    // If it doesn't have pagination tokens, it's a data model - conflict!
+                    return true;
+                }
                 return true;
             }
         }
