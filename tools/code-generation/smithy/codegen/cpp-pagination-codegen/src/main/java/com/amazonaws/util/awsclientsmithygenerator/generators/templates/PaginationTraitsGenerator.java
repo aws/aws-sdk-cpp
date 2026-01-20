@@ -60,10 +60,11 @@ public class PaginationTraitsGenerator {
         
         // Includes - detect suffix like C2J renameShape logic
         String resultSuffix = getResultSuffix(opName);
-        writer.writeInclude("aws/" + c2jServiceName + "/" + serviceName + "_EXPORTS.h")
+        String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
+        writer.writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "_EXPORTS.h")
               .writeInclude("aws/" + c2jServiceName + "/model/" + opName + "Request.h")
               .writeInclude("aws/" + c2jServiceName + "/model/" + opName + resultSuffix + ".h")
-              .writeInclude("aws/" + c2jServiceName + "/" + serviceName + "Client.h")
+              .writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "Client.h")
               .write("");
         
         // Namespaces
@@ -78,7 +79,7 @@ public class PaginationTraitsGenerator {
             writer.write("    using RequestType = Model::$LRequest;", opName)
                   .write("    using ResultType = Model::$L$L;", opName, resultSuffix)
                   .write("    using OutcomeType = Model::$LOutcome;", opName)
-                  .write("    using ClientType = $LClient;", serviceName)
+                  .write("    using ClientType = $LClient;", capitalizedServiceName)
                   .write("");
             
             // Invoke method

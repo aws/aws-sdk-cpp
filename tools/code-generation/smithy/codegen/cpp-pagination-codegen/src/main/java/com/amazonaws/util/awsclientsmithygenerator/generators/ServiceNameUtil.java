@@ -77,6 +77,19 @@ public final class ServiceNameUtil {
         return sanitized;
     }
     
+    // TODO: Investigate if getServiceNameLowercase and getServiceNameUpperCamel can be refactored
+    // to replace getServiceName entirely, ensuring all existing functionality is preserved
+    public static String getServiceNameLowercase(ServiceShape service) {
+        return getServiceName(service).toLowerCase();
+    }
+    
+    // TODO: Investigate if getServiceNameLowercase and getServiceNameUpperCamel can be refactored
+    // to replace getServiceName entirely, ensuring all existing functionality is preserved
+    public static String getServiceNameUpperCamel(ServiceShape service) {
+        String serviceName = getServiceName(service);
+        return serviceName.substring(0, 1).toUpperCase() + serviceName.substring(1);
+    }
+    
     // Match C2jModelToGeneratorModelTransformer.sanitizeServiceAbbreviation() exactly
     private static String sanitizeServiceAbbreviation(String serviceAbbreviation) {
         return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
