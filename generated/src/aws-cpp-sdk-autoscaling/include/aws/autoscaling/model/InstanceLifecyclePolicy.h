@@ -20,11 +20,14 @@ namespace AutoScaling {
 namespace Model {
 
 /**
- * <p> Defines the lifecycle policy for instances in an Auto Scaling group. This
- * policy controls instance behavior when lifecycles transition and operations
- * fail. Use lifecycle policies to ensure graceful shutdown for stateful workloads
- * or applications requiring extended draining periods. </p><p><h3>See Also:</h3>
- * <a
+ * <p> The instance lifecycle policy for the Auto Scaling group. This policy
+ * controls instance behavior when an instance transitions through its lifecycle
+ * states. Configure retention triggers to specify when instances should move to a
+ * <code>Retained</code> state instead of automatic termination. </p> <p>For more
+ * information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html">
+ * Control instance retention with instance lifecycle policies</a> in the <i>Amazon
+ * EC2 Auto Scaling User Guide</i>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceLifecyclePolicy">AWS
  * API Reference</a></p>
  */
@@ -40,9 +43,9 @@ class InstanceLifecyclePolicy {
   ///@{
   /**
    * <p> Specifies the conditions that trigger instance retention behavior. These
-   * triggers determine when instances should move to a Retained state instead of
-   * being terminated. This allows you to maintain control over instance management
-   * when lifecycle operations fail. </p>
+   * triggers determine when instances should move to a <code>Retained</code> state
+   * instead of automatic termination. This allows you to maintain control over
+   * instance management when lifecycles transition and operations fail. </p>
    */
   inline const RetentionTriggers& GetRetentionTriggers() const { return m_retentionTriggers; }
   inline bool RetentionTriggersHasBeenSet() const { return m_retentionTriggersHasBeenSet; }

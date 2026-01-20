@@ -22,6 +22,15 @@ InstanceTypeInfo& InstanceTypeInfo::operator=(JsonView jsonValue) {
     m_instanceType = jsonValue.GetString("InstanceType");
     m_instanceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SupportedInstanceConfigurations")) {
+    Aws::Utils::Array<JsonView> supportedInstanceConfigurationsJsonList = jsonValue.GetArray("SupportedInstanceConfigurations");
+    for (unsigned supportedInstanceConfigurationsIndex = 0;
+         supportedInstanceConfigurationsIndex < supportedInstanceConfigurationsJsonList.GetLength();
+         ++supportedInstanceConfigurationsIndex) {
+      m_supportedInstanceConfigurations.push_back(supportedInstanceConfigurationsJsonList[supportedInstanceConfigurationsIndex].AsObject());
+    }
+    m_supportedInstanceConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +39,17 @@ JsonValue InstanceTypeInfo::Jsonize() const {
 
   if (m_instanceTypeHasBeenSet) {
     payload.WithString("InstanceType", m_instanceType);
+  }
+
+  if (m_supportedInstanceConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedInstanceConfigurationsJsonList(m_supportedInstanceConfigurations.size());
+    for (unsigned supportedInstanceConfigurationsIndex = 0;
+         supportedInstanceConfigurationsIndex < supportedInstanceConfigurationsJsonList.GetLength();
+         ++supportedInstanceConfigurationsIndex) {
+      supportedInstanceConfigurationsJsonList[supportedInstanceConfigurationsIndex].AsObject(
+          m_supportedInstanceConfigurations[supportedInstanceConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("SupportedInstanceConfigurations", std::move(supportedInstanceConfigurationsJsonList));
   }
 
   return payload;

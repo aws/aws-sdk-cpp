@@ -8,6 +8,7 @@
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/keyspaces/model/CapacitySpecificationSummary.h>
 #include <aws/keyspaces/model/TableStatus.h>
+#include <aws/keyspaces/model/WarmThroughputSpecificationSummary.h>
 
 #include <utility>
 
@@ -90,15 +91,37 @@ class ReplicaSpecificationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The warm throughput settings for this replica, including the current status
+   * and configured read and write capacity units.</p>
+   */
+  inline const WarmThroughputSpecificationSummary& GetWarmThroughputSpecification() const { return m_warmThroughputSpecification; }
+  inline bool WarmThroughputSpecificationHasBeenSet() const { return m_warmThroughputSpecificationHasBeenSet; }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecificationSummary>
+  void SetWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    m_warmThroughputSpecificationHasBeenSet = true;
+    m_warmThroughputSpecification = std::forward<WarmThroughputSpecificationT>(value);
+  }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecificationSummary>
+  ReplicaSpecificationSummary& WithWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    SetWarmThroughputSpecification(std::forward<WarmThroughputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_region;
 
   TableStatus m_status{TableStatus::NOT_SET};
 
   CapacitySpecificationSummary m_capacitySpecification;
+
+  WarmThroughputSpecificationSummary m_warmThroughputSpecification;
   bool m_regionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_capacitySpecificationHasBeenSet = false;
+  bool m_warmThroughputSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

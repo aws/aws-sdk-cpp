@@ -41,9 +41,9 @@ class RetentionTriggers {
   /**
    * <p> Specifies the action when a termination lifecycle hook is abandoned due to
    * failure, timeout, or explicit abandonment (calling CompleteLifecycleAction).
-   * </p> <p> Set to <code>Retain</code> to move instances to a <code>Retained</code>
-   * state. Set to <code>Terminate</code> for default termination behavior. </p> <p>
-   * Retained instances don't count toward desired capacity and remain until you call
+   * </p> <p> Set to <code>retain</code> to move instances to a retained state. Set
+   * to <code>terminate</code> for default termination behavior. </p> <p> Retained
+   * instances don't count toward desired capacity and remain until you call
    * <code>TerminateInstanceInAutoScalingGroup</code>. </p>
    */
   inline RetentionAction GetTerminateHookAbandon() const { return m_terminateHookAbandon; }

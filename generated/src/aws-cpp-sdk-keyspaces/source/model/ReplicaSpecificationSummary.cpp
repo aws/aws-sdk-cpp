@@ -30,6 +30,10 @@ ReplicaSpecificationSummary& ReplicaSpecificationSummary::operator=(JsonView jso
     m_capacitySpecification = jsonValue.GetObject("capacitySpecification");
     m_capacitySpecificationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("warmThroughputSpecification")) {
+    m_warmThroughputSpecification = jsonValue.GetObject("warmThroughputSpecification");
+    m_warmThroughputSpecificationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ReplicaSpecificationSummary::Jsonize() const {
 
   if (m_capacitySpecificationHasBeenSet) {
     payload.WithObject("capacitySpecification", m_capacitySpecification.Jsonize());
+  }
+
+  if (m_warmThroughputSpecificationHasBeenSet) {
+    payload.WithObject("warmThroughputSpecification", m_warmThroughputSpecification.Jsonize());
   }
 
   return payload;

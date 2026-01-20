@@ -94,6 +94,9 @@
 #include <aws/keyspaces/model/UpdateTableRequest.h>
 #include <aws/keyspaces/model/UpdateTableResult.h>
 #include <aws/keyspaces/model/ViewType.h>
+#include <aws/keyspaces/model/WarmThroughputSpecification.h>
+#include <aws/keyspaces/model/WarmThroughputSpecificationSummary.h>
+#include <aws/keyspaces/model/WarmThroughputStatus.h>
 
 using KeyspacesIncludeTest = ::testing::Test;
 

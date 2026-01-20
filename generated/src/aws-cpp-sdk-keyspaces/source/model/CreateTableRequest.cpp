@@ -80,6 +80,10 @@ Aws::String CreateTableRequest::SerializePayload() const {
     payload.WithObject("cdcSpecification", m_cdcSpecification.Jsonize());
   }
 
+  if (m_warmThroughputSpecificationHasBeenSet) {
+    payload.WithObject("warmThroughputSpecification", m_warmThroughputSpecification.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -49,6 +49,10 @@ GetPolicyStoreResult& GetPolicyStoreResult::operator=(const Aws::AmazonWebServic
     m_deletionProtection = DeletionProtectionMapper::GetDeletionProtectionForName(jsonValue.GetString("deletionProtection"));
     m_deletionProtectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionState")) {
+    m_encryptionState = jsonValue.GetObject("encryptionState");
+    m_encryptionStateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("cedarVersion")) {
     m_cedarVersion = CedarVersionMapper::GetCedarVersionForName(jsonValue.GetString("cedarVersion"));
     m_cedarVersionHasBeenSet = true;

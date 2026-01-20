@@ -35,7 +35,8 @@ class ResourceNotFoundException {
 
   ///@{
   /**
-   * <p>Description of the error.</p>
+   * <p>The specified resource was not found. Verify the resource identifier and
+   * ensure the resource exists and is in an ACTIVE state.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -54,7 +55,7 @@ class ResourceNotFoundException {
   ///@{
   /**
    * <p>The unique identifier in the format of Amazon Resource Name (ARN) for the
-   * resource couldn’t be found.</p>
+   * resource couldn't be found.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

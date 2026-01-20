@@ -18,6 +18,7 @@
 #include <aws/keyspaces/model/SchemaDefinition.h>
 #include <aws/keyspaces/model/TableStatus.h>
 #include <aws/keyspaces/model/TimeToLive.h>
+#include <aws/keyspaces/model/WarmThroughputSpecificationSummary.h>
 
 #include <utility>
 
@@ -316,6 +317,24 @@ class GetTableResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The warm throughput settings for the table, including the current status and
+   * configured read and write capacity units.</p>
+   */
+  inline const WarmThroughputSpecificationSummary& GetWarmThroughputSpecification() const { return m_warmThroughputSpecification; }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecificationSummary>
+  void SetWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    m_warmThroughputSpecificationHasBeenSet = true;
+    m_warmThroughputSpecification = std::forward<WarmThroughputSpecificationT>(value);
+  }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecificationSummary>
+  GetTableResult& WithWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    SetWarmThroughputSpecification(std::forward<WarmThroughputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -362,6 +381,8 @@ class GetTableResult {
 
   CdcSpecificationSummary m_cdcSpecification;
 
+  WarmThroughputSpecificationSummary m_warmThroughputSpecification;
+
   Aws::String m_requestId;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
@@ -379,6 +400,7 @@ class GetTableResult {
   bool m_replicaSpecificationsHasBeenSet = false;
   bool m_latestStreamArnHasBeenSet = false;
   bool m_cdcSpecificationHasBeenSet = false;
+  bool m_warmThroughputSpecificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

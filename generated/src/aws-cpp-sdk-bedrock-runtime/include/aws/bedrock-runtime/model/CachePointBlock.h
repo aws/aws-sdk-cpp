@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/CachePointType.h>
+#include <aws/bedrock-runtime/model/CacheTTL.h>
 
 #include <utility>
 
@@ -47,9 +48,30 @@ class CachePointBlock {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional TTL duration for cache entries. When specified, enables extended TTL
+   * caching with the specified duration. When omitted, uses <code>type</code> value
+   * for caching behavior.</p>
+   */
+  inline CacheTTL GetTtl() const { return m_ttl; }
+  inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
+  inline void SetTtl(CacheTTL value) {
+    m_ttlHasBeenSet = true;
+    m_ttl = value;
+  }
+  inline CachePointBlock& WithTtl(CacheTTL value) {
+    SetTtl(value);
+    return *this;
+  }
+  ///@}
  private:
   CachePointType m_type{CachePointType::NOT_SET};
+
+  CacheTTL m_ttl{CacheTTL::NOT_SET};
   bool m_typeHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
 };
 
 }  // namespace Model

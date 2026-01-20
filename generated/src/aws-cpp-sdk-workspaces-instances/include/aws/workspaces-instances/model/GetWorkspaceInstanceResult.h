@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
+#include <aws/workspaces-instances/model/BillingConfiguration.h>
 #include <aws/workspaces-instances/model/EC2InstanceError.h>
 #include <aws/workspaces-instances/model/EC2ManagedInstance.h>
 #include <aws/workspaces-instances/model/ProvisionStateEnum.h>
@@ -133,6 +134,24 @@ class GetWorkspaceInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Returns the current billing configuration for the WorkSpace Instance,
+   * indicating the active billing mode.</p>
+   */
+  inline const BillingConfiguration& GetBillingConfiguration() const { return m_billingConfiguration; }
+  template <typename BillingConfigurationT = BillingConfiguration>
+  void SetBillingConfiguration(BillingConfigurationT&& value) {
+    m_billingConfigurationHasBeenSet = true;
+    m_billingConfiguration = std::forward<BillingConfigurationT>(value);
+  }
+  template <typename BillingConfigurationT = BillingConfiguration>
+  GetWorkspaceInstanceResult& WithBillingConfiguration(BillingConfigurationT&& value) {
+    SetBillingConfiguration(std::forward<BillingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -157,12 +176,15 @@ class GetWorkspaceInstanceResult {
 
   EC2ManagedInstance m_eC2ManagedInstance;
 
+  BillingConfiguration m_billingConfiguration;
+
   Aws::String m_requestId;
   bool m_workspaceInstanceErrorsHasBeenSet = false;
   bool m_eC2InstanceErrorsHasBeenSet = false;
   bool m_provisionStateHasBeenSet = false;
   bool m_workspaceInstanceIdHasBeenSet = false;
   bool m_eC2ManagedInstanceHasBeenSet = false;
+  bool m_billingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

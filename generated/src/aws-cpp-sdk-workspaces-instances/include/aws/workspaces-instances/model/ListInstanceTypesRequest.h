@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-instances/WorkspacesInstancesRequest.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
+#include <aws/workspaces-instances/model/InstanceConfigurationFilter.h>
 
 #include <utility>
 
@@ -69,12 +70,35 @@ class ListInstanceTypesRequest : public WorkspacesInstancesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional filter to narrow instance type results based on configuration
+   * requirements. Only returns instance types that support the specified combination
+   * of tenancy, platform type, and billing mode.</p>
+   */
+  inline const InstanceConfigurationFilter& GetInstanceConfigurationFilter() const { return m_instanceConfigurationFilter; }
+  inline bool InstanceConfigurationFilterHasBeenSet() const { return m_instanceConfigurationFilterHasBeenSet; }
+  template <typename InstanceConfigurationFilterT = InstanceConfigurationFilter>
+  void SetInstanceConfigurationFilter(InstanceConfigurationFilterT&& value) {
+    m_instanceConfigurationFilterHasBeenSet = true;
+    m_instanceConfigurationFilter = std::forward<InstanceConfigurationFilterT>(value);
+  }
+  template <typename InstanceConfigurationFilterT = InstanceConfigurationFilter>
+  ListInstanceTypesRequest& WithInstanceConfigurationFilter(InstanceConfigurationFilterT&& value) {
+    SetInstanceConfigurationFilter(std::forward<InstanceConfigurationFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  InstanceConfigurationFilter m_instanceConfigurationFilter;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_instanceConfigurationFilterHasBeenSet = false;
 };
 
 }  // namespace Model

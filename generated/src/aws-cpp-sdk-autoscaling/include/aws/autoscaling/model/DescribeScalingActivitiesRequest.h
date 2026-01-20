@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
+#include <aws/autoscaling/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -35,11 +36,11 @@ class DescribeScalingActivitiesRequest : public AutoScalingRequest {
  public:
   ///@{
   /**
-   * <p>The activity IDs of the desired scaling activities. If you omit this
-   * property, all activities for the past six weeks are described. If unknown
-   * activities are requested, they are ignored with no error. If you specify an Auto
-   * Scaling group, the results are limited to that group.</p> <p>Array Members:
-   * Maximum number of 50 IDs.</p>
+   * <p> The activity IDs of the desired scaling activities. If unknown activity IDs
+   * are requested, they are ignored with no error. Only activities started within
+   * the last six weeks can be returned regardless of the activity IDs specified. If
+   * other filters are specified with the request, only results matching all filter
+   * criteria can be returned. </p> <p>Array Members: Maximum number of 50 IDs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetActivityIds() const { return m_activityIds; }
   inline bool ActivityIdsHasBeenSet() const { return m_activityIdsHasBeenSet; }
@@ -63,7 +64,9 @@ class DescribeScalingActivitiesRequest : public AutoScalingRequest {
 
   ///@{
   /**
-   * <p>The name of the Auto Scaling group.</p>
+   * <p>The name of the Auto Scaling group.</p>  <p> Omitting this
+   * property performs an account-wide operation, which can result in slower or
+   * timed-out requests. </p>
    */
   inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
   inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
@@ -131,6 +134,45 @@ class DescribeScalingActivitiesRequest : public AutoScalingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> One or more filters to limit the results based on specific criteria. The
+   * following filters are supported: </p> <ul> <li> <p>
+   * <code>StartTimeLowerBound</code> - The earliest scaling activities to return
+   * based on the activity start time. Scaling activities with a start time earlier
+   * than this value are not included in the results. Only activities started within
+   * the last six weeks can be returned regardless of the value specified. </p> </li>
+   * <li> <p> <code>StartTimeUpperBound</code> - The latest scaling activities to
+   * return based on the activity start time. Scaling activities with a start time
+   * later than this value are not included in the results. Only activities started
+   * within the last six weeks can be returned regardless of the value specified.
+   * </p> </li> <li> <p> <code>Status</code> - The <code>StatusCode</code> value of
+   * the scaling activity. This filter can only be used in combination with the
+   * <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code>
+   * values, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a>
+   * in the <i>Amazon EC2 Auto Scaling API Reference</i>. </p> </li> </ul>
+   */
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  DescribeScalingActivitiesRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  DescribeScalingActivitiesRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_activityIds;
 
@@ -141,11 +183,14 @@ class DescribeScalingActivitiesRequest : public AutoScalingRequest {
   int m_maxRecords{0};
 
   Aws::String m_nextToken;
+
+  Aws::Vector<Filter> m_filters;
   bool m_activityIdsHasBeenSet = false;
   bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_includeDeletedGroupsHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -31,6 +31,10 @@ Aws::String CreateWorkspaceInstanceRequest::SerializePayload() const {
     payload.WithObject("ManagedInstance", m_managedInstance.Jsonize());
   }
 
+  if (m_billingConfigurationHasBeenSet) {
+    payload.WithObject("BillingConfiguration", m_billingConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

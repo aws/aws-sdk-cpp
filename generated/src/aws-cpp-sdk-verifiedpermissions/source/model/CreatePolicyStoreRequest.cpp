@@ -31,6 +31,10 @@ Aws::String CreatePolicyStoreRequest::SerializePayload() const {
     payload.WithString("deletionProtection", DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection));
   }
 
+  if (m_encryptionSettingsHasBeenSet) {
+    payload.WithObject("encryptionSettings", m_encryptionSettings.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

@@ -41,6 +41,18 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
+      ss << "Filters=&";
+    } else {
+      unsigned filtersCount = 1;
+      for (auto& item : m_filters) {
+        item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+        filtersCount++;
+      }
+    }
+  }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

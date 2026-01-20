@@ -38,6 +38,13 @@ TokenUsage& TokenUsage::operator=(JsonView jsonValue) {
     m_cacheWriteInputTokens = jsonValue.GetInteger("cacheWriteInputTokens");
     m_cacheWriteInputTokensHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cacheDetails")) {
+    Aws::Utils::Array<JsonView> cacheDetailsJsonList = jsonValue.GetArray("cacheDetails");
+    for (unsigned cacheDetailsIndex = 0; cacheDetailsIndex < cacheDetailsJsonList.GetLength(); ++cacheDetailsIndex) {
+      m_cacheDetails.push_back(cacheDetailsJsonList[cacheDetailsIndex].AsObject());
+    }
+    m_cacheDetailsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +69,14 @@ JsonValue TokenUsage::Jsonize() const {
 
   if (m_cacheWriteInputTokensHasBeenSet) {
     payload.WithInteger("cacheWriteInputTokens", m_cacheWriteInputTokens);
+  }
+
+  if (m_cacheDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cacheDetailsJsonList(m_cacheDetails.size());
+    for (unsigned cacheDetailsIndex = 0; cacheDetailsIndex < cacheDetailsJsonList.GetLength(); ++cacheDetailsIndex) {
+      cacheDetailsJsonList[cacheDetailsIndex].AsObject(m_cacheDetails[cacheDetailsIndex].Jsonize());
+    }
+    payload.WithArray("cacheDetails", std::move(cacheDetailsJsonList));
   }
 
   return payload;

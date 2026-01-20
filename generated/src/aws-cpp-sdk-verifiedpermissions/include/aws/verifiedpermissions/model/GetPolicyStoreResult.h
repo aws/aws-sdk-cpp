@@ -10,6 +10,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/verifiedpermissions/model/CedarVersion.h>
 #include <aws/verifiedpermissions/model/DeletionProtection.h>
+#include <aws/verifiedpermissions/model/EncryptionState.h>
 #include <aws/verifiedpermissions/model/ValidationSettings.h>
 
 #include <utility>
@@ -152,6 +153,24 @@ class GetPolicyStoreResult {
 
   ///@{
   /**
+   * <p>A structure that contains the encryption configuration for the policy
+   * store.</p>
+   */
+  inline const EncryptionState& GetEncryptionState() const { return m_encryptionState; }
+  template <typename EncryptionStateT = EncryptionState>
+  void SetEncryptionState(EncryptionStateT&& value) {
+    m_encryptionStateHasBeenSet = true;
+    m_encryptionState = std::forward<EncryptionStateT>(value);
+  }
+  template <typename EncryptionStateT = EncryptionState>
+  GetPolicyStoreResult& WithEncryptionState(EncryptionStateT&& value) {
+    SetEncryptionState(std::forward<EncryptionStateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The version of the Cedar language used with policies, policy templates, and
    * schemas in this policy store. For more information, see <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon
@@ -220,6 +239,8 @@ class GetPolicyStoreResult {
 
   DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
 
+  EncryptionState m_encryptionState;
+
   CedarVersion m_cedarVersion{CedarVersion::NOT_SET};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -232,6 +253,7 @@ class GetPolicyStoreResult {
   bool m_lastUpdatedDateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_encryptionStateHasBeenSet = false;
   bool m_cedarVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

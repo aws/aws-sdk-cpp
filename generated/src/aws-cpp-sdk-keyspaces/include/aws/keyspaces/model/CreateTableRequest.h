@@ -19,6 +19,7 @@
 #include <aws/keyspaces/model/SchemaDefinition.h>
 #include <aws/keyspaces/model/Tag.h>
 #include <aws/keyspaces/model/TimeToLive.h>
+#include <aws/keyspaces/model/WarmThroughputSpecification.h>
 
 #include <utility>
 
@@ -384,6 +385,31 @@ class CreateTableRequest : public KeyspacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the warm throughput settings for the table. Pre-warming a table
+   * helps you avoid capacity exceeded exceptions by pre-provisioning read and write
+   * capacity units to reduce cold start latency when your table receives
+   * traffic.</p> <p>For more information about pre-warming in Amazon Keyspaces, see
+   * <a
+   * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm
+   * a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer
+   * Guide</i>.</p>
+   */
+  inline const WarmThroughputSpecification& GetWarmThroughputSpecification() const { return m_warmThroughputSpecification; }
+  inline bool WarmThroughputSpecificationHasBeenSet() const { return m_warmThroughputSpecificationHasBeenSet; }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecification>
+  void SetWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    m_warmThroughputSpecificationHasBeenSet = true;
+    m_warmThroughputSpecification = std::forward<WarmThroughputSpecificationT>(value);
+  }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecification>
+  CreateTableRequest& WithWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    SetWarmThroughputSpecification(std::forward<WarmThroughputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_keyspaceName;
 
@@ -412,6 +438,8 @@ class CreateTableRequest : public KeyspacesRequest {
   Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
 
   CdcSpecification m_cdcSpecification;
+
+  WarmThroughputSpecification m_warmThroughputSpecification;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_schemaDefinitionHasBeenSet = false;
@@ -426,6 +454,7 @@ class CreateTableRequest : public KeyspacesRequest {
   bool m_autoScalingSpecificationHasBeenSet = false;
   bool m_replicaSpecificationsHasBeenSet = false;
   bool m_cdcSpecificationHasBeenSet = false;
+  bool m_warmThroughputSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

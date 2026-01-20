@@ -17,6 +17,7 @@
 #include <aws/keyspaces/model/PointInTimeRecovery.h>
 #include <aws/keyspaces/model/ReplicaSpecification.h>
 #include <aws/keyspaces/model/TimeToLive.h>
+#include <aws/keyspaces/model/WarmThroughputSpecification.h>
 
 #include <utility>
 
@@ -317,6 +318,25 @@ class UpdateTableRequest : public KeyspacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Modifies the warm throughput settings for the table. You can update the read
+   * and write capacity units to adjust the pre-provisioned throughput.</p>
+   */
+  inline const WarmThroughputSpecification& GetWarmThroughputSpecification() const { return m_warmThroughputSpecification; }
+  inline bool WarmThroughputSpecificationHasBeenSet() const { return m_warmThroughputSpecificationHasBeenSet; }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecification>
+  void SetWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    m_warmThroughputSpecificationHasBeenSet = true;
+    m_warmThroughputSpecification = std::forward<WarmThroughputSpecificationT>(value);
+  }
+  template <typename WarmThroughputSpecificationT = WarmThroughputSpecification>
+  UpdateTableRequest& WithWarmThroughputSpecification(WarmThroughputSpecificationT&& value) {
+    SetWarmThroughputSpecification(std::forward<WarmThroughputSpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_keyspaceName;
 
@@ -341,6 +361,8 @@ class UpdateTableRequest : public KeyspacesRequest {
   Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
 
   CdcSpecification m_cdcSpecification;
+
+  WarmThroughputSpecification m_warmThroughputSpecification;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_addColumnsHasBeenSet = false;
@@ -353,6 +375,7 @@ class UpdateTableRequest : public KeyspacesRequest {
   bool m_autoScalingSpecificationHasBeenSet = false;
   bool m_replicaSpecificationsHasBeenSet = false;
   bool m_cdcSpecificationHasBeenSet = false;
+  bool m_warmThroughputSpecificationHasBeenSet = false;
 };
 
 }  // namespace Model
