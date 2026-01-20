@@ -181,21 +181,13 @@ public class PaginationTraitsGenerator {
             return "Response";
         }
         
-        // For CloudFront, use the base operation name (without version suffix) for conflict detection
-        final String baseOpName;
-        if ("cloudfront".equals(c2jServiceName) && opName.endsWith("2020_05_31")) {
-            baseOpName = opName.substring(0, opName.length() - "2020_05_31".length());
-        } else {
-            baseOpName = opName;
-        }
-        
         // Check for known SdkResult cases (where data model conflicts exist)
         Set<Shape> allShapes = context.getModel().toSet();
         boolean hasDataModelConflict = allShapes.stream()
             .anyMatch(shape -> {
                 String shapeName = shape.getId().getName();
-                // Check if there's a conflicting shape with the base name + "Result"
-                String candidateName = baseOpName + "Result";
+                // Check if there's a conflicting shape with the operation name + "Result"
+                String candidateName = opName + "Result";
                 if (shapeName.equals(candidateName)) {
                     // Found a shape with the same name - check if it's a data model (not an operation result)
                     if (shape instanceof StructureShape) {
