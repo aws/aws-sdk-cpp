@@ -12,6 +12,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriterDelegator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import java.util.*;
 import java.util.Arrays;
 
@@ -59,7 +60,7 @@ public class PaginationTraitsGenerator {
               .write("#pragma once");
         
         // Includes - detect suffix like C2J renameShape logic
-        String resultSuffix = getResultSuffix(opName);
+        String resultSuffix = getResultSuffix(op);
         String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
         String requestFileName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName) + "Request";
         String resultFileName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName) + resultSuffix;
@@ -171,56 +172,10 @@ public class PaginationTraitsGenerator {
               .writeNamespaceClose("Aws");
     }
 
-    // Replicate C2J renameShape conflict detection logic
-    // TODO: This conflict detection logic may need to be moved to a shared utility class, its also very complicated and can be refactor
-    // to avoid duplication between C2J and Smithy generators and ensure consistency.
-    // Consider reusing the already implemented ShapeUtil class for shape name operations.
-    private String getResultSuffix(String opName) {
-        // Check if this service uses EC2 protocol which renames Result to Response
-        if (isEc2Protocol()) {
-            return "Response";
-        }
-        
-        // Check for known SdkResult cases (where data model conflicts exist)
-        Set<Shape> allShapes = context.getModel().toSet();
-        boolean hasDataModelConflict = allShapes.stream()
-            .anyMatch(shape -> {
-                String shapeName = shape.getId().getName();
-                // Check if there's a conflicting shape with the operation name + "Result"
-                String candidateName = opName + "Result";
-                if (shapeName.equals(candidateName)) {
-                    // Found a shape with the same name - check if it's a data model (not an operation result)
-                    if (shape instanceof StructureShape) {
-                        StructureShape structShape = (StructureShape) shape;
-                        // Check if this is an operation result by looking for pagination-related patterns
-                        Set<String> memberNames = structShape.getAllMembers().keySet();
-                        
-                        // Direct pagination tokens
-                        boolean hasDirectPaginationTokens = memberNames.contains("NextToken") || memberNames.contains("nextToken") ||
-                                             memberNames.contains("Marker") || memberNames.contains("marker") ||
-                                             memberNames.contains("NextMarker") || memberNames.contains("nextMarker") ||
-                                             memberNames.contains("IsTruncated") || memberNames.contains("isTruncated");
-                        
-                        // Check for nested list structures (common in AWS APIs)
-                        boolean hasNestedListStructure = memberNames.stream()
-                            .anyMatch(memberName -> memberName.toLowerCase().contains("list"));
-                        
-                        // If it has direct pagination tokens or nested list structure, it's likely an operation result
-                        boolean isOperationResult = hasDirectPaginationTokens || hasNestedListStructure;
-                        
-                        return !isOperationResult;
-                    }
-                }
-                return false;
-            });
-            
-        return hasDataModelConflict ? "SdkResult" : "Result";
-    }
-    
-    private boolean isEc2Protocol() {
-        // EC2 protocol services rename all Result shapes to Response
-        // This matches the logic in Ec2CppClientGenerator.legacyPatchEc2Model
-        return "ec2".equals(c2jServiceName);
+    // TODO: Consider inlining this method since it's only called once and just delegates to ShapeUtil.
+    // Verify no other generators use this pattern before removing.
+    private String getResultSuffix(OperationShape op) {
+        return ShapeUtil.getResultSuffix(context.getModel(), op, c2jServiceName);
     }
 
 
