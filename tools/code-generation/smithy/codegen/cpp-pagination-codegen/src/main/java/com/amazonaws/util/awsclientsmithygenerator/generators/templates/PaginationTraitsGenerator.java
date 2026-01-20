@@ -61,9 +61,11 @@ public class PaginationTraitsGenerator {
         // Includes - detect suffix like C2J renameShape logic
         String resultSuffix = getResultSuffix(opName);
         String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
+        String requestFileName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName) + "Request";
+        String resultFileName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName) + resultSuffix;
         writer.writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "_EXPORTS.h")
-              .writeInclude("aws/" + c2jServiceName + "/model/" + opName + "Request.h")
-              .writeInclude("aws/" + c2jServiceName + "/model/" + opName + resultSuffix + ".h")
+              .writeInclude("aws/" + c2jServiceName + "/model/" + requestFileName + ".h")
+              .writeInclude("aws/" + c2jServiceName + "/model/" + resultFileName + ".h")
               .writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "Client.h")
               .write("");
         
@@ -76,15 +78,16 @@ public class PaginationTraitsGenerator {
         // Struct definition
         writer.openBlock("struct " + opName + "PaginationTraits\n{", "};", () -> {
             // Use detected suffix to match C2J renameShape logic
-            writer.write("    using RequestType = Model::$LRequest;", opName)
-                  .write("    using ResultType = Model::$L$L;", opName, resultSuffix)
-                  .write("    using OutcomeType = Model::$LOutcome;", opName)
+            String methodName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName);
+            writer.write("    using RequestType = Model::$LRequest;", methodName)
+                  .write("    using ResultType = Model::$L$L;", methodName, resultSuffix)
+                  .write("    using OutcomeType = Model::$LOutcome;", methodName)
                   .write("    using ClientType = $LClient;", capitalizedServiceName)
                   .write("");
             
             // Invoke method
             writer.openBlock("    static OutcomeType Invoke(ClientType& client, const RequestType& request)\n    {", "    }", () -> {
-                writer.write("        return client.$L(request);", opName);
+                writer.write("        return client.$L(request);", methodName);
             });
             
             writer.write("");
@@ -93,7 +96,11 @@ public class PaginationTraitsGenerator {
             writer.openBlock("    static bool HasMoreResults(const ResultType& result)\n    {", "    }", () -> {
                 if (trait.getOutputToken().isPresent()) {
                     String outToken = trait.getOutputToken().get();
-                    if (outToken.toLowerCase().contains("marker") || outToken.toLowerCase().contains("number")) {
+                    String nestedListMember = getNestedListMember(op);
+                    String tokenName = extractTokenName(outToken);
+                    if (nestedListMember != null) {
+                        writer.write("        return !result.Get$L().Get$L().empty();", capitalize(nestedListMember), capitalize(tokenName));
+                    } else if (isNumericToken(op, outToken)) {
                         writer.write("        return result.Get$L() != 0;", capitalize(outToken));
                     } else {
                         writer.write("        return !result.Get$L().empty();", capitalize(outToken));
@@ -142,7 +149,13 @@ public class PaginationTraitsGenerator {
                 }
                 
                 if (inToken != null && outToken != null) {
-                    writer.write("        request.Set$L(result.Get$L());", capitalize(inToken), capitalize(outToken));
+                    String nestedListMember = getNestedListMember(op);
+                    String tokenName = extractTokenName(outToken);
+                    if (nestedListMember != null) {
+                        writer.write("        request.Set$L(result.Get$L().Get$L());", capitalize(inToken), capitalize(nestedListMember), capitalize(tokenName));
+                    } else {
+                        writer.write("        request.Set$L(result.Get$L());", capitalize(inToken), capitalize(outToken));
+                    }
                 } else {
                     // TODO: Check AWS SDK C++ standard for handling null pagination tokens
                     // Should we throw an exception, log a warning, or silently ignore?
@@ -168,23 +181,42 @@ public class PaginationTraitsGenerator {
             return "Response";
         }
         
-        // For now, use the simple approach that works:
-        // If the actual generated file exists, use Result; otherwise use SdkResult
+        // For CloudFront, use the base operation name (without version suffix) for conflict detection
+        final String baseOpName;
+        if ("cloudfront".equals(c2jServiceName) && opName.endsWith("2020_05_31")) {
+            baseOpName = opName.substring(0, opName.length() - "2020_05_31".length());
+        } else {
+            baseOpName = opName;
+        }
         
         // Check for known SdkResult cases (where data model conflicts exist)
         Set<Shape> allShapes = context.getModel().toSet();
         boolean hasDataModelConflict = allShapes.stream()
             .anyMatch(shape -> {
                 String shapeName = shape.getId().getName();
-                if (shapeName.equals(opName + "Result")) {
-                    // Found a shape with the same name - check if it's a data model
+                // Check if there's a conflicting shape with the base name + "Result"
+                String candidateName = baseOpName + "Result";
+                if (shapeName.equals(candidateName)) {
+                    // Found a shape with the same name - check if it's a data model (not an operation result)
                     if (shape instanceof StructureShape) {
                         StructureShape structShape = (StructureShape) shape;
-                        // If it doesn't have NextToken/nextToken, it's likely a data model
+                        // Check if this is an operation result by looking for pagination-related patterns
                         Set<String> memberNames = structShape.getAllMembers().keySet();
-                        // TODO: Sanitize member names for other edge cases (e.g., different casing, underscores, etc.)
-                        boolean hasNextToken = memberNames.contains("NextToken") || memberNames.contains("nextToken");
-                        return !hasNextToken;
+                        
+                        // Direct pagination tokens
+                        boolean hasDirectPaginationTokens = memberNames.contains("NextToken") || memberNames.contains("nextToken") ||
+                                             memberNames.contains("Marker") || memberNames.contains("marker") ||
+                                             memberNames.contains("NextMarker") || memberNames.contains("nextMarker") ||
+                                             memberNames.contains("IsTruncated") || memberNames.contains("isTruncated");
+                        
+                        // Check for nested list structures (common in AWS APIs)
+                        boolean hasNestedListStructure = memberNames.stream()
+                            .anyMatch(memberName -> memberName.toLowerCase().contains("list"));
+                        
+                        // If it has direct pagination tokens or nested list structure, it's likely an operation result
+                        boolean isOperationResult = hasDirectPaginationTokens || hasNestedListStructure;
+                        
+                        return !isOperationResult;
                     }
                 }
                 return false;
@@ -192,44 +224,6 @@ public class PaginationTraitsGenerator {
             
         return hasDataModelConflict ? "SdkResult" : "Result";
     }
-    
-    // TODO: Delete this method if it's not used - replaced by simpler conflict detection in getResultSuffix
-    // Replicate the precise conflict detection logic from C2jModelToGeneratorModelTransformer
-    private boolean hasNamingConflict(String candidateName, String opName) {
-        // Get all shapes in the model to check for conflicts
-        Set<Shape> allShapes = context.getModel().toSet();
-        
-        for (Shape shape : allShapes) {
-            String shapeName = shape.getId().getName();
-            
-            // Direct exact name conflict - this is the main case
-            if (candidateName.equals(shapeName)) {
-                // If this is a structure, check if it's already a suitable operation result
-                if (shape instanceof StructureShape) {
-                    StructureShape structShape = (StructureShape) shape;
-                    // If the existing shape has pagination tokens, it's already an operation result - no conflict
-                    // Check for various pagination token field names
-                    boolean hasNextToken = structShape.getAllMembers().keySet().stream()
-                        .anyMatch(memberName -> memberName.toLowerCase().contains("nexttoken") || 
-                                              memberName.toLowerCase().contains("token"));
-                    
-                    if (hasNextToken) {
-                        // This is already an operation result shape, no conflict
-                        return false;
-                    }
-                    
-                    // If it doesn't have pagination tokens, it's a data model - conflict!
-                    return true;
-                }
-                return true;
-            }
-        }
-        
-        return false;
-    }
-    
-    // Remove the hardcoded method - no longer needed
-    // private boolean isKnownConflictingOperation(String opName) { ... }
     
     private boolean isEc2Protocol() {
         // EC2 protocol services rename all Result shapes to Response
@@ -261,5 +255,54 @@ public class PaginationTraitsGenerator {
 
     private String capitalize(String str) {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+    
+    private String extractTokenName(String outToken) {
+        // Pagination token may be in format "MemberName.TokenName", extract just the token name
+        return outToken.contains(".") ? outToken.substring(outToken.lastIndexOf(".") + 1) : outToken;
+    }
+    
+    private String getNestedListMember(OperationShape op) {
+        // Check if the output has a nested list structure containing pagination tokens
+        // This pattern is used by CloudFront and potentially other services
+        String result = op.getOutput()
+            .flatMap(outputId -> context.getModel().getShape(outputId))
+            .filter(shape -> shape instanceof StructureShape)
+            .map(shape -> (StructureShape) shape)
+            .flatMap(outputShape -> {
+                // Find a member that contains "list" in its name and has pagination tokens
+                return outputShape.getAllMembers().entrySet().stream()
+                    .filter(entry -> entry.getKey().toLowerCase().contains("list"))
+                    .filter(entry -> {
+                        // Check if this member's target shape has pagination tokens
+                        return context.getModel().getShape(entry.getValue().getTarget())
+                            .filter(targetShape -> targetShape instanceof StructureShape)
+                            .map(targetShape -> (StructureShape) targetShape)
+                            .map(targetStruct -> {
+                                Set<String> memberNames = targetStruct.getAllMembers().keySet();
+                                return memberNames.contains("NextMarker") || memberNames.contains("nextMarker") ||
+                                       memberNames.contains("Marker") || memberNames.contains("marker") ||
+                                       memberNames.contains("IsTruncated") || memberNames.contains("isTruncated");
+                            })
+                            .orElse(false);
+                    })
+                    .map(entry -> entry.getKey())
+                    .findFirst();
+            })
+            .orElse(null);
+        
+        return result;
+    }
+    
+    private boolean isNumericToken(OperationShape op, String tokenName) {
+        // Check if the token is numeric by examining the shape type
+        return op.getOutput()
+            .flatMap(outputId -> context.getModel().getShape(outputId))
+            .filter(shape -> shape instanceof StructureShape)
+            .map(shape -> (StructureShape) shape)
+            .flatMap(outputShape -> outputShape.getMember(tokenName))
+            .flatMap(member -> context.getModel().getShape(member.getTarget()))
+            .map(targetShape -> targetShape instanceof IntegerShape || targetShape instanceof LongShape)
+            .orElse(false);
     }
 }

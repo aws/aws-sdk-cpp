@@ -21,7 +21,7 @@ struct ListPartsPaginationTraits {
 
   static OutcomeType Invoke(ClientType& client, const RequestType& request) { return client.ListParts(request); }
 
-  static bool HasMoreResults(const ResultType& result) { return result.GetNextPartNumberMarker() != 0; }
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextPartNumberMarker().empty(); }
 
   static void SetNextRequest(const ResultType& result, RequestType& request) {
     request.SetPartNumberMarker(result.GetNextPartNumberMarker());
