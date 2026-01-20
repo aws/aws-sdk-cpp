@@ -105,4 +105,22 @@ public final class ServiceNameUtil {
         
         return c2jMap != null ? c2jMap.getOrDefault(sdkId, sdkId) : sdkId;
     }
+    
+    /**
+     * Gets the client method name for an operation.
+     * CloudFront requires a version suffix for backwards compatibility with legacy C2J code generation.
+     * The legacy C2J generator appended version suffixes to CloudFront operation names in the generated code.
+     * 
+     * TODO: Consider moving to a map if more services require version suffixes in the future
+     * 
+     * @param opName The base operation name from the Smithy model
+     * @param c2jServiceName The C2J service name (e.g., "cloudfront")
+     * @return The operation name with version suffix if needed (e.g., "ListDistributions2020_05_31")
+     */
+    public static String getClientMethodName(String opName, String c2jServiceName) {
+        if ("cloudfront".equals(c2jServiceName)) {
+            return opName + "2020_05_31";
+        }
+        return opName;
+    }
 }

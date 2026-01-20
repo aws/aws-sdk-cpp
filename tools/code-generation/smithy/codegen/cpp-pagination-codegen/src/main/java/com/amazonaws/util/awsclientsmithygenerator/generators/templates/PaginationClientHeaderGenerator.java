@@ -17,11 +17,13 @@ public class PaginationClientHeaderGenerator {
     private final ServiceShape service;
     private final List<OperationData<PaginatedTrait>> paginatedOps;
     private final Map<String, String> c2jMap;
+    private final String c2jServiceName;
     
     public PaginationClientHeaderGenerator(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, Map<String, String> c2jMap) {
         this.service = service;
         this.paginatedOps = paginatedOps;
         this.c2jMap = c2jMap;
+        this.c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
     }
     
     public void render(CppWriter writer) {
@@ -59,8 +61,9 @@ public class PaginationClientHeaderGenerator {
         
         for (OperationData<PaginatedTrait> data : paginatedOps) {
             String opName = data.getOperation().getId().getName();
+            String methodName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName);
             writer.write("using $LPaginator = Aws::Utils::Pagination::PagePaginator<$LClient, Model::$LRequest, Pagination::$LPaginationTraits>;",
-                opName, ServiceNameUtil.getServiceNameUpperCamel(service), opName, opName);
+                opName, ServiceNameUtil.getServiceNameUpperCamel(service), methodName, opName);
         }
         
         writer.write("");
