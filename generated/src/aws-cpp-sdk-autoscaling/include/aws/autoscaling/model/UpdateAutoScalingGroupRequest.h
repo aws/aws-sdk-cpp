@@ -609,10 +609,14 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
 
   ///@{
   /**
-   * <p> The instance lifecycle policy for the Auto Scaling group. Use this to add,
-   * modify, or remove lifecycle policies that control instance behavior when an
-   * instance transitions through its lifecycle states. Configure retention triggers
-   * to specify when to preserve instances for manual intervention. </p>
+   * <p> The instance lifecycle policy for the Auto Scaling group. This policy
+   * controls instance behavior when an instance transitions through its lifecycle
+   * states. Configure retention triggers to specify when instances should move to a
+   * <code>Retained</code> state instead of automatic termination. </p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html">
+   * Control instance retention with instance lifecycle policies</a> in the <i>Amazon
+   * EC2 Auto Scaling User Guide</i>. </p>
    */
   inline const InstanceLifecyclePolicy& GetInstanceLifecyclePolicy() const { return m_instanceLifecyclePolicy; }
   inline bool InstanceLifecyclePolicyHasBeenSet() const { return m_instanceLifecyclePolicyHasBeenSet; }

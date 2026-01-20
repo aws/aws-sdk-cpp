@@ -19,6 +19,8 @@
 #include <aws/workspaces-instances/model/AssociateVolumeResult.h>
 #include <aws/workspaces-instances/model/AutoRecoveryEnum.h>
 #include <aws/workspaces-instances/model/BandwidthWeightingEnum.h>
+#include <aws/workspaces-instances/model/BillingConfiguration.h>
+#include <aws/workspaces-instances/model/BillingMode.h>
 #include <aws/workspaces-instances/model/BlockDeviceMappingRequest.h>
 #include <aws/workspaces-instances/model/CapacityReservationPreferenceEnum.h>
 #include <aws/workspaces-instances/model/CapacityReservationSpecification.h>
@@ -53,6 +55,8 @@
 #include <aws/workspaces-instances/model/HttpProtocolIpv6Enum.h>
 #include <aws/workspaces-instances/model/HttpTokensEnum.h>
 #include <aws/workspaces-instances/model/IamInstanceProfileSpecification.h>
+#include <aws/workspaces-instances/model/InstanceConfigurationFilter.h>
+#include <aws/workspaces-instances/model/InstanceConfigurationTenancyEnum.h>
 #include <aws/workspaces-instances/model/InstanceInterruptionBehaviorEnum.h>
 #include <aws/workspaces-instances/model/InstanceIpv6Address.h>
 #include <aws/workspaces-instances/model/InstanceMaintenanceOptionsRequest.h>
@@ -78,6 +82,7 @@
 #include <aws/workspaces-instances/model/ManagedInstanceRequest.h>
 #include <aws/workspaces-instances/model/MarketTypeEnum.h>
 #include <aws/workspaces-instances/model/Placement.h>
+#include <aws/workspaces-instances/model/PlatformTypeEnum.h>
 #include <aws/workspaces-instances/model/PrivateDnsNameOptionsRequest.h>
 #include <aws/workspaces-instances/model/PrivateIpAddressSpecification.h>
 #include <aws/workspaces-instances/model/ProvisionStateEnum.h>
@@ -88,6 +93,7 @@
 #include <aws/workspaces-instances/model/ServiceQuotaExceededException.h>
 #include <aws/workspaces-instances/model/SpotInstanceTypeEnum.h>
 #include <aws/workspaces-instances/model/SpotMarketOptions.h>
+#include <aws/workspaces-instances/model/SupportedInstanceConfiguration.h>
 #include <aws/workspaces-instances/model/Tag.h>
 #include <aws/workspaces-instances/model/TagResourceRequest.h>
 #include <aws/workspaces-instances/model/TagResourceResult.h>

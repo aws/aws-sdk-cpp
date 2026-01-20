@@ -23,6 +23,10 @@ Aws::String ListInstanceTypesRequest::SerializePayload() const {
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_instanceConfigurationFilterHasBeenSet) {
+    payload.WithObject("InstanceConfigurationFilter", m_instanceConfigurationFilter.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

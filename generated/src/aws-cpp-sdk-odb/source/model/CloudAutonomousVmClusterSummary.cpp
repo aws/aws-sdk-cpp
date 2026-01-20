@@ -225,6 +225,13 @@ CloudAutonomousVmClusterSummary& CloudAutonomousVmClusterSummary::operator=(Json
     m_totalContainerDatabases = jsonValue.GetInteger("totalContainerDatabases");
     m_totalContainerDatabasesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("iamRoles")) {
+    Aws::Utils::Array<JsonView> iamRolesJsonList = jsonValue.GetArray("iamRoles");
+    for (unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex) {
+      m_iamRoles.push_back(iamRolesJsonList[iamRolesIndex].AsObject());
+    }
+    m_iamRolesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -438,6 +445,14 @@ JsonValue CloudAutonomousVmClusterSummary::Jsonize() const {
 
   if (m_totalContainerDatabasesHasBeenSet) {
     payload.WithInteger("totalContainerDatabases", m_totalContainerDatabases);
+  }
+
+  if (m_iamRolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
+    for (unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex) {
+      iamRolesJsonList[iamRolesIndex].AsObject(m_iamRoles[iamRolesIndex].Jsonize());
+    }
+    payload.WithArray("iamRoles", std::move(iamRolesJsonList));
   }
 
   return payload;

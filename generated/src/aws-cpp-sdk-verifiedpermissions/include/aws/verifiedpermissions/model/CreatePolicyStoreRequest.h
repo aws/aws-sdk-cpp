@@ -10,6 +10,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissionsRequest.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/verifiedpermissions/model/DeletionProtection.h>
+#include <aws/verifiedpermissions/model/EncryptionSettings.h>
 #include <aws/verifiedpermissions/model/ValidationSettings.h>
 
 #include <utility>
@@ -129,6 +130,27 @@ class CreatePolicyStoreRequest : public VerifiedPermissionsRequest {
 
   ///@{
   /**
+   * <p>Specifies the encryption settings used to encrypt the policy store and their
+   * child resources. Allows for the ability to use a customer owned KMS key for
+   * encryption of data.</p> <p>This is an optional field to be used when providing a
+   * customer-managed KMS key for encryption.</p>
+   */
+  inline const EncryptionSettings& GetEncryptionSettings() const { return m_encryptionSettings; }
+  inline bool EncryptionSettingsHasBeenSet() const { return m_encryptionSettingsHasBeenSet; }
+  template <typename EncryptionSettingsT = EncryptionSettings>
+  void SetEncryptionSettings(EncryptionSettingsT&& value) {
+    m_encryptionSettingsHasBeenSet = true;
+    m_encryptionSettings = std::forward<EncryptionSettingsT>(value);
+  }
+  template <typename EncryptionSettingsT = EncryptionSettings>
+  CreatePolicyStoreRequest& WithEncryptionSettings(EncryptionSettingsT&& value) {
+    SetEncryptionSettings(std::forward<EncryptionSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of key-value pairs to associate with the policy store.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -159,11 +181,14 @@ class CreatePolicyStoreRequest : public VerifiedPermissionsRequest {
 
   DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
 
+  EncryptionSettings m_encryptionSettings;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_validationSettingsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_encryptionSettingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

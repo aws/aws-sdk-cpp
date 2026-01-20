@@ -5,6 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/bedrock-runtime/model/CacheDetail.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -108,6 +112,31 @@ class TokenUsage {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Detailed breakdown of cache writes by TTL. Empty if no cache creation
+   * occurred. Sorted by TTL duration (1h before 5m).</p>
+   */
+  inline const Aws::Vector<CacheDetail>& GetCacheDetails() const { return m_cacheDetails; }
+  inline bool CacheDetailsHasBeenSet() const { return m_cacheDetailsHasBeenSet; }
+  template <typename CacheDetailsT = Aws::Vector<CacheDetail>>
+  void SetCacheDetails(CacheDetailsT&& value) {
+    m_cacheDetailsHasBeenSet = true;
+    m_cacheDetails = std::forward<CacheDetailsT>(value);
+  }
+  template <typename CacheDetailsT = Aws::Vector<CacheDetail>>
+  TokenUsage& WithCacheDetails(CacheDetailsT&& value) {
+    SetCacheDetails(std::forward<CacheDetailsT>(value));
+    return *this;
+  }
+  template <typename CacheDetailsT = CacheDetail>
+  TokenUsage& AddCacheDetails(CacheDetailsT&& value) {
+    m_cacheDetailsHasBeenSet = true;
+    m_cacheDetails.emplace_back(std::forward<CacheDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_inputTokens{0};
 
@@ -118,11 +147,14 @@ class TokenUsage {
   int m_cacheReadInputTokens{0};
 
   int m_cacheWriteInputTokens{0};
+
+  Aws::Vector<CacheDetail> m_cacheDetails;
   bool m_inputTokensHasBeenSet = false;
   bool m_outputTokensHasBeenSet = false;
   bool m_totalTokensHasBeenSet = false;
   bool m_cacheReadInputTokensHasBeenSet = false;
   bool m_cacheWriteInputTokensHasBeenSet = false;
+  bool m_cacheDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

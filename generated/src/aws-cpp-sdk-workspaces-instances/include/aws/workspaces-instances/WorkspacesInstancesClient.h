@@ -182,7 +182,9 @@ class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient
   }
 
   /**
-   * <p>Deletes the specified WorkSpace</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified WorkSpace</p>  <p>Usage of this API will
+   * result in deletion of the resource in question.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-instances-2022-07-26/DeleteWorkspaceInstance">AWS
    * API Reference</a></p>
    */

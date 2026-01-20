@@ -86,7 +86,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The name of the associated launch configuration.</p>
+   * <p>The name of the associated launch configuration for the Auto Scaling
+   * group.</p>
    */
   inline const Aws::String& GetLaunchConfigurationName() const { return m_launchConfigurationName; }
   inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
@@ -104,7 +105,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The launch template for the group.</p>
+   * <p>The launch template for the Auto Scaling group.</p>
    */
   inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
   inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
@@ -140,7 +141,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The minimum size of the group.</p>
+   * <p>The minimum size of the Auto Scaling group.</p>
    */
   inline int GetMinSize() const { return m_minSize; }
   inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
@@ -156,7 +157,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The maximum size of the group.</p>
+   * <p>The maximum size of the Auto Scaling group.</p>
    */
   inline int GetMaxSize() const { return m_maxSize; }
   inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
@@ -172,7 +173,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The desired size of the group.</p>
+   * <p>The desired size of the Auto Scaling group.</p>
    */
   inline int GetDesiredCapacity() const { return m_desiredCapacity; }
   inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
@@ -205,7 +206,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The duration of the default cooldown period, in seconds.</p>
+   * <p>The duration of the default cooldown period, in seconds, for the Auto Scaling
+   * group.</p>
    */
   inline int GetDefaultCooldown() const { return m_defaultCooldown; }
   inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
@@ -221,7 +223,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>One or more Availability Zones for the group.</p>
+   * <p>One or more Availability Zones for the Auto Scaling group.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
   inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
@@ -294,7 +296,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>A comma-separated value string of one or more health check types.</p>
+   * <p>One or more comma-separated health check types for the Auto Scaling
+   * group.</p>
    */
   inline const Aws::String& GetHealthCheckType() const { return m_healthCheckType; }
   inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
@@ -312,7 +315,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The duration of the health check grace period, in seconds.</p>
+   * <p>The duration of the health check grace period, in seconds, for the Auto
+   * Scaling group.</p>
    */
   inline int GetHealthCheckGracePeriod() const { return m_healthCheckGracePeriod; }
   inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
@@ -328,7 +332,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The EC2 instances associated with the group.</p>
+   * <p>The EC2 instances associated with the Auto Scaling group.</p>
    */
   inline const Aws::Vector<Instance>& GetInstances() const { return m_instances; }
   inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
@@ -352,7 +356,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The date and time the group was created.</p>
+   * <p>The date and time the Auto Scaling group was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
   inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
@@ -370,7 +374,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The suspended processes associated with the group.</p>
+   * <p>The suspended processes associated with the Auto Scaling group.</p>
    */
   inline const Aws::Vector<SuspendedProcess>& GetSuspendedProcesses() const { return m_suspendedProcesses; }
   inline bool SuspendedProcessesHasBeenSet() const { return m_suspendedProcessesHasBeenSet; }
@@ -394,8 +398,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The name of the placement group into which to launch your instances, if
-   * any.</p>
+   * <p>The name of the placement group into which to launch EC2 instances for the
+   * Auto Scaling group.</p>
    */
   inline const Aws::String& GetPlacementGroup() const { return m_placementGroup; }
   inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
@@ -413,7 +417,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>One or more subnet IDs, if applicable, separated by commas.</p>
+   * <p>One or more comma-separated subnet IDs for the Auto Scaling group.</p>
    */
   inline const Aws::String& GetVPCZoneIdentifier() const { return m_vPCZoneIdentifier; }
   inline bool VPCZoneIdentifierHasBeenSet() const { return m_vPCZoneIdentifierHasBeenSet; }
@@ -431,7 +435,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The metrics enabled for the group.</p>
+   * <p>The metrics enabled for the Auto Scaling group.</p>
    */
   inline const Aws::Vector<EnabledMetric>& GetEnabledMetrics() const { return m_enabledMetrics; }
   inline bool EnabledMetricsHasBeenSet() const { return m_enabledMetricsHasBeenSet; }
@@ -455,7 +459,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The current state of the group when the <a
+   * <p>The current state of the Auto Scaling group when the <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a>
    * operation is in progress.</p>
    */
@@ -475,7 +479,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The tags for the group.</p>
+   * <p>The tags for the Auto Scaling group.</p>
    */
   inline const Aws::Vector<TagDescription>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -499,7 +503,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The termination policies for the group.</p>
+   * <p>The termination policies for the Auto Scaling group.</p>
    */
   inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const { return m_terminationPolicies; }
   inline bool TerminationPoliciesHasBeenSet() const { return m_terminationPoliciesHasBeenSet; }
@@ -523,9 +527,9 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>Indicates whether newly launched instances are protected from termination by
-   * Amazon EC2 Auto Scaling when scaling in. For more information about preventing
-   * instances from terminating on scale in, see <a
+   * <p>Indicates whether newly launched EC2 instances are protected from termination
+   * when scaling in for the Auto Scaling group.</p> <p> For more information about
+   * preventing instances from terminating on scale in, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Use
    * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
    * Guide</i>. </p>
@@ -563,8 +567,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The maximum amount of time, in seconds, that an instance can be in
-   * service.</p> <p>Valid Range: Minimum value of 0.</p>
+   * <p>The maximum amount of time, in seconds, that an EC2 instance can be in
+   * service for the Auto Scaling group.</p>
    */
   inline int GetMaxInstanceLifetime() const { return m_maxInstanceLifetime; }
   inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
@@ -668,7 +672,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p>The duration of the default instance warmup, in seconds.</p>
+   * <p>The duration of the default EC2 instance warmup time, in seconds, for the
+   * Auto Scaling group.</p>
    */
   inline int GetDefaultInstanceWarmup() const { return m_defaultInstanceWarmup; }
   inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
@@ -726,7 +731,8 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p> The instance capacity distribution across Availability Zones. </p>
+   * <p>The EC2 instance capacity distribution across Availability Zones for the Auto
+   * Scaling group.</p>
    */
   inline const AvailabilityZoneDistribution& GetAvailabilityZoneDistribution() const { return m_availabilityZoneDistribution; }
   inline bool AvailabilityZoneDistributionHasBeenSet() const { return m_availabilityZoneDistributionHasBeenSet; }
@@ -744,7 +750,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p> The Availability Zone impairment policy. </p>
+   * <p>The Availability Zone impairment policy for the Auto Scaling group.</p>
    */
   inline const AvailabilityZoneImpairmentPolicy& GetAvailabilityZoneImpairmentPolicy() const { return m_availabilityZoneImpairmentPolicy; }
   inline bool AvailabilityZoneImpairmentPolicyHasBeenSet() const { return m_availabilityZoneImpairmentPolicyHasBeenSet; }
@@ -762,7 +768,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p> The capacity reservation specification. </p>
+   * <p>The capacity reservation specification for the Auto Scaling group.</p>
    */
   inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const { return m_capacityReservationSpecification; }
   inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
@@ -780,10 +786,7 @@ class AutoScalingGroup {
 
   ///@{
   /**
-   * <p> The instance lifecycle policy applied to this Auto Scaling group. This
-   * policy determines instance behavior when an instance transitions through its
-   * lifecycle states. It provides additional control over graceful instance
-   * management processes. </p>
+   * <p>The instance lifecycle policy for the Auto Scaling group.</p>
    */
   inline const InstanceLifecyclePolicy& GetInstanceLifecyclePolicy() const { return m_instanceLifecyclePolicy; }
   inline bool InstanceLifecyclePolicyHasBeenSet() const { return m_instanceLifecyclePolicyHasBeenSet; }

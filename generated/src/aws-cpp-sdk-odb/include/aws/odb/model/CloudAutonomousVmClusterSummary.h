@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/ComputeModel.h>
+#include <aws/odb/model/IamRole.h>
 #include <aws/odb/model/LicenseModel.h>
 #include <aws/odb/model/MaintenanceWindow.h>
 #include <aws/odb/model/ResourceStatus.h>
@@ -924,6 +925,31 @@ class CloudAutonomousVmClusterSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Identity and Access Management (IAM) service roles
+   * associated with the Autonomous VM cluster in the summary information.</p>
+   */
+  inline const Aws::Vector<IamRole>& GetIamRoles() const { return m_iamRoles; }
+  inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
+  template <typename IamRolesT = Aws::Vector<IamRole>>
+  void SetIamRoles(IamRolesT&& value) {
+    m_iamRolesHasBeenSet = true;
+    m_iamRoles = std::forward<IamRolesT>(value);
+  }
+  template <typename IamRolesT = Aws::Vector<IamRole>>
+  CloudAutonomousVmClusterSummary& WithIamRoles(IamRolesT&& value) {
+    SetIamRoles(std::forward<IamRolesT>(value));
+    return *this;
+  }
+  template <typename IamRolesT = IamRole>
+  CloudAutonomousVmClusterSummary& AddIamRoles(IamRolesT&& value) {
+    m_iamRolesHasBeenSet = true;
+    m_iamRoles.emplace_back(std::forward<IamRolesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cloudAutonomousVmClusterId;
 
@@ -1026,6 +1052,8 @@ class CloudAutonomousVmClusterSummary {
   Aws::String m_timeZone;
 
   int m_totalContainerDatabases{0};
+
+  Aws::Vector<IamRole> m_iamRoles;
   bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
   bool m_cloudAutonomousVmClusterArnHasBeenSet = false;
   bool m_odbNetworkIdHasBeenSet = false;
@@ -1077,6 +1105,7 @@ class CloudAutonomousVmClusterSummary {
   bool m_timeOrdsCertificateExpiresHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
   bool m_totalContainerDatabasesHasBeenSet = false;
+  bool m_iamRolesHasBeenSet = false;
 };
 
 }  // namespace Model

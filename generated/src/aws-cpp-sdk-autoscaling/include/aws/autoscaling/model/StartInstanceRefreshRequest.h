@@ -55,7 +55,7 @@ class StartInstanceRefreshRequest : public AutoScalingRequest {
 
   ///@{
   /**
-   * <p>The strategy to use for the instance refresh. The only valid value is
+   * <p>The strategy to use for the instance refresh. The default value is
    * <code>Rolling</code>.</p>
    */
   inline RefreshStrategy GetStrategy() const { return m_strategy; }

@@ -30,8 +30,10 @@
 #include <aws/bedrock-runtime/model/AutoToolChoice.h>
 #include <aws/bedrock-runtime/model/BidirectionalInputPayloadPart.h>
 #include <aws/bedrock-runtime/model/BidirectionalOutputPayloadPart.h>
+#include <aws/bedrock-runtime/model/CacheDetail.h>
 #include <aws/bedrock-runtime/model/CachePointBlock.h>
 #include <aws/bedrock-runtime/model/CachePointType.h>
+#include <aws/bedrock-runtime/model/CacheTTL.h>
 #include <aws/bedrock-runtime/model/Citation.h>
 #include <aws/bedrock-runtime/model/CitationGeneratedContent.h>
 #include <aws/bedrock-runtime/model/CitationLocation.h>

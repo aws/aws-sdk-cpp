@@ -89,6 +89,10 @@ GetTableResult& GetTableResult::operator=(const Aws::AmazonWebServiceResult<Json
     m_cdcSpecification = jsonValue.GetObject("cdcSpecification");
     m_cdcSpecificationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("warmThroughputSpecification")) {
+    m_warmThroughputSpecification = jsonValue.GetObject("warmThroughputSpecification");
+    m_warmThroughputSpecificationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

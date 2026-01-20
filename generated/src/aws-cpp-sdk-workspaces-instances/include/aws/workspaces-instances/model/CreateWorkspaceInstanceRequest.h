@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-instances/WorkspacesInstancesRequest.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
+#include <aws/workspaces-instances/model/BillingConfiguration.h>
 #include <aws/workspaces-instances/model/ManagedInstanceRequest.h>
 #include <aws/workspaces-instances/model/Tag.h>
 
@@ -100,15 +101,38 @@ class CreateWorkspaceInstanceRequest : public WorkspacesInstancesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional billing configuration for the WorkSpace Instance. Allows customers
+   * to specify their preferred billing mode when creating a new instance. Defaults
+   * to hourly billing if not specified.</p>
+   */
+  inline const BillingConfiguration& GetBillingConfiguration() const { return m_billingConfiguration; }
+  inline bool BillingConfigurationHasBeenSet() const { return m_billingConfigurationHasBeenSet; }
+  template <typename BillingConfigurationT = BillingConfiguration>
+  void SetBillingConfiguration(BillingConfigurationT&& value) {
+    m_billingConfigurationHasBeenSet = true;
+    m_billingConfiguration = std::forward<BillingConfigurationT>(value);
+  }
+  template <typename BillingConfigurationT = BillingConfiguration>
+  CreateWorkspaceInstanceRequest& WithBillingConfiguration(BillingConfigurationT&& value) {
+    SetBillingConfiguration(std::forward<BillingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Vector<Tag> m_tags;
 
   ManagedInstanceRequest m_managedInstance;
+
+  BillingConfiguration m_billingConfiguration;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
   bool m_managedInstanceHasBeenSet = false;
+  bool m_billingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

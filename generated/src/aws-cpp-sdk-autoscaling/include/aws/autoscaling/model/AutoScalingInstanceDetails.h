@@ -117,13 +117,14 @@ class AutoScalingInstanceDetails {
    * <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
    * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
    * <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> |
-   * <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
-   * <code>EnteringStandby</code> | <code>Standby</code> |
-   * <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> |
-   * <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> |
+   * <code>Terminating:Retained</code> | <code>Terminated</code> |
+   * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
+   * <code>Standby</code> | <code>Warmed:Pending</code> |
+   * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+   * <code>Warmed:Pending:Retained</code> | <code>Warmed:Terminating</code> |
    * <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> |
-   * <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> |
-   * <code>Warmed:Running</code> </p>
+   * <code>Warmed:Terminating:Retained</code> | <code>Warmed:Terminated</code> |
+   * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
    */
   inline const Aws::String& GetLifecycleState() const { return m_lifecycleState; }
   inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }

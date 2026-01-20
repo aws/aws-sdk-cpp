@@ -48,6 +48,10 @@ GetWorkspaceInstanceResult& GetWorkspaceInstanceResult::operator=(const Aws::Ama
     m_eC2ManagedInstance = jsonValue.GetObject("EC2ManagedInstance");
     m_eC2ManagedInstanceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillingConfiguration")) {
+    m_billingConfiguration = jsonValue.GetObject("BillingConfiguration");
+    m_billingConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
