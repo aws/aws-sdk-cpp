@@ -44,6 +44,12 @@ AttachVolumeResponse& AttachVolumeResponse::operator=(const Aws::AmazonWebServic
       m_instanceOwningService = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwningServiceNode.GetText());
       m_instanceOwningServiceHasBeenSet = true;
     }
+    XmlNode ebsCardIndexNode = resultNode.FirstChild("ebsCardIndex");
+    if (!ebsCardIndexNode.IsNull()) {
+      m_ebsCardIndex =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsCardIndexNode.GetText()).c_str()).c_str());
+      m_ebsCardIndexHasBeenSet = true;
+    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if (!volumeIdNode.IsNull()) {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());

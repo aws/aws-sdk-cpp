@@ -1246,6 +1246,7 @@
 #include <aws/ec2/model/DynamicRoutingValue.h>
 #include <aws/ec2/model/EbsBlockDevice.h>
 #include <aws/ec2/model/EbsBlockDeviceResponse.h>
+#include <aws/ec2/model/EbsCardInfo.h>
 #include <aws/ec2/model/EbsEncryptionSupport.h>
 #include <aws/ec2/model/EbsInfo.h>
 #include <aws/ec2/model/EbsInstanceBlockDevice.h>

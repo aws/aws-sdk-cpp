@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -147,6 +149,30 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>A list of browser extensions to load into the browser session.</p>
+   */
+  inline const Aws::Vector<BrowserExtension>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Vector<BrowserExtension>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Vector<BrowserExtension>>
+  StartBrowserSessionRequest& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsT = BrowserExtension>
+  StartBrowserSessionRequest& AddExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace_back(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If this token matches a previous request, Amazon Bedrock
    * ignores the request, but does not return an error. This parameter helps prevent
@@ -178,6 +204,8 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   ViewPort m_viewPort;
 
+  Aws::Vector<BrowserExtension> m_extensions;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
@@ -185,6 +213,7 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
   bool m_nameHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_viewPortHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

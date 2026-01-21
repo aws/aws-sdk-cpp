@@ -61,6 +61,12 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator=(const XmlNode& xmlNode
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
+    XmlNode ebsCardIndexNode = resultNode.FirstChild("ebsCardIndex");
+    if (!ebsCardIndexNode.IsNull()) {
+      m_ebsCardIndex =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsCardIndexNode.GetText()).c_str()).c_str());
+      m_ebsCardIndexHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -98,6 +104,10 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
     operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
     m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
   }
+
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << index << locationValue << ".EbsCardIndex=" << m_ebsCardIndex << "&";
+  }
 }
 
 void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -124,6 +134,9 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
     Aws::String operatorLocationAndMember(location);
     operatorLocationAndMember += ".Operator";
     m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  }
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << ".EbsCardIndex=" << m_ebsCardIndex << "&";
   }
 }
 

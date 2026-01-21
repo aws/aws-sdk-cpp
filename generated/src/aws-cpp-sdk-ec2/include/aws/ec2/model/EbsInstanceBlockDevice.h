@@ -161,6 +161,23 @@ class EbsInstanceBlockDevice {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The index of the EBS card. Some instance types support multiple EBS cards.
+   * The default EBS card index is 0.</p>
+   */
+  inline int GetEbsCardIndex() const { return m_ebsCardIndex; }
+  inline bool EbsCardIndexHasBeenSet() const { return m_ebsCardIndexHasBeenSet; }
+  inline void SetEbsCardIndex(int value) {
+    m_ebsCardIndexHasBeenSet = true;
+    m_ebsCardIndex = value;
+  }
+  inline EbsInstanceBlockDevice& WithEbsCardIndex(int value) {
+    SetEbsCardIndex(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::DateTime m_attachTime{};
 
@@ -175,6 +192,8 @@ class EbsInstanceBlockDevice {
   Aws::String m_volumeOwnerId;
 
   OperatorResponse m_operator;
+
+  int m_ebsCardIndex{0};
   bool m_attachTimeHasBeenSet = false;
   bool m_deleteOnTerminationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -182,6 +201,7 @@ class EbsInstanceBlockDevice {
   bool m_associatedResourceHasBeenSet = false;
   bool m_volumeOwnerIdHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
+  bool m_ebsCardIndexHasBeenSet = false;
 };
 
 }  // namespace Model

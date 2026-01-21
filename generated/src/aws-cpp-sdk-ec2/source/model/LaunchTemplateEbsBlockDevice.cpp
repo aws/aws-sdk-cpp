@@ -74,6 +74,12 @@ LaunchTemplateEbsBlockDevice& LaunchTemplateEbsBlockDevice::operator=(const XmlN
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeInitializationRateNode.GetText()).c_str()).c_str());
       m_volumeInitializationRateHasBeenSet = true;
     }
+    XmlNode ebsCardIndexNode = resultNode.FirstChild("ebsCardIndex");
+    if (!ebsCardIndexNode.IsNull()) {
+      m_ebsCardIndex =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsCardIndexNode.GetText()).c_str()).c_str());
+      m_ebsCardIndexHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +123,10 @@ void LaunchTemplateEbsBlockDevice::OutputToStream(Aws::OStream& oStream, const c
   if (m_volumeInitializationRateHasBeenSet) {
     oStream << location << index << locationValue << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
   }
+
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << index << locationValue << ".EbsCardIndex=" << m_ebsCardIndex << "&";
+  }
 }
 
 void LaunchTemplateEbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -146,6 +156,9 @@ void LaunchTemplateEbsBlockDevice::OutputToStream(Aws::OStream& oStream, const c
   }
   if (m_volumeInitializationRateHasBeenSet) {
     oStream << location << ".VolumeInitializationRate=" << m_volumeInitializationRate << "&";
+  }
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << ".EbsCardIndex=" << m_ebsCardIndex << "&";
   }
 }
 

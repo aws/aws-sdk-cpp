@@ -94,6 +94,23 @@ class VolumeAttachment {
 
   ///@{
   /**
+   * <p>The index of the EBS card. Some instance types support multiple EBS cards.
+   * The default EBS card index is 0.</p>
+   */
+  inline int GetEbsCardIndex() const { return m_ebsCardIndex; }
+  inline bool EbsCardIndexHasBeenSet() const { return m_ebsCardIndexHasBeenSet; }
+  inline void SetEbsCardIndex(int value) {
+    m_ebsCardIndexHasBeenSet = true;
+    m_ebsCardIndex = value;
+  }
+  inline VolumeAttachment& WithEbsCardIndex(int value) {
+    SetEbsCardIndex(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the volume.</p>
    */
   inline const Aws::String& GetVolumeId() const { return m_volumeId; }
@@ -203,6 +220,8 @@ class VolumeAttachment {
 
   Aws::String m_instanceOwningService;
 
+  int m_ebsCardIndex{0};
+
   Aws::String m_volumeId;
 
   Aws::String m_instanceId;
@@ -217,6 +236,7 @@ class VolumeAttachment {
   bool m_deleteOnTerminationHasBeenSet = false;
   bool m_associatedResourceHasBeenSet = false;
   bool m_instanceOwningServiceHasBeenSet = false;
+  bool m_ebsCardIndexHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_deviceHasBeenSet = false;

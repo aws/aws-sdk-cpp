@@ -58,6 +58,23 @@ EbsInfo& EbsInfo::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentLimitTypeNode.GetText()).c_str()));
       m_attachmentLimitTypeHasBeenSet = true;
     }
+    XmlNode maximumEbsCardsNode = resultNode.FirstChild("maximumEbsCards");
+    if (!maximumEbsCardsNode.IsNull()) {
+      m_maximumEbsCards = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumEbsCardsNode.GetText()).c_str()).c_str());
+      m_maximumEbsCardsHasBeenSet = true;
+    }
+    XmlNode ebsCardsNode = resultNode.FirstChild("ebsCardSet");
+    if (!ebsCardsNode.IsNull()) {
+      XmlNode ebsCardsMember = ebsCardsNode.FirstChild("item");
+      m_ebsCardsHasBeenSet = !ebsCardsMember.IsNull();
+      while (!ebsCardsMember.IsNull()) {
+        m_ebsCards.push_back(ebsCardsMember);
+        ebsCardsMember = ebsCardsMember.NextNode("item");
+      }
+
+      m_ebsCardsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +110,19 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsign
     oStream << location << index << locationValue << ".AttachmentLimitType="
             << StringUtils::URLEncode(AttachmentLimitTypeMapper::GetNameForAttachmentLimitType(m_attachmentLimitType)) << "&";
   }
+
+  if (m_maximumEbsCardsHasBeenSet) {
+    oStream << location << index << locationValue << ".MaximumEbsCards=" << m_maximumEbsCards << "&";
+  }
+
+  if (m_ebsCardsHasBeenSet) {
+    unsigned ebsCardsIdx = 1;
+    for (auto& item : m_ebsCards) {
+      Aws::StringStream ebsCardsSs;
+      ebsCardsSs << location << index << locationValue << ".EbsCardSet." << ebsCardsIdx++;
+      item.OutputToStream(oStream, ebsCardsSs.str().c_str());
+    }
+  }
 }
 
 void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -118,6 +148,17 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const 
   if (m_attachmentLimitTypeHasBeenSet) {
     oStream << location << ".AttachmentLimitType="
             << StringUtils::URLEncode(AttachmentLimitTypeMapper::GetNameForAttachmentLimitType(m_attachmentLimitType)) << "&";
+  }
+  if (m_maximumEbsCardsHasBeenSet) {
+    oStream << location << ".MaximumEbsCards=" << m_maximumEbsCards << "&";
+  }
+  if (m_ebsCardsHasBeenSet) {
+    unsigned ebsCardsIdx = 1;
+    for (auto& item : m_ebsCards) {
+      Aws::StringStream ebsCardsSs;
+      ebsCardsSs << location << ".EbsCardSet." << ebsCardsIdx++;
+      item.OutputToStream(oStream, ebsCardsSs.str().c_str());
+    }
   }
 }
 

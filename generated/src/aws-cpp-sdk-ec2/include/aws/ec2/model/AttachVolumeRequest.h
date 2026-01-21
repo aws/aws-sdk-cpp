@@ -90,6 +90,23 @@ class AttachVolumeRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The index of the EBS card. Some instance types support multiple EBS cards.
+   * The default EBS card index is 0.</p>
+   */
+  inline int GetEbsCardIndex() const { return m_ebsCardIndex; }
+  inline bool EbsCardIndexHasBeenSet() const { return m_ebsCardIndexHasBeenSet; }
+  inline void SetEbsCardIndex(int value) {
+    m_ebsCardIndexHasBeenSet = true;
+    m_ebsCardIndex = value;
+  }
+  inline AttachVolumeRequest& WithEbsCardIndex(int value) {
+    SetEbsCardIndex(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the action, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -113,10 +130,13 @@ class AttachVolumeRequest : public EC2Request {
 
   Aws::String m_volumeId;
 
+  int m_ebsCardIndex{0};
+
   bool m_dryRun{false};
   bool m_deviceHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
+  bool m_ebsCardIndexHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

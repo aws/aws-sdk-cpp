@@ -25,6 +25,10 @@ Aws::String AttachVolumeRequest::SerializePayload() const {
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
+  if (m_ebsCardIndexHasBeenSet) {
+    ss << "EbsCardIndex=" << m_ebsCardIndex << "&";
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

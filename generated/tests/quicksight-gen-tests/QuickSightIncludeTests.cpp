@@ -1419,6 +1419,9 @@
 #include <aws/quicksight/model/SheetImageTooltipConfiguration.h>
 #include <aws/quicksight/model/SheetImageTooltipText.h>
 #include <aws/quicksight/model/SheetLayoutElementMaximizationOption.h>
+#include <aws/quicksight/model/SheetLayoutGroup.h>
+#include <aws/quicksight/model/SheetLayoutGroupMember.h>
+#include <aws/quicksight/model/SheetLayoutGroupMemberType.h>
 #include <aws/quicksight/model/SheetStyle.h>
 #include <aws/quicksight/model/SheetTextBox.h>
 #include <aws/quicksight/model/SheetVisualScopingConfiguration.h>

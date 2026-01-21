@@ -26,6 +26,7 @@
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/Branch.h>
 #include <aws/bedrock-agentcore/model/BranchFilter.h>
+#include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionSummary.h>
@@ -118,10 +119,12 @@
 #include <aws/bedrock-agentcore/model/ProgrammingLanguage.h>
 #include <aws/bedrock-agentcore/model/ResourceContent.h>
 #include <aws/bedrock-agentcore/model/ResourceContentType.h>
+#include <aws/bedrock-agentcore/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/RightExpression.h>
 #include <aws/bedrock-agentcore/model/Role.h>
+#include <aws/bedrock-agentcore/model/S3Location.h>
 #include <aws/bedrock-agentcore/model/SearchCriteria.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>

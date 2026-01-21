@@ -41,6 +41,13 @@ GetBrowserSessionResult& GetBrowserSessionResult::operator=(const Aws::AmazonWeb
     m_viewPort = jsonValue.GetObject("viewPort");
     m_viewPortHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("extensions")) {
+    Aws::Utils::Array<JsonView> extensionsJsonList = jsonValue.GetArray("extensions");
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      m_extensions.push_back(extensionsJsonList[extensionsIndex].AsObject());
+    }
+    m_extensionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionTimeoutSeconds")) {
     m_sessionTimeoutSeconds = jsonValue.GetInteger("sessionTimeoutSeconds");
     m_sessionTimeoutSecondsHasBeenSet = true;

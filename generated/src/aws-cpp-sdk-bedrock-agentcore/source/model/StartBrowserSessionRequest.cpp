@@ -28,6 +28,14 @@ Aws::String StartBrowserSessionRequest::SerializePayload() const {
     payload.WithObject("viewPort", m_viewPort.Jsonize());
   }
 
+  if (m_extensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extensionsJsonList(m_extensions.size());
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      extensionsJsonList[extensionsIndex].AsObject(m_extensions[extensionsIndex].Jsonize());
+    }
+    payload.WithArray("extensions", std::move(extensionsJsonList));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }
