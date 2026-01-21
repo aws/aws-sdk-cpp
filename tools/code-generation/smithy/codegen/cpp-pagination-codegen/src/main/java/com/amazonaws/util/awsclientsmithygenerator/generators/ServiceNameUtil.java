@@ -29,6 +29,7 @@ public final class ServiceNameUtil {
         Map.entry("codestarnotifications", "CodeStarNotifications"),
         Map.entry("configservice", "ConfigService"),
         Map.entry("databrew", "GlueDataBrew"),
+        Map.entry("deadline", "deadline"),
         Map.entry("elasticache", "ElastiCache"),
         Map.entry("emrcontainers", "EMRContainers"),
         Map.entry("marketplaceentitlementservice", "MarketplaceEntitlementService"),
