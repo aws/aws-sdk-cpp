@@ -97,14 +97,42 @@ public class PaginationTraitsGenerator {
             writer.openBlock("    static bool HasMoreResults(const ResultType& result)\n    {", "    }", () -> {
                 if (trait.getOutputToken().isPresent()) {
                     String outToken = trait.getOutputToken().get();
-                    String nestedListMember = getNestedListMember(op);
-                    String tokenName = extractTokenName(outToken);
-                    if (nestedListMember != null) {
-                        writer.write("        return !result.Get$L().Get$L().empty();", capitalize(nestedListMember), capitalize(tokenName));
-                    } else if (isNumericToken(op, outToken)) {
-                        writer.write("        return result.Get$L() != 0;", capitalize(outToken));
-                    } else {
-                        writer.write("        return !result.Get$L().empty();", capitalize(outToken));
+                    
+                    // TODO: Refactor HasMoreResults and SetNextRequest to share common token resolution logic
+                    // Both methods duplicate the same pattern matching (explicit nesting, top-level, wrapper)
+                    // Pattern A: Explicit nested token like "EngineDefaults.Marker"
+                    if (outToken.contains(".")) {
+                        String[] parts = outToken.split("\\.", 2);
+                        String memberName = parts[0];
+                        String nestedTokenName = parts[1];
+                        if (isNumericToken(op, memberName, nestedTokenName)) {
+                            writer.write("        return result.Get$L().Get$L() != 0;", capitalize(memberName), capitalize(nestedTokenName));
+                        } else {
+                            writer.write("        return !result.Get$L().Get$L().empty();", capitalize(memberName), capitalize(nestedTokenName));
+                        }
+                    }
+                    // Pattern B: Check if token is on top-level output
+                    else if (hasTopLevelMember(op, outToken)) {
+                        if (isNumericToken(op, null, outToken)) {
+                            writer.write("        return result.Get$L() != 0;", capitalize(outToken));
+                        } else {
+                            writer.write("        return !result.Get$L().empty();", capitalize(outToken));
+                        }
+                    }
+                    // Pattern C: Find wrapper member containing the token
+                    else {
+                        String wrapperMember = findWrapperMemberContainingToken(op, outToken);
+                        if (wrapperMember != null) {
+                            if (isNumericToken(op, wrapperMember, outToken)) {
+                                writer.write("        return result.Get$L().Get$L() != 0;", capitalize(wrapperMember), capitalize(outToken));
+                            } else {
+                                writer.write("        return !result.Get$L().Get$L().empty();", capitalize(wrapperMember), capitalize(outToken));
+                            }
+                        } else if (hasTopLevelMember(op, "IsTruncated")) {
+                            writer.write("        return result.GetIsTruncated();");
+                        } else {
+                            writer.write("        return false;");
+                        }
                     }
                 } else {
                     // TODO: Check how legacy C2J code generation handles service-level pagination
@@ -114,7 +142,7 @@ public class PaginationTraitsGenerator {
                     // and implement a more comprehensive solution that matches that behavior.
                     String serviceLevelOutputToken = getServiceLevelOutputToken();
                     if (serviceLevelOutputToken != null) {
-                        if (serviceLevelOutputToken.toLowerCase().contains("marker") || serviceLevelOutputToken.toLowerCase().contains("number")) {
+                        if (isNumericToken(op, null, serviceLevelOutputToken)) {
                             writer.write("        return result.Get$L() != 0;", capitalize(serviceLevelOutputToken));
                         } else {
                             writer.write("        return !result.Get$L().empty();", capitalize(serviceLevelOutputToken));
@@ -150,12 +178,25 @@ public class PaginationTraitsGenerator {
                 }
                 
                 if (inToken != null && outToken != null) {
-                    String nestedListMember = getNestedListMember(op);
-                    String tokenName = extractTokenName(outToken);
-                    if (nestedListMember != null) {
-                        writer.write("        request.Set$L(result.Get$L().Get$L());", capitalize(inToken), capitalize(nestedListMember), capitalize(tokenName));
-                    } else {
+                    // Pattern A: Explicit nested token like "EngineDefaults.Marker"
+                    if (outToken.contains(".")) {
+                        String[] parts = outToken.split("\\.", 2);
+                        String memberName = parts[0];
+                        String nestedTokenName = parts[1];
+                        writer.write("        request.Set$L(result.Get$L().Get$L());", capitalize(inToken), capitalize(memberName), capitalize(nestedTokenName));
+                    }
+                    // Pattern B: Check if token is on top-level output
+                    else if (hasTopLevelMember(op, outToken)) {
                         writer.write("        request.Set$L(result.Get$L());", capitalize(inToken), capitalize(outToken));
+                    }
+                    // Pattern C: Find wrapper member containing the token
+                    else {
+                        String wrapperMember = findWrapperMemberContainingToken(op, outToken);
+                        if (wrapperMember != null) {
+                            writer.write("        request.Set$L(result.Get$L().Get$L());", capitalize(inToken), capitalize(wrapperMember), capitalize(outToken));
+                        } else {
+                            writer.write("        (void)result; (void)request; // Token not found");
+                        }
                     }
                 } else {
                     // TODO: Check AWS SDK C++ standard for handling null pagination tokens
@@ -209,47 +250,46 @@ public class PaginationTraitsGenerator {
         return outToken.contains(".") ? outToken.substring(outToken.lastIndexOf(".") + 1) : outToken;
     }
     
-    private String getNestedListMember(OperationShape op) {
-        // Check if the output has a nested list structure containing pagination tokens
-        // This pattern is used by CloudFront and potentially other services
-        String result = op.getOutput()
-            .flatMap(outputId -> context.getModel().getShape(outputId))
-            .filter(shape -> shape instanceof StructureShape)
-            .map(shape -> (StructureShape) shape)
-            .flatMap(outputShape -> {
-                // Find a member that contains "list" in its name and has pagination tokens
-                return outputShape.getAllMembers().entrySet().stream()
-                    .filter(entry -> entry.getKey().toLowerCase().contains("list"))
-                    .filter(entry -> {
-                        // Check if this member's target shape has pagination tokens
-                        return context.getModel().getShape(entry.getValue().getTarget())
-                            .filter(targetShape -> targetShape instanceof StructureShape)
-                            .map(targetShape -> (StructureShape) targetShape)
-                            .map(targetStruct -> {
-                                Set<String> memberNames = targetStruct.getAllMembers().keySet();
-                                return memberNames.contains("NextMarker") || memberNames.contains("nextMarker") ||
-                                       memberNames.contains("Marker") || memberNames.contains("marker") ||
-                                       memberNames.contains("IsTruncated") || memberNames.contains("isTruncated");
-                            })
-                            .orElse(false);
-                    })
-                    .map(entry -> entry.getKey())
-                    .findFirst();
-            })
-            .orElse(null);
-        
-        return result;
-    }
-    
-    private boolean isNumericToken(OperationShape op, String tokenName) {
-        // Check if the token is numeric by examining the shape type
+    private String findWrapperMemberContainingToken(OperationShape op, String tokenName) {
         return op.getOutput()
             .flatMap(outputId -> context.getModel().getShape(outputId))
-            .filter(shape -> shape instanceof StructureShape)
-            .map(shape -> (StructureShape) shape)
-            .flatMap(outputShape -> outputShape.getMember(tokenName))
-            .flatMap(member -> context.getModel().getShape(member.getTarget()))
-            .map(targetShape -> targetShape instanceof IntegerShape || targetShape instanceof LongShape)
+            .flatMap(shape -> shape.asStructureShape())
+            .flatMap(outputShape ->
+                outputShape.getAllMembers().entrySet().stream()
+                    .filter(entry -> context.getModel().getShape(entry.getValue().getTarget())
+                        .flatMap(t -> t.asStructureShape())
+                        .map(s -> s.getAllMembers().containsKey(tokenName))
+                        .orElse(false))
+                    .map(Map.Entry::getKey)
+                    .findFirst()
+            )
+            .orElse(null);
+    }
+    
+    private boolean hasTopLevelMember(OperationShape op, String memberName) {
+        return op.getOutput()
+            .flatMap(outputId -> context.getModel().getShape(outputId))
+            .flatMap(shape -> shape.asStructureShape())
+            .map(outputShape -> outputShape.getAllMembers().containsKey(memberName))
             .orElse(false);
+    }
+    
+    private boolean isNumericToken(OperationShape op, String wrapperMember, String tokenName) {
+        Optional<Shape> tokenShape =
+            op.getOutput()
+              .flatMap(outputId -> context.getModel().getShape(outputId))
+              .flatMap(s -> s.asStructureShape())
+              .flatMap(out -> {
+                  if (wrapperMember == null) {
+                      return out.getMember(tokenName);
+                  }
+                  return out.getMember(wrapperMember)
+                            .flatMap(m -> context.getModel().getShape(m.getTarget()))
+                            .flatMap(t -> t.asStructureShape())
+                            .flatMap(w -> w.getMember(tokenName));
+              })
+              .flatMap(member -> context.getModel().getShape(member.getTarget()));
+
+        return tokenShape.map(ts -> ts instanceof IntegerShape || ts instanceof LongShape).orElse(false);
     }
 }
