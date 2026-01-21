@@ -43,8 +43,8 @@ public class PaginationClientHeaderGenerator {
     }
     
     private void renderIncludes(CppWriter writer, String serviceName, String c2jServiceName) {
-        String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
-        writer.writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "Client.h");
+        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
+        writer.writeInclude("aws/" + c2jServiceName + "/" + classPrefix + "Client.h");
         writer.writeInclude("aws/core/utils/pagination/Paginator.h");
         
         for (OperationData<PaginatedTrait> data : paginatedOps) {
@@ -55,6 +55,7 @@ public class PaginationClientHeaderGenerator {
     }
     
     private void renderNamespaces(CppWriter writer, String serviceName) {
+        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
         writer.writeNamespaceOpen("Aws");
         writer.writeNamespaceOpen(serviceName);
         writer.write("");
@@ -63,7 +64,7 @@ public class PaginationClientHeaderGenerator {
             String opName = data.getOperation().getId().getName();
             String methodName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName);
             writer.write("using $LPaginator = Aws::Utils::Pagination::PagePaginator<$LClient, Model::$LRequest, Pagination::$LPaginationTraits>;",
-                opName, ServiceNameUtil.getServiceNameUpperCamel(service), methodName, opName);
+                opName, classPrefix, methodName, opName);
         }
         
         writer.write("");
