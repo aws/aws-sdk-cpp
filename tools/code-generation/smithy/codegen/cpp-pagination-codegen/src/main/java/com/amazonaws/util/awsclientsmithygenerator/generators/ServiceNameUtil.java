@@ -89,7 +89,8 @@ public final class ServiceNameUtil {
         Map.entry("savingsplans", "SavingsPlans"),
         Map.entry("servicecatalogappregistry", "AppRegistry"),
         Map.entry("sesv2", "SESV2"),
-        Map.entry("synthetics", "Synthetics")
+        Map.entry("synthetics", "Synthetics"),
+        Map.entry("transfer", "Transfer")
     );
     
     public static String getServiceName(ServiceShape service) {
@@ -99,16 +100,16 @@ public final class ServiceNameUtil {
         
         String sanitized = sanitizeServiceAbbreviation(serviceId);
         
-        // Check legacy fullServiceName mappings first
-        String legacyName = LEGACY_FULL_SERVICE_NAME_MAP.get(sanitized.toLowerCase());
-        if (legacyName != null) {
-            return legacyName;
-        }
-        
-        // Check hardcoded mappings
+        // Check serviceAbbreviation mappings first (highest priority in C2J)
         String mapped = SMITHY_TO_C2J_NAMESPACE.get(sanitized.toLowerCase());
         if (mapped != null) {
             return mapped;
+        }
+        
+        // Check legacy fullServiceName mappings (fallback when serviceAbbreviation missing)
+        String legacyName = LEGACY_FULL_SERVICE_NAME_MAP.get(sanitized.toLowerCase());
+        if (legacyName != null) {
+            return legacyName;
         }
         
         return sanitized;
