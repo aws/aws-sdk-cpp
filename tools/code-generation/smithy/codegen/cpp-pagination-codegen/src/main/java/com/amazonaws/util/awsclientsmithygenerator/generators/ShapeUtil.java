@@ -6,10 +6,11 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ShapeUtil {
+    
+    private static final List<String> RESULT_SUFFIXES = List.of("Result", "SdkResult", "CppSdkResult");
     
     /**
      * Returns all shapes referenced by a root shape, recursively.
@@ -43,53 +44,79 @@ public class ShapeUtil {
             return "Response";
         }
         
-        String opName = operation.getId().getName();
+        String baseName = operation.getId().getName();
+        Set<String> allShapeNames = getAllShapeNames(model);
         
-        // Get the operation's output shape to exclude from collision check
-        ShapeId outputShapeId = operation.getOutputShape();
+        // Output shape name (used for legacy early-accept behavior)
+        String outputShapeName = operation.getOutput().isPresent()
+                ? operation.getOutputShape().getName()
+                : null;
         
-        // Try Result first, then SdkResult if collision
-        String[] suffixes = {"Result", "SdkResult", "CppSdkResult"};
+        // For closer parity with the legacy Get/Set collision rule
+        Set<String> outputMemberNames = getOutputMemberNames(model, operation);
         
-        for (String suffix : suffixes) {
-            String candidateName = opName + suffix;
-            if (!hasNamingConflict(model, candidateName, outputShapeId)) {
+        for (String suffix : RESULT_SUFFIXES) {
+            String candidate = baseName + suffix;
+            
+            // Legacy parity: if the operation's output shape is already named exactly candidate,
+            // then legacy renameShape() would return immediately (no conflict handling).
+            if (outputShapeName != null && candidate.equals(outputShapeName)) {
                 return suffix;
             }
+            
+            // Legacy: otherwise, direct collision with any existing shape name is a conflict
+            if (allShapeNames.contains(candidate)) {
+                continue;
+            }
+            
+            // Closer parity with legacy intent (member-gated Get/Set collisions)
+            if (hasGetSetCollision(candidate, allShapeNames, outputMemberNames)) {
+                continue;
+            }
+            
+            return suffix;
         }
         
-        // Fallback to CppSdkResult if all else fails
-        return "CppSdkResult";
+        // Legacy would throw if no suffix is available; returning CppSdkResult silently can hide bugs
+        throw new IllegalStateException("Unhandled result shape name conflict for operation: " + baseName);
     }
     
-    /**
-     * Checks if a candidate name conflicts with existing shapes.
-     * Implements C2J collision detection: direct name match OR Get/Set accessor conflict.
-     * Excludes the operation's own output shape from collision check.
-     */
-    private static boolean hasNamingConflict(Model model, String candidateName, ShapeId excludeShapeId) {
-        Set<Shape> allShapes = model.toSet();
+    private static Set<String> getAllShapeNames(Model model) {
+        Set<String> names = new HashSet<>();
+        model.shapes().forEach(s -> names.add(s.getId().getName()));
+        return names;
+    }
+    
+    private static Set<String> getOutputMemberNames(Model model, OperationShape op) {
+        // If no output or not a structure, return empty
+        if (!op.getOutput().isPresent()) {
+            return Collections.emptySet();
+        }
+        ShapeId outputId = op.getOutputShape();
+        Shape output = model.expectShape(outputId);
+        if (!output.isStructureShape()) {
+            return Collections.emptySet();
+        }
+        StructureShape struct = output.asStructureShape().get();
+        return new HashSet<>(struct.getAllMembers().keySet());
+    }
+    
+    private static boolean hasGetSetCollision(String candidate,
+                                             Set<String> allShapeNames,
+                                             Set<String> outputMemberNames) {
+        if (outputMemberNames.isEmpty()) {
+            return false;
+        }
         
-        return allShapes.stream()
-            .anyMatch(shape -> {
-                String shapeName = shape.getId().getName();
-                
-                // Skip the operation's own output shape by comparing names
-                if (excludeShapeId != null && shapeName.equals(excludeShapeId.getName())) {
-                    return false;
-                }
-                
-                // Direct collision: candidateName equals existing shapeName
-                if (candidateName.equals(shapeName)) {
-                    return true;
-                }
-                
-                // Get/Set accessor collision: candidateName equals "Get" + shapeName or "Set" + shapeName
-                if (candidateName.equals("Get" + shapeName) || candidateName.equals("Set" + shapeName)) {
-                    return true;
-                }
-                
-                return false;
-            });
+        // Legacy logic: only treat GetX/SetX as conflict if X is both a known shape name and a member name
+        for (String shapeName : allShapeNames) {
+            if (!outputMemberNames.contains(shapeName)) {
+                continue;
+            }
+            if (candidate.equals("Get" + shapeName) || candidate.equals("Set" + shapeName)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
