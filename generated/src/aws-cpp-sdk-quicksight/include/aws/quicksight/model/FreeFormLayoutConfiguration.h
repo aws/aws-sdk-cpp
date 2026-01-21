@@ -8,6 +8,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/FreeFormLayoutCanvasSizeOptions.h>
 #include <aws/quicksight/model/FreeFormLayoutElement.h>
+#include <aws/quicksight/model/SheetLayoutGroup.h>
 
 #include <utility>
 
@@ -72,12 +73,39 @@ class FreeFormLayoutConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The groups that are included in a free-form layout.</p>
+   */
+  inline const Aws::Vector<SheetLayoutGroup>& GetGroups() const { return m_groups; }
+  inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+  template <typename GroupsT = Aws::Vector<SheetLayoutGroup>>
+  void SetGroups(GroupsT&& value) {
+    m_groupsHasBeenSet = true;
+    m_groups = std::forward<GroupsT>(value);
+  }
+  template <typename GroupsT = Aws::Vector<SheetLayoutGroup>>
+  FreeFormLayoutConfiguration& WithGroups(GroupsT&& value) {
+    SetGroups(std::forward<GroupsT>(value));
+    return *this;
+  }
+  template <typename GroupsT = SheetLayoutGroup>
+  FreeFormLayoutConfiguration& AddGroups(GroupsT&& value) {
+    m_groupsHasBeenSet = true;
+    m_groups.emplace_back(std::forward<GroupsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<FreeFormLayoutElement> m_elements;
 
   FreeFormLayoutCanvasSizeOptions m_canvasSizeOptions;
+
+  Aws::Vector<SheetLayoutGroup> m_groups;
   bool m_elementsHasBeenSet = false;
   bool m_canvasSizeOptionsHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
 };
 
 }  // namespace Model

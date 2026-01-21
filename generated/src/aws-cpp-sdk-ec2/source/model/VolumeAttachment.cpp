@@ -39,6 +39,12 @@ VolumeAttachment& VolumeAttachment::operator=(const XmlNode& xmlNode) {
       m_instanceOwningService = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwningServiceNode.GetText());
       m_instanceOwningServiceHasBeenSet = true;
     }
+    XmlNode ebsCardIndexNode = resultNode.FirstChild("ebsCardIndex");
+    if (!ebsCardIndexNode.IsNull()) {
+      m_ebsCardIndex =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsCardIndexNode.GetText()).c_str()).c_str());
+      m_ebsCardIndexHasBeenSet = true;
+    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if (!volumeIdNode.IsNull()) {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
@@ -85,6 +91,10 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
             << "&";
   }
 
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << index << locationValue << ".EbsCardIndex=" << m_ebsCardIndex << "&";
+  }
+
   if (m_volumeIdHasBeenSet) {
     oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
@@ -121,6 +131,9 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if (m_instanceOwningServiceHasBeenSet) {
     oStream << location << ".InstanceOwningService=" << StringUtils::URLEncode(m_instanceOwningService.c_str()) << "&";
+  }
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << ".EbsCardIndex=" << m_ebsCardIndex << "&";
   }
   if (m_volumeIdHasBeenSet) {
     oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";

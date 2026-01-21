@@ -354,6 +354,23 @@ class EbsBlockDevice {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The index of the EBS card. Some instance types support multiple EBS cards.
+   * The default EBS card index is 0.</p>
+   */
+  inline int GetEbsCardIndex() const { return m_ebsCardIndex; }
+  inline bool EbsCardIndexHasBeenSet() const { return m_ebsCardIndexHasBeenSet; }
+  inline void SetEbsCardIndex(int value) {
+    m_ebsCardIndexHasBeenSet = true;
+    m_ebsCardIndex = value;
+  }
+  inline EbsBlockDevice& WithEbsCardIndex(int value) {
+    SetEbsCardIndex(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_deleteOnTermination{false};
 
@@ -378,6 +395,8 @@ class EbsBlockDevice {
   int m_volumeInitializationRate{0};
 
   Aws::String m_availabilityZoneId;
+
+  int m_ebsCardIndex{0};
   bool m_deleteOnTerminationHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
@@ -390,6 +409,7 @@ class EbsBlockDevice {
   bool m_encryptedHasBeenSet = false;
   bool m_volumeInitializationRateHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_ebsCardIndexHasBeenSet = false;
 };
 
 }  // namespace Model

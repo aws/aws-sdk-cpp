@@ -29,6 +29,13 @@ FreeFormLayoutConfiguration& FreeFormLayoutConfiguration::operator=(JsonView jso
     m_canvasSizeOptions = jsonValue.GetObject("CanvasSizeOptions");
     m_canvasSizeOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Groups")) {
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
+    for (unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex) {
+      m_groups.push_back(groupsJsonList[groupsIndex].AsObject());
+    }
+    m_groupsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +52,14 @@ JsonValue FreeFormLayoutConfiguration::Jsonize() const {
 
   if (m_canvasSizeOptionsHasBeenSet) {
     payload.WithObject("CanvasSizeOptions", m_canvasSizeOptions.Jsonize());
+  }
+
+  if (m_groupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
+    for (unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex) {
+      groupsJsonList[groupsIndex].AsObject(m_groups[groupsIndex].Jsonize());
+    }
+    payload.WithArray("Groups", std::move(groupsJsonList));
   }
 
   return payload;

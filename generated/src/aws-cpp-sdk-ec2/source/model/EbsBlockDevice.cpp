@@ -89,6 +89,12 @@ EbsBlockDevice& EbsBlockDevice::operator=(const XmlNode& xmlNode) {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
     }
+    XmlNode ebsCardIndexNode = resultNode.FirstChild("EbsCardIndex");
+    if (!ebsCardIndexNode.IsNull()) {
+      m_ebsCardIndex =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsCardIndexNode.GetText()).c_str()).c_str());
+      m_ebsCardIndexHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -143,6 +149,10 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location,
   if (m_availabilityZoneIdHasBeenSet) {
     oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
+
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << index << locationValue << ".EbsCardIndex=" << m_ebsCardIndex << "&";
+  }
 }
 
 void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -181,6 +191,9 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_availabilityZoneIdHasBeenSet) {
     oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+  if (m_ebsCardIndexHasBeenSet) {
+    oStream << location << ".EbsCardIndex=" << m_ebsCardIndex << "&";
   }
 }
 

@@ -30,6 +30,7 @@ static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedExcep
 static const int DUPLICATE_ID_HASH = HashingUtils::HashString("DuplicateIdException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
+static const int RETRYABLE_CONFLICT_HASH = HashingUtils::HashString("RetryableConflictException");
 static const int RUNTIME_CLIENT_HASH = HashingUtils::HashString("RuntimeClientError");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -49,6 +50,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::SERVICE), RetryableType::RETRYABLE);
+  } else if (hashCode == RETRYABLE_CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::RETRYABLE_CONFLICT), RetryableType::RETRYABLE);
   } else if (hashCode == RUNTIME_CLIENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentCoreErrors::RUNTIME_CLIENT), RetryableType::NOT_RETRYABLE);
   }

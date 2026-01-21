@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AttachmentLimitType.h>
+#include <aws/ec2/model/EbsCardInfo.h>
 #include <aws/ec2/model/EbsEncryptionSupport.h>
 #include <aws/ec2/model/EbsNvmeSupport.h>
 #include <aws/ec2/model/EbsOptimizedInfo.h>
@@ -146,6 +148,46 @@ class EbsInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the number of EBS cards supported by the instance type.</p>
+   */
+  inline int GetMaximumEbsCards() const { return m_maximumEbsCards; }
+  inline bool MaximumEbsCardsHasBeenSet() const { return m_maximumEbsCardsHasBeenSet; }
+  inline void SetMaximumEbsCards(int value) {
+    m_maximumEbsCardsHasBeenSet = true;
+    m_maximumEbsCards = value;
+  }
+  inline EbsInfo& WithMaximumEbsCards(int value) {
+    SetMaximumEbsCards(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Describes the EBS cards available for the instance type.</p>
+   */
+  inline const Aws::Vector<EbsCardInfo>& GetEbsCards() const { return m_ebsCards; }
+  inline bool EbsCardsHasBeenSet() const { return m_ebsCardsHasBeenSet; }
+  template <typename EbsCardsT = Aws::Vector<EbsCardInfo>>
+  void SetEbsCards(EbsCardsT&& value) {
+    m_ebsCardsHasBeenSet = true;
+    m_ebsCards = std::forward<EbsCardsT>(value);
+  }
+  template <typename EbsCardsT = Aws::Vector<EbsCardInfo>>
+  EbsInfo& WithEbsCards(EbsCardsT&& value) {
+    SetEbsCards(std::forward<EbsCardsT>(value));
+    return *this;
+  }
+  template <typename EbsCardsT = EbsCardInfo>
+  EbsInfo& AddEbsCards(EbsCardsT&& value) {
+    m_ebsCardsHasBeenSet = true;
+    m_ebsCards.emplace_back(std::forward<EbsCardsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EbsOptimizedSupport m_ebsOptimizedSupport{EbsOptimizedSupport::NOT_SET};
 
@@ -158,12 +200,18 @@ class EbsInfo {
   int m_maximumEbsAttachments{0};
 
   AttachmentLimitType m_attachmentLimitType{AttachmentLimitType::NOT_SET};
+
+  int m_maximumEbsCards{0};
+
+  Aws::Vector<EbsCardInfo> m_ebsCards;
   bool m_ebsOptimizedSupportHasBeenSet = false;
   bool m_encryptionSupportHasBeenSet = false;
   bool m_ebsOptimizedInfoHasBeenSet = false;
   bool m_nvmeSupportHasBeenSet = false;
   bool m_maximumEbsAttachmentsHasBeenSet = false;
   bool m_attachmentLimitTypeHasBeenSet = false;
+  bool m_maximumEbsCardsHasBeenSet = false;
+  bool m_ebsCardsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,11 +5,13 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -109,6 +111,30 @@ class GetBrowserSessionResult {
   template <typename ViewPortT = ViewPort>
   GetBrowserSessionResult& WithViewPort(ViewPortT&& value) {
     SetViewPort(std::forward<ViewPortT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of browser extensions that are configured in the browser
+   * session.</p>
+   */
+  inline const Aws::Vector<BrowserExtension>& GetExtensions() const { return m_extensions; }
+  template <typename ExtensionsT = Aws::Vector<BrowserExtension>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Vector<BrowserExtension>>
+  GetBrowserSessionResult& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsT = BrowserExtension>
+  GetBrowserSessionResult& AddExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace_back(std::forward<ExtensionsT>(value));
     return *this;
   }
   ///@}
@@ -221,6 +247,8 @@ class GetBrowserSessionResult {
 
   ViewPort m_viewPort;
 
+  Aws::Vector<BrowserExtension> m_extensions;
+
   int m_sessionTimeoutSeconds{0};
 
   BrowserSessionStatus m_status{BrowserSessionStatus::NOT_SET};
@@ -237,6 +265,7 @@ class GetBrowserSessionResult {
   bool m_nameHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_viewPortHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_streamsHasBeenSet = false;

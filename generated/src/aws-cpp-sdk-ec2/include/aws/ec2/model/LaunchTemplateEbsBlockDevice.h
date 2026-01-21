@@ -184,6 +184,23 @@ class LaunchTemplateEbsBlockDevice {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The index of the EBS card. Some instance types support multiple EBS cards.
+   * The default EBS card index is 0.</p>
+   */
+  inline int GetEbsCardIndex() const { return m_ebsCardIndex; }
+  inline bool EbsCardIndexHasBeenSet() const { return m_ebsCardIndexHasBeenSet; }
+  inline void SetEbsCardIndex(int value) {
+    m_ebsCardIndexHasBeenSet = true;
+    m_ebsCardIndex = value;
+  }
+  inline LaunchTemplateEbsBlockDevice& WithEbsCardIndex(int value) {
+    SetEbsCardIndex(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_encrypted{false};
 
@@ -202,6 +219,8 @@ class LaunchTemplateEbsBlockDevice {
   int m_throughput{0};
 
   int m_volumeInitializationRate{0};
+
+  int m_ebsCardIndex{0};
   bool m_encryptedHasBeenSet = false;
   bool m_deleteOnTerminationHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
@@ -211,6 +230,7 @@ class LaunchTemplateEbsBlockDevice {
   bool m_volumeTypeHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
   bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_ebsCardIndexHasBeenSet = false;
 };
 
 }  // namespace Model
