@@ -41,7 +41,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                 // Generate pagination files
                 FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, service, paginatedOps, "Pagination");
                 parser.run(featureParser -> {
-                    String serviceName = featureParser.getServiceName();
+                    String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
                     
                     // Generate client pagination header
                     featureParser.generateClientHeader(

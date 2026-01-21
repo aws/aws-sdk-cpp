@@ -74,7 +74,7 @@ public class PaginationCompilationTestGenerator {
         
         for (OperationData<PaginatedTrait> paginationData : allPaginatedOps) {
             ServiceShape service = paginationData.getService();
-            String serviceName = ServiceNameUtil.getServiceName(service);
+            String serviceName = ServiceNameUtil.getServiceNameUpperCamel(service);
             String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
             
             // Collect unique client headers
