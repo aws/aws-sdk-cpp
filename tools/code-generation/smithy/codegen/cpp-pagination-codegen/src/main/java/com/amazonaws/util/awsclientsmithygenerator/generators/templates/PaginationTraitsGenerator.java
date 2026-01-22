@@ -275,6 +275,11 @@ public class PaginationTraitsGenerator {
     }
     
     private boolean isNumericToken(OperationShape op, String wrapperMember, String tokenName) {
+        // Check for C2J/Smithy model mismatch overrides first
+        if (ShapeUtil.isNumericTokenOverride(c2jServiceName, op.getId().getName(), tokenName)) {
+            return true;
+        }
+        
         Optional<Shape> tokenShape =
             op.getOutput()
               .flatMap(outputId -> context.getModel().getShape(outputId))
