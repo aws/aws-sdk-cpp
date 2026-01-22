@@ -31,6 +31,7 @@ static const int UNSUPPORTED_FOR_INCREMENTAL_HASH = HashingUtils::HashString("UN
 static const int UNSUPPORTED_AMI_HASH = HashingUtils::HashString("UNSUPPORTED_AMI");
 static const int UNSUPPORTED_SNAPSHOT_HASH = HashingUtils::HashString("UNSUPPORTED_SNAPSHOT");
 static const int UNSUPPORTED_COMPOSITE_RECOVERY_POINT_HASH = HashingUtils::HashString("UNSUPPORTED_COMPOSITE_RECOVERY_POINT");
+static const int ALL_FILES_SKIPPED_OR_FAILED_HASH = HashingUtils::HashString("ALL_FILES_SKIPPED_OR_FAILED");
 
 ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
     return ScanStatusReason::UNSUPPORTED_SNAPSHOT;
   } else if (hashCode == UNSUPPORTED_COMPOSITE_RECOVERY_POINT_HASH) {
     return ScanStatusReason::UNSUPPORTED_COMPOSITE_RECOVERY_POINT;
+  } else if (hashCode == ALL_FILES_SKIPPED_OR_FAILED_HASH) {
+    return ScanStatusReason::ALL_FILES_SKIPPED_OR_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForScanStatusReason(ScanStatusReason enumValue) {
       return "UNSUPPORTED_SNAPSHOT";
     case ScanStatusReason::UNSUPPORTED_COMPOSITE_RECOVERY_POINT:
       return "UNSUPPORTED_COMPOSITE_RECOVERY_POINT";
+    case ScanStatusReason::ALL_FILES_SKIPPED_OR_FAILED:
+      return "ALL_FILES_SKIPPED_OR_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -59,6 +59,17 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator=(JsonView jsonValue
     }
     m_budgetedAndActualAmountsListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FilterExpression")) {
+    m_filterExpression = jsonValue.GetObject("FilterExpression");
+    m_filterExpressionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Metrics")) {
+    Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
+    for (unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex) {
+      m_metrics.push_back(MetricMapper::GetMetricForName(metricsJsonList[metricsIndex].AsString()));
+    }
+    m_metricsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -105,6 +116,18 @@ JsonValue BudgetPerformanceHistory::Jsonize() const {
           m_budgetedAndActualAmountsList[budgetedAndActualAmountsListIndex].Jsonize());
     }
     payload.WithArray("BudgetedAndActualAmountsList", std::move(budgetedAndActualAmountsListJsonList));
+  }
+
+  if (m_filterExpressionHasBeenSet) {
+    payload.WithObject("FilterExpression", m_filterExpression.Jsonize());
+  }
+
+  if (m_metricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
+    for (unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex) {
+      metricsJsonList[metricsIndex].AsString(MetricMapper::GetNameForMetric(m_metrics[metricsIndex]));
+    }
+    payload.WithArray("Metrics", std::move(metricsJsonList));
   }
 
   return payload;

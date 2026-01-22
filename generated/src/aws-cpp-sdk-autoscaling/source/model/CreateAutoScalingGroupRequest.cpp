@@ -133,6 +133,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const {
     }
   }
 
+  if (m_deletionProtectionHasBeenSet) {
+    ss << "DeletionProtection=" << StringUtils::URLEncode(DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection))
+       << "&";
+  }
+
   if (m_tagsHasBeenSet) {
     if (m_tags.empty()) {
       ss << "Tags=&";

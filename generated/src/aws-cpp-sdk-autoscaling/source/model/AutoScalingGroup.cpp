@@ -264,6 +264,12 @@ AutoScalingGroup& AutoScalingGroup::operator=(const XmlNode& xmlNode) {
       m_instanceMaintenancePolicy = instanceMaintenancePolicyNode;
       m_instanceMaintenancePolicyHasBeenSet = true;
     }
+    XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
+    if (!deletionProtectionNode.IsNull()) {
+      m_deletionProtection = DeletionProtectionMapper::GetDeletionProtectionForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()));
+      m_deletionProtectionHasBeenSet = true;
+    }
     XmlNode availabilityZoneDistributionNode = resultNode.FirstChild("AvailabilityZoneDistribution");
     if (!availabilityZoneDistributionNode.IsNull()) {
       m_availabilityZoneDistribution = availabilityZoneDistributionNode;
@@ -486,6 +492,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     m_instanceMaintenancePolicy.OutputToStream(oStream, instanceMaintenancePolicyLocationAndMemberSs.str().c_str());
   }
 
+  if (m_deletionProtectionHasBeenSet) {
+    oStream << location << index << locationValue << ".DeletionProtection="
+            << StringUtils::URLEncode(DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection)) << "&";
+  }
+
   if (m_availabilityZoneDistributionHasBeenSet) {
     Aws::StringStream availabilityZoneDistributionLocationAndMemberSs;
     availabilityZoneDistributionLocationAndMemberSs << location << index << locationValue << ".AvailabilityZoneDistribution";
@@ -663,6 +674,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
     Aws::String instanceMaintenancePolicyLocationAndMember(location);
     instanceMaintenancePolicyLocationAndMember += ".InstanceMaintenancePolicy";
     m_instanceMaintenancePolicy.OutputToStream(oStream, instanceMaintenancePolicyLocationAndMember.c_str());
+  }
+  if (m_deletionProtectionHasBeenSet) {
+    oStream << location << ".DeletionProtection="
+            << StringUtils::URLEncode(DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection)) << "&";
   }
   if (m_availabilityZoneDistributionHasBeenSet) {
     Aws::String availabilityZoneDistributionLocationAndMember(location);

@@ -114,7 +114,10 @@ class CreateGameSessionRequest : public GameLiftRequest {
    * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example,
    * see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create
-   * a game session with custom properties</a>. </p>
+   * a game session with custom properties</a>. </p>  <p>Avoid using periods
+   * (".") in property keys if you plan to search for game sessions by properties.
+   * Property keys containing periods cannot be searched and will be filtered out
+   * from search results due to search index limitations.</p>
    */
   inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
   inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }

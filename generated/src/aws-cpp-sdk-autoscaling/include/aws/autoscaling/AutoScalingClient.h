@@ -184,7 +184,7 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
 
   /**
    *  <p>This API operation is superseded by <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html">https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html</a>,
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html">AttachTrafficSources</a>,
    * which can attach multiple traffic sources types. We recommend using
    * <code>AttachTrafficSources</code> to simplify how you manage traffic sources.
    * However, we continue to support <code>AttachLoadBalancers</code>. You can use
@@ -1558,7 +1558,7 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
 
   /**
    *  <p>This API operation is superseded by <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTrafficSources.html">DetachTrafficSources</a>,
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DetachTrafficSources.html">DetachTrafficSources</a>,
    * which can detach multiple traffic sources types. We recommend using
    * <code>DetachTrafficSources</code> to simplify how you manage traffic sources.
    * However, we continue to support <code>DetachLoadBalancerTargetGroups</code>. You

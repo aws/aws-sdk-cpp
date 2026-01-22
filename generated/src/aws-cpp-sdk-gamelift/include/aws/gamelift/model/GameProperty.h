@@ -42,7 +42,10 @@ class GameProperty {
 
   ///@{
   /**
-   * <p>The game property identifier.</p>
+   * <p>The game property identifier.</p>  <p>Avoid using periods (".") in
+   * property keys if you plan to search for game sessions by properties. Property
+   * keys containing periods cannot be searched and will be filtered out from search
+   * results due to search index limitations.</p>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

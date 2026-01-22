@@ -38,6 +38,29 @@ GpuDeviceInfo& GpuDeviceInfo::operator=(const XmlNode& xmlNode) {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
     }
+    XmlNode logicalGpuCountNode = resultNode.FirstChild("logicalGpuCount");
+    if (!logicalGpuCountNode.IsNull()) {
+      m_logicalGpuCount = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logicalGpuCountNode.GetText()).c_str()).c_str());
+      m_logicalGpuCountHasBeenSet = true;
+    }
+    XmlNode gpuPartitionSizeNode = resultNode.FirstChild("gpuPartitionSize");
+    if (!gpuPartitionSizeNode.IsNull()) {
+      m_gpuPartitionSize = StringUtils::ConvertToDouble(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gpuPartitionSizeNode.GetText()).c_str()).c_str());
+      m_gpuPartitionSizeHasBeenSet = true;
+    }
+    XmlNode workloadsNode = resultNode.FirstChild("workloadSet");
+    if (!workloadsNode.IsNull()) {
+      XmlNode workloadsMember = workloadsNode.FirstChild("item");
+      m_workloadsHasBeenSet = !workloadsMember.IsNull();
+      while (!workloadsMember.IsNull()) {
+        m_workloads.push_back(workloadsMember.GetText());
+        workloadsMember = workloadsMember.NextNode("item");
+      }
+
+      m_workloadsHasBeenSet = true;
+    }
     XmlNode memoryInfoNode = resultNode.FirstChild("memoryInfo");
     if (!memoryInfoNode.IsNull()) {
       m_memoryInfo = memoryInfoNode;
@@ -61,6 +84,22 @@ void GpuDeviceInfo::OutputToStream(Aws::OStream& oStream, const char* location, 
     oStream << location << index << locationValue << ".Count=" << m_count << "&";
   }
 
+  if (m_logicalGpuCountHasBeenSet) {
+    oStream << location << index << locationValue << ".LogicalGpuCount=" << m_logicalGpuCount << "&";
+  }
+
+  if (m_gpuPartitionSizeHasBeenSet) {
+    oStream << location << index << locationValue << ".GpuPartitionSize=" << StringUtils::URLEncode(m_gpuPartitionSize) << "&";
+  }
+
+  if (m_workloadsHasBeenSet) {
+    unsigned workloadsIdx = 1;
+    for (auto& item : m_workloads) {
+      oStream << location << index << locationValue << ".WorkloadSet." << workloadsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
+  }
+
   if (m_memoryInfoHasBeenSet) {
     Aws::StringStream memoryInfoLocationAndMemberSs;
     memoryInfoLocationAndMemberSs << location << index << locationValue << ".MemoryInfo";
@@ -77,6 +116,18 @@ void GpuDeviceInfo::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if (m_countHasBeenSet) {
     oStream << location << ".Count=" << m_count << "&";
+  }
+  if (m_logicalGpuCountHasBeenSet) {
+    oStream << location << ".LogicalGpuCount=" << m_logicalGpuCount << "&";
+  }
+  if (m_gpuPartitionSizeHasBeenSet) {
+    oStream << location << ".GpuPartitionSize=" << StringUtils::URLEncode(m_gpuPartitionSize) << "&";
+  }
+  if (m_workloadsHasBeenSet) {
+    unsigned workloadsIdx = 1;
+    for (auto& item : m_workloads) {
+      oStream << location << ".WorkloadSet." << workloadsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
   if (m_memoryInfoHasBeenSet) {
     Aws::String memoryInfoLocationAndMember(location);

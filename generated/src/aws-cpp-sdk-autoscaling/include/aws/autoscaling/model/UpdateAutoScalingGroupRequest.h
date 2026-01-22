@@ -9,6 +9,7 @@
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
 #include <aws/autoscaling/model/CapacityReservationSpecification.h>
+#include <aws/autoscaling/model/DeletionProtection.h>
 #include <aws/autoscaling/model/InstanceLifecyclePolicy.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
@@ -631,6 +632,29 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The deletion protection setting for the Auto Scaling group. This setting
+   * helps safeguard your Auto Scaling group and its instances by controlling whether
+   * the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion
+   * protection is enabled, users cannot delete the Auto Scaling group according to
+   * the specified protection level until the setting is changed back to a less
+   * restrictive level. </p> <p> The valid values are <code>none</code>,
+   * <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>. </p>
+   * <p> Default: <code>none</code> </p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline UpdateAutoScalingGroupRequest& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_autoScalingGroupName;
 
@@ -685,6 +709,8 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
   CapacityReservationSpecification m_capacityReservationSpecification;
 
   InstanceLifecyclePolicy m_instanceLifecyclePolicy;
+
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
   bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_launchConfigurationNameHasBeenSet = false;
   bool m_launchTemplateHasBeenSet = false;
@@ -712,6 +738,7 @@ class UpdateAutoScalingGroupRequest : public AutoScalingRequest {
   bool m_skipZonalShiftValidationHasBeenSet = false;
   bool m_capacityReservationSpecificationHasBeenSet = false;
   bool m_instanceLifecyclePolicyHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
 };
 
 }  // namespace Model

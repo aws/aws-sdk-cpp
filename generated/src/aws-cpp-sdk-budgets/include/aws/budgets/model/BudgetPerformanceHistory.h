@@ -8,6 +8,8 @@
 #include <aws/budgets/model/BudgetType.h>
 #include <aws/budgets/model/BudgetedAndActualAmounts.h>
 #include <aws/budgets/model/CostTypes.h>
+#include <aws/budgets/model/Expression.h>
+#include <aws/budgets/model/Metric.h>
 #include <aws/budgets/model/TimeUnit.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -172,6 +174,47 @@ class BudgetPerformanceHistory {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The filtering dimensions for the budget and their corresponding values.</p>
+   */
+  inline const Expression& GetFilterExpression() const { return m_filterExpression; }
+  inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
+  template <typename FilterExpressionT = Expression>
+  void SetFilterExpression(FilterExpressionT&& value) {
+    m_filterExpressionHasBeenSet = true;
+    m_filterExpression = std::forward<FilterExpressionT>(value);
+  }
+  template <typename FilterExpressionT = Expression>
+  BudgetPerformanceHistory& WithFilterExpression(FilterExpressionT&& value) {
+    SetFilterExpression(std::forward<FilterExpressionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The definition for how the budget data is aggregated.</p>
+   */
+  inline const Aws::Vector<Metric>& GetMetrics() const { return m_metrics; }
+  inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+  template <typename MetricsT = Aws::Vector<Metric>>
+  void SetMetrics(MetricsT&& value) {
+    m_metricsHasBeenSet = true;
+    m_metrics = std::forward<MetricsT>(value);
+  }
+  template <typename MetricsT = Aws::Vector<Metric>>
+  BudgetPerformanceHistory& WithMetrics(MetricsT&& value) {
+    SetMetrics(std::forward<MetricsT>(value));
+    return *this;
+  }
+  inline BudgetPerformanceHistory& AddMetrics(Metric value) {
+    m_metricsHasBeenSet = true;
+    m_metrics.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_budgetName;
 
@@ -186,6 +229,10 @@ class BudgetPerformanceHistory {
   Aws::String m_billingViewArn;
 
   Aws::Vector<BudgetedAndActualAmounts> m_budgetedAndActualAmountsList;
+
+  Expression m_filterExpression;
+
+  Aws::Vector<Metric> m_metrics;
   bool m_budgetNameHasBeenSet = false;
   bool m_budgetTypeHasBeenSet = false;
   bool m_costFiltersHasBeenSet = false;
@@ -193,6 +240,8 @@ class BudgetPerformanceHistory {
   bool m_timeUnitHasBeenSet = false;
   bool m_billingViewArnHasBeenSet = false;
   bool m_budgetedAndActualAmountsListHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
 };
 
 }  // namespace Model

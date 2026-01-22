@@ -312,7 +312,10 @@ class MatchmakingConfiguration {
    * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
    * is added to the new <code>GameSession</code> object that is created for a
    * successful match. This parameter is not used when <code>FlexMatchMode</code> is
-   * set to <code>STANDALONE</code>.</p>
+   * set to <code>STANDALONE</code>.</p>  <p>Avoid using periods (".") in
+   * property keys if you plan to search for game sessions by properties. Property
+   * keys containing periods cannot be searched and will be filtered out from search
+   * results due to search index limitations.</p>
    */
   inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
   inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }

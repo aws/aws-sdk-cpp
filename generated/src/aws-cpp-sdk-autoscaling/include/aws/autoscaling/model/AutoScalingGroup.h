@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
 #include <aws/autoscaling/model/CapacityReservationSpecification.h>
+#include <aws/autoscaling/model/DeletionProtection.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/InstanceLifecyclePolicy.h>
@@ -731,6 +732,22 @@ class AutoScalingGroup {
 
   ///@{
   /**
+   * <p>The deletion protection setting for the Auto Scaling group.</p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline AutoScalingGroup& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The EC2 instance capacity distribution across Availability Zones for the Auto
    * Scaling group.</p>
    */
@@ -872,6 +889,8 @@ class AutoScalingGroup {
 
   InstanceMaintenancePolicy m_instanceMaintenancePolicy;
 
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+
   AvailabilityZoneDistribution m_availabilityZoneDistribution;
 
   AvailabilityZoneImpairmentPolicy m_availabilityZoneImpairmentPolicy;
@@ -914,6 +933,7 @@ class AutoScalingGroup {
   bool m_defaultInstanceWarmupHasBeenSet = false;
   bool m_trafficSourcesHasBeenSet = false;
   bool m_instanceMaintenancePolicyHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_availabilityZoneDistributionHasBeenSet = false;
   bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
   bool m_capacityReservationSpecificationHasBeenSet = false;

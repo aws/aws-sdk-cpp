@@ -218,7 +218,7 @@ class Compute {
   ///@{
   /**
    * <p>The type of operating system on the compute resource.</p>  <p>Amazon
-   * Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the <a
+   * Linux 2 (AL2) will reach end of support on 6/30/2026. See more details in the <a
    * href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
    * FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x
    * for Amazon GameLift Servers, first update the game server build to server SDK

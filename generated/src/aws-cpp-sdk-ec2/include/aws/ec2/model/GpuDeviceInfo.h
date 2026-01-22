@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/GpuDeviceMemoryInfo.h>
 
@@ -89,6 +90,63 @@ class GpuDeviceInfo {
 
   ///@{
   /**
+   * <p>Total number of GPU devices of this type.</p>
+   */
+  inline int GetLogicalGpuCount() const { return m_logicalGpuCount; }
+  inline bool LogicalGpuCountHasBeenSet() const { return m_logicalGpuCountHasBeenSet; }
+  inline void SetLogicalGpuCount(int value) {
+    m_logicalGpuCountHasBeenSet = true;
+    m_logicalGpuCount = value;
+  }
+  inline GpuDeviceInfo& WithLogicalGpuCount(int value) {
+    SetLogicalGpuCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1
+   * (included).</p>
+   */
+  inline double GetGpuPartitionSize() const { return m_gpuPartitionSize; }
+  inline bool GpuPartitionSizeHasBeenSet() const { return m_gpuPartitionSizeHasBeenSet; }
+  inline void SetGpuPartitionSize(double value) {
+    m_gpuPartitionSizeHasBeenSet = true;
+    m_gpuPartitionSize = value;
+  }
+  inline GpuDeviceInfo& WithGpuPartitionSize(double value) {
+    SetGpuPartitionSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of workload types this GPU supports.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetWorkloads() const { return m_workloads; }
+  inline bool WorkloadsHasBeenSet() const { return m_workloadsHasBeenSet; }
+  template <typename WorkloadsT = Aws::Vector<Aws::String>>
+  void SetWorkloads(WorkloadsT&& value) {
+    m_workloadsHasBeenSet = true;
+    m_workloads = std::forward<WorkloadsT>(value);
+  }
+  template <typename WorkloadsT = Aws::Vector<Aws::String>>
+  GpuDeviceInfo& WithWorkloads(WorkloadsT&& value) {
+    SetWorkloads(std::forward<WorkloadsT>(value));
+    return *this;
+  }
+  template <typename WorkloadsT = Aws::String>
+  GpuDeviceInfo& AddWorkloads(WorkloadsT&& value) {
+    m_workloadsHasBeenSet = true;
+    m_workloads.emplace_back(std::forward<WorkloadsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Describes the memory available to the GPU accelerator.</p>
    */
   inline const GpuDeviceMemoryInfo& GetMemoryInfo() const { return m_memoryInfo; }
@@ -111,10 +169,19 @@ class GpuDeviceInfo {
 
   int m_count{0};
 
+  int m_logicalGpuCount{0};
+
+  double m_gpuPartitionSize{0.0};
+
+  Aws::Vector<Aws::String> m_workloads;
+
   GpuDeviceMemoryInfo m_memoryInfo;
   bool m_nameHasBeenSet = false;
   bool m_manufacturerHasBeenSet = false;
   bool m_countHasBeenSet = false;
+  bool m_logicalGpuCountHasBeenSet = false;
+  bool m_gpuPartitionSizeHasBeenSet = false;
+  bool m_workloadsHasBeenSet = false;
   bool m_memoryInfoHasBeenSet = false;
 };
 

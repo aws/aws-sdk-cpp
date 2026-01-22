@@ -137,6 +137,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const {
     m_instanceLifecyclePolicy.OutputToStream(ss, "InstanceLifecyclePolicy");
   }
 
+  if (m_deletionProtectionHasBeenSet) {
+    ss << "DeletionProtection=" << StringUtils::URLEncode(DeletionProtectionMapper::GetNameForDeletionProtection(m_deletionProtection))
+       << "&";
+  }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

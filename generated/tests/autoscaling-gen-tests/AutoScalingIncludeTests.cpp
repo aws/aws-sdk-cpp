@@ -68,6 +68,7 @@
 #include <aws/autoscaling/model/DeleteTagsRequest.h>
 #include <aws/autoscaling/model/DeleteWarmPoolRequest.h>
 #include <aws/autoscaling/model/DeleteWarmPoolResult.h>
+#include <aws/autoscaling/model/DeletionProtection.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsResult.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
