@@ -45,6 +45,24 @@ public class ShapeUtil {
     );
     
     /**
+     * C2J/Smithy model mismatches: pagination tokens that are integers in C2J but strings in Smithy.
+     * 
+     * Background:
+     * Some services have pagination tokens that were modeled as integers in C2J but changed to
+     * strings in Smithy models. The C2J-generated code uses int types, so pagination traits must
+     * use `!= 0` checks instead of `.empty()` checks.
+     * 
+     * Map format: service-name -> Map of operation-name -> token-name
+     * 
+     * Example:
+     * S3's ListParts operation has NextPartNumberMarker as integer in C2J but string in Smithy.
+     */
+    private static final Map<String, Map<String, Set<String>>> NUMERIC_TOKEN_OVERRIDES = Map.of(
+        "s3", Map.of("ListParts", Set.of("NextPartNumberMarker")),
+        "s3-crt", Map.of("ListParts", Set.of("NextPartNumberMarker"))
+    );
+    
+    /**
      * Returns all shapes referenced by a root shape, recursively.
      */
     public static Set<Shape> getReferences(Model model, Shape root) {
@@ -54,6 +72,23 @@ public class ShapeUtil {
             refs.addAll(getReferences(model, model.expectShape(member.getTarget())));
         }
         return refs;
+    }
+    
+    /**
+     * Checks if a pagination token should be treated as numeric due to C2J/Smithy model mismatch.
+     * 
+     * @param c2jServiceName The C2J service name
+     * @param operationName The operation name
+     * @param tokenName The pagination token name
+     * @return true if token is numeric in C2J but string in Smithy
+     */
+    public static boolean isNumericTokenOverride(String c2jServiceName, String operationName, String tokenName) {
+        Map<String, Set<String>> serviceOverrides = NUMERIC_TOKEN_OVERRIDES.get(c2jServiceName);
+        if (serviceOverrides == null) {
+            return false;
+        }
+        Set<String> tokens = serviceOverrides.get(operationName);
+        return tokens != null && tokens.contains(tokenName);
     }
     
     /**
