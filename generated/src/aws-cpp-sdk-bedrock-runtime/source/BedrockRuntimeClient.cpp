@@ -373,12 +373,13 @@ InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& r
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeModelOutcome>(
       [&]() -> InvokeModelOutcome {
-        return InvokeModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           resolvedEndpoint.AddPathSegments("/model/");
-                                                           resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                                           resolvedEndpoint.AddPathSegments("/invoke");
-                                                         }));
+        return InvokeModelOutcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(),
+                                                                  Aws::Http::HttpMethod::HTTP_POST,
+                                                                  [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                                                    resolvedEndpoint.AddPathSegments("/model/");
+                                                                    resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                                                    resolvedEndpoint.AddPathSegments("/invoke");
+                                                                  }));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
