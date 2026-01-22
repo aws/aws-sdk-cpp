@@ -186,6 +186,9 @@
     "overengineered",
     "callfopen",
     "throughs",
+    "msteiger",
+    "fseeki",
+    "ftelli",
     // Json parser
     "Jsonize",
     "CJSON",

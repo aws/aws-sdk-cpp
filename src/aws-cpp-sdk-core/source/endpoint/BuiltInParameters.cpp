@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/endpoint/BuiltInParameters.h>
+#include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/config/EndpointResolver.h>
 
@@ -41,7 +42,9 @@ namespace Endpoint
         if (!config.region.empty()) {
             static const char* FIPS_PREFIX = "fips-";
             static const char* FIPS_SUFFIX = "-fips";
-            if (config.region.rfind(FIPS_PREFIX, 0) == 0) {
+            if (!Aws::Utils::IsValidDnsLabel(config.region)) {
+                AWS_LOGSTREAM_ERROR(ENDPOINT_BUILTIN_LOG_TAG, "Invalid region name: " << config.region);
+            } else if (config.region.rfind(FIPS_PREFIX, 0) == 0) {
                 // Backward compatibility layer for code hacking previous SDK version
                 Aws::String regionOverride = config.region.substr(strlen(FIPS_PREFIX));
                 forceFIPS = true;
