@@ -78,9 +78,9 @@ protected:
         WaitUntilActive(tableName);
     }
     
-    DescribeTableResult WaitUntilActive(const Aws::String& tableName) {
+    DescribeTableResult WaitUntilActive(const Aws::String& tableNameParam) {
         DescribeTableRequest describeTableRequest;
-        describeTableRequest.SetTableName(tableName);
+        describeTableRequest.SetTableName(tableNameParam);
         
         DescribeTableOutcome outcome = dynamoClient->DescribeTable(describeTableRequest);
         while (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() != TableStatus::ACTIVE) {
