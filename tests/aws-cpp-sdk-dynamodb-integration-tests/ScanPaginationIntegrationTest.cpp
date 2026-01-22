@@ -9,6 +9,7 @@
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
+#include <aws/dynamodb/model/DescribeTableRequest.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
@@ -17,7 +18,6 @@
 #include <aws/dynamodb/model/pagination/ScanPaginationTraits.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/testing/AwsTestHelpers.h>
-#include <random>
 
 using namespace Aws;
 using namespace Aws::DynamoDB;
@@ -36,9 +36,6 @@ protected:
     Aws::String tableName;
 
     void SetUp() override {
-        Aws::SDKOptions options;
-        Aws::InitAPI(options);
-        
         dynamoClient = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG);
         tableName = CalculateTableName("scan-paginator-test");
         
@@ -50,9 +47,6 @@ protected:
         DeleteTableRequest deleteRequest;
         deleteRequest.SetTableName(tableName);
         dynamoClient->DeleteTable(deleteRequest);
-        
-        Aws::SDKOptions options;
-        Aws::ShutdownAPI(options);
     }
 
     Aws::String CalculateTableName(const Aws::String& tablePrefix) {
@@ -79,24 +73,32 @@ protected:
         createRequest.SetProvisionedThroughput(throughput);
         
         auto outcome = dynamoClient->CreateTable(createRequest);
-        ASSERT_TRUE(outcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcome);
         
-        // Wait for table to be active (simplified)
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+        WaitUntilActive(tableName);
+    }
+    
+    DescribeTableResult WaitUntilActive(const Aws::String& tableName) {
+        DescribeTableRequest describeTableRequest;
+        describeTableRequest.SetTableName(tableName);
+        
+        DescribeTableOutcome outcome = dynamoClient->DescribeTable(describeTableRequest);
+        while (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() != TableStatus::ACTIVE) {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            outcome = dynamoClient->DescribeTable(describeTableRequest);
+        }
+        
+        return outcome.GetResult();
     }
 
     void PutTestData() {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<> dis(0, ITEM_COUNT - 1);
-        
         for (size_t i = 0; i < ITEM_COUNT; ++i) {
             PutItemRequest putRequest;
             putRequest.SetTableName(tableName);
             
             Aws::Map<Aws::String, AttributeValue> item;
-            item[HASH_KEY_NAME] = AttributeValue().SetN(std::to_string(i));
-            item[ATTRIBUTE_FOO] = AttributeValue().SetN(std::to_string(dis(gen)));
+            item[HASH_KEY_NAME] = AttributeValue().SetN(Aws::Utils::StringUtils::to_string(i));
+            item[ATTRIBUTE_FOO] = AttributeValue().SetN(Aws::Utils::StringUtils::to_string(i * 2));
             
             putRequest.SetItem(item);
             auto outcome = dynamoClient->PutItem(putRequest);
