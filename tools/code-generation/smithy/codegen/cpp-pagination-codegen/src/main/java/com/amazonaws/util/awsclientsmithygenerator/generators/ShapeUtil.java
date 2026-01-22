@@ -6,6 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.traits.Trait;
 import java.util.*;
 
 public class ShapeUtil {
@@ -59,11 +60,11 @@ public class ShapeUtil {
     );
     
     /**
-     * C2J/Smithy model mismatches: pagination tokens that are integers in C2J but strings in Smithy.
+     * C2J/Smithy model mismatches: tokens that are integers in C2J but strings in Smithy.
      * 
      * Background:
-     * Some services have pagination tokens that were modeled as integers in C2J but changed to
-     * strings in Smithy models. The C2J-generated code uses int types, so pagination traits must
+     * Some services have tokens that were modeled as integers in C2J but changed to
+     * strings in Smithy models. The C2J-generated code uses int types, so traits must
      * use `!= 0` checks instead of `.empty()` checks.
      * 
      * Map format: service-name -> Map of operation-name -> token-name
@@ -105,20 +106,39 @@ public class ShapeUtil {
     }
     
     /**
-     * Checks if a pagination token should be treated as numeric due to C2J/Smithy model mismatch.
+     * Checks if a token is numeric (integer or long type).
+     * First checks for C2J/Smithy model mismatch overrides, then inspects the actual shape type.
      * 
+     * @param model The Smithy model
+     * @param op The operation shape
      * @param smithyServiceName The Smithy service name
-     * @param operationName The operation name
-     * @param tokenName The pagination token name
-     * @return true if token is numeric in C2J but string in Smithy
+     * @param wrapperMember The wrapper member name (null if token is at top level)
+     * @param tokenName The token name
+     * @return true if the token is numeric
      */
-    public static boolean isNumericTokenOverride(String smithyServiceName, String operationName, String tokenName) {
+    public static boolean isNumericToken(Model model, OperationShape op, String smithyServiceName, String wrapperMember, String tokenName) {
+        // Check for C2J/Smithy model mismatch overrides first
         Map<String, Set<String>> serviceOverrides = NUMERIC_TOKEN_OVERRIDES.get(smithyServiceName);
-        if (serviceOverrides == null) {
-            return false;
+        if (serviceOverrides != null) {
+            Set<String> tokens = serviceOverrides.get(op.getId().getName());
+            if (tokens != null && tokens.contains(tokenName)) {
+                return true;
+            }
         }
-        Set<String> tokens = serviceOverrides.get(operationName);
-        return tokens != null && tokens.contains(tokenName);
+        
+        Optional<Shape> tokenShape = getOutputStructure(model, op)
+            .flatMap(out -> {
+                if (wrapperMember == null) {
+                    return out.getMember(tokenName);
+                }
+                return out.getMember(wrapperMember)
+                          .flatMap(m -> model.getShape(m.getTarget()))
+                          .flatMap(t -> t.asStructureShape())
+                          .flatMap(w -> w.getMember(tokenName));
+            })
+            .flatMap(member -> model.getShape(member.getTarget()));
+
+        return tokenShape.map(ts -> ts instanceof IntegerShape || ts instanceof LongShape).orElse(false);
     }
     
     /**
@@ -148,7 +168,8 @@ public class ShapeUtil {
         }
         
         String baseName = operation.getId().getName();
-        Set<String> allShapeNames = getAllShapeNames(model);
+        Set<String> allShapeNames = new HashSet<>();
+        model.shapes().forEach(s -> allShapeNames.add(s.getId().getName()));
         
         // Output shape name (used for legacy early-accept behavior)
         String outputShapeName = operation.getOutput().isPresent()
@@ -156,7 +177,9 @@ public class ShapeUtil {
                 : null;
         
         // For closer parity with the legacy Get/Set collision rule
-        Set<String> outputMemberNames = getOutputMemberNames(model, operation);
+        Set<String> outputMemberNames = getOutputStructure(model, operation)
+            .map(struct -> new HashSet<>(struct.getAllMembers().keySet()))
+            .orElse(new HashSet<>());
         
         for (String suffix : RESULT_SUFFIXES) {
             String candidate = baseName + suffix;
@@ -173,8 +196,18 @@ public class ShapeUtil {
             }
             
             // Closer parity with legacy intent (member-gated Get/Set collisions)
-            if (hasGetSetCollision(candidate, allShapeNames, outputMemberNames)) {
-                continue;
+            if (!outputMemberNames.isEmpty()) {
+                boolean hasCollision = false;
+                for (String shapeName : allShapeNames) {
+                    if (outputMemberNames.contains(shapeName) && 
+                        (candidate.equals("Get" + shapeName) || candidate.equals("Set" + shapeName))) {
+                        hasCollision = true;
+                        break;
+                    }
+                }
+                if (hasCollision) {
+                    continue;
+                }
             }
             
             return suffix;
@@ -184,42 +217,63 @@ public class ShapeUtil {
         throw new IllegalStateException("Unhandled result shape name conflict for operation: " + baseName);
     }
     
-    private static Set<String> getAllShapeNames(Model model) {
-        Set<String> names = new HashSet<>();
-        model.shapes().forEach(s -> names.add(s.getId().getName()));
-        return names;
+    /**
+     * Gets the output structure shape for an operation, or null if not present or not a structure.
+     */
+    private static Optional<StructureShape> getOutputStructure(Model model, OperationShape op) {
+        return op.getOutput()
+            .flatMap(outputId -> model.getShape(outputId))
+            .flatMap(shape -> shape.asStructureShape());
     }
     
-    private static Set<String> getOutputMemberNames(Model model, OperationShape op) {
-        // If no output or not a structure, return empty
-        if (!op.getOutput().isPresent()) {
-            return Collections.emptySet();
-        }
-        ShapeId outputId = op.getOutputShape();
-        Shape output = model.expectShape(outputId);
-        if (!output.isStructureShape()) {
-            return Collections.emptySet();
-        }
-        StructureShape struct = output.asStructureShape().get();
-        return new HashSet<>(struct.getAllMembers().keySet());
+    /**
+     * Finds the wrapper member in an operation's output that contains the specified token.
+     * Used for token resolution when tokens are nested in wrapper structures.
+     * 
+     * @param model The Smithy model
+     * @param op The operation shape
+     * @param tokenName The token name to find
+     * @return The wrapper member name, or null if not found
+     */
+    public static String findWrapperMemberContainingToken(Model model, OperationShape op, String tokenName) {
+        return getOutputStructure(model, op)
+            .flatMap(outputShape ->
+                outputShape.getAllMembers().entrySet().stream()
+                    .filter(entry -> model.getShape(entry.getValue().getTarget())
+                        .flatMap(t -> t.asStructureShape())
+                        .map(s -> s.getAllMembers().containsKey(tokenName))
+                        .orElse(false))
+                    .map(Map.Entry::getKey)
+                    .findFirst()
+            )
+            .orElse(null);
     }
     
-    private static boolean hasGetSetCollision(String candidate,
-                                             Set<String> allShapeNames,
-                                             Set<String> outputMemberNames) {
-        if (outputMemberNames.isEmpty()) {
-            return false;
-        }
-        
-        // Legacy logic: only treat GetX/SetX as conflict if X is both a known shape name and a member name
-        for (String shapeName : allShapeNames) {
-            if (!outputMemberNames.contains(shapeName)) {
-                continue;
-            }
-            if (candidate.equals("Get" + shapeName) || candidate.equals("Set" + shapeName)) {
-                return true;
-            }
-        }
-        return false;
+    /**
+     * Checks if an operation's output has a top-level member with the specified name.
+     * 
+     * @param model The Smithy model
+     * @param op The operation shape
+     * @param memberName The member name to check
+     * @return true if the member exists at the top level
+     */
+    public static boolean hasTopLevelMember(Model model, OperationShape op, String memberName) {
+        return getOutputStructure(model, op)
+            .map(outputShape -> outputShape.getAllMembers().containsKey(memberName))
+            .orElse(false);
+    }
+    
+    /**
+     * Gets service-level token when operation-level traits are missing.
+     * 
+     * @param service The service shape
+     * @param traitClass The trait class to look for
+     * @param tokenExtractor Function to extract the token from the trait
+     * @return The service-level token, or null if not defined
+     */
+    public static <T extends Trait> String getServiceLevelToken(ServiceShape service, Class<T> traitClass, java.util.function.Function<T, Optional<String>> tokenExtractor) {
+        return service.getTrait(traitClass)
+                .map(trait -> tokenExtractor.apply(trait).orElse(null))
+                .orElse(null);
     }
 }

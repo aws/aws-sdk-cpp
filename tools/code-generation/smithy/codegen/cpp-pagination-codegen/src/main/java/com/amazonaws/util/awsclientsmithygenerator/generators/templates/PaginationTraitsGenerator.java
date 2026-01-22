@@ -60,7 +60,7 @@ public class PaginationTraitsGenerator {
               .write("#pragma once");
         
         // Includes - detect suffix like C2J renameShape logic
-        String resultSuffix = getResultSuffix(op);
+        String resultSuffix = ShapeUtil.getResultSuffix(context.getModel(), op, smithyServiceName);
         String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
         String requestFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + "Request";
         String resultFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + resultSuffix;
@@ -98,54 +98,49 @@ public class PaginationTraitsGenerator {
                 if (trait.getOutputToken().isPresent()) {
                     String outToken = trait.getOutputToken().get();
                     
-                    // TODO: Refactor HasMoreResults and SetNextRequest to share common token resolution logic
-                    // Both methods duplicate the same pattern matching (explicit nesting, top-level, wrapper)
                     // Pattern A: Explicit nested token like "EngineDefaults.Marker"
                     if (outToken.contains(".")) {
                         String[] parts = outToken.split("\\.", 2);
                         String memberName = parts[0];
                         String nestedTokenName = parts[1];
-                        if (isNumericToken(op, memberName, nestedTokenName)) {
-                            writer.write("        return result.Get$L().Get$L() != 0;", capitalize(memberName), capitalize(nestedTokenName));
+                        if (ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, memberName, nestedTokenName)) {
+                            writer.write("        return result.Get$L().Get$L() != 0;", ServiceNameUtil.capitalize(memberName), ServiceNameUtil.capitalize(nestedTokenName));
                         } else {
-                            writer.write("        return !result.Get$L().Get$L().empty();", capitalize(memberName), capitalize(nestedTokenName));
+                            writer.write("        return !result.Get$L().Get$L().empty();", ServiceNameUtil.capitalize(memberName), ServiceNameUtil.capitalize(nestedTokenName));
                         }
                     }
                     // Pattern B: Check if token is on top-level output
-                    else if (hasTopLevelMember(op, outToken)) {
-                        if (isNumericToken(op, null, outToken)) {
-                            writer.write("        return result.Get$L() != 0;", capitalize(outToken));
+                    else if (ShapeUtil.hasTopLevelMember(context.getModel(), op, outToken)) {
+                        if (ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, null, outToken)) {
+                            writer.write("        return result.Get$L() != 0;", ServiceNameUtil.capitalize(outToken));
                         } else {
-                            writer.write("        return !result.Get$L().empty();", capitalize(outToken));
+                            writer.write("        return !result.Get$L().empty();", ServiceNameUtil.capitalize(outToken));
                         }
                     }
                     // Pattern C: Find wrapper member containing the token
                     else {
-                        String wrapperMember = findWrapperMemberContainingToken(op, outToken);
+                        String wrapperMember = ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, outToken);
                         if (wrapperMember != null) {
-                            if (isNumericToken(op, wrapperMember, outToken)) {
-                                writer.write("        return result.Get$L().Get$L() != 0;", capitalize(wrapperMember), capitalize(outToken));
+                            if (ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, wrapperMember, outToken)) {
+                                writer.write("        return result.Get$L().Get$L() != 0;", ServiceNameUtil.capitalize(wrapperMember), ServiceNameUtil.capitalize(outToken));
                             } else {
-                                writer.write("        return !result.Get$L().Get$L().empty();", capitalize(wrapperMember), capitalize(outToken));
+                                writer.write("        return !result.Get$L().Get$L().empty();", ServiceNameUtil.capitalize(wrapperMember), ServiceNameUtil.capitalize(outToken));
                             }
-                        } else if (hasTopLevelMember(op, "IsTruncated")) {
+                        } else if (ShapeUtil.hasTopLevelMember(context.getModel(), op, "IsTruncated")) {
                             writer.write("        return result.GetIsTruncated();");
                         } else {
                             writer.write("        return false;");
                         }
                     }
                 } else {
-                    // TODO: Check how legacy C2J code generation handles service-level pagination
-                    // This is a temporary fix for AccessAnalyzer which uses service-level pagination config.
-                    // We should investigate how the legacy generator in C2jModelToGeneratorModelTransformer
-                    // or other legacy components handle service-level vs operation-level pagination traits
-                    // and implement a more comprehensive solution that matches that behavior.
-                    String serviceLevelOutputToken = getServiceLevelOutputToken();
+                    // Fallback to service-level pagination configuration when operation-level traits are missing.
+                    // Some services like AccessAnalyzer define pagination tokens at the service level rather than per-operation.
+                    String serviceLevelOutputToken = ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getOutputToken());
                     if (serviceLevelOutputToken != null) {
-                        if (isNumericToken(op, null, serviceLevelOutputToken)) {
-                            writer.write("        return result.Get$L() != 0;", capitalize(serviceLevelOutputToken));
+                        if (ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, null, serviceLevelOutputToken)) {
+                            writer.write("        return result.Get$L() != 0;", ServiceNameUtil.capitalize(serviceLevelOutputToken));
                         } else {
-                            writer.write("        return !result.Get$L().empty();", capitalize(serviceLevelOutputToken));
+                            writer.write("        return !result.Get$L().empty();", ServiceNameUtil.capitalize(serviceLevelOutputToken));
                         }
                     } else {
                         writer.write("        return result.GetIsTruncated();");
@@ -164,13 +159,10 @@ public class PaginationTraitsGenerator {
                     inToken = trait.getInputToken().get();
                     outToken = trait.getOutputToken().get();
                 } else {
-                    // TODO: Check how legacy C2J code generation handles service-level pagination
-                    // This is a temporary fix for AccessAnalyzer which uses service-level pagination config.
-                    // We should investigate how the legacy generator in C2jModelToGeneratorModelTransformer
-                    // or other legacy components handle service-level vs operation-level pagination traits
-                    // and implement a more comprehensive solution that matches that behavior.
-                    String serviceLevelInputToken = getServiceLevelInputToken();
-                    String serviceLevelOutputToken = getServiceLevelOutputToken();
+                    // Fallback to service-level pagination configuration when operation-level traits are missing.
+                    // Some services like AccessAnalyzer define pagination tokens at the service level rather than per-operation.
+                    String serviceLevelInputToken = ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getInputToken());
+                    String serviceLevelOutputToken = ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getOutputToken());
                     if (serviceLevelInputToken != null && serviceLevelOutputToken != null) {
                         inToken = serviceLevelInputToken;
                         outToken = serviceLevelOutputToken;
@@ -183,25 +175,22 @@ public class PaginationTraitsGenerator {
                         String[] parts = outToken.split("\\.", 2);
                         String memberName = parts[0];
                         String nestedTokenName = parts[1];
-                        writer.write("        request.Set$L(result.Get$L().Get$L());", capitalize(inToken), capitalize(memberName), capitalize(nestedTokenName));
+                        writer.write("        request.Set$L(result.Get$L().Get$L());", ServiceNameUtil.capitalize(inToken), ServiceNameUtil.capitalize(memberName), ServiceNameUtil.capitalize(nestedTokenName));
                     }
                     // Pattern B: Check if token is on top-level output
-                    else if (hasTopLevelMember(op, outToken)) {
-                        writer.write("        request.Set$L(result.Get$L());", capitalize(inToken), capitalize(outToken));
+                    else if (ShapeUtil.hasTopLevelMember(context.getModel(), op, outToken)) {
+                        writer.write("        request.Set$L(result.Get$L());", ServiceNameUtil.capitalize(inToken), ServiceNameUtil.capitalize(outToken));
                     }
                     // Pattern C: Find wrapper member containing the token
                     else {
-                        String wrapperMember = findWrapperMemberContainingToken(op, outToken);
+                        String wrapperMember = ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, outToken);
                         if (wrapperMember != null) {
-                            writer.write("        request.Set$L(result.Get$L().Get$L());", capitalize(inToken), capitalize(wrapperMember), capitalize(outToken));
+                            writer.write("        request.Set$L(result.Get$L().Get$L());", ServiceNameUtil.capitalize(inToken), ServiceNameUtil.capitalize(wrapperMember), ServiceNameUtil.capitalize(outToken));
                         } else {
                             writer.write("        (void)result; (void)request; // Token not found");
                         }
                     }
                 } else {
-                    // TODO: Check AWS SDK C++ standard for handling null pagination tokens
-                    // Should we throw an exception, log a warning, or silently ignore?
-                    // Verify behavior with other AWS SDK implementations.
                     writer.write("        (void)result; (void)request; // Unused parameters");
                 }
             });
@@ -211,90 +200,5 @@ public class PaginationTraitsGenerator {
               .writeNamespaceClose("Pagination")
               .writeNamespaceClose(serviceName)
               .writeNamespaceClose("Aws");
-    }
-
-    // TODO: Consider inlining this method since it's only called once and just delegates to ShapeUtil.
-    // Verify no other generators use this pattern before removing.
-    private String getResultSuffix(OperationShape op) {
-        return ShapeUtil.getResultSuffix(context.getModel(), op, smithyServiceName);
-    }
-
-
-    // TODO: These service-level pagination helper methods are a temporary solution.
-    // We should investigate how the legacy C2J code generation system handles the precedence
-    // between operation-level and service-level pagination traits, and implement a solution
-    // that matches that behavior. This may involve:
-    // 1. Checking how C2jModelToGeneratorModelTransformer processes pagination
-    // 2. Understanding the inheritance model for pagination traits
-    // 3. Implementing proper trait resolution that matches legacy behavior
-    private String getServiceLevelInputToken() {
-        // Check if service has service-level pagination configuration
-        return service.getTrait(software.amazon.smithy.model.traits.PaginatedTrait.class)
-                .map(trait -> trait.getInputToken().orElse(null))
-                .orElse(null);
-    }
-    
-    private String getServiceLevelOutputToken() {
-        // Check if service has service-level pagination configuration
-        return service.getTrait(software.amazon.smithy.model.traits.PaginatedTrait.class)
-                .map(trait -> trait.getOutputToken().orElse(null))
-                .orElse(null);
-    }
-
-    private String capitalize(String str) {
-        return str.substring(0, 1).toUpperCase() + str.substring(1);
-    }
-    
-    private String extractTokenName(String outToken) {
-        // Pagination token may be in format "MemberName.TokenName", extract just the token name
-        return outToken.contains(".") ? outToken.substring(outToken.lastIndexOf(".") + 1) : outToken;
-    }
-    
-    private String findWrapperMemberContainingToken(OperationShape op, String tokenName) {
-        return op.getOutput()
-            .flatMap(outputId -> context.getModel().getShape(outputId))
-            .flatMap(shape -> shape.asStructureShape())
-            .flatMap(outputShape ->
-                outputShape.getAllMembers().entrySet().stream()
-                    .filter(entry -> context.getModel().getShape(entry.getValue().getTarget())
-                        .flatMap(t -> t.asStructureShape())
-                        .map(s -> s.getAllMembers().containsKey(tokenName))
-                        .orElse(false))
-                    .map(Map.Entry::getKey)
-                    .findFirst()
-            )
-            .orElse(null);
-    }
-    
-    private boolean hasTopLevelMember(OperationShape op, String memberName) {
-        return op.getOutput()
-            .flatMap(outputId -> context.getModel().getShape(outputId))
-            .flatMap(shape -> shape.asStructureShape())
-            .map(outputShape -> outputShape.getAllMembers().containsKey(memberName))
-            .orElse(false);
-    }
-    
-    private boolean isNumericToken(OperationShape op, String wrapperMember, String tokenName) {
-        // Check for C2J/Smithy model mismatch overrides first
-        if (ShapeUtil.isNumericTokenOverride(smithyServiceName, op.getId().getName(), tokenName)) {
-            return true;
-        }
-        
-        Optional<Shape> tokenShape =
-            op.getOutput()
-              .flatMap(outputId -> context.getModel().getShape(outputId))
-              .flatMap(s -> s.asStructureShape())
-              .flatMap(out -> {
-                  if (wrapperMember == null) {
-                      return out.getMember(tokenName);
-                  }
-                  return out.getMember(wrapperMember)
-                            .flatMap(m -> context.getModel().getShape(m.getTarget()))
-                            .flatMap(t -> t.asStructureShape())
-                            .flatMap(w -> w.getMember(tokenName));
-              })
-              .flatMap(member -> context.getModel().getShape(member.getTarget()));
-
-        return tokenShape.map(ts -> ts instanceof IntegerShape || ts instanceof LongShape).orElse(false);
     }
 }
