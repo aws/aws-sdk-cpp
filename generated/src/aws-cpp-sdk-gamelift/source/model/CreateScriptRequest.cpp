@@ -40,6 +40,10 @@ Aws::String CreateScriptRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_nodeJsVersionHasBeenSet) {
+    payload.WithString("NodeJsVersion", m_nodeJsVersion);
+  }
+
   return payload.View().WriteReadable();
 }
 

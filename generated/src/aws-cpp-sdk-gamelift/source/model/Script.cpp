@@ -46,6 +46,10 @@ Script& Script::operator=(JsonView jsonValue) {
     m_storageLocation = jsonValue.GetObject("StorageLocation");
     m_storageLocationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NodeJsVersion")) {
+    m_nodeJsVersion = jsonValue.GetString("NodeJsVersion");
+    m_nodeJsVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue Script::Jsonize() const {
 
   if (m_storageLocationHasBeenSet) {
     payload.WithObject("StorageLocation", m_storageLocation.Jsonize());
+  }
+
+  if (m_nodeJsVersionHasBeenSet) {
+    payload.WithString("NodeJsVersion", m_nodeJsVersion);
   }
 
   return payload;

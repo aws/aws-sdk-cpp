@@ -424,7 +424,7 @@ class FleetAttributes {
    * system is determined by the OS of the build or script that is deployed on this
    * fleet. This attribute is used with fleets where <code>ComputeType</code> is
    * <code>EC2</code>.</p>  <p>Amazon Linux 2 (AL2) will reach end of support
-   * on 6/30/2025. See more details in the <a
+   * on 6/30/2026. See more details in the <a
    * href="http://aws.amazon.com/aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2
    * FAQs</a>. For game servers that are hosted on AL2 and use server SDK version 4.x
    * for Amazon GameLift Servers, first update the game server build to server SDK

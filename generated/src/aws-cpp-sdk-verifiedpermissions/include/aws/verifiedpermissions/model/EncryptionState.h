@@ -58,7 +58,8 @@ class EncryptionState {
 
   ///@{
   /**
-   * <p>Policy store data is encrypted using AWS owned encryption keys.</p>
+   * <p>This is the default encryption state. The policy store is encrypted using an
+   * Amazon Web Services owned key.</p>
    */
   inline const Unit& GetDefault() const { return m_default; }
   inline bool DefaultHasBeenSet() const { return m_defaultHasBeenSet; }

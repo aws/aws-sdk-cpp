@@ -9,6 +9,7 @@
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
 #include <aws/autoscaling/model/CapacityReservationSpecification.h>
+#include <aws/autoscaling/model/DeletionProtection.h>
 #include <aws/autoscaling/model/InstanceLifecyclePolicy.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
@@ -522,6 +523,29 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
 
   ///@{
   /**
+   * <p> The deletion protection setting for the Auto Scaling group. This setting
+   * helps safeguard your Auto Scaling group and its instances by controlling whether
+   * the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion
+   * protection is enabled, users cannot delete the Auto Scaling group according to
+   * the specified protection level until the setting is changed back to a less
+   * restrictive level. </p> <p> The valid values are <code>none</code>,
+   * <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>. </p>
+   * <p> Default: <code>none</code> </p>
+   */
+  inline DeletionProtection GetDeletionProtection() const { return m_deletionProtection; }
+  inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+  inline void SetDeletionProtection(DeletionProtection value) {
+    m_deletionProtectionHasBeenSet = true;
+    m_deletionProtection = value;
+  }
+  inline CreateAutoScalingGroupRequest& WithDeletionProtection(DeletionProtection value) {
+    SetDeletionProtection(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>One or more tags. You can tag your Auto Scaling group and propagate the tags
    * to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS
    * volumes. To add tags to Amazon EBS volumes, specify the tags in a launch
@@ -863,6 +887,8 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
 
   Aws::Vector<LifecycleHookSpecification> m_lifecycleHookSpecificationList;
 
+  DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
+
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_serviceLinkedRoleARN;
@@ -908,6 +934,7 @@ class CreateAutoScalingGroupRequest : public AutoScalingRequest {
   bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
   bool m_capacityRebalanceHasBeenSet = false;
   bool m_lifecycleHookSpecificationListHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_serviceLinkedRoleARNHasBeenSet = false;
   bool m_maxInstanceLifetimeHasBeenSet = false;

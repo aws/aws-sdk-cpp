@@ -4080,21 +4080,24 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
    * "novice"</code>. All game property values are searched as strings.</p> <p> For
    * examples of searching game sessions, see the ones below, and also see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
-   * game sessions by game property</a>. </p> </li> <li> <p> <b>maximumSessions</b>
-   * -- Maximum number of player sessions allowed for a game session.</p> </li> <li>
-   * <p> <b>creationTimeMillis</b> -- Value indicating when a game session was
-   * created. It is expressed in Unix time as milliseconds.</p> </li> <li> <p>
-   * <b>playerSessionCount</b> -- Number of players currently connected to a game
-   * session. This value changes rapidly as players join the session or drop out.</p>
-   * </li> <li> <p> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating
-   * whether a game session has reached its maximum number of players. It is highly
-   * recommended that all search requests include this filter attribute to optimize
-   * search performance and return only sessions that players can join. </p> </li>
-   * </ul>  <p>Returned values for <code>playerSessionCount</code> and
-   * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
-   * and others drop out. Results should be considered a snapshot in time. Be sure to
-   * refresh search results often, and handle sessions that fill up before a player
-   * can join. </p>  <p> <a
+   * game sessions by game property</a>. </p>  <p>Avoid using periods (".") in
+   * property keys if you plan to search for game sessions by properties. Property
+   * keys containing periods cannot be searched and will be filtered out from search
+   * results due to search index limitations.</p>  </li> <li> <p>
+   * <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game
+   * session.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value indicating when a
+   * game session was created. It is expressed in Unix time as milliseconds.</p>
+   * </li> <li> <p> <b>playerSessionCount</b> -- Number of players currently
+   * connected to a game session. This value changes rapidly as players join the
+   * session or drop out.</p> </li> <li> <p> <b>hasAvailablePlayerSessions</b> --
+   * Boolean value indicating whether a game session has reached its maximum number
+   * of players. It is highly recommended that all search requests include this
+   * filter attribute to optimize search performance and return only sessions that
+   * players can join. </p> </li> </ul>  <p>Returned values for
+   * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+   * change quickly as players join sessions and others drop out. Results should be
+   * considered a snapshot in time. Be sure to refresh search results often, and
+   * handle sessions that fill up before a player can join. </p>  <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS

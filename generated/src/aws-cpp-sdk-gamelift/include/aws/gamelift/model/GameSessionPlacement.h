@@ -115,6 +115,10 @@ class GameSessionPlacement {
   /**
    * <p>A set of key-value pairs that can store custom data in a game session. For
    * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
+   * <p>Avoid using periods (".") in property keys if you plan to search for game
+   * sessions by properties. Property keys containing periods cannot be searched and
+   * will be filtered out from search results due to search index limitations.</p>
+   *
    */
   inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
   inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }

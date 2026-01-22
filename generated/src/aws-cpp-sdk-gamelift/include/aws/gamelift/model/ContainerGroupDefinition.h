@@ -95,7 +95,7 @@ class ContainerGroupDefinition {
   ///@{
   /**
    * <p>The platform that all containers in the container group definition run
-   * on.</p>  <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025.
+   * on.</p>  <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2026.
    * See more details in the <a
    * href="http://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
    * game servers that are hosted on AL2 and use server SDK version 4.x for Amazon

@@ -160,6 +160,26 @@ class CreateScriptRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Node.js version used for execution of your Realtime script. The valid
+   * values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is
+   * <code>10.x</code>. This value cannot be updated later. </p>
+   */
+  inline const Aws::String& GetNodeJsVersion() const { return m_nodeJsVersion; }
+  inline bool NodeJsVersionHasBeenSet() const { return m_nodeJsVersionHasBeenSet; }
+  template <typename NodeJsVersionT = Aws::String>
+  void SetNodeJsVersion(NodeJsVersionT&& value) {
+    m_nodeJsVersionHasBeenSet = true;
+    m_nodeJsVersion = std::forward<NodeJsVersionT>(value);
+  }
+  template <typename NodeJsVersionT = Aws::String>
+  CreateScriptRequest& WithNodeJsVersion(NodeJsVersionT&& value) {
+    SetNodeJsVersion(std::forward<NodeJsVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -170,11 +190,14 @@ class CreateScriptRequest : public GameLiftRequest {
   Aws::Utils::ByteBuffer m_zipFile{};
 
   Aws::Vector<Tag> m_tags;
+
+  Aws::String m_nodeJsVersion;
   bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_storageLocationHasBeenSet = false;
   bool m_zipFileHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_nodeJsVersionHasBeenSet = false;
 };
 
 }  // namespace Model
