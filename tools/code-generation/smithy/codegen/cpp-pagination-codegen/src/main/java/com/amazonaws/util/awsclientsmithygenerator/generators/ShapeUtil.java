@@ -45,6 +45,20 @@ public class ShapeUtil {
     );
     
     /**
+     * Legacy operation name version suffixes required for backwards compatibility.
+     * The legacy C2J code generator appended API version suffixes to operation names for certain services.
+     * This maintains compatibility with existing generated code that depends on these versioned method names.
+     * 
+     * CloudFront: Uses "2020_05_31" suffix (the API version when C++ SDK generation was standardized)
+     * - Example: "ListDistributions" becomes "ListDistributions2020_05_31"
+     * - Required because existing C++ code expects these versioned method names
+     * - CloudFront has had multiple API versions, and the C2J generator historically used version suffixes
+     */
+    private static final Map<String, String> OPERATION_VERSION_SUFFIXES = Map.of(
+        "cloudfront", "2020_05_31"
+    );
+    
+    /**
      * C2J/Smithy model mismatches: pagination tokens that are integers in C2J but strings in Smithy.
      * 
      * Background:
@@ -75,15 +89,31 @@ public class ShapeUtil {
     }
     
     /**
+     * Gets the operation method name with legacy version suffix if required.
+     * 
+     * Some services require version suffixes appended to operation names for backwards compatibility
+     * with the legacy C2J code generator. This ensures existing C++ code continues to work with
+     * the expected method names.
+     * 
+     * @param opName The base operation name from the Smithy model
+     * @param smithyServiceName The Smithy service name (e.g., "cloudfront")
+     * @return The operation name with version suffix if needed (e.g., "ListDistributions2020_05_31")
+     */
+    public static String getOperationMethodName(String opName, String smithyServiceName) {
+        String versionSuffix = OPERATION_VERSION_SUFFIXES.get(smithyServiceName);
+        return versionSuffix != null ? opName + versionSuffix : opName;
+    }
+    
+    /**
      * Checks if a pagination token should be treated as numeric due to C2J/Smithy model mismatch.
      * 
-     * @param c2jServiceName The C2J service name
+     * @param smithyServiceName The Smithy service name
      * @param operationName The operation name
      * @param tokenName The pagination token name
      * @return true if token is numeric in C2J but string in Smithy
      */
-    public static boolean isNumericTokenOverride(String c2jServiceName, String operationName, String tokenName) {
-        Map<String, Set<String>> serviceOverrides = NUMERIC_TOKEN_OVERRIDES.get(c2jServiceName);
+    public static boolean isNumericTokenOverride(String smithyServiceName, String operationName, String tokenName) {
+        Map<String, Set<String>> serviceOverrides = NUMERIC_TOKEN_OVERRIDES.get(smithyServiceName);
         if (serviceOverrides == null) {
             return false;
         }
@@ -102,17 +132,17 @@ public class ShapeUtil {
      * 
      * @param model The Smithy model
      * @param operation The operation shape
-     * @param c2jServiceName The C2J service name
+     * @param smithyServiceName The Smithy service name
      * @return "Response" for EC2 protocol, "SdkResult" if naming conflict exists, otherwise "Result"
      */
-    public static String getResultSuffix(Model model, OperationShape operation, String c2jServiceName) {
+    public static String getResultSuffix(Model model, OperationShape operation, String smithyServiceName) {
         // EC2 protocol services rename all Result shapes to Response
-        if ("ec2".equals(c2jServiceName)) {
+        if ("ec2".equals(smithyServiceName)) {
             return "Response";
         }
         
         // C2J backward compatibility: preserve SdkResult for operations that had collisions in legacy models
-        Set<String> legacyOps = LEGACY_SDK_RESULT_OPERATIONS.get(c2jServiceName);
+        Set<String> legacyOps = LEGACY_SDK_RESULT_OPERATIONS.get(smithyServiceName);
         if (legacyOps != null && legacyOps.contains(operation.getId().getName())) {
             return "SdkResult";
         }

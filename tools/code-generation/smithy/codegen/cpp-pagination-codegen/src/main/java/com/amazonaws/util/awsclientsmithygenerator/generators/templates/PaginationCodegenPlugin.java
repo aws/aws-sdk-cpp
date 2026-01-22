@@ -46,7 +46,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                     // Generate client pagination header
                     featureParser.generateClientHeader(
                         serviceName + "ClientPagination.h",
-                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getC2jMap()).render(writer)
+                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
                     );
                     
                     // Generate pagination traits headers
@@ -54,13 +54,13 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                         featureParser.getContext(), 
                         featureParser.getService(), 
                         featureParser.getOperations(), 
-                        featureParser.getC2jServiceName()
+                        featureParser.getSmithyServiceName()
                     );
                     traitsGenerator.write();
                 });
                 
                 // Generate compilation test
-                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps, parser.getC2jMap());
+                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps, parser.getServiceMap());
                 testGenerator.run();
             }
         }

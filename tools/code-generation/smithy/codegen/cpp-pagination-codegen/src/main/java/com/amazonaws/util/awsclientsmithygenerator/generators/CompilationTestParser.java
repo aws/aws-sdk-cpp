@@ -17,15 +17,15 @@ public class CompilationTestParser<T> {
     private final CppWriterDelegator writerDelegator;
     private final String testType;
     private final Consumer<CppWriter> renderFunction;
-    private final Map<String, String> c2jMap;
+    private final Map<String, String> serviceMap;
 
     public CompilationTestParser(PluginContext context, ServiceShape service, List<T> operations, 
-                                String testType, Consumer<CppWriter> renderFunction, Map<String, String> c2jMap) {
+                                String testType, Consumer<CppWriter> renderFunction, Map<String, String> serviceMap) {
         this.service = service;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
         this.testType = testType;
         this.renderFunction = renderFunction;
-        this.c2jMap = c2jMap;
+        this.serviceMap = serviceMap;
     }
 
     public void run() {
@@ -35,7 +35,7 @@ public class CompilationTestParser<T> {
     
     private void generateCompilationTest() {
         String serviceName = ServiceNameUtil.getServiceName(service);
-        String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
+        String c2jServiceName = ServiceNameUtil.getSmithyServiceName(service, serviceMap);
         
         writerDelegator.useFileWriter(
             "generated/tests/" + c2jServiceName + "-gen-tests/" + serviceName + testType + "CompilationTests.cpp",

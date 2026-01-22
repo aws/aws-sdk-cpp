@@ -16,18 +16,18 @@ import java.util.*;
 public class PaginationCompilationTestGenerator {
     private final CompilationTestParser<OperationData<PaginatedTrait>> parser;
     private final List<OperationData<PaginatedTrait>> allPaginatedOps;
-    private final Map<String, String> c2jMap;
+    private final Map<String, String> serviceMap;
 
-    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps, Map<String, String> c2jMap) {
+    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps, Map<String, String> serviceMap) {
         this.allPaginatedOps = allPaginatedOps;
-        this.c2jMap = c2jMap;
+        this.serviceMap = serviceMap;
         this.parser = new CompilationTestParser<>(
             context,
             service,
             allPaginatedOps,
             "Pagination",
             this::render,
-            c2jMap
+            serviceMap
         );
     }
 
@@ -75,14 +75,14 @@ public class PaginationCompilationTestGenerator {
         for (OperationData<PaginatedTrait> paginationData : allPaginatedOps) {
             ServiceShape service = paginationData.getService();
             String serviceName = ServiceNameUtil.getServiceNameUpperCamel(service);
-            String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
+            String smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, serviceMap);
             
             // Collect unique client headers
-            clientHeaders.add("aws/" + c2jServiceName + "/" + serviceName + "ClientPagination.h");
+            clientHeaders.add("aws/" + smithyServiceName + "/" + serviceName + "ClientPagination.h");
             
             // Collect unique trait headers
             String operationName = paginationData.getOperation().getId().getName();
-            traitHeaders.add("aws/" + c2jServiceName + "/model/pagination/" + operationName + "PaginationTraits.h");
+            traitHeaders.add("aws/" + smithyServiceName + "/model/pagination/" + operationName + "PaginationTraits.h");
         }
         
         // Write unique client headers
