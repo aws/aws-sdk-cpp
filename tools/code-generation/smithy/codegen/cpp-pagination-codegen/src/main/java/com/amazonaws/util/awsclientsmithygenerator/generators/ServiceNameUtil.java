@@ -116,8 +116,11 @@ public final class ServiceNameUtil {
     }
     
     public static String getServiceNameUpperCamel(ServiceShape service) {
-        String serviceName = getServiceName(service);
-        return serviceName.substring(0, 1).toUpperCase() + serviceName.substring(1);
+        return capitalize(getServiceName(service));
+    }
+    
+    public static String capitalize(String str) {
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
     
     // Match C2jModelToGeneratorModelTransformer.sanitizeServiceAbbreviation() exactly
