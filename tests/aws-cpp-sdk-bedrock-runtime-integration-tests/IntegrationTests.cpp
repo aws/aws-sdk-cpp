@@ -14,6 +14,7 @@
 #include <aws/bedrock-runtime/model/ConverseStreamRequest.h>
 #include <aws/bedrock-runtime/model/ConverseStreamHandler.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/bedrock-runtime/model/InvokeModelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/TestingEnvironment.h>
@@ -74,4 +75,21 @@ TEST_F(BedrockRuntimeTests, TestStreaming)
             return responseReceived; }); 
     ASSERT_TRUE(responseReceived);
 }
+
+TEST_F(BedrockRuntimeTests, TestInvokeModel)
+{
+  auto bedrockRequest = Aws::BedrockRuntime::Model::InvokeModelRequest{}.WithModelId("us.anthropic.claude-3-5-sonnet-20241022-v2:0").WithAccept("application/json") ;
+
+  bedrockRequest.SetBody(Aws::MakeShared<Aws::StringStream>(
+        "BedrockRuntimeTests::TestInvokeModel",
+        R"({"anthropic_version":"bedrock-2023-05-31","max_tokens":1024,"messages":[{"role":"user","content":"Why is the Mets baseball team so bad?"}]})"));
+  bedrockRequest.SetContentType("application/json");
+
+  Aws::BedrockRuntime::Model::InvokeModelOutcome outcome = m_client->InvokeModel(bedrockRequest);
+  ASSERT_TRUE(outcome.IsSuccess());
+  Aws::StringStream ss;
+  ss << outcome.GetResult().GetBody().rdbuf();
+  ASSERT_FALSE(ss.str().empty());
+}
+
 }
