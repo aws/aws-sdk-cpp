@@ -17,7 +17,7 @@ public class FeatureParser<T> {
     private final ServiceShape service;
     private final List<T> operations;
     private final CppWriterDelegator writerDelegator;
-    private final Map<String, String> c2jMap;
+    private final Map<String, String> serviceMap;
     private final String featureName;
 
     public FeatureParser(PluginContext context, ServiceShape service, List<T> operations, String featureName) {
@@ -27,8 +27,8 @@ public class FeatureParser<T> {
         this.featureName = featureName;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
         
-        // Initialize c2j map
-        this.c2jMap = new HashMap<>();
+        // Initialize service map
+        this.serviceMap = new HashMap<>();
         ObjectNode settings = context.getSettings();
         if (settings.containsMember("c2jMap")) {
             Node c2jMapNode = settings.expectMember("c2jMap");
@@ -36,7 +36,7 @@ public class FeatureParser<T> {
                 String jsonStr = c2jMapNode.expectStringNode().getValue();
                 ObjectNode mapNode = Node.parseJsonWithComments(jsonStr).expectObjectNode();
                 mapNode.getMembers().forEach((key, value) -> {
-                    this.c2jMap.put(key.getValue(), value.expectStringNode().getValue());
+                    this.serviceMap.put(key.getValue(), value.expectStringNode().getValue());
                 });
             }
         }
@@ -49,10 +49,10 @@ public class FeatureParser<T> {
     
     public void generateClientHeader(String fileName, Consumer<CppWriter> generator) {
         String serviceName = ServiceNameUtil.getServiceName(service);
-        String c2jServiceName = ServiceNameUtil.getC2jServiceName(service, c2jMap);
+        String smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, serviceMap);
         
         writerDelegator.useFileWriter(
-            "include/aws/" + c2jServiceName + "/" + fileName,
+            "include/aws/" + smithyServiceName + "/" + fileName,
             generator
         );
     }
@@ -61,7 +61,7 @@ public class FeatureParser<T> {
     public ServiceShape getService() { return service; }
     public List<T> getOperations() { return operations; }
     public String getFeatureName() { return featureName; }
-    public Map<String, String> getC2jMap() { return c2jMap; }
+    public Map<String, String> getServiceMap() { return serviceMap; }
     public String getServiceName() { return ServiceNameUtil.getServiceName(service); }
-    public String getC2jServiceName() { return ServiceNameUtil.getC2jServiceName(service, c2jMap); }
+    public String getSmithyServiceName() { return ServiceNameUtil.getSmithyServiceName(service, serviceMap); }
 }

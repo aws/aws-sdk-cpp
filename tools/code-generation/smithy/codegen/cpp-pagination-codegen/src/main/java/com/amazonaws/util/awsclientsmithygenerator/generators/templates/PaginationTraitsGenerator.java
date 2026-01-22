@@ -20,15 +20,15 @@ public class PaginationTraitsGenerator {
     private final PluginContext context;
     private final ServiceShape service;
     private final List<OperationData<PaginatedTrait>> paginatedOps;
-    private final String c2jServiceName;
+    private final String smithyServiceName;
 
     private final CppWriterDelegator writerDelegator;
 
-    public PaginationTraitsGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, String c2jServiceName) {
+    public PaginationTraitsGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, String smithyServiceName) {
         this.context = context;
         this.service = service;
         this.paginatedOps = paginatedOps;
-        this.c2jServiceName = c2jServiceName;
+        this.smithyServiceName = smithyServiceName;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
     }
 
@@ -36,7 +36,7 @@ public class PaginationTraitsGenerator {
         String serviceName = ServiceNameUtil.getServiceName(service);
 
         for (OperationData<PaginatedTrait> data : paginatedOps) {
-            String fileName = "include/aws/" + c2jServiceName + "/model/pagination/" + data.getOperation().getId().getName() + "PaginationTraits.h";
+            String fileName = "include/aws/" + smithyServiceName + "/model/pagination/" + data.getOperation().getId().getName() + "PaginationTraits.h";
             
             writerDelegator.useFileWriter(fileName, writer -> {
                 generateTraitsHeader(writer, data, serviceName);
@@ -62,12 +62,12 @@ public class PaginationTraitsGenerator {
         // Includes - detect suffix like C2J renameShape logic
         String resultSuffix = getResultSuffix(op);
         String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
-        String requestFileName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName) + "Request";
-        String resultFileName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName) + resultSuffix;
-        writer.writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "_EXPORTS.h")
-              .writeInclude("aws/" + c2jServiceName + "/model/" + requestFileName + ".h")
-              .writeInclude("aws/" + c2jServiceName + "/model/" + resultFileName + ".h")
-              .writeInclude("aws/" + c2jServiceName + "/" + capitalizedServiceName + "Client.h")
+        String requestFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + "Request";
+        String resultFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + resultSuffix;
+        writer.writeInclude("aws/" + smithyServiceName + "/" + capitalizedServiceName + "_EXPORTS.h")
+              .writeInclude("aws/" + smithyServiceName + "/model/" + requestFileName + ".h")
+              .writeInclude("aws/" + smithyServiceName + "/model/" + resultFileName + ".h")
+              .writeInclude("aws/" + smithyServiceName + "/" + capitalizedServiceName + "Client.h")
               .write("");
         
         // Namespaces
@@ -79,7 +79,7 @@ public class PaginationTraitsGenerator {
         // Struct definition
         writer.openBlock("struct " + opName + "PaginationTraits\n{", "};", () -> {
             // Use detected suffix to match C2J renameShape logic
-            String methodName = ServiceNameUtil.getClientMethodName(opName, c2jServiceName);
+            String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
             writer.write("    using RequestType = Model::$LRequest;", methodName)
                   .write("    using ResultType = Model::$L$L;", methodName, resultSuffix)
                   .write("    using OutcomeType = Model::$LOutcome;", methodName)
@@ -216,7 +216,7 @@ public class PaginationTraitsGenerator {
     // TODO: Consider inlining this method since it's only called once and just delegates to ShapeUtil.
     // Verify no other generators use this pattern before removing.
     private String getResultSuffix(OperationShape op) {
-        return ShapeUtil.getResultSuffix(context.getModel(), op, c2jServiceName);
+        return ShapeUtil.getResultSuffix(context.getModel(), op, smithyServiceName);
     }
 
 
@@ -276,7 +276,7 @@ public class PaginationTraitsGenerator {
     
     private boolean isNumericToken(OperationShape op, String wrapperMember, String tokenName) {
         // Check for C2J/Smithy model mismatch overrides first
-        if (ShapeUtil.isNumericTokenOverride(c2jServiceName, op.getId().getName(), tokenName)) {
+        if (ShapeUtil.isNumericTokenOverride(smithyServiceName, op.getId().getName(), tokenName)) {
             return true;
         }
         
