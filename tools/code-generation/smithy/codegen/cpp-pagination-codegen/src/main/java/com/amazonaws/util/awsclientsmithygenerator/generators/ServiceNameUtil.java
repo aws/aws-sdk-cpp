@@ -53,7 +53,7 @@ public final class ServiceNameUtil {
         Map.entry("rum", "CloudWatchRUM"),
         Map.entry("lexruntimeservice", "LexRuntimeService"),
         Map.entry("lexruntimev2", "LexRuntimeV2"),
-        Map.entry("lexmodelsv2", "LexModelBuildingV2"),
+        Map.entry("lexmodelsv2", "LexModelsV2"),
         Map.entry("sagemakerruntime", "SageMakerRuntime"),
         Map.entry("sagemakera2iruntime", "AugmentedAIRuntime"),
         Map.entry("sagemakeredge", "SagemakerEdgeManager"),
