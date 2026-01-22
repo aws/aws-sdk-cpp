@@ -4,7 +4,7 @@
 #include <aws/core/utils/memory/stl/AWSArray.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
-namespace EndpointParamTest{
+namespace {
 const size_t RulesBlobSize = 498;
 using RulesBlobT = Aws::Array<const char, RulesBlobSize>;
 
@@ -31,21 +31,89 @@ static constexpr RulesBlobT RulesBlob = {{
 's','e','t','"',',','"','t','y','p','e','"',':','"','e','r','r','o','r','"','}',']','}','\0'
 }};
 
-}
-
-class  TestServiceEndpointProviderTest : public Aws::Endpoint::DefaultEndpointProvider<>
+/**
+We store endpoint rules json as a character array. This is the pretty print
+of the following test rules set
 {
+    "version": "1.0",
+    "parameters": {
+        "Region": {
+            "builtIn": "AWS::Region",
+            "required": false,
+            "documentation": "The AWS region used to dispatch the request.",
+            "type": "string"
+        }
+    },
+    "rules": [
+        {
+            "documentation": "Test region blob",
+            "conditions": [
+                {
+                    "fn": "isSet",
+                    "argv": [
+                        {
+                            "ref": "Region"
+                        }
+                    ]
+                }
+            ],
+            "endpoint": {
+                "url": "https://tartarus.{Region}.amazon.aws.com/"
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "documentation": "error fallthrough",
+            "error": "no array values set",
+            "type": "error"
+        }
+    ]
+}
+ */
+const size_t RegionRulesBlobSize = 447;
+using RegionRulesBlobT = Aws::Array<const char, RegionRulesBlobSize>;
+static constexpr RegionRulesBlobT RegionRulesBlob = {
+    {'{', '"', 'v', 'e', 'r', 's', 'i', 'o', 'n', '"', ':', '"', '1', '.', '0', '"', ',', '"', 'p', 'a', 'r', 'a', 'm', 'e', 't', 'e', 'r',
+     's', '"', ':', '{', '"', 'R', 'e', 'g', 'i', 'o', 'n', '"', ':', '{', '"', 'b', 'u', 'i', 'l', 't', 'I', 'n', '"', ':', '"', 'A', 'W',
+     'S', ':', ':', 'R', 'e', 'g', 'i', 'o', 'n', '"', ',', '"', 'r', 'e', 'q', 'u', 'i', 'r', 'e', 'd', '"', ':', 'f', 'a', 'l', 's', 'e',
+     ',', '"', 'd', 'o', 'c', 'u', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', '"', ':', '"', 'T', 'h', 'e', ' ', 'A', 'W', 'S', ' ', 'r',
+     'e', 'g', 'i', 'o', 'n', ' ', 'u', 's', 'e', 'd', ' ', 't', 'o', ' ', 'd', 'i', 's', 'p', 'a', 't', 'c', 'h', ' ', 't', 'h', 'e', ' ',
+     'r', 'e', 'q', 'u', 'e', 's', 't', '.', '"', ',', '"', 't', 'y', 'p', 'e', '"', ':', '"', 's', 't', 'r', 'i', 'n', 'g', '"', '}', '}',
+     ',', '"', 'r', 'u', 'l', 'e', 's', '"', ':', '[', '{', '"', 'd', 'o', 'c', 'u', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', '"', ':',
+     '"', 'T', 'e', 's', 't', ' ', 'r', 'e', 'g', 'i', 'o', 'n', ' ', 'b', 'l', 'o', 'b', '"', ',', '"', 'c', 'o', 'n', 'd', 'i', 't', 'i',
+     'o', 'n', 's', '"', ':', '[', '{', '"', 'f', 'n', '"', ':', '"', 'i', 's', 'S', 'e', 't', '"', ',', '"', 'a', 'r', 'g', 'v', '"', ':',
+     '[', '{', '"', 'r', 'e', 'f', '"', ':', '"', 'R', 'e', 'g', 'i', 'o', 'n', '"', '}', ']', '}', ']', ',', '"', 'e', 'n', 'd', 'p', 'o',
+     'i', 'n', 't', '"', ':', '{', '"', 'u', 'r', 'l', '"', ':', '"', 'h', 't', 't', 'p', 's', ':', '/', '/', 't', 'a', 'r', 't', 'a', 'r',
+     'u', 's', '.', '{', 'R', 'e', 'g', 'i', 'o', 'n', '}', '.', 'a', 'm', 'a', 'z', 'o', 'n', '.', 'a', 'w', 's', '.', 'c', 'o', 'm', '/',
+     '"', '}', ',', '"', 't', 'y', 'p', 'e', '"', ':', '"', 'e', 'n', 'd', 'p', 'o', 'i', 'n', 't', '"', '}', ',', '{', '"', 'c', 'o', 'n',
+     'd', 'i', 't', 'i', 'o', 'n', 's', '"', ':', '[', ']', ',', '"', 'd', 'o', 'c', 'u', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', '"',
+     ':', '"', 'e', 'r', 'r', 'o', 'r', ' ', 'f', 'a', 'l', 'l', 't', 'h', 'r', 'o', 'u', 'g', 'h', '"', ',', '"', 'e', 'r', 'r', 'o', 'r',
+     '"', ':', '"', 'n', 'o', ' ', 'a', 'r', 'r', 'a', 'y', ' ', 'v', 'a', 'l', 'u', 'e', 's', ' ', 's', 'e', 't', '"', ',', '"', 't', 'y',
+     'p', 'e', '"', ':', '"', 'e', 'r', 'r', 'o', 'r', '"', '}', ']', '}', '\0'}};
+
+class RegionEndpointProviderTest : public Aws::Endpoint::DefaultEndpointProvider<> {
+ public:
+  using RegionEndpointResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+  RegionEndpointProviderTest() : Aws::Endpoint::DefaultEndpointProvider<>(RegionRulesBlob.data(), RegionRulesBlobSize) {}
+
+  ~RegionEndpointProviderTest() override = default;
+};
+
+class TestServiceEndpointProviderTest : public Aws::Endpoint::DefaultEndpointProvider<> {
 public:
     using TestServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
     TestServiceEndpointProviderTest()
-      : Aws::Endpoint::DefaultEndpointProvider<>(EndpointParamTest::RulesBlob.data(), EndpointParamTest::RulesBlobSize)
+      : Aws::Endpoint::DefaultEndpointProvider<>(RulesBlob.data(), RulesBlobSize)
     {}
 
     ~TestServiceEndpointProviderTest()
     {
     }
 };
+}  // namespace
 
 class EndpointTest : public Aws::Testing::AwsCppSdkGTestSuite {
     protected:
@@ -81,4 +149,24 @@ TEST_F(EndpointTest, testStringArrayParamError) {
     auto res = endpointProvider_sp->ResolveEndpoint(parameters);
 
     EXPECT_FALSE(res.IsSuccess());
+}
+
+TEST_F(EndpointTest, validRegionShouldBeUsed) {
+  RegionEndpointProviderTest regionEndpointProvider{};
+  Aws::Client::ClientConfiguration configuration{};
+  configuration.region = "us-east-1";
+  regionEndpointProvider.InitBuiltInParameters(configuration);
+  const auto result = regionEndpointProvider.ResolveEndpoint({});
+  EXPECT_TRUE(result.IsSuccess());
+  EXPECT_EQ(result.GetResult().GetURL(), "https://tartarus.us-east-1.amazon.aws.com");
+}
+
+TEST_F(EndpointTest, invalidRegionShouldNotBeUsed) {
+  RegionEndpointProviderTest regionEndpointProvider{};
+  Aws::Client::ClientConfiguration configuration{};
+  configuration.region = "i-am-thou-thou-art-i/";
+  regionEndpointProvider.InitBuiltInParameters(configuration);
+  const auto result = regionEndpointProvider.ResolveEndpoint({});
+  EXPECT_FALSE(result.IsSuccess());
+  EXPECT_EQ(result.GetError().GetErrorType(), Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION);
 }
