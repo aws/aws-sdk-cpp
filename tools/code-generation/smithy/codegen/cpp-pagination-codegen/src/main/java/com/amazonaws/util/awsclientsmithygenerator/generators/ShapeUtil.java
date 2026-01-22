@@ -13,6 +13,38 @@ public class ShapeUtil {
     private static final List<String> RESULT_SUFFIXES = List.of("Result", "SdkResult", "CppSdkResult");
     
     /**
+     * Backward compatibility map for operations that must use "SdkResult" suffix.
+     * 
+     * Background:
+     * The C2J code generator's renameShape() tries suffixes in order: Result -> SdkResult -> CppSdkResult.
+     * It picks the first suffix that doesn't collide with existing shape names in the model.
+     * 
+     * Problem:
+     * Some legacy C2J models (e.g., medialive-2017-10-14.normal.json) defined shapes like:
+     *   - ListNodesResult (a domain shape)
+     *   - ListNodesResponse (the operation output shape)
+     * 
+     * When the C2J generator tried to create the SDK wrapper for ListNodes operation:
+     *   1. Tried "ListNodesResult" -> COLLISION with existing shape
+     *   2. Fell back to "ListNodesSdkResult" -> No collision, used this
+     * 
+     * The Smithy models are cleaner and don't have these collisions, but we must preserve
+     * the "SdkResult" suffix for these operations to maintain backward compatibility with
+     * existing C2J-generated code.
+     * 
+     * Map format: service-name -> Set of operation names requiring "SdkResult"
+     * 
+     * Example:
+     * medialive C2J model had both ListNodesResult and ListNodesResponse shapes,
+     * forcing ListNodesSdkResult. Smithy model only has ListNodesResponse, but we
+     * preserve SdkResult to avoid breaking changes.
+     *
+     */
+    private static final Map<String, Set<String>> LEGACY_SDK_RESULT_OPERATIONS = Map.of(
+        "medialive", Set.of("ListChannelPlacementGroups", "ListClusters", "ListNetworks", "ListNodes")
+    );
+    
+    /**
      * Returns all shapes referenced by a root shape, recursively.
      */
     public static Set<Shape> getReferences(Model model, Shape root) {
@@ -42,6 +74,12 @@ public class ShapeUtil {
         // EC2 protocol services rename all Result shapes to Response
         if ("ec2".equals(c2jServiceName)) {
             return "Response";
+        }
+        
+        // C2J backward compatibility: preserve SdkResult for operations that had collisions in legacy models
+        Set<String> legacyOps = LEGACY_SDK_RESULT_OPERATIONS.get(c2jServiceName);
+        if (legacyOps != null && legacyOps.contains(operation.getId().getName())) {
+            return "SdkResult";
         }
         
         String baseName = operation.getId().getName();
