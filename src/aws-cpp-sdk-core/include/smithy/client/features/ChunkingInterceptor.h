@@ -152,10 +152,18 @@ private:
 class ChunkingInterceptor : public smithy::interceptor::Interceptor {
 public:
     explicit ChunkingInterceptor(Aws::Client::HttpClientChunkedMode httpClientChunkedMode)
-        : m_httpClientChunkedMode(httpClientChunkedMode) {}
+        : m_httpClientChunkedMode(httpClientChunkedMode), m_bufferSize(AWS_DATA_BUFFER_SIZE) {}
+    explicit ChunkingInterceptor(Aws::Client::HttpClientChunkedMode httpClientChunkedMode, size_t bufferSize)
+        : m_httpClientChunkedMode(httpClientChunkedMode), m_bufferSize(bufferSize) {}
     ~ChunkingInterceptor() override = default;
 
     ModifyRequestOutcome ModifyBeforeSigning(smithy::interceptor::InterceptorContext& context) override {
+      if (m_bufferSize < 8 * 1024) {
+        return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::VALIDATION,
+          "ValidationErrorException",
+          "aws-chunked buffer must be over 8KiB to content encode",
+          false};
+      }
       auto request = context.GetTransmitRequest();
 
       if (!ShouldApplyChunking(request, context)) {
@@ -188,6 +196,12 @@ public:
     }
 
     ModifyRequestOutcome ModifyBeforeTransmit(smithy::interceptor::InterceptorContext& context) override {
+        if (m_bufferSize < 8 * 1024) {
+          return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::VALIDATION,
+            "ValidationErrorException",
+            "aws-chunked buffer must be over 8KiB to content encode",
+            false};
+        }
         auto request = context.GetTransmitRequest();
 
         if (!ShouldApplyChunking(request, context)) {
@@ -199,8 +213,7 @@ public:
             return request;
         }
 
-        auto chunkedBody = Aws::MakeShared<AwsChunkedIOStream>(
-            ALLOCATION_TAG, request.get(), originalBody);
+        auto chunkedBody = Aws::MakeShared<AwsChunkedIOStream>(ALLOCATION_TAG, request.get(), originalBody, m_bufferSize);
 
         request->AddContentBody(chunkedBody);
         return request;
@@ -233,6 +246,7 @@ private:
     }
 
     Aws::Client::HttpClientChunkedMode m_httpClientChunkedMode;
+    size_t m_bufferSize;
 };
 
 } // namespace features

@@ -96,6 +96,7 @@ namespace
     static std::string BASE_CONTENT_ENCODING_BUCKET_NAME = "contentencoding";
     static std::string BASE_CROSS_REGION_BUCKET_NAME = "crossregion";
     static std::string BASE_ENDPOINT_OVERRIDE_BUCKET_NAME = "endpointoverride";
+    static std::string BASE_STREAM_SIZE_BUCKET_NAME = "streamsize";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
     static const char* TEST_NEWLINE_KEY = "TestNewlineKey";
@@ -143,6 +144,7 @@ namespace
           std::ref(BASE_CONTENT_ENCODING_BUCKET_NAME),
           std::ref(BASE_CROSS_REGION_BUCKET_NAME),
           std::ref(BASE_ENDPOINT_OVERRIDE_BUCKET_NAME),
+          std::ref(BASE_STREAM_SIZE_BUCKET_NAME)
       };
 
       for (auto& testBucketName : TEST_BUCKETS) {
@@ -2714,5 +2716,30 @@ namespace
         .WithBucket(fullBucketName)
         .WithKey(objectKey));
       AWS_EXPECT_SUCCESS(getObjectResponse);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, ShouldSuccessfullyUploadObjectForSmallerBufferSize) {
+      const String fullBucketName = CalculateBucketName(BASE_STREAM_SIZE_BUCKET_NAME.c_str());
+      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+      CreateBucketRequest createBucketRequest;
+      createBucketRequest.SetBucket(fullBucketName);
+      createBucketRequest.SetACL(BucketCannedACL::private_);
+      CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+      AWS_ASSERT_SUCCESS(createBucketOutcome);
+
+      S3ClientConfiguration configuration{};
+      configuration.region = Aws::Region::US_EAST_1;
+      // Set aws-chunked buffer to 12KB
+      configuration.awsChunkedBufferSize = 1024 * 12;
+      const S3Client shortStreamClient{configuration};
+
+      auto request = PutObjectRequest().WithBucket(fullBucketName).WithKey("the-jack-bros");
+
+      // Create a 24KB body
+      const Aws::String body(24L * 1024, 'a');
+      request.SetBody(Aws::MakeShared<StringStream>(ALLOCATION_TAG, body));
+
+      const auto response = shortStreamClient.PutObject(request);
+      AWS_EXPECT_SUCCESS(response);
     }
 }
