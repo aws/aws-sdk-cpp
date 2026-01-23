@@ -160,3 +160,18 @@ TEST_F(ChunkingInterceptorTest, ShouldNotApplyChunkingForCustomHttpClient) {
     EXPECT_FALSE(request->HasHeader(Aws::Http::AWS_TRAILER_HEADER));
     EXPECT_FALSE(request->HasHeader(Aws::Http::TRANSFER_ENCODING_HEADER));
 }
+
+TEST_F(ChunkingInterceptorTest, ShouldFailWhenBufferIsTooShort) {
+  const Aws::Client::ClientConfiguration config;
+  ChunkingInterceptor interceptor(config.httpClientChunkedMode, 7UL * 1024);
+
+  // Create interceptor context with a mock request
+  const MockRequest mockRequest;
+  smithy::interceptor::InterceptorContext context(mockRequest);
+  auto respnse = interceptor.ModifyBeforeSigning(context);
+  EXPECT_FALSE(respnse.IsSuccess());
+  EXPECT_STREQ("aws-chunked buffer must be over 8KiB to content encode", respnse.GetError().GetMessage().c_str());
+  respnse = interceptor.ModifyBeforeTransmit(context);
+  EXPECT_FALSE(respnse.IsSuccess());
+  EXPECT_STREQ("aws-chunked buffer must be over 8KiB to content encode", respnse.GetError().GetMessage().c_str());
+}

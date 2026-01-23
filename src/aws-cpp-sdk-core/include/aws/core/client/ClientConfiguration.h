@@ -602,6 +602,18 @@ namespace Aws
            * First available auth scheme will be used for each operation.
            */
           Aws::Vector<Aws::String> authPreferences;
+
+          /**
+           * Buffer size in bytes that will be used to content encode
+           * bodies using aws-chunked. Changing this is useful when you
+           * want to minimize memory use while uploading to S3. Size MUST
+           * be greater than 8KB otherwise S3 will reject the request.
+           *
+           * Defaults to 64KiB.
+           *
+           * https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html
+           */
+          size_t awsChunkedBufferSize = 64UL * 1024;
         };
 
         /**
