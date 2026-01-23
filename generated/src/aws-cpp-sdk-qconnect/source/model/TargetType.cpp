@@ -17,6 +17,7 @@ namespace TargetTypeMapper {
 
 static const int RECOMMENDATION_HASH = HashingUtils::HashString("RECOMMENDATION");
 static const int RESULT_HASH = HashingUtils::HashString("RESULT");
+static const int MESSAGE_HASH = HashingUtils::HashString("MESSAGE");
 
 TargetType GetTargetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ TargetType GetTargetTypeForName(const Aws::String& name) {
     return TargetType::RECOMMENDATION;
   } else if (hashCode == RESULT_HASH) {
     return TargetType::RESULT;
+  } else if (hashCode == MESSAGE_HASH) {
+    return TargetType::MESSAGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForTargetType(TargetType enumValue) {
       return "RECOMMENDATION";
     case TargetType::RESULT:
       return "RESULT";
+    case TargetType::MESSAGE:
+      return "MESSAGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

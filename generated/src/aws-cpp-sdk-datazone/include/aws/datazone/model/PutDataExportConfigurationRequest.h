@@ -32,7 +32,8 @@ class PutDataExportConfigurationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The domain ID where you want to create data export configuration details.</p>
+   * <p>The domain ID for which you want to create data export configuration
+   * details.</p>
    */
   inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
   inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }

@@ -1364,6 +1364,41 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes data export configuration for a domain.</p> <p>This operation does
+   * not delete the S3 table created by the PutDataExportConfiguration operation.</p>
+   * <p>To temporarily disable export without deleting the configuration, use the
+   * PutDataExportConfiguration operation with the <code>--no-enable-export</code>
+   * flag instead. This allows you to re-enable export for the same domain using the
+   * <code>--enable-export</code> flag without deleting S3 table.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataExportConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDataExportConfigurationOutcome DeleteDataExportConfiguration(
+      const Model::DeleteDataExportConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDataExportConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteDataExportConfigurationRequestT = Model::DeleteDataExportConfigurationRequest>
+  Model::DeleteDataExportConfigurationOutcomeCallable DeleteDataExportConfigurationCallable(
+      const DeleteDataExportConfigurationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::DeleteDataExportConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDataExportConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteDataExportConfigurationRequestT = Model::DeleteDataExportConfigurationRequest>
+  void DeleteDataExportConfigurationAsync(const DeleteDataExportConfigurationRequestT& request,
+                                          const DeleteDataExportConfigurationResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::DeleteDataExportConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a data product in Amazon DataZone.</p> <p>Prerequisites:</p> <ul>
    * <li> <p>The data product must exist and not be deleted or archived. </p> </li>
    * <li> <p>The user must have delete permissions for the data product.</p> </li>
@@ -3983,11 +4018,19 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates data export configuration details.</p> <p>In the current release, you
-   * can enable exporting asset metadata only for one domain per Amazon Web Services
-   * account per region. If you disable exporting asset metadata feature for a domain
-   * where it's already enabled, you cannot enable this feature for another domain in
-   * the same Amazon Web Services account and region.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates data export configuration details.</p> <p>If you want to temporarily
+   * disable export and later re-enable it for the same domain, use the
+   * <code>--no-enable-export</code> flag to disable and the
+   * <code>--enable-export</code> flag to re-enable. This preserves the configuration
+   * and allows you to re-enable export without deleting S3 table.</p>  <p>You
+   * can enable asset metadata export for only one domain per account per Region. To
+   * enable export for a different domain, complete the following steps:</p> <ol>
+   * <li> <p>Delete the export configuration for the currently enabled domain using
+   * the DeleteDataExportConfiguration operation.</p> </li> <li> <p>Delete the asset
+   * S3 table under the aws-sagemaker-catalog S3 table bucket. We recommend backing
+   * up the S3 table before deletion.</p> </li> <li> <p>Call the
+   * PutDataExportConfiguration API to enable export for the new domain.</p> </li>
+   * </ol> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutDataExportConfiguration">AWS
    * API Reference</a></p>
    */

@@ -5,12 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnectRequest.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <aws/qconnect/model/AIAgentType.h>
-#include <aws/qconnect/model/OrchestratorConfigurationEntry.h>
 
 #include <utility>
 
@@ -89,27 +87,18 @@ class UpdateAssistantAIAgentRequest : public QConnectRequest {
 
   ///@{
   /**
-   * <p>The updated list of orchestrator configurations for the assistant AI
-   * Agent.</p>
+   * <p>The orchestrator use case for the AI Agent being added.</p>
    */
-  inline const Aws::Vector<OrchestratorConfigurationEntry>& GetOrchestratorConfigurationList() const {
-    return m_orchestratorConfigurationList;
+  inline const Aws::String& GetOrchestratorUseCase() const { return m_orchestratorUseCase; }
+  inline bool OrchestratorUseCaseHasBeenSet() const { return m_orchestratorUseCaseHasBeenSet; }
+  template <typename OrchestratorUseCaseT = Aws::String>
+  void SetOrchestratorUseCase(OrchestratorUseCaseT&& value) {
+    m_orchestratorUseCaseHasBeenSet = true;
+    m_orchestratorUseCase = std::forward<OrchestratorUseCaseT>(value);
   }
-  inline bool OrchestratorConfigurationListHasBeenSet() const { return m_orchestratorConfigurationListHasBeenSet; }
-  template <typename OrchestratorConfigurationListT = Aws::Vector<OrchestratorConfigurationEntry>>
-  void SetOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
-    m_orchestratorConfigurationListHasBeenSet = true;
-    m_orchestratorConfigurationList = std::forward<OrchestratorConfigurationListT>(value);
-  }
-  template <typename OrchestratorConfigurationListT = Aws::Vector<OrchestratorConfigurationEntry>>
-  UpdateAssistantAIAgentRequest& WithOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
-    SetOrchestratorConfigurationList(std::forward<OrchestratorConfigurationListT>(value));
-    return *this;
-  }
-  template <typename OrchestratorConfigurationListT = OrchestratorConfigurationEntry>
-  UpdateAssistantAIAgentRequest& AddOrchestratorConfigurationList(OrchestratorConfigurationListT&& value) {
-    m_orchestratorConfigurationListHasBeenSet = true;
-    m_orchestratorConfigurationList.emplace_back(std::forward<OrchestratorConfigurationListT>(value));
+  template <typename OrchestratorUseCaseT = Aws::String>
+  UpdateAssistantAIAgentRequest& WithOrchestratorUseCase(OrchestratorUseCaseT&& value) {
+    SetOrchestratorUseCase(std::forward<OrchestratorUseCaseT>(value));
     return *this;
   }
   ///@}
@@ -120,11 +109,11 @@ class UpdateAssistantAIAgentRequest : public QConnectRequest {
 
   AIAgentConfigurationData m_configuration;
 
-  Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
+  Aws::String m_orchestratorUseCase;
   bool m_assistantIdHasBeenSet = false;
   bool m_aiAgentTypeHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
-  bool m_orchestratorConfigurationListHasBeenSet = false;
+  bool m_orchestratorUseCaseHasBeenSet = false;
 };
 
 }  // namespace Model

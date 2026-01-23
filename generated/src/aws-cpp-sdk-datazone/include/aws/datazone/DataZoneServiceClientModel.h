@@ -62,6 +62,7 @@
 #include <aws/datazone/model/DeleteAssetResult.h>
 #include <aws/datazone/model/DeleteAssetTypeResult.h>
 #include <aws/datazone/model/DeleteConnectionResult.h>
+#include <aws/datazone/model/DeleteDataExportConfigurationResult.h>
 #include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceResult.h>
 #include <aws/datazone/model/DeleteDomainResult.h>
@@ -264,6 +265,7 @@ class DeleteAssetRequest;
 class DeleteAssetFilterRequest;
 class DeleteAssetTypeRequest;
 class DeleteConnectionRequest;
+class DeleteDataExportConfigurationRequest;
 class DeleteDataProductRequest;
 class DeleteDataSourceRequest;
 class DeleteDomainRequest;
@@ -441,6 +443,7 @@ typedef Aws::Utils::Outcome<DeleteAssetResult, DataZoneError> DeleteAssetOutcome
 typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteAssetFilterOutcome;
 typedef Aws::Utils::Outcome<DeleteAssetTypeResult, DataZoneError> DeleteAssetTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteConnectionResult, DataZoneError> DeleteConnectionOutcome;
+typedef Aws::Utils::Outcome<DeleteDataExportConfigurationResult, DataZoneError> DeleteDataExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteDataProductResult, DataZoneError> DeleteDataProductOutcome;
 typedef Aws::Utils::Outcome<DeleteDataSourceResult, DataZoneError> DeleteDataSourceOutcome;
 typedef Aws::Utils::Outcome<DeleteDomainResult, DataZoneError> DeleteDomainOutcome;
@@ -618,6 +621,7 @@ typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
 typedef std::future<DeleteAssetFilterOutcome> DeleteAssetFilterOutcomeCallable;
 typedef std::future<DeleteAssetTypeOutcome> DeleteAssetTypeOutcomeCallable;
 typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
+typedef std::future<DeleteDataExportConfigurationOutcome> DeleteDataExportConfigurationOutcomeCallable;
 typedef std::future<DeleteDataProductOutcome> DeleteDataProductOutcomeCallable;
 typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
@@ -884,6 +888,10 @@ typedef std::function<void(const DataZoneClient*, const Model::DeleteAssetTypeRe
 typedef std::function<void(const DataZoneClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConnectionResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::DeleteDataExportConfigurationRequest&,
+                           const Model::DeleteDataExportConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDataExportConfigurationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::DeleteDataProductRequest&, const Model::DeleteDataProductOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDataProductResponseReceivedHandler;

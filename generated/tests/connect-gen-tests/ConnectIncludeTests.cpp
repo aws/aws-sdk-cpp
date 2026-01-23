@@ -242,6 +242,8 @@
 #include <aws/connect/model/CreateSecurityProfileResult.h>
 #include <aws/connect/model/CreateTaskTemplateRequest.h>
 #include <aws/connect/model/CreateTaskTemplateResult.h>
+#include <aws/connect/model/CreateTestCaseRequest.h>
+#include <aws/connect/model/CreateTestCaseResult.h>
 #include <aws/connect/model/CreateTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/CreateTrafficDistributionGroupResult.h>
 #include <aws/connect/model/CreateUseCaseRequest.h>
@@ -332,6 +334,8 @@
 #include <aws/connect/model/DeleteSecurityProfileRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
+#include <aws/connect/model/DeleteTestCaseRequest.h>
+#include <aws/connect/model/DeleteTestCaseResult.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupResult.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
@@ -397,6 +401,8 @@
 #include <aws/connect/model/DescribeRuleResult.h>
 #include <aws/connect/model/DescribeSecurityProfileRequest.h>
 #include <aws/connect/model/DescribeSecurityProfileResult.h>
+#include <aws/connect/model/DescribeTestCaseRequest.h>
+#include <aws/connect/model/DescribeTestCaseResult.h>
 #include <aws/connect/model/DescribeTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DescribeTrafficDistributionGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
@@ -550,6 +556,8 @@
 #include <aws/connect/model/EvaluatorUserUnion.h>
 #include <aws/connect/model/EventBridgeActionDefinition.h>
 #include <aws/connect/model/EventSourceName.h>
+#include <aws/connect/model/ExecutionRecord.h>
+#include <aws/connect/model/ExecutionRecordStatus.h>
 #include <aws/connect/model/Expiry.h>
 #include <aws/connect/model/Expression.h>
 #include <aws/connect/model/ExternalInvocationConfiguration.h>
@@ -594,6 +602,8 @@
 #include <aws/connect/model/GetPromptFileResult.h>
 #include <aws/connect/model/GetTaskTemplateRequest.h>
 #include <aws/connect/model/GetTaskTemplateResult.h>
+#include <aws/connect/model/GetTestCaseExecutionSummaryRequest.h>
+#include <aws/connect/model/GetTestCaseExecutionSummaryResult.h>
 #include <aws/connect/model/GetTrafficDistributionRequest.h>
 #include <aws/connect/model/GetTrafficDistributionResult.h>
 #include <aws/connect/model/GlobalResiliencyMetadata.h>
@@ -653,6 +663,7 @@
 #include <aws/connect/model/InvalidContactFlowModuleException.h>
 #include <aws/connect/model/InvalidRequestException.h>
 #include <aws/connect/model/InvalidRequestExceptionReason.h>
+#include <aws/connect/model/InvalidTestCaseException.h>
 #include <aws/connect/model/InvisibleFieldInfo.h>
 #include <aws/connect/model/IvrRecordingTrack.h>
 #include <aws/connect/model/KinesisFirehoseConfig.h>
@@ -767,6 +778,12 @@
 #include <aws/connect/model/ListTagsForResourceResult.h>
 #include <aws/connect/model/ListTaskTemplatesRequest.h>
 #include <aws/connect/model/ListTaskTemplatesResult.h>
+#include <aws/connect/model/ListTestCaseExecutionRecordsRequest.h>
+#include <aws/connect/model/ListTestCaseExecutionRecordsResult.h>
+#include <aws/connect/model/ListTestCaseExecutionsRequest.h>
+#include <aws/connect/model/ListTestCaseExecutionsResult.h>
+#include <aws/connect/model/ListTestCasesRequest.h>
+#include <aws/connect/model/ListTestCasesResult.h>
 #include <aws/connect/model/ListTrafficDistributionGroupUsersRequest.h>
 #include <aws/connect/model/ListTrafficDistributionGroupUsersResult.h>
 #include <aws/connect/model/ListTrafficDistributionGroupsRequest.h>
@@ -821,6 +838,7 @@
 #include <aws/connect/model/NumberReference.h>
 #include <aws/connect/model/NumericQuestionPropertyAutomationLabel.h>
 #include <aws/connect/model/NumericQuestionPropertyValueAutomation.h>
+#include <aws/connect/model/ObservationSummary.h>
 #include <aws/connect/model/OperationalHour.h>
 #include <aws/connect/model/OperationalStatus.h>
 #include <aws/connect/model/OutboundAdditionalRecipients.h>
@@ -1021,6 +1039,8 @@
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesRequest.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
+#include <aws/connect/model/SearchTestCasesRequest.h>
+#include <aws/connect/model/SearchTestCasesResult.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsResult.h>
 #include <aws/connect/model/SearchUsersRequest.h>
@@ -1091,6 +1111,8 @@
 #include <aws/connect/model/StartScreenSharingResult.h>
 #include <aws/connect/model/StartTaskContactRequest.h>
 #include <aws/connect/model/StartTaskContactResult.h>
+#include <aws/connect/model/StartTestCaseExecutionRequest.h>
+#include <aws/connect/model/StartTestCaseExecutionResult.h>
 #include <aws/connect/model/StartWebRTCContactRequest.h>
 #include <aws/connect/model/StartWebRTCContactResult.h>
 #include <aws/connect/model/StateTransition.h>
@@ -1105,6 +1127,8 @@
 #include <aws/connect/model/StopContactResult.h>
 #include <aws/connect/model/StopContactStreamingRequest.h>
 #include <aws/connect/model/StopContactStreamingResult.h>
+#include <aws/connect/model/StopTestCaseExecutionRequest.h>
+#include <aws/connect/model/StopTestCaseExecutionResult.h>
 #include <aws/connect/model/StorageType.h>
 #include <aws/connect/model/StringComparisonType.h>
 #include <aws/connect/model/StringCondition.h>
@@ -1136,6 +1160,15 @@
 #include <aws/connect/model/TelephonyConfig.h>
 #include <aws/connect/model/TemplateAttributes.h>
 #include <aws/connect/model/TemplatedMessageConfig.h>
+#include <aws/connect/model/TestCase.h>
+#include <aws/connect/model/TestCaseEntryPoint.h>
+#include <aws/connect/model/TestCaseEntryPointType.h>
+#include <aws/connect/model/TestCaseExecution.h>
+#include <aws/connect/model/TestCaseExecutionStatus.h>
+#include <aws/connect/model/TestCaseSearchCriteria.h>
+#include <aws/connect/model/TestCaseSearchFilter.h>
+#include <aws/connect/model/TestCaseStatus.h>
+#include <aws/connect/model/TestCaseSummary.h>
 #include <aws/connect/model/Threshold.h>
 #include <aws/connect/model/ThresholdV2.h>
 #include <aws/connect/model/TimerEligibleParticipantRoles.h>
@@ -1219,6 +1252,8 @@
 #include <aws/connect/model/UpdateSecurityProfileRequest.h>
 #include <aws/connect/model/UpdateTaskTemplateRequest.h>
 #include <aws/connect/model/UpdateTaskTemplateResult.h>
+#include <aws/connect/model/UpdateTestCaseRequest.h>
+#include <aws/connect/model/UpdateTestCaseResult.h>
 #include <aws/connect/model/UpdateTrafficDistributionRequest.h>
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
 #include <aws/connect/model/UpdateUserHierarchyGroupNameRequest.h>
@@ -1279,6 +1314,7 @@
 #include <aws/connect/model/VocabularyLanguageCode.h>
 #include <aws/connect/model/VocabularyState.h>
 #include <aws/connect/model/VocabularySummary.h>
+#include <aws/connect/model/VoiceCallEntryPointParameters.h>
 #include <aws/connect/model/VoiceRecordingConfiguration.h>
 #include <aws/connect/model/VoiceRecordingTrack.h>
 #include <aws/connect/model/WisdomInfo.h>
