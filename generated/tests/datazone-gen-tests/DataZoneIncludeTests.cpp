@@ -197,6 +197,8 @@
 #include <aws/datazone/model/DeleteAssetTypeResult.h>
 #include <aws/datazone/model/DeleteConnectionRequest.h>
 #include <aws/datazone/model/DeleteConnectionResult.h>
+#include <aws/datazone/model/DeleteDataExportConfigurationRequest.h>
+#include <aws/datazone/model/DeleteDataExportConfigurationResult.h>
 #include <aws/datazone/model/DeleteDataProductRequest.h>
 #include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceRequest.h>

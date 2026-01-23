@@ -65,6 +65,7 @@
 #include <aws/connect/model/CreateRuleResult.h>
 #include <aws/connect/model/CreateSecurityProfileResult.h>
 #include <aws/connect/model/CreateTaskTemplateResult.h>
+#include <aws/connect/model/CreateTestCaseResult.h>
 #include <aws/connect/model/CreateTrafficDistributionGroupResult.h>
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
@@ -86,6 +87,7 @@
 #include <aws/connect/model/DeleteEmailAddressResult.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
+#include <aws/connect/model/DeleteTestCaseResult.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupResult.h>
 #include <aws/connect/model/DeleteViewResult.h>
 #include <aws/connect/model/DeleteViewVersionResult.h>
@@ -117,6 +119,7 @@
 #include <aws/connect/model/DescribeRoutingProfileResult.h>
 #include <aws/connect/model/DescribeRuleResult.h>
 #include <aws/connect/model/DescribeSecurityProfileResult.h>
+#include <aws/connect/model/DescribeTestCaseResult.h>
 #include <aws/connect/model/DescribeTrafficDistributionGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
@@ -142,6 +145,7 @@
 #include <aws/connect/model/GetMetricDataV2Result.h>
 #include <aws/connect/model/GetPromptFileResult.h>
 #include <aws/connect/model/GetTaskTemplateResult.h>
+#include <aws/connect/model/GetTestCaseExecutionSummaryResult.h>
 #include <aws/connect/model/GetTrafficDistributionResult.h>
 #include <aws/connect/model/ImportPhoneNumberResult.h>
 #include <aws/connect/model/ImportWorkspaceMediaResult.h>
@@ -198,6 +202,9 @@
 #include <aws/connect/model/ListSecurityProfilesResult.h>
 #include <aws/connect/model/ListTagsForResourceResult.h>
 #include <aws/connect/model/ListTaskTemplatesResult.h>
+#include <aws/connect/model/ListTestCaseExecutionRecordsResult.h>
+#include <aws/connect/model/ListTestCaseExecutionsResult.h>
+#include <aws/connect/model/ListTestCasesResult.h>
 #include <aws/connect/model/ListTrafficDistributionGroupUsersResult.h>
 #include <aws/connect/model/ListTrafficDistributionGroupsRequest.h>
 #include <aws/connect/model/ListTrafficDistributionGroupsResult.h>
@@ -234,6 +241,7 @@
 #include <aws/connect/model/SearchResourceTagsResult.h>
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
+#include <aws/connect/model/SearchTestCasesResult.h>
 #include <aws/connect/model/SearchUserHierarchyGroupsResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
 #include <aws/connect/model/SearchViewsResult.h>
@@ -255,12 +263,14 @@
 #include <aws/connect/model/StartOutboundVoiceContactResult.h>
 #include <aws/connect/model/StartScreenSharingResult.h>
 #include <aws/connect/model/StartTaskContactResult.h>
+#include <aws/connect/model/StartTestCaseExecutionResult.h>
 #include <aws/connect/model/StartWebRTCContactResult.h>
 #include <aws/connect/model/StopContactMediaProcessingRequest.h>
 #include <aws/connect/model/StopContactMediaProcessingResult.h>
 #include <aws/connect/model/StopContactRecordingResult.h>
 #include <aws/connect/model/StopContactResult.h>
 #include <aws/connect/model/StopContactStreamingResult.h>
+#include <aws/connect/model/StopTestCaseExecutionResult.h>
 #include <aws/connect/model/SubmitContactEvaluationResult.h>
 #include <aws/connect/model/SuspendContactRecordingResult.h>
 #include <aws/connect/model/TagContactResult.h>
@@ -287,6 +297,7 @@
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
 #include <aws/connect/model/UpdatePromptResult.h>
 #include <aws/connect/model/UpdateTaskTemplateResult.h>
+#include <aws/connect/model/UpdateTestCaseResult.h>
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
 #include <aws/connect/model/UpdateViewContentResult.h>
 #include <aws/connect/model/UpdateViewMetadataResult.h>
@@ -385,6 +396,7 @@ class CreateRoutingProfileRequest;
 class CreateRuleRequest;
 class CreateSecurityProfileRequest;
 class CreateTaskTemplateRequest;
+class CreateTestCaseRequest;
 class CreateTrafficDistributionGroupRequest;
 class CreateUseCaseRequest;
 class CreateUserRequest;
@@ -419,6 +431,7 @@ class DeleteRoutingProfileRequest;
 class DeleteRuleRequest;
 class DeleteSecurityProfileRequest;
 class DeleteTaskTemplateRequest;
+class DeleteTestCaseRequest;
 class DeleteTrafficDistributionGroupRequest;
 class DeleteUseCaseRequest;
 class DeleteUserRequest;
@@ -453,6 +466,7 @@ class DescribeQuickConnectRequest;
 class DescribeRoutingProfileRequest;
 class DescribeRuleRequest;
 class DescribeSecurityProfileRequest;
+class DescribeTestCaseRequest;
 class DescribeTrafficDistributionGroupRequest;
 class DescribeUserRequest;
 class DescribeUserHierarchyGroupRequest;
@@ -491,6 +505,7 @@ class GetMetricDataRequest;
 class GetMetricDataV2Request;
 class GetPromptFileRequest;
 class GetTaskTemplateRequest;
+class GetTestCaseExecutionSummaryRequest;
 class GetTrafficDistributionRequest;
 class ImportPhoneNumberRequest;
 class ImportWorkspaceMediaRequest;
@@ -545,6 +560,9 @@ class ListSecurityProfilePermissionsRequest;
 class ListSecurityProfilesRequest;
 class ListTagsForResourceRequest;
 class ListTaskTemplatesRequest;
+class ListTestCaseExecutionRecordsRequest;
+class ListTestCaseExecutionsRequest;
+class ListTestCasesRequest;
 class ListTrafficDistributionGroupUsersRequest;
 class ListTrafficDistributionGroupsRequest;
 class ListUseCasesRequest;
@@ -581,6 +599,7 @@ class SearchQuickConnectsRequest;
 class SearchResourceTagsRequest;
 class SearchRoutingProfilesRequest;
 class SearchSecurityProfilesRequest;
+class SearchTestCasesRequest;
 class SearchUserHierarchyGroupsRequest;
 class SearchUsersRequest;
 class SearchViewsRequest;
@@ -601,11 +620,13 @@ class StartOutboundEmailContactRequest;
 class StartOutboundVoiceContactRequest;
 class StartScreenSharingRequest;
 class StartTaskContactRequest;
+class StartTestCaseExecutionRequest;
 class StartWebRTCContactRequest;
 class StopContactRequest;
 class StopContactMediaProcessingRequest;
 class StopContactRecordingRequest;
 class StopContactStreamingRequest;
+class StopTestCaseExecutionRequest;
 class SubmitContactEvaluationRequest;
 class SuspendContactRecordingRequest;
 class TagContactRequest;
@@ -657,6 +678,7 @@ class UpdateRoutingProfileQueuesRequest;
 class UpdateRuleRequest;
 class UpdateSecurityProfileRequest;
 class UpdateTaskTemplateRequest;
+class UpdateTestCaseRequest;
 class UpdateTrafficDistributionRequest;
 class UpdateUserHierarchyRequest;
 class UpdateUserHierarchyGroupNameRequest;
@@ -732,6 +754,7 @@ typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRout
 typedef Aws::Utils::Outcome<CreateRuleResult, ConnectError> CreateRuleOutcome;
 typedef Aws::Utils::Outcome<CreateSecurityProfileResult, ConnectError> CreateSecurityProfileOutcome;
 typedef Aws::Utils::Outcome<CreateTaskTemplateResult, ConnectError> CreateTaskTemplateOutcome;
+typedef Aws::Utils::Outcome<CreateTestCaseResult, ConnectError> CreateTestCaseOutcome;
 typedef Aws::Utils::Outcome<CreateTrafficDistributionGroupResult, ConnectError> CreateTrafficDistributionGroupOutcome;
 typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
 typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
@@ -766,6 +789,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRoutingProfileOut
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRuleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteSecurityProfileOutcome;
 typedef Aws::Utils::Outcome<DeleteTaskTemplateResult, ConnectError> DeleteTaskTemplateOutcome;
+typedef Aws::Utils::Outcome<DeleteTestCaseResult, ConnectError> DeleteTestCaseOutcome;
 typedef Aws::Utils::Outcome<DeleteTrafficDistributionGroupResult, ConnectError> DeleteTrafficDistributionGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
@@ -800,6 +824,7 @@ typedef Aws::Utils::Outcome<DescribeQuickConnectResult, ConnectError> DescribeQu
 typedef Aws::Utils::Outcome<DescribeRoutingProfileResult, ConnectError> DescribeRoutingProfileOutcome;
 typedef Aws::Utils::Outcome<DescribeRuleResult, ConnectError> DescribeRuleOutcome;
 typedef Aws::Utils::Outcome<DescribeSecurityProfileResult, ConnectError> DescribeSecurityProfileOutcome;
+typedef Aws::Utils::Outcome<DescribeTestCaseResult, ConnectError> DescribeTestCaseOutcome;
 typedef Aws::Utils::Outcome<DescribeTrafficDistributionGroupResult, ConnectError> DescribeTrafficDistributionGroupOutcome;
 typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
 typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> DescribeUserHierarchyGroupOutcome;
@@ -838,6 +863,7 @@ typedef Aws::Utils::Outcome<GetMetricDataResult, ConnectError> GetMetricDataOutc
 typedef Aws::Utils::Outcome<GetMetricDataV2Result, ConnectError> GetMetricDataV2Outcome;
 typedef Aws::Utils::Outcome<GetPromptFileResult, ConnectError> GetPromptFileOutcome;
 typedef Aws::Utils::Outcome<GetTaskTemplateResult, ConnectError> GetTaskTemplateOutcome;
+typedef Aws::Utils::Outcome<GetTestCaseExecutionSummaryResult, ConnectError> GetTestCaseExecutionSummaryOutcome;
 typedef Aws::Utils::Outcome<GetTrafficDistributionResult, ConnectError> GetTrafficDistributionOutcome;
 typedef Aws::Utils::Outcome<ImportPhoneNumberResult, ConnectError> ImportPhoneNumberOutcome;
 typedef Aws::Utils::Outcome<ImportWorkspaceMediaResult, ConnectError> ImportWorkspaceMediaOutcome;
@@ -892,6 +918,9 @@ typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> 
 typedef Aws::Utils::Outcome<ListSecurityProfilesResult, ConnectError> ListSecurityProfilesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTaskTemplatesResult, ConnectError> ListTaskTemplatesOutcome;
+typedef Aws::Utils::Outcome<ListTestCaseExecutionRecordsResult, ConnectError> ListTestCaseExecutionRecordsOutcome;
+typedef Aws::Utils::Outcome<ListTestCaseExecutionsResult, ConnectError> ListTestCaseExecutionsOutcome;
+typedef Aws::Utils::Outcome<ListTestCasesResult, ConnectError> ListTestCasesOutcome;
 typedef Aws::Utils::Outcome<ListTrafficDistributionGroupUsersResult, ConnectError> ListTrafficDistributionGroupUsersOutcome;
 typedef Aws::Utils::Outcome<ListTrafficDistributionGroupsResult, ConnectError> ListTrafficDistributionGroupsOutcome;
 typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
@@ -928,6 +957,7 @@ typedef Aws::Utils::Outcome<SearchQuickConnectsResult, ConnectError> SearchQuick
 typedef Aws::Utils::Outcome<SearchResourceTagsResult, ConnectError> SearchResourceTagsOutcome;
 typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRoutingProfilesOutcome;
 typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
+typedef Aws::Utils::Outcome<SearchTestCasesResult, ConnectError> SearchTestCasesOutcome;
 typedef Aws::Utils::Outcome<SearchUserHierarchyGroupsResult, ConnectError> SearchUserHierarchyGroupsOutcome;
 typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
 typedef Aws::Utils::Outcome<SearchViewsResult, ConnectError> SearchViewsOutcome;
@@ -948,11 +978,13 @@ typedef Aws::Utils::Outcome<StartOutboundEmailContactResult, ConnectError> Start
 typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, ConnectError> StartOutboundVoiceContactOutcome;
 typedef Aws::Utils::Outcome<StartScreenSharingResult, ConnectError> StartScreenSharingOutcome;
 typedef Aws::Utils::Outcome<StartTaskContactResult, ConnectError> StartTaskContactOutcome;
+typedef Aws::Utils::Outcome<StartTestCaseExecutionResult, ConnectError> StartTestCaseExecutionOutcome;
 typedef Aws::Utils::Outcome<StartWebRTCContactResult, ConnectError> StartWebRTCContactOutcome;
 typedef Aws::Utils::Outcome<StopContactResult, ConnectError> StopContactOutcome;
 typedef Aws::Utils::Outcome<StopContactMediaProcessingResult, ConnectError> StopContactMediaProcessingOutcome;
 typedef Aws::Utils::Outcome<StopContactRecordingResult, ConnectError> StopContactRecordingOutcome;
 typedef Aws::Utils::Outcome<StopContactStreamingResult, ConnectError> StopContactStreamingOutcome;
+typedef Aws::Utils::Outcome<StopTestCaseExecutionResult, ConnectError> StopTestCaseExecutionOutcome;
 typedef Aws::Utils::Outcome<SubmitContactEvaluationResult, ConnectError> SubmitContactEvaluationOutcome;
 typedef Aws::Utils::Outcome<SuspendContactRecordingResult, ConnectError> SuspendContactRecordingOutcome;
 typedef Aws::Utils::Outcome<TagContactResult, ConnectError> TagContactOutcome;
@@ -1004,6 +1036,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileQue
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRuleOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateSecurityProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateTaskTemplateResult, ConnectError> UpdateTaskTemplateOutcome;
+typedef Aws::Utils::Outcome<UpdateTestCaseResult, ConnectError> UpdateTestCaseOutcome;
 typedef Aws::Utils::Outcome<UpdateTrafficDistributionResult, ConnectError> UpdateTrafficDistributionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyGroupNameOutcome;
@@ -1079,6 +1112,7 @@ typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCall
 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
 typedef std::future<CreateSecurityProfileOutcome> CreateSecurityProfileOutcomeCallable;
 typedef std::future<CreateTaskTemplateOutcome> CreateTaskTemplateOutcomeCallable;
+typedef std::future<CreateTestCaseOutcome> CreateTestCaseOutcomeCallable;
 typedef std::future<CreateTrafficDistributionGroupOutcome> CreateTrafficDistributionGroupOutcomeCallable;
 typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
@@ -1113,6 +1147,7 @@ typedef std::future<DeleteRoutingProfileOutcome> DeleteRoutingProfileOutcomeCall
 typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
 typedef std::future<DeleteSecurityProfileOutcome> DeleteSecurityProfileOutcomeCallable;
 typedef std::future<DeleteTaskTemplateOutcome> DeleteTaskTemplateOutcomeCallable;
+typedef std::future<DeleteTestCaseOutcome> DeleteTestCaseOutcomeCallable;
 typedef std::future<DeleteTrafficDistributionGroupOutcome> DeleteTrafficDistributionGroupOutcomeCallable;
 typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
@@ -1147,6 +1182,7 @@ typedef std::future<DescribeQuickConnectOutcome> DescribeQuickConnectOutcomeCall
 typedef std::future<DescribeRoutingProfileOutcome> DescribeRoutingProfileOutcomeCallable;
 typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
 typedef std::future<DescribeSecurityProfileOutcome> DescribeSecurityProfileOutcomeCallable;
+typedef std::future<DescribeTestCaseOutcome> DescribeTestCaseOutcomeCallable;
 typedef std::future<DescribeTrafficDistributionGroupOutcome> DescribeTrafficDistributionGroupOutcomeCallable;
 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
 typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
@@ -1185,6 +1221,7 @@ typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
 typedef std::future<GetMetricDataV2Outcome> GetMetricDataV2OutcomeCallable;
 typedef std::future<GetPromptFileOutcome> GetPromptFileOutcomeCallable;
 typedef std::future<GetTaskTemplateOutcome> GetTaskTemplateOutcomeCallable;
+typedef std::future<GetTestCaseExecutionSummaryOutcome> GetTestCaseExecutionSummaryOutcomeCallable;
 typedef std::future<GetTrafficDistributionOutcome> GetTrafficDistributionOutcomeCallable;
 typedef std::future<ImportPhoneNumberOutcome> ImportPhoneNumberOutcomeCallable;
 typedef std::future<ImportWorkspaceMediaOutcome> ImportWorkspaceMediaOutcomeCallable;
@@ -1239,6 +1276,9 @@ typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePe
 typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTaskTemplatesOutcome> ListTaskTemplatesOutcomeCallable;
+typedef std::future<ListTestCaseExecutionRecordsOutcome> ListTestCaseExecutionRecordsOutcomeCallable;
+typedef std::future<ListTestCaseExecutionsOutcome> ListTestCaseExecutionsOutcomeCallable;
+typedef std::future<ListTestCasesOutcome> ListTestCasesOutcomeCallable;
 typedef std::future<ListTrafficDistributionGroupUsersOutcome> ListTrafficDistributionGroupUsersOutcomeCallable;
 typedef std::future<ListTrafficDistributionGroupsOutcome> ListTrafficDistributionGroupsOutcomeCallable;
 typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
@@ -1275,6 +1315,7 @@ typedef std::future<SearchQuickConnectsOutcome> SearchQuickConnectsOutcomeCallab
 typedef std::future<SearchResourceTagsOutcome> SearchResourceTagsOutcomeCallable;
 typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCallable;
 typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
+typedef std::future<SearchTestCasesOutcome> SearchTestCasesOutcomeCallable;
 typedef std::future<SearchUserHierarchyGroupsOutcome> SearchUserHierarchyGroupsOutcomeCallable;
 typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
 typedef std::future<SearchViewsOutcome> SearchViewsOutcomeCallable;
@@ -1295,11 +1336,13 @@ typedef std::future<StartOutboundEmailContactOutcome> StartOutboundEmailContactO
 typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
 typedef std::future<StartScreenSharingOutcome> StartScreenSharingOutcomeCallable;
 typedef std::future<StartTaskContactOutcome> StartTaskContactOutcomeCallable;
+typedef std::future<StartTestCaseExecutionOutcome> StartTestCaseExecutionOutcomeCallable;
 typedef std::future<StartWebRTCContactOutcome> StartWebRTCContactOutcomeCallable;
 typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
 typedef std::future<StopContactMediaProcessingOutcome> StopContactMediaProcessingOutcomeCallable;
 typedef std::future<StopContactRecordingOutcome> StopContactRecordingOutcomeCallable;
 typedef std::future<StopContactStreamingOutcome> StopContactStreamingOutcomeCallable;
+typedef std::future<StopTestCaseExecutionOutcome> StopTestCaseExecutionOutcomeCallable;
 typedef std::future<SubmitContactEvaluationOutcome> SubmitContactEvaluationOutcomeCallable;
 typedef std::future<SuspendContactRecordingOutcome> SuspendContactRecordingOutcomeCallable;
 typedef std::future<TagContactOutcome> TagContactOutcomeCallable;
@@ -1351,6 +1394,7 @@ typedef std::future<UpdateRoutingProfileQueuesOutcome> UpdateRoutingProfileQueue
 typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
 typedef std::future<UpdateSecurityProfileOutcome> UpdateSecurityProfileOutcomeCallable;
 typedef std::future<UpdateTaskTemplateOutcome> UpdateTaskTemplateOutcomeCallable;
+typedef std::future<UpdateTestCaseOutcome> UpdateTestCaseOutcomeCallable;
 typedef std::future<UpdateTrafficDistributionOutcome> UpdateTrafficDistributionOutcomeCallable;
 typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallable;
 typedef std::future<UpdateUserHierarchyGroupNameOutcome> UpdateUserHierarchyGroupNameOutcomeCallable;
@@ -1556,6 +1600,9 @@ typedef std::function<void(const ConnectClient*, const Model::CreateSecurityProf
 typedef std::function<void(const ConnectClient*, const Model::CreateTaskTemplateRequest&, const Model::CreateTaskTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTaskTemplateResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateTestCaseRequest&, const Model::CreateTestCaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTestCaseResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateTrafficDistributionGroupRequest&,
                            const Model::CreateTrafficDistributionGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1664,6 +1711,9 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteSecurityProf
 typedef std::function<void(const ConnectClient*, const Model::DeleteTaskTemplateRequest&, const Model::DeleteTaskTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTaskTemplateResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteTestCaseRequest&, const Model::DeleteTestCaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTestCaseResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeleteTrafficDistributionGroupRequest&,
                            const Model::DeleteTrafficDistributionGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1771,6 +1821,9 @@ typedef std::function<void(const ConnectClient*, const Model::DescribeRuleReques
 typedef std::function<void(const ConnectClient*, const Model::DescribeSecurityProfileRequest&, const Model::DescribeSecurityProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSecurityProfileResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeTestCaseRequest&, const Model::DescribeTestCaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTestCaseResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribeTrafficDistributionGroupRequest&,
                            const Model::DescribeTrafficDistributionGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1898,6 +1951,9 @@ typedef std::function<void(const ConnectClient*, const Model::GetPromptFileReque
 typedef std::function<void(const ConnectClient*, const Model::GetTaskTemplateRequest&, const Model::GetTaskTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTaskTemplateResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::GetTestCaseExecutionSummaryRequest&,
+                           const Model::GetTestCaseExecutionSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTestCaseExecutionSummaryResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::GetTrafficDistributionRequest&, const Model::GetTrafficDistributionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTrafficDistributionResponseReceivedHandler;
@@ -2070,6 +2126,16 @@ typedef std::function<void(const ConnectClient*, const Model::ListTagsForResourc
 typedef std::function<void(const ConnectClient*, const Model::ListTaskTemplatesRequest&, const Model::ListTaskTemplatesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTaskTemplatesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListTestCaseExecutionRecordsRequest&,
+                           const Model::ListTestCaseExecutionRecordsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestCaseExecutionRecordsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListTestCaseExecutionsRequest&, const Model::ListTestCaseExecutionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestCaseExecutionsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListTestCasesRequest&, const Model::ListTestCasesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTestCasesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListTrafficDistributionGroupUsersRequest&,
                            const Model::ListTrafficDistributionGroupUsersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2181,6 +2247,9 @@ typedef std::function<void(const ConnectClient*, const Model::SearchRoutingProfi
 typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchSecurityProfilesResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchTestCasesRequest&, const Model::SearchTestCasesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchTestCasesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchUserHierarchyGroupsRequest&,
                            const Model::SearchUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchUserHierarchyGroupsResponseReceivedHandler;
@@ -2241,6 +2310,9 @@ typedef std::function<void(const ConnectClient*, const Model::StartScreenSharing
 typedef std::function<void(const ConnectClient*, const Model::StartTaskContactRequest&, const Model::StartTaskContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartTaskContactResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::StartTestCaseExecutionRequest&, const Model::StartTestCaseExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartTestCaseExecutionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::StartWebRTCContactRequest&, const Model::StartWebRTCContactOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartWebRTCContactResponseReceivedHandler;
@@ -2256,6 +2328,9 @@ typedef std::function<void(const ConnectClient*, const Model::StopContactRecordi
 typedef std::function<void(const ConnectClient*, const Model::StopContactStreamingRequest&, const Model::StopContactStreamingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopContactStreamingResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::StopTestCaseExecutionRequest&, const Model::StopTestCaseExecutionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopTestCaseExecutionResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SubmitContactEvaluationRequest&, const Model::SubmitContactEvaluationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SubmitContactEvaluationResponseReceivedHandler;
@@ -2420,6 +2495,9 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateSecurityProf
 typedef std::function<void(const ConnectClient*, const Model::UpdateTaskTemplateRequest&, const Model::UpdateTaskTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTaskTemplateResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateTestCaseRequest&, const Model::UpdateTestCaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateTestCaseResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateTrafficDistributionRequest&,
                            const Model::UpdateTrafficDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTrafficDistributionResponseReceivedHandler;

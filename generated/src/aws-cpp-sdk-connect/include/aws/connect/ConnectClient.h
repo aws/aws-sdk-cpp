@@ -1934,6 +1934,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Creates a test case with its content and metadata for the specified Amazon
+   * Connect instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTestCase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTestCaseOutcome CreateTestCase(const Model::CreateTestCaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateTestCaseRequestT = Model::CreateTestCaseRequest>
+  Model::CreateTestCaseOutcomeCallable CreateTestCaseCallable(const CreateTestCaseRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateTestCase, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTestCase that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateTestCaseRequestT = Model::CreateTestCaseRequest>
+  void CreateTestCaseAsync(const CreateTestCaseRequestT& request, const CreateTestCaseResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateTestCase, request, handler, context);
+  }
+
+  /**
    * <p>Creates a traffic distribution group given an Amazon Connect instance that
    * has been replicated.</p>  <p>The <code>SignInConfig</code> distribution is
    * available only on a default <code>TrafficDistributionGroup</code> (see the
@@ -2922,6 +2948,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void DeleteTaskTemplateAsync(const DeleteTaskTemplateRequestT& request, const DeleteTaskTemplateResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DeleteTaskTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the test case that has already been created for the specified Amazon
+   * Connect instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTestCase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTestCaseOutcome DeleteTestCase(const Model::DeleteTestCaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteTestCaseRequestT = Model::DeleteTestCaseRequest>
+  Model::DeleteTestCaseOutcomeCallable DeleteTestCaseCallable(const DeleteTestCaseRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteTestCase, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTestCase that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteTestCaseRequestT = Model::DeleteTestCaseRequest>
+  void DeleteTestCaseAsync(const DeleteTestCaseRequestT& request, const DeleteTestCaseResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteTestCase, request, handler, context);
   }
 
   /**
@@ -3955,6 +4007,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                     const DescribeSecurityProfileResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DescribeSecurityProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the specified test case and allows you to get the content and
+   * metadata of the test case for the specified Amazon Connect
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTestCase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTestCaseOutcome DescribeTestCase(const Model::DescribeTestCaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTestCase that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeTestCaseRequestT = Model::DescribeTestCaseRequest>
+  Model::DescribeTestCaseOutcomeCallable DescribeTestCaseCallable(const DescribeTestCaseRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeTestCase, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTestCase that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeTestCaseRequestT = Model::DescribeTestCaseRequest>
+  void DescribeTestCaseAsync(const DescribeTestCaseRequestT& request, const DescribeTestCaseResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeTestCase, request, handler, context);
   }
 
   /**
@@ -5175,6 +5255,37 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void GetTaskTemplateAsync(const GetTaskTemplateRequestT& request, const GetTaskTemplateResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::GetTaskTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves an overview of a test execution that includes the status of the
+   * execution, start and end time, and observation summary.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTestCaseExecutionSummary">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTestCaseExecutionSummaryOutcome GetTestCaseExecutionSummary(
+      const Model::GetTestCaseExecutionSummaryRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTestCaseExecutionSummary that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetTestCaseExecutionSummaryRequestT = Model::GetTestCaseExecutionSummaryRequest>
+  Model::GetTestCaseExecutionSummaryOutcomeCallable GetTestCaseExecutionSummaryCallable(
+      const GetTestCaseExecutionSummaryRequestT& request) const {
+    return SubmitCallable(&ConnectClient::GetTestCaseExecutionSummary, request);
+  }
+
+  /**
+   * An Async wrapper for GetTestCaseExecutionSummary that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTestCaseExecutionSummaryRequestT = Model::GetTestCaseExecutionSummaryRequest>
+  void GetTestCaseExecutionSummaryAsync(const GetTestCaseExecutionSummaryRequestT& request,
+                                        const GetTestCaseExecutionSummaryResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::GetTestCaseExecutionSummary, request, handler, context);
   }
 
   /**
@@ -6829,6 +6940,92 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Lists detailed steps of test case execution that includes all observations
+   * along with actions taken and data associated in the specified Amazon Connect
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutionRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTestCaseExecutionRecordsOutcome ListTestCaseExecutionRecords(
+      const Model::ListTestCaseExecutionRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTestCaseExecutionRecords that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListTestCaseExecutionRecordsRequestT = Model::ListTestCaseExecutionRecordsRequest>
+  Model::ListTestCaseExecutionRecordsOutcomeCallable ListTestCaseExecutionRecordsCallable(
+      const ListTestCaseExecutionRecordsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListTestCaseExecutionRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ListTestCaseExecutionRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTestCaseExecutionRecordsRequestT = Model::ListTestCaseExecutionRecordsRequest>
+  void ListTestCaseExecutionRecordsAsync(const ListTestCaseExecutionRecordsRequestT& request,
+                                         const ListTestCaseExecutionRecordsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListTestCaseExecutionRecords, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all test case executions and allows filtering by test case id, test
+   * case name, start time, end time or status of the execution for the specified
+   * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCaseExecutions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTestCaseExecutionsOutcome ListTestCaseExecutions(const Model::ListTestCaseExecutionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTestCaseExecutions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTestCaseExecutionsRequestT = Model::ListTestCaseExecutionsRequest>
+  Model::ListTestCaseExecutionsOutcomeCallable ListTestCaseExecutionsCallable(const ListTestCaseExecutionsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListTestCaseExecutions, request);
+  }
+
+  /**
+   * An Async wrapper for ListTestCaseExecutions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTestCaseExecutionsRequestT = Model::ListTestCaseExecutionsRequest>
+  void ListTestCaseExecutionsAsync(const ListTestCaseExecutionsRequestT& request,
+                                   const ListTestCaseExecutionsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListTestCaseExecutions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the test cases present in the specific Amazon Connect
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTestCases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTestCasesOutcome ListTestCases(const Model::ListTestCasesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTestCases that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListTestCasesRequestT = Model::ListTestCasesRequest>
+  Model::ListTestCasesOutcomeCallable ListTestCasesCallable(const ListTestCasesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListTestCases, request);
+  }
+
+  /**
+   * An Async wrapper for ListTestCases that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListTestCasesRequestT = Model::ListTestCasesRequest>
+  void ListTestCasesAsync(const ListTestCasesRequestT& request, const ListTestCasesResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListTestCases, request, handler, context);
+  }
+
+  /**
    * <p>Lists traffic distribution group users.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">AWS
    * API Reference</a></p>
@@ -7895,6 +8092,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Searches for test cases in the specified Amazon Connect instance, with
+   * optional filtering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchTestCases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchTestCasesOutcome SearchTestCases(const Model::SearchTestCasesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchTestCases that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchTestCasesRequestT = Model::SearchTestCasesRequest>
+  Model::SearchTestCasesOutcomeCallable SearchTestCasesCallable(const SearchTestCasesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchTestCases, request);
+  }
+
+  /**
+   * An Async wrapper for SearchTestCases that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchTestCasesRequestT = Model::SearchTestCasesRequest>
+  void SearchTestCasesAsync(const SearchTestCasesRequestT& request, const SearchTestCasesResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchTestCases, request, handler, context);
+  }
+
+  /**
    * <p>Searches UserHierarchyGroups in an Amazon Connect instance, with optional
    * filtering.</p>  <p>The UserHierarchyGroup with <code>"LevelId":
    * "0"</code> is the foundation for building levels on top of an instance. It is
@@ -8593,6 +8816,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Starts executing a published test case.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTestCaseExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTestCaseExecutionOutcome StartTestCaseExecution(const Model::StartTestCaseExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTestCaseExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartTestCaseExecutionRequestT = Model::StartTestCaseExecutionRequest>
+  Model::StartTestCaseExecutionOutcomeCallable StartTestCaseExecutionCallable(const StartTestCaseExecutionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::StartTestCaseExecution, request);
+  }
+
+  /**
+   * An Async wrapper for StartTestCaseExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartTestCaseExecutionRequestT = Model::StartTestCaseExecutionRequest>
+  void StartTestCaseExecutionAsync(const StartTestCaseExecutionRequestT& request,
+                                   const StartTestCaseExecutionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::StartTestCaseExecution, request, handler, context);
+  }
+
+  /**
    * <p>Places an inbound in-app, web, or video call to a contact, and then initiates
    * the flow. It performs the actions in the flow that are specified (in
    * ContactFlowId) and present in the Amazon Connect instance (specified as
@@ -8740,6 +8990,32 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void StopContactStreamingAsync(const StopContactStreamingRequestT& request, const StopContactStreamingResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::StopContactStreaming, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running test execution.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopTestCaseExecution">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopTestCaseExecutionOutcome StopTestCaseExecution(const Model::StopTestCaseExecutionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopTestCaseExecution that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopTestCaseExecutionRequestT = Model::StopTestCaseExecutionRequest>
+  Model::StopTestCaseExecutionOutcomeCallable StopTestCaseExecutionCallable(const StopTestCaseExecutionRequestT& request) const {
+    return SubmitCallable(&ConnectClient::StopTestCaseExecution, request);
+  }
+
+  /**
+   * An Async wrapper for StopTestCaseExecution that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopTestCaseExecutionRequestT = Model::StopTestCaseExecutionRequest>
+  void StopTestCaseExecutionAsync(const StopTestCaseExecutionRequestT& request, const StopTestCaseExecutionResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::StopTestCaseExecution, request, handler, context);
   }
 
   /**
@@ -10345,6 +10621,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   void UpdateTaskTemplateAsync(const UpdateTaskTemplateRequestT& request, const UpdateTaskTemplateResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateTaskTemplate, request, handler, context);
+  }
+
+  /**
+   * <p>Updates any of the metadata for a test case, such as the name, description,
+   * and status or content of an existing test case. This API doesn't allow customers
+   * to update the tags of the test case resource for the specified Amazon Connect
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTestCase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTestCaseOutcome UpdateTestCase(const Model::UpdateTestCaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTestCase that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateTestCaseRequestT = Model::UpdateTestCaseRequest>
+  Model::UpdateTestCaseOutcomeCallable UpdateTestCaseCallable(const UpdateTestCaseRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateTestCase, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTestCase that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateTestCaseRequestT = Model::UpdateTestCaseRequest>
+  void UpdateTestCaseAsync(const UpdateTestCaseRequestT& request, const UpdateTestCaseResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateTestCase, request, handler, context);
   }
 
   /**
