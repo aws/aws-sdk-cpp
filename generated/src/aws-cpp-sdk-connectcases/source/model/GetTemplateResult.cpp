@@ -78,6 +78,14 @@ GetTemplateResult& GetTemplateResult::operator=(const Aws::AmazonWebServiceResul
     }
     m_rulesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tagPropagationConfigurations")) {
+    Aws::Utils::Array<JsonView> tagPropagationConfigurationsJsonList = jsonValue.GetArray("tagPropagationConfigurations");
+    for (unsigned tagPropagationConfigurationsIndex = 0;
+         tagPropagationConfigurationsIndex < tagPropagationConfigurationsJsonList.GetLength(); ++tagPropagationConfigurationsIndex) {
+      m_tagPropagationConfigurations.push_back(tagPropagationConfigurationsJsonList[tagPropagationConfigurationsIndex].AsObject());
+    }
+    m_tagPropagationConfigurationsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

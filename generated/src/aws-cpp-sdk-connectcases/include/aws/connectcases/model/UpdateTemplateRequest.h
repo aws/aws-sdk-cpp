@@ -8,6 +8,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/connectcases/model/RequiredField.h>
+#include <aws/connectcases/model/TagPropagationConfiguration.h>
 #include <aws/connectcases/model/TemplateRule.h>
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -189,6 +190,32 @@ class UpdateTemplateRequest : public ConnectCasesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines tag propagation configuration for resources created within a domain.
+   * Tags specified here will be automatically applied to resources being created for
+   * the specified resource type.</p>
+   */
+  inline const Aws::Vector<TagPropagationConfiguration>& GetTagPropagationConfigurations() const { return m_tagPropagationConfigurations; }
+  inline bool TagPropagationConfigurationsHasBeenSet() const { return m_tagPropagationConfigurationsHasBeenSet; }
+  template <typename TagPropagationConfigurationsT = Aws::Vector<TagPropagationConfiguration>>
+  void SetTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    m_tagPropagationConfigurationsHasBeenSet = true;
+    m_tagPropagationConfigurations = std::forward<TagPropagationConfigurationsT>(value);
+  }
+  template <typename TagPropagationConfigurationsT = Aws::Vector<TagPropagationConfiguration>>
+  UpdateTemplateRequest& WithTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    SetTagPropagationConfigurations(std::forward<TagPropagationConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TagPropagationConfigurationsT = TagPropagationConfiguration>
+  UpdateTemplateRequest& AddTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    m_tagPropagationConfigurationsHasBeenSet = true;
+    m_tagPropagationConfigurations.emplace_back(std::forward<TagPropagationConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -205,6 +232,8 @@ class UpdateTemplateRequest : public ConnectCasesRequest {
   TemplateStatus m_status{TemplateStatus::NOT_SET};
 
   Aws::Vector<TemplateRule> m_rules;
+
+  Aws::Vector<TagPropagationConfiguration> m_tagPropagationConfigurations;
   bool m_domainIdHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -213,6 +242,7 @@ class UpdateTemplateRequest : public ConnectCasesRequest {
   bool m_requiredFieldsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
+  bool m_tagPropagationConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

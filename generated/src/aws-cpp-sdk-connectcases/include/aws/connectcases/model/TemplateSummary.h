@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/TagPropagationConfiguration.h>
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -101,6 +103,32 @@ class TemplateSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines tag propagation configuration for resources created within a domain.
+   * Tags specified here will be automatically applied to resources being created for
+   * the specified resource type.</p>
+   */
+  inline const Aws::Vector<TagPropagationConfiguration>& GetTagPropagationConfigurations() const { return m_tagPropagationConfigurations; }
+  inline bool TagPropagationConfigurationsHasBeenSet() const { return m_tagPropagationConfigurationsHasBeenSet; }
+  template <typename TagPropagationConfigurationsT = Aws::Vector<TagPropagationConfiguration>>
+  void SetTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    m_tagPropagationConfigurationsHasBeenSet = true;
+    m_tagPropagationConfigurations = std::forward<TagPropagationConfigurationsT>(value);
+  }
+  template <typename TagPropagationConfigurationsT = Aws::Vector<TagPropagationConfiguration>>
+  TemplateSummary& WithTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    SetTagPropagationConfigurations(std::forward<TagPropagationConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TagPropagationConfigurationsT = TagPropagationConfiguration>
+  TemplateSummary& AddTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    m_tagPropagationConfigurationsHasBeenSet = true;
+    m_tagPropagationConfigurations.emplace_back(std::forward<TagPropagationConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_templateId;
 
@@ -109,10 +137,13 @@ class TemplateSummary {
   Aws::String m_name;
 
   TemplateStatus m_status{TemplateStatus::NOT_SET};
+
+  Aws::Vector<TagPropagationConfiguration> m_tagPropagationConfigurations;
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_tagPropagationConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

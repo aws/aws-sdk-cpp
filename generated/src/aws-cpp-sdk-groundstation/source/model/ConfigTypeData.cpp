@@ -46,6 +46,10 @@ ConfigTypeData& ConfigTypeData::operator=(JsonView jsonValue) {
     m_s3RecordingConfig = jsonValue.GetObject("s3RecordingConfig");
     m_s3RecordingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("telemetrySinkConfig")) {
+    m_telemetrySinkConfig = jsonValue.GetObject("telemetrySinkConfig");
+    m_telemetrySinkConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue ConfigTypeData::Jsonize() const {
 
   if (m_s3RecordingConfigHasBeenSet) {
     payload.WithObject("s3RecordingConfig", m_s3RecordingConfig.Jsonize());
+  }
+
+  if (m_telemetrySinkConfigHasBeenSet) {
+    payload.WithObject("telemetrySinkConfig", m_telemetrySinkConfig.Jsonize());
   }
 
   return payload;

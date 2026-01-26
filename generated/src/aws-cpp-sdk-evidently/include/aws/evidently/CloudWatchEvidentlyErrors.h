@@ -44,9 +44,6 @@ enum class CloudWatchEvidentlyErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER,
-  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_CLOUDWATCHEVIDENTLY_API CloudWatchEvidentlyError : public Aws::Client::AWSError<CloudWatchEvidentlyErrors> {

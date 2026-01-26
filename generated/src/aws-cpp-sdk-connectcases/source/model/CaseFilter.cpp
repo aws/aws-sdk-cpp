@@ -26,6 +26,10 @@ CaseFilter& CaseFilter::operator=(JsonView jsonValue) {
     m_not = Aws::MakeShared<CaseFilter>("CaseFilter", jsonValue.GetObject("not"));
     m_notHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tag")) {
+    m_tag = jsonValue.GetObject("tag");
+    m_tagHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("andAll")) {
     Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
     for (unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex) {
@@ -52,6 +56,10 @@ JsonValue CaseFilter::Jsonize() const {
 
   if (m_notHasBeenSet) {
     payload.WithObject("not", m_not->Jsonize());
+  }
+
+  if (m_tagHasBeenSet) {
+    payload.WithObject("tag", m_tag.Jsonize());
   }
 
   if (m_andAllHasBeenSet) {

@@ -24,7 +24,7 @@ class JsonValue;
 namespace GroundStation {
 namespace Model {
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMissionProfileResponse">AWS
  * API Reference</a></p>
  */
@@ -154,7 +154,7 @@ class GetMissionProfileResult {
   ///@{
   /**
    * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-   * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+   * <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
    */
   inline const Aws::Vector<Aws::Vector<Aws::String>>& GetDataflowEdges() const { return m_dataflowEdges; }
   template <typename DataflowEdgesT = Aws::Vector<Aws::Vector<Aws::String>>>
@@ -188,6 +188,23 @@ class GetMissionProfileResult {
   template <typename TrackingConfigArnT = Aws::String>
   GetMissionProfileResult& WithTrackingConfigArn(TrackingConfigArnT&& value) {
     SetTrackingConfigArn(std::forward<TrackingConfigArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ARN of a telemetry sink <code>Config</code>.</p>
+   */
+  inline const Aws::String& GetTelemetrySinkConfigArn() const { return m_telemetrySinkConfigArn; }
+  template <typename TelemetrySinkConfigArnT = Aws::String>
+  void SetTelemetrySinkConfigArn(TelemetrySinkConfigArnT&& value) {
+    m_telemetrySinkConfigArnHasBeenSet = true;
+    m_telemetrySinkConfigArn = std::forward<TelemetrySinkConfigArnT>(value);
+  }
+  template <typename TelemetrySinkConfigArnT = Aws::String>
+  GetMissionProfileResult& WithTelemetrySinkConfigArn(TelemetrySinkConfigArnT&& value) {
+    SetTelemetrySinkConfigArn(std::forward<TelemetrySinkConfigArnT>(value));
     return *this;
   }
   ///@}
@@ -282,6 +299,8 @@ class GetMissionProfileResult {
 
   Aws::String m_trackingConfigArn;
 
+  Aws::String m_telemetrySinkConfigArn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   KmsKey m_streamsKmsKey;
@@ -298,6 +317,7 @@ class GetMissionProfileResult {
   bool m_minimumViableContactDurationSecondsHasBeenSet = false;
   bool m_dataflowEdgesHasBeenSet = false;
   bool m_trackingConfigArnHasBeenSet = false;
+  bool m_telemetrySinkConfigArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_streamsKmsKeyHasBeenSet = false;
   bool m_streamsKmsRoleHasBeenSet = false;

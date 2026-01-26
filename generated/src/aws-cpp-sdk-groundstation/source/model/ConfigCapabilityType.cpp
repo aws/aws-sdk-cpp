@@ -22,6 +22,7 @@ static const int dataflow_endpoint_HASH = HashingUtils::HashString("dataflow-end
 static const int antenna_uplink_HASH = HashingUtils::HashString("antenna-uplink");
 static const int uplink_echo_HASH = HashingUtils::HashString("uplink-echo");
 static const int s3_recording_HASH = HashingUtils::HashString("s3-recording");
+static const int telemetry_sink_HASH = HashingUtils::HashString("telemetry-sink");
 
 ConfigCapabilityType GetConfigCapabilityTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ ConfigCapabilityType GetConfigCapabilityTypeForName(const Aws::String& name) {
     return ConfigCapabilityType::uplink_echo;
   } else if (hashCode == s3_recording_HASH) {
     return ConfigCapabilityType::s3_recording;
+  } else if (hashCode == telemetry_sink_HASH) {
+    return ConfigCapabilityType::telemetry_sink;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForConfigCapabilityType(ConfigCapabilityType enumValue) {
       return "uplink-echo";
     case ConfigCapabilityType::s3_recording:
       return "s3-recording";
+    case ConfigCapabilityType::telemetry_sink:
+      return "telemetry-sink";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
