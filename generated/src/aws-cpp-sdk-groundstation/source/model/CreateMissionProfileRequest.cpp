@@ -47,6 +47,10 @@ Aws::String CreateMissionProfileRequest::SerializePayload() const {
     payload.WithString("trackingConfigArn", m_trackingConfigArn);
   }
 
+  if (m_telemetrySinkConfigArnHasBeenSet) {
+    payload.WithString("telemetrySinkConfigArn", m_telemetrySinkConfigArn);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

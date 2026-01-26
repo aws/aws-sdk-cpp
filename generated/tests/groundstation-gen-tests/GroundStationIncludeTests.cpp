@@ -120,6 +120,7 @@
 #include <aws/groundstation/model/ISO8601TimeRange.h>
 #include <aws/groundstation/model/IntegerRange.h>
 #include <aws/groundstation/model/InvalidParameterException.h>
+#include <aws/groundstation/model/KinesisDataStreamData.h>
 #include <aws/groundstation/model/KmsKey.h>
 #include <aws/groundstation/model/ListConfigsRequest.h>
 #include <aws/groundstation/model/ListConfigsResult.h>
@@ -161,6 +162,9 @@
 #include <aws/groundstation/model/TLEEphemeris.h>
 #include <aws/groundstation/model/TagResourceRequest.h>
 #include <aws/groundstation/model/TagResourceResult.h>
+#include <aws/groundstation/model/TelemetrySinkConfig.h>
+#include <aws/groundstation/model/TelemetrySinkData.h>
+#include <aws/groundstation/model/TelemetrySinkType.h>
 #include <aws/groundstation/model/TimeAzEl.h>
 #include <aws/groundstation/model/TimeRange.h>
 #include <aws/groundstation/model/TrackingConfig.h>

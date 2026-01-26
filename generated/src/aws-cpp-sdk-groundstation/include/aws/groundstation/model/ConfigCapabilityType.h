@@ -18,7 +18,8 @@ enum class ConfigCapabilityType {
   dataflow_endpoint,
   antenna_uplink,
   uplink_echo,
-  s3_recording
+  s3_recording,
+  telemetry_sink
 };
 
 namespace ConfigCapabilityTypeMapper {

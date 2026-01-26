@@ -47,5 +47,15 @@ Aws::String CreateTemplateRequest::SerializePayload() const {
     payload.WithArray("rules", std::move(rulesJsonList));
   }
 
+  if (m_tagPropagationConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagPropagationConfigurationsJsonList(m_tagPropagationConfigurations.size());
+    for (unsigned tagPropagationConfigurationsIndex = 0;
+         tagPropagationConfigurationsIndex < tagPropagationConfigurationsJsonList.GetLength(); ++tagPropagationConfigurationsIndex) {
+      tagPropagationConfigurationsJsonList[tagPropagationConfigurationsIndex].AsObject(
+          m_tagPropagationConfigurations[tagPropagationConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("tagPropagationConfigurations", std::move(tagPropagationConfigurationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

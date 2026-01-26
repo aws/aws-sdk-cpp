@@ -10,6 +10,7 @@
 #include <aws/groundstation/model/AntennaUplinkConfig.h>
 #include <aws/groundstation/model/DataflowEndpointConfig.h>
 #include <aws/groundstation/model/S3RecordingConfig.h>
+#include <aws/groundstation/model/TelemetrySinkConfig.h>
 #include <aws/groundstation/model/TrackingConfig.h>
 #include <aws/groundstation/model/UplinkEchoConfig.h>
 
@@ -136,9 +137,9 @@ class ConfigTypeData {
   ///@{
   /**
    * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
-   * the <code>AntennaUplinkConfig</code>, corresponding to the specified
-   * <code>AntennaUplinkConfigArn</code>, are used when this
-   * <code>UplinkEchoConfig</code> is used in a contact.</p>
+   * the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>
+   * AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code>
+   * is used in a contact.</p>
    */
   inline const UplinkEchoConfig& GetUplinkEchoConfig() const { return m_uplinkEchoConfig; }
   inline bool UplinkEchoConfigHasBeenSet() const { return m_uplinkEchoConfigHasBeenSet; }
@@ -171,6 +172,24 @@ class ConfigTypeData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about a telemetry sink <code>Config</code>.</p>
+   */
+  inline const TelemetrySinkConfig& GetTelemetrySinkConfig() const { return m_telemetrySinkConfig; }
+  inline bool TelemetrySinkConfigHasBeenSet() const { return m_telemetrySinkConfigHasBeenSet; }
+  template <typename TelemetrySinkConfigT = TelemetrySinkConfig>
+  void SetTelemetrySinkConfig(TelemetrySinkConfigT&& value) {
+    m_telemetrySinkConfigHasBeenSet = true;
+    m_telemetrySinkConfig = std::forward<TelemetrySinkConfigT>(value);
+  }
+  template <typename TelemetrySinkConfigT = TelemetrySinkConfig>
+  ConfigTypeData& WithTelemetrySinkConfig(TelemetrySinkConfigT&& value) {
+    SetTelemetrySinkConfig(std::forward<TelemetrySinkConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AntennaDownlinkConfig m_antennaDownlinkConfig;
 
@@ -185,6 +204,8 @@ class ConfigTypeData {
   UplinkEchoConfig m_uplinkEchoConfig;
 
   S3RecordingConfig m_s3RecordingConfig;
+
+  TelemetrySinkConfig m_telemetrySinkConfig;
   bool m_antennaDownlinkConfigHasBeenSet = false;
   bool m_trackingConfigHasBeenSet = false;
   bool m_dataflowEndpointConfigHasBeenSet = false;
@@ -192,6 +213,7 @@ class ConfigTypeData {
   bool m_antennaUplinkConfigHasBeenSet = false;
   bool m_uplinkEchoConfigHasBeenSet = false;
   bool m_s3RecordingConfigHasBeenSet = false;
+  bool m_telemetrySinkConfigHasBeenSet = false;
 };
 
 }  // namespace Model

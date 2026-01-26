@@ -9,6 +9,7 @@
 #include <aws/connectcases/model/FieldValue.h>
 #include <aws/connectcases/model/UserUnion.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -130,6 +131,31 @@ class CreateCaseRequest : public ConnectCasesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
+   * to organize, track, or control access for this resource.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateCaseRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateCaseRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -140,11 +166,14 @@ class CreateCaseRequest : public ConnectCasesRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   UserUnion m_performedBy;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_domainIdHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_performedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

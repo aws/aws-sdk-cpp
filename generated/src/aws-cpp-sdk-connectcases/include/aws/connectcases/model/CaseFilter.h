@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/FieldFilter.h>
+#include <aws/connectcases/model/TagFilter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -69,6 +70,24 @@ class CaseFilter {
 
   ///@{
   /**
+   * <p>A list of tags to filter on.</p>
+   */
+  inline const TagFilter& GetTag() const { return m_tag; }
+  inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+  template <typename TagT = TagFilter>
+  void SetTag(TagT&& value) {
+    m_tagHasBeenSet = true;
+    m_tag = std::forward<TagT>(value);
+  }
+  template <typename TagT = TagFilter>
+  CaseFilter& WithTag(TagT&& value) {
+    SetTag(std::forward<TagT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Provides "and all" filtering.</p>
    */
   inline const Aws::Vector<CaseFilter>& GetAndAll() const { return m_andAll; }
@@ -119,11 +138,14 @@ class CaseFilter {
 
   std::shared_ptr<CaseFilter> m_not;
 
+  TagFilter m_tag;
+
   Aws::Vector<CaseFilter> m_andAll;
 
   Aws::Vector<CaseFilter> m_orAll;
   bool m_fieldHasBeenSet = false;
   bool m_notHasBeenSet = false;
+  bool m_tagHasBeenSet = false;
   bool m_andAllHasBeenSet = false;
   bool m_orAllHasBeenSet = false;
 };

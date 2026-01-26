@@ -86,6 +86,25 @@ class NetworkCardInfo {
 
   ///@{
   /**
+   * <p>The number of additional network interfaces that can be attached to an
+   * instance when using flexible Elastic Network Adapter (ENA) queues. This number
+   * is in addition to the base number specified by
+   * <code>maximumNetworkInterfaces</code>.</p>
+   */
+  inline int GetAdditionalFlexibleNetworkInterfaces() const { return m_additionalFlexibleNetworkInterfaces; }
+  inline bool AdditionalFlexibleNetworkInterfacesHasBeenSet() const { return m_additionalFlexibleNetworkInterfacesHasBeenSet; }
+  inline void SetAdditionalFlexibleNetworkInterfaces(int value) {
+    m_additionalFlexibleNetworkInterfacesHasBeenSet = true;
+    m_additionalFlexibleNetworkInterfaces = value;
+  }
+  inline NetworkCardInfo& WithAdditionalFlexibleNetworkInterfaces(int value) {
+    SetAdditionalFlexibleNetworkInterfaces(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The baseline network performance of the network card, in Gbps.</p>
    */
   inline double GetBaselineBandwidthInGbps() const { return m_baselineBandwidthInGbps; }
@@ -170,6 +189,8 @@ class NetworkCardInfo {
 
   int m_maximumNetworkInterfaces{0};
 
+  int m_additionalFlexibleNetworkInterfaces{0};
+
   double m_baselineBandwidthInGbps{0.0};
 
   double m_peakBandwidthInGbps{0.0};
@@ -182,6 +203,7 @@ class NetworkCardInfo {
   bool m_networkCardIndexHasBeenSet = false;
   bool m_networkPerformanceHasBeenSet = false;
   bool m_maximumNetworkInterfacesHasBeenSet = false;
+  bool m_additionalFlexibleNetworkInterfacesHasBeenSet = false;
   bool m_baselineBandwidthInGbpsHasBeenSet = false;
   bool m_peakBandwidthInGbpsHasBeenSet = false;
   bool m_defaultEnaQueueCountPerInterfaceHasBeenSet = false;

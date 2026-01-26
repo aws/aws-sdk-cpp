@@ -66,6 +66,10 @@ GetMissionProfileResult& GetMissionProfileResult::operator=(const Aws::AmazonWeb
     m_trackingConfigArn = jsonValue.GetString("trackingConfigArn");
     m_trackingConfigArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("telemetrySinkConfigArn")) {
+    m_telemetrySinkConfigArn = jsonValue.GetString("telemetrySinkConfigArn");
+    m_telemetrySinkConfigArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {

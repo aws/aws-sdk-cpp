@@ -40,6 +40,12 @@ NetworkCardInfo& NetworkCardInfo::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
       m_maximumNetworkInterfacesHasBeenSet = true;
     }
+    XmlNode additionalFlexibleNetworkInterfacesNode = resultNode.FirstChild("additionalFlexibleNetworkInterfaces");
+    if (!additionalFlexibleNetworkInterfacesNode.IsNull()) {
+      m_additionalFlexibleNetworkInterfaces = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(additionalFlexibleNetworkInterfacesNode.GetText()).c_str()).c_str());
+      m_additionalFlexibleNetworkInterfacesHasBeenSet = true;
+    }
     XmlNode baselineBandwidthInGbpsNode = resultNode.FirstChild("baselineBandwidthInGbps");
     if (!baselineBandwidthInGbpsNode.IsNull()) {
       m_baselineBandwidthInGbps = StringUtils::ConvertToDouble(
@@ -88,6 +94,11 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
     oStream << location << index << locationValue << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
   }
 
+  if (m_additionalFlexibleNetworkInterfacesHasBeenSet) {
+    oStream << location << index << locationValue << ".AdditionalFlexibleNetworkInterfaces=" << m_additionalFlexibleNetworkInterfaces
+            << "&";
+  }
+
   if (m_baselineBandwidthInGbpsHasBeenSet) {
     oStream << location << index << locationValue << ".BaselineBandwidthInGbps=" << StringUtils::URLEncode(m_baselineBandwidthInGbps)
             << "&";
@@ -119,6 +130,9 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if (m_maximumNetworkInterfacesHasBeenSet) {
     oStream << location << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+  if (m_additionalFlexibleNetworkInterfacesHasBeenSet) {
+    oStream << location << ".AdditionalFlexibleNetworkInterfaces=" << m_additionalFlexibleNetworkInterfaces << "&";
   }
   if (m_baselineBandwidthInGbpsHasBeenSet) {
     oStream << location << ".BaselineBandwidthInGbps=" << StringUtils::URLEncode(m_baselineBandwidthInGbps) << "&";

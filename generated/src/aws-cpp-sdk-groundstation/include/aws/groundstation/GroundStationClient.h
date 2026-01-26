@@ -80,7 +80,12 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   virtual ~GroundStationClient();
 
   /**
-   * <p>Cancels a contact with a specified contact ID.</p><p><h3>See Also:</h3>   <a
+   * <p>Cancels or stops a contact with a specified contact ID based on its position
+   * in the <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/ug/contacts.lifecycle.html">contact
+   * lifecycle</a>.</p> <p>For contacts that:</p> <ul> <li> <p>Have yet to start, the
+   * contact will be cancelled.</p> </li> <li> <p>Have started but have yet to
+   * finish, the contact will be stopped.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CancelContact">AWS
    * API Reference</a></p>
    */
@@ -133,11 +138,11 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Creates a <code>DataflowEndpoint</code> group containing the specified list
-   * of <code>DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in
-   * each endpoint is used in your mission profile
-   * <code>DataflowEndpointConfig</code> to specify which endpoints to use during a
+   * of <code> DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in
+   * each endpoint is used in your mission profile <code>
+   * DataflowEndpointConfig</code> to specify which endpoints to use during a
    * contact.</p> <p>When a contact uses multiple <code>DataflowEndpointConfig</code>
-   * objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in
+   * objects, each <code> Config</code> must match a <code>DataflowEndpoint</code> in
    * the same group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroup">AWS
    * API Reference</a></p>
@@ -167,12 +172,12 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Creates a <code>DataflowEndpointGroupV2</code> containing the specified list
-   * of <code>DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in
-   * each endpoint is used in your mission profile
-   * <code>DataflowEndpointConfig</code> to specify which endpoints to use during a
+   * <p>Creates a <code>DataflowEndpoint</code> group containing the specified list
+   * of Ground Station Agent based endpoints.</p> <p>The <code>name</code> field in
+   * each endpoint is used in your mission profile <code>
+   * DataflowEndpointConfig</code> to specify which endpoints to use during a
    * contact.</p> <p>When a contact uses multiple <code>DataflowEndpointConfig</code>
-   * objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in
+   * objects, each <code> Config</code> must match a <code>DataflowEndpoint</code> in
    * the same group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroupV2">AWS
    * API Reference</a></p>
@@ -627,7 +632,7 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
 
   /**
    * <p>Returns a list of contacts.</p> <p>If <code>statusList</code> contains
-   * AVAILABLE, the request must include <code>groundStation</code>,
+   * AVAILABLE, the request must include <code> groundStation</code>,
    * <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContacts">AWS

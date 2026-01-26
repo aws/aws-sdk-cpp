@@ -168,7 +168,11 @@
 #include <aws/connectcases/model/SlaStatus.h>
 #include <aws/connectcases/model/SlaType.h>
 #include <aws/connectcases/model/Sort.h>
+#include <aws/connectcases/model/TagFilter.h>
+#include <aws/connectcases/model/TagPropagationConfiguration.h>
+#include <aws/connectcases/model/TagPropagationResourceType.h>
 #include <aws/connectcases/model/TagResourceRequest.h>
+#include <aws/connectcases/model/TagValue.h>
 #include <aws/connectcases/model/TemplateRule.h>
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/connectcases/model/TemplateSummary.h>

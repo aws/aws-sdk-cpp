@@ -57,10 +57,11 @@ class CreateDataflowEndpointGroupV2Request : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time, in seconds, before a contact starts that the Ground Station
-   * Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground
-   * Station Dataflow Endpoint Group State Change event will be emitted when the
-   * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
+   * <p> Amount of time, in seconds, before a contact starts that the Ground Station
+   * Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/ug/monitoring.automating-events.html">Ground
+   * Station Dataflow Endpoint Group State Change event</a> will be emitted when the
+   * Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state. </p>
    */
   inline int GetContactPrePassDurationSeconds() const { return m_contactPrePassDurationSeconds; }
   inline bool ContactPrePassDurationSecondsHasBeenSet() const { return m_contactPrePassDurationSecondsHasBeenSet; }
@@ -76,10 +77,11 @@ class CreateDataflowEndpointGroupV2Request : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time, in seconds, after a contact ends that the Ground Station
-   * Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground
-   * Station Dataflow Endpoint Group State Change event will be emitted when the
-   * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
+   * <p> Amount of time, in seconds, after a contact ends that the Ground Station
+   * Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A <a
+   * href="https://docs.aws.amazon.com/ground-station/latest/ug/monitoring.automating-events.html">Ground
+   * Station Dataflow Endpoint Group State Change event</a> will be emitted when the
+   * Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state. </p>
    */
   inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
   inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }

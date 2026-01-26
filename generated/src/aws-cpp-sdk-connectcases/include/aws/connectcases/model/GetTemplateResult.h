@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/LayoutConfiguration.h>
 #include <aws/connectcases/model/RequiredField.h>
+#include <aws/connectcases/model/TagPropagationConfiguration.h>
 #include <aws/connectcases/model/TemplateRule.h>
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -256,6 +257,31 @@ class GetTemplateResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Defines tag propagation configuration for resources created within a domain.
+   * Tags specified here will be automatically applied to resources being created for
+   * the specified resource type.</p>
+   */
+  inline const Aws::Vector<TagPropagationConfiguration>& GetTagPropagationConfigurations() const { return m_tagPropagationConfigurations; }
+  template <typename TagPropagationConfigurationsT = Aws::Vector<TagPropagationConfiguration>>
+  void SetTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    m_tagPropagationConfigurationsHasBeenSet = true;
+    m_tagPropagationConfigurations = std::forward<TagPropagationConfigurationsT>(value);
+  }
+  template <typename TagPropagationConfigurationsT = Aws::Vector<TagPropagationConfiguration>>
+  GetTemplateResult& WithTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    SetTagPropagationConfigurations(std::forward<TagPropagationConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TagPropagationConfigurationsT = TagPropagationConfiguration>
+  GetTemplateResult& AddTagPropagationConfigurations(TagPropagationConfigurationsT&& value) {
+    m_tagPropagationConfigurationsHasBeenSet = true;
+    m_tagPropagationConfigurations.emplace_back(std::forward<TagPropagationConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -294,6 +320,8 @@ class GetTemplateResult {
 
   Aws::Vector<TemplateRule> m_rules;
 
+  Aws::Vector<TagPropagationConfiguration> m_tagPropagationConfigurations;
+
   Aws::String m_requestId;
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
@@ -307,6 +335,7 @@ class GetTemplateResult {
   bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
+  bool m_tagPropagationConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

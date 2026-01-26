@@ -47,6 +47,10 @@ Aws::String UpdateMissionProfileRequest::SerializePayload() const {
     payload.WithString("trackingConfigArn", m_trackingConfigArn);
   }
 
+  if (m_telemetrySinkConfigArnHasBeenSet) {
+    payload.WithString("telemetrySinkConfigArn", m_telemetrySinkConfigArn);
+  }
+
   if (m_streamsKmsKeyHasBeenSet) {
     payload.WithObject("streamsKmsKey", m_streamsKmsKey.Jsonize());
   }

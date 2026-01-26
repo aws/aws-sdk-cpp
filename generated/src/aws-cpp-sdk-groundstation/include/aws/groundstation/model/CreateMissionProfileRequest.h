@@ -18,7 +18,7 @@ namespace GroundStation {
 namespace Model {
 
 /**
- * <p/><p><h3>See Also:</h3>   <a
+ * <p> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateMissionProfileRequest">AWS
  * API Reference</a></p>
  */
@@ -71,7 +71,7 @@ class CreateMissionProfileRequest : public GroundStationRequest {
 
   ///@{
   /**
-   * <p>Amount of time after a contact ends that you���d like to receive a Ground
+   * <p>Amount of time after a contact ends that you’d like to receive a Ground
    * Station Contact State Change event indicating the pass has finished.</p>
    */
   inline int GetContactPostPassDurationSeconds() const { return m_contactPostPassDurationSeconds; }
@@ -107,7 +107,7 @@ class CreateMissionProfileRequest : public GroundStationRequest {
   ///@{
   /**
    * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-   * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+   * <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
    */
   inline const Aws::Vector<Aws::Vector<Aws::String>>& GetDataflowEdges() const { return m_dataflowEdges; }
   inline bool DataflowEdgesHasBeenSet() const { return m_dataflowEdgesHasBeenSet; }
@@ -143,6 +143,24 @@ class CreateMissionProfileRequest : public GroundStationRequest {
   template <typename TrackingConfigArnT = Aws::String>
   CreateMissionProfileRequest& WithTrackingConfigArn(TrackingConfigArnT&& value) {
     SetTrackingConfigArn(std::forward<TrackingConfigArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ARN of a telemetry sink <code>Config</code>.</p>
+   */
+  inline const Aws::String& GetTelemetrySinkConfigArn() const { return m_telemetrySinkConfigArn; }
+  inline bool TelemetrySinkConfigArnHasBeenSet() const { return m_telemetrySinkConfigArnHasBeenSet; }
+  template <typename TelemetrySinkConfigArnT = Aws::String>
+  void SetTelemetrySinkConfigArn(TelemetrySinkConfigArnT&& value) {
+    m_telemetrySinkConfigArnHasBeenSet = true;
+    m_telemetrySinkConfigArn = std::forward<TelemetrySinkConfigArnT>(value);
+  }
+  template <typename TelemetrySinkConfigArnT = Aws::String>
+  CreateMissionProfileRequest& WithTelemetrySinkConfigArn(TelemetrySinkConfigArnT&& value) {
+    SetTelemetrySinkConfigArn(std::forward<TelemetrySinkConfigArnT>(value));
     return *this;
   }
   ///@}
@@ -219,6 +237,8 @@ class CreateMissionProfileRequest : public GroundStationRequest {
 
   Aws::String m_trackingConfigArn;
 
+  Aws::String m_telemetrySinkConfigArn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   KmsKey m_streamsKmsKey;
@@ -230,6 +250,7 @@ class CreateMissionProfileRequest : public GroundStationRequest {
   bool m_minimumViableContactDurationSecondsHasBeenSet = false;
   bool m_dataflowEdgesHasBeenSet = false;
   bool m_trackingConfigArnHasBeenSet = false;
+  bool m_telemetrySinkConfigArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_streamsKmsKeyHasBeenSet = false;
   bool m_streamsKmsRoleHasBeenSet = false;
