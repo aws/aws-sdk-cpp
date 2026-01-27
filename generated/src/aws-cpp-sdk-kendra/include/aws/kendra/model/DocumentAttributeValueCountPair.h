@@ -7,9 +7,12 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/model/DocumentAttributeValue.h>
-#include <aws/kendra/model/FacetResult.h>
 
 #include <utility>
+
+// Include full definition - #pragma once will prevent infinite recursion
+// This ensures complete type is available when member variable is declared
+#include <aws/kendra/model/FacetResult.h>
 
 namespace Aws {
 namespace Utils {

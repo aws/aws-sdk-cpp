@@ -7,10 +7,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
-#include <aws/kendra/model/DocumentAttributeValueCountPair.h>
 #include <aws/kendra/model/DocumentAttributeValueType.h>
 
 #include <utility>
+
+// Include full definition - #pragma once will prevent infinite recursion
+// This ensures complete type is available when member variable is declared
+#include <aws/kendra/model/DocumentAttributeValueCountPair.h>
 
 namespace Aws {
 namespace Utils {
