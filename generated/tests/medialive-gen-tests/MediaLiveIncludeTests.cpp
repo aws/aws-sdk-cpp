@@ -80,6 +80,7 @@
 #include <aws/medialive/model/Av1Settings.h>
 #include <aws/medialive/model/Av1SpatialAq.h>
 #include <aws/medialive/model/Av1TemporalAq.h>
+#include <aws/medialive/model/Av1TimecodeInsertionBehavior.h>
 #include <aws/medialive/model/AvailBlanking.h>
 #include <aws/medialive/model/AvailBlankingState.h>
 #include <aws/medialive/model/AvailConfiguration.h>
@@ -273,6 +274,7 @@
 #include <aws/medialive/model/DescribeThumbnailsResult.h>
 #include <aws/medialive/model/DeviceSettingsSyncState.h>
 #include <aws/medialive/model/DeviceUpdateStatus.h>
+#include <aws/medialive/model/DisabledLockingSettings.h>
 #include <aws/medialive/model/DolbyEProgramSelection.h>
 #include <aws/medialive/model/DolbyVision81Settings.h>
 #include <aws/medialive/model/DvbDashAccessibility.h>

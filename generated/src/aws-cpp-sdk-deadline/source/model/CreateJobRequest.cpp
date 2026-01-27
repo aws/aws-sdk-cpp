@@ -65,6 +65,14 @@ Aws::String CreateJobRequest::SerializePayload() const {
     payload.WithString("sourceJobId", m_sourceJobId);
   }
 
+  if (m_nameOverrideHasBeenSet) {
+    payload.WithString("nameOverride", m_nameOverride);
+  }
+
+  if (m_descriptionOverrideHasBeenSet) {
+    payload.WithString("descriptionOverride", m_descriptionOverride);
+  }
+
   return payload.View().WriteReadable();
 }
 

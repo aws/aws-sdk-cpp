@@ -8,10 +8,12 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Reference.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
+#include <aws/connect/model/TaskAttachment.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -338,6 +340,31 @@ class StartTaskContactRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>List of S3 presigned URLs of task attachments and their file name. You can
+   * have a maximum of 5 attachments per task.</p>
+   */
+  inline const Aws::Vector<TaskAttachment>& GetAttachments() const { return m_attachments; }
+  inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+  template <typename AttachmentsT = Aws::Vector<TaskAttachment>>
+  void SetAttachments(AttachmentsT&& value) {
+    m_attachmentsHasBeenSet = true;
+    m_attachments = std::forward<AttachmentsT>(value);
+  }
+  template <typename AttachmentsT = Aws::Vector<TaskAttachment>>
+  StartTaskContactRequest& WithAttachments(AttachmentsT&& value) {
+    SetAttachments(std::forward<AttachmentsT>(value));
+    return *this;
+  }
+  template <typename AttachmentsT = TaskAttachment>
+  StartTaskContactRequest& AddAttachments(AttachmentsT&& value) {
+    m_attachmentsHasBeenSet = true;
+    m_attachments.emplace_back(std::forward<AttachmentsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -364,6 +391,8 @@ class StartTaskContactRequest : public ConnectRequest {
   Aws::String m_relatedContactId;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
+
+  Aws::Vector<TaskAttachment> m_attachments;
   bool m_instanceIdHasBeenSet = false;
   bool m_previousContactIdHasBeenSet = false;
   bool m_contactFlowIdHasBeenSet = false;
@@ -377,6 +406,7 @@ class StartTaskContactRequest : public ConnectRequest {
   bool m_quickConnectIdHasBeenSet = false;
   bool m_relatedContactIdHasBeenSet = false;
   bool m_segmentAttributesHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
 };
 
 }  // namespace Model

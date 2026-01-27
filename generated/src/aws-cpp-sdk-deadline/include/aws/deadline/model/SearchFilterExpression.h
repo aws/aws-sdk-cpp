@@ -111,7 +111,7 @@ class SearchFilterExpression {
 
   ///@{
   /**
-   * <p>Filters by a list of string values.</p>
+   * <p>Filters by a list of strings.</p>
    */
   inline const StringListFilterExpression& GetStringListFilter() const { return m_stringListFilter; }
   inline bool StringListFilterHasBeenSet() const { return m_stringListFilterHasBeenSet; }

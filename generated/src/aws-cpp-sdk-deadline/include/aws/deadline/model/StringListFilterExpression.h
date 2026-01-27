@@ -22,7 +22,7 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>Searches for a match within a list of strings.</p><p><h3>See Also:</h3>   <a
+ * <p>Searches for a particular list of strings.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/StringListFilterExpression">AWS
  * API Reference</a></p>
  */
@@ -53,8 +53,7 @@ class StringListFilterExpression {
 
   ///@{
   /**
-   * <p>The type of comparison to use for this search. ANY_EQUALS and ALL_NOT_EQUALS
-   * are supported.</p>
+   * <p>The type of comparison to use for this search.</p>
    */
   inline ComparisonOperator GetOperator() const { return m_operator; }
   inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }

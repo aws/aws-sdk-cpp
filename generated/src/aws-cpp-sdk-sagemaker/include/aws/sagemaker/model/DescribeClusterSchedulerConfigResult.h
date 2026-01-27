@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/SchedulerConfig.h>
+#include <aws/sagemaker/model/SchedulerConfigComponent.h>
 #include <aws/sagemaker/model/SchedulerResourceStatus.h>
 #include <aws/sagemaker/model/UserContext.h>
 
@@ -124,6 +126,30 @@ class DescribeClusterSchedulerConfigResult {
   template <typename FailureReasonT = Aws::String>
   DescribeClusterSchedulerConfigResult& WithFailureReason(FailureReasonT&& value) {
     SetFailureReason(std::forward<FailureReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional details about the status of the cluster policy. This field
+   * provides context when the policy is in a non-active state, such as during
+   * creation, updates, or if failures occur.</p>
+   */
+  inline const Aws::Map<SchedulerConfigComponent, SchedulerResourceStatus>& GetStatusDetails() const { return m_statusDetails; }
+  template <typename StatusDetailsT = Aws::Map<SchedulerConfigComponent, SchedulerResourceStatus>>
+  void SetStatusDetails(StatusDetailsT&& value) {
+    m_statusDetailsHasBeenSet = true;
+    m_statusDetails = std::forward<StatusDetailsT>(value);
+  }
+  template <typename StatusDetailsT = Aws::Map<SchedulerConfigComponent, SchedulerResourceStatus>>
+  DescribeClusterSchedulerConfigResult& WithStatusDetails(StatusDetailsT&& value) {
+    SetStatusDetails(std::forward<StatusDetailsT>(value));
+    return *this;
+  }
+  inline DescribeClusterSchedulerConfigResult& AddStatusDetails(SchedulerConfigComponent key, SchedulerResourceStatus value) {
+    m_statusDetailsHasBeenSet = true;
+    m_statusDetails.emplace(key, value);
     return *this;
   }
   ///@}
@@ -272,6 +298,8 @@ class DescribeClusterSchedulerConfigResult {
 
   Aws::String m_failureReason;
 
+  Aws::Map<SchedulerConfigComponent, SchedulerResourceStatus> m_statusDetails;
+
   Aws::String m_clusterArn;
 
   SchedulerConfig m_schedulerConfig;
@@ -293,6 +321,7 @@ class DescribeClusterSchedulerConfigResult {
   bool m_clusterSchedulerConfigVersionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
   bool m_schedulerConfigHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

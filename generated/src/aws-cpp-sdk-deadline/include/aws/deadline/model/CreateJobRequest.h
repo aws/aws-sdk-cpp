@@ -292,6 +292,43 @@ class CreateJobRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A custom name to override the job name derived from the job template.</p>
+   */
+  inline const Aws::String& GetNameOverride() const { return m_nameOverride; }
+  inline bool NameOverrideHasBeenSet() const { return m_nameOverrideHasBeenSet; }
+  template <typename NameOverrideT = Aws::String>
+  void SetNameOverride(NameOverrideT&& value) {
+    m_nameOverrideHasBeenSet = true;
+    m_nameOverride = std::forward<NameOverrideT>(value);
+  }
+  template <typename NameOverrideT = Aws::String>
+  CreateJobRequest& WithNameOverride(NameOverrideT&& value) {
+    SetNameOverride(std::forward<NameOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A custom description to override the job description derived from the job
+   * template.</p>
+   */
+  inline const Aws::String& GetDescriptionOverride() const { return m_descriptionOverride; }
+  inline bool DescriptionOverrideHasBeenSet() const { return m_descriptionOverrideHasBeenSet; }
+  template <typename DescriptionOverrideT = Aws::String>
+  void SetDescriptionOverride(DescriptionOverrideT&& value) {
+    m_descriptionOverrideHasBeenSet = true;
+    m_descriptionOverride = std::forward<DescriptionOverrideT>(value);
+  }
+  template <typename DescriptionOverrideT = Aws::String>
+  CreateJobRequest& WithDescriptionOverride(DescriptionOverrideT&& value) {
+    SetDescriptionOverride(std::forward<DescriptionOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -320,6 +357,10 @@ class CreateJobRequest : public DeadlineRequest {
   int m_maxWorkerCount{0};
 
   Aws::String m_sourceJobId;
+
+  Aws::String m_nameOverride;
+
+  Aws::String m_descriptionOverride;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
@@ -334,6 +375,8 @@ class CreateJobRequest : public DeadlineRequest {
   bool m_maxRetriesPerTaskHasBeenSet = false;
   bool m_maxWorkerCountHasBeenSet = false;
   bool m_sourceJobIdHasBeenSet = false;
+  bool m_nameOverrideHasBeenSet = false;
+  bool m_descriptionOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

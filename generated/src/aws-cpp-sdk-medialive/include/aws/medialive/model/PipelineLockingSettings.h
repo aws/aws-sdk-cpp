@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/PipelineLockingMethod.h>
 
@@ -49,9 +50,34 @@ class PipelineLockingSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Optional. Only applies to CMAF Ingest Output Group and MediaPackage V2 Output
+   * Group Only. Enter a value here to use a custom epoch, instead of the standard
+   * epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the
+   * custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be
+   * 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
+   */
+  inline const Aws::String& GetCustomEpoch() const { return m_customEpoch; }
+  inline bool CustomEpochHasBeenSet() const { return m_customEpochHasBeenSet; }
+  template <typename CustomEpochT = Aws::String>
+  void SetCustomEpoch(CustomEpochT&& value) {
+    m_customEpochHasBeenSet = true;
+    m_customEpoch = std::forward<CustomEpochT>(value);
+  }
+  template <typename CustomEpochT = Aws::String>
+  PipelineLockingSettings& WithCustomEpoch(CustomEpochT&& value) {
+    SetCustomEpoch(std::forward<CustomEpochT>(value));
+    return *this;
+  }
+  ///@}
  private:
   PipelineLockingMethod m_pipelineLockingMethod{PipelineLockingMethod::NOT_SET};
+
+  Aws::String m_customEpoch;
   bool m_pipelineLockingMethodHasBeenSet = false;
+  bool m_customEpochHasBeenSet = false;
 };
 
 }  // namespace Model

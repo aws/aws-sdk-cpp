@@ -14,6 +14,7 @@
 #include <aws/medialive/model/Av1SceneChangeDetect.h>
 #include <aws/medialive/model/Av1SpatialAq.h>
 #include <aws/medialive/model/Av1TemporalAq.h>
+#include <aws/medialive/model/Av1TimecodeInsertionBehavior.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/TimecodeBurninSettings.h>
 
@@ -468,6 +469,29 @@ Enter a minimum bitrate if you
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Controls how MediaLive inserts timecodes into the video output encode.
+DISABLED:
+   * Do not insert timecodes.
+METADATA_OBU: Include timecodes. MediaLive inserts
+   * timecode metadata based on the timecode from the source specified in the
+   * Timecode Config property. The timecode metadata is a metadata OBU (Open
+   * Bitstream Unit) of type METADATA_TYPE_TIMECODE, in accordance with
+   * https://aomediacodec.github.io/av1-spec/#metadata-timecode-syntax.
+   */
+  inline Av1TimecodeInsertionBehavior GetTimecodeInsertion() const { return m_timecodeInsertion; }
+  inline bool TimecodeInsertionHasBeenSet() const { return m_timecodeInsertionHasBeenSet; }
+  inline void SetTimecodeInsertion(Av1TimecodeInsertionBehavior value) {
+    m_timecodeInsertionHasBeenSet = true;
+    m_timecodeInsertion = value;
+  }
+  inline Av1Settings& WithTimecodeInsertion(Av1TimecodeInsertionBehavior value) {
+    SetTimecodeInsertion(value);
+    return *this;
+  }
+  ///@}
  private:
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
 
@@ -512,6 +536,8 @@ Enter a minimum bitrate if you
   Av1SpatialAq m_spatialAq{Av1SpatialAq::NOT_SET};
 
   Av1TemporalAq m_temporalAq{Av1TemporalAq::NOT_SET};
+
+  Av1TimecodeInsertionBehavior m_timecodeInsertion{Av1TimecodeInsertionBehavior::NOT_SET};
   bool m_afdSignalingHasBeenSet = false;
   bool m_bufSizeHasBeenSet = false;
   bool m_colorSpaceSettingsHasBeenSet = false;
@@ -534,6 +560,7 @@ Enter a minimum bitrate if you
   bool m_minBitrateHasBeenSet = false;
   bool m_spatialAqHasBeenSet = false;
   bool m_temporalAqHasBeenSet = false;
+  bool m_timecodeInsertionHasBeenSet = false;
 };
 
 }  // namespace Model

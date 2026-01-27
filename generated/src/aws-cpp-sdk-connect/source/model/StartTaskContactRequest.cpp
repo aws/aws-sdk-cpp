@@ -79,5 +79,13 @@ Aws::String StartTaskContactRequest::SerializePayload() const {
     payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
   }
 
+  if (m_attachmentsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
+    for (unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex) {
+      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
+    }
+    payload.WithArray("Attachments", std::move(attachmentsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

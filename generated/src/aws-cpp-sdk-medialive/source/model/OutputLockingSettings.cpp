@@ -26,6 +26,10 @@ OutputLockingSettings& OutputLockingSettings::operator=(JsonView jsonValue) {
     m_pipelineLockingSettings = jsonValue.GetObject("pipelineLockingSettings");
     m_pipelineLockingSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("disabledLockingSettings")) {
+    m_disabledLockingSettings = jsonValue.GetObject("disabledLockingSettings");
+    m_disabledLockingSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue OutputLockingSettings::Jsonize() const {
 
   if (m_pipelineLockingSettingsHasBeenSet) {
     payload.WithObject("pipelineLockingSettings", m_pipelineLockingSettings.Jsonize());
+  }
+
+  if (m_disabledLockingSettingsHasBeenSet) {
+    payload.WithObject("disabledLockingSettings", m_disabledLockingSettings.Jsonize());
   }
 
   return payload;

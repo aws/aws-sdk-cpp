@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/DisabledLockingSettings.h>
 #include <aws/medialive/model/EpochLockingSettings.h>
 #include <aws/medialive/model/PipelineLockingSettings.h>
 
@@ -63,12 +64,31 @@ class OutputLockingSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const DisabledLockingSettings& GetDisabledLockingSettings() const { return m_disabledLockingSettings; }
+  inline bool DisabledLockingSettingsHasBeenSet() const { return m_disabledLockingSettingsHasBeenSet; }
+  template <typename DisabledLockingSettingsT = DisabledLockingSettings>
+  void SetDisabledLockingSettings(DisabledLockingSettingsT&& value) {
+    m_disabledLockingSettingsHasBeenSet = true;
+    m_disabledLockingSettings = std::forward<DisabledLockingSettingsT>(value);
+  }
+  template <typename DisabledLockingSettingsT = DisabledLockingSettings>
+  OutputLockingSettings& WithDisabledLockingSettings(DisabledLockingSettingsT&& value) {
+    SetDisabledLockingSettings(std::forward<DisabledLockingSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EpochLockingSettings m_epochLockingSettings;
 
   PipelineLockingSettings m_pipelineLockingSettings;
+
+  DisabledLockingSettings m_disabledLockingSettings;
   bool m_epochLockingSettingsHasBeenSet = false;
   bool m_pipelineLockingSettingsHasBeenSet = false;
+  bool m_disabledLockingSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

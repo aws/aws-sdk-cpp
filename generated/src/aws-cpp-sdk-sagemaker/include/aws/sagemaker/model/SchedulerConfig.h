@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/FairShare.h>
+#include <aws/sagemaker/model/IdleResourceSharing.h>
 #include <aws/sagemaker/model/PriorityClass.h>
 
 #include <utility>
@@ -79,12 +80,33 @@ class SchedulerConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for sharing idle compute resources across entities in the
+   * cluster. When enabled, unallocated resources are automatically calculated and
+   * made available for entities to borrow. </p>
+   */
+  inline IdleResourceSharing GetIdleResourceSharing() const { return m_idleResourceSharing; }
+  inline bool IdleResourceSharingHasBeenSet() const { return m_idleResourceSharingHasBeenSet; }
+  inline void SetIdleResourceSharing(IdleResourceSharing value) {
+    m_idleResourceSharingHasBeenSet = true;
+    m_idleResourceSharing = value;
+  }
+  inline SchedulerConfig& WithIdleResourceSharing(IdleResourceSharing value) {
+    SetIdleResourceSharing(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<PriorityClass> m_priorityClasses;
 
   FairShare m_fairShare{FairShare::NOT_SET};
+
+  IdleResourceSharing m_idleResourceSharing{IdleResourceSharing::NOT_SET};
   bool m_priorityClassesHasBeenSet = false;
   bool m_fairShareHasBeenSet = false;
+  bool m_idleResourceSharingHasBeenSet = false;
 };
 
 }  // namespace Model
