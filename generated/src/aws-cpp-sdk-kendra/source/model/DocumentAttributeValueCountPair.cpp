@@ -5,6 +5,7 @@
 
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra/model/DocumentAttributeValueCountPair.h>
+#include <aws/kendra/model/FacetResult.h>
 
 #include <utility>
 

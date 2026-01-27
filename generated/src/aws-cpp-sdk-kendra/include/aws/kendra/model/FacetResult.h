@@ -21,7 +21,6 @@ class JsonView;
 }  // namespace Utils
 namespace kendra {
 namespace Model {
-class DocumentAttributeValueCountPair;
 
 /**
  * <p>The facet values for the documents in the response.</p><p><h3>See Also:</h3>

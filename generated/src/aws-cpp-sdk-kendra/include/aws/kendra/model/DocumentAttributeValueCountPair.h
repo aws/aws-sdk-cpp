@@ -7,7 +7,6 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/model/DocumentAttributeValue.h>
-#include <aws/kendra/model/FacetResult.h>
 
 #include <utility>
 
