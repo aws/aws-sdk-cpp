@@ -4,13 +4,14 @@
  */
 
 #pragma once
-#include <aws/s3/S3Client.h>
+#include <aws/s3/S3ServiceClientModel.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ListBucketsRequest.h>
 #include <aws/s3/model/ListBucketsResult.h>
 
 namespace Aws {
 namespace S3 {
+class S3Client;
 namespace Pagination {
 
 struct ListBucketsPaginationTraits {
@@ -19,7 +20,10 @@ struct ListBucketsPaginationTraits {
   using OutcomeType = Model::ListBucketsOutcome;
   using ClientType = S3Client;
 
-  static OutcomeType Invoke(ClientType& client, const RequestType& request) { return client.ListBuckets(request); }
+  template <typename Client = ClientType>
+  static OutcomeType Invoke(Client& client, const RequestType& request) {
+    return client.ListBuckets(request);
+  }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetContinuationToken().empty(); }
 

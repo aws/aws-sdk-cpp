@@ -15,6 +15,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationTraitsGenerator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationClientHeaderGenerator;
 import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationCompilationTestGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationBaseGenerator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,6 +48,12 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                     featureParser.generateClientHeader(
                         serviceName + "ClientPagination.h",
                         writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
+                    );
+                    
+                    // Generate CRTP pagination mixin
+                    featureParser.generateClientHeader(
+                        serviceName + "PaginationBase.h",
+                        writer -> new PaginationBaseGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
                     );
                     
                     // Generate pagination traits headers
