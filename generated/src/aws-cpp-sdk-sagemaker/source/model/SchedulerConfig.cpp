@@ -29,6 +29,10 @@ SchedulerConfig& SchedulerConfig::operator=(JsonView jsonValue) {
     m_fairShare = FairShareMapper::GetFairShareForName(jsonValue.GetString("FairShare"));
     m_fairShareHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdleResourceSharing")) {
+    m_idleResourceSharing = IdleResourceSharingMapper::GetIdleResourceSharingForName(jsonValue.GetString("IdleResourceSharing"));
+    m_idleResourceSharingHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue SchedulerConfig::Jsonize() const {
 
   if (m_fairShareHasBeenSet) {
     payload.WithString("FairShare", FairShareMapper::GetNameForFairShare(m_fairShare));
+  }
+
+  if (m_idleResourceSharingHasBeenSet) {
+    payload.WithString("IdleResourceSharing", IdleResourceSharingMapper::GetNameForIdleResourceSharing(m_idleResourceSharing));
   }
 
   return payload;

@@ -70,7 +70,7 @@ class UpdateJobRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The job priority to update.</p>
+   * <p>The updated job priority.</p>
    */
   inline int GetPriority() const { return m_priority; }
   inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -160,6 +160,42 @@ class UpdateJobRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The updated job name.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateJobRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated job description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateJobRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The farm ID of the job to update.</p>
    */
   inline const Aws::String& GetFarmId() const { return m_farmId; }
@@ -226,6 +262,10 @@ class UpdateJobRequest : public DeadlineRequest {
 
   int m_maxWorkerCount{0};
 
+  Aws::String m_name;
+
+  Aws::String m_description;
+
   Aws::String m_farmId;
 
   Aws::String m_queueId;
@@ -238,6 +278,8 @@ class UpdateJobRequest : public DeadlineRequest {
   bool m_maxRetriesPerTaskHasBeenSet = false;
   bool m_lifecycleStatusHasBeenSet = false;
   bool m_maxWorkerCountHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;

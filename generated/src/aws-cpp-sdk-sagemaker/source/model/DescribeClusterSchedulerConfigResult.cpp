@@ -48,6 +48,14 @@ DescribeClusterSchedulerConfigResult& DescribeClusterSchedulerConfigResult::oper
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StatusDetails")) {
+    Aws::Map<Aws::String, JsonView> statusDetailsJsonMap = jsonValue.GetObject("StatusDetails").GetAllObjects();
+    for (auto& statusDetailsItem : statusDetailsJsonMap) {
+      m_statusDetails[SchedulerConfigComponentMapper::GetSchedulerConfigComponentForName(statusDetailsItem.first)] =
+          SchedulerResourceStatusMapper::GetSchedulerResourceStatusForName(statusDetailsItem.second.AsString());
+    }
+    m_statusDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ClusterArn")) {
     m_clusterArn = jsonValue.GetString("ClusterArn");
     m_clusterArnHasBeenSet = true;

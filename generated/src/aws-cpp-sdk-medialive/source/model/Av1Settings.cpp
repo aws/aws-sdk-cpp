@@ -106,6 +106,11 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
     m_temporalAq = Av1TemporalAqMapper::GetAv1TemporalAqForName(jsonValue.GetString("temporalAq"));
     m_temporalAqHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timecodeInsertion")) {
+    m_timecodeInsertion =
+        Av1TimecodeInsertionBehaviorMapper::GetAv1TimecodeInsertionBehaviorForName(jsonValue.GetString("timecodeInsertion"));
+    m_timecodeInsertionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -198,6 +203,11 @@ JsonValue Av1Settings::Jsonize() const {
 
   if (m_temporalAqHasBeenSet) {
     payload.WithString("temporalAq", Av1TemporalAqMapper::GetNameForAv1TemporalAq(m_temporalAq));
+  }
+
+  if (m_timecodeInsertionHasBeenSet) {
+    payload.WithString("timecodeInsertion",
+                       Av1TimecodeInsertionBehaviorMapper::GetNameForAv1TimecodeInsertionBehavior(m_timecodeInsertion));
   }
 
   return payload;

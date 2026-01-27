@@ -22,6 +22,10 @@ PipelineLockingSettings& PipelineLockingSettings::operator=(JsonView jsonValue) 
     m_pipelineLockingMethod = PipelineLockingMethodMapper::GetPipelineLockingMethodForName(jsonValue.GetString("pipelineLockingMethod"));
     m_pipelineLockingMethodHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customEpoch")) {
+    m_customEpoch = jsonValue.GetString("customEpoch");
+    m_customEpochHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue PipelineLockingSettings::Jsonize() const {
 
   if (m_pipelineLockingMethodHasBeenSet) {
     payload.WithString("pipelineLockingMethod", PipelineLockingMethodMapper::GetNameForPipelineLockingMethod(m_pipelineLockingMethod));
+  }
+
+  if (m_customEpochHasBeenSet) {
+    payload.WithString("customEpoch", m_customEpoch);
   }
 
   return payload;

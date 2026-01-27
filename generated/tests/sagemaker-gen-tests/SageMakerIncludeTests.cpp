@@ -832,6 +832,7 @@
 #include <aws/sagemaker/model/IamIdentity.h>
 #include <aws/sagemaker/model/IamPolicyConstraints.h>
 #include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
+#include <aws/sagemaker/model/IdleResourceSharing.h>
 #include <aws/sagemaker/model/IdleSettings.h>
 #include <aws/sagemaker/model/Image.h>
 #include <aws/sagemaker/model/ImageClassificationJobConfig.h>
@@ -1458,6 +1459,7 @@
 #include <aws/sagemaker/model/ScheduleStatus.h>
 #include <aws/sagemaker/model/ScheduledUpdateConfig.h>
 #include <aws/sagemaker/model/SchedulerConfig.h>
+#include <aws/sagemaker/model/SchedulerConfigComponent.h>
 #include <aws/sagemaker/model/SchedulerResourceStatus.h>
 #include <aws/sagemaker/model/SearchExpression.h>
 #include <aws/sagemaker/model/SearchRecord.h>

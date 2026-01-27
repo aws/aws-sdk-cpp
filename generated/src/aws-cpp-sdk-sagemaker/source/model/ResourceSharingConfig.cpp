@@ -26,6 +26,14 @@ ResourceSharingConfig& ResourceSharingConfig::operator=(JsonView jsonValue) {
     m_borrowLimit = jsonValue.GetInteger("BorrowLimit");
     m_borrowLimitHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AbsoluteBorrowLimits")) {
+    Aws::Utils::Array<JsonView> absoluteBorrowLimitsJsonList = jsonValue.GetArray("AbsoluteBorrowLimits");
+    for (unsigned absoluteBorrowLimitsIndex = 0; absoluteBorrowLimitsIndex < absoluteBorrowLimitsJsonList.GetLength();
+         ++absoluteBorrowLimitsIndex) {
+      m_absoluteBorrowLimits.push_back(absoluteBorrowLimitsJsonList[absoluteBorrowLimitsIndex].AsObject());
+    }
+    m_absoluteBorrowLimitsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,15 @@ JsonValue ResourceSharingConfig::Jsonize() const {
 
   if (m_borrowLimitHasBeenSet) {
     payload.WithInteger("BorrowLimit", m_borrowLimit);
+  }
+
+  if (m_absoluteBorrowLimitsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> absoluteBorrowLimitsJsonList(m_absoluteBorrowLimits.size());
+    for (unsigned absoluteBorrowLimitsIndex = 0; absoluteBorrowLimitsIndex < absoluteBorrowLimitsJsonList.GetLength();
+         ++absoluteBorrowLimitsIndex) {
+      absoluteBorrowLimitsJsonList[absoluteBorrowLimitsIndex].AsObject(m_absoluteBorrowLimits[absoluteBorrowLimitsIndex].Jsonize());
+    }
+    payload.WithArray("AbsoluteBorrowLimits", std::move(absoluteBorrowLimitsJsonList));
   }
 
   return payload;

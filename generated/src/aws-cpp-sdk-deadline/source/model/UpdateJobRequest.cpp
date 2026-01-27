@@ -40,6 +40,14 @@ Aws::String UpdateJobRequest::SerializePayload() const {
     payload.WithInteger("maxWorkerCount", m_maxWorkerCount);
   }
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -1148,6 +1148,7 @@
 #include <aws/connect/model/TagSet.h>
 #include <aws/connect/model/TargetListType.h>
 #include <aws/connect/model/TaskActionDefinition.h>
+#include <aws/connect/model/TaskAttachment.h>
 #include <aws/connect/model/TaskTemplateConstraints.h>
 #include <aws/connect/model/TaskTemplateDefaultFieldValue.h>
 #include <aws/connect/model/TaskTemplateDefaults.h>

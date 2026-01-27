@@ -4,7 +4,9 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ComputeQuotaResourceConfig.h>
 #include <aws/sagemaker/model/ResourceSharingStrategy.h>
 
 #include <utility>
@@ -70,12 +72,42 @@ class ResourceSharingConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The absolute limits on compute resources that can be borrowed from idle
+   * compute. When specified, these limits define the maximum amount of specific
+   * resource types (such as accelerators, vCPU, or memory) that an entity can
+   * borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>
+   */
+  inline const Aws::Vector<ComputeQuotaResourceConfig>& GetAbsoluteBorrowLimits() const { return m_absoluteBorrowLimits; }
+  inline bool AbsoluteBorrowLimitsHasBeenSet() const { return m_absoluteBorrowLimitsHasBeenSet; }
+  template <typename AbsoluteBorrowLimitsT = Aws::Vector<ComputeQuotaResourceConfig>>
+  void SetAbsoluteBorrowLimits(AbsoluteBorrowLimitsT&& value) {
+    m_absoluteBorrowLimitsHasBeenSet = true;
+    m_absoluteBorrowLimits = std::forward<AbsoluteBorrowLimitsT>(value);
+  }
+  template <typename AbsoluteBorrowLimitsT = Aws::Vector<ComputeQuotaResourceConfig>>
+  ResourceSharingConfig& WithAbsoluteBorrowLimits(AbsoluteBorrowLimitsT&& value) {
+    SetAbsoluteBorrowLimits(std::forward<AbsoluteBorrowLimitsT>(value));
+    return *this;
+  }
+  template <typename AbsoluteBorrowLimitsT = ComputeQuotaResourceConfig>
+  ResourceSharingConfig& AddAbsoluteBorrowLimits(AbsoluteBorrowLimitsT&& value) {
+    m_absoluteBorrowLimitsHasBeenSet = true;
+    m_absoluteBorrowLimits.emplace_back(std::forward<AbsoluteBorrowLimitsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ResourceSharingStrategy m_strategy{ResourceSharingStrategy::NOT_SET};
 
   int m_borrowLimit{0};
+
+  Aws::Vector<ComputeQuotaResourceConfig> m_absoluteBorrowLimits;
   bool m_strategyHasBeenSet = false;
   bool m_borrowLimitHasBeenSet = false;
+  bool m_absoluteBorrowLimitsHasBeenSet = false;
 };
 
 }  // namespace Model
