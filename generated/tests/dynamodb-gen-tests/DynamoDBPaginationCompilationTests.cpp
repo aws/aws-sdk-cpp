@@ -7,12 +7,13 @@
 // This test ensures all generated pagination headers compile successfully
 
 #include <aws/dynamodb/DynamoDBClientPagination.h>
-#include <aws/dynamodb/model/pagination/ScanPaginationTraits.h>
-#include <aws/dynamodb/model/pagination/ListContributorInsightsPaginationTraits.h>
-#include <aws/dynamodb/model/pagination/ListExportsPaginationTraits.h>
-#include <aws/dynamodb/model/pagination/QueryPaginationTraits.h>
-#include <aws/dynamodb/model/pagination/ListTablesPaginationTraits.h>
-#include <aws/dynamodb/model/pagination/ListImportsPaginationTraits.h>
+#include <aws/dynamodb/DynamoDBPaginationBase.h>
+#include <aws/dynamodb/model/ScanPaginationTraits.h>
+#include <aws/dynamodb/model/ListContributorInsightsPaginationTraits.h>
+#include <aws/dynamodb/model/ListImportsPaginationTraits.h>
+#include <aws/dynamodb/model/ListExportsPaginationTraits.h>
+#include <aws/dynamodb/model/QueryPaginationTraits.h>
+#include <aws/dynamodb/model/ListTablesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

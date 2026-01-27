@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3/S3Client.h>
-#include <aws/s3/model/pagination/ListBucketsPaginationTraits.h>
-#include <aws/s3/model/pagination/ListDirectoryBucketsPaginationTraits.h>
-#include <aws/s3/model/pagination/ListObjectsV2PaginationTraits.h>
-#include <aws/s3/model/pagination/ListPartsPaginationTraits.h>
+#include <aws/s3/model/ListBucketsPaginationTraits.h>
+#include <aws/s3/model/ListDirectoryBucketsPaginationTraits.h>
+#include <aws/s3/model/ListObjectsV2PaginationTraits.h>
+#include <aws/s3/model/ListPartsPaginationTraits.h>
 
 namespace Aws {
 namespace S3 {

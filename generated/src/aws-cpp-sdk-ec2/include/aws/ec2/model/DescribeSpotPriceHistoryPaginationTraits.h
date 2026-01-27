@@ -4,13 +4,14 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2Client.h>
+#include <aws/ec2/EC2ServiceClientModel.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/DescribeSpotPriceHistoryRequest.h>
 #include <aws/ec2/model/DescribeSpotPriceHistoryResponse.h>
 
 namespace Aws {
 namespace EC2 {
+class EC2Client;
 namespace Pagination {
 
 struct DescribeSpotPriceHistoryPaginationTraits {
@@ -19,7 +20,10 @@ struct DescribeSpotPriceHistoryPaginationTraits {
   using OutcomeType = Model::DescribeSpotPriceHistoryOutcome;
   using ClientType = EC2Client;
 
-  static OutcomeType Invoke(ClientType& client, const RequestType& request) { return client.DescribeSpotPriceHistory(request); }
+  template <typename Client = ClientType>
+  static OutcomeType Invoke(Client& client, const RequestType& request) {
+    return client.DescribeSpotPriceHistory(request);
+  }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
 
