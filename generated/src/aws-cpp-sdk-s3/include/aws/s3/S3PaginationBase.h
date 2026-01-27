@@ -1,0 +1,62 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+
+#include <aws/core/utils/pagination/Paginator.h>
+#include <aws/s3/model/ListBucketsPaginationTraits.h>
+#include <aws/s3/model/ListDirectoryBucketsPaginationTraits.h>
+#include <aws/s3/model/ListObjectsV2PaginationTraits.h>
+#include <aws/s3/model/ListPartsPaginationTraits.h>
+
+#include <memory>
+
+namespace Aws {
+namespace S3 {
+
+class S3Client;
+
+template <typename DerivedClient>
+class S3PaginationBase {
+ public:
+  /**
+   * Create a paginator for ListBuckets operation
+   */
+  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListBucketsRequest, Pagination::ListBucketsPaginationTraits>
+  ListBucketsPaginator(const Model::ListBucketsRequest& request) {
+    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListBucketsRequest, Pagination::ListBucketsPaginationTraits>{
+        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+  }
+
+  /**
+   * Create a paginator for ListDirectoryBuckets operation
+   */
+  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListDirectoryBucketsRequest, Pagination::ListDirectoryBucketsPaginationTraits>
+  ListDirectoryBucketsPaginator(const Model::ListDirectoryBucketsRequest& request) {
+    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListDirectoryBucketsRequest,
+                                                 Pagination::ListDirectoryBucketsPaginationTraits>{
+        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+  }
+
+  /**
+   * Create a paginator for ListObjectsV2 operation
+   */
+  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListObjectsV2Request, Pagination::ListObjectsV2PaginationTraits>
+  ListObjectsV2Paginator(const Model::ListObjectsV2Request& request) {
+    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListObjectsV2Request, Pagination::ListObjectsV2PaginationTraits>{
+        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+  }
+
+  /**
+   * Create a paginator for ListParts operation
+   */
+  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListPartsRequest, Pagination::ListPartsPaginationTraits> ListPartsPaginator(
+      const Model::ListPartsRequest& request) {
+    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListPartsRequest, Pagination::ListPartsPaginationTraits>{
+        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+  }
+};
+}  // namespace S3
+}  // namespace Aws

@@ -51,7 +51,7 @@ public class PaginationClientHeaderGenerator {
         
         for (OperationData<PaginatedTrait> data : paginatedOps) {
             String opName = data.getOperation().getId().getName();
-            writer.writeInclude("aws/" + smithyServiceName + "/model/pagination/" + opName + "PaginationTraits.h");
+            writer.writeInclude("aws/" + smithyServiceName + "/model/" + opName + "PaginationTraits.h");
         }
         writer.write("");
     }

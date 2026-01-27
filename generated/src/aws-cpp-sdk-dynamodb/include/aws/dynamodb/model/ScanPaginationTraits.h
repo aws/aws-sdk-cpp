@@ -4,13 +4,14 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDBClient.h>
+#include <aws/dynamodb/DynamoDBServiceClientModel.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/ScanResult.h>
 
 namespace Aws {
 namespace DynamoDB {
+class DynamoDBClient;
 namespace Pagination {
 
 struct ScanPaginationTraits {
@@ -19,7 +20,10 @@ struct ScanPaginationTraits {
   using OutcomeType = Model::ScanOutcome;
   using ClientType = DynamoDBClient;
 
-  static OutcomeType Invoke(ClientType& client, const RequestType& request) { return client.Scan(request); }
+  template <typename Client = ClientType>
+  static OutcomeType Invoke(Client& client, const RequestType& request) {
+    return client.Scan(request);
+  }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetLastEvaluatedKey().empty(); }
 

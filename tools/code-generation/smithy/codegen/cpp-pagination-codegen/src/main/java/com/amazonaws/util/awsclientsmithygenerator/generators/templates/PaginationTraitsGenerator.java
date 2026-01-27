@@ -36,7 +36,7 @@ public class PaginationTraitsGenerator {
         String serviceName = ServiceNameUtil.getServiceName(service);
 
         for (OperationData<PaginatedTrait> data : paginatedOps) {
-            String fileName = "include/aws/" + smithyServiceName + "/model/pagination/" + data.getOperation().getId().getName() + "PaginationTraits.h";
+            String fileName = "include/aws/" + smithyServiceName + "/model/" + data.getOperation().getId().getName() + "PaginationTraits.h";
             
             writerDelegator.useFileWriter(fileName, writer -> {
                 generateTraitsHeader(writer, data, serviceName);
@@ -64,30 +64,33 @@ public class PaginationTraitsGenerator {
         String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
         String requestFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + "Request";
         String resultFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + resultSuffix;
+        String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
+        
         writer.writeInclude("aws/" + smithyServiceName + "/" + capitalizedServiceName + "_EXPORTS.h")
               .writeInclude("aws/" + smithyServiceName + "/model/" + requestFileName + ".h")
               .writeInclude("aws/" + smithyServiceName + "/model/" + resultFileName + ".h")
-              .writeInclude("aws/" + smithyServiceName + "/" + capitalizedServiceName + "Client.h")
+              .writeInclude("aws/" + smithyServiceName + "/" + capitalizedServiceName + "ServiceClientModel.h")
               .write("");
         
         // Namespaces
         writer.writeNamespaceOpen("Aws")
               .writeNamespaceOpen(serviceName)
+              .write("class " + capitalizedServiceName + "Client;")
               .writeNamespaceOpen("Pagination")
               .write("");
         
         // Struct definition
         writer.openBlock("struct " + opName + "PaginationTraits\n{", "};", () -> {
             // Use detected suffix to match C2J renameShape logic
-            String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
             writer.write("    using RequestType = Model::$LRequest;", methodName)
                   .write("    using ResultType = Model::$L$L;", methodName, resultSuffix)
                   .write("    using OutcomeType = Model::$LOutcome;", methodName)
                   .write("    using ClientType = $LClient;", capitalizedServiceName)
                   .write("");
             
-            // Invoke method
-            writer.openBlock("    static OutcomeType Invoke(ClientType& client, const RequestType& request)\n    {", "    }", () -> {
+            // Invoke method - template to defer instantiation
+            writer.write("    template<typename Client = ClientType>")
+                  .openBlock("    static OutcomeType Invoke(Client& client, const RequestType& request)\n    {", "    }", () -> {
                 writer.write("        return client.$L(request);", methodName);
             });
             

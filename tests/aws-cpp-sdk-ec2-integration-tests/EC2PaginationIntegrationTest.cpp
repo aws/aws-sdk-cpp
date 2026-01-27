@@ -3,12 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+// TODO: Update these tests to use the new paginator API directly:
+// For example: for (const auto& outcome : ec2Client->DescribeSpotPriceHistoryPaginator(request)) { ... }
+// instead of manual pagination with traits
+
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/Aws.h>
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/model/DescribeSpotPriceHistoryRequest.h>
-#include <aws/ec2/model/pagination/DescribeSpotPriceHistoryPaginationTraits.h>
+#include <aws/ec2/model/DescribeSpotPriceHistoryPaginationTraits.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsTestHelpers.h>
 

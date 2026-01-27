@@ -71,6 +71,7 @@ public class PaginationCompilationTestGenerator {
     private void writeIncludes(CppWriter writer) {
         Set<String> clientHeaders = new HashSet<>();
         Set<String> traitHeaders = new HashSet<>();
+        Set<String> mixinHeaders = new HashSet<>();
         
         for (OperationData<PaginatedTrait> paginationData : allPaginatedOps) {
             ServiceShape service = paginationData.getService();
@@ -80,13 +81,21 @@ public class PaginationCompilationTestGenerator {
             // Collect unique client headers
             clientHeaders.add("aws/" + smithyServiceName + "/" + serviceName + "ClientPagination.h");
             
+            // Collect unique mixin headers
+            mixinHeaders.add("aws/" + smithyServiceName + "/" + serviceName + "PaginationBase.h");
+            
             // Collect unique trait headers
             String operationName = paginationData.getOperation().getId().getName();
-            traitHeaders.add("aws/" + smithyServiceName + "/model/pagination/" + operationName + "PaginationTraits.h");
+            traitHeaders.add("aws/" + smithyServiceName + "/model/" + operationName + "PaginationTraits.h");
         }
         
         // Write unique client headers
         for (String header : clientHeaders) {
+            writer.writeInclude(header);
+        }
+        
+        // Write unique mixin headers
+        for (String header : mixinHeaders) {
             writer.writeInclude(header);
         }
         
