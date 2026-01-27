@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/model/DocumentAttributeValue.h>
+#include <aws/kendra/model/FacetResult.h>
 
 #include <utility>
 
@@ -19,7 +20,6 @@ class JsonView;
 }  // namespace Utils
 namespace kendra {
 namespace Model {
-class FacetResult;
 
 /**
  * <p>Provides the count of documents that match a particular document attribute or
