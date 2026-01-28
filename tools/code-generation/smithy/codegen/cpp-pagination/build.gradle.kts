@@ -75,10 +75,11 @@ tasks.register("generate-smithy-build") {
             projectionsBuilder.withMember("$sdkId.${service.version.lowercase()}", projectionContents)
         }
         
-        // TODO: Remove this workaround - legacy services should have proper Smithy models
+        // TODO: Remove this workaround - legacy services should have proper Smithy model files
         // instead of hardcoding service names in both Gradle and Java
+        // Currently only needed for importexport, sdb (SimpleDB), and s3-crt
         // Add mock projections for legacy C2J-only services
-        val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB")
+        val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB", "s3-crt" to "S3Crt")
         legacyServices.forEach { (c2jName, pascalName) ->
             if (filteredServiceList.isEmpty() || c2jName in filteredServiceList) {
                 val mockProjectionContents = Node.objectNodeBuilder()
