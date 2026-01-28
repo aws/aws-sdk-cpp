@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConnect {
 namespace Model {
-enum class FlowSize { NOT_SET, MEDIUM, LARGE };
+enum class FlowSize { NOT_SET, MEDIUM, LARGE, LARGE_4X };
 
 namespace FlowSizeMapper {
 AWS_MEDIACONNECT_API FlowSize GetFlowSizeForName(const Aws::String& name);

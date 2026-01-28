@@ -124,8 +124,8 @@ class CreateRouterInputRequest : public MediaConnectRequest {
 
   ///@{
   /**
-   * <p>The AWS Region for the router input. Defaults to the current region if not
-   * specified.</p>
+   * <p>The Amazon Web Services Region for the router input. Defaults to the current
+   * region if not specified.</p>
    */
   inline const Aws::String& GetRegionName() const { return m_regionName; }
   inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/CustomEmailLambdaVersionConfigType.h>
 #include <aws/cognito-idp/model/CustomSMSLambdaVersionConfigType.h>
+#include <aws/cognito-idp/model/InboundFederationLambdaType.h>
 #include <aws/cognito-idp/model/PreTokenGenerationVersionConfigType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -337,6 +338,26 @@ class LambdaConfigType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of an inbound federation Lambda trigger. This trigger can
+   * transform federated user attributes during the authentication with external
+   * identity providers.</p>
+   */
+  inline const InboundFederationLambdaType& GetInboundFederation() const { return m_inboundFederation; }
+  inline bool InboundFederationHasBeenSet() const { return m_inboundFederationHasBeenSet; }
+  template <typename InboundFederationT = InboundFederationLambdaType>
+  void SetInboundFederation(InboundFederationT&& value) {
+    m_inboundFederationHasBeenSet = true;
+    m_inboundFederation = std::forward<InboundFederationT>(value);
+  }
+  template <typename InboundFederationT = InboundFederationLambdaType>
+  LambdaConfigType& WithInboundFederation(InboundFederationT&& value) {
+    SetInboundFederation(std::forward<InboundFederationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_preSignUp;
 
@@ -365,6 +386,8 @@ class LambdaConfigType {
   CustomEmailLambdaVersionConfigType m_customEmailSender;
 
   Aws::String m_kMSKeyID;
+
+  InboundFederationLambdaType m_inboundFederation;
   bool m_preSignUpHasBeenSet = false;
   bool m_customMessageHasBeenSet = false;
   bool m_postConfirmationHasBeenSet = false;
@@ -379,6 +402,7 @@ class LambdaConfigType {
   bool m_customSMSSenderHasBeenSet = false;
   bool m_customEmailSenderHasBeenSet = false;
   bool m_kMSKeyIDHasBeenSet = false;
+  bool m_inboundFederationHasBeenSet = false;
 };
 
 }  // namespace Model

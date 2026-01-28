@@ -16,11 +16,17 @@ namespace Model {
 namespace EventSourceMappingMetricMapper {
 
 static const int EventCount_HASH = HashingUtils::HashString("EventCount");
+static const int ErrorCount_HASH = HashingUtils::HashString("ErrorCount");
+static const int KafkaMetrics_HASH = HashingUtils::HashString("KafkaMetrics");
 
 EventSourceMappingMetric GetEventSourceMappingMetricForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == EventCount_HASH) {
     return EventSourceMappingMetric::EventCount;
+  } else if (hashCode == ErrorCount_HASH) {
+    return EventSourceMappingMetric::ErrorCount;
+  } else if (hashCode == KafkaMetrics_HASH) {
+    return EventSourceMappingMetric::KafkaMetrics;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForEventSourceMappingMetric(EventSourceMappingMetric enumValu
       return {};
     case EventSourceMappingMetric::EventCount:
       return "EventCount";
+    case EventSourceMappingMetric::ErrorCount:
+      return "ErrorCount";
+    case EventSourceMappingMetric::KafkaMetrics:
+      return "KafkaMetrics";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

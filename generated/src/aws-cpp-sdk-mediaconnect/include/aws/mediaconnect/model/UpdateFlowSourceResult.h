@@ -29,7 +29,7 @@ class UpdateFlowSourceResult {
 
   ///@{
   /**
-   * <p>The ARN of the flow that you was updated. </p>
+   * <p>The ARN of the flow that you updated.</p>
    */
   inline const Aws::String& GetFlowArn() const { return m_flowArn; }
   template <typename FlowArnT = Aws::String>

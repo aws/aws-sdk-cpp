@@ -99,6 +99,10 @@ SetSourceRequest& SetSourceRequest::operator=(JsonView jsonValue) {
     m_gatewayBridgeSource = jsonValue.GetObject("gatewayBridgeSource");
     m_gatewayBridgeSourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ndiSourceSettings")) {
+    m_ndiSourceSettings = jsonValue.GetObject("ndiSourceSettings");
+    m_ndiSourceSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sourceTags")) {
     Aws::Map<Aws::String, JsonView> sourceTagsJsonMap = jsonValue.GetObject("sourceTags").GetAllObjects();
     for (auto& sourceTagsItem : sourceTagsJsonMap) {
@@ -201,6 +205,10 @@ JsonValue SetSourceRequest::Jsonize() const {
 
   if (m_gatewayBridgeSourceHasBeenSet) {
     payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
+  }
+
+  if (m_ndiSourceSettingsHasBeenSet) {
+    payload.WithObject("ndiSourceSettings", m_ndiSourceSettings.Jsonize());
   }
 
   if (m_sourceTagsHasBeenSet) {

@@ -365,7 +365,7 @@ class AddOutputRequest {
 
   ///@{
   /**
-   * <p> A suffix for the names of the NDI sources that the flow creates. If a custom
+   * <p> A suffix for the name of the NDI® sender that the flow creates. If a custom
    * name isn't specified, MediaConnect uses the output name. </p>
    */
   inline const Aws::String& GetNdiProgramName() const { return m_ndiProgramName; }

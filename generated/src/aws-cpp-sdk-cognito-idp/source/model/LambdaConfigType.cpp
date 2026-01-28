@@ -74,6 +74,10 @@ LambdaConfigType& LambdaConfigType::operator=(JsonView jsonValue) {
     m_kMSKeyID = jsonValue.GetString("KMSKeyID");
     m_kMSKeyIDHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InboundFederation")) {
+    m_inboundFederation = jsonValue.GetObject("InboundFederation");
+    m_inboundFederationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -134,6 +138,10 @@ JsonValue LambdaConfigType::Jsonize() const {
 
   if (m_kMSKeyIDHasBeenSet) {
     payload.WithString("KMSKeyID", m_kMSKeyID);
+  }
+
+  if (m_inboundFederationHasBeenSet) {
+    payload.WithObject("InboundFederation", m_inboundFederation.Jsonize());
   }
 
   return payload;

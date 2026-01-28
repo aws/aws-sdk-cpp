@@ -77,6 +77,13 @@ ContactSearchSummary& ContactSearchSummary::operator=(JsonView jsonValue) {
     m_routingCriteria = jsonValue.GetObject("RoutingCriteria");
     m_routingCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Tags")) {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for (auto& tagsItem : tagsJsonMap) {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("GlobalResiliencyMetadata")) {
     m_globalResiliencyMetadata = jsonValue.GetObject("GlobalResiliencyMetadata");
     m_globalResiliencyMetadataHasBeenSet = true;
@@ -145,6 +152,14 @@ JsonValue ContactSearchSummary::Jsonize() const {
 
   if (m_routingCriteriaHasBeenSet) {
     payload.WithObject("RoutingCriteria", m_routingCriteria.Jsonize());
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   if (m_globalResiliencyMetadataHasBeenSet) {

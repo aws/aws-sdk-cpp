@@ -26,6 +26,11 @@ MxfSettings& MxfSettings::operator=(JsonView jsonValue) {
     m_profile = MxfProfileMapper::GetMxfProfileForName(jsonValue.GetString("profile"));
     m_profileHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("uncompressedAudioWrapping")) {
+    m_uncompressedAudioWrapping =
+        MxfUncompressedAudioWrappingMapper::GetMxfUncompressedAudioWrappingForName(jsonValue.GetString("uncompressedAudioWrapping"));
+    m_uncompressedAudioWrappingHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("xavcProfileSettings")) {
     m_xavcProfileSettings = jsonValue.GetObject("xavcProfileSettings");
     m_xavcProfileSettingsHasBeenSet = true;
@@ -42,6 +47,11 @@ JsonValue MxfSettings::Jsonize() const {
 
   if (m_profileHasBeenSet) {
     payload.WithString("profile", MxfProfileMapper::GetNameForMxfProfile(m_profile));
+  }
+
+  if (m_uncompressedAudioWrappingHasBeenSet) {
+    payload.WithString("uncompressedAudioWrapping",
+                       MxfUncompressedAudioWrappingMapper::GetNameForMxfUncompressedAudioWrapping(m_uncompressedAudioWrapping));
   }
 
   if (m_xavcProfileSettingsHasBeenSet) {

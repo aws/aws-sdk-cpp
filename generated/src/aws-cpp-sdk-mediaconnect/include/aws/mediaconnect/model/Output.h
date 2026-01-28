@@ -352,10 +352,11 @@ class Output {
    * configured destination address.</p> </li> <li> <p>For outputs that use listener
    * protocols (such as SRT Listener), this value shows the address of the connected
    * receiver. </p> </li> <li> <p>Peer IP addresses aren't available for
-   * entitlements, managed MediaLive outputs, NDI outputs, and CDI/ST2110 outputs.
-   * </p> </li> <li> <p>The peer IP address might not be visible for flows that
-   * haven't been started yet, or flows that were started before May 2025. In these
-   * cases, restart your flow to see the peer IP address.</p> </li> </ul>
+   * entitlements, managed MediaLive outputs, NDI® sources and outputs, and
+   * CDI/ST2110 outputs. </p> </li> <li> <p>The peer IP address might not be visible
+   * for flows that haven't been started yet, or flows that were started before May
+   * 2025. In these cases, restart your flow to see the peer IP address.</p> </li>
+   * </ul>
    */
   inline const Aws::String& GetPeerIpAddress() const { return m_peerIpAddress; }
   inline bool PeerIpAddressHasBeenSet() const { return m_peerIpAddressHasBeenSet; }

@@ -130,6 +130,24 @@ class SearchTransitGatewayRoutesRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  SearchTransitGatewayRoutesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
 
@@ -138,10 +156,13 @@ class SearchTransitGatewayRoutesRequest : public EC2Request {
   int m_maxResults{0};
 
   bool m_dryRun{false};
+
+  Aws::String m_nextToken;
   bool m_transitGatewayRouteTableIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

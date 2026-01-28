@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class Ac3CodingMode { NOT_SET, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE };
+enum class Ac3CodingMode { NOT_SET, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_3_2_LFE, CODING_MODE_AUTO };
 
 namespace Ac3CodingModeMapper {
 AWS_MEDIACONVERT_API Ac3CodingMode GetAc3CodingModeForName(const Aws::String& name);

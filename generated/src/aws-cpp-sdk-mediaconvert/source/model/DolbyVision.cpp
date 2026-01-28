@@ -18,6 +18,10 @@ namespace Model {
 DolbyVision::DolbyVision(JsonView jsonValue) { *this = jsonValue; }
 
 DolbyVision& DolbyVision::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("compatibility")) {
+    m_compatibility = DolbyVisionCompatibilityMapper::GetDolbyVisionCompatibilityForName(jsonValue.GetString("compatibility"));
+    m_compatibilityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("l6Metadata")) {
     m_l6Metadata = jsonValue.GetObject("l6Metadata");
     m_l6MetadataHasBeenSet = true;
@@ -39,6 +43,10 @@ DolbyVision& DolbyVision::operator=(JsonView jsonValue) {
 
 JsonValue DolbyVision::Jsonize() const {
   JsonValue payload;
+
+  if (m_compatibilityHasBeenSet) {
+    payload.WithString("compatibility", DolbyVisionCompatibilityMapper::GetNameForDolbyVisionCompatibility(m_compatibility));
+  }
 
   if (m_l6MetadataHasBeenSet) {
     payload.WithObject("l6Metadata", m_l6Metadata.Jsonize());

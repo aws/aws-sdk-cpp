@@ -15,6 +15,7 @@
 #include <aws/s3control/model/S3SetObjectLegalHoldOperation.h>
 #include <aws/s3control/model/S3SetObjectRetentionOperation.h>
 #include <aws/s3control/model/S3SetObjectTaggingOperation.h>
+#include <aws/s3control/model/S3UpdateObjectEncryptionOperation.h>
 
 #include <utility>
 
@@ -231,6 +232,31 @@ class JobOperation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Updates the server-side encryption type of an existing encrypted object in a
+   * general purpose bucket. You can use the <code>UpdateObjectEncryption</code>
+   * operation to change encrypted objects from server-side encryption with Amazon S3
+   * managed keys (SSE-S3) to server-side encryption with Key Management Service
+   * (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the
+   * <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS
+   * key used to encrypt your data so that you can comply with custom key-rotation
+   * standards.</p>
+   */
+  inline const S3UpdateObjectEncryptionOperation& GetS3UpdateObjectEncryption() const { return m_s3UpdateObjectEncryption; }
+  inline bool S3UpdateObjectEncryptionHasBeenSet() const { return m_s3UpdateObjectEncryptionHasBeenSet; }
+  template <typename S3UpdateObjectEncryptionT = S3UpdateObjectEncryptionOperation>
+  void SetS3UpdateObjectEncryption(S3UpdateObjectEncryptionT&& value) {
+    m_s3UpdateObjectEncryptionHasBeenSet = true;
+    m_s3UpdateObjectEncryption = std::forward<S3UpdateObjectEncryptionT>(value);
+  }
+  template <typename S3UpdateObjectEncryptionT = S3UpdateObjectEncryptionOperation>
+  JobOperation& WithS3UpdateObjectEncryption(S3UpdateObjectEncryptionT&& value) {
+    SetS3UpdateObjectEncryption(std::forward<S3UpdateObjectEncryptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LambdaInvokeOperation m_lambdaInvoke;
 
@@ -251,6 +277,8 @@ class JobOperation {
   S3ReplicateObjectOperation m_s3ReplicateObject;
 
   S3ComputeObjectChecksumOperation m_s3ComputeObjectChecksum;
+
+  S3UpdateObjectEncryptionOperation m_s3UpdateObjectEncryption;
   bool m_lambdaInvokeHasBeenSet = false;
   bool m_s3PutObjectCopyHasBeenSet = false;
   bool m_s3PutObjectAclHasBeenSet = false;
@@ -261,6 +289,7 @@ class JobOperation {
   bool m_s3PutObjectRetentionHasBeenSet = false;
   bool m_s3ReplicateObjectHasBeenSet = false;
   bool m_s3ComputeObjectChecksumHasBeenSet = false;
+  bool m_s3UpdateObjectEncryptionHasBeenSet = false;
 };
 
 }  // namespace Model

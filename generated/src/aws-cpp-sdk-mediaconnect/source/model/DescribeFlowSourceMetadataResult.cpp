@@ -40,6 +40,10 @@ DescribeFlowSourceMetadataResult& DescribeFlowSourceMetadataResult::operator=(co
     m_transportMediaInfo = jsonValue.GetObject("transportMediaInfo");
     m_transportMediaInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ndiInfo")) {
+    m_ndiInfo = jsonValue.GetObject("ndiInfo");
+    m_ndiInfoHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -157,7 +157,8 @@ class ListedRouterNetworkInterface {
 
   ///@{
   /**
-   * <p>The AWS Region where the router network interface is located.</p>
+   * <p>The Amazon Web Services Region where the router network interface is
+   * located.</p>
    */
   inline const Aws::String& GetRegionName() const { return m_regionName; }
   inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }

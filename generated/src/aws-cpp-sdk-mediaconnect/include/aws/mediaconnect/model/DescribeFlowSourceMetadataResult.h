@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/MessageDetail.h>
+#include <aws/mediaconnect/model/NdiSourceMetadataInfo.h>
 #include <aws/mediaconnect/model/TransportMediaInfo.h>
 
 #include <utility>
@@ -73,7 +74,7 @@ class DescribeFlowSourceMetadataResult {
 
   ///@{
   /**
-   * <p> The timestamp of the most recent change in metadata for this flow’s
+   * <p> The timestamp of the most recent change in metadata for this flow���s
    * source.</p>
    */
   inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
@@ -107,6 +108,25 @@ class DescribeFlowSourceMetadataResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The NDI® specific information about the flow's source. This includes the
+   * current active NDI sender, a list of all discovered NDI senders, the associated
+   * media streams for the active NDI sender, and any relevant status messages. </p>
+   */
+  inline const NdiSourceMetadataInfo& GetNdiInfo() const { return m_ndiInfo; }
+  template <typename NdiInfoT = NdiSourceMetadataInfo>
+  void SetNdiInfo(NdiInfoT&& value) {
+    m_ndiInfoHasBeenSet = true;
+    m_ndiInfo = std::forward<NdiInfoT>(value);
+  }
+  template <typename NdiInfoT = NdiSourceMetadataInfo>
+  DescribeFlowSourceMetadataResult& WithNdiInfo(NdiInfoT&& value) {
+    SetNdiInfo(std::forward<NdiInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -129,11 +149,14 @@ class DescribeFlowSourceMetadataResult {
 
   TransportMediaInfo m_transportMediaInfo;
 
+  NdiSourceMetadataInfo m_ndiInfo;
+
   Aws::String m_requestId;
   bool m_flowArnHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_transportMediaInfoHasBeenSet = false;
+  bool m_ndiInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -20,7 +20,7 @@ namespace MediaConnect {
 namespace Model {
 
 /**
- * <p>Specifies the configuration settings for individual NDI discovery servers. A
+ * <p>Specifies the configuration settings for individual NDI® discovery servers. A
  * maximum of 3 servers is allowed. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/NdiDiscoveryServerConfig">AWS
  * API Reference</a></p>

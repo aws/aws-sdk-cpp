@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/DolbyVisionCompatibility.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Metadata.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Mode.h>
 #include <aws/mediaconvert/model/DolbyVisionMapping.h>
@@ -34,6 +35,27 @@ class DolbyVision {
   AWS_MEDIACONVERT_API DolbyVision(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API DolbyVision& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * When you set Compatibility mapping to Duplicate Stream, DolbyVision streams that
+   * have a backward compatible base layer (e.g., DolbyVision 8.1) will cause a
+   * duplicate stream to be signaled in the manifest as a duplicate stream. When you
+   * set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that have a
+   * backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate
+   * stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+   */
+  inline DolbyVisionCompatibility GetCompatibility() const { return m_compatibility; }
+  inline bool CompatibilityHasBeenSet() const { return m_compatibilityHasBeenSet; }
+  inline void SetCompatibility(DolbyVisionCompatibility value) {
+    m_compatibilityHasBeenSet = true;
+    m_compatibility = value;
+  }
+  inline DolbyVision& WithCompatibility(DolbyVisionCompatibility value) {
+    SetCompatibility(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -115,6 +137,8 @@ class DolbyVision {
   }
   ///@}
  private:
+  DolbyVisionCompatibility m_compatibility{DolbyVisionCompatibility::NOT_SET};
+
   DolbyVisionLevel6Metadata m_l6Metadata;
 
   DolbyVisionLevel6Mode m_l6Mode{DolbyVisionLevel6Mode::NOT_SET};
@@ -122,6 +146,7 @@ class DolbyVision {
   DolbyVisionMapping m_mapping{DolbyVisionMapping::NOT_SET};
 
   DolbyVisionProfile m_profile{DolbyVisionProfile::NOT_SET};
+  bool m_compatibilityHasBeenSet = false;
   bool m_l6MetadataHasBeenSet = false;
   bool m_l6ModeHasBeenSet = false;
   bool m_mappingHasBeenSet = false;

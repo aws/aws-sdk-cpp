@@ -185,7 +185,7 @@ class RouterInput {
 
   ///@{
   /**
-   * <p>The AWS Region where the router input is located.</p>
+   * <p>The Amazon Web Services Region where the router input is located.</p>
    */
   inline const Aws::String& GetRegionName() const { return m_regionName; }
   inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }

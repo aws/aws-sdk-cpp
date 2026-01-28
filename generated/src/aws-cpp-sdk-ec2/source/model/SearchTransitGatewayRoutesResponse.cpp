@@ -47,6 +47,11 @@ SearchTransitGatewayRoutesResponse& SearchTransitGatewayRoutesResponse::operator
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(additionalRoutesAvailableNode.GetText()).c_str()).c_str());
       m_additionalRoutesAvailableHasBeenSet = true;
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if (!nextTokenNode.IsNull()) {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

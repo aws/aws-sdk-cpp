@@ -281,6 +281,7 @@
 #include <aws/s3-crt/model/Object.h>
 #include <aws/s3-crt/model/ObjectAttributes.h>
 #include <aws/s3-crt/model/ObjectCannedACL.h>
+#include <aws/s3-crt/model/ObjectEncryption.h>
 #include <aws/s3-crt/model/ObjectIdentifier.h>
 #include <aws/s3-crt/model/ObjectLockConfiguration.h>
 #include <aws/s3-crt/model/ObjectLockEnabled.h>
@@ -383,6 +384,7 @@
 #include <aws/s3-crt/model/S3TablesDestination.h>
 #include <aws/s3-crt/model/S3TablesDestinationResult.h>
 #include <aws/s3-crt/model/SSEKMS.h>
+#include <aws/s3-crt/model/SSEKMSEncryption.h>
 #include <aws/s3-crt/model/SSES3.h>
 #include <aws/s3-crt/model/ScanRange.h>
 #include <aws/s3-crt/model/SelectObjectContentHandler.h>
@@ -421,6 +423,8 @@
 #include <aws/s3-crt/model/Type.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
+#include <aws/s3-crt/model/UpdateObjectEncryptionRequest.h>
+#include <aws/s3-crt/model/UpdateObjectEncryptionResult.h>
 #include <aws/s3-crt/model/UploadPartCopyRequest.h>
 #include <aws/s3-crt/model/UploadPartCopyResult.h>
 #include <aws/s3-crt/model/UploadPartRequest.h>

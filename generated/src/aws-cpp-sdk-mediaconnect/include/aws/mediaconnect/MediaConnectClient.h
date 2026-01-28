@@ -2093,7 +2093,20 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> Updates an existing flow.</p><p><h3>See Also:</h3>   <a
+   * <p> Updates an existing flow.</p>  <p> Because
+   * <code>UpdateFlowSources</code> and <code>UpdateFlow</code> are separate
+   * operations, you can't change both the source type AND the flow size in a single
+   * request. </p> <ul> <li> <p>If you have a <code>MEDIUM</code> flow and you want
+   * to change the flow source to NDI®:</p> <ul> <li> <p>First, use the
+   * <code>UpdateFlow</code> operation to upgrade the flow size to
+   * <code>LARGE</code>. </p> </li> <li> <p>After that, you can then use the
+   * <code>UpdateFlowSource</code> operation to configure the NDI source. </p> </li>
+   * </ul> </li> <li> <p>If you're switching from an NDI source to a transport stream
+   * (TS) source and want to downgrade the flow size: </p> <ul> <li> <p>First, use
+   * the <code>UpdateFlowSource</code> operation to change the flow source type. </p>
+   * </li> <li> <p>After that, you can then use the <code>UpdateFlow</code> operation
+   * to downgrade the flow size to <code>MEDIUM</code>.</p> </li> </ul> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow">AWS
    * API Reference</a></p>
    */
@@ -2199,7 +2212,20 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> Updates the source of a flow.</p><p><h3>See Also:</h3>   <a
+   * <p> Updates the source of a flow.</p>  <p> Because
+   * <code>UpdateFlowSources</code> and <code>UpdateFlow</code> are separate
+   * operations, you can't change both the source type AND the flow size in a single
+   * request. </p> <ul> <li> <p>If you have a <code>MEDIUM</code> flow and you want
+   * to change the flow source to NDI®:</p> <ul> <li> <p>First, use the
+   * <code>UpdateFlow</code> operation to upgrade the flow size to
+   * <code>LARGE</code>. </p> </li> <li> <p>After that, you can then use the
+   * <code>UpdateFlowSource</code> operation to configure the NDI source. </p> </li>
+   * </ul> </li> <li> <p>If you're switching from an NDI source to a transport stream
+   * (TS) source and want to downgrade the flow size: </p> <ul> <li> <p>First, use
+   * the <code>UpdateFlowSource</code> operation to change the flow source type. </p>
+   * </li> <li> <p>After that, you can then use the <code>UpdateFlow</code> operation
+   * to downgrade the flow size to <code>MEDIUM</code>.</p> </li> </ul> </li> </ul>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowSource">AWS
    * API Reference</a></p>
    */
