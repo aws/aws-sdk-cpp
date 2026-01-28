@@ -105,6 +105,7 @@ class SmokeTestsGen(object):
 
         # Walk only cpp-smoke-tests subdirectory to avoid .git and gradle cache
         cpp_smoke_tests_dir = os.path.join(top_level_dir, "cpp-smoke-tests")
+        # TODO: Verify if this check is still needed after Smithy generator always creates output
         if not os.path.exists(cpp_smoke_tests_dir):
             if self.debug:
                 print(f"No cpp-smoke-tests directory found at '{cpp_smoke_tests_dir}'")

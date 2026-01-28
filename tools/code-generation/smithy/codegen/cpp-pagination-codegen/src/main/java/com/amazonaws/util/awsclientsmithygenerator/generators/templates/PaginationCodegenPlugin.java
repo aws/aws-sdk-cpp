@@ -38,22 +38,23 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                 .map(op -> new OperationData<>(op, op.expectTrait(PaginatedTrait.class), service))
                 .collect(Collectors.toList());
             
-            if (!paginatedOps.isEmpty()) {
-                // Generate pagination files
-                FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, service, paginatedOps, "Pagination");
-                parser.run(featureParser -> {
-                    String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
-                    
+            // Always generate base class, even if empty
+            // Required because legacy C2J generator always includes PaginationBase inheritance in client headers
+            FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, service, paginatedOps, "Pagination");
+            parser.run(featureParser -> {
+                String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
+                
+                // Generate CRTP pagination mixin (always, even if empty)
+                featureParser.generateClientHeader(
+                    serviceName + "PaginationBase.h",
+                    writer -> new PaginationBaseGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
+                );
+                
+                if (!paginatedOps.isEmpty()) {
                     // Generate client pagination header
                     featureParser.generateClientHeader(
                         serviceName + "ClientPagination.h",
                         writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
-                    );
-                    
-                    // Generate CRTP pagination mixin
-                    featureParser.generateClientHeader(
-                        serviceName + "PaginationBase.h",
-                        writer -> new PaginationBaseGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
                     );
                     
                     // Generate pagination traits headers
@@ -64,8 +65,10 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                         featureParser.getSmithyServiceName()
                     );
                     traitsGenerator.write();
-                });
-                
+                }
+            });
+            
+            if (!paginatedOps.isEmpty()) {
                 // Generate compilation test
                 PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps, parser.getServiceMap());
                 testGenerator.run();
