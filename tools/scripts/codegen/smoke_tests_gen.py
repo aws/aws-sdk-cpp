@@ -103,8 +103,15 @@ class SmokeTestsGen(object):
         if self.debug:
             print(f"_copy_cpp_codegen_contents: {target_dir}")
 
-        # Walk through the top-level directory and find all "cpp-codegen-smoke-tests-plugin" directories
-        for root, dirs, files in os.walk(top_level_dir):
+        # Walk only cpp-smoke-tests subdirectory to avoid .git and gradle cache
+        cpp_smoke_tests_dir = os.path.join(top_level_dir, "cpp-smoke-tests")
+        if not os.path.exists(cpp_smoke_tests_dir):
+            if self.debug:
+                print(f"No cpp-smoke-tests directory found at '{cpp_smoke_tests_dir}'")
+            return
+
+        # Walk through the cpp-smoke-tests directory and find all plugin directories
+        for root, dirs, files in os.walk(cpp_smoke_tests_dir):
             if plugin_name in dirs:
                 source_dir = os.path.join(root, plugin_name)
                 # recursively copy all contents from the source to the target folder
