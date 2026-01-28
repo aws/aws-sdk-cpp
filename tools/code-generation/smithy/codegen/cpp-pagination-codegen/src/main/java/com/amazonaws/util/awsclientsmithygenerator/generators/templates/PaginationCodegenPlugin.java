@@ -37,6 +37,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
         
         // TODO: Remove this workaround - mock projections should use proper Smithy model generation
         // instead of manually writing files in the plugin
+        // Currently only needed for importexport, sdb (SimpleDB), and s3-crt
         // Check if this is a legacy service mock projection
         String projectionName = context.getProjectionName();
         if (projectionName.endsWith(".mock")) {
@@ -94,6 +95,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
         Map<String, String> legacyServices = new HashMap<>();
         legacyServices.put("importexport", "ImportExport");
         legacyServices.put("sdb", "SimpleDB");
+        legacyServices.put("s3-crt", "S3Crt");
         
         String projectionName = context.getProjectionName();
         String c2jName = projectionName.replace(".mock", "");
