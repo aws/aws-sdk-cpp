@@ -74,6 +74,7 @@ class PaginationGen(object):
     def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_name: str, target_dir: str):
         # Walk only cpp-pagination subdirectory to avoid .git and gradle cache
         cpp_pagination_dir = os.path.join(top_level_dir, "cpp-pagination")
+        # TODO: Verify if this check is still needed after Smithy generator always creates output
         if not os.path.exists(cpp_pagination_dir):
             if self.debug:
                 print(f"No cpp-pagination directory found at '{cpp_pagination_dir}'")

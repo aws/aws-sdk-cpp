@@ -69,23 +69,29 @@ public class PaginationBaseGenerator {
         // CRTP base class
         writer.write("template<typename DerivedClient>");
         writer.openBlock("class " + classPrefix + "PaginationBase {\npublic:", "};", () -> {
-            // Generate paginator methods
-            for (OperationData<PaginatedTrait> data : paginatedOps) {
-                String opName = data.getOperation().getId().getName();
-                String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
-                
-                writer.write("");
-                writer.write("/**")
-                      .write(" * Create a paginator for " + opName + " operation")
-                      .write(" */");
-                
-                writer.write("Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits>")
-                      .write(opName + "Paginator(const Model::" + methodName + "Request& request)");
-                
-                writer.openBlock("{", "}", () -> {
-                writer.write("return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits>{")
-                      .write("    std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*){}), request};");
-                });
+            if (paginatedOps.isEmpty()) {
+                // Empty base class for services without pagination
+                // Required because legacy C2J generator always includes PaginationBase inheritance in client headers
+                writer.write("virtual ~" + classPrefix + "PaginationBase() = default;");
+            } else {
+                // Generate paginator methods
+                for (OperationData<PaginatedTrait> data : paginatedOps) {
+                    String opName = data.getOperation().getId().getName();
+                    String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
+                    
+                    writer.write("");
+                    writer.write("/**")
+                          .write(" * Create a paginator for " + opName + " operation")
+                          .write(" */");
+                    
+                    writer.write("Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits>")
+                          .write(opName + "Paginator(const Model::" + methodName + "Request& request)");
+                    
+                    writer.openBlock("{", "}", () -> {
+                    writer.write("return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits>{")
+                          .write("    std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*){}), request};");
+                    });
+                }
             }
         });
         
