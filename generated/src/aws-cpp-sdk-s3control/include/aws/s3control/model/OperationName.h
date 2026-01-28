@@ -21,7 +21,8 @@ enum class OperationName {
   S3PutObjectLegalHold,
   S3PutObjectRetention,
   S3ReplicateObject,
-  S3ComputeObjectChecksum
+  S3ComputeObjectChecksum,
+  S3UpdateObjectEncryption
 };
 
 namespace OperationNameMapper {

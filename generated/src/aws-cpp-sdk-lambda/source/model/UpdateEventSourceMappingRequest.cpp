@@ -103,6 +103,10 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const {
     payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
   }
 
+  if (m_loggingConfigHasBeenSet) {
+    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
+  }
+
   if (m_provisionedPollerConfigHasBeenSet) {
     payload.WithObject("ProvisionedPollerConfig", m_provisionedPollerConfig.Jsonize());
   }

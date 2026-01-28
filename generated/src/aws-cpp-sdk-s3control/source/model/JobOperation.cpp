@@ -73,6 +73,11 @@ JobOperation& JobOperation::operator=(const XmlNode& xmlNode) {
       m_s3ComputeObjectChecksum = s3ComputeObjectChecksumNode;
       m_s3ComputeObjectChecksumHasBeenSet = true;
     }
+    XmlNode s3UpdateObjectEncryptionNode = resultNode.FirstChild("S3UpdateObjectEncryption");
+    if (!s3UpdateObjectEncryptionNode.IsNull()) {
+      m_s3UpdateObjectEncryption = s3UpdateObjectEncryptionNode;
+      m_s3UpdateObjectEncryptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -128,6 +133,11 @@ void JobOperation::AddToNode(XmlNode& parentNode) const {
   if (m_s3ComputeObjectChecksumHasBeenSet) {
     XmlNode s3ComputeObjectChecksumNode = parentNode.CreateChildElement("S3ComputeObjectChecksum");
     m_s3ComputeObjectChecksum.AddToNode(s3ComputeObjectChecksumNode);
+  }
+
+  if (m_s3UpdateObjectEncryptionHasBeenSet) {
+    XmlNode s3UpdateObjectEncryptionNode = parentNode.CreateChildElement("S3UpdateObjectEncryption");
+    m_s3UpdateObjectEncryption.AddToNode(s3UpdateObjectEncryptionNode);
   }
 }
 

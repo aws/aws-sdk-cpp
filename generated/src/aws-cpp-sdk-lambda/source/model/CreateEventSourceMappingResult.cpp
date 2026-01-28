@@ -160,6 +160,10 @@ CreateEventSourceMappingResult& CreateEventSourceMappingResult::operator=(const 
     m_metricsConfig = jsonValue.GetObject("MetricsConfig");
     m_metricsConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LoggingConfig")) {
+    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
+    m_loggingConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ProvisionedPollerConfig")) {
     m_provisionedPollerConfig = jsonValue.GetObject("ProvisionedPollerConfig");
     m_provisionedPollerConfigHasBeenSet = true;

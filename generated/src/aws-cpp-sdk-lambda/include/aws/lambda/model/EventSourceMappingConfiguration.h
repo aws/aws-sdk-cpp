@@ -11,6 +11,7 @@
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
+#include <aws/lambda/model/EventSourceMappingLoggingConfig.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/lambda/model/FilterCriteria.h>
@@ -684,6 +685,27 @@ class EventSourceMappingConfiguration {
 
   ///@{
   /**
+   * <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration
+   * for your event source. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event
+   * source mapping logging</a>.</p>
+   */
+  inline const EventSourceMappingLoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
+  inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  void SetLoggingConfig(LoggingConfigT&& value) {
+    m_loggingConfigHasBeenSet = true;
+    m_loggingConfig = std::forward<LoggingConfigT>(value);
+  }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  EventSourceMappingConfiguration& WithLoggingConfig(LoggingConfigT&& value) {
+    SetLoggingConfig(std::forward<LoggingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned
    * mode configuration for the event source. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned
@@ -781,6 +803,8 @@ class EventSourceMappingConfiguration {
 
   EventSourceMappingMetricsConfig m_metricsConfig;
 
+  EventSourceMappingLoggingConfig m_loggingConfig;
+
   ProvisionedPollerConfig m_provisionedPollerConfig;
 
   Aws::String m_requestId;
@@ -815,6 +839,7 @@ class EventSourceMappingConfiguration {
   bool m_filterCriteriaErrorHasBeenSet = false;
   bool m_eventSourceMappingArnHasBeenSet = false;
   bool m_metricsConfigHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
   bool m_provisionedPollerConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

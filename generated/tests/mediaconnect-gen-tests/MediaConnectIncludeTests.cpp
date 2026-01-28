@@ -111,9 +111,11 @@
 #include <aws/mediaconnect/model/DurationUnits.h>
 #include <aws/mediaconnect/model/EgressGatewayBridge.h>
 #include <aws/mediaconnect/model/EncoderProfile.h>
+#include <aws/mediaconnect/model/EncodingConfig.h>
 #include <aws/mediaconnect/model/EncodingName.h>
 #include <aws/mediaconnect/model/EncodingParameters.h>
 #include <aws/mediaconnect/model/EncodingParametersRequest.h>
+#include <aws/mediaconnect/model/EncodingProfile.h>
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/EntitlementStatus.h>
@@ -225,6 +227,11 @@
 #include <aws/mediaconnect/model/MulticastSourceSettings.h>
 #include <aws/mediaconnect/model/NdiConfig.h>
 #include <aws/mediaconnect/model/NdiDiscoveryServerConfig.h>
+#include <aws/mediaconnect/model/NdiMediaInfo.h>
+#include <aws/mediaconnect/model/NdiMediaStreamInfo.h>
+#include <aws/mediaconnect/model/NdiSourceInfo.h>
+#include <aws/mediaconnect/model/NdiSourceMetadataInfo.h>
+#include <aws/mediaconnect/model/NdiSourceSettings.h>
 #include <aws/mediaconnect/model/NdiState.h>
 #include <aws/mediaconnect/model/NetworkInterfaceType.h>
 #include <aws/mediaconnect/model/Offering.h>

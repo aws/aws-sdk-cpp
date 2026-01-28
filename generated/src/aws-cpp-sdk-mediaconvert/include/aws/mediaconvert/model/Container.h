@@ -54,8 +54,8 @@ class Container {
   ///@{
   /**
    * The format of your media file. For example: MP4, QuickTime (MOV), Matroska
-   * (MKV), WebM or MXF. Note that this will be blank if your media file has a format
-   * that the MediaConvert Probe operation does not recognize.
+   * (MKV), WebM, MXF or Wave. Note that this will be blank if your media file has a
+   * format that the MediaConvert Probe operation does not recognize.
    */
   inline Format GetFormat() const { return m_format; }
   inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }

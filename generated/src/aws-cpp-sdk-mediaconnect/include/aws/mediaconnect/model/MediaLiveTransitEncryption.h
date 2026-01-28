@@ -24,7 +24,7 @@ namespace Model {
  * <p>The encryption configuration that defines how content is encrypted during
  * transit between MediaConnect Router and MediaLive. This configuration determines
  * whether encryption keys are automatically managed by the service or manually
- * managed through AWS Secrets Manager.</p><p><h3>See Also:</h3>   <a
+ * managed through Secrets Manager.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaLiveTransitEncryption">AWS
  * API Reference</a></p>
  */

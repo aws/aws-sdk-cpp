@@ -22,7 +22,7 @@ namespace MediaConnect {
 namespace Model {
 
 /**
- * <p> Information about the encryption of the flow.</p><p><h3>See Also:</h3>   <a
+ * <p> Encryption information.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Encryption">AWS
  * API Reference</a></p>
  */

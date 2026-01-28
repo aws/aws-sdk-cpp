@@ -36,10 +36,16 @@ class EventSourceMappingMetricsConfig {
 
   ///@{
   /**
-   * <p> The metrics you want your event source mapping to produce. Include
-   * <code>EventCount</code> to receive event source mapping metrics related to the
-   * number of events processed by your event source mapping. For more information
-   * about these metrics, see <a
+   * <p> The metrics you want your event source mapping to produce, including
+   * <code>EventCount</code>, <code>ErrorCount</code>, <code>KafkaMetrics</code>.
+   * </p> <ul> <li> <p> <code>EventCount</code> to receive metrics related to the
+   * number of events processed by your event source mapping.</p> </li> <li> <p>
+   * <code>ErrorCount</code> (Amazon MSK and self-managed Apache Kafka) to receive
+   * metrics related to the number of errors in your event source mapping
+   * processing.</p> </li> <li> <p> <code>KafkaMetrics</code> (Amazon MSK and
+   * self-managed Apache Kafka) to receive metrics related to the Kafka consumers
+   * from your event source mapping.</p> </li> </ul> <p> For more information about
+   * these metrics, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">
    * Event source mapping metrics</a>. </p>
    */

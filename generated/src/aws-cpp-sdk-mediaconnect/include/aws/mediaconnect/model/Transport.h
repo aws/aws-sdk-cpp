@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/NdiSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
 
 #include <utility>
@@ -290,7 +291,7 @@ class Transport {
 
   ///@{
   /**
-   * <p>A suffix for the names of the NDI sources that the flow creates. If a custom
+   * <p>A suffix for the name of the NDI® sender that the flow creates. If a custom
    * name isn't specified, MediaConnect uses the output name. </p>
    */
   inline const Aws::String& GetNdiProgramName() const { return m_ndiProgramName; }
@@ -303,6 +304,25 @@ class Transport {
   template <typename NdiProgramNameT = Aws::String>
   Transport& WithNdiProgramName(NdiProgramNameT&& value) {
     SetNdiProgramName(std::forward<NdiProgramNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The settings for the NDI source. This includes the exact name of the
+   * upstream NDI sender that you want to connect to your source. </p>
+   */
+  inline const NdiSourceSettings& GetNdiSourceSettings() const { return m_ndiSourceSettings; }
+  inline bool NdiSourceSettingsHasBeenSet() const { return m_ndiSourceSettingsHasBeenSet; }
+  template <typename NdiSourceSettingsT = NdiSourceSettings>
+  void SetNdiSourceSettings(NdiSourceSettingsT&& value) {
+    m_ndiSourceSettingsHasBeenSet = true;
+    m_ndiSourceSettings = std::forward<NdiSourceSettingsT>(value);
+  }
+  template <typename NdiSourceSettingsT = NdiSourceSettings>
+  Transport& WithNdiSourceSettings(NdiSourceSettingsT&& value) {
+    SetNdiSourceSettings(std::forward<NdiSourceSettingsT>(value));
     return *this;
   }
   ///@}
@@ -336,6 +356,8 @@ class Transport {
   int m_ndiSpeedHqQuality{0};
 
   Aws::String m_ndiProgramName;
+
+  NdiSourceSettings m_ndiSourceSettings;
   bool m_cidrAllowListHasBeenSet = false;
   bool m_maxBitrateHasBeenSet = false;
   bool m_maxLatencyHasBeenSet = false;
@@ -351,6 +373,7 @@ class Transport {
   bool m_streamIdHasBeenSet = false;
   bool m_ndiSpeedHqQualityHasBeenSet = false;
   bool m_ndiProgramNameHasBeenSet = false;
+  bool m_ndiSourceSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

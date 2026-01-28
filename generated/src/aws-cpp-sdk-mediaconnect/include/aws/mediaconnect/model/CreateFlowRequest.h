@@ -12,6 +12,7 @@
 #include <aws/mediaconnect/model/AddMaintenance.h>
 #include <aws/mediaconnect/model/AddMediaStreamRequest.h>
 #include <aws/mediaconnect/model/AddOutputRequest.h>
+#include <aws/mediaconnect/model/EncodingConfig.h>
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/FlowSize.h>
 #include <aws/mediaconnect/model/GrantEntitlementRequest.h>
@@ -274,8 +275,8 @@ class CreateFlowRequest : public MediaConnectRequest {
   ///@{
   /**
    * <p> Determines the processing capacity and feature set of the flow. Set this
-   * optional parameter to <code>LARGE</code> if you want to enable NDI outputs on
-   * the flow. </p>
+   * optional parameter to <code>LARGE</code> if you want to enable NDI sources or
+   * outputs on the flow. </p>
    */
   inline FlowSize GetFlowSize() const { return m_flowSize; }
   inline bool FlowSizeHasBeenSet() const { return m_flowSizeHasBeenSet; }
@@ -291,8 +292,8 @@ class CreateFlowRequest : public MediaConnectRequest {
 
   ///@{
   /**
-   * <p> Specifies the configuration settings for NDI outputs. Required when the flow
-   * includes NDI outputs. </p>
+   * <p> Specifies the configuration settings for a flow's NDI source or output.
+   * Required when the flow includes an NDI source or output. </p>
    */
   inline const NdiConfig& GetNdiConfig() const { return m_ndiConfig; }
   inline bool NdiConfigHasBeenSet() const { return m_ndiConfigHasBeenSet; }
@@ -304,6 +305,22 @@ class CreateFlowRequest : public MediaConnectRequest {
   template <typename NdiConfigT = NdiConfig>
   CreateFlowRequest& WithNdiConfig(NdiConfigT&& value) {
     SetNdiConfig(std::forward<NdiConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EncodingConfig& GetEncodingConfig() const { return m_encodingConfig; }
+  inline bool EncodingConfigHasBeenSet() const { return m_encodingConfigHasBeenSet; }
+  template <typename EncodingConfigT = EncodingConfig>
+  void SetEncodingConfig(EncodingConfigT&& value) {
+    m_encodingConfigHasBeenSet = true;
+    m_encodingConfig = std::forward<EncodingConfigT>(value);
+  }
+  template <typename EncodingConfigT = EncodingConfig>
+  CreateFlowRequest& WithEncodingConfig(EncodingConfigT&& value) {
+    SetEncodingConfig(std::forward<EncodingConfigT>(value));
     return *this;
   }
   ///@}
@@ -358,6 +375,8 @@ class CreateFlowRequest : public MediaConnectRequest {
 
   NdiConfig m_ndiConfig;
 
+  EncodingConfig m_encodingConfig;
+
   Aws::Map<Aws::String, Aws::String> m_flowTags;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_entitlementsHasBeenSet = false;
@@ -372,6 +391,7 @@ class CreateFlowRequest : public MediaConnectRequest {
   bool m_sourceMonitoringConfigHasBeenSet = false;
   bool m_flowSizeHasBeenSet = false;
   bool m_ndiConfigHasBeenSet = false;
+  bool m_encodingConfigHasBeenSet = false;
   bool m_flowTagsHasBeenSet = false;
 };
 

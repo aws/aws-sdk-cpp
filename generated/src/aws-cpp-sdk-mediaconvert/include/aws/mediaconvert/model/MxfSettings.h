@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/MxfAfdSignaling.h>
 #include <aws/mediaconvert/model/MxfProfile.h>
+#include <aws/mediaconvert/model/MxfUncompressedAudioWrapping.h>
 #include <aws/mediaconvert/model/MxfXavcProfileSettings.h>
 
 #include <utility>
@@ -79,6 +80,25 @@ class MxfSettings {
 
   ///@{
   /**
+   * Choose the audio frame wrapping mode for PCM tracks in MXF outputs. AUTO
+   * (default): Uses codec-appropriate defaults - BWF for H.264/AVC, AES3 for
+   * MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant descriptors.
+   * This setting only takes effect when the MXF profile is OP1a.
+   */
+  inline MxfUncompressedAudioWrapping GetUncompressedAudioWrapping() const { return m_uncompressedAudioWrapping; }
+  inline bool UncompressedAudioWrappingHasBeenSet() const { return m_uncompressedAudioWrappingHasBeenSet; }
+  inline void SetUncompressedAudioWrapping(MxfUncompressedAudioWrapping value) {
+    m_uncompressedAudioWrappingHasBeenSet = true;
+    m_uncompressedAudioWrapping = value;
+  }
+  inline MxfSettings& WithUncompressedAudioWrapping(MxfUncompressedAudioWrapping value) {
+    SetUncompressedAudioWrapping(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
    * to XAVC.
    */
@@ -100,9 +120,12 @@ class MxfSettings {
 
   MxfProfile m_profile{MxfProfile::NOT_SET};
 
+  MxfUncompressedAudioWrapping m_uncompressedAudioWrapping{MxfUncompressedAudioWrapping::NOT_SET};
+
   MxfXavcProfileSettings m_xavcProfileSettings;
   bool m_afdSignalingHasBeenSet = false;
   bool m_profileHasBeenSet = false;
+  bool m_uncompressedAudioWrappingHasBeenSet = false;
   bool m_xavcProfileSettingsHasBeenSet = false;
 };
 

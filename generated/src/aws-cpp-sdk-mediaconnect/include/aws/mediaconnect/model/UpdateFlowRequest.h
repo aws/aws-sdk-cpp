@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/EncodingConfig.h>
 #include <aws/mediaconnect/model/FlowSize.h>
 #include <aws/mediaconnect/model/MonitoringConfig.h>
 #include <aws/mediaconnect/model/NdiConfig.h>
@@ -107,8 +108,8 @@ class UpdateFlowRequest : public MediaConnectRequest {
 
   ///@{
   /**
-   * <p> Specifies the configuration settings for NDI outputs. Required when the flow
-   * includes NDI outputs. </p>
+   * <p> Specifies the configuration settings for a flow's NDI source or output.
+   * Required when the flow includes an NDI source or output. </p>
    */
   inline const NdiConfig& GetNdiConfig() const { return m_ndiConfig; }
   inline bool NdiConfigHasBeenSet() const { return m_ndiConfigHasBeenSet; }
@@ -139,6 +140,22 @@ class UpdateFlowRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const EncodingConfig& GetEncodingConfig() const { return m_encodingConfig; }
+  inline bool EncodingConfigHasBeenSet() const { return m_encodingConfigHasBeenSet; }
+  template <typename EncodingConfigT = EncodingConfig>
+  void SetEncodingConfig(EncodingConfigT&& value) {
+    m_encodingConfigHasBeenSet = true;
+    m_encodingConfig = std::forward<EncodingConfigT>(value);
+  }
+  template <typename EncodingConfigT = EncodingConfig>
+  UpdateFlowRequest& WithEncodingConfig(EncodingConfigT&& value) {
+    SetEncodingConfig(std::forward<EncodingConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_flowArn;
 
@@ -151,12 +168,15 @@ class UpdateFlowRequest : public MediaConnectRequest {
   NdiConfig m_ndiConfig;
 
   FlowSize m_flowSize{FlowSize::NOT_SET};
+
+  EncodingConfig m_encodingConfig;
   bool m_flowArnHasBeenSet = false;
   bool m_sourceFailoverConfigHasBeenSet = false;
   bool m_maintenanceHasBeenSet = false;
   bool m_sourceMonitoringConfigHasBeenSet = false;
   bool m_ndiConfigHasBeenSet = false;
   bool m_flowSizeHasBeenSet = false;
+  bool m_encodingConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/EncodingConfig.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/FlowSize.h>
@@ -349,8 +350,7 @@ class Flow {
 
   ///@{
   /**
-   * <p> Determines the processing capacity and feature set of the flow. Set this
-   * optional parameter to LARGE if you want to enable NDI outputs on the flow. </p>
+   * <p> Determines the processing capacity and feature set of the flow. </p>
    */
   inline FlowSize GetFlowSize() const { return m_flowSize; }
   inline bool FlowSizeHasBeenSet() const { return m_flowSizeHasBeenSet; }
@@ -366,8 +366,8 @@ class Flow {
 
   ///@{
   /**
-   * <p>Specifies the configuration settings for NDI outputs. Required when the flow
-   * includes NDI outputs. </p>
+   * <p>Specifies the configuration settings for a flow's NDI source or output.
+   * Required when the flow includes an NDI source or output.</p>
    */
   inline const NdiConfig& GetNdiConfig() const { return m_ndiConfig; }
   inline bool NdiConfigHasBeenSet() const { return m_ndiConfigHasBeenSet; }
@@ -379,6 +379,25 @@ class Flow {
   template <typename NdiConfigT = NdiConfig>
   Flow& WithNdiConfig(NdiConfigT&& value) {
     SetNdiConfig(std::forward<NdiConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The encoding configuration to apply to the NDI® source when transcoding it
+   * to a transport stream for downstream distribution. </p>
+   */
+  inline const EncodingConfig& GetEncodingConfig() const { return m_encodingConfig; }
+  inline bool EncodingConfigHasBeenSet() const { return m_encodingConfigHasBeenSet; }
+  template <typename EncodingConfigT = EncodingConfig>
+  void SetEncodingConfig(EncodingConfigT&& value) {
+    m_encodingConfigHasBeenSet = true;
+    m_encodingConfig = std::forward<EncodingConfigT>(value);
+  }
+  template <typename EncodingConfigT = EncodingConfig>
+  Flow& WithEncodingConfig(EncodingConfigT&& value) {
+    SetEncodingConfig(std::forward<EncodingConfigT>(value));
     return *this;
   }
   ///@}
@@ -416,6 +435,8 @@ class Flow {
   FlowSize m_flowSize{FlowSize::NOT_SET};
 
   NdiConfig m_ndiConfig;
+
+  EncodingConfig m_encodingConfig;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_egressIpHasBeenSet = false;
@@ -433,6 +454,7 @@ class Flow {
   bool m_sourceMonitoringConfigHasBeenSet = false;
   bool m_flowSizeHasBeenSet = false;
   bool m_ndiConfigHasBeenSet = false;
+  bool m_encodingConfigHasBeenSet = false;
 };
 
 }  // namespace Model

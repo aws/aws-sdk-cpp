@@ -10,6 +10,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
+#include <aws/mediaconnect/model/NdiSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/State.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
@@ -409,6 +410,25 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
 
   ///@{
   /**
+   * <p> The settings for the NDI source. This includes the exact name of the
+   * upstream NDI sender that you want to connect to your source. </p>
+   */
+  inline const NdiSourceSettings& GetNdiSourceSettings() const { return m_ndiSourceSettings; }
+  inline bool NdiSourceSettingsHasBeenSet() const { return m_ndiSourceSettingsHasBeenSet; }
+  template <typename NdiSourceSettingsT = NdiSourceSettings>
+  void SetNdiSourceSettings(NdiSourceSettingsT&& value) {
+    m_ndiSourceSettingsHasBeenSet = true;
+    m_ndiSourceSettings = std::forward<NdiSourceSettingsT>(value);
+  }
+  template <typename NdiSourceSettingsT = NdiSourceSettings>
+  UpdateFlowSourceRequest& WithNdiSourceSettings(NdiSourceSettingsT&& value) {
+    SetNdiSourceSettings(std::forward<NdiSourceSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether to enable or disable router integration for this flow
    * source.</p>
    */
@@ -483,6 +503,8 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
 
   UpdateGatewayBridgeSourceRequest m_gatewayBridgeSource;
 
+  NdiSourceSettings m_ndiSourceSettings;
+
   State m_routerIntegrationState{State::NOT_SET};
 
   FlowTransitEncryption m_routerIntegrationTransitDecryption;
@@ -506,6 +528,7 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
   bool m_vpcInterfaceNameHasBeenSet = false;
   bool m_whitelistCidrHasBeenSet = false;
   bool m_gatewayBridgeSourceHasBeenSet = false;
+  bool m_ndiSourceSettingsHasBeenSet = false;
   bool m_routerIntegrationStateHasBeenSet = false;
   bool m_routerIntegrationTransitDecryptionHasBeenSet = false;
 };

@@ -81,6 +81,10 @@ Transport& Transport::operator=(JsonView jsonValue) {
     m_ndiProgramName = jsonValue.GetString("ndiProgramName");
     m_ndiProgramNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ndiSourceSettings")) {
+    m_ndiSourceSettings = jsonValue.GetObject("ndiSourceSettings");
+    m_ndiSourceSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -149,6 +153,10 @@ JsonValue Transport::Jsonize() const {
 
   if (m_ndiProgramNameHasBeenSet) {
     payload.WithString("ndiProgramName", m_ndiProgramName);
+  }
+
+  if (m_ndiSourceSettingsHasBeenSet) {
+    payload.WithObject("ndiSourceSettings", m_ndiSourceSettings.Jsonize());
   }
 
   return payload;

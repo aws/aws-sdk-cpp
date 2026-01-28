@@ -120,7 +120,9 @@ class AacSettings {
    * Description (Receiver Mix): One channel, C. Includes audio description data from
    * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
    * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
-   * C, L, R, Ls, Rs, LFE.
+   * C, L, R, Ls, Rs, LFE. To follow the number of channels from your input audio,
+   * choose CODING_MODE_AUTO, and the service will automatically choose from one of
+   * the coding modes above.
    */
   inline AacCodingMode GetCodingMode() const { return m_codingMode; }
   inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }

@@ -216,6 +216,7 @@
 #include <aws/mediaconvert/model/DisassociateCertificateRequest.h>
 #include <aws/mediaconvert/model/DisassociateCertificateResult.h>
 #include <aws/mediaconvert/model/DolbyVision.h>
+#include <aws/mediaconvert/model/DolbyVisionCompatibility.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Metadata.h>
 #include <aws/mediaconvert/model/DolbyVisionLevel6Mode.h>
 #include <aws/mediaconvert/model/DolbyVisionMapping.h>
@@ -540,6 +541,7 @@
 #include <aws/mediaconvert/model/MxfAfdSignaling.h>
 #include <aws/mediaconvert/model/MxfProfile.h>
 #include <aws/mediaconvert/model/MxfSettings.h>
+#include <aws/mediaconvert/model/MxfUncompressedAudioWrapping.h>
 #include <aws/mediaconvert/model/MxfXavcDurationMode.h>
 #include <aws/mediaconvert/model/MxfXavcProfileSettings.h>
 #include <aws/mediaconvert/model/NexGuardFileMarkerSettings.h>

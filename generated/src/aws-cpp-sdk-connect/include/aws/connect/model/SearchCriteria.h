@@ -9,6 +9,7 @@
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
+#include <aws/connect/model/ControlPlaneTagFilter.h>
 #include <aws/connect/model/NameCriteria.h>
 #include <aws/connect/model/SearchContactsAdditionalTimeRange.h>
 #include <aws/connect/model/SearchableContactAttributes.h>
@@ -295,6 +296,22 @@ class SearchCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ControlPlaneTagFilter& GetContactTags() const { return m_contactTags; }
+  inline bool ContactTagsHasBeenSet() const { return m_contactTagsHasBeenSet; }
+  template <typename ContactTagsT = ControlPlaneTagFilter>
+  void SetContactTags(ContactTagsT&& value) {
+    m_contactTagsHasBeenSet = true;
+    m_contactTags = std::forward<ContactTagsT>(value);
+  }
+  template <typename ContactTagsT = ControlPlaneTagFilter>
+  SearchCriteria& WithContactTags(ContactTagsT&& value) {
+    SetContactTags(std::forward<ContactTagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NameCriteria m_name;
 
@@ -319,6 +336,8 @@ class SearchCriteria {
   SearchableSegmentAttributes m_searchableSegmentAttributes;
 
   Aws::Vector<Aws::String> m_activeRegions;
+
+  ControlPlaneTagFilter m_contactTags;
   bool m_nameHasBeenSet = false;
   bool m_agentIdsHasBeenSet = false;
   bool m_agentHierarchyGroupsHasBeenSet = false;
@@ -331,6 +350,7 @@ class SearchCriteria {
   bool m_searchableContactAttributesHasBeenSet = false;
   bool m_searchableSegmentAttributesHasBeenSet = false;
   bool m_activeRegionsHasBeenSet = false;
+  bool m_contactTagsHasBeenSet = false;
 };
 
 }  // namespace Model

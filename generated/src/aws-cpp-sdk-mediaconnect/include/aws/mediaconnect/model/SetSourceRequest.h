@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/Encryption.h>
 #include <aws/mediaconnect/model/FlowTransitEncryption.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
+#include <aws/mediaconnect/model/NdiSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/SetGatewayBridgeSourceRequest.h>
 #include <aws/mediaconnect/model/State.h>
@@ -394,6 +395,25 @@ class SetSourceRequest {
 
   ///@{
   /**
+   * <p> The settings for the NDI® source. This includes the exact name of the
+   * upstream NDI sender that you want to connect to your source. </p>
+   */
+  inline const NdiSourceSettings& GetNdiSourceSettings() const { return m_ndiSourceSettings; }
+  inline bool NdiSourceSettingsHasBeenSet() const { return m_ndiSourceSettingsHasBeenSet; }
+  template <typename NdiSourceSettingsT = NdiSourceSettings>
+  void SetNdiSourceSettings(NdiSourceSettingsT&& value) {
+    m_ndiSourceSettingsHasBeenSet = true;
+    m_ndiSourceSettings = std::forward<NdiSourceSettingsT>(value);
+  }
+  template <typename NdiSourceSettingsT = NdiSourceSettings>
+  SetSourceRequest& WithNdiSourceSettings(NdiSourceSettingsT&& value) {
+    SetNdiSourceSettings(std::forward<NdiSourceSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The key-value pairs that can be used to tag and organize the source. </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetSourceTags() const { return m_sourceTags; }
@@ -491,6 +511,8 @@ class SetSourceRequest {
 
   SetGatewayBridgeSourceRequest m_gatewayBridgeSource;
 
+  NdiSourceSettings m_ndiSourceSettings;
+
   Aws::Map<Aws::String, Aws::String> m_sourceTags;
 
   State m_routerIntegrationState{State::NOT_SET};
@@ -515,6 +537,7 @@ class SetSourceRequest {
   bool m_vpcInterfaceNameHasBeenSet = false;
   bool m_whitelistCidrHasBeenSet = false;
   bool m_gatewayBridgeSourceHasBeenSet = false;
+  bool m_ndiSourceSettingsHasBeenSet = false;
   bool m_sourceTagsHasBeenSet = false;
   bool m_routerIntegrationStateHasBeenSet = false;
   bool m_routerIntegrationTransitDecryptionHasBeenSet = false;

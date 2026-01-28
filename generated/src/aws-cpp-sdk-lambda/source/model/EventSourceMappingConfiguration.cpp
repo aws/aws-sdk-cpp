@@ -158,6 +158,10 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator=(Json
     m_metricsConfig = jsonValue.GetObject("MetricsConfig");
     m_metricsConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LoggingConfig")) {
+    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
+    m_loggingConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ProvisionedPollerConfig")) {
     m_provisionedPollerConfig = jsonValue.GetObject("ProvisionedPollerConfig");
     m_provisionedPollerConfigHasBeenSet = true;
@@ -310,6 +314,10 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const {
 
   if (m_metricsConfigHasBeenSet) {
     payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+  }
+
+  if (m_loggingConfigHasBeenSet) {
+    payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
   }
 
   if (m_provisionedPollerConfigHasBeenSet) {

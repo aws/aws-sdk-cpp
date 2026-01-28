@@ -116,8 +116,10 @@
 #include <aws/lambda/model/EventInput.h>
 #include <aws/lambda/model/EventResult.h>
 #include <aws/lambda/model/EventSourceMappingConfiguration.h>
+#include <aws/lambda/model/EventSourceMappingLoggingConfig.h>
 #include <aws/lambda/model/EventSourceMappingMetric.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
+#include <aws/lambda/model/EventSourceMappingSystemLogLevel.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/lambda/model/EventType.h>
 #include <aws/lambda/model/Execution.h>

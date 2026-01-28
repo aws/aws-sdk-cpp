@@ -139,6 +139,7 @@
 #include <aws/s3-crt/model/SelectObjectContentRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataInventoryTableConfigurationRequest.h>
 #include <aws/s3-crt/model/UpdateBucketMetadataJournalTableConfigurationRequest.h>
+#include <aws/s3-crt/model/UpdateObjectEncryptionRequest.h>
 #include <aws/s3-crt/model/UploadPartCopyRequest.h>
 #include <aws/s3-crt/model/UploadPartRequest.h>
 #include <aws/s3-crt/model/WriteGetObjectResponseRequest.h>
@@ -5741,6 +5742,54 @@ UpdateBucketMetadataJournalTableConfigurationOutcome S3CrtClient::UpdateBucketMe
         }());
         return UpdateBucketMetadataJournalTableConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateObjectEncryptionOutcome S3CrtClient::UpdateObjectEncryption(const UpdateObjectEncryptionRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateObjectEncryption);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateObjectEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateObjectEncryption", "Required field: Bucket, is not set");
+    return UpdateObjectEncryptionOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateObjectEncryption", "Required field: Key, is not set");
+    return UpdateObjectEncryptionOutcome(
+        Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateObjectEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateObjectEncryption, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateObjectEncryptionOutcome>(
+      [&]() -> UpdateObjectEncryptionOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateObjectEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        Aws::StringStream ss;
+        endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+        ss.str("?encryption");
+        endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        request.SetServiceSpecificParameters([&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+        return UpdateObjectEncryptionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

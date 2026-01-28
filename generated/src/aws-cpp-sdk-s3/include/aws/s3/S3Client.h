@@ -5937,17 +5937,16 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * filtering based only on an object key name prefix, which is supported for
    * backward compatibility. For the related API description, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
-   *  <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header
-   * syntax</dt> <dd> <p>You specify the lifecycle configuration in your request
-   * body. The lifecycle configuration is specified as XML consisting of one or more
-   * rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules. This
-   * limit is not adjustable.</p> <p>Bucket lifecycle configuration supports
-   * specifying a lifecycle rule using an object key name prefix, one or more object
-   * tags, object size, or any combination of these. Accordingly, this section
-   * describes the latest API. The previous version of the API supported filtering
-   * based only on an object key name prefix, which is supported for backward
-   * compatibility for general purpose buckets. For the related API description, see
-   * <a
+   *  <dl> <dt>Rules</dt> <dd> <p>You specify the lifecycle configuration in
+   * your request body. The lifecycle configuration is specified as XML consisting of
+   * one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000
+   * rules. This limit is not adjustable.</p> <p>Bucket lifecycle configuration
+   * supports specifying a lifecycle rule using an object key name prefix, one or
+   * more object tags, object size, or any combination of these. Accordingly, this
+   * section describes the latest API. The previous version of the API supported
+   * filtering based only on an object key name prefix, which is supported for
+   * backward compatibility for general purpose buckets. For the related API
+   * description, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
    * </p>  <p>Lifecyle configurations for directory buckets only support
    * expiring objects and cancelling multipart uploads. Expiring of versioned
@@ -5965,13 +5964,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
    * Lifecycle Management</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
-   * Configuration Elements</a>.</p> </dd> <dd> <ul> <li> <p> <b>General purpose
-   * bucket permissions</b> - By default, all Amazon S3 resources are private,
-   * including buckets, objects, and related subresources (for example, lifecycle
-   * configuration and website configuration). Only the resource owner (that is, the
-   * Amazon Web Services account that created it) can access the resource. The
-   * resource owner can optionally grant access permissions to others by writing an
-   * access policy. For this operation, a user must have the
+   * Configuration Elements</a>.</p> </dd> <dt>Permissions</dt> <dd> <ul> <li> <p>
+   * <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources
+   * are private, including buckets, objects, and related subresources (for example,
+   * lifecycle configuration and website configuration). Only the resource owner
+   * (that is, the Amazon Web Services account that created it) can access the
+   * resource. The resource owner can optionally grant access permissions to others
+   * by writing an access policy. For this operation, a user must have the
    * <code>s3:PutLifecycleConfiguration</code> permission.</p> <p>You can also
    * explicitly deny permissions. An explicit deny also supersedes any other
    * permissions. If you want to block users or accounts from removing or deleting
@@ -6003,10 +6002,11 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * Zones, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
    * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
-   *  </li> </ul> </dd> <dd> <p> <b>Directory buckets </b> - The HTTP Host
-   * header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p>
-   * <p>The following operations are related to
-   * <code>PutBucketLifecycleConfiguration</code>:</p> <ul> <li> <p> <a
+   *  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory
+   * buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> <p>The following
+   * operations are related to <code>PutBucketLifecycleConfiguration</code>:</p> <ul>
+   * <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
@@ -6838,7 +6838,14 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
    * </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets
    * </b> - The HTTP Host header syntax is <code>
    * <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
-   * </dd> </dl> <p>For more information about related Amazon S3 APIs, see the
+   * </dd> </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> <p>You might receive an
+   * <code>InvalidRequest</code> error for several reasons. Depending on the reason
+   * for the error, you might receive one of the following messages:</p> <ul> <li>
+   * <p>Cannot specify both a write offset value and user-defined object metadata for
+   * existing objects.</p> </li> <li> <p>Checksum Type mismatch occurred, expected
+   * checksum Type: sha1, actual checksum Type: crc32c.</p> </li> <li> <p>Request
+   * body cannot be empty when 'write offset' is specified.</p> </li> </ul> </li>
+   * </ul> </dd> </dl> <p>For more information about related Amazon S3 APIs, see the
    * following:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
    * </p> </li> <li> <p> <a
@@ -7664,6 +7671,120 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
       const UpdateBucketMetadataJournalTableConfigurationResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3Client::UpdateBucketMetadataJournalTableConfiguration, request, handler, context);
+  }
+
+  /**
+   *  <p>This operation is not supported for directory buckets or Amazon S3 on
+   * Outposts buckets. </p>  <p> Updates the server-side encryption type of an
+   * existing encrypted object in a general purpose bucket. You can use the
+   * <code>UpdateObjectEncryption</code> operation to change encrypted objects from
+   * server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side
+   * encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3
+   * Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation
+   * to change the customer-managed KMS key used to encrypt your data so that you can
+   * comply with custom key-rotation standards. </p> <p>Using the
+   * <code>UpdateObjectEncryption</code> operation, you can atomically update the
+   * server-side encryption type of an existing object in a general purpose bucket
+   * without any data movement. The <code>UpdateObjectEncryption</code> operation
+   * uses envelope encryption to re-encrypt the data key used to encrypt and decrypt
+   * your object with your newly specified server-side encryption type. In other
+   * words, when you use the <code>UpdateObjectEncryption</code> operation, your data
+   * isn't copied, archived objects in the S3 Glacier Flexible Retrieval and S3
+   * Glacier Deep Archive storage classes aren't restored, and objects in the S3
+   * Intelligent-Tiering storage class aren't moved between tiers. Additionally, the
+   * <code>UpdateObjectEncryption</code> operation preserves all object metadata
+   * properties, including the storage class, creation date, last modified date,
+   * ETag, and checksum properties. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/update-sse-encryption.html">
+   * Updating server-side encryption for existing objects</a> in the <i>Amazon S3
+   * User Guide</i>.</p> <p>By default, all <code>UpdateObjectEncryption</code>
+   * requests that specify a customer-managed KMS key are restricted to KMS keys that
+   * are owned by the bucket owner's Amazon Web Services account. If you're using
+   * Organizations, you can request the ability to use KMS keys owned by other member
+   * accounts within your organization by contacting Amazon Web Services Support.</p>
+   *  <p>Source objects that are unencrypted, or encrypted with either
+   * dual-layer server-side encryption with KMS keys (DSSE-KMS) or server-side
+   * encryption with customer-provided keys (SSE-C) aren't supported by this
+   * operation. Additionally, you cannot specify SSE-S3 encryption as the requested
+   * new encryption type <code>UpdateObjectEncryption</code> request.</p>
+   * <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>To use the
+   * <code>UpdateObjectEncryption</code> operation, you must have the following
+   * permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p>
+   * <code>s3:UpdateObjectEncryption</code> </p> </li> <li> <p>
+   * <code>kms:Encrypt</code> </p> </li> <li> <p> <code>kms:Decrypt</code> </p> </li>
+   * <li> <p> <code>kms:GenerateDataKey</code> </p> </li> <li> <p>
+   * <code>kms:ReEncrypt*</code> </p> </li> </ul> </li> <li> <p>If you're using
+   * Organizations, to use this operation with customer-managed KMS keys from other
+   * Amazon Web Services accounts within your organization, you must have the
+   * <code>organizations:DescribeAccount</code> permission.</p> </li> </ul> </dd>
+   * </dl> <dl> <dt>Errors</dt> <dd> <ul> <li> <p>You might receive an
+   * <code>InvalidRequest</code> error for several reasons. Depending on the reason
+   * for the error, you might receive one of the following messages:</p> <ul> <li>
+   * <p>The <code>UpdateObjectEncryption</code> operation doesn't supported
+   * unencrypted source objects. Only source objects encrypted with SSE-S3 or SSE-KMS
+   * are supported.</p> </li> <li> <p>The <code>UpdateObjectEncryption</code>
+   * operation doesn't support source objects with the encryption type DSSE-KMS or
+   * SSE-C. Only source objects encrypted with SSE-S3 or SSE-KMS are supported.</p>
+   * </li> <li> <p>The <code>UpdateObjectEncryption</code> operation doesn't support
+   * updating the encryption type to DSSE-KMS or SSE-C. Modify the request to specify
+   * SSE-KMS for the updated encryption type, and then try again.</p> </li> <li>
+   * <p>Requests that modify an object encryption configuration require Amazon Web
+   * Services Signature Version 4. Modify the request to use Amazon Web Services
+   * Signature Version 4, and then try again.</p> </li> <li> <p>Requests that modify
+   * an object encryption configuration require a valid new encryption type. Valid
+   * values are <code>SSEKMS</code>. Modify the request to specify SSE-KMS for the
+   * updated encryption type, and then try again.</p> </li> <li> <p>Requests that
+   * modify an object's encryption type to SSE-KMS require an Amazon Web Services KMS
+   * key Amazon Resource Name (ARN). Modify the request to specify a KMS key ARN, and
+   * then try again.</p> </li> <li> <p>Requests that modify an object's encryption
+   * type to SSE-KMS require a valid Amazon Web Services KMS key Amazon Resource Name
+   * (ARN). Confirm that you have a correctly formatted KMS key ARN in your request,
+   * and then try again.</p> </li> <li> <p>The <code>BucketKeyEnabled</code> value
+   * isn't valid. Valid values are <code>true</code> or <code>false</code>. Modify
+   * the request to specify a valid value, and then try again.</p> </li> </ul> </li>
+   * <li> <p>You might receive an <code>AccessDenied</code> error for several
+   * reasons. Depending on the reason for the error, you might receive one of the
+   * following messages:</p> <ul> <li> <p>The Amazon Web Services KMS key in the
+   * request must be owned by the same account as the bucket. Modify the request to
+   * specify a KMS key from the same account, and then try again.</p> </li> <li>
+   * <p>The bucket owner's account was approved to make
+   * <code>UpdateObjectEncryption</code> requests that use any Amazon Web Services
+   * KMS key in their organization, but the bucket owner's account isn't part of an
+   * organization in Organizations. Make sure that the bucket owner's account and the
+   * specified KMS key belong to the same organization, and then try again. </p>
+   * </li> <li> <p>The specified Amazon Web Services KMS key must be from the same
+   * organization in Organizations as the bucket. Specify a KMS key that belongs to
+   * the same organization as the bucket, and then try again. </p> </li> <li> <p>The
+   * encryption type for the specified object can’t be updated because that object is
+   * protected by S3 Object Lock. If the object has a governance-mode retention
+   * period or a legal hold, you must first remove the Object Lock status on the
+   * object before you issue your <code>UpdateObjectEncryption</code> request. You
+   * can't use the <code>UpdateObjectEncryption</code> operation with objects that
+   * have an Object Lock compliance mode retention period applied to them.</p> </li>
+   * </ul> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateObjectEncryption">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateObjectEncryptionOutcome UpdateObjectEncryption(const Model::UpdateObjectEncryptionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateObjectEncryption that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateObjectEncryptionRequestT = Model::UpdateObjectEncryptionRequest>
+  Model::UpdateObjectEncryptionOutcomeCallable UpdateObjectEncryptionCallable(const UpdateObjectEncryptionRequestT& request) const {
+    return SubmitCallable(&S3Client::UpdateObjectEncryption, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateObjectEncryption that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateObjectEncryptionRequestT = Model::UpdateObjectEncryptionRequest>
+  void UpdateObjectEncryptionAsync(const UpdateObjectEncryptionRequestT& request,
+                                   const UpdateObjectEncryptionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3Client::UpdateObjectEncryption, request, handler, context);
   }
 
   /**

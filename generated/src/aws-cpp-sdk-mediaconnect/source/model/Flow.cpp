@@ -101,6 +101,10 @@ Flow& Flow::operator=(JsonView jsonValue) {
     m_ndiConfig = jsonValue.GetObject("ndiConfig");
     m_ndiConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encodingConfig")) {
+    m_encodingConfig = jsonValue.GetObject("encodingConfig");
+    m_encodingConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -193,6 +197,10 @@ JsonValue Flow::Jsonize() const {
 
   if (m_ndiConfigHasBeenSet) {
     payload.WithObject("ndiConfig", m_ndiConfig.Jsonize());
+  }
+
+  if (m_encodingConfigHasBeenSet) {
+    payload.WithObject("encodingConfig", m_encodingConfig.Jsonize());
   }
 
   return payload;

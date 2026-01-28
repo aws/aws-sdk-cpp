@@ -145,7 +145,7 @@ class ListedRouterOutput {
 
   ///@{
   /**
-   * <p>The AWS Region where the router output is located.</p>
+   * <p>The AAmazon Web Services Region where the router output is located.</p>
    */
   inline const Aws::String& GetRegionName() const { return m_regionName; }
   inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }

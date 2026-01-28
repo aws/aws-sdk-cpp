@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -67,6 +68,24 @@ class SearchTransitGatewayRoutesResponse {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to use to retrieve the next page of results. This value is
+   * <code>null</code> when there are no more results to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  SearchTransitGatewayRoutesResponse& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -85,9 +104,12 @@ class SearchTransitGatewayRoutesResponse {
 
   bool m_additionalRoutesAvailable{false};
 
+  Aws::String m_nextToken;
+
   ResponseMetadata m_responseMetadata;
   bool m_routesHasBeenSet = false;
   bool m_additionalRoutesAvailableHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

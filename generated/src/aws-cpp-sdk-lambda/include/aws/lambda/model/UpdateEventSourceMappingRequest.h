@@ -11,6 +11,7 @@
 #include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
+#include <aws/lambda/model/EventSourceMappingLoggingConfig.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
 #include <aws/lambda/model/FilterCriteria.h>
 #include <aws/lambda/model/FunctionResponseType.h>
@@ -454,6 +455,22 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
   ///@}
 
   ///@{
+
+  inline const EventSourceMappingLoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
+  inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  void SetLoggingConfig(LoggingConfigT&& value) {
+    m_loggingConfigHasBeenSet = true;
+    m_loggingConfig = std::forward<LoggingConfigT>(value);
+  }
+  template <typename LoggingConfigT = EventSourceMappingLoggingConfig>
+  UpdateEventSourceMappingRequest& WithLoggingConfig(LoggingConfigT&& value) {
+    SetLoggingConfig(std::forward<LoggingConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned
    * mode configuration for the event source. For more information, see <a
@@ -514,6 +531,8 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
 
   EventSourceMappingMetricsConfig m_metricsConfig;
 
+  EventSourceMappingLoggingConfig m_loggingConfig;
+
   ProvisionedPollerConfig m_provisionedPollerConfig;
   bool m_uUIDHasBeenSet = false;
   bool m_functionNameHasBeenSet = false;
@@ -535,6 +554,7 @@ class UpdateEventSourceMappingRequest : public LambdaRequest {
   bool m_documentDBEventSourceConfigHasBeenSet = false;
   bool m_kMSKeyArnHasBeenSet = false;
   bool m_metricsConfigHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
   bool m_provisionedPollerConfigHasBeenSet = false;
 };
 

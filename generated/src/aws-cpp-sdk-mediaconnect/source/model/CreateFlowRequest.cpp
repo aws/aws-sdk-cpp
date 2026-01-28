@@ -87,6 +87,10 @@ Aws::String CreateFlowRequest::SerializePayload() const {
     payload.WithObject("ndiConfig", m_ndiConfig.Jsonize());
   }
 
+  if (m_encodingConfigHasBeenSet) {
+    payload.WithObject("encodingConfig", m_encodingConfig.Jsonize());
+  }
+
   if (m_flowTagsHasBeenSet) {
     JsonValue flowTagsJsonMap;
     for (auto& flowTagsItem : m_flowTags) {

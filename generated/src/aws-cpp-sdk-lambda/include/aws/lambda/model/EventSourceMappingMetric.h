@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Lambda {
 namespace Model {
-enum class EventSourceMappingMetric { NOT_SET, EventCount };
+enum class EventSourceMappingMetric { NOT_SET, EventCount, ErrorCount, KafkaMetrics };
 
 namespace EventSourceMappingMetricMapper {
 AWS_LAMBDA_API EventSourceMappingMetric GetEventSourceMappingMetricForName(const Aws::String& name);

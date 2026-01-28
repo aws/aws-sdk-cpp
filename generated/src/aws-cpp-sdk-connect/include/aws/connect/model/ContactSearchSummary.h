@@ -308,6 +308,31 @@ class ContactSearchSummary {
 
   ///@{
   /**
+   * <p>Tags associated with the contact. This contains both Amazon Web Services
+   * generated and user-defined tags.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  ContactSearchSummary& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  ContactSearchSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Additional routing information for contacts created in ACGR instances.</p>
    */
   inline const GlobalResiliencyMetadata& GetGlobalResiliencyMetadata() const { return m_globalResiliencyMetadata; }
@@ -352,6 +377,8 @@ class ContactSearchSummary {
 
   RoutingCriteria m_routingCriteria;
 
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
   GlobalResiliencyMetadata m_globalResiliencyMetadata;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -367,6 +394,7 @@ class ContactSearchSummary {
   bool m_segmentAttributesHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_routingCriteriaHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_globalResiliencyMetadataHasBeenSet = false;
 };
 
