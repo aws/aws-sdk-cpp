@@ -3,12 +3,23 @@ if(PLATFORM_ANDROID AND ANDROID_BUILD_ZLIB)
     set(BUILD_ZLIB 1)
     message(STATUS "  Building Zlib as part of AWS SDK")
 elseif(NOT PLATFORM_WINDOWS AND NOT PLATFORM_CUSTOM)
-    #If zlib is required either by openssl and curl in their linking chain, we should find it.
-    include(FindZLIB)
-    if(NOT ZLIB_FOUND)
-        message(FATAL_ERROR "Could not find zlib")
+    # Check if user explicitly disabled compression
+    if(ENABLE_ZLIB_REQUEST_COMPRESSION STREQUAL "OFF")
+        # User explicitly disabled, skip zlib check
     else()
-        message(STATUS "  Zlib library: ${ZLIB_LIBRARIES}")
+        # If zlib is required either by openssl and curl in their linking chain, we should find it.
+        include(FindZLIB)
+        if(NOT ZLIB_FOUND)
+            if(ENABLE_ZLIB_REQUEST_COMPRESSION)
+                # User explicitly enabled, require zlib
+                message(FATAL_ERROR "Could not find zlib")
+            else()
+                # Default case: zlib not found, disable compression silently
+                message(STATUS "  Zlib not found; request compression will be disabled")
+            endif()
+        else()
+            message(STATUS "  Zlib library: ${ZLIB_LIBRARIES}")
+        endif()
     endif()
 endif()
 
