@@ -13,13 +13,21 @@ $memberVarName;
     ${spaces}{
 #if(!$shapeMember.shape.mapValue.shape.list)
     ${spaces}  ss << #serializeElement($shapeMember.shape.mapValue, "item.second")
+#if($shapeMember.shape.mapKey.shape.enum)
+    ${spaces}  uri.AddQueryStringParameter(${shapeMember.shape.mapKey.shape.name}Mapper::GetNameFor${shapeMember.shape.mapKey.shape.name}(item.first).c_str(), ss.str());
+#else
     ${spaces}  uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+#end
     ${spaces}  ss.str("");
 #else##URL query Key has multiple values, multiply key per https://smithy.io/2.0/spec/http-bindings.html#id9
     ${spaces}  for(auto& innerItem : item.second)
     ${spaces}  {
     ${spaces}    ss << #serializeElement($shapeMember.shape.mapValue, "innerItem")
+#if($shapeMember.shape.mapKey.shape.enum)
+    ${spaces}    uri.AddQueryStringParameter(${shapeMember.shape.mapKey.shape.name}Mapper::GetNameFor${shapeMember.shape.mapKey.shape.name}(item.first).c_str(), ss.str());
+#else
     ${spaces}    uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+#end
     ${spaces}    ss.str("");
     ${spaces}  }
 #end##if(!$shapeMember.shape.map.mapValue.shape.list)
