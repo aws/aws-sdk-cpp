@@ -67,8 +67,8 @@ class SmokeTestsGen(object):
     def _generate_smoke_tests(self, smithy_services: List[str], smithy_c2j_data: str):
         smithy_codegen_command = [
             "./gradlew",
-            "clean",
-            "build",
+            ":cpp-smoke-tests:clean",
+            ":cpp-smoke-tests:build",
             "-PoutputDirectory=" + SMITHY_OUTPUT_DIR,
             "-PservicesFilter=" + ",".join(smithy_services),
             "-Pc2jMap=" + smithy_c2j_data
