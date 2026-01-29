@@ -55,6 +55,12 @@ tasks.register("generate-smithy-build") {
             .filter { it.isNotEmpty() }  
         println("filteredServiceList: $filteredServiceList")
 
+        // Services with broken models that fail Smithy build:
+        // - elastic-inference: Malformed endpoint rules (expects StringType but has EndpointType[])
+        // - nimble: Model validation errors
+        // - rtbfabric: Invalid shape found during code generation
+        val blockedServices = setOf("elastic-inference", "nimble", "rtbfabric")
+
         val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: ""
 
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
@@ -81,6 +87,12 @@ tasks.register("generate-smithy-build") {
                 .replace(" ", "-")
                 .replace("_", "-")
                 .lowercase()
+
+            // Skip blocked services
+            if (sdkId in blockedServices) {
+                println("Skipping blocked service: $sdkId")
+                return@eachFile
+            }
 
             // Filter by service id if necessary
             if (filteredServiceList.isNotEmpty() && sdkId !in filteredServiceList) {
