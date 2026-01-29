@@ -4897,12 +4897,11 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
    * fleet. Fleet capacity determines the number of game sessions and players that
    * the fleet can host based on its configuration. For fleets with multiple
    * locations, use this operation to manage capacity settings in each location
-   * individually.</p> <p>Use this operation to set these fleet capacity properties:
-   * </p> <ul> <li> <p>Minimum/maximum size: Set hard limits on the number of Amazon
-   * EC2 instances allowed. If Amazon GameLift Servers receives a request--either
-   * through manual update or automatic scaling--it won't change the capacity to a
-   * value outside of this range.</p> </li> <li> <p>Desired capacity: As an
-   * alternative to automatic scaling, manually set the number of Amazon EC2
+   * individually.</p> <ul> <li> <p>Minimum/maximum size: Set hard limits on the
+   * number of Amazon EC2 instances allowed. If Amazon GameLift Servers receives a
+   * request--either through manual update or automatic scaling--it won't change the
+   * capacity to a value outside of this range.</p> </li> <li> <p>Desired capacity:
+   * As an alternative to automatic scaling, manually set the number of Amazon EC2
    * instances to be maintained. Before changing a fleet's desired capacity, check
    * the maximum capacity of the fleet's Amazon EC2 instance type by calling <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html">DescribeEC2InstanceLimits</a>.</p>
@@ -4921,8 +4920,23 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
    * a fleet's current capacity by calling <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
    * or <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
-   * </p> <p> <b>Learn more</b> </p> <p> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.</p>
+   * <p> Use ManagedCapacityConfiguration with the "SCALE_TO_AND_FROM_ZERO"
+   * ZeroCapacityStrategy to enable Amazon GameLift Servers to fully manage the
+   * MinSize value, switching between 0 and 1 based on game session activity. This is
+   * ideal for eliminating compute costs during periods of no game activity. It is
+   * particularly beneficial during development when you're away from your desk,
+   * iterating on builds for extended periods, in production environments serving
+   * low-traffic locations, or for games with long, predictable downtime windows. By
+   * automatically managing capacity between 0 and 1 instances, you avoid paying for
+   * idle instances while maintaining the ability to serve game sessions when demand
+   * arrives. Note that while scale-out is triggered immediately upon receiving a
+   * game session request, actual game session availability depends on your server
+   * process startup time, so this approach works best with multi-location Fleets
+   * where cold-start latency is tolerable. With a "MANUAL" ZeroCapacityStrategy
+   * Amazon GameLift Servers will not modify Fleet MinSize values automatically and
+   * will not scale out from zero instances in response to game sessions. This is
+   * configurable per-location.</p> <p> <b>Learn more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-manage-capacity.html">Scaling
    * fleet capacity</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS

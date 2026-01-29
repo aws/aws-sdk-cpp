@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/gamelift/model/ManagedCapacityConfiguration.h>
 
 #include <utility>
 
@@ -71,7 +72,9 @@ class UpdateFleetCapacityRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>The minimum number of instances that are allowed in the specified fleet
-   * location. If this parameter is not set, the default is 0.</p>
+   * location. If this parameter is not set, the default is 0. This parameter cannot
+   * be set when using a ManagedCapacityConfiguration where ZeroCapacityStrategy has
+   * a value of SCALE_TO_AND_FROM_ZERO.</p>
    */
   inline int GetMinSize() const { return m_minSize; }
   inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
@@ -120,6 +123,25 @@ class UpdateFleetCapacityRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for Amazon GameLift Servers-managed capacity scaling
+   * options.</p>
+   */
+  inline const ManagedCapacityConfiguration& GetManagedCapacityConfiguration() const { return m_managedCapacityConfiguration; }
+  inline bool ManagedCapacityConfigurationHasBeenSet() const { return m_managedCapacityConfigurationHasBeenSet; }
+  template <typename ManagedCapacityConfigurationT = ManagedCapacityConfiguration>
+  void SetManagedCapacityConfiguration(ManagedCapacityConfigurationT&& value) {
+    m_managedCapacityConfigurationHasBeenSet = true;
+    m_managedCapacityConfiguration = std::forward<ManagedCapacityConfigurationT>(value);
+  }
+  template <typename ManagedCapacityConfigurationT = ManagedCapacityConfiguration>
+  UpdateFleetCapacityRequest& WithManagedCapacityConfiguration(ManagedCapacityConfigurationT&& value) {
+    SetManagedCapacityConfiguration(std::forward<ManagedCapacityConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fleetId;
 
@@ -130,11 +152,14 @@ class UpdateFleetCapacityRequest : public GameLiftRequest {
   int m_maxSize{0};
 
   Aws::String m_location;
+
+  ManagedCapacityConfiguration m_managedCapacityConfiguration;
   bool m_fleetIdHasBeenSet = false;
   bool m_desiredInstancesHasBeenSet = false;
   bool m_minSizeHasBeenSet = false;
   bool m_maxSizeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
+  bool m_managedCapacityConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -42,6 +42,10 @@ FleetCapacity& FleetCapacity::operator=(JsonView jsonValue) {
     m_gameServerContainerGroupCounts = jsonValue.GetObject("GameServerContainerGroupCounts");
     m_gameServerContainerGroupCountsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedCapacityConfiguration")) {
+    m_managedCapacityConfiguration = jsonValue.GetObject("ManagedCapacityConfiguration");
+    m_managedCapacityConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue FleetCapacity::Jsonize() const {
 
   if (m_gameServerContainerGroupCountsHasBeenSet) {
     payload.WithObject("GameServerContainerGroupCounts", m_gameServerContainerGroupCounts.Jsonize());
+  }
+
+  if (m_managedCapacityConfigurationHasBeenSet) {
+    payload.WithObject("ManagedCapacityConfiguration", m_managedCapacityConfiguration.Jsonize());
   }
 
   return payload;

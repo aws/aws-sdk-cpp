@@ -35,6 +35,10 @@ Aws::String UpdateFleetCapacityRequest::SerializePayload() const {
     payload.WithString("Location", m_location);
   }
 
+  if (m_managedCapacityConfigurationHasBeenSet) {
+    payload.WithObject("ManagedCapacityConfiguration", m_managedCapacityConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

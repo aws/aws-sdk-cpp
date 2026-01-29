@@ -1181,6 +1181,12 @@ static const int x8i_96xlarge_HASH = HashingUtils::HashString("x8i.96xlarge");
 static const int x8i_metal_48xl_HASH = HashingUtils::HashString("x8i.metal-48xl");
 static const int x8i_metal_96xl_HASH = HashingUtils::HashString("x8i.metal-96xl");
 static const int mac_m4max_metal_HASH = HashingUtils::HashString("mac-m4max.metal");
+static const int g7e_2xlarge_HASH = HashingUtils::HashString("g7e.2xlarge");
+static const int g7e_4xlarge_HASH = HashingUtils::HashString("g7e.4xlarge");
+static const int g7e_8xlarge_HASH = HashingUtils::HashString("g7e.8xlarge");
+static const int g7e_12xlarge_HASH = HashingUtils::HashString("g7e.12xlarge");
+static const int g7e_24xlarge_HASH = HashingUtils::HashString("g7e.24xlarge");
+static const int g7e_48xlarge_HASH = HashingUtils::HashString("g7e.48xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -4721,6 +4727,24 @@ static bool GetEnumForNameHelper9(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == mac_m4max_metal_HASH) {
     enumValue = InstanceType::mac_m4max_metal;
+    return true;
+  } else if (hashCode == g7e_2xlarge_HASH) {
+    enumValue = InstanceType::g7e_2xlarge;
+    return true;
+  } else if (hashCode == g7e_4xlarge_HASH) {
+    enumValue = InstanceType::g7e_4xlarge;
+    return true;
+  } else if (hashCode == g7e_8xlarge_HASH) {
+    enumValue = InstanceType::g7e_8xlarge;
+    return true;
+  } else if (hashCode == g7e_12xlarge_HASH) {
+    enumValue = InstanceType::g7e_12xlarge;
+    return true;
+  } else if (hashCode == g7e_24xlarge_HASH) {
+    enumValue = InstanceType::g7e_24xlarge;
+    return true;
+  } else if (hashCode == g7e_48xlarge_HASH) {
+    enumValue = InstanceType::g7e_48xlarge;
     return true;
   }
   return false;
@@ -8279,6 +8303,24 @@ static bool GetNameForEnumHelper9(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::mac_m4max_metal:
       value = "mac-m4max.metal";
+      return true;
+    case InstanceType::g7e_2xlarge:
+      value = "g7e.2xlarge";
+      return true;
+    case InstanceType::g7e_4xlarge:
+      value = "g7e.4xlarge";
+      return true;
+    case InstanceType::g7e_8xlarge:
+      value = "g7e.8xlarge";
+      return true;
+    case InstanceType::g7e_12xlarge:
+      value = "g7e.12xlarge";
+      return true;
+    case InstanceType::g7e_24xlarge:
+      value = "g7e.24xlarge";
+      return true;
+    case InstanceType::g7e_48xlarge:
+      value = "g7e.48xlarge";
       return true;
     default:
       return false;

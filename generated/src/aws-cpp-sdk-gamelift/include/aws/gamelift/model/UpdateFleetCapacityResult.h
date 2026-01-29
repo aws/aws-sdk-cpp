@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/gamelift/model/ManagedCapacityConfiguration.h>
 
 #include <utility>
 
@@ -84,6 +85,24 @@ class UpdateFleetCapacityResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration for Amazon GameLift Servers-managed capacity scaling
+   * options.</p>
+   */
+  inline const ManagedCapacityConfiguration& GetManagedCapacityConfiguration() const { return m_managedCapacityConfiguration; }
+  template <typename ManagedCapacityConfigurationT = ManagedCapacityConfiguration>
+  void SetManagedCapacityConfiguration(ManagedCapacityConfigurationT&& value) {
+    m_managedCapacityConfigurationHasBeenSet = true;
+    m_managedCapacityConfiguration = std::forward<ManagedCapacityConfigurationT>(value);
+  }
+  template <typename ManagedCapacityConfigurationT = ManagedCapacityConfiguration>
+  UpdateFleetCapacityResult& WithManagedCapacityConfiguration(ManagedCapacityConfigurationT&& value) {
+    SetManagedCapacityConfiguration(std::forward<ManagedCapacityConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -104,10 +123,13 @@ class UpdateFleetCapacityResult {
 
   Aws::String m_location;
 
+  ManagedCapacityConfiguration m_managedCapacityConfiguration;
+
   Aws::String m_requestId;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_locationHasBeenSet = false;
+  bool m_managedCapacityConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

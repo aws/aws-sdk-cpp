@@ -1177,7 +1177,13 @@ enum class InstanceType {
   x8i_96xlarge,
   x8i_metal_48xl,
   x8i_metal_96xl,
-  mac_m4max_metal
+  mac_m4max_metal,
+  g7e_2xlarge,
+  g7e_4xlarge,
+  g7e_8xlarge,
+  g7e_12xlarge,
+  g7e_24xlarge,
+  g7e_48xlarge
 };
 
 namespace InstanceTypeMapper {
