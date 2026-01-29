@@ -33,6 +33,10 @@ UpdateFleetCapacityResult& UpdateFleetCapacityResult::operator=(const Aws::Amazo
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedCapacityConfiguration")) {
+    m_managedCapacityConfiguration = jsonValue.GetObject("ManagedCapacityConfiguration");
+    m_managedCapacityConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

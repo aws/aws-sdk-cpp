@@ -9,6 +9,7 @@
 #include <aws/gamelift/model/EC2InstanceCounts.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/GameServerContainerGroupCounts.h>
+#include <aws/gamelift/model/ManagedCapacityConfiguration.h>
 
 #include <utility>
 
@@ -160,6 +161,24 @@ class FleetCapacity {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for managed capacity scaling.</p>
+   */
+  inline const ManagedCapacityConfiguration& GetManagedCapacityConfiguration() const { return m_managedCapacityConfiguration; }
+  inline bool ManagedCapacityConfigurationHasBeenSet() const { return m_managedCapacityConfigurationHasBeenSet; }
+  template <typename ManagedCapacityConfigurationT = ManagedCapacityConfiguration>
+  void SetManagedCapacityConfiguration(ManagedCapacityConfigurationT&& value) {
+    m_managedCapacityConfigurationHasBeenSet = true;
+    m_managedCapacityConfiguration = std::forward<ManagedCapacityConfigurationT>(value);
+  }
+  template <typename ManagedCapacityConfigurationT = ManagedCapacityConfiguration>
+  FleetCapacity& WithManagedCapacityConfiguration(ManagedCapacityConfigurationT&& value) {
+    SetManagedCapacityConfiguration(std::forward<ManagedCapacityConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fleetId;
 
@@ -172,12 +191,15 @@ class FleetCapacity {
   Aws::String m_location;
 
   GameServerContainerGroupCounts m_gameServerContainerGroupCounts;
+
+  ManagedCapacityConfiguration m_managedCapacityConfiguration;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountsHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_gameServerContainerGroupCountsHasBeenSet = false;
+  bool m_managedCapacityConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

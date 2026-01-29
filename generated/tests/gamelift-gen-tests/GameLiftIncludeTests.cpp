@@ -282,6 +282,7 @@
 #include <aws/gamelift/model/LocationalDeployment.h>
 #include <aws/gamelift/model/LogConfiguration.h>
 #include <aws/gamelift/model/LogDestination.h>
+#include <aws/gamelift/model/ManagedCapacityConfiguration.h>
 #include <aws/gamelift/model/MatchedPlayerSession.h>
 #include <aws/gamelift/model/MatchmakingConfiguration.h>
 #include <aws/gamelift/model/MatchmakingConfigurationStatus.h>
@@ -390,6 +391,7 @@
 #include <aws/gamelift/model/VpcPeeringAuthorization.h>
 #include <aws/gamelift/model/VpcPeeringConnection.h>
 #include <aws/gamelift/model/VpcPeeringConnectionStatus.h>
+#include <aws/gamelift/model/ZeroCapacityStrategy.h>
 
 using GameLiftIncludeTest = ::testing::Test;
 
