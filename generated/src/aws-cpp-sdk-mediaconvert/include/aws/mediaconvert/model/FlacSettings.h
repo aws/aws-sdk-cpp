@@ -48,9 +48,9 @@ class FlacSettings {
 
   ///@{
   /**
-   * Specify the number of channels in this output audio track. Choosing Mono on the
-   * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-   * valid values are between 1 and 8.
+   * Specify the number of channels in this output audio track. Valid values are 0,
+   * 1, and even numbers up to 8.  Choose 0 to follow the number of channels from
+   * your input audio. Otherwise, manually choose from 1, 2, 4, 6, and 8.
    */
   inline int GetChannels() const { return m_channels; }
   inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }

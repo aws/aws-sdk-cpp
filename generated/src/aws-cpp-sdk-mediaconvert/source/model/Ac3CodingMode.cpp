@@ -19,6 +19,7 @@ static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_
 static const int CODING_MODE_1_1_HASH = HashingUtils::HashString("CODING_MODE_1_1");
 static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
 static const int CODING_MODE_3_2_LFE_HASH = HashingUtils::HashString("CODING_MODE_3_2_LFE");
+static const int CODING_MODE_AUTO_HASH = HashingUtils::HashString("CODING_MODE_AUTO");
 
 Ac3CodingMode GetAc3CodingModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ Ac3CodingMode GetAc3CodingModeForName(const Aws::String& name) {
     return Ac3CodingMode::CODING_MODE_2_0;
   } else if (hashCode == CODING_MODE_3_2_LFE_HASH) {
     return Ac3CodingMode::CODING_MODE_3_2_LFE;
+  } else if (hashCode == CODING_MODE_AUTO_HASH) {
+    return Ac3CodingMode::CODING_MODE_AUTO;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForAc3CodingMode(Ac3CodingMode enumValue) {
       return "CODING_MODE_2_0";
     case Ac3CodingMode::CODING_MODE_3_2_LFE:
       return "CODING_MODE_3_2_LFE";
+    case Ac3CodingMode::CODING_MODE_AUTO:
+      return "CODING_MODE_AUTO";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

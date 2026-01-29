@@ -82,6 +82,10 @@ SearchCriteria& SearchCriteria::operator=(JsonView jsonValue) {
     }
     m_activeRegionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactTags")) {
+    m_contactTags = jsonValue.GetObject("ContactTags");
+    m_contactTagsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -155,6 +159,10 @@ JsonValue SearchCriteria::Jsonize() const {
       activeRegionsJsonList[activeRegionsIndex].AsString(m_activeRegions[activeRegionsIndex]);
     }
     payload.WithArray("ActiveRegions", std::move(activeRegionsJsonList));
+  }
+
+  if (m_contactTagsHasBeenSet) {
+    payload.WithObject("ContactTags", m_contactTags.Jsonize());
   }
 
   return payload;

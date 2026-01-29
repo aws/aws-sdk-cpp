@@ -23,8 +23,8 @@ namespace MediaConnect {
 namespace Model {
 
 /**
- * <p>Specifies the configuration settings for NDI outputs. Required when the flow
- * includes NDI outputs. </p><p><h3>See Also:</h3>   <a
+ * <p>Specifies the configuration settings for NDI sources and outputs.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/NdiConfig">AWS
  * API Reference</a></p>
  */
@@ -37,8 +37,10 @@ class NdiConfig {
 
   ///@{
   /**
-   * <p>A setting that controls whether NDI outputs can be used in the flow. Must be
-   * ENABLED to add NDI outputs. Default is DISABLED. </p>
+   * <p>A setting that controls whether NDI® sources or outputs can be used in the
+   * flow. </p> <p> The default value is <code>DISABLED</code>. This value must be
+   * set as <code>ENABLED</code> for your flow to support NDI sources or outputs.
+   * </p>
    */
   inline NdiState GetNdiState() const { return m_ndiState; }
   inline bool NdiStateHasBeenSet() const { return m_ndiStateHasBeenSet; }

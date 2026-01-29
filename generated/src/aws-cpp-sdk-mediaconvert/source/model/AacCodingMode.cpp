@@ -20,6 +20,7 @@ static const int CODING_MODE_1_0_HASH = HashingUtils::HashString("CODING_MODE_1_
 static const int CODING_MODE_1_1_HASH = HashingUtils::HashString("CODING_MODE_1_1");
 static const int CODING_MODE_2_0_HASH = HashingUtils::HashString("CODING_MODE_2_0");
 static const int CODING_MODE_5_1_HASH = HashingUtils::HashString("CODING_MODE_5_1");
+static const int CODING_MODE_AUTO_HASH = HashingUtils::HashString("CODING_MODE_AUTO");
 
 AacCodingMode GetAacCodingModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ AacCodingMode GetAacCodingModeForName(const Aws::String& name) {
     return AacCodingMode::CODING_MODE_2_0;
   } else if (hashCode == CODING_MODE_5_1_HASH) {
     return AacCodingMode::CODING_MODE_5_1;
+  } else if (hashCode == CODING_MODE_AUTO_HASH) {
+    return AacCodingMode::CODING_MODE_AUTO;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForAacCodingMode(AacCodingMode enumValue) {
       return "CODING_MODE_2_0";
     case AacCodingMode::CODING_MODE_5_1:
       return "CODING_MODE_5_1";
+    case AacCodingMode::CODING_MODE_AUTO:
+      return "CODING_MODE_AUTO";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

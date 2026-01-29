@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class AacCodingMode { NOT_SET, AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1 };
+enum class AacCodingMode { NOT_SET, AD_RECEIVER_MIX, CODING_MODE_1_0, CODING_MODE_1_1, CODING_MODE_2_0, CODING_MODE_5_1, CODING_MODE_AUTO };
 
 namespace AacCodingModeMapper {
 AWS_MEDIACONVERT_API AacCodingMode GetAacCodingModeForName(const Aws::String& name);

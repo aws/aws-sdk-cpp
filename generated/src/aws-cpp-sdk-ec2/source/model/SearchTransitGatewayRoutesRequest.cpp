@@ -33,6 +33,10 @@ Aws::String SearchTransitGatewayRoutesRequest::SerializePayload() const {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if (m_nextTokenHasBeenSet) {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

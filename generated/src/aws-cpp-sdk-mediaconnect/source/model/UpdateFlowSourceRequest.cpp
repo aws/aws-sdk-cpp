@@ -94,6 +94,10 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const {
     payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
   }
 
+  if (m_ndiSourceSettingsHasBeenSet) {
+    payload.WithObject("ndiSourceSettings", m_ndiSourceSettings.Jsonize());
+  }
+
   if (m_routerIntegrationStateHasBeenSet) {
     payload.WithString("routerIntegrationState", StateMapper::GetNameForState(m_routerIntegrationState));
   }

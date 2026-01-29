@@ -35,5 +35,9 @@ Aws::String UpdateFlowRequest::SerializePayload() const {
     payload.WithString("flowSize", FlowSizeMapper::GetNameForFlowSize(m_flowSize));
   }
 
+  if (m_encodingConfigHasBeenSet) {
+    payload.WithObject("encodingConfig", m_encodingConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -20,7 +20,7 @@ namespace MediaConnect {
 namespace Model {
 
 /**
- * <p>The configuration settings for transit encryption using AWS Secrets Manager,
+ * <p>The configuration settings for transit encryption using Secrets Manager,
  * including the secret ARN and role ARN.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SecretsManagerEncryptionKeyConfiguration">AWS
  * API Reference</a></p>
@@ -34,7 +34,7 @@ class SecretsManagerEncryptionKeyConfiguration {
 
   ///@{
   /**
-   * <p>The ARN of the AWS Secrets Manager secret used for transit encryption.</p>
+   * <p>The ARN of the Secrets Manager secret used for transit encryption.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
   inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
@@ -52,8 +52,8 @@ class SecretsManagerEncryptionKeyConfiguration {
 
   ///@{
   /**
-   * <p>The ARN of the IAM role assumed by MediaConnect to access the AWS Secrets
-   * Manager secret.</p>
+   * <p>The ARN of the IAM role assumed by MediaConnect to access the Secrets Manager
+   * secret.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

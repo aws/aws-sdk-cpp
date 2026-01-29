@@ -222,6 +222,8 @@
 #include <aws/cognito-idp/model/HttpHeader.h>
 #include <aws/cognito-idp/model/IdentityProviderType.h>
 #include <aws/cognito-idp/model/IdentityProviderTypeType.h>
+#include <aws/cognito-idp/model/InboundFederationLambdaType.h>
+#include <aws/cognito-idp/model/InboundFederationLambdaVersionType.h>
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
 #include <aws/cognito-idp/model/InvalidParameterException.h>

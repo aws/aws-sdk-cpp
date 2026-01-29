@@ -85,6 +85,7 @@
 #include <aws/s3/model/PutObjectTaggingResult.h>
 #include <aws/s3/model/RenameObjectResult.h>
 #include <aws/s3/model/RestoreObjectResult.h>
+#include <aws/s3/model/UpdateObjectEncryptionResult.h>
 #include <aws/s3/model/UploadPartCopyResult.h>
 #include <aws/s3/model/UploadPartResult.h>
 /* End of service model headers required in S3Client header */
@@ -222,6 +223,7 @@ class RestoreObjectRequest;
 class SelectObjectContentRequest;
 class UpdateBucketMetadataInventoryTableConfigurationRequest;
 class UpdateBucketMetadataJournalTableConfigurationRequest;
+class UpdateObjectEncryptionRequest;
 class UploadPartRequest;
 class UploadPartCopyRequest;
 class WriteGetObjectResponseRequest;
@@ -331,6 +333,7 @@ typedef Aws::Utils::Outcome<RestoreObjectResult, S3Error> RestoreObjectOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> SelectObjectContentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> UpdateBucketMetadataInventoryTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> UpdateBucketMetadataJournalTableConfigurationOutcome;
+typedef Aws::Utils::Outcome<UpdateObjectEncryptionResult, S3Error> UpdateObjectEncryptionOutcome;
 typedef Aws::Utils::Outcome<UploadPartResult, S3Error> UploadPartOutcome;
 typedef Aws::Utils::Outcome<UploadPartCopyResult, S3Error> UploadPartCopyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> WriteGetObjectResponseOutcome;
@@ -440,6 +443,7 @@ typedef std::future<RestoreObjectOutcome> RestoreObjectOutcomeCallable;
 typedef std::future<SelectObjectContentOutcome> SelectObjectContentOutcomeCallable;
 typedef std::future<UpdateBucketMetadataInventoryTableConfigurationOutcome> UpdateBucketMetadataInventoryTableConfigurationOutcomeCallable;
 typedef std::future<UpdateBucketMetadataJournalTableConfigurationOutcome> UpdateBucketMetadataJournalTableConfigurationOutcomeCallable;
+typedef std::future<UpdateObjectEncryptionOutcome> UpdateObjectEncryptionOutcomeCallable;
 typedef std::future<UploadPartOutcome> UploadPartOutcomeCallable;
 typedef std::future<UploadPartCopyOutcome> UploadPartCopyOutcomeCallable;
 typedef std::future<WriteGetObjectResponseOutcome> WriteGetObjectResponseOutcomeCallable;
@@ -789,6 +793,9 @@ typedef std::function<void(const S3Client*, const Model::UpdateBucketMetadataJou
                            const Model::UpdateBucketMetadataJournalTableConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateBucketMetadataJournalTableConfigurationResponseReceivedHandler;
+typedef std::function<void(const S3Client*, const Model::UpdateObjectEncryptionRequest&, const Model::UpdateObjectEncryptionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateObjectEncryptionResponseReceivedHandler;
 typedef std::function<void(const S3Client*, const Model::UploadPartRequest&, const Model::UploadPartOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UploadPartResponseReceivedHandler;

@@ -234,6 +234,7 @@
 #include <aws/s3control/model/NoncurrentVersionExpiration.h>
 #include <aws/s3control/model/NoncurrentVersionTransition.h>
 #include <aws/s3control/model/NotSSEFilter.h>
+#include <aws/s3control/model/ObjectEncryption.h>
 #include <aws/s3control/model/ObjectEncryptionFilter.h>
 #include <aws/s3control/model/ObjectLambdaAccessPoint.h>
 #include <aws/s3control/model/ObjectLambdaAccessPointAlias.h>
@@ -323,6 +324,8 @@
 #include <aws/s3control/model/S3SetObjectTaggingOperation.h>
 #include <aws/s3control/model/S3StorageClass.h>
 #include <aws/s3control/model/S3Tag.h>
+#include <aws/s3control/model/S3UpdateObjectEncryptionOperation.h>
+#include <aws/s3control/model/S3UpdateObjectEncryptionSSEKMS.h>
 #include <aws/s3control/model/SSECFilter.h>
 #include <aws/s3control/model/SSEKMS.h>
 #include <aws/s3control/model/SSEKMSEncryption.h>
