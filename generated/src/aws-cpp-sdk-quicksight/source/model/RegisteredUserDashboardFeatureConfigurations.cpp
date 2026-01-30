@@ -22,13 +22,13 @@ RegisteredUserDashboardFeatureConfigurations& RegisteredUserDashboardFeatureConf
     m_statePersistence = jsonValue.GetObject("StatePersistence");
     m_statePersistenceHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("SharedView")) {
-    m_sharedView = jsonValue.GetObject("SharedView");
-    m_sharedViewHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Bookmarks")) {
     m_bookmarks = jsonValue.GetObject("Bookmarks");
     m_bookmarksHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharedView")) {
+    m_sharedView = jsonValue.GetObject("SharedView");
+    m_sharedViewHasBeenSet = true;
   }
   if (jsonValue.ValueExists("AmazonQInQuickSight")) {
     m_amazonQInQuickSight = jsonValue.GetObject("AmazonQInQuickSight");
@@ -56,12 +56,12 @@ JsonValue RegisteredUserDashboardFeatureConfigurations::Jsonize() const {
     payload.WithObject("StatePersistence", m_statePersistence.Jsonize());
   }
 
-  if (m_sharedViewHasBeenSet) {
-    payload.WithObject("SharedView", m_sharedView.Jsonize());
-  }
-
   if (m_bookmarksHasBeenSet) {
     payload.WithObject("Bookmarks", m_bookmarks.Jsonize());
+  }
+
+  if (m_sharedViewHasBeenSet) {
+    payload.WithObject("SharedView", m_sharedView.Jsonize());
   }
 
   if (m_amazonQInQuickSightHasBeenSet) {

@@ -31,8 +31,10 @@ class GetContactMetricsResult {
   ///@{
   /**
    * <p>A list of metric results containing the calculated values for each requested
-   * metric. Each result includes the metric name and its corresponding calculated
-   * value.</p>
+   * metric. Each result includes the metric name and its corresponding value. For
+   * example, POSITION_IN_QUEUE returns a numeric value representing the contact's
+   * position in queue, and ESTIMATED_WAIT_TIME returns the predicted wait time in
+   * seconds.</p>
    */
   inline const Aws::Vector<ContactMetricResult>& GetMetricResults() const { return m_metricResults; }
   template <typename MetricResultsT = Aws::Vector<ContactMetricResult>>
@@ -55,7 +57,8 @@ class GetContactMetricsResult {
 
   ///@{
   /**
-   * <p>The unique identifier of the contact for which metrics were retrieved.</p>
+   * <p>The unique identifier of the contact for which metrics were retrieved. This
+   * matches the ContactId provided in the request.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>

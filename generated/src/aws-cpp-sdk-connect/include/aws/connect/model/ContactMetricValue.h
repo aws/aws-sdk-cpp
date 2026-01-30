@@ -17,7 +17,8 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Object which contains the number.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the numeric value of a contact metric result.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactMetricValue">AWS
  * API Reference</a></p>
  */
@@ -30,8 +31,10 @@ class ContactMetricValue {
 
   ///@{
   /**
-   * <p>The number of type Double. This number is the contact's position in
-   * queue.</p>
+   * <p>The numeric value of the metric result. For POSITION_IN_QUEUE, this
+   * represents the contact's current position in the queue (e.g., 3.00 means third
+   * in line). For ESTIMATED_WAIT_TIME, this represents the predicted wait time in
+   * seconds (e.g., 120.00 means approximately 2 minutes).</p>
    */
   inline double GetNumber() const { return m_number; }
   inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }

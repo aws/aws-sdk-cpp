@@ -70,7 +70,10 @@ class GetContactMetricsRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>A list of contact-level metrics to retrieve.</p>
+   * <p>A list of contact level metrics to retrieve.Supported metrics include
+   * POSITION_IN_QUEUE (the contact's current position in the queue) and
+   * ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is
+   * connected to an agent)</p>
    */
   inline const Aws::Vector<ContactMetricInfo>& GetMetrics() const { return m_metrics; }
   inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }

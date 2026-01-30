@@ -21,8 +21,9 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Object containing information about metric requested for the
- * contact.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the result of a requested metric for the contact. This object is
+ * returned as part of the GetContactMetrics response and includes both the metric
+ * name and its calculated value.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactMetricResult">AWS
  * API Reference</a></p>
  */
@@ -35,7 +36,9 @@ class ContactMetricResult {
 
   ///@{
   /**
-   * <p>The name of the metric being retrieved in type String.</p>
+   * <p>The name of the metric that was retrieved. This corresponds to the metric
+   * name specified in the request, such as POSITION_IN_QUEUE or
+   * ESTIMATED_WAIT_TIME.</p>
    */
   inline ContactMetricName GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -51,7 +54,8 @@ class ContactMetricResult {
 
   ///@{
   /**
-   * <p>Object result associated with the metric received.</p>
+   * <p>The calculated value for the requested metric. This object contains the
+   * numeric result based on the contact's current state in the queue.</p>
    */
   inline const ContactMetricValue& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

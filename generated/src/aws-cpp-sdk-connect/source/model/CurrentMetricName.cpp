@@ -28,6 +28,7 @@ static const int CONTACTS_SCHEDULED_HASH = HashingUtils::HashString("CONTACTS_SC
 static const int AGENTS_ON_CONTACT_HASH = HashingUtils::HashString("AGENTS_ON_CONTACT");
 static const int SLOTS_ACTIVE_HASH = HashingUtils::HashString("SLOTS_ACTIVE");
 static const int SLOTS_AVAILABLE_HASH = HashingUtils::HashString("SLOTS_AVAILABLE");
+static const int ESTIMATED_WAIT_TIME_HASH = HashingUtils::HashString("ESTIMATED_WAIT_TIME");
 
 CurrentMetricName GetCurrentMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +58,8 @@ CurrentMetricName GetCurrentMetricNameForName(const Aws::String& name) {
     return CurrentMetricName::SLOTS_ACTIVE;
   } else if (hashCode == SLOTS_AVAILABLE_HASH) {
     return CurrentMetricName::SLOTS_AVAILABLE;
+  } else if (hashCode == ESTIMATED_WAIT_TIME_HASH) {
+    return CurrentMetricName::ESTIMATED_WAIT_TIME;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +100,8 @@ Aws::String GetNameForCurrentMetricName(CurrentMetricName enumValue) {
       return "SLOTS_ACTIVE";
     case CurrentMetricName::SLOTS_AVAILABLE:
       return "SLOTS_AVAILABLE";
+    case CurrentMetricName::ESTIMATED_WAIT_TIME:
+      return "ESTIMATED_WAIT_TIME";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
