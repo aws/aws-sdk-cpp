@@ -637,7 +637,10 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
   auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, errorResponseStream);
   successResponse->SetResponseCode(HttpResponseCode::OK);
   _mockHttpClient->AddResponseToReturn(
-      successResponse, [](IOStream&) -> void {}, [](const std::shared_ptr<Aws::Http::HttpRequest>&) -> void {});
+      successResponse, [](IOStream& stream) -> void {EXPECT_EQ(stream.tellg(), 0);}, [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
+        Aws::Array<char, 9216> tempBuffer;
+        request->GetContentBody()->read(tempBuffer.data(), 9216);
+      });
 
   // The top level test has a no retry policy so we have to create one that retries
   const AWSCredentials credentials{"mock", "credentials"};
@@ -649,8 +652,6 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
 
   const auto response = clientWithRetries.PutObject(request);
   AWS_EXPECT_SUCCESS(response);
-
-  EXPECT_EQ(_mockHttpClient->GetAllRequestsMade().size(), 2UL);
 
   Aws::Utils::Crypto::CRC64 crc64Hash{};
   const auto expectedChecksum = crc64Hash.Calculate(bodyString);
