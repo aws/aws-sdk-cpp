@@ -24,7 +24,8 @@ enum class CurrentMetricName {
   CONTACTS_SCHEDULED,
   AGENTS_ON_CONTACT,
   SLOTS_ACTIVE,
-  SLOTS_AVAILABLE
+  SLOTS_AVAILABLE,
+  ESTIMATED_WAIT_TIME
 };
 
 namespace CurrentMetricNameMapper {

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class ContactMetricName { NOT_SET, POSITION_IN_QUEUE };
+enum class ContactMetricName { NOT_SET, ESTIMATED_WAIT_TIME, POSITION_IN_QUEUE };
 
 namespace ContactMetricNameMapper {
 AWS_CONNECT_API ContactMetricName GetContactMetricNameForName(const Aws::String& name);
