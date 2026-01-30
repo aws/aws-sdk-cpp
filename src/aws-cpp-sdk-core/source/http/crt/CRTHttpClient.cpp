@@ -240,7 +240,7 @@ namespace Aws
             if (!client.ContinueRequest(*request) || !client.IsRequestProcessingEnabled())
             {
                 AWS_LOGSTREAM_INFO(CRT_HTTP_CLIENT_TAG, "Request canceled. Canceling request by closing the connection.");
-                stream.GetConnection().Close();                
+                stream.GetConnection().Close();
                 return;
             }
 
@@ -248,25 +248,61 @@ namespace Aws
             assert(response);
             for (const auto& hashIterator : request->GetResponseValidationHashes())
             {
-              std::stringstream headerStr;
-              headerStr<<"x-amz-checksum-"<<hashIterator.first;
-              if(response->HasHeader(headerStr.str().c_str()))
-              {
-                hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
-                break;
-              }
+                std::stringstream headerStr;
+                headerStr << "x-amz-checksum-" << hashIterator.first;
+                if (response->HasHeader(headerStr.str().c_str()))
+                {
+                    hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
+                    break;
+                }
+            }
+
+            auto& out = response->GetResponseBody();
+
+            // If the output stream is already in a failed state, abort the transfer.
+            if (out.fail())
+            {
+                const auto& ref = out;
+                Aws::StringStream ss;
+                ss << "Response output stream in bad state (eof: " << ref.eof()
+                   << ", bad: " << ref.bad() << ")";
+                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, ss.str());
+                response->SetClientErrorType(Aws::Client::CoreErrors::INTERNAL_FAILURE);
+                response->SetClientErrorMessage(ss.str());
+                stream.GetConnection().Close();
+                return;
             }
 
             // When data is received from the content body of the incoming response, just copy it to the output stream.
-            response->GetResponseBody().write((const char*)body.ptr, static_cast<long>(body.len));
-            if (response->GetResponseBody().fail()) {
-                const auto& ref = response->GetResponseBody();
-                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to write " << body.len << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+            out.write(reinterpret_cast<const char*>(body.ptr), static_cast<std::streamsize>(body.len));
+            if (out.fail())
+            {
+                const auto& ref = out;
+                Aws::StringStream ss;
+                ss << "Failed to write " << body.len
+                   << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")";
+                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, ss.str());
+                response->SetClientErrorType(Aws::Client::CoreErrors::INTERNAL_FAILURE);
+                response->SetClientErrorMessage(ss.str());
+                stream.GetConnection().Close();
+                return;
             }
 
             if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
             {
-                response->GetResponseBody().flush();
+                out.flush();
+                if (out.fail())
+                {
+                    const auto& ref = out;
+                    Aws::StringStream ss;
+                    ss << "Failed to flush event response (eof: " << ref.eof()
+                       << ", bad: " << ref.bad() << ")";
+                    AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, ss.str());
+                    response->SetClientErrorType(Aws::Client::CoreErrors::INTERNAL_FAILURE);
+                    response->SetClientErrorMessage(ss.str());
+                    stream.GetConnection().Close();
+                    return;
+                }
             }
 
             auto& receivedHandler = request->GetDataReceivedEventHandler();
