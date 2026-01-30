@@ -3,6 +3,8 @@
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/base64/Base64.h>
+#include <aws/core/utils/crypto/CRC64.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
@@ -609,4 +611,56 @@ TEST_F(S3UnitTest, testLegacyApi)
       "SignatureV4");
     
     EXPECT_TRUE(outcome2.IsSuccess());
+}
+
+TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
+  auto request = PutObjectRequest().WithBucket("(iamthou").WithKey("thouarti");
+  // the body has to be over 8K as the checksum is read as we read in chunks, in this case
+  // we set the chunk size to 8K and we need the body to be larger than that.
+  const Aws::String bodyString(9216, 'a');
+  request.SetBody(Aws::MakeShared<StringStream>(ALLOCATION_TAG, bodyString));
+
+  const auto errorResponseStream = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_POST);
+  errorResponseStream->SetResponseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  auto errorResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, errorResponseStream);
+  errorResponse->SetResponseCode(HttpResponseCode::REQUEST_TIMEOUT);
+  _mockHttpClient->AddResponseToReturn(
+      errorResponse, [](IOStream&) -> void {},
+      [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
+        // Partially read the buffer, such that the request checksum ends up in a bad state.
+        Aws::Array<char, 12> tempBuffer;
+        request->GetContentBody()->read(tempBuffer.data(), 12);
+      });
+
+  const auto successResponseStream = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_POST);
+  successResponseStream->SetResponseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, errorResponseStream);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+  _mockHttpClient->AddResponseToReturn(
+      successResponse, [](IOStream&) -> void {}, [](const std::shared_ptr<Aws::Http::HttpRequest>&) -> void {});
+
+  // The top level test has a no retry policy so we have to create one that retries
+  const AWSCredentials credentials{"mock", "credentials"};
+  S3ClientConfiguration configuration;
+  configuration.httpClientChunkedMode = HttpClientChunkedMode::DEFAULT;
+  // Smallest chunk size allowed
+  configuration.awsChunkedBufferSize = 8192UL;
+  const S3Client clientWithRetries{credentials, nullptr, configuration};
+
+  const auto response = clientWithRetries.PutObject(request);
+  AWS_EXPECT_SUCCESS(response);
+
+  EXPECT_EQ(_mockHttpClient->GetAllRequestsMade().size(), 2UL);
+
+  Aws::Utils::Crypto::CRC64 crc64Hash{};
+  const auto expectedChecksum = crc64Hash.Calculate(bodyString);
+  EXPECT_TRUE(expectedChecksum.IsSuccess());
+  const Aws::Utils::Base64::Base64 base64{};
+  const auto expectedChecksumBase64 = base64.Encode(expectedChecksum.GetResult());
+
+  const auto retriedRequest = _mockHttpClient->GetMostRecentHttpRequest();
+  const auto seenChecksum = retriedRequest.GetRequestHash().second->GetHash();
+  EXPECT_TRUE(seenChecksum.IsSuccess());
+  const auto seenChecksumBase64 = base64.Encode(seenChecksum.GetResult());
+  EXPECT_EQ(seenChecksumBase64, expectedChecksumBase64);
 }
