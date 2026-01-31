@@ -26,6 +26,7 @@ buildscript {
     dependencies {
         classpath(codegen.model)
         classpath(codegen.aws.traits)
+        classpath(codegen.aws.smoke.test.model)
         classpath(codegen.rules.engine)
     }
 }
@@ -37,6 +38,8 @@ dependencies {
     implementation(codegen.aws.iam.traits)
     implementation(codegen.aws.endpoints)
     implementation(codegen.waiters)
+    implementation(codegen.smoke.test.traits)
+    implementation(codegen.aws.smoke.test.model)
 }
 
 tasks.jar {
