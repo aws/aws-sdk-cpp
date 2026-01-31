@@ -44,8 +44,8 @@ class PaginationGen(object):
     def _generate_pagination(self, smithy_services: List[str], smithy_c2j_data: str):
         smithy_codegen_command = [
             "./gradlew",
-            "clean",
-            "build",
+            ":cpp-pagination-codegen:clean",
+            ":cpp-pagination-codegen:build",
             "-PservicesFilter=" + ",".join(smithy_services),
             "-Pc2jMap=" + smithy_c2j_data
         ]
@@ -73,8 +73,8 @@ class PaginationGen(object):
             return False
 
     def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_name: str, target_dir: str):
-        # Walk through the output directory to find plugin directories
-        output_dir = os.path.join(top_level_dir, "output")
+        # Walk through the cpp-pagination-codegen output directory to find plugin directories
+        output_dir = os.path.join(top_level_dir, "cpp-pagination-codegen", "output")
         # TODO: Verify if this check is still needed after Smithy generator always creates output
         if not os.path.exists(output_dir):
             if self.debug:
@@ -124,7 +124,7 @@ class PaginationGen(object):
             if self.debug:
                 print(f"Cleaned up '{output_dir}'")
         
-        smithy_build_json = os.path.join(top_level_dir, "smithy-build.json")
+        smithy_build_json = os.path.join(top_level_dir, "cpp-pagination-codegen", "smithy-build.json")
         if os.path.exists(smithy_build_json):
             os.remove(smithy_build_json)
             if self.debug:
