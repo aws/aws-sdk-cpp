@@ -14,3 +14,8 @@ allprojects {
 
 dependencies {
 }
+
+// Prevent cpp-smoke-tests from building when root build is invoked
+project(":cpp-smoke-tests").tasks.configureEach {
+    enabled = false
+}
