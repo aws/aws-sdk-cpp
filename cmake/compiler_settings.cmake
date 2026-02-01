@@ -3,6 +3,15 @@ set(COMPILER_MSVC 0)
 set(COMPILER_GCC 0)
 set(COMPILER_CLANG 0)
 
+# pkg-config consumers blindly apply Cflags to downstream compilation. Historically
+# aws-sdk-cpp exported -std=c++${CPP_STANDARD} (and other policy flags) in .pc files,
+# which can override a consumer's chosen language level. Keep default behavior for
+# backward compatibility, but allow packagers/consumers to disable exporting the C++
+# standard (and related policy flags) via pkg-config.
+option(NO_CPPSTD_IN_PKG_CONFIG
+    "Do not export -std=c++XX (and related policy flags) in pkg-config Cflags"
+    OFF)
+
 # ToDo: extend as necessary and remove common assumptions
 if(MSVC)
     set(COMPILER_MSVC 1)
@@ -23,7 +32,19 @@ function(set_compiler_flags target)
         set_gcc_flags()
         target_compile_options(${target} PRIVATE "${AWS_COMPILER_FLAGS}")
         string(REPLACE ";" " " _TMP "${AWS_COMPILER_FLAGS}")
-        set(PKG_CONFIG_CFLAGS "${_TMP}" CACHE INTERNAL "C++ compiler flags which affect the ABI")
+        if(NO_CPPSTD_IN_PKG_CONFIG)
+            # pkg-config has no PRIVATE/PUBLIC separation: everything in Cflags leaks.
+            # Remove policy flags that should be controlled by the downstream project.
+
+            # Remove any explicit -std=c++NN
+            string(REGEX REPLACE "(^|[ \t])(-std=c\\+\\+[0-9]+)([ \t]|$)" " " _TMP " ${_TMP} ")
+
+            # Also remove -fno-exceptions since it changes downstream semantics
+            string(REGEX REPLACE "(^|[ \t])(-fno-exceptions)([ \t]|$)" " " _TMP " ${_TMP} ")
+
+            string(STRIP "${_TMP}" _TMP)
+        endif()
+        set(PKG_CONFIG_CFLAGS "${_TMP}" CACHE INTERNAL "Compiler flags exported via pkg-config")
     endif()
 endfunction()
 
