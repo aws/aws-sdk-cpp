@@ -376,6 +376,17 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
         if(request.GetBody())
         {
+            if (request.GetBody()->tellg() == EOF) {
+              // Save checksum information from the original request if we haven't already and stream is finalized
+              RetryContext context = request.GetRetryContext();
+              if (context.m_requestHash == nullptr) {
+                auto originalRequestHash = httpRequest->GetRequestHash();
+                if (originalRequestHash.second != nullptr) {
+                  context.m_requestHash = Aws::MakeShared<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>(AWS_CLIENT_LOG_TAG, originalRequestHash);
+                  request.SetRetryContext(context);
+                }
+              }
+            }
             request.GetBody()->clear();
             request.GetBody()->seekg(0);
         }
@@ -395,16 +406,6 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         if (!newEndpoint.empty())
         {
             newUri.SetAuthority(newEndpoint);
-        }
-
-        // Save checksum information from the original request if we haven't already - safe to assume that the checksum has been finalized, since we have sent and received a response
-        RetryContext context = request.GetRetryContext();
-        if (context.m_requestHash == nullptr) {
-          auto originalRequestHash = httpRequest->GetRequestHash();
-          if (originalRequestHash.second != nullptr) {
-            context.m_requestHash = Aws::MakeShared<std::pair<Aws::String, std::shared_ptr<Aws::Utils::Crypto::Hash>>>(AWS_CLIENT_LOG_TAG, originalRequestHash);
-            request.SetRetryContext(context);
-          }
         }
 
         httpRequest = CreateHttpRequest(newUri, method, request.GetResponseStreamFactory());
