@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorLevel.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -128,6 +129,32 @@ class CreateEvaluatorRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable
+   * you to categorize your resources in different ways, for example, by purpose,
+   * owner, or environment.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateEvaluatorRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateEvaluatorRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -138,11 +165,14 @@ class CreateEvaluatorRequest : public BedrockAgentCoreControlRequest {
   EvaluatorConfig m_evaluatorConfig;
 
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_evaluatorNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluatorConfigHasBeenSet = false;
   bool m_levelHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

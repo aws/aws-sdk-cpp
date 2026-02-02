@@ -51,5 +51,13 @@ Aws::String CreateOnlineEvaluationConfigRequest::SerializePayload() const {
     payload.WithBool("enableOnCreate", m_enableOnCreate);
   }
 
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

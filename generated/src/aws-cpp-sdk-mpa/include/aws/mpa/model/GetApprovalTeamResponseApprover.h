@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/mpa/model/IdentityStatus.h>
+#include <aws/mpa/model/MfaMethod.h>
 
 #include <utility>
 
@@ -123,6 +125,30 @@ class GetApprovalTeamResponseApprover {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Multi-factor authentication configuration for the approver</p>
+   */
+  inline const Aws::Vector<MfaMethod>& GetMfaMethods() const { return m_mfaMethods; }
+  inline bool MfaMethodsHasBeenSet() const { return m_mfaMethodsHasBeenSet; }
+  template <typename MfaMethodsT = Aws::Vector<MfaMethod>>
+  void SetMfaMethods(MfaMethodsT&& value) {
+    m_mfaMethodsHasBeenSet = true;
+    m_mfaMethods = std::forward<MfaMethodsT>(value);
+  }
+  template <typename MfaMethodsT = Aws::Vector<MfaMethod>>
+  GetApprovalTeamResponseApprover& WithMfaMethods(MfaMethodsT&& value) {
+    SetMfaMethods(std::forward<MfaMethodsT>(value));
+    return *this;
+  }
+  template <typename MfaMethodsT = MfaMethod>
+  GetApprovalTeamResponseApprover& AddMfaMethods(MfaMethodsT&& value) {
+    m_mfaMethodsHasBeenSet = true;
+    m_mfaMethods.emplace_back(std::forward<MfaMethodsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_approverId;
 
@@ -133,11 +159,14 @@ class GetApprovalTeamResponseApprover {
   Aws::String m_primaryIdentitySourceArn;
 
   IdentityStatus m_primaryIdentityStatus{IdentityStatus::NOT_SET};
+
+  Aws::Vector<MfaMethod> m_mfaMethods;
   bool m_approverIdHasBeenSet = false;
   bool m_responseTimeHasBeenSet = false;
   bool m_primaryIdentityIdHasBeenSet = false;
   bool m_primaryIdentitySourceArnHasBeenSet = false;
   bool m_primaryIdentityStatusHasBeenSet = false;
+  bool m_mfaMethodsHasBeenSet = false;
 };
 
 }  // namespace Model

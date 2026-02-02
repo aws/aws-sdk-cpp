@@ -417,6 +417,7 @@
 #include <aws/cloudfront/model/OriginGroupMembers.h>
 #include <aws/cloudfront/model/OriginGroupSelectionCriteria.h>
 #include <aws/cloudfront/model/OriginGroups.h>
+#include <aws/cloudfront/model/OriginMtlsConfig.h>
 #include <aws/cloudfront/model/OriginProtocolPolicy.h>
 #include <aws/cloudfront/model/OriginRequestPolicy.h>
 #include <aws/cloudfront/model/OriginRequestPolicyConfig.h>

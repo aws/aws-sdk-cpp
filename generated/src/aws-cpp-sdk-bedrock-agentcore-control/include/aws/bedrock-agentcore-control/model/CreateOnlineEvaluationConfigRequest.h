@@ -10,6 +10,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorReference.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -194,6 +195,32 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of tag keys and values to assign to an AgentCore Online Evaluation
+   * Config. Tags enable you to categorize your resources in different ways, for
+   * example, by purpose, owner, or environment.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateOnlineEvaluationConfigRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateOnlineEvaluationConfigRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -210,6 +237,8 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   Aws::String m_evaluationExecutionRoleArn;
 
   bool m_enableOnCreate{false};
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_onlineEvaluationConfigNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -218,6 +247,7 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   bool m_evaluatorsHasBeenSet = false;
   bool m_evaluationExecutionRoleArnHasBeenSet = false;
   bool m_enableOnCreateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

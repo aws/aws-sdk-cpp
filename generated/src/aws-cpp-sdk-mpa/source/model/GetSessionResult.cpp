@@ -120,6 +120,15 @@ GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<
     }
     m_approverResponsesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdditionalSecurityRequirements")) {
+    Aws::Utils::Array<JsonView> additionalSecurityRequirementsJsonList = jsonValue.GetArray("AdditionalSecurityRequirements");
+    for (unsigned additionalSecurityRequirementsIndex = 0;
+         additionalSecurityRequirementsIndex < additionalSecurityRequirementsJsonList.GetLength(); ++additionalSecurityRequirementsIndex) {
+      m_additionalSecurityRequirements.push_back(AdditionalSecurityRequirementMapper::GetAdditionalSecurityRequirementForName(
+          additionalSecurityRequirementsJsonList[additionalSecurityRequirementsIndex].AsString()));
+    }
+    m_additionalSecurityRequirementsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
