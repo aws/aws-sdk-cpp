@@ -170,9 +170,15 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
    * queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name
    * in real-time metrics report: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time">Scheduled</a>
-   * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-   * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
-   * you do not use groupings, Unit says SECONDS but the Value is returned in
+   * </p> </dd> <dt>ESTIMATED_WAIT_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>This metric
+   * supports filter and grouping combination only used for core routing purpose.
+   * Valid filter and grouping use cases: </p> <ul> <li> <p>Filter by a list of
+   * [Queues] and a list of [Channels], group by [“QUEUE”, “CHANNEL”]</p> </li> <li>
+   * <p>Filter by a singleton list of [Queue], a singleton list of [Channel], a list
+   * of [RoutingStepExpression], group by [“ROUTING_STEP_EXPRESSION”].</p> </li>
+   * </ul> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you
+   * use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>
+   * <p>When you do not use groupings, Unit says SECONDS but the Value is returned in
    * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
    * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
    * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>When the

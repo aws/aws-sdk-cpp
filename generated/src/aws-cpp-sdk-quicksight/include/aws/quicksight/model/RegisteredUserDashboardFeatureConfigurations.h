@@ -58,24 +58,6 @@ class RegisteredUserDashboardFeatureConfigurations {
 
   ///@{
   /**
-   * <p>The shared view settings of an embedded dashboard.</p>
-   */
-  inline const SharedViewConfigurations& GetSharedView() const { return m_sharedView; }
-  inline bool SharedViewHasBeenSet() const { return m_sharedViewHasBeenSet; }
-  template <typename SharedViewT = SharedViewConfigurations>
-  void SetSharedView(SharedViewT&& value) {
-    m_sharedViewHasBeenSet = true;
-    m_sharedView = std::forward<SharedViewT>(value);
-  }
-  template <typename SharedViewT = SharedViewConfigurations>
-  RegisteredUserDashboardFeatureConfigurations& WithSharedView(SharedViewT&& value) {
-    SetSharedView(std::forward<SharedViewT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The bookmarks configuration for an embedded dashboard in Amazon Quick
    * Sight.</p>
    */
@@ -89,6 +71,24 @@ class RegisteredUserDashboardFeatureConfigurations {
   template <typename BookmarksT = BookmarksConfigurations>
   RegisteredUserDashboardFeatureConfigurations& WithBookmarks(BookmarksT&& value) {
     SetBookmarks(std::forward<BookmarksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The shared view settings of an embedded dashboard.</p>
+   */
+  inline const SharedViewConfigurations& GetSharedView() const { return m_sharedView; }
+  inline bool SharedViewHasBeenSet() const { return m_sharedViewHasBeenSet; }
+  template <typename SharedViewT = SharedViewConfigurations>
+  void SetSharedView(SharedViewT&& value) {
+    m_sharedViewHasBeenSet = true;
+    m_sharedView = std::forward<SharedViewT>(value);
+  }
+  template <typename SharedViewT = SharedViewConfigurations>
+  RegisteredUserDashboardFeatureConfigurations& WithSharedView(SharedViewT&& value) {
+    SetSharedView(std::forward<SharedViewT>(value));
     return *this;
   }
   ///@}
@@ -167,9 +167,9 @@ class RegisteredUserDashboardFeatureConfigurations {
  private:
   StatePersistenceConfigurations m_statePersistence;
 
-  SharedViewConfigurations m_sharedView;
-
   BookmarksConfigurations m_bookmarks;
+
+  SharedViewConfigurations m_sharedView;
 
   AmazonQInQuickSightDashboardConfigurations m_amazonQInQuickSight;
 
@@ -179,8 +179,8 @@ class RegisteredUserDashboardFeatureConfigurations {
 
   ThresholdAlertsConfigurations m_thresholdAlerts;
   bool m_statePersistenceHasBeenSet = false;
-  bool m_sharedViewHasBeenSet = false;
   bool m_bookmarksHasBeenSet = false;
+  bool m_sharedViewHasBeenSet = false;
   bool m_amazonQInQuickSightHasBeenSet = false;
   bool m_schedulesHasBeenSet = false;
   bool m_recentSnapshotsHasBeenSet = false;
