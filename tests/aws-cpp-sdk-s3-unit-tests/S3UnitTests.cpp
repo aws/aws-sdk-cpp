@@ -629,7 +629,9 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
       [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
         // Partially read the buffer, such that the request checksum ends up in a bad state.
         Aws::Array<char, 12> tempBuffer;
-        request->GetContentBody()->read(tempBuffer.data(), 12);
+        if (request->GetContentBody()) {
+          request->GetContentBody()->read(tempBuffer.data(), 12);
+        }
       });
 
   const auto successResponseStream = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_POST);
@@ -639,7 +641,9 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
   _mockHttpClient->AddResponseToReturn(
       successResponse, [](IOStream& stream) -> void {EXPECT_EQ(stream.tellg(), 0);}, [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
         Aws::Array<char, 9216> tempBuffer;
-        request->GetContentBody()->read(tempBuffer.data(), 9216);
+        if (request->GetContentBody()) {
+          request->GetContentBody()->read(tempBuffer.data(), 9216);
+        }
       });
 
   // The top level test has a no retry policy so we have to create one that retries
