@@ -648,7 +648,9 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
 
   // The top level test has a no retry policy so we have to create one that retries
   const AWSCredentials credentials{"mock", "credentials"};
-  S3ClientConfiguration configuration;
+  ClientConfigurationInitValues initValues;
+  initValues.shouldDisableIMDS = true;
+  S3ClientConfiguration configuration{initValues};
   configuration.httpClientChunkedMode = HttpClientChunkedMode::DEFAULT;
   // Smallest chunk size allowed
   configuration.awsChunkedBufferSize = 8192UL;
