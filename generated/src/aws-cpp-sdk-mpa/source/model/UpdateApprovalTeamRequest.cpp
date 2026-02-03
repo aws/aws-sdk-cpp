@@ -31,5 +31,13 @@ Aws::String UpdateApprovalTeamRequest::SerializePayload() const {
     payload.WithString("Description", m_description);
   }
 
+  if (m_updateActionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> updateActionsJsonList(m_updateActions.size());
+    for (unsigned updateActionsIndex = 0; updateActionsIndex < updateActionsJsonList.GetLength(); ++updateActionsIndex) {
+      updateActionsJsonList[updateActionsIndex].AsString(UpdateActionMapper::GetNameForUpdateAction(m_updateActions[updateActionsIndex]));
+    }
+    payload.WithArray("UpdateActions", std::move(updateActionsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

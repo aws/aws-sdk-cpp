@@ -38,6 +38,13 @@ GetApprovalTeamResponseApprover& GetApprovalTeamResponseApprover::operator=(Json
     m_primaryIdentityStatus = IdentityStatusMapper::GetIdentityStatusForName(jsonValue.GetString("PrimaryIdentityStatus"));
     m_primaryIdentityStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MfaMethods")) {
+    Aws::Utils::Array<JsonView> mfaMethodsJsonList = jsonValue.GetArray("MfaMethods");
+    for (unsigned mfaMethodsIndex = 0; mfaMethodsIndex < mfaMethodsJsonList.GetLength(); ++mfaMethodsIndex) {
+      m_mfaMethods.push_back(mfaMethodsJsonList[mfaMethodsIndex].AsObject());
+    }
+    m_mfaMethodsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +69,14 @@ JsonValue GetApprovalTeamResponseApprover::Jsonize() const {
 
   if (m_primaryIdentityStatusHasBeenSet) {
     payload.WithString("PrimaryIdentityStatus", IdentityStatusMapper::GetNameForIdentityStatus(m_primaryIdentityStatus));
+  }
+
+  if (m_mfaMethodsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mfaMethodsJsonList(m_mfaMethods.size());
+    for (unsigned mfaMethodsIndex = 0; mfaMethodsIndex < mfaMethodsJsonList.GetLength(); ++mfaMethodsIndex) {
+      mfaMethodsJsonList[mfaMethodsIndex].AsObject(m_mfaMethods[mfaMethodsIndex].Jsonize());
+    }
+    payload.WithArray("MfaMethods", std::move(mfaMethodsJsonList));
   }
 
   return payload;

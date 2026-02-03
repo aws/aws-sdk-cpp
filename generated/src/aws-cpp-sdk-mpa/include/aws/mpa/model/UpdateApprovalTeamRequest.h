@@ -10,6 +10,7 @@
 #include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/mpa/model/ApprovalStrategy.h>
 #include <aws/mpa/model/ApprovalTeamRequestApprover.h>
+#include <aws/mpa/model/UpdateAction.h>
 
 #include <utility>
 
@@ -110,6 +111,29 @@ class UpdateApprovalTeamRequest : public MPARequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+   */
+  inline const Aws::Vector<UpdateAction>& GetUpdateActions() const { return m_updateActions; }
+  inline bool UpdateActionsHasBeenSet() const { return m_updateActionsHasBeenSet; }
+  template <typename UpdateActionsT = Aws::Vector<UpdateAction>>
+  void SetUpdateActions(UpdateActionsT&& value) {
+    m_updateActionsHasBeenSet = true;
+    m_updateActions = std::forward<UpdateActionsT>(value);
+  }
+  template <typename UpdateActionsT = Aws::Vector<UpdateAction>>
+  UpdateApprovalTeamRequest& WithUpdateActions(UpdateActionsT&& value) {
+    SetUpdateActions(std::forward<UpdateActionsT>(value));
+    return *this;
+  }
+  inline UpdateApprovalTeamRequest& AddUpdateActions(UpdateAction value) {
+    m_updateActionsHasBeenSet = true;
+    m_updateActions.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   ApprovalStrategy m_approvalStrategy;
 
@@ -118,10 +142,13 @@ class UpdateApprovalTeamRequest : public MPARequest {
   Aws::String m_description;
 
   Aws::String m_arn;
+
+  Aws::Vector<UpdateAction> m_updateActions;
   bool m_approvalStrategyHasBeenSet = false;
   bool m_approversHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
+  bool m_updateActionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -288,11 +288,7 @@ class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Returns details for the version of a policy. Policies define the permissions
-   * for team resources.</p> <p>The protected operation for a service integration
-   * might require specific permissions. For more information, see <a
-   * href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-   * other services work with Multi-party approval</a> in the <i>Multi-party approval
-   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * for team resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetPolicyVersion">AWS
    * API Reference</a></p>
    */
@@ -429,11 +425,7 @@ class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Returns a list of policies. Policies define the permissions for team
-   * resources.</p> <p>The protected operation for a service integration might
-   * require specific permissions. For more information, see <a
-   * href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-   * other services work with Multi-party approval</a> in the <i>Multi-party approval
-   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListPolicies">AWS
    * API Reference</a></p>
    */
@@ -460,11 +452,7 @@ class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Returns a list of the versions for policies. Policies define the permissions
-   * for team resources.</p> <p>The protected operation for a service integration
-   * might require specific permissions. For more information, see <a
-   * href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-   * other services work with Multi-party approval</a> in the <i>Multi-party approval
-   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * for team resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListPolicyVersions">AWS
    * API Reference</a></p>
    */

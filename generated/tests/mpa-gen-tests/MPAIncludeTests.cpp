@@ -15,6 +15,7 @@
 #include <aws/mpa/MPAServiceClientModel.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/mpa/model/ActionCompletionStrategy.h>
+#include <aws/mpa/model/AdditionalSecurityRequirement.h>
 #include <aws/mpa/model/ApprovalStrategy.h>
 #include <aws/mpa/model/ApprovalStrategyResponse.h>
 #include <aws/mpa/model/ApprovalTeamRequestApprover.h>
@@ -71,6 +72,9 @@
 #include <aws/mpa/model/ListSessionsResult.h>
 #include <aws/mpa/model/ListTagsForResourceRequest.h>
 #include <aws/mpa/model/ListTagsForResourceResult.h>
+#include <aws/mpa/model/MfaMethod.h>
+#include <aws/mpa/model/MfaSyncStatus.h>
+#include <aws/mpa/model/MfaType.h>
 #include <aws/mpa/model/MofNApprovalStrategy.h>
 #include <aws/mpa/model/Operator.h>
 #include <aws/mpa/model/PendingUpdate.h>
@@ -91,6 +95,7 @@
 #include <aws/mpa/model/TooManyTagsException.h>
 #include <aws/mpa/model/UntagResourceRequest.h>
 #include <aws/mpa/model/UntagResourceResult.h>
+#include <aws/mpa/model/UpdateAction.h>
 #include <aws/mpa/model/UpdateApprovalTeamRequest.h>
 #include <aws/mpa/model/UpdateApprovalTeamResult.h>
 
