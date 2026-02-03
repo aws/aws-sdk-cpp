@@ -86,7 +86,7 @@ TEST_F(BedrockRuntimeTests, TestInvokeModel)
   bedrockRequest.SetContentType("application/json");
 
   Aws::BedrockRuntime::Model::InvokeModelOutcome outcome = m_client->InvokeModel(bedrockRequest);
-  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_TRUE(outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
   Aws::StringStream ss;
   ss << outcome.GetResult().GetBody().rdbuf();
   ASSERT_FALSE(ss.str().empty());
