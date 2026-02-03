@@ -12,10 +12,11 @@ import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.shapes.*;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationTraitsGenerator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationClientHeaderGenerator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationCompilationTestGenerator;
-import com.amazonaws.util.awsclientsmithygenerator.generators.templates.PaginationBaseGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationTraitsGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationClientHeaderGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationCompilationTestGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationBaseGenerator;
+import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationEmptyHeaderGenerator;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -28,20 +29,16 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
 
     @Override
     public String getName() {
-        return "cpp-codegen-pagination-plugin";
+        return "smithy-cpp-codegen";
     }
 
     @Override
     public void execute(PluginContext context) {
         var model = context.getModel();
         
-        // TODO: Remove this workaround - mock projections should use proper Smithy model generation
-        // instead of manually writing files in the plugin
-        // Currently only needed for importexport, sdb (SimpleDB), and s3-crt
-        // Check if this is a legacy service mock projection
-        String projectionName = context.getProjectionName();
-        if (projectionName.endsWith(".mock")) {
-            generateLegacyServiceFile(context);
+        // Handle legacy services without Smithy models
+        if (context.getProjectionName().endsWith(".mock")) {
+            PaginationEmptyHeaderGenerator.generate(context);
             return;
         }
         
@@ -88,53 +85,6 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                 PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps, parser.getServiceMap());
                 testGenerator.run();
             }
-        }
-    }
-    
-    private void generateLegacyServiceFile(PluginContext context) {
-        Map<String, String> legacyServices = new HashMap<>();
-        legacyServices.put("importexport", "ImportExport");
-        legacyServices.put("sdb", "SimpleDB");
-        legacyServices.put("s3-crt", "S3Crt");
-        
-        String projectionName = context.getProjectionName();
-        String c2jName = projectionName.replace(".mock", "");
-        String pascalName = legacyServices.get(c2jName);
-        
-        if (pascalName == null) {
-            return;
-        }
-        
-        try {
-            Path baseDir = context.getFileManifest().getBaseDir();
-            Path includeDir = baseDir.resolve("include").resolve("aws").resolve(c2jName);
-            Files.createDirectories(includeDir);
-                
-                // Generate empty pagination base header
-                Path headerFile = includeDir.resolve(pascalName + "PaginationBase.h");
-                String content = String.format(
-                    "/**\n" +
-                    " * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n" +
-                    " * SPDX-License-Identifier: Apache-2.0.\n" +
-                    " */\n\n" +
-                    "#pragma once\n\n" +
-                    "namespace Aws\n" +
-                    "{\n" +
-                    "    namespace %s\n" +
-                    "    {\n" +
-                    "        template<typename ClientType>\n" +
-                    "        class %sPaginationBase\n" +
-                    "        {\n" +
-                    "        public:\n" +
-                    "            virtual ~%sPaginationBase() = default;\n" +
-                    "        };\n" +
-                    "    } // namespace %s\n" +
-                    "} // namespace Aws\n",
-                    pascalName, pascalName, pascalName, pascalName
-                );
-            Files.writeString(headerFile, content);
-        } catch (Exception e) {
-            System.err.println("Failed to generate legacy service " + c2jName + ": " + e.getMessage());
         }
     }
 }

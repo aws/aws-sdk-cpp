@@ -19,21 +19,21 @@ repositories {
 
 buildscript {
     dependencies {
-        classpath(codegen.model)
-        classpath(codegen.aws.traits)
-        classpath(codegen.rules.engine)
+        classpath("software.amazon.smithy:smithy-model:1.62.0")
+        classpath("software.amazon.smithy:smithy-aws-traits:1.62.0")
+        classpath("software.amazon.smithy:smithy-rules-engine:1.62.0")
     }
 }
 
 dependencies {
-    implementation(project(":cpp-pagination-codegen"))
-    implementation(codegen.aws.traits)
-    implementation(codegen.aws.cloudformation.traits)
-    implementation(codegen.aws.iam.traits)
-    implementation(codegen.aws.endpoints)
-    implementation(codegen.smoke.test.traits)
-    implementation(codegen.aws.smoke.test.model)
-    implementation(codegen.waiters)
+    implementation(project(":smithy-cpp-codegen"))
+    implementation("software.amazon.smithy:smithy-aws-traits:1.62.0")
+    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.62.0")
+    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.62.0")
+    implementation("software.amazon.smithy:smithy-aws-endpoints:1.62.0")
+    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.62.0")
+    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.62.0")
+    implementation("software.amazon.smithy:smithy-waiters:1.62.0")
 }
 
 tasks.jar {
@@ -43,7 +43,7 @@ tasks.jar {
 tasks.register("generate-smithy-build") {
     doLast {
         val projectionsBuilder = Node.objectNodeBuilder()
-        val models = project.file("../../api-descriptions")
+        val models = project.file("../api-descriptions")
         val filteredServices: String = project.findProperty("servicesFilter")?.toString() ?: ""
         val filteredServiceList = filteredServices.split(",").map { it.trim() }.filter { it.isNotEmpty() }
         val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: ""
@@ -51,12 +51,9 @@ tasks.register("generate-smithy-build") {
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
             val model = Model.assembler()
                 .addImport(file.absolutePath)
-                // Grab the result directly rather than worrying about checking for errors via unwrap.
-                // All we care about here is the service shape, any unchecked errors will be exposed
-                // as part of the actual build task done by the smithy gradle plugin.
                 .assemble().result.get()
-                val services = model.shapes(ServiceShape::class.java).sorted().toList()
-                if (services.size != 1) return@eachFile
+            val services = model.shapes(ServiceShape::class.java).sorted().toList()
+            if (services.size != 1) return@eachFile
             
             val service = services[0]
             val serviceTrait = service.getTrait(ServiceTrait::class.java).get()
@@ -67,7 +64,7 @@ tasks.register("generate-smithy-build") {
             val projectionContents = Node.objectNodeBuilder()
                 .withMember("imports", Node.fromStrings("${models.absolutePath}${File.separator}${file.name}"))
                 .withMember("plugins", Node.objectNode()
-                    .withMember("cpp-codegen-pagination-plugin", Node.objectNodeBuilder()
+                    .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
                         .withMember("c2jMap", Node.from(c2jMapStr))
                         .build()))
                 .build()
@@ -75,16 +72,12 @@ tasks.register("generate-smithy-build") {
             projectionsBuilder.withMember("$sdkId.${service.version.lowercase()}", projectionContents)
         }
         
-        // TODO: Remove this workaround - legacy services should have proper Smithy model files
-        // instead of hardcoding service names in both Gradle and Java
-        // Currently only needed for importexport, sdb (SimpleDB), and s3-crt
-        // Add mock projections for legacy C2J-only services
         val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB", "s3-crt" to "S3Crt")
         legacyServices.forEach { (c2jName, pascalName) ->
             if (filteredServiceList.isEmpty() || c2jName in filteredServiceList) {
                 val mockProjectionContents = Node.objectNodeBuilder()
                     .withMember("plugins", Node.objectNode()
-                        .withMember("cpp-codegen-pagination-plugin", Node.objectNodeBuilder()
+                        .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
                             .withMember("c2jMap", Node.from(c2jMapStr))
                             .build()))
                     .build()
@@ -102,3 +95,5 @@ tasks.register("generate-smithy-build") {
 }
 
 tasks["build"].dependsOn(tasks["generate-smithy-build"])
+tasks["generate-smithy-build"].dependsOn(tasks["jar"])
+tasks["smithyBuild"].dependsOn(tasks["jar"])

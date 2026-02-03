@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-package com.amazonaws.util.awsclientsmithygenerator.generators.templates;
+package com.amazonaws.util.awsclientsmithygenerator.generators.pagination;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;

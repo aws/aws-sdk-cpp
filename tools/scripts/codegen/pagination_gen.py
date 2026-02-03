@@ -12,8 +12,8 @@ import shutil
 import subprocess
 from typing import List
 
-SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/codegen"
-SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/codegen/smithy2c2j_service_map.json"
+SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/cpp-codegen"
+SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/cpp-codegen/smithy2c2j_service_map.json"
 
 
 class PaginationGen(object):
@@ -34,8 +34,8 @@ class PaginationGen(object):
         if self._generate_pagination(smithy_services, json.dumps(self.smithy_c2j_data)):
             target_dir = os.path.abspath("generated/src")
             self._copy_cpp_codegen_contents(
-                os.path.abspath("tools/code-generation/smithy/codegen"),
-                "cpp-codegen-pagination-plugin",
+                os.path.abspath("tools/code-generation/smithy/cpp-codegen"),
+                "smithy-cpp-codegen",
                 target_dir
             )
             return 0
@@ -44,7 +44,7 @@ class PaginationGen(object):
     def _generate_pagination(self, smithy_services: List[str], smithy_c2j_data: str):
         smithy_codegen_command = [
             "./gradlew",
-            ":cpp-pagination:build",
+            "build",
             "-PservicesFilter=" + ",".join(smithy_services),
             "-Pc2jMap=" + smithy_c2j_data
         ]
@@ -72,15 +72,15 @@ class PaginationGen(object):
             return False
 
     def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_name: str, target_dir: str):
-        # Walk only cpp-pagination subdirectory to avoid .git and gradle cache
-        cpp_pagination_dir = os.path.join(top_level_dir, "cpp-pagination")
+        # Walk output directory to find generated code
+        output_dir = os.path.join(top_level_dir, "output")
         # TODO: Verify if this check is still needed after Smithy generator always creates output
-        if not os.path.exists(cpp_pagination_dir):
+        if not os.path.exists(output_dir):
             if self.debug:
-                print(f"No cpp-pagination directory found at '{cpp_pagination_dir}'")
+                print(f"No output directory found at '{output_dir}'")
             return
             
-        for root, dirs, files in os.walk(cpp_pagination_dir):
+        for root, dirs, files in os.walk(output_dir):
             if plugin_name in dirs:
                 source_dir = os.path.join(root, plugin_name)
                 
@@ -118,7 +118,6 @@ class PaginationGen(object):
                     print(f"Copied from '{source_dir}' to '{service_target_dir}'")
         
         # Cleanup output directory
-        output_dir = os.path.join(top_level_dir, "cpp-pagination/output")
         if os.path.exists(output_dir):
             shutil.rmtree(output_dir)
             if self.debug:

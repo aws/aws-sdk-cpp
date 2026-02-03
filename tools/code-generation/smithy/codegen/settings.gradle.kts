@@ -2,8 +2,6 @@ rootProject.name = "smithy_code_generation"
 
 include("cpp-smoke-tests")
 include("cpp-smoke-tests-codegen")
-include("cpp-pagination-codegen")
-include("cpp-pagination")
 
 pluginManagement {
     repositories {
