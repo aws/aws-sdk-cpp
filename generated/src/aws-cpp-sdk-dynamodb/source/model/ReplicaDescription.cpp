@@ -66,6 +66,11 @@ ReplicaDescription& ReplicaDescription::operator=(JsonView jsonValue) {
     m_replicaTableClassSummary = jsonValue.GetObject("ReplicaTableClassSummary");
     m_replicaTableClassSummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GlobalTableSettingsReplicationMode")) {
+    m_globalTableSettingsReplicationMode = GlobalTableSettingsReplicationModeMapper::GetGlobalTableSettingsReplicationModeForName(
+        jsonValue.GetString("GlobalTableSettingsReplicationMode"));
+    m_globalTableSettingsReplicationModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -119,6 +124,12 @@ JsonValue ReplicaDescription::Jsonize() const {
 
   if (m_replicaTableClassSummaryHasBeenSet) {
     payload.WithObject("ReplicaTableClassSummary", m_replicaTableClassSummary.Jsonize());
+  }
+
+  if (m_globalTableSettingsReplicationModeHasBeenSet) {
+    payload.WithString(
+        "GlobalTableSettingsReplicationMode",
+        GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
   }
 
   return payload;

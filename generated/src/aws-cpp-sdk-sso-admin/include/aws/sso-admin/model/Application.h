@@ -197,6 +197,25 @@ class Application {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the application was created in IAM
+   * Identity Center.</p>
+   */
+  inline const Aws::String& GetCreatedFrom() const { return m_createdFrom; }
+  inline bool CreatedFromHasBeenSet() const { return m_createdFromHasBeenSet; }
+  template <typename CreatedFromT = Aws::String>
+  void SetCreatedFrom(CreatedFromT&& value) {
+    m_createdFromHasBeenSet = true;
+    m_createdFrom = std::forward<CreatedFromT>(value);
+  }
+  template <typename CreatedFromT = Aws::String>
+  Application& WithCreatedFrom(CreatedFromT&& value) {
+    SetCreatedFrom(std::forward<CreatedFromT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationArn;
 
@@ -215,6 +234,8 @@ class Application {
   Aws::String m_description;
 
   Aws::Utils::DateTime m_createdDate{};
+
+  Aws::String m_createdFrom;
   bool m_applicationArnHasBeenSet = false;
   bool m_applicationProviderArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -224,6 +245,7 @@ class Application {
   bool m_portalOptionsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
+  bool m_createdFromHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -186,6 +186,24 @@ class DescribeApplicationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Web Services Region where the application was created in IAM
+   * Identity Center.</p>
+   */
+  inline const Aws::String& GetCreatedFrom() const { return m_createdFrom; }
+  template <typename CreatedFromT = Aws::String>
+  void SetCreatedFrom(CreatedFromT&& value) {
+    m_createdFromHasBeenSet = true;
+    m_createdFrom = std::forward<CreatedFromT>(value);
+  }
+  template <typename CreatedFromT = Aws::String>
+  DescribeApplicationResult& WithCreatedFrom(CreatedFromT&& value) {
+    SetCreatedFrom(std::forward<CreatedFromT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -218,6 +236,8 @@ class DescribeApplicationResult {
 
   Aws::Utils::DateTime m_createdDate{};
 
+  Aws::String m_createdFrom;
+
   Aws::String m_requestId;
   bool m_applicationArnHasBeenSet = false;
   bool m_applicationProviderArnHasBeenSet = false;
@@ -228,6 +248,7 @@ class DescribeApplicationResult {
   bool m_portalOptionsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
+  bool m_createdFromHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

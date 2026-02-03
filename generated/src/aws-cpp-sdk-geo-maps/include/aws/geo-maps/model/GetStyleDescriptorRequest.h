@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-maps/GeoMapsRequest.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
+#include <aws/geo-maps/model/Buildings.h>
 #include <aws/geo-maps/model/ColorScheme.h>
 #include <aws/geo-maps/model/ContourDensity.h>
 #include <aws/geo-maps/model/MapStyle.h>
@@ -115,8 +116,10 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
    * <p>Adjusts how physical terrain details are rendered on the map.</p> <p>The
    * following terrain styles are currently supported:</p> <ul> <li> <p>
    * <code>Hillshade</code>: Displays the physical terrain details through shading
-   * and highlighting of elevation change and geographic features.</p> </li> </ul>
-   * <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+   * and highlighting of elevation change and geographic features.</p> </li> <li> <p>
+   * <code>Terrain3D</code>: Displays physical terrain details and elevations as a
+   * three-dimensional model.</p> </li> </ul> <p> <code>Hillshade</code> is valid
+   * only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
    */
   inline Terrain GetTerrain() const { return m_terrain; }
   inline bool TerrainHasBeenSet() const { return m_terrainHasBeenSet; }
@@ -135,7 +138,8 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
    * <p>Displays the shape and steepness of terrain features using elevation lines.
    * The density value controls how densely the available contour line information is
    * rendered on the map.</p> <p>This parameter is valid only for the
-   * <code>Standard</code> map style.</p>
+   * <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map
+   * styles.</p>
    */
   inline ContourDensity GetContourDensity() const { return m_contourDensity; }
   inline bool ContourDensityHasBeenSet() const { return m_contourDensityHasBeenSet; }
@@ -195,6 +199,26 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   ///@{
   /**
+   * <p>Adjusts how building details are rendered on the map.</p> <p>The following
+   * building styles are currently supported:</p> <ul> <li> <p>
+   * <code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on
+   * the map.</p> </li> </ul> <p> <code>Buildings3D</code> is valid only for the
+   * <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+   */
+  inline Buildings GetBuildings() const { return m_buildings; }
+  inline bool BuildingsHasBeenSet() const { return m_buildingsHasBeenSet; }
+  inline void SetBuildings(Buildings value) {
+    m_buildingsHasBeenSet = true;
+    m_buildings = value;
+  }
+  inline GetStyleDescriptorRequest& WithBuildings(Buildings value) {
+    SetBuildings(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Optional: The API key to be used for authorization. Either an API key or
    * valid SigV4 signature must be provided when making a request. </p>
    */
@@ -226,6 +250,8 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
 
   Aws::Vector<TravelMode> m_travelModes;
 
+  Buildings m_buildings{Buildings::NOT_SET};
+
   Aws::String m_key;
   bool m_styleHasBeenSet = false;
   bool m_colorSchemeHasBeenSet = false;
@@ -234,6 +260,7 @@ class GetStyleDescriptorRequest : public GeoMapsRequest {
   bool m_contourDensityHasBeenSet = false;
   bool m_trafficHasBeenSet = false;
   bool m_travelModesHasBeenSet = false;
+  bool m_buildingsHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

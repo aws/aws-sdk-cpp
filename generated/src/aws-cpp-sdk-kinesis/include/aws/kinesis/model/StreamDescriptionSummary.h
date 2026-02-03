@@ -77,6 +77,24 @@ class StreamDescriptionSummary {
 
   ///@{
   /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  StreamDescriptionSummary& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the stream being described. The stream status is one of
    * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
    * being created. Kinesis Data Streams immediately returns and sets
@@ -299,6 +317,8 @@ class StreamDescriptionSummary {
 
   Aws::String m_streamARN;
 
+  Aws::String m_streamId;
+
   StreamStatus m_streamStatus{StreamStatus::NOT_SET};
 
   StreamModeDetails m_streamModeDetails;
@@ -322,6 +342,7 @@ class StreamDescriptionSummary {
   int m_maxRecordSizeInKiB{0};
   bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_streamStatusHasBeenSet = false;
   bool m_streamModeDetailsHasBeenSet = false;
   bool m_retentionPeriodHoursHasBeenSet = false;

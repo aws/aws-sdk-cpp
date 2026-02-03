@@ -23,6 +23,10 @@ Aws::String RegisterStreamConsumerRequest::SerializePayload() const {
     payload.WithString("ConsumerName", m_consumerName);
   }
 
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
@@ -47,6 +51,10 @@ RegisterStreamConsumerRequest::EndpointParameters RegisterStreamConsumerRequest:
   // Operation context parameters
   if (StreamARNHasBeenSet()) {
     parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (StreamIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamId"), this->GetStreamId(),
                             Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
   }
   return parameters;

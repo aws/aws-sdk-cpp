@@ -23,6 +23,10 @@ Aws::String UpdateStreamWarmThroughputRequest::SerializePayload() const {
     payload.WithString("StreamName", m_streamName);
   }
 
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
+  }
+
   if (m_warmThroughputMiBpsHasBeenSet) {
     payload.WithInteger("WarmThroughputMiBps", m_warmThroughputMiBps);
   }
@@ -43,6 +47,10 @@ UpdateStreamWarmThroughputRequest::EndpointParameters UpdateStreamWarmThroughput
   // Operation context parameters
   if (StreamARNHasBeenSet()) {
     parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (StreamIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamId"), this->GetStreamId(),
                             Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
   }
   return parameters;

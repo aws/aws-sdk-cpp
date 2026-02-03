@@ -5,6 +5,10 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -62,12 +66,59 @@ class ArrayPropertiesSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A summary of the number of array job children in each available job status.
+   * This parameter is returned for parent array jobs.</p>
+   */
+  inline const Aws::Map<Aws::String, int>& GetStatusSummary() const { return m_statusSummary; }
+  inline bool StatusSummaryHasBeenSet() const { return m_statusSummaryHasBeenSet; }
+  template <typename StatusSummaryT = Aws::Map<Aws::String, int>>
+  void SetStatusSummary(StatusSummaryT&& value) {
+    m_statusSummaryHasBeenSet = true;
+    m_statusSummary = std::forward<StatusSummaryT>(value);
+  }
+  template <typename StatusSummaryT = Aws::Map<Aws::String, int>>
+  ArrayPropertiesSummary& WithStatusSummary(StatusSummaryT&& value) {
+    SetStatusSummary(std::forward<StatusSummaryT>(value));
+    return *this;
+  }
+  inline ArrayPropertiesSummary& AddStatusSummary(Aws::String key, int value) {
+    m_statusSummaryHasBeenSet = true;
+    m_statusSummary.emplace(key, value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the <code>statusSummary</code>
+   * was last updated.</p>
+   */
+  inline long long GetStatusSummaryLastUpdatedAt() const { return m_statusSummaryLastUpdatedAt; }
+  inline bool StatusSummaryLastUpdatedAtHasBeenSet() const { return m_statusSummaryLastUpdatedAtHasBeenSet; }
+  inline void SetStatusSummaryLastUpdatedAt(long long value) {
+    m_statusSummaryLastUpdatedAtHasBeenSet = true;
+    m_statusSummaryLastUpdatedAt = value;
+  }
+  inline ArrayPropertiesSummary& WithStatusSummaryLastUpdatedAt(long long value) {
+    SetStatusSummaryLastUpdatedAt(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_size{0};
 
   int m_index{0};
+
+  Aws::Map<Aws::String, int> m_statusSummary;
+
+  long long m_statusSummaryLastUpdatedAt{0};
   bool m_sizeHasBeenSet = false;
   bool m_indexHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
+  bool m_statusSummaryLastUpdatedAtHasBeenSet = false;
 };
 
 }  // namespace Model

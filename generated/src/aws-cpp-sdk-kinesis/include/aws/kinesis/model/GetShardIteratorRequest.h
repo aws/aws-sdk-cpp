@@ -167,6 +167,24 @@ class GetShardIteratorRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  GetShardIteratorRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -179,12 +197,15 @@ class GetShardIteratorRequest : public KinesisRequest {
   Aws::Utils::DateTime m_timestamp{};
 
   Aws::String m_streamARN;
+
+  Aws::String m_streamId;
   bool m_streamNameHasBeenSet = false;
   bool m_shardIdHasBeenSet = false;
   bool m_shardIteratorTypeHasBeenSet = false;
   bool m_startingSequenceNumberHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
 };
 
 }  // namespace Model

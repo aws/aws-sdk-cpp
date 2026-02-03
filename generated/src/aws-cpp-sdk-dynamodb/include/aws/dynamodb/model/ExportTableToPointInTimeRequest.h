@@ -89,7 +89,7 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
    * not resubmit the same request with the same client token for more than 8 hours,
    * or the result might not be idempotent.</p> <p>If you submit a request with the
    * same client token but a change in other parameters within the 8-hour idempotency
-   * window, DynamoDB returns an <code>ImportConflictException</code>.</p>
+   * window, DynamoDB returns an <code>ExportConflictException</code>.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

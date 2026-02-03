@@ -62,7 +62,7 @@ class GetTileRequest : public GeoMapsRequest {
   ///@{
   /**
    * <p>Specifies the desired tile set.</p> <p>Valid Values: <code>raster.satellite |
-   * vector.basemap</code> </p>
+   * vector.basemap | vector.traffic | raster.dem</code> </p>
    */
   inline const Aws::String& GetTileset() const { return m_tileset; }
   inline bool TilesetHasBeenSet() const { return m_tilesetHasBeenSet; }

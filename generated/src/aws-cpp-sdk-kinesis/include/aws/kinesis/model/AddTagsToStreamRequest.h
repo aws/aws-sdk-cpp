@@ -101,15 +101,36 @@ class AddTagsToStreamRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  AddTagsToStreamRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_streamARN;
+
+  Aws::String m_streamId;
   bool m_streamNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
 };
 
 }  // namespace Model

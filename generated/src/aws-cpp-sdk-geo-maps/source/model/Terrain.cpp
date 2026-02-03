@@ -16,11 +16,14 @@ namespace Model {
 namespace TerrainMapper {
 
 static const int Hillshade_HASH = HashingUtils::HashString("Hillshade");
+static const int Terrain3D_HASH = HashingUtils::HashString("Terrain3D");
 
 Terrain GetTerrainForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == Hillshade_HASH) {
     return Terrain::Hillshade;
+  } else if (hashCode == Terrain3D_HASH) {
+    return Terrain::Terrain3D;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForTerrain(Terrain enumValue) {
       return {};
     case Terrain::Hillshade:
       return "Hillshade";
+    case Terrain::Terrain3D:
+      return "Terrain3D";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

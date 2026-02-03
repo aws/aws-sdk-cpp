@@ -27,6 +27,10 @@ Aws::String TagResourceRequest::SerializePayload() const {
     payload.WithString("ResourceARN", m_resourceARN);
   }
 
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
+  }
+
   return payload.View().WriteReadable();
 }
 
@@ -43,6 +47,10 @@ TagResourceRequest::EndpointParameters TagResourceRequest::GetEndpointContextPar
   // Operation context parameters
   if (ResourceARNHasBeenSet()) {
     parameters.emplace_back(Aws::String("ResourceARN"), this->GetResourceARN(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (StreamIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamId"), this->GetStreamId(),
                             Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
   }
   return parameters;

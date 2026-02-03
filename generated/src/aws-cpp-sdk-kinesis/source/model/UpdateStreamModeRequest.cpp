@@ -19,6 +19,10 @@ Aws::String UpdateStreamModeRequest::SerializePayload() const {
     payload.WithString("StreamARN", m_streamARN);
   }
 
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
+  }
+
   if (m_streamModeDetailsHasBeenSet) {
     payload.WithObject("StreamModeDetails", m_streamModeDetails.Jsonize());
   }
@@ -43,6 +47,10 @@ UpdateStreamModeRequest::EndpointParameters UpdateStreamModeRequest::GetEndpoint
   // Operation context parameters
   if (StreamARNHasBeenSet()) {
     parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (StreamIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamId"), this->GetStreamId(),
                             Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
   }
   return parameters;

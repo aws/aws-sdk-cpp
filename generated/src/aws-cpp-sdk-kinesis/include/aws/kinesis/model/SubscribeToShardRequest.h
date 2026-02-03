@@ -86,6 +86,24 @@ class SubscribeToShardRequest : public KinesisRequest {
 
   ///@{
   /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  SubscribeToShardRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the shard you want to subscribe to. To see a list of all the shards
    * for a given stream, use <a>ListShards</a>.</p>
    */
@@ -123,6 +141,8 @@ class SubscribeToShardRequest : public KinesisRequest {
  private:
   Aws::String m_consumerARN;
 
+  Aws::String m_streamId;
+
   Aws::String m_shardId;
 
   StartingPosition m_startingPosition;
@@ -130,6 +150,7 @@ class SubscribeToShardRequest : public KinesisRequest {
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   bool m_consumerARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_shardIdHasBeenSet = false;
   bool m_startingPositionHasBeenSet = false;
 };

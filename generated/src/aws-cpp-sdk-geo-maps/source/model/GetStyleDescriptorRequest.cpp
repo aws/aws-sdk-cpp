@@ -57,6 +57,12 @@ void GetStyleDescriptorRequest::AddQueryStringParameters(URI& uri) const {
     }
   }
 
+  if (m_buildingsHasBeenSet) {
+    ss << BuildingsMapper::GetNameForBuildings(m_buildings);
+    uri.AddQueryStringParameter("buildings", ss.str());
+    ss.str("");
+  }
+
   if (m_keyHasBeenSet) {
     ss << m_key;
     uri.AddQueryStringParameter("key", ss.str());

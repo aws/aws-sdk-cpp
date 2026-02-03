@@ -58,7 +58,8 @@ class CreateGlobalSecondaryIndexAction {
 
   ///@{
   /**
-   * <p>The key schema for the global secondary index.</p>
+   * <p>The key schema for the global secondary index. Global secondary index
+   * supports up to 4 partition and up to 4 sort keys.</p>
    */
   inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const { return m_keySchema; }
   inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }

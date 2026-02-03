@@ -11,6 +11,7 @@
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndex.h>
+#include <aws/dynamodb/model/GlobalTableSettingsReplicationMode.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
@@ -199,7 +200,8 @@ class CreateTableRequest : public DynamoDBRequest {
    * table. Each global secondary index in the array includes the following:</p> <ul>
    * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
    * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
-   * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+   * Specifies the key schema for the global secondary index. Each global secondary
+   * index supports up to 4 partition keys and up to 4 sort keys.</p> </li> <li> <p>
    * <code>Projection</code> - Specifies attributes that are copied (projected) from
    * the table into the index. These are in addition to the primary key attributes
    * and index key attributes, which are automatically projected. Each attribute
@@ -470,6 +472,44 @@ class CreateTableRequest : public DynamoDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the source table used for the creation of a
+   * multi-account global table.</p>
+   */
+  inline const Aws::String& GetGlobalTableSourceArn() const { return m_globalTableSourceArn; }
+  inline bool GlobalTableSourceArnHasBeenSet() const { return m_globalTableSourceArnHasBeenSet; }
+  template <typename GlobalTableSourceArnT = Aws::String>
+  void SetGlobalTableSourceArn(GlobalTableSourceArnT&& value) {
+    m_globalTableSourceArnHasBeenSet = true;
+    m_globalTableSourceArn = std::forward<GlobalTableSourceArnT>(value);
+  }
+  template <typename GlobalTableSourceArnT = Aws::String>
+  CreateTableRequest& WithGlobalTableSourceArn(GlobalTableSourceArnT&& value) {
+    SetGlobalTableSourceArn(std::forward<GlobalTableSourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Controls the settings synchronization mode for the global table. For
+   * multi-account global tables, this parameter is required and the only supported
+   * value is ENABLED. For same-account global tables, this parameter is set to
+   * ENABLED_WITH_OVERRIDES. </p>
+   */
+  inline GlobalTableSettingsReplicationMode GetGlobalTableSettingsReplicationMode() const { return m_globalTableSettingsReplicationMode; }
+  inline bool GlobalTableSettingsReplicationModeHasBeenSet() const { return m_globalTableSettingsReplicationModeHasBeenSet; }
+  inline void SetGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    m_globalTableSettingsReplicationModeHasBeenSet = true;
+    m_globalTableSettingsReplicationMode = value;
+  }
+  inline CreateTableRequest& WithGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    SetGlobalTableSettingsReplicationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
 
@@ -500,6 +540,10 @@ class CreateTableRequest : public DynamoDBRequest {
   Aws::String m_resourcePolicy;
 
   OnDemandThroughput m_onDemandThroughput;
+
+  Aws::String m_globalTableSourceArn;
+
+  GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
   bool m_attributeDefinitionsHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_keySchemaHasBeenSet = false;
@@ -515,6 +559,8 @@ class CreateTableRequest : public DynamoDBRequest {
   bool m_warmThroughputHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;
   bool m_onDemandThroughputHasBeenSet = false;
+  bool m_globalTableSourceArnHasBeenSet = false;
+  bool m_globalTableSettingsReplicationModeHasBeenSet = false;
 };
 
 }  // namespace Model

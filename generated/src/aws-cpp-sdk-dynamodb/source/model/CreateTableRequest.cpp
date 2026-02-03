@@ -98,6 +98,16 @@ Aws::String CreateTableRequest::SerializePayload() const {
     payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
   }
 
+  if (m_globalTableSourceArnHasBeenSet) {
+    payload.WithString("GlobalTableSourceArn", m_globalTableSourceArn);
+  }
+
+  if (m_globalTableSettingsReplicationModeHasBeenSet) {
+    payload.WithString(
+        "GlobalTableSettingsReplicationMode",
+        GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
+  }
+
   return payload.View().WriteReadable();
 }
 
