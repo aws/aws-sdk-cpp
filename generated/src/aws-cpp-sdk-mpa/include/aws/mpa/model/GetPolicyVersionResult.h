@@ -30,12 +30,7 @@ class GetPolicyVersionResult {
   ///@{
   /**
    * <p>A <code>PolicyVersion</code> object. Contains details for the version of the
-   * policy. Policies define the permissions for team resources.</p> <p>The protected
-   * operation for a service integration might require specific permissions. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-   * other services work with Multi-party approval</a> in the <i>Multi-party approval
-   * User Guide</i>.</p>
+   * policy. Policies define the permissions for team resources.</p>
    */
   inline const PolicyVersion& GetPolicyVersion() const { return m_policyVersion; }
   template <typename PolicyVersionT = PolicyVersion>

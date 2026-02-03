@@ -24,12 +24,8 @@ namespace Model {
 
 /**
  * <p>Contains details for the version of a policy. Policies define what operations
- * a team that define the permissions for team resources.</p> <p>The protected
- * operation for a service integration might require specific permissions. For more
- * information, see <a
- * href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
- * other services work with Multi-party approval</a> in the <i>Multi-party approval
- * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+ * a team that define the permissions for team resources.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/PolicyVersionSummary">AWS
  * API Reference</a></p>
  */
@@ -147,7 +143,7 @@ class PolicyVersionSummary {
    * <p>Status for the policy. For example, if the policy is <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_attach-policy.html">attachable</a>
    * or <a
-   * href="https://docs.aws.amazon.com/access_policies_managed-deprecated.html">deprecated</a>.</p>
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-deprecated.html">deprecated</a>.</p>
    */
   inline PolicyStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
