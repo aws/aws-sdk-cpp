@@ -87,6 +87,15 @@ ListSessionsResponseSession& ListSessionsResponseSession::operator=(JsonView jso
         ActionCompletionStrategyMapper::GetActionCompletionStrategyForName(jsonValue.GetString("ActionCompletionStrategy"));
     m_actionCompletionStrategyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdditionalSecurityRequirements")) {
+    Aws::Utils::Array<JsonView> additionalSecurityRequirementsJsonList = jsonValue.GetArray("AdditionalSecurityRequirements");
+    for (unsigned additionalSecurityRequirementsIndex = 0;
+         additionalSecurityRequirementsIndex < additionalSecurityRequirementsJsonList.GetLength(); ++additionalSecurityRequirementsIndex) {
+      m_additionalSecurityRequirements.push_back(AdditionalSecurityRequirementMapper::GetAdditionalSecurityRequirementForName(
+          additionalSecurityRequirementsJsonList[additionalSecurityRequirementsIndex].AsString()));
+    }
+    m_additionalSecurityRequirementsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -160,6 +169,17 @@ JsonValue ListSessionsResponseSession::Jsonize() const {
   if (m_actionCompletionStrategyHasBeenSet) {
     payload.WithString("ActionCompletionStrategy",
                        ActionCompletionStrategyMapper::GetNameForActionCompletionStrategy(m_actionCompletionStrategy));
+  }
+
+  if (m_additionalSecurityRequirementsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalSecurityRequirementsJsonList(m_additionalSecurityRequirements.size());
+    for (unsigned additionalSecurityRequirementsIndex = 0;
+         additionalSecurityRequirementsIndex < additionalSecurityRequirementsJsonList.GetLength(); ++additionalSecurityRequirementsIndex) {
+      additionalSecurityRequirementsJsonList[additionalSecurityRequirementsIndex].AsString(
+          AdditionalSecurityRequirementMapper::GetNameForAdditionalSecurityRequirement(
+              m_additionalSecurityRequirements[additionalSecurityRequirementsIndex]));
+    }
+    payload.WithArray("AdditionalSecurityRequirements", std::move(additionalSecurityRequirementsJsonList));
   }
 
   return payload;

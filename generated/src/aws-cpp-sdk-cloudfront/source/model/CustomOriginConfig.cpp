@@ -64,6 +64,11 @@ CustomOriginConfig& CustomOriginConfig::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
+    XmlNode originMtlsConfigNode = resultNode.FirstChild("OriginMtlsConfig");
+    if (!originMtlsConfigNode.IsNull()) {
+      m_originMtlsConfig = originMtlsConfigNode;
+      m_originMtlsConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,6 +117,11 @@ void CustomOriginConfig::AddToNode(XmlNode& parentNode) const {
   if (m_ipAddressTypeHasBeenSet) {
     XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
     ipAddressTypeNode.SetText(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  }
+
+  if (m_originMtlsConfigHasBeenSet) {
+    XmlNode originMtlsConfigNode = parentNode.CreateChildElement("OriginMtlsConfig");
+    m_originMtlsConfig.AddToNode(originMtlsConfigNode);
   }
 }
 

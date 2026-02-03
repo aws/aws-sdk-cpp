@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/mpa/model/ActionCompletionStrategy.h>
+#include <aws/mpa/model/AdditionalSecurityRequirement.h>
 #include <aws/mpa/model/SessionStatus.h>
 #include <aws/mpa/model/SessionStatusCode.h>
 
@@ -343,6 +345,32 @@ class ListSessionsResponseSession {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of <code>AdditionalSecurityRequirement</code> applied to the
+   * session.</p>
+   */
+  inline const Aws::Vector<AdditionalSecurityRequirement>& GetAdditionalSecurityRequirements() const {
+    return m_additionalSecurityRequirements;
+  }
+  inline bool AdditionalSecurityRequirementsHasBeenSet() const { return m_additionalSecurityRequirementsHasBeenSet; }
+  template <typename AdditionalSecurityRequirementsT = Aws::Vector<AdditionalSecurityRequirement>>
+  void SetAdditionalSecurityRequirements(AdditionalSecurityRequirementsT&& value) {
+    m_additionalSecurityRequirementsHasBeenSet = true;
+    m_additionalSecurityRequirements = std::forward<AdditionalSecurityRequirementsT>(value);
+  }
+  template <typename AdditionalSecurityRequirementsT = Aws::Vector<AdditionalSecurityRequirement>>
+  ListSessionsResponseSession& WithAdditionalSecurityRequirements(AdditionalSecurityRequirementsT&& value) {
+    SetAdditionalSecurityRequirements(std::forward<AdditionalSecurityRequirementsT>(value));
+    return *this;
+  }
+  inline ListSessionsResponseSession& AddAdditionalSecurityRequirements(AdditionalSecurityRequirement value) {
+    m_additionalSecurityRequirementsHasBeenSet = true;
+    m_additionalSecurityRequirements.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sessionArn;
 
@@ -377,6 +405,8 @@ class ListSessionsResponseSession {
   Aws::String m_statusMessage;
 
   ActionCompletionStrategy m_actionCompletionStrategy{ActionCompletionStrategy::NOT_SET};
+
+  Aws::Vector<AdditionalSecurityRequirement> m_additionalSecurityRequirements;
   bool m_sessionArnHasBeenSet = false;
   bool m_approvalTeamNameHasBeenSet = false;
   bool m_approvalTeamArnHasBeenSet = false;
@@ -394,6 +424,7 @@ class ListSessionsResponseSession {
   bool m_statusCodeHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
   bool m_actionCompletionStrategyHasBeenSet = false;
+  bool m_additionalSecurityRequirementsHasBeenSet = false;
 };
 
 }  // namespace Model

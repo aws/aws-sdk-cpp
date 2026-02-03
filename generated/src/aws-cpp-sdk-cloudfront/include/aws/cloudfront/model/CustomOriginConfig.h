@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/IpAddressType.h>
+#include <aws/cloudfront/model/OriginMtlsConfig.h>
 #include <aws/cloudfront/model/OriginProtocolPolicy.h>
 #include <aws/cloudfront/model/OriginSslProtocols.h>
 
@@ -176,6 +177,25 @@ class CustomOriginConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configures mutual TLS authentication between CloudFront and your origin
+   * server.</p>
+   */
+  inline const OriginMtlsConfig& GetOriginMtlsConfig() const { return m_originMtlsConfig; }
+  inline bool OriginMtlsConfigHasBeenSet() const { return m_originMtlsConfigHasBeenSet; }
+  template <typename OriginMtlsConfigT = OriginMtlsConfig>
+  void SetOriginMtlsConfig(OriginMtlsConfigT&& value) {
+    m_originMtlsConfigHasBeenSet = true;
+    m_originMtlsConfig = std::forward<OriginMtlsConfigT>(value);
+  }
+  template <typename OriginMtlsConfigT = OriginMtlsConfig>
+  CustomOriginConfig& WithOriginMtlsConfig(OriginMtlsConfigT&& value) {
+    SetOriginMtlsConfig(std::forward<OriginMtlsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_hTTPPort{0};
 
@@ -190,6 +210,8 @@ class CustomOriginConfig {
   int m_originKeepaliveTimeout{0};
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+
+  OriginMtlsConfig m_originMtlsConfig;
   bool m_hTTPPortHasBeenSet = false;
   bool m_hTTPSPortHasBeenSet = false;
   bool m_originProtocolPolicyHasBeenSet = false;
@@ -197,6 +219,7 @@ class CustomOriginConfig {
   bool m_originReadTimeoutHasBeenSet = false;
   bool m_originKeepaliveTimeoutHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_originMtlsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/mpa/model/ActionCompletionStrategy.h>
+#include <aws/mpa/model/AdditionalSecurityRequirement.h>
 #include <aws/mpa/model/ApprovalStrategyResponse.h>
 #include <aws/mpa/model/GetSessionResponseApproverResponse.h>
 #include <aws/mpa/model/SessionExecutionStatus.h>
@@ -439,6 +440,31 @@ class GetSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A list of <code>AdditionalSecurityRequirement</code> applied to the
+   * session.</p>
+   */
+  inline const Aws::Vector<AdditionalSecurityRequirement>& GetAdditionalSecurityRequirements() const {
+    return m_additionalSecurityRequirements;
+  }
+  template <typename AdditionalSecurityRequirementsT = Aws::Vector<AdditionalSecurityRequirement>>
+  void SetAdditionalSecurityRequirements(AdditionalSecurityRequirementsT&& value) {
+    m_additionalSecurityRequirementsHasBeenSet = true;
+    m_additionalSecurityRequirements = std::forward<AdditionalSecurityRequirementsT>(value);
+  }
+  template <typename AdditionalSecurityRequirementsT = Aws::Vector<AdditionalSecurityRequirement>>
+  GetSessionResult& WithAdditionalSecurityRequirements(AdditionalSecurityRequirementsT&& value) {
+    SetAdditionalSecurityRequirements(std::forward<AdditionalSecurityRequirementsT>(value));
+    return *this;
+  }
+  inline GetSessionResult& AddAdditionalSecurityRequirements(AdditionalSecurityRequirement value) {
+    m_additionalSecurityRequirementsHasBeenSet = true;
+    m_additionalSecurityRequirements.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -499,6 +525,8 @@ class GetSessionResult {
 
   Aws::Vector<GetSessionResponseApproverResponse> m_approverResponses;
 
+  Aws::Vector<AdditionalSecurityRequirement> m_additionalSecurityRequirements;
+
   Aws::String m_requestId;
   bool m_sessionArnHasBeenSet = false;
   bool m_approvalTeamArnHasBeenSet = false;
@@ -523,6 +551,7 @@ class GetSessionResult {
   bool m_requesterCommentHasBeenSet = false;
   bool m_actionCompletionStrategyHasBeenSet = false;
   bool m_approverResponsesHasBeenSet = false;
+  bool m_additionalSecurityRequirementsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 
