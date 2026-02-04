@@ -78,6 +78,24 @@ class RegisterStreamConsumerRequest : public KinesisRequest {
 
   ///@{
   /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  RegisterStreamConsumerRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A set of up to 50 key-value pairs. A tag consists of a required key and an
    * optional value.</p>
    */
@@ -105,9 +123,12 @@ class RegisterStreamConsumerRequest : public KinesisRequest {
 
   Aws::String m_consumerName;
 
+  Aws::String m_streamId;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_streamARNHasBeenSet = false;
   bool m_consumerNameHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -96,6 +96,45 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
   virtual ~SSOAdminClient();
 
   /**
+   * <p>Adds a Region to an IAM Identity Center instance. This operation initiates an
+   * asynchronous workflow to replicate the IAM Identity Center instance to the
+   * target Region. The Region status is set to ADDING at first and changes to ACTIVE
+   * when the workflow completes.</p> <p>To use this operation, your IAM Identity
+   * Center instance and the target Region must meet the requirements described in
+   * the <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/multi-region-iam-identity-center.html#multi-region-prerequisites">IAM
+   * Identity Center User Guide</a>. </p> <p>The following actions are related to
+   * <code>AddRegion</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html">RemoveRegion</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html">DescribeRegion</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html">ListRegions</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AddRegion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AddRegionOutcome AddRegion(const Model::AddRegionRequest& request) const;
+
+  /**
+   * A Callable wrapper for AddRegion that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename AddRegionRequestT = Model::AddRegionRequest>
+  Model::AddRegionOutcomeCallable AddRegionCallable(const AddRegionRequestT& request) const {
+    return SubmitCallable(&SSOAdminClient::AddRegion, request);
+  }
+
+  /**
+   * An Async wrapper for AddRegion that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename AddRegionRequestT = Model::AddRegionRequest>
+  void AddRegionAsync(const AddRegionRequestT& request, const AddRegionResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSOAdminClient::AddRegion, request, handler, context);
+  }
+
+  /**
    * <p>Attaches the specified customer managed policy to the specified
    * <a>PermissionSet</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">AWS
@@ -1040,6 +1079,42 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves details about a specific Region enabled in an IAM Identity Center
+   * instance. Details include the Region name, current status (ACTIVE, ADDING, or
+   * REMOVING), the date when the Region was added, and whether it is the primary
+   * Region. The request must be made from one of the enabled Regions of the IAM
+   * Identity Center instance.</p> <p>The following actions are related to
+   * <code>DescribeRegion</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html">
+   * AddRegion</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html">RemoveRegion</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html">ListRegions</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeRegion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeRegionOutcome DescribeRegion(const Model::DescribeRegionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeRegion that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeRegionRequestT = Model::DescribeRegionRequest>
+  Model::DescribeRegionOutcomeCallable DescribeRegionCallable(const DescribeRegionRequestT& request) const {
+    return SubmitCallable(&SSOAdminClient::DescribeRegion, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeRegion that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeRegionRequestT = Model::DescribeRegionRequest>
+  void DescribeRegionAsync(const DescribeRegionRequestT& request, const DescribeRegionResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSOAdminClient::DescribeRegion, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves details about a trusted token issuer configuration stored in an
    * instance of IAM Identity Center. Details include the name of the trusted token
    * issuer, the issuer URL, and the path of the source attribute and the destination
@@ -1886,6 +1961,40 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists all enabled Regions of an IAM Identity Center instance, including those
+   * that are being added or removed. This operation returns Regions with ACTIVE,
+   * ADDING, or REMOVING status.</p> <p>The following actions are related to
+   * <code>ListRegions</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html">
+   * AddRegion</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_RemoveRegion.html">RemoveRegion</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html">DescribeRegion</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListRegions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRegionsOutcome ListRegions(const Model::ListRegionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRegions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListRegionsRequestT = Model::ListRegionsRequest>
+  Model::ListRegionsOutcomeCallable ListRegionsCallable(const ListRegionsRequestT& request) const {
+    return SubmitCallable(&SSOAdminClient::ListRegions, request);
+  }
+
+  /**
+   * An Async wrapper for ListRegions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListRegionsRequestT = Model::ListRegionsRequest>
+  void ListRegionsAsync(const ListRegionsRequestT& request, const ListRegionsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSOAdminClient::ListRegions, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags that are attached to a specified resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTagsForResource">AWS
@@ -2223,6 +2332,44 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
                                                   const PutPermissionsBoundaryToPermissionSetResponseReceivedHandler& handler,
                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SSOAdminClient::PutPermissionsBoundaryToPermissionSet, request, handler, context);
+  }
+
+  /**
+   * <p>Removes an additional Region from an IAM Identity Center instance. This
+   * operation initiates an asynchronous workflow to clean up IAM Identity Center
+   * resources in the specified additional Region. The Region status is set to
+   * REMOVING and the Region record is deleted when the workflow completes. The
+   * request must be made from the primary Region. The target Region cannot be the
+   * primary Region, and no other add or remove Region workflows can be in
+   * progress.</p> <p>The following actions are related to
+   * <code>RemoveRegion</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_AddRegion.html">
+   * AddRegion</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_DescribeRegion.html">DescribeRegion</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListRegions.html">ListRegions</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/RemoveRegion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RemoveRegionOutcome RemoveRegion(const Model::RemoveRegionRequest& request) const;
+
+  /**
+   * A Callable wrapper for RemoveRegion that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RemoveRegionRequestT = Model::RemoveRegionRequest>
+  Model::RemoveRegionOutcomeCallable RemoveRegionCallable(const RemoveRegionRequestT& request) const {
+    return SubmitCallable(&SSOAdminClient::RemoveRegion, request);
+  }
+
+  /**
+   * An Async wrapper for RemoveRegion that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RemoveRegionRequestT = Model::RemoveRegionRequest>
+  void RemoveRegionAsync(const RemoveRegionRequestT& request, const RemoveRegionResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSOAdminClient::RemoveRegion, request, handler, context);
   }
 
   /**

@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<KinesisEndpointProviderEndpointTestCase>> KinesisEndpointProviderTests::TEST_CASES;
-const size_t KinesisEndpointProviderTests::TEST_CASES_SZ = 154;
+const size_t KinesisEndpointProviderTests::TEST_CASES_SZ = 189;
 
 Aws::Vector<KinesisEndpointProviderEndpointTestCase> KinesisEndpointProviderTests::getTestCase() {
 
@@ -1423,6 +1423,351 @@ Aws::Vector<KinesisEndpointProviderEndpointTestCase> KinesisEndpointProviderTest
      EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 154*/
+  {"StreamId test: OperationType not set with StreamId", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Operation Type is not set. Please contact service team for resolution."} // expect
+  },
+  /*TEST CASE 155*/
+  {"StreamId test: Stream endpoint targeting control operation type", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+     EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 156*/
+  {"StreamId test: Stream endpoint targeting data operation type", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+     EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 157*/
+  {"StreamId test: Stream endpoint with fips targeting data operation type", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+     EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 158*/
+  {"StreamId test: Stream endpoint with fips targeting control operation type", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+     EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 159*/
+  {"StreamId test: Stream endpoint with Dual Stack and FIPS enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"),
+     EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 160*/
+  {"StreamId test: Stream endpoint with Dual Stack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-west-1"), EpParam("OperationType", "data"), EpParam("StreamARN", "arn:aws:kinesis:us-west-1:123:stream/test-stream"),
+     EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis.us-west-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 161*/
+  {"StreamId test: Stream endpoint with FIPS and DualStack disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Region", "us-west-1"), EpParam("OperationType", "control"), EpParam("StreamARN", "arn:aws:kinesis:us-west-1:123:stream/test-stream"),
+     EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-west-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 162*/
+  {"StreamId test: Stream endpoint FIPS and DualStack disabled with endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 163*/
+  {"StreamId test: Stream endpoint targeting data operation type with endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 164*/
+  {"StreamId test: Stream endpoint with fips targeting data operation type with endpoint", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 165*/
+  {"StreamId test: Stream endpoint with fips targeting control operation type with endpoint", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 166*/
+  {"StreamId test: Stream endpoint with Dual Stack and FIPS enabled with endpoint", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 167*/
+  {"StreamId test: Stream endpoint with Dual Stack enabled with endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 168*/
+  {"StreamId test: Stream endpoint targeting data operation type with https endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 169*/
+  {"StreamId test: HTTPS endpoint with FIPS enabled targeting control operation type", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 170*/
+  {"StreamId test: HTTPS endpoint with FIPS enabled targeting data operation type", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 171*/
+  {"StreamId test: HTTPS endpoint with DualStack enabled targeting control operation type", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 172*/
+  {"StreamId test: HTTPS endpoint with DualStack enabled targeting data operation type", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 173*/
+  {"StreamId test: HTTPS endpoint with FIPS and DualStack enabled targeting control operation type", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 174*/
+  {"StreamId test: HTTPS endpoint with FIPS and DualStack enabled targeting data operation type", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod1.us-east-1.amazonaws.com"), EpParam("Region", "us-east-1"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 175*/
+  {"StreamId test: HTTPS endpoint with FIPS enabled in different region", // documentation
+    {EpParam("UseFIPS", true), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod2.us-west-2.amazonaws.com"), EpParam("Region", "us-west-2"),
+     EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis-pod2-fips.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 176*/
+  {"StreamId test: HTTPS endpoint with DualStack enabled in different region", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("Endpoint", "https://kinesis-pod2.us-west-2.amazonaws.com"), EpParam("Region", "us-west-2"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis-pod2.us-west-2.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 177*/
+  {"StreamId test: Stream endpoint with ConsumerARN targeting control operation type", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
+     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 178*/
+  {"StreamId test: Stream endpoint with ConsumerARN targeting data operation type", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"), EpParam("ConsumerARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737"),
+     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 179*/
+  {"StreamId test: Stream endpoint with ResourceARN targeting control operation type", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"),
+     EpParam("Region", "us-east-1"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 180*/
+  {"StreamId test: Stream endpoint with ResourceARN targeting data operation type", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-xyz"),
+     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 181*/
+  {"StreamId test: Invalid StreamId with ARN", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071=xyz"),
+     EpParam("Region", "us-east-1"), EpParam("OperationType", "data"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.data-kinesis.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 182*/
+  {"StreamId test: Invalid streamId with custom endpoint", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071=xyz"), EpParam("Endpoint", "https://kinesis-pod2.us-west-2.amazonaws.com"), EpParam("Region", "us-west-2"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis-pod2.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 183*/
+  {"StreamId test: Invalid streamId", // documentation
+    {EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071=xyz"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 184*/
+  {"StreamId test: Invalid streamId with custom endpoint and ARN", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071=xyz"),
+     EpParam("Endpoint", "https://kinesis-pod2.us-west-2.amazonaws.com"), EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://kinesis-pod2.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 185*/
+  {"StreamId test: Invalid streamId with longer prefix", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k0174683507123-xyz"),
+     EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 186*/
+  {"StreamId test: Invalid streamId with shorter prefix", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835-xyz"), EpParam("Region", "us-west-2"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 187*/
+  {"StreamId test: Invalid streamId with longer suffix", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-wxyz"),
+     EpParam("Region", "us-west-2"), EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 188*/
+  {"StreamId test: Invalid streamId with shorter suffix", // documentation
+    {EpParam("ResourceARN", "arn:aws:kinesis:us-east-1:123:stream/test-stream"), EpParam("UseFIPS", false), EpParam("StreamId", "af4lwng4k01746835071-yz"), EpParam("Region", "us-west-2"),
+     EpParam("OperationType", "control"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://123.control-kinesis.us-west-2.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect

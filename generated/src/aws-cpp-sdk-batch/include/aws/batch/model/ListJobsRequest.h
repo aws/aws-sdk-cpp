@@ -98,7 +98,11 @@ class ListJobsRequest : public BatchRequest {
    * <p>The job status used to filter jobs in the specified queue. If the
    * <code>filters</code> parameter is specified, the <code>jobStatus</code>
    * parameter is ignored and jobs with any status are returned. If you don't specify
-   * a status, only <code>RUNNING</code> jobs are returned.</p>
+   * a status, only <code>RUNNING</code> jobs are returned.</p>  <p>Array job
+   * parents are updated to <code>PENDING</code> when any child job is updated to
+   * <code>RUNNABLE</code> and remain in <code>PENDING</code> status while child jobs
+   * are running. To view these jobs, filter by <code>PENDING</code> status until all
+   * child jobs reach a terminal state.</p>
    */
   inline JobStatus GetJobStatus() const { return m_jobStatus; }
   inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }

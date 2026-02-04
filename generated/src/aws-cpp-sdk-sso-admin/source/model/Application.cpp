@@ -54,6 +54,10 @@ Application& Application::operator=(JsonView jsonValue) {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
     m_createdDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedFrom")) {
+    m_createdFrom = jsonValue.GetString("CreatedFrom");
+    m_createdFromHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue Application::Jsonize() const {
 
   if (m_createdDateHasBeenSet) {
     payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if (m_createdFromHasBeenSet) {
+    payload.WithString("CreatedFrom", m_createdFrom);
   }
 
   return payload;

@@ -55,6 +55,24 @@ class PutResourcePolicyRequest : public KinesisRequest {
 
   ///@{
   /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  PutResourcePolicyRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Details of the resource policy. It must include the identity of the principal
    * and the actions allowed on this resource. This is formatted as a JSON
    * string.</p>
@@ -75,8 +93,11 @@ class PutResourcePolicyRequest : public KinesisRequest {
  private:
   Aws::String m_resourceARN;
 
+  Aws::String m_streamId;
+
   Aws::String m_policy;
   bool m_resourceARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

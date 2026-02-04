@@ -63,7 +63,7 @@ class PutRecordRequest : public KinesisRequest {
    * <p>The data blob to put into the record, which is base64-encoded when the blob
    * is serialized. When the data blob (the payload before base64-encoding) is added
    * to the partition key size, the total size must not exceed the maximum record
-   * size (1 MiB).</p>
+   * size (10 MiB).</p>
    */
   inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
@@ -163,6 +163,24 @@ class PutRecordRequest : public KinesisRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  PutRecordRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamName;
 
@@ -175,12 +193,15 @@ class PutRecordRequest : public KinesisRequest {
   Aws::String m_sequenceNumberForOrdering;
 
   Aws::String m_streamARN;
+
+  Aws::String m_streamId;
   bool m_streamNameHasBeenSet = false;
   bool m_dataHasBeenSet = false;
   bool m_partitionKeyHasBeenSet = false;
   bool m_explicitHashKeyHasBeenSet = false;
   bool m_sequenceNumberForOrderingHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -46,21 +46,21 @@ namespace Model {
  * <code>TransactGetItems</code> request is in a different account or region.</p>
  * </li> <li> <p>There is insufficient provisioned capacity for the transaction to
  * be completed.</p> </li> <li> <p>There is a user error, such as an invalid data
- * format.</p> </li> </ul>  <p>If using Java, DynamoDB lists the cancellation
- * reasons on the <code>CancellationReasons</code> property. This property is not
- * set for other languages. Transaction cancellation reasons are ordered in the
- * order of requested items, if an item has no error it will have <code>None</code>
- * code and <code>Null</code> message.</p>  <p>Cancellation reason codes and
- * possible error messages:</p> <ul> <li> <p>No Errors:</p> <ul> <li> <p>Code:
- * <code>None</code> </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul>
- * </li> <li> <p>Conditional Check Failed:</p> <ul> <li> <p>Code:
- * <code>ConditionalCheckFailed</code> </p> </li> <li> <p>Message: The conditional
- * request failed. </p> </li> </ul> </li> <li> <p>Item Collection Size Limit
- * Exceeded:</p> <ul> <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
- * </p> </li> <li> <p>Message: Collection size exceeded.</p> </li> </ul> </li> <li>
- * <p>Transaction Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code>
- * </p> </li> <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul>
- * </li> <li> <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code:
+ * format.</p> </li> </ul>  <p>DynamoDB lists the cancellation reasons on the
+ * <code>CancellationReasons</code> property. Transaction cancellation reasons are
+ * ordered in the order of requested items, if an item has no error it will have
+ * <code>None</code> code and <code>Null</code> message.</p>
+ * <p>Cancellation reason codes and possible error messages:</p> <ul> <li> <p>No
+ * Errors:</p> <ul> <li> <p>Code: <code>None</code> </p> </li> <li> <p>Message:
+ * <code>null</code> </p> </li> </ul> </li> <li> <p>Conditional Check Failed:</p>
+ * <ul> <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> <li>
+ * <p>Message: The conditional request failed. </p> </li> </ul> </li> <li> <p>Item
+ * Collection Size Limit Exceeded:</p> <ul> <li> <p>Code:
+ * <code>ItemCollectionSizeLimitExceeded</code> </p> </li> <li> <p>Message:
+ * Collection size exceeded.</p> </li> </ul> </li> <li> <p>Transaction
+ * Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code> </p> </li>
+ * <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul> </li> <li>
+ * <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code:
  * <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages:</p> <ul>
  * <li> <p>The level of configured provisioned throughput for the table was
  * exceeded. Consider increasing your provisioning level with the UpdateTable

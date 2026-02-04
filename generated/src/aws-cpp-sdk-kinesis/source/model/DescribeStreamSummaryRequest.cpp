@@ -23,6 +23,10 @@ Aws::String DescribeStreamSummaryRequest::SerializePayload() const {
     payload.WithString("StreamARN", m_streamARN);
   }
 
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
+  }
+
   return payload.View().WriteReadable();
 }
 
@@ -39,6 +43,10 @@ DescribeStreamSummaryRequest::EndpointParameters DescribeStreamSummaryRequest::G
   // Operation context parameters
   if (StreamARNHasBeenSet()) {
     parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (StreamIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamId"), this->GetStreamId(),
                             Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
   }
   return parameters;

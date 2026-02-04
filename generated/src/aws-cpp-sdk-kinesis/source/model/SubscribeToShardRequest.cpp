@@ -19,6 +19,10 @@ Aws::String SubscribeToShardRequest::SerializePayload() const {
     payload.WithString("ConsumerARN", m_consumerARN);
   }
 
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
+  }
+
   if (m_shardIdHasBeenSet) {
     payload.WithString("ShardId", m_shardId);
   }
@@ -43,6 +47,10 @@ SubscribeToShardRequest::EndpointParameters SubscribeToShardRequest::GetEndpoint
   // Operation context parameters
   if (ConsumerARNHasBeenSet()) {
     parameters.emplace_back(Aws::String("ConsumerARN"), this->GetConsumerARN(),
+                            Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  if (StreamIdHasBeenSet()) {
+    parameters.emplace_back(Aws::String("StreamId"), this->GetStreamId(),
                             Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
   }
   return parameters;

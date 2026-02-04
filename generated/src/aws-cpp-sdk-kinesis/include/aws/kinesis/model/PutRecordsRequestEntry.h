@@ -38,7 +38,7 @@ class PutRecordsRequestEntry {
    * <p>The data blob to put into the record, which is base64-encoded when the blob
    * is serialized. When the data blob (the payload before base64-encoding) is added
    * to the partition key size, the total size must not exceed the maximum record
-   * size (1 MiB).</p>
+   * size (10 MiB).</p>
    */
   inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
   inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }

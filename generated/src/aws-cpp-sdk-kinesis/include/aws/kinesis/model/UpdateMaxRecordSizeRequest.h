@@ -56,6 +56,24 @@ class UpdateMaxRecordSizeRequest : public KinesisRequest {
 
   ///@{
   /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  UpdateMaxRecordSizeRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum record size of a single record in KiB that you can write to, and
    * read from a stream. Specify a value between 1024 and 10240 KiB (1 to 10 MiB). If
    * you specify a value that is out of this range, <code>UpdateMaxRecordSize</code>
@@ -75,8 +93,11 @@ class UpdateMaxRecordSizeRequest : public KinesisRequest {
  private:
   Aws::String m_streamARN;
 
+  Aws::String m_streamId;
+
   int m_maxRecordSizeInKiB{0};
   bool m_streamARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
 };
 

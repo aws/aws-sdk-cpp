@@ -26,6 +26,10 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator=(JsonView jsonValue
     m_streamARN = jsonValue.GetString("StreamARN");
     m_streamARNHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StreamId")) {
+    m_streamId = jsonValue.GetString("StreamId");
+    m_streamIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("StreamStatus")) {
     m_streamStatus = StreamStatusMapper::GetStreamStatusForName(jsonValue.GetString("StreamStatus"));
     m_streamStatusHasBeenSet = true;
@@ -86,6 +90,10 @@ JsonValue StreamDescriptionSummary::Jsonize() const {
 
   if (m_streamARNHasBeenSet) {
     payload.WithString("StreamARN", m_streamARN);
+  }
+
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("StreamId", m_streamId);
   }
 
   if (m_streamStatusHasBeenSet) {

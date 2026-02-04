@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GeoMaps {
 namespace Model {
-enum class Terrain { NOT_SET, Hillshade };
+enum class Terrain { NOT_SET, Hillshade, Terrain3D };
 
 namespace TerrainMapper {
 AWS_GEOMAPS_API Terrain GetTerrainForName(const Aws::String& name);

@@ -116,6 +116,11 @@ TableDescription& TableDescription::operator=(JsonView jsonValue) {
     }
     m_globalTableWitnessesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GlobalTableSettingsReplicationMode")) {
+    m_globalTableSettingsReplicationMode = GlobalTableSettingsReplicationModeMapper::GetGlobalTableSettingsReplicationModeForName(
+        jsonValue.GetString("GlobalTableSettingsReplicationMode"));
+    m_globalTableSettingsReplicationModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RestoreSummary")) {
     m_restoreSummary = jsonValue.GetObject("RestoreSummary");
     m_restoreSummaryHasBeenSet = true;
@@ -257,6 +262,12 @@ JsonValue TableDescription::Jsonize() const {
       globalTableWitnessesJsonList[globalTableWitnessesIndex].AsObject(m_globalTableWitnesses[globalTableWitnessesIndex].Jsonize());
     }
     payload.WithArray("GlobalTableWitnesses", std::move(globalTableWitnessesJsonList));
+  }
+
+  if (m_globalTableSettingsReplicationModeHasBeenSet) {
+    payload.WithString(
+        "GlobalTableSettingsReplicationMode",
+        GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
   }
 
   if (m_restoreSummaryHasBeenSet) {

@@ -25,6 +25,10 @@ ArrayPropertiesDetail& ArrayPropertiesDetail::operator=(JsonView jsonValue) {
     }
     m_statusSummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("statusSummaryLastUpdatedAt")) {
+    m_statusSummaryLastUpdatedAt = jsonValue.GetInt64("statusSummaryLastUpdatedAt");
+    m_statusSummaryLastUpdatedAtHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("size")) {
     m_size = jsonValue.GetInteger("size");
     m_sizeHasBeenSet = true;
@@ -45,6 +49,10 @@ JsonValue ArrayPropertiesDetail::Jsonize() const {
       statusSummaryJsonMap.WithInteger(statusSummaryItem.first, statusSummaryItem.second);
     }
     payload.WithObject("statusSummary", std::move(statusSummaryJsonMap));
+  }
+
+  if (m_statusSummaryLastUpdatedAtHasBeenSet) {
+    payload.WithInt64("statusSummaryLastUpdatedAt", m_statusSummaryLastUpdatedAt);
   }
 
   if (m_sizeHasBeenSet) {

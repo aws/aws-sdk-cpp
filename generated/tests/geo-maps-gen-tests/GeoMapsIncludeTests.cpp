@@ -14,6 +14,7 @@
 #include <aws/geo-maps/GeoMapsRequest.h>
 #include <aws/geo-maps/GeoMapsServiceClientModel.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
+#include <aws/geo-maps/model/Buildings.h>
 #include <aws/geo-maps/model/ColorScheme.h>
 #include <aws/geo-maps/model/ContourDensity.h>
 #include <aws/geo-maps/model/GetGlyphsRequest.h>

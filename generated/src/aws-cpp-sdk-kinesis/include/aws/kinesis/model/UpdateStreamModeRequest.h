@@ -57,6 +57,24 @@ class UpdateStreamModeRequest : public KinesisRequest {
 
   ///@{
   /**
+   * <p>Not Implemented. Reserved for future use.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  UpdateStreamModeRequest& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> Specifies the capacity mode to which you want to set your data stream.
    * Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b>
    * capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
@@ -96,10 +114,13 @@ class UpdateStreamModeRequest : public KinesisRequest {
  private:
   Aws::String m_streamARN;
 
+  Aws::String m_streamId;
+
   StreamModeDetails m_streamModeDetails;
 
   int m_warmThroughputMiBps{0};
   bool m_streamARNHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_streamModeDetailsHasBeenSet = false;
   bool m_warmThroughputMiBpsHasBeenSet = false;
 };

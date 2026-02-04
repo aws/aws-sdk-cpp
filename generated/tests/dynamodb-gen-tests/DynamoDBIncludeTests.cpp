@@ -146,6 +146,7 @@
 #include <aws/dynamodb/model/GlobalTable.h>
 #include <aws/dynamodb/model/GlobalTableDescription.h>
 #include <aws/dynamodb/model/GlobalTableGlobalSecondaryIndexSettingsUpdate.h>
+#include <aws/dynamodb/model/GlobalTableSettingsReplicationMode.h>
 #include <aws/dynamodb/model/GlobalTableStatus.h>
 #include <aws/dynamodb/model/GlobalTableWitnessDescription.h>
 #include <aws/dynamodb/model/GlobalTableWitnessGroupUpdate.h>

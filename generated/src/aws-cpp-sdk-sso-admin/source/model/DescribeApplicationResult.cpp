@@ -57,6 +57,10 @@ DescribeApplicationResult& DescribeApplicationResult::operator=(const Aws::Amazo
     m_createdDate = jsonValue.GetDouble("CreatedDate");
     m_createdDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedFrom")) {
+    m_createdFrom = jsonValue.GetString("CreatedFrom");
+    m_createdFromHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

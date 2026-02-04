@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
+#include <aws/dynamodb/model/GlobalTableSettingsReplicationMode.h>
 #include <aws/dynamodb/model/OnDemandThroughputOverride.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexDescription.h>
@@ -256,6 +257,29 @@ class ReplicaDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates one of the settings synchronization modes for the global table
+   * replica:</p> <ul> <li> <p> <code>ENABLED</code>: Indicates that the settings
+   * synchronization mode for the global table replica is enabled.</p> </li> <li> <p>
+   * <code>DISABLED</code>: Indicates that the settings synchronization mode for the
+   * global table replica is disabled.</p> </li> <li> <p>
+   * <code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same
+   * account global table. Indicates that certain global table settings can be
+   * overridden.</p> </li> </ul>
+   */
+  inline GlobalTableSettingsReplicationMode GetGlobalTableSettingsReplicationMode() const { return m_globalTableSettingsReplicationMode; }
+  inline bool GlobalTableSettingsReplicationModeHasBeenSet() const { return m_globalTableSettingsReplicationModeHasBeenSet; }
+  inline void SetGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    m_globalTableSettingsReplicationModeHasBeenSet = true;
+    m_globalTableSettingsReplicationMode = value;
+  }
+  inline ReplicaDescription& WithGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    SetGlobalTableSettingsReplicationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_regionName;
 
@@ -278,6 +302,8 @@ class ReplicaDescription {
   Aws::Utils::DateTime m_replicaInaccessibleDateTime{};
 
   TableClassSummary m_replicaTableClassSummary;
+
+  GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
   bool m_regionNameHasBeenSet = false;
   bool m_replicaStatusHasBeenSet = false;
   bool m_replicaStatusDescriptionHasBeenSet = false;
@@ -289,6 +315,7 @@ class ReplicaDescription {
   bool m_globalSecondaryIndexesHasBeenSet = false;
   bool m_replicaInaccessibleDateTimeHasBeenSet = false;
   bool m_replicaTableClassSummaryHasBeenSet = false;
+  bool m_globalTableSettingsReplicationModeHasBeenSet = false;
 };
 
 }  // namespace Model

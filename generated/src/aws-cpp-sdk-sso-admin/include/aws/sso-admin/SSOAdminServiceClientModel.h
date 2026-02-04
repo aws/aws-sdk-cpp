@@ -20,6 +20,7 @@
 
 /* Service model headers required in SSOAdminClient header */
 #include <aws/core/NoResult.h>
+#include <aws/sso-admin/model/AddRegionResult.h>
 #include <aws/sso-admin/model/AttachCustomerManagedPolicyReferenceToPermissionSetResult.h>
 #include <aws/sso-admin/model/AttachManagedPolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/CreateAccountAssignmentResult.h>
@@ -48,6 +49,7 @@
 #include <aws/sso-admin/model/DescribeInstanceResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetProvisioningStatusResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetResult.h>
+#include <aws/sso-admin/model/DescribeRegionResult.h>
 #include <aws/sso-admin/model/DescribeTrustedTokenIssuerResult.h>
 #include <aws/sso-admin/model/DetachCustomerManagedPolicyReferenceFromPermissionSetResult.h>
 #include <aws/sso-admin/model/DetachManagedPolicyFromPermissionSetResult.h>
@@ -78,6 +80,7 @@
 #include <aws/sso-admin/model/ListPermissionSetProvisioningStatusResult.h>
 #include <aws/sso-admin/model/ListPermissionSetsProvisionedToAccountResult.h>
 #include <aws/sso-admin/model/ListPermissionSetsResult.h>
+#include <aws/sso-admin/model/ListRegionsResult.h>
 #include <aws/sso-admin/model/ListTagsForResourceResult.h>
 #include <aws/sso-admin/model/ListTrustedTokenIssuersResult.h>
 #include <aws/sso-admin/model/ProvisionPermissionSetResult.h>
@@ -85,6 +88,7 @@
 #include <aws/sso-admin/model/PutApplicationSessionConfigurationResult.h>
 #include <aws/sso-admin/model/PutInlinePolicyToPermissionSetResult.h>
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetResult.h>
+#include <aws/sso-admin/model/RemoveRegionResult.h>
 #include <aws/sso-admin/model/TagResourceResult.h>
 #include <aws/sso-admin/model/UntagResourceResult.h>
 #include <aws/sso-admin/model/UpdateApplicationResult.h>
@@ -125,6 +129,7 @@ using SSOAdminEndpointProvider = Aws::SSOAdmin::Endpoint::SSOAdminEndpointProvid
 
 namespace Model {
 /* Service model forward declarations required in SSOAdminClient header */
+class AddRegionRequest;
 class AttachCustomerManagedPolicyReferenceToPermissionSetRequest;
 class AttachManagedPolicyToPermissionSetRequest;
 class CreateAccountAssignmentRequest;
@@ -155,6 +160,7 @@ class DescribeInstanceRequest;
 class DescribeInstanceAccessControlAttributeConfigurationRequest;
 class DescribePermissionSetRequest;
 class DescribePermissionSetProvisioningStatusRequest;
+class DescribeRegionRequest;
 class DescribeTrustedTokenIssuerRequest;
 class DetachCustomerManagedPolicyReferenceFromPermissionSetRequest;
 class DetachManagedPolicyFromPermissionSetRequest;
@@ -183,6 +189,7 @@ class ListManagedPoliciesInPermissionSetRequest;
 class ListPermissionSetProvisioningStatusRequest;
 class ListPermissionSetsRequest;
 class ListPermissionSetsProvisionedToAccountRequest;
+class ListRegionsRequest;
 class ListTagsForResourceRequest;
 class ListTrustedTokenIssuersRequest;
 class ProvisionPermissionSetRequest;
@@ -193,6 +200,7 @@ class PutApplicationGrantRequest;
 class PutApplicationSessionConfigurationRequest;
 class PutInlinePolicyToPermissionSetRequest;
 class PutPermissionsBoundaryToPermissionSetRequest;
+class RemoveRegionRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateApplicationRequest;
@@ -203,6 +211,7 @@ class UpdateTrustedTokenIssuerRequest;
 /* End of service model forward declarations required in SSOAdminClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AddRegionResult, SSOAdminError> AddRegionOutcome;
 typedef Aws::Utils::Outcome<AttachCustomerManagedPolicyReferenceToPermissionSetResult, SSOAdminError>
     AttachCustomerManagedPolicyReferenceToPermissionSetOutcome;
 typedef Aws::Utils::Outcome<AttachManagedPolicyToPermissionSetResult, SSOAdminError> AttachManagedPolicyToPermissionSetOutcome;
@@ -238,6 +247,7 @@ typedef Aws::Utils::Outcome<DescribeInstanceAccessControlAttributeConfigurationR
     DescribeInstanceAccessControlAttributeConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribePermissionSetResult, SSOAdminError> DescribePermissionSetOutcome;
 typedef Aws::Utils::Outcome<DescribePermissionSetProvisioningStatusResult, SSOAdminError> DescribePermissionSetProvisioningStatusOutcome;
+typedef Aws::Utils::Outcome<DescribeRegionResult, SSOAdminError> DescribeRegionOutcome;
 typedef Aws::Utils::Outcome<DescribeTrustedTokenIssuerResult, SSOAdminError> DescribeTrustedTokenIssuerOutcome;
 typedef Aws::Utils::Outcome<DetachCustomerManagedPolicyReferenceFromPermissionSetResult, SSOAdminError>
     DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome;
@@ -268,6 +278,7 @@ typedef Aws::Utils::Outcome<ListManagedPoliciesInPermissionSetResult, SSOAdminEr
 typedef Aws::Utils::Outcome<ListPermissionSetProvisioningStatusResult, SSOAdminError> ListPermissionSetProvisioningStatusOutcome;
 typedef Aws::Utils::Outcome<ListPermissionSetsResult, SSOAdminError> ListPermissionSetsOutcome;
 typedef Aws::Utils::Outcome<ListPermissionSetsProvisionedToAccountResult, SSOAdminError> ListPermissionSetsProvisionedToAccountOutcome;
+typedef Aws::Utils::Outcome<ListRegionsResult, SSOAdminError> ListRegionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, SSOAdminError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTrustedTokenIssuersResult, SSOAdminError> ListTrustedTokenIssuersOutcome;
 typedef Aws::Utils::Outcome<ProvisionPermissionSetResult, SSOAdminError> ProvisionPermissionSetOutcome;
@@ -278,6 +289,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SSOAdminError> PutApplicationGrantOut
 typedef Aws::Utils::Outcome<PutApplicationSessionConfigurationResult, SSOAdminError> PutApplicationSessionConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutInlinePolicyToPermissionSetResult, SSOAdminError> PutInlinePolicyToPermissionSetOutcome;
 typedef Aws::Utils::Outcome<PutPermissionsBoundaryToPermissionSetResult, SSOAdminError> PutPermissionsBoundaryToPermissionSetOutcome;
+typedef Aws::Utils::Outcome<RemoveRegionResult, SSOAdminError> RemoveRegionOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, SSOAdminError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, SSOAdminError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationResult, SSOAdminError> UpdateApplicationOutcome;
@@ -289,6 +301,7 @@ typedef Aws::Utils::Outcome<UpdateTrustedTokenIssuerResult, SSOAdminError> Updat
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AddRegionOutcome> AddRegionOutcomeCallable;
 typedef std::future<AttachCustomerManagedPolicyReferenceToPermissionSetOutcome>
     AttachCustomerManagedPolicyReferenceToPermissionSetOutcomeCallable;
 typedef std::future<AttachManagedPolicyToPermissionSetOutcome> AttachManagedPolicyToPermissionSetOutcomeCallable;
@@ -323,6 +336,7 @@ typedef std::future<DescribeInstanceAccessControlAttributeConfigurationOutcome>
     DescribeInstanceAccessControlAttributeConfigurationOutcomeCallable;
 typedef std::future<DescribePermissionSetOutcome> DescribePermissionSetOutcomeCallable;
 typedef std::future<DescribePermissionSetProvisioningStatusOutcome> DescribePermissionSetProvisioningStatusOutcomeCallable;
+typedef std::future<DescribeRegionOutcome> DescribeRegionOutcomeCallable;
 typedef std::future<DescribeTrustedTokenIssuerOutcome> DescribeTrustedTokenIssuerOutcomeCallable;
 typedef std::future<DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome>
     DetachCustomerManagedPolicyReferenceFromPermissionSetOutcomeCallable;
@@ -353,6 +367,7 @@ typedef std::future<ListManagedPoliciesInPermissionSetOutcome> ListManagedPolici
 typedef std::future<ListPermissionSetProvisioningStatusOutcome> ListPermissionSetProvisioningStatusOutcomeCallable;
 typedef std::future<ListPermissionSetsOutcome> ListPermissionSetsOutcomeCallable;
 typedef std::future<ListPermissionSetsProvisionedToAccountOutcome> ListPermissionSetsProvisionedToAccountOutcomeCallable;
+typedef std::future<ListRegionsOutcome> ListRegionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTrustedTokenIssuersOutcome> ListTrustedTokenIssuersOutcomeCallable;
 typedef std::future<ProvisionPermissionSetOutcome> ProvisionPermissionSetOutcomeCallable;
@@ -363,6 +378,7 @@ typedef std::future<PutApplicationGrantOutcome> PutApplicationGrantOutcomeCallab
 typedef std::future<PutApplicationSessionConfigurationOutcome> PutApplicationSessionConfigurationOutcomeCallable;
 typedef std::future<PutInlinePolicyToPermissionSetOutcome> PutInlinePolicyToPermissionSetOutcomeCallable;
 typedef std::future<PutPermissionsBoundaryToPermissionSetOutcome> PutPermissionsBoundaryToPermissionSetOutcomeCallable;
+typedef std::future<RemoveRegionOutcome> RemoveRegionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
@@ -377,6 +393,9 @@ typedef std::future<UpdateTrustedTokenIssuerOutcome> UpdateTrustedTokenIssuerOut
 class SSOAdminClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const SSOAdminClient*, const Model::AddRegionRequest&, const Model::AddRegionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AddRegionResponseReceivedHandler;
 typedef std::function<void(const SSOAdminClient*, const Model::AttachCustomerManagedPolicyReferenceToPermissionSetRequest&,
                            const Model::AttachCustomerManagedPolicyReferenceToPermissionSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -480,6 +499,9 @@ typedef std::function<void(const SSOAdminClient*, const Model::DescribePermissio
                            const Model::DescribePermissionSetProvisioningStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribePermissionSetProvisioningStatusResponseReceivedHandler;
+typedef std::function<void(const SSOAdminClient*, const Model::DescribeRegionRequest&, const Model::DescribeRegionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeRegionResponseReceivedHandler;
 typedef std::function<void(const SSOAdminClient*, const Model::DescribeTrustedTokenIssuerRequest&,
                            const Model::DescribeTrustedTokenIssuerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTrustedTokenIssuerResponseReceivedHandler;
@@ -581,6 +603,9 @@ typedef std::function<void(const SSOAdminClient*, const Model::ListPermissionSet
                            const Model::ListPermissionSetsProvisionedToAccountOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPermissionSetsProvisionedToAccountResponseReceivedHandler;
+typedef std::function<void(const SSOAdminClient*, const Model::ListRegionsRequest&, const Model::ListRegionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRegionsResponseReceivedHandler;
 typedef std::function<void(const SSOAdminClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -616,6 +641,9 @@ typedef std::function<void(const SSOAdminClient*, const Model::PutPermissionsBou
                            const Model::PutPermissionsBoundaryToPermissionSetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutPermissionsBoundaryToPermissionSetResponseReceivedHandler;
+typedef std::function<void(const SSOAdminClient*, const Model::RemoveRegionRequest&, const Model::RemoveRegionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RemoveRegionResponseReceivedHandler;
 typedef std::function<void(const SSOAdminClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

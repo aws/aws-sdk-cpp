@@ -12,6 +12,7 @@
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/BillingModeSummary.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexDescription.h>
+#include <aws/dynamodb/model/GlobalTableSettingsReplicationMode.h>
 #include <aws/dynamodb/model/GlobalTableWitnessDescription.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -554,6 +555,28 @@ class TableDescription {
 
   ///@{
   /**
+   * <p>Indicates one of the settings synchronization modes for the global table:</p>
+   * <ul> <li> <p> <code>ENABLED</code>: Indicates that the settings synchronization
+   * mode for the global table is enabled.</p> </li> <li> <p> <code>DISABLED</code>:
+   * Indicates that the settings synchronization mode for the global table is
+   * disabled.</p> </li> <li> <p> <code>ENABLED_WITH_OVERRIDES</code>: This mode is
+   * set by default for a same account global table. Indicates that certain global
+   * table settings can be overridden.</p> </li> </ul>
+   */
+  inline GlobalTableSettingsReplicationMode GetGlobalTableSettingsReplicationMode() const { return m_globalTableSettingsReplicationMode; }
+  inline bool GlobalTableSettingsReplicationModeHasBeenSet() const { return m_globalTableSettingsReplicationModeHasBeenSet; }
+  inline void SetGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    m_globalTableSettingsReplicationModeHasBeenSet = true;
+    m_globalTableSettingsReplicationMode = value;
+  }
+  inline TableDescription& WithGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    SetGlobalTableSettingsReplicationMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Contains details for the restore.</p>
    */
   inline const RestoreSummary& GetRestoreSummary() const { return m_restoreSummary; }
@@ -742,6 +765,8 @@ class TableDescription {
 
   Aws::Vector<GlobalTableWitnessDescription> m_globalTableWitnesses;
 
+  GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
+
   RestoreSummary m_restoreSummary;
 
   SSEDescription m_sSEDescription;
@@ -776,6 +801,7 @@ class TableDescription {
   bool m_globalTableVersionHasBeenSet = false;
   bool m_replicasHasBeenSet = false;
   bool m_globalTableWitnessesHasBeenSet = false;
+  bool m_globalTableSettingsReplicationModeHasBeenSet = false;
   bool m_restoreSummaryHasBeenSet = false;
   bool m_sSEDescriptionHasBeenSet = false;
   bool m_archivalSummaryHasBeenSet = false;

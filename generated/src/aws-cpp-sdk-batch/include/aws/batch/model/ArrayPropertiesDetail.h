@@ -59,6 +59,23 @@ class ArrayPropertiesDetail {
 
   ///@{
   /**
+   * <p>The Unix timestamp (in milliseconds) for when the <code>statusSummary</code>
+   * was last updated.</p>
+   */
+  inline long long GetStatusSummaryLastUpdatedAt() const { return m_statusSummaryLastUpdatedAt; }
+  inline bool StatusSummaryLastUpdatedAtHasBeenSet() const { return m_statusSummaryLastUpdatedAtHasBeenSet; }
+  inline void SetStatusSummaryLastUpdatedAt(long long value) {
+    m_statusSummaryLastUpdatedAtHasBeenSet = true;
+    m_statusSummaryLastUpdatedAt = value;
+  }
+  inline ArrayPropertiesDetail& WithStatusSummaryLastUpdatedAt(long long value) {
+    SetStatusSummaryLastUpdatedAt(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The size of the array job. This parameter is returned for parent array
    * jobs.</p>
    */
@@ -93,10 +110,13 @@ class ArrayPropertiesDetail {
  private:
   Aws::Map<Aws::String, int> m_statusSummary;
 
+  long long m_statusSummaryLastUpdatedAt{0};
+
   int m_size{0};
 
   int m_index{0};
   bool m_statusSummaryHasBeenSet = false;
+  bool m_statusSummaryLastUpdatedAtHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };

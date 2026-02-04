@@ -22,6 +22,8 @@
 #include <aws/sso-admin/model/AccountAssignmentForPrincipal.h>
 #include <aws/sso-admin/model/AccountAssignmentOperationStatus.h>
 #include <aws/sso-admin/model/AccountAssignmentOperationStatusMetadata.h>
+#include <aws/sso-admin/model/AddRegionRequest.h>
+#include <aws/sso-admin/model/AddRegionResult.h>
 #include <aws/sso-admin/model/Application.h>
 #include <aws/sso-admin/model/ApplicationAssignment.h>
 #include <aws/sso-admin/model/ApplicationAssignmentForPrincipal.h>
@@ -92,6 +94,8 @@
 #include <aws/sso-admin/model/DescribePermissionSetProvisioningStatusResult.h>
 #include <aws/sso-admin/model/DescribePermissionSetRequest.h>
 #include <aws/sso-admin/model/DescribePermissionSetResult.h>
+#include <aws/sso-admin/model/DescribeRegionRequest.h>
+#include <aws/sso-admin/model/DescribeRegionResult.h>
 #include <aws/sso-admin/model/DescribeTrustedTokenIssuerRequest.h>
 #include <aws/sso-admin/model/DescribeTrustedTokenIssuerResult.h>
 #include <aws/sso-admin/model/DetachCustomerManagedPolicyReferenceFromPermissionSetRequest.h>
@@ -167,6 +171,8 @@
 #include <aws/sso-admin/model/ListPermissionSetsProvisionedToAccountResult.h>
 #include <aws/sso-admin/model/ListPermissionSetsRequest.h>
 #include <aws/sso-admin/model/ListPermissionSetsResult.h>
+#include <aws/sso-admin/model/ListRegionsRequest.h>
+#include <aws/sso-admin/model/ListRegionsResult.h>
 #include <aws/sso-admin/model/ListTagsForResourceRequest.h>
 #include <aws/sso-admin/model/ListTagsForResourceResult.h>
 #include <aws/sso-admin/model/ListTrustedTokenIssuersRequest.h>
@@ -196,6 +202,10 @@
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetRequest.h>
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetResult.h>
 #include <aws/sso-admin/model/RefreshTokenGrant.h>
+#include <aws/sso-admin/model/RegionMetadata.h>
+#include <aws/sso-admin/model/RegionStatus.h>
+#include <aws/sso-admin/model/RemoveRegionRequest.h>
+#include <aws/sso-admin/model/RemoveRegionResult.h>
 #include <aws/sso-admin/model/ResourceNotFoundException.h>
 #include <aws/sso-admin/model/ResourceNotFoundExceptionReason.h>
 #include <aws/sso-admin/model/ResourceServerConfig.h>
