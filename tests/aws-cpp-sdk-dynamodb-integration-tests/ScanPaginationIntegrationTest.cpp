@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-// TODO: Uncomment and test to identify which integration test is the bottleneck
-/*
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/Aws.h>
@@ -109,106 +107,19 @@ protected:
     }
 };
 
-TEST_F(ScanPaginationTest, TestMultipleIterationOnResponses) {
+TEST_F(ScanPaginationTest, TestPaginationTraits) {
     ScanRequest request;
     request.SetTableName(tableName);
-    request.SetConsistentRead(true);
-    request.SetLimit(2);
+    request.SetLimit(1);  // Force pagination
     
-    size_t count = 0;
-    auto outcome = dynamoClient->Scan(request);
-    
-    // First iteration
-    while (outcome.IsSuccess()) {
-        const auto& result = outcome.GetResult();
-        count += result.GetCount();
-        
-        if (!Aws::DynamoDB::Pagination::ScanPaginationTraits::HasMoreResults(result)) {
-            break;
-        }
-        
-        Aws::DynamoDB::Pagination::ScanPaginationTraits::SetNextRequest(result, request);
-        outcome = dynamoClient->Scan(request);
-    }
-    
-    EXPECT_EQ(ITEM_COUNT, count);
-    
-    // Reset for second iteration
-    request = ScanRequest();
-    request.SetTableName(tableName);
-    request.SetConsistentRead(true);
-    request.SetLimit(2);
-    
-    count = 0;
-    outcome = dynamoClient->Scan(request);
-    
-    // Second iteration
-    while (outcome.IsSuccess()) {
-        const auto& result = outcome.GetResult();
-        count += result.GetCount();
-        
-        if (!Aws::DynamoDB::Pagination::ScanPaginationTraits::HasMoreResults(result)) {
-            break;
-        }
-        
-        Aws::DynamoDB::Pagination::ScanPaginationTraits::SetNextRequest(result, request);
-        outcome = dynamoClient->Scan(request);
-    }
-    
-    EXPECT_EQ(ITEM_COUNT, count);
-}
-
-TEST_F(ScanPaginationTest, TestPaginationWithLimit) {
-    ScanRequest request;
-    request.SetTableName(tableName);
-    request.SetConsistentRead(true);
-    request.SetLimit(3);
-    
-    size_t totalItems = 0;
     size_t pageCount = 0;
-    auto outcome = dynamoClient->Scan(request);
+    auto paginator = dynamoClient->ScanPaginator(request);
     
-    while (outcome.IsSuccess()) {
-        const auto& result = outcome.GetResult();
-        totalItems += result.GetCount();
+    for (auto pageIter = paginator.begin(); pageIter != paginator.end(); ++pageIter) {
+        const auto& outcome = *pageIter;
+        AWS_ASSERT_SUCCESS(outcome);
         pageCount++;
-        
-        if (!Aws::DynamoDB::Pagination::ScanPaginationTraits::HasMoreResults(result)) {
-            break;
-        }
-        
-        Aws::DynamoDB::Pagination::ScanPaginationTraits::SetNextRequest(result, request);
-        outcome = dynamoClient->Scan(request);
     }
     
-    EXPECT_EQ(ITEM_COUNT, totalItems);
-    EXPECT_GT(pageCount, 1u); // Should have multiple pages with limit=3
+    EXPECT_GT(pageCount, 1u);  // Should have multiple pages with Limit=1
 }
-
-TEST_F(ScanPaginationTest, TestManualPaginationWithExclusiveStartKey) {
-    ScanRequest request;
-    request.SetTableName(tableName);
-    request.SetConsistentRead(true);
-    request.SetLimit(5);
-    
-    Aws::Vector<Aws::Map<Aws::String, AttributeValue>> allItems;
-    
-    do {
-        auto outcome = dynamoClient->Scan(request);
-        ASSERT_TRUE(outcome.IsSuccess());
-        
-        const auto& result = outcome.GetResult();
-        for (const auto& item : result.GetItems()) {
-            allItems.push_back(item);
-        }
-        
-        if (!result.GetLastEvaluatedKey().empty()) {
-            request.SetExclusiveStartKey(result.GetLastEvaluatedKey());
-        } else {
-            break;
-        }
-    } while (true);
-    
-    EXPECT_EQ(ITEM_COUNT, allItems.size());
-}
-*/

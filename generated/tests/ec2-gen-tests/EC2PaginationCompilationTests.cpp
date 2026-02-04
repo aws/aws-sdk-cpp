@@ -105,6 +105,7 @@
 #include <aws/ec2/model/DescribeImageUsageReportsPaginationTraits.h>
 #include <aws/ec2/model/DescribeVolumeStatusPaginationTraits.h>
 #include <aws/ec2/model/DescribeVpnConcentratorsPaginationTraits.h>
+#include <aws/ec2/model/SearchTransitGatewayRoutesPaginationTraits.h>
 #include <aws/ec2/model/GetAssociatedIpv6PoolCidrsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPoolsPaginationTraits.h>
 #include <aws/ec2/model/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginationTraits.h>

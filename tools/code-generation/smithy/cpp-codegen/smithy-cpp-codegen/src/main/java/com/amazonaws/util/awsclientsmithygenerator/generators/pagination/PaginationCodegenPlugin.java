@@ -55,7 +55,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
             parser.run(featureParser -> {
                 String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
                 
-                // Generate CRTP pagination mixin (always, even if empty)
+                // Generate CRTP pagination (always, even if empty)
                 featureParser.generateClientHeader(
                     serviceName + "PaginationBase.h",
                     writer -> new PaginationBaseGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)

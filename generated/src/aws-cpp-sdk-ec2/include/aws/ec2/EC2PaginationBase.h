@@ -169,6 +169,7 @@
 #include <aws/ec2/model/ListSnapshotsInRecycleBinPaginationTraits.h>
 #include <aws/ec2/model/SearchLocalGatewayRoutesPaginationTraits.h>
 #include <aws/ec2/model/SearchTransitGatewayMulticastGroupsPaginationTraits.h>
+#include <aws/ec2/model/SearchTransitGatewayRoutesPaginationTraits.h>
 
 #include <memory>
 
@@ -1937,6 +1938,17 @@ class EC2PaginationBase {
   SearchTransitGatewayMulticastGroupsPaginator(const Model::SearchTransitGatewayMulticastGroupsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayMulticastGroupsRequest,
                                                  Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits>{
+        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+  }
+
+  /**
+   * Create a paginator for SearchTransitGatewayRoutes operation
+   */
+  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
+                                        Pagination::SearchTransitGatewayRoutesPaginationTraits>
+  SearchTransitGatewayRoutesPaginator(const Model::SearchTransitGatewayRoutesRequest& request) {
+    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
+                                                 Pagination::SearchTransitGatewayRoutesPaginationTraits>{
         std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
   }
 };

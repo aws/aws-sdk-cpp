@@ -169,6 +169,7 @@
 #include <aws/ec2/model/ListSnapshotsInRecycleBinPaginationTraits.h>
 #include <aws/ec2/model/SearchLocalGatewayRoutesPaginationTraits.h>
 #include <aws/ec2/model/SearchTransitGatewayMulticastGroupsPaginationTraits.h>
+#include <aws/ec2/model/SearchTransitGatewayRoutesPaginationTraits.h>
 
 namespace Aws {
 namespace EC2 {
@@ -587,6 +588,8 @@ using SearchLocalGatewayRoutesPaginator = Aws::Utils::Pagination::PagePaginator<
 using SearchTransitGatewayMulticastGroupsPaginator =
     Aws::Utils::Pagination::PagePaginator<EC2Client, Model::SearchTransitGatewayMulticastGroupsRequest,
                                           Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits>;
+using SearchTransitGatewayRoutesPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::SearchTransitGatewayRoutesRequest,
+                                                                                  Pagination::SearchTransitGatewayRoutesPaginationTraits>;
 
 }  // namespace EC2
 }  // namespace Aws
