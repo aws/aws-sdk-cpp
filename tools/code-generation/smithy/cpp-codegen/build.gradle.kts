@@ -28,16 +28,6 @@ buildscript {
 dependencies {
     implementation(project(":smithy-cpp-codegen"))
     implementation("software.amazon.smithy:smithy-aws-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-endpoints:1.62.0")
-    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.62.0")
-    implementation("software.amazon.smithy:smithy-waiters:1.62.0")
-}
-
-tasks.jar {
-    enabled = false
 }
 
 tasks.register("generate-smithy-build") {
@@ -72,8 +62,9 @@ tasks.register("generate-smithy-build") {
             projectionsBuilder.withMember("$sdkId.${service.version.lowercase()}", projectionContents)
         }
         
+        // Legacy services without full Smithy models - generate mock projections for base classes
         val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB", "s3-crt" to "S3Crt")
-        legacyServices.forEach { (c2jName, pascalName) ->
+        legacyServices.forEach { (c2jName, serviceName) ->
             if (filteredServiceList.isEmpty() || c2jName in filteredServiceList) {
                 val mockProjectionContents = Node.objectNodeBuilder()
                     .withMember("plugins", Node.objectNode()
@@ -95,5 +86,3 @@ tasks.register("generate-smithy-build") {
 }
 
 tasks["build"].dependsOn(tasks["generate-smithy-build"])
-tasks["generate-smithy-build"].dependsOn(tasks["jar"])
-tasks["smithyBuild"].dependsOn(tasks["jar"])

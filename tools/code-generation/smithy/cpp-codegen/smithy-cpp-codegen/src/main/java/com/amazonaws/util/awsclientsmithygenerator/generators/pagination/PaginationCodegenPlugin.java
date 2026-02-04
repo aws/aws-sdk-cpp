@@ -19,7 +19,6 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.Paginat
 import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationEmptyHeaderGenerator;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.stream.Collectors;
 import java.nio.file.Files;
 import java.nio.file.Path;

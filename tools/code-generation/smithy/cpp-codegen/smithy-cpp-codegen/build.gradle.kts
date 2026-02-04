@@ -14,5 +14,4 @@ dependencies {
     implementation("software.amazon.smithy:smithy-waiters:1.62.0")
     implementation("software.amazon.smithy:smithy-rules-engine:1.62.0")
     implementation("software.amazon.smithy:smithy-aws-endpoints:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.62.0")
 }
