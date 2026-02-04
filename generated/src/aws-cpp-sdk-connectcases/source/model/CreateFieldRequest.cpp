@@ -27,5 +27,9 @@ Aws::String CreateFieldRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_attributesHasBeenSet) {
+    payload.WithObject("attributes", m_attributes.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

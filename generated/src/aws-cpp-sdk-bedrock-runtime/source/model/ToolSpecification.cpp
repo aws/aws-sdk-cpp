@@ -30,6 +30,10 @@ ToolSpecification& ToolSpecification::operator=(JsonView jsonValue) {
     m_inputSchema = jsonValue.GetObject("inputSchema");
     m_inputSchemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("strict")) {
+    m_strict = jsonValue.GetBool("strict");
+    m_strictHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ToolSpecification::Jsonize() const {
 
   if (m_inputSchemaHasBeenSet) {
     payload.WithObject("inputSchema", m_inputSchema.Jsonize());
+  }
+
+  if (m_strictHasBeenSet) {
+    payload.WithBool("strict", m_strict);
   }
 
   return payload;

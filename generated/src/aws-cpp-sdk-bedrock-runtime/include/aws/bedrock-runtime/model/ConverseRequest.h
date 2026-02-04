@@ -9,6 +9,7 @@
 #include <aws/bedrock-runtime/model/GuardrailConfiguration.h>
 #include <aws/bedrock-runtime/model/InferenceConfiguration.h>
 #include <aws/bedrock-runtime/model/Message.h>
+#include <aws/bedrock-runtime/model/OutputConfig.h>
 #include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
 #include <aws/bedrock-runtime/model/PromptVariableValues.h>
 #include <aws/bedrock-runtime/model/ServiceTier.h>
@@ -340,6 +341,24 @@ class ConverseRequest : public BedrockRuntimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Output configuration for a model response.</p>
+   */
+  inline const OutputConfig& GetOutputConfig() const { return m_outputConfig; }
+  inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+  template <typename OutputConfigT = OutputConfig>
+  void SetOutputConfig(OutputConfigT&& value) {
+    m_outputConfigHasBeenSet = true;
+    m_outputConfig = std::forward<OutputConfigT>(value);
+  }
+  template <typename OutputConfigT = OutputConfig>
+  ConverseRequest& WithOutputConfig(OutputConfigT&& value) {
+    SetOutputConfig(std::forward<OutputConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelId;
 
@@ -364,6 +383,8 @@ class ConverseRequest : public BedrockRuntimeRequest {
   PerformanceConfiguration m_performanceConfig;
 
   ServiceTier m_serviceTier;
+
+  OutputConfig m_outputConfig;
   bool m_modelIdHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_systemHasBeenSet = false;
@@ -376,6 +397,7 @@ class ConverseRequest : public BedrockRuntimeRequest {
   bool m_requestMetadataHasBeenSet = false;
   bool m_performanceConfigHasBeenSet = false;
   bool m_serviceTierHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
 };
 
 }  // namespace Model

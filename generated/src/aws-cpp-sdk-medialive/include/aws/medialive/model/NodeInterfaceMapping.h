@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/NetworkInterfaceMode.h>
 
@@ -85,15 +86,42 @@ class NodeInterfaceMapping {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * The IP addresses associated with the physical interface on the node hardware.
+   */
+  inline const Aws::Vector<Aws::String>& GetPhysicalInterfaceIpAddresses() const { return m_physicalInterfaceIpAddresses; }
+  inline bool PhysicalInterfaceIpAddressesHasBeenSet() const { return m_physicalInterfaceIpAddressesHasBeenSet; }
+  template <typename PhysicalInterfaceIpAddressesT = Aws::Vector<Aws::String>>
+  void SetPhysicalInterfaceIpAddresses(PhysicalInterfaceIpAddressesT&& value) {
+    m_physicalInterfaceIpAddressesHasBeenSet = true;
+    m_physicalInterfaceIpAddresses = std::forward<PhysicalInterfaceIpAddressesT>(value);
+  }
+  template <typename PhysicalInterfaceIpAddressesT = Aws::Vector<Aws::String>>
+  NodeInterfaceMapping& WithPhysicalInterfaceIpAddresses(PhysicalInterfaceIpAddressesT&& value) {
+    SetPhysicalInterfaceIpAddresses(std::forward<PhysicalInterfaceIpAddressesT>(value));
+    return *this;
+  }
+  template <typename PhysicalInterfaceIpAddressesT = Aws::String>
+  NodeInterfaceMapping& AddPhysicalInterfaceIpAddresses(PhysicalInterfaceIpAddressesT&& value) {
+    m_physicalInterfaceIpAddressesHasBeenSet = true;
+    m_physicalInterfaceIpAddresses.emplace_back(std::forward<PhysicalInterfaceIpAddressesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logicalInterfaceName;
 
   NetworkInterfaceMode m_networkInterfaceMode{NetworkInterfaceMode::NOT_SET};
 
   Aws::String m_physicalInterfaceName;
+
+  Aws::Vector<Aws::String> m_physicalInterfaceIpAddresses;
   bool m_logicalInterfaceNameHasBeenSet = false;
   bool m_networkInterfaceModeHasBeenSet = false;
   bool m_physicalInterfaceNameHasBeenSet = false;
+  bool m_physicalInterfaceIpAddressesHasBeenSet = false;
 };
 
 }  // namespace Model

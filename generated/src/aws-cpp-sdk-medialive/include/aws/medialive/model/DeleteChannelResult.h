@@ -429,6 +429,29 @@ one destination per
   ///@}
 
   ///@{
+  /**
+   * A list of IDs for all the Input Security Groups attached to the channel.
+   */
+  inline const Aws::Vector<Aws::String>& GetChannelSecurityGroups() const { return m_channelSecurityGroups; }
+  template <typename ChannelSecurityGroupsT = Aws::Vector<Aws::String>>
+  void SetChannelSecurityGroups(ChannelSecurityGroupsT&& value) {
+    m_channelSecurityGroupsHasBeenSet = true;
+    m_channelSecurityGroups = std::forward<ChannelSecurityGroupsT>(value);
+  }
+  template <typename ChannelSecurityGroupsT = Aws::Vector<Aws::String>>
+  DeleteChannelResult& WithChannelSecurityGroups(ChannelSecurityGroupsT&& value) {
+    SetChannelSecurityGroups(std::forward<ChannelSecurityGroupsT>(value));
+    return *this;
+  }
+  template <typename ChannelSecurityGroupsT = Aws::String>
+  DeleteChannelResult& AddChannelSecurityGroups(ChannelSecurityGroupsT&& value) {
+    m_channelSecurityGroupsHasBeenSet = true;
+    m_channelSecurityGroups.emplace_back(std::forward<ChannelSecurityGroupsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -485,6 +508,8 @@ one destination per
 
   DescribeLinkedChannelSettings m_linkedChannelSettings;
 
+  Aws::Vector<Aws::String> m_channelSecurityGroups;
+
   Aws::String m_requestId;
   bool m_arnHasBeenSet = false;
   bool m_cdiInputSpecificationHasBeenSet = false;
@@ -507,6 +532,7 @@ one destination per
   bool m_anywhereSettingsHasBeenSet = false;
   bool m_channelEngineVersionHasBeenSet = false;
   bool m_linkedChannelSettingsHasBeenSet = false;
+  bool m_channelSecurityGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/FieldAttributes.h>
 #include <aws/connectcases/model/FieldNamespace.h>
 #include <aws/connectcases/model/FieldType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -118,6 +119,24 @@ class FieldSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Union of field attributes.</p>
+   */
+  inline const FieldAttributes& GetAttributes() const { return m_attributes; }
+  inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+  template <typename AttributesT = FieldAttributes>
+  void SetAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes = std::forward<AttributesT>(value);
+  }
+  template <typename AttributesT = FieldAttributes>
+  FieldSummary& WithAttributes(AttributesT&& value) {
+    SetAttributes(std::forward<AttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fieldId;
 
@@ -128,11 +147,14 @@ class FieldSummary {
   FieldType m_type{FieldType::NOT_SET};
 
   FieldNamespace m_namespace{FieldNamespace::NOT_SET};
+
+  FieldAttributes m_attributes;
   bool m_fieldIdHasBeenSet = false;
   bool m_fieldArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
 };
 
 }  // namespace Model

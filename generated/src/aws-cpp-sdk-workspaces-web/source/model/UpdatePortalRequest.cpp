@@ -31,5 +31,9 @@ Aws::String UpdatePortalRequest::SerializePayload() const {
     payload.WithInteger("maxConcurrentSessions", m_maxConcurrentSessions);
   }
 
+  if (m_portalCustomDomainHasBeenSet) {
+    payload.WithString("portalCustomDomain", m_portalCustomDomain);
+  }
+
   return payload.View().WriteReadable();
 }

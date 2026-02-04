@@ -295,13 +295,13 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * EKS API server endpoint. Each Amazon EKS cluster control plane is single tenant
    * and unique. It runs on its own set of Amazon EC2 instances.</p> <p>The cluster
    * control plane is provisioned across multiple Availability Zones and fronted by
-   * an ELB Network Load Balancer. Amazon EKS also provisions elastic network
-   * interfaces in your VPC subnets to provide connectivity from the control plane
-   * instances to the nodes (for example, to support <code>kubectl exec</code>,
-   * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
-   * run in your Amazon Web Services account and connect to your cluster's control
-   * plane over the Kubernetes API server endpoint and a certificate file that is
-   * created for your cluster.</p> <p>You can use the
+   * an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions
+   * elastic network interfaces in your VPC subnets to provide connectivity from the
+   * control plane instances to the nodes (for example, to support <code>kubectl
+   * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
+   * <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your
+   * cluster's control plane over the Kubernetes API server endpoint and a
+   * certificate file that is created for your cluster.</p> <p>You can use the
    * <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
    * parameters to enable or disable public and private access to your cluster's
    * Kubernetes API server endpoint. By default, public access is enabled, and
@@ -626,10 +626,11 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Deletes an Amazon EKS cluster control plane.</p> <p>If you have active
-   * services in your cluster that are associated with a load balancer, you must
-   * delete those services before deleting the cluster so that the load balancers are
-   * deleted properly. Otherwise, you can have orphaned resources in your VPC that
-   * prevent you from being able to delete the VPC. For more information, see <a
+   * services and ingress resources in your cluster that are associated with a load
+   * balancer, you must delete those services before deleting the cluster so that the
+   * load balancers are deleted properly. Otherwise, you can have orphaned resources
+   * in your VPC that prevent you from being able to delete the VPC. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
    * a cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
    * node groups or Fargate profiles attached to the cluster, you must delete them

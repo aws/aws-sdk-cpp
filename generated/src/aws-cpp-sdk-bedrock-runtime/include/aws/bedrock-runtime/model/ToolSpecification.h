@@ -88,15 +88,34 @@ class ToolSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Flag to enable structured output enforcement on a tool usage response.</p>
+   */
+  inline bool GetStrict() const { return m_strict; }
+  inline bool StrictHasBeenSet() const { return m_strictHasBeenSet; }
+  inline void SetStrict(bool value) {
+    m_strictHasBeenSet = true;
+    m_strict = value;
+  }
+  inline ToolSpecification& WithStrict(bool value) {
+    SetStrict(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   Aws::String m_description;
 
   ToolInputSchema m_inputSchema;
+
+  bool m_strict{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_inputSchemaHasBeenSet = false;
+  bool m_strictHasBeenSet = false;
 };
 
 }  // namespace Model

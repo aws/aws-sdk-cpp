@@ -51,6 +51,13 @@ InputSecurityGroup& InputSecurityGroup::operator=(JsonView jsonValue) {
     }
     m_whitelistRulesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channels")) {
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
+      m_channels.push_back(channelsJsonList[channelsIndex].AsString());
+    }
+    m_channelsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -91,6 +98,14 @@ JsonValue InputSecurityGroup::Jsonize() const {
       whitelistRulesJsonList[whitelistRulesIndex].AsObject(m_whitelistRules[whitelistRulesIndex].Jsonize());
     }
     payload.WithArray("whitelistRules", std::move(whitelistRulesJsonList));
+  }
+
+  if (m_channelsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
+      channelsJsonList[channelsIndex].AsString(m_channels[channelsIndex]);
+    }
+    payload.WithArray("channels", std::move(channelsJsonList));
   }
 
   return payload;

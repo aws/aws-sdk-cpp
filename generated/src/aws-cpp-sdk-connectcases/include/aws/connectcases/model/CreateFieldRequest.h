@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/FieldAttributes.h>
 #include <aws/connectcases/model/FieldType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -99,6 +100,24 @@ class CreateFieldRequest : public ConnectCasesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Union of field attributes.</p>
+   */
+  inline const FieldAttributes& GetAttributes() const { return m_attributes; }
+  inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+  template <typename AttributesT = FieldAttributes>
+  void SetAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes = std::forward<AttributesT>(value);
+  }
+  template <typename AttributesT = FieldAttributes>
+  CreateFieldRequest& WithAttributes(AttributesT&& value) {
+    SetAttributes(std::forward<AttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -107,10 +126,13 @@ class CreateFieldRequest : public ConnectCasesRequest {
   FieldType m_type{FieldType::NOT_SET};
 
   Aws::String m_description;
+
+  FieldAttributes m_attributes;
   bool m_domainIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
 };
 
 }  // namespace Model

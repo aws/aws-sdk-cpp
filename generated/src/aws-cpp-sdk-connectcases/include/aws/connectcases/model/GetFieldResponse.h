@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/FieldAttributes.h>
 #include <aws/connectcases/model/FieldNamespace.h>
 #include <aws/connectcases/model/FieldType.h>
 #include <aws/core/utils/DateTime.h>
@@ -215,6 +216,24 @@ class GetFieldResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Union of field attributes.</p>
+   */
+  inline const FieldAttributes& GetAttributes() const { return m_attributes; }
+  inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+  template <typename AttributesT = FieldAttributes>
+  void SetAttributes(AttributesT&& value) {
+    m_attributesHasBeenSet = true;
+    m_attributes = std::forward<AttributesT>(value);
+  }
+  template <typename AttributesT = FieldAttributes>
+  GetFieldResponse& WithAttributes(AttributesT&& value) {
+    SetAttributes(std::forward<AttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fieldId;
 
@@ -235,6 +254,8 @@ class GetFieldResponse {
   Aws::Utils::DateTime m_createdTime{};
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+
+  FieldAttributes m_attributes;
   bool m_fieldIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_fieldArnHasBeenSet = false;
@@ -245,6 +266,7 @@ class GetFieldResponse {
   bool m_deletedHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
 };
 
 }  // namespace Model

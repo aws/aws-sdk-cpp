@@ -84,5 +84,9 @@ Aws::String ConverseRequest::SerializePayload() const {
     payload.WithObject("serviceTier", m_serviceTier.Jsonize());
   }
 
+  if (m_outputConfigHasBeenSet) {
+    payload.WithObject("outputConfig", m_outputConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -54,6 +54,13 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator=(co
     }
     m_whitelistRulesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channels")) {
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
+    for (unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex) {
+      m_channels.push_back(channelsJsonList[channelsIndex].AsString());
+    }
+    m_channelsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

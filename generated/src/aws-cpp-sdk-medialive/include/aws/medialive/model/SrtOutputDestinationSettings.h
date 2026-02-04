@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/ConnectionMode.h>
 
 #include <utility>
 
@@ -85,15 +86,55 @@ class SrtOutputDestinationSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the mode the output should use for connection establishment. CALLER
+   * mode requires URL, LISTENER mode requires port.
+   */
+  inline ConnectionMode GetConnectionMode() const { return m_connectionMode; }
+  inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
+  inline void SetConnectionMode(ConnectionMode value) {
+    m_connectionModeHasBeenSet = true;
+    m_connectionMode = value;
+  }
+  inline SrtOutputDestinationSettings& WithConnectionMode(ConnectionMode value) {
+    SetConnectionMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Port number for listener mode connections (required when connectionMode is
+   * LISTENER, must not be provided when connectionMode is CALLER).
+   */
+  inline int GetListenerPort() const { return m_listenerPort; }
+  inline bool ListenerPortHasBeenSet() const { return m_listenerPortHasBeenSet; }
+  inline void SetListenerPort(int value) {
+    m_listenerPortHasBeenSet = true;
+    m_listenerPort = value;
+  }
+  inline SrtOutputDestinationSettings& WithListenerPort(int value) {
+    SetListenerPort(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_encryptionPassphraseSecretArn;
 
   Aws::String m_streamId;
 
   Aws::String m_url;
+
+  ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
+
+  int m_listenerPort{0};
   bool m_encryptionPassphraseSecretArnHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_listenerPortHasBeenSet = false;
 };
 
 }  // namespace Model
