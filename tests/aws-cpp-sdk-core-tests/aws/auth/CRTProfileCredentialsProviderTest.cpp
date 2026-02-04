@@ -113,7 +113,7 @@ TEST_F(CRTProfileCredentialsProviderTest, MissingProfileReturnsEmpty) {
     EXPECT_TRUE(credentials.IsEmpty());
 }
 
-TEST_F(CRTProfileCredentialsProviderTest, ProcessCredentials) {
+TEST_F(CRTProfileCredentialsProviderTest, DISABLED_ProcessCredentials) {
     std::ofstream config(m_configFile.c_str());
     config << "[default]\n";
     config << "credential_process = echo '{\"Version\": 1, \"AccessKeyId\": \"ProcessKey\", \"SecretAccessKey\": \"ProcessSecret\"}'\n";

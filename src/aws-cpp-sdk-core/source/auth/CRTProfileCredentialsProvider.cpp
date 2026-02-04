@@ -7,72 +7,106 @@
 
 using namespace Aws::Auth;
 
-class CRTProfileCredentialsProvider::Impl {
+class CRTProfileCredentialsProvider::CRTProfileCredentialsProviderImp {
 public:
-    std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtProvider;
+    Aws::String m_profileToUse;
+    Aws::Config::AWSConfigFileProfileConfigLoader m_credentialsFileLoader;
+    long m_loadFrequencyMs;
+
+    CRTProfileCredentialsProviderImp(long refreshRateMs) :
+    m_profileToUse(Aws::Auth::GetConfigProfileName()),
+    m_credentialsFileLoader(GetCredentialsProfileFilename()),
+    m_loadFrequencyMs(refreshRateMs){}
+
+    CRTProfileCredentialsProviderImp(const char* profile, long refreshRateMs) :
+    m_profileToUse(profile),
+    m_credentialsFileLoader(GetCredentialsProfileFilename()),
+    m_loadFrequencyMs(refreshRateMs){}
 };
 
-CRTProfileCredentialsProvider::CRTProfileCredentialsProvider()
-    : m_impl(Aws::MakeShared<Impl>("CRTProfileCredentialsProvider")){
-    Aws::Crt::Auth::CredentialsProviderProfileConfig config{};
-    config.Bootstrap = GetDefaultClientBootstrap();
-    auto profileName = Aws::Environment::GetEnv("AWS_PROFILE");
-    if(!profileName.empty()){
-        config.ProfileNameOverride = Aws::Crt::ByteCursorFromCString(profileName.c_str());
+Aws::String CRTProfileCredentialsProvider::GetCredentialsProfileFilename()
+{
+    auto credentialsFileNameFromVar = Aws::Environment::GetEnv(AWS_CREDENTIALS_FILE);
+
+    if (credentialsFileNameFromVar.empty())
+    {
+        return Aws::FileSystem::GetHomeDirectory() + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CREDENTIALS_FILE;
     }
-    m_impl->m_crtProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderProfile(config);
+    else
+    {
+        return credentialsFileNameFromVar;
+    }
 }
 
-CRTProfileCredentialsProvider::CRTProfileCredentialsProvider(const char *profileName)
-    :m_impl(Aws::MakeShared<Impl>("CRTProfileCredentialsProvider")){
-    Aws::Crt::Auth::CredentialsProviderProfileConfig config{};
-    config.Bootstrap = GetDefaultClientBootstrap();
-    if (profileName) {
-        config.ProfileNameOverride = Aws::Crt::ByteCursorFromCString(profileName);
+Aws::String CRTProfileCredentialsProvider::GetProfileDirectory()
+{
+    Aws::String credentialsFileName = GetCredentialsProfileFilename();
+    auto lastSeparator = credentialsFileName.find_last_of(PATH_DELIM);
+    if (lastSeparator != std::string::npos)
+    {
+        return credentialsFileName.substr(0, lastSeparator);
     }
-    m_impl->m_crtProvider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderProfile(config);
+    else
+    {
+        return {};
+    }
 }
 
-CRTProfileCredentialsProvider::~CRTProfileCredentialsProvider() = default;
+CRTProfileCredentialsProvider::CRTProfileCredentialsProvider(long refreshRateMs):
+    m_impl(std::make_shared<CRTProfileCredentialsProviderImp>(refreshRateMs))
+{
+    AWS_LOGSTREAM_INFO(PROFILE_LOG_TAG, "Setting provider to read credentials from " <<  GetCredentialsProfileFilename() << " for credentials file"
+                                      << " and " <<  GetConfigProfileFilename() << " for the config file "
+                                      << ", for use with profile " << m_impl->m_profileToUse);
+}
 
-AWSCredentials CRTProfileCredentialsProvider::GetAWSCredentials() {
-    if (!m_impl || !m_impl->m_crtProvider) {
-        return AWSCredentials{};
-    }
-    AWSCredentials credentials;
-    std::mutex mtx;
-    std::condition_variable cv;
-    bool done = false;
+CRTProfileCredentialsProvider::CRTProfileCredentialsProvider(const char* profile, long refreshRateMs) :
+    m_impl(std::make_shared<CRTProfileCredentialsProviderImp>(profile, refreshRateMs))
+{
+    AWS_LOGSTREAM_INFO(PROFILE_LOG_TAG, "Setting provider to read credentials from " <<  GetCredentialsProfileFilename() << " for credentials file"
+                                      << " and " <<  GetConfigProfileFilename() << " for the config file "
+                                      << ", for use with profile " << m_impl->m_profileToUse);
+}
 
-    m_impl->m_crtProvider->GetCredentials([&](std::shared_ptr<Aws::Crt::Auth::Credentials> crtCreds, int errorCode) {
-        {
-            std::lock_guard<std::mutex> lock(mtx);
-            if (errorCode == 0 && crtCreds) {
-                auto accessKey = crtCreds->GetAccessKeyId();
-                auto secretKey = crtCreds->GetSecretAccessKey();
-                auto sessionToken = crtCreds->GetSessionToken();
+AWSCredentials CRTProfileCredentialsProvider::GetAWSCredentials()
+{
+    RefreshIfExpired();
+    ReaderLockGuard guard(m_reloadLock);
+    const Aws::Map<Aws::String, Aws::Config::Profile>& profiles = m_impl->m_credentialsFileLoader.GetProfiles();
+    auto credsFileProfileIter = profiles.find(m_impl->m_profileToUse);
 
-                credentials.SetAWSAccessKeyId({reinterpret_cast<char*>(accessKey.ptr), accessKey.len});
-                credentials.SetAWSSecretKey({reinterpret_cast<char*>(secretKey.ptr), secretKey.len});
-                if (sessionToken.len > 0) {
-                    credentials.SetSessionToken({reinterpret_cast<char*>(sessionToken.ptr), sessionToken.len});
-                }
-                auto expiration = crtCreds->GetExpirationTimepointInSeconds();
-                if (expiration > 0) {
-                    credentials.SetExpiration(Aws::Utils::DateTime(static_cast<double>(expiration)));
-                }
-            }
-            done = true;
+    if(credsFileProfileIter != profiles.end())
+    {
+        AWSCredentials credentials = credsFileProfileIter->second.GetCredentials();
+        if (!credentials.IsEmpty()) {
+            credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROFILE);
         }
-        cv.notify_one();
-    });
+        return credentials;
+    }
 
-    std::unique_lock<std::mutex> lock(mtx);
-    cv.wait_for(lock,std::chrono::milliseconds(5000), [&done]() -> bool { return done;});
-    return credentials;
+    return AWSCredentials();
 }
 
-void CRTProfileCredentialsProvider::Reload() {}
 
+void CRTProfileCredentialsProvider::Reload()
+{
+    m_impl->m_credentialsFileLoader.Load();
+    AWSCredentialsProvider::Reload();
+}
 
+void CRTProfileCredentialsProvider::RefreshIfExpired()
+{
+    ReaderLockGuard guard(m_reloadLock);
+    if (!IsTimeToRefresh(m_impl->m_loadFrequencyMs))
+    {
+       return;
+    }
 
+    guard.UpgradeToWriterLock();
+    if (!IsTimeToRefresh(m_impl->m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
+    {
+        return;
+    }
+
+    Reload();
+}

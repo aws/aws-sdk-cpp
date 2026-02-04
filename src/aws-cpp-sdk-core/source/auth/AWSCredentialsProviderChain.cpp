@@ -13,6 +13,8 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
+#include <aws/core/auth/CRTProfileCredentialsProvider.h>
+
 using namespace Aws::Auth;
 using namespace Aws::Utils::Threading;
 
@@ -45,7 +47,7 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    AddProvider(Aws::MakeShared<CRTProfileCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag));
@@ -90,7 +92,7 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config) : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
-    AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag,config.profile.c_str()));
+    AddProvider(Aws::MakeShared<CRTProfileCredentialsProvider>(DefaultCredentialsProviderChainTag,config.profile.c_str()));
     AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag,config.profile));
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag, config));
     AddProvider(Aws::MakeShared<SSOCredentialsProvider>(DefaultCredentialsProviderChainTag,config.profile));

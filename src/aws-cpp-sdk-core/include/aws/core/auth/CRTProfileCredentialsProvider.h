@@ -2,8 +2,6 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-//#include <aws/core/auth/AWSCredentials.h>
-//#include <aws/crt/auth/Credentials.h>
 #include <memory>
 
 namespace Aws
@@ -17,21 +15,39 @@ namespace Aws
         class AWS_CORE_API CRTProfileCredentialsProvider : public AWSCredentialsProvider
         {
         public:
-            CRTProfileCredentialsProvider();
-            explicit CRTProfileCredentialsProvider(const char* profileName);
-            ~CRTProfileCredentialsProvider();
+            /**
+        * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
+        */
+            CRTProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
-            CRTProfileCredentialsProvider(const CRTProfileCredentialsProvider&) = delete;
-            CRTProfileCredentialsProvider& operator=(const CRTProfileCredentialsProvider&) = delete;
+            /**
+            * Initializes with a profile override and
+            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
+            */
+            CRTProfileCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
+            /**
+            * Retrieves the credentials if found, otherwise returns empty credential set.
+            */
             AWSCredentials GetAWSCredentials() override;
+
+            /**
+             * Returns the fullpath of the calculated credentials profile file
+             */
+            static Aws::String GetCredentialsProfileFilename();
+
+            /**
+             * Returns the directory storing the profile file.
+             */
+            static Aws::String GetProfileDirectory();
 
         protected:
             void Reload() override;
+            class CRTProfileCredentialsProviderImp;
+            std::shared_ptr<CRTProfileCredentialsProviderImp> m_impl;
 
         private:
-            class Impl;
-            std::shared_ptr<Impl> m_impl;
+            void RefreshIfExpired();
         };
     }
 }
