@@ -162,6 +162,7 @@
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamHandler.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamInitialResponse.h>
 #include <aws/bedrock-runtime/model/InvokeModelWithResponseStreamRequest.h>
+#include <aws/bedrock-runtime/model/JsonSchemaDefinition.h>
 #include <aws/bedrock-runtime/model/ListAsyncInvokesRequest.h>
 #include <aws/bedrock-runtime/model/ListAsyncInvokesResult.h>
 #include <aws/bedrock-runtime/model/Message.h>
@@ -169,6 +170,10 @@
 #include <aws/bedrock-runtime/model/MessageStopEvent.h>
 #include <aws/bedrock-runtime/model/ModelErrorException.h>
 #include <aws/bedrock-runtime/model/ModelStreamErrorException.h>
+#include <aws/bedrock-runtime/model/OutputConfig.h>
+#include <aws/bedrock-runtime/model/OutputFormat.h>
+#include <aws/bedrock-runtime/model/OutputFormatStructure.h>
+#include <aws/bedrock-runtime/model/OutputFormatType.h>
 #include <aws/bedrock-runtime/model/PayloadPart.h>
 #include <aws/bedrock-runtime/model/PerformanceConfigLatency.h>
 #include <aws/bedrock-runtime/model/PerformanceConfiguration.h>

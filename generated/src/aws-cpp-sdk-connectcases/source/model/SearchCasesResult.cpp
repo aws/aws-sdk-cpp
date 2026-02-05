@@ -32,6 +32,10 @@ SearchCasesResult& SearchCasesResult::operator=(const Aws::AmazonWebServiceResul
     }
     m_casesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("totalCount")) {
+    m_totalCount = jsonValue.GetInt64("totalCount");
+    m_totalCountHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

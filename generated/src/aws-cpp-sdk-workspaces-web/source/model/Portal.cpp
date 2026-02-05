@@ -105,6 +105,10 @@ Portal& Portal::operator=(JsonView jsonValue) {
     m_maxConcurrentSessions = jsonValue.GetInteger("maxConcurrentSessions");
     m_maxConcurrentSessionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("portalCustomDomain")) {
+    m_portalCustomDomain = jsonValue.GetString("portalCustomDomain");
+    m_portalCustomDomainHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -197,6 +201,10 @@ JsonValue Portal::Jsonize() const {
 
   if (m_maxConcurrentSessionsHasBeenSet) {
     payload.WithInteger("maxConcurrentSessions", m_maxConcurrentSessions);
+  }
+
+  if (m_portalCustomDomainHasBeenSet) {
+    payload.WithString("portalCustomDomain", m_portalCustomDomain);
   }
 
   return payload;

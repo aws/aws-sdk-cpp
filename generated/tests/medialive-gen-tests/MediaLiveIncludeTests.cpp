@@ -162,6 +162,7 @@
 #include <aws/medialive/model/ColorCorrectionSettings.h>
 #include <aws/medialive/model/ColorSpace.h>
 #include <aws/medialive/model/ColorSpacePassthroughSettings.h>
+#include <aws/medialive/model/ConnectionMode.h>
 #include <aws/medialive/model/ContentType.h>
 #include <aws/medialive/model/CreateChannelPlacementGroupRequest.h>
 #include <aws/medialive/model/CreateChannelPlacementGroupResult.h>
@@ -812,6 +813,10 @@
 #include <aws/medialive/model/SrtCallerSourceRequest.h>
 #include <aws/medialive/model/SrtEncryptionType.h>
 #include <aws/medialive/model/SrtGroupSettings.h>
+#include <aws/medialive/model/SrtListenerDecryption.h>
+#include <aws/medialive/model/SrtListenerDecryptionRequest.h>
+#include <aws/medialive/model/SrtListenerSettings.h>
+#include <aws/medialive/model/SrtListenerSettingsRequest.h>
 #include <aws/medialive/model/SrtOutputDestinationSettings.h>
 #include <aws/medialive/model/SrtOutputSettings.h>
 #include <aws/medialive/model/SrtSettings.h>

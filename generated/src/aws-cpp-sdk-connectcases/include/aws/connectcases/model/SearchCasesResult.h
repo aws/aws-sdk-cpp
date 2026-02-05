@@ -72,6 +72,21 @@ class SearchCasesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The total number of cases that matched the search criteria.</p>
+   */
+  inline long long GetTotalCount() const { return m_totalCount; }
+  inline void SetTotalCount(long long value) {
+    m_totalCountHasBeenSet = true;
+    m_totalCount = value;
+  }
+  inline SearchCasesResult& WithTotalCount(long long value) {
+    SetTotalCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -90,9 +105,12 @@ class SearchCasesResult {
 
   Aws::Vector<SearchCasesResponseItem> m_cases;
 
+  long long m_totalCount{0};
+
   Aws::String m_requestId;
   bool m_nextTokenHasBeenSet = false;
   bool m_casesHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

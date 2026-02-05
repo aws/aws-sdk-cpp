@@ -299,6 +299,30 @@ class UpdateChannelRequest : public MediaLiveRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * A list of IDs for all the Input Security Groups attached to the channel.
+   */
+  inline const Aws::Vector<Aws::String>& GetChannelSecurityGroups() const { return m_channelSecurityGroups; }
+  inline bool ChannelSecurityGroupsHasBeenSet() const { return m_channelSecurityGroupsHasBeenSet; }
+  template <typename ChannelSecurityGroupsT = Aws::Vector<Aws::String>>
+  void SetChannelSecurityGroups(ChannelSecurityGroupsT&& value) {
+    m_channelSecurityGroupsHasBeenSet = true;
+    m_channelSecurityGroups = std::forward<ChannelSecurityGroupsT>(value);
+  }
+  template <typename ChannelSecurityGroupsT = Aws::Vector<Aws::String>>
+  UpdateChannelRequest& WithChannelSecurityGroups(ChannelSecurityGroupsT&& value) {
+    SetChannelSecurityGroups(std::forward<ChannelSecurityGroupsT>(value));
+    return *this;
+  }
+  template <typename ChannelSecurityGroupsT = Aws::String>
+  UpdateChannelRequest& AddChannelSecurityGroups(ChannelSecurityGroupsT&& value) {
+    m_channelSecurityGroupsHasBeenSet = true;
+    m_channelSecurityGroups.emplace_back(std::forward<ChannelSecurityGroupsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
 
@@ -327,6 +351,8 @@ class UpdateChannelRequest : public MediaLiveRequest {
   AnywhereSettings m_anywhereSettings;
 
   LinkedChannelSettings m_linkedChannelSettings;
+
+  Aws::Vector<Aws::String> m_channelSecurityGroups;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
@@ -341,6 +367,7 @@ class UpdateChannelRequest : public MediaLiveRequest {
   bool m_dryRunHasBeenSet = false;
   bool m_anywhereSettingsHasBeenSet = false;
   bool m_linkedChannelSettingsHasBeenSet = false;
+  bool m_channelSecurityGroupsHasBeenSet = false;
 };
 
 }  // namespace Model

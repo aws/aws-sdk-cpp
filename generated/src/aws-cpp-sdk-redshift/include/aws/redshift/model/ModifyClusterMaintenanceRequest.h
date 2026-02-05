@@ -126,7 +126,7 @@ class ModifyClusterMaintenanceRequest : public RedshiftRequest {
   ///@{
   /**
    * <p>An integer indicating the duration of the maintenance window in days. If you
-   * specify a duration, you can't specify an end time. The duration must be 45 days
+   * specify a duration, you can't specify an end time. The duration must be 60 days
    * or less.</p>
    */
   inline int GetDeferMaintenanceDuration() const { return m_deferMaintenanceDuration; }

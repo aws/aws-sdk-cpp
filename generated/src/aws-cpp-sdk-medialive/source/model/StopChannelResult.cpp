@@ -120,6 +120,14 @@ StopChannelResult& StopChannelResult::operator=(const Aws::AmazonWebServiceResul
     m_linkedChannelSettings = jsonValue.GetObject("linkedChannelSettings");
     m_linkedChannelSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channelSecurityGroups")) {
+    Aws::Utils::Array<JsonView> channelSecurityGroupsJsonList = jsonValue.GetArray("channelSecurityGroups");
+    for (unsigned channelSecurityGroupsIndex = 0; channelSecurityGroupsIndex < channelSecurityGroupsJsonList.GetLength();
+         ++channelSecurityGroupsIndex) {
+      m_channelSecurityGroups.push_back(channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString());
+    }
+    m_channelSecurityGroupsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

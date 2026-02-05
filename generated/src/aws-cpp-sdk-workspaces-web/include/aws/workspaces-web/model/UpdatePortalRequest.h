@@ -122,6 +122,25 @@ class UpdatePortalRequest : public WorkSpacesWebRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The custom domain of the web portal that users access in order to start
+   * streaming sessions. </p>
+   */
+  inline const Aws::String& GetPortalCustomDomain() const { return m_portalCustomDomain; }
+  inline bool PortalCustomDomainHasBeenSet() const { return m_portalCustomDomainHasBeenSet; }
+  template <typename PortalCustomDomainT = Aws::String>
+  void SetPortalCustomDomain(PortalCustomDomainT&& value) {
+    m_portalCustomDomainHasBeenSet = true;
+    m_portalCustomDomain = std::forward<PortalCustomDomainT>(value);
+  }
+  template <typename PortalCustomDomainT = Aws::String>
+  UpdatePortalRequest& WithPortalCustomDomain(PortalCustomDomainT&& value) {
+    SetPortalCustomDomain(std::forward<PortalCustomDomainT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_portalArn;
 
@@ -132,11 +151,14 @@ class UpdatePortalRequest : public WorkSpacesWebRequest {
   InstanceType m_instanceType{InstanceType::NOT_SET};
 
   int m_maxConcurrentSessions{0};
+
+  Aws::String m_portalCustomDomain;
   bool m_portalArnHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_maxConcurrentSessionsHasBeenSet = false;
+  bool m_portalCustomDomainHasBeenSet = false;
 };
 
 }  // namespace Model

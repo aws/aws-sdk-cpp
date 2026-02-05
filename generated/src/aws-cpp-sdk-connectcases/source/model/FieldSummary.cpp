@@ -38,6 +38,10 @@ FieldSummary& FieldSummary::operator=(JsonView jsonValue) {
     m_namespace = FieldNamespaceMapper::GetFieldNamespaceForName(jsonValue.GetString("namespace"));
     m_namespaceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("attributes")) {
+    m_attributes = jsonValue.GetObject("attributes");
+    m_attributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue FieldSummary::Jsonize() const {
 
   if (m_namespaceHasBeenSet) {
     payload.WithString("namespace", FieldNamespaceMapper::GetNameForFieldNamespace(m_namespace));
+  }
+
+  if (m_attributesHasBeenSet) {
+    payload.WithObject("attributes", m_attributes.Jsonize());
   }
 
   return payload;

@@ -95,5 +95,14 @@ Aws::String CreateChannelRequest::SerializePayload() const {
     payload.WithObject("linkedChannelSettings", m_linkedChannelSettings.Jsonize());
   }
 
+  if (m_channelSecurityGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> channelSecurityGroupsJsonList(m_channelSecurityGroups.size());
+    for (unsigned channelSecurityGroupsIndex = 0; channelSecurityGroupsIndex < channelSecurityGroupsJsonList.GetLength();
+         ++channelSecurityGroupsIndex) {
+      channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString(m_channelSecurityGroups[channelSecurityGroupsIndex]);
+    }
+    payload.WithArray("channelSecurityGroups", std::move(channelSecurityGroupsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

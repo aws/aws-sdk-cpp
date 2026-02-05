@@ -158,6 +158,31 @@ class InputSecurityGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * The list of channels currently using this Input Security Group as their channel
+   * security group.
+   */
+  inline const Aws::Vector<Aws::String>& GetChannels() const { return m_channels; }
+  inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+  template <typename ChannelsT = Aws::Vector<Aws::String>>
+  void SetChannels(ChannelsT&& value) {
+    m_channelsHasBeenSet = true;
+    m_channels = std::forward<ChannelsT>(value);
+  }
+  template <typename ChannelsT = Aws::Vector<Aws::String>>
+  InputSecurityGroup& WithChannels(ChannelsT&& value) {
+    SetChannels(std::forward<ChannelsT>(value));
+    return *this;
+  }
+  template <typename ChannelsT = Aws::String>
+  InputSecurityGroup& AddChannels(ChannelsT&& value) {
+    m_channelsHasBeenSet = true;
+    m_channels.emplace_back(std::forward<ChannelsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -170,12 +195,15 @@ class InputSecurityGroup {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::Vector<InputWhitelistRule> m_whitelistRules;
+
+  Aws::Vector<Aws::String> m_channels;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_inputsHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_whitelistRulesHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
 };
 
 }  // namespace Model

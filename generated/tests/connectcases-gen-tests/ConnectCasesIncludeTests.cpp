@@ -82,6 +82,7 @@
 #include <aws/connectcases/model/EmptyOperandValue.h>
 #include <aws/connectcases/model/EventBridgeConfiguration.h>
 #include <aws/connectcases/model/EventIncludedData.h>
+#include <aws/connectcases/model/FieldAttributes.h>
 #include <aws/connectcases/model/FieldError.h>
 #include <aws/connectcases/model/FieldFilter.h>
 #include <aws/connectcases/model/FieldGroup.h>
@@ -176,6 +177,7 @@
 #include <aws/connectcases/model/TemplateRule.h>
 #include <aws/connectcases/model/TemplateStatus.h>
 #include <aws/connectcases/model/TemplateSummary.h>
+#include <aws/connectcases/model/TextAttributes.h>
 #include <aws/connectcases/model/UntagResourceRequest.h>
 #include <aws/connectcases/model/UpdateCaseRequest.h>
 #include <aws/connectcases/model/UpdateCaseResult.h>

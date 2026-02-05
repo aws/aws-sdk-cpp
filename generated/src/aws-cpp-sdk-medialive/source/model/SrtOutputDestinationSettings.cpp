@@ -30,6 +30,14 @@ SrtOutputDestinationSettings& SrtOutputDestinationSettings::operator=(JsonView j
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connectionMode")) {
+    m_connectionMode = ConnectionModeMapper::GetConnectionModeForName(jsonValue.GetString("connectionMode"));
+    m_connectionModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("listenerPort")) {
+    m_listenerPort = jsonValue.GetInteger("listenerPort");
+    m_listenerPortHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue SrtOutputDestinationSettings::Jsonize() const {
 
   if (m_urlHasBeenSet) {
     payload.WithString("url", m_url);
+  }
+
+  if (m_connectionModeHasBeenSet) {
+    payload.WithString("connectionMode", ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
+  }
+
+  if (m_listenerPortHasBeenSet) {
+    payload.WithInteger("listenerPort", m_listenerPort);
   }
 
   return payload;

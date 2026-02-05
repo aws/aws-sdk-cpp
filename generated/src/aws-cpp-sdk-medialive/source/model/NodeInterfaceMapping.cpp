@@ -30,6 +30,14 @@ NodeInterfaceMapping& NodeInterfaceMapping::operator=(JsonView jsonValue) {
     m_physicalInterfaceName = jsonValue.GetString("physicalInterfaceName");
     m_physicalInterfaceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("physicalInterfaceIpAddresses")) {
+    Aws::Utils::Array<JsonView> physicalInterfaceIpAddressesJsonList = jsonValue.GetArray("physicalInterfaceIpAddresses");
+    for (unsigned physicalInterfaceIpAddressesIndex = 0;
+         physicalInterfaceIpAddressesIndex < physicalInterfaceIpAddressesJsonList.GetLength(); ++physicalInterfaceIpAddressesIndex) {
+      m_physicalInterfaceIpAddresses.push_back(physicalInterfaceIpAddressesJsonList[physicalInterfaceIpAddressesIndex].AsString());
+    }
+    m_physicalInterfaceIpAddressesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,16 @@ JsonValue NodeInterfaceMapping::Jsonize() const {
 
   if (m_physicalInterfaceNameHasBeenSet) {
     payload.WithString("physicalInterfaceName", m_physicalInterfaceName);
+  }
+
+  if (m_physicalInterfaceIpAddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> physicalInterfaceIpAddressesJsonList(m_physicalInterfaceIpAddresses.size());
+    for (unsigned physicalInterfaceIpAddressesIndex = 0;
+         physicalInterfaceIpAddressesIndex < physicalInterfaceIpAddressesJsonList.GetLength(); ++physicalInterfaceIpAddressesIndex) {
+      physicalInterfaceIpAddressesJsonList[physicalInterfaceIpAddressesIndex].AsString(
+          m_physicalInterfaceIpAddresses[physicalInterfaceIpAddressesIndex]);
+    }
+    payload.WithArray("physicalInterfaceIpAddresses", std::move(physicalInterfaceIpAddressesJsonList));
   }
 
   return payload;

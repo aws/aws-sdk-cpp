@@ -25,6 +25,10 @@ SrtSettings& SrtSettings::operator=(JsonView jsonValue) {
     }
     m_srtCallerSourcesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("srtListenerSettings")) {
+    m_srtListenerSettings = jsonValue.GetObject("srtListenerSettings");
+    m_srtListenerSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue SrtSettings::Jsonize() const {
       srtCallerSourcesJsonList[srtCallerSourcesIndex].AsObject(m_srtCallerSources[srtCallerSourcesIndex].Jsonize());
     }
     payload.WithArray("srtCallerSources", std::move(srtCallerSourcesJsonList));
+  }
+
+  if (m_srtListenerSettingsHasBeenSet) {
+    payload.WithObject("srtListenerSettings", m_srtListenerSettings.Jsonize());
   }
 
   return payload;

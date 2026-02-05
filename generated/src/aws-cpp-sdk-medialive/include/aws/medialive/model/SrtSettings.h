@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/SrtCallerSource.h>
+#include <aws/medialive/model/SrtListenerSettings.h>
 
 #include <utility>
 
@@ -21,7 +22,8 @@ namespace MediaLive {
 namespace Model {
 
 /**
- * The configured sources for this SRT input.<p><h3>See Also:</h3>   <a
+ * The configured settings for SRT inputs (caller and listener).<p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/SrtSettings">AWS
  * API Reference</a></p>
  */
@@ -53,9 +55,28 @@ class SrtSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const SrtListenerSettings& GetSrtListenerSettings() const { return m_srtListenerSettings; }
+  inline bool SrtListenerSettingsHasBeenSet() const { return m_srtListenerSettingsHasBeenSet; }
+  template <typename SrtListenerSettingsT = SrtListenerSettings>
+  void SetSrtListenerSettings(SrtListenerSettingsT&& value) {
+    m_srtListenerSettingsHasBeenSet = true;
+    m_srtListenerSettings = std::forward<SrtListenerSettingsT>(value);
+  }
+  template <typename SrtListenerSettingsT = SrtListenerSettings>
+  SrtSettings& WithSrtListenerSettings(SrtListenerSettingsT&& value) {
+    SetSrtListenerSettings(std::forward<SrtListenerSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<SrtCallerSource> m_srtCallerSources;
+
+  SrtListenerSettings m_srtListenerSettings;
   bool m_srtCallerSourcesHasBeenSet = false;
+  bool m_srtListenerSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

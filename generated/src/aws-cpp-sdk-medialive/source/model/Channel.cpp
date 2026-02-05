@@ -117,6 +117,14 @@ Channel& Channel::operator=(JsonView jsonValue) {
     m_linkedChannelSettings = jsonValue.GetObject("linkedChannelSettings");
     m_linkedChannelSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channelSecurityGroups")) {
+    Aws::Utils::Array<JsonView> channelSecurityGroupsJsonList = jsonValue.GetArray("channelSecurityGroups");
+    for (unsigned channelSecurityGroupsIndex = 0; channelSecurityGroupsIndex < channelSecurityGroupsJsonList.GetLength();
+         ++channelSecurityGroupsIndex) {
+      m_channelSecurityGroups.push_back(channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString());
+    }
+    m_channelSecurityGroupsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -225,6 +233,15 @@ JsonValue Channel::Jsonize() const {
 
   if (m_linkedChannelSettingsHasBeenSet) {
     payload.WithObject("linkedChannelSettings", m_linkedChannelSettings.Jsonize());
+  }
+
+  if (m_channelSecurityGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> channelSecurityGroupsJsonList(m_channelSecurityGroups.size());
+    for (unsigned channelSecurityGroupsIndex = 0; channelSecurityGroupsIndex < channelSecurityGroupsJsonList.GetLength();
+         ++channelSecurityGroupsIndex) {
+      channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString(m_channelSecurityGroups[channelSecurityGroupsIndex]);
+    }
+    payload.WithArray("channelSecurityGroups", std::move(channelSecurityGroupsJsonList));
   }
 
   return payload;

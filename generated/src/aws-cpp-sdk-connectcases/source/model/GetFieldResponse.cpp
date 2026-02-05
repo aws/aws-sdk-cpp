@@ -61,6 +61,10 @@ GetFieldResponse& GetFieldResponse::operator=(JsonView jsonValue) {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("attributes")) {
+    m_attributes = jsonValue.GetObject("attributes");
+    m_attributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +113,10 @@ JsonValue GetFieldResponse::Jsonize() const {
 
   if (m_lastModifiedTimeHasBeenSet) {
     payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_attributesHasBeenSet) {
+    payload.WithObject("attributes", m_attributes.Jsonize());
   }
 
   return payload;
