@@ -628,25 +628,25 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
       errorResponse, [](IOStream&) -> void {},
       [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
         // Partially read the buffer, such that the request checksum ends up in a bad state.
+        ASSERT_TRUE(request->GetContentBody());
         Aws::Array<char, 12> tempBuffer;
-        if (request->GetContentBody()) {
-          request->GetContentBody()->read(tempBuffer.data(), 12);
-        }
+        request->GetContentBody()->read(tempBuffer.data(), 12);
       });
 
   const auto successResponseStream = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_POST);
   successResponseStream->SetResponseStreamFactory(Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-  auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, errorResponseStream);
+  auto successResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, successResponseStream);
   successResponse->SetResponseCode(HttpResponseCode::OK);
   _mockHttpClient->AddResponseToReturn(
-      successResponse, [](IOStream& stream) -> void {EXPECT_EQ(stream.tellg(), 0);}, [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
+      successResponse, [](IOStream&) -> void {},
+      [](const std::shared_ptr<Aws::Http::HttpRequest>& request) -> void {
+        ASSERT_TRUE(request->GetContentBody());
         Aws::Array<char, 9216> tempBuffer;
-        if (request->GetContentBody()) {
-          request->GetContentBody()->read(tempBuffer.data(), 9216);
-        }
+        request->GetContentBody()->read(tempBuffer.data(), 9216);
       });
 
   // The top level test has a no retry policy so we have to create one that retries
+  _mockHttpClient->Reset();
   const AWSCredentials credentials{"mock", "credentials"};
   ClientConfigurationInitValues initValues;
   initValues.shouldDisableIMDS = true;
@@ -658,6 +658,7 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
 
   const auto response = clientWithRetries.PutObject(request);
   AWS_EXPECT_SUCCESS(response);
+  EXPECT_EQ(_mockHttpClient->GetAllRequestsMade().size(), 2ULL);
 
   Aws::Utils::Crypto::CRC64 crc64Hash{};
   const auto expectedChecksum = crc64Hash.Calculate(bodyString);
