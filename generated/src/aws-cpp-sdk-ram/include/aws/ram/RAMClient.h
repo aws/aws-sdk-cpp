@@ -114,11 +114,11 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Adds the specified list of principals and list of resources to a resource
-   * share. Principals that already have access to this resource share immediately
-   * receive access to the added resources. Newly added principals immediately
-   * receive access to the resources shared in this resource share. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Adds the specified list of principals, resources, and source constraints to a
+   * resource share. Principals that already have access to this resource share
+   * immediately receive access to the added resources. Newly added principals
+   * immediately receive access to the resources shared in this resource share.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">AWS
    * API Reference</a></p>
    */
@@ -243,11 +243,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * <p>Creates a resource share. You can provide a list of the <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
    * Resource Names (ARNs)</a> for the resources that you want to share, a list of
-   * principals you want to share the resources with, and the permissions to grant
-   * those principals.</p>  <p>Sharing a resource makes it available for use by
-   * principals outside of the Amazon Web Services account that created the resource.
-   * Sharing doesn't change any permissions or quotas that apply to the resource in
-   * the account that created it.</p> <p><h3>See Also:</h3>   <a
+   * principals you want to share the resources with, the permissions to grant those
+   * principals, and optionally source constraints to enhance security for service
+   * principal sharing.</p>  <p>Sharing a resource makes it available for use
+   * by principals outside of the Amazon Web Services account that created the
+   * resource. Sharing doesn't change any permissions or quotas that apply to the
+   * resource in the account that created it.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">AWS
    * API Reference</a></p>
    */
@@ -363,8 +364,8 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Removes the specified principals or resources from participating in the
-   * specified resource share.</p><p><h3>See Also:</h3>   <a
+   * <p>Removes the specified principals, resources, or source constraints from
+   * participating in the specified resource share.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceShare">AWS
    * API Reference</a></p>
    */
@@ -491,7 +492,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Retrieves the resource policies for the specified resources that you own and
-   * have shared.</p><p><h3>See Also:</h3>   <a
+   * have shared.</p>  <p>Always check the <code>NextToken</code> response
+   * parameter for a <code>null</code> value when calling a paginated operation.
+   * These operations can occasionally return an empty set of results even when there
+   * are more results available. The <code>NextToken</code> response parameter value
+   * is <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
    * API Reference</a></p>
    */
@@ -518,7 +524,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Retrieves the lists of resources and principals that associated for resource
-   * shares that you own.</p><p><h3>See Also:</h3>   <a
+   * shares that you own.</p>  <p>Always check the <code>NextToken</code>
+   * response parameter for a <code>null</code> value when calling a paginated
+   * operation. These operations can occasionally return an empty set of results even
+   * when there are more results available. The <code>NextToken</code> response
+   * parameter value is <code>null</code> <i>only</i> when there are no more results
+   * to display.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
    * API Reference</a></p>
    */
@@ -548,7 +559,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Retrieves details about invitations that you have received for resource
-   * shares.</p><p><h3>See Also:</h3>   <a
+   * shares.</p>  <p>Always check the <code>NextToken</code> response parameter
+   * for a <code>null</code> value when calling a paginated operation. These
+   * operations can occasionally return an empty set of results even when there are
+   * more results available. The <code>NextToken</code> response parameter value is
+   * <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
    * API Reference</a></p>
    */
@@ -578,7 +594,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Retrieves details about the resource shares that you own or that are shared
-   * with you.</p><p><h3>See Also:</h3>   <a
+   * with you.</p>  <p>Always check the <code>NextToken</code> response
+   * parameter for a <code>null</code> value when calling a paginated operation.
+   * These operations can occasionally return an empty set of results even when there
+   * are more results available. The <code>NextToken</code> response parameter value
+   * is <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
    * API Reference</a></p>
    */
@@ -606,8 +627,13 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   /**
    * <p>Lists the resources in a resource share that is shared with you but for which
    * the invitation is still <code>PENDING</code>. That means that you haven't
-   * accepted or rejected the invitation and the invitation hasn't
-   * expired.</p><p><h3>See Also:</h3>   <a
+   * accepted or rejected the invitation and the invitation hasn't expired.</p>
+   *  <p>Always check the <code>NextToken</code> response parameter for a
+   * <code>null</code> value when calling a paginated operation. These operations can
+   * occasionally return an empty set of results even when there are more results
+   * available. The <code>NextToken</code> response parameter value is
+   * <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
    * API Reference</a></p>
    */
@@ -638,8 +664,13 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   /**
    * <p>Lists information about the managed permission and its associations to any
    * resource shares that use this managed permission. This lets you see which
-   * resource shares use which versions of the specified managed
-   * permission.</p><p><h3>See Also:</h3>   <a
+   * resource shares use which versions of the specified managed permission.</p>
+   *  <p>Always check the <code>NextToken</code> response parameter for a
+   * <code>null</code> value when calling a paginated operation. These operations can
+   * occasionally return an empty set of results even when there are more results
+   * available. The <code>NextToken</code> response parameter value is
+   * <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations">AWS
    * API Reference</a></p>
    */
@@ -668,8 +699,13 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Lists the available versions of the specified RAM permission.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Lists the available versions of the specified RAM permission.</p>
+   * <p>Always check the <code>NextToken</code> response parameter for a
+   * <code>null</code> value when calling a paginated operation. These operations can
+   * occasionally return an empty set of results even when there are more results
+   * available. The <code>NextToken</code> response parameter value is
+   * <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">AWS
    * API Reference</a></p>
    */
@@ -697,7 +733,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Retrieves a list of available RAM permissions that you can use for the
-   * supported resource types. </p><p><h3>See Also:</h3>   <a
+   * supported resource types. </p>  <p>Always check the <code>NextToken</code>
+   * response parameter for a <code>null</code> value when calling a paginated
+   * operation. These operations can occasionally return an empty set of results even
+   * when there are more results available. The <code>NextToken</code> response
+   * parameter value is <code>null</code> <i>only</i> when there are no more results
+   * to display.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">AWS
    * API Reference</a></p>
    */
@@ -724,7 +765,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Lists the principals that you are sharing resources with or that are sharing
-   * resources with you.</p><p><h3>See Also:</h3>   <a
+   * resources with you.</p>  <p>Always check the <code>NextToken</code>
+   * response parameter for a <code>null</code> value when calling a paginated
+   * operation. These operations can occasionally return an empty set of results even
+   * when there are more results available. The <code>NextToken</code> response
+   * parameter value is <code>null</code> <i>only</i> when there are no more results
+   * to display.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
    * API Reference</a></p>
    */
@@ -750,8 +796,13 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Retrieves the current status of the asynchronous tasks performed by RAM when
-   * you perform the <a>ReplacePermissionAssociationsWork</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * you perform the <a>ReplacePermissionAssociationsWork</a> operation.</p>
+   * <p>Always check the <code>NextToken</code> response parameter for a
+   * <code>null</code> value when calling a paginated operation. These operations can
+   * occasionally return an empty set of results even when there are more results
+   * available. The <code>NextToken</code> response parameter value is
+   * <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork">AWS
    * API Reference</a></p>
    */
@@ -780,8 +831,13 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Lists the RAM permissions that are associated with a resource
-   * share.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the RAM permissions that are associated with a resource share.</p>
+   *  <p>Always check the <code>NextToken</code> response parameter for a
+   * <code>null</code> value when calling a paginated operation. These operations can
+   * occasionally return an empty set of results even when there are more results
+   * available. The <code>NextToken</code> response parameter value is
+   * <code>null</code> <i>only</i> when there are no more results to display.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">AWS
    * API Reference</a></p>
    */
@@ -839,7 +895,12 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Lists the resources that you added to a resource share or the resources that
-   * are shared with you.</p><p><h3>See Also:</h3>   <a
+   * are shared with you.</p>  <p>Always check the <code>NextToken</code>
+   * response parameter for a <code>null</code> value when calling a paginated
+   * operation. These operations can occasionally return an empty set of results even
+   * when there are more results available. The <code>NextToken</code> response
+   * parameter value is <code>null</code> <i>only</i> when there are no more results
+   * to display.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
    * API Reference</a></p>
    */
@@ -861,6 +922,39 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   void ListResourcesAsync(const ListResourcesRequestT& request, const ListResourcesResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RAMClient::ListResources, request, handler, context);
+  }
+
+  /**
+   * <p>Lists source associations for resource shares. Source associations control
+   * which sources can be used with service principals in resource shares. This
+   * operation provides visibility into source associations for resource share
+   * owners.</p> <p>You can filter the results by resource share Amazon Resource Name
+   * (ARN), source ID, source type, or association status. We recommend using
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListSourceAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSourceAssociationsOutcome ListSourceAssociations(const Model::ListSourceAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSourceAssociations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSourceAssociationsRequestT = Model::ListSourceAssociationsRequest>
+  Model::ListSourceAssociationsOutcomeCallable ListSourceAssociationsCallable(const ListSourceAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&RAMClient::ListSourceAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListSourceAssociations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSourceAssociationsRequestT = Model::ListSourceAssociationsRequest>
+  void ListSourceAssociationsAsync(const ListSourceAssociationsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListSourceAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&RAMClient::ListSourceAssociations, request, handler, context);
   }
 
   /**

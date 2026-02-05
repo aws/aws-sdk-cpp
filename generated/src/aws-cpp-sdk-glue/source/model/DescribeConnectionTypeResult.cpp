@@ -89,6 +89,10 @@ DescribeConnectionTypeResult& DescribeConnectionTypeResult::operator=(const Aws:
     }
     m_sparkConnectionPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RestConfiguration")) {
+    m_restConfiguration = jsonValue.GetObject("RestConfiguration");
+    m_restConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

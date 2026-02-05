@@ -10,7 +10,7 @@
 namespace Aws {
 namespace RAM {
 namespace Model {
-enum class ResourceShareAssociationType { NOT_SET, PRINCIPAL, RESOURCE };
+enum class ResourceShareAssociationType { NOT_SET, PRINCIPAL, RESOURCE, SOURCE };
 
 namespace ResourceShareAssociationTypeMapper {
 AWS_RAM_API ResourceShareAssociationType GetResourceShareAssociationTypeForName(const Aws::String& name);

@@ -36,6 +36,8 @@
 #include <aws/bedrock-agentcore-control/model/BedrockEvaluatorModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkMode.h>
+#include <aws/bedrock-agentcore-control/model/BrowserProfileStatus.h>
+#include <aws/bedrock-agentcore-control/model/BrowserProfileSummary.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
@@ -61,6 +63,8 @@
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateApiKeyCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateBrowserProfileRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterRequest.h>
@@ -106,6 +110,8 @@
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteApiKeyCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteBrowserProfileRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterRequest.h>
@@ -170,6 +176,8 @@
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/GetApiKeyCredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/GetBrowserProfileRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterRequest.h>
@@ -224,6 +232,8 @@
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersResult.h>
+#include <aws/bedrock-agentcore-control/model/ListBrowserProfilesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListBrowserProfilesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>

@@ -73,8 +73,8 @@ class Trigger {
 
   ///@{
   /**
-   * <p>The action to perform when the trigger fires. Valid values include ACTIVATE
-   * and DEACTIVATE.</p>
+   * <p>The action to perform when the trigger fires. Valid values include
+   * <code>activate</code> and <code>deactivate</code>.</p>
    */
   inline WorkflowTargetAction GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }

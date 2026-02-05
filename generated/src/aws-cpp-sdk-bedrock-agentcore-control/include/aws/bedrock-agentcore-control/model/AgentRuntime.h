@@ -23,7 +23,8 @@ namespace Model {
 
 /**
  * <p>Contains information about an agent runtime. An agent runtime is the
- * execution environment for a Amazon Bedrock Agent.</p><p><h3>See Also:</h3>   <a
+ * execution environment for a Amazon Bedrock AgentCore Agent.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AgentRuntime">AWS
  * API Reference</a></p>
  */

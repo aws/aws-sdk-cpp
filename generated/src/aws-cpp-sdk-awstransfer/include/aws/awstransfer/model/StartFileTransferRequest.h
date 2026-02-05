@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/CustomHttpHeader.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -142,6 +143,32 @@ class StartFileTransferRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of key-value pairs that represent custom HTTP headers to include in
+   * AS2 messages. These headers are added to the AS2 message when sending files to
+   * your trading partner.</p>
+   */
+  inline const Aws::Vector<CustomHttpHeader>& GetCustomHttpHeaders() const { return m_customHttpHeaders; }
+  inline bool CustomHttpHeadersHasBeenSet() const { return m_customHttpHeadersHasBeenSet; }
+  template <typename CustomHttpHeadersT = Aws::Vector<CustomHttpHeader>>
+  void SetCustomHttpHeaders(CustomHttpHeadersT&& value) {
+    m_customHttpHeadersHasBeenSet = true;
+    m_customHttpHeaders = std::forward<CustomHttpHeadersT>(value);
+  }
+  template <typename CustomHttpHeadersT = Aws::Vector<CustomHttpHeader>>
+  StartFileTransferRequest& WithCustomHttpHeaders(CustomHttpHeadersT&& value) {
+    SetCustomHttpHeaders(std::forward<CustomHttpHeadersT>(value));
+    return *this;
+  }
+  template <typename CustomHttpHeadersT = CustomHttpHeader>
+  StartFileTransferRequest& AddCustomHttpHeaders(CustomHttpHeadersT&& value) {
+    m_customHttpHeadersHasBeenSet = true;
+    m_customHttpHeaders.emplace_back(std::forward<CustomHttpHeadersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_connectorId;
 
@@ -152,11 +179,14 @@ class StartFileTransferRequest : public TransferRequest {
   Aws::String m_localDirectoryPath;
 
   Aws::String m_remoteDirectoryPath;
+
+  Aws::Vector<CustomHttpHeader> m_customHttpHeaders;
   bool m_connectorIdHasBeenSet = false;
   bool m_sendFilePathsHasBeenSet = false;
   bool m_retrieveFilePathsHasBeenSet = false;
   bool m_localDirectoryPathHasBeenSet = false;
   bool m_remoteDirectoryPathHasBeenSet = false;
+  bool m_customHttpHeadersHasBeenSet = false;
 };
 
 }  // namespace Model

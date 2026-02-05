@@ -188,6 +188,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Creates a browser profile in Amazon Bedrock AgentCore. A browser profile
+   * stores persistent browser data such as cookies, local storage, session storage,
+   * and browsing history that can be saved from browser sessions and reused in
+   * subsequent sessions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateBrowserProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateBrowserProfileOutcome CreateBrowserProfile(const Model::CreateBrowserProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateBrowserProfile that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateBrowserProfileRequestT = Model::CreateBrowserProfileRequest>
+  Model::CreateBrowserProfileOutcomeCallable CreateBrowserProfileCallable(const CreateBrowserProfileRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateBrowserProfile, request);
+  }
+
+  /**
+   * An Async wrapper for CreateBrowserProfile that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateBrowserProfileRequestT = Model::CreateBrowserProfileRequest>
+  void CreateBrowserProfileAsync(const CreateBrowserProfileRequestT& request, const CreateBrowserProfileResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateBrowserProfile, request, handler, context);
+  }
+
+  /**
    * <p>Creates a custom code interpreter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateCodeInterpreter">AWS
    * API Reference</a></p>
@@ -588,6 +617,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void DeleteBrowserAsync(const DeleteBrowserRequestT& request, const DeleteBrowserResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteBrowser, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a browser profile.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowserProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteBrowserProfileOutcome DeleteBrowserProfile(const Model::DeleteBrowserProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteBrowserProfile that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteBrowserProfileRequestT = Model::DeleteBrowserProfileRequest>
+  Model::DeleteBrowserProfileOutcomeCallable DeleteBrowserProfileCallable(const DeleteBrowserProfileRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteBrowserProfile, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteBrowserProfile that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteBrowserProfileRequestT = Model::DeleteBrowserProfileRequest>
+  void DeleteBrowserProfileAsync(const DeleteBrowserProfileRequestT& request, const DeleteBrowserProfileResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteBrowserProfile, request, handler, context);
   }
 
   /**
@@ -1000,6 +1055,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetBrowserAsync(const GetBrowserRequestT& request, const GetBrowserResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetBrowser, request, handler, context);
+  }
+
+  /**
+   * <p>Gets information about a browser profile.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowserProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBrowserProfileOutcome GetBrowserProfile(const Model::GetBrowserProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBrowserProfile that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetBrowserProfileRequestT = Model::GetBrowserProfileRequest>
+  Model::GetBrowserProfileOutcomeCallable GetBrowserProfileCallable(const GetBrowserProfileRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetBrowserProfile, request);
+  }
+
+  /**
+   * An Async wrapper for GetBrowserProfile that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetBrowserProfileRequestT = Model::GetBrowserProfileRequest>
+  void GetBrowserProfileAsync(const GetBrowserProfileRequestT& request, const GetBrowserProfileResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetBrowserProfile, request, handler, context);
   }
 
   /**
@@ -1475,6 +1556,33 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Lists all browser profiles in your account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowserProfiles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBrowserProfilesOutcome ListBrowserProfiles(const Model::ListBrowserProfilesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBrowserProfiles that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListBrowserProfilesRequestT = Model::ListBrowserProfilesRequest>
+  Model::ListBrowserProfilesOutcomeCallable ListBrowserProfilesCallable(const ListBrowserProfilesRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListBrowserProfiles, request);
+  }
+
+  /**
+   * An Async wrapper for ListBrowserProfiles that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListBrowserProfilesRequestT = Model::ListBrowserProfilesRequest>
+  void ListBrowserProfilesAsync(const ListBrowserProfilesResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListBrowserProfilesRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListBrowserProfiles, request, handler, context);
+  }
+
+  /**
    * <p>Lists all custom browsers in your account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowsers">AWS
    * API Reference</a></p>
@@ -1817,8 +1925,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
 
   /**
    * <p>Lists the tags associated with the specified resource.</p>  <p>This
-   * feature is currently available only for AgentCore Runtime, Browser, Code
-   * Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>   <a
+   * feature is currently available only for AgentCore Runtime, Browser, Browser
+   * Profile, Code Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -1996,8 +2105,8 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
    * If existing tags on a resource are not specified in the request parameters, they
    * are not changed. When a resource is deleted, the tags associated with that
    * resource are also deleted.</p>  <p>This feature is currently available
-   * only for AgentCore Runtime, Browser, Code Interpreter tool, and Gateway.</p>
-   * <p><h3>See Also:</h3>   <a
+   * only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and
+   * Gateway.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/TagResource">AWS
    * API Reference</a></p>
    */
@@ -2023,8 +2132,9 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
 
   /**
    * <p>Removes the specified tags from the specified resource.</p>  <p>This
-   * feature is currently available only for AgentCore Runtime, Browser, Code
-   * Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>   <a
+   * feature is currently available only for AgentCore Runtime, Browser, Browser
+   * Profile, Code Interpreter tool, and Gateway.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UntagResource">AWS
    * API Reference</a></p>
    */

@@ -71,8 +71,9 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
 
   ///@{
   /**
-   * <p>The action to perform. Valid values are ACTIVATE (to shift traffic to the
-   * target Region) or DEACTIVATE (to shift traffic away from the target Region).</p>
+   * <p>The action to perform. Valid values are <code>activate</code> (to shift
+   * traffic to the target Region) or <code>deactivate</code> (to shift traffic away
+   * from the target Region).</p>
    */
   inline ExecutionAction GetAction() const { return m_action; }
   inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -88,9 +89,9 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
 
   ///@{
   /**
-   * <p>The plan execution mode. Valid values are <code>Practice</code>, for testing
-   * without making actual changes, or <code>Recovery</code>, for actual traffic
-   * shifting and application recovery.</p>
+   * <p>The plan execution mode. Valid values are <code>graceful</code>, for starting
+   * the execution in graceful mode, or <code>ungraceful</code>, for starting the
+   * execution in ungraceful mode.</p>
    */
   inline ExecutionMode GetMode() const { return m_mode; }
   inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }

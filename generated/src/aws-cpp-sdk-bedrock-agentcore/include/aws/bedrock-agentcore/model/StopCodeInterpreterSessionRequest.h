@@ -113,7 +113,7 @@ class StopCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
   /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If this token matches a previous request, Amazon Bedrock
-   * ignores the request, but does not return an error.</p>
+   * AgentCore ignores the request, but does not return an error.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

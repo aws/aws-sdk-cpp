@@ -10,7 +10,17 @@
 namespace Aws {
 namespace RAM {
 namespace Model {
-enum class ResourceShareAssociationStatus { NOT_SET, ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED };
+enum class ResourceShareAssociationStatus {
+  NOT_SET,
+  ASSOCIATING,
+  ASSOCIATED,
+  FAILED,
+  DISASSOCIATING,
+  DISASSOCIATED,
+  SUSPENDED,
+  SUSPENDING,
+  RESTORING
+};
 
 namespace ResourceShareAssociationStatusMapper {
 AWS_RAM_API ResourceShareAssociationStatus GetResourceShareAssociationStatusForName(const Aws::String& name);

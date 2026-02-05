@@ -207,7 +207,7 @@ class ResourceSharePermissionDetail {
    * <p>The type of managed permission. This can be one of the following values:</p>
    * <ul> <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages
    * this managed permission. You can associate it with your resource shares, but you
-   * can't modify it.</p> </li> <li> <p> <code>CUSTOMER_MANAGED</code> – You, or
+   * can't modify it.</p> </li> <li> <p> <code>CUSTOMER_MANAGED</code> �� You, or
    * another principal in your account created this managed permission. You can
    * associate it with your resource shares and create new versions that have
    * different permissions.</p> </li> </ul>

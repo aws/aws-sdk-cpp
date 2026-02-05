@@ -48,6 +48,10 @@ GetBrowserSessionResult& GetBrowserSessionResult::operator=(const Aws::AmazonWeb
     }
     m_extensionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("profileConfiguration")) {
+    m_profileConfiguration = jsonValue.GetObject("profileConfiguration");
+    m_profileConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionTimeoutSeconds")) {
     m_sessionTimeoutSeconds = jsonValue.GetInteger("sessionTimeoutSeconds");
     m_sessionTimeoutSecondsHasBeenSet = true;

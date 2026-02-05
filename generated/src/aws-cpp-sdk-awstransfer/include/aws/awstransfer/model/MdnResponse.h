@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Transfer {
 namespace Model {
-enum class MdnResponse { NOT_SET, SYNC, NONE };
+enum class MdnResponse { NOT_SET, SYNC, NONE, ASYNC };
 
 namespace MdnResponseMapper {
 AWS_TRANSFER_API MdnResponse GetMdnResponseForName(const Aws::String& name);

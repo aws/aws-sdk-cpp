@@ -93,7 +93,7 @@ class StartImportTaskRequest : public NeptuneGraphRequest {
   ///@{
   /**
    * <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV,
-   * which identifies the Gremlin CSV format or OPENCYPHER, which identies the
+   * which identifies the Gremlin CSV format or OPENCYPHER, which identifies the
    * openCypher load format.</p>
    */
   inline Format GetFormat() const { return m_format; }

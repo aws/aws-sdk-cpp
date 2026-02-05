@@ -61,8 +61,8 @@ class Workflow {
 
   ///@{
   /**
-   * <p>The action that the workflow performs. Valid values include ACTIVATE and
-   * DEACTIVATE.</p>
+   * <p>The action that the workflow performs. Valid values include
+   * <code>activate</code> and <code>deactivate</code>.</p>
    */
   inline WorkflowTargetAction GetWorkflowTargetAction() const { return m_workflowTargetAction; }
   inline bool WorkflowTargetActionHasBeenSet() const { return m_workflowTargetActionHasBeenSet; }

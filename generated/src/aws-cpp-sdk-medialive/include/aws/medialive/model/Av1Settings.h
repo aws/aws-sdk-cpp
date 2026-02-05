@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AfdSignaling.h>
+#include <aws/medialive/model/Av1BitDepth.h>
 #include <aws/medialive/model/Av1ColorSpaceSettings.h>
 #include <aws/medialive/model/Av1GopSizeUnits.h>
 #include <aws/medialive/model/Av1Level.h>
@@ -492,6 +493,23 @@ METADATA_OBU: Include timecodes. MediaLive inserts
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies the bit depth for the output encode. Choose a value. Or leave the
+   * field empty to use the default, which is 8 bit.
+   */
+  inline Av1BitDepth GetBitDepth() const { return m_bitDepth; }
+  inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
+  inline void SetBitDepth(Av1BitDepth value) {
+    m_bitDepthHasBeenSet = true;
+    m_bitDepth = value;
+  }
+  inline Av1Settings& WithBitDepth(Av1BitDepth value) {
+    SetBitDepth(value);
+    return *this;
+  }
+  ///@}
  private:
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
 
@@ -538,6 +556,8 @@ METADATA_OBU: Include timecodes. MediaLive inserts
   Av1TemporalAq m_temporalAq{Av1TemporalAq::NOT_SET};
 
   Av1TimecodeInsertionBehavior m_timecodeInsertion{Av1TimecodeInsertionBehavior::NOT_SET};
+
+  Av1BitDepth m_bitDepth{Av1BitDepth::NOT_SET};
   bool m_afdSignalingHasBeenSet = false;
   bool m_bufSizeHasBeenSet = false;
   bool m_colorSpaceSettingsHasBeenSet = false;
@@ -561,6 +581,7 @@ METADATA_OBU: Include timecodes. MediaLive inserts
   bool m_spatialAqHasBeenSet = false;
   bool m_temporalAqHasBeenSet = false;
   bool m_timecodeInsertionHasBeenSet = false;
+  bool m_bitDepthHasBeenSet = false;
 };
 
 }  // namespace Model

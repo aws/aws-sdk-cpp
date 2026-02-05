@@ -21,6 +21,7 @@
 #include <aws/ram/model/AssociateResourceShareRequest.h>
 #include <aws/ram/model/AssociateResourceShareResult.h>
 #include <aws/ram/model/AssociatedPermission.h>
+#include <aws/ram/model/AssociatedSource.h>
 #include <aws/ram/model/CreatePermissionRequest.h>
 #include <aws/ram/model/CreatePermissionResult.h>
 #include <aws/ram/model/CreatePermissionVersionRequest.h>
@@ -67,6 +68,8 @@
 #include <aws/ram/model/ListResourceTypesResult.h>
 #include <aws/ram/model/ListResourcesRequest.h>
 #include <aws/ram/model/ListResourcesResult.h>
+#include <aws/ram/model/ListSourceAssociationsRequest.h>
+#include <aws/ram/model/ListSourceAssociationsResult.h>
 #include <aws/ram/model/PermissionFeatureSet.h>
 #include <aws/ram/model/PermissionStatus.h>
 #include <aws/ram/model/PermissionType.h>

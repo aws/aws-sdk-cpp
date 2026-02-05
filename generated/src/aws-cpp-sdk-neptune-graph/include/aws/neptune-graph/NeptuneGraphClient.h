@@ -242,10 +242,9 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Create a private graph endpoint to allow private access from to the graph
-   * from within a VPC. You can attach security groups to the private graph
-   * endpoint.</p>  <p>VPC endpoint charges apply.</p> <p><h3>See
-   * Also:</h3>   <a
+   * <p>Create a private graph endpoint to allow private access to the graph from
+   * within a VPC. You can attach security groups to the private graph endpoint.</p>
+   *  <p>VPC endpoint charges apply.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreatePrivateGraphEndpoint">AWS
    * API Reference</a></p>
    */
@@ -300,7 +299,7 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes the specifed graph snapshot.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified graph snapshot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraphSnapshot">AWS
    * API Reference</a></p>
    */

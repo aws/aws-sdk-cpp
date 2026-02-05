@@ -17,6 +17,7 @@ namespace ResourceShareAssociationTypeMapper {
 
 static const int PRINCIPAL_HASH = HashingUtils::HashString("PRINCIPAL");
 static const int RESOURCE_HASH = HashingUtils::HashString("RESOURCE");
+static const int SOURCE_HASH = HashingUtils::HashString("SOURCE");
 
 ResourceShareAssociationType GetResourceShareAssociationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ResourceShareAssociationType GetResourceShareAssociationTypeForName(const Aws::S
     return ResourceShareAssociationType::PRINCIPAL;
   } else if (hashCode == RESOURCE_HASH) {
     return ResourceShareAssociationType::RESOURCE;
+  } else if (hashCode == SOURCE_HASH) {
+    return ResourceShareAssociationType::SOURCE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForResourceShareAssociationType(ResourceShareAssociationType 
       return "PRINCIPAL";
     case ResourceShareAssociationType::RESOURCE:
       return "RESOURCE";
+    case ResourceShareAssociationType::SOURCE:
+      return "SOURCE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -23,8 +23,15 @@ namespace Athena {
 namespace Model {
 
 /**
- * <p>Contains data processing unit (DPU) configuration settings and parameter
- * mappings for a notebook engine.</p><p><h3>See Also:</h3>   <a
+ * <p>The engine configuration for the workgroup, which includes the
+ * minimum/maximum number of Data Processing Units (DPU) that queries should use
+ * when running in provisioned capacity. If not specified, Athena uses default
+ * values (Default value for min is 4 and for max is Minimum of 124 and allocated
+ * DPUs).</p> <p>To specify DPU values for PC queries the WG containing
+ * EngineConfiguration should have the following values: The name of the
+ * Classifications should be <code>athena-query-engine-properties</code>, with the
+ * only allowed properties as <code>max-dpu-count</code> and
+ * <code>min-dpu-count</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EngineConfiguration">AWS
  * API Reference</a></p>
  */

@@ -22,8 +22,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>A condensed representation of a browser session in Amazon Bedrock. This
- * structure contains key information about a browser session, including
+ * <p>A condensed representation of a browser session in Amazon Bedrock AgentCore.
+ * This structure contains key information about a browser session, including
  * identifiers, status, and timestamps, without the full details of the session
  * configuration and streams.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BrowserSessionSummary">AWS

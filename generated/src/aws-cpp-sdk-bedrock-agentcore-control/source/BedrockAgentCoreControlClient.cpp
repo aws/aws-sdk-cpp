@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateApiKeyCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateBrowserProfileRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorRequest.h>
@@ -23,6 +24,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteApiKeyCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteBrowserProfileRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorRequest.h>
@@ -38,6 +40,7 @@
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetApiKeyCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetBrowserProfileRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
@@ -56,6 +59,7 @@
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListBrowserProfilesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsRequest.h>
@@ -349,6 +353,36 @@ CreateBrowserOutcome BedrockAgentCoreControlClient::CreateBrowser(const CreateBr
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/browsers");
         return CreateBrowserOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateBrowserProfileOutcome BedrockAgentCoreControlClient::CreateBrowserProfile(const CreateBrowserProfileRequest& request) const {
+  AWS_OPERATION_GUARD(CreateBrowserProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBrowserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBrowserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateBrowserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateBrowserProfile",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateBrowserProfileOutcome>(
+      [&]() -> CreateBrowserProfileOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBrowserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/browser-profiles");
+        return CreateBrowserProfileOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -812,6 +846,42 @@ DeleteBrowserOutcome BedrockAgentCoreControlClient::DeleteBrowser(const DeleteBr
         endpointResolutionOutcome.GetResult().AddPathSegments("/browsers/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrowserId());
         return DeleteBrowserOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteBrowserProfileOutcome BedrockAgentCoreControlClient::DeleteBrowserProfile(const DeleteBrowserProfileRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteBrowserProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBrowserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteBrowserProfile", "Required field: ProfileId, is not set");
+    return DeleteBrowserProfileOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBrowserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteBrowserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBrowserProfile",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteBrowserProfileOutcome>(
+      [&]() -> DeleteBrowserProfileOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBrowserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/browser-profiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
+        return DeleteBrowserProfileOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1359,6 +1429,42 @@ GetBrowserOutcome BedrockAgentCoreControlClient::GetBrowser(const GetBrowserRequ
         endpointResolutionOutcome.GetResult().AddPathSegments("/browsers/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrowserId());
         return GetBrowserOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetBrowserProfileOutcome BedrockAgentCoreControlClient::GetBrowserProfile(const GetBrowserProfileRequest& request) const {
+  AWS_OPERATION_GUARD(GetBrowserProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBrowserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetBrowserProfile", "Required field: ProfileId, is not set");
+    return GetBrowserProfileOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBrowserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetBrowserProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBrowserProfile",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetBrowserProfileOutcome>(
+      [&]() -> GetBrowserProfileOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBrowserProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/browser-profiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
+        return GetBrowserProfileOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1970,6 +2076,36 @@ ListApiKeyCredentialProvidersOutcome BedrockAgentCoreControlClient::ListApiKeyCr
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/identities/ListApiKeyCredentialProviders");
         return ListApiKeyCredentialProvidersOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBrowserProfilesOutcome BedrockAgentCoreControlClient::ListBrowserProfiles(const ListBrowserProfilesRequest& request) const {
+  AWS_OPERATION_GUARD(ListBrowserProfiles);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBrowserProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBrowserProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBrowserProfiles, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBrowserProfiles",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBrowserProfilesOutcome>(
+      [&]() -> ListBrowserProfilesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBrowserProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/browser-profiles");
+        return ListBrowserProfilesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

@@ -23,7 +23,8 @@ namespace Model {
 
 /**
  * <p>Contains summary information about a browser. A browser enables Amazon
- * Bedrock Agent to interact with web content.</p><p><h3>See Also:</h3>   <a
+ * Bedrock AgentCore Agent to interact with web content.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/BrowserSummary">AWS
  * API Reference</a></p>
  */

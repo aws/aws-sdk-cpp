@@ -80,6 +80,7 @@
 #include <aws/glue/model/DeleteColumnStatisticsForTableResult.h>
 #include <aws/glue/model/DeleteColumnStatisticsTaskSettingsResult.h>
 #include <aws/glue/model/DeleteConnectionResult.h>
+#include <aws/glue/model/DeleteConnectionTypeResult.h>
 #include <aws/glue/model/DeleteCrawlerResult.h>
 #include <aws/glue/model/DeleteCustomEntityTypeResult.h>
 #include <aws/glue/model/DeleteDataQualityRulesetResult.h>
@@ -270,6 +271,7 @@
 #include <aws/glue/model/PutWorkflowRunPropertiesResult.h>
 #include <aws/glue/model/QuerySchemaVersionMetadataRequest.h>
 #include <aws/glue/model/QuerySchemaVersionMetadataResult.h>
+#include <aws/glue/model/RegisterConnectionTypeResult.h>
 #include <aws/glue/model/RegisterSchemaVersionResult.h>
 #include <aws/glue/model/RemoveSchemaVersionMetadataResult.h>
 #include <aws/glue/model/ResetJobBookmarkResult.h>
@@ -428,6 +430,7 @@ class DeleteColumnStatisticsForPartitionRequest;
 class DeleteColumnStatisticsForTableRequest;
 class DeleteColumnStatisticsTaskSettingsRequest;
 class DeleteConnectionRequest;
+class DeleteConnectionTypeRequest;
 class DeleteCrawlerRequest;
 class DeleteCustomEntityTypeRequest;
 class DeleteDataQualityRulesetRequest;
@@ -572,6 +575,7 @@ class PutResourcePolicyRequest;
 class PutSchemaVersionMetadataRequest;
 class PutWorkflowRunPropertiesRequest;
 class QuerySchemaVersionMetadataRequest;
+class RegisterConnectionTypeRequest;
 class RegisterSchemaVersionRequest;
 class RemoveSchemaVersionMetadataRequest;
 class ResetJobBookmarkRequest;
@@ -694,6 +698,7 @@ typedef Aws::Utils::Outcome<DeleteColumnStatisticsForPartitionResult, GlueError>
 typedef Aws::Utils::Outcome<DeleteColumnStatisticsForTableResult, GlueError> DeleteColumnStatisticsForTableOutcome;
 typedef Aws::Utils::Outcome<DeleteColumnStatisticsTaskSettingsResult, GlueError> DeleteColumnStatisticsTaskSettingsOutcome;
 typedef Aws::Utils::Outcome<DeleteConnectionResult, GlueError> DeleteConnectionOutcome;
+typedef Aws::Utils::Outcome<DeleteConnectionTypeResult, GlueError> DeleteConnectionTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteCrawlerResult, GlueError> DeleteCrawlerOutcome;
 typedef Aws::Utils::Outcome<DeleteCustomEntityTypeResult, GlueError> DeleteCustomEntityTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteDataQualityRulesetResult, GlueError> DeleteDataQualityRulesetOutcome;
@@ -838,6 +843,7 @@ typedef Aws::Utils::Outcome<PutResourcePolicyResult, GlueError> PutResourcePolic
 typedef Aws::Utils::Outcome<PutSchemaVersionMetadataResult, GlueError> PutSchemaVersionMetadataOutcome;
 typedef Aws::Utils::Outcome<PutWorkflowRunPropertiesResult, GlueError> PutWorkflowRunPropertiesOutcome;
 typedef Aws::Utils::Outcome<QuerySchemaVersionMetadataResult, GlueError> QuerySchemaVersionMetadataOutcome;
+typedef Aws::Utils::Outcome<RegisterConnectionTypeResult, GlueError> RegisterConnectionTypeOutcome;
 typedef Aws::Utils::Outcome<RegisterSchemaVersionResult, GlueError> RegisterSchemaVersionOutcome;
 typedef Aws::Utils::Outcome<RemoveSchemaVersionMetadataResult, GlueError> RemoveSchemaVersionMetadataOutcome;
 typedef Aws::Utils::Outcome<ResetJobBookmarkResult, GlueError> ResetJobBookmarkOutcome;
@@ -960,6 +966,7 @@ typedef std::future<DeleteColumnStatisticsForPartitionOutcome> DeleteColumnStati
 typedef std::future<DeleteColumnStatisticsForTableOutcome> DeleteColumnStatisticsForTableOutcomeCallable;
 typedef std::future<DeleteColumnStatisticsTaskSettingsOutcome> DeleteColumnStatisticsTaskSettingsOutcomeCallable;
 typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
+typedef std::future<DeleteConnectionTypeOutcome> DeleteConnectionTypeOutcomeCallable;
 typedef std::future<DeleteCrawlerOutcome> DeleteCrawlerOutcomeCallable;
 typedef std::future<DeleteCustomEntityTypeOutcome> DeleteCustomEntityTypeOutcomeCallable;
 typedef std::future<DeleteDataQualityRulesetOutcome> DeleteDataQualityRulesetOutcomeCallable;
@@ -1104,6 +1111,7 @@ typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
 typedef std::future<PutSchemaVersionMetadataOutcome> PutSchemaVersionMetadataOutcomeCallable;
 typedef std::future<PutWorkflowRunPropertiesOutcome> PutWorkflowRunPropertiesOutcomeCallable;
 typedef std::future<QuerySchemaVersionMetadataOutcome> QuerySchemaVersionMetadataOutcomeCallable;
+typedef std::future<RegisterConnectionTypeOutcome> RegisterConnectionTypeOutcomeCallable;
 typedef std::future<RegisterSchemaVersionOutcome> RegisterSchemaVersionOutcomeCallable;
 typedef std::future<RemoveSchemaVersionMetadataOutcome> RemoveSchemaVersionMetadataOutcomeCallable;
 typedef std::future<ResetJobBookmarkOutcome> ResetJobBookmarkOutcomeCallable;
@@ -1357,6 +1365,9 @@ typedef std::function<void(const GlueClient*, const Model::DeleteColumnStatistic
 typedef std::function<void(const GlueClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteConnectionResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteConnectionTypeRequest&, const Model::DeleteConnectionTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteConnectionTypeResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::DeleteCrawlerRequest&, const Model::DeleteCrawlerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCrawlerResponseReceivedHandler;
@@ -1811,6 +1822,9 @@ typedef std::function<void(const GlueClient*, const Model::PutWorkflowRunPropert
 typedef std::function<void(const GlueClient*, const Model::QuerySchemaVersionMetadataRequest&,
                            const Model::QuerySchemaVersionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     QuerySchemaVersionMetadataResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::RegisterConnectionTypeRequest&, const Model::RegisterConnectionTypeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterConnectionTypeResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::RegisterSchemaVersionRequest&, const Model::RegisterSchemaVersionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RegisterSchemaVersionResponseReceivedHandler;

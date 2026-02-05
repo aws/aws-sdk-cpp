@@ -21,8 +21,8 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
- * <p>The collection of streams associated with a browser session in Amazon
- * Bedrock. These streams provide different ways to interact with and observe the
+ * <p>The collection of streams associated with a browser session in Amazon Bedrock
+ * AgentCore. These streams provide different ways to interact with and observe the
  * browser session, including programmatic control and visual representation of the
  * browser content.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BrowserSessionStream">AWS

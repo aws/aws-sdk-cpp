@@ -23,7 +23,8 @@ namespace Model {
 
 /**
  * <p>Contains summary information about a code interpreter. A code interpreter
- * enables Amazon Bedrock Agent to execute code.</p><p><h3>See Also:</h3>   <a
+ * enables Amazon Bedrock AgentCore Agent to execute code.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CodeInterpreterSummary">AWS
  * API Reference</a></p>
  */

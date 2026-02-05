@@ -36,6 +36,10 @@ Aws::String StartBrowserSessionRequest::SerializePayload() const {
     payload.WithArray("extensions", std::move(extensionsJsonList));
   }
 
+  if (m_profileConfigurationHasBeenSet) {
+    payload.WithObject("profileConfiguration", m_profileConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

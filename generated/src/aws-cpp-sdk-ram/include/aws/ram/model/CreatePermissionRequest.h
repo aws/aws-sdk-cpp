@@ -53,10 +53,11 @@ class CreatePermissionRequest : public RAMRequest {
   /**
    * <p>Specifies the name of the resource type that this customer managed permission
    * applies to.</p> <p>The format is <code>
-   * <i>&lt;service-code&gt;</i>:<i>&lt;resource-type&gt;</i> </code> and is not case
+   * <i>&lt;service-code&gt;</i>:<i>&lt;resource-type&gt;</i> </code> and is case
    * sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string
-   * <code>ec2:subnet</code>. To see the list of valid values for this parameter,
-   * query the <a>ListResourceTypes</a> operation.</p>
+   * <code>ec2:Subnet</code>. To see the list of valid values for this parameter,
+   * query the <a>ListResourceTypes</a> operation. This value must match the display
+   * name of the resource (available in <code>ListResourceTypes</code>).</p>
    */
   inline const Aws::String& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
-enum class ImageComputeType { NOT_SET, BASE, GRAPHICS_G4DN };
+enum class ImageComputeType { NOT_SET, BASE, GRAPHICS_G4DN, GRAPHICS_G6 };
 
 namespace ImageComputeTypeMapper {
 AWS_WORKSPACES_API ImageComputeType GetImageComputeTypeForName(const Aws::String& name);

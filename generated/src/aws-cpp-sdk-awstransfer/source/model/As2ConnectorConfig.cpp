@@ -58,6 +58,10 @@ As2ConnectorConfig& As2ConnectorConfig::operator=(JsonView jsonValue) {
     m_preserveContentType = PreserveContentTypeMapper::GetPreserveContentTypeForName(jsonValue.GetString("PreserveContentType"));
     m_preserveContentTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AsyncMdnConfig")) {
+    m_asyncMdnConfig = jsonValue.GetObject("AsyncMdnConfig");
+    m_asyncMdnConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue As2ConnectorConfig::Jsonize() const {
 
   if (m_preserveContentTypeHasBeenSet) {
     payload.WithString("PreserveContentType", PreserveContentTypeMapper::GetNameForPreserveContentType(m_preserveContentType));
+  }
+
+  if (m_asyncMdnConfigHasBeenSet) {
+    payload.WithObject("AsyncMdnConfig", m_asyncMdnConfig.Jsonize());
   }
 
   return payload;

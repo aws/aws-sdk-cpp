@@ -91,9 +91,10 @@ class DisassociateResourceShareRequest : public RAMRequest {
    * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
    * </p> </li> <li> <p>An ARN of an IAM role, for example:
    * <code>iam::123456789012:role/rolename</code> </p> </li> <li> <p>An ARN of an IAM
-   * user, for example: <code>iam::123456789012user/username</code> </p> </li> </ul>
-   *  <p>Not all resource types can be shared with IAM roles and users. For
-   * more information, see <a
+   * user, for example: <code>iam::123456789012user/username</code> </p> </li> <li>
+   * <p>A service principal name, for example: <code>service-id.amazonaws.com</code>
+   * </p> </li> </ul>  <p>Not all resource types can be shared with IAM roles
+   * and users. For more information, see <a
    * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
    * with IAM roles and users</a> in the <i>Resource Access Manager User
    * Guide</i>.</p>
@@ -147,8 +148,11 @@ class DisassociateResourceShareRequest : public RAMRequest {
 
   ///@{
   /**
-   * <p>Specifies from which source accounts the service principal no longer has
-   * access to the resources in this resource share.</p>
+   * <p>Specifies source constraints (accounts, ARNs, organization IDs, or
+   * organization paths) to remove from the resource share. This enables granular
+   * management of source constraints while maintaining service principal
+   * associations. At least one source must remain when service principals are
+   * present.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSources() const { return m_sources; }
   inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

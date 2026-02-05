@@ -85,7 +85,7 @@ class CreatePrivateGraphEndpointResult {
 
   ///@{
   /**
-   * <p>Endpoint ID of the prviate grpah endpoint.</p>
+   * <p>Endpoint ID of the private graph endpoint.</p>
    */
   inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
   template <typename VpcEndpointIdT = Aws::String>

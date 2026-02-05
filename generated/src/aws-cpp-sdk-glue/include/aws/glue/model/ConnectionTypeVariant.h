@@ -20,10 +20,9 @@ namespace Glue {
 namespace Model {
 
 /**
- * <p>Represents a variant of a connection type in Glue Data Catalog. Connection
- * type variants provide specific configurations and behaviors for different
- * implementations of the same general connection type.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Represents a variant of a connection type in Glue. Connection type variants
+ * provide specific configurations and behaviors for different implementations of
+ * the same general connection type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionTypeVariant">AWS
  * API Reference</a></p>
  */

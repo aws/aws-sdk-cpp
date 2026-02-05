@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/As2AsyncMdnConnectorConfig.h>
 #include <aws/awstransfer/model/CompressionEnum.h>
 #include <aws/awstransfer/model/EncryptionAlg.h>
 #include <aws/awstransfer/model/MdnResponse.h>
@@ -244,6 +245,26 @@ class As2ConnectorConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for asynchronous Message Disposition Notification
+   * (MDN) responses. This allows you to configure where asynchronous MDN responses
+   * should be sent and which servers should handle them.</p>
+   */
+  inline const As2AsyncMdnConnectorConfig& GetAsyncMdnConfig() const { return m_asyncMdnConfig; }
+  inline bool AsyncMdnConfigHasBeenSet() const { return m_asyncMdnConfigHasBeenSet; }
+  template <typename AsyncMdnConfigT = As2AsyncMdnConnectorConfig>
+  void SetAsyncMdnConfig(AsyncMdnConfigT&& value) {
+    m_asyncMdnConfigHasBeenSet = true;
+    m_asyncMdnConfig = std::forward<AsyncMdnConfigT>(value);
+  }
+  template <typename AsyncMdnConfigT = As2AsyncMdnConnectorConfig>
+  As2ConnectorConfig& WithAsyncMdnConfig(AsyncMdnConfigT&& value) {
+    SetAsyncMdnConfig(std::forward<AsyncMdnConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_localProfileId;
 
@@ -264,6 +285,8 @@ class As2ConnectorConfig {
   Aws::String m_basicAuthSecretId;
 
   PreserveContentType m_preserveContentType{PreserveContentType::NOT_SET};
+
+  As2AsyncMdnConnectorConfig m_asyncMdnConfig;
   bool m_localProfileIdHasBeenSet = false;
   bool m_partnerProfileIdHasBeenSet = false;
   bool m_messageSubjectHasBeenSet = false;
@@ -274,6 +297,7 @@ class As2ConnectorConfig {
   bool m_mdnResponseHasBeenSet = false;
   bool m_basicAuthSecretIdHasBeenSet = false;
   bool m_preserveContentTypeHasBeenSet = false;
+  bool m_asyncMdnConfigHasBeenSet = false;
 };
 
 }  // namespace Model

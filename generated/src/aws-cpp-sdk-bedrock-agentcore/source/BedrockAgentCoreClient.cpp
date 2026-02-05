@@ -34,6 +34,7 @@
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartMemoryExtractionJobRequest.h>
@@ -1261,6 +1262,43 @@ RetrieveMemoryRecordsOutcome BedrockAgentCoreClient::RetrieveMemoryRecords(const
         endpointResolutionOutcome.GetResult().AddPathSegments("/retrieve");
         return RetrieveMemoryRecordsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SaveBrowserSessionProfileOutcome BedrockAgentCoreClient::SaveBrowserSessionProfile(const SaveBrowserSessionProfileRequest& request) const {
+  AWS_OPERATION_GUARD(SaveBrowserSessionProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SaveBrowserSessionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("SaveBrowserSessionProfile", "Required field: ProfileIdentifier, is not set");
+    return SaveBrowserSessionProfileOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SaveBrowserSessionProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SaveBrowserSessionProfile, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SaveBrowserSessionProfile",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SaveBrowserSessionProfileOutcome>(
+      [&]() -> SaveBrowserSessionProfileOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SaveBrowserSessionProfile, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/browser-profiles/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/save");
+        return SaveBrowserSessionProfileOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

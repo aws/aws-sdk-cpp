@@ -50,7 +50,8 @@ class RetrieveMemoryRecordsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The namespace to filter memory records by.</p>
+   * <p>The namespace prefix to filter memory records by. Searches for memory records
+   * in namespaces that start with the provided prefix.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
