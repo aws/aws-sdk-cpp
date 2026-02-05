@@ -22,7 +22,8 @@ namespace Model {
 
 /**
  * <p>A tag key and optional list of possible values that you can use to filter
- * results for tagged resources.</p><p><h3>See Also:</h3>   <a
+ * results for tagged resources.</p>  <p>Multiple tag filters are evaluated
+ * as an OR condition.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagFilter">AWS API
  * Reference</a></p>
  */

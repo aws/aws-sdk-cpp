@@ -332,11 +332,11 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
 
   /**
    * <p>Retrieves detailed information about a specific browser session in Amazon
-   * Bedrock. This operation returns the session's configuration, current status,
-   * associated streams, and metadata.</p> <p>To get a browser session, you must
-   * specify both the browser identifier and the session ID. The response includes
-   * information about the session's viewport configuration, timeout settings, and
-   * stream endpoints.</p> <p>The following operations are related to
+   * Bedrock AgentCore. This operation returns the session's configuration, current
+   * status, associated streams, and metadata.</p> <p>To get a browser session, you
+   * must specify both the browser identifier and the session ID. The response
+   * includes information about the session's viewport configuration, timeout
+   * settings, and stream endpoints.</p> <p>The following operations are related to
    * <code>GetBrowserSession</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
    * </p> </li> <li> <p> <a
@@ -370,12 +370,12 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
 
   /**
    * <p>Retrieves detailed information about a specific code interpreter session in
-   * Amazon Bedrock. This operation returns the session's configuration, current
-   * status, and metadata.</p> <p>To get a code interpreter session, you must specify
-   * both the code interpreter identifier and the session ID. The response includes
-   * information about the session's timeout settings and current status.</p> <p>The
-   * following operations are related to <code>GetCodeInterpreterSession</code>:</p>
-   * <ul> <li> <p> <a
+   * Amazon Bedrock AgentCore. This operation returns the session's configuration,
+   * current status, and metadata.</p> <p>To get a code interpreter session, you must
+   * specify both the code interpreter identifier and the session ID. The response
+   * includes information about the session's timeout settings and current
+   * status.</p> <p>The following operations are related to
+   * <code>GetCodeInterpreterSession</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a>
@@ -655,15 +655,15 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Executes code within an active code interpreter session in Amazon Bedrock.
-   * This operation processes the provided code, runs it in a secure environment, and
-   * returns the execution results including output, errors, and generated
-   * visualizations.</p> <p>To execute code, you must specify the code interpreter
-   * identifier, session ID, and the code to run in the arguments parameter. The
-   * operation returns a stream containing the execution results, which can include
-   * text output, error messages, and data visualizations.</p> <p>This operation is
-   * subject to request rate limiting based on your account's service quotas.</p>
-   * <p>The following operations are related to
+   * <p>Executes code within an active code interpreter session in Amazon Bedrock
+   * AgentCore. This operation processes the provided code, runs it in a secure
+   * environment, and returns the execution results including output, errors, and
+   * generated visualizations.</p> <p>To execute code, you must specify the code
+   * interpreter identifier, session ID, and the code to run in the arguments
+   * parameter. The operation returns a stream containing the execution results,
+   * which can include text output, error messages, and data visualizations.</p>
+   * <p>This operation is subject to request rate limiting based on your account's
+   * service quotas.</p> <p>The following operations are related to
    * <code>InvokeCodeInterpreter</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
@@ -723,8 +723,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Retrieves a list of browser sessions in Amazon Bedrock that match the
-   * specified criteria. This operation returns summary information about each
+   * <p>Retrieves a list of browser sessions in Amazon Bedrock AgentCore that match
+   * the specified criteria. This operation returns summary information about each
    * session, including identifiers, status, and timestamps.</p> <p>You can filter
    * the results by browser identifier and session status. The operation supports
    * pagination to handle large result sets efficiently.</p> <p>We recommend using
@@ -760,14 +760,15 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Retrieves a list of code interpreter sessions in Amazon Bedrock that match
-   * the specified criteria. This operation returns summary information about each
-   * session, including identifiers, status, and timestamps.</p> <p>You can filter
-   * the results by code interpreter identifier and session status. The operation
-   * supports pagination to handle large result sets efficiently.</p> <p>We recommend
-   * using pagination to ensure that the operation returns quickly and successfully
-   * when retrieving large numbers of sessions.</p> <p>The following operations are
-   * related to <code>ListCodeInterpreterSessions</code>:</p> <ul> <li> <p> <a
+   * <p>Retrieves a list of code interpreter sessions in Amazon Bedrock AgentCore
+   * that match the specified criteria. This operation returns summary information
+   * about each session, including identifiers, status, and timestamps.</p> <p>You
+   * can filter the results by code interpreter identifier and session status. The
+   * operation supports pagination to handle large result sets efficiently.</p> <p>We
+   * recommend using pagination to ensure that the operation returns quickly and
+   * successfully when retrieving large numbers of sessions.</p> <p>The following
+   * operations are related to <code>ListCodeInterpreterSessions</code>:</p> <ul>
+   * <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a>
@@ -948,9 +949,52 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Creates and initializes a browser session in Amazon Bedrock. The session
-   * enables agents to navigate and interact with web content, extract information
-   * from websites, and perform web-based tasks as part of their response
+   * <p>Saves the current state of a browser session as a reusable profile in Amazon
+   * Bedrock AgentCore. A browser profile captures persistent browser data such as
+   * cookies and local storage from an active session, enabling you to reuse this
+   * data in future browser sessions.</p> <p>To save a browser session profile, you
+   * must specify the profile identifier, browser identifier, and session ID. The
+   * session must be active when saving the profile. Once saved, the profile can be
+   * used with the <code>StartBrowserSession</code> operation to initialize new
+   * sessions with the stored browser state.</p> <p>Browser profiles are useful for
+   * scenarios that require persistent authentication, maintaining user preferences
+   * across sessions, or continuing tasks that depend on previously stored browser
+   * data.</p> <p>The following operations are related to
+   * <code>SaveBrowserSessionProfile</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/SaveBrowserSessionProfile">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SaveBrowserSessionProfileOutcome SaveBrowserSessionProfile(const Model::SaveBrowserSessionProfileRequest& request) const;
+
+  /**
+   * A Callable wrapper for SaveBrowserSessionProfile that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SaveBrowserSessionProfileRequestT = Model::SaveBrowserSessionProfileRequest>
+  Model::SaveBrowserSessionProfileOutcomeCallable SaveBrowserSessionProfileCallable(
+      const SaveBrowserSessionProfileRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::SaveBrowserSessionProfile, request);
+  }
+
+  /**
+   * An Async wrapper for SaveBrowserSessionProfile that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SaveBrowserSessionProfileRequestT = Model::SaveBrowserSessionProfileRequest>
+  void SaveBrowserSessionProfileAsync(const SaveBrowserSessionProfileRequestT& request,
+                                      const SaveBrowserSessionProfileResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::SaveBrowserSessionProfile, request, handler, context);
+  }
+
+  /**
+   * <p>Creates and initializes a browser session in Amazon Bedrock AgentCore. The
+   * session enables agents to navigate and interact with web content, extract
+   * information from websites, and perform web-based tasks as part of their response
    * generation.</p> <p>To create a session, you must specify a browser identifier
    * and a name. You can also configure the viewport dimensions to control the
    * visible area of web content. The session remains active until it times out or
@@ -960,6 +1004,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -988,9 +1034,9 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Creates and initializes a code interpreter session in Amazon Bedrock. The
-   * session enables agents to execute code as part of their response generation,
-   * supporting programming languages such as Python for data analysis,
+   * <p>Creates and initializes a code interpreter session in Amazon Bedrock
+   * AgentCore. The session enables agents to execute code as part of their response
+   * generation, supporting programming languages such as Python for data analysis,
    * visualization, and computation tasks.</p> <p>To create a session, you must
    * specify a code interpreter identifier and a name. The session remains active
    * until it times out or you explicitly stop it using the
@@ -1063,11 +1109,11 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Terminates an active browser session in Amazon Bedrock. This operation stops
-   * the session, releases associated resources, and makes the session unavailable
-   * for further use.</p> <p>To stop a browser session, you must specify both the
-   * browser identifier and the session ID. Once stopped, a session cannot be
-   * restarted; you must create a new session using
+   * <p>Terminates an active browser session in Amazon Bedrock AgentCore. This
+   * operation stops the session, releases associated resources, and makes the
+   * session unavailable for further use.</p> <p>To stop a browser session, you must
+   * specify both the browser identifier and the session ID. Once stopped, a session
+   * cannot be restarted; you must create a new session using
    * <code>StartBrowserSession</code>.</p> <p>The following operations are related to
    * <code>StopBrowserSession</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
@@ -1099,8 +1145,8 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
-   * <p>Terminates an active code interpreter session in Amazon Bedrock. This
-   * operation stops the session, releases associated resources, and makes the
+   * <p>Terminates an active code interpreter session in Amazon Bedrock AgentCore.
+   * This operation stops the session, releases associated resources, and makes the
    * session unavailable for further use.</p> <p>To stop a code interpreter session,
    * you must specify both the code interpreter identifier and the session ID. Once
    * stopped, a session cannot be restarted; you must create a new session using

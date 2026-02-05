@@ -11,6 +11,7 @@
 #include <aws/glue/model/Capabilities.h>
 #include <aws/glue/model/ComputeEnvironmentConfiguration.h>
 #include <aws/glue/model/Property.h>
+#include <aws/glue/model/RestConfiguration.h>
 
 #include <utility>
 
@@ -278,6 +279,24 @@ class DescribeConnectionTypeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>HTTP request and response configuration, validation endpoint, and entity
+   * configurations for REST based data source.</p>
+   */
+  inline const RestConfiguration& GetRestConfiguration() const { return m_restConfiguration; }
+  template <typename RestConfigurationT = RestConfiguration>
+  void SetRestConfiguration(RestConfigurationT&& value) {
+    m_restConfigurationHasBeenSet = true;
+    m_restConfiguration = std::forward<RestConfigurationT>(value);
+  }
+  template <typename RestConfigurationT = RestConfiguration>
+  DescribeConnectionTypeResult& WithRestConfiguration(RestConfigurationT&& value) {
+    SetRestConfiguration(std::forward<RestConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -314,6 +333,8 @@ class DescribeConnectionTypeResult {
 
   Aws::Map<Aws::String, Property> m_sparkConnectionProperties;
 
+  RestConfiguration m_restConfiguration;
+
   Aws::String m_requestId;
   bool m_connectionTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -326,6 +347,7 @@ class DescribeConnectionTypeResult {
   bool m_athenaConnectionPropertiesHasBeenSet = false;
   bool m_pythonConnectionPropertiesHasBeenSet = false;
   bool m_sparkConnectionPropertiesHasBeenSet = false;
+  bool m_restConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -93,9 +93,10 @@ class AssociateResourceShareRequest : public RAMRequest {
    * <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
    * </p> </li> <li> <p>An ARN of an IAM role, for example:
    * <code>iam::123456789012:role/rolename</code> </p> </li> <li> <p>An ARN of an IAM
-   * user, for example: <code>iam::123456789012user/username</code> </p> </li> </ul>
-   *  <p>Not all resource types can be shared with IAM roles and users. For
-   * more information, see <a
+   * user, for example: <code>iam::123456789012user/username</code> </p> </li> <li>
+   * <p>A service principal name, for example: <code>service-id.amazonaws.com</code>
+   * </p> </li> </ul>  <p>Not all resource types can be shared with IAM roles
+   * and users. For more information, see <a
    * href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
    * with IAM roles and users</a> in the <i>Resource Access Manager User
    * Guide</i>.</p>
@@ -149,8 +150,12 @@ class AssociateResourceShareRequest : public RAMRequest {
 
   ///@{
   /**
-   * <p>Specifies from which source accounts the service principal has access to the
-   * resources in this resource share.</p>
+   * <p>Specifies source constraints (accounts, ARNs, organization IDs, or
+   * organization paths) that limit when service principals can access resources in
+   * this resource share. When a service principal attempts to access a shared
+   * resource, validation is performed to ensure the request originates from one of
+   * the specified sources. This helps prevent confused deputy attacks by applying
+   * constraints on where service principals can access resources from.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSources() const { return m_sources; }
   inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

@@ -23,10 +23,10 @@ namespace Model {
 
 /**
  * <p>The output produced by executing code in a code interpreter session in Amazon
- * Bedrock. This structure contains the results of code execution, including
- * textual output, structured data, and error information. Agents use these results
- * to generate responses that incorporate computation, data analysis, and
- * visualization.</p><p><h3>See Also:</h3>   <a
+ * Bedrock AgentCore. This structure contains the results of code execution,
+ * including textual output, structured data, and error information. Agents use
+ * these results to generate responses that incorporate computation, data analysis,
+ * and visualization.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CodeInterpreterResult">AWS
  * API Reference</a></p>
  */

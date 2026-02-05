@@ -51,6 +51,8 @@
 #include <aws/ram/model/ListResourceTypesRequest.h>
 #include <aws/ram/model/ListResourceTypesResult.h>
 #include <aws/ram/model/ListResourcesResult.h>
+#include <aws/ram/model/ListSourceAssociationsRequest.h>
+#include <aws/ram/model/ListSourceAssociationsResult.h>
 #include <aws/ram/model/PromotePermissionCreatedFromPolicyResult.h>
 #include <aws/ram/model/PromoteResourceShareCreatedFromPolicyResult.h>
 #include <aws/ram/model/RejectResourceShareInvitationResult.h>
@@ -118,6 +120,7 @@ class ListReplacePermissionAssociationsWorkRequest;
 class ListResourceSharePermissionsRequest;
 class ListResourceTypesRequest;
 class ListResourcesRequest;
+class ListSourceAssociationsRequest;
 class PromotePermissionCreatedFromPolicyRequest;
 class PromoteResourceShareCreatedFromPolicyRequest;
 class RejectResourceShareInvitationRequest;
@@ -155,6 +158,7 @@ typedef Aws::Utils::Outcome<ListReplacePermissionAssociationsWorkResult, RAMErro
 typedef Aws::Utils::Outcome<ListResourceSharePermissionsResult, RAMError> ListResourceSharePermissionsOutcome;
 typedef Aws::Utils::Outcome<ListResourceTypesResult, RAMError> ListResourceTypesOutcome;
 typedef Aws::Utils::Outcome<ListResourcesResult, RAMError> ListResourcesOutcome;
+typedef Aws::Utils::Outcome<ListSourceAssociationsResult, RAMError> ListSourceAssociationsOutcome;
 typedef Aws::Utils::Outcome<PromotePermissionCreatedFromPolicyResult, RAMError> PromotePermissionCreatedFromPolicyOutcome;
 typedef Aws::Utils::Outcome<PromoteResourceShareCreatedFromPolicyResult, RAMError> PromoteResourceShareCreatedFromPolicyOutcome;
 typedef Aws::Utils::Outcome<RejectResourceShareInvitationResult, RAMError> RejectResourceShareInvitationOutcome;
@@ -192,6 +196,7 @@ typedef std::future<ListReplacePermissionAssociationsWorkOutcome> ListReplacePer
 typedef std::future<ListResourceSharePermissionsOutcome> ListResourceSharePermissionsOutcomeCallable;
 typedef std::future<ListResourceTypesOutcome> ListResourceTypesOutcomeCallable;
 typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
+typedef std::future<ListSourceAssociationsOutcome> ListSourceAssociationsOutcomeCallable;
 typedef std::future<PromotePermissionCreatedFromPolicyOutcome> PromotePermissionCreatedFromPolicyOutcomeCallable;
 typedef std::future<PromoteResourceShareCreatedFromPolicyOutcome> PromoteResourceShareCreatedFromPolicyOutcomeCallable;
 typedef std::future<RejectResourceShareInvitationOutcome> RejectResourceShareInvitationOutcomeCallable;
@@ -292,6 +297,9 @@ typedef std::function<void(const RAMClient*, const Model::ListResourceTypesReque
 typedef std::function<void(const RAMClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourcesResponseReceivedHandler;
+typedef std::function<void(const RAMClient*, const Model::ListSourceAssociationsRequest&, const Model::ListSourceAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSourceAssociationsResponseReceivedHandler;
 typedef std::function<void(const RAMClient*, const Model::PromotePermissionCreatedFromPolicyRequest&,
                            const Model::PromotePermissionCreatedFromPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

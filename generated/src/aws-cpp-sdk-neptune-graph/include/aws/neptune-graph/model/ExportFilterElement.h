@@ -22,7 +22,7 @@ namespace NeptuneGraph {
 namespace Model {
 
 /**
- * <p>Specifies whihc properties of that label should be included in the
+ * <p>Specifies which properties of that label should be included in the
  * export.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ExportFilterElement">AWS
  * API Reference</a></p>

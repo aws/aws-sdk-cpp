@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BrowserExtension.h>
+#include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
@@ -141,6 +142,25 @@ class GetBrowserSessionResult {
 
   ///@{
   /**
+   * <p>The browser profile configuration associated with this session. Contains the
+   * profile identifier that links to persistent browser data such as cookies and
+   * local storage.</p>
+   */
+  inline const BrowserProfileConfiguration& GetProfileConfiguration() const { return m_profileConfiguration; }
+  template <typename ProfileConfigurationT = BrowserProfileConfiguration>
+  void SetProfileConfiguration(ProfileConfigurationT&& value) {
+    m_profileConfigurationHasBeenSet = true;
+    m_profileConfiguration = std::forward<ProfileConfigurationT>(value);
+  }
+  template <typename ProfileConfigurationT = BrowserProfileConfiguration>
+  GetBrowserSessionResult& WithProfileConfiguration(ProfileConfigurationT&& value) {
+    SetProfileConfiguration(std::forward<ProfileConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timeout period for the browser session in seconds.</p>
    */
   inline int GetSessionTimeoutSeconds() const { return m_sessionTimeoutSeconds; }
@@ -249,6 +269,8 @@ class GetBrowserSessionResult {
 
   Aws::Vector<BrowserExtension> m_extensions;
 
+  BrowserProfileConfiguration m_profileConfiguration;
+
   int m_sessionTimeoutSeconds{0};
 
   BrowserSessionStatus m_status{BrowserSessionStatus::NOT_SET};
@@ -266,6 +288,7 @@ class GetBrowserSessionResult {
   bool m_createdAtHasBeenSet = false;
   bool m_viewPortHasBeenSet = false;
   bool m_extensionsHasBeenSet = false;
+  bool m_profileConfigurationHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_streamsHasBeenSet = false;

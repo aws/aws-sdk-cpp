@@ -187,7 +187,17 @@ class StartQueryExecutionRequest : public AthenaRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The engine configuration for the workgroup, which includes the
+   * minimum/maximum number of Data Processing Units (DPU) that queries should use
+   * when running in provisioned capacity. If not specified, Athena uses default
+   * values (Default value for min is 4 and for max is Minimum of 124 and allocated
+   * DPUs).</p> <p>To specify minimum and maximum DPU values for Capacity
+   * Reservations queries, the workgroup containing <code>EngineConfiguration</code>
+   * should have the following values: The name of the <code>Classifications</code>
+   * should be <code>athena-query-engine-properties</code>, with the only allowed
+   * properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p>
+   */
   inline const EngineConfiguration& GetEngineConfiguration() const { return m_engineConfiguration; }
   inline bool EngineConfigurationHasBeenSet() const { return m_engineConfigurationHasBeenSet; }
   template <typename EngineConfigurationT = EngineConfiguration>

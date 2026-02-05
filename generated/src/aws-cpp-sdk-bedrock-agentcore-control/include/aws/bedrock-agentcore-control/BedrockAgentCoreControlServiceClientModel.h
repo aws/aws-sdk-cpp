@@ -22,6 +22,7 @@
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/CreateBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorResult.h>
@@ -36,6 +37,7 @@
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/DeleteBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorResult.h>
@@ -51,6 +53,7 @@
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/GetAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore-control/model/GetApiKeyCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/GetBrowserProfileResult.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserResult.h>
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterResult.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorResult.h>
@@ -72,6 +75,8 @@
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListApiKeyCredentialProvidersResult.h>
+#include <aws/bedrock-agentcore-control/model/ListBrowserProfilesRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListBrowserProfilesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>
@@ -150,6 +155,7 @@ class CreateAgentRuntimeRequest;
 class CreateAgentRuntimeEndpointRequest;
 class CreateApiKeyCredentialProviderRequest;
 class CreateBrowserRequest;
+class CreateBrowserProfileRequest;
 class CreateCodeInterpreterRequest;
 class CreateEvaluatorRequest;
 class CreateGatewayRequest;
@@ -164,6 +170,7 @@ class DeleteAgentRuntimeRequest;
 class DeleteAgentRuntimeEndpointRequest;
 class DeleteApiKeyCredentialProviderRequest;
 class DeleteBrowserRequest;
+class DeleteBrowserProfileRequest;
 class DeleteCodeInterpreterRequest;
 class DeleteEvaluatorRequest;
 class DeleteGatewayRequest;
@@ -179,6 +186,7 @@ class GetAgentRuntimeRequest;
 class GetAgentRuntimeEndpointRequest;
 class GetApiKeyCredentialProviderRequest;
 class GetBrowserRequest;
+class GetBrowserProfileRequest;
 class GetCodeInterpreterRequest;
 class GetEvaluatorRequest;
 class GetGatewayRequest;
@@ -196,6 +204,7 @@ class ListAgentRuntimeEndpointsRequest;
 class ListAgentRuntimeVersionsRequest;
 class ListAgentRuntimesRequest;
 class ListApiKeyCredentialProvidersRequest;
+class ListBrowserProfilesRequest;
 class ListBrowsersRequest;
 class ListCodeInterpretersRequest;
 class ListEvaluatorsRequest;
@@ -235,6 +244,7 @@ typedef Aws::Utils::Outcome<CreateAgentRuntimeResult, BedrockAgentCoreControlErr
 typedef Aws::Utils::Outcome<CreateAgentRuntimeEndpointResult, BedrockAgentCoreControlError> CreateAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateApiKeyCredentialProviderResult, BedrockAgentCoreControlError> CreateApiKeyCredentialProviderOutcome;
 typedef Aws::Utils::Outcome<CreateBrowserResult, BedrockAgentCoreControlError> CreateBrowserOutcome;
+typedef Aws::Utils::Outcome<CreateBrowserProfileResult, BedrockAgentCoreControlError> CreateBrowserProfileOutcome;
 typedef Aws::Utils::Outcome<CreateCodeInterpreterResult, BedrockAgentCoreControlError> CreateCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<CreateEvaluatorResult, BedrockAgentCoreControlError> CreateEvaluatorOutcome;
 typedef Aws::Utils::Outcome<CreateGatewayResult, BedrockAgentCoreControlError> CreateGatewayOutcome;
@@ -249,6 +259,7 @@ typedef Aws::Utils::Outcome<DeleteAgentRuntimeResult, BedrockAgentCoreControlErr
 typedef Aws::Utils::Outcome<DeleteAgentRuntimeEndpointResult, BedrockAgentCoreControlError> DeleteAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteApiKeyCredentialProviderResult, BedrockAgentCoreControlError> DeleteApiKeyCredentialProviderOutcome;
 typedef Aws::Utils::Outcome<DeleteBrowserResult, BedrockAgentCoreControlError> DeleteBrowserOutcome;
+typedef Aws::Utils::Outcome<DeleteBrowserProfileResult, BedrockAgentCoreControlError> DeleteBrowserProfileOutcome;
 typedef Aws::Utils::Outcome<DeleteCodeInterpreterResult, BedrockAgentCoreControlError> DeleteCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<DeleteEvaluatorResult, BedrockAgentCoreControlError> DeleteEvaluatorOutcome;
 typedef Aws::Utils::Outcome<DeleteGatewayResult, BedrockAgentCoreControlError> DeleteGatewayOutcome;
@@ -264,6 +275,7 @@ typedef Aws::Utils::Outcome<GetAgentRuntimeResult, BedrockAgentCoreControlError>
 typedef Aws::Utils::Outcome<GetAgentRuntimeEndpointResult, BedrockAgentCoreControlError> GetAgentRuntimeEndpointOutcome;
 typedef Aws::Utils::Outcome<GetApiKeyCredentialProviderResult, BedrockAgentCoreControlError> GetApiKeyCredentialProviderOutcome;
 typedef Aws::Utils::Outcome<GetBrowserResult, BedrockAgentCoreControlError> GetBrowserOutcome;
+typedef Aws::Utils::Outcome<GetBrowserProfileResult, BedrockAgentCoreControlError> GetBrowserProfileOutcome;
 typedef Aws::Utils::Outcome<GetCodeInterpreterResult, BedrockAgentCoreControlError> GetCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<GetEvaluatorResult, BedrockAgentCoreControlError> GetEvaluatorOutcome;
 typedef Aws::Utils::Outcome<GetGatewayResult, BedrockAgentCoreControlError> GetGatewayOutcome;
@@ -281,6 +293,7 @@ typedef Aws::Utils::Outcome<ListAgentRuntimeEndpointsResult, BedrockAgentCoreCon
 typedef Aws::Utils::Outcome<ListAgentRuntimeVersionsResult, BedrockAgentCoreControlError> ListAgentRuntimeVersionsOutcome;
 typedef Aws::Utils::Outcome<ListAgentRuntimesResult, BedrockAgentCoreControlError> ListAgentRuntimesOutcome;
 typedef Aws::Utils::Outcome<ListApiKeyCredentialProvidersResult, BedrockAgentCoreControlError> ListApiKeyCredentialProvidersOutcome;
+typedef Aws::Utils::Outcome<ListBrowserProfilesResult, BedrockAgentCoreControlError> ListBrowserProfilesOutcome;
 typedef Aws::Utils::Outcome<ListBrowsersResult, BedrockAgentCoreControlError> ListBrowsersOutcome;
 typedef Aws::Utils::Outcome<ListCodeInterpretersResult, BedrockAgentCoreControlError> ListCodeInterpretersOutcome;
 typedef Aws::Utils::Outcome<ListEvaluatorsResult, BedrockAgentCoreControlError> ListEvaluatorsOutcome;
@@ -320,6 +333,7 @@ typedef std::future<CreateAgentRuntimeOutcome> CreateAgentRuntimeOutcomeCallable
 typedef std::future<CreateAgentRuntimeEndpointOutcome> CreateAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<CreateApiKeyCredentialProviderOutcome> CreateApiKeyCredentialProviderOutcomeCallable;
 typedef std::future<CreateBrowserOutcome> CreateBrowserOutcomeCallable;
+typedef std::future<CreateBrowserProfileOutcome> CreateBrowserProfileOutcomeCallable;
 typedef std::future<CreateCodeInterpreterOutcome> CreateCodeInterpreterOutcomeCallable;
 typedef std::future<CreateEvaluatorOutcome> CreateEvaluatorOutcomeCallable;
 typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
@@ -334,6 +348,7 @@ typedef std::future<DeleteAgentRuntimeOutcome> DeleteAgentRuntimeOutcomeCallable
 typedef std::future<DeleteAgentRuntimeEndpointOutcome> DeleteAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<DeleteApiKeyCredentialProviderOutcome> DeleteApiKeyCredentialProviderOutcomeCallable;
 typedef std::future<DeleteBrowserOutcome> DeleteBrowserOutcomeCallable;
+typedef std::future<DeleteBrowserProfileOutcome> DeleteBrowserProfileOutcomeCallable;
 typedef std::future<DeleteCodeInterpreterOutcome> DeleteCodeInterpreterOutcomeCallable;
 typedef std::future<DeleteEvaluatorOutcome> DeleteEvaluatorOutcomeCallable;
 typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
@@ -349,6 +364,7 @@ typedef std::future<GetAgentRuntimeOutcome> GetAgentRuntimeOutcomeCallable;
 typedef std::future<GetAgentRuntimeEndpointOutcome> GetAgentRuntimeEndpointOutcomeCallable;
 typedef std::future<GetApiKeyCredentialProviderOutcome> GetApiKeyCredentialProviderOutcomeCallable;
 typedef std::future<GetBrowserOutcome> GetBrowserOutcomeCallable;
+typedef std::future<GetBrowserProfileOutcome> GetBrowserProfileOutcomeCallable;
 typedef std::future<GetCodeInterpreterOutcome> GetCodeInterpreterOutcomeCallable;
 typedef std::future<GetEvaluatorOutcome> GetEvaluatorOutcomeCallable;
 typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
@@ -366,6 +382,7 @@ typedef std::future<ListAgentRuntimeEndpointsOutcome> ListAgentRuntimeEndpointsO
 typedef std::future<ListAgentRuntimeVersionsOutcome> ListAgentRuntimeVersionsOutcomeCallable;
 typedef std::future<ListAgentRuntimesOutcome> ListAgentRuntimesOutcomeCallable;
 typedef std::future<ListApiKeyCredentialProvidersOutcome> ListApiKeyCredentialProvidersOutcomeCallable;
+typedef std::future<ListBrowserProfilesOutcome> ListBrowserProfilesOutcomeCallable;
 typedef std::future<ListBrowsersOutcome> ListBrowsersOutcomeCallable;
 typedef std::future<ListCodeInterpretersOutcome> ListCodeInterpretersOutcomeCallable;
 typedef std::future<ListEvaluatorsOutcome> ListEvaluatorsOutcomeCallable;
@@ -417,6 +434,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Cr
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateBrowserRequest&, const Model::CreateBrowserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBrowserResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateBrowserProfileRequest&,
+                           const Model::CreateBrowserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateBrowserProfileResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreateCodeInterpreterRequest&,
                            const Model::CreateCodeInterpreterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCodeInterpreterResponseReceivedHandler;
@@ -462,6 +482,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteBrowserRequest&, const Model::DeleteBrowserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBrowserResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteBrowserProfileRequest&,
+                           const Model::DeleteBrowserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteBrowserProfileResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeleteCodeInterpreterRequest&,
                            const Model::DeleteCodeInterpreterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCodeInterpreterResponseReceivedHandler;
@@ -509,6 +532,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetBrowserRequest&, const Model::GetBrowserOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBrowserResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetBrowserProfileRequest&,
+                           const Model::GetBrowserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBrowserProfileResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetCodeInterpreterRequest&,
                            const Model::GetCodeInterpreterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCodeInterpreterResponseReceivedHandler;
@@ -561,6 +587,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
                            const Model::ListApiKeyCredentialProvidersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApiKeyCredentialProvidersResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListBrowserProfilesRequest&,
+                           const Model::ListBrowserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBrowserProfilesResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListBrowsersRequest&, const Model::ListBrowsersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBrowsersResponseReceivedHandler;

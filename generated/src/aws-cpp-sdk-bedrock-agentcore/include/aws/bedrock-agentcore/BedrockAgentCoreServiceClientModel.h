@@ -46,6 +46,7 @@
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/ListSessionsResult.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>
+#include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionResult.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionResult.h>
 #include <aws/bedrock-agentcore/model/StartMemoryExtractionJobResult.h>
@@ -115,6 +116,7 @@ class ListMemoryExtractionJobsRequest;
 class ListMemoryRecordsRequest;
 class ListSessionsRequest;
 class RetrieveMemoryRecordsRequest;
+class SaveBrowserSessionProfileRequest;
 class StartBrowserSessionRequest;
 class StartCodeInterpreterSessionRequest;
 class StartMemoryExtractionJobRequest;
@@ -153,6 +155,7 @@ typedef Aws::Utils::Outcome<ListMemoryExtractionJobsResult, BedrockAgentCoreErro
 typedef Aws::Utils::Outcome<ListMemoryRecordsResult, BedrockAgentCoreError> ListMemoryRecordsOutcome;
 typedef Aws::Utils::Outcome<ListSessionsResult, BedrockAgentCoreError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<RetrieveMemoryRecordsResult, BedrockAgentCoreError> RetrieveMemoryRecordsOutcome;
+typedef Aws::Utils::Outcome<SaveBrowserSessionProfileResult, BedrockAgentCoreError> SaveBrowserSessionProfileOutcome;
 typedef Aws::Utils::Outcome<StartBrowserSessionResult, BedrockAgentCoreError> StartBrowserSessionOutcome;
 typedef Aws::Utils::Outcome<StartCodeInterpreterSessionResult, BedrockAgentCoreError> StartCodeInterpreterSessionOutcome;
 typedef Aws::Utils::Outcome<StartMemoryExtractionJobResult, BedrockAgentCoreError> StartMemoryExtractionJobOutcome;
@@ -191,6 +194,7 @@ typedef std::future<ListMemoryExtractionJobsOutcome> ListMemoryExtractionJobsOut
 typedef std::future<ListMemoryRecordsOutcome> ListMemoryRecordsOutcomeCallable;
 typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<RetrieveMemoryRecordsOutcome> RetrieveMemoryRecordsOutcomeCallable;
+typedef std::future<SaveBrowserSessionProfileOutcome> SaveBrowserSessionProfileOutcomeCallable;
 typedef std::future<StartBrowserSessionOutcome> StartBrowserSessionOutcomeCallable;
 typedef std::future<StartCodeInterpreterSessionOutcome> StartCodeInterpreterSessionOutcomeCallable;
 typedef std::future<StartMemoryExtractionJobOutcome> StartMemoryExtractionJobOutcomeCallable;
@@ -290,6 +294,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListSessi
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::RetrieveMemoryRecordsRequest&,
                            const Model::RetrieveMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RetrieveMemoryRecordsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::SaveBrowserSessionProfileRequest&,
+                           const Model::SaveBrowserSessionProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SaveBrowserSessionProfileResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::StartBrowserSessionRequest&,
                            const Model::StartBrowserSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartBrowserSessionResponseReceivedHandler;

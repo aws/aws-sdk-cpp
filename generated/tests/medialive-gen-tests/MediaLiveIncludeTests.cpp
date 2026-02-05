@@ -71,6 +71,7 @@
 #include <aws/medialive/model/AudioWatermarkSettings.h>
 #include <aws/medialive/model/AuthenticationScheme.h>
 #include <aws/medialive/model/AutomaticInputFailoverSettings.h>
+#include <aws/medialive/model/Av1BitDepth.h>
 #include <aws/medialive/model/Av1ColorSpaceSettings.h>
 #include <aws/medialive/model/Av1GopSizeUnits.h>
 #include <aws/medialive/model/Av1Level.h>

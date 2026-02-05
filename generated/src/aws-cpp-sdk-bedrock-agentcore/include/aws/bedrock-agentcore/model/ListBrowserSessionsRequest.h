@@ -71,7 +71,7 @@ class ListBrowserSessionsRequest : public BedrockAgentCoreRequest {
   /**
    * <p>The token for the next set of results. Use the value returned in the previous
    * response in the next request to retrieve the next set of results. If not
-   * specified, Amazon Bedrock returns the first page of results.</p>
+   * specified, Amazon Bedrock AgentCore returns the first page of results.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

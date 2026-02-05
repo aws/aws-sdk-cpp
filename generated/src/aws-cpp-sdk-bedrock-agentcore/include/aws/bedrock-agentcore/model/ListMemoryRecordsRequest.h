@@ -49,8 +49,8 @@ class ListMemoryRecordsRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The namespace to filter memory records by. If specified, only memory records
-   * in this namespace are returned.</p>
+   * <p>The namespace prefix to filter memory records by. Returns all memory records
+   * in namespaces that start with the provided prefix.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

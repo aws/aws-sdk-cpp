@@ -111,6 +111,10 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
         Av1TimecodeInsertionBehaviorMapper::GetAv1TimecodeInsertionBehaviorForName(jsonValue.GetString("timecodeInsertion"));
     m_timecodeInsertionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bitDepth")) {
+    m_bitDepth = Av1BitDepthMapper::GetAv1BitDepthForName(jsonValue.GetString("bitDepth"));
+    m_bitDepthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -208,6 +212,10 @@ JsonValue Av1Settings::Jsonize() const {
   if (m_timecodeInsertionHasBeenSet) {
     payload.WithString("timecodeInsertion",
                        Av1TimecodeInsertionBehaviorMapper::GetNameForAv1TimecodeInsertionBehavior(m_timecodeInsertion));
+  }
+
+  if (m_bitDepthHasBeenSet) {
+    payload.WithString("bitDepth", Av1BitDepthMapper::GetNameForAv1BitDepth(m_bitDepth));
   }
 
   return payload;

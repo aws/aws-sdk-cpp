@@ -43,6 +43,14 @@ Aws::String StartFileTransferRequest::SerializePayload() const {
     payload.WithString("RemoteDirectoryPath", m_remoteDirectoryPath);
   }
 
+  if (m_customHttpHeadersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customHttpHeadersJsonList(m_customHttpHeaders.size());
+    for (unsigned customHttpHeadersIndex = 0; customHttpHeadersIndex < customHttpHeadersJsonList.GetLength(); ++customHttpHeadersIndex) {
+      customHttpHeadersJsonList[customHttpHeadersIndex].AsObject(m_customHttpHeaders[customHttpHeadersIndex].Jsonize());
+    }
+    payload.WithArray("CustomHttpHeaders", std::move(customHttpHeadersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

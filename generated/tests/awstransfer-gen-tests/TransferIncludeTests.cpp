@@ -15,6 +15,7 @@
 #include <aws/awstransfer/TransferServiceClientModel.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/model/AgreementStatusType.h>
+#include <aws/awstransfer/model/As2AsyncMdnConnectorConfig.h>
 #include <aws/awstransfer/model/As2ConnectorConfig.h>
 #include <aws/awstransfer/model/As2Transport.h>
 #include <aws/awstransfer/model/CertificateStatusType.h>
@@ -44,6 +45,7 @@
 #include <aws/awstransfer/model/CreateWorkflowRequest.h>
 #include <aws/awstransfer/model/CreateWorkflowResult.h>
 #include <aws/awstransfer/model/CustomDirectoriesType.h>
+#include <aws/awstransfer/model/CustomHttpHeader.h>
 #include <aws/awstransfer/model/CustomStepDetails.h>
 #include <aws/awstransfer/model/CustomStepStatus.h>
 #include <aws/awstransfer/model/DecryptStepDetails.h>

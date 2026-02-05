@@ -1768,6 +1768,35 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
   }
 
   /**
+   * <p>Deletes a custom connection type in Glue.</p> <p>The connection type must
+   * exist and be registered before it can be deleted. This operation supports
+   * cleanup of connection type resources and helps maintain proper lifecycle
+   * management of custom connection types.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnectionType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConnectionTypeOutcome DeleteConnectionType(const Model::DeleteConnectionTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConnectionType that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteConnectionTypeRequestT = Model::DeleteConnectionTypeRequest>
+  Model::DeleteConnectionTypeOutcomeCallable DeleteConnectionTypeCallable(const DeleteConnectionTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::DeleteConnectionType, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConnectionType that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteConnectionTypeRequestT = Model::DeleteConnectionTypeRequest>
+  void DeleteConnectionTypeAsync(const DeleteConnectionTypeRequestT& request, const DeleteConnectionTypeResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::DeleteConnectionType, request, handler, context);
+  }
+
+  /**
    * <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler
    * state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
@@ -2513,8 +2542,12 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
 
   /**
    * <p>The <code>DescribeConnectionType</code> API provides full details of the
-   * supported options for a given connection type in Glue.</p><p><h3>See Also:</h3>
-   * <a
+   * supported options for a given connection type in Glue. The response includes
+   * authentication configuration details that show supported authentication types
+   * and properties, and RestConfiguration for custom REST-based connection types
+   * registered via <code>RegisterConnectionType</code>.</p> <p>See also:
+   * <code>ListConnectionTypes</code>, <code>RegisterConnectionType</code>,
+   * <code>DeleteConnectionType</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeConnectionType">AWS
    * API Reference</a></p>
    */
@@ -4909,9 +4942,12 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
    * <p>The <code>ListConnectionTypes</code> API provides a discovery mechanism to
    * learn available connection types in Glue. The response contains a list of
    * connection types with high-level details of what is supported for each
-   * connection type. The connection types listed are the set of supported options
-   * for the <code>ConnectionType</code> value in the <code>CreateConnection</code>
-   * API.</p><p><h3>See Also:</h3>   <a
+   * connection type, including both built-in connection types and custom connection
+   * types registered via <code>RegisterConnectionType</code>. The connection types
+   * listed are the set of supported options for the <code>ConnectionType</code>
+   * value in the <code>CreateConnection</code> API.</p> <p>See also:
+   * <code>DescribeConnectionType</code>, <code>RegisterConnectionType</code>,
+   * <code>DeleteConnectionType</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListConnectionTypes">AWS
    * API Reference</a></p>
    */
@@ -5842,6 +5878,43 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const QuerySchemaVersionMetadataRequestT& request = {}) const {
     return SubmitAsync(&GlueClient::QuerySchemaVersionMetadata, request, handler, context);
+  }
+
+  /**
+   * <p>Registers a custom connection type in Glue based on the configuration
+   * provided. This operation enables customers to configure custom connectors for
+   * any data source with REST-based APIs, eliminating the need for building custom
+   * Lambda connectors.</p> <p>The registered connection type stores details about
+   * how requests and responses are interpreted by REST sources, including connection
+   * properties, authentication configuration, and REST configuration with entity
+   * definitions. Once registered, customers can create connections using this
+   * connection type and work with them the same way as natively supported Glue
+   * connectors.</p> <p>Supports multiple authentication types including Basic,
+   * OAuth2 (Client Credentials, JWT Bearer, Authorization Code), and Custom Auth
+   * configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterConnectionType">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterConnectionTypeOutcome RegisterConnectionType(const Model::RegisterConnectionTypeRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterConnectionType that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RegisterConnectionTypeRequestT = Model::RegisterConnectionTypeRequest>
+  Model::RegisterConnectionTypeOutcomeCallable RegisterConnectionTypeCallable(const RegisterConnectionTypeRequestT& request) const {
+    return SubmitCallable(&GlueClient::RegisterConnectionType, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterConnectionType that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RegisterConnectionTypeRequestT = Model::RegisterConnectionTypeRequest>
+  void RegisterConnectionTypeAsync(const RegisterConnectionTypeRequestT& request,
+                                   const RegisterConnectionTypeResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::RegisterConnectionType, request, handler, context);
   }
 
   /**

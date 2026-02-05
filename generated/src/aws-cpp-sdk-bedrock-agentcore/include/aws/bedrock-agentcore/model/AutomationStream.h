@@ -22,10 +22,10 @@ namespace Model {
 
 /**
  * <p>The configuration for a stream that enables programmatic control of a browser
- * session in Amazon Bedrock. This stream provides a bidirectional communication
- * channel for sending commands to the browser and receiving responses, allowing
- * agents to automate web interactions such as navigation, form filling, and
- * element clicking.</p><p><h3>See Also:</h3>   <a
+ * session in Amazon Bedrock AgentCore. This stream provides a bidirectional
+ * communication channel for sending commands to the browser and receiving
+ * responses, allowing agents to automate web interactions such as navigation, form
+ * filling, and element clicking.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/AutomationStream">AWS
  * API Reference</a></p>
  */

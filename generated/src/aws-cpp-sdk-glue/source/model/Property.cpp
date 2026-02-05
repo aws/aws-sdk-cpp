@@ -57,6 +57,14 @@ Property& Property::operator=(JsonView jsonValue) {
     }
     m_dataOperationScopesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KeyOverride")) {
+    m_keyOverride = jsonValue.GetString("KeyOverride");
+    m_keyOverrideHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PropertyLocation")) {
+    m_propertyLocation = PropertyLocationMapper::GetPropertyLocationForName(jsonValue.GetString("PropertyLocation"));
+    m_propertyLocationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +111,14 @@ JsonValue Property::Jsonize() const {
           DataOperationMapper::GetNameForDataOperation(m_dataOperationScopes[dataOperationScopesIndex]));
     }
     payload.WithArray("DataOperationScopes", std::move(dataOperationScopesJsonList));
+  }
+
+  if (m_keyOverrideHasBeenSet) {
+    payload.WithString("KeyOverride", m_keyOverride);
+  }
+
+  if (m_propertyLocationHasBeenSet) {
+    payload.WithString("PropertyLocation", PropertyLocationMapper::GetNameForPropertyLocation(m_propertyLocation));
   }
 
   return payload;

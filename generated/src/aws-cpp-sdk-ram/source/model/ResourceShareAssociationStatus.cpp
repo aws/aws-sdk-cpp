@@ -20,6 +20,9 @@ static const int ASSOCIATED_HASH = HashingUtils::HashString("ASSOCIATED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int DISASSOCIATING_HASH = HashingUtils::HashString("DISASSOCIATING");
 static const int DISASSOCIATED_HASH = HashingUtils::HashString("DISASSOCIATED");
+static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+static const int SUSPENDING_HASH = HashingUtils::HashString("SUSPENDING");
+static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
 
 ResourceShareAssociationStatus GetResourceShareAssociationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +36,12 @@ ResourceShareAssociationStatus GetResourceShareAssociationStatusForName(const Aw
     return ResourceShareAssociationStatus::DISASSOCIATING;
   } else if (hashCode == DISASSOCIATED_HASH) {
     return ResourceShareAssociationStatus::DISASSOCIATED;
+  } else if (hashCode == SUSPENDED_HASH) {
+    return ResourceShareAssociationStatus::SUSPENDED;
+  } else if (hashCode == SUSPENDING_HASH) {
+    return ResourceShareAssociationStatus::SUSPENDING;
+  } else if (hashCode == RESTORING_HASH) {
+    return ResourceShareAssociationStatus::RESTORING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +66,12 @@ Aws::String GetNameForResourceShareAssociationStatus(ResourceShareAssociationSta
       return "DISASSOCIATING";
     case ResourceShareAssociationStatus::DISASSOCIATED:
       return "DISASSOCIATED";
+    case ResourceShareAssociationStatus::SUSPENDED:
+      return "SUSPENDED";
+    case ResourceShareAssociationStatus::SUSPENDING:
+      return "SUSPENDING";
+    case ResourceShareAssociationStatus::RESTORING:
+      return "RESTORING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -31,6 +31,8 @@ static const int BYTE_HASH = HashingUtils::HashString("BYTE");
 static const int SHORT_HASH = HashingUtils::HashString("SHORT");
 static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
 static const int STRUCT_HASH = HashingUtils::HashString("STRUCT");
+static const int BINARY_HASH = HashingUtils::HashString("BINARY");
+static const int UNION_HASH = HashingUtils::HashString("UNION");
 
 FieldDataType GetFieldDataTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +68,10 @@ FieldDataType GetFieldDataTypeForName(const Aws::String& name) {
     return FieldDataType::DOUBLE;
   } else if (hashCode == STRUCT_HASH) {
     return FieldDataType::STRUCT;
+  } else if (hashCode == BINARY_HASH) {
+    return FieldDataType::BINARY;
+  } else if (hashCode == UNION_HASH) {
+    return FieldDataType::UNION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +118,10 @@ Aws::String GetNameForFieldDataType(FieldDataType enumValue) {
       return "DOUBLE";
     case FieldDataType::STRUCT:
       return "STRUCT";
+    case FieldDataType::BINARY:
+      return "BINARY";
+    case FieldDataType::UNION:
+      return "UNION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

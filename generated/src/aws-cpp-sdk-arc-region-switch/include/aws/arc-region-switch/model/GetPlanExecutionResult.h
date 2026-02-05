@@ -155,9 +155,8 @@ class GetPlanExecutionResult {
 
   ///@{
   /**
-   * <p>The plan execution mode. Valid values are <code>Practice</code>, for testing
-   * without making actual changes, or <code>Recovery</code>, for actual traffic
-   * shifting and application recovery.</p>
+   * <p>The plan execution mode. Valid values are <code>graceful</code>, for graceful
+   * executions, or <code>ungraceful</code>, for ungraceful executions.</p>
    */
   inline ExecutionMode GetMode() const { return m_mode; }
   inline void SetMode(ExecutionMode value) {
@@ -188,8 +187,8 @@ class GetPlanExecutionResult {
 
   ///@{
   /**
-   * <p>The plan execution action. Valid values are <code>Activate</code>, to
-   * activate an Amazon Web Services Region, or <code>Deactivate</code>, to
+   * <p>The plan execution action. Valid values are <code>activate</code>, to
+   * activate an Amazon Web Services Region, or <code>deactivate</code>, to
    * deactivate a Region.</p>
    */
   inline ExecutionAction GetExecutionAction() const { return m_executionAction; }

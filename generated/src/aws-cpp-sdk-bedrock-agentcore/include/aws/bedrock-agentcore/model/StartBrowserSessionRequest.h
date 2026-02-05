@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BrowserExtension.h>
+#include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -131,7 +132,7 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
   /**
    * <p>The dimensions of the browser viewport for this session. This determines the
    * visible area of the web content and affects how web pages are rendered. If not
-   * specified, Amazon Bedrock uses a default viewport size.</p>
+   * specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
    */
   inline const ViewPort& GetViewPort() const { return m_viewPort; }
   inline bool ViewPortHasBeenSet() const { return m_viewPortHasBeenSet; }
@@ -173,10 +174,33 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>The browser profile configuration to use for this session. A browser profile
+   * contains persistent data such as cookies and local storage that can be reused
+   * across multiple browser sessions. If specified, the session initializes with the
+   * profile's stored data, enabling continuity for tasks that require authentication
+   * or personalized settings.</p>
+   */
+  inline const BrowserProfileConfiguration& GetProfileConfiguration() const { return m_profileConfiguration; }
+  inline bool ProfileConfigurationHasBeenSet() const { return m_profileConfigurationHasBeenSet; }
+  template <typename ProfileConfigurationT = BrowserProfileConfiguration>
+  void SetProfileConfiguration(ProfileConfigurationT&& value) {
+    m_profileConfigurationHasBeenSet = true;
+    m_profileConfiguration = std::forward<ProfileConfigurationT>(value);
+  }
+  template <typename ProfileConfigurationT = BrowserProfileConfiguration>
+  StartBrowserSessionRequest& WithProfileConfiguration(ProfileConfigurationT&& value) {
+    SetProfileConfiguration(std::forward<ProfileConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If this token matches a previous request, Amazon Bedrock
-   * ignores the request, but does not return an error. This parameter helps prevent
-   * the creation of duplicate sessions if there are temporary network issues.</p>
+   * AgentCore ignores the request, but does not return an error. This parameter
+   * helps prevent the creation of duplicate sessions if there are temporary network
+   * issues.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -206,6 +230,8 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   Aws::Vector<BrowserExtension> m_extensions;
 
+  BrowserProfileConfiguration m_profileConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
@@ -214,6 +240,7 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_viewPortHasBeenSet = false;
   bool m_extensionsHasBeenSet = false;
+  bool m_profileConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

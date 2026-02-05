@@ -17,6 +17,7 @@ namespace MdnResponseMapper {
 
 static const int SYNC_HASH = HashingUtils::HashString("SYNC");
 static const int NONE_HASH = HashingUtils::HashString("NONE");
+static const int ASYNC_HASH = HashingUtils::HashString("ASYNC");
 
 MdnResponse GetMdnResponseForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ MdnResponse GetMdnResponseForName(const Aws::String& name) {
     return MdnResponse::SYNC;
   } else if (hashCode == NONE_HASH) {
     return MdnResponse::NONE;
+  } else if (hashCode == ASYNC_HASH) {
+    return MdnResponse::ASYNC;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForMdnResponse(MdnResponse enumValue) {
       return "SYNC";
     case MdnResponse::NONE:
       return "NONE";
+    case MdnResponse::ASYNC:
+      return "ASYNC";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

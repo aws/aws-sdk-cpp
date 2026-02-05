@@ -24,9 +24,9 @@ namespace Model {
 
 /**
  * <p>The collection of arguments that specify the operation to perform and its
- * parameters when invoking a tool in Amazon Bedrock. Different tools require
- * different arguments, and this structure provides a flexible way to pass the
- * appropriate arguments to each tool type.</p><p><h3>See Also:</h3>   <a
+ * parameters when invoking a tool in Amazon Bedrock AgentCore. Different tools
+ * require different arguments, and this structure provides a flexible way to pass
+ * the appropriate arguments to each tool type.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ToolArguments">AWS
  * API Reference</a></p>
  */

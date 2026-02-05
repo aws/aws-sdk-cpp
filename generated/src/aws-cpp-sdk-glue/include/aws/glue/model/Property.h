@@ -9,6 +9,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/AllowedValue.h>
 #include <aws/glue/model/DataOperation.h>
+#include <aws/glue/model/PropertyLocation.h>
 #include <aws/glue/model/PropertyType.h>
 
 #include <utility>
@@ -176,6 +177,42 @@ class Property {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A key name to use when sending this property in API requests, if different
+   * from the display name.</p>
+   */
+  inline const Aws::String& GetKeyOverride() const { return m_keyOverride; }
+  inline bool KeyOverrideHasBeenSet() const { return m_keyOverrideHasBeenSet; }
+  template <typename KeyOverrideT = Aws::String>
+  void SetKeyOverride(KeyOverrideT&& value) {
+    m_keyOverrideHasBeenSet = true;
+    m_keyOverride = std::forward<KeyOverrideT>(value);
+  }
+  template <typename KeyOverrideT = Aws::String>
+  Property& WithKeyOverride(KeyOverrideT&& value) {
+    SetKeyOverride(std::forward<KeyOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies where this property should be included in REST requests, such as in
+   * headers, query parameters, or request body.</p>
+   */
+  inline PropertyLocation GetPropertyLocation() const { return m_propertyLocation; }
+  inline bool PropertyLocationHasBeenSet() const { return m_propertyLocationHasBeenSet; }
+  inline void SetPropertyLocation(PropertyLocation value) {
+    m_propertyLocationHasBeenSet = true;
+    m_propertyLocation = value;
+  }
+  inline Property& WithPropertyLocation(PropertyLocation value) {
+    SetPropertyLocation(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -190,6 +227,10 @@ class Property {
   Aws::Vector<AllowedValue> m_allowedValues;
 
   Aws::Vector<DataOperation> m_dataOperationScopes;
+
+  Aws::String m_keyOverride;
+
+  PropertyLocation m_propertyLocation{PropertyLocation::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
@@ -197,6 +238,8 @@ class Property {
   bool m_propertyTypesHasBeenSet = false;
   bool m_allowedValuesHasBeenSet = false;
   bool m_dataOperationScopesHasBeenSet = false;
+  bool m_keyOverrideHasBeenSet = false;
+  bool m_propertyLocationHasBeenSet = false;
 };
 
 }  // namespace Model

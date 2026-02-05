@@ -27,7 +27,9 @@ enum class FieldDataType {
   BYTE,
   SHORT,
   DOUBLE,
-  STRUCT
+  STRUCT,
+  BINARY,
+  UNION
 };
 
 namespace FieldDataTypeMapper {

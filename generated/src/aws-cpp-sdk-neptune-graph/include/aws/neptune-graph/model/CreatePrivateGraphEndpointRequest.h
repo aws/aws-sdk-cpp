@@ -96,7 +96,7 @@ class CreatePrivateGraphEndpointRequest : public NeptuneGraphRequest {
 
   ///@{
   /**
-   * <p>Security groups to be attached to the private graph endpoint..</p>
+   * <p>Security groups to be attached to the private graph endpoint.</p>
    */
   inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
   inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }

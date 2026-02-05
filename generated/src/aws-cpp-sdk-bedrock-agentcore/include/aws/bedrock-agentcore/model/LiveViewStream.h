@@ -21,9 +21,9 @@ namespace Model {
 
 /**
  * <p>The configuration for a stream that provides a visual representation of a
- * browser session in Amazon Bedrock. This stream enables agents to observe the
- * current state of the browser, including rendered web pages, visual elements, and
- * the results of interactions.</p><p><h3>See Also:</h3>   <a
+ * browser session in Amazon Bedrock AgentCore. This stream enables agents to
+ * observe the current state of the browser, including rendered web pages, visual
+ * elements, and the results of interactions.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/LiveViewStream">AWS
  * API Reference</a></p>
  */

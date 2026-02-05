@@ -202,7 +202,8 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
   ///@{
   /**
    * <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke.
-   * The ARN uniquely identifies the agent runtime resource in Amazon Bedrock.</p>
+   * The ARN uniquely identifies the agent runtime resource in Amazon Bedrock
+   * AgentCore.</p>
    */
   inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
   inline bool AgentRuntimeArnHasBeenSet() const { return m_agentRuntimeArnHasBeenSet; }
@@ -222,7 +223,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
   /**
    * <p>The qualifier to use for the agent runtime. This can be a version number or
    * an endpoint name that points to a specific version. If not specified, Amazon
-   * Bedrock uses the default version of the agent runtime.</p>
+   * Bedrock AgentCore uses the default version of the agent runtime.</p>
    */
   inline const Aws::String& GetQualifier() const { return m_qualifier; }
   inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }

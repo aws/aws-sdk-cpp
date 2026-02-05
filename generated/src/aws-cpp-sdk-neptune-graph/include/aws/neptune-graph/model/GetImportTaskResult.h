@@ -88,7 +88,7 @@ class GetImportTaskResult {
    * <p>Specifies the format of S3 data to be imported. Valid values are
    * <code>CSV</code>, which identifies the <a
    * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-   * CSV format</a> or <code>OPENCYPHER</code>, which identies the <a
+   * CSV format</a> or <code>OPENCYPHER</code>, which identifies the <a
    * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
    * load format</a>.</p>
    */
@@ -150,8 +150,8 @@ class GetImportTaskResult {
    * <b>ERROR_ENCOUNTERED_ROLLING_BACK</b>   –   Because of the error that was
    * encountered, the graph is being rolled back and all its resources released.</p>
    * </li> <li> <p> <b>SUCCEEDED</b>   –   Graph creation and data loading
-   * succeeded.</p> </li> <li> <p> <b>FAILED</b>   –   Graph creation or data loading
-   * failed. When the status is <code>FAILED</code>, you can use
+   * succeeded.</p> </li> <li> <p> <b>FAILED</b> �� –   Graph creation or data
+   * loading failed. When the status is <code>FAILED</code>, you can use
    * <code>get-graphs</code> to get more information about the state of the
    * graph.</p> </li> <li> <p> <b>CANCELLING</b>   –   Because you cancelled the
    * import task, cancellation is in progress.</p> </li> <li> <p> <b>CANCELLED</b>  

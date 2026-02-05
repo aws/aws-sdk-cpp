@@ -53,7 +53,8 @@ class TriggerCondition {
 
   ///@{
   /**
-   * <p>The condition that must be met. Valid values include ALARM and OK.</p>
+   * <p>The condition that must be met. Valid values include <code>green</code> and
+   * <code>red</code>.</p>
    */
   inline AlarmCondition GetCondition() const { return m_condition; }
   inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
