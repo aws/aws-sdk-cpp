@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/partnercentral-selling/model/ResourceSnapshotPayload.h>
 #include <aws/partnercentral-selling/model/ResourceType.h>
@@ -205,6 +206,29 @@ class GetResourceSnapshotResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Target member accounts associated with the resource snapshot.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTargetMemberAccounts() const { return m_targetMemberAccounts; }
+  template <typename TargetMemberAccountsT = Aws::Vector<Aws::String>>
+  void SetTargetMemberAccounts(TargetMemberAccountsT&& value) {
+    m_targetMemberAccountsHasBeenSet = true;
+    m_targetMemberAccounts = std::forward<TargetMemberAccountsT>(value);
+  }
+  template <typename TargetMemberAccountsT = Aws::Vector<Aws::String>>
+  GetResourceSnapshotResult& WithTargetMemberAccounts(TargetMemberAccountsT&& value) {
+    SetTargetMemberAccounts(std::forward<TargetMemberAccountsT>(value));
+    return *this;
+  }
+  template <typename TargetMemberAccountsT = Aws::String>
+  GetResourceSnapshotResult& AddTargetMemberAccounts(TargetMemberAccountsT&& value) {
+    m_targetMemberAccountsHasBeenSet = true;
+    m_targetMemberAccounts.emplace_back(std::forward<TargetMemberAccountsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -239,6 +263,8 @@ class GetResourceSnapshotResult {
 
   ResourceSnapshotPayload m_payload;
 
+  Aws::Vector<Aws::String> m_targetMemberAccounts;
+
   Aws::String m_requestId;
   bool m_catalogHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -250,6 +276,7 @@ class GetResourceSnapshotResult {
   bool m_resourceSnapshotTemplateNameHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
+  bool m_targetMemberAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

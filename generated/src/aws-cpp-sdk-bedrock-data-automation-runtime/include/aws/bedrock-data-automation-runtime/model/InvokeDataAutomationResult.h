@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
+#include <aws/bedrock-data-automation-runtime/model/OutputConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/OutputSegment.h>
 #include <aws/bedrock-data-automation-runtime/model/SemanticModality.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -34,6 +35,23 @@ class InvokeDataAutomationResult {
   AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationResult& operator=(
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Output configuration</p>
+   */
+  inline const OutputConfiguration& GetOutputConfiguration() const { return m_outputConfiguration; }
+  template <typename OutputConfigurationT = OutputConfiguration>
+  void SetOutputConfiguration(OutputConfigurationT&& value) {
+    m_outputConfigurationHasBeenSet = true;
+    m_outputConfiguration = std::forward<OutputConfigurationT>(value);
+  }
+  template <typename OutputConfigurationT = OutputConfiguration>
+  InvokeDataAutomationResult& WithOutputConfiguration(OutputConfigurationT&& value) {
+    SetOutputConfiguration(std::forward<OutputConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -88,11 +106,14 @@ class InvokeDataAutomationResult {
   }
   ///@}
  private:
+  OutputConfiguration m_outputConfiguration;
+
   SemanticModality m_semanticModality{SemanticModality::NOT_SET};
 
   Aws::Vector<OutputSegment> m_outputSegments;
 
   Aws::String m_requestId;
+  bool m_outputConfigurationHasBeenSet = false;
   bool m_semanticModalityHasBeenSet = false;
   bool m_outputSegmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

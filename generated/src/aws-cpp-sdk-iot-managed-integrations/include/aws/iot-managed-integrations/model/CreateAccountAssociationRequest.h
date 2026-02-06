@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/model/GeneralAuthorizationName.h>
 
 #include <utility>
 
@@ -127,6 +128,24 @@ class CreateAccountAssociationRequest : public IoTManagedIntegrationsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The General Authorization reference by authorization material name.</p>
+   */
+  inline const GeneralAuthorizationName& GetGeneralAuthorization() const { return m_generalAuthorization; }
+  inline bool GeneralAuthorizationHasBeenSet() const { return m_generalAuthorizationHasBeenSet; }
+  template <typename GeneralAuthorizationT = GeneralAuthorizationName>
+  void SetGeneralAuthorization(GeneralAuthorizationT&& value) {
+    m_generalAuthorizationHasBeenSet = true;
+    m_generalAuthorization = std::forward<GeneralAuthorizationT>(value);
+  }
+  template <typename GeneralAuthorizationT = GeneralAuthorizationName>
+  CreateAccountAssociationRequest& WithGeneralAuthorization(GeneralAuthorizationT&& value) {
+    SetGeneralAuthorization(std::forward<GeneralAuthorizationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -137,11 +156,14 @@ class CreateAccountAssociationRequest : public IoTManagedIntegrationsRequest {
   Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  GeneralAuthorizationName m_generalAuthorization;
   bool m_clientTokenHasBeenSet = true;
   bool m_connectorDestinationIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_generalAuthorizationHasBeenSet = false;
 };
 
 }  // namespace Model

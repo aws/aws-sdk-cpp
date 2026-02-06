@@ -40,8 +40,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>ISO 4217 currency code (e.g., &quot;USD&quot;) ensuring consistent
-   * representation across calculations</p>
+   * <p>ISO 4217 currency code.</p>
    */
   inline AwsProductInsightsCurrencyCodeEnum GetCurrencyCode() const { return m_currencyCode; }
   inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
@@ -57,8 +56,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>Time period for spend amounts: &quot;Monthly&quot; or
-   * &quot;Annually&quot;</p>
+   * <p>Time period for spend amounts.</p>
    */
   inline PaymentFrequency GetFrequency() const { return m_frequency; }
   inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
@@ -74,7 +72,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>Total estimated spend for this source before optimizations</p>
+   * <p>Total estimated spend for this source before optimizations.</p>
    */
   inline const Aws::String& GetTotalAmount() const { return m_totalAmount; }
   inline bool TotalAmountHasBeenSet() const { return m_totalAmountHasBeenSet; }
@@ -92,7 +90,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>Total estimated spend after applying recommended optimizations</p>
+   * <p>Total estimated spend after applying recommended optimizations.</p>
    */
   inline const Aws::String& GetTotalOptimizedAmount() const { return m_totalOptimizedAmount; }
   inline bool TotalOptimizedAmountHasBeenSet() const { return m_totalOptimizedAmountHasBeenSet; }
@@ -110,7 +108,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>Quantified savings achievable through implementing optimizations</p>
+   * <p>Quantified savings achievable through implementing optimizations.</p>
    */
   inline const Aws::String& GetTotalPotentialSavingsAmount() const { return m_totalPotentialSavingsAmount; }
   inline bool TotalPotentialSavingsAmountHasBeenSet() const { return m_totalPotentialSavingsAmountHasBeenSet; }
@@ -128,7 +126,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>Spend amounts mapped to AWS programs and modernization pathways</p>
+   * <p>Spend amounts mapped to AWS programs and modernization pathways.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTotalAmountByCategory() const { return m_totalAmountByCategory; }
   inline bool TotalAmountByCategoryHasBeenSet() const { return m_totalAmountByCategoryHasBeenSet; }
@@ -152,7 +150,7 @@ class AwsProductInsights {
 
   ///@{
   /**
-   * <p>Product-level details including costs and optimization recommendations</p>
+   * <p>Product-level details including costs and optimization recommendations.</p>
    */
   inline const Aws::Vector<AwsProductDetails>& GetAwsProducts() const { return m_awsProducts; }
   inline bool AwsProductsHasBeenSet() const { return m_awsProductsHasBeenSet; }

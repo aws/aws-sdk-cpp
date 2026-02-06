@@ -39,5 +39,9 @@ Aws::String CreateAccountAssociationRequest::SerializePayload() const {
     payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
+  if (m_generalAuthorizationHasBeenSet) {
+    payload.WithObject("GeneralAuthorization", m_generalAuthorization.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

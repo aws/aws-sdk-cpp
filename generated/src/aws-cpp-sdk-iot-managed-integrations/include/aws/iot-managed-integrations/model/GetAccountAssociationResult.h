@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/iot-managed-integrations/model/AssociationState.h>
+#include <aws/iot-managed-integrations/model/GeneralAuthorizationName.h>
 
 #include <utility>
 
@@ -150,7 +151,8 @@ class GetAccountAssociationResult {
   ///@{
   /**
    * <p>Third party IoT platform OAuth authorization server URL backed with all the
-   * required parameters to perform end-user authentication.</p>
+   * required parameters to perform end-user authentication. This field will be empty
+   * when using General Authorization flows that do not require OAuth.</p>
    */
   inline const Aws::String& GetOAuthAuthorizationUrl() const { return m_oAuthAuthorizationUrl; }
   template <typename OAuthAuthorizationUrlT = Aws::String>
@@ -189,6 +191,23 @@ class GetAccountAssociationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The General Authorization reference by authorization material name.</p>
+   */
+  inline const GeneralAuthorizationName& GetGeneralAuthorization() const { return m_generalAuthorization; }
+  template <typename GeneralAuthorizationT = GeneralAuthorizationName>
+  void SetGeneralAuthorization(GeneralAuthorizationT&& value) {
+    m_generalAuthorizationHasBeenSet = true;
+    m_generalAuthorization = std::forward<GeneralAuthorizationT>(value);
+  }
+  template <typename GeneralAuthorizationT = GeneralAuthorizationName>
+  GetAccountAssociationResult& WithGeneralAuthorization(GeneralAuthorizationT&& value) {
+    SetGeneralAuthorization(std::forward<GeneralAuthorizationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -221,6 +240,8 @@ class GetAccountAssociationResult {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  GeneralAuthorizationName m_generalAuthorization;
+
   Aws::String m_requestId;
   bool m_accountAssociationIdHasBeenSet = false;
   bool m_associationStateHasBeenSet = false;
@@ -231,6 +252,7 @@ class GetAccountAssociationResult {
   bool m_arnHasBeenSet = false;
   bool m_oAuthAuthorizationUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_generalAuthorizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

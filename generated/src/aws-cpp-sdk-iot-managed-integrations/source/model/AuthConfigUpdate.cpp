@@ -22,6 +22,10 @@ AuthConfigUpdate& AuthConfigUpdate::operator=(JsonView jsonValue) {
     m_oAuthUpdate = jsonValue.GetObject("oAuthUpdate");
     m_oAuthUpdateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GeneralAuthorizationUpdate")) {
+    m_generalAuthorizationUpdate = jsonValue.GetObject("GeneralAuthorizationUpdate");
+    m_generalAuthorizationUpdateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue AuthConfigUpdate::Jsonize() const {
 
   if (m_oAuthUpdateHasBeenSet) {
     payload.WithObject("oAuthUpdate", m_oAuthUpdate.Jsonize());
+  }
+
+  if (m_generalAuthorizationUpdateHasBeenSet) {
+    payload.WithObject("GeneralAuthorizationUpdate", m_generalAuthorizationUpdate.Jsonize());
   }
 
   return payload;

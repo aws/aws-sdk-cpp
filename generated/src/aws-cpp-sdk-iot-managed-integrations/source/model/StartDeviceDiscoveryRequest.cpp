@@ -48,6 +48,15 @@ Aws::String StartDeviceDiscoveryRequest::SerializePayload() const {
     payload.WithString("ClientToken", m_clientToken);
   }
 
+  if (m_connectorDeviceIdListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> connectorDeviceIdListJsonList(m_connectorDeviceIdList.size());
+    for (unsigned connectorDeviceIdListIndex = 0; connectorDeviceIdListIndex < connectorDeviceIdListJsonList.GetLength();
+         ++connectorDeviceIdListIndex) {
+      connectorDeviceIdListJsonList[connectorDeviceIdListIndex].AsString(m_connectorDeviceIdList[connectorDeviceIdListIndex]);
+    }
+    payload.WithArray("ConnectorDeviceIdList", std::move(connectorDeviceIdListJsonList));
+  }
+
   if (m_protocolHasBeenSet) {
     payload.WithString("Protocol", ProtocolTypeMapper::GetNameForProtocolType(m_protocol));
   }

@@ -26,6 +26,11 @@ ManagedThingAssociation& ManagedThingAssociation::operator=(JsonView jsonValue) 
     m_accountAssociationId = jsonValue.GetString("AccountAssociationId");
     m_accountAssociationIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedThingAssociationStatus")) {
+    m_managedThingAssociationStatus =
+        ManagedThingAssociationStatusMapper::GetManagedThingAssociationStatusForName(jsonValue.GetString("ManagedThingAssociationStatus"));
+    m_managedThingAssociationStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +43,11 @@ JsonValue ManagedThingAssociation::Jsonize() const {
 
   if (m_accountAssociationIdHasBeenSet) {
     payload.WithString("AccountAssociationId", m_accountAssociationId);
+  }
+
+  if (m_managedThingAssociationStatusHasBeenSet) {
+    payload.WithString("ManagedThingAssociationStatus",
+                       ManagedThingAssociationStatusMapper::GetNameForManagedThingAssociationStatus(m_managedThingAssociationStatus));
   }
 
   return payload;

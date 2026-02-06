@@ -73,7 +73,10 @@ class AwsOpportunityInsights {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Source-separated spend insights that provide independent analysis for AWS
+   * recommendations and partner estimates.</p>
+   */
   inline const AwsProductsSpendInsightsBySource& GetAwsProductsSpendInsightsBySource() const { return m_awsProductsSpendInsightsBySource; }
   inline bool AwsProductsSpendInsightsBySourceHasBeenSet() const { return m_awsProductsSpendInsightsBySourceHasBeenSet; }
   template <typename AwsProductsSpendInsightsBySourceT = AwsProductsSpendInsightsBySource>

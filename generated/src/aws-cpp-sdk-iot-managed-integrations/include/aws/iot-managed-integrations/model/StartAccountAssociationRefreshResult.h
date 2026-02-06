@@ -31,7 +31,9 @@ class StartAccountAssociationRefreshResult {
   ///@{
   /**
    * <p>Third-party IoT platform OAuth authorization server URL with all required
-   * parameters to perform end-user authentication during the refresh process.</p>
+   * parameters to perform end-user authentication during the refresh process. This
+   * field will be empty when using General Authorization flows that do not require
+   * OAuth.</p>
    */
   inline const Aws::String& GetOAuthAuthorizationUrl() const { return m_oAuthAuthorizationUrl; }
   template <typename OAuthAuthorizationUrlT = Aws::String>

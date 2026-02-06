@@ -68,6 +68,24 @@ class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
+   * <p>The claim certificate.</p>
+   */
+  inline const Aws::String& GetClaimCertificate() const { return m_claimCertificate; }
+  inline bool ClaimCertificateHasBeenSet() const { return m_claimCertificateHasBeenSet; }
+  template <typename ClaimCertificateT = Aws::String>
+  void SetClaimCertificate(ClaimCertificateT&& value) {
+    m_claimCertificateHasBeenSet = true;
+    m_claimCertificate = std::forward<ClaimCertificateT>(value);
+  }
+  template <typename ClaimCertificateT = Aws::String>
+  CreateProvisioningProfileRequest& WithClaimCertificate(ClaimCertificateT&& value) {
+    SetClaimCertificate(std::forward<ClaimCertificateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the provisioning template.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -133,6 +151,8 @@ class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   Aws::String m_caCertificate;
 
+  Aws::String m_claimCertificate;
+
   Aws::String m_name;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -140,6 +160,7 @@ class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_provisioningTypeHasBeenSet = false;
   bool m_caCertificateHasBeenSet = false;
+  bool m_claimCertificateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;

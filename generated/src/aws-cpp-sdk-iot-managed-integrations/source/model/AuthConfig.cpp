@@ -22,6 +22,14 @@ AuthConfig& AuthConfig::operator=(JsonView jsonValue) {
     m_oAuth = jsonValue.GetObject("oAuth");
     m_oAuthHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GeneralAuthorization")) {
+    Aws::Utils::Array<JsonView> generalAuthorizationJsonList = jsonValue.GetArray("GeneralAuthorization");
+    for (unsigned generalAuthorizationIndex = 0; generalAuthorizationIndex < generalAuthorizationJsonList.GetLength();
+         ++generalAuthorizationIndex) {
+      m_generalAuthorization.push_back(generalAuthorizationJsonList[generalAuthorizationIndex].AsObject());
+    }
+    m_generalAuthorizationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,15 @@ JsonValue AuthConfig::Jsonize() const {
 
   if (m_oAuthHasBeenSet) {
     payload.WithObject("oAuth", m_oAuth.Jsonize());
+  }
+
+  if (m_generalAuthorizationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> generalAuthorizationJsonList(m_generalAuthorization.size());
+    for (unsigned generalAuthorizationIndex = 0; generalAuthorizationIndex < generalAuthorizationJsonList.GetLength();
+         ++generalAuthorizationIndex) {
+      generalAuthorizationJsonList[generalAuthorizationIndex].AsObject(m_generalAuthorization[generalAuthorizationIndex].Jsonize());
+    }
+    payload.WithArray("GeneralAuthorization", std::move(generalAuthorizationJsonList));
   }
 
   return payload;

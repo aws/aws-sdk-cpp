@@ -16,7 +16,8 @@ enum class AuthMaterialType {
   WIFI_SETUP_QR_BAR_CODE,
   ZWAVE_QR_BAR_CODE,
   ZIGBEE_QR_BAR_CODE,
-  DISCOVERED_DEVICE
+  DISCOVERED_DEVICE,
+  PRE_ONBOARDED_CLOUD
 };
 
 namespace AuthMaterialTypeMapper {

@@ -9,6 +9,7 @@
 #include <aws/bedrock-data-automation-runtime/model/Blueprint.h>
 #include <aws/bedrock-data-automation-runtime/model/DataAutomationConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/EncryptionConfiguration.h>
+#include <aws/bedrock-data-automation-runtime/model/OutputConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/SyncInputConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -133,6 +134,24 @@ class InvokeDataAutomationRequest : public BedrockDataAutomationRuntimeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Output configuration.</p>
+   */
+  inline const OutputConfiguration& GetOutputConfiguration() const { return m_outputConfiguration; }
+  inline bool OutputConfigurationHasBeenSet() const { return m_outputConfigurationHasBeenSet; }
+  template <typename OutputConfigurationT = OutputConfiguration>
+  void SetOutputConfiguration(OutputConfigurationT&& value) {
+    m_outputConfigurationHasBeenSet = true;
+    m_outputConfiguration = std::forward<OutputConfigurationT>(value);
+  }
+  template <typename OutputConfigurationT = OutputConfiguration>
+  InvokeDataAutomationRequest& WithOutputConfiguration(OutputConfigurationT&& value) {
+    SetOutputConfiguration(std::forward<OutputConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SyncInputConfiguration m_inputConfiguration;
 
@@ -143,11 +162,14 @@ class InvokeDataAutomationRequest : public BedrockDataAutomationRuntimeRequest {
   Aws::String m_dataAutomationProfileArn;
 
   EncryptionConfiguration m_encryptionConfiguration;
+
+  OutputConfiguration m_outputConfiguration;
   bool m_inputConfigurationHasBeenSet = false;
   bool m_dataAutomationConfigurationHasBeenSet = false;
   bool m_blueprintsHasBeenSet = false;
   bool m_dataAutomationProfileArnHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

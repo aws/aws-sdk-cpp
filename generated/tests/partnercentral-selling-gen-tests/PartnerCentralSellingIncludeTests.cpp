@@ -34,6 +34,7 @@
 #include <aws/partnercentral-selling/model/AwsOpportunityProject.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityRelatedEntities.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityStage.h>
+#include <aws/partnercentral-selling/model/AwsOpportunitySummaryFullView.h>
 #include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/AwsProductDetails.h>
 #include <aws/partnercentral-selling/model/AwsProductInsights.h>
@@ -59,6 +60,7 @@
 #include <aws/partnercentral-selling/model/CreateResourceSnapshotJobResult.h>
 #include <aws/partnercentral-selling/model/CreateResourceSnapshotRequest.h>
 #include <aws/partnercentral-selling/model/CreateResourceSnapshotResult.h>
+#include <aws/partnercentral-selling/model/CreatedDateFilter.h>
 #include <aws/partnercentral-selling/model/CurrencyCode.h>
 #include <aws/partnercentral-selling/model/Customer.h>
 #include <aws/partnercentral-selling/model/CustomerProjectsContext.h>

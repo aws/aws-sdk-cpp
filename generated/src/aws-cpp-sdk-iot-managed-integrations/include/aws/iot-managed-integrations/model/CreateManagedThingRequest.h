@@ -93,7 +93,7 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
   ///@{
   /**
    * <p>The authentication material defining the device connectivity setup requests.
-   * The authentication materials used are the device bar code.</p>
+   * The authorization materials used are the device bar code.</p>
    */
   inline const Aws::String& GetAuthenticationMaterial() const { return m_authenticationMaterial; }
   inline bool AuthenticationMaterialHasBeenSet() const { return m_authenticationMaterialHasBeenSet; }

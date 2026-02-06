@@ -31,7 +31,7 @@ class TagResourceRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The ARN of the resource to which to add tags.</p>
+   * <p>The Amazon Resource Name (ARN) of the resource to which to add tags.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -49,7 +49,7 @@ class TagResourceRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>A set of key/value pairs that are used to manage the resource</p>
+   * <p>A set of key/value pairs that are used to manage the resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
