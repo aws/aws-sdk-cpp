@@ -31,7 +31,7 @@ class DynamoDBPaginationBase {
   ListContributorInsightsPaginator(const Model::ListContributorInsightsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListContributorInsightsRequest,
                                                  Pagination::ListContributorInsightsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -40,8 +40,8 @@ class DynamoDBPaginationBase {
   Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListExportsRequest, Pagination::ListExportsPaginationTraits<DerivedClient>>
   ListExportsPaginator(const Model::ListExportsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListExportsRequest,
-                                                 Pagination::ListExportsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+                                                 Pagination::ListExportsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**
@@ -50,8 +50,8 @@ class DynamoDBPaginationBase {
   Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListImportsRequest, Pagination::ListImportsPaginationTraits<DerivedClient>>
   ListImportsPaginator(const Model::ListImportsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListImportsRequest,
-                                                 Pagination::ListImportsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+                                                 Pagination::ListImportsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**
@@ -60,8 +60,8 @@ class DynamoDBPaginationBase {
   Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DerivedClient>>
   ListTablesPaginator(const Model::ListTablesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListTablesRequest,
-                                                 Pagination::ListTablesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+                                                 Pagination::ListTablesPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 
   /**
@@ -70,7 +70,7 @@ class DynamoDBPaginationBase {
   Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DerivedClient>>
   QueryPaginator(const Model::QueryRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -79,7 +79,7 @@ class DynamoDBPaginationBase {
   Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ScanRequest, Pagination::ScanPaginationTraits<DerivedClient>> ScanPaginator(
       const Model::ScanRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ScanRequest, Pagination::ScanPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 };
 }  // namespace DynamoDB

@@ -189,7 +189,7 @@ class EC2PaginationBase {
   DescribeAddressesAttributePaginator(const Model::DescribeAddressesAttributeRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAddressesAttributeRequest,
                                                  Pagination::DescribeAddressesAttributePaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -200,7 +200,7 @@ class EC2PaginationBase {
   DescribeAddressTransfersPaginator(const Model::DescribeAddressTransfersRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAddressTransfersRequest,
                                                  Pagination::DescribeAddressTransfersPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -211,8 +211,8 @@ class EC2PaginationBase {
   DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator(const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<
         DerivedClient, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
-        Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                     request};
   }
 
   /**
@@ -223,7 +223,7 @@ class EC2PaginationBase {
   DescribeByoipCidrsPaginator(const Model::DescribeByoipCidrsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeByoipCidrsRequest,
                                                  Pagination::DescribeByoipCidrsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -234,7 +234,7 @@ class EC2PaginationBase {
   DescribeCapacityBlockExtensionHistoryPaginator(const Model::DescribeCapacityBlockExtensionHistoryRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockExtensionHistoryRequest,
                                                  Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -245,7 +245,7 @@ class EC2PaginationBase {
   DescribeCapacityBlockExtensionOfferingsPaginator(const Model::DescribeCapacityBlockExtensionOfferingsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockExtensionOfferingsRequest,
                                                  Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -256,7 +256,7 @@ class EC2PaginationBase {
   DescribeCapacityBlockOfferingsPaginator(const Model::DescribeCapacityBlockOfferingsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockOfferingsRequest,
                                                  Pagination::DescribeCapacityBlockOfferingsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -267,7 +267,7 @@ class EC2PaginationBase {
   DescribeCapacityBlocksPaginator(const Model::DescribeCapacityBlocksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlocksRequest,
                                                  Pagination::DescribeCapacityBlocksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -278,7 +278,7 @@ class EC2PaginationBase {
   DescribeCapacityBlockStatusPaginator(const Model::DescribeCapacityBlockStatusRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockStatusRequest,
                                                  Pagination::DescribeCapacityBlockStatusPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -289,7 +289,7 @@ class EC2PaginationBase {
   DescribeCapacityManagerDataExportsPaginator(const Model::DescribeCapacityManagerDataExportsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityManagerDataExportsRequest,
                                                  Pagination::DescribeCapacityManagerDataExportsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -300,7 +300,7 @@ class EC2PaginationBase {
   DescribeCapacityReservationBillingRequestsPaginator(const Model::DescribeCapacityReservationBillingRequestsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationBillingRequestsRequest,
                                                  Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -311,7 +311,7 @@ class EC2PaginationBase {
   DescribeCapacityReservationFleetsPaginator(const Model::DescribeCapacityReservationFleetsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationFleetsRequest,
                                                  Pagination::DescribeCapacityReservationFleetsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -322,7 +322,7 @@ class EC2PaginationBase {
   DescribeCapacityReservationsPaginator(const Model::DescribeCapacityReservationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationsRequest,
                                                  Pagination::DescribeCapacityReservationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -333,7 +333,7 @@ class EC2PaginationBase {
   DescribeCarrierGatewaysPaginator(const Model::DescribeCarrierGatewaysRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCarrierGatewaysRequest,
                                                  Pagination::DescribeCarrierGatewaysPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -344,7 +344,7 @@ class EC2PaginationBase {
   DescribeClassicLinkInstancesPaginator(const Model::DescribeClassicLinkInstancesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClassicLinkInstancesRequest,
                                                  Pagination::DescribeClassicLinkInstancesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -355,7 +355,7 @@ class EC2PaginationBase {
   DescribeClientVpnAuthorizationRulesPaginator(const Model::DescribeClientVpnAuthorizationRulesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnAuthorizationRulesRequest,
                                                  Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -366,7 +366,7 @@ class EC2PaginationBase {
   DescribeClientVpnConnectionsPaginator(const Model::DescribeClientVpnConnectionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnConnectionsRequest,
                                                  Pagination::DescribeClientVpnConnectionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -377,7 +377,7 @@ class EC2PaginationBase {
   DescribeClientVpnEndpointsPaginator(const Model::DescribeClientVpnEndpointsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnEndpointsRequest,
                                                  Pagination::DescribeClientVpnEndpointsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -388,7 +388,7 @@ class EC2PaginationBase {
   DescribeClientVpnRoutesPaginator(const Model::DescribeClientVpnRoutesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnRoutesRequest,
                                                  Pagination::DescribeClientVpnRoutesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -399,7 +399,7 @@ class EC2PaginationBase {
   DescribeClientVpnTargetNetworksPaginator(const Model::DescribeClientVpnTargetNetworksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnTargetNetworksRequest,
                                                  Pagination::DescribeClientVpnTargetNetworksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -410,7 +410,7 @@ class EC2PaginationBase {
   DescribeCoipPoolsPaginator(const Model::DescribeCoipPoolsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCoipPoolsRequest,
                                                  Pagination::DescribeCoipPoolsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -421,7 +421,7 @@ class EC2PaginationBase {
   DescribeDhcpOptionsPaginator(const Model::DescribeDhcpOptionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeDhcpOptionsRequest,
                                                  Pagination::DescribeDhcpOptionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -432,7 +432,7 @@ class EC2PaginationBase {
   DescribeEgressOnlyInternetGatewaysPaginator(const Model::DescribeEgressOnlyInternetGatewaysRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeEgressOnlyInternetGatewaysRequest,
                                                  Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -443,7 +443,7 @@ class EC2PaginationBase {
   DescribeExportImageTasksPaginator(const Model::DescribeExportImageTasksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeExportImageTasksRequest,
                                                  Pagination::DescribeExportImageTasksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -454,7 +454,7 @@ class EC2PaginationBase {
   DescribeFastLaunchImagesPaginator(const Model::DescribeFastLaunchImagesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFastLaunchImagesRequest,
                                                  Pagination::DescribeFastLaunchImagesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -465,7 +465,7 @@ class EC2PaginationBase {
   DescribeFastSnapshotRestoresPaginator(const Model::DescribeFastSnapshotRestoresRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFastSnapshotRestoresRequest,
                                                  Pagination::DescribeFastSnapshotRestoresPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -476,7 +476,7 @@ class EC2PaginationBase {
   DescribeFleetsPaginator(const Model::DescribeFleetsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFleetsRequest,
                                                  Pagination::DescribeFleetsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -487,7 +487,7 @@ class EC2PaginationBase {
   DescribeFlowLogsPaginator(const Model::DescribeFlowLogsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFlowLogsRequest,
                                                  Pagination::DescribeFlowLogsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -498,7 +498,7 @@ class EC2PaginationBase {
   DescribeFpgaImagesPaginator(const Model::DescribeFpgaImagesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFpgaImagesRequest,
                                                  Pagination::DescribeFpgaImagesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -509,7 +509,7 @@ class EC2PaginationBase {
   DescribeHostReservationOfferingsPaginator(const Model::DescribeHostReservationOfferingsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostReservationOfferingsRequest,
                                                  Pagination::DescribeHostReservationOfferingsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -520,7 +520,7 @@ class EC2PaginationBase {
   DescribeHostReservationsPaginator(const Model::DescribeHostReservationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostReservationsRequest,
                                                  Pagination::DescribeHostReservationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -531,7 +531,7 @@ class EC2PaginationBase {
   DescribeHostsPaginator(const Model::DescribeHostsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostsRequest,
                                                  Pagination::DescribeHostsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -542,7 +542,7 @@ class EC2PaginationBase {
   DescribeIamInstanceProfileAssociationsPaginator(const Model::DescribeIamInstanceProfileAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIamInstanceProfileAssociationsRequest,
                                                  Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -553,7 +553,7 @@ class EC2PaginationBase {
   DescribeImageReferencesPaginator(const Model::DescribeImageReferencesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageReferencesRequest,
                                                  Pagination::DescribeImageReferencesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -564,7 +564,7 @@ class EC2PaginationBase {
   DescribeImagesPaginator(const Model::DescribeImagesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImagesRequest,
                                                  Pagination::DescribeImagesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -575,7 +575,7 @@ class EC2PaginationBase {
   DescribeImageUsageReportEntriesPaginator(const Model::DescribeImageUsageReportEntriesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageUsageReportEntriesRequest,
                                                  Pagination::DescribeImageUsageReportEntriesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -586,7 +586,7 @@ class EC2PaginationBase {
   DescribeImageUsageReportsPaginator(const Model::DescribeImageUsageReportsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageUsageReportsRequest,
                                                  Pagination::DescribeImageUsageReportsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -597,7 +597,7 @@ class EC2PaginationBase {
   DescribeImportImageTasksPaginator(const Model::DescribeImportImageTasksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImportImageTasksRequest,
                                                  Pagination::DescribeImportImageTasksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -608,7 +608,7 @@ class EC2PaginationBase {
   DescribeImportSnapshotTasksPaginator(const Model::DescribeImportSnapshotTasksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImportSnapshotTasksRequest,
                                                  Pagination::DescribeImportSnapshotTasksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -619,7 +619,7 @@ class EC2PaginationBase {
   DescribeInstanceConnectEndpointsPaginator(const Model::DescribeInstanceConnectEndpointsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceConnectEndpointsRequest,
                                                  Pagination::DescribeInstanceConnectEndpointsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -630,7 +630,7 @@ class EC2PaginationBase {
   DescribeInstanceCreditSpecificationsPaginator(const Model::DescribeInstanceCreditSpecificationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceCreditSpecificationsRequest,
                                                  Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -641,7 +641,7 @@ class EC2PaginationBase {
   DescribeInstanceEventWindowsPaginator(const Model::DescribeInstanceEventWindowsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceEventWindowsRequest,
                                                  Pagination::DescribeInstanceEventWindowsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -652,7 +652,7 @@ class EC2PaginationBase {
   DescribeInstanceImageMetadataPaginator(const Model::DescribeInstanceImageMetadataRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceImageMetadataRequest,
                                                  Pagination::DescribeInstanceImageMetadataPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -663,7 +663,7 @@ class EC2PaginationBase {
   DescribeInstancesPaginator(const Model::DescribeInstancesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstancesRequest,
                                                  Pagination::DescribeInstancesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -674,7 +674,7 @@ class EC2PaginationBase {
   DescribeInstanceStatusPaginator(const Model::DescribeInstanceStatusRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceStatusRequest,
                                                  Pagination::DescribeInstanceStatusPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -685,7 +685,7 @@ class EC2PaginationBase {
   DescribeInstanceTopologyPaginator(const Model::DescribeInstanceTopologyRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTopologyRequest,
                                                  Pagination::DescribeInstanceTopologyPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -696,7 +696,7 @@ class EC2PaginationBase {
   DescribeInstanceTypeOfferingsPaginator(const Model::DescribeInstanceTypeOfferingsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTypeOfferingsRequest,
                                                  Pagination::DescribeInstanceTypeOfferingsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -707,7 +707,7 @@ class EC2PaginationBase {
   DescribeInstanceTypesPaginator(const Model::DescribeInstanceTypesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTypesRequest,
                                                  Pagination::DescribeInstanceTypesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -718,7 +718,7 @@ class EC2PaginationBase {
   DescribeInternetGatewaysPaginator(const Model::DescribeInternetGatewaysRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInternetGatewaysRequest,
                                                  Pagination::DescribeInternetGatewaysPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -729,7 +729,7 @@ class EC2PaginationBase {
   DescribeIpamPoolsPaginator(const Model::DescribeIpamPoolsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPoolsRequest,
                                                  Pagination::DescribeIpamPoolsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -740,7 +740,7 @@ class EC2PaginationBase {
   DescribeIpamPrefixListResolversPaginator(const Model::DescribeIpamPrefixListResolversRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPrefixListResolversRequest,
                                                  Pagination::DescribeIpamPrefixListResolversPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -751,7 +751,7 @@ class EC2PaginationBase {
   DescribeIpamPrefixListResolverTargetsPaginator(const Model::DescribeIpamPrefixListResolverTargetsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPrefixListResolverTargetsRequest,
                                                  Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -762,7 +762,7 @@ class EC2PaginationBase {
   DescribeIpamResourceDiscoveriesPaginator(const Model::DescribeIpamResourceDiscoveriesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamResourceDiscoveriesRequest,
                                                  Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -773,7 +773,7 @@ class EC2PaginationBase {
   DescribeIpamResourceDiscoveryAssociationsPaginator(const Model::DescribeIpamResourceDiscoveryAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
                                                  Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -784,7 +784,7 @@ class EC2PaginationBase {
   DescribeIpamsPaginator(const Model::DescribeIpamsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamsRequest,
                                                  Pagination::DescribeIpamsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -795,7 +795,7 @@ class EC2PaginationBase {
   DescribeIpamScopesPaginator(const Model::DescribeIpamScopesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamScopesRequest,
                                                  Pagination::DescribeIpamScopesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -806,7 +806,7 @@ class EC2PaginationBase {
   DescribeIpv6PoolsPaginator(const Model::DescribeIpv6PoolsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpv6PoolsRequest,
                                                  Pagination::DescribeIpv6PoolsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -817,7 +817,7 @@ class EC2PaginationBase {
   DescribeLaunchTemplatesPaginator(const Model::DescribeLaunchTemplatesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLaunchTemplatesRequest,
                                                  Pagination::DescribeLaunchTemplatesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -828,7 +828,7 @@ class EC2PaginationBase {
   DescribeLaunchTemplateVersionsPaginator(const Model::DescribeLaunchTemplateVersionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLaunchTemplateVersionsRequest,
                                                  Pagination::DescribeLaunchTemplateVersionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -839,7 +839,7 @@ class EC2PaginationBase {
   DescribeLocalGatewayRouteTablesPaginator(const Model::DescribeLocalGatewayRouteTablesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayRouteTablesRequest,
                                                  Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -853,7 +853,7 @@ class EC2PaginationBase {
     return Aws::Utils::Pagination::PagePaginator<
         DerivedClient, Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest,
         Pagination::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -864,7 +864,7 @@ class EC2PaginationBase {
   DescribeLocalGatewayRouteTableVpcAssociationsPaginator(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
                                                  Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -875,7 +875,7 @@ class EC2PaginationBase {
   DescribeLocalGatewaysPaginator(const Model::DescribeLocalGatewaysRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewaysRequest,
                                                  Pagination::DescribeLocalGatewaysPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -886,7 +886,7 @@ class EC2PaginationBase {
   DescribeLocalGatewayVirtualInterfaceGroupsPaginator(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
                                                  Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -897,7 +897,7 @@ class EC2PaginationBase {
   DescribeLocalGatewayVirtualInterfacesPaginator(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfacesRequest,
                                                  Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -908,7 +908,7 @@ class EC2PaginationBase {
   DescribeMacHostsPaginator(const Model::DescribeMacHostsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMacHostsRequest,
                                                  Pagination::DescribeMacHostsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -919,7 +919,7 @@ class EC2PaginationBase {
   DescribeMacModificationTasksPaginator(const Model::DescribeMacModificationTasksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMacModificationTasksRequest,
                                                  Pagination::DescribeMacModificationTasksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -930,7 +930,7 @@ class EC2PaginationBase {
   DescribeManagedPrefixListsPaginator(const Model::DescribeManagedPrefixListsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeManagedPrefixListsRequest,
                                                  Pagination::DescribeManagedPrefixListsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -941,7 +941,7 @@ class EC2PaginationBase {
   DescribeMovingAddressesPaginator(const Model::DescribeMovingAddressesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMovingAddressesRequest,
                                                  Pagination::DescribeMovingAddressesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -952,7 +952,7 @@ class EC2PaginationBase {
   DescribeNatGatewaysPaginator(const Model::DescribeNatGatewaysRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNatGatewaysRequest,
                                                  Pagination::DescribeNatGatewaysPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -963,7 +963,7 @@ class EC2PaginationBase {
   DescribeNetworkAclsPaginator(const Model::DescribeNetworkAclsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkAclsRequest,
                                                  Pagination::DescribeNetworkAclsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -974,7 +974,7 @@ class EC2PaginationBase {
   DescribeNetworkInsightsAccessScopeAnalysesPaginator(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
                                                  Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -985,7 +985,7 @@ class EC2PaginationBase {
   DescribeNetworkInsightsAccessScopesPaginator(const Model::DescribeNetworkInsightsAccessScopesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopesRequest,
                                                  Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -996,7 +996,7 @@ class EC2PaginationBase {
   DescribeNetworkInsightsAnalysesPaginator(const Model::DescribeNetworkInsightsAnalysesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAnalysesRequest,
                                                  Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1007,7 +1007,7 @@ class EC2PaginationBase {
   DescribeNetworkInsightsPathsPaginator(const Model::DescribeNetworkInsightsPathsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsPathsRequest,
                                                  Pagination::DescribeNetworkInsightsPathsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1018,7 +1018,7 @@ class EC2PaginationBase {
   DescribeNetworkInterfacePermissionsPaginator(const Model::DescribeNetworkInterfacePermissionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInterfacePermissionsRequest,
                                                  Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1029,7 +1029,7 @@ class EC2PaginationBase {
   DescribeNetworkInterfacesPaginator(const Model::DescribeNetworkInterfacesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInterfacesRequest,
                                                  Pagination::DescribeNetworkInterfacesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1040,7 +1040,7 @@ class EC2PaginationBase {
   DescribePrefixListsPaginator(const Model::DescribePrefixListsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePrefixListsRequest,
                                                  Pagination::DescribePrefixListsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1051,7 +1051,7 @@ class EC2PaginationBase {
   DescribePrincipalIdFormatPaginator(const Model::DescribePrincipalIdFormatRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePrincipalIdFormatRequest,
                                                  Pagination::DescribePrincipalIdFormatPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1062,7 +1062,7 @@ class EC2PaginationBase {
   DescribePublicIpv4PoolsPaginator(const Model::DescribePublicIpv4PoolsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePublicIpv4PoolsRequest,
                                                  Pagination::DescribePublicIpv4PoolsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1073,7 +1073,7 @@ class EC2PaginationBase {
   DescribeReplaceRootVolumeTasksPaginator(const Model::DescribeReplaceRootVolumeTasksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReplaceRootVolumeTasksRequest,
                                                  Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1084,7 +1084,7 @@ class EC2PaginationBase {
   DescribeReservedInstancesModificationsPaginator(const Model::DescribeReservedInstancesModificationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReservedInstancesModificationsRequest,
                                                  Pagination::DescribeReservedInstancesModificationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1095,7 +1095,7 @@ class EC2PaginationBase {
   DescribeReservedInstancesOfferingsPaginator(const Model::DescribeReservedInstancesOfferingsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReservedInstancesOfferingsRequest,
                                                  Pagination::DescribeReservedInstancesOfferingsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1106,7 +1106,7 @@ class EC2PaginationBase {
   DescribeRouteServerEndpointsPaginator(const Model::DescribeRouteServerEndpointsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServerEndpointsRequest,
                                                  Pagination::DescribeRouteServerEndpointsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1117,7 +1117,7 @@ class EC2PaginationBase {
   DescribeRouteServerPeersPaginator(const Model::DescribeRouteServerPeersRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServerPeersRequest,
                                                  Pagination::DescribeRouteServerPeersPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1128,7 +1128,7 @@ class EC2PaginationBase {
   DescribeRouteServersPaginator(const Model::DescribeRouteServersRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServersRequest,
                                                  Pagination::DescribeRouteServersPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1139,7 +1139,7 @@ class EC2PaginationBase {
   DescribeRouteTablesPaginator(const Model::DescribeRouteTablesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteTablesRequest,
                                                  Pagination::DescribeRouteTablesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1150,7 +1150,7 @@ class EC2PaginationBase {
   DescribeScheduledInstanceAvailabilityPaginator(const Model::DescribeScheduledInstanceAvailabilityRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeScheduledInstanceAvailabilityRequest,
                                                  Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1161,7 +1161,7 @@ class EC2PaginationBase {
   DescribeScheduledInstancesPaginator(const Model::DescribeScheduledInstancesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeScheduledInstancesRequest,
                                                  Pagination::DescribeScheduledInstancesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1172,7 +1172,7 @@ class EC2PaginationBase {
   DescribeSecurityGroupRulesPaginator(const Model::DescribeSecurityGroupRulesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupRulesRequest,
                                                  Pagination::DescribeSecurityGroupRulesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1183,7 +1183,7 @@ class EC2PaginationBase {
   DescribeSecurityGroupsPaginator(const Model::DescribeSecurityGroupsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupsRequest,
                                                  Pagination::DescribeSecurityGroupsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1194,7 +1194,7 @@ class EC2PaginationBase {
   DescribeSecurityGroupVpcAssociationsPaginator(const Model::DescribeSecurityGroupVpcAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupVpcAssociationsRequest,
                                                  Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1205,7 +1205,7 @@ class EC2PaginationBase {
   DescribeSnapshotsPaginator(const Model::DescribeSnapshotsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                                  Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1216,7 +1216,7 @@ class EC2PaginationBase {
   DescribeSnapshotTierStatusPaginator(const Model::DescribeSnapshotTierStatusRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSnapshotTierStatusRequest,
                                                  Pagination::DescribeSnapshotTierStatusPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1227,7 +1227,7 @@ class EC2PaginationBase {
   DescribeSpotFleetRequestsPaginator(const Model::DescribeSpotFleetRequestsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotFleetRequestsRequest,
                                                  Pagination::DescribeSpotFleetRequestsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1238,7 +1238,7 @@ class EC2PaginationBase {
   DescribeSpotInstanceRequestsPaginator(const Model::DescribeSpotInstanceRequestsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotInstanceRequestsRequest,
                                                  Pagination::DescribeSpotInstanceRequestsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1249,7 +1249,7 @@ class EC2PaginationBase {
   DescribeSpotPriceHistoryPaginator(const Model::DescribeSpotPriceHistoryRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotPriceHistoryRequest,
                                                  Pagination::DescribeSpotPriceHistoryPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1260,7 +1260,7 @@ class EC2PaginationBase {
   DescribeStaleSecurityGroupsPaginator(const Model::DescribeStaleSecurityGroupsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeStaleSecurityGroupsRequest,
                                                  Pagination::DescribeStaleSecurityGroupsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1271,7 +1271,7 @@ class EC2PaginationBase {
   DescribeStoreImageTasksPaginator(const Model::DescribeStoreImageTasksRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeStoreImageTasksRequest,
                                                  Pagination::DescribeStoreImageTasksPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1282,7 +1282,7 @@ class EC2PaginationBase {
   DescribeSubnetsPaginator(const Model::DescribeSubnetsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSubnetsRequest,
                                                  Pagination::DescribeSubnetsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1292,7 +1292,7 @@ class EC2PaginationBase {
   DescribeTagsPaginator(const Model::DescribeTagsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTagsRequest,
                                                  Pagination::DescribeTagsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1303,7 +1303,7 @@ class EC2PaginationBase {
   DescribeTrafficMirrorFiltersPaginator(const Model::DescribeTrafficMirrorFiltersRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorFiltersRequest,
                                                  Pagination::DescribeTrafficMirrorFiltersPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1314,7 +1314,7 @@ class EC2PaginationBase {
   DescribeTrafficMirrorSessionsPaginator(const Model::DescribeTrafficMirrorSessionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorSessionsRequest,
                                                  Pagination::DescribeTrafficMirrorSessionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1325,7 +1325,7 @@ class EC2PaginationBase {
   DescribeTrafficMirrorTargetsPaginator(const Model::DescribeTrafficMirrorTargetsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorTargetsRequest,
                                                  Pagination::DescribeTrafficMirrorTargetsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1336,7 +1336,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayAttachmentsPaginator(const Model::DescribeTransitGatewayAttachmentsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayAttachmentsRequest,
                                                  Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1347,7 +1347,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayConnectPeersPaginator(const Model::DescribeTransitGatewayConnectPeersRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayConnectPeersRequest,
                                                  Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1358,7 +1358,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayConnectsPaginator(const Model::DescribeTransitGatewayConnectsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayConnectsRequest,
                                                  Pagination::DescribeTransitGatewayConnectsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1369,7 +1369,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayMulticastDomainsPaginator(const Model::DescribeTransitGatewayMulticastDomainsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayMulticastDomainsRequest,
                                                  Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1380,7 +1380,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayPeeringAttachmentsPaginator(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
                                                  Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1391,7 +1391,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayPolicyTablesPaginator(const Model::DescribeTransitGatewayPolicyTablesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayPolicyTablesRequest,
                                                  Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1402,7 +1402,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayRouteTableAnnouncementsPaginator(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
                                                  Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1413,7 +1413,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayRouteTablesPaginator(const Model::DescribeTransitGatewayRouteTablesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayRouteTablesRequest,
                                                  Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1424,7 +1424,7 @@ class EC2PaginationBase {
   DescribeTransitGatewaysPaginator(const Model::DescribeTransitGatewaysRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewaysRequest,
                                                  Pagination::DescribeTransitGatewaysPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1435,7 +1435,7 @@ class EC2PaginationBase {
   DescribeTransitGatewayVpcAttachmentsPaginator(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayVpcAttachmentsRequest,
                                                  Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1446,7 +1446,7 @@ class EC2PaginationBase {
   DescribeTrunkInterfaceAssociationsPaginator(const Model::DescribeTrunkInterfaceAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrunkInterfaceAssociationsRequest,
                                                  Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1457,7 +1457,7 @@ class EC2PaginationBase {
   DescribeVerifiedAccessEndpointsPaginator(const Model::DescribeVerifiedAccessEndpointsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessEndpointsRequest,
                                                  Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1468,7 +1468,7 @@ class EC2PaginationBase {
   DescribeVerifiedAccessGroupsPaginator(const Model::DescribeVerifiedAccessGroupsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessGroupsRequest,
                                                  Pagination::DescribeVerifiedAccessGroupsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1480,8 +1480,8 @@ class EC2PaginationBase {
       const Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<
         DerivedClient, Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
-        Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 
   /**
@@ -1492,7 +1492,7 @@ class EC2PaginationBase {
   DescribeVerifiedAccessInstancesPaginator(const Model::DescribeVerifiedAccessInstancesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessInstancesRequest,
                                                  Pagination::DescribeVerifiedAccessInstancesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1503,7 +1503,7 @@ class EC2PaginationBase {
   DescribeVerifiedAccessTrustProvidersPaginator(const Model::DescribeVerifiedAccessTrustProvidersRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessTrustProvidersRequest,
                                                  Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1514,7 +1514,7 @@ class EC2PaginationBase {
   DescribeVolumesPaginator(const Model::DescribeVolumesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumesRequest,
                                                  Pagination::DescribeVolumesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1525,7 +1525,7 @@ class EC2PaginationBase {
   DescribeVolumesModificationsPaginator(const Model::DescribeVolumesModificationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumesModificationsRequest,
                                                  Pagination::DescribeVolumesModificationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1536,7 +1536,7 @@ class EC2PaginationBase {
   DescribeVolumeStatusPaginator(const Model::DescribeVolumeStatusRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumeStatusRequest,
                                                  Pagination::DescribeVolumeStatusPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1547,7 +1547,7 @@ class EC2PaginationBase {
   DescribeVpcClassicLinkDnsSupportPaginator(const Model::DescribeVpcClassicLinkDnsSupportRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcClassicLinkDnsSupportRequest,
                                                  Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1558,7 +1558,7 @@ class EC2PaginationBase {
   DescribeVpcEndpointConnectionNotificationsPaginator(const Model::DescribeVpcEndpointConnectionNotificationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointConnectionNotificationsRequest,
                                                  Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1569,7 +1569,7 @@ class EC2PaginationBase {
   DescribeVpcEndpointConnectionsPaginator(const Model::DescribeVpcEndpointConnectionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointConnectionsRequest,
                                                  Pagination::DescribeVpcEndpointConnectionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1580,7 +1580,7 @@ class EC2PaginationBase {
   DescribeVpcEndpointsPaginator(const Model::DescribeVpcEndpointsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointsRequest,
                                                  Pagination::DescribeVpcEndpointsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1591,7 +1591,7 @@ class EC2PaginationBase {
   DescribeVpcEndpointServiceConfigurationsPaginator(const Model::DescribeVpcEndpointServiceConfigurationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointServiceConfigurationsRequest,
                                                  Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1602,7 +1602,7 @@ class EC2PaginationBase {
   DescribeVpcEndpointServicePermissionsPaginator(const Model::DescribeVpcEndpointServicePermissionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointServicePermissionsRequest,
                                                  Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1613,7 +1613,7 @@ class EC2PaginationBase {
   DescribeVpcPeeringConnectionsPaginator(const Model::DescribeVpcPeeringConnectionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcPeeringConnectionsRequest,
                                                  Pagination::DescribeVpcPeeringConnectionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1623,7 +1623,7 @@ class EC2PaginationBase {
   DescribeVpcsPaginator(const Model::DescribeVpcsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcsRequest,
                                                  Pagination::DescribeVpcsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1634,7 +1634,7 @@ class EC2PaginationBase {
   DescribeVpnConcentratorsPaginator(const Model::DescribeVpnConcentratorsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpnConcentratorsRequest,
                                                  Pagination::DescribeVpnConcentratorsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1645,7 +1645,7 @@ class EC2PaginationBase {
   GetAssociatedIpv6PoolCidrsPaginator(const Model::GetAssociatedIpv6PoolCidrsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetAssociatedIpv6PoolCidrsRequest,
                                                  Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1656,7 +1656,7 @@ class EC2PaginationBase {
   GetAwsNetworkPerformanceDataPaginator(const Model::GetAwsNetworkPerformanceDataRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetAwsNetworkPerformanceDataRequest,
                                                  Pagination::GetAwsNetworkPerformanceDataPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1667,7 +1667,7 @@ class EC2PaginationBase {
   GetCapacityManagerMetricDataPaginator(const Model::GetCapacityManagerMetricDataRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetCapacityManagerMetricDataRequest,
                                                  Pagination::GetCapacityManagerMetricDataPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1678,7 +1678,7 @@ class EC2PaginationBase {
   GetCapacityManagerMetricDimensionsPaginator(const Model::GetCapacityManagerMetricDimensionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetCapacityManagerMetricDimensionsRequest,
                                                  Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1689,7 +1689,7 @@ class EC2PaginationBase {
   GetGroupsForCapacityReservationPaginator(const Model::GetGroupsForCapacityReservationRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetGroupsForCapacityReservationRequest,
                                                  Pagination::GetGroupsForCapacityReservationPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1700,7 +1700,7 @@ class EC2PaginationBase {
   GetInstanceTypesFromInstanceRequirementsPaginator(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetInstanceTypesFromInstanceRequirementsRequest,
                                                  Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1711,7 +1711,7 @@ class EC2PaginationBase {
   GetIpamAddressHistoryPaginator(const Model::GetIpamAddressHistoryRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamAddressHistoryRequest,
                                                  Pagination::GetIpamAddressHistoryPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1722,7 +1722,7 @@ class EC2PaginationBase {
   GetIpamDiscoveredAccountsPaginator(const Model::GetIpamDiscoveredAccountsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamDiscoveredAccountsRequest,
                                                  Pagination::GetIpamDiscoveredAccountsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1733,7 +1733,7 @@ class EC2PaginationBase {
   GetIpamDiscoveredResourceCidrsPaginator(const Model::GetIpamDiscoveredResourceCidrsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamDiscoveredResourceCidrsRequest,
                                                  Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1744,7 +1744,7 @@ class EC2PaginationBase {
   GetIpamPoolAllocationsPaginator(const Model::GetIpamPoolAllocationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPoolAllocationsRequest,
                                                  Pagination::GetIpamPoolAllocationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1755,7 +1755,7 @@ class EC2PaginationBase {
   GetIpamPoolCidrsPaginator(const Model::GetIpamPoolCidrsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPoolCidrsRequest,
                                                  Pagination::GetIpamPoolCidrsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1766,7 +1766,7 @@ class EC2PaginationBase {
   GetIpamPrefixListResolverRulesPaginator(const Model::GetIpamPrefixListResolverRulesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverRulesRequest,
                                                  Pagination::GetIpamPrefixListResolverRulesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1777,7 +1777,7 @@ class EC2PaginationBase {
   GetIpamPrefixListResolverVersionEntriesPaginator(const Model::GetIpamPrefixListResolverVersionEntriesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverVersionEntriesRequest,
                                                  Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1788,7 +1788,7 @@ class EC2PaginationBase {
   GetIpamPrefixListResolverVersionsPaginator(const Model::GetIpamPrefixListResolverVersionsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverVersionsRequest,
                                                  Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1799,7 +1799,7 @@ class EC2PaginationBase {
   GetIpamResourceCidrsPaginator(const Model::GetIpamResourceCidrsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamResourceCidrsRequest,
                                                  Pagination::GetIpamResourceCidrsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1810,7 +1810,7 @@ class EC2PaginationBase {
   GetManagedPrefixListAssociationsPaginator(const Model::GetManagedPrefixListAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetManagedPrefixListAssociationsRequest,
                                                  Pagination::GetManagedPrefixListAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1821,7 +1821,7 @@ class EC2PaginationBase {
   GetManagedPrefixListEntriesPaginator(const Model::GetManagedPrefixListEntriesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetManagedPrefixListEntriesRequest,
                                                  Pagination::GetManagedPrefixListEntriesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1832,7 +1832,7 @@ class EC2PaginationBase {
   GetNetworkInsightsAccessScopeAnalysisFindingsPaginator(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
                                                  Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1843,7 +1843,7 @@ class EC2PaginationBase {
   GetSecurityGroupsForVpcPaginator(const Model::GetSecurityGroupsForVpcRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetSecurityGroupsForVpcRequest,
                                                  Pagination::GetSecurityGroupsForVpcPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1854,7 +1854,7 @@ class EC2PaginationBase {
   GetSpotPlacementScoresPaginator(const Model::GetSpotPlacementScoresRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetSpotPlacementScoresRequest,
                                                  Pagination::GetSpotPlacementScoresPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1865,7 +1865,7 @@ class EC2PaginationBase {
   GetTransitGatewayAttachmentPropagationsPaginator(const Model::GetTransitGatewayAttachmentPropagationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayAttachmentPropagationsRequest,
                                                  Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1876,7 +1876,7 @@ class EC2PaginationBase {
   GetTransitGatewayMulticastDomainAssociationsPaginator(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
                                                  Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1887,7 +1887,7 @@ class EC2PaginationBase {
   GetTransitGatewayPolicyTableAssociationsPaginator(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayPolicyTableAssociationsRequest,
                                                  Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1898,7 +1898,7 @@ class EC2PaginationBase {
   GetTransitGatewayPrefixListReferencesPaginator(const Model::GetTransitGatewayPrefixListReferencesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayPrefixListReferencesRequest,
                                                  Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1909,7 +1909,7 @@ class EC2PaginationBase {
   GetTransitGatewayRouteTableAssociationsPaginator(const Model::GetTransitGatewayRouteTableAssociationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayRouteTableAssociationsRequest,
                                                  Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1920,7 +1920,7 @@ class EC2PaginationBase {
   GetTransitGatewayRouteTablePropagationsPaginator(const Model::GetTransitGatewayRouteTablePropagationsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayRouteTablePropagationsRequest,
                                                  Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1931,7 +1931,7 @@ class EC2PaginationBase {
   GetVpnConnectionDeviceTypesPaginator(const Model::GetVpnConnectionDeviceTypesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetVpnConnectionDeviceTypesRequest,
                                                  Pagination::GetVpnConnectionDeviceTypesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1942,7 +1942,7 @@ class EC2PaginationBase {
   ListImagesInRecycleBinPaginator(const Model::ListImagesInRecycleBinRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListImagesInRecycleBinRequest,
                                                  Pagination::ListImagesInRecycleBinPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1953,7 +1953,7 @@ class EC2PaginationBase {
   ListSnapshotsInRecycleBinPaginator(const Model::ListSnapshotsInRecycleBinRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListSnapshotsInRecycleBinRequest,
                                                  Pagination::ListSnapshotsInRecycleBinPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1964,7 +1964,7 @@ class EC2PaginationBase {
   SearchLocalGatewayRoutesPaginator(const Model::SearchLocalGatewayRoutesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchLocalGatewayRoutesRequest,
                                                  Pagination::SearchLocalGatewayRoutesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1975,7 +1975,7 @@ class EC2PaginationBase {
   SearchTransitGatewayMulticastGroupsPaginator(const Model::SearchTransitGatewayMulticastGroupsRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayMulticastGroupsRequest,
                                                  Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -1986,7 +1986,7 @@ class EC2PaginationBase {
   SearchTransitGatewayRoutesPaginator(const Model::SearchTransitGatewayRoutesRequest& request) {
     return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
                                                  Pagination::SearchTransitGatewayRoutesPaginationTraits<DerivedClient>>{
-        std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*) {}), request};
+        *static_cast<DerivedClient*>(this), request};
   }
 };
 }  // namespace EC2

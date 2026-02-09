@@ -34,10 +34,10 @@ public:
         using pointer = const OutcomeType*;
         using reference = const OutcomeType&;
 
-        PageIterator(std::shared_ptr<ServiceClient> client, const OperationRequest& firstReq)
+        PageIterator(ServiceClient& client, const OperationRequest& firstReq)
             : m_client(client),
               m_request(firstReq),
-              m_currentOutcome{OperationTraits::Invoke(*m_client, m_request)}
+              m_currentOutcome{OperationTraits::Invoke(m_client, m_request)}
         {}
 
         const OutcomeType& operator*() const { return m_currentOutcome; }
@@ -75,16 +75,16 @@ public:
        private:
         void FetchPage()
         {
-            m_currentOutcome = OperationTraits::Invoke(*m_client, m_request);
+            m_currentOutcome = OperationTraits::Invoke(m_client, m_request);
         }
 
-        std::shared_ptr<ServiceClient> m_client;
+        ServiceClient& m_client;
         OperationRequest m_request{};
         OutcomeType m_currentOutcome{};
         bool m_atEnd{false};
     };
 
-    PagePaginator(std::shared_ptr<ServiceClient> client, const OperationRequest& firstReq)
+    PagePaginator(ServiceClient& client, const OperationRequest& firstReq)
         : m_client(client),
           m_firstRequest(firstReq) {}
 
@@ -92,7 +92,7 @@ public:
     EndSentinel end() const { return EndSentinel{}; }
 
 private:
-    std::shared_ptr<ServiceClient> m_client;
+    ServiceClient& m_client;
     OperationRequest m_firstRequest{};
 };
 

@@ -66,7 +66,7 @@ public class PaginationBaseGenerator extends BaseHeaderGenerator<OperationData<P
                     
                     writer.openBlock("{", "}", () -> {
                     writer.write("return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits<DerivedClient>>{")
-                          .write("    std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*){}), request};");
+                          .write("    *static_cast<DerivedClient*>(this), request};");
                     });
                 }
             }
