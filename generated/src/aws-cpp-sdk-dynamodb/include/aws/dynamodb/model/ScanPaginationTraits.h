@@ -11,19 +11,16 @@
 
 namespace Aws {
 namespace DynamoDB {
-class DynamoDBClient;
 namespace Pagination {
 
+template <typename Client = DynamoDBClient>
 struct ScanPaginationTraits {
   using RequestType = Model::ScanRequest;
   using ResultType = Model::ScanResult;
   using OutcomeType = Model::ScanOutcome;
-  using ClientType = DynamoDBClient;
+  using ClientType = Client;
 
-  template <typename Client = ClientType>
-  static OutcomeType Invoke(Client& client, const RequestType& request) {
-    return client.Scan(request);
-  }
+  static OutcomeType Invoke(Client& client, const RequestType& request) { return client.Scan(request); }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetLastEvaluatedKey().empty(); }
 

@@ -11,19 +11,16 @@
 
 namespace Aws {
 namespace S3 {
-class S3Client;
 namespace Pagination {
 
+template <typename Client = S3Client>
 struct ListDirectoryBucketsPaginationTraits {
   using RequestType = Model::ListDirectoryBucketsRequest;
   using ResultType = Model::ListDirectoryBucketsResult;
   using OutcomeType = Model::ListDirectoryBucketsOutcome;
-  using ClientType = S3Client;
+  using ClientType = Client;
 
-  template <typename Client = ClientType>
-  static OutcomeType Invoke(Client& client, const RequestType& request) {
-    return client.ListDirectoryBuckets(request);
-  }
+  static OutcomeType Invoke(Client& client, const RequestType& request) { return client.ListDirectoryBuckets(request); }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetContinuationToken().empty(); }
 

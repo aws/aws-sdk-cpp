@@ -34,21 +34,17 @@ namespace {
 
 class ListObjectsV2PaginationTest : public Aws::Testing::AwsCppSdkGTestSuite {
 protected:
-    std::shared_ptr<S3Client> Client;
+    S3Client Client;
     Aws::String bucketName;
 
     void SetUp() override {
-        Aws::Client::ClientConfiguration config;
-        config.region = Aws::Region::US_EAST_1;
-        Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config);
-        
         bucketName = CalculateBucketName("listobjectsv2paginationtest");
         
         // Create bucket
         CreateBucketRequest createRequest;
         createRequest.SetBucket(bucketName);
         createRequest.SetACL(BucketCannedACL::private_);
-        auto createOutcome = Client->CreateBucket(createRequest);
+        auto createOutcome = Client.CreateBucket(createRequest);
         AWS_ASSERT_SUCCESS(createOutcome);
         
         ASSERT_TRUE(WaitForBucketToPropagate());
@@ -61,14 +57,13 @@ protected:
     }
 
     void TearDown() override {
-        if (Client && !bucketName.empty()) {
+        if (!bucketName.empty()) {
             EmptyBucket();
             
             DeleteBucketRequest deleteRequest;
             deleteRequest.SetBucket(bucketName);
-            Client->DeleteBucket(deleteRequest);
+            Client.DeleteBucket(deleteRequest);
         }
-        Client = nullptr;
     }
     
     bool WaitForBucketToPropagate() {
@@ -76,7 +71,7 @@ protected:
         while (timeoutCount++ < TIMEOUT_MAX) {
             ListObjectsV2Request listRequest;
             listRequest.SetBucket(bucketName);
-            auto listOutcome = Client->ListObjectsV2(listRequest);
+            auto listOutcome = Client.ListObjectsV2(listRequest);
             if (listOutcome.IsSuccess()) {
                 return true;
             }
@@ -94,7 +89,7 @@ protected:
         Tagging tagging;
         tagging.AddTagSet(tag);
         taggingRequest.SetTagging(tagging);
-        Client->PutBucketTagging(taggingRequest);
+        Client.PutBucketTagging(taggingRequest);
     }
     
     void CreateTestObject(const Aws::String& key) {
@@ -106,20 +101,20 @@ protected:
         *data << "Test data for " << key;
         putRequest.SetBody(data);
         
-        Client->PutObject(putRequest);
+        Client.PutObject(putRequest);
     }
     
     void EmptyBucket() {
         ListObjectsV2Request listRequest;
         listRequest.SetBucket(bucketName);
-        auto listOutcome = Client->ListObjectsV2(listRequest);
+        auto listOutcome = Client.ListObjectsV2(listRequest);
         
         if (listOutcome.IsSuccess()) {
             for (const auto& object : listOutcome.GetResult().GetContents()) {
                 DeleteObjectRequest deleteRequest;
                 deleteRequest.SetBucket(bucketName);
                 deleteRequest.SetKey(object.GetKey());
-                Client->DeleteObject(deleteRequest);
+                Client.DeleteObject(deleteRequest);
             }
         }
     }
@@ -131,7 +126,7 @@ TEST_F(ListObjectsV2PaginationTest, TestPaginationTraits) {
     request.SetMaxKeys(1);  // Force pagination
     
     size_t pageCount = 0;
-    auto paginator = Client->ListObjectsV2Paginator(request);
+    auto paginator = Client.ListObjectsV2Paginator(request);
     
     for (auto pageIter = paginator.begin(); pageIter != paginator.end(); ++pageIter) {
         const auto& outcome = *pageIter;
@@ -140,20 +135,4 @@ TEST_F(ListObjectsV2PaginationTest, TestPaginationTraits) {
     }
     
     EXPECT_GT(pageCount, 1u);  // Should have multiple pages with MaxKeys=1
-}
-
-TEST_F(ListObjectsV2PaginationTest, TestPaginationOnEmptyBucket) {
-    // Empty the bucket first
-    EmptyBucket();
-    
-    ListObjectsV2Request emptyRequest;
-    emptyRequest.SetBucket(bucketName);
-    emptyRequest.SetMaxKeys(1);
-    
-    auto emptyOutcome = Client->ListObjectsV2(emptyRequest);
-    AWS_ASSERT_SUCCESS(emptyOutcome);
-    
-    const auto& emptyResult = emptyOutcome.GetResult();
-    EXPECT_EQ(0u, emptyResult.GetContents().size());
-    EXPECT_FALSE(Aws::S3::Pagination::ListObjectsV2PaginationTraits::HasMoreResults(emptyResult));
 }

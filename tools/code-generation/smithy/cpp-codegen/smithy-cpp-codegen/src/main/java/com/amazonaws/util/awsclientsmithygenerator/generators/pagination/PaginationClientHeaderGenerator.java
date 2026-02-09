@@ -40,8 +40,8 @@ public class PaginationClientHeaderGenerator extends BaseHeaderGenerator<Operati
         for (OperationData<PaginatedTrait> data : operations) {
             String opName = data.getOperation().getId().getName();
             String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
-            writer.write("using $LPaginator = Aws::Utils::Pagination::PagePaginator<$LClient, Model::$LRequest, Pagination::$LPaginationTraits>;",
-                opName, classPrefix, methodName, opName);
+            writer.write("using $LPaginator = Aws::Utils::Pagination::PagePaginator<$LClient, Model::$LRequest, Pagination::$LPaginationTraits<$LClient>>;",
+                opName, classPrefix, methodName, opName, classPrefix);
         }
         writer.write("");
     }

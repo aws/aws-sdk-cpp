@@ -61,11 +61,11 @@ public class PaginationBaseGenerator extends BaseHeaderGenerator<OperationData<P
                           .write(" * Create a paginator for " + opName + " operation")
                           .write(" */");
                     
-                    writer.write("Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits>")
+                    writer.write("Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits<DerivedClient>>")
                           .write(opName + "Paginator(const Model::" + methodName + "Request& request)");
                     
                     writer.openBlock("{", "}", () -> {
-                    writer.write("return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits>{")
+                    writer.write("return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits<DerivedClient>>{")
                           .write("    std::shared_ptr<DerivedClient>(static_cast<DerivedClient*>(this), [](DerivedClient*){}), request};");
                     });
                 }

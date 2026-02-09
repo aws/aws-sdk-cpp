@@ -2,14 +2,16 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-package com.amazonaws.util.awsclientsmithygenerator.generators;
+package com.amazonaws.util.awsclientsmithygenerator.generators.pagination;
 
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.model.traits.DeprecatedTrait;
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.OperationShape;
+import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
 import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationTraitsGenerator;
@@ -20,9 +22,6 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.pagination.Paginat
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class PaginationCodegenPlugin implements SmithyBuildPlugin {
 

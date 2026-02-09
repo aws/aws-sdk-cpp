@@ -1,1 +1,1 @@
-com.amazonaws.util.awsclientsmithygenerator.generators.PaginationCodegenPlugin
+com.amazonaws.util.awsclientsmithygenerator.generators.pagination.PaginationCodegenPlugin

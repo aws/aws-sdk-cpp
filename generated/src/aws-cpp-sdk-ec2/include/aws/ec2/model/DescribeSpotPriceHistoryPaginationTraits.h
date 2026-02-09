@@ -11,19 +11,16 @@
 
 namespace Aws {
 namespace EC2 {
-class EC2Client;
 namespace Pagination {
 
+template <typename Client = EC2Client>
 struct DescribeSpotPriceHistoryPaginationTraits {
   using RequestType = Model::DescribeSpotPriceHistoryRequest;
   using ResultType = Model::DescribeSpotPriceHistoryResponse;
   using OutcomeType = Model::DescribeSpotPriceHistoryOutcome;
-  using ClientType = EC2Client;
+  using ClientType = Client;
 
-  template <typename Client = ClientType>
-  static OutcomeType Invoke(Client& client, const RequestType& request) {
-    return client.DescribeSpotPriceHistory(request);
-  }
+  static OutcomeType Invoke(Client& client, const RequestType& request) { return client.DescribeSpotPriceHistory(request); }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
 

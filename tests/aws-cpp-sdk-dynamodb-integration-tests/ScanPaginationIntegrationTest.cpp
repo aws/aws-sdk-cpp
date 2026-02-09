@@ -24,7 +24,6 @@ using namespace Aws::DynamoDB;
 using namespace Aws::DynamoDB::Model;
 
 namespace {
-    static const char* ALLOCATION_TAG = "ScanPaginationTest";
     const size_t ITEM_COUNT = 19;
     const Aws::String HASH_KEY_NAME = "id";
     const Aws::String ATTRIBUTE_FOO = "attribute_foo";
@@ -32,11 +31,10 @@ namespace {
 
 class ScanPaginationTest : public Aws::Testing::AwsCppSdkGTestSuite {
 protected:
-    std::shared_ptr<DynamoDBClient> dynamoClient;
+    DynamoDBClient dynamoClient;
     Aws::String tableName;
 
     void SetUp() override {
-        dynamoClient = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG);
         tableName = CalculateTableName("scan-paginator-test");
         
         CreateTable();
@@ -46,7 +44,7 @@ protected:
     void TearDown() override {
         DeleteTableRequest deleteRequest;
         deleteRequest.SetTableName(tableName);
-        dynamoClient->DeleteTable(deleteRequest);
+        dynamoClient.DeleteTable(deleteRequest);
     }
 
     Aws::String CalculateTableName(const Aws::String& tablePrefix) {
@@ -72,7 +70,7 @@ protected:
         throughput.SetWriteCapacityUnits(5);
         createRequest.SetProvisionedThroughput(throughput);
         
-        auto outcome = dynamoClient->CreateTable(createRequest);
+        auto outcome = dynamoClient.CreateTable(createRequest);
         AWS_ASSERT_SUCCESS(outcome);
         
         WaitUntilActive(tableName);
@@ -82,10 +80,10 @@ protected:
         DescribeTableRequest describeTableRequest;
         describeTableRequest.SetTableName(tableNameParam);
         
-        DescribeTableOutcome outcome = dynamoClient->DescribeTable(describeTableRequest);
+        DescribeTableOutcome outcome = dynamoClient.DescribeTable(describeTableRequest);
         while (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() != TableStatus::ACTIVE) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
-            outcome = dynamoClient->DescribeTable(describeTableRequest);
+            outcome = dynamoClient.DescribeTable(describeTableRequest);
         }
         
         return outcome.GetResult();
@@ -101,7 +99,7 @@ protected:
             item[ATTRIBUTE_FOO] = AttributeValue().SetN(Aws::Utils::StringUtils::to_string(i * 2));
             
             putRequest.SetItem(item);
-            auto outcome = dynamoClient->PutItem(putRequest);
+            auto outcome = dynamoClient.PutItem(putRequest);
             ASSERT_TRUE(outcome.IsSuccess());
         }
     }
@@ -113,7 +111,7 @@ TEST_F(ScanPaginationTest, TestPaginationTraits) {
     request.SetLimit(1);  // Force pagination
     
     size_t pageCount = 0;
-    auto paginator = dynamoClient->ScanPaginator(request);
+    auto paginator = dynamoClient.ScanPaginator(request);
     
     for (auto pageIter = paginator.begin(); pageIter != paginator.end(); ++pageIter) {
         const auto& outcome = *pageIter;

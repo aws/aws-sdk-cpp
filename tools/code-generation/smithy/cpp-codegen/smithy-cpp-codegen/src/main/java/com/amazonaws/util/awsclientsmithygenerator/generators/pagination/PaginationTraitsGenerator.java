@@ -13,6 +13,7 @@ import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import java.util.List;
+import java.util.Optional;
 
 public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData<PaginatedTrait>> {
 
@@ -47,22 +48,20 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
         // Namespaces
         writer.writeNamespaceOpen("Aws")
               .writeNamespaceOpen(serviceName)
-              .write("class " + capitalizedServiceName + "Client;")
               .writeNamespaceOpen("Pagination")
               .write("");
         
         // Struct definition
-        writer.openBlock("struct " + opName + "PaginationTraits\n{", "};", () -> {
+        writer.openBlock("template<typename Client = " + capitalizedServiceName + "Client>\nstruct " + opName + "PaginationTraits\n{", "};", () -> {
             // Use detected suffix to match C2J renameShape logic
             writer.write("    using RequestType = Model::$LRequest;", methodName)
                   .write("    using ResultType = Model::$L$L;", methodName, resultSuffix)
                   .write("    using OutcomeType = Model::$LOutcome;", methodName)
-                  .write("    using ClientType = $LClient;", capitalizedServiceName)
+                  .write("    using ClientType = Client;")
                   .write("");
             
-            // Invoke method - template to defer instantiation
-            writer.write("    template<typename Client = ClientType>")
-                  .openBlock("    static OutcomeType Invoke(Client& client, const RequestType& request)\n    {", "    }", () -> {
+            // Invoke method - no template needed since struct is templated
+            writer.openBlock("    static OutcomeType Invoke(Client& client, const RequestType& request)\n    {", "    }", () -> {
                 writer.write("        return client.$L(request);", methodName);
             });
             
@@ -141,39 +140,41 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
     }
 
     private void generateSetNextRequestLogic(CppWriter writer, PaginatedTrait trait, OperationShape op) {
-        String inToken = null;
-        String outToken = null;
+        Optional<String> inToken = Optional.empty();
+        Optional<String> outToken = Optional.empty();
         
         if (trait.getInputToken().isPresent() && trait.getOutputToken().isPresent()) {
-            inToken = trait.getInputToken().get();
-            outToken = trait.getOutputToken().get();
+            inToken = trait.getInputToken();
+            outToken = trait.getOutputToken();
         } else {
             // Fallback to service-level pagination configuration
-            String serviceLevelInputToken = ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getInputToken());
-            String serviceLevelOutputToken = ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getOutputToken());
-            if (serviceLevelInputToken != null && serviceLevelOutputToken != null) {
+            Optional<String> serviceLevelInputToken = Optional.ofNullable(ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getInputToken()));
+            Optional<String> serviceLevelOutputToken = Optional.ofNullable(ShapeUtil.getServiceLevelToken(service, software.amazon.smithy.model.traits.PaginatedTrait.class, t -> t.getOutputToken()));
+            if (serviceLevelInputToken.isPresent() && serviceLevelOutputToken.isPresent()) {
                 inToken = serviceLevelInputToken;
                 outToken = serviceLevelOutputToken;
             }
         }
         
-        if (inToken != null && outToken != null) {
+        if (inToken.isPresent() && outToken.isPresent()) {
+            String inTokenValue = inToken.get();
+            String outTokenValue = outToken.get();
             // Pattern A: Explicit nested token like "EngineDefaults.Marker"
-            if (outToken.contains(".")) {
-                String[] parts = outToken.split("\\.", 2);
+            if (outTokenValue.contains(".")) {
+                String[] parts = outTokenValue.split("\\.", 2);
                 String memberName = parts[0];
                 String nestedTokenName = parts[1];
-                writer.write("        request.Set$L(result.Get$L().Get$L());", ServiceNameUtil.capitalize(inToken), ServiceNameUtil.capitalize(memberName), ServiceNameUtil.capitalize(nestedTokenName));
+                writer.write("        request.Set$L(result.Get$L().Get$L());", ServiceNameUtil.capitalize(inTokenValue), ServiceNameUtil.capitalize(memberName), ServiceNameUtil.capitalize(nestedTokenName));
             }
             // Pattern B: Check if token is on top-level output
-            else if (ShapeUtil.hasTopLevelMember(context.getModel(), op, outToken)) {
-                writer.write("        request.Set$L(result.Get$L());", ServiceNameUtil.capitalize(inToken), ServiceNameUtil.capitalize(outToken));
+            else if (ShapeUtil.hasTopLevelMember(context.getModel(), op, outTokenValue)) {
+                writer.write("        request.Set$L(result.Get$L());", ServiceNameUtil.capitalize(inTokenValue), ServiceNameUtil.capitalize(outTokenValue));
             }
             // Pattern C: Find wrapper member containing the token
             else {
-                String wrapperMember = ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, outToken);
+                String wrapperMember = ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, outTokenValue);
                 if (wrapperMember != null) {
-                    writer.write("        request.Set$L(result.Get$L().Get$L());", ServiceNameUtil.capitalize(inToken), ServiceNameUtil.capitalize(wrapperMember), ServiceNameUtil.capitalize(outToken));
+                    writer.write("        request.Set$L(result.Get$L().Get$L());", ServiceNameUtil.capitalize(inTokenValue), ServiceNameUtil.capitalize(wrapperMember), ServiceNameUtil.capitalize(outTokenValue));
                 } else {
                     writer.write("        (void)result; (void)request; // Token not found");
                 }

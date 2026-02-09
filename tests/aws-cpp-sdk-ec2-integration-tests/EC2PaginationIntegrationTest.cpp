@@ -14,20 +14,9 @@ using namespace Aws;
 using namespace Aws::EC2;
 using namespace Aws::EC2::Model;
 
-namespace {
-    static const char* ALLOCATION_TAG = "EC2PaginationTest";
-}
-
 class EC2PaginationTest : public Aws::Testing::AwsCppSdkGTestSuite {
 protected:
-    std::shared_ptr<EC2Client> ec2Client;
-
-    void SetUp() override {
-        ec2Client = Aws::MakeShared<EC2Client>(ALLOCATION_TAG);
-    }
-
-    void TearDown() override {
-    }
+    EC2Client ec2Client;
 };
 
 TEST_F(EC2PaginationTest, TestPaginationTraits) {
@@ -38,7 +27,7 @@ TEST_F(EC2PaginationTest, TestPaginationTraits) {
     request.SetMaxResults(1);  // Force pagination
     
     size_t pageCount = 0;
-    auto paginator = ec2Client->DescribeSpotPriceHistoryPaginator(request);
+    auto paginator = ec2Client.DescribeSpotPriceHistoryPaginator(request);
     
     for (auto pageIter = paginator.begin(); pageIter != paginator.end(); ++pageIter) {
         const auto& outcome = *pageIter;

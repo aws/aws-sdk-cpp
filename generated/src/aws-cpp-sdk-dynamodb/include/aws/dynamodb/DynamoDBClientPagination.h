@@ -16,16 +16,19 @@
 namespace Aws {
 namespace DynamoDB {
 
-using ListContributorInsightsPaginator = Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListContributorInsightsRequest,
-                                                                               Pagination::ListContributorInsightsPaginationTraits>;
-using ListExportsPaginator =
-    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListExportsRequest, Pagination::ListExportsPaginationTraits>;
-using ListImportsPaginator =
-    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListImportsRequest, Pagination::ListImportsPaginationTraits>;
+using ListContributorInsightsPaginator =
+    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListContributorInsightsRequest,
+                                          Pagination::ListContributorInsightsPaginationTraits<DynamoDBClient>>;
+using ListExportsPaginator = Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListExportsRequest,
+                                                                   Pagination::ListExportsPaginationTraits<DynamoDBClient>>;
+using ListImportsPaginator = Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListImportsRequest,
+                                                                   Pagination::ListImportsPaginationTraits<DynamoDBClient>>;
 using ListTablesPaginator =
-    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits>;
-using QueryPaginator = Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::QueryRequest, Pagination::QueryPaginationTraits>;
-using ScanPaginator = Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ScanRequest, Pagination::ScanPaginationTraits>;
+    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DynamoDBClient>>;
+using QueryPaginator =
+    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DynamoDBClient>>;
+using ScanPaginator =
+    Aws::Utils::Pagination::PagePaginator<DynamoDBClient, Model::ScanRequest, Pagination::ScanPaginationTraits<DynamoDBClient>>;
 
 }  // namespace DynamoDB
 }  // namespace Aws
