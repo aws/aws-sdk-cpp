@@ -153,11 +153,6 @@ if (LEGACY_BUILD)
         endif ()
     endif ()
 
-    # use response files to prevent command-line-too-big errors for large libraries like iam
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
-    set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
-
     if (COMMAND apply_pre_project_platform_settings)
         apply_pre_project_platform_settings()
     endif ()
@@ -172,6 +167,13 @@ if (LEGACY_BUILD)
 
     # build the sdk targets
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
+    if(NOT CMAKE_SYSTEM_NAME STREQUAL "AIX")
+        # use response files to prevent command-line-too-big errors for large libraries like iam
+        set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+        set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+        set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
+    endif()
 
     find_package(Python3 COMPONENTS Interpreter Development)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
