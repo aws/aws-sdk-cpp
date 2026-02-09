@@ -46,7 +46,7 @@ namespace ${serviceNamespace}
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
-        void OverrideEndpoint(const Aws::String& endpoint);
+        virtual void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
