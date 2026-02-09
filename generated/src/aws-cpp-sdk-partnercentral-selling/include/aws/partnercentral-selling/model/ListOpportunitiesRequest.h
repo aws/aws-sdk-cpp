@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingRequest.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/CreatedDateFilter.h>
 #include <aws/partnercentral-selling/model/LastModifiedDate.h>
 #include <aws/partnercentral-selling/model/OpportunitySort.h>
 #include <aws/partnercentral-selling/model/ReviewStatus.h>
@@ -238,6 +239,24 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter opportunities by creation date criteria.</p>
+   */
+  inline const CreatedDateFilter& GetCreatedDate() const { return m_createdDate; }
+  inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+  template <typename CreatedDateT = CreatedDateFilter>
+  void SetCreatedDate(CreatedDateT&& value) {
+    m_createdDateHasBeenSet = true;
+    m_createdDate = std::forward<CreatedDateT>(value);
+  }
+  template <typename CreatedDateT = CreatedDateFilter>
+  ListOpportunitiesRequest& WithCreatedDate(CreatedDateT&& value) {
+    SetCreatedDate(std::forward<CreatedDateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalog;
 
@@ -256,6 +275,8 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
   Aws::Vector<ReviewStatus> m_lifeCycleReviewStatus;
 
   Aws::Vector<Aws::String> m_customerCompanyName;
+
+  CreatedDateFilter m_createdDate;
   bool m_catalogHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
@@ -265,6 +286,7 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
   bool m_lifeCycleStageHasBeenSet = false;
   bool m_lifeCycleReviewStatusHasBeenSet = false;
   bool m_customerCompanyNameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
 };
 
 }  // namespace Model

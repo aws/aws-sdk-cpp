@@ -22,7 +22,7 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p>AWS services with program eligibility indicators (MAP, modernization
+ * <p>List of AWS services with program eligibility indicators (MAP, modernization
  * pathways), cost estimates, and optimization recommendations.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AwsProductDetails">AWS
@@ -37,7 +37,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>AWS Partner Central product identifier used for opportunity association</p>
+   * <p>AWS Partner Central product identifier used for opportunity association.</p>
    */
   inline const Aws::String& GetProductCode() const { return m_productCode; }
   inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
@@ -55,7 +55,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>Pricing Calculator service code (links to original calculator URL)</p>
+   * <p>Pricing Calculator service code.</p>
    */
   inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
   inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
@@ -73,7 +73,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>List of program and pathway categories this product is eligible for</p>
+   * <p>List of program and pathway categories this product is eligible for.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCategories() const { return m_categories; }
   inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
@@ -97,8 +97,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>Baseline service cost before optimizations (may be null for AWS-sourced
-   * predictions)</p>
+   * <p>Baseline service cost before optimizations.</p>
    */
   inline const Aws::String& GetAmount() const { return m_amount; }
   inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
@@ -116,8 +115,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>Service cost after applying optimizations (may be null for AWS-sourced
-   * predictions)</p>
+   * <p>Service cost after applying optimizations.</p>
    */
   inline const Aws::String& GetOptimizedAmount() const { return m_optimizedAmount; }
   inline bool OptimizedAmountHasBeenSet() const { return m_optimizedAmountHasBeenSet; }
@@ -135,8 +133,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>Service-specific cost reduction through optimizations (may be null for
-   * AWS-sourced predictions)</p>
+   * <p>Service-specific cost reduction through optimizations.</p>
    */
   inline const Aws::String& GetPotentialSavingsAmount() const { return m_potentialSavingsAmount; }
   inline bool PotentialSavingsAmountHasBeenSet() const { return m_potentialSavingsAmountHasBeenSet; }
@@ -154,7 +151,7 @@ class AwsProductDetails {
 
   ///@{
   /**
-   * <p>List of specific optimization recommendations for this product</p>
+   * <p>List of specific optimization recommendations for this product.</p>
    */
   inline const Aws::Vector<AwsProductOptimization>& GetOptimizations() const { return m_optimizations; }
   inline bool OptimizationsHasBeenSet() const { return m_optimizationsHasBeenSet; }

@@ -150,7 +150,13 @@ enum class TrainingInstanceType {
   ml_r7i_48xlarge,
   ml_p6e_gb200_36xlarge,
   ml_p5_4xlarge,
-  ml_p6_b300_48xlarge
+  ml_p6_b300_48xlarge,
+  ml_g7e_2xlarge,
+  ml_g7e_4xlarge,
+  ml_g7e_8xlarge,
+  ml_g7e_12xlarge,
+  ml_g7e_24xlarge,
+  ml_g7e_48xlarge
 };
 
 namespace TrainingInstanceTypeMapper {

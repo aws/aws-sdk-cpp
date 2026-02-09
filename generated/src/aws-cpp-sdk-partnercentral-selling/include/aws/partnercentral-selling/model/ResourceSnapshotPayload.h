@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/AwsOpportunitySummaryFullView.h>
 #include <aws/partnercentral-selling/model/OpportunitySummaryView.h>
 
 #include <utility>
@@ -50,9 +51,30 @@ class ResourceSnapshotPayload {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Provides a comprehensive view of AwsOpportunitySummaryFullView template.</p>
+   */
+  inline const AwsOpportunitySummaryFullView& GetAwsOpportunitySummaryFullView() const { return m_awsOpportunitySummaryFullView; }
+  inline bool AwsOpportunitySummaryFullViewHasBeenSet() const { return m_awsOpportunitySummaryFullViewHasBeenSet; }
+  template <typename AwsOpportunitySummaryFullViewT = AwsOpportunitySummaryFullView>
+  void SetAwsOpportunitySummaryFullView(AwsOpportunitySummaryFullViewT&& value) {
+    m_awsOpportunitySummaryFullViewHasBeenSet = true;
+    m_awsOpportunitySummaryFullView = std::forward<AwsOpportunitySummaryFullViewT>(value);
+  }
+  template <typename AwsOpportunitySummaryFullViewT = AwsOpportunitySummaryFullView>
+  ResourceSnapshotPayload& WithAwsOpportunitySummaryFullView(AwsOpportunitySummaryFullViewT&& value) {
+    SetAwsOpportunitySummaryFullView(std::forward<AwsOpportunitySummaryFullViewT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OpportunitySummaryView m_opportunitySummary;
+
+  AwsOpportunitySummaryFullView m_awsOpportunitySummaryFullView;
   bool m_opportunitySummaryHasBeenSet = false;
+  bool m_awsOpportunitySummaryFullViewHasBeenSet = false;
 };
 
 }  // namespace Model

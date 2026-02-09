@@ -70,6 +70,10 @@ Aws::String ListOpportunitiesRequest::SerializePayload() const {
     payload.WithArray("CustomerCompanyName", std::move(customerCompanyNameJsonList));
   }
 
+  if (m_createdDateHasBeenSet) {
+    payload.WithObject("CreatedDate", m_createdDate.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

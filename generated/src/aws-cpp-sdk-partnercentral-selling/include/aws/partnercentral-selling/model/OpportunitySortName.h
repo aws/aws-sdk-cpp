@@ -10,7 +10,7 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 namespace Model {
-enum class OpportunitySortName { NOT_SET, LastModifiedDate, Identifier, CustomerCompanyName };
+enum class OpportunitySortName { NOT_SET, LastModifiedDate, Identifier, CustomerCompanyName, CreatedDate };
 
 namespace OpportunitySortNameMapper {
 AWS_PARTNERCENTRALSELLING_API OpportunitySortName GetOpportunitySortNameForName(const Aws::String& name);

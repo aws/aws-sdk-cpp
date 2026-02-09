@@ -36,7 +36,7 @@ class UntagResourceRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The ARN of the resource to which to add tags.</p>
+   * <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

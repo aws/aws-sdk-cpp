@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/model/GeneralAuthorizationUpdate.h>
 #include <aws/iot-managed-integrations/model/OAuthUpdate.h>
 
 #include <utility>
@@ -50,9 +51,31 @@ class AuthConfigUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The General Authorization update information containing authorization
+   * materials to add or update in Kinesis Data Streams.</p>
+   */
+  inline const GeneralAuthorizationUpdate& GetGeneralAuthorizationUpdate() const { return m_generalAuthorizationUpdate; }
+  inline bool GeneralAuthorizationUpdateHasBeenSet() const { return m_generalAuthorizationUpdateHasBeenSet; }
+  template <typename GeneralAuthorizationUpdateT = GeneralAuthorizationUpdate>
+  void SetGeneralAuthorizationUpdate(GeneralAuthorizationUpdateT&& value) {
+    m_generalAuthorizationUpdateHasBeenSet = true;
+    m_generalAuthorizationUpdate = std::forward<GeneralAuthorizationUpdateT>(value);
+  }
+  template <typename GeneralAuthorizationUpdateT = GeneralAuthorizationUpdate>
+  AuthConfigUpdate& WithGeneralAuthorizationUpdate(GeneralAuthorizationUpdateT&& value) {
+    SetGeneralAuthorizationUpdate(std::forward<GeneralAuthorizationUpdateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OAuthUpdate m_oAuthUpdate;
+
+  GeneralAuthorizationUpdate m_generalAuthorizationUpdate;
   bool m_oAuthUpdateHasBeenSet = false;
+  bool m_generalAuthorizationUpdateHasBeenSet = false;
 };
 
 }  // namespace Model

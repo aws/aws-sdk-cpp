@@ -31,7 +31,8 @@ class CreateAccountAssociationResult {
   ///@{
   /**
    * <p>Third-party IoT platform OAuth authorization server URL backed with all the
-   * required parameters to perform end-user authentication.</p>
+   * required parameters to perform end-user authentication. This field will be empty
+   * when using General Authorization flows that do not require OAuth.</p>
    */
   inline const Aws::String& GetOAuthAuthorizationUrl() const { return m_oAuthAuthorizationUrl; }
   template <typename OAuthAuthorizationUrlT = Aws::String>

@@ -20,6 +20,7 @@ static const int WIFI_SETUP_QR_BAR_CODE_HASH = HashingUtils::HashString("WIFI_SE
 static const int ZWAVE_QR_BAR_CODE_HASH = HashingUtils::HashString("ZWAVE_QR_BAR_CODE");
 static const int ZIGBEE_QR_BAR_CODE_HASH = HashingUtils::HashString("ZIGBEE_QR_BAR_CODE");
 static const int DISCOVERED_DEVICE_HASH = HashingUtils::HashString("DISCOVERED_DEVICE");
+static const int PRE_ONBOARDED_CLOUD_HASH = HashingUtils::HashString("PRE_ONBOARDED_CLOUD");
 
 AuthMaterialType GetAuthMaterialTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ AuthMaterialType GetAuthMaterialTypeForName(const Aws::String& name) {
     return AuthMaterialType::ZIGBEE_QR_BAR_CODE;
   } else if (hashCode == DISCOVERED_DEVICE_HASH) {
     return AuthMaterialType::DISCOVERED_DEVICE;
+  } else if (hashCode == PRE_ONBOARDED_CLOUD_HASH) {
+    return AuthMaterialType::PRE_ONBOARDED_CLOUD;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForAuthMaterialType(AuthMaterialType enumValue) {
       return "ZIGBEE_QR_BAR_CODE";
     case AuthMaterialType::DISCOVERED_DEVICE:
       return "DISCOVERED_DEVICE";
+    case AuthMaterialType::PRE_ONBOARDED_CLOUD:
+      return "PRE_ONBOARDED_CLOUD";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

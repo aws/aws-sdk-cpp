@@ -20,8 +20,8 @@ namespace PartnerCentralSelling {
 namespace Model {
 
 /**
- * <p>Details for a specific optimization recommendation</p><p><h3>See Also:</h3>
- * <a
+ * <p>Specific optimization strategies partners can implement to reduce
+ * costs.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AwsProductOptimization">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class AwsProductOptimization {
 
   ///@{
   /**
-   * <p>Human-readable explanation of the optimization strategy</p>
+   * <p>Human-readable explanation of the optimization strategy.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -52,7 +52,7 @@ class AwsProductOptimization {
 
   ///@{
   /**
-   * <p>Quantified cost savings achievable by implementing this optimization</p>
+   * <p>Quantified cost savings achievable by implementing this optimization.</p>
    */
   inline const Aws::String& GetSavingsAmount() const { return m_savingsAmount; }
   inline bool SavingsAmountHasBeenSet() const { return m_savingsAmountHasBeenSet; }

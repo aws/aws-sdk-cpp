@@ -21,6 +21,10 @@ InvokeDataAutomationResult::InvokeDataAutomationResult(const Aws::AmazonWebServi
 
 InvokeDataAutomationResult& InvokeDataAutomationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("outputConfiguration")) {
+    m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
+    m_outputConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("semanticModality")) {
     m_semanticModality = SemanticModalityMapper::GetSemanticModalityForName(jsonValue.GetString("semanticModality"));
     m_semanticModalityHasBeenSet = true;

@@ -22,6 +22,10 @@ ResourceSnapshotPayload& ResourceSnapshotPayload::operator=(JsonView jsonValue) 
     m_opportunitySummary = jsonValue.GetObject("OpportunitySummary");
     m_opportunitySummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsOpportunitySummaryFullView")) {
+    m_awsOpportunitySummaryFullView = jsonValue.GetObject("AwsOpportunitySummaryFullView");
+    m_awsOpportunitySummaryFullViewHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ResourceSnapshotPayload::Jsonize() const {
 
   if (m_opportunitySummaryHasBeenSet) {
     payload.WithObject("OpportunitySummary", m_opportunitySummary.Jsonize());
+  }
+
+  if (m_awsOpportunitySummaryFullViewHasBeenSet) {
+    payload.WithObject("AwsOpportunitySummaryFullView", m_awsOpportunitySummaryFullView.Jsonize());
   }
 
   return payload;

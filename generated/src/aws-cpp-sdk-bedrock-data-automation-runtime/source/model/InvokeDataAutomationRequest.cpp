@@ -39,6 +39,10 @@ Aws::String InvokeDataAutomationRequest::SerializePayload() const {
     payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
   }
 
+  if (m_outputConfigurationHasBeenSet) {
+    payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

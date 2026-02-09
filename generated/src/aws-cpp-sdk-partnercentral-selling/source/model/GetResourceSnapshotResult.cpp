@@ -61,6 +61,14 @@ GetResourceSnapshotResult& GetResourceSnapshotResult::operator=(const Aws::Amazo
     m_payload = jsonValue.GetObject("Payload");
     m_payloadHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetMemberAccounts")) {
+    Aws::Utils::Array<JsonView> targetMemberAccountsJsonList = jsonValue.GetArray("TargetMemberAccounts");
+    for (unsigned targetMemberAccountsIndex = 0; targetMemberAccountsIndex < targetMemberAccountsJsonList.GetLength();
+         ++targetMemberAccountsIndex) {
+      m_targetMemberAccounts.push_back(targetMemberAccountsJsonList[targetMemberAccountsIndex].AsString());
+    }
+    m_targetMemberAccountsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

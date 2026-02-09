@@ -60,6 +60,10 @@ GetAccountAssociationResult& GetAccountAssociationResult::operator=(const Aws::A
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GeneralAuthorization")) {
+    m_generalAuthorization = jsonValue.GetObject("GeneralAuthorization");
+    m_generalAuthorizationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

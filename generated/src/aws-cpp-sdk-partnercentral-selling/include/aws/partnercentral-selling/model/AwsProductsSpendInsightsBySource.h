@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>Source-separated spend insights that provide independent analysis for AWS
- * predictions and partner estimates</p><p><h3>See Also:</h3>   <a
+ * recommendations and partner estimates.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AwsProductsSpendInsightsBySource">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,7 @@ class AwsProductsSpendInsightsBySource {
 
   ///@{
   /**
-   * <p>Partner-sourced insights derived from Pricing Calculator URLs including
-   * detailed service costs and optimizations</p>
+   * <p>Partner-sourced insights derived from Pricing Calculator URLs.</p>
    */
   inline const AwsProductInsights& GetPartner() const { return m_partner; }
   inline bool PartnerHasBeenSet() const { return m_partnerHasBeenSet; }
@@ -53,7 +52,7 @@ class AwsProductsSpendInsightsBySource {
 
   ///@{
   /**
-   * <p>AI-generated insights including recommended products from AWS</p>
+   * <p>AI-generated insights including recommended products from AWS.</p>
    */
   inline const AwsProductInsights& GetAWS() const { return m_aWS; }
   inline bool AWSHasBeenSet() const { return m_aWSHasBeenSet; }

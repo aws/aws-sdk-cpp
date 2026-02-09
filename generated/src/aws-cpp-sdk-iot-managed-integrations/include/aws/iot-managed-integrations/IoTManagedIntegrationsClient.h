@@ -1842,7 +1842,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>List tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the tags for a specified resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -2160,7 +2160,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Add tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Adds tags to a specified resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/TagResource">AWS
    * API Reference</a></p>
    */
@@ -2185,7 +2185,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Remove tags for the specified resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Removes tags from a specified resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/UntagResource">AWS
    * API Reference</a></p>
    */

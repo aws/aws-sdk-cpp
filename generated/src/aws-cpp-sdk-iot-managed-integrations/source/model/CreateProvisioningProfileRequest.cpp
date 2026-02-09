@@ -23,6 +23,10 @@ Aws::String CreateProvisioningProfileRequest::SerializePayload() const {
     payload.WithString("CaCertificate", m_caCertificate);
   }
 
+  if (m_claimCertificateHasBeenSet) {
+    payload.WithString("ClaimCertificate", m_claimCertificate);
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
   }

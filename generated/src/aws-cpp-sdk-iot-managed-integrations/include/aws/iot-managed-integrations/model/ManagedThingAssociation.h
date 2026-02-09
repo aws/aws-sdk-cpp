@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/model/ManagedThingAssociationStatus.h>
 
 #include <utility>
 
@@ -68,12 +69,33 @@ class ManagedThingAssociation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of the registration between the managed thing and the account
+   * association. Indicates whether the device is pre-associated or fully associated
+   * with the account association.</p>
+   */
+  inline ManagedThingAssociationStatus GetManagedThingAssociationStatus() const { return m_managedThingAssociationStatus; }
+  inline bool ManagedThingAssociationStatusHasBeenSet() const { return m_managedThingAssociationStatusHasBeenSet; }
+  inline void SetManagedThingAssociationStatus(ManagedThingAssociationStatus value) {
+    m_managedThingAssociationStatusHasBeenSet = true;
+    m_managedThingAssociationStatus = value;
+  }
+  inline ManagedThingAssociation& WithManagedThingAssociationStatus(ManagedThingAssociationStatus value) {
+    SetManagedThingAssociationStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_managedThingId;
 
   Aws::String m_accountAssociationId;
+
+  ManagedThingAssociationStatus m_managedThingAssociationStatus{ManagedThingAssociationStatus::NOT_SET};
   bool m_managedThingIdHasBeenSet = false;
   bool m_accountAssociationIdHasBeenSet = false;
+  bool m_managedThingAssociationStatusHasBeenSet = false;
 };
 
 }  // namespace Model

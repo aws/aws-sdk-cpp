@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsRequest.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/iot-managed-integrations/model/DiscoveryAuthMaterialType.h>
@@ -170,6 +171,30 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
+   * <p>Used as a filter for PLA discoveries.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetConnectorDeviceIdList() const { return m_connectorDeviceIdList; }
+  inline bool ConnectorDeviceIdListHasBeenSet() const { return m_connectorDeviceIdListHasBeenSet; }
+  template <typename ConnectorDeviceIdListT = Aws::Vector<Aws::String>>
+  void SetConnectorDeviceIdList(ConnectorDeviceIdListT&& value) {
+    m_connectorDeviceIdListHasBeenSet = true;
+    m_connectorDeviceIdList = std::forward<ConnectorDeviceIdListT>(value);
+  }
+  template <typename ConnectorDeviceIdListT = Aws::Vector<Aws::String>>
+  StartDeviceDiscoveryRequest& WithConnectorDeviceIdList(ConnectorDeviceIdListT&& value) {
+    SetConnectorDeviceIdList(std::forward<ConnectorDeviceIdListT>(value));
+    return *this;
+  }
+  template <typename ConnectorDeviceIdListT = Aws::String>
+  StartDeviceDiscoveryRequest& AddConnectorDeviceIdList(ConnectorDeviceIdListT&& value) {
+    m_connectorDeviceIdListHasBeenSet = true;
+    m_connectorDeviceIdList.emplace_back(std::forward<ConnectorDeviceIdListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p>
    *  <p>This parameter is only available when the discovery type is
    * CONTROLLER_CAPABILITY_REDISCOVERY.</p>
@@ -220,6 +245,8 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
 
   Aws::String m_clientToken;
 
+  Aws::Vector<Aws::String> m_connectorDeviceIdList;
+
   ProtocolType m_protocol{ProtocolType::NOT_SET};
 
   Aws::String m_endDeviceIdentifier;
@@ -230,6 +257,7 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
   bool m_authenticationMaterialHasBeenSet = false;
   bool m_authenticationMaterialTypeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
+  bool m_connectorDeviceIdListHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
   bool m_endDeviceIdentifierHasBeenSet = false;
 };

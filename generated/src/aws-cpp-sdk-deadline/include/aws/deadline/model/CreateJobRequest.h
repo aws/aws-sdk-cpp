@@ -329,6 +329,31 @@ class CreateJobRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tags to add to your job. Each tag consists of a tag key and a tag value.
+   * Tag keys and values are both required, but tag values can be empty strings.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateJobRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
@@ -361,6 +386,8 @@ class CreateJobRequest : public DeadlineRequest {
   Aws::String m_nameOverride;
 
   Aws::String m_descriptionOverride;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_farmIdHasBeenSet = false;
   bool m_queueIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
@@ -377,6 +404,7 @@ class CreateJobRequest : public DeadlineRequest {
   bool m_sourceJobIdHasBeenSet = false;
   bool m_nameOverrideHasBeenSet = false;
   bool m_descriptionOverrideHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

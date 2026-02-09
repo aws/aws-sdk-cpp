@@ -350,8 +350,8 @@ class Project {
   ///@{
   /**
    * <p>AWS partition where the opportunity will be deployed. Possible values:
-   * 'aws-eusc' for AWS European Sovereign Cloud, <code>null</code> for all other
-   * partitions</p>
+   * <code>aws-eusc</code> for AWS European Sovereign Cloud, <code>null</code> for
+   * all other partitions.</p>
    */
   inline AwsPartition GetAwsPartition() const { return m_awsPartition; }
   inline bool AwsPartitionHasBeenSet() const { return m_awsPartitionHasBeenSet; }

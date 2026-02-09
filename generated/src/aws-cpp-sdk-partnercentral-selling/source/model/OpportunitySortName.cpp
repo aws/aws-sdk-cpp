@@ -18,6 +18,7 @@ namespace OpportunitySortNameMapper {
 static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedDate");
 static const int Identifier_HASH = HashingUtils::HashString("Identifier");
 static const int CustomerCompanyName_HASH = HashingUtils::HashString("CustomerCompanyName");
+static const int CreatedDate_HASH = HashingUtils::HashString("CreatedDate");
 
 OpportunitySortName GetOpportunitySortNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ OpportunitySortName GetOpportunitySortNameForName(const Aws::String& name) {
     return OpportunitySortName::Identifier;
   } else if (hashCode == CustomerCompanyName_HASH) {
     return OpportunitySortName::CustomerCompanyName;
+  } else if (hashCode == CreatedDate_HASH) {
+    return OpportunitySortName::CreatedDate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForOpportunitySortName(OpportunitySortName enumValue) {
       return "Identifier";
     case OpportunitySortName::CustomerCompanyName:
       return "CustomerCompanyName";
+    case OpportunitySortName::CreatedDate:
+      return "CreatedDate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

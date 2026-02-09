@@ -21,6 +21,7 @@
 #include <aws/iot-managed-integrations/model/AssociationState.h>
 #include <aws/iot-managed-integrations/model/AuthConfig.h>
 #include <aws/iot-managed-integrations/model/AuthConfigUpdate.h>
+#include <aws/iot-managed-integrations/model/AuthMaterial.h>
 #include <aws/iot-managed-integrations/model/AuthMaterialType.h>
 #include <aws/iot-managed-integrations/model/AuthType.h>
 #include <aws/iot-managed-integrations/model/CapabilityAction.h>
@@ -88,6 +89,8 @@
 #include <aws/iot-managed-integrations/model/EventLogConfigurationSummary.h>
 #include <aws/iot-managed-integrations/model/EventType.h>
 #include <aws/iot-managed-integrations/model/ExponentialRolloutRate.h>
+#include <aws/iot-managed-integrations/model/GeneralAuthorizationName.h>
+#include <aws/iot-managed-integrations/model/GeneralAuthorizationUpdate.h>
 #include <aws/iot-managed-integrations/model/GetAccountAssociationRequest.h>
 #include <aws/iot-managed-integrations/model/GetAccountAssociationResult.h>
 #include <aws/iot-managed-integrations/model/GetCloudConnectorRequest.h>
@@ -172,6 +175,7 @@
 #include <aws/iot-managed-integrations/model/ListTagsForResourceResult.h>
 #include <aws/iot-managed-integrations/model/LogLevel.h>
 #include <aws/iot-managed-integrations/model/ManagedThingAssociation.h>
+#include <aws/iot-managed-integrations/model/ManagedThingAssociationStatus.h>
 #include <aws/iot-managed-integrations/model/ManagedThingSchemaListItem.h>
 #include <aws/iot-managed-integrations/model/ManagedThingSummary.h>
 #include <aws/iot-managed-integrations/model/MatterCapabilityReport.h>
