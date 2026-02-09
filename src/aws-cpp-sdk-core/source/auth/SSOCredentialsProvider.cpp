@@ -72,7 +72,7 @@ void SSOCredentialsProvider::Reload()
             return token.GetToken();
         }
         Aws::String hashedStartUrl = Aws::Utils::HashingUtils::HexEncode(Aws::Utils::HashingUtils::CalculateSHA1(profile.GetSsoStartUrl()));
-        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        auto profileDirectory = ProfileCredentialsProvider::GetProfileDirectory();
         Aws::StringStream ssToken;
         ssToken << profileDirectory;
         ssToken << PATH_DELIM << "sso"  << PATH_DELIM << "cache" << PATH_DELIM << hashedStartUrl << ".json";

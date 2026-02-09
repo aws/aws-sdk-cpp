@@ -5,12 +5,10 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/client/UserAgent.h>
-#include <cstdlib>
-#include <string.h>
-#include <climits>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 
 using namespace Aws::Auth;
+using namespace Aws::Utils::Threading;
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
  public:

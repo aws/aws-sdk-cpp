@@ -153,7 +153,9 @@ namespace Aws
         * Optionally a user can specify the profile and it will override the environment variable
         * and defaults. To alter the file this pulls from, then the user should alter the AWS_SHARED_CREDENTIALS_FILE variable.
         */
-        class AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
+        class
+        AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV3. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")
+        AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
         {
         public:
 
