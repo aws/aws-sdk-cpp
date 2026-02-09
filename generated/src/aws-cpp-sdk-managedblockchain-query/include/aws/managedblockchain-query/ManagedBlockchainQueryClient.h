@@ -350,7 +350,7 @@ class AWS_MANAGEDBLOCKCHAINQUERY_API ManagedBlockchainQueryClient
     return SubmitAsync(&ManagedBlockchainQueryClient::ListTransactions, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase>& accessEndpointProvider();
 
  private:

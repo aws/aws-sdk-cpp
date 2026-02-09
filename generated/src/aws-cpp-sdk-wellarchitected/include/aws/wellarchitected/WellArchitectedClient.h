@@ -2108,7 +2108,7 @@ class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJso
     return SubmitAsync(&WellArchitectedClient::UpgradeReviewTemplateLensReview, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<WellArchitectedEndpointProviderBase>& accessEndpointProvider();
 
  private:

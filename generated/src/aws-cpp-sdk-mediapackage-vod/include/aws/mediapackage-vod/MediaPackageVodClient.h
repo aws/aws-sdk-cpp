@@ -539,7 +539,7 @@ class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJso
     return SubmitAsync(&MediaPackageVodClient::UpdatePackagingGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MediaPackageVodEndpointProviderBase>& accessEndpointProvider();
 
  private:

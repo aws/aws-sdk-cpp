@@ -2263,7 +2263,7 @@ class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJso
     return SubmitAsync(&ForecastServiceClient::UpdateDatasetGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ForecastServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

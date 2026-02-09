@@ -520,7 +520,7 @@ class AWS_MWAASERVERLESS_API MWAAServerlessClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&MWAAServerlessClient::UpdateWorkflow, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MWAAServerlessEndpointProviderBase>& accessEndpointProvider();
 
  private:

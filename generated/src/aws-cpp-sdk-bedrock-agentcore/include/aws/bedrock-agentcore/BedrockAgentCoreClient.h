@@ -1191,7 +1191,7 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
     return SubmitAsync(&BedrockAgentCoreClient::UpdateBrowserStream, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BedrockAgentCoreEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -247,7 +247,7 @@ class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient
     return SubmitAsync(&BedrockDataAutomationRuntimeClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BedrockDataAutomationRuntimeEndpointProviderBase>& accessEndpointProvider();
 
  private:

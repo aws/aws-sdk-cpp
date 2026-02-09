@@ -2749,7 +2749,7 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ApiGatewayV2Client::UpdateVpcLink, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ApiGatewayV2EndpointProviderBase>& accessEndpointProvider();
 
  private:

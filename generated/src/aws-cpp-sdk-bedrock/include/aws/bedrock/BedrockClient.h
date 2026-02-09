@@ -3180,7 +3180,7 @@ class AWS_BEDROCK_API BedrockClient
     return SubmitAsync(&BedrockClient::UpdateProvisionedModelThroughput, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BedrockEndpointProviderBase>& accessEndpointProvider();
 
  private:

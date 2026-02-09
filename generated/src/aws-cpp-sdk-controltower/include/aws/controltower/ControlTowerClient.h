@@ -1103,7 +1103,7 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ControlTowerClient::UpdateLandingZone, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ControlTowerEndpointProviderBase>& accessEndpointProvider();
 
  private:

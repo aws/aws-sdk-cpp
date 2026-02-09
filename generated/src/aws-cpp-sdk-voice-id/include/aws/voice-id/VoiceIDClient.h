@@ -861,7 +861,7 @@ class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&VoiceIDClient::UpdateWatchlist, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<VoiceIDEndpointProviderBase>& accessEndpointProvider();
 
  private:

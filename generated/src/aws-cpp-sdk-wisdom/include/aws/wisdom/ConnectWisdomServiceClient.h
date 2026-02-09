@@ -1159,7 +1159,7 @@ class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient
     return SubmitAsync(&ConnectWisdomServiceClient::UpdateQuickResponse, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

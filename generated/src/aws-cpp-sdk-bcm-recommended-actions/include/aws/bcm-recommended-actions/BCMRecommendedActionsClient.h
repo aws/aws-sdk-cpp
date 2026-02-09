@@ -108,7 +108,7 @@ class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsClient
     return SubmitAsync(&BCMRecommendedActionsClient::ListRecommendedActions, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BCMRecommendedActionsEndpointProviderBase>& accessEndpointProvider();
 
  private:

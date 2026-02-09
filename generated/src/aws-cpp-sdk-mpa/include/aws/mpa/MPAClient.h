@@ -670,7 +670,7 @@ class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&MPAClient::UpdateApprovalTeam, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MPAEndpointProviderBase>& accessEndpointProvider();
 
  private:

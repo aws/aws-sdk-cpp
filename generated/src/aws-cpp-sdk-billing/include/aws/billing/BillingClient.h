@@ -404,7 +404,7 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&BillingClient::UpdateBillingView, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BillingEndpointProviderBase>& accessEndpointProvider();
 
  private:

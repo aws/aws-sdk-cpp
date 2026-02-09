@@ -997,7 +997,7 @@ class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient
     return SubmitAsync(&ChimeSDKMediaPipelinesClient::UpdateMediaPipelineKinesisVideoStreamPool, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase>& accessEndpointProvider();
 
  private:

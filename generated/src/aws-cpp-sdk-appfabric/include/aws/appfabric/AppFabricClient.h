@@ -796,7 +796,7 @@ class AWS_APPFABRIC_API AppFabricClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&AppFabricClient::UpdateIngestionDestination, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AppFabricEndpointProviderBase>& accessEndpointProvider();
 
  private:

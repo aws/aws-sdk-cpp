@@ -1034,7 +1034,7 @@ class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&SQSClient::UntagQueue, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
 
  private:

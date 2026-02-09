@@ -1025,7 +1025,7 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
     return SubmitAsync(&GameLiftStreamsClient::UpdateStreamGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GameLiftStreamsEndpointProviderBase>& accessEndpointProvider();
 
  private:

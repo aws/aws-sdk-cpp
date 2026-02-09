@@ -1438,7 +1438,7 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
     return SubmitAsync(&PaymentCryptographyClient::UpdateAlias, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PaymentCryptographyEndpointProviderBase>& accessEndpointProvider();
 
  private:

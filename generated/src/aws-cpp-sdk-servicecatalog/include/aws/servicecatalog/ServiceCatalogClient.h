@@ -2865,7 +2865,7 @@ class AWS_SERVICECATALOG_API ServiceCatalogClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&ServiceCatalogClient::UpdateTagOption, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ServiceCatalogEndpointProviderBase>& accessEndpointProvider();
 
  private:

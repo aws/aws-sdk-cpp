@@ -1183,7 +1183,7 @@ class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&ShieldClient::UpdateSubscription, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ShieldEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -807,7 +807,7 @@ class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJ
     return SubmitAsync(&AmplifyUIBuilderClient::UpdateTheme, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AmplifyUIBuilderEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -1134,7 +1134,7 @@ class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&TnbClient::ValidateSolNetworkPackageContent, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<TnbEndpointProviderBase>& accessEndpointProvider();
 
  private:

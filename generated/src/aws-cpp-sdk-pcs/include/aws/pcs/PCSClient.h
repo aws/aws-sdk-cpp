@@ -632,7 +632,7 @@ class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&PCSClient::UpdateQueue, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PCSEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -774,7 +774,7 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&TaxSettingsClient::PutTaxRegistration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<TaxSettingsEndpointProviderBase>& accessEndpointProvider();
 
  private:

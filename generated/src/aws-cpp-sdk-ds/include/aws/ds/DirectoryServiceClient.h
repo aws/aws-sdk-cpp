@@ -2447,7 +2447,7 @@ class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJ
     return SubmitAsync(&DirectoryServiceClient::VerifyTrust, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DirectoryServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

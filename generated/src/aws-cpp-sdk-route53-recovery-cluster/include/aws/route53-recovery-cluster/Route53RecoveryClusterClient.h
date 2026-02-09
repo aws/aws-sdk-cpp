@@ -329,7 +329,7 @@ class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient
     return SubmitAsync(&Route53RecoveryClusterClient::UpdateRoutingControlStates, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& accessEndpointProvider();
 
  private:

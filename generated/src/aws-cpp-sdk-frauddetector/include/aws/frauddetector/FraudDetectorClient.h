@@ -2174,7 +2174,7 @@ class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&FraudDetectorClient::UpdateVariable, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<FraudDetectorEndpointProviderBase>& accessEndpointProvider();
 
  private:

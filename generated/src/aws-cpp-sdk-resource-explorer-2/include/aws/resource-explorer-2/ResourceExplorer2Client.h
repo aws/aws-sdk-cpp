@@ -1131,7 +1131,7 @@ class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AW
     return SubmitAsync(&ResourceExplorer2Client::UpdateView, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ResourceExplorer2EndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -517,7 +517,7 @@ class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJ
     return SubmitAsync(&CodeGuruReviewerClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeGuruReviewerEndpointProviderBase>& accessEndpointProvider();
 
  private:

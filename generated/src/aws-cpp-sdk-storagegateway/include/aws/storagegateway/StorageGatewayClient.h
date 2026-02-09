@@ -3296,7 +3296,7 @@ class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&StorageGatewayClient::UpdateVTLDeviceType, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<StorageGatewayEndpointProviderBase>& accessEndpointProvider();
 
  private:

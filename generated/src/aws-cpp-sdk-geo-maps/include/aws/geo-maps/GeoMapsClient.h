@@ -232,7 +232,7 @@ class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&GeoMapsClient::GetTile, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GeoMapsEndpointProviderBase>& accessEndpointProvider();
 
  private:

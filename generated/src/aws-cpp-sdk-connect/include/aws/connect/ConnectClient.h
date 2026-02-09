@@ -11104,7 +11104,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&ConnectClient::UpdateWorkspaceVisibility, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:

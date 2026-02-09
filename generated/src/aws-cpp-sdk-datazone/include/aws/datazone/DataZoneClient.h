@@ -5137,7 +5137,7 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DataZoneClient::UpdateUserProfile, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DataZoneEndpointProviderBase>& accessEndpointProvider();
 
  private:

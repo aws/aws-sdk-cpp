@@ -466,7 +466,7 @@ class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&SSMQuickSetupClient::UpdateServiceSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SSMQuickSetupEndpointProviderBase>& accessEndpointProvider();
 
  private:

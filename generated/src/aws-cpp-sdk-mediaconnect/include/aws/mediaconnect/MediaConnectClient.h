@@ -2360,7 +2360,7 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&MediaConnectClient::UpdateRouterOutput, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MediaConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:

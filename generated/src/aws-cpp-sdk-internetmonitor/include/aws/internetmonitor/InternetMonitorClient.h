@@ -596,7 +596,7 @@ class AWS_INTERNETMONITOR_API InternetMonitorClient : public Aws::Client::AWSJso
     return SubmitAsync(&InternetMonitorClient::UpdateMonitor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<InternetMonitorEndpointProviderBase>& accessEndpointProvider();
 
  private:

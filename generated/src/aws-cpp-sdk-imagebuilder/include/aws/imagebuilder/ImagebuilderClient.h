@@ -2253,7 +2253,7 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ImagebuilderClient::UpdateLifecyclePolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ImagebuilderEndpointProviderBase>& accessEndpointProvider();
 
  private:

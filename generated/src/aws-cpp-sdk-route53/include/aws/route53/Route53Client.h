@@ -2725,7 +2725,7 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient, public A
     return SubmitAsync(&Route53Client::UpdateTrafficPolicyInstance, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53EndpointProviderBase>& accessEndpointProvider();
 
  private:

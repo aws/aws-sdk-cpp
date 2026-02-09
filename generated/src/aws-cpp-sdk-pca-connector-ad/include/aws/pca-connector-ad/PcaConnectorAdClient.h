@@ -790,7 +790,7 @@ class AWS_PCACONNECTORAD_API PcaConnectorAdClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&PcaConnectorAdClient::UpdateTemplateGroupAccessControlEntry, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PcaConnectorAdEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -1164,7 +1164,7 @@ class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CodeCatalystClient::VerifySession, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeCatalystEndpointProviderBase>& accessEndpointProvider();
 
  private:

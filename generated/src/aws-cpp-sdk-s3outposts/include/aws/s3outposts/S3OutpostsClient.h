@@ -229,7 +229,7 @@ class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&S3OutpostsClient::ListSharedEndpoints, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<S3OutpostsEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -559,7 +559,7 @@ class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&BraketClient::UpdateSpendingLimit, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -3309,7 +3309,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SecurityHubClient::UpdateStandardsControl, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SecurityHubEndpointProviderBase>& accessEndpointProvider();
 
  private:

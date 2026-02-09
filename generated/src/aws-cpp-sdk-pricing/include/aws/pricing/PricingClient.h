@@ -254,7 +254,7 @@ class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&PricingClient::ListPriceLists, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PricingEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -262,7 +262,7 @@ class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJ
     return SubmitAsync(&AutoScalingPlansClient::UpdateScalingPlan, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AutoScalingPlansEndpointProviderBase>& accessEndpointProvider();
 
  private:

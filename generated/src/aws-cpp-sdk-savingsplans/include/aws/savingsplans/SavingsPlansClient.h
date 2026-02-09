@@ -353,7 +353,7 @@ class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&SavingsPlansClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SavingsPlansEndpointProviderBase>& accessEndpointProvider();
 
  private:

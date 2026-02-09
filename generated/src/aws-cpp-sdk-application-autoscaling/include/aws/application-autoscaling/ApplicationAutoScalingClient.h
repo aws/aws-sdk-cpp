@@ -629,7 +629,7 @@ class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
     return SubmitAsync(&ApplicationAutoScalingClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ApplicationAutoScalingEndpointProviderBase>& accessEndpointProvider();
 
  private:

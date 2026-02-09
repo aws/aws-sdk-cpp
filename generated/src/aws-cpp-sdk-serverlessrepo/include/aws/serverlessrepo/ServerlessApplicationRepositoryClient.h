@@ -512,7 +512,7 @@ Permissions</a>
     return SubmitAsync(&ServerlessApplicationRepositoryClient::UpdateApplication, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase>& accessEndpointProvider();
 
  private:

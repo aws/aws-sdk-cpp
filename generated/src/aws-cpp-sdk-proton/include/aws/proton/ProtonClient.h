@@ -155,7 +155,7 @@ class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient, public Aw
   /* End of legacy constructors due deprecation */
   virtual ~ProtonClient();
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ProtonEndpointProviderBase>& accessEndpointProvider();
 
  private:

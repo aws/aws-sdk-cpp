@@ -3310,7 +3310,7 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&RekognitionClient::UpdateStreamProcessor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<RekognitionEndpointProviderBase>& accessEndpointProvider();
 
  private:

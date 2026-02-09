@@ -489,7 +489,7 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&EVSClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<EVSEndpointProviderBase>& accessEndpointProvider();
 
  private:

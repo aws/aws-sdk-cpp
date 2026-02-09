@@ -2523,7 +2523,7 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&ECSClient::UpdateTaskSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ECSEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -422,7 +422,7 @@ class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&AIOpsClient::UpdateInvestigationGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AIOpsEndpointProviderBase>& accessEndpointProvider();
 
  private:

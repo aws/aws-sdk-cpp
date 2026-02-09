@@ -658,7 +658,7 @@ class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&SignerClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SignerEndpointProviderBase>& accessEndpointProvider();
 
  private:

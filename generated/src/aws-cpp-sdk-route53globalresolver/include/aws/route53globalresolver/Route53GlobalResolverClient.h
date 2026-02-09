@@ -1369,7 +1369,7 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
     return SubmitAsync(&Route53GlobalResolverClient::UpdateHostedZoneAssociation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53GlobalResolverEndpointProviderBase>& accessEndpointProvider();
 
  private:

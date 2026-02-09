@@ -493,7 +493,7 @@ class AWS_LAUNCHWIZARD_API LaunchWizardClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&LaunchWizardClient::UpdateDeployment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<LaunchWizardEndpointProviderBase>& accessEndpointProvider();
 
  private:

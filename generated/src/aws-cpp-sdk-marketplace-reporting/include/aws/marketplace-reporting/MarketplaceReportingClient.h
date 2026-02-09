@@ -161,7 +161,7 @@ class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient
     return SubmitAsync(&MarketplaceReportingClient::GetBuyerDashboard, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MarketplaceReportingEndpointProviderBase>& accessEndpointProvider();
 
  private:

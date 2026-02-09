@@ -794,7 +794,7 @@ class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&IoTEventsClient::UpdateInput, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<IoTEventsEndpointProviderBase>& accessEndpointProvider();
 
  private:

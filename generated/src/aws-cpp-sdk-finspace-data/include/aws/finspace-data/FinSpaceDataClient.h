@@ -74,7 +74,7 @@ class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClien
   /* End of legacy constructors due deprecation */
   virtual ~FinSpaceDataClient();
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<FinSpaceDataEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -610,7 +610,7 @@ class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialClient
     return SubmitAsync(&SageMakerGeospatialClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SageMakerGeospatialEndpointProviderBase>& accessEndpointProvider();
 
  private:

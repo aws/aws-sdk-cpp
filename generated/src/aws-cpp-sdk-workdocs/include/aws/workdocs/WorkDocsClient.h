@@ -1338,7 +1338,7 @@ class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&WorkDocsClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<WorkDocsEndpointProviderBase>& accessEndpointProvider();
 
  private:

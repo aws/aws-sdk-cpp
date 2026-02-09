@@ -1233,7 +1233,7 @@ class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&Route53DomainsClient::ViewBilling, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53DomainsEndpointProviderBase>& accessEndpointProvider();
 
  private:

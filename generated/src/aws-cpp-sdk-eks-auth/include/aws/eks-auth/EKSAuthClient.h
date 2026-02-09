@@ -103,7 +103,7 @@ class AWS_EKSAUTH_API EKSAuthClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&EKSAuthClient::AssumeRoleForPodIdentity, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<EKSAuthEndpointProviderBase>& accessEndpointProvider();
 
  private:

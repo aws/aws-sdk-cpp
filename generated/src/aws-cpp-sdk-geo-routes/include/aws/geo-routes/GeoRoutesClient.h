@@ -218,7 +218,7 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GeoRoutesClient::SnapToRoads, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GeoRoutesEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -2202,7 +2202,7 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&VPCLatticeClient::UpdateTargetGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<VPCLatticeEndpointProviderBase>& accessEndpointProvider();
 
  private:

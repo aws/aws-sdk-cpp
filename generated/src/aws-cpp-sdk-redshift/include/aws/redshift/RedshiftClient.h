@@ -4554,7 +4554,7 @@ class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&RedshiftClient::UpdatePartnerStatus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<RedshiftEndpointProviderBase>& accessEndpointProvider();
 
  private:

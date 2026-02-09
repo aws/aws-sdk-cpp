@@ -2918,7 +2918,7 @@ class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJ
     return SubmitAsync(&CustomerProfilesClient::UpdateRecommender, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CustomerProfilesEndpointProviderBase>& accessEndpointProvider();
 
  private:

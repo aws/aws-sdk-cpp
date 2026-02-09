@@ -1425,7 +1425,7 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
     return SubmitAsync(&PartnerCentralSellingClient::UpdateOpportunity, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PartnerCentralSellingEndpointProviderBase>& accessEndpointProvider();
 
  private:

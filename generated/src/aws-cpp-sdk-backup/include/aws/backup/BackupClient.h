@@ -3266,7 +3266,7 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&BackupClient::UpdateTieringConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BackupEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -1462,7 +1462,7 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&AppConfigClient::ValidateConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AppConfigEndpointProviderBase>& accessEndpointProvider();
 
  private:

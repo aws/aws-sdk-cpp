@@ -8272,7 +8272,7 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client
 
   virtual bool MultipartUploadSupported() const;
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<S3EndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -794,7 +794,7 @@ class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&BackupGatewayClient::UpdateHypervisor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BackupGatewayEndpointProviderBase>& accessEndpointProvider();
 
  private:

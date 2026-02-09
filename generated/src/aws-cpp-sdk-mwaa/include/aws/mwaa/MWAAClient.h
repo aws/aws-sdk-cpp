@@ -402,7 +402,7 @@ class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&MWAAClient::UpdateEnvironment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MWAAEndpointProviderBase>& accessEndpointProvider();
 
  private:
