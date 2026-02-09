@@ -184,673 +184,668 @@ class EC2PaginationBase {
   /**
    * Create a paginator for DescribeAddressesAttribute operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAddressesAttributeRequest,
-                                        Pagination::DescribeAddressesAttributePaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAddressesAttributeRequest,
+                                    Pagination::DescribeAddressesAttributePaginationTraits<DerivedClient>>
   DescribeAddressesAttributePaginator(const Model::DescribeAddressesAttributeRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAddressesAttributeRequest,
-                                                 Pagination::DescribeAddressesAttributePaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAddressesAttributeRequest,
+                                             Pagination::DescribeAddressesAttributePaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeAddressTransfers operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAddressTransfersRequest,
-                                        Pagination::DescribeAddressTransfersPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAddressTransfersRequest,
+                                    Pagination::DescribeAddressTransfersPaginationTraits<DerivedClient>>
   DescribeAddressTransfersPaginator(const Model::DescribeAddressTransfersRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAddressTransfersRequest,
-                                                 Pagination::DescribeAddressTransfersPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAddressTransfersRequest,
+                                             Pagination::DescribeAddressTransfersPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeAwsNetworkPerformanceMetricSubscriptions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
-                                        Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
+                                    Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<DerivedClient>>
   DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator(const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<
-        DerivedClient, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
-        Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
-                                                                                                     request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
+                                             Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<DerivedClient>>{
+        *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeByoipCidrs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeByoipCidrsRequest,
-                                        Pagination::DescribeByoipCidrsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeByoipCidrsRequest,
+                                    Pagination::DescribeByoipCidrsPaginationTraits<DerivedClient>>
   DescribeByoipCidrsPaginator(const Model::DescribeByoipCidrsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeByoipCidrsRequest,
-                                                 Pagination::DescribeByoipCidrsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeByoipCidrsRequest,
+                                             Pagination::DescribeByoipCidrsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityBlockExtensionHistory operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockExtensionHistoryRequest,
-                                        Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockExtensionHistoryRequest,
+                                    Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<DerivedClient>>
   DescribeCapacityBlockExtensionHistoryPaginator(const Model::DescribeCapacityBlockExtensionHistoryRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockExtensionHistoryRequest,
-                                                 Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockExtensionHistoryRequest,
+                                             Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityBlockExtensionOfferings operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockExtensionOfferingsRequest,
-                                        Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockExtensionOfferingsRequest,
+                                    Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<DerivedClient>>
   DescribeCapacityBlockExtensionOfferingsPaginator(const Model::DescribeCapacityBlockExtensionOfferingsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockExtensionOfferingsRequest,
-                                                 Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockExtensionOfferingsRequest,
+                                             Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityBlockOfferings operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockOfferingsRequest,
-                                        Pagination::DescribeCapacityBlockOfferingsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockOfferingsRequest,
+                                    Pagination::DescribeCapacityBlockOfferingsPaginationTraits<DerivedClient>>
   DescribeCapacityBlockOfferingsPaginator(const Model::DescribeCapacityBlockOfferingsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockOfferingsRequest,
-                                                 Pagination::DescribeCapacityBlockOfferingsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockOfferingsRequest,
+                                             Pagination::DescribeCapacityBlockOfferingsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityBlocks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlocksRequest,
-                                        Pagination::DescribeCapacityBlocksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlocksRequest,
+                                    Pagination::DescribeCapacityBlocksPaginationTraits<DerivedClient>>
   DescribeCapacityBlocksPaginator(const Model::DescribeCapacityBlocksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlocksRequest,
-                                                 Pagination::DescribeCapacityBlocksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlocksRequest,
+                                             Pagination::DescribeCapacityBlocksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityBlockStatus operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockStatusRequest,
-                                        Pagination::DescribeCapacityBlockStatusPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockStatusRequest,
+                                    Pagination::DescribeCapacityBlockStatusPaginationTraits<DerivedClient>>
   DescribeCapacityBlockStatusPaginator(const Model::DescribeCapacityBlockStatusRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityBlockStatusRequest,
-                                                 Pagination::DescribeCapacityBlockStatusPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityBlockStatusRequest,
+                                             Pagination::DescribeCapacityBlockStatusPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityManagerDataExports operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityManagerDataExportsRequest,
-                                        Pagination::DescribeCapacityManagerDataExportsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityManagerDataExportsRequest,
+                                    Pagination::DescribeCapacityManagerDataExportsPaginationTraits<DerivedClient>>
   DescribeCapacityManagerDataExportsPaginator(const Model::DescribeCapacityManagerDataExportsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityManagerDataExportsRequest,
-                                                 Pagination::DescribeCapacityManagerDataExportsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityManagerDataExportsRequest,
+                                             Pagination::DescribeCapacityManagerDataExportsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityReservationBillingRequests operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationBillingRequestsRequest,
-                                        Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationBillingRequestsRequest,
+                                    Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<DerivedClient>>
   DescribeCapacityReservationBillingRequestsPaginator(const Model::DescribeCapacityReservationBillingRequestsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationBillingRequestsRequest,
-                                                 Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationBillingRequestsRequest,
+                                             Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityReservationFleets operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationFleetsRequest,
-                                        Pagination::DescribeCapacityReservationFleetsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationFleetsRequest,
+                                    Pagination::DescribeCapacityReservationFleetsPaginationTraits<DerivedClient>>
   DescribeCapacityReservationFleetsPaginator(const Model::DescribeCapacityReservationFleetsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationFleetsRequest,
-                                                 Pagination::DescribeCapacityReservationFleetsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationFleetsRequest,
+                                             Pagination::DescribeCapacityReservationFleetsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCapacityReservations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationsRequest,
-                                        Pagination::DescribeCapacityReservationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationsRequest,
+                                    Pagination::DescribeCapacityReservationsPaginationTraits<DerivedClient>>
   DescribeCapacityReservationsPaginator(const Model::DescribeCapacityReservationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCapacityReservationsRequest,
-                                                 Pagination::DescribeCapacityReservationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCapacityReservationsRequest,
+                                             Pagination::DescribeCapacityReservationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCarrierGateways operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCarrierGatewaysRequest,
-                                        Pagination::DescribeCarrierGatewaysPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCarrierGatewaysRequest,
+                                    Pagination::DescribeCarrierGatewaysPaginationTraits<DerivedClient>>
   DescribeCarrierGatewaysPaginator(const Model::DescribeCarrierGatewaysRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCarrierGatewaysRequest,
-                                                 Pagination::DescribeCarrierGatewaysPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCarrierGatewaysRequest,
+                                             Pagination::DescribeCarrierGatewaysPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeClassicLinkInstances operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClassicLinkInstancesRequest,
-                                        Pagination::DescribeClassicLinkInstancesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClassicLinkInstancesRequest,
+                                    Pagination::DescribeClassicLinkInstancesPaginationTraits<DerivedClient>>
   DescribeClassicLinkInstancesPaginator(const Model::DescribeClassicLinkInstancesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClassicLinkInstancesRequest,
-                                                 Pagination::DescribeClassicLinkInstancesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClassicLinkInstancesRequest,
+                                             Pagination::DescribeClassicLinkInstancesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeClientVpnAuthorizationRules operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnAuthorizationRulesRequest,
-                                        Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnAuthorizationRulesRequest,
+                                    Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<DerivedClient>>
   DescribeClientVpnAuthorizationRulesPaginator(const Model::DescribeClientVpnAuthorizationRulesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnAuthorizationRulesRequest,
-                                                 Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnAuthorizationRulesRequest,
+                                             Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeClientVpnConnections operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnConnectionsRequest,
-                                        Pagination::DescribeClientVpnConnectionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnConnectionsRequest,
+                                    Pagination::DescribeClientVpnConnectionsPaginationTraits<DerivedClient>>
   DescribeClientVpnConnectionsPaginator(const Model::DescribeClientVpnConnectionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnConnectionsRequest,
-                                                 Pagination::DescribeClientVpnConnectionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnConnectionsRequest,
+                                             Pagination::DescribeClientVpnConnectionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeClientVpnEndpoints operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnEndpointsRequest,
-                                        Pagination::DescribeClientVpnEndpointsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnEndpointsRequest,
+                                    Pagination::DescribeClientVpnEndpointsPaginationTraits<DerivedClient>>
   DescribeClientVpnEndpointsPaginator(const Model::DescribeClientVpnEndpointsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnEndpointsRequest,
-                                                 Pagination::DescribeClientVpnEndpointsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnEndpointsRequest,
+                                             Pagination::DescribeClientVpnEndpointsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeClientVpnRoutes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnRoutesRequest,
-                                        Pagination::DescribeClientVpnRoutesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnRoutesRequest,
+                                    Pagination::DescribeClientVpnRoutesPaginationTraits<DerivedClient>>
   DescribeClientVpnRoutesPaginator(const Model::DescribeClientVpnRoutesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnRoutesRequest,
-                                                 Pagination::DescribeClientVpnRoutesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnRoutesRequest,
+                                             Pagination::DescribeClientVpnRoutesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeClientVpnTargetNetworks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnTargetNetworksRequest,
-                                        Pagination::DescribeClientVpnTargetNetworksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnTargetNetworksRequest,
+                                    Pagination::DescribeClientVpnTargetNetworksPaginationTraits<DerivedClient>>
   DescribeClientVpnTargetNetworksPaginator(const Model::DescribeClientVpnTargetNetworksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeClientVpnTargetNetworksRequest,
-                                                 Pagination::DescribeClientVpnTargetNetworksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClientVpnTargetNetworksRequest,
+                                             Pagination::DescribeClientVpnTargetNetworksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeCoipPools operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCoipPoolsRequest,
-                                        Pagination::DescribeCoipPoolsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCoipPoolsRequest,
+                                    Pagination::DescribeCoipPoolsPaginationTraits<DerivedClient>>
   DescribeCoipPoolsPaginator(const Model::DescribeCoipPoolsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeCoipPoolsRequest,
-                                                 Pagination::DescribeCoipPoolsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCoipPoolsRequest,
+                                             Pagination::DescribeCoipPoolsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeDhcpOptions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeDhcpOptionsRequest,
-                                        Pagination::DescribeDhcpOptionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDhcpOptionsRequest,
+                                    Pagination::DescribeDhcpOptionsPaginationTraits<DerivedClient>>
   DescribeDhcpOptionsPaginator(const Model::DescribeDhcpOptionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeDhcpOptionsRequest,
-                                                 Pagination::DescribeDhcpOptionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDhcpOptionsRequest,
+                                             Pagination::DescribeDhcpOptionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeEgressOnlyInternetGateways operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeEgressOnlyInternetGatewaysRequest,
-                                        Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEgressOnlyInternetGatewaysRequest,
+                                    Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<DerivedClient>>
   DescribeEgressOnlyInternetGatewaysPaginator(const Model::DescribeEgressOnlyInternetGatewaysRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeEgressOnlyInternetGatewaysRequest,
-                                                 Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEgressOnlyInternetGatewaysRequest,
+                                             Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeExportImageTasks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeExportImageTasksRequest,
-                                        Pagination::DescribeExportImageTasksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeExportImageTasksRequest,
+                                    Pagination::DescribeExportImageTasksPaginationTraits<DerivedClient>>
   DescribeExportImageTasksPaginator(const Model::DescribeExportImageTasksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeExportImageTasksRequest,
-                                                 Pagination::DescribeExportImageTasksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeExportImageTasksRequest,
+                                             Pagination::DescribeExportImageTasksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeFastLaunchImages operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFastLaunchImagesRequest,
-                                        Pagination::DescribeFastLaunchImagesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFastLaunchImagesRequest,
+                                    Pagination::DescribeFastLaunchImagesPaginationTraits<DerivedClient>>
   DescribeFastLaunchImagesPaginator(const Model::DescribeFastLaunchImagesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFastLaunchImagesRequest,
-                                                 Pagination::DescribeFastLaunchImagesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFastLaunchImagesRequest,
+                                             Pagination::DescribeFastLaunchImagesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeFastSnapshotRestores operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFastSnapshotRestoresRequest,
-                                        Pagination::DescribeFastSnapshotRestoresPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFastSnapshotRestoresRequest,
+                                    Pagination::DescribeFastSnapshotRestoresPaginationTraits<DerivedClient>>
   DescribeFastSnapshotRestoresPaginator(const Model::DescribeFastSnapshotRestoresRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFastSnapshotRestoresRequest,
-                                                 Pagination::DescribeFastSnapshotRestoresPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFastSnapshotRestoresRequest,
+                                             Pagination::DescribeFastSnapshotRestoresPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeFleets operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFleetsRequest,
-                                        Pagination::DescribeFleetsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetsRequest, Pagination::DescribeFleetsPaginationTraits<DerivedClient>>
   DescribeFleetsPaginator(const Model::DescribeFleetsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFleetsRequest,
-                                                 Pagination::DescribeFleetsPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetsRequest,
+                                             Pagination::DescribeFleetsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 
   /**
    * Create a paginator for DescribeFlowLogs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFlowLogsRequest,
-                                        Pagination::DescribeFlowLogsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFlowLogsRequest,
+                                    Pagination::DescribeFlowLogsPaginationTraits<DerivedClient>>
   DescribeFlowLogsPaginator(const Model::DescribeFlowLogsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFlowLogsRequest,
-                                                 Pagination::DescribeFlowLogsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFlowLogsRequest,
+                                             Pagination::DescribeFlowLogsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeFpgaImages operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFpgaImagesRequest,
-                                        Pagination::DescribeFpgaImagesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFpgaImagesRequest,
+                                    Pagination::DescribeFpgaImagesPaginationTraits<DerivedClient>>
   DescribeFpgaImagesPaginator(const Model::DescribeFpgaImagesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeFpgaImagesRequest,
-                                                 Pagination::DescribeFpgaImagesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFpgaImagesRequest,
+                                             Pagination::DescribeFpgaImagesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeHostReservationOfferings operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostReservationOfferingsRequest,
-                                        Pagination::DescribeHostReservationOfferingsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHostReservationOfferingsRequest,
+                                    Pagination::DescribeHostReservationOfferingsPaginationTraits<DerivedClient>>
   DescribeHostReservationOfferingsPaginator(const Model::DescribeHostReservationOfferingsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostReservationOfferingsRequest,
-                                                 Pagination::DescribeHostReservationOfferingsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHostReservationOfferingsRequest,
+                                             Pagination::DescribeHostReservationOfferingsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeHostReservations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostReservationsRequest,
-                                        Pagination::DescribeHostReservationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHostReservationsRequest,
+                                    Pagination::DescribeHostReservationsPaginationTraits<DerivedClient>>
   DescribeHostReservationsPaginator(const Model::DescribeHostReservationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostReservationsRequest,
-                                                 Pagination::DescribeHostReservationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHostReservationsRequest,
+                                             Pagination::DescribeHostReservationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeHosts operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostsRequest,
-                                        Pagination::DescribeHostsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHostsRequest, Pagination::DescribeHostsPaginationTraits<DerivedClient>>
   DescribeHostsPaginator(const Model::DescribeHostsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeHostsRequest,
-                                                 Pagination::DescribeHostsPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHostsRequest,
+                                             Pagination::DescribeHostsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 
   /**
    * Create a paginator for DescribeIamInstanceProfileAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIamInstanceProfileAssociationsRequest,
-                                        Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIamInstanceProfileAssociationsRequest,
+                                    Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<DerivedClient>>
   DescribeIamInstanceProfileAssociationsPaginator(const Model::DescribeIamInstanceProfileAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIamInstanceProfileAssociationsRequest,
-                                                 Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIamInstanceProfileAssociationsRequest,
+                                             Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeImageReferences operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageReferencesRequest,
-                                        Pagination::DescribeImageReferencesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageReferencesRequest,
+                                    Pagination::DescribeImageReferencesPaginationTraits<DerivedClient>>
   DescribeImageReferencesPaginator(const Model::DescribeImageReferencesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageReferencesRequest,
-                                                 Pagination::DescribeImageReferencesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageReferencesRequest,
+                                             Pagination::DescribeImageReferencesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeImages operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImagesRequest,
-                                        Pagination::DescribeImagesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImagesRequest, Pagination::DescribeImagesPaginationTraits<DerivedClient>>
   DescribeImagesPaginator(const Model::DescribeImagesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImagesRequest,
-                                                 Pagination::DescribeImagesPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImagesRequest,
+                                             Pagination::DescribeImagesPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                        request};
   }
 
   /**
    * Create a paginator for DescribeImageUsageReportEntries operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageUsageReportEntriesRequest,
-                                        Pagination::DescribeImageUsageReportEntriesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageUsageReportEntriesRequest,
+                                    Pagination::DescribeImageUsageReportEntriesPaginationTraits<DerivedClient>>
   DescribeImageUsageReportEntriesPaginator(const Model::DescribeImageUsageReportEntriesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageUsageReportEntriesRequest,
-                                                 Pagination::DescribeImageUsageReportEntriesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageUsageReportEntriesRequest,
+                                             Pagination::DescribeImageUsageReportEntriesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeImageUsageReports operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageUsageReportsRequest,
-                                        Pagination::DescribeImageUsageReportsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageUsageReportsRequest,
+                                    Pagination::DescribeImageUsageReportsPaginationTraits<DerivedClient>>
   DescribeImageUsageReportsPaginator(const Model::DescribeImageUsageReportsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImageUsageReportsRequest,
-                                                 Pagination::DescribeImageUsageReportsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageUsageReportsRequest,
+                                             Pagination::DescribeImageUsageReportsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeImportImageTasks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImportImageTasksRequest,
-                                        Pagination::DescribeImportImageTasksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImportImageTasksRequest,
+                                    Pagination::DescribeImportImageTasksPaginationTraits<DerivedClient>>
   DescribeImportImageTasksPaginator(const Model::DescribeImportImageTasksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImportImageTasksRequest,
-                                                 Pagination::DescribeImportImageTasksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImportImageTasksRequest,
+                                             Pagination::DescribeImportImageTasksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeImportSnapshotTasks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImportSnapshotTasksRequest,
-                                        Pagination::DescribeImportSnapshotTasksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImportSnapshotTasksRequest,
+                                    Pagination::DescribeImportSnapshotTasksPaginationTraits<DerivedClient>>
   DescribeImportSnapshotTasksPaginator(const Model::DescribeImportSnapshotTasksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeImportSnapshotTasksRequest,
-                                                 Pagination::DescribeImportSnapshotTasksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImportSnapshotTasksRequest,
+                                             Pagination::DescribeImportSnapshotTasksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceConnectEndpoints operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceConnectEndpointsRequest,
-                                        Pagination::DescribeInstanceConnectEndpointsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceConnectEndpointsRequest,
+                                    Pagination::DescribeInstanceConnectEndpointsPaginationTraits<DerivedClient>>
   DescribeInstanceConnectEndpointsPaginator(const Model::DescribeInstanceConnectEndpointsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceConnectEndpointsRequest,
-                                                 Pagination::DescribeInstanceConnectEndpointsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceConnectEndpointsRequest,
+                                             Pagination::DescribeInstanceConnectEndpointsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceCreditSpecifications operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceCreditSpecificationsRequest,
-                                        Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceCreditSpecificationsRequest,
+                                    Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<DerivedClient>>
   DescribeInstanceCreditSpecificationsPaginator(const Model::DescribeInstanceCreditSpecificationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceCreditSpecificationsRequest,
-                                                 Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceCreditSpecificationsRequest,
+                                             Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceEventWindows operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceEventWindowsRequest,
-                                        Pagination::DescribeInstanceEventWindowsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceEventWindowsRequest,
+                                    Pagination::DescribeInstanceEventWindowsPaginationTraits<DerivedClient>>
   DescribeInstanceEventWindowsPaginator(const Model::DescribeInstanceEventWindowsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceEventWindowsRequest,
-                                                 Pagination::DescribeInstanceEventWindowsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceEventWindowsRequest,
+                                             Pagination::DescribeInstanceEventWindowsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceImageMetadata operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceImageMetadataRequest,
-                                        Pagination::DescribeInstanceImageMetadataPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceImageMetadataRequest,
+                                    Pagination::DescribeInstanceImageMetadataPaginationTraits<DerivedClient>>
   DescribeInstanceImageMetadataPaginator(const Model::DescribeInstanceImageMetadataRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceImageMetadataRequest,
-                                                 Pagination::DescribeInstanceImageMetadataPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceImageMetadataRequest,
+                                             Pagination::DescribeInstanceImageMetadataPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstances operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstancesRequest,
-                                        Pagination::DescribeInstancesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstancesRequest,
+                                    Pagination::DescribeInstancesPaginationTraits<DerivedClient>>
   DescribeInstancesPaginator(const Model::DescribeInstancesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstancesRequest,
-                                                 Pagination::DescribeInstancesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstancesRequest,
+                                             Pagination::DescribeInstancesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceStatus operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceStatusRequest,
-                                        Pagination::DescribeInstanceStatusPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceStatusRequest,
+                                    Pagination::DescribeInstanceStatusPaginationTraits<DerivedClient>>
   DescribeInstanceStatusPaginator(const Model::DescribeInstanceStatusRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceStatusRequest,
-                                                 Pagination::DescribeInstanceStatusPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceStatusRequest,
+                                             Pagination::DescribeInstanceStatusPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceTopology operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTopologyRequest,
-                                        Pagination::DescribeInstanceTopologyPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceTopologyRequest,
+                                    Pagination::DescribeInstanceTopologyPaginationTraits<DerivedClient>>
   DescribeInstanceTopologyPaginator(const Model::DescribeInstanceTopologyRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTopologyRequest,
-                                                 Pagination::DescribeInstanceTopologyPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceTopologyRequest,
+                                             Pagination::DescribeInstanceTopologyPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceTypeOfferings operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTypeOfferingsRequest,
-                                        Pagination::DescribeInstanceTypeOfferingsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceTypeOfferingsRequest,
+                                    Pagination::DescribeInstanceTypeOfferingsPaginationTraits<DerivedClient>>
   DescribeInstanceTypeOfferingsPaginator(const Model::DescribeInstanceTypeOfferingsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTypeOfferingsRequest,
-                                                 Pagination::DescribeInstanceTypeOfferingsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceTypeOfferingsRequest,
+                                             Pagination::DescribeInstanceTypeOfferingsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInstanceTypes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTypesRequest,
-                                        Pagination::DescribeInstanceTypesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceTypesRequest,
+                                    Pagination::DescribeInstanceTypesPaginationTraits<DerivedClient>>
   DescribeInstanceTypesPaginator(const Model::DescribeInstanceTypesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInstanceTypesRequest,
-                                                 Pagination::DescribeInstanceTypesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceTypesRequest,
+                                             Pagination::DescribeInstanceTypesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeInternetGateways operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInternetGatewaysRequest,
-                                        Pagination::DescribeInternetGatewaysPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInternetGatewaysRequest,
+                                    Pagination::DescribeInternetGatewaysPaginationTraits<DerivedClient>>
   DescribeInternetGatewaysPaginator(const Model::DescribeInternetGatewaysRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeInternetGatewaysRequest,
-                                                 Pagination::DescribeInternetGatewaysPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInternetGatewaysRequest,
+                                             Pagination::DescribeInternetGatewaysPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpamPools operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPoolsRequest,
-                                        Pagination::DescribeIpamPoolsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPoolsRequest,
+                                    Pagination::DescribeIpamPoolsPaginationTraits<DerivedClient>>
   DescribeIpamPoolsPaginator(const Model::DescribeIpamPoolsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPoolsRequest,
-                                                 Pagination::DescribeIpamPoolsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPoolsRequest,
+                                             Pagination::DescribeIpamPoolsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpamPrefixListResolvers operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPrefixListResolversRequest,
-                                        Pagination::DescribeIpamPrefixListResolversPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPrefixListResolversRequest,
+                                    Pagination::DescribeIpamPrefixListResolversPaginationTraits<DerivedClient>>
   DescribeIpamPrefixListResolversPaginator(const Model::DescribeIpamPrefixListResolversRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPrefixListResolversRequest,
-                                                 Pagination::DescribeIpamPrefixListResolversPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPrefixListResolversRequest,
+                                             Pagination::DescribeIpamPrefixListResolversPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpamPrefixListResolverTargets operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPrefixListResolverTargetsRequest,
-                                        Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPrefixListResolverTargetsRequest,
+                                    Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<DerivedClient>>
   DescribeIpamPrefixListResolverTargetsPaginator(const Model::DescribeIpamPrefixListResolverTargetsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamPrefixListResolverTargetsRequest,
-                                                 Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamPrefixListResolverTargetsRequest,
+                                             Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpamResourceDiscoveries operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamResourceDiscoveriesRequest,
-                                        Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamResourceDiscoveriesRequest,
+                                    Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<DerivedClient>>
   DescribeIpamResourceDiscoveriesPaginator(const Model::DescribeIpamResourceDiscoveriesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamResourceDiscoveriesRequest,
-                                                 Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamResourceDiscoveriesRequest,
+                                             Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpamResourceDiscoveryAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
-                                        Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
+                                    Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<DerivedClient>>
   DescribeIpamResourceDiscoveryAssociationsPaginator(const Model::DescribeIpamResourceDiscoveryAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
-                                                 Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
+                                             Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpams operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamsRequest,
-                                        Pagination::DescribeIpamsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamsRequest, Pagination::DescribeIpamsPaginationTraits<DerivedClient>>
   DescribeIpamsPaginator(const Model::DescribeIpamsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamsRequest,
-                                                 Pagination::DescribeIpamsPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamsRequest,
+                                             Pagination::DescribeIpamsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 
   /**
    * Create a paginator for DescribeIpamScopes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamScopesRequest,
-                                        Pagination::DescribeIpamScopesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamScopesRequest,
+                                    Pagination::DescribeIpamScopesPaginationTraits<DerivedClient>>
   DescribeIpamScopesPaginator(const Model::DescribeIpamScopesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpamScopesRequest,
-                                                 Pagination::DescribeIpamScopesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpamScopesRequest,
+                                             Pagination::DescribeIpamScopesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeIpv6Pools operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpv6PoolsRequest,
-                                        Pagination::DescribeIpv6PoolsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpv6PoolsRequest,
+                                    Pagination::DescribeIpv6PoolsPaginationTraits<DerivedClient>>
   DescribeIpv6PoolsPaginator(const Model::DescribeIpv6PoolsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeIpv6PoolsRequest,
-                                                 Pagination::DescribeIpv6PoolsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeIpv6PoolsRequest,
+                                             Pagination::DescribeIpv6PoolsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLaunchTemplates operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLaunchTemplatesRequest,
-                                        Pagination::DescribeLaunchTemplatesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLaunchTemplatesRequest,
+                                    Pagination::DescribeLaunchTemplatesPaginationTraits<DerivedClient>>
   DescribeLaunchTemplatesPaginator(const Model::DescribeLaunchTemplatesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLaunchTemplatesRequest,
-                                                 Pagination::DescribeLaunchTemplatesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLaunchTemplatesRequest,
+                                             Pagination::DescribeLaunchTemplatesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLaunchTemplateVersions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLaunchTemplateVersionsRequest,
-                                        Pagination::DescribeLaunchTemplateVersionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLaunchTemplateVersionsRequest,
+                                    Pagination::DescribeLaunchTemplateVersionsPaginationTraits<DerivedClient>>
   DescribeLaunchTemplateVersionsPaginator(const Model::DescribeLaunchTemplateVersionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLaunchTemplateVersionsRequest,
-                                                 Pagination::DescribeLaunchTemplateVersionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLaunchTemplateVersionsRequest,
+                                             Pagination::DescribeLaunchTemplateVersionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLocalGatewayRouteTables operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayRouteTablesRequest,
-                                        Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayRouteTablesRequest,
+                                    Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<DerivedClient>>
   DescribeLocalGatewayRouteTablesPaginator(const Model::DescribeLocalGatewayRouteTablesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayRouteTablesRequest,
-                                                 Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayRouteTablesRequest,
+                                             Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<
+  Aws::Utils::Pagination::Paginator<
       DerivedClient, Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest,
       Pagination::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginationTraits<DerivedClient>>
   DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator(
       const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<
+    return Aws::Utils::Pagination::Paginator<
         DerivedClient, Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest,
         Pagination::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
@@ -859,626 +854,626 @@ class EC2PaginationBase {
   /**
    * Create a paginator for DescribeLocalGatewayRouteTableVpcAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
-                                        Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
+                                    Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<DerivedClient>>
   DescribeLocalGatewayRouteTableVpcAssociationsPaginator(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
-                                                 Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
+                                             Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLocalGateways operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewaysRequest,
-                                        Pagination::DescribeLocalGatewaysPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewaysRequest,
+                                    Pagination::DescribeLocalGatewaysPaginationTraits<DerivedClient>>
   DescribeLocalGatewaysPaginator(const Model::DescribeLocalGatewaysRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewaysRequest,
-                                                 Pagination::DescribeLocalGatewaysPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewaysRequest,
+                                             Pagination::DescribeLocalGatewaysPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLocalGatewayVirtualInterfaceGroups operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
-                                        Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
+                                    Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<DerivedClient>>
   DescribeLocalGatewayVirtualInterfaceGroupsPaginator(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
-                                                 Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
+                                             Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeLocalGatewayVirtualInterfaces operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfacesRequest,
-                                        Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfacesRequest,
+                                    Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<DerivedClient>>
   DescribeLocalGatewayVirtualInterfacesPaginator(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfacesRequest,
-                                                 Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLocalGatewayVirtualInterfacesRequest,
+                                             Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeMacHosts operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMacHostsRequest,
-                                        Pagination::DescribeMacHostsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMacHostsRequest,
+                                    Pagination::DescribeMacHostsPaginationTraits<DerivedClient>>
   DescribeMacHostsPaginator(const Model::DescribeMacHostsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMacHostsRequest,
-                                                 Pagination::DescribeMacHostsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMacHostsRequest,
+                                             Pagination::DescribeMacHostsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeMacModificationTasks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMacModificationTasksRequest,
-                                        Pagination::DescribeMacModificationTasksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMacModificationTasksRequest,
+                                    Pagination::DescribeMacModificationTasksPaginationTraits<DerivedClient>>
   DescribeMacModificationTasksPaginator(const Model::DescribeMacModificationTasksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMacModificationTasksRequest,
-                                                 Pagination::DescribeMacModificationTasksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMacModificationTasksRequest,
+                                             Pagination::DescribeMacModificationTasksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeManagedPrefixLists operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeManagedPrefixListsRequest,
-                                        Pagination::DescribeManagedPrefixListsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeManagedPrefixListsRequest,
+                                    Pagination::DescribeManagedPrefixListsPaginationTraits<DerivedClient>>
   DescribeManagedPrefixListsPaginator(const Model::DescribeManagedPrefixListsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeManagedPrefixListsRequest,
-                                                 Pagination::DescribeManagedPrefixListsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeManagedPrefixListsRequest,
+                                             Pagination::DescribeManagedPrefixListsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeMovingAddresses operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMovingAddressesRequest,
-                                        Pagination::DescribeMovingAddressesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMovingAddressesRequest,
+                                    Pagination::DescribeMovingAddressesPaginationTraits<DerivedClient>>
   DescribeMovingAddressesPaginator(const Model::DescribeMovingAddressesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeMovingAddressesRequest,
-                                                 Pagination::DescribeMovingAddressesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMovingAddressesRequest,
+                                             Pagination::DescribeMovingAddressesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNatGateways operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNatGatewaysRequest,
-                                        Pagination::DescribeNatGatewaysPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNatGatewaysRequest,
+                                    Pagination::DescribeNatGatewaysPaginationTraits<DerivedClient>>
   DescribeNatGatewaysPaginator(const Model::DescribeNatGatewaysRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNatGatewaysRequest,
-                                                 Pagination::DescribeNatGatewaysPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNatGatewaysRequest,
+                                             Pagination::DescribeNatGatewaysPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkAcls operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkAclsRequest,
-                                        Pagination::DescribeNetworkAclsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkAclsRequest,
+                                    Pagination::DescribeNetworkAclsPaginationTraits<DerivedClient>>
   DescribeNetworkAclsPaginator(const Model::DescribeNetworkAclsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkAclsRequest,
-                                                 Pagination::DescribeNetworkAclsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkAclsRequest,
+                                             Pagination::DescribeNetworkAclsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkInsightsAccessScopeAnalyses operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
-                                        Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
+                                    Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<DerivedClient>>
   DescribeNetworkInsightsAccessScopeAnalysesPaginator(const Model::DescribeNetworkInsightsAccessScopeAnalysesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
-                                                 Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
+                                             Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkInsightsAccessScopes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopesRequest,
-                                        Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopesRequest,
+                                    Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<DerivedClient>>
   DescribeNetworkInsightsAccessScopesPaginator(const Model::DescribeNetworkInsightsAccessScopesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopesRequest,
-                                                 Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsAccessScopesRequest,
+                                             Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkInsightsAnalyses operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAnalysesRequest,
-                                        Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsAnalysesRequest,
+                                    Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<DerivedClient>>
   DescribeNetworkInsightsAnalysesPaginator(const Model::DescribeNetworkInsightsAnalysesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsAnalysesRequest,
-                                                 Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsAnalysesRequest,
+                                             Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkInsightsPaths operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsPathsRequest,
-                                        Pagination::DescribeNetworkInsightsPathsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsPathsRequest,
+                                    Pagination::DescribeNetworkInsightsPathsPaginationTraits<DerivedClient>>
   DescribeNetworkInsightsPathsPaginator(const Model::DescribeNetworkInsightsPathsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInsightsPathsRequest,
-                                                 Pagination::DescribeNetworkInsightsPathsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInsightsPathsRequest,
+                                             Pagination::DescribeNetworkInsightsPathsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkInterfacePermissions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInterfacePermissionsRequest,
-                                        Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInterfacePermissionsRequest,
+                                    Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<DerivedClient>>
   DescribeNetworkInterfacePermissionsPaginator(const Model::DescribeNetworkInterfacePermissionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInterfacePermissionsRequest,
-                                                 Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInterfacePermissionsRequest,
+                                             Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeNetworkInterfaces operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInterfacesRequest,
-                                        Pagination::DescribeNetworkInterfacesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInterfacesRequest,
+                                    Pagination::DescribeNetworkInterfacesPaginationTraits<DerivedClient>>
   DescribeNetworkInterfacesPaginator(const Model::DescribeNetworkInterfacesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeNetworkInterfacesRequest,
-                                                 Pagination::DescribeNetworkInterfacesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkInterfacesRequest,
+                                             Pagination::DescribeNetworkInterfacesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribePrefixLists operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePrefixListsRequest,
-                                        Pagination::DescribePrefixListsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePrefixListsRequest,
+                                    Pagination::DescribePrefixListsPaginationTraits<DerivedClient>>
   DescribePrefixListsPaginator(const Model::DescribePrefixListsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePrefixListsRequest,
-                                                 Pagination::DescribePrefixListsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePrefixListsRequest,
+                                             Pagination::DescribePrefixListsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribePrincipalIdFormat operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePrincipalIdFormatRequest,
-                                        Pagination::DescribePrincipalIdFormatPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePrincipalIdFormatRequest,
+                                    Pagination::DescribePrincipalIdFormatPaginationTraits<DerivedClient>>
   DescribePrincipalIdFormatPaginator(const Model::DescribePrincipalIdFormatRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePrincipalIdFormatRequest,
-                                                 Pagination::DescribePrincipalIdFormatPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePrincipalIdFormatRequest,
+                                             Pagination::DescribePrincipalIdFormatPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribePublicIpv4Pools operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePublicIpv4PoolsRequest,
-                                        Pagination::DescribePublicIpv4PoolsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePublicIpv4PoolsRequest,
+                                    Pagination::DescribePublicIpv4PoolsPaginationTraits<DerivedClient>>
   DescribePublicIpv4PoolsPaginator(const Model::DescribePublicIpv4PoolsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribePublicIpv4PoolsRequest,
-                                                 Pagination::DescribePublicIpv4PoolsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePublicIpv4PoolsRequest,
+                                             Pagination::DescribePublicIpv4PoolsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeReplaceRootVolumeTasks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReplaceRootVolumeTasksRequest,
-                                        Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplaceRootVolumeTasksRequest,
+                                    Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<DerivedClient>>
   DescribeReplaceRootVolumeTasksPaginator(const Model::DescribeReplaceRootVolumeTasksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReplaceRootVolumeTasksRequest,
-                                                 Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplaceRootVolumeTasksRequest,
+                                             Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeReservedInstancesModifications operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReservedInstancesModificationsRequest,
-                                        Pagination::DescribeReservedInstancesModificationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedInstancesModificationsRequest,
+                                    Pagination::DescribeReservedInstancesModificationsPaginationTraits<DerivedClient>>
   DescribeReservedInstancesModificationsPaginator(const Model::DescribeReservedInstancesModificationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReservedInstancesModificationsRequest,
-                                                 Pagination::DescribeReservedInstancesModificationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedInstancesModificationsRequest,
+                                             Pagination::DescribeReservedInstancesModificationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeReservedInstancesOfferings operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReservedInstancesOfferingsRequest,
-                                        Pagination::DescribeReservedInstancesOfferingsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedInstancesOfferingsRequest,
+                                    Pagination::DescribeReservedInstancesOfferingsPaginationTraits<DerivedClient>>
   DescribeReservedInstancesOfferingsPaginator(const Model::DescribeReservedInstancesOfferingsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeReservedInstancesOfferingsRequest,
-                                                 Pagination::DescribeReservedInstancesOfferingsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedInstancesOfferingsRequest,
+                                             Pagination::DescribeReservedInstancesOfferingsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeRouteServerEndpoints operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServerEndpointsRequest,
-                                        Pagination::DescribeRouteServerEndpointsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteServerEndpointsRequest,
+                                    Pagination::DescribeRouteServerEndpointsPaginationTraits<DerivedClient>>
   DescribeRouteServerEndpointsPaginator(const Model::DescribeRouteServerEndpointsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServerEndpointsRequest,
-                                                 Pagination::DescribeRouteServerEndpointsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteServerEndpointsRequest,
+                                             Pagination::DescribeRouteServerEndpointsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeRouteServerPeers operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServerPeersRequest,
-                                        Pagination::DescribeRouteServerPeersPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteServerPeersRequest,
+                                    Pagination::DescribeRouteServerPeersPaginationTraits<DerivedClient>>
   DescribeRouteServerPeersPaginator(const Model::DescribeRouteServerPeersRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServerPeersRequest,
-                                                 Pagination::DescribeRouteServerPeersPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteServerPeersRequest,
+                                             Pagination::DescribeRouteServerPeersPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeRouteServers operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServersRequest,
-                                        Pagination::DescribeRouteServersPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteServersRequest,
+                                    Pagination::DescribeRouteServersPaginationTraits<DerivedClient>>
   DescribeRouteServersPaginator(const Model::DescribeRouteServersRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteServersRequest,
-                                                 Pagination::DescribeRouteServersPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteServersRequest,
+                                             Pagination::DescribeRouteServersPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeRouteTables operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteTablesRequest,
-                                        Pagination::DescribeRouteTablesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteTablesRequest,
+                                    Pagination::DescribeRouteTablesPaginationTraits<DerivedClient>>
   DescribeRouteTablesPaginator(const Model::DescribeRouteTablesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeRouteTablesRequest,
-                                                 Pagination::DescribeRouteTablesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRouteTablesRequest,
+                                             Pagination::DescribeRouteTablesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeScheduledInstanceAvailability operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeScheduledInstanceAvailabilityRequest,
-                                        Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScheduledInstanceAvailabilityRequest,
+                                    Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<DerivedClient>>
   DescribeScheduledInstanceAvailabilityPaginator(const Model::DescribeScheduledInstanceAvailabilityRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeScheduledInstanceAvailabilityRequest,
-                                                 Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScheduledInstanceAvailabilityRequest,
+                                             Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeScheduledInstances operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeScheduledInstancesRequest,
-                                        Pagination::DescribeScheduledInstancesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScheduledInstancesRequest,
+                                    Pagination::DescribeScheduledInstancesPaginationTraits<DerivedClient>>
   DescribeScheduledInstancesPaginator(const Model::DescribeScheduledInstancesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeScheduledInstancesRequest,
-                                                 Pagination::DescribeScheduledInstancesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScheduledInstancesRequest,
+                                             Pagination::DescribeScheduledInstancesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSecurityGroupRules operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupRulesRequest,
-                                        Pagination::DescribeSecurityGroupRulesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSecurityGroupRulesRequest,
+                                    Pagination::DescribeSecurityGroupRulesPaginationTraits<DerivedClient>>
   DescribeSecurityGroupRulesPaginator(const Model::DescribeSecurityGroupRulesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupRulesRequest,
-                                                 Pagination::DescribeSecurityGroupRulesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSecurityGroupRulesRequest,
+                                             Pagination::DescribeSecurityGroupRulesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSecurityGroups operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupsRequest,
-                                        Pagination::DescribeSecurityGroupsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSecurityGroupsRequest,
+                                    Pagination::DescribeSecurityGroupsPaginationTraits<DerivedClient>>
   DescribeSecurityGroupsPaginator(const Model::DescribeSecurityGroupsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupsRequest,
-                                                 Pagination::DescribeSecurityGroupsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSecurityGroupsRequest,
+                                             Pagination::DescribeSecurityGroupsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSecurityGroupVpcAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupVpcAssociationsRequest,
-                                        Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSecurityGroupVpcAssociationsRequest,
+                                    Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<DerivedClient>>
   DescribeSecurityGroupVpcAssociationsPaginator(const Model::DescribeSecurityGroupVpcAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSecurityGroupVpcAssociationsRequest,
-                                                 Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSecurityGroupVpcAssociationsRequest,
+                                             Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSnapshots operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSnapshotsRequest,
-                                        Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
+                                    Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>
   DescribeSnapshotsPaginator(const Model::DescribeSnapshotsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSnapshotsRequest,
-                                                 Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
+                                             Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSnapshotTierStatus operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSnapshotTierStatusRequest,
-                                        Pagination::DescribeSnapshotTierStatusPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotTierStatusRequest,
+                                    Pagination::DescribeSnapshotTierStatusPaginationTraits<DerivedClient>>
   DescribeSnapshotTierStatusPaginator(const Model::DescribeSnapshotTierStatusRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSnapshotTierStatusRequest,
-                                                 Pagination::DescribeSnapshotTierStatusPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotTierStatusRequest,
+                                             Pagination::DescribeSnapshotTierStatusPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSpotFleetRequests operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotFleetRequestsRequest,
-                                        Pagination::DescribeSpotFleetRequestsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSpotFleetRequestsRequest,
+                                    Pagination::DescribeSpotFleetRequestsPaginationTraits<DerivedClient>>
   DescribeSpotFleetRequestsPaginator(const Model::DescribeSpotFleetRequestsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotFleetRequestsRequest,
-                                                 Pagination::DescribeSpotFleetRequestsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSpotFleetRequestsRequest,
+                                             Pagination::DescribeSpotFleetRequestsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSpotInstanceRequests operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotInstanceRequestsRequest,
-                                        Pagination::DescribeSpotInstanceRequestsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSpotInstanceRequestsRequest,
+                                    Pagination::DescribeSpotInstanceRequestsPaginationTraits<DerivedClient>>
   DescribeSpotInstanceRequestsPaginator(const Model::DescribeSpotInstanceRequestsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotInstanceRequestsRequest,
-                                                 Pagination::DescribeSpotInstanceRequestsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSpotInstanceRequestsRequest,
+                                             Pagination::DescribeSpotInstanceRequestsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSpotPriceHistory operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotPriceHistoryRequest,
-                                        Pagination::DescribeSpotPriceHistoryPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSpotPriceHistoryRequest,
+                                    Pagination::DescribeSpotPriceHistoryPaginationTraits<DerivedClient>>
   DescribeSpotPriceHistoryPaginator(const Model::DescribeSpotPriceHistoryRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSpotPriceHistoryRequest,
-                                                 Pagination::DescribeSpotPriceHistoryPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSpotPriceHistoryRequest,
+                                             Pagination::DescribeSpotPriceHistoryPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeStaleSecurityGroups operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeStaleSecurityGroupsRequest,
-                                        Pagination::DescribeStaleSecurityGroupsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeStaleSecurityGroupsRequest,
+                                    Pagination::DescribeStaleSecurityGroupsPaginationTraits<DerivedClient>>
   DescribeStaleSecurityGroupsPaginator(const Model::DescribeStaleSecurityGroupsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeStaleSecurityGroupsRequest,
-                                                 Pagination::DescribeStaleSecurityGroupsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeStaleSecurityGroupsRequest,
+                                             Pagination::DescribeStaleSecurityGroupsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeStoreImageTasks operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeStoreImageTasksRequest,
-                                        Pagination::DescribeStoreImageTasksPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeStoreImageTasksRequest,
+                                    Pagination::DescribeStoreImageTasksPaginationTraits<DerivedClient>>
   DescribeStoreImageTasksPaginator(const Model::DescribeStoreImageTasksRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeStoreImageTasksRequest,
-                                                 Pagination::DescribeStoreImageTasksPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeStoreImageTasksRequest,
+                                             Pagination::DescribeStoreImageTasksPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeSubnets operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSubnetsRequest,
-                                        Pagination::DescribeSubnetsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubnetsRequest,
+                                    Pagination::DescribeSubnetsPaginationTraits<DerivedClient>>
   DescribeSubnetsPaginator(const Model::DescribeSubnetsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeSubnetsRequest,
-                                                 Pagination::DescribeSubnetsPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubnetsRequest,
+                                             Pagination::DescribeSubnetsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**
    * Create a paginator for DescribeTags operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTagsRequest, Pagination::DescribeTagsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsRequest, Pagination::DescribeTagsPaginationTraits<DerivedClient>>
   DescribeTagsPaginator(const Model::DescribeTagsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTagsRequest,
-                                                 Pagination::DescribeTagsPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsRequest,
+                                             Pagination::DescribeTagsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 
   /**
    * Create a paginator for DescribeTrafficMirrorFilters operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorFiltersRequest,
-                                        Pagination::DescribeTrafficMirrorFiltersPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficMirrorFiltersRequest,
+                                    Pagination::DescribeTrafficMirrorFiltersPaginationTraits<DerivedClient>>
   DescribeTrafficMirrorFiltersPaginator(const Model::DescribeTrafficMirrorFiltersRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorFiltersRequest,
-                                                 Pagination::DescribeTrafficMirrorFiltersPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficMirrorFiltersRequest,
+                                             Pagination::DescribeTrafficMirrorFiltersPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTrafficMirrorSessions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorSessionsRequest,
-                                        Pagination::DescribeTrafficMirrorSessionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficMirrorSessionsRequest,
+                                    Pagination::DescribeTrafficMirrorSessionsPaginationTraits<DerivedClient>>
   DescribeTrafficMirrorSessionsPaginator(const Model::DescribeTrafficMirrorSessionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorSessionsRequest,
-                                                 Pagination::DescribeTrafficMirrorSessionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficMirrorSessionsRequest,
+                                             Pagination::DescribeTrafficMirrorSessionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTrafficMirrorTargets operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorTargetsRequest,
-                                        Pagination::DescribeTrafficMirrorTargetsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficMirrorTargetsRequest,
+                                    Pagination::DescribeTrafficMirrorTargetsPaginationTraits<DerivedClient>>
   DescribeTrafficMirrorTargetsPaginator(const Model::DescribeTrafficMirrorTargetsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrafficMirrorTargetsRequest,
-                                                 Pagination::DescribeTrafficMirrorTargetsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficMirrorTargetsRequest,
+                                             Pagination::DescribeTrafficMirrorTargetsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayAttachments operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayAttachmentsRequest,
-                                        Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayAttachmentsRequest,
+                                    Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<DerivedClient>>
   DescribeTransitGatewayAttachmentsPaginator(const Model::DescribeTransitGatewayAttachmentsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayAttachmentsRequest,
-                                                 Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayAttachmentsRequest,
+                                             Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayConnectPeers operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayConnectPeersRequest,
-                                        Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayConnectPeersRequest,
+                                    Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<DerivedClient>>
   DescribeTransitGatewayConnectPeersPaginator(const Model::DescribeTransitGatewayConnectPeersRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayConnectPeersRequest,
-                                                 Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayConnectPeersRequest,
+                                             Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayConnects operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayConnectsRequest,
-                                        Pagination::DescribeTransitGatewayConnectsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayConnectsRequest,
+                                    Pagination::DescribeTransitGatewayConnectsPaginationTraits<DerivedClient>>
   DescribeTransitGatewayConnectsPaginator(const Model::DescribeTransitGatewayConnectsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayConnectsRequest,
-                                                 Pagination::DescribeTransitGatewayConnectsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayConnectsRequest,
+                                             Pagination::DescribeTransitGatewayConnectsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayMulticastDomains operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayMulticastDomainsRequest,
-                                        Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayMulticastDomainsRequest,
+                                    Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<DerivedClient>>
   DescribeTransitGatewayMulticastDomainsPaginator(const Model::DescribeTransitGatewayMulticastDomainsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayMulticastDomainsRequest,
-                                                 Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayMulticastDomainsRequest,
+                                             Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayPeeringAttachments operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
-                                        Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
+                                    Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<DerivedClient>>
   DescribeTransitGatewayPeeringAttachmentsPaginator(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
-                                                 Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
+                                             Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayPolicyTables operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayPolicyTablesRequest,
-                                        Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayPolicyTablesRequest,
+                                    Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<DerivedClient>>
   DescribeTransitGatewayPolicyTablesPaginator(const Model::DescribeTransitGatewayPolicyTablesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayPolicyTablesRequest,
-                                                 Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayPolicyTablesRequest,
+                                             Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayRouteTableAnnouncements operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
-                                        Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
+                                    Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<DerivedClient>>
   DescribeTransitGatewayRouteTableAnnouncementsPaginator(const Model::DescribeTransitGatewayRouteTableAnnouncementsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
-                                                 Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
+                                             Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayRouteTables operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayRouteTablesRequest,
-                                        Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayRouteTablesRequest,
+                                    Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<DerivedClient>>
   DescribeTransitGatewayRouteTablesPaginator(const Model::DescribeTransitGatewayRouteTablesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayRouteTablesRequest,
-                                                 Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayRouteTablesRequest,
+                                             Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGateways operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewaysRequest,
-                                        Pagination::DescribeTransitGatewaysPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewaysRequest,
+                                    Pagination::DescribeTransitGatewaysPaginationTraits<DerivedClient>>
   DescribeTransitGatewaysPaginator(const Model::DescribeTransitGatewaysRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewaysRequest,
-                                                 Pagination::DescribeTransitGatewaysPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewaysRequest,
+                                             Pagination::DescribeTransitGatewaysPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTransitGatewayVpcAttachments operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayVpcAttachmentsRequest,
-                                        Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayVpcAttachmentsRequest,
+                                    Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<DerivedClient>>
   DescribeTransitGatewayVpcAttachmentsPaginator(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTransitGatewayVpcAttachmentsRequest,
-                                                 Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTransitGatewayVpcAttachmentsRequest,
+                                             Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeTrunkInterfaceAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrunkInterfaceAssociationsRequest,
-                                        Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrunkInterfaceAssociationsRequest,
+                                    Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<DerivedClient>>
   DescribeTrunkInterfaceAssociationsPaginator(const Model::DescribeTrunkInterfaceAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeTrunkInterfaceAssociationsRequest,
-                                                 Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrunkInterfaceAssociationsRequest,
+                                             Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVerifiedAccessEndpoints operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessEndpointsRequest,
-                                        Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessEndpointsRequest,
+                                    Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<DerivedClient>>
   DescribeVerifiedAccessEndpointsPaginator(const Model::DescribeVerifiedAccessEndpointsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessEndpointsRequest,
-                                                 Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessEndpointsRequest,
+                                             Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVerifiedAccessGroups operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessGroupsRequest,
-                                        Pagination::DescribeVerifiedAccessGroupsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessGroupsRequest,
+                                    Pagination::DescribeVerifiedAccessGroupsPaginationTraits<DerivedClient>>
   DescribeVerifiedAccessGroupsPaginator(const Model::DescribeVerifiedAccessGroupsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessGroupsRequest,
-                                                 Pagination::DescribeVerifiedAccessGroupsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessGroupsRequest,
+                                             Pagination::DescribeVerifiedAccessGroupsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVerifiedAccessInstanceLoggingConfigurations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
-                                        Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
+                                    Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<DerivedClient>>
   DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator(
       const Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<
+    return Aws::Utils::Pagination::Paginator<
         DerivedClient, Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
         Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -1487,505 +1482,505 @@ class EC2PaginationBase {
   /**
    * Create a paginator for DescribeVerifiedAccessInstances operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessInstancesRequest,
-                                        Pagination::DescribeVerifiedAccessInstancesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessInstancesRequest,
+                                    Pagination::DescribeVerifiedAccessInstancesPaginationTraits<DerivedClient>>
   DescribeVerifiedAccessInstancesPaginator(const Model::DescribeVerifiedAccessInstancesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessInstancesRequest,
-                                                 Pagination::DescribeVerifiedAccessInstancesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessInstancesRequest,
+                                             Pagination::DescribeVerifiedAccessInstancesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVerifiedAccessTrustProviders operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessTrustProvidersRequest,
-                                        Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessTrustProvidersRequest,
+                                    Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<DerivedClient>>
   DescribeVerifiedAccessTrustProvidersPaginator(const Model::DescribeVerifiedAccessTrustProvidersRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVerifiedAccessTrustProvidersRequest,
-                                                 Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVerifiedAccessTrustProvidersRequest,
+                                             Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVolumes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumesRequest,
-                                        Pagination::DescribeVolumesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumesRequest,
+                                    Pagination::DescribeVolumesPaginationTraits<DerivedClient>>
   DescribeVolumesPaginator(const Model::DescribeVolumesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumesRequest,
-                                                 Pagination::DescribeVolumesPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumesRequest,
+                                             Pagination::DescribeVolumesPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**
    * Create a paginator for DescribeVolumesModifications operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumesModificationsRequest,
-                                        Pagination::DescribeVolumesModificationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumesModificationsRequest,
+                                    Pagination::DescribeVolumesModificationsPaginationTraits<DerivedClient>>
   DescribeVolumesModificationsPaginator(const Model::DescribeVolumesModificationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumesModificationsRequest,
-                                                 Pagination::DescribeVolumesModificationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumesModificationsRequest,
+                                             Pagination::DescribeVolumesModificationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVolumeStatus operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumeStatusRequest,
-                                        Pagination::DescribeVolumeStatusPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumeStatusRequest,
+                                    Pagination::DescribeVolumeStatusPaginationTraits<DerivedClient>>
   DescribeVolumeStatusPaginator(const Model::DescribeVolumeStatusRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVolumeStatusRequest,
-                                                 Pagination::DescribeVolumeStatusPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumeStatusRequest,
+                                             Pagination::DescribeVolumeStatusPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcClassicLinkDnsSupport operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcClassicLinkDnsSupportRequest,
-                                        Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcClassicLinkDnsSupportRequest,
+                                    Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<DerivedClient>>
   DescribeVpcClassicLinkDnsSupportPaginator(const Model::DescribeVpcClassicLinkDnsSupportRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcClassicLinkDnsSupportRequest,
-                                                 Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcClassicLinkDnsSupportRequest,
+                                             Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcEndpointConnectionNotifications operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointConnectionNotificationsRequest,
-                                        Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointConnectionNotificationsRequest,
+                                    Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<DerivedClient>>
   DescribeVpcEndpointConnectionNotificationsPaginator(const Model::DescribeVpcEndpointConnectionNotificationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointConnectionNotificationsRequest,
-                                                 Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointConnectionNotificationsRequest,
+                                             Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcEndpointConnections operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointConnectionsRequest,
-                                        Pagination::DescribeVpcEndpointConnectionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointConnectionsRequest,
+                                    Pagination::DescribeVpcEndpointConnectionsPaginationTraits<DerivedClient>>
   DescribeVpcEndpointConnectionsPaginator(const Model::DescribeVpcEndpointConnectionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointConnectionsRequest,
-                                                 Pagination::DescribeVpcEndpointConnectionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointConnectionsRequest,
+                                             Pagination::DescribeVpcEndpointConnectionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcEndpoints operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointsRequest,
-                                        Pagination::DescribeVpcEndpointsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointsRequest,
+                                    Pagination::DescribeVpcEndpointsPaginationTraits<DerivedClient>>
   DescribeVpcEndpointsPaginator(const Model::DescribeVpcEndpointsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointsRequest,
-                                                 Pagination::DescribeVpcEndpointsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointsRequest,
+                                             Pagination::DescribeVpcEndpointsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcEndpointServiceConfigurations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointServiceConfigurationsRequest,
-                                        Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointServiceConfigurationsRequest,
+                                    Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<DerivedClient>>
   DescribeVpcEndpointServiceConfigurationsPaginator(const Model::DescribeVpcEndpointServiceConfigurationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointServiceConfigurationsRequest,
-                                                 Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointServiceConfigurationsRequest,
+                                             Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcEndpointServicePermissions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointServicePermissionsRequest,
-                                        Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointServicePermissionsRequest,
+                                    Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<DerivedClient>>
   DescribeVpcEndpointServicePermissionsPaginator(const Model::DescribeVpcEndpointServicePermissionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcEndpointServicePermissionsRequest,
-                                                 Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcEndpointServicePermissionsRequest,
+                                             Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcPeeringConnections operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcPeeringConnectionsRequest,
-                                        Pagination::DescribeVpcPeeringConnectionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcPeeringConnectionsRequest,
+                                    Pagination::DescribeVpcPeeringConnectionsPaginationTraits<DerivedClient>>
   DescribeVpcPeeringConnectionsPaginator(const Model::DescribeVpcPeeringConnectionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcPeeringConnectionsRequest,
-                                                 Pagination::DescribeVpcPeeringConnectionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcPeeringConnectionsRequest,
+                                             Pagination::DescribeVpcPeeringConnectionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for DescribeVpcs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcsRequest, Pagination::DescribeVpcsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcsRequest, Pagination::DescribeVpcsPaginationTraits<DerivedClient>>
   DescribeVpcsPaginator(const Model::DescribeVpcsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpcsRequest,
-                                                 Pagination::DescribeVpcsPaginationTraits<DerivedClient>>{
-        *static_cast<DerivedClient*>(this), request};
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpcsRequest,
+                                             Pagination::DescribeVpcsPaginationTraits<DerivedClient>>{*static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 
   /**
    * Create a paginator for DescribeVpnConcentrators operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpnConcentratorsRequest,
-                                        Pagination::DescribeVpnConcentratorsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpnConcentratorsRequest,
+                                    Pagination::DescribeVpnConcentratorsPaginationTraits<DerivedClient>>
   DescribeVpnConcentratorsPaginator(const Model::DescribeVpnConcentratorsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::DescribeVpnConcentratorsRequest,
-                                                 Pagination::DescribeVpnConcentratorsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVpnConcentratorsRequest,
+                                             Pagination::DescribeVpnConcentratorsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetAssociatedIpv6PoolCidrs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetAssociatedIpv6PoolCidrsRequest,
-                                        Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAssociatedIpv6PoolCidrsRequest,
+                                    Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<DerivedClient>>
   GetAssociatedIpv6PoolCidrsPaginator(const Model::GetAssociatedIpv6PoolCidrsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetAssociatedIpv6PoolCidrsRequest,
-                                                 Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAssociatedIpv6PoolCidrsRequest,
+                                             Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetAwsNetworkPerformanceData operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetAwsNetworkPerformanceDataRequest,
-                                        Pagination::GetAwsNetworkPerformanceDataPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAwsNetworkPerformanceDataRequest,
+                                    Pagination::GetAwsNetworkPerformanceDataPaginationTraits<DerivedClient>>
   GetAwsNetworkPerformanceDataPaginator(const Model::GetAwsNetworkPerformanceDataRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetAwsNetworkPerformanceDataRequest,
-                                                 Pagination::GetAwsNetworkPerformanceDataPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAwsNetworkPerformanceDataRequest,
+                                             Pagination::GetAwsNetworkPerformanceDataPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetCapacityManagerMetricData operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetCapacityManagerMetricDataRequest,
-                                        Pagination::GetCapacityManagerMetricDataPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMetricDataRequest,
+                                    Pagination::GetCapacityManagerMetricDataPaginationTraits<DerivedClient>>
   GetCapacityManagerMetricDataPaginator(const Model::GetCapacityManagerMetricDataRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetCapacityManagerMetricDataRequest,
-                                                 Pagination::GetCapacityManagerMetricDataPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMetricDataRequest,
+                                             Pagination::GetCapacityManagerMetricDataPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetCapacityManagerMetricDimensions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetCapacityManagerMetricDimensionsRequest,
-                                        Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMetricDimensionsRequest,
+                                    Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<DerivedClient>>
   GetCapacityManagerMetricDimensionsPaginator(const Model::GetCapacityManagerMetricDimensionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetCapacityManagerMetricDimensionsRequest,
-                                                 Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCapacityManagerMetricDimensionsRequest,
+                                             Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetGroupsForCapacityReservation operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetGroupsForCapacityReservationRequest,
-                                        Pagination::GetGroupsForCapacityReservationPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetGroupsForCapacityReservationRequest,
+                                    Pagination::GetGroupsForCapacityReservationPaginationTraits<DerivedClient>>
   GetGroupsForCapacityReservationPaginator(const Model::GetGroupsForCapacityReservationRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetGroupsForCapacityReservationRequest,
-                                                 Pagination::GetGroupsForCapacityReservationPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetGroupsForCapacityReservationRequest,
+                                             Pagination::GetGroupsForCapacityReservationPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetInstanceTypesFromInstanceRequirements operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetInstanceTypesFromInstanceRequirementsRequest,
-                                        Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInstanceTypesFromInstanceRequirementsRequest,
+                                    Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<DerivedClient>>
   GetInstanceTypesFromInstanceRequirementsPaginator(const Model::GetInstanceTypesFromInstanceRequirementsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetInstanceTypesFromInstanceRequirementsRequest,
-                                                 Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInstanceTypesFromInstanceRequirementsRequest,
+                                             Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamAddressHistory operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamAddressHistoryRequest,
-                                        Pagination::GetIpamAddressHistoryPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamAddressHistoryRequest,
+                                    Pagination::GetIpamAddressHistoryPaginationTraits<DerivedClient>>
   GetIpamAddressHistoryPaginator(const Model::GetIpamAddressHistoryRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamAddressHistoryRequest,
-                                                 Pagination::GetIpamAddressHistoryPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamAddressHistoryRequest,
+                                             Pagination::GetIpamAddressHistoryPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamDiscoveredAccounts operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamDiscoveredAccountsRequest,
-                                        Pagination::GetIpamDiscoveredAccountsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamDiscoveredAccountsRequest,
+                                    Pagination::GetIpamDiscoveredAccountsPaginationTraits<DerivedClient>>
   GetIpamDiscoveredAccountsPaginator(const Model::GetIpamDiscoveredAccountsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamDiscoveredAccountsRequest,
-                                                 Pagination::GetIpamDiscoveredAccountsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamDiscoveredAccountsRequest,
+                                             Pagination::GetIpamDiscoveredAccountsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamDiscoveredResourceCidrs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamDiscoveredResourceCidrsRequest,
-                                        Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamDiscoveredResourceCidrsRequest,
+                                    Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<DerivedClient>>
   GetIpamDiscoveredResourceCidrsPaginator(const Model::GetIpamDiscoveredResourceCidrsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamDiscoveredResourceCidrsRequest,
-                                                 Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamDiscoveredResourceCidrsRequest,
+                                             Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamPoolAllocations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPoolAllocationsRequest,
-                                        Pagination::GetIpamPoolAllocationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPoolAllocationsRequest,
+                                    Pagination::GetIpamPoolAllocationsPaginationTraits<DerivedClient>>
   GetIpamPoolAllocationsPaginator(const Model::GetIpamPoolAllocationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPoolAllocationsRequest,
-                                                 Pagination::GetIpamPoolAllocationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPoolAllocationsRequest,
+                                             Pagination::GetIpamPoolAllocationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamPoolCidrs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPoolCidrsRequest,
-                                        Pagination::GetIpamPoolCidrsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPoolCidrsRequest,
+                                    Pagination::GetIpamPoolCidrsPaginationTraits<DerivedClient>>
   GetIpamPoolCidrsPaginator(const Model::GetIpamPoolCidrsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPoolCidrsRequest,
-                                                 Pagination::GetIpamPoolCidrsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPoolCidrsRequest,
+                                             Pagination::GetIpamPoolCidrsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamPrefixListResolverRules operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverRulesRequest,
-                                        Pagination::GetIpamPrefixListResolverRulesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPrefixListResolverRulesRequest,
+                                    Pagination::GetIpamPrefixListResolverRulesPaginationTraits<DerivedClient>>
   GetIpamPrefixListResolverRulesPaginator(const Model::GetIpamPrefixListResolverRulesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverRulesRequest,
-                                                 Pagination::GetIpamPrefixListResolverRulesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPrefixListResolverRulesRequest,
+                                             Pagination::GetIpamPrefixListResolverRulesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamPrefixListResolverVersionEntries operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverVersionEntriesRequest,
-                                        Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPrefixListResolverVersionEntriesRequest,
+                                    Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<DerivedClient>>
   GetIpamPrefixListResolverVersionEntriesPaginator(const Model::GetIpamPrefixListResolverVersionEntriesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverVersionEntriesRequest,
-                                                 Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPrefixListResolverVersionEntriesRequest,
+                                             Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamPrefixListResolverVersions operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverVersionsRequest,
-                                        Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPrefixListResolverVersionsRequest,
+                                    Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<DerivedClient>>
   GetIpamPrefixListResolverVersionsPaginator(const Model::GetIpamPrefixListResolverVersionsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamPrefixListResolverVersionsRequest,
-                                                 Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamPrefixListResolverVersionsRequest,
+                                             Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetIpamResourceCidrs operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamResourceCidrsRequest,
-                                        Pagination::GetIpamResourceCidrsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamResourceCidrsRequest,
+                                    Pagination::GetIpamResourceCidrsPaginationTraits<DerivedClient>>
   GetIpamResourceCidrsPaginator(const Model::GetIpamResourceCidrsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetIpamResourceCidrsRequest,
-                                                 Pagination::GetIpamResourceCidrsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetIpamResourceCidrsRequest,
+                                             Pagination::GetIpamResourceCidrsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetManagedPrefixListAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetManagedPrefixListAssociationsRequest,
-                                        Pagination::GetManagedPrefixListAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetManagedPrefixListAssociationsRequest,
+                                    Pagination::GetManagedPrefixListAssociationsPaginationTraits<DerivedClient>>
   GetManagedPrefixListAssociationsPaginator(const Model::GetManagedPrefixListAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetManagedPrefixListAssociationsRequest,
-                                                 Pagination::GetManagedPrefixListAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetManagedPrefixListAssociationsRequest,
+                                             Pagination::GetManagedPrefixListAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetManagedPrefixListEntries operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetManagedPrefixListEntriesRequest,
-                                        Pagination::GetManagedPrefixListEntriesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetManagedPrefixListEntriesRequest,
+                                    Pagination::GetManagedPrefixListEntriesPaginationTraits<DerivedClient>>
   GetManagedPrefixListEntriesPaginator(const Model::GetManagedPrefixListEntriesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetManagedPrefixListEntriesRequest,
-                                                 Pagination::GetManagedPrefixListEntriesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetManagedPrefixListEntriesRequest,
+                                             Pagination::GetManagedPrefixListEntriesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetNetworkInsightsAccessScopeAnalysisFindings operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
-                                        Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
+                                    Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<DerivedClient>>
   GetNetworkInsightsAccessScopeAnalysisFindingsPaginator(const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
-                                                 Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
+                                             Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetSecurityGroupsForVpc operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetSecurityGroupsForVpcRequest,
-                                        Pagination::GetSecurityGroupsForVpcPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSecurityGroupsForVpcRequest,
+                                    Pagination::GetSecurityGroupsForVpcPaginationTraits<DerivedClient>>
   GetSecurityGroupsForVpcPaginator(const Model::GetSecurityGroupsForVpcRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetSecurityGroupsForVpcRequest,
-                                                 Pagination::GetSecurityGroupsForVpcPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSecurityGroupsForVpcRequest,
+                                             Pagination::GetSecurityGroupsForVpcPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetSpotPlacementScores operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetSpotPlacementScoresRequest,
-                                        Pagination::GetSpotPlacementScoresPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSpotPlacementScoresRequest,
+                                    Pagination::GetSpotPlacementScoresPaginationTraits<DerivedClient>>
   GetSpotPlacementScoresPaginator(const Model::GetSpotPlacementScoresRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetSpotPlacementScoresRequest,
-                                                 Pagination::GetSpotPlacementScoresPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSpotPlacementScoresRequest,
+                                             Pagination::GetSpotPlacementScoresPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetTransitGatewayAttachmentPropagations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayAttachmentPropagationsRequest,
-                                        Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayAttachmentPropagationsRequest,
+                                    Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<DerivedClient>>
   GetTransitGatewayAttachmentPropagationsPaginator(const Model::GetTransitGatewayAttachmentPropagationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayAttachmentPropagationsRequest,
-                                                 Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayAttachmentPropagationsRequest,
+                                             Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetTransitGatewayMulticastDomainAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
-                                        Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
+                                    Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<DerivedClient>>
   GetTransitGatewayMulticastDomainAssociationsPaginator(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
-                                                 Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
+                                             Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetTransitGatewayPolicyTableAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayPolicyTableAssociationsRequest,
-                                        Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPolicyTableAssociationsRequest,
+                                    Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<DerivedClient>>
   GetTransitGatewayPolicyTableAssociationsPaginator(const Model::GetTransitGatewayPolicyTableAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayPolicyTableAssociationsRequest,
-                                                 Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPolicyTableAssociationsRequest,
+                                             Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetTransitGatewayPrefixListReferences operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayPrefixListReferencesRequest,
-                                        Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPrefixListReferencesRequest,
+                                    Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<DerivedClient>>
   GetTransitGatewayPrefixListReferencesPaginator(const Model::GetTransitGatewayPrefixListReferencesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayPrefixListReferencesRequest,
-                                                 Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayPrefixListReferencesRequest,
+                                             Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetTransitGatewayRouteTableAssociations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayRouteTableAssociationsRequest,
-                                        Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRouteTableAssociationsRequest,
+                                    Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<DerivedClient>>
   GetTransitGatewayRouteTableAssociationsPaginator(const Model::GetTransitGatewayRouteTableAssociationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayRouteTableAssociationsRequest,
-                                                 Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRouteTableAssociationsRequest,
+                                             Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetTransitGatewayRouteTablePropagations operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayRouteTablePropagationsRequest,
-                                        Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRouteTablePropagationsRequest,
+                                    Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<DerivedClient>>
   GetTransitGatewayRouteTablePropagationsPaginator(const Model::GetTransitGatewayRouteTablePropagationsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetTransitGatewayRouteTablePropagationsRequest,
-                                                 Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRouteTablePropagationsRequest,
+                                             Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for GetVpnConnectionDeviceTypes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetVpnConnectionDeviceTypesRequest,
-                                        Pagination::GetVpnConnectionDeviceTypesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVpnConnectionDeviceTypesRequest,
+                                    Pagination::GetVpnConnectionDeviceTypesPaginationTraits<DerivedClient>>
   GetVpnConnectionDeviceTypesPaginator(const Model::GetVpnConnectionDeviceTypesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::GetVpnConnectionDeviceTypesRequest,
-                                                 Pagination::GetVpnConnectionDeviceTypesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVpnConnectionDeviceTypesRequest,
+                                             Pagination::GetVpnConnectionDeviceTypesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for ListImagesInRecycleBin operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListImagesInRecycleBinRequest,
-                                        Pagination::ListImagesInRecycleBinPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImagesInRecycleBinRequest,
+                                    Pagination::ListImagesInRecycleBinPaginationTraits<DerivedClient>>
   ListImagesInRecycleBinPaginator(const Model::ListImagesInRecycleBinRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListImagesInRecycleBinRequest,
-                                                 Pagination::ListImagesInRecycleBinPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImagesInRecycleBinRequest,
+                                             Pagination::ListImagesInRecycleBinPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for ListSnapshotsInRecycleBin operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListSnapshotsInRecycleBinRequest,
-                                        Pagination::ListSnapshotsInRecycleBinPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotsInRecycleBinRequest,
+                                    Pagination::ListSnapshotsInRecycleBinPaginationTraits<DerivedClient>>
   ListSnapshotsInRecycleBinPaginator(const Model::ListSnapshotsInRecycleBinRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::ListSnapshotsInRecycleBinRequest,
-                                                 Pagination::ListSnapshotsInRecycleBinPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotsInRecycleBinRequest,
+                                             Pagination::ListSnapshotsInRecycleBinPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for SearchLocalGatewayRoutes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchLocalGatewayRoutesRequest,
-                                        Pagination::SearchLocalGatewayRoutesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchLocalGatewayRoutesRequest,
+                                    Pagination::SearchLocalGatewayRoutesPaginationTraits<DerivedClient>>
   SearchLocalGatewayRoutesPaginator(const Model::SearchLocalGatewayRoutesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchLocalGatewayRoutesRequest,
-                                                 Pagination::SearchLocalGatewayRoutesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchLocalGatewayRoutesRequest,
+                                             Pagination::SearchLocalGatewayRoutesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for SearchTransitGatewayMulticastGroups operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayMulticastGroupsRequest,
-                                        Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTransitGatewayMulticastGroupsRequest,
+                                    Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<DerivedClient>>
   SearchTransitGatewayMulticastGroupsPaginator(const Model::SearchTransitGatewayMulticastGroupsRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayMulticastGroupsRequest,
-                                                 Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTransitGatewayMulticastGroupsRequest,
+                                             Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 
   /**
    * Create a paginator for SearchTransitGatewayRoutes operation
    */
-  Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
-                                        Pagination::SearchTransitGatewayRoutesPaginationTraits<DerivedClient>>
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
+                                    Pagination::SearchTransitGatewayRoutesPaginationTraits<DerivedClient>>
   SearchTransitGatewayRoutesPaginator(const Model::SearchTransitGatewayRoutesRequest& request) {
-    return Aws::Utils::Pagination::PagePaginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
-                                                 Pagination::SearchTransitGatewayRoutesPaginationTraits<DerivedClient>>{
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTransitGatewayRoutesRequest,
+                                             Pagination::SearchTransitGatewayRoutesPaginationTraits<DerivedClient>>{
         *static_cast<DerivedClient*>(this), request};
   }
 };

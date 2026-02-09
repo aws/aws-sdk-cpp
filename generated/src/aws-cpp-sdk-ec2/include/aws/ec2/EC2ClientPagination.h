@@ -175,466 +175,451 @@ namespace Aws {
 namespace EC2 {
 
 using DescribeAddressesAttributePaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeAddressesAttributeRequest,
-                                          Pagination::DescribeAddressesAttributePaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeAddressesAttributeRequest,
+                                      Pagination::DescribeAddressesAttributePaginationTraits<EC2Client>>;
 using DescribeAddressTransfersPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeAddressTransfersRequest,
-                                          Pagination::DescribeAddressTransfersPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeAddressTransfersRequest,
+                                      Pagination::DescribeAddressTransfersPaginationTraits<EC2Client>>;
 using DescribeAwsNetworkPerformanceMetricSubscriptionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
-                                          Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<EC2Client>>;
-using DescribeByoipCidrsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeByoipCidrsRequest,
-                                                                          Pagination::DescribeByoipCidrsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest,
+                                      Pagination::DescribeAwsNetworkPerformanceMetricSubscriptionsPaginationTraits<EC2Client>>;
+using DescribeByoipCidrsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeByoipCidrsRequest,
+                                                                      Pagination::DescribeByoipCidrsPaginationTraits<EC2Client>>;
 using DescribeCapacityBlockExtensionHistoryPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityBlockExtensionHistoryRequest,
-                                          Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityBlockExtensionHistoryRequest,
+                                      Pagination::DescribeCapacityBlockExtensionHistoryPaginationTraits<EC2Client>>;
 using DescribeCapacityBlockExtensionOfferingsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityBlockExtensionOfferingsRequest,
-                                          Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityBlockExtensionOfferingsRequest,
+                                      Pagination::DescribeCapacityBlockExtensionOfferingsPaginationTraits<EC2Client>>;
 using DescribeCapacityBlockOfferingsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityBlockOfferingsRequest,
-                                          Pagination::DescribeCapacityBlockOfferingsPaginationTraits<EC2Client>>;
-using DescribeCapacityBlocksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityBlocksRequest,
-                                          Pagination::DescribeCapacityBlocksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityBlockOfferingsRequest,
+                                      Pagination::DescribeCapacityBlockOfferingsPaginationTraits<EC2Client>>;
+using DescribeCapacityBlocksPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityBlocksRequest,
+                                                                          Pagination::DescribeCapacityBlocksPaginationTraits<EC2Client>>;
 using DescribeCapacityBlockStatusPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityBlockStatusRequest,
-                                          Pagination::DescribeCapacityBlockStatusPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityBlockStatusRequest,
+                                      Pagination::DescribeCapacityBlockStatusPaginationTraits<EC2Client>>;
 using DescribeCapacityManagerDataExportsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityManagerDataExportsRequest,
-                                          Pagination::DescribeCapacityManagerDataExportsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityManagerDataExportsRequest,
+                                      Pagination::DescribeCapacityManagerDataExportsPaginationTraits<EC2Client>>;
 using DescribeCapacityReservationBillingRequestsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityReservationBillingRequestsRequest,
-                                          Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityReservationBillingRequestsRequest,
+                                      Pagination::DescribeCapacityReservationBillingRequestsPaginationTraits<EC2Client>>;
 using DescribeCapacityReservationFleetsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityReservationFleetsRequest,
-                                          Pagination::DescribeCapacityReservationFleetsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityReservationFleetsRequest,
+                                      Pagination::DescribeCapacityReservationFleetsPaginationTraits<EC2Client>>;
 using DescribeCapacityReservationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCapacityReservationsRequest,
-                                          Pagination::DescribeCapacityReservationsPaginationTraits<EC2Client>>;
-using DescribeCarrierGatewaysPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCarrierGatewaysRequest,
-                                          Pagination::DescribeCarrierGatewaysPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCapacityReservationsRequest,
+                                      Pagination::DescribeCapacityReservationsPaginationTraits<EC2Client>>;
+using DescribeCarrierGatewaysPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCarrierGatewaysRequest,
+                                                                           Pagination::DescribeCarrierGatewaysPaginationTraits<EC2Client>>;
 using DescribeClassicLinkInstancesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeClassicLinkInstancesRequest,
-                                          Pagination::DescribeClassicLinkInstancesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeClassicLinkInstancesRequest,
+                                      Pagination::DescribeClassicLinkInstancesPaginationTraits<EC2Client>>;
 using DescribeClientVpnAuthorizationRulesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeClientVpnAuthorizationRulesRequest,
-                                          Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeClientVpnAuthorizationRulesRequest,
+                                      Pagination::DescribeClientVpnAuthorizationRulesPaginationTraits<EC2Client>>;
 using DescribeClientVpnConnectionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeClientVpnConnectionsRequest,
-                                          Pagination::DescribeClientVpnConnectionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeClientVpnConnectionsRequest,
+                                      Pagination::DescribeClientVpnConnectionsPaginationTraits<EC2Client>>;
 using DescribeClientVpnEndpointsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeClientVpnEndpointsRequest,
-                                          Pagination::DescribeClientVpnEndpointsPaginationTraits<EC2Client>>;
-using DescribeClientVpnRoutesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeClientVpnRoutesRequest,
-                                          Pagination::DescribeClientVpnRoutesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeClientVpnEndpointsRequest,
+                                      Pagination::DescribeClientVpnEndpointsPaginationTraits<EC2Client>>;
+using DescribeClientVpnRoutesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeClientVpnRoutesRequest,
+                                                                           Pagination::DescribeClientVpnRoutesPaginationTraits<EC2Client>>;
 using DescribeClientVpnTargetNetworksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeClientVpnTargetNetworksRequest,
-                                          Pagination::DescribeClientVpnTargetNetworksPaginationTraits<EC2Client>>;
-using DescribeCoipPoolsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeCoipPoolsRequest,
-                                                                         Pagination::DescribeCoipPoolsPaginationTraits<EC2Client>>;
-using DescribeDhcpOptionsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeDhcpOptionsRequest,
-                                                                           Pagination::DescribeDhcpOptionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeClientVpnTargetNetworksRequest,
+                                      Pagination::DescribeClientVpnTargetNetworksPaginationTraits<EC2Client>>;
+using DescribeCoipPoolsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeCoipPoolsRequest, Pagination::DescribeCoipPoolsPaginationTraits<EC2Client>>;
+using DescribeDhcpOptionsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeDhcpOptionsRequest,
+                                                                       Pagination::DescribeDhcpOptionsPaginationTraits<EC2Client>>;
 using DescribeEgressOnlyInternetGatewaysPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeEgressOnlyInternetGatewaysRequest,
-                                          Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeEgressOnlyInternetGatewaysRequest,
+                                      Pagination::DescribeEgressOnlyInternetGatewaysPaginationTraits<EC2Client>>;
 using DescribeExportImageTasksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeExportImageTasksRequest,
-                                          Pagination::DescribeExportImageTasksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeExportImageTasksRequest,
+                                      Pagination::DescribeExportImageTasksPaginationTraits<EC2Client>>;
 using DescribeFastLaunchImagesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeFastLaunchImagesRequest,
-                                          Pagination::DescribeFastLaunchImagesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeFastLaunchImagesRequest,
+                                      Pagination::DescribeFastLaunchImagesPaginationTraits<EC2Client>>;
 using DescribeFastSnapshotRestoresPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeFastSnapshotRestoresRequest,
-                                          Pagination::DescribeFastSnapshotRestoresPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeFastSnapshotRestoresRequest,
+                                      Pagination::DescribeFastSnapshotRestoresPaginationTraits<EC2Client>>;
 using DescribeFleetsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeFleetsRequest, Pagination::DescribeFleetsPaginationTraits<EC2Client>>;
-using DescribeFlowLogsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeFlowLogsRequest,
-                                                                        Pagination::DescribeFlowLogsPaginationTraits<EC2Client>>;
-using DescribeFpgaImagesPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeFpgaImagesRequest,
-                                                                          Pagination::DescribeFpgaImagesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeFleetsRequest, Pagination::DescribeFleetsPaginationTraits<EC2Client>>;
+using DescribeFlowLogsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeFlowLogsRequest, Pagination::DescribeFlowLogsPaginationTraits<EC2Client>>;
+using DescribeFpgaImagesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeFpgaImagesRequest,
+                                                                      Pagination::DescribeFpgaImagesPaginationTraits<EC2Client>>;
 using DescribeHostReservationOfferingsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeHostReservationOfferingsRequest,
-                                          Pagination::DescribeHostReservationOfferingsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeHostReservationOfferingsRequest,
+                                      Pagination::DescribeHostReservationOfferingsPaginationTraits<EC2Client>>;
 using DescribeHostReservationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeHostReservationsRequest,
-                                          Pagination::DescribeHostReservationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeHostReservationsRequest,
+                                      Pagination::DescribeHostReservationsPaginationTraits<EC2Client>>;
 using DescribeHostsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeHostsRequest, Pagination::DescribeHostsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeHostsRequest, Pagination::DescribeHostsPaginationTraits<EC2Client>>;
 using DescribeIamInstanceProfileAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIamInstanceProfileAssociationsRequest,
-                                          Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<EC2Client>>;
-using DescribeImageReferencesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeImageReferencesRequest,
-                                          Pagination::DescribeImageReferencesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIamInstanceProfileAssociationsRequest,
+                                      Pagination::DescribeIamInstanceProfileAssociationsPaginationTraits<EC2Client>>;
+using DescribeImageReferencesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeImageReferencesRequest,
+                                                                           Pagination::DescribeImageReferencesPaginationTraits<EC2Client>>;
 using DescribeImagesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeImagesRequest, Pagination::DescribeImagesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeImagesRequest, Pagination::DescribeImagesPaginationTraits<EC2Client>>;
 using DescribeImageUsageReportEntriesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeImageUsageReportEntriesRequest,
-                                          Pagination::DescribeImageUsageReportEntriesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeImageUsageReportEntriesRequest,
+                                      Pagination::DescribeImageUsageReportEntriesPaginationTraits<EC2Client>>;
 using DescribeImageUsageReportsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeImageUsageReportsRequest,
-                                          Pagination::DescribeImageUsageReportsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeImageUsageReportsRequest,
+                                      Pagination::DescribeImageUsageReportsPaginationTraits<EC2Client>>;
 using DescribeImportImageTasksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeImportImageTasksRequest,
-                                          Pagination::DescribeImportImageTasksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeImportImageTasksRequest,
+                                      Pagination::DescribeImportImageTasksPaginationTraits<EC2Client>>;
 using DescribeImportSnapshotTasksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeImportSnapshotTasksRequest,
-                                          Pagination::DescribeImportSnapshotTasksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeImportSnapshotTasksRequest,
+                                      Pagination::DescribeImportSnapshotTasksPaginationTraits<EC2Client>>;
 using DescribeInstanceConnectEndpointsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceConnectEndpointsRequest,
-                                          Pagination::DescribeInstanceConnectEndpointsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceConnectEndpointsRequest,
+                                      Pagination::DescribeInstanceConnectEndpointsPaginationTraits<EC2Client>>;
 using DescribeInstanceCreditSpecificationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceCreditSpecificationsRequest,
-                                          Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceCreditSpecificationsRequest,
+                                      Pagination::DescribeInstanceCreditSpecificationsPaginationTraits<EC2Client>>;
 using DescribeInstanceEventWindowsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceEventWindowsRequest,
-                                          Pagination::DescribeInstanceEventWindowsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceEventWindowsRequest,
+                                      Pagination::DescribeInstanceEventWindowsPaginationTraits<EC2Client>>;
 using DescribeInstanceImageMetadataPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceImageMetadataRequest,
-                                          Pagination::DescribeInstanceImageMetadataPaginationTraits<EC2Client>>;
-using DescribeInstancesPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstancesRequest,
-                                                                         Pagination::DescribeInstancesPaginationTraits<EC2Client>>;
-using DescribeInstanceStatusPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceStatusRequest,
-                                          Pagination::DescribeInstanceStatusPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceImageMetadataRequest,
+                                      Pagination::DescribeInstanceImageMetadataPaginationTraits<EC2Client>>;
+using DescribeInstancesPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstancesRequest, Pagination::DescribeInstancesPaginationTraits<EC2Client>>;
+using DescribeInstanceStatusPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceStatusRequest,
+                                                                          Pagination::DescribeInstanceStatusPaginationTraits<EC2Client>>;
 using DescribeInstanceTopologyPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceTopologyRequest,
-                                          Pagination::DescribeInstanceTopologyPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceTopologyRequest,
+                                      Pagination::DescribeInstanceTopologyPaginationTraits<EC2Client>>;
 using DescribeInstanceTypeOfferingsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceTypeOfferingsRequest,
-                                          Pagination::DescribeInstanceTypeOfferingsPaginationTraits<EC2Client>>;
-using DescribeInstanceTypesPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInstanceTypesRequest,
-                                                                             Pagination::DescribeInstanceTypesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceTypeOfferingsRequest,
+                                      Pagination::DescribeInstanceTypeOfferingsPaginationTraits<EC2Client>>;
+using DescribeInstanceTypesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInstanceTypesRequest,
+                                                                         Pagination::DescribeInstanceTypesPaginationTraits<EC2Client>>;
 using DescribeInternetGatewaysPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeInternetGatewaysRequest,
-                                          Pagination::DescribeInternetGatewaysPaginationTraits<EC2Client>>;
-using DescribeIpamPoolsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamPoolsRequest,
-                                                                         Pagination::DescribeIpamPoolsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeInternetGatewaysRequest,
+                                      Pagination::DescribeInternetGatewaysPaginationTraits<EC2Client>>;
+using DescribeIpamPoolsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamPoolsRequest, Pagination::DescribeIpamPoolsPaginationTraits<EC2Client>>;
 using DescribeIpamPrefixListResolversPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamPrefixListResolversRequest,
-                                          Pagination::DescribeIpamPrefixListResolversPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamPrefixListResolversRequest,
+                                      Pagination::DescribeIpamPrefixListResolversPaginationTraits<EC2Client>>;
 using DescribeIpamPrefixListResolverTargetsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamPrefixListResolverTargetsRequest,
-                                          Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamPrefixListResolverTargetsRequest,
+                                      Pagination::DescribeIpamPrefixListResolverTargetsPaginationTraits<EC2Client>>;
 using DescribeIpamResourceDiscoveriesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamResourceDiscoveriesRequest,
-                                          Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamResourceDiscoveriesRequest,
+                                      Pagination::DescribeIpamResourceDiscoveriesPaginationTraits<EC2Client>>;
 using DescribeIpamResourceDiscoveryAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
-                                          Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamResourceDiscoveryAssociationsRequest,
+                                      Pagination::DescribeIpamResourceDiscoveryAssociationsPaginationTraits<EC2Client>>;
 using DescribeIpamsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamsRequest, Pagination::DescribeIpamsPaginationTraits<EC2Client>>;
-using DescribeIpamScopesPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpamScopesRequest,
-                                                                          Pagination::DescribeIpamScopesPaginationTraits<EC2Client>>;
-using DescribeIpv6PoolsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeIpv6PoolsRequest,
-                                                                         Pagination::DescribeIpv6PoolsPaginationTraits<EC2Client>>;
-using DescribeLaunchTemplatesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLaunchTemplatesRequest,
-                                          Pagination::DescribeLaunchTemplatesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamsRequest, Pagination::DescribeIpamsPaginationTraits<EC2Client>>;
+using DescribeIpamScopesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpamScopesRequest,
+                                                                      Pagination::DescribeIpamScopesPaginationTraits<EC2Client>>;
+using DescribeIpv6PoolsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeIpv6PoolsRequest, Pagination::DescribeIpv6PoolsPaginationTraits<EC2Client>>;
+using DescribeLaunchTemplatesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLaunchTemplatesRequest,
+                                                                           Pagination::DescribeLaunchTemplatesPaginationTraits<EC2Client>>;
 using DescribeLaunchTemplateVersionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLaunchTemplateVersionsRequest,
-                                          Pagination::DescribeLaunchTemplateVersionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLaunchTemplateVersionsRequest,
+                                      Pagination::DescribeLaunchTemplateVersionsPaginationTraits<EC2Client>>;
 using DescribeLocalGatewayRouteTablesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLocalGatewayRouteTablesRequest,
-                                          Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<EC2Client>>;
-using DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator = Aws::Utils::Pagination::PagePaginator<
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLocalGatewayRouteTablesRequest,
+                                      Pagination::DescribeLocalGatewayRouteTablesPaginationTraits<EC2Client>>;
+using DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator = Aws::Utils::Pagination::Paginator<
     EC2Client, Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest,
     Pagination::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginationTraits<EC2Client>>;
 using DescribeLocalGatewayRouteTableVpcAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
-                                          Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<EC2Client>>;
-using DescribeLocalGatewaysPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLocalGatewaysRequest,
-                                                                             Pagination::DescribeLocalGatewaysPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest,
+                                      Pagination::DescribeLocalGatewayRouteTableVpcAssociationsPaginationTraits<EC2Client>>;
+using DescribeLocalGatewaysPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLocalGatewaysRequest,
+                                                                         Pagination::DescribeLocalGatewaysPaginationTraits<EC2Client>>;
 using DescribeLocalGatewayVirtualInterfaceGroupsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
-                                          Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest,
+                                      Pagination::DescribeLocalGatewayVirtualInterfaceGroupsPaginationTraits<EC2Client>>;
 using DescribeLocalGatewayVirtualInterfacesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeLocalGatewayVirtualInterfacesRequest,
-                                          Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<EC2Client>>;
-using DescribeMacHostsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeMacHostsRequest,
-                                                                        Pagination::DescribeMacHostsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeLocalGatewayVirtualInterfacesRequest,
+                                      Pagination::DescribeLocalGatewayVirtualInterfacesPaginationTraits<EC2Client>>;
+using DescribeMacHostsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeMacHostsRequest, Pagination::DescribeMacHostsPaginationTraits<EC2Client>>;
 using DescribeMacModificationTasksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeMacModificationTasksRequest,
-                                          Pagination::DescribeMacModificationTasksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeMacModificationTasksRequest,
+                                      Pagination::DescribeMacModificationTasksPaginationTraits<EC2Client>>;
 using DescribeManagedPrefixListsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeManagedPrefixListsRequest,
-                                          Pagination::DescribeManagedPrefixListsPaginationTraits<EC2Client>>;
-using DescribeMovingAddressesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeMovingAddressesRequest,
-                                          Pagination::DescribeMovingAddressesPaginationTraits<EC2Client>>;
-using DescribeNatGatewaysPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNatGatewaysRequest,
-                                                                           Pagination::DescribeNatGatewaysPaginationTraits<EC2Client>>;
-using DescribeNetworkAclsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkAclsRequest,
-                                                                           Pagination::DescribeNetworkAclsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeManagedPrefixListsRequest,
+                                      Pagination::DescribeManagedPrefixListsPaginationTraits<EC2Client>>;
+using DescribeMovingAddressesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeMovingAddressesRequest,
+                                                                           Pagination::DescribeMovingAddressesPaginationTraits<EC2Client>>;
+using DescribeNatGatewaysPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNatGatewaysRequest,
+                                                                       Pagination::DescribeNatGatewaysPaginationTraits<EC2Client>>;
+using DescribeNetworkAclsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkAclsRequest,
+                                                                       Pagination::DescribeNetworkAclsPaginationTraits<EC2Client>>;
 using DescribeNetworkInsightsAccessScopeAnalysesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
-                                          Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
+                                      Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<EC2Client>>;
 using DescribeNetworkInsightsAccessScopesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkInsightsAccessScopesRequest,
-                                          Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInsightsAccessScopesRequest,
+                                      Pagination::DescribeNetworkInsightsAccessScopesPaginationTraits<EC2Client>>;
 using DescribeNetworkInsightsAnalysesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkInsightsAnalysesRequest,
-                                          Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInsightsAnalysesRequest,
+                                      Pagination::DescribeNetworkInsightsAnalysesPaginationTraits<EC2Client>>;
 using DescribeNetworkInsightsPathsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkInsightsPathsRequest,
-                                          Pagination::DescribeNetworkInsightsPathsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInsightsPathsRequest,
+                                      Pagination::DescribeNetworkInsightsPathsPaginationTraits<EC2Client>>;
 using DescribeNetworkInterfacePermissionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkInterfacePermissionsRequest,
-                                          Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInterfacePermissionsRequest,
+                                      Pagination::DescribeNetworkInterfacePermissionsPaginationTraits<EC2Client>>;
 using DescribeNetworkInterfacesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeNetworkInterfacesRequest,
-                                          Pagination::DescribeNetworkInterfacesPaginationTraits<EC2Client>>;
-using DescribePrefixListsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribePrefixListsRequest,
-                                                                           Pagination::DescribePrefixListsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInterfacesRequest,
+                                      Pagination::DescribeNetworkInterfacesPaginationTraits<EC2Client>>;
+using DescribePrefixListsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribePrefixListsRequest,
+                                                                       Pagination::DescribePrefixListsPaginationTraits<EC2Client>>;
 using DescribePrincipalIdFormatPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribePrincipalIdFormatRequest,
-                                          Pagination::DescribePrincipalIdFormatPaginationTraits<EC2Client>>;
-using DescribePublicIpv4PoolsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribePublicIpv4PoolsRequest,
-                                          Pagination::DescribePublicIpv4PoolsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribePrincipalIdFormatRequest,
+                                      Pagination::DescribePrincipalIdFormatPaginationTraits<EC2Client>>;
+using DescribePublicIpv4PoolsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribePublicIpv4PoolsRequest,
+                                                                           Pagination::DescribePublicIpv4PoolsPaginationTraits<EC2Client>>;
 using DescribeReplaceRootVolumeTasksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeReplaceRootVolumeTasksRequest,
-                                          Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeReplaceRootVolumeTasksRequest,
+                                      Pagination::DescribeReplaceRootVolumeTasksPaginationTraits<EC2Client>>;
 using DescribeReservedInstancesModificationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeReservedInstancesModificationsRequest,
-                                          Pagination::DescribeReservedInstancesModificationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeReservedInstancesModificationsRequest,
+                                      Pagination::DescribeReservedInstancesModificationsPaginationTraits<EC2Client>>;
 using DescribeReservedInstancesOfferingsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeReservedInstancesOfferingsRequest,
-                                          Pagination::DescribeReservedInstancesOfferingsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeReservedInstancesOfferingsRequest,
+                                      Pagination::DescribeReservedInstancesOfferingsPaginationTraits<EC2Client>>;
 using DescribeRouteServerEndpointsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeRouteServerEndpointsRequest,
-                                          Pagination::DescribeRouteServerEndpointsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeRouteServerEndpointsRequest,
+                                      Pagination::DescribeRouteServerEndpointsPaginationTraits<EC2Client>>;
 using DescribeRouteServerPeersPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeRouteServerPeersRequest,
-                                          Pagination::DescribeRouteServerPeersPaginationTraits<EC2Client>>;
-using DescribeRouteServersPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeRouteServersRequest,
-                                                                            Pagination::DescribeRouteServersPaginationTraits<EC2Client>>;
-using DescribeRouteTablesPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeRouteTablesRequest,
-                                                                           Pagination::DescribeRouteTablesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeRouteServerPeersRequest,
+                                      Pagination::DescribeRouteServerPeersPaginationTraits<EC2Client>>;
+using DescribeRouteServersPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeRouteServersRequest,
+                                                                        Pagination::DescribeRouteServersPaginationTraits<EC2Client>>;
+using DescribeRouteTablesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeRouteTablesRequest,
+                                                                       Pagination::DescribeRouteTablesPaginationTraits<EC2Client>>;
 using DescribeScheduledInstanceAvailabilityPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeScheduledInstanceAvailabilityRequest,
-                                          Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeScheduledInstanceAvailabilityRequest,
+                                      Pagination::DescribeScheduledInstanceAvailabilityPaginationTraits<EC2Client>>;
 using DescribeScheduledInstancesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeScheduledInstancesRequest,
-                                          Pagination::DescribeScheduledInstancesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeScheduledInstancesRequest,
+                                      Pagination::DescribeScheduledInstancesPaginationTraits<EC2Client>>;
 using DescribeSecurityGroupRulesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSecurityGroupRulesRequest,
-                                          Pagination::DescribeSecurityGroupRulesPaginationTraits<EC2Client>>;
-using DescribeSecurityGroupsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSecurityGroupsRequest,
-                                          Pagination::DescribeSecurityGroupsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSecurityGroupRulesRequest,
+                                      Pagination::DescribeSecurityGroupRulesPaginationTraits<EC2Client>>;
+using DescribeSecurityGroupsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSecurityGroupsRequest,
+                                                                          Pagination::DescribeSecurityGroupsPaginationTraits<EC2Client>>;
 using DescribeSecurityGroupVpcAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSecurityGroupVpcAssociationsRequest,
-                                          Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<EC2Client>>;
-using DescribeSnapshotsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSnapshotsRequest,
-                                                                         Pagination::DescribeSnapshotsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSecurityGroupVpcAssociationsRequest,
+                                      Pagination::DescribeSecurityGroupVpcAssociationsPaginationTraits<EC2Client>>;
+using DescribeSnapshotsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSnapshotsRequest, Pagination::DescribeSnapshotsPaginationTraits<EC2Client>>;
 using DescribeSnapshotTierStatusPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSnapshotTierStatusRequest,
-                                          Pagination::DescribeSnapshotTierStatusPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSnapshotTierStatusRequest,
+                                      Pagination::DescribeSnapshotTierStatusPaginationTraits<EC2Client>>;
 using DescribeSpotFleetRequestsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSpotFleetRequestsRequest,
-                                          Pagination::DescribeSpotFleetRequestsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSpotFleetRequestsRequest,
+                                      Pagination::DescribeSpotFleetRequestsPaginationTraits<EC2Client>>;
 using DescribeSpotInstanceRequestsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSpotInstanceRequestsRequest,
-                                          Pagination::DescribeSpotInstanceRequestsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSpotInstanceRequestsRequest,
+                                      Pagination::DescribeSpotInstanceRequestsPaginationTraits<EC2Client>>;
 using DescribeSpotPriceHistoryPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSpotPriceHistoryRequest,
-                                          Pagination::DescribeSpotPriceHistoryPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSpotPriceHistoryRequest,
+                                      Pagination::DescribeSpotPriceHistoryPaginationTraits<EC2Client>>;
 using DescribeStaleSecurityGroupsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeStaleSecurityGroupsRequest,
-                                          Pagination::DescribeStaleSecurityGroupsPaginationTraits<EC2Client>>;
-using DescribeStoreImageTasksPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeStoreImageTasksRequest,
-                                          Pagination::DescribeStoreImageTasksPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeStaleSecurityGroupsRequest,
+                                      Pagination::DescribeStaleSecurityGroupsPaginationTraits<EC2Client>>;
+using DescribeStoreImageTasksPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeStoreImageTasksRequest,
+                                                                           Pagination::DescribeStoreImageTasksPaginationTraits<EC2Client>>;
 using DescribeSubnetsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeSubnetsRequest, Pagination::DescribeSubnetsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeSubnetsRequest, Pagination::DescribeSubnetsPaginationTraits<EC2Client>>;
 using DescribeTagsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTagsRequest, Pagination::DescribeTagsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTagsRequest, Pagination::DescribeTagsPaginationTraits<EC2Client>>;
 using DescribeTrafficMirrorFiltersPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTrafficMirrorFiltersRequest,
-                                          Pagination::DescribeTrafficMirrorFiltersPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTrafficMirrorFiltersRequest,
+                                      Pagination::DescribeTrafficMirrorFiltersPaginationTraits<EC2Client>>;
 using DescribeTrafficMirrorSessionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTrafficMirrorSessionsRequest,
-                                          Pagination::DescribeTrafficMirrorSessionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTrafficMirrorSessionsRequest,
+                                      Pagination::DescribeTrafficMirrorSessionsPaginationTraits<EC2Client>>;
 using DescribeTrafficMirrorTargetsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTrafficMirrorTargetsRequest,
-                                          Pagination::DescribeTrafficMirrorTargetsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTrafficMirrorTargetsRequest,
+                                      Pagination::DescribeTrafficMirrorTargetsPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayAttachmentsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayAttachmentsRequest,
-                                          Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayAttachmentsRequest,
+                                      Pagination::DescribeTransitGatewayAttachmentsPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayConnectPeersPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayConnectPeersRequest,
-                                          Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayConnectPeersRequest,
+                                      Pagination::DescribeTransitGatewayConnectPeersPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayConnectsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayConnectsRequest,
-                                          Pagination::DescribeTransitGatewayConnectsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayConnectsRequest,
+                                      Pagination::DescribeTransitGatewayConnectsPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayMulticastDomainsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayMulticastDomainsRequest,
-                                          Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayMulticastDomainsRequest,
+                                      Pagination::DescribeTransitGatewayMulticastDomainsPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayPeeringAttachmentsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
-                                          Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayPeeringAttachmentsRequest,
+                                      Pagination::DescribeTransitGatewayPeeringAttachmentsPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayPolicyTablesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayPolicyTablesRequest,
-                                          Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayPolicyTablesRequest,
+                                      Pagination::DescribeTransitGatewayPolicyTablesPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayRouteTableAnnouncementsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
-                                          Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayRouteTableAnnouncementsRequest,
+                                      Pagination::DescribeTransitGatewayRouteTableAnnouncementsPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayRouteTablesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayRouteTablesRequest,
-                                          Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<EC2Client>>;
-using DescribeTransitGatewaysPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewaysRequest,
-                                          Pagination::DescribeTransitGatewaysPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayRouteTablesRequest,
+                                      Pagination::DescribeTransitGatewayRouteTablesPaginationTraits<EC2Client>>;
+using DescribeTransitGatewaysPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewaysRequest,
+                                                                           Pagination::DescribeTransitGatewaysPaginationTraits<EC2Client>>;
 using DescribeTransitGatewayVpcAttachmentsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTransitGatewayVpcAttachmentsRequest,
-                                          Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTransitGatewayVpcAttachmentsRequest,
+                                      Pagination::DescribeTransitGatewayVpcAttachmentsPaginationTraits<EC2Client>>;
 using DescribeTrunkInterfaceAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeTrunkInterfaceAssociationsRequest,
-                                          Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeTrunkInterfaceAssociationsRequest,
+                                      Pagination::DescribeTrunkInterfaceAssociationsPaginationTraits<EC2Client>>;
 using DescribeVerifiedAccessEndpointsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVerifiedAccessEndpointsRequest,
-                                          Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVerifiedAccessEndpointsRequest,
+                                      Pagination::DescribeVerifiedAccessEndpointsPaginationTraits<EC2Client>>;
 using DescribeVerifiedAccessGroupsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVerifiedAccessGroupsRequest,
-                                          Pagination::DescribeVerifiedAccessGroupsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVerifiedAccessGroupsRequest,
+                                      Pagination::DescribeVerifiedAccessGroupsPaginationTraits<EC2Client>>;
 using DescribeVerifiedAccessInstanceLoggingConfigurationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
-                                          Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
+                                      Pagination::DescribeVerifiedAccessInstanceLoggingConfigurationsPaginationTraits<EC2Client>>;
 using DescribeVerifiedAccessInstancesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVerifiedAccessInstancesRequest,
-                                          Pagination::DescribeVerifiedAccessInstancesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVerifiedAccessInstancesRequest,
+                                      Pagination::DescribeVerifiedAccessInstancesPaginationTraits<EC2Client>>;
 using DescribeVerifiedAccessTrustProvidersPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVerifiedAccessTrustProvidersRequest,
-                                          Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVerifiedAccessTrustProvidersRequest,
+                                      Pagination::DescribeVerifiedAccessTrustProvidersPaginationTraits<EC2Client>>;
 using DescribeVolumesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVolumesRequest, Pagination::DescribeVolumesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVolumesRequest, Pagination::DescribeVolumesPaginationTraits<EC2Client>>;
 using DescribeVolumesModificationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVolumesModificationsRequest,
-                                          Pagination::DescribeVolumesModificationsPaginationTraits<EC2Client>>;
-using DescribeVolumeStatusPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVolumeStatusRequest,
-                                                                            Pagination::DescribeVolumeStatusPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVolumesModificationsRequest,
+                                      Pagination::DescribeVolumesModificationsPaginationTraits<EC2Client>>;
+using DescribeVolumeStatusPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVolumeStatusRequest,
+                                                                        Pagination::DescribeVolumeStatusPaginationTraits<EC2Client>>;
 using DescribeVpcClassicLinkDnsSupportPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcClassicLinkDnsSupportRequest,
-                                          Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcClassicLinkDnsSupportRequest,
+                                      Pagination::DescribeVpcClassicLinkDnsSupportPaginationTraits<EC2Client>>;
 using DescribeVpcEndpointConnectionNotificationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcEndpointConnectionNotificationsRequest,
-                                          Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcEndpointConnectionNotificationsRequest,
+                                      Pagination::DescribeVpcEndpointConnectionNotificationsPaginationTraits<EC2Client>>;
 using DescribeVpcEndpointConnectionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcEndpointConnectionsRequest,
-                                          Pagination::DescribeVpcEndpointConnectionsPaginationTraits<EC2Client>>;
-using DescribeVpcEndpointsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcEndpointsRequest,
-                                                                            Pagination::DescribeVpcEndpointsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcEndpointConnectionsRequest,
+                                      Pagination::DescribeVpcEndpointConnectionsPaginationTraits<EC2Client>>;
+using DescribeVpcEndpointsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcEndpointsRequest,
+                                                                        Pagination::DescribeVpcEndpointsPaginationTraits<EC2Client>>;
 using DescribeVpcEndpointServiceConfigurationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcEndpointServiceConfigurationsRequest,
-                                          Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcEndpointServiceConfigurationsRequest,
+                                      Pagination::DescribeVpcEndpointServiceConfigurationsPaginationTraits<EC2Client>>;
 using DescribeVpcEndpointServicePermissionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcEndpointServicePermissionsRequest,
-                                          Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcEndpointServicePermissionsRequest,
+                                      Pagination::DescribeVpcEndpointServicePermissionsPaginationTraits<EC2Client>>;
 using DescribeVpcPeeringConnectionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcPeeringConnectionsRequest,
-                                          Pagination::DescribeVpcPeeringConnectionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcPeeringConnectionsRequest,
+                                      Pagination::DescribeVpcPeeringConnectionsPaginationTraits<EC2Client>>;
 using DescribeVpcsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpcsRequest, Pagination::DescribeVpcsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpcsRequest, Pagination::DescribeVpcsPaginationTraits<EC2Client>>;
 using DescribeVpnConcentratorsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::DescribeVpnConcentratorsRequest,
-                                          Pagination::DescribeVpnConcentratorsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeVpnConcentratorsRequest,
+                                      Pagination::DescribeVpnConcentratorsPaginationTraits<EC2Client>>;
 using GetAssociatedIpv6PoolCidrsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetAssociatedIpv6PoolCidrsRequest,
-                                          Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetAssociatedIpv6PoolCidrsRequest,
+                                      Pagination::GetAssociatedIpv6PoolCidrsPaginationTraits<EC2Client>>;
 using GetAwsNetworkPerformanceDataPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetAwsNetworkPerformanceDataRequest,
-                                          Pagination::GetAwsNetworkPerformanceDataPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetAwsNetworkPerformanceDataRequest,
+                                      Pagination::GetAwsNetworkPerformanceDataPaginationTraits<EC2Client>>;
 using GetCapacityManagerMetricDataPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetCapacityManagerMetricDataRequest,
-                                          Pagination::GetCapacityManagerMetricDataPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetCapacityManagerMetricDataRequest,
+                                      Pagination::GetCapacityManagerMetricDataPaginationTraits<EC2Client>>;
 using GetCapacityManagerMetricDimensionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetCapacityManagerMetricDimensionsRequest,
-                                          Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetCapacityManagerMetricDimensionsRequest,
+                                      Pagination::GetCapacityManagerMetricDimensionsPaginationTraits<EC2Client>>;
 using GetGroupsForCapacityReservationPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetGroupsForCapacityReservationRequest,
-                                          Pagination::GetGroupsForCapacityReservationPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetGroupsForCapacityReservationRequest,
+                                      Pagination::GetGroupsForCapacityReservationPaginationTraits<EC2Client>>;
 using GetInstanceTypesFromInstanceRequirementsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetInstanceTypesFromInstanceRequirementsRequest,
-                                          Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<EC2Client>>;
-using GetIpamAddressHistoryPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamAddressHistoryRequest,
-                                                                             Pagination::GetIpamAddressHistoryPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetInstanceTypesFromInstanceRequirementsRequest,
+                                      Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<EC2Client>>;
+using GetIpamAddressHistoryPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamAddressHistoryRequest,
+                                                                         Pagination::GetIpamAddressHistoryPaginationTraits<EC2Client>>;
 using GetIpamDiscoveredAccountsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamDiscoveredAccountsRequest,
-                                          Pagination::GetIpamDiscoveredAccountsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamDiscoveredAccountsRequest,
+                                      Pagination::GetIpamDiscoveredAccountsPaginationTraits<EC2Client>>;
 using GetIpamDiscoveredResourceCidrsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamDiscoveredResourceCidrsRequest,
-                                          Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<EC2Client>>;
-using GetIpamPoolAllocationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamPoolAllocationsRequest,
-                                          Pagination::GetIpamPoolAllocationsPaginationTraits<EC2Client>>;
-using GetIpamPoolCidrsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamPoolCidrsRequest,
-                                                                        Pagination::GetIpamPoolCidrsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamDiscoveredResourceCidrsRequest,
+                                      Pagination::GetIpamDiscoveredResourceCidrsPaginationTraits<EC2Client>>;
+using GetIpamPoolAllocationsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamPoolAllocationsRequest,
+                                                                          Pagination::GetIpamPoolAllocationsPaginationTraits<EC2Client>>;
+using GetIpamPoolCidrsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamPoolCidrsRequest, Pagination::GetIpamPoolCidrsPaginationTraits<EC2Client>>;
 using GetIpamPrefixListResolverRulesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamPrefixListResolverRulesRequest,
-                                          Pagination::GetIpamPrefixListResolverRulesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamPrefixListResolverRulesRequest,
+                                      Pagination::GetIpamPrefixListResolverRulesPaginationTraits<EC2Client>>;
 using GetIpamPrefixListResolverVersionEntriesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamPrefixListResolverVersionEntriesRequest,
-                                          Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamPrefixListResolverVersionEntriesRequest,
+                                      Pagination::GetIpamPrefixListResolverVersionEntriesPaginationTraits<EC2Client>>;
 using GetIpamPrefixListResolverVersionsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamPrefixListResolverVersionsRequest,
-                                          Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<EC2Client>>;
-using GetIpamResourceCidrsPaginator = Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetIpamResourceCidrsRequest,
-                                                                            Pagination::GetIpamResourceCidrsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamPrefixListResolverVersionsRequest,
+                                      Pagination::GetIpamPrefixListResolverVersionsPaginationTraits<EC2Client>>;
+using GetIpamResourceCidrsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::GetIpamResourceCidrsRequest,
+                                                                        Pagination::GetIpamResourceCidrsPaginationTraits<EC2Client>>;
 using GetManagedPrefixListAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetManagedPrefixListAssociationsRequest,
-                                          Pagination::GetManagedPrefixListAssociationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetManagedPrefixListAssociationsRequest,
+                                      Pagination::GetManagedPrefixListAssociationsPaginationTraits<EC2Client>>;
 using GetManagedPrefixListEntriesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetManagedPrefixListEntriesRequest,
-                                          Pagination::GetManagedPrefixListEntriesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetManagedPrefixListEntriesRequest,
+                                      Pagination::GetManagedPrefixListEntriesPaginationTraits<EC2Client>>;
 using GetNetworkInsightsAccessScopeAnalysisFindingsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
-                                          Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<EC2Client>>;
-using GetSecurityGroupsForVpcPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetSecurityGroupsForVpcRequest,
-                                          Pagination::GetSecurityGroupsForVpcPaginationTraits<EC2Client>>;
-using GetSpotPlacementScoresPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetSpotPlacementScoresRequest,
-                                          Pagination::GetSpotPlacementScoresPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest,
+                                      Pagination::GetNetworkInsightsAccessScopeAnalysisFindingsPaginationTraits<EC2Client>>;
+using GetSecurityGroupsForVpcPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::GetSecurityGroupsForVpcRequest,
+                                                                           Pagination::GetSecurityGroupsForVpcPaginationTraits<EC2Client>>;
+using GetSpotPlacementScoresPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::GetSpotPlacementScoresRequest,
+                                                                          Pagination::GetSpotPlacementScoresPaginationTraits<EC2Client>>;
 using GetTransitGatewayAttachmentPropagationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetTransitGatewayAttachmentPropagationsRequest,
-                                          Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayAttachmentPropagationsRequest,
+                                      Pagination::GetTransitGatewayAttachmentPropagationsPaginationTraits<EC2Client>>;
 using GetTransitGatewayMulticastDomainAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
-                                          Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayMulticastDomainAssociationsRequest,
+                                      Pagination::GetTransitGatewayMulticastDomainAssociationsPaginationTraits<EC2Client>>;
 using GetTransitGatewayPolicyTableAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetTransitGatewayPolicyTableAssociationsRequest,
-                                          Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayPolicyTableAssociationsRequest,
+                                      Pagination::GetTransitGatewayPolicyTableAssociationsPaginationTraits<EC2Client>>;
 using GetTransitGatewayPrefixListReferencesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetTransitGatewayPrefixListReferencesRequest,
-                                          Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayPrefixListReferencesRequest,
+                                      Pagination::GetTransitGatewayPrefixListReferencesPaginationTraits<EC2Client>>;
 using GetTransitGatewayRouteTableAssociationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetTransitGatewayRouteTableAssociationsRequest,
-                                          Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayRouteTableAssociationsRequest,
+                                      Pagination::GetTransitGatewayRouteTableAssociationsPaginationTraits<EC2Client>>;
 using GetTransitGatewayRouteTablePropagationsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetTransitGatewayRouteTablePropagationsRequest,
-                                          Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetTransitGatewayRouteTablePropagationsRequest,
+                                      Pagination::GetTransitGatewayRouteTablePropagationsPaginationTraits<EC2Client>>;
 using GetVpnConnectionDeviceTypesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::GetVpnConnectionDeviceTypesRequest,
-                                          Pagination::GetVpnConnectionDeviceTypesPaginationTraits<EC2Client>>;
-using ListImagesInRecycleBinPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::ListImagesInRecycleBinRequest,
-                                          Pagination::ListImagesInRecycleBinPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetVpnConnectionDeviceTypesRequest,
+                                      Pagination::GetVpnConnectionDeviceTypesPaginationTraits<EC2Client>>;
+using ListImagesInRecycleBinPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::ListImagesInRecycleBinRequest,
+                                                                          Pagination::ListImagesInRecycleBinPaginationTraits<EC2Client>>;
 using ListSnapshotsInRecycleBinPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::ListSnapshotsInRecycleBinRequest,
-                                          Pagination::ListSnapshotsInRecycleBinPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::ListSnapshotsInRecycleBinRequest,
+                                      Pagination::ListSnapshotsInRecycleBinPaginationTraits<EC2Client>>;
 using SearchLocalGatewayRoutesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::SearchLocalGatewayRoutesRequest,
-                                          Pagination::SearchLocalGatewayRoutesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::SearchLocalGatewayRoutesRequest,
+                                      Pagination::SearchLocalGatewayRoutesPaginationTraits<EC2Client>>;
 using SearchTransitGatewayMulticastGroupsPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::SearchTransitGatewayMulticastGroupsRequest,
-                                          Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::SearchTransitGatewayMulticastGroupsRequest,
+                                      Pagination::SearchTransitGatewayMulticastGroupsPaginationTraits<EC2Client>>;
 using SearchTransitGatewayRoutesPaginator =
-    Aws::Utils::Pagination::PagePaginator<EC2Client, Model::SearchTransitGatewayRoutesRequest,
-                                          Pagination::SearchTransitGatewayRoutesPaginationTraits<EC2Client>>;
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::SearchTransitGatewayRoutesRequest,
+                                      Pagination::SearchTransitGatewayRoutesPaginationTraits<EC2Client>>;
 
 }  // namespace EC2
 }  // namespace Aws
