@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/SSMPaginationBase.h>
 #include <aws/ssm/SSMServiceClientModel.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
@@ -41,7 +42,9 @@ namespace SSM {
  * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems
  * Manager Incident Manager API Reference</a> </i>.</p> </li> </ul>
  */
-class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient> {
+class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>,
+                              public SSMPaginationBase<SSMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

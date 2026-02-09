@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingPaginationBase.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace IoTSecureTunneling {
  * Secure Tunneling</a>.</p>
  */
 class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>,
+                                                            public IoTSecureTunnelingPaginationBase<IoTSecureTunnelingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

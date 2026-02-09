@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingPaginationBase.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -22,7 +23,8 @@ namespace ChimeSDKMessaging {
  * Chime SDK messaging</a>.</p>
  */
 class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>,
+                                                          public ChimeSDKMessagingPaginationBase<ChimeSDKMessagingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/EKSPaginationBase.h>
 #include <aws/eks/EKSServiceClientModel.h>
 #include <aws/eks/EKS_EXPORTS.h>
 
@@ -26,7 +27,9 @@ namespace EKS {
  * means that you can easily migrate any standard Kubernetes application to Amazon
  * EKS without any code modification required.</p>
  */
-class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient> {
+class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>,
+                              public EKSPaginationBase<EKSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

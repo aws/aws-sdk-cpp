@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/amp/PrometheusServicePaginationBase.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -32,7 +33,8 @@ namespace PrometheusService {
  * API</a> to work within your Prometheus workspace.</p> </li> </ul>
  */
 class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>,
+                                                          public PrometheusServicePaginationBase<PrometheusServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

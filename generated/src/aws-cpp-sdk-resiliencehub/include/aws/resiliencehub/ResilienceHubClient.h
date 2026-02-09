@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/ResilienceHubPaginationBase.h>
 #include <aws/resiliencehub/ResilienceHubServiceClientModel.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace ResilienceHub {
  * production. </p>
  */
 class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>,
+                                                  public ResilienceHubPaginationBase<ResilienceHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/signin/SigninPaginationBase.h>
 #include <aws/signin/SigninServiceClientModel.h>
 #include <aws/signin/Signin_EXPORTS.h>
 
@@ -18,7 +19,9 @@ namespace Signin {
  * secure authentication flows for accessing AWS resources from the console and
  * developer tools.</p>
  */
-class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SigninClient> {
+class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<SigninClient>,
+                                    public SigninPaginationBase<SigninClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

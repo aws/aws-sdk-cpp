@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workdocs/WorkDocsPaginationBase.h>
 #include <aws/workdocs/WorkDocsServiceClientModel.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 
@@ -48,7 +49,8 @@ namespace WorkDocs {
  *
  */
 class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>,
+                                        public WorkDocsPaginationBase<WorkDocsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

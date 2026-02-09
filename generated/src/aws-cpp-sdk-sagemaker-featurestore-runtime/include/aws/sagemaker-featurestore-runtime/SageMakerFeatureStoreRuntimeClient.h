@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimePaginationBase.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace SageMakerFeatureStoreRuntime {
  */
 class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>,
+      public SageMakerFeatureStoreRuntimePaginationBase<SageMakerFeatureStoreRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

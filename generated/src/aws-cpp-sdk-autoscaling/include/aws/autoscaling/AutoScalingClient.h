@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/autoscaling/AutoScalingPaginationBase.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
@@ -31,7 +32,8 @@ namespace AutoScaling {
  * EC2 Auto Scaling API Reference</a>.</p>
  */
 class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>,
+                                              public AutoScalingPaginationBase<AutoScalingClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

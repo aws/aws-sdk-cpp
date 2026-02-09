@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/MgnPaginationBase.h>
 #include <aws/mgn/MgnServiceClientModel.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 
@@ -16,7 +17,9 @@ namespace mgn {
 /**
  * <p>The Application Migration Service service.</p>
  */
-class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient> {
+class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>,
+                              public MgnPaginationBase<MgnClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/entityresolution/EntityResolutionPaginationBase.h>
 #include <aws/entityresolution/EntityResolutionServiceClientModel.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
@@ -29,7 +30,8 @@ namespace EntityResolution {
  * Resolution User Guide</a>.</p>
  */
 class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>,
+                                                        public EntityResolutionPaginationBase<EntityResolutionClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

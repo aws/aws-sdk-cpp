@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/apigatewayv2/ApiGatewayV2PaginationBase.h>
 #include <aws/apigatewayv2/ApiGatewayV2ServiceClientModel.h>
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -17,7 +18,8 @@ namespace ApiGatewayV2 {
  * <p>Amazon API Gateway V2</p>
  */
 class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client>,
+                                                public ApiGatewayV2PaginationBase<ApiGatewayV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

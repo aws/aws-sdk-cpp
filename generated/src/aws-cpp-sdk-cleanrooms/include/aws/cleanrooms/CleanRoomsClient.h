@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cleanrooms/CleanRoomsPaginationBase.h>
 #include <aws/cleanrooms/CleanRoomsServiceClientModel.h>
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -28,7 +29,8 @@ namespace CleanRooms {
  * Rooms SQL Reference</a>.</p>
  */
 class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>,
+                                            public CleanRoomsPaginationBase<CleanRoomsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

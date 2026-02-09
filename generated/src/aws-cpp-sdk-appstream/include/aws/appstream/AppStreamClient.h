@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appstream/AppStreamPaginationBase.h>
 #include <aws/appstream/AppStreamServiceClientModel.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -35,7 +36,8 @@ namespace AppStream {
  * Applications documentation</a> </p> </li> </ul>
  */
 class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>,
+                                          public AppStreamPaginationBase<AppStreamClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

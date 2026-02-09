@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/DocDBPaginationBase.h>
 #include <aws/docdb/DocDBServiceClientModel.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 
@@ -20,7 +21,9 @@ namespace DocDB {
  * databases in the cloud. With Amazon DocumentDB, you can run the same application
  * code and use the same drivers and tools that you use with MongoDB.</p>
  */
-class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient> {
+class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>,
+                                  public DocDBPaginationBase<DocDBClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

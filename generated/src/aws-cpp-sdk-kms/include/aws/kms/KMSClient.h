@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/KMSPaginationBase.h>
 #include <aws/kms/KMSServiceClientModel.h>
 #include <aws/kms/KMS_EXPORTS.h>
 
@@ -81,7 +82,9 @@ namespace KMS {
  * <a>GenerateDataKey</a> </p> </li> <li> <p>
  * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
  */
-class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient> {
+class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>,
+                              public KMSPaginationBase<KMSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

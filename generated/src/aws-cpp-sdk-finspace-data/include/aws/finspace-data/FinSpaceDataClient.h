@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace-data/FinSpaceDataPaginationBase.h>
 #include <aws/finspace-data/FinSpaceDataServiceClientModel.h>
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace FinSpaceData {
  * <p> The FinSpace APIs let you take actions inside the FinSpace.</p>
  */
 class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<FinSpaceDataClient>,
+                                                public FinSpaceDataPaginationBase<FinSpaceDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

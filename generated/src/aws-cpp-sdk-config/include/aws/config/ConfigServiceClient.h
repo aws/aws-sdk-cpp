@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/config/ConfigServicePaginationBase.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -39,7 +40,8 @@ namespace ConfigService {
  * Is Config</a> in the <i>Config Developer Guide</i>.</p>
  */
 class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>,
+                                                  public ConfigServicePaginationBase<ConfigServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

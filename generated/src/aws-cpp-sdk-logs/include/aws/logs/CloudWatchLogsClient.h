@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/CloudWatchLogsPaginationBase.h>
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
@@ -41,7 +42,8 @@ namespace CloudWatchLogs {
  * </ul>
  */
 class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>,
+                                                    public CloudWatchLogsPaginationBase<CloudWatchLogsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

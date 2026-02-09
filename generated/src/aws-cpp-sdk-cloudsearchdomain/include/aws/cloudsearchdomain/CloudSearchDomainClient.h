@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudsearchdomain/CloudSearchDomainPaginationBase.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainServiceClientModel.h>
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -26,7 +27,8 @@ namespace CloudSearchDomain {
  * CloudSearch Developer Guide</a>.</p>
  */
 class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>,
+                                                          public CloudSearchDomainPaginationBase<CloudSearchDomainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

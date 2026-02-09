@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/KafkaConnectPaginationBase.h>
 #include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace KafkaConnect {
  * <p/>
  */
 class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>,
+                                                public KafkaConnectPaginationBase<KafkaConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

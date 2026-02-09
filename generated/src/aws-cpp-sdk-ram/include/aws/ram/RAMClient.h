@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/RAMPaginationBase.h>
 #include <aws/ram/RAMServiceClientModel.h>
 #include <aws/ram/RAM_EXPORTS.h>
 
@@ -27,7 +28,9 @@ namespace RAM {
  * href="https://docs.aws.amazon.com/ram/latest/userguide/">Resource Access Manager
  * User Guide</a> </p> </li> </ul>
  */
-class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RAMClient> {
+class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>,
+                              public RAMPaginationBase<RAMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

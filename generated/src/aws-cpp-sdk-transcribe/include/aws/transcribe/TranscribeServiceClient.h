@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/TranscribeServicePaginationBase.h>
 #include <aws/transcribe/TranscribeServiceServiceClientModel.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 
@@ -26,7 +27,8 @@ namespace TranscribeService {
  * details.</p> </li> </ul>
  */
 class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>,
+                                                          public TranscribeServicePaginationBase<TranscribeServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

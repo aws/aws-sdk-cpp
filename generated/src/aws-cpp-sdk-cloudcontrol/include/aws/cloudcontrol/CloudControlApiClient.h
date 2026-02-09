@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudcontrol/CloudControlApiPaginationBase.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -19,7 +20,8 @@ namespace CloudControlApi {
  * Web Services Cloud Control API User Guide</a>.</p>
  */
 class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>,
+                                                      public CloudControlApiPaginationBase<CloudControlApiClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

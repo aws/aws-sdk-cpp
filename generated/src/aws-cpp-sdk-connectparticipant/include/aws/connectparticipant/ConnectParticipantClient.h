@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connectparticipant/ConnectParticipantPaginationBase.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -30,7 +31,8 @@ namespace ConnectParticipant {
  * retrieving chat transcripts.</p>
  */
 class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>,
+                                                            public ConnectParticipantPaginationBase<ConnectParticipantClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

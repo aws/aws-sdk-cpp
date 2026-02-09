@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/machinelearning/MachineLearningPaginationBase.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace MachineLearning {
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
 class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>,
+                                                      public MachineLearningPaginationBase<MachineLearningClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

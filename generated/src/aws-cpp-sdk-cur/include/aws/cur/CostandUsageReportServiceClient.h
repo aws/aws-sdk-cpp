@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cur/CostandUsageReportServicePaginationBase.h>
 #include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace CostandUsageReportService {
  */
 class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>,
+      public CostandUsageReportServicePaginationBase<CostandUsageReportServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

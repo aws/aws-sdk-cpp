@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codestar-connections/CodeStarconnectionsPaginationBase.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -56,9 +57,9 @@ namespace CodeStarconnections {
  * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
  * Tools User Guide</a>.</p>
  */
-class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient> {
+class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>,
+                                                              public CodeStarconnectionsPaginationBase<CodeStarconnectionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

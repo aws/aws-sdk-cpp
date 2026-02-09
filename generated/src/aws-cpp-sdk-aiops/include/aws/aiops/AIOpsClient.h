@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/aiops/AIOpsPaginationBase.h>
 #include <aws/aiops/AIOpsServiceClientModel.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -22,7 +23,9 @@ namespace AIOps {
  * manage, and delete investigation groups and investigation group policies. To
  * start and manage investigations, you must use the CloudWatch console.</p>
  */
-class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient> {
+class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient>,
+                                  public AIOpsPaginationBase<AIOpsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

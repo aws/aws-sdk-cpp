@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/scheduler/SchedulerPaginationBase.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
 #include <aws/scheduler/Scheduler_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace Scheduler {
  * Scheduler. </p>
  */
 class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>,
+                                          public SchedulerPaginationBase<SchedulerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

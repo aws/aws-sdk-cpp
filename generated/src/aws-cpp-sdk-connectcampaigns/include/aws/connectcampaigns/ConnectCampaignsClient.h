@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connectcampaigns/ConnectCampaignsPaginationBase.h>
 #include <aws/connectcampaigns/ConnectCampaignsServiceClientModel.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -17,7 +18,8 @@ namespace ConnectCampaigns {
  * <p>Provide APIs to create and manage Amazon Connect Campaigns.</p>
  */
 class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient>,
+                                                        public ConnectCampaignsPaginationBase<ConnectCampaignsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

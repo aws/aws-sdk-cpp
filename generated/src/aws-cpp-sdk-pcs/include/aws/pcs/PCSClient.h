@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pcs/PCSPaginationBase.h>
 #include <aws/pcs/PCSServiceClientModel.h>
 #include <aws/pcs/PCS_EXPORTS.h>
 
@@ -36,7 +37,9 @@ namespace PCS {
  * compute nodes. PCS automatically terminates your compute nodes when you delete
  * the PCS resources related to those compute nodes.</p>
  */
-class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PCSClient> {
+class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>,
+                              public PCSPaginationBase<PCSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

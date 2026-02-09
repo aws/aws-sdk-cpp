@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/RedshiftPaginationBase.h>
 #include <aws/redshift/RedshiftServiceClientModel.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 
@@ -39,7 +40,8 @@ namespace Redshift {
  * maintain the databases that make up your data warehouse. </p>
  */
 class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftClient>,
+                                        public RedshiftPaginationBase<RedshiftClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

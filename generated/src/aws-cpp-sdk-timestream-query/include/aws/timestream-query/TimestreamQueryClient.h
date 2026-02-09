@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/TimestreamQueryPaginationBase.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace TimestreamQuery {
  * <fullname>Amazon Timestream Query </fullname> <p/>
  */
 class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>,
+                                                      public TimestreamQueryPaginationBase<TimestreamQueryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigPaginationBase.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
 
@@ -19,7 +20,8 @@ namespace Route53RecoveryControlConfig {
  */
 class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>,
+      public Route53RecoveryControlConfigPaginationBase<Route53RecoveryControlConfigClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

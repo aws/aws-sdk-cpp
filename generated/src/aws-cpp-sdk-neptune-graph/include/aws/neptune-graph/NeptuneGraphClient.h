@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptune-graph/NeptuneGraphPaginationBase.h>
 #include <aws/neptune-graph/NeptuneGraphServiceClientModel.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace NeptuneGraph {
  * and getting analytics results in seconds.</p>
  */
 class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient>,
+                                                public NeptuneGraphPaginationBase<NeptuneGraphClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

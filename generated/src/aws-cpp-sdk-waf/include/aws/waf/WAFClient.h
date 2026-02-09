@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf/WAFPaginationBase.h>
 #include <aws/waf/WAFServiceClientModel.h>
 #include <aws/waf/WAF_EXPORTS.h>
 
@@ -32,7 +33,9 @@ namespace WAF {
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
  * WAF Classic</a> in the developer guide.</p>
  */
-class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFClient> {
+class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>,
+                              public WAFPaginationBase<WAFClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/controlcatalog/ControlCatalogPaginationBase.h>
 #include <aws/controlcatalog/ControlCatalogServiceClientModel.h>
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -34,7 +35,8 @@ namespace ControlCatalog {
  * </ul>
  */
 class AWS_CONTROLCATALOG_API ControlCatalogClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient>,
+                                                    public ControlCatalogPaginationBase<ControlCatalogClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

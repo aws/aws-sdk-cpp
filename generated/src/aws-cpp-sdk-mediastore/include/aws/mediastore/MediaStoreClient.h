@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediastore/MediaStorePaginationBase.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace MediaStore {
  * objects. You use a container endpoint to create, read, and delete objects. </p>
  */
 class AWS_MEDIASTORE_API MediaStoreClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>,
+                                            public MediaStorePaginationBase<MediaStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/GlobalAcceleratorPaginationBase.h>
 #include <aws/globalaccelerator/GlobalAcceleratorServiceClientModel.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
@@ -68,7 +69,8 @@ namespace GlobalAccelerator {
  * Accelerator Developer Guide</a>.</p>
  */
 class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient>,
+                                                          public GlobalAcceleratorPaginationBase<GlobalAcceleratorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

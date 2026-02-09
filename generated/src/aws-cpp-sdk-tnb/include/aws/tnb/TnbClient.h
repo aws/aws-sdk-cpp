@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/TnbPaginationBase.h>
 #include <aws/tnb/TnbServiceClientModel.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
 
@@ -19,7 +20,9 @@ namespace tnb {
  * with the lifecycle management of your telecommunication network functions
  * throughout planning, deployment, and post-deployment activities.</p>
  */
-class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TnbClient> {
+class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>,
+                              public TnbPaginationBase<TnbClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/Route53PaginationBase.h>
 #include <aws/route53/Route53ServiceClientModel.h>
 #include <aws/route53/Route53_EXPORTS.h>
 
@@ -27,7 +28,9 @@ namespace Route53 {
  * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
  * Route 53 checks the health of your resources</a>.</p> </li> </ul>
  */
-class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53Client> {
+class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>,
+                                      public Route53PaginationBase<Route53Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

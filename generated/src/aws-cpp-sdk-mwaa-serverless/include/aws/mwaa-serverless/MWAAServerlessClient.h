@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mwaa-serverless/MWAAServerlessPaginationBase.h>
 #include <aws/mwaa-serverless/MWAAServerlessServiceClientModel.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace MWAAServerless {
  * Amazon Web Services services for orchestrating complex analytics workloads.</p>
  */
 class AWS_MWAASERVERLESS_API MWAAServerlessClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<MWAAServerlessClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<MWAAServerlessClient>,
+                                                    public MWAAServerlessPaginationBase<MWAAServerlessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

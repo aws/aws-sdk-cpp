@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medical-imaging/MedicalImagingPaginationBase.h>
 #include <aws/medical-imaging/MedicalImagingServiceClientModel.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace MedicalImaging {
  * is AWS HealthImaging?</a> in the <i>AWS HealthImaging Developer Guide</i>.</p>
  */
 class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>,
+                                                    public MedicalImagingPaginationBase<MedicalImagingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/EMRPaginationBase.h>
 #include <aws/elasticmapreduce/EMRServiceClientModel.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
@@ -20,7 +21,9 @@ namespace EMR {
  * analysis, machine learning, scientific simulation, and data warehouse
  * management.</p>
  */
-class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EMRClient> {
+class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>,
+                              public EMRPaginationBase<EMRClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

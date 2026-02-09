@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimePaginationBase.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeServiceClientModel.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 
@@ -45,7 +46,8 @@ namespace AugmentedAIRuntime {
  * APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.</p>
  */
 class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>,
+                                                            public AugmentedAIRuntimePaginationBase<AugmentedAIRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

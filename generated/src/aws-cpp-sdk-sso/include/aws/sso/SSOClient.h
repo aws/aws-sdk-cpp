@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso/SSOPaginationBase.h>
 #include <aws/sso/SSOServiceClientModel.h>
 #include <aws/sso/SSO_EXPORTS.h>
 
@@ -32,7 +33,9 @@ namespace SSO {
  * to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
  * for Amazon Web Services</a>.</p>
  */
-class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOClient> {
+class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SSOClient>,
+                              public SSOPaginationBase<SSOClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

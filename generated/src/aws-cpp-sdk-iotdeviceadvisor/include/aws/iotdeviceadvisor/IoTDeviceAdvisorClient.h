@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorPaginationBase.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 
@@ -27,7 +28,8 @@ namespace IoTDeviceAdvisor {
  * wait for it to be tested.</p>
  */
 class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>,
+                                                        public IoTDeviceAdvisorPaginationBase<IoTDeviceAdvisorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

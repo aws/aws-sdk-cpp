@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudformation/CloudFormationPaginationBase.h>
 #include <aws/cloudformation/CloudFormationServiceClientModel.h>
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
@@ -34,7 +35,8 @@ namespace CloudFormation {
  * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p>
  */
 class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudFormationClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudFormationClient>,
+                                                    public CloudFormationPaginationBase<CloudFormationClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

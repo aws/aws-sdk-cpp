@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClientPaginationBase.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClientServiceClientModel.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace WorkSpacesThinClient {
  */
 class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>,
+      public WorkSpacesThinClientPaginationBase<WorkSpacesThinClientClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
