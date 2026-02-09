@@ -12,6 +12,9 @@
 #include <unistd.h>
 #include <climits>
 #endif
+#ifdef _AIX
+#define NAME_MAX     255
+#endif
 
 using namespace Aws;
 using namespace Aws::Utils;
