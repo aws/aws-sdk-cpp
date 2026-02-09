@@ -304,6 +304,55 @@ class NetworkInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether secondary interface attachments from secondary network are
+   * supported.</p>
+   */
+  inline bool GetSecondaryNetworkSupported() const { return m_secondaryNetworkSupported; }
+  inline bool SecondaryNetworkSupportedHasBeenSet() const { return m_secondaryNetworkSupportedHasBeenSet; }
+  inline void SetSecondaryNetworkSupported(bool value) {
+    m_secondaryNetworkSupportedHasBeenSet = true;
+    m_secondaryNetworkSupported = value;
+  }
+  inline NetworkInfo& WithSecondaryNetworkSupported(bool value) {
+    SetSecondaryNetworkSupported(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of secondary interfaces for the instance type.</p>
+   */
+  inline int GetMaximumSecondaryNetworkInterfaces() const { return m_maximumSecondaryNetworkInterfaces; }
+  inline bool MaximumSecondaryNetworkInterfacesHasBeenSet() const { return m_maximumSecondaryNetworkInterfacesHasBeenSet; }
+  inline void SetMaximumSecondaryNetworkInterfaces(int value) {
+    m_maximumSecondaryNetworkInterfacesHasBeenSet = true;
+    m_maximumSecondaryNetworkInterfaces = value;
+  }
+  inline NetworkInfo& WithMaximumSecondaryNetworkInterfaces(int value) {
+    SetMaximumSecondaryNetworkInterfaces(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of IPv4 addresses per secondary interface.</p>
+   */
+  inline int GetIpv4AddressesPerSecondaryInterface() const { return m_ipv4AddressesPerSecondaryInterface; }
+  inline bool Ipv4AddressesPerSecondaryInterfaceHasBeenSet() const { return m_ipv4AddressesPerSecondaryInterfaceHasBeenSet; }
+  inline void SetIpv4AddressesPerSecondaryInterface(int value) {
+    m_ipv4AddressesPerSecondaryInterfaceHasBeenSet = true;
+    m_ipv4AddressesPerSecondaryInterface = value;
+  }
+  inline NetworkInfo& WithIpv4AddressesPerSecondaryInterface(int value) {
+    SetIpv4AddressesPerSecondaryInterface(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_networkPerformance;
 
@@ -334,6 +383,12 @@ class NetworkInfo {
   Aws::Vector<BandwidthWeightingType> m_bandwidthWeightings;
 
   FlexibleEnaQueuesSupport m_flexibleEnaQueuesSupport{FlexibleEnaQueuesSupport::NOT_SET};
+
+  bool m_secondaryNetworkSupported{false};
+
+  int m_maximumSecondaryNetworkInterfaces{0};
+
+  int m_ipv4AddressesPerSecondaryInterface{0};
   bool m_networkPerformanceHasBeenSet = false;
   bool m_maximumNetworkInterfacesHasBeenSet = false;
   bool m_maximumNetworkCardsHasBeenSet = false;
@@ -349,6 +404,9 @@ class NetworkInfo {
   bool m_enaSrdSupportedHasBeenSet = false;
   bool m_bandwidthWeightingsHasBeenSet = false;
   bool m_flexibleEnaQueuesSupportHasBeenSet = false;
+  bool m_secondaryNetworkSupportedHasBeenSet = false;
+  bool m_maximumSecondaryNetworkInterfacesHasBeenSet = false;
+  bool m_ipv4AddressesPerSecondaryInterfaceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -122,6 +122,24 @@ NetworkInfo& NetworkInfo::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(flexibleEnaQueuesSupportNode.GetText()).c_str()));
       m_flexibleEnaQueuesSupportHasBeenSet = true;
     }
+    XmlNode secondaryNetworkSupportedNode = resultNode.FirstChild("secondaryNetworkSupported");
+    if (!secondaryNetworkSupportedNode.IsNull()) {
+      m_secondaryNetworkSupported = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondaryNetworkSupportedNode.GetText()).c_str()).c_str());
+      m_secondaryNetworkSupportedHasBeenSet = true;
+    }
+    XmlNode maximumSecondaryNetworkInterfacesNode = resultNode.FirstChild("maximumSecondaryNetworkInterfaces");
+    if (!maximumSecondaryNetworkInterfacesNode.IsNull()) {
+      m_maximumSecondaryNetworkInterfaces = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumSecondaryNetworkInterfacesNode.GetText()).c_str()).c_str());
+      m_maximumSecondaryNetworkInterfacesHasBeenSet = true;
+    }
+    XmlNode ipv4AddressesPerSecondaryInterfaceNode = resultNode.FirstChild("ipv4AddressesPerSecondaryInterface");
+    if (!ipv4AddressesPerSecondaryInterfaceNode.IsNull()) {
+      m_ipv4AddressesPerSecondaryInterface = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv4AddressesPerSecondaryInterfaceNode.GetText()).c_str()).c_str());
+      m_ipv4AddressesPerSecondaryInterfaceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -202,6 +220,18 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
             << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport))
             << "&";
   }
+
+  if (m_secondaryNetworkSupportedHasBeenSet) {
+    oStream << location << index << locationValue << ".SecondaryNetworkSupported=" << std::boolalpha << m_secondaryNetworkSupported << "&";
+  }
+
+  if (m_maximumSecondaryNetworkInterfacesHasBeenSet) {
+    oStream << location << index << locationValue << ".MaximumSecondaryNetworkInterfaces=" << m_maximumSecondaryNetworkInterfaces << "&";
+  }
+
+  if (m_ipv4AddressesPerSecondaryInterfaceHasBeenSet) {
+    oStream << location << index << locationValue << ".Ipv4AddressesPerSecondaryInterface=" << m_ipv4AddressesPerSecondaryInterface << "&";
+  }
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -262,6 +292,15 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
     oStream << location << ".FlexibleEnaQueuesSupport="
             << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport))
             << "&";
+  }
+  if (m_secondaryNetworkSupportedHasBeenSet) {
+    oStream << location << ".SecondaryNetworkSupported=" << std::boolalpha << m_secondaryNetworkSupported << "&";
+  }
+  if (m_maximumSecondaryNetworkInterfacesHasBeenSet) {
+    oStream << location << ".MaximumSecondaryNetworkInterfaces=" << m_maximumSecondaryNetworkInterfaces << "&";
+  }
+  if (m_ipv4AddressesPerSecondaryInterfaceHasBeenSet) {
+    oStream << location << ".Ipv4AddressesPerSecondaryInterface=" << m_ipv4AddressesPerSecondaryInterface << "&";
   }
 }
 

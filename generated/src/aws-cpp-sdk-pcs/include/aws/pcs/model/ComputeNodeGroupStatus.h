@@ -21,7 +21,8 @@ enum class ComputeNodeGroupStatus {
   UPDATE_FAILED,
   DELETED,
   SUSPENDING,
-  SUSPENDED
+  SUSPENDED,
+  RESUMING
 };
 
 namespace ComputeNodeGroupStatusMapper {

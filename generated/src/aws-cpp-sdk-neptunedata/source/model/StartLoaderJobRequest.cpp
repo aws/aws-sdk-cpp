@@ -71,5 +71,9 @@ Aws::String StartLoaderJobRequest::SerializePayload() const {
     payload.WithBool("userProvidedEdgeIds", m_userProvidedEdgeIds);
   }
 
+  if (m_edgeOnlyLoadHasBeenSet) {
+    payload.WithBool("edgeOnlyLoad", m_edgeOnlyLoad);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -25,6 +25,7 @@ static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 static const int SUSPENDING_HASH = HashingUtils::HashString("SUSPENDING");
 static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+static const int RESUMING_HASH = HashingUtils::HashString("RESUMING");
 
 ComputeNodeGroupStatus GetComputeNodeGroupStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ ComputeNodeGroupStatus GetComputeNodeGroupStatusForName(const Aws::String& name)
     return ComputeNodeGroupStatus::SUSPENDING;
   } else if (hashCode == SUSPENDED_HASH) {
     return ComputeNodeGroupStatus::SUSPENDED;
+  } else if (hashCode == RESUMING_HASH) {
+    return ComputeNodeGroupStatus::RESUMING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForComputeNodeGroupStatus(ComputeNodeGroupStatus enumValue) {
       return "SUSPENDING";
     case ComputeNodeGroupStatus::SUSPENDED:
       return "SUSPENDED";
+    case ComputeNodeGroupStatus::RESUMING:
+      return "RESUMING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

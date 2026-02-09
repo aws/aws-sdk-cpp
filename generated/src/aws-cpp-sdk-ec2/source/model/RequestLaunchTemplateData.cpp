@@ -219,6 +219,17 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator=(const XmlNode& x
       m_networkPerformanceOptions = networkPerformanceOptionsNode;
       m_networkPerformanceOptionsHasBeenSet = true;
     }
+    XmlNode secondaryInterfacesNode = resultNode.FirstChild("SecondaryInterface");
+    if (!secondaryInterfacesNode.IsNull()) {
+      XmlNode secondaryInterfacesMember = secondaryInterfacesNode.FirstChild("InstanceSecondaryInterfaceSpecification");
+      m_secondaryInterfacesHasBeenSet = !secondaryInterfacesMember.IsNull();
+      while (!secondaryInterfacesMember.IsNull()) {
+        m_secondaryInterfaces.push_back(secondaryInterfacesMember);
+        secondaryInterfacesMember = secondaryInterfacesMember.NextNode("InstanceSecondaryInterfaceSpecification");
+      }
+
+      m_secondaryInterfacesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -409,6 +420,15 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
     networkPerformanceOptionsLocationAndMemberSs << location << index << locationValue << ".NetworkPerformanceOptions";
     m_networkPerformanceOptions.OutputToStream(oStream, networkPerformanceOptionsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_secondaryInterfacesHasBeenSet) {
+    unsigned secondaryInterfacesIdx = 1;
+    for (auto& item : m_secondaryInterfaces) {
+      Aws::StringStream secondaryInterfacesSs;
+      secondaryInterfacesSs << location << index << locationValue << ".SecondaryInterface." << secondaryInterfacesIdx++;
+      item.OutputToStream(oStream, secondaryInterfacesSs.str().c_str());
+    }
+  }
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -561,6 +581,14 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
     Aws::String networkPerformanceOptionsLocationAndMember(location);
     networkPerformanceOptionsLocationAndMember += ".NetworkPerformanceOptions";
     m_networkPerformanceOptions.OutputToStream(oStream, networkPerformanceOptionsLocationAndMember.c_str());
+  }
+  if (m_secondaryInterfacesHasBeenSet) {
+    unsigned secondaryInterfacesIdx = 1;
+    for (auto& item : m_secondaryInterfaces) {
+      Aws::StringStream secondaryInterfacesSs;
+      secondaryInterfacesSs << location << ".SecondaryInterface." << secondaryInterfacesIdx++;
+      item.OutputToStream(oStream, secondaryInterfacesSs.str().c_str());
+    }
   }
 }
 

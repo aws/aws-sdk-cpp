@@ -277,6 +277,17 @@ Instance& Instance::operator=(const XmlNode& xmlNode) {
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
+    XmlNode secondaryInterfacesNode = resultNode.FirstChild("secondaryInterfaceSet");
+    if (!secondaryInterfacesNode.IsNull()) {
+      XmlNode secondaryInterfacesMember = secondaryInterfacesNode.FirstChild("item");
+      m_secondaryInterfacesHasBeenSet = !secondaryInterfacesMember.IsNull();
+      while (!secondaryInterfacesMember.IsNull()) {
+        m_secondaryInterfaces.push_back(secondaryInterfacesMember);
+        secondaryInterfacesMember = secondaryInterfacesMember.NextNode("item");
+      }
+
+      m_secondaryInterfacesHasBeenSet = true;
+    }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if (!instanceIdNode.IsNull()) {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
@@ -621,6 +632,15 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
     m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
   }
 
+  if (m_secondaryInterfacesHasBeenSet) {
+    unsigned secondaryInterfacesIdx = 1;
+    for (auto& item : m_secondaryInterfaces) {
+      Aws::StringStream secondaryInterfacesSs;
+      secondaryInterfacesSs << location << index << locationValue << ".SecondaryInterfaceSet." << secondaryInterfacesIdx++;
+      item.OutputToStream(oStream, secondaryInterfacesSs.str().c_str());
+    }
+  }
+
   if (m_instanceIdHasBeenSet) {
     oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
@@ -900,6 +920,14 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
     Aws::String operatorLocationAndMember(location);
     operatorLocationAndMember += ".Operator";
     m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  }
+  if (m_secondaryInterfacesHasBeenSet) {
+    unsigned secondaryInterfacesIdx = 1;
+    for (auto& item : m_secondaryInterfaces) {
+      Aws::StringStream secondaryInterfacesSs;
+      secondaryInterfacesSs << location << ".SecondaryInterfaceSet." << secondaryInterfacesIdx++;
+      item.OutputToStream(oStream, secondaryInterfacesSs.str().c_str());
+    }
   }
   if (m_instanceIdHasBeenSet) {
     oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
