@@ -8,6 +8,7 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
+#include <aws//core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/platform/Environment.h>
@@ -66,7 +67,7 @@ protected:
     AwsCppSdkGTestSuite::SetUp();
 
     // Build paths the same way the SDK does
-    const Aws::String profileDir = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    const Aws::String profileDir = ProfileCredentialsProvider::GetProfileDirectory();
     const Aws::String ssoDir     = profileDir + PATH_DELIM + "sso";
     const Aws::String cacheDir   = ssoDir    + PATH_DELIM + "cache";
 

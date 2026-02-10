@@ -8,6 +8,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
 
 #include <fstream>
@@ -37,7 +38,7 @@ public:
     Aws::Environment::UnSetEnv("AWS_REGION");
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
 
-    auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    auto profileDirectory = Aws::Auth::ProfileCredentialsProvider::GetProfileDirectory();
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
   }
 

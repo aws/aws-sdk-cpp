@@ -10,6 +10,7 @@
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/client/AWSClient.h>
@@ -178,7 +179,7 @@ TEST_F(CredentialTrackingTest, TestProfileCredentialsTracking)
     }};
     Aws::Config::ReloadCachedCredentialsFile();
 
-    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileConfigFileAWSCredentialsProvider>(TEST_LOG_TAG);
+    auto credsProvider = Aws::MakeShared<Aws::Auth::ProfileCredentialsProvider>(TEST_LOG_TAG);
     RunTestWithCredentialsProvider(std::move(credsProvider), "n");
 }
 
