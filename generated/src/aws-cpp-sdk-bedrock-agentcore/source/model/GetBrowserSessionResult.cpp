@@ -64,6 +64,10 @@ GetBrowserSessionResult& GetBrowserSessionResult::operator=(const Aws::AmazonWeb
     m_streams = jsonValue.GetObject("streams");
     m_streamsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("proxyConfiguration")) {
+    m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
+    m_proxyConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sessionReplayArtifact")) {
     m_sessionReplayArtifact = jsonValue.GetString("sessionReplayArtifact");
     m_sessionReplayArtifactHasBeenSet = true;

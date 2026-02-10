@@ -20,6 +20,8 @@
 #include <aws/connect/model/ActivateEvaluationFormRequest.h>
 #include <aws/connect/model/ActivateEvaluationFormResult.h>
 #include <aws/connect/model/AdditionalEmailRecipients.h>
+#include <aws/connect/model/AfterContactWorkConfig.h>
+#include <aws/connect/model/AfterContactWorkConfigPerChannel.h>
 #include <aws/connect/model/AgentAvailabilityTimer.h>
 #include <aws/connect/model/AgentConfig.h>
 #include <aws/connect/model/AgentContactReference.h>
@@ -93,6 +95,7 @@
 #include <aws/connect/model/AudioQualityMetricsInfo.h>
 #include <aws/connect/model/AuthenticationProfile.h>
 #include <aws/connect/model/AuthenticationProfileSummary.h>
+#include <aws/connect/model/AutoAcceptConfig.h>
 #include <aws/connect/model/AutoEvaluationConfiguration.h>
 #include <aws/connect/model/AutoEvaluationDetails.h>
 #include <aws/connect/model/AutoEvaluationStatus.h>
@@ -875,6 +878,8 @@
 #include <aws/connect/model/PauseContactRequest.h>
 #include <aws/connect/model/PauseContactResult.h>
 #include <aws/connect/model/PersistentChat.h>
+#include <aws/connect/model/PersistentConnectionConfig.h>
+#include <aws/connect/model/PhoneNumberConfig.h>
 #include <aws/connect/model/PhoneNumberCountryCode.h>
 #include <aws/connect/model/PhoneNumberQuickConnectConfig.h>
 #include <aws/connect/model/PhoneNumberStatus.h>
@@ -1257,6 +1262,7 @@
 #include <aws/connect/model/UpdateTestCaseResult.h>
 #include <aws/connect/model/UpdateTrafficDistributionRequest.h>
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
+#include <aws/connect/model/UpdateUserConfigRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyGroupNameRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyStructureRequest.h>
@@ -1316,6 +1322,8 @@
 #include <aws/connect/model/VocabularyState.h>
 #include <aws/connect/model/VocabularySummary.h>
 #include <aws/connect/model/VoiceCallEntryPointParameters.h>
+#include <aws/connect/model/VoiceEnhancementConfig.h>
+#include <aws/connect/model/VoiceEnhancementMode.h>
 #include <aws/connect/model/VoiceRecordingConfiguration.h>
 #include <aws/connect/model/VoiceRecordingTrack.h>
 #include <aws/connect/model/WisdomInfo.h>

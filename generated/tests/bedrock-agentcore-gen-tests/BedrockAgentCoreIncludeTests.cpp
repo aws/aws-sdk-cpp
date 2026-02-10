@@ -18,6 +18,7 @@
 #include <aws/bedrock-agentcore/model/AutomationStream.h>
 #include <aws/bedrock-agentcore/model/AutomationStreamStatus.h>
 #include <aws/bedrock-agentcore/model/AutomationStreamUpdate.h>
+#include <aws/bedrock-agentcore/model/BasicAuth.h>
 #include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/BatchCreateMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/bedrock-agentcore/model/EvaluationTarget.h>
 #include <aws/bedrock-agentcore/model/Event.h>
 #include <aws/bedrock-agentcore/model/EventMetadataFilterExpression.h>
+#include <aws/bedrock-agentcore/model/ExternalProxy.h>
 #include <aws/bedrock-agentcore/model/ExtractionJob.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobFilterInput.h>
 #include <aws/bedrock-agentcore/model/ExtractionJobMessages.h>
@@ -118,6 +120,10 @@
 #include <aws/bedrock-agentcore/model/OperatorType.h>
 #include <aws/bedrock-agentcore/model/PayloadType.h>
 #include <aws/bedrock-agentcore/model/ProgrammingLanguage.h>
+#include <aws/bedrock-agentcore/model/Proxy.h>
+#include <aws/bedrock-agentcore/model/ProxyBypass.h>
+#include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
+#include <aws/bedrock-agentcore/model/ProxyCredentials.h>
 #include <aws/bedrock-agentcore/model/ResourceContent.h>
 #include <aws/bedrock-agentcore/model/ResourceContentType.h>
 #include <aws/bedrock-agentcore/model/ResourceLocation.h>

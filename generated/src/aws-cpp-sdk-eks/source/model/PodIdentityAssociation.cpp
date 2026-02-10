@@ -73,6 +73,10 @@ PodIdentityAssociation& PodIdentityAssociation::operator=(JsonView jsonValue) {
     m_externalId = jsonValue.GetString("externalId");
     m_externalIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policy")) {
+    m_policy = jsonValue.GetString("policy");
+    m_policyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -133,6 +137,10 @@ JsonValue PodIdentityAssociation::Jsonize() const {
 
   if (m_externalIdHasBeenSet) {
     payload.WithString("externalId", m_externalId);
+  }
+
+  if (m_policyHasBeenSet) {
+    payload.WithString("policy", m_policy);
   }
 
   return payload;

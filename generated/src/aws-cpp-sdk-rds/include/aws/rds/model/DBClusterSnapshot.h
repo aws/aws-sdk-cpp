@@ -351,6 +351,42 @@ class DBClusterSnapshot {
 
   ///@{
   /**
+   * <p>The number of days for which automatic DB snapshots are retained.</p>
+   */
+  inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
+  inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+  inline void SetBackupRetentionPeriod(int value) {
+    m_backupRetentionPeriodHasBeenSet = true;
+    m_backupRetentionPeriod = value;
+  }
+  inline DBClusterSnapshot& WithBackupRetentionPeriod(int value) {
+    SetBackupRetentionPeriod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The daily time range during which automated backups are created if automated
+   * backups are enabled, as determined by the
+   * <code>BackupRetentionPeriod</code>.</p>
+   */
+  inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
+  inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+  template <typename PreferredBackupWindowT = Aws::String>
+  void SetPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    m_preferredBackupWindowHasBeenSet = true;
+    m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value);
+  }
+  template <typename PreferredBackupWindowT = Aws::String>
+  DBClusterSnapshot& WithPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
    * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
    * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
@@ -556,6 +592,10 @@ class DBClusterSnapshot {
 
   bool m_storageEncrypted{false};
 
+  int m_backupRetentionPeriod{0};
+
+  Aws::String m_preferredBackupWindow;
+
   Aws::String m_kmsKeyId;
 
   Aws::String m_dBClusterSnapshotArn;
@@ -590,6 +630,8 @@ class DBClusterSnapshot {
   bool m_snapshotTypeHasBeenSet = false;
   bool m_percentProgressHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_dBClusterSnapshotArnHasBeenSet = false;
   bool m_sourceDBClusterSnapshotArnHasBeenSet = false;

@@ -26,11 +26,13 @@
 #include <aws/kafka/model/CreateClusterV2Result.h>
 #include <aws/kafka/model/CreateConfigurationResult.h>
 #include <aws/kafka/model/CreateReplicatorResult.h>
+#include <aws/kafka/model/CreateTopicResult.h>
 #include <aws/kafka/model/CreateVpcConnectionResult.h>
 #include <aws/kafka/model/DeleteClusterPolicyResult.h>
 #include <aws/kafka/model/DeleteClusterResult.h>
 #include <aws/kafka/model/DeleteConfigurationResult.h>
 #include <aws/kafka/model/DeleteReplicatorResult.h>
+#include <aws/kafka/model/DeleteTopicResult.h>
 #include <aws/kafka/model/DeleteVpcConnectionResult.h>
 #include <aws/kafka/model/DescribeClusterOperationResult.h>
 #include <aws/kafka/model/DescribeClusterOperationV2Result.h>
@@ -81,6 +83,7 @@
 #include <aws/kafka/model/UpdateReplicationInfoResult.h>
 #include <aws/kafka/model/UpdateSecurityResult.h>
 #include <aws/kafka/model/UpdateStorageResult.h>
+#include <aws/kafka/model/UpdateTopicResult.h>
 /* End of service model headers required in KafkaClient header */
 
 namespace Aws {
@@ -120,11 +123,13 @@ class CreateClusterRequest;
 class CreateClusterV2Request;
 class CreateConfigurationRequest;
 class CreateReplicatorRequest;
+class CreateTopicRequest;
 class CreateVpcConnectionRequest;
 class DeleteClusterRequest;
 class DeleteClusterPolicyRequest;
 class DeleteConfigurationRequest;
 class DeleteReplicatorRequest;
+class DeleteTopicRequest;
 class DeleteVpcConnectionRequest;
 class DescribeClusterRequest;
 class DescribeClusterOperationRequest;
@@ -170,6 +175,7 @@ class UpdateRebalancingRequest;
 class UpdateReplicationInfoRequest;
 class UpdateSecurityRequest;
 class UpdateStorageRequest;
+class UpdateTopicRequest;
 /* End of service model forward declarations required in KafkaClient header */
 
 /* Service model Outcome class definitions */
@@ -179,11 +185,13 @@ typedef Aws::Utils::Outcome<CreateClusterResult, KafkaError> CreateClusterOutcom
 typedef Aws::Utils::Outcome<CreateClusterV2Result, KafkaError> CreateClusterV2Outcome;
 typedef Aws::Utils::Outcome<CreateConfigurationResult, KafkaError> CreateConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateReplicatorResult, KafkaError> CreateReplicatorOutcome;
+typedef Aws::Utils::Outcome<CreateTopicResult, KafkaError> CreateTopicOutcome;
 typedef Aws::Utils::Outcome<CreateVpcConnectionResult, KafkaError> CreateVpcConnectionOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterResult, KafkaError> DeleteClusterOutcome;
 typedef Aws::Utils::Outcome<DeleteClusterPolicyResult, KafkaError> DeleteClusterPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteConfigurationResult, KafkaError> DeleteConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteReplicatorResult, KafkaError> DeleteReplicatorOutcome;
+typedef Aws::Utils::Outcome<DeleteTopicResult, KafkaError> DeleteTopicOutcome;
 typedef Aws::Utils::Outcome<DeleteVpcConnectionResult, KafkaError> DeleteVpcConnectionOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterResult, KafkaError> DescribeClusterOutcome;
 typedef Aws::Utils::Outcome<DescribeClusterOperationResult, KafkaError> DescribeClusterOperationOutcome;
@@ -229,6 +237,7 @@ typedef Aws::Utils::Outcome<UpdateRebalancingResult, KafkaError> UpdateRebalanci
 typedef Aws::Utils::Outcome<UpdateReplicationInfoResult, KafkaError> UpdateReplicationInfoOutcome;
 typedef Aws::Utils::Outcome<UpdateSecurityResult, KafkaError> UpdateSecurityOutcome;
 typedef Aws::Utils::Outcome<UpdateStorageResult, KafkaError> UpdateStorageOutcome;
+typedef Aws::Utils::Outcome<UpdateTopicResult, KafkaError> UpdateTopicOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -238,11 +247,13 @@ typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 typedef std::future<CreateClusterV2Outcome> CreateClusterV2OutcomeCallable;
 typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
 typedef std::future<CreateReplicatorOutcome> CreateReplicatorOutcomeCallable;
+typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
 typedef std::future<CreateVpcConnectionOutcome> CreateVpcConnectionOutcomeCallable;
 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
 typedef std::future<DeleteClusterPolicyOutcome> DeleteClusterPolicyOutcomeCallable;
 typedef std::future<DeleteConfigurationOutcome> DeleteConfigurationOutcomeCallable;
 typedef std::future<DeleteReplicatorOutcome> DeleteReplicatorOutcomeCallable;
+typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
 typedef std::future<DeleteVpcConnectionOutcome> DeleteVpcConnectionOutcomeCallable;
 typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
 typedef std::future<DescribeClusterOperationOutcome> DescribeClusterOperationOutcomeCallable;
@@ -288,6 +299,7 @@ typedef std::future<UpdateRebalancingOutcome> UpdateRebalancingOutcomeCallable;
 typedef std::future<UpdateReplicationInfoOutcome> UpdateReplicationInfoOutcomeCallable;
 typedef std::future<UpdateSecurityOutcome> UpdateSecurityOutcomeCallable;
 typedef std::future<UpdateStorageOutcome> UpdateStorageOutcomeCallable;
+typedef std::future<UpdateTopicOutcome> UpdateTopicOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -313,6 +325,9 @@ typedef std::function<void(const KafkaClient*, const Model::CreateConfigurationR
 typedef std::function<void(const KafkaClient*, const Model::CreateReplicatorRequest&, const Model::CreateReplicatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateReplicatorResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::CreateTopicRequest&, const Model::CreateTopicOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTopicResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::CreateVpcConnectionRequest&, const Model::CreateVpcConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateVpcConnectionResponseReceivedHandler;
@@ -328,6 +343,9 @@ typedef std::function<void(const KafkaClient*, const Model::DeleteConfigurationR
 typedef std::function<void(const KafkaClient*, const Model::DeleteReplicatorRequest&, const Model::DeleteReplicatorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteReplicatorResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::DeleteTopicRequest&, const Model::DeleteTopicOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTopicResponseReceivedHandler;
 typedef std::function<void(const KafkaClient*, const Model::DeleteVpcConnectionRequest&, const Model::DeleteVpcConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteVpcConnectionResponseReceivedHandler;
@@ -464,6 +482,9 @@ typedef std::function<void(const KafkaClient*, const Model::UpdateSecurityReques
 typedef std::function<void(const KafkaClient*, const Model::UpdateStorageRequest&, const Model::UpdateStorageOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateStorageResponseReceivedHandler;
+typedef std::function<void(const KafkaClient*, const Model::UpdateTopicRequest&, const Model::UpdateTopicOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateTopicResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Kafka
 }  // namespace Aws

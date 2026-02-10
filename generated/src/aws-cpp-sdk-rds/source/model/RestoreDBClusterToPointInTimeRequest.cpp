@@ -174,6 +174,14 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const {
     ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
 
+  if (m_backupRetentionPeriodHasBeenSet) {
+    ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+
+  if (m_preferredBackupWindowHasBeenSet) {
+    ss << "PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
+  }
+
   if (m_engineLifecycleSupportHasBeenSet) {
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }

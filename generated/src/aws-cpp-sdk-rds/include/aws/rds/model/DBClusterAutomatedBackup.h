@@ -345,6 +345,26 @@ class DBClusterAutomatedBackup {
 
   ///@{
   /**
+   * <p>The daily time range during which automated backups are created if automated
+   * backups are enabled, as determined by the
+   * <code>BackupRetentionPeriod</code>.</p>
+   */
+  inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
+  inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+  template <typename PreferredBackupWindowT = Aws::String>
+  void SetPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    m_preferredBackupWindowHasBeenSet = true;
+    m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value);
+  }
+  template <typename PreferredBackupWindowT = Aws::String>
+  DBClusterAutomatedBackup& WithPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The engine mode of the database engine for the automated backup.</p>
    */
   inline const Aws::String& GetEngineMode() const { return m_engineMode; }
@@ -556,6 +576,8 @@ class DBClusterAutomatedBackup {
 
   int m_backupRetentionPeriod{0};
 
+  Aws::String m_preferredBackupWindow;
+
   Aws::String m_engineMode;
 
   Aws::Vector<Aws::String> m_availabilityZones;
@@ -590,6 +612,7 @@ class DBClusterAutomatedBackup {
   bool m_engineVersionHasBeenSet = false;
   bool m_dBClusterArnHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
   bool m_engineModeHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_portHasBeenSet = false;

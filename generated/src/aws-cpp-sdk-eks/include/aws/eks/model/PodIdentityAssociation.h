@@ -316,6 +316,30 @@ class PodIdentityAssociation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional IAM policy in JSON format (as an escaped string) that applies
+   * additional restrictions to this pod identity association beyond the IAM policies
+   * attached to the IAM role. This policy is applied as the intersection of the
+   * role's policies and this policy, allowing you to reduce the permissions that
+   * applications in the pods can use. Use this policy to enforce least privilege
+   * access while still leveraging a shared IAM role across multiple
+   * applications.</p>
+   */
+  inline const Aws::String& GetPolicy() const { return m_policy; }
+  inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+  template <typename PolicyT = Aws::String>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = Aws::String>
+  PodIdentityAssociation& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterName;
 
@@ -342,6 +366,8 @@ class PodIdentityAssociation {
   Aws::String m_targetRoleArn;
 
   Aws::String m_externalId;
+
+  Aws::String m_policy;
   bool m_clusterNameHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_serviceAccountHasBeenSet = false;
@@ -355,6 +381,7 @@ class PodIdentityAssociation {
   bool m_disableSessionTagsHasBeenSet = false;
   bool m_targetRoleArnHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -2032,9 +2032,23 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
    * parameters are required in some situations. For example, <code>Email</code>,
    * <code>FirstName</code> and <code>LastName</code> are required if you are using
-   * Amazon Connect or SAML for identity management.</p>  <p>For
-   * information about how to create users using the Amazon Connect admin website,
-   * see <a
+   * Amazon Connect or SAML for identity management.</p>
+   * <p>Fields in <code>PhoneConfig</code> cannot be set simultaneously with their
+   * corresponding channel-specific configuration parameters. Specifically:</p> <ul>
+   * <li> <p> <code>PhoneConfig.AutoAccept</code> conflicts with
+   * <code>AutoAcceptConfigs</code> </p> </li> <li> <p>
+   * <code>PhoneConfig.AfterContactWorkTimeLimit</code> conflicts with
+   * <code>AfterContactWorkConfigs</code> </p> </li> <li> <p>
+   * <code>PhoneConfig.PhoneType</code> and <code>PhoneConfig.PhoneNumber</code>
+   * conflict with <code>PhoneNumberConfigs</code> </p> </li> <li> <p>
+   * <code>PhoneConfig.PersistentConnection</code> conflicts with
+   * <code>PersistentConnectionConfigs</code> </p> </li> </ul> <p>We recommend using
+   * channel-specific parameters such as <code>AutoAcceptConfigs</code>,
+   * <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>,
+   * <code>PersistentConnectionConfigs</code>, and
+   * <code>VoiceEnhancementConfigs</code> for per-channel configuration.</p>
+   * <p>For information about how to create users using the Amazon Connect admin
+   * website, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
    * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
@@ -10699,6 +10713,37 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Updates the configuration settings for the specified user, including
+   * per-channel auto-accept and after contact work (ACW) timeout settings.</p>
+   *  <p>This operation replaces the UpdateUserPhoneConfig API. While
+   * UpdateUserPhoneConfig applies the same ACW timeout to all channels,
+   * UpdateUserConfig allows you to set different auto-accept and ACW timeout values
+   * for each channel type.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateUserConfigOutcome UpdateUserConfig(const Model::UpdateUserConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateUserConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateUserConfigRequestT = Model::UpdateUserConfigRequest>
+  Model::UpdateUserConfigOutcomeCallable UpdateUserConfigCallable(const UpdateUserConfigRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateUserConfig, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateUserConfig that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateUserConfigRequestT = Model::UpdateUserConfigRequest>
+  void UpdateUserConfigAsync(const UpdateUserConfigRequestT& request, const UpdateUserConfigResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateUserConfig, request, handler, context);
+  }
+
+  /**
    * <p>Assigns the specified hierarchy group to the specified user.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">AWS
@@ -10821,8 +10866,14 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>Updates the phone configuration settings for the specified
-   * user.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the phone configuration settings for the specified user.</p>
+   * <p>We recommend using the <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+   * API, which supports additional functionality that is not available in the
+   * UpdateUserPhoneConfig API, such as voice enhancement settings and per-channel
+   * configuration for auto-accept and After Contact Work (ACW) timeouts. In
+   * comparison, the UpdateUserPhoneConfig API will always set the same ACW timeouts
+   * to all channels the user handles.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserPhoneConfig">AWS
    * API Reference</a></p>
    */
