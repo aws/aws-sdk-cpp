@@ -1,0 +1,106 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace EC2 {
+namespace Model {
+
+/**
+ */
+class DeleteSecondarySubnetRequest : public EC2Request {
+ public:
+  AWS_EC2_API DeleteSecondarySubnetRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteSecondarySubnet"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
+  /**
+   * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+   * of the request. For more information, see <a
+   * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure
+   * Idempotency</a>.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  DeleteSecondarySubnetRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Checks whether you have the required permissions for the action, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DeleteSecondarySubnetRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the secondary subnet to delete.</p>
+   */
+  inline const Aws::String& GetSecondarySubnetId() const { return m_secondarySubnetId; }
+  inline bool SecondarySubnetIdHasBeenSet() const { return m_secondarySubnetIdHasBeenSet; }
+  template <typename SecondarySubnetIdT = Aws::String>
+  void SetSecondarySubnetId(SecondarySubnetIdT&& value) {
+    m_secondarySubnetIdHasBeenSet = true;
+    m_secondarySubnetId = std::forward<SecondarySubnetIdT>(value);
+  }
+  template <typename SecondarySubnetIdT = Aws::String>
+  DeleteSecondarySubnetRequest& WithSecondarySubnetId(SecondarySubnetIdT&& value) {
+    SetSecondarySubnetId(std::forward<SecondarySubnetIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  bool m_dryRun{false};
+
+  Aws::String m_secondarySubnetId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_secondarySubnetIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -161,7 +161,7 @@ class DataLakeSettings {
   /**
    * <p>A key-value map that provides an additional configuration on your data lake.
    * CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field.
-   * Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
+   * Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
   inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

@@ -22,6 +22,7 @@
 #include <aws/ec2/model/InstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/InstanceNetworkPerformanceOptionsRequest.h>
+#include <aws/ec2/model/InstanceSecondaryInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/LaunchTemplateSpecification.h>
 #include <aws/ec2/model/LicenseConfigurationRequest.h>
@@ -765,6 +766,30 @@ class RunInstancesRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The secondary interfaces to associate with the instance.</p>
+   */
+  inline const Aws::Vector<InstanceSecondaryInterfaceSpecificationRequest>& GetSecondaryInterfaces() const { return m_secondaryInterfaces; }
+  inline bool SecondaryInterfacesHasBeenSet() const { return m_secondaryInterfacesHasBeenSet; }
+  template <typename SecondaryInterfacesT = Aws::Vector<InstanceSecondaryInterfaceSpecificationRequest>>
+  void SetSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    m_secondaryInterfacesHasBeenSet = true;
+    m_secondaryInterfaces = std::forward<SecondaryInterfacesT>(value);
+  }
+  template <typename SecondaryInterfacesT = Aws::Vector<InstanceSecondaryInterfaceSpecificationRequest>>
+  RunInstancesRequest& WithSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    SetSecondaryInterfaces(std::forward<SecondaryInterfacesT>(value));
+    return *this;
+  }
+  template <typename SecondaryInterfacesT = InstanceSecondaryInterfaceSpecificationRequest>
+  RunInstancesRequest& AddSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    m_secondaryInterfacesHasBeenSet = true;
+    m_secondaryInterfaces.emplace_back(std::forward<SecondaryInterfacesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -1012,6 +1037,8 @@ class RunInstancesRequest : public EC2Request {
 
   OperatorRequest m_operator;
 
+  Aws::Vector<InstanceSecondaryInterfaceSpecificationRequest> m_secondaryInterfaces;
+
   bool m_dryRun{false};
 
   bool m_disableApiTermination{false};
@@ -1061,6 +1088,7 @@ class RunInstancesRequest : public EC2Request {
   bool m_enablePrimaryIpv6HasBeenSet = false;
   bool m_networkPerformanceOptionsHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
+  bool m_secondaryInterfacesHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_disableApiTerminationHasBeenSet = false;
   bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;

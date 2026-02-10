@@ -4357,6 +4357,67 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Creates an Amazon secondary network.</p> <p>The allowed size for a secondary
+   * network CIDR block is between /28 netmask (16 IP addresses) and /12 netmask
+   * (1,048,576 IP addresses).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondaryNetwork">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSecondaryNetworkOutcome CreateSecondaryNetwork(const Model::CreateSecondaryNetworkRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSecondaryNetwork that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateSecondaryNetworkRequestT = Model::CreateSecondaryNetworkRequest>
+  Model::CreateSecondaryNetworkOutcomeCallable CreateSecondaryNetworkCallable(const CreateSecondaryNetworkRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateSecondaryNetwork, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSecondaryNetwork that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateSecondaryNetworkRequestT = Model::CreateSecondaryNetworkRequest>
+  void CreateSecondaryNetworkAsync(const CreateSecondaryNetworkRequestT& request,
+                                   const CreateSecondaryNetworkResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateSecondaryNetwork, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a secondary subnet in a secondary network.</p> <p>A secondary subnet
+   * CIDR block must not overlap with the CIDR block of an existing secondary subnet
+   * in the secondary network. After you create a secondary subnet, you can't change
+   * its CIDR block.</p> <p>The allowed size for a secondary subnet CIDR block is
+   * between /28 netmask (16 IP addresses) and /12 netmask (1,048,576 IP addresses).
+   * Amazon reserves the first four IP addresses and the last IP address in each
+   * secondary subnet for internal use.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecondarySubnet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSecondarySubnetOutcome CreateSecondarySubnet(const Model::CreateSecondarySubnetRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSecondarySubnet that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateSecondarySubnetRequestT = Model::CreateSecondarySubnetRequest>
+  Model::CreateSecondarySubnetOutcomeCallable CreateSecondarySubnetCallable(const CreateSecondarySubnetRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateSecondarySubnet, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSecondarySubnet that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateSecondarySubnetRequestT = Model::CreateSecondarySubnetRequest>
+  void CreateSecondarySubnetAsync(const CreateSecondarySubnetRequestT& request, const CreateSecondarySubnetResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateSecondarySubnet, request, handler, context);
+  }
+
+  /**
    * <p>Creates a security group.</p> <p>A security group acts as a virtual firewall
    * for your instance to control inbound and outbound traffic. For more information,
    * see <a
@@ -7349,6 +7410,62 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
   void DeleteRouteTableAsync(const DeleteRouteTableRequestT& request, const DeleteRouteTableResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteRouteTable, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a secondary network. You must delete all secondary subnets in the
+   * secondary network before you can delete the secondary network.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondaryNetwork">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSecondaryNetworkOutcome DeleteSecondaryNetwork(const Model::DeleteSecondaryNetworkRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSecondaryNetwork that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSecondaryNetworkRequestT = Model::DeleteSecondaryNetworkRequest>
+  Model::DeleteSecondaryNetworkOutcomeCallable DeleteSecondaryNetworkCallable(const DeleteSecondaryNetworkRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteSecondaryNetwork, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSecondaryNetwork that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSecondaryNetworkRequestT = Model::DeleteSecondaryNetworkRequest>
+  void DeleteSecondaryNetworkAsync(const DeleteSecondaryNetworkRequestT& request,
+                                   const DeleteSecondaryNetworkResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteSecondaryNetwork, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a secondary subnet. A secondary subnet must not contain any secondary
+   * interfaces prior to deletion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecondarySubnet">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSecondarySubnetOutcome DeleteSecondarySubnet(const Model::DeleteSecondarySubnetRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSecondarySubnet that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSecondarySubnetRequestT = Model::DeleteSecondarySubnetRequest>
+  Model::DeleteSecondarySubnetOutcomeCallable DeleteSecondarySubnetCallable(const DeleteSecondarySubnetRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteSecondarySubnet, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSecondarySubnet that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteSecondarySubnetRequestT = Model::DeleteSecondarySubnetRequest>
+  void DeleteSecondarySubnetAsync(const DeleteSecondarySubnetRequestT& request, const DeleteSecondarySubnetResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteSecondarySubnet, request, handler, context);
   }
 
   /**
@@ -12835,6 +12952,94 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const DescribeScheduledInstancesRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeScheduledInstances, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more of your secondary interfaces.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryInterfaces">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSecondaryInterfacesOutcome DescribeSecondaryInterfaces(
+      const Model::DescribeSecondaryInterfacesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeSecondaryInterfaces that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeSecondaryInterfacesRequestT = Model::DescribeSecondaryInterfacesRequest>
+  Model::DescribeSecondaryInterfacesOutcomeCallable DescribeSecondaryInterfacesCallable(
+      const DescribeSecondaryInterfacesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeSecondaryInterfaces, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSecondaryInterfaces that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSecondaryInterfacesRequestT = Model::DescribeSecondaryInterfacesRequest>
+  void DescribeSecondaryInterfacesAsync(const DescribeSecondaryInterfacesResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const DescribeSecondaryInterfacesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeSecondaryInterfaces, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more secondary networks.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondaryNetworks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSecondaryNetworksOutcome DescribeSecondaryNetworks(
+      const Model::DescribeSecondaryNetworksRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeSecondaryNetworks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeSecondaryNetworksRequestT = Model::DescribeSecondaryNetworksRequest>
+  Model::DescribeSecondaryNetworksOutcomeCallable DescribeSecondaryNetworksCallable(
+      const DescribeSecondaryNetworksRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeSecondaryNetworks, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSecondaryNetworks that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSecondaryNetworksRequestT = Model::DescribeSecondaryNetworksRequest>
+  void DescribeSecondaryNetworksAsync(const DescribeSecondaryNetworksResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                      const DescribeSecondaryNetworksRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeSecondaryNetworks, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more of your secondary subnets.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecondarySubnets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSecondarySubnetsOutcome DescribeSecondarySubnets(const Model::DescribeSecondarySubnetsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeSecondarySubnets that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeSecondarySubnetsRequestT = Model::DescribeSecondarySubnetsRequest>
+  Model::DescribeSecondarySubnetsOutcomeCallable DescribeSecondarySubnetsCallable(
+      const DescribeSecondarySubnetsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeSecondarySubnets, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSecondarySubnets that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSecondarySubnetsRequestT = Model::DescribeSecondarySubnetsRequest>
+  void DescribeSecondarySubnetsAsync(const DescribeSecondarySubnetsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeSecondarySubnetsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeSecondarySubnets, request, handler, context);
   }
 
   /**

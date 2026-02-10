@@ -93,9 +93,9 @@ class ModifyInstanceMetadataDefaultsRequest : public EC2Request {
   /**
    * <p>Enables or disables access to an instance's tags from the instance metadata.
    * For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-   * with instance tags using the instance metadata</a> in the <i>Amazon EC2 User
-   * Guide</i>.</p>
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View
+   * tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2
+   * User Guide</i>.</p>
    */
   inline DefaultInstanceMetadataTagsState GetInstanceMetadataTags() const { return m_instanceMetadataTags; }
   inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }

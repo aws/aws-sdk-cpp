@@ -23,6 +23,7 @@
 #include <aws/ec2/model/LaunchTemplateInstanceMarketOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMetadataOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
+#include <aws/ec2/model/LaunchTemplateInstanceSecondaryInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateLicenseConfiguration.h>
 #include <aws/ec2/model/LaunchTemplateNetworkPerformanceOptions.h>
 #include <aws/ec2/model/LaunchTemplatePlacement.h>
@@ -731,6 +732,32 @@ class ResponseLaunchTemplateData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The secondary interfaces associated with the launch template.</p>
+   */
+  inline const Aws::Vector<LaunchTemplateInstanceSecondaryInterfaceSpecification>& GetSecondaryInterfaces() const {
+    return m_secondaryInterfaces;
+  }
+  inline bool SecondaryInterfacesHasBeenSet() const { return m_secondaryInterfacesHasBeenSet; }
+  template <typename SecondaryInterfacesT = Aws::Vector<LaunchTemplateInstanceSecondaryInterfaceSpecification>>
+  void SetSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    m_secondaryInterfacesHasBeenSet = true;
+    m_secondaryInterfaces = std::forward<SecondaryInterfacesT>(value);
+  }
+  template <typename SecondaryInterfacesT = Aws::Vector<LaunchTemplateInstanceSecondaryInterfaceSpecification>>
+  ResponseLaunchTemplateData& WithSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    SetSecondaryInterfaces(std::forward<SecondaryInterfacesT>(value));
+    return *this;
+  }
+  template <typename SecondaryInterfacesT = LaunchTemplateInstanceSecondaryInterfaceSpecification>
+  ResponseLaunchTemplateData& AddSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    m_secondaryInterfacesHasBeenSet = true;
+    m_secondaryInterfaces.emplace_back(std::forward<SecondaryInterfacesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_kernelId;
 
@@ -797,6 +824,8 @@ class ResponseLaunchTemplateData {
   OperatorResponse m_operator;
 
   LaunchTemplateNetworkPerformanceOptions m_networkPerformanceOptions;
+
+  Aws::Vector<LaunchTemplateInstanceSecondaryInterfaceSpecification> m_secondaryInterfaces;
   bool m_kernelIdHasBeenSet = false;
   bool m_ebsOptimizedHasBeenSet = false;
   bool m_iamInstanceProfileHasBeenSet = false;
@@ -830,6 +859,7 @@ class ResponseLaunchTemplateData {
   bool m_disableApiStopHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
   bool m_networkPerformanceOptionsHasBeenSet = false;
+  bool m_secondaryInterfacesHasBeenSet = false;
 };
 
 }  // namespace Model

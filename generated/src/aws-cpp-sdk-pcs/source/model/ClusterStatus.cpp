@@ -24,6 +24,7 @@ static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int SUSPENDING_HASH = HashingUtils::HashString("SUSPENDING");
 static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+static const int RESUMING_HASH = HashingUtils::HashString("RESUMING");
 
 ClusterStatus GetClusterStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ ClusterStatus GetClusterStatusForName(const Aws::String& name) {
     return ClusterStatus::SUSPENDING;
   } else if (hashCode == SUSPENDED_HASH) {
     return ClusterStatus::SUSPENDED;
+  } else if (hashCode == RESUMING_HASH) {
+    return ClusterStatus::RESUMING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForClusterStatus(ClusterStatus enumValue) {
       return "SUSPENDING";
     case ClusterStatus::SUSPENDED:
       return "SUSPENDED";
+    case ClusterStatus::RESUMING:
+      return "RESUMING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

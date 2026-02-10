@@ -118,6 +118,9 @@ static const int mac_modification_task_HASH = HashingUtils::HashString("mac-modi
 static const int ipam_prefix_list_resolver_HASH = HashingUtils::HashString("ipam-prefix-list-resolver");
 static const int ipam_policy_HASH = HashingUtils::HashString("ipam-policy");
 static const int ipam_prefix_list_resolver_target_HASH = HashingUtils::HashString("ipam-prefix-list-resolver-target");
+static const int secondary_interface_HASH = HashingUtils::HashString("secondary-interface");
+static const int secondary_network_HASH = HashingUtils::HashString("secondary-network");
+static const int secondary_subnet_HASH = HashingUtils::HashString("secondary-subnet");
 static const int capacity_manager_data_export_HASH = HashingUtils::HashString("capacity-manager-data-export");
 static const int vpn_concentrator_HASH = HashingUtils::HashString("vpn-concentrator");
 
@@ -327,6 +330,12 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::ipam_policy;
   } else if (hashCode == ipam_prefix_list_resolver_target_HASH) {
     return ResourceType::ipam_prefix_list_resolver_target;
+  } else if (hashCode == secondary_interface_HASH) {
+    return ResourceType::secondary_interface;
+  } else if (hashCode == secondary_network_HASH) {
+    return ResourceType::secondary_network;
+  } else if (hashCode == secondary_subnet_HASH) {
+    return ResourceType::secondary_subnet;
   } else if (hashCode == capacity_manager_data_export_HASH) {
     return ResourceType::capacity_manager_data_export;
   } else if (hashCode == vpn_concentrator_HASH) {
@@ -549,6 +558,12 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "ipam-policy";
     case ResourceType::ipam_prefix_list_resolver_target:
       return "ipam-prefix-list-resolver-target";
+    case ResourceType::secondary_interface:
+      return "secondary-interface";
+    case ResourceType::secondary_network:
+      return "secondary-network";
+    case ResourceType::secondary_subnet:
+      return "secondary-subnet";
     case ResourceType::capacity_manager_data_export:
       return "capacity-manager-data-export";
     case ResourceType::vpn_concentrator:

@@ -20,7 +20,8 @@ enum class QueueStatus {
   DELETE_FAILED,
   UPDATE_FAILED,
   SUSPENDING,
-  SUSPENDED
+  SUSPENDED,
+  RESUMING
 };
 
 namespace QueueStatusMapper {

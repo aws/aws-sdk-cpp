@@ -165,6 +165,14 @@ Aws::String RunInstancesRequest::SerializePayload() const {
     m_operator.OutputToStream(ss, "Operator");
   }
 
+  if (m_secondaryInterfacesHasBeenSet) {
+    unsigned secondaryInterfacesCount = 1;
+    for (auto& item : m_secondaryInterfaces) {
+      item.OutputToStream(ss, "SecondaryInterface.", secondaryInterfacesCount, "");
+      secondaryInterfacesCount++;
+    }
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
