@@ -226,6 +226,14 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
+  if (m_backupRetentionPeriodHasBeenSet) {
+    ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+
+  if (m_preferredBackupWindowHasBeenSet) {
+    ss << "PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
+  }
+
   if (m_dedicatedLogVolumeHasBeenSet) {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }

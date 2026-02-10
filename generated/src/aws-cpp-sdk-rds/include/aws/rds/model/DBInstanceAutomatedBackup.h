@@ -498,6 +498,26 @@ class DBInstanceAutomatedBackup {
 
   ///@{
   /**
+   * <p>The daily time range during which automated backups are created if automated
+   * backups are enabled, as determined by the
+   * <code>BackupRetentionPeriod</code>.</p>
+   */
+  inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
+  inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+  template <typename PreferredBackupWindowT = Aws::String>
+  void SetPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    m_preferredBackupWindowHasBeenSet = true;
+    m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value);
+  }
+  template <typename PreferredBackupWindowT = Aws::String>
+  DBInstanceAutomatedBackup& WithPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
    */
   inline const Aws::String& GetDBInstanceAutomatedBackupsArn() const { return m_dBInstanceAutomatedBackupsArn; }
@@ -711,6 +731,8 @@ class DBInstanceAutomatedBackup {
 
   int m_backupRetentionPeriod{0};
 
+  Aws::String m_preferredBackupWindow;
+
   Aws::String m_dBInstanceAutomatedBackupsArn;
 
   Aws::Vector<DBInstanceAutomatedBackupsReplication> m_dBInstanceAutomatedBackupsReplications;
@@ -751,6 +773,7 @@ class DBInstanceAutomatedBackup {
   bool m_timezoneHasBeenSet = false;
   bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
   bool m_dBInstanceAutomatedBackupsArnHasBeenSet = false;
   bool m_dBInstanceAutomatedBackupsReplicationsHasBeenSet = false;
   bool m_backupTargetHasBeenSet = false;

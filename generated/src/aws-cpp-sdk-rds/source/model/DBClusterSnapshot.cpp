@@ -121,6 +121,17 @@ DBClusterSnapshot& DBClusterSnapshot::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptedNode.GetText()).c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
+    XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
+    if (!backupRetentionPeriodNode.IsNull()) {
+      m_backupRetentionPeriod = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backupRetentionPeriodNode.GetText()).c_str()).c_str());
+      m_backupRetentionPeriodHasBeenSet = true;
+    }
+    XmlNode preferredBackupWindowNode = resultNode.FirstChild("PreferredBackupWindow");
+    if (!preferredBackupWindowNode.IsNull()) {
+      m_preferredBackupWindow = Aws::Utils::Xml::DecodeEscapedXmlText(preferredBackupWindowNode.GetText());
+      m_preferredBackupWindowHasBeenSet = true;
+    }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if (!kmsKeyIdNode.IsNull()) {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
@@ -258,6 +269,15 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
     oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
+  if (m_backupRetentionPeriodHasBeenSet) {
+    oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+
+  if (m_preferredBackupWindowHasBeenSet) {
+    oStream << location << index << locationValue << ".PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str())
+            << "&";
+  }
+
   if (m_kmsKeyIdHasBeenSet) {
     oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
@@ -363,6 +383,12 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
+  }
+  if (m_backupRetentionPeriodHasBeenSet) {
+    oStream << location << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+  if (m_preferredBackupWindowHasBeenSet) {
+    oStream << location << ".PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
   if (m_kmsKeyIdHasBeenSet) {
     oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";

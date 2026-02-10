@@ -226,6 +226,35 @@ class CreatePodIdentityAssociationRequest : public EKSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional IAM policy in JSON format (as an escaped string) that applies
+   * additional restrictions to this pod identity association beyond the IAM policies
+   * attached to the IAM role. This policy is applied as the intersection of the
+   * role's policies and this policy, allowing you to reduce the permissions that
+   * applications in the pods can use. Use this policy to enforce least privilege
+   * access while still leveraging a shared IAM role across multiple
+   * applications.</p> <p> <b>Important considerations</b> </p> <ul> <li> <p>
+   * <b>Session tags:</b> When using this policy, <code>disableSessionTags</code>
+   * must be set to <code>true</code>.</p> </li> <li> <p> <b>Target role
+   * permissions:</b> If you specify both a <code>TargetRoleArn</code> and a policy,
+   * the policy restrictions apply only to the target role's permissions, not to the
+   * initial role used for assuming the target role.</p> </li> </ul>
+   */
+  inline const Aws::String& GetPolicy() const { return m_policy; }
+  inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+  template <typename PolicyT = Aws::String>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = Aws::String>
+  CreatePodIdentityAssociationRequest& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterName;
 
@@ -242,6 +271,8 @@ class CreatePodIdentityAssociationRequest : public EKSRequest {
   bool m_disableSessionTags{false};
 
   Aws::String m_targetRoleArn;
+
+  Aws::String m_policy;
   bool m_clusterNameHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_serviceAccountHasBeenSet = false;
@@ -250,6 +281,7 @@ class CreatePodIdentityAssociationRequest : public EKSRequest {
   bool m_tagsHasBeenSet = false;
   bool m_disableSessionTagsHasBeenSet = false;
   bool m_targetRoleArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -40,6 +40,10 @@ Aws::String StartBrowserSessionRequest::SerializePayload() const {
     payload.WithObject("profileConfiguration", m_profileConfiguration.Jsonize());
   }
 
+  if (m_proxyConfigurationHasBeenSet) {
+    payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

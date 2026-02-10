@@ -114,6 +114,11 @@ DBClusterAutomatedBackup& DBClusterAutomatedBackup::operator=(const XmlNode& xml
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backupRetentionPeriodNode.GetText()).c_str()).c_str());
       m_backupRetentionPeriodHasBeenSet = true;
     }
+    XmlNode preferredBackupWindowNode = resultNode.FirstChild("PreferredBackupWindow");
+    if (!preferredBackupWindowNode.IsNull()) {
+      m_preferredBackupWindow = Aws::Utils::Xml::DecodeEscapedXmlText(preferredBackupWindowNode.GetText());
+      m_preferredBackupWindowHasBeenSet = true;
+    }
     XmlNode engineModeNode = resultNode.FirstChild("EngineMode");
     if (!engineModeNode.IsNull()) {
       m_engineMode = Aws::Utils::Xml::DecodeEscapedXmlText(engineModeNode.GetText());
@@ -255,6 +260,11 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
     oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
 
+  if (m_preferredBackupWindowHasBeenSet) {
+    oStream << location << index << locationValue << ".PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str())
+            << "&";
+  }
+
   if (m_engineModeHasBeenSet) {
     oStream << location << index << locationValue << ".EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
   }
@@ -357,6 +367,9 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
   }
   if (m_backupRetentionPeriodHasBeenSet) {
     oStream << location << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+  if (m_preferredBackupWindowHasBeenSet) {
+    oStream << location << ".PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
   if (m_engineModeHasBeenSet) {
     oStream << location << ".EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";

@@ -5,8 +5,13 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AfterContactWorkConfigPerChannel.h>
+#include <aws/connect/model/AutoAcceptConfig.h>
+#include <aws/connect/model/PersistentConnectionConfig.h>
+#include <aws/connect/model/PhoneNumberConfig.h>
 #include <aws/connect/model/UserIdentityInfoLite.h>
 #include <aws/connect/model/UserPhoneConfig.h>
+#include <aws/connect/model/VoiceEnhancementConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -225,6 +230,128 @@ class UserSearchSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of auto-accept configuration settings for each channel.</p>
+   */
+  inline const Aws::Vector<AutoAcceptConfig>& GetAutoAcceptConfigs() const { return m_autoAcceptConfigs; }
+  inline bool AutoAcceptConfigsHasBeenSet() const { return m_autoAcceptConfigsHasBeenSet; }
+  template <typename AutoAcceptConfigsT = Aws::Vector<AutoAcceptConfig>>
+  void SetAutoAcceptConfigs(AutoAcceptConfigsT&& value) {
+    m_autoAcceptConfigsHasBeenSet = true;
+    m_autoAcceptConfigs = std::forward<AutoAcceptConfigsT>(value);
+  }
+  template <typename AutoAcceptConfigsT = Aws::Vector<AutoAcceptConfig>>
+  UserSearchSummary& WithAutoAcceptConfigs(AutoAcceptConfigsT&& value) {
+    SetAutoAcceptConfigs(std::forward<AutoAcceptConfigsT>(value));
+    return *this;
+  }
+  template <typename AutoAcceptConfigsT = AutoAcceptConfig>
+  UserSearchSummary& AddAutoAcceptConfigs(AutoAcceptConfigsT&& value) {
+    m_autoAcceptConfigsHasBeenSet = true;
+    m_autoAcceptConfigs.emplace_back(std::forward<AutoAcceptConfigsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of after contact work (ACW) timeout configuration settings for each
+   * channel.</p>
+   */
+  inline const Aws::Vector<AfterContactWorkConfigPerChannel>& GetAfterContactWorkConfigs() const { return m_afterContactWorkConfigs; }
+  inline bool AfterContactWorkConfigsHasBeenSet() const { return m_afterContactWorkConfigsHasBeenSet; }
+  template <typename AfterContactWorkConfigsT = Aws::Vector<AfterContactWorkConfigPerChannel>>
+  void SetAfterContactWorkConfigs(AfterContactWorkConfigsT&& value) {
+    m_afterContactWorkConfigsHasBeenSet = true;
+    m_afterContactWorkConfigs = std::forward<AfterContactWorkConfigsT>(value);
+  }
+  template <typename AfterContactWorkConfigsT = Aws::Vector<AfterContactWorkConfigPerChannel>>
+  UserSearchSummary& WithAfterContactWorkConfigs(AfterContactWorkConfigsT&& value) {
+    SetAfterContactWorkConfigs(std::forward<AfterContactWorkConfigsT>(value));
+    return *this;
+  }
+  template <typename AfterContactWorkConfigsT = AfterContactWorkConfigPerChannel>
+  UserSearchSummary& AddAfterContactWorkConfigs(AfterContactWorkConfigsT&& value) {
+    m_afterContactWorkConfigsHasBeenSet = true;
+    m_afterContactWorkConfigs.emplace_back(std::forward<AfterContactWorkConfigsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of phone number configuration settings for each channel.</p>
+   */
+  inline const Aws::Vector<PhoneNumberConfig>& GetPhoneNumberConfigs() const { return m_phoneNumberConfigs; }
+  inline bool PhoneNumberConfigsHasBeenSet() const { return m_phoneNumberConfigsHasBeenSet; }
+  template <typename PhoneNumberConfigsT = Aws::Vector<PhoneNumberConfig>>
+  void SetPhoneNumberConfigs(PhoneNumberConfigsT&& value) {
+    m_phoneNumberConfigsHasBeenSet = true;
+    m_phoneNumberConfigs = std::forward<PhoneNumberConfigsT>(value);
+  }
+  template <typename PhoneNumberConfigsT = Aws::Vector<PhoneNumberConfig>>
+  UserSearchSummary& WithPhoneNumberConfigs(PhoneNumberConfigsT&& value) {
+    SetPhoneNumberConfigs(std::forward<PhoneNumberConfigsT>(value));
+    return *this;
+  }
+  template <typename PhoneNumberConfigsT = PhoneNumberConfig>
+  UserSearchSummary& AddPhoneNumberConfigs(PhoneNumberConfigsT&& value) {
+    m_phoneNumberConfigsHasBeenSet = true;
+    m_phoneNumberConfigs.emplace_back(std::forward<PhoneNumberConfigsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of persistent connection configuration settings for each
+   * channel.</p>
+   */
+  inline const Aws::Vector<PersistentConnectionConfig>& GetPersistentConnectionConfigs() const { return m_persistentConnectionConfigs; }
+  inline bool PersistentConnectionConfigsHasBeenSet() const { return m_persistentConnectionConfigsHasBeenSet; }
+  template <typename PersistentConnectionConfigsT = Aws::Vector<PersistentConnectionConfig>>
+  void SetPersistentConnectionConfigs(PersistentConnectionConfigsT&& value) {
+    m_persistentConnectionConfigsHasBeenSet = true;
+    m_persistentConnectionConfigs = std::forward<PersistentConnectionConfigsT>(value);
+  }
+  template <typename PersistentConnectionConfigsT = Aws::Vector<PersistentConnectionConfig>>
+  UserSearchSummary& WithPersistentConnectionConfigs(PersistentConnectionConfigsT&& value) {
+    SetPersistentConnectionConfigs(std::forward<PersistentConnectionConfigsT>(value));
+    return *this;
+  }
+  template <typename PersistentConnectionConfigsT = PersistentConnectionConfig>
+  UserSearchSummary& AddPersistentConnectionConfigs(PersistentConnectionConfigsT&& value) {
+    m_persistentConnectionConfigsHasBeenSet = true;
+    m_persistentConnectionConfigs.emplace_back(std::forward<PersistentConnectionConfigsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of voice enhancement configuration settings for each channel.</p>
+   */
+  inline const Aws::Vector<VoiceEnhancementConfig>& GetVoiceEnhancementConfigs() const { return m_voiceEnhancementConfigs; }
+  inline bool VoiceEnhancementConfigsHasBeenSet() const { return m_voiceEnhancementConfigsHasBeenSet; }
+  template <typename VoiceEnhancementConfigsT = Aws::Vector<VoiceEnhancementConfig>>
+  void SetVoiceEnhancementConfigs(VoiceEnhancementConfigsT&& value) {
+    m_voiceEnhancementConfigsHasBeenSet = true;
+    m_voiceEnhancementConfigs = std::forward<VoiceEnhancementConfigsT>(value);
+  }
+  template <typename VoiceEnhancementConfigsT = Aws::Vector<VoiceEnhancementConfig>>
+  UserSearchSummary& WithVoiceEnhancementConfigs(VoiceEnhancementConfigsT&& value) {
+    SetVoiceEnhancementConfigs(std::forward<VoiceEnhancementConfigsT>(value));
+    return *this;
+  }
+  template <typename VoiceEnhancementConfigsT = VoiceEnhancementConfig>
+  UserSearchSummary& AddVoiceEnhancementConfigs(VoiceEnhancementConfigsT&& value) {
+    m_voiceEnhancementConfigsHasBeenSet = true;
+    m_voiceEnhancementConfigs.emplace_back(std::forward<VoiceEnhancementConfigsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -245,6 +372,16 @@ class UserSearchSummary {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_username;
+
+  Aws::Vector<AutoAcceptConfig> m_autoAcceptConfigs;
+
+  Aws::Vector<AfterContactWorkConfigPerChannel> m_afterContactWorkConfigs;
+
+  Aws::Vector<PhoneNumberConfig> m_phoneNumberConfigs;
+
+  Aws::Vector<PersistentConnectionConfig> m_persistentConnectionConfigs;
+
+  Aws::Vector<VoiceEnhancementConfig> m_voiceEnhancementConfigs;
   bool m_arnHasBeenSet = false;
   bool m_directoryUserIdHasBeenSet = false;
   bool m_hierarchyGroupIdHasBeenSet = false;
@@ -255,6 +392,11 @@ class UserSearchSummary {
   bool m_securityProfileIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
+  bool m_autoAcceptConfigsHasBeenSet = false;
+  bool m_afterContactWorkConfigsHasBeenSet = false;
+  bool m_phoneNumberConfigsHasBeenSet = false;
+  bool m_persistentConnectionConfigsHasBeenSet = false;
+  bool m_voiceEnhancementConfigsHasBeenSet = false;
 };
 
 }  // namespace Model

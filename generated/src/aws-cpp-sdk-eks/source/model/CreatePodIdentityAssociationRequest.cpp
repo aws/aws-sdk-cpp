@@ -47,5 +47,9 @@ Aws::String CreatePodIdentityAssociationRequest::SerializePayload() const {
     payload.WithString("targetRoleArn", m_targetRoleArn);
   }
 
+  if (m_policyHasBeenSet) {
+    payload.WithString("policy", m_policy);
+  }
+
   return payload.View().WriteReadable();
 }
