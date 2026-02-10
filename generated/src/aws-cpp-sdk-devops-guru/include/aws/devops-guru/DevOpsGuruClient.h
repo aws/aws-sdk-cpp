@@ -1031,7 +1031,7 @@ class AWS_DEVOPSGURU_API DevOpsGuruClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DevOpsGuruClient::UpdateServiceIntegration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DevOpsGuruEndpointProviderBase>& accessEndpointProvider();
 
  private:

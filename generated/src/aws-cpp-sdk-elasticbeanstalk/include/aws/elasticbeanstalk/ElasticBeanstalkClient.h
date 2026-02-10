@@ -1552,7 +1552,7 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
     return SubmitAsync(&ElasticBeanstalkClient::ValidateConfigurationSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ElasticBeanstalkEndpointProviderBase>& accessEndpointProvider();
 
  private:

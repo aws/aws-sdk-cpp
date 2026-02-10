@@ -1107,7 +1107,7 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient
     return SubmitAsync(&VerifiedPermissionsClient::UpdatePolicyTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<VerifiedPermissionsEndpointProviderBase>& accessEndpointProvider();
 
  private:

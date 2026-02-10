@@ -83,7 +83,7 @@ class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonC
   /* End of legacy constructors due deprecation */
   virtual ~IoTThingsGraphClient();
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<IoTThingsGraphEndpointProviderBase>& accessEndpointProvider();
 
  private:

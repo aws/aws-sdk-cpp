@@ -2495,7 +2495,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateWorkloadIdentity, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BedrockAgentCoreControlEndpointProviderBase>& accessEndpointProvider();
 
  private:

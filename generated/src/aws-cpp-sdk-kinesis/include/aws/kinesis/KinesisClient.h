@@ -1770,7 +1770,7 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&KinesisClient::UpdateStreamWarmThroughput, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<KinesisEndpointProviderBase>& accessEndpointProvider();
 
  private:

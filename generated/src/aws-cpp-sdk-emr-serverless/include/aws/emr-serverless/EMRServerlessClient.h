@@ -518,7 +518,7 @@ class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&EMRServerlessClient::UpdateApplication, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<EMRServerlessEndpointProviderBase>& accessEndpointProvider();
 
  private:

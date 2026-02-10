@@ -3096,7 +3096,7 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&OmicsClient::UploadReadSetPart, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<OmicsEndpointProviderBase>& accessEndpointProvider();
 
  private:

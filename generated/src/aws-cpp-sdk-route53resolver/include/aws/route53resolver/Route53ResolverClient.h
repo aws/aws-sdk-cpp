@@ -2128,7 +2128,7 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
     return SubmitAsync(&Route53ResolverClient::UpdateResolverRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53ResolverEndpointProviderBase>& accessEndpointProvider();
 
  private:

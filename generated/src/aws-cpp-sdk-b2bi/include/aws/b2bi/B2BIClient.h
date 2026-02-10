@@ -970,7 +970,7 @@ class AWS_B2BI_API B2BIClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&B2BIClient::UpdateTransformer, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<B2BIEndpointProviderBase>& accessEndpointProvider();
 
  private:

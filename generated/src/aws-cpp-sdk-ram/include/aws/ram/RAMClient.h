@@ -1240,7 +1240,7 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&RAMClient::UpdateResourceShare, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<RAMEndpointProviderBase>& accessEndpointProvider();
 
  private:

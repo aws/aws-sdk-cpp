@@ -523,7 +523,7 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
     return SubmitAsync(&Route53ProfilesClient::UpdateProfileResourceAssociation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53ProfilesEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -7686,7 +7686,7 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&GlueClient::UpdateWorkflow, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GlueEndpointProviderBase>& accessEndpointProvider();
 
  private:

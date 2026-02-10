@@ -953,7 +953,7 @@ class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessClient
     return SubmitAsync(&Route53RecoveryReadinessClient::UpdateResourceSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase>& accessEndpointProvider();
 
  private:

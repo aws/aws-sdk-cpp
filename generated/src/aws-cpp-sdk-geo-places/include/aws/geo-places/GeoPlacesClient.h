@@ -315,7 +315,7 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GeoPlacesClient::Suggest, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GeoPlacesEndpointProviderBase>& accessEndpointProvider();
 
  private:

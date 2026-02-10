@@ -326,7 +326,7 @@ class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient
     return SubmitAsync(&CostOptimizationHubClient::UpdatePreferences, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CostOptimizationHubEndpointProviderBase>& accessEndpointProvider();
 
  private:

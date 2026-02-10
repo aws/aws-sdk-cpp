@@ -1989,7 +1989,7 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&MgnClient::UpdateWave, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MgnEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -6726,7 +6726,7 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Clie
     return SubmitAsync(&IAMClient::UploadSigningCertificate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<IAMEndpointProviderBase>& accessEndpointProvider();
 
  private:

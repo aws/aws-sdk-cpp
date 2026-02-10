@@ -1523,7 +1523,7 @@ class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
     return SubmitAsync(&SNSClient::VerifySMSSandboxPhoneNumber, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SNSEndpointProviderBase>& accessEndpointProvider();
 
  private:

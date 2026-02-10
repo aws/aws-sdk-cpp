@@ -2434,7 +2434,7 @@ class AWS_QBUSINESS_API QBusinessClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&QBusinessClient::UpdateWebExperience, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<QBusinessEndpointProviderBase>& accessEndpointProvider();
 
  private:

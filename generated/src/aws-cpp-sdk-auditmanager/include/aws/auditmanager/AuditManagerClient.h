@@ -2014,7 +2014,7 @@ class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&AuditManagerClient::ValidateAssessmentReportIntegrity, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AuditManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:

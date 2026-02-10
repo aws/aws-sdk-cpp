@@ -2301,7 +2301,7 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient, public A
     return SubmitAsync(&NeptuneClient::SwitchoverGlobalCluster, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<NeptuneEndpointProviderBase>& accessEndpointProvider();
 
  private:

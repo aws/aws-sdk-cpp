@@ -441,7 +441,7 @@ class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : public Aws::Client::AWSJ
     return SubmitAsync(&CodeGuruSecurityClient::UpdateAccountConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeGuruSecurityEndpointProviderBase>& accessEndpointProvider();
 
  private:

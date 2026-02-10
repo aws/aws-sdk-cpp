@@ -682,7 +682,7 @@ class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJ
     return SubmitAsync(&ChimeSDKMeetingsClient::UpdateAttendeeCapabilities, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& accessEndpointProvider();
 
  private:

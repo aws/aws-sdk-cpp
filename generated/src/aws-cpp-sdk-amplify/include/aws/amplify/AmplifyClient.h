@@ -1071,7 +1071,7 @@ class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&AmplifyClient::UpdateWebhook, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AmplifyEndpointProviderBase>& accessEndpointProvider();
 
  private:

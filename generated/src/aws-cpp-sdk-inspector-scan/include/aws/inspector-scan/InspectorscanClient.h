@@ -109,7 +109,7 @@ class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&InspectorscanClient::ScanSbom, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<InspectorscanEndpointProviderBase>& accessEndpointProvider();
 
  private:

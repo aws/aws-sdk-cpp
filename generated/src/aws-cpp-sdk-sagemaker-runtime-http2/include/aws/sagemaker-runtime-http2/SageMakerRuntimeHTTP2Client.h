@@ -115,7 +115,7 @@ class AWS_SAGEMAKERRUNTIMEHTTP2_API SageMakerRuntimeHTTP2Client
       const InvokeEndpointWithBidirectionalStreamResponseReceivedHandler& handler,
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SageMakerRuntimeHTTP2EndpointProviderBase>& accessEndpointProvider();
 
  private:

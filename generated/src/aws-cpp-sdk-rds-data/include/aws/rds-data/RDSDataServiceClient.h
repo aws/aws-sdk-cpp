@@ -240,7 +240,7 @@ class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&RDSDataServiceClient::RollbackTransaction, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<RDSDataServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

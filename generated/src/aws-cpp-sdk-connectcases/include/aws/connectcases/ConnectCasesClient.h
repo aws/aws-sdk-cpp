@@ -1376,7 +1376,7 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ConnectCasesClient::UpdateTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ConnectCasesEndpointProviderBase>& accessEndpointProvider();
 
  private:

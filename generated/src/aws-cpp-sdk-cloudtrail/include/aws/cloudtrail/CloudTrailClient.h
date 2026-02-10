@@ -2066,7 +2066,7 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CloudTrailClient::UpdateTrail, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
 
  private:

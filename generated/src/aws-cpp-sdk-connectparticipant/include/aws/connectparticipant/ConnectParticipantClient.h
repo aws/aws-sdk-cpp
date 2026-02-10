@@ -534,7 +534,7 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
     return SubmitAsync(&ConnectParticipantClient::StartAttachmentUpload, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ConnectParticipantEndpointProviderBase>& accessEndpointProvider();
 
  private:

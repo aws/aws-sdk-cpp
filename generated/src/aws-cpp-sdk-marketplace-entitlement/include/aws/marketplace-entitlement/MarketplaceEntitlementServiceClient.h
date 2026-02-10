@@ -119,7 +119,7 @@ class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceClient
     return SubmitAsync(&MarketplaceEntitlementServiceClient::GetEntitlements, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MarketplaceEntitlementServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

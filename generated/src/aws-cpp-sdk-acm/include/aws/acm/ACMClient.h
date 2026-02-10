@@ -644,7 +644,7 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&ACMClient::UpdateCertificateOptions, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
 
  private:

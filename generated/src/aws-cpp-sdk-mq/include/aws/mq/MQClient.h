@@ -727,7 +727,7 @@ class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient, public Aws::Clien
     return SubmitAsync(&MQClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MQEndpointProviderBase>& accessEndpointProvider();
 
  private:

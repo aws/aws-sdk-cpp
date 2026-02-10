@@ -1061,7 +1061,7 @@ class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&ChatbotClient::UpdateSlackChannelConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ChatbotEndpointProviderBase>& accessEndpointProvider();
 
  private:

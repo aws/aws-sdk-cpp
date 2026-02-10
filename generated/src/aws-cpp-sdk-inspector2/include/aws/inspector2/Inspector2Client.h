@@ -2208,7 +2208,7 @@ class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&Inspector2Client::UpdateOrganizationConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Inspector2EndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -845,7 +845,7 @@ class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AW
     return SubmitAsync(&ManagedBlockchainClient::VoteOnProposal, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ManagedBlockchainEndpointProviderBase>& accessEndpointProvider();
 
  private:

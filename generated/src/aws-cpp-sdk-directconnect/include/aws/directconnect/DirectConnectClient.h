@@ -2031,7 +2031,7 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&DirectConnectClient::UpdateVirtualInterfaceAttributes, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DirectConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:

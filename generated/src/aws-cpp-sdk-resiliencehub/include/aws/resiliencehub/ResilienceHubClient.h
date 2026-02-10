@@ -1967,7 +1967,7 @@ class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ResilienceHubClient::UpdateResiliencyPolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ResilienceHubEndpointProviderBase>& accessEndpointProvider();
 
  private:

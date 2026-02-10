@@ -553,7 +553,7 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
     return SubmitAsync(&BedrockDataAutomationClient::UpdateDataAutomationProject, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BedrockDataAutomationEndpointProviderBase>& accessEndpointProvider();
 
  private:

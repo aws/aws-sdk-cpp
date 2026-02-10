@@ -213,7 +213,7 @@ namespace ${rootNamespace}
 
         virtual bool MultipartUploadSupported() const;
 
-        void OverrideEndpoint(const Aws::String& endpoint);
+        virtual void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
@@ -233,8 +233,8 @@ namespace ${rootNamespace}
           Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig;
         };
 
-        Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
-        Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+        virtual Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+        virtual Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
 
 #end
     private:

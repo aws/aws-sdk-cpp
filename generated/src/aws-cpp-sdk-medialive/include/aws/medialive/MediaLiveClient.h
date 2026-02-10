@@ -3423,7 +3423,7 @@ class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&MediaLiveClient::UpdateSdiSource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MediaLiveEndpointProviderBase>& accessEndpointProvider();
 
  private:

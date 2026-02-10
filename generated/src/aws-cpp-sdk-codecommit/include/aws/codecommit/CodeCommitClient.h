@@ -2552,7 +2552,7 @@ class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CodeCommitClient::UpdateRepositoryName, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeCommitEndpointProviderBase>& accessEndpointProvider();
 
  private:

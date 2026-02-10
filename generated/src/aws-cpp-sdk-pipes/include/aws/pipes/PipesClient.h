@@ -365,7 +365,7 @@ class AWS_PIPES_API PipesClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&PipesClient::UpdatePipe, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PipesEndpointProviderBase>& accessEndpointProvider();
 
  private:

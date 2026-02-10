@@ -1778,7 +1778,7 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient, public Aws::
     return SubmitAsync(&DocDBClient::SwitchoverGlobalCluster, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
 
  private:

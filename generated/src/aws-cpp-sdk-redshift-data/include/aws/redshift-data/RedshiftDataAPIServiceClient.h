@@ -579,7 +579,7 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
     return SubmitAsync(&RedshiftDataAPIServiceClient::ListTables, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

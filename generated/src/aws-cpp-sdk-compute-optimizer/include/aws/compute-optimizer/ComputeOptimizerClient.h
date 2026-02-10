@@ -1074,7 +1074,7 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
     return SubmitAsync(&ComputeOptimizerClient::UpdateEnrollmentStatus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ComputeOptimizerEndpointProviderBase>& accessEndpointProvider();
 
  private:

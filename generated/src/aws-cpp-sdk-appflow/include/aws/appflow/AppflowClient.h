@@ -831,7 +831,7 @@ class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&AppflowClient::UpdateFlow, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AppflowEndpointProviderBase>& accessEndpointProvider();
 
  private:

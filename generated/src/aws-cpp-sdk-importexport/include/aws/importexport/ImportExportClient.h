@@ -255,7 +255,7 @@ class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient
     return SubmitAsync(&ImportExportClient::UpdateJob, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ImportExportEndpointProviderBase>& accessEndpointProvider();
 
  private:

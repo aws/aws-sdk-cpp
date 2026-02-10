@@ -1925,7 +1925,7 @@ class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&EventBridgeClient::UpdateEventBus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<EventBridgeEndpointProviderBase>& accessEndpointProvider();
 
  private:

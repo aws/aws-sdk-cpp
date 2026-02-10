@@ -119,7 +119,7 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&SigninClient::CreateOAuth2Token, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SigninEndpointProviderBase>& accessEndpointProvider();
 
  private:

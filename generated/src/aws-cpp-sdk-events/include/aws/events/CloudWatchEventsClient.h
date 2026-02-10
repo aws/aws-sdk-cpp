@@ -1716,7 +1716,7 @@ class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJ
     return SubmitAsync(&CloudWatchEventsClient::UpdateConnection, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CloudWatchEventsEndpointProviderBase>& accessEndpointProvider();
 
  private:

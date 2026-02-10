@@ -1137,7 +1137,7 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&AccessAnalyzerClient::ValidatePolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AccessAnalyzerEndpointProviderBase>& accessEndpointProvider();
 
  private:

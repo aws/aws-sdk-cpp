@@ -608,7 +608,7 @@ class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CognitoSyncClient::UpdateRecords, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CognitoSyncEndpointProviderBase>& accessEndpointProvider();
 
  private:

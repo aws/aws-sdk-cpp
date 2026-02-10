@@ -2762,7 +2762,7 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&NetworkManagerClient::UpdateVpcAttachment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<NetworkManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:

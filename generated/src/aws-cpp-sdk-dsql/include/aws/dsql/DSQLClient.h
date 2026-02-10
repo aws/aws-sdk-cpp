@@ -458,7 +458,7 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient, public Aws::C
   Aws::Utils::Outcome<String, DSQLError> GenerateDBConnectAdminAuthToken(const Aws::String& hostname, const Aws::String& region,
                                                                          long long expiresIn = 900);
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DSQLEndpointProviderBase>& accessEndpointProvider();
 
  private:

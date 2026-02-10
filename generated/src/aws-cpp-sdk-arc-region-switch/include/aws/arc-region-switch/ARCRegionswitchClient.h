@@ -674,7 +674,7 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJso
     return SubmitAsync(&ARCRegionswitchClient::UpdatePlanExecutionStep, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ARCRegionswitchEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -854,7 +854,7 @@ class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&ManagedGrafanaClient::UpdateWorkspaceConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ManagedGrafanaEndpointProviderBase>& accessEndpointProvider();
 
  private:

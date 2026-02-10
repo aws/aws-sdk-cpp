@@ -2496,7 +2496,7 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&ElastiCacheClient::TestMigration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ElastiCacheEndpointProviderBase>& accessEndpointProvider();
 
  private:

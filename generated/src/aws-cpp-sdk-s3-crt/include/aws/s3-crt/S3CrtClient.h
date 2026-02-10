@@ -8253,7 +8253,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
 
   virtual bool MultipartUploadSupported() const;
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<S3CrtEndpointProviderBase>& accessEndpointProvider();
 
   struct CrtRequestCallbackUserData {
@@ -8269,8 +8269,8 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
     Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig;
   };
 
-  Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
-  Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+  virtual Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+  virtual Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
 
  protected:
   void AddContentLengthToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body,

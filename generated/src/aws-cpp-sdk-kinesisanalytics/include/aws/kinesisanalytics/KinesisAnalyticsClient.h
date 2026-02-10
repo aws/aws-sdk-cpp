@@ -859,7 +859,7 @@ class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJ
     return SubmitAsync(&KinesisAnalyticsClient::UpdateApplication, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<KinesisAnalyticsEndpointProviderBase>& accessEndpointProvider();
 
  private:

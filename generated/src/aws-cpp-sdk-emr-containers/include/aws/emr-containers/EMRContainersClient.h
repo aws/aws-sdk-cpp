@@ -777,7 +777,7 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&EMRContainersClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<EMRContainersEndpointProviderBase>& accessEndpointProvider();
 
  private:

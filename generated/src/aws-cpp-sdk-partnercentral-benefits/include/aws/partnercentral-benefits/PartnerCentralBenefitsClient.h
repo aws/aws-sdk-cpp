@@ -545,7 +545,7 @@ class AWS_PARTNERCENTRALBENEFITS_API PartnerCentralBenefitsClient
     return SubmitAsync(&PartnerCentralBenefitsClient::UpdateBenefitApplication, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PartnerCentralBenefitsEndpointProviderBase>& accessEndpointProvider();
 
  private:

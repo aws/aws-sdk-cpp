@@ -985,7 +985,7 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&NeptuneGraphClient::UpdateGraph, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<NeptuneGraphEndpointProviderBase>& accessEndpointProvider();
 
  private:

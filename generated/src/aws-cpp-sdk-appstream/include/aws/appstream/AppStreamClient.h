@@ -2592,7 +2592,7 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&AppStreamClient::UpdateThemeForStack, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AppStreamEndpointProviderBase>& accessEndpointProvider();
 
  private:

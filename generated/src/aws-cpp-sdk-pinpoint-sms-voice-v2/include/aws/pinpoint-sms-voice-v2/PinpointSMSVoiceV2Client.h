@@ -2931,7 +2931,7 @@ class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::
     return SubmitAsync(&PinpointSMSVoiceV2Client::VerifyDestinationNumber, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PinpointSMSVoiceV2EndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -556,7 +556,7 @@ class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&OAMClient::UpdateLink, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<OAMEndpointProviderBase>& accessEndpointProvider();
 
  private:

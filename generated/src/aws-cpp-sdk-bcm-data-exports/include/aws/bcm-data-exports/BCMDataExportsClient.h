@@ -411,7 +411,7 @@ class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&BCMDataExportsClient::UpdateExport, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<BCMDataExportsEndpointProviderBase>& accessEndpointProvider();
 
  private:

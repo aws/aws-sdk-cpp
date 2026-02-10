@@ -1916,7 +1916,7 @@ class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AW
     return SubmitAsync(&GlobalAcceleratorClient::WithdrawByoipCidr, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GlobalAcceleratorEndpointProviderBase>& accessEndpointProvider();
 
  private:

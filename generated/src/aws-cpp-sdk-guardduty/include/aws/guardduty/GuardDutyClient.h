@@ -2673,7 +2673,7 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GuardDutyClient::UpdateTrustedEntitySet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GuardDutyEndpointProviderBase>& accessEndpointProvider();
 
  private:

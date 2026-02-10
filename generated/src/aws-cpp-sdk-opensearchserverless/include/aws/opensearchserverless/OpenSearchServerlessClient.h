@@ -1446,7 +1446,7 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
     return SubmitAsync(&OpenSearchServerlessClient::UpdateVpcEndpoint, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<OpenSearchServerlessEndpointProviderBase>& accessEndpointProvider();
 
  private:

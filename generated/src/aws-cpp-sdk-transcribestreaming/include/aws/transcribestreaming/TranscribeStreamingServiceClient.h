@@ -233,7 +233,7 @@ class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient
                                              const StartStreamTranscriptionResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:

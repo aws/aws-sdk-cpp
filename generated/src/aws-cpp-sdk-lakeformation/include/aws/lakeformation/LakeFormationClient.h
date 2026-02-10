@@ -1881,7 +1881,7 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&LakeFormationClient::UpdateTableStorageOptimizer, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<LakeFormationEndpointProviderBase>& accessEndpointProvider();
 
  private:

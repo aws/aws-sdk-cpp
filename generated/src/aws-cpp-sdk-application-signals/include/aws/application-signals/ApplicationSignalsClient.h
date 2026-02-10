@@ -851,7 +851,7 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
     return SubmitAsync(&ApplicationSignalsClient::UpdateServiceLevelObjective, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ApplicationSignalsEndpointProviderBase>& accessEndpointProvider();
 
  private:

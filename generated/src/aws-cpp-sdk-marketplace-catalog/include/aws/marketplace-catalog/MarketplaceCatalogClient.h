@@ -461,7 +461,7 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::
     return SubmitAsync(&MarketplaceCatalogClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MarketplaceCatalogEndpointProviderBase>& accessEndpointProvider();
 
  private:

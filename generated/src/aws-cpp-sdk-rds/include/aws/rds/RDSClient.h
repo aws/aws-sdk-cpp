@@ -5626,7 +5626,7 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
     return SubmitAsync(&RDSClient::SwitchoverReadReplica, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<RDSEndpointProviderBase>& accessEndpointProvider();
 
  private:

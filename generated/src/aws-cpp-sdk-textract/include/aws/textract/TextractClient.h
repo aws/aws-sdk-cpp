@@ -984,7 +984,7 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&TextractClient::UpdateAdapter, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<TextractEndpointProviderBase>& accessEndpointProvider();
 
  private:

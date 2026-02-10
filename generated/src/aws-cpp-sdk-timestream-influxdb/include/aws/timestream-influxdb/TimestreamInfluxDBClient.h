@@ -579,7 +579,7 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
     return SubmitAsync(&TimestreamInfluxDBClient::UpdateDbInstance, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<TimestreamInfluxDBEndpointProviderBase>& accessEndpointProvider();
 
  private:

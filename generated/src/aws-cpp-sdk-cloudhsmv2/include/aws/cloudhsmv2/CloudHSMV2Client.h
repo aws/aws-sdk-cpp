@@ -634,7 +634,7 @@ class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CloudHSMV2Client::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CloudHSMV2EndpointProviderBase>& accessEndpointProvider();
 
  private:

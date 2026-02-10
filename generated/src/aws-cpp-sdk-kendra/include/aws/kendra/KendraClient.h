@@ -2202,7 +2202,7 @@ class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&KendraClient::UpdateThesaurus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<KendraEndpointProviderBase>& accessEndpointProvider();
 
  private:

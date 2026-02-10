@@ -186,7 +186,7 @@ class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient
     return SubmitAsync(&MarketplaceDeploymentClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MarketplaceDeploymentEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -527,7 +527,7 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&AccountClient::StartPrimaryEmailUpdate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<AccountEndpointProviderBase>& accessEndpointProvider();
 
  private:

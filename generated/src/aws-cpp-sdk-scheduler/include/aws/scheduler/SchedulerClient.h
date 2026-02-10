@@ -403,7 +403,7 @@ class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SchedulerClient::UpdateSchedule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SchedulerEndpointProviderBase>& accessEndpointProvider();
 
  private:

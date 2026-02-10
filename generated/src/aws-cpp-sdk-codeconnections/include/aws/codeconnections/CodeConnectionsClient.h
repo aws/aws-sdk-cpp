@@ -860,7 +860,7 @@ class AWS_CODECONNECTIONS_API CodeConnectionsClient : public Aws::Client::AWSJso
     return SubmitAsync(&CodeConnectionsClient::UpdateSyncConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeConnectionsEndpointProviderBase>& accessEndpointProvider();
 
  private:

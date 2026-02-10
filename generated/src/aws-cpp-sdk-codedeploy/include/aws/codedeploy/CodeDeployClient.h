@@ -1356,7 +1356,7 @@ class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CodeDeployClient::UpdateDeploymentGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeDeployEndpointProviderBase>& accessEndpointProvider();
 
  private:

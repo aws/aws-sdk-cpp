@@ -1051,7 +1051,7 @@ class AWS_GREENGRASSV2_API GreengrassV2Client : public Aws::Client::AWSJsonClien
     return SubmitAsync(&GreengrassV2Client::UpdateConnectivityInfo, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<GreengrassV2EndpointProviderBase>& accessEndpointProvider();
 
  private:

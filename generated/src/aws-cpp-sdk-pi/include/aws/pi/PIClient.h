@@ -474,7 +474,7 @@ class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient, public Aws::Clien
     return SubmitAsync(&PIClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PIEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -424,7 +424,7 @@ class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient
     return SubmitAsync(&WorkspacesInstancesClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<WorkspacesInstancesEndpointProviderBase>& accessEndpointProvider();
 
  private:

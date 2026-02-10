@@ -2353,7 +2353,7 @@ class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&Macie2Client::UpdateSensitivityInspectionTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<Macie2EndpointProviderBase>& accessEndpointProvider();
 
  private:

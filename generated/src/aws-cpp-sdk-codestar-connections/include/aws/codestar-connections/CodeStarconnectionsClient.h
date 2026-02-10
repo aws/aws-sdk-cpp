@@ -862,7 +862,7 @@ class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient
     return SubmitAsync(&CodeStarconnectionsClient::UpdateSyncConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeStarconnectionsEndpointProviderBase>& accessEndpointProvider();
 
  private:

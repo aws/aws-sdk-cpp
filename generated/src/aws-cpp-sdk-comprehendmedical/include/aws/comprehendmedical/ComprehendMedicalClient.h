@@ -811,7 +811,7 @@ class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AW
     return SubmitAsync(&ComprehendMedicalClient::StopSNOMEDCTInferenceJob, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ComprehendMedicalEndpointProviderBase>& accessEndpointProvider();
 
  private:

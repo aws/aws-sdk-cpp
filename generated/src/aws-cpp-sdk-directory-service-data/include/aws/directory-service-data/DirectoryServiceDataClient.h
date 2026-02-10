@@ -596,7 +596,7 @@ class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient
     return SubmitAsync(&DirectoryServiceDataClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<DirectoryServiceDataEndpointProviderBase>& accessEndpointProvider();
 
  private:

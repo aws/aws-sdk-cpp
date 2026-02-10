@@ -1676,7 +1676,7 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
     return SubmitAsync(&ElasticLoadBalancingv2Client::SetSubnets, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase>& accessEndpointProvider();
 
  private:

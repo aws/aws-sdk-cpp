@@ -418,7 +418,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
     return SubmitAsync(&PcaConnectorScepClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PcaConnectorScepEndpointProviderBase>& accessEndpointProvider();
 
  private:

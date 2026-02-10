@@ -221,7 +221,7 @@ class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AW
     return SubmitAsync(&PersonalizeEventsClient::PutUsers, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PersonalizeEventsEndpointProviderBase>& accessEndpointProvider();
 
  private:

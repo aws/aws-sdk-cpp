@@ -838,7 +838,7 @@ class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
     return SubmitAsync(&MigrationHubRefactorSpacesClient::UpdateRoute, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase>& accessEndpointProvider();
 
  private:

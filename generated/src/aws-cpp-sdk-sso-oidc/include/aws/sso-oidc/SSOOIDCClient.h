@@ -223,7 +223,7 @@ class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&SSOOIDCClient::StartDeviceAuthorization, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<SSOOIDCEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -3650,7 +3650,7 @@ class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&WAFRegionalClient::UpdateXssMatchSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<WAFRegionalEndpointProviderBase>& accessEndpointProvider();
 
  private:

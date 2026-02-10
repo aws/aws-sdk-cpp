@@ -995,7 +995,7 @@ class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient
     return SubmitAsync(&ApplicationInsightsClient::UpdateWorkload, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<ApplicationInsightsEndpointProviderBase>& accessEndpointProvider();
 
  private:

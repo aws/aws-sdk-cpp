@@ -1731,7 +1731,7 @@ class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CodeArtifactClient::UpdateRepository, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<CodeArtifactEndpointProviderBase>& accessEndpointProvider();
 
  private:

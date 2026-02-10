@@ -997,7 +997,7 @@ class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&PanoramaClient::UpdateDeviceMetadata, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<PanoramaEndpointProviderBase>& accessEndpointProvider();
 
  private:

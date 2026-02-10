@@ -1097,7 +1097,7 @@ class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient
     return SubmitAsync(&MainframeModernizationClient::UpdateEnvironment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MainframeModernizationEndpointProviderBase>& accessEndpointProvider();
 
  private:

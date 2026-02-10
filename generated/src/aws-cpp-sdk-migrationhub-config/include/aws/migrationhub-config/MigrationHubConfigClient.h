@@ -204,7 +204,7 @@ class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::
     return SubmitAsync(&MigrationHubConfigClient::GetHomeRegion, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<MigrationHubConfigEndpointProviderBase>& accessEndpointProvider();
 
  private:

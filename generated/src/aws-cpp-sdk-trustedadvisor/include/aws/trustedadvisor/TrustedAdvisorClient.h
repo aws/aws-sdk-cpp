@@ -396,7 +396,7 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&TrustedAdvisorClient::UpdateRecommendationLifecycle, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
   std::shared_ptr<TrustedAdvisorEndpointProviderBase>& accessEndpointProvider();
 
  private:
