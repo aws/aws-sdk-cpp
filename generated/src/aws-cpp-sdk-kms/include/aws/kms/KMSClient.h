@@ -3840,8 +3840,8 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&KMSClient::VerifyMac, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KMSEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KMSEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;

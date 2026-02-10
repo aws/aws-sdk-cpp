@@ -2684,8 +2684,8 @@ class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ComprehendClient::UpdateFlywheel, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;

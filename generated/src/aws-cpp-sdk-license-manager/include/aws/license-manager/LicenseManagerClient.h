@@ -1823,8 +1823,8 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&LicenseManagerClient::UpdateServiceSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LicenseManagerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LicenseManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>;

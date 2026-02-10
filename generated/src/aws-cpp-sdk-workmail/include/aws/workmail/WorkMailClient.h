@@ -2736,8 +2736,8 @@ class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&WorkMailClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WorkMailEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WorkMailEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>;

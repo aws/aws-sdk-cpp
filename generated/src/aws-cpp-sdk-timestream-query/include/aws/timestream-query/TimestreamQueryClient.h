@@ -538,8 +538,8 @@ class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJso
     return SubmitAsync(&TimestreamQueryClient::UpdateScheduledQuery, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TimestreamQueryEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TimestreamQueryEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>;

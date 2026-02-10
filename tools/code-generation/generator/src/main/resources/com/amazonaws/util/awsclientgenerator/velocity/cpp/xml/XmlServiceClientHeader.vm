@@ -45,10 +45,14 @@ namespace ${serviceNamespace}
 
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
+#set($xml_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($xml_virtual = "virtual ")
+#end
 
-        void OverrideEndpoint(const Aws::String& endpoint);
+        ${xml_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+        ${xml_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
   private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;

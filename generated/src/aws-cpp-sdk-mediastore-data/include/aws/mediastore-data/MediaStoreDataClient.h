@@ -210,8 +210,8 @@ class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&MediaStoreDataClient::PutObject, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MediaStoreDataEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MediaStoreDataEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>;

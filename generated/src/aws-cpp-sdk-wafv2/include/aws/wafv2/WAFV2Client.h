@@ -1923,8 +1923,8 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&WAFV2Client::UpdateWebACL, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WAFV2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WAFV2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>;

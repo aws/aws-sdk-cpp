@@ -2514,8 +2514,8 @@ class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&PersonalizeClient::UpdateSolution, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>;

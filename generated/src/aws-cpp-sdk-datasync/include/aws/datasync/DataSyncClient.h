@@ -1683,8 +1683,8 @@ class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DataSyncClient::UpdateTaskExecution, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>;

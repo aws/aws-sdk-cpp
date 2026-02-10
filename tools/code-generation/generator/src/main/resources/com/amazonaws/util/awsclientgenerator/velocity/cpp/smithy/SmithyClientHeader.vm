@@ -65,28 +65,32 @@ namespace ${serviceNamespace}
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#set($smithy_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($smithy_virtual = "virtual ")
+#end
 #if($metadata.protocol == "query")
 
         /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        ${smithy_virtual}Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 #if($serviceModel.metadata.serviceId == "RDS")
 
         /**
         * Generates an auth token for connecting to an rds instance.
         */
-        Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
+        ${smithy_virtual}Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
 
 #end
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
 #foreach($presigner in $serviceModel.presigners)
-        Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn = 900);
+        ${smithy_virtual}Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn = 900);
 #end
-      void OverrideEndpoint(const ${rootNamespace}::String& endpoint);
-      std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+        ${smithy_virtual}void OverrideEndpoint(const ${rootNamespace}::String& endpoint);
+        ${smithy_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class ${rootNamespace}::Client::ClientWithAsyncTemplateMethods<${className}>;
 

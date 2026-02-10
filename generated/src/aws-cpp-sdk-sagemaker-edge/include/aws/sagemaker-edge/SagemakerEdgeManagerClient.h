@@ -156,8 +156,8 @@ class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient
     return SubmitAsync(&SagemakerEdgeManagerClient::SendHeartbeat, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>;

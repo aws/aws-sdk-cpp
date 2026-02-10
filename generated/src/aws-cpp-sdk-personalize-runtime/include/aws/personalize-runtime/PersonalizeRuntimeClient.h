@@ -180,8 +180,8 @@ class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::
     return SubmitAsync(&PersonalizeRuntimeClient::GetRecommendations, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PersonalizeRuntimeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PersonalizeRuntimeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>;

@@ -1111,8 +1111,8 @@ class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&ACMPCAClient::UpdateCertificateAuthority, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>;

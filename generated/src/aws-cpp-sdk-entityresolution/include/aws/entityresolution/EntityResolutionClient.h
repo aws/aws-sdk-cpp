@@ -1156,8 +1156,8 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
     return SubmitAsync(&EntityResolutionClient::UpdateSchemaMapping, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EntityResolutionEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EntityResolutionEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>;

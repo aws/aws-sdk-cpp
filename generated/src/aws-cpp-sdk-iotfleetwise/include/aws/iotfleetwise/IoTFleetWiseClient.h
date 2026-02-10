@@ -1748,8 +1748,8 @@ class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&IoTFleetWiseClient::UpdateVehicle, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTFleetWiseEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTFleetWiseEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>;

@@ -542,8 +542,8 @@ class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient
     return SubmitAsync(&KinesisVideoArchivedMediaClient::ListFragments, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>;

@@ -1574,8 +1574,8 @@ class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&SFNClient::ValidateStateMachineDefinition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>;

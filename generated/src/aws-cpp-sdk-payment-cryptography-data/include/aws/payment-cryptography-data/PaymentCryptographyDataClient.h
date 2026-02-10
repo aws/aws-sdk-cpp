@@ -866,8 +866,8 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
     return SubmitAsync(&PaymentCryptographyDataClient::VerifyPinData, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PaymentCryptographyDataEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PaymentCryptographyDataEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>;

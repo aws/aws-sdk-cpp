@@ -1535,8 +1535,8 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&GlacierClient::UploadMultipartPart, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<GlacierEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<GlacierEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>;

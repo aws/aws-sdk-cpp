@@ -111,8 +111,8 @@ class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&CloudTrailDataClient::PutAuditEvents, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudTrailDataEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudTrailDataEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>;

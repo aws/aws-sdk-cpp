@@ -25440,8 +25440,8 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
     return SubmitAsync(&EC2Client::WithdrawByoipCidr, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EC2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EC2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>;

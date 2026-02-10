@@ -417,8 +417,8 @@ class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&BackupSearchClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BackupSearchEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BackupSearchEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>;

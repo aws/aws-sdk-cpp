@@ -3666,8 +3666,8 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ConfigServiceClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ConfigServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ConfigServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>;

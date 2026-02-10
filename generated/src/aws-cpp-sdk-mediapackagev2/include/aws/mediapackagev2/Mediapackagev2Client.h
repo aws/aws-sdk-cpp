@@ -942,8 +942,8 @@ class AWS_MEDIAPACKAGEV2_API Mediapackagev2Client : public Aws::Client::AWSJsonC
     return SubmitAsync(&Mediapackagev2Client::UpdateOriginEndpoint, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<Mediapackagev2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<Mediapackagev2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client>;

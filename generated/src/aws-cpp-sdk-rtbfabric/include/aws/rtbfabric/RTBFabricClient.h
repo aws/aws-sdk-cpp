@@ -815,8 +815,8 @@ class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&RTBFabricClient::UpdateResponderGateway, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RTBFabricEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RTBFabricEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RTBFabricClient>;

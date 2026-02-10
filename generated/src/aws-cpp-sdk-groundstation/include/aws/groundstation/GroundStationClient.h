@@ -1031,8 +1031,8 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&GroundStationClient::UpdateMissionProfile, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<GroundStationEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<GroundStationEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>;

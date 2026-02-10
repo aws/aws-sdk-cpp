@@ -2445,8 +2445,8 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
     return SubmitAsync(&OpenSearchServiceClient::UpgradeDomain, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;

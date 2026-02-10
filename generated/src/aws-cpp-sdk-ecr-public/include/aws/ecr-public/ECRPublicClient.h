@@ -755,8 +755,8 @@ class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ECRPublicClient::UploadLayerPart, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ECRPublicEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ECRPublicEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>;

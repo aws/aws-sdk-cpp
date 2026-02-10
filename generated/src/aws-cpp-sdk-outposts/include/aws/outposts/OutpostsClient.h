@@ -1048,8 +1048,8 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&OutpostsClient::UpdateSiteRackPhysicalProperties, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OutpostsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OutpostsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>;

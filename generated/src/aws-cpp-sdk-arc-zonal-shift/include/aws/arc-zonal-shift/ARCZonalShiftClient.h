@@ -597,8 +597,8 @@ class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ARCZonalShiftClient::UpdateZonalShift, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ARCZonalShiftEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ARCZonalShiftEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>;

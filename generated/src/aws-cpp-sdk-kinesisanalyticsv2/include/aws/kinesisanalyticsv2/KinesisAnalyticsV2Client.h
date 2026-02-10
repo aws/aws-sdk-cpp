@@ -1132,8 +1132,8 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
     return SubmitAsync(&KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>;

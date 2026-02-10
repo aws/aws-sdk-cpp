@@ -322,8 +322,8 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&BCMDashboardsClient::UpdateDashboard, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BCMDashboardsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BCMDashboardsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>;

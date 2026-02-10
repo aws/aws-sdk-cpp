@@ -3770,8 +3770,8 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
     return SubmitAsync(&DatabaseMigrationServiceClient::UpdateSubscriptionsToEventBridge, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>;

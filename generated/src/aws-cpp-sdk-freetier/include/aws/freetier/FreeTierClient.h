@@ -216,8 +216,8 @@ class AWS_FREETIER_API FreeTierClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&FreeTierClient::UpgradeAccountPlan, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<FreeTierEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<FreeTierEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FreeTierClient>;

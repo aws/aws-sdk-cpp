@@ -995,8 +995,8 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJ
     return SubmitAsync(&BillingConductorClient::UpdatePricingRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BillingConductorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BillingConductorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>;

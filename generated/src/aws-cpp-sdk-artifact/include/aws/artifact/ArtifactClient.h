@@ -285,8 +285,8 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ArtifactClient::PutAccountSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ArtifactEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ArtifactEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>;

@@ -566,8 +566,8 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&KafkaConnectClient::UpdateConnector, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KafkaConnectEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KafkaConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>;

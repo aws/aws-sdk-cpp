@@ -780,8 +780,8 @@ class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SyntheticsClient::UpdateCanary, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SyntheticsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SyntheticsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>;

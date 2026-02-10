@@ -1422,8 +1422,8 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
     return SubmitAsync(&PrometheusServiceClient::UpdateWorkspaceConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PrometheusServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PrometheusServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>;

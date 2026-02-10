@@ -447,8 +447,8 @@ class AWS_NETWORKMONITOR_API NetworkMonitorClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&NetworkMonitorClient::UpdateProbe, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NetworkMonitorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NetworkMonitorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkMonitorClient>;

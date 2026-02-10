@@ -2178,8 +2178,8 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
     return SubmitAsync(&BedrockAgentClient::ValidateFlowDefinition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BedrockAgentEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BedrockAgentEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>;

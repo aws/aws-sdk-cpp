@@ -2194,8 +2194,8 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DeviceFarmClient::UpdateVPCEConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DeviceFarmEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DeviceFarmEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>;

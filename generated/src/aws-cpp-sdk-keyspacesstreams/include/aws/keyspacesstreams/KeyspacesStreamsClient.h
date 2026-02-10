@@ -215,8 +215,8 @@ class AWS_KEYSPACESSTREAMS_API KeyspacesStreamsClient : public Aws::Client::AWSJ
     return SubmitAsync(&KeyspacesStreamsClient::ListStreams, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KeyspacesStreamsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KeyspacesStreamsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesStreamsClient>;

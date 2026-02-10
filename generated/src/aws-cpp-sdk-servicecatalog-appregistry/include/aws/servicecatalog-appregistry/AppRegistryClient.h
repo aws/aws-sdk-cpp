@@ -792,8 +792,8 @@ class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&AppRegistryClient::UpdateAttributeGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppRegistryEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppRegistryEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>;

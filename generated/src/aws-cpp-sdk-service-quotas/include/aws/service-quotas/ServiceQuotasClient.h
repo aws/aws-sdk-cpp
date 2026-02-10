@@ -877,8 +877,8 @@ class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ServiceQuotasClient::UpdateAutoManagement, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>;

@@ -1305,8 +1305,8 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&OdbClient::UpdateOdbPeeringConnection, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OdbEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OdbEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OdbClient>;

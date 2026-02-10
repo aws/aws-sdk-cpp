@@ -700,8 +700,8 @@ class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommenda
     return SubmitAsync(&MigrationHubStrategyRecommendationsClient::UpdateServerConfig, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;

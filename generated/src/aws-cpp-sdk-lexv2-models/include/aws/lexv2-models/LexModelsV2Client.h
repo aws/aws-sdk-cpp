@@ -3034,8 +3034,8 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&LexModelsV2Client::UpdateTestSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LexModelsV2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LexModelsV2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>;

@@ -2106,8 +2106,8 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&AthenaClient::UpdateWorkGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AthenaEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AthenaEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>;
