@@ -138,8 +138,8 @@ class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient
     return SubmitAsync(&ForecastQueryServiceClient::QueryWhatIfForecast, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ForecastQueryServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ForecastQueryServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>;

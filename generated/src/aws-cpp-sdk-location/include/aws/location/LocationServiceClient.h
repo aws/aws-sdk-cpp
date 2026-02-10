@@ -2318,8 +2318,8 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
     return SubmitAsync(&LocationServiceClient::VerifyDevicePosition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>;

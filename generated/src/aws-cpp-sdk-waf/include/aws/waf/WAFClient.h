@@ -3502,8 +3502,8 @@ class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&WAFClient::UpdateXssMatchSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WAFEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WAFEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>;

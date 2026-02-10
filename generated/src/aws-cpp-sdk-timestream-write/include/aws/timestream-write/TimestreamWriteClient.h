@@ -711,8 +711,8 @@ class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJso
     return SubmitAsync(&TimestreamWriteClient::WriteRecords, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;

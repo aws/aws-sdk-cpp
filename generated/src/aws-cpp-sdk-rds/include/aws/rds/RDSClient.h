@@ -110,12 +110,13 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   /**
    * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
    */
-  Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+  virtual Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert,
+                                                   const char* region) const;
 
   /**
    * Generates an auth token for connecting to an rds instance.
    */
-  Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
+  virtual Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
 
   /**
    * <p>Associates an Identity and Access Management (IAM) role with a DB
@@ -5626,8 +5627,8 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
     return SubmitAsync(&RDSClient::SwitchoverReadReplica, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RDSEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RDSEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>;

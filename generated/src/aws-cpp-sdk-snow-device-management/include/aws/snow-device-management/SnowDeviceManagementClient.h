@@ -428,8 +428,8 @@ class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient
     return SubmitAsync(&SnowDeviceManagementClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SnowDeviceManagementEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SnowDeviceManagementEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>;

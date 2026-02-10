@@ -748,8 +748,8 @@ class AWS_MIGRATIONHUB_API MigrationHubClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&MigrationHubClient::PutResourceAttributes, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MigrationHubEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MigrationHubEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubClient>;

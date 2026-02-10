@@ -308,8 +308,8 @@ class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::
     return SubmitAsync(&IoTSecureTunnelingClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTSecureTunnelingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTSecureTunnelingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>;

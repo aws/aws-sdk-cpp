@@ -1133,8 +1133,8 @@ class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&InspectorClient::UpdateAssessmentTarget, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<InspectorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<InspectorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>;

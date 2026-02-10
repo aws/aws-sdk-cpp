@@ -115,8 +115,8 @@ class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient
     return SubmitAsync(&MarketplaceCommerceAnalyticsClient::GenerateDataSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>;

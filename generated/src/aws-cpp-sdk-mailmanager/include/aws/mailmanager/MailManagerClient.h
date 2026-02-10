@@ -1685,8 +1685,8 @@ class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&MailManagerClient::UpdateTrafficPolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MailManagerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MailManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>;

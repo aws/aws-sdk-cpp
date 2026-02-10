@@ -2170,8 +2170,8 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&EKSClient::UpdatePodIdentityAssociation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;

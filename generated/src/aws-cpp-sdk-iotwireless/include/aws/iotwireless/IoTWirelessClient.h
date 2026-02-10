@@ -3128,8 +3128,8 @@ class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&IoTWirelessClient::UpdateWirelessGateway, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTWirelessEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTWirelessEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>;

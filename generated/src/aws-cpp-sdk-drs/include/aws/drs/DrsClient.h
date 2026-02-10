@@ -1496,8 +1496,8 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&DrsClient::UpdateReplicationConfigurationTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DrsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DrsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;

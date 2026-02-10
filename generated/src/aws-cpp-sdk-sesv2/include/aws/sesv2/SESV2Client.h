@@ -3441,8 +3441,8 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&SESV2Client::UpdateReputationEntityPolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SESV2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SESV2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>;

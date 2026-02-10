@@ -934,8 +934,8 @@ class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&RolesAnywhereClient::UpdateTrustAnchor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RolesAnywhereEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RolesAnywhereEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>;

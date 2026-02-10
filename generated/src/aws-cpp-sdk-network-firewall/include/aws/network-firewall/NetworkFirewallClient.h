@@ -2611,8 +2611,8 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
     return SubmitAsync(&NetworkFirewallClient::UpdateTLSInspectionConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NetworkFirewallEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NetworkFirewallEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>;

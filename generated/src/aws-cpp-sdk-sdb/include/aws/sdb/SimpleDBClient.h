@@ -455,8 +455,8 @@ class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&SimpleDBClient::Select, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SimpleDBEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SimpleDBEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>;

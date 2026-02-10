@@ -1279,8 +1279,8 @@ class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&WickrClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WickrEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WickrEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WickrClient>;

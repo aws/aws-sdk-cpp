@@ -289,8 +289,8 @@ class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AW
     return SubmitAsync(&LexRuntimeServiceClient::PutSession, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>;

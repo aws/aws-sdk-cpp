@@ -1538,8 +1538,8 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
     return SubmitAsync(&TranscribeServiceClient::UpdateVocabularyFilter, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TranscribeServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TranscribeServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>;

@@ -929,8 +929,8 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
     return SubmitAsync(&NetworkFlowMonitorClient::UpdateScope, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NetworkFlowMonitorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NetworkFlowMonitorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>;

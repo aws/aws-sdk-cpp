@@ -977,8 +977,8 @@ class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SupplyChainClient::UpdateInstance, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SupplyChainEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SupplyChainEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>;

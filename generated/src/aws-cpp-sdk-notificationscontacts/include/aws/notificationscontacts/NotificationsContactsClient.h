@@ -326,8 +326,8 @@ class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsClient
     return SubmitAsync(&NotificationsContactsClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NotificationsContactsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NotificationsContactsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsContactsClient>;

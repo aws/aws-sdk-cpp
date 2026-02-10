@@ -1118,8 +1118,8 @@ class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&IoTTwinMakerClient::UpdateWorkspace, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTTwinMakerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTTwinMakerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>;

@@ -341,8 +341,8 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&IoTDataPlaneClient::UpdateThingShadow, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTDataPlaneEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTDataPlaneEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>;

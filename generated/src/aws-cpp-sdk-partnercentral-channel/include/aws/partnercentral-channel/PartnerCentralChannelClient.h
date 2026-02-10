@@ -542,8 +542,8 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
     return SubmitAsync(&PartnerCentralChannelClient::UpdateRelationship, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PartnerCentralChannelEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PartnerCentralChannelEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralChannelClient>;

@@ -1855,8 +1855,8 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&ECRClient::ValidatePullThroughCacheRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ECREndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ECREndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>;

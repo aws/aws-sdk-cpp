@@ -696,8 +696,8 @@ class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&FirehoseClient::UpdateDestination, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<FirehoseEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<FirehoseEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>;

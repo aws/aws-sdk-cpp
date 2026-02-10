@@ -368,8 +368,8 @@ class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&RecycleBinClient::UpdateRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RecycleBinEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RecycleBinEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>;

@@ -141,8 +141,8 @@ class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient
     return SubmitAsync(&WorkMailMessageFlowClient::PutRawMessageContent, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>;

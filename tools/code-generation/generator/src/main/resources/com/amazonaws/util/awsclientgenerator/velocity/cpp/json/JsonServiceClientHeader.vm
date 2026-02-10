@@ -38,10 +38,14 @@ namespace ${serviceNamespace}
 #foreach($presigner in $serviceModel.presigners)
         Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn = 900);
 #end
+#set($json_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($json_virtual = "virtual ")
+#end
 
-      void OverrideEndpoint(const Aws::String& endpoint);
+    ${json_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-      std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+    ${json_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
     private:
       friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;

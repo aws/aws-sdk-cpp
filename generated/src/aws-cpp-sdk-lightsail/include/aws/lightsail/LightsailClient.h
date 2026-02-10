@@ -5166,8 +5166,8 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&LightsailClient::UpdateRelationalDatabaseParameters, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LightsailEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LightsailEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>;

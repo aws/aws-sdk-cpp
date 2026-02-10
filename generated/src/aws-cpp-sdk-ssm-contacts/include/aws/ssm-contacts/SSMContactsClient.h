@@ -1144,8 +1144,8 @@ class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SSMContactsClient::UpdateRotation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SSMContactsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SSMContactsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>;

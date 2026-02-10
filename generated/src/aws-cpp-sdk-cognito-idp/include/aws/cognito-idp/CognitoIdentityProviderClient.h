@@ -4995,8 +4995,8 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
     return SubmitAsync(&CognitoIdentityProviderClient::VerifyUserAttribute, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CognitoIdentityProviderEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CognitoIdentityProviderEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient>;

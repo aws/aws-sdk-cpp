@@ -733,8 +733,8 @@ class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&KeyspacesClient::UpdateTable, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KeyspacesEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KeyspacesEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>;

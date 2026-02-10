@@ -35,25 +35,29 @@ namespace ${rootNamespace}
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#set($rds_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($rds_virtual = "virtual ")
+#end
 
     #if($metadata.findFirstSupportedProtocol() == "query")
 
         /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        ${rds_virtual}Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
         /**
         * Generates an auth token for connecting to an rds instance.
         */
-        Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
+        ${rds_virtual}Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
 
     #end
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
-        void OverrideEndpoint(const Aws::String& endpoint);
+        ${rds_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+        ${rds_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
     private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;

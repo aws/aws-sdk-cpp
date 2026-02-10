@@ -1907,8 +1907,8 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::
     return SubmitAsync(&RedshiftServerlessClient::UpdateWorkgroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RedshiftServerlessEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RedshiftServerlessEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>;

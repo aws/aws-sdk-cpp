@@ -1433,8 +1433,8 @@ class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CodePipelineClient::UpdatePipeline, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodePipelineEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodePipelineEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>;

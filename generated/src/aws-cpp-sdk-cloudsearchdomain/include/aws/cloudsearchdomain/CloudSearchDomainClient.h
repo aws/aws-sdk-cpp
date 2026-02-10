@@ -214,8 +214,8 @@ class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AW
     return SubmitAsync(&CloudSearchDomainClient::UploadDocuments, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudSearchDomainEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudSearchDomainEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>;

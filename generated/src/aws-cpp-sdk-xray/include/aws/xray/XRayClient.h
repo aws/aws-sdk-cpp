@@ -1237,8 +1237,8 @@ class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&XRayClient::UpdateTraceSegmentDestination, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>;

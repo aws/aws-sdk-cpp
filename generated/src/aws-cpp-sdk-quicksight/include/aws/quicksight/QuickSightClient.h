@@ -6995,8 +6995,8 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&QuickSightClient::UpdateVPCConnection, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<QuickSightEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<QuickSightEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>;

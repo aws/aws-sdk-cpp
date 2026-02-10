@@ -3106,8 +3106,8 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DeadlineClient::UpdateWorkerSchedule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DeadlineEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DeadlineEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>;

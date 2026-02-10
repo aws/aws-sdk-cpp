@@ -1308,8 +1308,8 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
     return SubmitAsync(&ObservabilityAdminClient::ValidateTelemetryPipelineConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ObservabilityAdminEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ObservabilityAdminEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>;

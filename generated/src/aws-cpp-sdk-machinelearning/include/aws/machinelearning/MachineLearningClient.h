@@ -985,8 +985,8 @@ class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJso
     return SubmitAsync(&MachineLearningClient::UpdateMLModel, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MachineLearningEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MachineLearningEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>;

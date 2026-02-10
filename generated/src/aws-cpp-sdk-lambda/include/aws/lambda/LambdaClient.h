@@ -2912,8 +2912,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&LambdaClient::UpdateFunctionUrlConfig, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LambdaEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LambdaEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>;

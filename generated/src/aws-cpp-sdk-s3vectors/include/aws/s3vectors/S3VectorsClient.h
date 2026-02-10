@@ -703,8 +703,8 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&S3VectorsClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<S3VectorsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<S3VectorsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient>;

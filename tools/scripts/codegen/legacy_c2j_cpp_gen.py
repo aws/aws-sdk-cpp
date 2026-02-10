@@ -83,6 +83,7 @@ class LegacyC2jCppGen(object):
 
         self.raw_generator_arguments = args["raw_generator_arguments"]
         self.output_location = args["output_location"]
+        self.disable_virtual_operations = args.get("disable_virtual_operations", False)
 
     def generate(self, executor: ProcessPoolExecutor, max_workers: int, args: dict) -> int:
         """
@@ -167,7 +168,7 @@ class LegacyC2jCppGen(object):
         # raw arguments to be passed from Py wrapper to the actual generator
         if not kwargs.get("language-binding"):
             kwargs["language-binding"] = "cpp"  # Always cpp by default in the current code gen
-        if not kwargs.get("enable-virtual-operations"):
+        if not self.disable_virtual_operations:
             kwargs["enable-virtual-operations"] = ""  # Historically always set by default in this project
 
         if tmp_dir:

@@ -57,10 +57,14 @@ namespace ${metadata.namespace}
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
+#set($s3_control_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($s3_control_virtual = "virtual ")
+#end
 
-        void OverrideEndpoint(const Aws::String& endpoint);
+        ${s3_control_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+        ${s3_control_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
     private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;

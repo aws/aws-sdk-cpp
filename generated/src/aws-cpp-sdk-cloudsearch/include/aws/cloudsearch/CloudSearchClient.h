@@ -917,8 +917,8 @@ class AWS_CLOUDSEARCH_API CloudSearchClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&CloudSearchClient::UpdateServiceAccessPolicies, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudSearchEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudSearchEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient>;

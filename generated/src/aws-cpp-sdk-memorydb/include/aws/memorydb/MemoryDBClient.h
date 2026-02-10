@@ -1374,8 +1374,8 @@ class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&MemoryDBClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MemoryDBEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MemoryDBEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>;

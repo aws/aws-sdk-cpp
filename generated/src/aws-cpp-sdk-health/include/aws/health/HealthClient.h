@@ -679,8 +679,8 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&HealthClient::EnableHealthServiceAccessForOrganization, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>;

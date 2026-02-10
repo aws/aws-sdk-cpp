@@ -52,6 +52,9 @@ def parse_arguments() -> dict:
                         help="Code generator raw argument to be passed through to "
                              "mark operation functions in service client as virtual functions. Always on by default",
                         action="store_true")
+    parser.add_argument("--disable-virtual-operations",
+                        help="Do NOT mark operation functions in service client as virtual functions",
+                        action="store_true")
 
     parser.add_argument("--generate_smoke_tests",
                         help="Run smithy code generator for smoke tests",
@@ -114,6 +117,7 @@ def parse_arguments() -> dict:
         if args.get(raw_argument):
             raw_generator_arguments[raw_argument] = args[raw_argument]
     arg_map["raw_generator_arguments"] = raw_generator_arguments
+    arg_map["disable_virtual_operations"] = args.get("disable_virtual_operations", False)
     arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
     arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
     if arg_map["debug"]:

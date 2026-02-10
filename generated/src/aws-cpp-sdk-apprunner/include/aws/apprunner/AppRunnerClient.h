@@ -1220,8 +1220,8 @@ class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&AppRunnerClient::UpdateVpcIngressConnection, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;
