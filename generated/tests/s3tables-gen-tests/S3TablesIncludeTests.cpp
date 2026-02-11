@@ -71,8 +71,14 @@
 #include <aws/s3tables/model/IcebergCompactionSettings.h>
 #include <aws/s3tables/model/IcebergCompactionStrategy.h>
 #include <aws/s3tables/model/IcebergMetadata.h>
+#include <aws/s3tables/model/IcebergNullOrder.h>
+#include <aws/s3tables/model/IcebergPartitionField.h>
+#include <aws/s3tables/model/IcebergPartitionSpec.h>
 #include <aws/s3tables/model/IcebergSchema.h>
 #include <aws/s3tables/model/IcebergSnapshotManagementSettings.h>
+#include <aws/s3tables/model/IcebergSortDirection.h>
+#include <aws/s3tables/model/IcebergSortField.h>
+#include <aws/s3tables/model/IcebergSortOrder.h>
 #include <aws/s3tables/model/IcebergUnreferencedFileRemovalSettings.h>
 #include <aws/s3tables/model/JobStatus.h>
 #include <aws/s3tables/model/LastSuccessfulReplicatedUpdate.h>

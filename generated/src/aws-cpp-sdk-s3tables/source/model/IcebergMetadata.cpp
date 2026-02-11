@@ -22,6 +22,14 @@ IcebergMetadata& IcebergMetadata::operator=(JsonView jsonValue) {
     m_schema = jsonValue.GetObject("schema");
     m_schemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("partitionSpec")) {
+    m_partitionSpec = jsonValue.GetObject("partitionSpec");
+    m_partitionSpecHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("writeOrder")) {
+    m_writeOrder = jsonValue.GetObject("writeOrder");
+    m_writeOrderHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("properties")) {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
     for (auto& propertiesItem : propertiesJsonMap) {
@@ -37,6 +45,14 @@ JsonValue IcebergMetadata::Jsonize() const {
 
   if (m_schemaHasBeenSet) {
     payload.WithObject("schema", m_schema.Jsonize());
+  }
+
+  if (m_partitionSpecHasBeenSet) {
+    payload.WithObject("partitionSpec", m_partitionSpec.Jsonize());
+  }
+
+  if (m_writeOrderHasBeenSet) {
+    payload.WithObject("writeOrder", m_writeOrder.Jsonize());
   }
 
   if (m_propertiesHasBeenSet) {

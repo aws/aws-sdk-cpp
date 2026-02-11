@@ -83,7 +83,7 @@ class AutoScaling {
 
   ///@{
   /**
-   * <p>The sacle-in policy for the connector.</p>
+   * <p>The scale-in policy for the connector.</p>
    */
   inline const ScaleInPolicy& GetScaleInPolicy() const { return m_scaleInPolicy; }
   inline bool ScaleInPolicyHasBeenSet() const { return m_scaleInPolicyHasBeenSet; }
@@ -101,7 +101,7 @@ class AutoScaling {
 
   ///@{
   /**
-   * <p>The sacle-out policy for the connector.</p>
+   * <p>The scale-out policy for the connector.</p>
    */
   inline const ScaleOutPolicy& GetScaleOutPolicy() const { return m_scaleOutPolicy; }
   inline bool ScaleOutPolicyHasBeenSet() const { return m_scaleOutPolicyHasBeenSet; }
@@ -116,6 +116,23 @@ class AutoScaling {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of tasks allocated to the connector during autoscaling
+   * operations. Must be at least equal to maxWorkerCount.</p>
+   */
+  inline int GetMaxAutoscalingTaskCount() const { return m_maxAutoscalingTaskCount; }
+  inline bool MaxAutoscalingTaskCountHasBeenSet() const { return m_maxAutoscalingTaskCountHasBeenSet; }
+  inline void SetMaxAutoscalingTaskCount(int value) {
+    m_maxAutoscalingTaskCountHasBeenSet = true;
+    m_maxAutoscalingTaskCount = value;
+  }
+  inline AutoScaling& WithMaxAutoscalingTaskCount(int value) {
+    SetMaxAutoscalingTaskCount(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_maxWorkerCount{0};
 
@@ -126,11 +143,14 @@ class AutoScaling {
   ScaleInPolicy m_scaleInPolicy;
 
   ScaleOutPolicy m_scaleOutPolicy;
+
+  int m_maxAutoscalingTaskCount{0};
   bool m_maxWorkerCountHasBeenSet = false;
   bool m_mcuCountHasBeenSet = false;
   bool m_minWorkerCountHasBeenSet = false;
   bool m_scaleInPolicyHasBeenSet = false;
   bool m_scaleOutPolicyHasBeenSet = false;
+  bool m_maxAutoscalingTaskCountHasBeenSet = false;
 };
 
 }  // namespace Model

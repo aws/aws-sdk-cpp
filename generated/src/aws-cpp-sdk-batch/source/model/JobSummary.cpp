@@ -30,9 +30,24 @@ JobSummary& JobSummary::operator=(JsonView jsonValue) {
     m_jobName = jsonValue.GetString("jobName");
     m_jobNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capacityUsage")) {
+    Aws::Utils::Array<JsonView> capacityUsageJsonList = jsonValue.GetArray("capacityUsage");
+    for (unsigned capacityUsageIndex = 0; capacityUsageIndex < capacityUsageJsonList.GetLength(); ++capacityUsageIndex) {
+      m_capacityUsage.push_back(capacityUsageJsonList[capacityUsageIndex].AsObject());
+    }
+    m_capacityUsageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetInt64("createdAt");
     m_createdAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scheduledAt")) {
+    m_scheduledAt = jsonValue.GetInt64("scheduledAt");
+    m_scheduledAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("shareIdentifier")) {
+    m_shareIdentifier = jsonValue.GetString("shareIdentifier");
+    m_shareIdentifierHasBeenSet = true;
   }
   if (jsonValue.ValueExists("status")) {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
@@ -84,8 +99,24 @@ JsonValue JobSummary::Jsonize() const {
     payload.WithString("jobName", m_jobName);
   }
 
+  if (m_capacityUsageHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capacityUsageJsonList(m_capacityUsage.size());
+    for (unsigned capacityUsageIndex = 0; capacityUsageIndex < capacityUsageJsonList.GetLength(); ++capacityUsageIndex) {
+      capacityUsageJsonList[capacityUsageIndex].AsObject(m_capacityUsage[capacityUsageIndex].Jsonize());
+    }
+    payload.WithArray("capacityUsage", std::move(capacityUsageJsonList));
+  }
+
   if (m_createdAtHasBeenSet) {
     payload.WithInt64("createdAt", m_createdAt);
+  }
+
+  if (m_scheduledAtHasBeenSet) {
+    payload.WithInt64("scheduledAt", m_scheduledAt);
+  }
+
+  if (m_shareIdentifierHasBeenSet) {
+    payload.WithString("shareIdentifier", m_shareIdentifier);
   }
 
   if (m_statusHasBeenSet) {

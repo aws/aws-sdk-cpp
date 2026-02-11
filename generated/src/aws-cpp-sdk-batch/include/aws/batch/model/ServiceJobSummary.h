@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/LatestServiceJobAttempt.h>
+#include <aws/batch/model/ServiceJobCapacityUsageSummary.h>
 #include <aws/batch/model/ServiceJobStatus.h>
 #include <aws/batch/model/ServiceJobType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -48,6 +50,31 @@ class ServiceJobSummary {
   template <typename LatestAttemptT = LatestServiceJobAttempt>
   ServiceJobSummary& WithLatestAttempt(LatestAttemptT&& value) {
     SetLatestAttempt(std::forward<LatestAttemptT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The capacity usage information for this service job, including the unit of
+   * measure and quantity of resources being used.</p>
+   */
+  inline const Aws::Vector<ServiceJobCapacityUsageSummary>& GetCapacityUsage() const { return m_capacityUsage; }
+  inline bool CapacityUsageHasBeenSet() const { return m_capacityUsageHasBeenSet; }
+  template <typename CapacityUsageT = Aws::Vector<ServiceJobCapacityUsageSummary>>
+  void SetCapacityUsage(CapacityUsageT&& value) {
+    m_capacityUsageHasBeenSet = true;
+    m_capacityUsage = std::forward<CapacityUsageT>(value);
+  }
+  template <typename CapacityUsageT = Aws::Vector<ServiceJobCapacityUsageSummary>>
+  ServiceJobSummary& WithCapacityUsage(CapacityUsageT&& value) {
+    SetCapacityUsage(std::forward<CapacityUsageT>(value));
+    return *this;
+  }
+  template <typename CapacityUsageT = ServiceJobCapacityUsageSummary>
+  ServiceJobSummary& AddCapacityUsage(CapacityUsageT&& value) {
+    m_capacityUsageHasBeenSet = true;
+    m_capacityUsage.emplace_back(std::forward<CapacityUsageT>(value));
     return *this;
   }
   ///@}
@@ -119,6 +146,23 @@ class ServiceJobSummary {
   template <typename JobNameT = Aws::String>
   ServiceJobSummary& WithJobName(JobNameT&& value) {
     SetJobName(std::forward<JobNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the service job was scheduled
+   * for execution.</p>
+   */
+  inline long long GetScheduledAt() const { return m_scheduledAt; }
+  inline bool ScheduledAtHasBeenSet() const { return m_scheduledAtHasBeenSet; }
+  inline void SetScheduledAt(long long value) {
+    m_scheduledAtHasBeenSet = true;
+    m_scheduledAt = value;
+  }
+  inline ServiceJobSummary& WithScheduledAt(long long value) {
+    SetScheduledAt(value);
     return *this;
   }
   ///@}
@@ -229,6 +273,8 @@ class ServiceJobSummary {
  private:
   LatestServiceJobAttempt m_latestAttempt;
 
+  Aws::Vector<ServiceJobCapacityUsageSummary> m_capacityUsage;
+
   long long m_createdAt{0};
 
   Aws::String m_jobArn;
@@ -236,6 +282,8 @@ class ServiceJobSummary {
   Aws::String m_jobId;
 
   Aws::String m_jobName;
+
+  long long m_scheduledAt{0};
 
   ServiceJobType m_serviceJobType{ServiceJobType::NOT_SET};
 
@@ -249,10 +297,12 @@ class ServiceJobSummary {
 
   long long m_stoppedAt{0};
   bool m_latestAttemptHasBeenSet = false;
+  bool m_capacityUsageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_jobArnHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
+  bool m_scheduledAtHasBeenSet = false;
   bool m_serviceJobTypeHasBeenSet = false;
   bool m_shareIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;

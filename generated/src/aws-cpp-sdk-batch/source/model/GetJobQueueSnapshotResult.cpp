@@ -25,6 +25,10 @@ GetJobQueueSnapshotResult& GetJobQueueSnapshotResult::operator=(const Aws::Amazo
     m_frontOfQueue = jsonValue.GetObject("frontOfQueue");
     m_frontOfQueueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("queueUtilization")) {
+    m_queueUtilization = jsonValue.GetObject("queueUtilization");
+    m_queueUtilizationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
