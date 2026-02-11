@@ -24,6 +24,7 @@ static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int SUSPENDING_HASH = HashingUtils::HashString("SUSPENDING");
 static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+static const int RESUMING_HASH = HashingUtils::HashString("RESUMING");
 
 QueueStatus GetQueueStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ QueueStatus GetQueueStatusForName(const Aws::String& name) {
     return QueueStatus::SUSPENDING;
   } else if (hashCode == SUSPENDED_HASH) {
     return QueueStatus::SUSPENDED;
+  } else if (hashCode == RESUMING_HASH) {
+    return QueueStatus::RESUMING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForQueueStatus(QueueStatus enumValue) {
       return "SUSPENDING";
     case QueueStatus::SUSPENDED:
       return "SUSPENDED";
+    case QueueStatus::RESUMING:
+      return "RESUMING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

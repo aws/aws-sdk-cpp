@@ -27,7 +27,8 @@ enum class UpdateType {
   AutoModeUpdate,
   RemoteNetworkConfigUpdate,
   DeletionProtectionUpdate,
-  ControlPlaneScalingConfigUpdate
+  ControlPlaneScalingConfigUpdate,
+  VendedLogsUpdate
 };
 
 namespace UpdateTypeMapper {

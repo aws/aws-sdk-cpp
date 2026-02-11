@@ -249,6 +249,34 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws:
 
   /**
    *
+      <p>Creates a topic in the specified MSK cluster.</p>
+
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateTopic">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTopic that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateTopicRequestT = Model::CreateTopicRequest>
+  Model::CreateTopicOutcomeCallable CreateTopicCallable(const CreateTopicRequestT& request) const {
+    return SubmitCallable(&KafkaClient::CreateTopic, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTopic that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateTopicRequestT = Model::CreateTopicRequest>
+  void CreateTopicAsync(const CreateTopicRequestT& request, const CreateTopicResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::CreateTopic, request, handler, context);
+  }
+
+  /**
+   *
       <p>Creates a new MSK VPC connection.</p>
    <p><h3>See
    * Also:</h3>   <a
@@ -386,6 +414,34 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws:
   void DeleteReplicatorAsync(const DeleteReplicatorRequestT& request, const DeleteReplicatorResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::DeleteReplicator, request, handler, context);
+  }
+
+  /**
+   *
+      <p>Deletes a topic in the specified MSK cluster.</p>
+
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteTopic">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTopic that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteTopicRequestT = Model::DeleteTopicRequest>
+  Model::DeleteTopicOutcomeCallable DeleteTopicCallable(const DeleteTopicRequestT& request) const {
+    return SubmitCallable(&KafkaClient::DeleteTopic, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTopic that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteTopicRequestT = Model::DeleteTopicRequest>
+  void DeleteTopicAsync(const DeleteTopicRequestT& request, const DeleteTopicResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::DeleteTopic, request, handler, context);
   }
 
   /**
@@ -1702,6 +1758,34 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws:
   void UpdateStorageAsync(const UpdateStorageRequestT& request, const UpdateStorageResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaClient::UpdateStorage, request, handler, context);
+  }
+
+  /**
+   *
+      <p>Updates the configuration of the specified topic.</p>
+
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateTopic">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTopicOutcome UpdateTopic(const Model::UpdateTopicRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTopic that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateTopicRequestT = Model::UpdateTopicRequest>
+  Model::UpdateTopicOutcomeCallable UpdateTopicCallable(const UpdateTopicRequestT& request) const {
+    return SubmitCallable(&KafkaClient::UpdateTopic, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTopic that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateTopicRequestT = Model::UpdateTopicRequest>
+  void UpdateTopicAsync(const UpdateTopicRequestT& request, const UpdateTopicResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaClient::UpdateTopic, request, handler, context);
   }
 
   void OverrideEndpoint(const Aws::String& endpoint);

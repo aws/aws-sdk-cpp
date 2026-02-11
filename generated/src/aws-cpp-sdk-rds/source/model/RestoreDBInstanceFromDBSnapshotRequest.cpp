@@ -210,6 +210,14 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
+  if (m_backupRetentionPeriodHasBeenSet) {
+    ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
+  }
+
+  if (m_preferredBackupWindowHasBeenSet) {
+    ss << "PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
+  }
+
   if (m_dedicatedLogVolumeHasBeenSet) {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }

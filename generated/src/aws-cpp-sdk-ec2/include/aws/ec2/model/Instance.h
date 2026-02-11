@@ -28,6 +28,7 @@
 #include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/InstanceNetworkInterface.h>
 #include <aws/ec2/model/InstanceNetworkPerformanceOptions.h>
+#include <aws/ec2/model/InstanceSecondaryInterface.h>
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/LicenseConfiguration.h>
@@ -846,6 +847,30 @@ class Instance {
 
   ///@{
   /**
+   * <p>The secondary interfaces for the instance.</p>
+   */
+  inline const Aws::Vector<InstanceSecondaryInterface>& GetSecondaryInterfaces() const { return m_secondaryInterfaces; }
+  inline bool SecondaryInterfacesHasBeenSet() const { return m_secondaryInterfacesHasBeenSet; }
+  template <typename SecondaryInterfacesT = Aws::Vector<InstanceSecondaryInterface>>
+  void SetSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    m_secondaryInterfacesHasBeenSet = true;
+    m_secondaryInterfaces = std::forward<SecondaryInterfacesT>(value);
+  }
+  template <typename SecondaryInterfacesT = Aws::Vector<InstanceSecondaryInterface>>
+  Instance& WithSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    SetSecondaryInterfaces(std::forward<SecondaryInterfacesT>(value));
+    return *this;
+  }
+  template <typename SecondaryInterfacesT = InstanceSecondaryInterface>
+  Instance& AddSecondaryInterfaces(SecondaryInterfacesT&& value) {
+    m_secondaryInterfacesHasBeenSet = true;
+    m_secondaryInterfaces.emplace_back(std::forward<SecondaryInterfacesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the instance.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
@@ -1303,6 +1328,8 @@ class Instance {
 
   OperatorResponse m_operator;
 
+  Aws::Vector<InstanceSecondaryInterface> m_secondaryInterfaces;
+
   Aws::String m_instanceId;
 
   Aws::String m_imageId;
@@ -1382,6 +1409,7 @@ class Instance {
   bool m_currentInstanceBootModeHasBeenSet = false;
   bool m_networkPerformanceOptionsHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
+  bool m_secondaryInterfacesHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;

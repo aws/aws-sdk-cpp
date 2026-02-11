@@ -680,6 +680,7 @@ class UpdateSecurityProfileRequest;
 class UpdateTaskTemplateRequest;
 class UpdateTestCaseRequest;
 class UpdateTrafficDistributionRequest;
+class UpdateUserConfigRequest;
 class UpdateUserHierarchyRequest;
 class UpdateUserHierarchyGroupNameRequest;
 class UpdateUserHierarchyStructureRequest;
@@ -1038,6 +1039,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateSecurityProfileOu
 typedef Aws::Utils::Outcome<UpdateTaskTemplateResult, ConnectError> UpdateTaskTemplateOutcome;
 typedef Aws::Utils::Outcome<UpdateTestCaseResult, ConnectError> UpdateTestCaseOutcome;
 typedef Aws::Utils::Outcome<UpdateTrafficDistributionResult, ConnectError> UpdateTrafficDistributionOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyGroupNameOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyStructureOutcome;
@@ -1396,6 +1398,7 @@ typedef std::future<UpdateSecurityProfileOutcome> UpdateSecurityProfileOutcomeCa
 typedef std::future<UpdateTaskTemplateOutcome> UpdateTaskTemplateOutcomeCallable;
 typedef std::future<UpdateTestCaseOutcome> UpdateTestCaseOutcomeCallable;
 typedef std::future<UpdateTrafficDistributionOutcome> UpdateTrafficDistributionOutcomeCallable;
+typedef std::future<UpdateUserConfigOutcome> UpdateUserConfigOutcomeCallable;
 typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallable;
 typedef std::future<UpdateUserHierarchyGroupNameOutcome> UpdateUserHierarchyGroupNameOutcomeCallable;
 typedef std::future<UpdateUserHierarchyStructureOutcome> UpdateUserHierarchyStructureOutcomeCallable;
@@ -2501,6 +2504,9 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateTestCaseRequ
 typedef std::function<void(const ConnectClient*, const Model::UpdateTrafficDistributionRequest&,
                            const Model::UpdateTrafficDistributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTrafficDistributionResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateUserConfigRequest&, const Model::UpdateUserConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateUserConfigResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyRequest&, const Model::UpdateUserHierarchyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateUserHierarchyResponseReceivedHandler;

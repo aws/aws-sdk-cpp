@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
+#include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -196,6 +197,28 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>Optional proxy configuration for routing browser traffic through
+   * customer-specified proxy servers. When provided, enables HTTP Basic
+   * authentication via Amazon Web Services Secrets Manager and domain-based routing
+   * rules. Requires <code>secretsmanager:GetSecretValue</code> IAM permission for
+   * the specified secret ARNs.</p>
+   */
+  inline const ProxyConfiguration& GetProxyConfiguration() const { return m_proxyConfiguration; }
+  inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
+  template <typename ProxyConfigurationT = ProxyConfiguration>
+  void SetProxyConfiguration(ProxyConfigurationT&& value) {
+    m_proxyConfigurationHasBeenSet = true;
+    m_proxyConfiguration = std::forward<ProxyConfigurationT>(value);
+  }
+  template <typename ProxyConfigurationT = ProxyConfiguration>
+  StartBrowserSessionRequest& WithProxyConfiguration(ProxyConfigurationT&& value) {
+    SetProxyConfiguration(std::forward<ProxyConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If this token matches a previous request, Amazon Bedrock
    * AgentCore ignores the request, but does not return an error. This parameter
@@ -232,6 +255,8 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   BrowserProfileConfiguration m_profileConfiguration;
 
+  ProxyConfiguration m_proxyConfiguration;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
@@ -241,6 +266,7 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
   bool m_viewPortHasBeenSet = false;
   bool m_extensionsHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

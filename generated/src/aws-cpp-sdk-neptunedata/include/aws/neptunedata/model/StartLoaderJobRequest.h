@@ -393,6 +393,29 @@ class StartLoaderJobRequest : public NeptunedataRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> <b> <code>edgeOnlyLoad</code> </b>   –   A flag that controls file
+   * processing order during bulk loading.</p> <p> <i>Allowed values</i>:
+   * <code>"TRUE"</code>, <code>"FALSE"</code>.</p> <p> <i>Default value</i>:
+   * <code>"FALSE"</code>.</p> <p>When this parameter is set to "FALSE", the loader
+   * automatically loads vertex files first, then edge files afterwards. It does this
+   * by first scanning all files to determine their contents (vertices or edges).
+   * When this parameter is set to "TRUE", the loader skips the initial scanning
+   * phase and immediately loads all files in the order they appear.</p>
+   */
+  inline bool GetEdgeOnlyLoad() const { return m_edgeOnlyLoad; }
+  inline bool EdgeOnlyLoadHasBeenSet() const { return m_edgeOnlyLoadHasBeenSet; }
+  inline void SetEdgeOnlyLoad(bool value) {
+    m_edgeOnlyLoadHasBeenSet = true;
+    m_edgeOnlyLoad = value;
+  }
+  inline StartLoaderJobRequest& WithEdgeOnlyLoad(bool value) {
+    SetEdgeOnlyLoad(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_source;
 
@@ -417,6 +440,8 @@ class StartLoaderJobRequest : public NeptunedataRequest {
   Aws::Vector<Aws::String> m_dependencies;
 
   bool m_userProvidedEdgeIds{false};
+
+  bool m_edgeOnlyLoad{false};
   bool m_sourceHasBeenSet = false;
   bool m_formatHasBeenSet = false;
   bool m_s3BucketRegionHasBeenSet = false;
@@ -429,6 +454,7 @@ class StartLoaderJobRequest : public NeptunedataRequest {
   bool m_queueRequestHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
   bool m_userProvidedEdgeIdsHasBeenSet = false;
+  bool m_edgeOnlyLoadHasBeenSet = false;
 };
 
 }  // namespace Model

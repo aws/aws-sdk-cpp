@@ -45,12 +45,21 @@ enum class KafkaErrors {
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLUSTER_CONNECTIVITY,
   CONFLICT,
+  CONTROLLER_MOVED,
   FORBIDDEN,
+  GROUP_SUBSCRIBED_TO_TOPIC,
   INTERNAL_SERVER_ERROR,
+  KAFKA_REQUEST,
+  KAFKA_TIMEOUT,
+  NOT_CONTROLLER,
   NOT_FOUND,
+  REASSIGNMENT_IN_PROGRESS,
   TOO_MANY_REQUESTS,
-  UNAUTHORIZED
+  TOPIC_EXISTS,
+  UNAUTHORIZED,
+  UNKNOWN_TOPIC_OR_PARTITION
 };
 
 class AWS_KAFKA_API KafkaError : public Aws::Client::AWSError<KafkaErrors> {

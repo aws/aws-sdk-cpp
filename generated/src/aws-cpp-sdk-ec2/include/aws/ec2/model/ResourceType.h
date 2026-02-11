@@ -114,6 +114,9 @@ enum class ResourceType {
   ipam_prefix_list_resolver,
   ipam_policy,
   ipam_prefix_list_resolver_target,
+  secondary_interface,
+  secondary_network,
+  secondary_subnet,
   capacity_manager_data_export,
   vpn_concentrator
 };

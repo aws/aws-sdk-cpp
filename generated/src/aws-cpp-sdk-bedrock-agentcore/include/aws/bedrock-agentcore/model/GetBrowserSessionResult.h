@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
+#include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -210,6 +211,26 @@ class GetBrowserSessionResult {
 
   ///@{
   /**
+   * <p>The active proxy configuration for this browser session. This field is only
+   * present if proxy configuration was provided when the session was started using
+   * <code>StartBrowserSession</code>. The configuration includes proxy servers,
+   * domain bypass rules and the proxy authentication credentials.</p>
+   */
+  inline const ProxyConfiguration& GetProxyConfiguration() const { return m_proxyConfiguration; }
+  template <typename ProxyConfigurationT = ProxyConfiguration>
+  void SetProxyConfiguration(ProxyConfigurationT&& value) {
+    m_proxyConfigurationHasBeenSet = true;
+    m_proxyConfiguration = std::forward<ProxyConfigurationT>(value);
+  }
+  template <typename ProxyConfigurationT = ProxyConfiguration>
+  GetBrowserSessionResult& WithProxyConfiguration(ProxyConfigurationT&& value) {
+    SetProxyConfiguration(std::forward<ProxyConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The artifact containing the session replay information.</p>
    */
   inline const Aws::String& GetSessionReplayArtifact() const { return m_sessionReplayArtifact; }
@@ -277,6 +298,8 @@ class GetBrowserSessionResult {
 
   BrowserSessionStream m_streams;
 
+  ProxyConfiguration m_proxyConfiguration;
+
   Aws::String m_sessionReplayArtifact;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
@@ -292,6 +315,7 @@ class GetBrowserSessionResult {
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_streamsHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
   bool m_sessionReplayArtifactHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

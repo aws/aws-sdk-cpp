@@ -152,6 +152,8 @@
 #include <aws/ec2/model/CreateRouteServerPeerResponse.h>
 #include <aws/ec2/model/CreateRouteServerResponse.h>
 #include <aws/ec2/model/CreateRouteTableResponse.h>
+#include <aws/ec2/model/CreateSecondaryNetworkResponse.h>
+#include <aws/ec2/model/CreateSecondarySubnetResponse.h>
 #include <aws/ec2/model/CreateSecurityGroupResponse.h>
 #include <aws/ec2/model/CreateSnapshotResponse.h>
 #include <aws/ec2/model/CreateSnapshotsResponse.h>
@@ -242,6 +244,8 @@
 #include <aws/ec2/model/DeleteRouteServerEndpointResponse.h>
 #include <aws/ec2/model/DeleteRouteServerPeerResponse.h>
 #include <aws/ec2/model/DeleteRouteServerResponse.h>
+#include <aws/ec2/model/DeleteSecondaryNetworkResponse.h>
+#include <aws/ec2/model/DeleteSecondarySubnetResponse.h>
 #include <aws/ec2/model/DeleteSecurityGroupRequest.h>
 #include <aws/ec2/model/DeleteSecurityGroupResponse.h>
 #include <aws/ec2/model/DeleteSpotDatafeedSubscriptionRequest.h>
@@ -509,6 +513,12 @@
 #include <aws/ec2/model/DescribeScheduledInstanceAvailabilityResponse.h>
 #include <aws/ec2/model/DescribeScheduledInstancesRequest.h>
 #include <aws/ec2/model/DescribeScheduledInstancesResponse.h>
+#include <aws/ec2/model/DescribeSecondaryInterfacesRequest.h>
+#include <aws/ec2/model/DescribeSecondaryInterfacesResponse.h>
+#include <aws/ec2/model/DescribeSecondaryNetworksRequest.h>
+#include <aws/ec2/model/DescribeSecondaryNetworksResponse.h>
+#include <aws/ec2/model/DescribeSecondarySubnetsRequest.h>
+#include <aws/ec2/model/DescribeSecondarySubnetsResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupReferencesResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupRulesRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupRulesResponse.h>
@@ -1097,6 +1107,8 @@ class CreateRouteServerRequest;
 class CreateRouteServerEndpointRequest;
 class CreateRouteServerPeerRequest;
 class CreateRouteTableRequest;
+class CreateSecondaryNetworkRequest;
+class CreateSecondarySubnetRequest;
 class CreateSecurityGroupRequest;
 class CreateSnapshotRequest;
 class CreateSnapshotsRequest;
@@ -1189,6 +1201,8 @@ class DeleteRouteServerRequest;
 class DeleteRouteServerEndpointRequest;
 class DeleteRouteServerPeerRequest;
 class DeleteRouteTableRequest;
+class DeleteSecondaryNetworkRequest;
+class DeleteSecondarySubnetRequest;
 class DeleteSecurityGroupRequest;
 class DeleteSnapshotRequest;
 class DeleteSpotDatafeedSubscriptionRequest;
@@ -1357,6 +1371,9 @@ class DescribeRouteServersRequest;
 class DescribeRouteTablesRequest;
 class DescribeScheduledInstanceAvailabilityRequest;
 class DescribeScheduledInstancesRequest;
+class DescribeSecondaryInterfacesRequest;
+class DescribeSecondaryNetworksRequest;
+class DescribeSecondarySubnetsRequest;
 class DescribeSecurityGroupReferencesRequest;
 class DescribeSecurityGroupRulesRequest;
 class DescribeSecurityGroupVpcAssociationsRequest;
@@ -1855,6 +1872,8 @@ typedef Aws::Utils::Outcome<CreateRouteServerResponse, EC2Error> CreateRouteServ
 typedef Aws::Utils::Outcome<CreateRouteServerEndpointResponse, EC2Error> CreateRouteServerEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateRouteServerPeerResponse, EC2Error> CreateRouteServerPeerOutcome;
 typedef Aws::Utils::Outcome<CreateRouteTableResponse, EC2Error> CreateRouteTableOutcome;
+typedef Aws::Utils::Outcome<CreateSecondaryNetworkResponse, EC2Error> CreateSecondaryNetworkOutcome;
+typedef Aws::Utils::Outcome<CreateSecondarySubnetResponse, EC2Error> CreateSecondarySubnetOutcome;
 typedef Aws::Utils::Outcome<CreateSecurityGroupResponse, EC2Error> CreateSecurityGroupOutcome;
 typedef Aws::Utils::Outcome<CreateSnapshotResponse, EC2Error> CreateSnapshotOutcome;
 typedef Aws::Utils::Outcome<CreateSnapshotsResponse, EC2Error> CreateSnapshotsOutcome;
@@ -1949,6 +1968,8 @@ typedef Aws::Utils::Outcome<DeleteRouteServerResponse, EC2Error> DeleteRouteServ
 typedef Aws::Utils::Outcome<DeleteRouteServerEndpointResponse, EC2Error> DeleteRouteServerEndpointOutcome;
 typedef Aws::Utils::Outcome<DeleteRouteServerPeerResponse, EC2Error> DeleteRouteServerPeerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteRouteTableOutcome;
+typedef Aws::Utils::Outcome<DeleteSecondaryNetworkResponse, EC2Error> DeleteSecondaryNetworkOutcome;
+typedef Aws::Utils::Outcome<DeleteSecondarySubnetResponse, EC2Error> DeleteSecondarySubnetOutcome;
 typedef Aws::Utils::Outcome<DeleteSecurityGroupResponse, EC2Error> DeleteSecurityGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSnapshotOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSpotDatafeedSubscriptionOutcome;
@@ -2125,6 +2146,9 @@ typedef Aws::Utils::Outcome<DescribeRouteServersResponse, EC2Error> DescribeRout
 typedef Aws::Utils::Outcome<DescribeRouteTablesResponse, EC2Error> DescribeRouteTablesOutcome;
 typedef Aws::Utils::Outcome<DescribeScheduledInstanceAvailabilityResponse, EC2Error> DescribeScheduledInstanceAvailabilityOutcome;
 typedef Aws::Utils::Outcome<DescribeScheduledInstancesResponse, EC2Error> DescribeScheduledInstancesOutcome;
+typedef Aws::Utils::Outcome<DescribeSecondaryInterfacesResponse, EC2Error> DescribeSecondaryInterfacesOutcome;
+typedef Aws::Utils::Outcome<DescribeSecondaryNetworksResponse, EC2Error> DescribeSecondaryNetworksOutcome;
+typedef Aws::Utils::Outcome<DescribeSecondarySubnetsResponse, EC2Error> DescribeSecondarySubnetsOutcome;
 typedef Aws::Utils::Outcome<DescribeSecurityGroupReferencesResponse, EC2Error> DescribeSecurityGroupReferencesOutcome;
 typedef Aws::Utils::Outcome<DescribeSecurityGroupRulesResponse, EC2Error> DescribeSecurityGroupRulesOutcome;
 typedef Aws::Utils::Outcome<DescribeSecurityGroupVpcAssociationsResponse, EC2Error> DescribeSecurityGroupVpcAssociationsOutcome;
@@ -2642,6 +2666,8 @@ typedef std::future<CreateRouteServerOutcome> CreateRouteServerOutcomeCallable;
 typedef std::future<CreateRouteServerEndpointOutcome> CreateRouteServerEndpointOutcomeCallable;
 typedef std::future<CreateRouteServerPeerOutcome> CreateRouteServerPeerOutcomeCallable;
 typedef std::future<CreateRouteTableOutcome> CreateRouteTableOutcomeCallable;
+typedef std::future<CreateSecondaryNetworkOutcome> CreateSecondaryNetworkOutcomeCallable;
+typedef std::future<CreateSecondarySubnetOutcome> CreateSecondarySubnetOutcomeCallable;
 typedef std::future<CreateSecurityGroupOutcome> CreateSecurityGroupOutcomeCallable;
 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 typedef std::future<CreateSnapshotsOutcome> CreateSnapshotsOutcomeCallable;
@@ -2735,6 +2761,8 @@ typedef std::future<DeleteRouteServerOutcome> DeleteRouteServerOutcomeCallable;
 typedef std::future<DeleteRouteServerEndpointOutcome> DeleteRouteServerEndpointOutcomeCallable;
 typedef std::future<DeleteRouteServerPeerOutcome> DeleteRouteServerPeerOutcomeCallable;
 typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
+typedef std::future<DeleteSecondaryNetworkOutcome> DeleteSecondaryNetworkOutcomeCallable;
+typedef std::future<DeleteSecondarySubnetOutcome> DeleteSecondarySubnetOutcomeCallable;
 typedef std::future<DeleteSecurityGroupOutcome> DeleteSecurityGroupOutcomeCallable;
 typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
 typedef std::future<DeleteSpotDatafeedSubscriptionOutcome> DeleteSpotDatafeedSubscriptionOutcomeCallable;
@@ -2905,6 +2933,9 @@ typedef std::future<DescribeRouteServersOutcome> DescribeRouteServersOutcomeCall
 typedef std::future<DescribeRouteTablesOutcome> DescribeRouteTablesOutcomeCallable;
 typedef std::future<DescribeScheduledInstanceAvailabilityOutcome> DescribeScheduledInstanceAvailabilityOutcomeCallable;
 typedef std::future<DescribeScheduledInstancesOutcome> DescribeScheduledInstancesOutcomeCallable;
+typedef std::future<DescribeSecondaryInterfacesOutcome> DescribeSecondaryInterfacesOutcomeCallable;
+typedef std::future<DescribeSecondaryNetworksOutcome> DescribeSecondaryNetworksOutcomeCallable;
+typedef std::future<DescribeSecondarySubnetsOutcome> DescribeSecondarySubnetsOutcomeCallable;
 typedef std::future<DescribeSecurityGroupReferencesOutcome> DescribeSecurityGroupReferencesOutcomeCallable;
 typedef std::future<DescribeSecurityGroupRulesOutcome> DescribeSecurityGroupRulesOutcomeCallable;
 typedef std::future<DescribeSecurityGroupVpcAssociationsOutcome> DescribeSecurityGroupVpcAssociationsOutcomeCallable;
@@ -3688,6 +3719,12 @@ typedef std::function<void(const EC2Client*, const Model::CreateRouteServerPeerR
 typedef std::function<void(const EC2Client*, const Model::CreateRouteTableRequest&, const Model::CreateRouteTableOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateRouteTableResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateSecondaryNetworkRequest&, const Model::CreateSecondaryNetworkOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSecondaryNetworkResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateSecondarySubnetRequest&, const Model::CreateSecondarySubnetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSecondarySubnetResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateSecurityGroupRequest&, const Model::CreateSecurityGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateSecurityGroupResponseReceivedHandler;
@@ -3999,6 +4036,12 @@ typedef std::function<void(const EC2Client*, const Model::DeleteRouteServerPeerR
 typedef std::function<void(const EC2Client*, const Model::DeleteRouteTableRequest&, const Model::DeleteRouteTableOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRouteTableResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteSecondaryNetworkRequest&, const Model::DeleteSecondaryNetworkOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSecondaryNetworkResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteSecondarySubnetRequest&, const Model::DeleteSecondarySubnetOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSecondarySubnetResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteSecurityGroupRequest&, const Model::DeleteSecurityGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSecurityGroupResponseReceivedHandler;
@@ -4575,6 +4618,15 @@ typedef std::function<void(const EC2Client*, const Model::DescribeScheduledInsta
 typedef std::function<void(const EC2Client*, const Model::DescribeScheduledInstancesRequest&,
                            const Model::DescribeScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeScheduledInstancesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeSecondaryInterfacesRequest&,
+                           const Model::DescribeSecondaryInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSecondaryInterfacesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeSecondaryNetworksRequest&, const Model::DescribeSecondaryNetworksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSecondaryNetworksResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeSecondarySubnetsRequest&, const Model::DescribeSecondarySubnetsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSecondarySubnetsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupReferencesRequest&,
                            const Model::DescribeSecurityGroupReferencesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

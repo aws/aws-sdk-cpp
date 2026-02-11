@@ -944,6 +944,65 @@ class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>The number of days to retain automated backups. Setting this parameter to a
+   * positive number enables backups. Setting this parameter to 0 disables automated
+   * backups.</p>  <p>Enabling and disabling backups can result in a brief I/O
+   * suspension that lasts from a few seconds to a few minutes, depending on the size
+   * and class of your DB instance.</p>  <p>This setting doesn't apply to
+   * Amazon Aurora DB instances. The retention period for automated backups is
+   * managed by the DB cluster. For more information, see
+   * <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
+   * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35.</p> </li> <li>
+   * <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
+   * <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
+   * </ul>
+   */
+  inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
+  inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+  inline void SetBackupRetentionPeriod(int value) {
+    m_backupRetentionPeriodHasBeenSet = true;
+    m_backupRetentionPeriod = value;
+  }
+  inline RestoreDBInstanceFromDBSnapshotRequest& WithBackupRetentionPeriod(int value) {
+    SetBackupRetentionPeriod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The daily time range during which automated backups are created if automated
+   * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
+   * parameter. Changing this parameter doesn't result in an outage and the change is
+   * asynchronously applied as soon as possible. The default is a 30-minute window
+   * selected at random from an 8-hour block of time for each Amazon Web Services
+   * Region. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+   * window</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't
+   * apply to Amazon Aurora DB instances. The daily time range for creating automated
+   * backups is managed by the DB cluster. For more information, see
+   * <code>ModifyDBCluster</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must be in
+   * the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+   * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+   * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+   * </ul>
+   */
+  inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
+  inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+  template <typename PreferredBackupWindowT = Aws::String>
+  void SetPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    m_preferredBackupWindowHasBeenSet = true;
+    m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value);
+  }
+  template <typename PreferredBackupWindowT = Aws::String>
+  RestoreDBInstanceFromDBSnapshotRequest& WithPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
    * instance.</p>
    */
@@ -1204,6 +1263,10 @@ class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest {
 
   Aws::String m_dBClusterSnapshotIdentifier;
 
+  int m_backupRetentionPeriod{0};
+
+  Aws::String m_preferredBackupWindow;
+
   bool m_dedicatedLogVolume{false};
 
   Aws::String m_cACertificateIdentifier;
@@ -1256,6 +1319,8 @@ class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest {
   bool m_customIamInstanceProfileHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_cACertificateIdentifierHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;

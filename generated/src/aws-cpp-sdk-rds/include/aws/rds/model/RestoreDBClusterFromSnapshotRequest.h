@@ -841,6 +841,54 @@ class RestoreDBClusterFromSnapshotRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>The number of days for which automated backups are retained. Specify a
+   * minimum value of <code>1</code>.</p> <p>Valid for Cluster Type: Aurora DB
+   * clusters and Multi-AZ DB clusters</p> <p>Default: Uses existing setting</p>
+   * <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35.</p> </li> </ul>
+   */
+  inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
+  inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+  inline void SetBackupRetentionPeriod(int value) {
+    m_backupRetentionPeriodHasBeenSet = true;
+    m_backupRetentionPeriod = value;
+  }
+  inline RestoreDBClusterFromSnapshotRequest& WithBackupRetentionPeriod(int value) {
+    SetBackupRetentionPeriod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The daily time range during which automated backups are created if automated
+   * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
+   * <p>The default is a 30-minute window selected at random from an 8-hour block of
+   * time for each Amazon Web Services Region. To view the time blocks available, see
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+   * Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+   * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+   * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+   * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+   * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+   * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+   */
+  inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
+  inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+  template <typename PreferredBackupWindowT = Aws::String>
+  void SetPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    m_preferredBackupWindowHasBeenSet = true;
+    m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value);
+  }
+  template <typename PreferredBackupWindowT = Aws::String>
+  RestoreDBClusterFromSnapshotRequest& WithPreferredBackupWindow(PreferredBackupWindowT&& value) {
+    SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
    * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
    * cluster into Amazon RDS Extended Support. At the end of standard support, you
@@ -971,6 +1019,10 @@ class RestoreDBClusterFromSnapshotRequest : public RDSRequest {
 
   int m_performanceInsightsRetentionPeriod{0};
 
+  int m_backupRetentionPeriod{0};
+
+  Aws::String m_preferredBackupWindow;
+
   Aws::String m_engineLifecycleSupport;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
@@ -1008,6 +1060,8 @@ class RestoreDBClusterFromSnapshotRequest : public RDSRequest {
   bool m_enablePerformanceInsightsHasBeenSet = false;
   bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
