@@ -7,9 +7,15 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 
+using namespace Aws::Utils;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Auth;
-using namespace Aws::Utils::Threading;
+using namespace Aws::Internal;
+using namespace Aws::FileSystem;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Client;
+using Aws::Utils::Threading::ReaderLockGuard;
+using Aws::Utils::Threading::WriterLockGuard;
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
  public:
