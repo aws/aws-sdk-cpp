@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSimulationResult::DeleteSimulationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSimulationResult& DeleteSimulationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

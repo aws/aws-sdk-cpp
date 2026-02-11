@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEventSourceMappingResult::CreateEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEventSourceMappingResult& CreateEventSourceMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UUID")) {
     m_uUID = jsonValue.GetString("UUID");

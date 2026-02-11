@@ -22,6 +22,7 @@ ListApplicationDependenciesResult::ListApplicationDependenciesResult(const Aws::
 }
 
 ListApplicationDependenciesResult& ListApplicationDependenciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dependencies")) {
     Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");

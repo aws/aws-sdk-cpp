@@ -20,6 +20,7 @@ using namespace Aws;
 ListWhatIfForecastsResult::ListWhatIfForecastsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListWhatIfForecastsResult& ListWhatIfForecastsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WhatIfForecasts")) {
     Aws::Utils::Array<JsonView> whatIfForecastsJsonList = jsonValue.GetArray("WhatIfForecasts");

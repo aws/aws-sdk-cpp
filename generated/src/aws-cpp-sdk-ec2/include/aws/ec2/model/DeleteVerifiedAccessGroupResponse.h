@@ -58,10 +58,13 @@ class DeleteVerifiedAccessGroupResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VerifiedAccessGroup m_verifiedAccessGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verifiedAccessGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

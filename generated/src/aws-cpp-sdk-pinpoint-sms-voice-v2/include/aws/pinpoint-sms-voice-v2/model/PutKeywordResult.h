@@ -124,6 +124,8 @@ class PutKeywordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_originationIdentityArn;
 
@@ -136,6 +138,7 @@ class PutKeywordResult {
   KeywordAction m_keywordAction{KeywordAction::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_originationIdentityArnHasBeenSet = false;
   bool m_originationIdentityHasBeenSet = false;
   bool m_keywordHasBeenSet = false;

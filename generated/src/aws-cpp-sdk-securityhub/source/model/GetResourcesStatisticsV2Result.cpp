@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourcesStatisticsV2Result::GetResourcesStatisticsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourcesStatisticsV2Result& GetResourcesStatisticsV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupByResults")) {
     Aws::Utils::Array<JsonView> groupByResultsJsonList = jsonValue.GetArray("GroupByResults");

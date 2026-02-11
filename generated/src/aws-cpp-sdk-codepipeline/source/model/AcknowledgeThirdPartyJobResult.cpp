@@ -20,6 +20,7 @@ using namespace Aws;
 AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AcknowledgeThirdPartyJobResult& AcknowledgeThirdPartyJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));

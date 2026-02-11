@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAccountSubscriptionResult::CreateAccountSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAccountSubscriptionResult& CreateAccountSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SignupResponse")) {
     m_signupResponse = jsonValue.GetObject("SignupResponse");

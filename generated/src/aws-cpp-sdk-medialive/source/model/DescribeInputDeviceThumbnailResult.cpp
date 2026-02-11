@@ -21,6 +21,7 @@ DescribeInputDeviceThumbnailResult::DescribeInputDeviceThumbnailResult(Aws::Amaz
 }
 
 DescribeInputDeviceThumbnailResult& DescribeInputDeviceThumbnailResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_body = result.TakeOwnershipOfPayload();
   m_bodyHasBeenSet = true;
 

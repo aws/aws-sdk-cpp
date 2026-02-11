@@ -20,6 +20,7 @@ using namespace Aws;
 SearchFoldersResult::SearchFoldersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchFoldersResult& SearchFoldersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FolderSummaryList")) {
     Aws::Utils::Array<JsonView> folderSummaryListJsonList = jsonValue.GetArray("FolderSummaryList");

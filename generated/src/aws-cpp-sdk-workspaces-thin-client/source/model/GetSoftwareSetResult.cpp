@@ -20,6 +20,7 @@ using namespace Aws;
 GetSoftwareSetResult::GetSoftwareSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSoftwareSetResult& GetSoftwareSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("softwareSet")) {
     m_softwareSet = jsonValue.GetObject("softwareSet");

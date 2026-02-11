@@ -57,10 +57,13 @@ class UpdateCaseStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SelfManagedCaseStatus m_caseStatus{SelfManagedCaseStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_caseStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

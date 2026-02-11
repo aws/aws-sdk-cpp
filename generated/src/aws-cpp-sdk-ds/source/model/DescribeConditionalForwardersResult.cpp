@@ -22,6 +22,7 @@ DescribeConditionalForwardersResult::DescribeConditionalForwardersResult(const A
 }
 
 DescribeConditionalForwardersResult& DescribeConditionalForwardersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConditionalForwarders")) {
     Aws::Utils::Array<JsonView> conditionalForwardersJsonList = jsonValue.GetArray("ConditionalForwarders");

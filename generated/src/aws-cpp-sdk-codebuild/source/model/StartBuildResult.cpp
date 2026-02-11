@@ -20,6 +20,7 @@ using namespace Aws;
 StartBuildResult::StartBuildResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartBuildResult& StartBuildResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("build")) {
     m_build = jsonValue.GetObject("build");

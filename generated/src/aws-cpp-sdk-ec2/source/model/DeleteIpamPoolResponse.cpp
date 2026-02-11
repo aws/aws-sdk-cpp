@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteIpamPoolResponse::DeleteIpamPoolResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteIpamPoolResponse& DeleteIpamPoolResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

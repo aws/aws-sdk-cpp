@@ -63,10 +63,13 @@ class GetSuppressedDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SuppressedDestination m_suppressedDestination;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_suppressedDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

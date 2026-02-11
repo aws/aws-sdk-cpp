@@ -89,12 +89,15 @@ class ListResourceScanRelatedResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ScannedResource> m_relatedResources;
 
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_relatedResourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

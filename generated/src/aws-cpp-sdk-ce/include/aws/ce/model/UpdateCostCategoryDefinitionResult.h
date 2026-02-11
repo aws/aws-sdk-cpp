@@ -76,12 +76,15 @@ class UpdateCostCategoryDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_costCategoryArn;
 
   Aws::String m_effectiveStart;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_costCategoryArnHasBeenSet = false;
   bool m_effectiveStartHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

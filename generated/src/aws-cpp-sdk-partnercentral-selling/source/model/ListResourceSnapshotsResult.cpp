@@ -20,6 +20,7 @@ using namespace Aws;
 ListResourceSnapshotsResult::ListResourceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListResourceSnapshotsResult& ListResourceSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceSnapshotSummaries")) {
     Aws::Utils::Array<JsonView> resourceSnapshotSummariesJsonList = jsonValue.GetArray("ResourceSnapshotSummaries");

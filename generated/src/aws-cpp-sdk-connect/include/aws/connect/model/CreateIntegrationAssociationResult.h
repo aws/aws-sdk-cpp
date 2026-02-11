@@ -74,12 +74,15 @@ class CreateIntegrationAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_integrationAssociationId;
 
   Aws::String m_integrationAssociationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_integrationAssociationIdHasBeenSet = false;
   bool m_integrationAssociationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

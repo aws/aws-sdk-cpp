@@ -198,6 +198,8 @@ class DescribeProtectedResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -218,6 +220,7 @@ class DescribeProtectedResourceResult {
   Aws::Utils::DateTime m_latestRestoreRecoveryPointCreationDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_lastBackupTimeHasBeenSet = false;

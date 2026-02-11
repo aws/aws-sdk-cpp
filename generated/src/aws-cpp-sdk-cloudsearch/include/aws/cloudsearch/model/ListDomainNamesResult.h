@@ -71,10 +71,13 @@ class ListDomainNamesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_domainNames;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainNamesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

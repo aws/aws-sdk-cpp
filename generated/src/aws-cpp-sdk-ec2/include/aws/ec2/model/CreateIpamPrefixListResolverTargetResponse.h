@@ -59,10 +59,13 @@ class CreateIpamPrefixListResolverTargetResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamPrefixListResolverTarget m_ipamPrefixListResolverTarget;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamPrefixListResolverTargetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

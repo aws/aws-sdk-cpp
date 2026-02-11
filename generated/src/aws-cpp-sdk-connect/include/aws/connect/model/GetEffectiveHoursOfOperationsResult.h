@@ -110,6 +110,8 @@ class GetEffectiveHoursOfOperationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EffectiveHoursOfOperations> m_effectiveHoursOfOperationList;
 
@@ -118,6 +120,7 @@ class GetEffectiveHoursOfOperationsResult {
   Aws::String m_timeZone;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_effectiveHoursOfOperationListHasBeenSet = false;
   bool m_effectiveOverrideHoursListHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;

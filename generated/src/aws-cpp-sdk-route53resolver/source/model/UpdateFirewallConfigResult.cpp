@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFirewallConfigResult::UpdateFirewallConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFirewallConfigResult& UpdateFirewallConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallConfig")) {
     m_firewallConfig = jsonValue.GetObject("FirewallConfig");

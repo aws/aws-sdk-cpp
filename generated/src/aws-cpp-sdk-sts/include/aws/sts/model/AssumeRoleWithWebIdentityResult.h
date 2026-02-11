@@ -210,6 +210,8 @@ class AssumeRoleWithWebIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Credentials m_credentials;
 
@@ -226,6 +228,7 @@ class AssumeRoleWithWebIdentityResult {
   Aws::String m_sourceIdentity;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_subjectFromWebIdentityTokenHasBeenSet = false;
   bool m_assumedRoleUserHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSecurityPolicyResult::DescribeSecurityPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSecurityPolicyResult& DescribeSecurityPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecurityPolicy")) {
     m_securityPolicy = jsonValue.GetObject("SecurityPolicy");

@@ -58,10 +58,13 @@ class DescribeClusterNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ClusterNodeDetails m_nodeDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nodeDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

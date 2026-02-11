@@ -252,6 +252,8 @@ class DescribeDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_createdBy;
 
@@ -278,6 +280,7 @@ class DescribeDatasetResult {
   Aws::String m_resourceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createdByHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;

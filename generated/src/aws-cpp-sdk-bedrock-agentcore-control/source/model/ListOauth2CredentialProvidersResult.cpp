@@ -22,6 +22,7 @@ ListOauth2CredentialProvidersResult::ListOauth2CredentialProvidersResult(const A
 }
 
 ListOauth2CredentialProvidersResult& ListOauth2CredentialProvidersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("credentialProviders")) {
     Aws::Utils::Array<JsonView> credentialProvidersJsonList = jsonValue.GetArray("credentialProviders");

@@ -22,6 +22,7 @@ DescribeTrustedAdvisorChecksResult::DescribeTrustedAdvisorChecksResult(const Aws
 }
 
 DescribeTrustedAdvisorChecksResult& DescribeTrustedAdvisorChecksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("checks")) {
     Aws::Utils::Array<JsonView> checksJsonList = jsonValue.GetArray("checks");

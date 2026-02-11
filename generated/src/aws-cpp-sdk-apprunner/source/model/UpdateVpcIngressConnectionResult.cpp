@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateVpcIngressConnectionResult::UpdateVpcIngressConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateVpcIngressConnectionResult& UpdateVpcIngressConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcIngressConnection")) {
     m_vpcIngressConnection = jsonValue.GetObject("VpcIngressConnection");

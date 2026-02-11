@@ -87,12 +87,15 @@ class ListResourceServersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ResourceServerType> m_resourceServers;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceServersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

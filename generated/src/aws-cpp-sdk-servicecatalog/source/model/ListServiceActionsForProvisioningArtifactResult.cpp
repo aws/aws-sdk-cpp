@@ -24,6 +24,7 @@ ListServiceActionsForProvisioningArtifactResult::ListServiceActionsForProvisioni
 
 ListServiceActionsForProvisioningArtifactResult& ListServiceActionsForProvisioningArtifactResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServiceActionSummaries")) {
     Aws::Utils::Array<JsonView> serviceActionSummariesJsonList = jsonValue.GetArray("ServiceActionSummaries");

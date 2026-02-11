@@ -58,10 +58,13 @@ class CreateChannelNamespaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ChannelNamespace m_channelNamespace;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelNamespaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEnvironmentHostResult::CreateEnvironmentHostResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEnvironmentHostResult& CreateEnvironmentHostResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environmentSummary")) {
     m_environmentSummary = jsonValue.GetObject("environmentSummary");

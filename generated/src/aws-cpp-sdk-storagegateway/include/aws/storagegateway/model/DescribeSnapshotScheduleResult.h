@@ -152,6 +152,8 @@ class DescribeSnapshotScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_volumeARN;
 
@@ -166,6 +168,7 @@ class DescribeSnapshotScheduleResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_volumeARNHasBeenSet = false;
   bool m_startAtHasBeenSet = false;
   bool m_recurrenceInHoursHasBeenSet = false;

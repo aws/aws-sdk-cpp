@@ -58,10 +58,13 @@ class DeleteTransitGatewayRouteTableResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayRouteTable m_transitGatewayRouteTable;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayRouteTableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

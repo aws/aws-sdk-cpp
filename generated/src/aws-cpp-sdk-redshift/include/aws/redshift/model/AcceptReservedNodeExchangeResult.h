@@ -58,10 +58,13 @@ class AcceptReservedNodeExchangeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReservedNode m_exchangedReservedNode;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exchangedReservedNodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

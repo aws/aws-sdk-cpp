@@ -20,6 +20,7 @@ using namespace Aws;
 ListEntitiesDetectionJobsResult::ListEntitiesDetectionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEntitiesDetectionJobsResult& ListEntitiesDetectionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntitiesDetectionJobPropertiesList")) {
     Aws::Utils::Array<JsonView> entitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("EntitiesDetectionJobPropertiesList");

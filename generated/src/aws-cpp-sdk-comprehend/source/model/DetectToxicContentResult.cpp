@@ -20,6 +20,7 @@ using namespace Aws;
 DetectToxicContentResult::DetectToxicContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectToxicContentResult& DetectToxicContentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResultList")) {
     Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");

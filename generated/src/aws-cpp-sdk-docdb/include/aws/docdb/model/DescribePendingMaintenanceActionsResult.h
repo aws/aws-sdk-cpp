@@ -91,12 +91,15 @@ class DescribePendingMaintenanceActionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ResourcePendingMaintenanceActions> m_pendingMaintenanceActions;
 
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pendingMaintenanceActionsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

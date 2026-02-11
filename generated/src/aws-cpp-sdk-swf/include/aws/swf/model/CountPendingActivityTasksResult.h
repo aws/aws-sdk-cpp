@@ -76,12 +76,15 @@ class CountPendingActivityTasksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_count{0};
 
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_countHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

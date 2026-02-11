@@ -218,6 +218,8 @@ class DescribeRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -240,6 +242,7 @@ class DescribeRuleResult {
   Aws::String m_createdBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_eventPatternHasBeenSet = false;

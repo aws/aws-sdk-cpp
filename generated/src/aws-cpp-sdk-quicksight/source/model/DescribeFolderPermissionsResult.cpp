@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFolderPermissionsResult::DescribeFolderPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFolderPermissionsResult& DescribeFolderPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FolderId")) {
     m_folderId = jsonValue.GetString("FolderId");

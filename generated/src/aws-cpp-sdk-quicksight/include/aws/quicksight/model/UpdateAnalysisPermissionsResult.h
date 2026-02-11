@@ -115,6 +115,8 @@ class UpdateAnalysisPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_analysisArn;
 
@@ -125,6 +127,7 @@ class UpdateAnalysisPermissionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisArnHasBeenSet = false;
   bool m_analysisIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

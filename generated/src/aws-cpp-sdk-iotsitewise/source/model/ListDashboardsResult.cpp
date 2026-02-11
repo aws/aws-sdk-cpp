@@ -20,6 +20,7 @@ using namespace Aws;
 ListDashboardsResult::ListDashboardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDashboardsResult& ListDashboardsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dashboardSummaries")) {
     Aws::Utils::Array<JsonView> dashboardSummariesJsonList = jsonValue.GetArray("dashboardSummaries");

@@ -133,6 +133,8 @@ class GetRetainedMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_topic;
 
@@ -145,6 +147,7 @@ class GetRetainedMessageResult {
   Aws::Utils::ByteBuffer m_userProperties{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_topicHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
   bool m_qosHasBeenSet = false;

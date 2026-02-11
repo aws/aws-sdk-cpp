@@ -20,6 +20,7 @@ using namespace Aws;
 StartInstanceOnboardingJobResult::StartInstanceOnboardingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartInstanceOnboardingJobResult& StartInstanceOnboardingJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectInstanceOnboardingJobStatus")) {
     m_connectInstanceOnboardingJobStatus = jsonValue.GetObject("connectInstanceOnboardingJobStatus");

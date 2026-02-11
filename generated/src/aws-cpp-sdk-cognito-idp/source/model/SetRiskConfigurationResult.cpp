@@ -20,6 +20,7 @@ using namespace Aws;
 SetRiskConfigurationResult::SetRiskConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SetRiskConfigurationResult& SetRiskConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RiskConfiguration")) {
     m_riskConfiguration = jsonValue.GetObject("RiskConfiguration");

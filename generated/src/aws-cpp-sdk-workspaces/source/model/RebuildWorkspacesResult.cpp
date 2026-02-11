@@ -20,6 +20,7 @@ using namespace Aws;
 RebuildWorkspacesResult::RebuildWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RebuildWorkspacesResult& RebuildWorkspacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedRequests")) {
     Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");

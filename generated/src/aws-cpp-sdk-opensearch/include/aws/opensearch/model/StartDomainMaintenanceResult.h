@@ -63,10 +63,13 @@ class StartDomainMaintenanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_maintenanceId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_maintenanceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

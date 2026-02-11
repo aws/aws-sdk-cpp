@@ -22,6 +22,7 @@ DescribeRetrainingSchedulerResult::DescribeRetrainingSchedulerResult(const Aws::
 }
 
 DescribeRetrainingSchedulerResult& DescribeRetrainingSchedulerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelName")) {
     m_modelName = jsonValue.GetString("ModelName");

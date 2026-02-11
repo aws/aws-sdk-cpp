@@ -20,6 +20,7 @@ using namespace Aws;
 SearchDataTablesResult::SearchDataTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchDataTablesResult& SearchDataTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataTables")) {
     Aws::Utils::Array<JsonView> dataTablesJsonList = jsonValue.GetArray("DataTables");

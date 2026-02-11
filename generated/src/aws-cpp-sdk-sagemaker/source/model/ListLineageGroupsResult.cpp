@@ -20,6 +20,7 @@ using namespace Aws;
 ListLineageGroupsResult::ListLineageGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLineageGroupsResult& ListLineageGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LineageGroupSummaries")) {
     Aws::Utils::Array<JsonView> lineageGroupSummariesJsonList = jsonValue.GetArray("LineageGroupSummaries");

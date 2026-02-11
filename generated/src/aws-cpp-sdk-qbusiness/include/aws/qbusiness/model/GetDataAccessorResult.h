@@ -226,6 +226,8 @@ class GetDataAccessorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_displayName;
 
@@ -248,6 +250,7 @@ class GetDataAccessorResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_displayNameHasBeenSet = false;
   bool m_dataAccessorIdHasBeenSet = false;
   bool m_dataAccessorArnHasBeenSet = false;

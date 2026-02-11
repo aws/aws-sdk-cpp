@@ -143,6 +143,8 @@ class PutEmailIdentityDkimSigningAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DkimStatus m_dkimStatus{DkimStatus::NOT_SET};
 
@@ -151,6 +153,7 @@ class PutEmailIdentityDkimSigningAttributesResult {
   Aws::String m_signingHostedZone;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dkimStatusHasBeenSet = false;
   bool m_dkimTokensHasBeenSet = false;
   bool m_signingHostedZoneHasBeenSet = false;

@@ -141,6 +141,8 @@ class GetRightsizingRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RightsizingRecommendationMetadata m_metadata;
 
@@ -153,6 +155,7 @@ class GetRightsizingRecommendationResult {
   RightsizingRecommendationConfiguration m_configuration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metadataHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
   bool m_rightsizingRecommendationsHasBeenSet = false;

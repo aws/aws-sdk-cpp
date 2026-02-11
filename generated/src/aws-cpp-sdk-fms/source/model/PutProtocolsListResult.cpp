@@ -20,6 +20,7 @@ using namespace Aws;
 PutProtocolsListResult::PutProtocolsListResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutProtocolsListResult& PutProtocolsListResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProtocolsList")) {
     m_protocolsList = jsonValue.GetObject("ProtocolsList");

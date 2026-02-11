@@ -24,6 +24,7 @@ BatchDisassociateApprovalRuleTemplateFromRepositoriesResult::BatchDisassociateAp
 
 BatchDisassociateApprovalRuleTemplateFromRepositoriesResult& BatchDisassociateApprovalRuleTemplateFromRepositoriesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("disassociatedRepositoryNames")) {
     Aws::Utils::Array<JsonView> disassociatedRepositoryNamesJsonList = jsonValue.GetArray("disassociatedRepositoryNames");

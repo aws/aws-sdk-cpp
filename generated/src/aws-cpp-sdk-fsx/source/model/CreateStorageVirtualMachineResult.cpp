@@ -22,6 +22,7 @@ CreateStorageVirtualMachineResult::CreateStorageVirtualMachineResult(const Aws::
 }
 
 CreateStorageVirtualMachineResult& CreateStorageVirtualMachineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StorageVirtualMachine")) {
     m_storageVirtualMachine = jsonValue.GetObject("StorageVirtualMachine");

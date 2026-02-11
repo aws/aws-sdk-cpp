@@ -512,6 +512,8 @@ class DescribeChangeSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_changeSetName;
 
@@ -560,6 +562,7 @@ class DescribeChangeSetResult {
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_changeSetNameHasBeenSet = false;
   bool m_changeSetIdHasBeenSet = false;
   bool m_stackIdHasBeenSet = false;

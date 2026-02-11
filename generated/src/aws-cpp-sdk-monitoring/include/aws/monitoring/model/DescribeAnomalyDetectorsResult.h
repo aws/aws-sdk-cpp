@@ -99,6 +99,8 @@ class DescribeAnomalyDetectorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AnomalyDetector> m_anomalyDetectors;
 
@@ -107,6 +109,7 @@ class DescribeAnomalyDetectorsResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_anomalyDetectorsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

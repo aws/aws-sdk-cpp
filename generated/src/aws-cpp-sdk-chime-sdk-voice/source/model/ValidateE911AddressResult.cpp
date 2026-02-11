@@ -20,6 +20,7 @@ using namespace Aws;
 ValidateE911AddressResult::ValidateE911AddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ValidateE911AddressResult& ValidateE911AddressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ValidationResult")) {
     m_validationResult = jsonValue.GetInteger("ValidationResult");

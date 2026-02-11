@@ -76,12 +76,15 @@ class UpdateFlowMediaStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_flowArn;
 
   MediaStream m_mediaStream;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_mediaStreamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

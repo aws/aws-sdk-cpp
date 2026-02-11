@@ -94,12 +94,15 @@ class BatchAssociateResourcesToCustomLineItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AssociateResourceResponseElement> m_successfullyAssociatedResources;
 
   Aws::Vector<AssociateResourceResponseElement> m_failedAssociatedResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfullyAssociatedResourcesHasBeenSet = false;
   bool m_failedAssociatedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

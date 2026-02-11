@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDomainHealthResult::DescribeDomainHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDomainHealthResult& DescribeDomainHealthResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainState")) {
     m_domainState = DomainStateMapper::GetDomainStateForName(jsonValue.GetString("DomainState"));

@@ -82,12 +82,15 @@ class GetFolderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FolderMetadata m_metadata;
 
   Aws::Map<Aws::String, Aws::String> m_customMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metadataHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

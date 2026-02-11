@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataSetImportTaskResult::GetDataSetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataSetImportTaskResult& GetDataSetImportTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = DataSetTaskLifecycleMapper::GetDataSetTaskLifecycleForName(jsonValue.GetString("status"));

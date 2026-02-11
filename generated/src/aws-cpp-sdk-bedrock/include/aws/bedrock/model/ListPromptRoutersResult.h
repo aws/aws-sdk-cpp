@@ -83,12 +83,15 @@ class ListPromptRoutersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PromptRouterSummary> m_promptRouterSummaries;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_promptRouterSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

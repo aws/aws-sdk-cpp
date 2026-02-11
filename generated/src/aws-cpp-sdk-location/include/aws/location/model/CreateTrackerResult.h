@@ -97,6 +97,8 @@ class CreateTrackerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trackerName;
 
@@ -105,6 +107,7 @@ class CreateTrackerResult {
   Aws::Utils::DateTime m_createTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trackerNameHasBeenSet = false;
   bool m_trackerArnHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;

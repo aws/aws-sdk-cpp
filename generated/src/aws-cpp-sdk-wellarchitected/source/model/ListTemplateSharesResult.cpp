@@ -20,6 +20,7 @@ using namespace Aws;
 ListTemplateSharesResult::ListTemplateSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTemplateSharesResult& ListTemplateSharesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TemplateArn")) {
     m_templateArn = jsonValue.GetString("TemplateArn");

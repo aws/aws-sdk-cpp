@@ -90,6 +90,8 @@ class CreateTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tokenId;
 
@@ -98,6 +100,7 @@ class CreateTokenResult {
   Aws::String m_token;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tokenIdHasBeenSet = false;
   bool m_tokenTypeHasBeenSet = false;
   bool m_tokenHasBeenSet = false;

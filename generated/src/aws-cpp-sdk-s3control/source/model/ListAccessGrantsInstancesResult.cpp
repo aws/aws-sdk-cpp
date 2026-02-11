@@ -19,6 +19,7 @@ using namespace Aws;
 ListAccessGrantsInstancesResult::ListAccessGrantsInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListAccessGrantsInstancesResult& ListAccessGrantsInstancesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

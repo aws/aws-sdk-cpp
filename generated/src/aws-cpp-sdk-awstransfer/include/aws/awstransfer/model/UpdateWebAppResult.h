@@ -57,10 +57,13 @@ class UpdateWebAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_webAppId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_webAppIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

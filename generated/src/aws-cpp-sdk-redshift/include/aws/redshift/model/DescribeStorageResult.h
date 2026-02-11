@@ -70,12 +70,15 @@ class DescribeStorageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   double m_totalBackupSizeInMegaBytes{0.0};
 
   double m_totalProvisionedStorageInMegaBytes{0.0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
   bool m_totalProvisionedStorageInMegaBytesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

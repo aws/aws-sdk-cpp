@@ -58,10 +58,13 @@ class GetBillingViewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BillingViewElement m_billingView;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_billingViewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

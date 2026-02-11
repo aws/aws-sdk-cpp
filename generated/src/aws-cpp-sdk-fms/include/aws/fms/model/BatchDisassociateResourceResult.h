@@ -83,12 +83,15 @@ class BatchDisassociateResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceSetIdentifier;
 
   Aws::Vector<FailedItem> m_failedItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceSetIdentifierHasBeenSet = false;
   bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -78,12 +78,15 @@ class DescribeMultiRegionAccessPointOperationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AsyncOperation m_asyncOperation;
 
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_asyncOperationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;

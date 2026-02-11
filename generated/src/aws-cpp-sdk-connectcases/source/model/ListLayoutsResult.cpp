@@ -20,6 +20,7 @@ using namespace Aws;
 ListLayoutsResult::ListLayoutsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLayoutsResult& ListLayoutsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("layouts")) {
     Aws::Utils::Array<JsonView> layoutsJsonList = jsonValue.GetArray("layouts");

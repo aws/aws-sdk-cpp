@@ -86,12 +86,15 @@ class DescribeCustomerMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CustomerAgreement> m_agreements;
 
   NniPartnerType m_nniPartnerType{NniPartnerType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agreementsHasBeenSet = false;
   bool m_nniPartnerTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 StopProjectVersionResult::StopProjectVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopProjectVersionResult& StopProjectVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = ProjectVersionStatusMapper::GetProjectVersionStatusForName(jsonValue.GetString("Status"));

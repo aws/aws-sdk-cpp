@@ -73,10 +73,13 @@ class CancelSpotInstanceRequestsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CancelledSpotInstanceRequest> m_cancelledSpotInstanceRequests;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cancelledSpotInstanceRequestsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

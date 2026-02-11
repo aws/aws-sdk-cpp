@@ -65,10 +65,13 @@ class DescribeWorkspaceAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<WorkspaceResourceAssociation> m_associations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

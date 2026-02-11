@@ -130,6 +130,8 @@ class CreateGUISessionAccessDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceName;
 
@@ -142,6 +144,7 @@ class CreateGUISessionAccessDetailsResult {
   Aws::Vector<Session> m_sessions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_percentageCompleteHasBeenSet = false;

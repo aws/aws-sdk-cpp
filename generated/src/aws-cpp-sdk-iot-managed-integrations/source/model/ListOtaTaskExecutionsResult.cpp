@@ -20,6 +20,7 @@ using namespace Aws;
 ListOtaTaskExecutionsResult::ListOtaTaskExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListOtaTaskExecutionsResult& ListOtaTaskExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExecutionSummaries")) {
     Aws::Utils::Array<JsonView> executionSummariesJsonList = jsonValue.GetArray("ExecutionSummaries");

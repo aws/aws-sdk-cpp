@@ -108,6 +108,8 @@ class GetAggregateConformancePackComplianceSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AggregateConformancePackComplianceSummary> m_aggregateConformancePackComplianceSummaries;
 
@@ -116,6 +118,7 @@ class GetAggregateConformancePackComplianceSummaryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aggregateConformancePackComplianceSummariesHasBeenSet = false;
   bool m_groupByKeyHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

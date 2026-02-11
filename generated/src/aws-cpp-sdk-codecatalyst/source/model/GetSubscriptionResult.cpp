@@ -20,6 +20,7 @@ using namespace Aws;
 GetSubscriptionResult::GetSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSubscriptionResult& GetSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subscriptionType")) {
     m_subscriptionType = jsonValue.GetString("subscriptionType");

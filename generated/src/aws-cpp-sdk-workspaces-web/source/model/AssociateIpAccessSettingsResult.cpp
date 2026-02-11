@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateIpAccessSettingsResult::AssociateIpAccessSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateIpAccessSettingsResult& AssociateIpAccessSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("portalArn")) {
     m_portalArn = jsonValue.GetString("portalArn");

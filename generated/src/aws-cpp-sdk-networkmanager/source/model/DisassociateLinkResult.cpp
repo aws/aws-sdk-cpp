@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateLinkResult::DisassociateLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateLinkResult& DisassociateLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LinkAssociation")) {
     m_linkAssociation = jsonValue.GetObject("LinkAssociation");

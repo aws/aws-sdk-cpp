@@ -20,6 +20,7 @@ using namespace Aws;
 ScheduleRunResult::ScheduleRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ScheduleRunResult& ScheduleRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("run")) {
     m_run = jsonValue.GetObject("run");

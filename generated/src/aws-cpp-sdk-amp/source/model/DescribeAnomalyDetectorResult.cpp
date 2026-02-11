@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAnomalyDetectorResult& DescribeAnomalyDetectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("anomalyDetector")) {
     m_anomalyDetector = jsonValue.GetObject("anomalyDetector");

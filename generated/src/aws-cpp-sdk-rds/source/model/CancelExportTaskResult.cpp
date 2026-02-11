@@ -20,6 +20,7 @@ using namespace Aws;
 CancelExportTaskResult::CancelExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CancelExportTaskResult& CancelExportTaskResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

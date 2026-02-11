@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceLFTagsResult::GetResourceLFTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceLFTagsResult& GetResourceLFTagsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LFTagOnDatabase")) {
     Aws::Utils::Array<JsonView> lFTagOnDatabaseJsonList = jsonValue.GetArray("LFTagOnDatabase");

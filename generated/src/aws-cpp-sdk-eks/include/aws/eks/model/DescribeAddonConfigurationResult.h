@@ -121,6 +121,8 @@ class DescribeAddonConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_addonName;
 
@@ -131,6 +133,7 @@ class DescribeAddonConfigurationResult {
   Aws::Vector<AddonPodIdentityConfiguration> m_podIdentityConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_addonNameHasBeenSet = false;
   bool m_addonVersionHasBeenSet = false;
   bool m_configurationSchemaHasBeenSet = false;

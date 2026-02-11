@@ -58,10 +58,13 @@ class DescribeAttackResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AttackDetail m_attack;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

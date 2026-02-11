@@ -58,10 +58,13 @@ class GetTimelineEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TimelineEvent m_event;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

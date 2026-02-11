@@ -85,12 +85,15 @@ class ListApplicationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ApplicationSummary> m_applicationSummaries;
 
   bool m_hasMoreApplications{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationSummariesHasBeenSet = false;
   bool m_hasMoreApplicationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

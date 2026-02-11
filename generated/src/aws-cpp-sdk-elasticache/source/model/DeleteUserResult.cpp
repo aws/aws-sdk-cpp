@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteUserResult::DeleteUserResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteUserResult& DeleteUserResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -23,6 +23,7 @@ DescribeAppVersionAppComponentResult::DescribeAppVersionAppComponentResult(const
 
 DescribeAppVersionAppComponentResult& DescribeAppVersionAppComponentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("appArn")) {
     m_appArn = jsonValue.GetString("appArn");

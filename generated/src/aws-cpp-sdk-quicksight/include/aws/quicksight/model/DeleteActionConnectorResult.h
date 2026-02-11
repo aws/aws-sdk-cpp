@@ -89,6 +89,8 @@ class DeleteActionConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -97,6 +99,7 @@ class DeleteActionConnectorResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_actionConnectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,7 @@ ListStandardsControlAssociationsResult::ListStandardsControlAssociationsResult(c
 
 ListStandardsControlAssociationsResult& ListStandardsControlAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StandardsControlAssociationSummaries")) {
     Aws::Utils::Array<JsonView> standardsControlAssociationSummariesJsonList = jsonValue.GetArray("StandardsControlAssociationSummaries");

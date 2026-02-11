@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCollectionResult::DeleteCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCollectionResult& DeleteCollectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StatusCode")) {
     m_statusCode = jsonValue.GetInteger("StatusCode");

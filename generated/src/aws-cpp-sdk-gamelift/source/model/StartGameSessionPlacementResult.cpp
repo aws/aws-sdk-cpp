@@ -20,6 +20,7 @@ using namespace Aws;
 StartGameSessionPlacementResult::StartGameSessionPlacementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartGameSessionPlacementResult& StartGameSessionPlacementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GameSessionPlacement")) {
     m_gameSessionPlacement = jsonValue.GetObject("GameSessionPlacement");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeUserImportJobResult::DescribeUserImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeUserImportJobResult& DescribeUserImportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserImportJob")) {
     m_userImportJob = jsonValue.GetObject("UserImportJob");

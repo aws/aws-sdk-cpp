@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSessionDataResult::UpdateSessionDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSessionDataResult& UpdateSessionDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sessionArn")) {
     m_sessionArn = jsonValue.GetString("sessionArn");

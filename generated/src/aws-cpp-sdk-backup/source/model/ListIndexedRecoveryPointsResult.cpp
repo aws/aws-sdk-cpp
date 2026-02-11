@@ -20,6 +20,7 @@ using namespace Aws;
 ListIndexedRecoveryPointsResult::ListIndexedRecoveryPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIndexedRecoveryPointsResult& ListIndexedRecoveryPointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IndexedRecoveryPoints")) {
     Aws::Utils::Array<JsonView> indexedRecoveryPointsJsonList = jsonValue.GetArray("IndexedRecoveryPoints");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateArchiveResult::UpdateArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateArchiveResult& UpdateArchiveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ArchiveArn")) {
     m_archiveArn = jsonValue.GetString("ArchiveArn");

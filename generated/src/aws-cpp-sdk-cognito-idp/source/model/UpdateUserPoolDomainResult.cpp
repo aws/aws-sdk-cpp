@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateUserPoolDomainResult::UpdateUserPoolDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateUserPoolDomainResult& UpdateUserPoolDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedLoginVersion")) {
     m_managedLoginVersion = jsonValue.GetInteger("ManagedLoginVersion");

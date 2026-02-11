@@ -20,6 +20,7 @@ using namespace Aws;
 ListRetrainingSchedulersResult::ListRetrainingSchedulersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRetrainingSchedulersResult& ListRetrainingSchedulersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RetrainingSchedulerSummaries")) {
     Aws::Utils::Array<JsonView> retrainingSchedulerSummariesJsonList = jsonValue.GetArray("RetrainingSchedulerSummaries");

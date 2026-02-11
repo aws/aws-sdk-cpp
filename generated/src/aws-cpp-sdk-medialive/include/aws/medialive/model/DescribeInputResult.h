@@ -487,6 +487,8 @@ an input in a customer network.
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -533,6 +535,7 @@ an input in a customer network.
   RouterInputSettings m_routerSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_attachedChannelsHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;

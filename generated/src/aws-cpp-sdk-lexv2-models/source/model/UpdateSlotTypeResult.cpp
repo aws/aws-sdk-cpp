@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSlotTypeResult::UpdateSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSlotTypeResult& UpdateSlotTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("slotTypeId")) {
     m_slotTypeId = jsonValue.GetString("slotTypeId");

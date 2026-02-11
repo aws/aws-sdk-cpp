@@ -20,6 +20,7 @@ using namespace Aws;
 CreateScheduleResult::CreateScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateScheduleResult& CreateScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScheduleArn")) {
     m_scheduleArn = jsonValue.GetString("ScheduleArn");

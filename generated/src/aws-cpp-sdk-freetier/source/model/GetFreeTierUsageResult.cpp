@@ -20,6 +20,7 @@ using namespace Aws;
 GetFreeTierUsageResult::GetFreeTierUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFreeTierUsageResult& GetFreeTierUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("freeTierUsages")) {
     Aws::Utils::Array<JsonView> freeTierUsagesJsonList = jsonValue.GetArray("freeTierUsages");

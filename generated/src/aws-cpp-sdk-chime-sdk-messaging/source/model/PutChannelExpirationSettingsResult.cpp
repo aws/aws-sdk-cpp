@@ -22,6 +22,7 @@ PutChannelExpirationSettingsResult::PutChannelExpirationSettingsResult(const Aws
 }
 
 PutChannelExpirationSettingsResult& PutChannelExpirationSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelArn")) {
     m_channelArn = jsonValue.GetString("ChannelArn");

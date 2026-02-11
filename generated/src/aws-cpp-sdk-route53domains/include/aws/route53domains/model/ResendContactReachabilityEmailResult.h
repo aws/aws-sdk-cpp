@@ -93,6 +93,8 @@ class ResendContactReachabilityEmailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -101,6 +103,7 @@ class ResendContactReachabilityEmailResult {
   bool m_isAlreadyVerified{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
   bool m_isAlreadyVerifiedHasBeenSet = false;

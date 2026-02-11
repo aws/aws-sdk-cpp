@@ -24,6 +24,7 @@ UpdateProcurementPortalPreferenceStatusResult::UpdateProcurementPortalPreference
 
 UpdateProcurementPortalPreferenceStatusResult& UpdateProcurementPortalPreferenceStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProcurementPortalPreferenceArn")) {
     m_procurementPortalPreferenceArn = jsonValue.GetString("ProcurementPortalPreferenceArn");

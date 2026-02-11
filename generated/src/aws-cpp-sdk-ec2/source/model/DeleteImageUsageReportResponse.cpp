@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteImageUsageReportResponse::DeleteImageUsageReportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteImageUsageReportResponse& DeleteImageUsageReportResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

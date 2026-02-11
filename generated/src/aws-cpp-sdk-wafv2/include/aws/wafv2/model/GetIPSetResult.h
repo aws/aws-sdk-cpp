@@ -82,12 +82,15 @@ class GetIPSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IPSet m_iPSet;
 
   Aws::String m_lockToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_iPSetHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

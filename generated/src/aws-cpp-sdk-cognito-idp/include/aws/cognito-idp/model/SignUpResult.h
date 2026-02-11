@@ -122,6 +122,8 @@ class SignUpResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_userConfirmed{false};
 
@@ -132,6 +134,7 @@ class SignUpResult {
   Aws::String m_session;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userConfirmedHasBeenSet = false;
   bool m_codeDeliveryDetailsHasBeenSet = false;
   bool m_userSubHasBeenSet = false;

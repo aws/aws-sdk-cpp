@@ -58,10 +58,13 @@ class GetMetricPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MetricPolicy m_metricPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metricPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

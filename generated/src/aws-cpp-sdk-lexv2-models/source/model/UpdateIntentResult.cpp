@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateIntentResult::UpdateIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIntentResult& UpdateIntentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("intentId")) {
     m_intentId = jsonValue.GetString("intentId");

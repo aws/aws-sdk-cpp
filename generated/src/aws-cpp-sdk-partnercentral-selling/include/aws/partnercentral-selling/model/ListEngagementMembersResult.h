@@ -86,12 +86,15 @@ class ListEngagementMembersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EngagementMember> m_engagementMemberList;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_engagementMemberListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

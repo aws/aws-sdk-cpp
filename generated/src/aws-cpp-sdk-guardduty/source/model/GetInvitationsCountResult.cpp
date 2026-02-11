@@ -20,6 +20,7 @@ using namespace Aws;
 GetInvitationsCountResult::GetInvitationsCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInvitationsCountResult& GetInvitationsCountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("invitationsCount")) {
     m_invitationsCount = jsonValue.GetInteger("invitationsCount");

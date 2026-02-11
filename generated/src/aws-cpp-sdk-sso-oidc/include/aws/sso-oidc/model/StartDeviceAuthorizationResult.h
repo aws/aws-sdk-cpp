@@ -145,6 +145,8 @@ class StartDeviceAuthorizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_deviceCode;
 
@@ -159,6 +161,7 @@ class StartDeviceAuthorizationResult {
   int m_interval{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deviceCodeHasBeenSet = false;
   bool m_userCodeHasBeenSet = false;
   bool m_verificationUriHasBeenSet = false;

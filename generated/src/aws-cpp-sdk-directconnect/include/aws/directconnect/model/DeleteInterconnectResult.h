@@ -66,10 +66,13 @@ class DeleteInterconnectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InterconnectState m_interconnectState{InterconnectState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_interconnectStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

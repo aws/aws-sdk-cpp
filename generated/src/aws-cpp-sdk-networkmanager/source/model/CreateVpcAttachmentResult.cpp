@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVpcAttachmentResult::CreateVpcAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVpcAttachmentResult& CreateVpcAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcAttachment")) {
     m_vpcAttachment = jsonValue.GetObject("VpcAttachment");

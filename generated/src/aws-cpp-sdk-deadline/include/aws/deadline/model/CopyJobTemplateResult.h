@@ -57,10 +57,13 @@ class CopyJobTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobTemplateType m_templateType{JobTemplateType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

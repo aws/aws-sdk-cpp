@@ -428,6 +428,8 @@ class DescribeJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -472,6 +474,7 @@ class DescribeJobResult {
   OutputLocation m_outputLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobDescriptionHasBeenSet = false;
   bool m_actionHasBeenSet = false;

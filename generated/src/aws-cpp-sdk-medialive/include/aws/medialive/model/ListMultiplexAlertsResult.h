@@ -88,12 +88,15 @@ class ListMultiplexAlertsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<MultiplexAlert> m_alerts;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_alertsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

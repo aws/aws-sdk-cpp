@@ -221,6 +221,8 @@ class GetAccountAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_accountAssociationId;
 
@@ -243,6 +245,7 @@ class GetAccountAssociationResult {
   GeneralAuthorizationName m_generalAuthorization;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountAssociationIdHasBeenSet = false;
   bool m_associationStateHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

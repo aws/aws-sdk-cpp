@@ -113,6 +113,8 @@ class ListGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Group> m_groups;
 
@@ -121,6 +123,7 @@ class ListGroupsResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupsHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

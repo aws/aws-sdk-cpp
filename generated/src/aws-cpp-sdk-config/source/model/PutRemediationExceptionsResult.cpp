@@ -20,6 +20,7 @@ using namespace Aws;
 PutRemediationExceptionsResult::PutRemediationExceptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRemediationExceptionsResult& PutRemediationExceptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedBatches")) {
     Aws::Utils::Array<JsonView> failedBatchesJsonList = jsonValue.GetArray("FailedBatches");

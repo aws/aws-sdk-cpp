@@ -23,6 +23,7 @@ ListDistributionTenantsByCustomization2020_05_31Result::ListDistributionTenantsB
 
 ListDistributionTenantsByCustomization2020_05_31Result& ListDistributionTenantsByCustomization2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

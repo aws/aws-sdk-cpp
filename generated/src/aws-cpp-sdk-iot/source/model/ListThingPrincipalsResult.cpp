@@ -20,6 +20,7 @@ using namespace Aws;
 ListThingPrincipalsResult::ListThingPrincipalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListThingPrincipalsResult& ListThingPrincipalsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("principals")) {
     Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");

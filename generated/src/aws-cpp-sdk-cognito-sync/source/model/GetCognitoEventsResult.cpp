@@ -20,6 +20,7 @@ using namespace Aws;
 GetCognitoEventsResult::GetCognitoEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCognitoEventsResult& GetCognitoEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Events")) {
     Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("Events").GetAllObjects();

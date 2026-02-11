@@ -102,6 +102,8 @@ class ListDelegationRequestsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DelegationRequest> m_delegationRequests;
 
@@ -110,6 +112,7 @@ class ListDelegationRequestsResult {
   bool m_isTruncated{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_delegationRequestsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 PutAllianceLeadContactResult::PutAllianceLeadContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutAllianceLeadContactResult& PutAllianceLeadContactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");

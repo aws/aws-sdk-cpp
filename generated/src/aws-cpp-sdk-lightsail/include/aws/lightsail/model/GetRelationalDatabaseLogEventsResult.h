@@ -102,6 +102,8 @@ class GetRelationalDatabaseLogEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<LogEvent> m_resourceLogEvents;
 
@@ -110,6 +112,7 @@ class GetRelationalDatabaseLogEventsResult {
   Aws::String m_nextForwardToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceLogEventsHasBeenSet = false;
   bool m_nextBackwardTokenHasBeenSet = false;
   bool m_nextForwardTokenHasBeenSet = false;

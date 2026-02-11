@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateReviewTemplateResult::UpdateReviewTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateReviewTemplateResult& UpdateReviewTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReviewTemplate")) {
     m_reviewTemplate = jsonValue.GetObject("ReviewTemplate");

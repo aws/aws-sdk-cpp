@@ -20,6 +20,7 @@ using namespace Aws;
 GetCaseAttachmentUploadUrlResult::GetCaseAttachmentUploadUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCaseAttachmentUploadUrlResult& GetCaseAttachmentUploadUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("attachmentPresignedUrl")) {
     m_attachmentPresignedUrl = jsonValue.GetString("attachmentPresignedUrl");

@@ -74,12 +74,15 @@ class UpdateRoleAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_roleAlias;
 
   Aws::String m_roleAliasArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_roleAliasHasBeenSet = false;
   bool m_roleAliasArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

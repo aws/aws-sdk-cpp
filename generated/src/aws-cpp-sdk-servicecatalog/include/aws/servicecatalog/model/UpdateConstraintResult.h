@@ -91,6 +91,8 @@ class UpdateConstraintResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConstraintDetail m_constraintDetail;
 
@@ -99,6 +101,7 @@ class UpdateConstraintResult {
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_constraintDetailHasBeenSet = false;
   bool m_constraintParametersHasBeenSet = false;
   bool m_statusHasBeenSet = false;

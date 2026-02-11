@@ -23,6 +23,7 @@ DescribeNotificationConfigurationResult::DescribeNotificationConfigurationResult
 
 DescribeNotificationConfigurationResult& DescribeNotificationConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotificationConfiguration")) {
     m_notificationConfiguration = jsonValue.GetObject("NotificationConfiguration");

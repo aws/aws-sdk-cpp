@@ -23,6 +23,7 @@ RegisterTaskWithMaintenanceWindowResult::RegisterTaskWithMaintenanceWindowResult
 
 RegisterTaskWithMaintenanceWindowResult& RegisterTaskWithMaintenanceWindowResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WindowTaskId")) {
     m_windowTaskId = jsonValue.GetString("WindowTaskId");

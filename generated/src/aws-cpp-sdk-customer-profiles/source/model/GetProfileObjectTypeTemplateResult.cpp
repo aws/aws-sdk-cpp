@@ -22,6 +22,7 @@ GetProfileObjectTypeTemplateResult::GetProfileObjectTypeTemplateResult(const Aws
 }
 
 GetProfileObjectTypeTemplateResult& GetProfileObjectTypeTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TemplateId")) {
     m_templateId = jsonValue.GetString("TemplateId");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteElasticsearchDomainResult::DeleteElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteElasticsearchDomainResult& DeleteElasticsearchDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainStatus")) {
     m_domainStatus = jsonValue.GetObject("DomainStatus");

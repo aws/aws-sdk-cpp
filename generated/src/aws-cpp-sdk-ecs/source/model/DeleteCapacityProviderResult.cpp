@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCapacityProviderResult::DeleteCapacityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCapacityProviderResult& DeleteCapacityProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("capacityProvider")) {
     m_capacityProvider = jsonValue.GetObject("capacityProvider");

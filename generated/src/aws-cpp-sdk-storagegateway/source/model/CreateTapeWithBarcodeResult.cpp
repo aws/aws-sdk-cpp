@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTapeWithBarcodeResult::CreateTapeWithBarcodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTapeWithBarcodeResult& CreateTapeWithBarcodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TapeARN")) {
     m_tapeARN = jsonValue.GetString("TapeARN");

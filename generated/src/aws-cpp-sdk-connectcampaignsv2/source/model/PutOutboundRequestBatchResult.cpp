@@ -20,6 +20,7 @@ using namespace Aws;
 PutOutboundRequestBatchResult::PutOutboundRequestBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutOutboundRequestBatchResult& PutOutboundRequestBatchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successfulRequests")) {
     Aws::Utils::Array<JsonView> successfulRequestsJsonList = jsonValue.GetArray("successfulRequests");

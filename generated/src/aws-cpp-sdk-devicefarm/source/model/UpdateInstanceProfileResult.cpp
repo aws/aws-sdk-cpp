@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateInstanceProfileResult::UpdateInstanceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateInstanceProfileResult& UpdateInstanceProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("instanceProfile")) {
     m_instanceProfile = jsonValue.GetObject("instanceProfile");

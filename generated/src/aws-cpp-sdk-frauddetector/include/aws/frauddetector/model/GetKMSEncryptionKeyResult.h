@@ -58,10 +58,13 @@ class GetKMSEncryptionKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KMSKey m_kmsKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_kmsKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

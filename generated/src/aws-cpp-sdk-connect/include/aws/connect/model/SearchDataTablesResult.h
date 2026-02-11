@@ -100,6 +100,8 @@ class SearchDataTablesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DataTable> m_dataTables;
 
@@ -108,6 +110,7 @@ class SearchDataTablesResult {
   long long m_approximateTotalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataTablesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_approximateTotalCountHasBeenSet = false;

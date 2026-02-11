@@ -72,12 +72,15 @@ class UpdateComputeQuotaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_computeQuotaArn;
 
   int m_computeQuotaVersion{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_computeQuotaArnHasBeenSet = false;
   bool m_computeQuotaVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

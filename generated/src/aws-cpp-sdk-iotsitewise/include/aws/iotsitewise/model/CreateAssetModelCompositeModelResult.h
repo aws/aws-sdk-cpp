@@ -102,6 +102,8 @@ class CreateAssetModelCompositeModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_assetModelCompositeModelId;
 
@@ -110,6 +112,7 @@ class CreateAssetModelCompositeModelResult {
   AssetModelStatus m_assetModelStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assetModelCompositeModelIdHasBeenSet = false;
   bool m_assetModelCompositeModelPathHasBeenSet = false;
   bool m_assetModelStatusHasBeenSet = false;

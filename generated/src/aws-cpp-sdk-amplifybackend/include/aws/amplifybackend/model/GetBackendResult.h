@@ -166,6 +166,8 @@ class GetBackendResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_amplifyFeatureFlags;
 
@@ -182,6 +184,7 @@ class GetBackendResult {
   Aws::String m_error;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_amplifyFeatureFlagsHasBeenSet = false;
   bool m_amplifyMetaConfigHasBeenSet = false;
   bool m_appIdHasBeenSet = false;

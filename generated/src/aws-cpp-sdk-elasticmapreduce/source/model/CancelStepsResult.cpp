@@ -20,6 +20,7 @@ using namespace Aws;
 CancelStepsResult::CancelStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelStepsResult& CancelStepsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CancelStepsInfoList")) {
     Aws::Utils::Array<JsonView> cancelStepsInfoListJsonList = jsonValue.GetArray("CancelStepsInfoList");

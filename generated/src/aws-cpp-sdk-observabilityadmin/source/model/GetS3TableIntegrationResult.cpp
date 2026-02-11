@@ -20,6 +20,7 @@ using namespace Aws;
 GetS3TableIntegrationResult::GetS3TableIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetS3TableIntegrationResult& GetS3TableIntegrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");

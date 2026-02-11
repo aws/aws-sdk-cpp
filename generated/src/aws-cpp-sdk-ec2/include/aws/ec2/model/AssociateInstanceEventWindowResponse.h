@@ -58,10 +58,13 @@ class AssociateInstanceEventWindowResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceEventWindow m_instanceEventWindow;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceEventWindowHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

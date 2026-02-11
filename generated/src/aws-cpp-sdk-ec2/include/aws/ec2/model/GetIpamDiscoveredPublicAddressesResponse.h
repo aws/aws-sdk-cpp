@@ -104,6 +104,8 @@ class GetIpamDiscoveredPublicAddressesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<IpamDiscoveredPublicAddress> m_ipamDiscoveredPublicAddresses;
 
@@ -112,6 +114,7 @@ class GetIpamDiscoveredPublicAddressesResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamDiscoveredPublicAddressesHasBeenSet = false;
   bool m_oldestSampleTimeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

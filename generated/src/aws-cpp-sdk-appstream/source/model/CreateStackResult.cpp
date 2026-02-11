@@ -20,6 +20,7 @@ using namespace Aws;
 CreateStackResult::CreateStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateStackResult& CreateStackResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Stack")) {
     m_stack = jsonValue.GetObject("Stack");

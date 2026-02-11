@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMultiRegionClusterResult::DeleteMultiRegionClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMultiRegionClusterResult& DeleteMultiRegionClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MultiRegionCluster")) {
     m_multiRegionCluster = jsonValue.GetObject("MultiRegionCluster");

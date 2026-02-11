@@ -98,6 +98,8 @@ class GetUnfilteredPartitionMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Partition m_partition;
 
@@ -106,6 +108,7 @@ class GetUnfilteredPartitionMetadataResult {
   bool m_isRegisteredWithLakeFormation{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_partitionHasBeenSet = false;
   bool m_authorizedColumnsHasBeenSet = false;
   bool m_isRegisteredWithLakeFormationHasBeenSet = false;

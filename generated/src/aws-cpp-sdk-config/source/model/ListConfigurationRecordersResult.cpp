@@ -20,6 +20,7 @@ using namespace Aws;
 ListConfigurationRecordersResult::ListConfigurationRecordersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConfigurationRecordersResult& ListConfigurationRecordersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationRecorderSummaries")) {
     Aws::Utils::Array<JsonView> configurationRecorderSummariesJsonList = jsonValue.GetArray("ConfigurationRecorderSummaries");

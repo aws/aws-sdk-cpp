@@ -20,6 +20,7 @@ using namespace Aws;
 StopBuildBatchResult::StopBuildBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopBuildBatchResult& StopBuildBatchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("buildBatch")) {
     m_buildBatch = jsonValue.GetObject("buildBatch");

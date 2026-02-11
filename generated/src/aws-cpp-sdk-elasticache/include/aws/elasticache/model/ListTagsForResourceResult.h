@@ -72,10 +72,13 @@ class ListTagsForResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Tag> m_tagList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tagListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

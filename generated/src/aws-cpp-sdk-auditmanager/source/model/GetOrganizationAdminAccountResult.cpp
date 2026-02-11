@@ -22,6 +22,7 @@ GetOrganizationAdminAccountResult::GetOrganizationAdminAccountResult(const Aws::
 }
 
 GetOrganizationAdminAccountResult& GetOrganizationAdminAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("adminAccountId")) {
     m_adminAccountId = jsonValue.GetString("adminAccountId");

@@ -20,6 +20,7 @@ using namespace Aws;
 PostCommentForPullRequestResult::PostCommentForPullRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PostCommentForPullRequestResult& PostCommentForPullRequestResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");

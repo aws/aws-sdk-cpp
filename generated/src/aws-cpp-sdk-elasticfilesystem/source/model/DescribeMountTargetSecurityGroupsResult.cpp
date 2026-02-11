@@ -23,6 +23,7 @@ DescribeMountTargetSecurityGroupsResult::DescribeMountTargetSecurityGroupsResult
 
 DescribeMountTargetSecurityGroupsResult& DescribeMountTargetSecurityGroupsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecurityGroups")) {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");

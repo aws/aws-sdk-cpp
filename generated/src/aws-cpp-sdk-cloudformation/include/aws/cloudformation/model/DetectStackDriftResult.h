@@ -61,10 +61,13 @@ class DetectStackDriftResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_stackDriftDetectionId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackDriftDetectionIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ListEmailTemplatesResult::ListEmailTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEmailTemplatesResult& ListEmailTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TemplatesMetadata")) {
     Aws::Utils::Array<JsonView> templatesMetadataJsonList = jsonValue.GetArray("TemplatesMetadata");

@@ -81,12 +81,15 @@ class CheckDNSAvailabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_available{false};
 
   Aws::String m_fullyQualifiedCNAME;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_availableHasBeenSet = false;
   bool m_fullyQualifiedCNAMEHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

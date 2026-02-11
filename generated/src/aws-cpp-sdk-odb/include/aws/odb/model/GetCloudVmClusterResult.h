@@ -58,10 +58,13 @@ class GetCloudVmClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CloudVmCluster m_cloudVmCluster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cloudVmClusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

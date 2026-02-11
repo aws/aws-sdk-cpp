@@ -58,10 +58,13 @@ class GetResolverDnssecConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResolverDnssecConfig m_resolverDNSSECConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resolverDNSSECConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

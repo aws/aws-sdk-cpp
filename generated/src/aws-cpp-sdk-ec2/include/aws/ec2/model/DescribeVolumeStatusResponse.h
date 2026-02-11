@@ -84,12 +84,15 @@ class DescribeVolumeStatusResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<VolumeStatusItem> m_volumeStatuses;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_volumeStatusesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

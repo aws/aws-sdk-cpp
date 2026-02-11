@@ -59,10 +59,13 @@ class DescribePiiEntitiesDetectionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PiiEntitiesDetectionJobProperties m_piiEntitiesDetectionJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_piiEntitiesDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

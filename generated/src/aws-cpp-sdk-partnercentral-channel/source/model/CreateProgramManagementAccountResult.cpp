@@ -23,6 +23,7 @@ CreateProgramManagementAccountResult::CreateProgramManagementAccountResult(const
 
 CreateProgramManagementAccountResult& CreateProgramManagementAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("programManagementAccountDetail")) {
     m_programManagementAccountDetail = jsonValue.GetObject("programManagementAccountDetail");

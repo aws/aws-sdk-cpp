@@ -119,6 +119,8 @@ class TestConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectorId;
 
@@ -129,6 +131,7 @@ class TestConnectionResult {
   SftpConnectorConnectionDetails m_sftpConnectionDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectorIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;

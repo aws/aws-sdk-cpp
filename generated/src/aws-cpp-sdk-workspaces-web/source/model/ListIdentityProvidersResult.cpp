@@ -20,6 +20,7 @@ using namespace Aws;
 ListIdentityProvidersResult::ListIdentityProvidersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIdentityProvidersResult& ListIdentityProvidersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

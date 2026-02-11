@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFieldResult::CreateFieldResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFieldResult& CreateFieldResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fieldId")) {
     m_fieldId = jsonValue.GetString("fieldId");

@@ -425,6 +425,8 @@ class DescribeAutoMLJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_autoMLJobName;
 
@@ -469,6 +471,7 @@ class DescribeAutoMLJobResult {
   ModelDeployResult m_modelDeployResult;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoMLJobNameHasBeenSet = false;
   bool m_autoMLJobArnHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;

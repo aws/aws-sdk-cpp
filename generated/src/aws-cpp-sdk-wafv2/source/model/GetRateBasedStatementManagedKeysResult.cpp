@@ -23,6 +23,7 @@ GetRateBasedStatementManagedKeysResult::GetRateBasedStatementManagedKeysResult(c
 
 GetRateBasedStatementManagedKeysResult& GetRateBasedStatementManagedKeysResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedKeysIPV4")) {
     m_managedKeysIPV4 = jsonValue.GetObject("ManagedKeysIPV4");

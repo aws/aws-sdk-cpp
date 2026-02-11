@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateResourceShareResult::AssociateResourceShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateResourceShareResult& AssociateResourceShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceShareAssociations")) {
     Aws::Utils::Array<JsonView> resourceShareAssociationsJsonList = jsonValue.GetArray("resourceShareAssociations");

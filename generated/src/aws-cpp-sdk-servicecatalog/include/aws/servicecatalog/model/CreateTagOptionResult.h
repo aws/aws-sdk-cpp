@@ -58,10 +58,13 @@ class CreateTagOptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TagOptionDetail m_tagOptionDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tagOptionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterContainerImageResult::RegisterContainerImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterContainerImageResult& RegisterContainerImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("containerImage")) {
     m_containerImage = jsonValue.GetObject("containerImage");

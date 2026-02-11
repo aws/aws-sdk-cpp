@@ -20,6 +20,7 @@ using namespace Aws;
 GetLensResult::GetLensResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLensResult& GetLensResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Lens")) {
     m_lens = jsonValue.GetObject("Lens");

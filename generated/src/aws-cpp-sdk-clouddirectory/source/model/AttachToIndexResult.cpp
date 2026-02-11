@@ -20,6 +20,7 @@ using namespace Aws;
 AttachToIndexResult::AttachToIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AttachToIndexResult& AttachToIndexResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AttachedObjectIdentifier")) {
     m_attachedObjectIdentifier = jsonValue.GetString("AttachedObjectIdentifier");

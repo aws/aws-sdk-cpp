@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataIntegrationFlowResult::CreateDataIntegrationFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataIntegrationFlowResult& CreateDataIntegrationFlowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("instanceId")) {
     m_instanceId = jsonValue.GetString("instanceId");

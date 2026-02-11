@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTableBucketResult::CreateTableBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTableBucketResult& CreateTableBucketResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");

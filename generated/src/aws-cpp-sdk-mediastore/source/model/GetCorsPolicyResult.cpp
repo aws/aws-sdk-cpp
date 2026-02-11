@@ -20,6 +20,7 @@ using namespace Aws;
 GetCorsPolicyResult::GetCorsPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCorsPolicyResult& GetCorsPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CorsPolicy")) {
     Aws::Utils::Array<JsonView> corsPolicyJsonList = jsonValue.GetArray("CorsPolicy");

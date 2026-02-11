@@ -68,10 +68,13 @@ class BatchDisassociateClientDeviceFromCoreDeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DisassociateClientDeviceFromCoreDeviceErrorEntry> m_errorEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_errorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

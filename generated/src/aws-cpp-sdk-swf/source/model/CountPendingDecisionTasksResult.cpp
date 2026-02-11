@@ -20,6 +20,7 @@ using namespace Aws;
 CountPendingDecisionTasksResult::CountPendingDecisionTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CountPendingDecisionTasksResult& CountPendingDecisionTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInteger("count");

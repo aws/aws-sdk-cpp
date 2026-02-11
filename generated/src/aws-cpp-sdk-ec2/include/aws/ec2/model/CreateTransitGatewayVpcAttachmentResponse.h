@@ -58,10 +58,13 @@ class CreateTransitGatewayVpcAttachmentResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayVpcAttachment m_transitGatewayVpcAttachment;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayVpcAttachmentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

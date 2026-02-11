@@ -20,6 +20,7 @@ using namespace Aws;
 PutRegistrationFieldValueResult::PutRegistrationFieldValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRegistrationFieldValueResult& PutRegistrationFieldValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegistrationArn")) {
     m_registrationArn = jsonValue.GetString("RegistrationArn");

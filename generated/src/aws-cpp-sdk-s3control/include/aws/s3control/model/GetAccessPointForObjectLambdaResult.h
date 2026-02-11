@@ -132,6 +132,8 @@ class GetAccessPointForObjectLambdaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -144,6 +146,7 @@ class GetAccessPointForObjectLambdaResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_publicAccessBlockConfigurationHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

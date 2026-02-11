@@ -23,6 +23,7 @@ DescribeMaintenanceWindowExecutionsResult::DescribeMaintenanceWindowExecutionsRe
 
 DescribeMaintenanceWindowExecutionsResult& DescribeMaintenanceWindowExecutionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WindowExecutions")) {
     Aws::Utils::Array<JsonView> windowExecutionsJsonList = jsonValue.GetArray("WindowExecutions");

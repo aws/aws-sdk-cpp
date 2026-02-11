@@ -89,12 +89,15 @@ class BatchUpdateFindingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AwsSecurityFindingIdentifier> m_processedFindings;
 
   Aws::Vector<BatchUpdateFindingsUnprocessedFinding> m_unprocessedFindings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_processedFindingsHasBeenSet = false;
   bool m_unprocessedFindingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

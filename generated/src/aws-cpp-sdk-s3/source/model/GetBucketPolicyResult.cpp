@@ -18,6 +18,7 @@ using namespace Aws;
 GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetBucketPolicyResult& GetBucketPolicyResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_policy = result.TakeOwnershipOfPayload();
   m_policyHasBeenSet = true;
 

@@ -74,12 +74,15 @@ class CreateIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_indexId;
 
   Aws::String m_indexArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_indexIdHasBeenSet = false;
   bool m_indexArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

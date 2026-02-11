@@ -116,6 +116,8 @@ class ListGroupResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ListGroupResourcesItem> m_resources;
 
@@ -124,6 +126,7 @@ class ListGroupResourcesResult {
   Aws::Vector<QueryError> m_queryErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_queryErrorsHasBeenSet = false;

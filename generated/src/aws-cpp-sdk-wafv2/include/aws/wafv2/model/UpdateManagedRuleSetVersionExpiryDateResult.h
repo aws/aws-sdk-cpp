@@ -102,6 +102,8 @@ class UpdateManagedRuleSetVersionExpiryDateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_expiringVersion;
 
@@ -110,6 +112,7 @@ class UpdateManagedRuleSetVersionExpiryDateResult {
   Aws::String m_nextLockToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_expiringVersionHasBeenSet = false;
   bool m_expiryTimestampHasBeenSet = false;
   bool m_nextLockTokenHasBeenSet = false;

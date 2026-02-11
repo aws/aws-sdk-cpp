@@ -22,6 +22,7 @@ DescribeDashboardSnapshotJobResult::DescribeDashboardSnapshotJobResult(const Aws
 }
 
 DescribeDashboardSnapshotJobResult& DescribeDashboardSnapshotJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AwsAccountId")) {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");

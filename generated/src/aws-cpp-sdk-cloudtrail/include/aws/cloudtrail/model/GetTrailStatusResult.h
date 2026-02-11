@@ -361,6 +361,8 @@ class GetTrailStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isLogging{false};
 
@@ -397,6 +399,7 @@ class GetTrailStatusResult {
   Aws::String m_timeLoggingStopped;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isLoggingHasBeenSet = false;
   bool m_latestDeliveryErrorHasBeenSet = false;
   bool m_latestNotificationErrorHasBeenSet = false;

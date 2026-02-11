@@ -20,6 +20,7 @@ using namespace Aws;
 CheckNoNewAccessSdkResult::CheckNoNewAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckNoNewAccessSdkResult& CheckNoNewAccessSdkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("result")) {
     m_result = CheckNoNewAccessResultMapper::GetCheckNoNewAccessResultForName(jsonValue.GetString("result"));

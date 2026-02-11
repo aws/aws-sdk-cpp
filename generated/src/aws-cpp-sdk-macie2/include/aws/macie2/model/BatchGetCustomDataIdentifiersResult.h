@@ -91,12 +91,15 @@ class BatchGetCustomDataIdentifiersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchGetCustomDataIdentifierSummary> m_customDataIdentifiers;
 
   Aws::Vector<Aws::String> m_notFoundIdentifierIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customDataIdentifiersHasBeenSet = false;
   bool m_notFoundIdentifierIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

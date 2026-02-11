@@ -162,6 +162,8 @@ class GetFaceLivenessSessionResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -176,6 +178,7 @@ class GetFaceLivenessSessionResultsResult {
   Challenge m_challenge;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;

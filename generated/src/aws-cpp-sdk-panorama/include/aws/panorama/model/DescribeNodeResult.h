@@ -279,6 +279,8 @@ class DescribeNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_assetName;
 
@@ -309,6 +311,7 @@ class DescribeNodeResult {
   Aws::String m_patchVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assetNameHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;

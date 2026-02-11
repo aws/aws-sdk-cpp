@@ -20,6 +20,7 @@ using namespace Aws;
 CreateUpdatedImageResult::CreateUpdatedImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateUpdatedImageResult& CreateUpdatedImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("image")) {
     m_image = jsonValue.GetObject("image");

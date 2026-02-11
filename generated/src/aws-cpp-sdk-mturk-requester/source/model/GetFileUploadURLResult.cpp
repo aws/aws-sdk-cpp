@@ -20,6 +20,7 @@ using namespace Aws;
 GetFileUploadURLResult::GetFileUploadURLResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFileUploadURLResult& GetFileUploadURLResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileUploadURL")) {
     m_fileUploadURL = jsonValue.GetString("FileUploadURL");

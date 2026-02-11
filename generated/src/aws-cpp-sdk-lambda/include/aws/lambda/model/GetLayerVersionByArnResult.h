@@ -215,6 +215,8 @@ class GetLayerVersionByArnResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LayerVersionContentOutput m_content;
 
@@ -235,6 +237,7 @@ class GetLayerVersionByArnResult {
   Aws::Vector<Architecture> m_compatibleArchitectures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentHasBeenSet = false;
   bool m_layerArnHasBeenSet = false;
   bool m_layerVersionArnHasBeenSet = false;

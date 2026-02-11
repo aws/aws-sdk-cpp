@@ -277,6 +277,8 @@ class CreateApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApiGatewayProxyInput m_apiGatewayProxy;
 
@@ -305,6 +307,7 @@ class CreateApplicationResult {
   Aws::String m_vpcId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_apiGatewayProxyHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;

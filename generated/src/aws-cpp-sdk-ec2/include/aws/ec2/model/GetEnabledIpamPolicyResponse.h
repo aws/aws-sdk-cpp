@@ -89,6 +89,8 @@ class GetEnabledIpamPolicyResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_ipamPolicyEnabled{false};
 
@@ -97,6 +99,7 @@ class GetEnabledIpamPolicyResponse {
   IpamPolicyManagedBy m_managedBy{IpamPolicyManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamPolicyEnabledHasBeenSet = false;
   bool m_ipamPolicyIdHasBeenSet = false;
   bool m_managedByHasBeenSet = false;

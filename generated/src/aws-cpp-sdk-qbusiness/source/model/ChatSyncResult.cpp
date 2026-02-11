@@ -20,6 +20,7 @@ using namespace Aws;
 ChatSyncResult::ChatSyncResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ChatSyncResult& ChatSyncResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("conversationId")) {
     m_conversationId = jsonValue.GetString("conversationId");

@@ -23,6 +23,7 @@ ListRecommendedActionSummariesResult::ListRecommendedActionSummariesResult(const
 
 ListRecommendedActionSummariesResult& ListRecommendedActionSummariesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recommendedActionSummaries")) {
     Aws::Utils::Array<JsonView> recommendedActionSummariesJsonList = jsonValue.GetArray("recommendedActionSummaries");

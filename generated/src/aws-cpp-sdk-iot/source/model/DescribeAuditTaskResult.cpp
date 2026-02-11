@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAuditTaskResult::DescribeAuditTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAuditTaskResult& DescribeAuditTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskStatus")) {
     m_taskStatus = AuditTaskStatusMapper::GetAuditTaskStatusForName(jsonValue.GetString("taskStatus"));

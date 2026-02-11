@@ -20,6 +20,7 @@ using namespace Aws;
 ListPeeringsResult::ListPeeringsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPeeringsResult& ListPeeringsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Peerings")) {
     Aws::Utils::Array<JsonView> peeringsJsonList = jsonValue.GetArray("Peerings");

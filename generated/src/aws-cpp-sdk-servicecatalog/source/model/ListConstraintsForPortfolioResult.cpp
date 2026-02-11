@@ -22,6 +22,7 @@ ListConstraintsForPortfolioResult::ListConstraintsForPortfolioResult(const Aws::
 }
 
 ListConstraintsForPortfolioResult& ListConstraintsForPortfolioResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConstraintDetails")) {
     Aws::Utils::Array<JsonView> constraintDetailsJsonList = jsonValue.GetArray("ConstraintDetails");

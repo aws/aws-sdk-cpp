@@ -20,6 +20,7 @@ using namespace Aws;
 StartMetricsExportResult::StartMetricsExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartMetricsExportResult& StartMetricsExportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricsExportId")) {
     m_metricsExportId = jsonValue.GetString("metricsExportId");

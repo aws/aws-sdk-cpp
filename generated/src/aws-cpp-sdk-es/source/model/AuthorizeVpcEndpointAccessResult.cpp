@@ -20,6 +20,7 @@ using namespace Aws;
 AuthorizeVpcEndpointAccessResult::AuthorizeVpcEndpointAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AuthorizeVpcEndpointAccessResult& AuthorizeVpcEndpointAccessResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthorizedPrincipal")) {
     m_authorizedPrincipal = jsonValue.GetObject("AuthorizedPrincipal");

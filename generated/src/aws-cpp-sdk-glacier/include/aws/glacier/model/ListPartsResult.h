@@ -178,6 +178,8 @@ class ListPartsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_multipartUploadId;
 
@@ -194,6 +196,7 @@ class ListPartsResult {
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_multipartUploadIdHasBeenSet = false;
   bool m_vaultARNHasBeenSet = false;
   bool m_archiveDescriptionHasBeenSet = false;

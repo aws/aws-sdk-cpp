@@ -95,6 +95,8 @@ class CreateSnapshotFromVolumeRecoveryPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_snapshotId;
 
@@ -103,6 +105,7 @@ class CreateSnapshotFromVolumeRecoveryPointResult {
   Aws::String m_volumeRecoveryPointTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotIdHasBeenSet = false;
   bool m_volumeARNHasBeenSet = false;
   bool m_volumeRecoveryPointTimeHasBeenSet = false;

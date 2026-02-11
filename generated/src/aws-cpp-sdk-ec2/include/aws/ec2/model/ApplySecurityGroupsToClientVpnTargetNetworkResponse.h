@@ -66,10 +66,13 @@ class ApplySecurityGroupsToClientVpnTargetNetworkResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_securityGroupIdsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

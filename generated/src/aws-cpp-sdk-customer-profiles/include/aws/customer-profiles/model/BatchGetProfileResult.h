@@ -91,12 +91,15 @@ class BatchGetProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchGetProfileError> m_errors;
 
   Aws::Vector<Profile> m_profiles;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_errorsHasBeenSet = false;
   bool m_profilesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

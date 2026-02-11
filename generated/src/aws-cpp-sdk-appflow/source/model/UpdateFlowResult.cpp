@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFlowResult::UpdateFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFlowResult& UpdateFlowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowStatus")) {
     m_flowStatus = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("flowStatus"));

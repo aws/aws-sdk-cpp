@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceConfigHistoryResult::GetResourceConfigHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceConfigHistoryResult& GetResourceConfigHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configurationItems")) {
     Aws::Utils::Array<JsonView> configurationItemsJsonList = jsonValue.GetArray("configurationItems");

@@ -23,6 +23,7 @@ ValidateAssessmentReportIntegrityResult::ValidateAssessmentReportIntegrityResult
 
 ValidateAssessmentReportIntegrityResult& ValidateAssessmentReportIntegrityResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("signatureValid")) {
     m_signatureValid = jsonValue.GetBool("signatureValid");

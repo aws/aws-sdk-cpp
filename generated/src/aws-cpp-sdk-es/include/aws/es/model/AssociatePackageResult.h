@@ -64,10 +64,13 @@ class AssociatePackageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DomainPackageDetails m_domainPackageDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainPackageDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteTaskDefinitionsResult::DeleteTaskDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteTaskDefinitionsResult& DeleteTaskDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskDefinitions")) {
     Aws::Utils::Array<JsonView> taskDefinitionsJsonList = jsonValue.GetArray("taskDefinitions");

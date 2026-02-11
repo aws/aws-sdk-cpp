@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFileResult::DeleteFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFileResult& DeleteFileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("commitId")) {
     m_commitId = jsonValue.GetString("commitId");

@@ -122,6 +122,8 @@ class DescribeTLSInspectionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_updateToken;
 
@@ -130,6 +132,7 @@ class DescribeTLSInspectionConfigurationResult {
   TLSInspectionConfigurationResponse m_tLSInspectionConfigurationResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_updateTokenHasBeenSet = false;
   bool m_tLSInspectionConfigurationHasBeenSet = false;
   bool m_tLSInspectionConfigurationResponseHasBeenSet = false;

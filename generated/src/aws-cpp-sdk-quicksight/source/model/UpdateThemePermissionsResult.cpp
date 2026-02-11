@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateThemePermissionsResult::UpdateThemePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateThemePermissionsResult& UpdateThemePermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ThemeId")) {
     m_themeId = jsonValue.GetString("ThemeId");

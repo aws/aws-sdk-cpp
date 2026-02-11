@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceExplorerSetupResult::GetResourceExplorerSetupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceExplorerSetupResult& GetResourceExplorerSetupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Regions")) {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");

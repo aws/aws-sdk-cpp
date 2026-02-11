@@ -20,6 +20,7 @@ using namespace Aws;
 GetMailDomainResult::GetMailDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMailDomainResult& GetMailDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Records")) {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");

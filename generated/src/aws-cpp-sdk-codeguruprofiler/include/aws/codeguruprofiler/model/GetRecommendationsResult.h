@@ -151,6 +151,8 @@ class GetRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Anomaly> m_anomalies;
 
@@ -163,6 +165,7 @@ class GetRecommendationsResult {
   Aws::Vector<Recommendation> m_recommendations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_anomaliesHasBeenSet = false;
   bool m_profileEndTimeHasBeenSet = false;
   bool m_profileStartTimeHasBeenSet = false;

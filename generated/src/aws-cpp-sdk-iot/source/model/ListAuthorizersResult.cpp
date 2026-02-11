@@ -20,6 +20,7 @@ using namespace Aws;
 ListAuthorizersResult::ListAuthorizersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAuthorizersResult& ListAuthorizersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authorizers")) {
     Aws::Utils::Array<JsonView> authorizersJsonList = jsonValue.GetArray("authorizers");

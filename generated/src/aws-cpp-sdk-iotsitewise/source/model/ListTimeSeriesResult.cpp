@@ -20,6 +20,7 @@ using namespace Aws;
 ListTimeSeriesResult::ListTimeSeriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTimeSeriesResult& ListTimeSeriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TimeSeriesSummaries")) {
     Aws::Utils::Array<JsonView> timeSeriesSummariesJsonList = jsonValue.GetArray("TimeSeriesSummaries");

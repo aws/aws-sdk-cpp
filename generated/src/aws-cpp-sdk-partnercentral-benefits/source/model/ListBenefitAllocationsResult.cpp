@@ -20,6 +20,7 @@ using namespace Aws;
 ListBenefitAllocationsResult::ListBenefitAllocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBenefitAllocationsResult& ListBenefitAllocationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BenefitAllocationSummaries")) {
     Aws::Utils::Array<JsonView> benefitAllocationSummariesJsonList = jsonValue.GetArray("BenefitAllocationSummaries");

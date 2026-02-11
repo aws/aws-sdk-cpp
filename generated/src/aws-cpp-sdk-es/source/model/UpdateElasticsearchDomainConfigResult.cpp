@@ -23,6 +23,7 @@ UpdateElasticsearchDomainConfigResult::UpdateElasticsearchDomainConfigResult(con
 
 UpdateElasticsearchDomainConfigResult& UpdateElasticsearchDomainConfigResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainConfig")) {
     m_domainConfig = jsonValue.GetObject("DomainConfig");

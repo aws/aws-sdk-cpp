@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateRepositoryResult::DisassociateRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateRepositoryResult& DisassociateRepositoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RepositoryAssociation")) {
     m_repositoryAssociation = jsonValue.GetObject("RepositoryAssociation");

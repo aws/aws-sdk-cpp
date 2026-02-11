@@ -57,10 +57,13 @@ class DisableAllowedImagesSettingsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AllowedImagesSettingsDisabledState m_allowedImagesSettingsState{AllowedImagesSettingsDisabledState::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_allowedImagesSettingsStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

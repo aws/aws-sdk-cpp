@@ -23,6 +23,7 @@ StartAccountAssociationRefreshResult::StartAccountAssociationRefreshResult(const
 
 StartAccountAssociationRefreshResult& StartAccountAssociationRefreshResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OAuthAuthorizationUrl")) {
     m_oAuthAuthorizationUrl = jsonValue.GetString("OAuthAuthorizationUrl");

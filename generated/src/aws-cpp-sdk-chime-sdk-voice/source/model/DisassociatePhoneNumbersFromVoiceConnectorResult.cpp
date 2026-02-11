@@ -24,6 +24,7 @@ DisassociatePhoneNumbersFromVoiceConnectorResult::DisassociatePhoneNumbersFromVo
 
 DisassociatePhoneNumbersFromVoiceConnectorResult& DisassociatePhoneNumbersFromVoiceConnectorResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PhoneNumberErrors")) {
     Aws::Utils::Array<JsonView> phoneNumberErrorsJsonList = jsonValue.GetArray("PhoneNumberErrors");

@@ -74,12 +74,15 @@ class DeleteAgentRuntimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
 
   Aws::String m_agentRuntimeId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

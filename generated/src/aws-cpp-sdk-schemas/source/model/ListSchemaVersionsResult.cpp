@@ -20,6 +20,7 @@ using namespace Aws;
 ListSchemaVersionsResult::ListSchemaVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSchemaVersionsResult& ListSchemaVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

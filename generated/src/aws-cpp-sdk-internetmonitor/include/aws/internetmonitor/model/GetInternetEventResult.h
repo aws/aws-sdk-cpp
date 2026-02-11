@@ -161,6 +161,8 @@ class GetInternetEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_eventId;
 
@@ -177,6 +179,7 @@ class GetInternetEventResult {
   InternetEventStatus m_eventStatus{InternetEventStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventIdHasBeenSet = false;
   bool m_eventArnHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;

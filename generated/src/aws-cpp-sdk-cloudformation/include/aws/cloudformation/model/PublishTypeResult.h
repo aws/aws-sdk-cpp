@@ -59,10 +59,13 @@ class PublishTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_publicTypeArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_publicTypeArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

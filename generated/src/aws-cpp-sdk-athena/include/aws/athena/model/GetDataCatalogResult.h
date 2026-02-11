@@ -58,10 +58,13 @@ class GetDataCatalogResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DataCatalog m_dataCatalog;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataCatalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

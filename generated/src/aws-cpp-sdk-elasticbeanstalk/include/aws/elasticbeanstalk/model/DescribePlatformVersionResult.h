@@ -59,10 +59,13 @@ class DescribePlatformVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PlatformDescription m_platformDescription;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_platformDescriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

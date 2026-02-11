@@ -71,12 +71,15 @@ class GetShippingLabelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_shippingLabelURL;
 
   Aws::String m_warning;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_shippingLabelURLHasBeenSet = false;
   bool m_warningHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

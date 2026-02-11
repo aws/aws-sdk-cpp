@@ -20,6 +20,7 @@ using namespace Aws;
 StartCanaryDryRunResult::StartCanaryDryRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartCanaryDryRunResult& StartCanaryDryRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DryRunConfig")) {
     m_dryRunConfig = jsonValue.GetObject("DryRunConfig");

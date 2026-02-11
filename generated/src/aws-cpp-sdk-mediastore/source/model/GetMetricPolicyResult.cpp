@@ -20,6 +20,7 @@ using namespace Aws;
 GetMetricPolicyResult::GetMetricPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMetricPolicyResult& GetMetricPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MetricPolicy")) {
     m_metricPolicy = jsonValue.GetObject("MetricPolicy");

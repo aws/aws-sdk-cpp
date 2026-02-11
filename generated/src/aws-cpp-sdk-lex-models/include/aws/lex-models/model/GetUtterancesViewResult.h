@@ -87,12 +87,15 @@ class GetUtterancesViewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botName;
 
   Aws::Vector<UtteranceList> m_utterances;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botNameHasBeenSet = false;
   bool m_utterancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

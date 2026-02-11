@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateQAppPermissionsResult::UpdateQAppPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateQAppPermissionsResult& UpdateQAppPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceArn")) {
     m_resourceArn = jsonValue.GetString("resourceArn");

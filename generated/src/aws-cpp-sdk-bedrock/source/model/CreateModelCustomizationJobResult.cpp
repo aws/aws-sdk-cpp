@@ -22,6 +22,7 @@ CreateModelCustomizationJobResult::CreateModelCustomizationJobResult(const Aws::
 }
 
 CreateModelCustomizationJobResult& CreateModelCustomizationJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobArn")) {
     m_jobArn = jsonValue.GetString("jobArn");

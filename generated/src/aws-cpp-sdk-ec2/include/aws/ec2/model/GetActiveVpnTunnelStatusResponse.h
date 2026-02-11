@@ -58,10 +58,13 @@ class GetActiveVpnTunnelStatusResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ActiveVpnTunnelStatus m_activeVpnTunnelStatus;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activeVpnTunnelStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -59,10 +59,13 @@ class DisassociateUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceUserSummary m_instanceUserSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceUserSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 CopyImageResult::CopyImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CopyImageResult& CopyImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DestinationImageName")) {
     m_destinationImageName = jsonValue.GetString("DestinationImageName");

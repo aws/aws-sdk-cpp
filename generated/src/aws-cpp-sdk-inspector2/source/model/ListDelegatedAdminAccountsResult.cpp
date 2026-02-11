@@ -20,6 +20,7 @@ using namespace Aws;
 ListDelegatedAdminAccountsResult::ListDelegatedAdminAccountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDelegatedAdminAccountsResult& ListDelegatedAdminAccountsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("delegatedAdminAccounts")) {
     Aws::Utils::Array<JsonView> delegatedAdminAccountsJsonList = jsonValue.GetArray("delegatedAdminAccounts");

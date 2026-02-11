@@ -20,6 +20,7 @@ using namespace Aws;
 QueryLineageResult::QueryLineageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 QueryLineageResult& QueryLineageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Vertices")) {
     Aws::Utils::Array<JsonView> verticesJsonList = jsonValue.GetArray("Vertices");

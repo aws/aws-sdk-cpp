@@ -104,6 +104,8 @@ class StartSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -112,6 +114,7 @@ class StartSessionResult {
   Aws::String m_streamUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_tokenValueHasBeenSet = false;
   bool m_streamUrlHasBeenSet = false;

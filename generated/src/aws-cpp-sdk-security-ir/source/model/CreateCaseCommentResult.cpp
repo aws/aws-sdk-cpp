@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCaseCommentResult::CreateCaseCommentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCaseCommentResult& CreateCaseCommentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("commentId")) {
     m_commentId = jsonValue.GetString("commentId");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListAggregatorsV2Result::ListAggregatorsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAggregatorsV2Result& ListAggregatorsV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AggregatorsV2")) {
     Aws::Utils::Array<JsonView> aggregatorsV2JsonList = jsonValue.GetArray("AggregatorsV2");

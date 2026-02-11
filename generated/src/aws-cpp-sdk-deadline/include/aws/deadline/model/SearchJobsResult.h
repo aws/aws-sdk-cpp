@@ -95,6 +95,8 @@ class SearchJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<JobSearchSummary> m_jobs;
 
@@ -103,6 +105,7 @@ class SearchJobsResult {
   int m_totalResults{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobsHasBeenSet = false;
   bool m_nextItemOffsetHasBeenSet = false;
   bool m_totalResultsHasBeenSet = false;

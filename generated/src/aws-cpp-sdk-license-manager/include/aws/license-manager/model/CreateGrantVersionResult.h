@@ -90,6 +90,8 @@ class CreateGrantVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_grantArn;
 
@@ -98,6 +100,7 @@ class CreateGrantVersionResult {
   Aws::String m_version;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_grantArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_versionHasBeenSet = false;

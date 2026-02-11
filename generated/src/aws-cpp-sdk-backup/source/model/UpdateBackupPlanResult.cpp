@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateBackupPlanResult::UpdateBackupPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateBackupPlanResult& UpdateBackupPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BackupPlanId")) {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");

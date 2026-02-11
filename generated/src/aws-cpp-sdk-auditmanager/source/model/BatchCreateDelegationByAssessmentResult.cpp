@@ -23,6 +23,7 @@ BatchCreateDelegationByAssessmentResult::BatchCreateDelegationByAssessmentResult
 
 BatchCreateDelegationByAssessmentResult& BatchCreateDelegationByAssessmentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("delegations")) {
     Aws::Utils::Array<JsonView> delegationsJsonList = jsonValue.GetArray("delegations");

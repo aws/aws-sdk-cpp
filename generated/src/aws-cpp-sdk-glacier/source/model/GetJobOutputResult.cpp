@@ -19,6 +19,7 @@ using namespace Aws;
 GetJobOutputResult::GetJobOutputResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetJobOutputResult& GetJobOutputResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_body = result.TakeOwnershipOfPayload();
   m_bodyHasBeenSet = true;
 

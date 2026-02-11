@@ -57,10 +57,13 @@ class UpdateExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_exportArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

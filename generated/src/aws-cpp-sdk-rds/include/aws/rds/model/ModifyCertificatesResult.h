@@ -56,10 +56,13 @@ class ModifyCertificatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Certificate m_certificate;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

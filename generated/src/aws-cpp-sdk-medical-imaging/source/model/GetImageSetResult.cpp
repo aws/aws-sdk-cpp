@@ -20,6 +20,7 @@ using namespace Aws;
 GetImageSetResult::GetImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetImageSetResult& GetImageSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datastoreId")) {
     m_datastoreId = jsonValue.GetString("datastoreId");

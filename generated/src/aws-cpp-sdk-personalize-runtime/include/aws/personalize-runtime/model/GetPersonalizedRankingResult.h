@@ -84,12 +84,15 @@ class GetPersonalizedRankingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PredictedItem> m_personalizedRanking;
 
   Aws::String m_recommendationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_personalizedRankingHasBeenSet = false;
   bool m_recommendationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

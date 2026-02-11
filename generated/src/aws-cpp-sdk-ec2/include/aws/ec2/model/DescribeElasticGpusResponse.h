@@ -101,6 +101,8 @@ class DescribeElasticGpusResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ElasticGpus> m_elasticGpuSet;
 
@@ -109,6 +111,7 @@ class DescribeElasticGpusResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_elasticGpuSetHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -230,6 +230,8 @@ class ModifyScheduledActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_scheduledActionName;
 
@@ -250,6 +252,7 @@ class ModifyScheduledActionResult {
   Aws::Utils::DateTime m_endTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scheduledActionNameHasBeenSet = false;
   bool m_targetActionHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;

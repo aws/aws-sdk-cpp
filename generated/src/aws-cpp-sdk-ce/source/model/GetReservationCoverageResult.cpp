@@ -20,6 +20,7 @@ using namespace Aws;
 GetReservationCoverageResult::GetReservationCoverageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetReservationCoverageResult& GetReservationCoverageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CoveragesByTime")) {
     Aws::Utils::Array<JsonView> coveragesByTimeJsonList = jsonValue.GetArray("CoveragesByTime");

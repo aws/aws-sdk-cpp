@@ -22,6 +22,7 @@ DescribeMatchmakingRuleSetsResult::DescribeMatchmakingRuleSetsResult(const Aws::
 }
 
 DescribeMatchmakingRuleSetsResult& DescribeMatchmakingRuleSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleSets")) {
     Aws::Utils::Array<JsonView> ruleSetsJsonList = jsonValue.GetArray("RuleSets");

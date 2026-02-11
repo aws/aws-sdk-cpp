@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDirectoryConfigResult::CreateDirectoryConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDirectoryConfigResult& CreateDirectoryConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DirectoryConfig")) {
     m_directoryConfig = jsonValue.GetObject("DirectoryConfig");

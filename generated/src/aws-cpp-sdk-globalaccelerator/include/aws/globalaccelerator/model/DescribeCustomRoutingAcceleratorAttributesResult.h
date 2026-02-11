@@ -60,10 +60,13 @@ class DescribeCustomRoutingAcceleratorAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CustomRoutingAcceleratorAttributes m_acceleratorAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_acceleratorAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

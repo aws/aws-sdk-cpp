@@ -86,12 +86,15 @@ class PutDashboardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DashboardValidationMessage> m_dashboardValidationMessages;
 
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dashboardValidationMessagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

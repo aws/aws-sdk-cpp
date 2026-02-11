@@ -58,10 +58,13 @@ class CreateProxySessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProxySession m_proxySession;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proxySessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

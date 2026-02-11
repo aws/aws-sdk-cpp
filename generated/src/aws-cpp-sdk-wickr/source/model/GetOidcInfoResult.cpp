@@ -20,6 +20,7 @@ using namespace Aws;
 GetOidcInfoResult::GetOidcInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOidcInfoResult& GetOidcInfoResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("openidConnectInfo")) {
     m_openidConnectInfo = jsonValue.GetObject("openidConnectInfo");

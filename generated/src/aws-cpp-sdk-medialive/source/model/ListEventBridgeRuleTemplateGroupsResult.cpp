@@ -23,6 +23,7 @@ ListEventBridgeRuleTemplateGroupsResult::ListEventBridgeRuleTemplateGroupsResult
 
 ListEventBridgeRuleTemplateGroupsResult& ListEventBridgeRuleTemplateGroupsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("eventBridgeRuleTemplateGroups")) {
     Aws::Utils::Array<JsonView> eventBridgeRuleTemplateGroupsJsonList = jsonValue.GetArray("eventBridgeRuleTemplateGroups");

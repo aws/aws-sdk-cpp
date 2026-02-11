@@ -20,6 +20,7 @@ using namespace Aws;
 StartSearchJobResult::StartSearchJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartSearchJobResult& StartSearchJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SearchJobArn")) {
     m_searchJobArn = jsonValue.GetString("SearchJobArn");

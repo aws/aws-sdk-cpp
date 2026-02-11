@@ -20,6 +20,7 @@ using namespace Aws;
 CreateExplainabilityExportResult::CreateExplainabilityExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateExplainabilityExportResult& CreateExplainabilityExportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExplainabilityExportArn")) {
     m_explainabilityExportArn = jsonValue.GetString("ExplainabilityExportArn");

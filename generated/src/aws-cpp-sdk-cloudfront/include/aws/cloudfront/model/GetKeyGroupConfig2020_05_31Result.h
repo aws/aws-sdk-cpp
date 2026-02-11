@@ -75,12 +75,15 @@ class GetKeyGroupConfig2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KeyGroupConfig m_keyGroupConfig;
 
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyGroupConfigHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

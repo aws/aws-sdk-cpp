@@ -73,12 +73,15 @@ class UpdateGatewayInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BridgePlacement m_bridgePlacement{BridgePlacement::NOT_SET};
 
   Aws::String m_gatewayInstanceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bridgePlacementHasBeenSet = false;
   bool m_gatewayInstanceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

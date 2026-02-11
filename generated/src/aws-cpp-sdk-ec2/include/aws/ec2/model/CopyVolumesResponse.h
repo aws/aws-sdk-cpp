@@ -65,10 +65,13 @@ class CopyVolumesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Volume> m_volumes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_volumesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

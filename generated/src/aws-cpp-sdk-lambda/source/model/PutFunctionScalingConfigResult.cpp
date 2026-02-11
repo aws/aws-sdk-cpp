@@ -20,6 +20,7 @@ using namespace Aws;
 PutFunctionScalingConfigResult::PutFunctionScalingConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutFunctionScalingConfigResult& PutFunctionScalingConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FunctionState")) {
     m_functionState = StateMapper::GetStateForName(jsonValue.GetString("FunctionState"));

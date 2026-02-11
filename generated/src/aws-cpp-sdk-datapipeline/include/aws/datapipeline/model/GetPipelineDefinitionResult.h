@@ -118,6 +118,8 @@ class GetPipelineDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PipelineObject> m_pipelineObjects;
 
@@ -126,6 +128,7 @@ class GetPipelineDefinitionResult {
   Aws::Vector<ParameterValue> m_parameterValues;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pipelineObjectsHasBeenSet = false;
   bool m_parameterObjectsHasBeenSet = false;
   bool m_parameterValuesHasBeenSet = false;

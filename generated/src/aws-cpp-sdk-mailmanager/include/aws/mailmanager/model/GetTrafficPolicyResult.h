@@ -183,6 +183,8 @@ class GetTrafficPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trafficPolicyName;
 
@@ -201,6 +203,7 @@ class GetTrafficPolicyResult {
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trafficPolicyNameHasBeenSet = false;
   bool m_trafficPolicyIdHasBeenSet = false;
   bool m_trafficPolicyArnHasBeenSet = false;

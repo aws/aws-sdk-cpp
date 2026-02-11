@@ -20,6 +20,7 @@ using namespace Aws;
 GeocodeResult::GeocodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GeocodeResult& GeocodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResultItems")) {
     Aws::Utils::Array<JsonView> resultItemsJsonList = jsonValue.GetArray("ResultItems");

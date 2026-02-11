@@ -20,6 +20,7 @@ using namespace Aws;
 ListHumanLoopsResult::ListHumanLoopsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListHumanLoopsResult& ListHumanLoopsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HumanLoopSummaries")) {
     Aws::Utils::Array<JsonView> humanLoopSummariesJsonList = jsonValue.GetArray("HumanLoopSummaries");

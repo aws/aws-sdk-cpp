@@ -20,6 +20,7 @@ using namespace Aws;
 ListDatasetLabelsResult::ListDatasetLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDatasetLabelsResult& ListDatasetLabelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatasetLabelDescriptions")) {
     Aws::Utils::Array<JsonView> datasetLabelDescriptionsJsonList = jsonValue.GetArray("DatasetLabelDescriptions");

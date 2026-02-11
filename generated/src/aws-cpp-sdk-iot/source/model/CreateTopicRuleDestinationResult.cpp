@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTopicRuleDestinationResult::CreateTopicRuleDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTopicRuleDestinationResult& CreateTopicRuleDestinationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("topicRuleDestination")) {
     m_topicRuleDestination = jsonValue.GetObject("topicRuleDestination");

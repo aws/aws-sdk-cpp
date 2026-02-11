@@ -20,6 +20,7 @@ using namespace Aws;
 CancelKeyDeletionResult::CancelKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelKeyDeletionResult& CancelKeyDeletionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");

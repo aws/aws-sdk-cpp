@@ -20,6 +20,7 @@ using namespace Aws;
 GetLoadBalancerResult::GetLoadBalancerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLoadBalancerResult& GetLoadBalancerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("loadBalancer")) {
     m_loadBalancer = jsonValue.GetObject("loadBalancer");

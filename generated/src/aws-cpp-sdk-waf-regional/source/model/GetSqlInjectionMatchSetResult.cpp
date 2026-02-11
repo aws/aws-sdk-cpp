@@ -20,6 +20,7 @@ using namespace Aws;
 GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSqlInjectionMatchSetResult& GetSqlInjectionMatchSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SqlInjectionMatchSet")) {
     m_sqlInjectionMatchSet = jsonValue.GetObject("SqlInjectionMatchSet");

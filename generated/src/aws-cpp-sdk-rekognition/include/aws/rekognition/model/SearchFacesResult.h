@@ -101,6 +101,8 @@ class SearchFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_searchedFaceId;
 
@@ -109,6 +111,7 @@ class SearchFacesResult {
   Aws::String m_faceModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_searchedFaceIdHasBeenSet = false;
   bool m_faceMatchesHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;

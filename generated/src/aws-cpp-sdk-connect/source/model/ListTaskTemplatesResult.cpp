@@ -20,6 +20,7 @@ using namespace Aws;
 ListTaskTemplatesResult::ListTaskTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTaskTemplatesResult& ListTaskTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskTemplates")) {
     Aws::Utils::Array<JsonView> taskTemplatesJsonList = jsonValue.GetArray("TaskTemplates");

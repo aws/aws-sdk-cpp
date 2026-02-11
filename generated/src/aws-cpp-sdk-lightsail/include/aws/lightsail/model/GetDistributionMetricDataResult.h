@@ -81,12 +81,15 @@ class GetDistributionMetricDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DistributionMetricName m_metricName{DistributionMetricName::NOT_SET};
 
   Aws::Vector<MetricDatapoint> m_metricData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_metricDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -58,10 +58,13 @@ class CreateMessageTemplateAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MessageTemplateAttachment m_attachment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

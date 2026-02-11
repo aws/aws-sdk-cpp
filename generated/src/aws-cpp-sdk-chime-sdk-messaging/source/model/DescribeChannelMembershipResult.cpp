@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeChannelMembershipResult::DescribeChannelMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeChannelMembershipResult& DescribeChannelMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelMembership")) {
     m_channelMembership = jsonValue.GetObject("ChannelMembership");

@@ -93,12 +93,15 @@ class CreateWorkspacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FailedCreateWorkspaceRequest> m_failedRequests;
 
   Aws::Vector<Workspace> m_pendingRequests;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedRequestsHasBeenSet = false;
   bool m_pendingRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

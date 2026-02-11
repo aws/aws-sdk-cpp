@@ -22,6 +22,7 @@ DescribeRoleCustomPermissionResult::DescribeRoleCustomPermissionResult(const Aws
 }
 
 DescribeRoleCustomPermissionResult& DescribeRoleCustomPermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomPermissionsName")) {
     m_customPermissionsName = jsonValue.GetString("CustomPermissionsName");

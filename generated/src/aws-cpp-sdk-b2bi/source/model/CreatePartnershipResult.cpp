@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePartnershipResult::CreatePartnershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePartnershipResult& CreatePartnershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("profileId")) {
     m_profileId = jsonValue.GetString("profileId");

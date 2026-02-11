@@ -58,10 +58,13 @@ class DeleteVpcEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeleteVpcEndpointDetail m_deleteVpcEndpointDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deleteVpcEndpointDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

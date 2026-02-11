@@ -20,6 +20,7 @@ using namespace Aws;
 ListMetadataTransferJobsResult::ListMetadataTransferJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMetadataTransferJobsResult& ListMetadataTransferJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metadataTransferJobSummaries")) {
     Aws::Utils::Array<JsonView> metadataTransferJobSummariesJsonList = jsonValue.GetArray("metadataTransferJobSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListByteMatchSetsResult::ListByteMatchSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListByteMatchSetsResult& ListByteMatchSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextMarker")) {
     m_nextMarker = jsonValue.GetString("NextMarker");

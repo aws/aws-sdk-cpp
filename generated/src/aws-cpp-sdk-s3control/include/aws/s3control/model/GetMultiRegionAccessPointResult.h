@@ -78,12 +78,15 @@ class GetMultiRegionAccessPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MultiRegionAccessPointReport m_accessPoint;
 
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessPointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;

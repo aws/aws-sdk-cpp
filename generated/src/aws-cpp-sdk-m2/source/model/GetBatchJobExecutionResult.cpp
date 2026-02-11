@@ -20,6 +20,7 @@ using namespace Aws;
 GetBatchJobExecutionResult::GetBatchJobExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBatchJobExecutionResult& GetBatchJobExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("applicationId")) {
     m_applicationId = jsonValue.GetString("applicationId");

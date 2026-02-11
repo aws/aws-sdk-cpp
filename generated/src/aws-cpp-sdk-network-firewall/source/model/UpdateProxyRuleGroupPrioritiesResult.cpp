@@ -23,6 +23,7 @@ UpdateProxyRuleGroupPrioritiesResult::UpdateProxyRuleGroupPrioritiesResult(const
 
 UpdateProxyRuleGroupPrioritiesResult& UpdateProxyRuleGroupPrioritiesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProxyRuleGroups")) {
     Aws::Utils::Array<JsonView> proxyRuleGroupsJsonList = jsonValue.GetArray("ProxyRuleGroups");

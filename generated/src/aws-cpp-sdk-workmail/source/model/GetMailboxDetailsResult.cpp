@@ -20,6 +20,7 @@ using namespace Aws;
 GetMailboxDetailsResult::GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMailboxDetailsResult& GetMailboxDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MailboxQuota")) {
     m_mailboxQuota = jsonValue.GetInteger("MailboxQuota");

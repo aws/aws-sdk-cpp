@@ -85,12 +85,15 @@ class DescribeKinesisStreamingDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tableName;
 
   Aws::Vector<KinesisDataStreamDestination> m_kinesisDataStreamDestinations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableNameHasBeenSet = false;
   bool m_kinesisDataStreamDestinationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,7 @@ DescribeManagedProductsByVendorResult::DescribeManagedProductsByVendorResult(con
 
 DescribeManagedProductsByVendorResult& DescribeManagedProductsByVendorResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedProducts")) {
     Aws::Utils::Array<JsonView> managedProductsJsonList = jsonValue.GetArray("ManagedProducts");

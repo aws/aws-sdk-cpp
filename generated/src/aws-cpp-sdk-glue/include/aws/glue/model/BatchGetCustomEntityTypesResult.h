@@ -89,12 +89,15 @@ class BatchGetCustomEntityTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CustomEntityType> m_customEntityTypes;
 
   Aws::Vector<Aws::String> m_customEntityTypesNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customEntityTypesHasBeenSet = false;
   bool m_customEntityTypesNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

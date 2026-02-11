@@ -143,6 +143,8 @@ class CreateServiceNetworkServiceAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -157,6 +159,7 @@ class CreateServiceNetworkServiceAssociationResult {
   DnsEntry m_dnsEntry;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;

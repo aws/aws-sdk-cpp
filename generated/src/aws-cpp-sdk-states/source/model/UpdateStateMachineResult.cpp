@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateStateMachineResult::UpdateStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateStateMachineResult& UpdateStateMachineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("updateDate")) {
     m_updateDate = jsonValue.GetDouble("updateDate");

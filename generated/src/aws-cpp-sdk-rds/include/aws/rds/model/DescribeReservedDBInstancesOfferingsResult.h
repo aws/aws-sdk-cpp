@@ -93,12 +93,15 @@ class DescribeReservedDBInstancesOfferingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<ReservedDBInstancesOffering> m_reservedDBInstancesOfferings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_reservedDBInstancesOfferingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

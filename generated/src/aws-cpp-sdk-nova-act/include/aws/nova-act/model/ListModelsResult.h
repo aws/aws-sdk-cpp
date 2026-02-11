@@ -108,6 +108,8 @@ class ListModelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ModelSummary> m_modelSummaries;
 
@@ -116,6 +118,7 @@ class ListModelsResult {
   CompatibilityInformation m_compatibilityInformation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelSummariesHasBeenSet = false;
   bool m_modelAliasesHasBeenSet = false;
   bool m_compatibilityInformationHasBeenSet = false;

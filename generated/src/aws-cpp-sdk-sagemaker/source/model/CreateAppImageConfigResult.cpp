@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAppImageConfigResult::CreateAppImageConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAppImageConfigResult& CreateAppImageConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppImageConfigArn")) {
     m_appImageConfigArn = jsonValue.GetString("AppImageConfigArn");

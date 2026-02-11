@@ -79,12 +79,15 @@ class DeleteClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clusterArn;
 
   ClusterState m_state{ClusterState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

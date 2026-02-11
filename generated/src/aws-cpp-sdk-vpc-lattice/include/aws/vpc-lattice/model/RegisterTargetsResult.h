@@ -89,12 +89,15 @@ class RegisterTargetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Target> m_successful;
 
   Aws::Vector<TargetFailure> m_unsuccessful;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulHasBeenSet = false;
   bool m_unsuccessfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

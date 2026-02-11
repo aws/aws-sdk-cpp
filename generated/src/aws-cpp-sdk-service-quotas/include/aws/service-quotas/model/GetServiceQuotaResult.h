@@ -58,10 +58,13 @@ class GetServiceQuotaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceQuota m_quota;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_quotaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

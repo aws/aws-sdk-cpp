@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePlayerSessionsResult::DescribePlayerSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePlayerSessionsResult& DescribePlayerSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PlayerSessions")) {
     Aws::Utils::Array<JsonView> playerSessionsJsonList = jsonValue.GetArray("PlayerSessions");

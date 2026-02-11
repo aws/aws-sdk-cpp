@@ -108,6 +108,8 @@ class GetDiscoveredResourceCountsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_totalDiscoveredResources{0};
 
@@ -116,6 +118,7 @@ class GetDiscoveredResourceCountsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_totalDiscoveredResourcesHasBeenSet = false;
   bool m_resourceCountsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

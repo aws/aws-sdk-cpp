@@ -20,6 +20,7 @@ using namespace Aws;
 StartScanJobResult::StartScanJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartScanJobResult& StartScanJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetDouble("CreationDate");

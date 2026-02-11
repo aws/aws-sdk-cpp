@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateTaskTemplateResult::UpdateTaskTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateTaskTemplateResult& UpdateTaskTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");

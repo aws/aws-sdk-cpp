@@ -23,6 +23,7 @@ ListDistributionsByResponseHeadersPolicyId2020_05_31Result::ListDistributionsByR
 
 ListDistributionsByResponseHeadersPolicyId2020_05_31Result& ListDistributionsByResponseHeadersPolicyId2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

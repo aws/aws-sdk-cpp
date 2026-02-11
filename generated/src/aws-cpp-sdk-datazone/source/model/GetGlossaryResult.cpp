@@ -20,6 +20,7 @@ using namespace Aws;
 GetGlossaryResult::GetGlossaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGlossaryResult& GetGlossaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");

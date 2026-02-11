@@ -23,6 +23,7 @@ BatchAddChannelRoleToAccessorsResult::BatchAddChannelRoleToAccessorsResult(const
 
 BatchAddChannelRoleToAccessorsResult& BatchAddChannelRoleToAccessorsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("addedAccessorIds")) {
     Aws::Utils::Array<JsonView> addedAccessorIdsJsonList = jsonValue.GetArray("addedAccessorIds");

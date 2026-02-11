@@ -20,6 +20,7 @@ using namespace Aws;
 ListV2LoggingLevelsResult::ListV2LoggingLevelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListV2LoggingLevelsResult& ListV2LoggingLevelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logTargetConfigurations")) {
     Aws::Utils::Array<JsonView> logTargetConfigurationsJsonList = jsonValue.GetArray("logTargetConfigurations");

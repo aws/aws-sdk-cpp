@@ -58,10 +58,13 @@ class DescribeUserHierarchyStructureResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HierarchyStructure m_hierarchyStructure;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hierarchyStructureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

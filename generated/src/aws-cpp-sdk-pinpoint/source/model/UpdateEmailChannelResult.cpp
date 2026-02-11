@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateEmailChannelResult::UpdateEmailChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateEmailChannelResult& UpdateEmailChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_emailChannelResponse = jsonValue;
   m_emailChannelResponseHasBeenSet = true;

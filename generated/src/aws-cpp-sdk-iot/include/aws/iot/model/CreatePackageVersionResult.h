@@ -168,6 +168,8 @@ class CreatePackageVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_packageVersionArn;
 
@@ -184,6 +186,7 @@ class CreatePackageVersionResult {
   Aws::String m_errorReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_packageVersionArnHasBeenSet = false;
   bool m_packageNameHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;

@@ -216,6 +216,8 @@ class GetDashboardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dashboardArn;
 
@@ -238,6 +240,7 @@ class GetDashboardResult {
   bool m_terminationProtectionEnabled{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dashboardArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_statusHasBeenSet = false;

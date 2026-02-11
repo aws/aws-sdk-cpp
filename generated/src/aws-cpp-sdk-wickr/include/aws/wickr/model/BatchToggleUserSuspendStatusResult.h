@@ -108,6 +108,8 @@ class BatchToggleUserSuspendStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_message;
 
@@ -116,6 +118,7 @@ class BatchToggleUserSuspendStatusResult {
   Aws::Vector<BatchUserErrorResponseItem> m_failed;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_messageHasBeenSet = false;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;

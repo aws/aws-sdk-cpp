@@ -20,6 +20,7 @@ using namespace Aws;
 GetOpenIdTokenResult::GetOpenIdTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOpenIdTokenResult& GetOpenIdTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityId")) {
     m_identityId = jsonValue.GetString("IdentityId");

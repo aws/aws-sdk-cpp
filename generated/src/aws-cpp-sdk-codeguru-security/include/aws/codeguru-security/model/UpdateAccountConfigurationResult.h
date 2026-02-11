@@ -61,10 +61,13 @@ class UpdateAccountConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EncryptionConfig m_encryptionConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_encryptionConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

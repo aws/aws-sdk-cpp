@@ -57,10 +57,13 @@ class CreateUserProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userProfileArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userProfileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -200,6 +200,8 @@ class GenerateMacEmvPinChangeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_newPinPekArn;
 
@@ -220,6 +222,7 @@ class GenerateMacEmvPinChangeResult {
   VisaAmexDerivationOutputs m_visaAmexDerivationOutputs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_newPinPekArnHasBeenSet = false;
   bool m_secureMessagingIntegrityKeyArnHasBeenSet = false;
   bool m_secureMessagingConfidentialityKeyArnHasBeenSet = false;

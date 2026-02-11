@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDefaultAuthorizerResult::DescribeDefaultAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDefaultAuthorizerResult& DescribeDefaultAuthorizerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authorizerDescription")) {
     m_authorizerDescription = jsonValue.GetObject("authorizerDescription");

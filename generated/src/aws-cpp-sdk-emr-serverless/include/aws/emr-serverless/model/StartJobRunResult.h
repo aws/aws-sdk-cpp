@@ -92,6 +92,8 @@ class StartJobRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -100,6 +102,7 @@ class StartJobRunResult {
   Aws::String m_arn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_jobRunIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;

@@ -309,6 +309,8 @@ class DescribeApplicationInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationInstanceId;
 
@@ -341,6 +343,7 @@ class DescribeApplicationInstanceResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationInstanceIdHasBeenSet = false;
   bool m_applicationInstanceIdToReplaceHasBeenSet = false;
   bool m_arnHasBeenSet = false;

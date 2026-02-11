@@ -108,6 +108,8 @@ class DescribeSnapshotAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ProductCode> m_productCodes;
 
@@ -116,6 +118,7 @@ class DescribeSnapshotAttributeResponse {
   Aws::Vector<CreateVolumePermission> m_createVolumePermissions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productCodesHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
   bool m_createVolumePermissionsHasBeenSet = false;

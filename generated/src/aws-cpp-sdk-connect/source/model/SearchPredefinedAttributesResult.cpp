@@ -20,6 +20,7 @@ using namespace Aws;
 SearchPredefinedAttributesResult::SearchPredefinedAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchPredefinedAttributesResult& SearchPredefinedAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PredefinedAttributes")) {
     Aws::Utils::Array<JsonView> predefinedAttributesJsonList = jsonValue.GetArray("PredefinedAttributes");

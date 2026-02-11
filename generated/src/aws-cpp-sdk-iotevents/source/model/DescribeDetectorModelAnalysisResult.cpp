@@ -22,6 +22,7 @@ DescribeDetectorModelAnalysisResult::DescribeDetectorModelAnalysisResult(const A
 }
 
 DescribeDetectorModelAnalysisResult& DescribeDetectorModelAnalysisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = AnalysisStatusMapper::GetAnalysisStatusForName(jsonValue.GetString("status"));

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchUpdateUserResult::BatchUpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchUpdateUserResult& BatchUpdateUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserErrors")) {
     Aws::Utils::Array<JsonView> userErrorsJsonList = jsonValue.GetArray("UserErrors");

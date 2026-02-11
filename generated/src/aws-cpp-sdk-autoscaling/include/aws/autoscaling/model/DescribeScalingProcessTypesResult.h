@@ -65,10 +65,13 @@ class DescribeScalingProcessTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ProcessType> m_processes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_processesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

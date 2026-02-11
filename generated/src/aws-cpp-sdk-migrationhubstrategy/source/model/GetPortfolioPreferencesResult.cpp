@@ -20,6 +20,7 @@ using namespace Aws;
 GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPortfolioPreferencesResult& GetPortfolioPreferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("applicationMode")) {
     m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("applicationMode"));

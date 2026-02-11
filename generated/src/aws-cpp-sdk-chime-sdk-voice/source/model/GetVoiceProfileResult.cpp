@@ -20,6 +20,7 @@ using namespace Aws;
 GetVoiceProfileResult::GetVoiceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVoiceProfileResult& GetVoiceProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VoiceProfile")) {
     m_voiceProfile = jsonValue.GetObject("VoiceProfile");

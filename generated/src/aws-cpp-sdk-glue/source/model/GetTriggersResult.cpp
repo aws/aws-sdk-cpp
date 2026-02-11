@@ -20,6 +20,7 @@ using namespace Aws;
 GetTriggersResult::GetTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTriggersResult& GetTriggersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Triggers")) {
     Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("Triggers");

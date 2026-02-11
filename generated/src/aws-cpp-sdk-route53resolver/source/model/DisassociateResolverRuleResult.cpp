@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateResolverRuleResult::DisassociateResolverRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateResolverRuleResult& DisassociateResolverRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverRuleAssociation")) {
     m_resolverRuleAssociation = jsonValue.GetObject("ResolverRuleAssociation");

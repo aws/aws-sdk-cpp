@@ -20,6 +20,7 @@ using namespace Aws;
 ListDecoderManifestSignalsResult::ListDecoderManifestSignalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDecoderManifestSignalsResult& ListDecoderManifestSignalsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("signalDecoders")) {
     Aws::Utils::Array<JsonView> signalDecodersJsonList = jsonValue.GetArray("signalDecoders");

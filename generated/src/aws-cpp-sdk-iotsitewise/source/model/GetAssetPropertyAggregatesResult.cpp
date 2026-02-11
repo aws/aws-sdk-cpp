@@ -20,6 +20,7 @@ using namespace Aws;
 GetAssetPropertyAggregatesResult::GetAssetPropertyAggregatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAssetPropertyAggregatesResult& GetAssetPropertyAggregatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("aggregatedValues")) {
     Aws::Utils::Array<JsonView> aggregatedValuesJsonList = jsonValue.GetArray("aggregatedValues");

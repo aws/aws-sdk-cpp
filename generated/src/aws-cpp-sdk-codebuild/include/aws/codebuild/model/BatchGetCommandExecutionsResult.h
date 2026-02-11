@@ -88,12 +88,15 @@ class BatchGetCommandExecutionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CommandExecution> m_commandExecutions;
 
   Aws::Vector<Aws::String> m_commandExecutionsNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commandExecutionsHasBeenSet = false;
   bool m_commandExecutionsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

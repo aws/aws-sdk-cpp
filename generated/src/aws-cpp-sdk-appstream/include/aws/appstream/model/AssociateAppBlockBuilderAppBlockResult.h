@@ -61,10 +61,13 @@ class AssociateAppBlockBuilderAppBlockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AppBlockBuilderAppBlockAssociation m_appBlockBuilderAppBlockAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appBlockBuilderAppBlockAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

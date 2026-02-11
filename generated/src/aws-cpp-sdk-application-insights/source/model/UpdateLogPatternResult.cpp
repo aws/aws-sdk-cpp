@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateLogPatternResult::UpdateLogPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateLogPatternResult& UpdateLogPatternResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceGroupName")) {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");

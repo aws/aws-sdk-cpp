@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEC2InstanceLimitsResult::DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEC2InstanceLimitsResult& DescribeEC2InstanceLimitsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EC2InstanceLimits")) {
     Aws::Utils::Array<JsonView> eC2InstanceLimitsJsonList = jsonValue.GetArray("EC2InstanceLimits");

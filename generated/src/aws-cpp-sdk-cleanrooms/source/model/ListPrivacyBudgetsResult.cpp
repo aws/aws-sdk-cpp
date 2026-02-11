@@ -20,6 +20,7 @@ using namespace Aws;
 ListPrivacyBudgetsResult::ListPrivacyBudgetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPrivacyBudgetsResult& ListPrivacyBudgetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("privacyBudgetSummaries")) {
     Aws::Utils::Array<JsonView> privacyBudgetSummariesJsonList = jsonValue.GetArray("privacyBudgetSummaries");

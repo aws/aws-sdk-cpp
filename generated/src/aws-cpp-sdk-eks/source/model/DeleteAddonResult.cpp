@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteAddonResult::DeleteAddonResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAddonResult& DeleteAddonResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("addon")) {
     m_addon = jsonValue.GetObject("addon");

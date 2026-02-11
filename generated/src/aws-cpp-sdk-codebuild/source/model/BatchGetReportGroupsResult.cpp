@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetReportGroupsResult::BatchGetReportGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("reportGroups")) {
     Aws::Utils::Array<JsonView> reportGroupsJsonList = jsonValue.GetArray("reportGroups");

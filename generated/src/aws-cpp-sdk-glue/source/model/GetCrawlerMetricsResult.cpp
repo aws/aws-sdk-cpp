@@ -20,6 +20,7 @@ using namespace Aws;
 GetCrawlerMetricsResult::GetCrawlerMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCrawlerMetricsResult& GetCrawlerMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CrawlerMetricsList")) {
     Aws::Utils::Array<JsonView> crawlerMetricsListJsonList = jsonValue.GetArray("CrawlerMetricsList");

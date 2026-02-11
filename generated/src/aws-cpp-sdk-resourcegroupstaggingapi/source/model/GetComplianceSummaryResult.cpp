@@ -20,6 +20,7 @@ using namespace Aws;
 GetComplianceSummaryResult::GetComplianceSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetComplianceSummaryResult& GetComplianceSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SummaryList")) {
     Aws::Utils::Array<JsonView> summaryListJsonList = jsonValue.GetArray("SummaryList");

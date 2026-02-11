@@ -58,10 +58,13 @@ class CreateNodegroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Nodegroup m_nodegroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nodegroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -116,6 +116,8 @@ class ListLogPatternSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceGroupName;
 
@@ -126,6 +128,7 @@ class ListLogPatternSetsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceGroupNameHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_logPatternSetsHasBeenSet = false;

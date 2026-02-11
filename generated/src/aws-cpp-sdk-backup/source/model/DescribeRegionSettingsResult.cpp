@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRegionSettingsResult::DescribeRegionSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRegionSettingsResult& DescribeRegionSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceTypeOptInPreference")) {
     Aws::Map<Aws::String, JsonView> resourceTypeOptInPreferenceJsonMap = jsonValue.GetObject("ResourceTypeOptInPreference").GetAllObjects();

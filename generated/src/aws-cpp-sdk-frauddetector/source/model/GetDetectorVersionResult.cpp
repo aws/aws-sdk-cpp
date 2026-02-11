@@ -20,6 +20,7 @@ using namespace Aws;
 GetDetectorVersionResult::GetDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDetectorVersionResult& GetDetectorVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("detectorId")) {
     m_detectorId = jsonValue.GetString("detectorId");

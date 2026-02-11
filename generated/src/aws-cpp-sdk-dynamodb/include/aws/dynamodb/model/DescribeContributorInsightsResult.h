@@ -178,6 +178,8 @@ class DescribeContributorInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tableName;
 
@@ -194,6 +196,7 @@ class DescribeContributorInsightsResult {
   ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
   bool m_contributorInsightsRuleListHasBeenSet = false;

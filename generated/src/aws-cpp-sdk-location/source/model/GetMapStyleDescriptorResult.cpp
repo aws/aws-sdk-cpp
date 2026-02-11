@@ -21,6 +21,7 @@ GetMapStyleDescriptorResult::GetMapStyleDescriptorResult(Aws::AmazonWebServiceRe
 }
 
 GetMapStyleDescriptorResult& GetMapStyleDescriptorResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_blob = result.TakeOwnershipOfPayload();
   m_blobHasBeenSet = true;
 

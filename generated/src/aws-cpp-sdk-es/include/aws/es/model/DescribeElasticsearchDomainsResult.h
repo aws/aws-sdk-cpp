@@ -74,10 +74,13 @@ class DescribeElasticsearchDomainsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ElasticsearchDomainStatus> m_domainStatusList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainStatusListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

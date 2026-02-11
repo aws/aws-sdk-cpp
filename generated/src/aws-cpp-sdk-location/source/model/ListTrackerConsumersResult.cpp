@@ -20,6 +20,7 @@ using namespace Aws;
 ListTrackerConsumersResult::ListTrackerConsumersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTrackerConsumersResult& ListTrackerConsumersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConsumerArns")) {
     Aws::Utils::Array<JsonView> consumerArnsJsonList = jsonValue.GetArray("ConsumerArns");

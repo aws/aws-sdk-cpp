@@ -20,6 +20,7 @@ using namespace Aws;
 ListAIGuardrailVersionsResult::ListAIGuardrailVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAIGuardrailVersionsResult& ListAIGuardrailVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("aiGuardrailVersionSummaries")) {
     Aws::Utils::Array<JsonView> aiGuardrailVersionSummariesJsonList = jsonValue.GetArray("aiGuardrailVersionSummaries");

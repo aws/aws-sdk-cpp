@@ -23,6 +23,7 @@ GetApplicationAuthenticationMethodResult::GetApplicationAuthenticationMethodResu
 
 GetApplicationAuthenticationMethodResult& GetApplicationAuthenticationMethodResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthenticationMethod")) {
     m_authenticationMethod = jsonValue.GetObject("AuthenticationMethod");

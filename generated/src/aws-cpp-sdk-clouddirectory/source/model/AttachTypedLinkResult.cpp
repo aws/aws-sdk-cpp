@@ -20,6 +20,7 @@ using namespace Aws;
 AttachTypedLinkResult::AttachTypedLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AttachTypedLinkResult& AttachTypedLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TypedLinkSpecifier")) {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");

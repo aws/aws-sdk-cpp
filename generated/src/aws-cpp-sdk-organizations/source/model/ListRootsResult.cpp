@@ -20,6 +20,7 @@ using namespace Aws;
 ListRootsResult::ListRootsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRootsResult& ListRootsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Roots")) {
     Aws::Utils::Array<JsonView> rootsJsonList = jsonValue.GetArray("Roots");

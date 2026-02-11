@@ -20,6 +20,7 @@ using namespace Aws;
 GetIndexingRulesResult::GetIndexingRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIndexingRulesResult& GetIndexingRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IndexingRules")) {
     Aws::Utils::Array<JsonView> indexingRulesJsonList = jsonValue.GetArray("IndexingRules");

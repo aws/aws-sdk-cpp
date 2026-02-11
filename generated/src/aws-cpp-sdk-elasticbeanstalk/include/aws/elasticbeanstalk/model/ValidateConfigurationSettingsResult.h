@@ -71,10 +71,13 @@ class ValidateConfigurationSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ValidationMessage> m_messages;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_messagesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

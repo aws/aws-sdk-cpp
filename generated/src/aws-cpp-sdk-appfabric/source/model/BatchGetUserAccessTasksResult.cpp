@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetUserAccessTasksResult::BatchGetUserAccessTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetUserAccessTasksResult& BatchGetUserAccessTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("userAccessResultsList")) {
     Aws::Utils::Array<JsonView> userAccessResultsListJsonList = jsonValue.GetArray("userAccessResultsList");

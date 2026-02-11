@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataRepositoryTaskResult::CreateDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataRepositoryTaskResult& CreateDataRepositoryTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataRepositoryTask")) {
     m_dataRepositoryTask = jsonValue.GetObject("DataRepositoryTask");

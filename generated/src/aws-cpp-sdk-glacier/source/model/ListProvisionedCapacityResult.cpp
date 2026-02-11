@@ -20,6 +20,7 @@ using namespace Aws;
 ListProvisionedCapacityResult::ListProvisionedCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListProvisionedCapacityResult& ListProvisionedCapacityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProvisionedCapacityList")) {
     Aws::Utils::Array<JsonView> provisionedCapacityListJsonList = jsonValue.GetArray("ProvisionedCapacityList");

@@ -85,12 +85,15 @@ class DescribeServiceLinkVirtualInterfacesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ServiceLinkVirtualInterface> m_serviceLinkVirtualInterfaces;
 
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceLinkVirtualInterfacesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

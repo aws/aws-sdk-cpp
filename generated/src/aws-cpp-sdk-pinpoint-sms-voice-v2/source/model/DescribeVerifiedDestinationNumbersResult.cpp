@@ -23,6 +23,7 @@ DescribeVerifiedDestinationNumbersResult::DescribeVerifiedDestinationNumbersResu
 
 DescribeVerifiedDestinationNumbersResult& DescribeVerifiedDestinationNumbersResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VerifiedDestinationNumbers")) {
     Aws::Utils::Array<JsonView> verifiedDestinationNumbersJsonList = jsonValue.GetArray("VerifiedDestinationNumbers");

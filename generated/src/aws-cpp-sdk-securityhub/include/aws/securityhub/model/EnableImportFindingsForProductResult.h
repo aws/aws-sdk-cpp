@@ -58,10 +58,13 @@ class EnableImportFindingsForProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_productSubscriptionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productSubscriptionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

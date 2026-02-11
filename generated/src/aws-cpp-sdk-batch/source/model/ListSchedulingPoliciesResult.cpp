@@ -20,6 +20,7 @@ using namespace Aws;
 ListSchedulingPoliciesResult::ListSchedulingPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSchedulingPoliciesResult& ListSchedulingPoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("schedulingPolicies")) {
     Aws::Utils::Array<JsonView> schedulingPoliciesJsonList = jsonValue.GetArray("schedulingPolicies");

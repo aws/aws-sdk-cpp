@@ -20,6 +20,7 @@ using namespace Aws;
 CreateConnectClientAddInResult::CreateConnectClientAddInResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateConnectClientAddInResult& CreateConnectClientAddInResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AddInId")) {
     m_addInId = jsonValue.GetString("AddInId");

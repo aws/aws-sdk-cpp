@@ -59,10 +59,13 @@ class UpdateDataProtectionSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DataProtectionSettings m_dataProtectionSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataProtectionSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

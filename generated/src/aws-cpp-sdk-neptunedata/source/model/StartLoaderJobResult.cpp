@@ -20,6 +20,7 @@ using namespace Aws;
 StartLoaderJobResult::StartLoaderJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartLoaderJobResult& StartLoaderJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");

@@ -20,6 +20,7 @@ using namespace Aws;
 StartMedicalScribeJobResult::StartMedicalScribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartMedicalScribeJobResult& StartMedicalScribeJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MedicalScribeJob")) {
     m_medicalScribeJob = jsonValue.GetObject("MedicalScribeJob");

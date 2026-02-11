@@ -57,10 +57,13 @@ class CreateQueueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_queueId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queueIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

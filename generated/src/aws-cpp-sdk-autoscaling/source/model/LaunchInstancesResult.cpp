@@ -20,6 +20,7 @@ using namespace Aws;
 LaunchInstancesResult::LaunchInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 LaunchInstancesResult& LaunchInstancesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

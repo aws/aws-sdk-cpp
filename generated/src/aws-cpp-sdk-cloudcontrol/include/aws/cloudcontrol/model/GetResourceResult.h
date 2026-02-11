@@ -73,12 +73,15 @@ class GetResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_typeName;
 
   ResourceDescription m_resourceDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_typeNameHasBeenSet = false;
   bool m_resourceDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

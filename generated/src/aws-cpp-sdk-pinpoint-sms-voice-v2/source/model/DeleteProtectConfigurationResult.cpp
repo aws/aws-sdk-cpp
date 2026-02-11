@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteProtectConfigurationResult::DeleteProtectConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteProtectConfigurationResult& DeleteProtectConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProtectConfigurationArn")) {
     m_protectConfigurationArn = jsonValue.GetString("ProtectConfigurationArn");

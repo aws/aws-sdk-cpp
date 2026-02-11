@@ -22,6 +22,7 @@ ListExperimentResolvedTargetsResult::ListExperimentResolvedTargetsResult(const A
 }
 
 ListExperimentResolvedTargetsResult& ListExperimentResolvedTargetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resolvedTargets")) {
     Aws::Utils::Array<JsonView> resolvedTargetsJsonList = jsonValue.GetArray("resolvedTargets");

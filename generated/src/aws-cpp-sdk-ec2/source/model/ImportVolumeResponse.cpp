@@ -20,6 +20,7 @@ using namespace Aws;
 ImportVolumeResponse::ImportVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ImportVolumeResponse& ImportVolumeResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

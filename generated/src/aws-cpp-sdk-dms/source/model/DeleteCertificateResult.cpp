@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCertificateResult::DeleteCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCertificateResult& DeleteCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Certificate")) {
     m_certificate = jsonValue.GetObject("Certificate");

@@ -60,10 +60,13 @@ class CreateCompilationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_compilationJobArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_compilationJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

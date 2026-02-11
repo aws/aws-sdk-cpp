@@ -59,10 +59,13 @@ class DescribeRiskConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RiskConfigurationType m_riskConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_riskConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

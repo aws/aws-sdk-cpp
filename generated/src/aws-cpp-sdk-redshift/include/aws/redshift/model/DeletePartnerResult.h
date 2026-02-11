@@ -75,12 +75,15 @@ class DeletePartnerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_databaseName;
 
   Aws::String m_partnerName;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_databaseNameHasBeenSet = false;
   bool m_partnerNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

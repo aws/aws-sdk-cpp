@@ -103,6 +103,8 @@ class CreateBucketResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_location;
 
@@ -111,6 +113,7 @@ class CreateBucketResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationHasBeenSet = false;
   bool m_bucketArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

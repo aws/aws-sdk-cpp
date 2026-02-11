@@ -251,6 +251,8 @@ class GetEmailIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
 
@@ -273,6 +275,7 @@ class GetEmailIdentityResult {
   VerificationInfo m_verificationInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityTypeHasBeenSet = false;
   bool m_feedbackForwardingStatusHasBeenSet = false;
   bool m_verifiedForSendingStatusHasBeenSet = false;

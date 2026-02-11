@@ -20,6 +20,7 @@ using namespace Aws;
 CreateContactResult::CreateContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateContactResult& CreateContactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactArn")) {
     m_contactArn = jsonValue.GetString("ContactArn");

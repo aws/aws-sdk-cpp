@@ -23,6 +23,7 @@ ListAggregateLogGroupSummariesResult::ListAggregateLogGroupSummariesResult(const
 
 ListAggregateLogGroupSummariesResult& ListAggregateLogGroupSummariesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("aggregateLogGroupSummaries")) {
     Aws::Utils::Array<JsonView> aggregateLogGroupSummariesJsonList = jsonValue.GetArray("aggregateLogGroupSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 DetectModerationLabelsResult::DetectModerationLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectModerationLabelsResult& DetectModerationLabelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModerationLabels")) {
     Aws::Utils::Array<JsonView> moderationLabelsJsonList = jsonValue.GetArray("ModerationLabels");

@@ -20,6 +20,7 @@ using namespace Aws;
 StartZonalShiftResult::StartZonalShiftResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartZonalShiftResult& StartZonalShiftResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("zonalShiftId")) {
     m_zonalShiftId = jsonValue.GetString("zonalShiftId");

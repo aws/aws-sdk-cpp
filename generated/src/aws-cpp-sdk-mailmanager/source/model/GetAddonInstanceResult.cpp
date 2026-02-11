@@ -20,6 +20,7 @@ using namespace Aws;
 GetAddonInstanceResult::GetAddonInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAddonInstanceResult& GetAddonInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AddonSubscriptionId")) {
     m_addonSubscriptionId = jsonValue.GetString("AddonSubscriptionId");

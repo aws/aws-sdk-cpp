@@ -75,12 +75,15 @@ class DeleteFileCacheResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fileCacheId;
 
   FileCacheLifecycle m_lifecycle{FileCacheLifecycle::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fileCacheIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

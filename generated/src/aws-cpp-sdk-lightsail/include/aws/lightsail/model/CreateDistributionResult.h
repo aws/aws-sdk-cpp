@@ -78,12 +78,15 @@ class CreateDistributionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LightsailDistribution m_distribution;
 
   Operation m_operation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_distributionHasBeenSet = false;
   bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

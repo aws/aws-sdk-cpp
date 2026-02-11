@@ -87,12 +87,15 @@ class GetTransitGatewayMeteringPolicyEntriesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TransitGatewayMeteringPolicyEntry> m_transitGatewayMeteringPolicyEntries;
 
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayMeteringPolicyEntriesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

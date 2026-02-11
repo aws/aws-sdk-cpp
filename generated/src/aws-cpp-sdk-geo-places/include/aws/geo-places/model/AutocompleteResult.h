@@ -85,12 +85,15 @@ class AutocompleteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pricingBucket;
 
   Aws::Vector<AutocompleteResultItem> m_resultItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pricingBucketHasBeenSet = false;
   bool m_resultItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

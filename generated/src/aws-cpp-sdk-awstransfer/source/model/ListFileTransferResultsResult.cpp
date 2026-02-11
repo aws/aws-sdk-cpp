@@ -20,6 +20,7 @@ using namespace Aws;
 ListFileTransferResultsResult::ListFileTransferResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFileTransferResultsResult& ListFileTransferResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileTransferResults")) {
     Aws::Utils::Array<JsonView> fileTransferResultsJsonList = jsonValue.GetArray("FileTransferResults");

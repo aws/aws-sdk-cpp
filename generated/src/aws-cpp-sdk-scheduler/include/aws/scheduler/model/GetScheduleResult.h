@@ -325,6 +325,8 @@ class GetScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ActionAfterCompletion m_actionAfterCompletion{ActionAfterCompletion::NOT_SET};
 
@@ -357,6 +359,7 @@ class GetScheduleResult {
   Target m_target;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionAfterCompletionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

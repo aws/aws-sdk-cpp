@@ -20,6 +20,7 @@ using namespace Aws;
 ListMLTransformsResult::ListMLTransformsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMLTransformsResult& ListMLTransformsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransformIds")) {
     Aws::Utils::Array<JsonView> transformIdsJsonList = jsonValue.GetArray("TransformIds");

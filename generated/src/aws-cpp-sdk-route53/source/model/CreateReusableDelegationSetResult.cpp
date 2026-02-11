@@ -21,6 +21,7 @@ CreateReusableDelegationSetResult::CreateReusableDelegationSetResult(const Aws::
 }
 
 CreateReusableDelegationSetResult& CreateReusableDelegationSetResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

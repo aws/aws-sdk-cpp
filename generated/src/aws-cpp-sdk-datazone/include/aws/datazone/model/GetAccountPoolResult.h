@@ -232,6 +232,8 @@ class GetAccountPoolResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainId;
 
@@ -256,6 +258,7 @@ class GetAccountPoolResult {
   Aws::String m_domainUnitId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;

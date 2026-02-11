@@ -20,6 +20,7 @@ using namespace Aws;
 ModifyAccountResult::ModifyAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ModifyAccountResult& ModifyAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");

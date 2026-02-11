@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStreamSummaryResult::DescribeStreamSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStreamSummaryResult& DescribeStreamSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamDescriptionSummary")) {
     m_streamDescriptionSummary = jsonValue.GetObject("StreamDescriptionSummary");

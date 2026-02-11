@@ -19,6 +19,7 @@ using namespace Aws;
 ListStorageLensGroupsResult::ListStorageLensGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListStorageLensGroupsResult& ListStorageLensGroupsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

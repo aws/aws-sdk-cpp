@@ -20,6 +20,7 @@ using namespace Aws;
 GetKMSEncryptionKeyResult::GetKMSEncryptionKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKMSEncryptionKeyResult& GetKMSEncryptionKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("kmsKey")) {
     m_kmsKey = jsonValue.GetObject("kmsKey");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMembersResult::DeleteMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMembersResult& DeleteMembersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountIds")) {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");

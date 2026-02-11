@@ -20,6 +20,7 @@ using namespace Aws;
 RenderUiTemplateResult::RenderUiTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RenderUiTemplateResult& RenderUiTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RenderedContent")) {
     m_renderedContent = jsonValue.GetString("RenderedContent");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgreementTermsResult::GetAgreementTermsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgreementTermsResult& GetAgreementTermsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("acceptedTerms")) {
     Aws::Utils::Array<JsonView> acceptedTermsJsonList = jsonValue.GetArray("acceptedTerms");

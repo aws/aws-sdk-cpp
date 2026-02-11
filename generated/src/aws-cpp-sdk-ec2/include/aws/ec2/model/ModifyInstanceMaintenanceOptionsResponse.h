@@ -102,6 +102,8 @@ class ModifyInstanceMaintenanceOptionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_instanceId;
 
@@ -110,6 +112,7 @@ class ModifyInstanceMaintenanceOptionsResponse {
   InstanceRebootMigrationState m_rebootMigration{InstanceRebootMigrationState::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_autoRecoveryHasBeenSet = false;
   bool m_rebootMigrationHasBeenSet = false;

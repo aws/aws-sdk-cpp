@@ -20,6 +20,7 @@ using namespace Aws;
 CreateParticipantResult::CreateParticipantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateParticipantResult& CreateParticipantResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ParticipantCredentials")) {
     m_participantCredentials = jsonValue.GetObject("ParticipantCredentials");

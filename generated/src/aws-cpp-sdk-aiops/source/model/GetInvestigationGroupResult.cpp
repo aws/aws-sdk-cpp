@@ -20,6 +20,7 @@ using namespace Aws;
 GetInvestigationGroupResult::GetInvestigationGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInvestigationGroupResult& GetInvestigationGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");

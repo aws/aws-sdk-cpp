@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateObjectAttributesResult::UpdateObjectAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateObjectAttributesResult& UpdateObjectAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ObjectIdentifier")) {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");

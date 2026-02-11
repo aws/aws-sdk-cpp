@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDataIntegrationFlowResult::DeleteDataIntegrationFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDataIntegrationFlowResult& DeleteDataIntegrationFlowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("instanceId")) {
     m_instanceId = jsonValue.GetString("instanceId");

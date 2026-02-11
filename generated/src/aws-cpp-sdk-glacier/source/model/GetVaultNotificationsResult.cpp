@@ -20,6 +20,7 @@ using namespace Aws;
 GetVaultNotificationsResult::GetVaultNotificationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVaultNotificationsResult& GetVaultNotificationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_vaultNotificationConfig = jsonValue;
   m_vaultNotificationConfigHasBeenSet = true;

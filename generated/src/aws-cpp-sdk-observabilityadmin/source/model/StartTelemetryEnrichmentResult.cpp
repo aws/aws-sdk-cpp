@@ -20,6 +20,7 @@ using namespace Aws;
 StartTelemetryEnrichmentResult::StartTelemetryEnrichmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartTelemetryEnrichmentResult& StartTelemetryEnrichmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = TelemetryEnrichmentStatusMapper::GetTelemetryEnrichmentStatusForName(jsonValue.GetString("Status"));

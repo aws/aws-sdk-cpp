@@ -24,6 +24,7 @@ ListContainerGroupDefinitionVersionsResult::ListContainerGroupDefinitionVersions
 
 ListContainerGroupDefinitionVersionsResult& ListContainerGroupDefinitionVersionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContainerGroupDefinitions")) {
     Aws::Utils::Array<JsonView> containerGroupDefinitionsJsonList = jsonValue.GetArray("ContainerGroupDefinitions");

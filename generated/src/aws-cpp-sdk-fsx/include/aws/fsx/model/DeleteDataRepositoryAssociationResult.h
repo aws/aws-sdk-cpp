@@ -90,6 +90,8 @@ class DeleteDataRepositoryAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_associationId;
 
@@ -98,6 +100,7 @@ class DeleteDataRepositoryAssociationResult {
   bool m_deleteDataInFileSystem{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associationIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_deleteDataInFileSystemHasBeenSet = false;

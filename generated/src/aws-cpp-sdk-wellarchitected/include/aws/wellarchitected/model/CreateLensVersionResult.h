@@ -74,12 +74,15 @@ class CreateLensVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_lensArn;
 
   Aws::String m_lensVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lensArnHasBeenSet = false;
   bool m_lensVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListConnectionTypesResult::ListConnectionTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConnectionTypesResult& ListConnectionTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectionTypes")) {
     Aws::Utils::Array<JsonView> connectionTypesJsonList = jsonValue.GetArray("ConnectionTypes");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourcePolicyResult::GetResourcePolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetResourcePolicyResult& GetResourcePolicyResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

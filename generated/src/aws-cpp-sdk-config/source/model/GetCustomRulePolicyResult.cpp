@@ -20,6 +20,7 @@ using namespace Aws;
 GetCustomRulePolicyResult::GetCustomRulePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCustomRulePolicyResult& GetCustomRulePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PolicyText")) {
     m_policyText = jsonValue.GetString("PolicyText");

@@ -59,10 +59,13 @@ class GetServiceSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceSettings m_serviceSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

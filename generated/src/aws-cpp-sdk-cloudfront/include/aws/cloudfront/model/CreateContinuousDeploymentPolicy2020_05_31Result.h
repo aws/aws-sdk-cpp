@@ -95,6 +95,8 @@ class CreateContinuousDeploymentPolicy2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContinuousDeploymentPolicy m_continuousDeploymentPolicy;
 
@@ -103,6 +105,7 @@ class CreateContinuousDeploymentPolicy2020_05_31Result {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_continuousDeploymentPolicyHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_eTagHasBeenSet = false;

@@ -22,6 +22,7 @@ UpdateSubscriberNotificationResult::UpdateSubscriberNotificationResult(const Aws
 }
 
 UpdateSubscriberNotificationResult& UpdateSubscriberNotificationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subscriberEndpoint")) {
     m_subscriberEndpoint = jsonValue.GetString("subscriberEndpoint");

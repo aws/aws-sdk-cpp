@@ -23,6 +23,7 @@ DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult
 
 DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("autoEnable")) {
     m_autoEnable = jsonValue.GetObject("autoEnable");

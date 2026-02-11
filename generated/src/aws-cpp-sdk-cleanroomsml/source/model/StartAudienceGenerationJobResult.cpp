@@ -20,6 +20,7 @@ using namespace Aws;
 StartAudienceGenerationJobResult::StartAudienceGenerationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartAudienceGenerationJobResult& StartAudienceGenerationJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("audienceGenerationJobArn")) {
     m_audienceGenerationJobArn = jsonValue.GetString("audienceGenerationJobArn");

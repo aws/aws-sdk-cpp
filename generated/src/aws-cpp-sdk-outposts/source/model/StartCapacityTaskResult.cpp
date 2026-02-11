@@ -20,6 +20,7 @@ using namespace Aws;
 StartCapacityTaskResult::StartCapacityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartCapacityTaskResult& StartCapacityTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CapacityTaskId")) {
     m_capacityTaskId = jsonValue.GetString("CapacityTaskId");

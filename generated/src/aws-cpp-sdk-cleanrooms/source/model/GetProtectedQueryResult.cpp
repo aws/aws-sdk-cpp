@@ -20,6 +20,7 @@ using namespace Aws;
 GetProtectedQueryResult::GetProtectedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetProtectedQueryResult& GetProtectedQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("protectedQuery")) {
     m_protectedQuery = jsonValue.GetObject("protectedQuery");

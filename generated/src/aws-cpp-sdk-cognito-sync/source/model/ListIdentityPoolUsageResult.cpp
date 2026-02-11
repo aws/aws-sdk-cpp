@@ -20,6 +20,7 @@ using namespace Aws;
 ListIdentityPoolUsageResult::ListIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIdentityPoolUsageResult& ListIdentityPoolUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityPoolUsages")) {
     Aws::Utils::Array<JsonView> identityPoolUsagesJsonList = jsonValue.GetArray("IdentityPoolUsages");

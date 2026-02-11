@@ -23,6 +23,7 @@ GetConfigurationPolicyAssociationResult::GetConfigurationPolicyAssociationResult
 
 GetConfigurationPolicyAssociationResult& GetConfigurationPolicyAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationPolicyId")) {
     m_configurationPolicyId = jsonValue.GetString("ConfigurationPolicyId");

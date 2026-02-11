@@ -20,6 +20,7 @@ using namespace Aws;
 ListTranscriptionJobsResult::ListTranscriptionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTranscriptionJobsResult& ListTranscriptionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = TranscriptionJobStatusMapper::GetTranscriptionJobStatusForName(jsonValue.GetString("Status"));

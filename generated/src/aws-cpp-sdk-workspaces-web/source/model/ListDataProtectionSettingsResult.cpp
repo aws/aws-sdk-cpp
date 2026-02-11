@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataProtectionSettingsResult::ListDataProtectionSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataProtectionSettingsResult& ListDataProtectionSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataProtectionSettings")) {
     Aws::Utils::Array<JsonView> dataProtectionSettingsJsonList = jsonValue.GetArray("dataProtectionSettings");

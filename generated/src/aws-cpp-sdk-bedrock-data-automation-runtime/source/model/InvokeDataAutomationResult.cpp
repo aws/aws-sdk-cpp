@@ -20,6 +20,7 @@ using namespace Aws;
 InvokeDataAutomationResult::InvokeDataAutomationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 InvokeDataAutomationResult& InvokeDataAutomationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("outputConfiguration")) {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListIAMPolicyAssignmentsResult::ListIAMPolicyAssignmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIAMPolicyAssignmentsResult& ListIAMPolicyAssignmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IAMPolicyAssignments")) {
     Aws::Utils::Array<JsonView> iAMPolicyAssignmentsJsonList = jsonValue.GetArray("IAMPolicyAssignments");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAllManagedProductsResult::DescribeAllManagedProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAllManagedProductsResult& DescribeAllManagedProductsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedProducts")) {
     Aws::Utils::Array<JsonView> managedProductsJsonList = jsonValue.GetArray("ManagedProducts");

@@ -22,6 +22,7 @@ DescribeGameServerInstancesResult::DescribeGameServerInstancesResult(const Aws::
 }
 
 DescribeGameServerInstancesResult& DescribeGameServerInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GameServerInstances")) {
     Aws::Utils::Array<JsonView> gameServerInstancesJsonList = jsonValue.GetArray("GameServerInstances");

@@ -94,12 +94,15 @@ class ListUserImportJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UserImportJobType> m_userImportJobs;
 
   Aws::String m_paginationToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userImportJobsHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

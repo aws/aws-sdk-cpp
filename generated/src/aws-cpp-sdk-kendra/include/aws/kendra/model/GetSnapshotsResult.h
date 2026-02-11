@@ -125,6 +125,8 @@ class GetSnapshotsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TimeRange m_snapShotTimeFilter;
 
@@ -135,6 +137,7 @@ class GetSnapshotsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapShotTimeFilterHasBeenSet = false;
   bool m_snapshotsDataHeaderHasBeenSet = false;
   bool m_snapshotsDataHasBeenSet = false;

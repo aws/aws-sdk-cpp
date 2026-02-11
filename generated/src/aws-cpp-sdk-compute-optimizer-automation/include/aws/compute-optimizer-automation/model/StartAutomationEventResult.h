@@ -91,6 +91,8 @@ class StartAutomationEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_recommendedActionId;
 
@@ -99,6 +101,7 @@ class StartAutomationEventResult {
   EventStatus m_eventStatus{EventStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recommendedActionIdHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
   bool m_eventStatusHasBeenSet = false;

@@ -91,6 +91,8 @@ class UpdateJobPriorityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -99,6 +101,7 @@ class UpdateJobPriorityResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

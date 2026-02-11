@@ -20,6 +20,7 @@ using namespace Aws;
 CreateOpsItemResult::CreateOpsItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateOpsItemResult& CreateOpsItemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OpsItemId")) {
     m_opsItemId = jsonValue.GetString("OpsItemId");

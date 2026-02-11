@@ -77,12 +77,15 @@ class PutRetentionSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RetentionSettings m_retentionSettings;
 
   Aws::Utils::DateTime m_initiateDeletionTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_retentionSettingsHasBeenSet = false;
   bool m_initiateDeletionTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

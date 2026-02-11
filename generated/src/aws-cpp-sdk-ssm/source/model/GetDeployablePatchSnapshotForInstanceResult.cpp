@@ -24,6 +24,7 @@ GetDeployablePatchSnapshotForInstanceResult::GetDeployablePatchSnapshotForInstan
 
 GetDeployablePatchSnapshotForInstanceResult& GetDeployablePatchSnapshotForInstanceResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");

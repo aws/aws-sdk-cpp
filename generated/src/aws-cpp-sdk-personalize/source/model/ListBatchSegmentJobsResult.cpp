@@ -20,6 +20,7 @@ using namespace Aws;
 ListBatchSegmentJobsResult::ListBatchSegmentJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBatchSegmentJobsResult& ListBatchSegmentJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("batchSegmentJobs")) {
     Aws::Utils::Array<JsonView> batchSegmentJobsJsonList = jsonValue.GetArray("batchSegmentJobs");

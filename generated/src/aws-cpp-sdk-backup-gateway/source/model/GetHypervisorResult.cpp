@@ -20,6 +20,7 @@ using namespace Aws;
 GetHypervisorResult::GetHypervisorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetHypervisorResult& GetHypervisorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Hypervisor")) {
     m_hypervisor = jsonValue.GetObject("Hypervisor");

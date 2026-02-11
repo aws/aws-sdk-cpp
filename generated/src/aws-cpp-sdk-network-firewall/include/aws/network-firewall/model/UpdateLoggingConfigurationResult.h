@@ -110,6 +110,8 @@ class UpdateLoggingConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_firewallArn;
 
@@ -120,6 +122,7 @@ class UpdateLoggingConfigurationResult {
   bool m_enableMonitoringDashboard{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;

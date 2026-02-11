@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteInvoiceUnitResult::DeleteInvoiceUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteInvoiceUnitResult& DeleteInvoiceUnitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InvoiceUnitArn")) {
     m_invoiceUnitArn = jsonValue.GetString("InvoiceUnitArn");

@@ -90,6 +90,8 @@ class CreateDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datasetName;
 
@@ -98,6 +100,7 @@ class CreateDatasetResult {
   DatasetStatus m_status{DatasetStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetNameHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

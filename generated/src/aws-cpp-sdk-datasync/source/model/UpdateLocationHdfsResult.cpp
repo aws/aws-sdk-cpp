@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateLocationHdfsResult::UpdateLocationHdfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateLocationHdfsResult& UpdateLocationHdfsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

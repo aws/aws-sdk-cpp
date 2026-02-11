@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateSessionLoggerResult::AssociateSessionLoggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateSessionLoggerResult& AssociateSessionLoggerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("portalArn")) {
     m_portalArn = jsonValue.GetString("portalArn");

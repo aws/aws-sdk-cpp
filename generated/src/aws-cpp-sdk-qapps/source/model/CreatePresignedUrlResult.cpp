@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePresignedUrlResult::CreatePresignedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePresignedUrlResult& CreatePresignedUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fileId")) {
     m_fileId = jsonValue.GetString("fileId");

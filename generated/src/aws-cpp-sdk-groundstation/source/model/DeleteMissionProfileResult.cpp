@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMissionProfileResult::DeleteMissionProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMissionProfileResult& DeleteMissionProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("missionProfileId")) {
     m_missionProfileId = jsonValue.GetString("missionProfileId");

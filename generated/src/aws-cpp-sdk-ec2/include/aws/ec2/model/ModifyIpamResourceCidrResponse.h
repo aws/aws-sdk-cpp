@@ -58,10 +58,13 @@ class ModifyIpamResourceCidrResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamResourceCidr m_ipamResourceCidr;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamResourceCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

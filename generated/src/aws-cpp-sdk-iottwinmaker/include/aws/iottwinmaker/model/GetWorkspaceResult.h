@@ -185,6 +185,8 @@ class GetWorkspaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -203,6 +205,7 @@ class GetWorkspaceResult {
   Aws::Utils::DateTime m_updateDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

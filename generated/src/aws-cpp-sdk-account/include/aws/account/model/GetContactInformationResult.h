@@ -59,10 +59,13 @@ class GetContactInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContactInformation m_contactInformation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactInformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

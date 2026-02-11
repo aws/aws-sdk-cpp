@@ -22,6 +22,7 @@ TerminateSolNetworkInstanceResult::TerminateSolNetworkInstanceResult(const Aws::
 }
 
 TerminateSolNetworkInstanceResult& TerminateSolNetworkInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nsLcmOpOccId")) {
     m_nsLcmOpOccId = jsonValue.GetString("nsLcmOpOccId");

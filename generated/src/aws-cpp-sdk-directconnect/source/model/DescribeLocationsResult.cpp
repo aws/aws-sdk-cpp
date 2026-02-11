@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLocationsResult::DescribeLocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLocationsResult& DescribeLocationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("locations")) {
     Aws::Utils::Array<JsonView> locationsJsonList = jsonValue.GetArray("locations");

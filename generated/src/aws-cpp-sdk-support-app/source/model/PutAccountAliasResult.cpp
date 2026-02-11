@@ -20,6 +20,7 @@ using namespace Aws;
 PutAccountAliasResult::PutAccountAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutAccountAliasResult& PutAccountAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

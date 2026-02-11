@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateExtensionAssociationResult::UpdateExtensionAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateExtensionAssociationResult& UpdateExtensionAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListInferenceComponentsResult::ListInferenceComponentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInferenceComponentsResult& ListInferenceComponentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferenceComponents")) {
     Aws::Utils::Array<JsonView> inferenceComponentsJsonList = jsonValue.GetArray("InferenceComponents");

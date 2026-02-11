@@ -20,6 +20,7 @@ using namespace Aws;
 SendEmailResult::SendEmailResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 SendEmailResult& SendEmailResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

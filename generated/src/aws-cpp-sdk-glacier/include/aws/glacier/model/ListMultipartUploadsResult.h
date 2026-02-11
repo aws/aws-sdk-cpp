@@ -91,12 +91,15 @@ class ListMultipartUploadsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UploadListElement> m_uploadsList;
 
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_uploadsListHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

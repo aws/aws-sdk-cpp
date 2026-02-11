@@ -23,6 +23,7 @@ BatchGetEffectiveLifecyclePolicyResult::BatchGetEffectiveLifecyclePolicyResult(c
 
 BatchGetEffectiveLifecyclePolicyResult& BatchGetEffectiveLifecyclePolicyResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("effectiveLifecyclePolicyDetails")) {
     Aws::Utils::Array<JsonView> effectiveLifecyclePolicyDetailsJsonList = jsonValue.GetArray("effectiveLifecyclePolicyDetails");

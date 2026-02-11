@@ -20,6 +20,7 @@ using namespace Aws;
 GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPreferencesResult& GetPreferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("managementAccountRateTypeSelections")) {
     Aws::Utils::Array<JsonView> managementAccountRateTypeSelectionsJsonList = jsonValue.GetArray("managementAccountRateTypeSelections");

@@ -531,6 +531,8 @@ class CreateKxClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_environmentId;
 
@@ -581,6 +583,7 @@ class CreateKxClusterResult {
   KxScalingGroupConfiguration m_scalingGroupConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_environmentIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;

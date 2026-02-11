@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCreateCaseOptionsResult::DescribeCreateCaseOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCreateCaseOptionsResult& DescribeCreateCaseOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("languageAvailability")) {
     m_languageAvailability = jsonValue.GetString("languageAvailability");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateKeyRegistrationResult::UpdateKeyRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateKeyRegistrationResult& UpdateKeyRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedKeyRegistration")) {
     Aws::Utils::Array<JsonView> failedKeyRegistrationJsonList = jsonValue.GetArray("FailedKeyRegistration");

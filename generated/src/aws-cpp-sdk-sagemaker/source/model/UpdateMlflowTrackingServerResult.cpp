@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMlflowTrackingServerResult::UpdateMlflowTrackingServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMlflowTrackingServerResult& UpdateMlflowTrackingServerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrackingServerArn")) {
     m_trackingServerArn = jsonValue.GetString("TrackingServerArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInferenceSchedulerResult::CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInferenceSchedulerResult& CreateInferenceSchedulerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferenceSchedulerArn")) {
     m_inferenceSchedulerArn = jsonValue.GetString("InferenceSchedulerArn");

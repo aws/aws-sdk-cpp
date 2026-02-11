@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSessionLoggerResult::UpdateSessionLoggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSessionLoggerResult& UpdateSessionLoggerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sessionLogger")) {
     m_sessionLogger = jsonValue.GetObject("sessionLogger");

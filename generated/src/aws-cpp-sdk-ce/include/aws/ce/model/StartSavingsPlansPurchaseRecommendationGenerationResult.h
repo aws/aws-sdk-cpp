@@ -93,6 +93,8 @@ class StartSavingsPlansPurchaseRecommendationGenerationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_recommendationId;
 
@@ -101,6 +103,7 @@ class StartSavingsPlansPurchaseRecommendationGenerationResult {
   Aws::String m_estimatedCompletionTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recommendationIdHasBeenSet = false;
   bool m_generationStartedTimeHasBeenSet = false;
   bool m_estimatedCompletionTimeHasBeenSet = false;

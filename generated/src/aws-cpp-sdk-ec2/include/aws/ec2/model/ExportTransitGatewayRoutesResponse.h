@@ -59,10 +59,13 @@ class ExportTransitGatewayRoutesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_s3Location;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_s3LocationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

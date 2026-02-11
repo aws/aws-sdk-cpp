@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateConsumableResourceResult::UpdateConsumableResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateConsumableResourceResult& UpdateConsumableResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("consumableResourceName")) {
     m_consumableResourceName = jsonValue.GetString("consumableResourceName");

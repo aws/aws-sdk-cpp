@@ -20,6 +20,7 @@ using namespace Aws;
 ListPHIDetectionJobsResult::ListPHIDetectionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPHIDetectionJobsResult& ListPHIDetectionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComprehendMedicalAsyncJobPropertiesList")) {
     Aws::Utils::Array<JsonView> comprehendMedicalAsyncJobPropertiesListJsonList =

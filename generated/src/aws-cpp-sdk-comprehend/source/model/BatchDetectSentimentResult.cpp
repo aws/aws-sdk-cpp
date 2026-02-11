@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDetectSentimentResult::BatchDetectSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDetectSentimentResult& BatchDetectSentimentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResultList")) {
     Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");

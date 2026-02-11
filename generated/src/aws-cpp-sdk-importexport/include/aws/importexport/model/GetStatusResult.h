@@ -292,6 +292,8 @@ class GetStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -326,6 +328,7 @@ class GetStatusResult {
   Aws::Vector<Artifact> m_artifactList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
   bool m_locationCodeHasBeenSet = false;

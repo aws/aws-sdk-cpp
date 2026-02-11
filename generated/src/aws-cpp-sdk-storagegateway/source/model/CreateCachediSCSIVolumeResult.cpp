@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCachediSCSIVolumeResult::CreateCachediSCSIVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCachediSCSIVolumeResult& CreateCachediSCSIVolumeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VolumeARN")) {
     m_volumeARN = jsonValue.GetString("VolumeARN");

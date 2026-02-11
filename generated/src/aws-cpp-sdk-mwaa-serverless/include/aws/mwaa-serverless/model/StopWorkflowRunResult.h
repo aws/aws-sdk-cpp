@@ -109,6 +109,8 @@ class StopWorkflowRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workflowArn;
 
@@ -119,6 +121,7 @@ class StopWorkflowRunResult {
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workflowArnHasBeenSet = false;
   bool m_workflowVersionHasBeenSet = false;
   bool m_runIdHasBeenSet = false;

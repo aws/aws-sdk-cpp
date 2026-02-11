@@ -20,6 +20,7 @@ using namespace Aws;
 GetEntityRecordsResult::GetEntityRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEntityRecordsResult& GetEntityRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Records")) {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");

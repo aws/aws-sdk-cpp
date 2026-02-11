@@ -20,6 +20,7 @@ using namespace Aws;
 TestParsingResult::TestParsingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestParsingResult& TestParsingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("parsedFileContent")) {
     m_parsedFileContent = jsonValue.GetString("parsedFileContent");

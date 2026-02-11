@@ -119,6 +119,8 @@ class CreateSchemaMappingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_schemaName;
 
@@ -129,6 +131,7 @@ class CreateSchemaMappingResult {
   Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_schemaNameHasBeenSet = false;
   bool m_schemaArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -60,10 +60,13 @@ class StartMedicalTranscriptionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MedicalTranscriptionJob m_medicalTranscriptionJob;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_medicalTranscriptionJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

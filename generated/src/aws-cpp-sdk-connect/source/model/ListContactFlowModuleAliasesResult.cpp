@@ -22,6 +22,7 @@ ListContactFlowModuleAliasesResult::ListContactFlowModuleAliasesResult(const Aws
 }
 
 ListContactFlowModuleAliasesResult& ListContactFlowModuleAliasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactFlowModuleAliasSummaryList")) {
     Aws::Utils::Array<JsonView> contactFlowModuleAliasSummaryListJsonList = jsonValue.GetArray("ContactFlowModuleAliasSummaryList");

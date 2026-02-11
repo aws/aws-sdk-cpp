@@ -70,12 +70,15 @@ class GetMailboxDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_mailboxQuota{0};
 
   double m_mailboxSize{0.0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mailboxQuotaHasBeenSet = false;
   bool m_mailboxSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

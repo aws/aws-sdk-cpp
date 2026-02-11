@@ -400,6 +400,8 @@ class GetMLTransformResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_transformId;
 
@@ -440,6 +442,7 @@ class GetMLTransformResult {
   TransformEncryption m_transformEncryption;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transformIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -67,10 +67,13 @@ class DescribeConnectorEntityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ConnectorEntityField> m_connectorEntityFields;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectorEntityFieldsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

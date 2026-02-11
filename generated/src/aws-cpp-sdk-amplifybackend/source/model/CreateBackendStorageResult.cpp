@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBackendStorageResult::CreateBackendStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBackendStorageResult& CreateBackendStorageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("appId")) {
     m_appId = jsonValue.GetString("appId");

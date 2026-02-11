@@ -23,6 +23,7 @@ DescribeDocumentClassificationJobResult::DescribeDocumentClassificationJobResult
 
 DescribeDocumentClassificationJobResult& DescribeDocumentClassificationJobResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentClassificationJobProperties")) {
     m_documentClassificationJobProperties = jsonValue.GetObject("DocumentClassificationJobProperties");

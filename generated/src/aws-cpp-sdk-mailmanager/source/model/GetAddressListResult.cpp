@@ -20,6 +20,7 @@ using namespace Aws;
 GetAddressListResult::GetAddressListResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAddressListResult& GetAddressListResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AddressListId")) {
     m_addressListId = jsonValue.GetString("AddressListId");

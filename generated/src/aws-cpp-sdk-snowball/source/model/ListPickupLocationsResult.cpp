@@ -20,6 +20,7 @@ using namespace Aws;
 ListPickupLocationsResult::ListPickupLocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPickupLocationsResult& ListPickupLocationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Addresses")) {
     Aws::Utils::Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");

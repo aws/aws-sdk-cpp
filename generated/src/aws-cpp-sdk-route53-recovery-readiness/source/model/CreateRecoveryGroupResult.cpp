@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRecoveryGroupResult::CreateRecoveryGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRecoveryGroupResult& CreateRecoveryGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cells")) {
     Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");

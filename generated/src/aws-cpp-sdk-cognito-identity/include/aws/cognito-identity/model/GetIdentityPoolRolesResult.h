@@ -115,6 +115,8 @@ class GetIdentityPoolRolesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityPoolId;
 
@@ -123,6 +125,7 @@ class GetIdentityPoolRolesResult {
   Aws::Map<Aws::String, RoleMapping> m_roleMappings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_rolesHasBeenSet = false;
   bool m_roleMappingsHasBeenSet = false;

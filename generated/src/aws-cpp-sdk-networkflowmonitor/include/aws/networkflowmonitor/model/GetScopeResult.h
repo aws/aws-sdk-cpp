@@ -149,6 +149,8 @@ class GetScopeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_scopeId;
 
@@ -161,6 +163,7 @@ class GetScopeResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scopeIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_scopeArnHasBeenSet = false;

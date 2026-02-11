@@ -24,6 +24,7 @@ GetWirelessGatewayFirmwareInformationResult::GetWirelessGatewayFirmwareInformati
 
 GetWirelessGatewayFirmwareInformationResult& GetWirelessGatewayFirmwareInformationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LoRaWAN")) {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");

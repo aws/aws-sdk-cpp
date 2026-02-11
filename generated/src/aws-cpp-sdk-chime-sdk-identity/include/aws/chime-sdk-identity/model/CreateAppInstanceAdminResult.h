@@ -77,12 +77,15 @@ class CreateAppInstanceAdminResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Identity m_appInstanceAdmin;
 
   Aws::String m_appInstanceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appInstanceAdminHasBeenSet = false;
   bool m_appInstanceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -88,12 +88,15 @@ class ListCollaborationTrainedModelInferenceJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<CollaborationTrainedModelInferenceJobSummary> m_collaborationTrainedModelInferenceJobs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_collaborationTrainedModelInferenceJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

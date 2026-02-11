@@ -88,12 +88,15 @@ class ListCallAnalyticsCategoriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<CategoryProperties> m_categories;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

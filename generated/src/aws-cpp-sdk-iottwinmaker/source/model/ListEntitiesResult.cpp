@@ -20,6 +20,7 @@ using namespace Aws;
 ListEntitiesResult::ListEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEntitiesResult& ListEntitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("entitySummaries")) {
     Aws::Utils::Array<JsonView> entitySummariesJsonList = jsonValue.GetArray("entitySummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRouteResult::DescribeRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRouteResult& DescribeRouteResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_route = jsonValue;
   m_routeHasBeenSet = true;

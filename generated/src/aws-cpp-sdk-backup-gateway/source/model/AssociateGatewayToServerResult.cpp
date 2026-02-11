@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateGatewayToServerResult::AssociateGatewayToServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateGatewayToServerResult& AssociateGatewayToServerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GatewayArn")) {
     m_gatewayArn = jsonValue.GetString("GatewayArn");

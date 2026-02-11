@@ -65,10 +65,13 @@ class GetGeoLocationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GeoLocationDetails m_geoLocationDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_geoLocationDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

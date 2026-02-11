@@ -181,6 +181,8 @@ class GetEffectiveRecommendationPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
 
@@ -193,6 +195,7 @@ class GetEffectiveRecommendationPreferencesResult {
   Aws::Vector<EffectivePreferredResource> m_preferredResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_enhancedInfrastructureMetricsHasBeenSet = false;
   bool m_externalMetricsPreferenceHasBeenSet = false;
   bool m_lookBackPeriodHasBeenSet = false;

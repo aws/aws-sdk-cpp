@@ -20,6 +20,7 @@ using namespace Aws;
 GetCodeSigningConfigResult::GetCodeSigningConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCodeSigningConfigResult& GetCodeSigningConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CodeSigningConfig")) {
     m_codeSigningConfig = jsonValue.GetObject("CodeSigningConfig");

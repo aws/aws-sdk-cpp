@@ -58,10 +58,13 @@ class StopReplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SourceServer m_sourceServer;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

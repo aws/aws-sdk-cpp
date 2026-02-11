@@ -108,6 +108,8 @@ class CreateSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_createdAt{};
 
@@ -118,6 +120,7 @@ class CreateSessionResult {
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createdAtHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;

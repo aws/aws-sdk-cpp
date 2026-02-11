@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteProxyRuleGroupResult::DeleteProxyRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteProxyRuleGroupResult& DeleteProxyRuleGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProxyRuleGroupName")) {
     m_proxyRuleGroupName = jsonValue.GetString("ProxyRuleGroupName");

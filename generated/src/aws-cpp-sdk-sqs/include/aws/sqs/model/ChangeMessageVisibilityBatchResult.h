@@ -114,6 +114,8 @@ class ChangeMessageVisibilityBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ChangeMessageVisibilityBatchResultEntry> m_successful;
 
@@ -122,6 +124,7 @@ class ChangeMessageVisibilityBatchResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetTranscriptionJobResult::GetTranscriptionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTranscriptionJobResult& GetTranscriptionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TranscriptionJob")) {
     m_transcriptionJob = jsonValue.GetObject("TranscriptionJob");

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchUpdatePhoneNumberResult::BatchUpdatePhoneNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchUpdatePhoneNumberResult& BatchUpdatePhoneNumberResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PhoneNumberErrors")) {
     Aws::Utils::Array<JsonView> phoneNumberErrorsJsonList = jsonValue.GetArray("PhoneNumberErrors");

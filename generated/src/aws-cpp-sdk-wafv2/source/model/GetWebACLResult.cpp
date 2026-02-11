@@ -20,6 +20,7 @@ using namespace Aws;
 GetWebACLResult::GetWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetWebACLResult& GetWebACLResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WebACL")) {
     m_webACL = jsonValue.GetObject("WebACL");

@@ -64,10 +64,13 @@ class CreateEventSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EventSubscription m_eventSubscription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventSubscriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -58,10 +58,13 @@ class GetDiskSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DiskSnapshot m_diskSnapshot;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_diskSnapshotHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

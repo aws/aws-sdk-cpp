@@ -59,10 +59,13 @@ class CreateCrossAccountAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Attachment m_crossAccountAttachment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_crossAccountAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -67,10 +67,13 @@ class GetLogGroupFieldsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<LogGroupField> m_logGroupFields;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_logGroupFieldsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

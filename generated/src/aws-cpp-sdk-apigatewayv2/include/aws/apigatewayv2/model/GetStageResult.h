@@ -305,6 +305,8 @@ class GetStageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccessLogSettings m_accessLogSettings;
 
@@ -335,6 +337,7 @@ class GetStageResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessLogSettingsHasBeenSet = false;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_autoDeployHasBeenSet = false;

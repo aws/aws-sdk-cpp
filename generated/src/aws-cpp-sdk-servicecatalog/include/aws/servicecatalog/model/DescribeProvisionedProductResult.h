@@ -85,12 +85,15 @@ class DescribeProvisionedProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProvisionedProductDetail m_provisionedProductDetail;
 
   Aws::Vector<CloudWatchDashboard> m_cloudWatchDashboards;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_provisionedProductDetailHasBeenSet = false;
   bool m_cloudWatchDashboardsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

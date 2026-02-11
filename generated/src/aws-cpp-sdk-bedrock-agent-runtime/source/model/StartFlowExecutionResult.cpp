@@ -20,6 +20,7 @@ using namespace Aws;
 StartFlowExecutionResult::StartFlowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartFlowExecutionResult& StartFlowExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("executionArn")) {
     m_executionArn = jsonValue.GetString("executionArn");

@@ -454,6 +454,8 @@ class GetJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobPrimaryStatus m_status{JobPrimaryStatus::NOT_SET};
 
@@ -498,6 +500,7 @@ class GetJobResult {
   Aws::Vector<Association> m_associations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_jobArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;

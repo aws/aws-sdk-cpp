@@ -23,6 +23,7 @@ PutMessagingStreamingConfigurationsResult::PutMessagingStreamingConfigurationsRe
 
 PutMessagingStreamingConfigurationsResult& PutMessagingStreamingConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamingConfigurations")) {
     Aws::Utils::Array<JsonView> streamingConfigurationsJsonList = jsonValue.GetArray("StreamingConfigurations");

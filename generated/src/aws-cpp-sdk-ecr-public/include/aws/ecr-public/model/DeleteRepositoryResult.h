@@ -58,10 +58,13 @@ class DeleteRepositoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Repository m_repository;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

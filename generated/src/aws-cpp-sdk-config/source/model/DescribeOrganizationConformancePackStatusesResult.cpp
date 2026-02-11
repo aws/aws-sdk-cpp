@@ -24,6 +24,7 @@ DescribeOrganizationConformancePackStatusesResult::DescribeOrganizationConforman
 
 DescribeOrganizationConformancePackStatusesResult& DescribeOrganizationConformancePackStatusesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationConformancePackStatuses")) {
     Aws::Utils::Array<JsonView> organizationConformancePackStatusesJsonList = jsonValue.GetArray("OrganizationConformancePackStatuses");

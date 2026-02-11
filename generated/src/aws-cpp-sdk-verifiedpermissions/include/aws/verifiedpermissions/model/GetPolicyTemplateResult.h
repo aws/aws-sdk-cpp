@@ -144,6 +144,8 @@ class GetPolicyTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyStoreId;
 
@@ -158,6 +160,7 @@ class GetPolicyTemplateResult {
   Aws::Utils::DateTime m_lastUpdatedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyStoreIdHasBeenSet = false;
   bool m_policyTemplateIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

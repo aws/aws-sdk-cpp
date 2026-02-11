@@ -157,6 +157,8 @@ class GetBulkDeploymentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BulkDeploymentMetrics m_bulkDeploymentMetrics;
 
@@ -171,6 +173,7 @@ class GetBulkDeploymentStatusResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bulkDeploymentMetricsHasBeenSet = false;
   bool m_bulkDeploymentStatusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

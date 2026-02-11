@@ -123,6 +123,8 @@ class GetGlueIdentityCenterConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationArn;
 
@@ -133,6 +135,7 @@ class GetGlueIdentityCenterConfigurationResult {
   bool m_userBackgroundSessionsEnabled{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_instanceArnHasBeenSet = false;
   bool m_scopesHasBeenSet = false;

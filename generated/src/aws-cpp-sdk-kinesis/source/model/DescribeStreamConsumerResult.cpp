@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStreamConsumerResult::DescribeStreamConsumerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStreamConsumerResult& DescribeStreamConsumerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConsumerDescription")) {
     m_consumerDescription = jsonValue.GetObject("ConsumerDescription");

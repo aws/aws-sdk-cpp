@@ -20,6 +20,7 @@ using namespace Aws;
 ListFolderMembersResult::ListFolderMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFolderMembersResult& ListFolderMembersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FolderMemberList")) {
     Aws::Utils::Array<JsonView> folderMemberListJsonList = jsonValue.GetArray("FolderMemberList");

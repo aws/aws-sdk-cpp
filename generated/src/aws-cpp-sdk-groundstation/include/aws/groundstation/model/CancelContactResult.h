@@ -62,10 +62,13 @@ class CancelContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contactId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

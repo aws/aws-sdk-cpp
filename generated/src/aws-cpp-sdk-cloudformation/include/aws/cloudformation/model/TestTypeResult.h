@@ -58,10 +58,13 @@ class TestTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_typeVersionArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_typeVersionArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

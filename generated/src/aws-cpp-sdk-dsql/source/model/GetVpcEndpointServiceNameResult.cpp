@@ -20,6 +20,7 @@ using namespace Aws;
 GetVpcEndpointServiceNameResult::GetVpcEndpointServiceNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVpcEndpointServiceNameResult& GetVpcEndpointServiceNameResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = jsonValue.GetString("serviceName");

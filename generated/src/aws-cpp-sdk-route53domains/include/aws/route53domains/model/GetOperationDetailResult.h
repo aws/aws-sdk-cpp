@@ -191,6 +191,8 @@ class GetOperationDetailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_operationId;
 
@@ -209,6 +211,7 @@ class GetOperationDetailResult {
   StatusFlag m_statusFlag{StatusFlag::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_operationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;

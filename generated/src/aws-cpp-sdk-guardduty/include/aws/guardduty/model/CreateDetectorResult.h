@@ -76,12 +76,15 @@ class CreateDetectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_detectorId;
 
   UnprocessedDataSourcesResult m_unprocessedDataSources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_detectorIdHasBeenSet = false;
   bool m_unprocessedDataSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

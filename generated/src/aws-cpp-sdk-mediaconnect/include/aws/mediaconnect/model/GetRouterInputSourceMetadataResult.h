@@ -94,6 +94,8 @@ class GetRouterInputSourceMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -102,6 +104,7 @@ class GetRouterInputSourceMetadataResult {
   RouterInputSourceMetadataDetails m_sourceMetadataDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sourceMetadataDetailsHasBeenSet = false;

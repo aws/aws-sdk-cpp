@@ -61,10 +61,13 @@ class DeleteLicenseServerEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LicenseServerEndpoint m_licenseServerEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_licenseServerEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

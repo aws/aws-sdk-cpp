@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueryStatusResult::GetQueryStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueryStatusResult& GetQueryStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("Status"));

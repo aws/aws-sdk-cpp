@@ -60,10 +60,13 @@ class DescribeKeyPhrasesDetectionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KeyPhrasesDetectionJobProperties m_keyPhrasesDetectionJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyPhrasesDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

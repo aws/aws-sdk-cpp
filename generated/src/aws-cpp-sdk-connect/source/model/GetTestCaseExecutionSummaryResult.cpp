@@ -22,6 +22,7 @@ GetTestCaseExecutionSummaryResult::GetTestCaseExecutionSummaryResult(const Aws::
 }
 
 GetTestCaseExecutionSummaryResult& GetTestCaseExecutionSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetDouble("StartTime");

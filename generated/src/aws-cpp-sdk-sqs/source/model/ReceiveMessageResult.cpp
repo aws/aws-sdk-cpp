@@ -20,6 +20,7 @@ using namespace Aws;
 ReceiveMessageResult::ReceiveMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReceiveMessageResult& ReceiveMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Messages")) {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("Messages");

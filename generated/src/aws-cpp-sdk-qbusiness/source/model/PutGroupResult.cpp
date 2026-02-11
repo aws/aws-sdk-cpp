@@ -20,6 +20,7 @@ using namespace Aws;
 PutGroupResult::PutGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutGroupResult& PutGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

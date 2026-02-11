@@ -78,12 +78,15 @@ class GetConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EcrConfigurationState m_ecrConfiguration;
 
   Ec2ConfigurationState m_ec2Configuration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMapRunResult::DescribeMapRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMapRunResult& DescribeMapRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mapRunArn")) {
     m_mapRunArn = jsonValue.GetString("mapRunArn");

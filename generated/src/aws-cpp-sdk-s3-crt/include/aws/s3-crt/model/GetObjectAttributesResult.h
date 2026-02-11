@@ -203,6 +203,8 @@ class GetObjectAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_deleteMarker{false};
 
@@ -223,6 +225,7 @@ class GetObjectAttributesResult {
   long long m_objectSize{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deleteMarkerHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

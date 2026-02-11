@@ -174,6 +174,8 @@ class UpdateClusterSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -190,6 +192,7 @@ class UpdateClusterSdkResult {
   ClusterState m_state{ClusterState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelIdsHasBeenSet = false;
   bool m_clusterTypeHasBeenSet = false;

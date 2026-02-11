@@ -20,6 +20,7 @@ using namespace Aws;
 MoveReplicationTaskResult::MoveReplicationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 MoveReplicationTaskResult& MoveReplicationTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationTask")) {
     m_replicationTask = jsonValue.GetObject("ReplicationTask");

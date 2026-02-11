@@ -23,6 +23,7 @@ DescribeUsageReportSubscriptionsResult::DescribeUsageReportSubscriptionsResult(c
 
 DescribeUsageReportSubscriptionsResult& DescribeUsageReportSubscriptionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UsageReportSubscriptions")) {
     Aws::Utils::Array<JsonView> usageReportSubscriptionsJsonList = jsonValue.GetArray("UsageReportSubscriptions");

@@ -133,6 +133,8 @@ class DescribeFolderResolvedPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_status{0};
 
@@ -145,6 +147,7 @@ class DescribeFolderResolvedPermissionsResult {
   Aws::String m_requestId;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_folderIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;

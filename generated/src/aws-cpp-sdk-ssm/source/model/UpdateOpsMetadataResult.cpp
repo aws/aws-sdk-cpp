@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateOpsMetadataResult::UpdateOpsMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateOpsMetadataResult& UpdateOpsMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OpsMetadataArn")) {
     m_opsMetadataArn = jsonValue.GetString("OpsMetadataArn");

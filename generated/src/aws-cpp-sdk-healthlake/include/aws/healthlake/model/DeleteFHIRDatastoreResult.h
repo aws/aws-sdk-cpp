@@ -108,6 +108,8 @@ class DeleteFHIRDatastoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datastoreId;
 
@@ -118,6 +120,7 @@ class DeleteFHIRDatastoreResult {
   Aws::String m_datastoreEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreArnHasBeenSet = false;
   bool m_datastoreStatusHasBeenSet = false;

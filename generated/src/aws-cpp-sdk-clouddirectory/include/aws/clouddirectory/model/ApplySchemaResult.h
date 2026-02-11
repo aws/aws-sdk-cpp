@@ -77,12 +77,15 @@ class ApplySchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appliedSchemaArn;
 
   Aws::String m_directoryArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appliedSchemaArnHasBeenSet = false;
   bool m_directoryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

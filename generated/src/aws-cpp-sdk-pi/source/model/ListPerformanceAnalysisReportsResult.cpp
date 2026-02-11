@@ -23,6 +23,7 @@ ListPerformanceAnalysisReportsResult::ListPerformanceAnalysisReportsResult(const
 
 ListPerformanceAnalysisReportsResult& ListPerformanceAnalysisReportsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AnalysisReports")) {
     Aws::Utils::Array<JsonView> analysisReportsJsonList = jsonValue.GetArray("AnalysisReports");

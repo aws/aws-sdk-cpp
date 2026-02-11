@@ -22,6 +22,7 @@ ListSecurityProfilesForTargetResult::ListSecurityProfilesForTargetResult(const A
 }
 
 ListSecurityProfilesForTargetResult& ListSecurityProfilesForTargetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("securityProfileTargetMappings")) {
     Aws::Utils::Array<JsonView> securityProfileTargetMappingsJsonList = jsonValue.GetArray("securityProfileTargetMappings");

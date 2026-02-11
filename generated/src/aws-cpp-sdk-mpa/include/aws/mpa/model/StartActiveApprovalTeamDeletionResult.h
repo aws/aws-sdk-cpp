@@ -75,12 +75,15 @@ class StartActiveApprovalTeamDeletionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_deletionCompletionTime{};
 
   Aws::Utils::DateTime m_deletionStartTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deletionCompletionTimeHasBeenSet = false;
   bool m_deletionStartTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

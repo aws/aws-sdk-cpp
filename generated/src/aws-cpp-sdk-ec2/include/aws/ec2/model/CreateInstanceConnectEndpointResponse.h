@@ -77,12 +77,15 @@ class CreateInstanceConnectEndpointResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Ec2InstanceConnectEndpoint m_instanceConnectEndpoint;
 
   Aws::String m_clientToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceConnectEndpointHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

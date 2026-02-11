@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetSecurityControlsResult::BatchGetSecurityControlsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetSecurityControlsResult& BatchGetSecurityControlsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecurityControls")) {
     Aws::Utils::Array<JsonView> securityControlsJsonList = jsonValue.GetArray("SecurityControls");

@@ -91,12 +91,15 @@ class ListDevicesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DeviceType> m_devices;
 
   Aws::String m_paginationToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_devicesHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateEventConfigurationsResult::UpdateEventConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateEventConfigurationsResult& UpdateEventConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

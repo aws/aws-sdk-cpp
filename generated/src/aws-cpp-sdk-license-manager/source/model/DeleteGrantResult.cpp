@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteGrantResult::DeleteGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteGrantResult& DeleteGrantResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GrantArn")) {
     m_grantArn = jsonValue.GetString("GrantArn");

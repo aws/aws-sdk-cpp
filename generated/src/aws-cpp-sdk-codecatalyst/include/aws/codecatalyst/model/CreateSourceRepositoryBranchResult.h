@@ -112,6 +112,8 @@ class CreateSourceRepositoryBranchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ref;
 
@@ -122,6 +124,7 @@ class CreateSourceRepositoryBranchResult {
   Aws::String m_headCommitId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_refHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;

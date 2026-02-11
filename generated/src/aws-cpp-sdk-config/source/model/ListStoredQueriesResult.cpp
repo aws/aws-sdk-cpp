@@ -20,6 +20,7 @@ using namespace Aws;
 ListStoredQueriesResult::ListStoredQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListStoredQueriesResult& ListStoredQueriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StoredQueryMetadata")) {
     Aws::Utils::Array<JsonView> storedQueryMetadataJsonList = jsonValue.GetArray("StoredQueryMetadata");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListSbomValidationResultsResult::ListSbomValidationResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSbomValidationResultsResult& ListSbomValidationResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("validationResultSummaries")) {
     Aws::Utils::Array<JsonView> validationResultSummariesJsonList = jsonValue.GetArray("validationResultSummaries");

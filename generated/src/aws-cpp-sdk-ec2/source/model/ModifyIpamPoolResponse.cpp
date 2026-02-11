@@ -20,6 +20,7 @@ using namespace Aws;
 ModifyIpamPoolResponse::ModifyIpamPoolResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ModifyIpamPoolResponse& ModifyIpamPoolResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

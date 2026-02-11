@@ -20,6 +20,7 @@ using namespace Aws;
 PutGatewayResponseResult::PutGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutGatewayResponseResult& PutGatewayResponseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("responseType")) {
     m_responseType = GatewayResponseTypeMapper::GetGatewayResponseTypeForName(jsonValue.GetString("responseType"));

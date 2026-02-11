@@ -23,6 +23,7 @@ ListIAMPolicyAssignmentsForUserResult::ListIAMPolicyAssignmentsForUserResult(con
 
 ListIAMPolicyAssignmentsForUserResult& ListIAMPolicyAssignmentsForUserResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ActiveAssignments")) {
     Aws::Utils::Array<JsonView> activeAssignmentsJsonList = jsonValue.GetArray("ActiveAssignments");

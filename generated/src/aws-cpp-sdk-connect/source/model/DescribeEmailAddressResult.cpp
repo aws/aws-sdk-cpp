@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEmailAddressResult::DescribeEmailAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEmailAddressResult& DescribeEmailAddressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EmailAddressId")) {
     m_emailAddressId = jsonValue.GetString("EmailAddressId");

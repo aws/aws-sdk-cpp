@@ -24,6 +24,7 @@ UpdateConfiguredAudienceModelAssociationResult::UpdateConfiguredAudienceModelAss
 
 UpdateConfiguredAudienceModelAssociationResult& UpdateConfiguredAudienceModelAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredAudienceModelAssociation")) {
     m_configuredAudienceModelAssociation = jsonValue.GetObject("configuredAudienceModelAssociation");

@@ -156,6 +156,8 @@ class GeneratePinDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_generationKeyArn;
 
@@ -170,6 +172,7 @@ class GeneratePinDataResult {
   PinData m_pinData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_generationKeyArnHasBeenSet = false;
   bool m_generationKeyCheckValueHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListProfileHistoryRecordsResult::ListProfileHistoryRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListProfileHistoryRecordsResult& ListProfileHistoryRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileHistoryRecords")) {
     Aws::Utils::Array<JsonView> profileHistoryRecordsJsonList = jsonValue.GetArray("ProfileHistoryRecords");

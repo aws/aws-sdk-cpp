@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAnalysisPermissionsResult::UpdateAnalysisPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAnalysisPermissionsResult& UpdateAnalysisPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AnalysisArn")) {
     m_analysisArn = jsonValue.GetString("AnalysisArn");

@@ -24,6 +24,7 @@ DescribeApplicableIndividualAssessmentsResult::DescribeApplicableIndividualAsses
 
 DescribeApplicableIndividualAssessmentsResult& DescribeApplicableIndividualAssessmentsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IndividualAssessmentNames")) {
     Aws::Utils::Array<JsonView> individualAssessmentNamesJsonList = jsonValue.GetArray("IndividualAssessmentNames");

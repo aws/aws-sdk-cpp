@@ -105,6 +105,8 @@ class InferICD10CMResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ICD10CMEntity> m_entities;
 
@@ -113,6 +115,7 @@ class InferICD10CMResult {
   Aws::String m_modelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;

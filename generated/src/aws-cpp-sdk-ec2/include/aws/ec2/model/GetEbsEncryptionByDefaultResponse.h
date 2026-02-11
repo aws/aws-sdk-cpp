@@ -71,12 +71,15 @@ class GetEbsEncryptionByDefaultResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_ebsEncryptionByDefault{false};
 
   SSEType m_sseType{SSEType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ebsEncryptionByDefaultHasBeenSet = false;
   bool m_sseTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

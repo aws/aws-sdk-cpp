@@ -22,6 +22,7 @@ GetIdentityCenterAuthTokenResult::GetIdentityCenterAuthTokenResult(const Aws::Am
 }
 
 GetIdentityCenterAuthTokenResult& GetIdentityCenterAuthTokenResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

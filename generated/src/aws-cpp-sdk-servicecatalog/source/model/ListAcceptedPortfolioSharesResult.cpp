@@ -22,6 +22,7 @@ ListAcceptedPortfolioSharesResult::ListAcceptedPortfolioSharesResult(const Aws::
 }
 
 ListAcceptedPortfolioSharesResult& ListAcceptedPortfolioSharesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PortfolioDetails")) {
     Aws::Utils::Array<JsonView> portfolioDetailsJsonList = jsonValue.GetArray("PortfolioDetails");

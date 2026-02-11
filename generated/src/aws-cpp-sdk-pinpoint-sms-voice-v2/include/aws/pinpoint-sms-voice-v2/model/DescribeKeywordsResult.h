@@ -119,6 +119,8 @@ class DescribeKeywordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_originationIdentityArn;
 
@@ -129,6 +131,7 @@ class DescribeKeywordsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_originationIdentityArnHasBeenSet = false;
   bool m_originationIdentityHasBeenSet = false;
   bool m_keywordsHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 TransferCertificateResult::TransferCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TransferCertificateResult& TransferCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("transferredCertificateArn")) {
     m_transferredCertificateArn = jsonValue.GetString("transferredCertificateArn");

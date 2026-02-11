@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAppResult::UpdateAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAppResult& UpdateAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("app")) {
     m_app = jsonValue.GetObject("app");

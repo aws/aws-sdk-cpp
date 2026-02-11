@@ -80,12 +80,15 @@ class GetArtifactUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_artifactId;
 
   Aws::String m_artifactUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_artifactIdHasBeenSet = false;
   bool m_artifactUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

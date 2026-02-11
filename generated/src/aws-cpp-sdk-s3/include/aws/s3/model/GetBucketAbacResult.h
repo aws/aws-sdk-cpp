@@ -58,10 +58,13 @@ class GetBucketAbacResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AbacStatus m_abacStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_abacStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

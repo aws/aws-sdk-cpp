@@ -20,6 +20,7 @@ using namespace Aws;
 ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReportTaskRunnerHeartbeatResult& ReportTaskRunnerHeartbeatResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("terminate")) {
     m_terminate = jsonValue.GetBool("terminate");

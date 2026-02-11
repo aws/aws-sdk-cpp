@@ -72,12 +72,15 @@ class UpdatePipelineVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pipelineArn;
 
   long long m_pipelineVersionId{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

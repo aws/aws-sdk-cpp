@@ -24,6 +24,7 @@ DescribeElasticsearchInstanceTypeLimitsResult::DescribeElasticsearchInstanceType
 
 DescribeElasticsearchInstanceTypeLimitsResult& DescribeElasticsearchInstanceTypeLimitsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LimitsByRole")) {
     Aws::Map<Aws::String, JsonView> limitsByRoleJsonMap = jsonValue.GetObject("LimitsByRole").GetAllObjects();

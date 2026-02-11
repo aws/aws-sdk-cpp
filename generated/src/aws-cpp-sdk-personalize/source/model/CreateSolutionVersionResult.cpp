@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSolutionVersionResult::CreateSolutionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSolutionVersionResult& CreateSolutionVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("solutionVersionArn")) {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");

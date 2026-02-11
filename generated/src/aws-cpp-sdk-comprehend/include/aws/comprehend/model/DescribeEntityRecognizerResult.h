@@ -58,10 +58,13 @@ class DescribeEntityRecognizerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EntityRecognizerProperties m_entityRecognizerProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entityRecognizerPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -83,12 +83,15 @@ class ListDeviceResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ResourceSummary> m_resources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -65,10 +65,13 @@ class DescribeEntityAggregatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EntityAggregate> m_entityAggregates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entityAggregatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

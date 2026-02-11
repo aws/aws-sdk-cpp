@@ -20,6 +20,7 @@ using namespace Aws;
 GetDedicatedIpPoolResult::GetDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDedicatedIpPoolResult& GetDedicatedIpPoolResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DedicatedIpPool")) {
     m_dedicatedIpPool = jsonValue.GetObject("DedicatedIpPool");

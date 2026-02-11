@@ -20,6 +20,7 @@ using namespace Aws;
 GetMigrationsResult::GetMigrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMigrationsResult& GetMigrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("migrationSummaries")) {
     Aws::Utils::Array<JsonView> migrationSummariesJsonList = jsonValue.GetArray("migrationSummaries");

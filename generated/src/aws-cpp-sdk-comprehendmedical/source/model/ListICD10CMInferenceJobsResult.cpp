@@ -20,6 +20,7 @@ using namespace Aws;
 ListICD10CMInferenceJobsResult::ListICD10CMInferenceJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListICD10CMInferenceJobsResult& ListICD10CMInferenceJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComprehendMedicalAsyncJobPropertiesList")) {
     Aws::Utils::Array<JsonView> comprehendMedicalAsyncJobPropertiesListJsonList =

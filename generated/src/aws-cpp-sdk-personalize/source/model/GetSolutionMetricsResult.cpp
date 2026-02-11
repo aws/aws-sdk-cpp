@@ -20,6 +20,7 @@ using namespace Aws;
 GetSolutionMetricsResult::GetSolutionMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSolutionMetricsResult& GetSolutionMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("solutionVersionArn")) {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");

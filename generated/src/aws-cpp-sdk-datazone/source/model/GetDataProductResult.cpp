@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataProductResult::GetDataProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataProductResult& GetDataProductResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");

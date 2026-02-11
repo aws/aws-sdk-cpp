@@ -58,10 +58,13 @@ class UpdateRoleDescriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Role m_role;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_roleHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

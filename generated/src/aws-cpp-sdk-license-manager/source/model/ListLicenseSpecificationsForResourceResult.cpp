@@ -24,6 +24,7 @@ ListLicenseSpecificationsForResourceResult::ListLicenseSpecificationsForResource
 
 ListLicenseSpecificationsForResourceResult& ListLicenseSpecificationsForResourceResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseSpecifications")) {
     Aws::Utils::Array<JsonView> licenseSpecificationsJsonList = jsonValue.GetArray("LicenseSpecifications");

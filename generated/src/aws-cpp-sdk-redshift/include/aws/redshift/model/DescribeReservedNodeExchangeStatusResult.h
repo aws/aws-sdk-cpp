@@ -88,12 +88,15 @@ class DescribeReservedNodeExchangeStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ReservedNodeExchangeStatus> m_reservedNodeExchangeStatusDetails;
 
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reservedNodeExchangeStatusDetailsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

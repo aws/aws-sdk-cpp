@@ -91,6 +91,8 @@ class DeleteApplicationVpcConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationARN;
 
@@ -99,6 +101,7 @@ class DeleteApplicationVpcConfigurationResult {
   Aws::String m_operationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationARNHasBeenSet = false;
   bool m_applicationVersionIdHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;

@@ -58,10 +58,13 @@ class PutDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Destination m_destination;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_destinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -23,6 +23,7 @@ UpdateAssessmentControlSetStatusResult::UpdateAssessmentControlSetStatusResult(c
 
 UpdateAssessmentControlSetStatusResult& UpdateAssessmentControlSetStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("controlSet")) {
     m_controlSet = jsonValue.GetObject("controlSet");

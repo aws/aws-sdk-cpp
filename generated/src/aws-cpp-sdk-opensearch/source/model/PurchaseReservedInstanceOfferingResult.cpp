@@ -23,6 +23,7 @@ PurchaseReservedInstanceOfferingResult::PurchaseReservedInstanceOfferingResult(c
 
 PurchaseReservedInstanceOfferingResult& PurchaseReservedInstanceOfferingResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReservedInstanceId")) {
     m_reservedInstanceId = jsonValue.GetString("ReservedInstanceId");

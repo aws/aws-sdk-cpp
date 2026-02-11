@@ -20,6 +20,7 @@ using namespace Aws;
 GetFolderResult::GetFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFolderResult& GetFolderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("commitId")) {
     m_commitId = jsonValue.GetString("commitId");

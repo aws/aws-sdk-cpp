@@ -20,6 +20,7 @@ using namespace Aws;
 ListDedicatedIpPoolsResult::ListDedicatedIpPoolsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDedicatedIpPoolsResult& ListDedicatedIpPoolsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DedicatedIpPools")) {
     Aws::Utils::Array<JsonView> dedicatedIpPoolsJsonList = jsonValue.GetArray("DedicatedIpPools");

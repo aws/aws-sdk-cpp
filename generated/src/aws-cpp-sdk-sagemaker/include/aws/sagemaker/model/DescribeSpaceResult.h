@@ -273,6 +273,8 @@ class DescribeSpaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainId;
 
@@ -301,6 +303,7 @@ class DescribeSpaceResult {
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_spaceArnHasBeenSet = false;
   bool m_spaceNameHasBeenSet = false;

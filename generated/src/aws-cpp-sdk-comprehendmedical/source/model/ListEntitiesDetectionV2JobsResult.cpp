@@ -22,6 +22,7 @@ ListEntitiesDetectionV2JobsResult::ListEntitiesDetectionV2JobsResult(const Aws::
 }
 
 ListEntitiesDetectionV2JobsResult& ListEntitiesDetectionV2JobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComprehendMedicalAsyncJobPropertiesList")) {
     Aws::Utils::Array<JsonView> comprehendMedicalAsyncJobPropertiesListJsonList =

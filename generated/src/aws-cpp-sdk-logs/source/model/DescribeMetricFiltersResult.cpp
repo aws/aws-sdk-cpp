@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMetricFiltersResult::DescribeMetricFiltersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMetricFiltersResult& DescribeMetricFiltersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricFilters")) {
     Aws::Utils::Array<JsonView> metricFiltersJsonList = jsonValue.GetArray("metricFilters");

@@ -20,6 +20,7 @@ using namespace Aws;
 PutRuntimeManagementConfigResult::PutRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRuntimeManagementConfigResult& PutRuntimeManagementConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpdateRuntimeOn")) {
     m_updateRuntimeOn = UpdateRuntimeOnMapper::GetUpdateRuntimeOnForName(jsonValue.GetString("UpdateRuntimeOn"));

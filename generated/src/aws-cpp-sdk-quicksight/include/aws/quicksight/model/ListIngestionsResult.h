@@ -98,6 +98,8 @@ class ListIngestionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Ingestion> m_ingestions;
 
@@ -106,6 +108,7 @@ class ListIngestionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ingestionsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

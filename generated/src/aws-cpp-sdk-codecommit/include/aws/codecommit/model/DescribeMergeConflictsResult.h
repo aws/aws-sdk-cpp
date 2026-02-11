@@ -154,6 +154,8 @@ class DescribeMergeConflictsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConflictMetadata m_conflictMetadata;
 
@@ -168,6 +170,7 @@ class DescribeMergeConflictsResult {
   Aws::String m_baseCommitId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_conflictMetadataHasBeenSet = false;
   bool m_mergeHunksHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

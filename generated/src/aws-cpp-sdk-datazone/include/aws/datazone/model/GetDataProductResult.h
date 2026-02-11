@@ -299,6 +299,8 @@ class GetDataProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainId;
 
@@ -329,6 +331,7 @@ class GetDataProductResult {
   Aws::String m_firstRevisionCreatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

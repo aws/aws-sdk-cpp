@@ -22,6 +22,7 @@ DescribeEntitiesDetectionJobResult::DescribeEntitiesDetectionJobResult(const Aws
 }
 
 DescribeEntitiesDetectionJobResult& DescribeEntitiesDetectionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntitiesDetectionJobProperties")) {
     m_entitiesDetectionJobProperties = jsonValue.GetObject("EntitiesDetectionJobProperties");

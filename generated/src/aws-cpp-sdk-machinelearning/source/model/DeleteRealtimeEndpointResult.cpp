@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteRealtimeEndpointResult::DeleteRealtimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteRealtimeEndpointResult& DeleteRealtimeEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MLModelId")) {
     m_mLModelId = jsonValue.GetString("MLModelId");

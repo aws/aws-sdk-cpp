@@ -20,6 +20,7 @@ using namespace Aws;
 BatchLookupUserUnameResult::BatchLookupUserUnameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchLookupUserUnameResult& BatchLookupUserUnameResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");

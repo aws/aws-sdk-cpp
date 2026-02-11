@@ -24,6 +24,7 @@ ListAutomatedReasoningPolicyTestResultsResult::ListAutomatedReasoningPolicyTestR
 
 ListAutomatedReasoningPolicyTestResultsResult& ListAutomatedReasoningPolicyTestResultsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("testResults")) {
     Aws::Utils::Array<JsonView> testResultsJsonList = jsonValue.GetArray("testResults");

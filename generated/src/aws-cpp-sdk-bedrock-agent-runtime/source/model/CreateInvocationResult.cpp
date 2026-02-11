@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInvocationResult::CreateInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInvocationResult& CreateInvocationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLDAPSSettingsResult::DescribeLDAPSSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLDAPSSettingsResult& DescribeLDAPSSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LDAPSSettingsInfo")) {
     Aws::Utils::Array<JsonView> lDAPSSettingsInfoJsonList = jsonValue.GetArray("LDAPSSettingsInfo");

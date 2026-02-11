@@ -20,6 +20,7 @@ using namespace Aws;
 GetConsolidatedReportResult::GetConsolidatedReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetConsolidatedReportResult& GetConsolidatedReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Metrics")) {
     Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");

@@ -100,6 +100,8 @@ class GetAssociatedResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Resource m_resource;
 
@@ -108,6 +110,7 @@ class GetAssociatedResourceResult {
   ApplicationTagResult m_applicationTagResult;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
   bool m_applicationTagResultHasBeenSet = false;

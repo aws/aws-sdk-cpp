@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeContinuousExportsResult::DescribeContinuousExportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeContinuousExportsResult& DescribeContinuousExportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("descriptions")) {
     Aws::Utils::Array<JsonView> descriptionsJsonList = jsonValue.GetArray("descriptions");

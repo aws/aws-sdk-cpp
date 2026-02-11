@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateFileSystemResult::DisassociateFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateFileSystemResult& DisassociateFileSystemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileSystemAssociationARN")) {
     m_fileSystemAssociationARN = jsonValue.GetString("FileSystemAssociationARN");

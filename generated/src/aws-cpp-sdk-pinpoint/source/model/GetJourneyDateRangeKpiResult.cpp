@@ -20,6 +20,7 @@ using namespace Aws;
 GetJourneyDateRangeKpiResult::GetJourneyDateRangeKpiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetJourneyDateRangeKpiResult& GetJourneyDateRangeKpiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_journeyDateRangeKpiResponse = jsonValue;
   m_journeyDateRangeKpiResponseHasBeenSet = true;

@@ -20,6 +20,7 @@ using namespace Aws;
 StartPersonTrackingResult::StartPersonTrackingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartPersonTrackingResult& StartPersonTrackingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");

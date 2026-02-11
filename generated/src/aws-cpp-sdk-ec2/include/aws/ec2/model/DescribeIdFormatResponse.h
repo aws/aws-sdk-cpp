@@ -65,10 +65,13 @@ class DescribeIdFormatResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<IdFormat> m_statuses;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

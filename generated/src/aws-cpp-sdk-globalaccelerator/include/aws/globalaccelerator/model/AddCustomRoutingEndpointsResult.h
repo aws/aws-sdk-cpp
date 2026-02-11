@@ -84,12 +84,15 @@ class AddCustomRoutingEndpointsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CustomRoutingEndpointDescription> m_endpointDescriptions;
 
   Aws::String m_endpointGroupArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointDescriptionsHasBeenSet = false;
   bool m_endpointGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetContainerAPIMetadataResult::GetContainerAPIMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetContainerAPIMetadataResult& GetContainerAPIMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metadata")) {
     Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");

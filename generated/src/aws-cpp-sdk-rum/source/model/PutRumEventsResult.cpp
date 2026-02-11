@@ -20,6 +20,7 @@ using namespace Aws;
 PutRumEventsResult::PutRumEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRumEventsResult& PutRumEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSizeConstraintSetResult::UpdateSizeConstraintSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSizeConstraintSetResult& UpdateSizeConstraintSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeToken")) {
     m_changeToken = jsonValue.GetString("ChangeToken");

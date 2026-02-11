@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCoreNetworkResult::DeleteCoreNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCoreNetworkResult& DeleteCoreNetworkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CoreNetwork")) {
     m_coreNetwork = jsonValue.GetObject("CoreNetwork");

@@ -23,6 +23,7 @@ ListAssociatedRoute53HealthChecksResult::ListAssociatedRoute53HealthChecksResult
 
 ListAssociatedRoute53HealthChecksResult& ListAssociatedRoute53HealthChecksResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HealthCheckIds")) {
     Aws::Utils::Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");

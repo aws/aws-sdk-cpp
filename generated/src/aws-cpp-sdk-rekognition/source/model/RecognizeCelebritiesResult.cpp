@@ -20,6 +20,7 @@ using namespace Aws;
 RecognizeCelebritiesResult::RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CelebrityFaces")) {
     Aws::Utils::Array<JsonView> celebrityFacesJsonList = jsonValue.GetArray("CelebrityFaces");

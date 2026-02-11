@@ -58,10 +58,13 @@ class SignalApplicationInstanceNodeInstancesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationInstanceId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationInstanceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

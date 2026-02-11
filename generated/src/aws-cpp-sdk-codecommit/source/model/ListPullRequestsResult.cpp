@@ -20,6 +20,7 @@ using namespace Aws;
 ListPullRequestsResult::ListPullRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPullRequestsResult& ListPullRequestsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullRequestIds")) {
     Aws::Utils::Array<JsonView> pullRequestIdsJsonList = jsonValue.GetArray("pullRequestIds");

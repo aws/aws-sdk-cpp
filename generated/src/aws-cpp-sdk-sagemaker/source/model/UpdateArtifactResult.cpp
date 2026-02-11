@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateArtifactResult::UpdateArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateArtifactResult& UpdateArtifactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ArtifactArn")) {
     m_artifactArn = jsonValue.GetString("ArtifactArn");

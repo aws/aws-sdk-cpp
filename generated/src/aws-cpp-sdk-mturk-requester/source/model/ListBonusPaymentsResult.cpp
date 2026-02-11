@@ -20,6 +20,7 @@ using namespace Aws;
 ListBonusPaymentsResult::ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBonusPaymentsResult& ListBonusPaymentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NumResults")) {
     m_numResults = jsonValue.GetInteger("NumResults");

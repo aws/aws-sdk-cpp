@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteChapCredentialsResult::DeleteChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteChapCredentialsResult& DeleteChapCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TargetARN")) {
     m_targetARN = jsonValue.GetString("TargetARN");

@@ -22,6 +22,7 @@ DescribeInstanceStorageConfigResult::DescribeInstanceStorageConfigResult(const A
 }
 
 DescribeInstanceStorageConfigResult& DescribeInstanceStorageConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StorageConfig")) {
     m_storageConfig = jsonValue.GetObject("StorageConfig");

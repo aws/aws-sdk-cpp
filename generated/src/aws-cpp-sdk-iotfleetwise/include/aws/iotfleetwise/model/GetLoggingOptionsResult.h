@@ -58,10 +58,13 @@ class GetLoggingOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CloudWatchLogDeliveryOptions m_cloudWatchLogDelivery;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cloudWatchLogDeliveryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -61,10 +61,13 @@ class UpdateConfiguredAudienceModelAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConfiguredAudienceModelAssociation m_configuredAudienceModelAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configuredAudienceModelAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

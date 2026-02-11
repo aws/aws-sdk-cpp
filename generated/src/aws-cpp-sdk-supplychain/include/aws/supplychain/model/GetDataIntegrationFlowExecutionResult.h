@@ -64,10 +64,13 @@ class GetDataIntegrationFlowExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DataIntegrationFlowExecution m_flowExecution;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

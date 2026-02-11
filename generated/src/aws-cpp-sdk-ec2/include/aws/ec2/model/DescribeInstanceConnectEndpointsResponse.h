@@ -84,12 +84,15 @@ class DescribeInstanceConnectEndpointsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Ec2InstanceConnectEndpoint> m_instanceConnectEndpoints;
 
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceConnectEndpointsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

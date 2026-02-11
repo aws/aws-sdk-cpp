@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFleetMetricResult::DescribeFleetMetricResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFleetMetricResult& DescribeFleetMetricResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricName")) {
     m_metricName = jsonValue.GetString("metricName");

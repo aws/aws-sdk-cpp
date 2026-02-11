@@ -24,6 +24,7 @@ BatchGetConfigurationPolicyAssociationsResult::BatchGetConfigurationPolicyAssoci
 
 BatchGetConfigurationPolicyAssociationsResult& BatchGetConfigurationPolicyAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationPolicyAssociations")) {
     Aws::Utils::Array<JsonView> configurationPolicyAssociationsJsonList = jsonValue.GetArray("ConfigurationPolicyAssociations");

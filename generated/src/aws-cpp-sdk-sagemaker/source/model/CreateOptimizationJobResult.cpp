@@ -20,6 +20,7 @@ using namespace Aws;
 CreateOptimizationJobResult::CreateOptimizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateOptimizationJobResult& CreateOptimizationJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OptimizationJobArn")) {
     m_optimizationJobArn = jsonValue.GetString("OptimizationJobArn");

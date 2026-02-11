@@ -90,6 +90,8 @@ class CreateConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectorArn;
 
@@ -98,6 +100,7 @@ class CreateConnectorResult {
   ConnectorState m_connectorState{ConnectorState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorNameHasBeenSet = false;
   bool m_connectorStateHasBeenSet = false;

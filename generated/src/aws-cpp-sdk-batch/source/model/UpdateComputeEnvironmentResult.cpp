@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateComputeEnvironmentResult::UpdateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateComputeEnvironmentResult& UpdateComputeEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("computeEnvironmentName")) {
     m_computeEnvironmentName = jsonValue.GetString("computeEnvironmentName");

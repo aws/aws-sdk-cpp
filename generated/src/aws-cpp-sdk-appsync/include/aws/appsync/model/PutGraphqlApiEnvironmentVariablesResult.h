@@ -66,10 +66,13 @@ class PutGraphqlApiEnvironmentVariablesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_environmentVariablesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

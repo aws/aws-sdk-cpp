@@ -20,6 +20,7 @@ using namespace Aws;
 GetPortalResult::GetPortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPortalResult& GetPortalResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authorization")) {
     m_authorization = jsonValue.GetObject("authorization");

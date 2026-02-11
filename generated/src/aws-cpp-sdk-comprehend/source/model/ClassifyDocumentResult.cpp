@@ -20,6 +20,7 @@ using namespace Aws;
 ClassifyDocumentResult::ClassifyDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ClassifyDocumentResult& ClassifyDocumentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Classes")) {
     Aws::Utils::Array<JsonView> classesJsonList = jsonValue.GetArray("Classes");

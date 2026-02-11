@@ -20,6 +20,7 @@ using namespace Aws;
 UpdatePullThroughCacheRuleResult::UpdatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdatePullThroughCacheRuleResult& UpdatePullThroughCacheRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ecrRepositoryPrefix")) {
     m_ecrRepositoryPrefix = jsonValue.GetString("ecrRepositoryPrefix");

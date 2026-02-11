@@ -343,6 +343,8 @@ class StartExportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_exportTaskIdentifier;
 
@@ -377,6 +379,7 @@ class StartExportTaskResult {
   ExportSourceType m_sourceType{ExportSourceType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportTaskIdentifierHasBeenSet = false;
   bool m_sourceArnHasBeenSet = false;
   bool m_exportOnlyHasBeenSet = false;

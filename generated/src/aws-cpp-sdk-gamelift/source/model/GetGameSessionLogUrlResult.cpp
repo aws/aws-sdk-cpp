@@ -20,6 +20,7 @@ using namespace Aws;
 GetGameSessionLogUrlResult::GetGameSessionLogUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGameSessionLogUrlResult& GetGameSessionLogUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PreSignedUrl")) {
     m_preSignedUrl = jsonValue.GetString("PreSignedUrl");

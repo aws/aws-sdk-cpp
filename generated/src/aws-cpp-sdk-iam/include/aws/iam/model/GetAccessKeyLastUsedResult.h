@@ -87,12 +87,15 @@ class GetAccessKeyLastUsedResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userName;
 
   AccessKeyLastUsed m_accessKeyLastUsed;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userNameHasBeenSet = false;
   bool m_accessKeyLastUsedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

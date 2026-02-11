@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLabelingJobResult::CreateLabelingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLabelingJobResult& CreateLabelingJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LabelingJobArn")) {
     m_labelingJobArn = jsonValue.GetString("LabelingJobArn");

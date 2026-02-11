@@ -23,6 +23,7 @@ DescribeFleetAdvisorLsaAnalysisResult::DescribeFleetAdvisorLsaAnalysisResult(con
 
 DescribeFleetAdvisorLsaAnalysisResult& DescribeFleetAdvisorLsaAnalysisResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Analysis")) {
     Aws::Utils::Array<JsonView> analysisJsonList = jsonValue.GetArray("Analysis");

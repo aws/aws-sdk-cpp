@@ -134,6 +134,8 @@ class GetDataRetentionBotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botName;
 
@@ -148,6 +150,7 @@ class GetDataRetentionBotResult {
   bool m_isPubkeyMsgAcked{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botNameHasBeenSet = false;
   bool m_botExistsHasBeenSet = false;
   bool m_isBotActiveHasBeenSet = false;

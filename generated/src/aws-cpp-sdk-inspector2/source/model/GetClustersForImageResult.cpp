@@ -20,6 +20,7 @@ using namespace Aws;
 GetClustersForImageResult::GetClustersForImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetClustersForImageResult& GetClustersForImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cluster")) {
     Aws::Utils::Array<JsonView> clusterJsonList = jsonValue.GetArray("cluster");

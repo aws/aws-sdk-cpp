@@ -22,6 +22,7 @@ GetContainerServiceMetricDataResult::GetContainerServiceMetricDataResult(const A
 }
 
 GetContainerServiceMetricDataResult& GetContainerServiceMetricDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricName")) {
     m_metricName = ContainerServiceMetricNameMapper::GetContainerServiceMetricNameForName(jsonValue.GetString("metricName"));

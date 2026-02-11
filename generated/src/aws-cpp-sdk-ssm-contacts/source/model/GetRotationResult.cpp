@@ -20,6 +20,7 @@ using namespace Aws;
 GetRotationResult::GetRotationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRotationResult& GetRotationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RotationArn")) {
     m_rotationArn = jsonValue.GetString("RotationArn");

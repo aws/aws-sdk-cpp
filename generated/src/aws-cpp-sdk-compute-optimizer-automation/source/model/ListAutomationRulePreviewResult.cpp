@@ -20,6 +20,7 @@ using namespace Aws;
 ListAutomationRulePreviewResult::ListAutomationRulePreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAutomationRulePreviewResult& ListAutomationRulePreviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("previewResults")) {
     Aws::Utils::Array<JsonView> previewResultsJsonList = jsonValue.GetArray("previewResults");

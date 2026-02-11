@@ -118,6 +118,8 @@ class UpdateProtectConfigurationCountryRuleSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_protectConfigurationArn;
 
@@ -128,6 +130,7 @@ class UpdateProtectConfigurationCountryRuleSetResult {
   Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation> m_countryRuleSet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_protectConfigurationArnHasBeenSet = false;
   bool m_protectConfigurationIdHasBeenSet = false;
   bool m_numberCapabilityHasBeenSet = false;

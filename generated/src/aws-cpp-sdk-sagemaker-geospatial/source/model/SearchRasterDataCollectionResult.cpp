@@ -20,6 +20,7 @@ using namespace Aws;
 SearchRasterDataCollectionResult::SearchRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchRasterDataCollectionResult& SearchRasterDataCollectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApproximateResultCount")) {
     m_approximateResultCount = jsonValue.GetInteger("ApproximateResultCount");

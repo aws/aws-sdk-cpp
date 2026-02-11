@@ -208,6 +208,8 @@ class DescribePackageVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isLatestPatch{false};
 
@@ -230,6 +232,7 @@ class DescribePackageVersionResult {
   Aws::String m_statusDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isLatestPatchHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
   bool m_packageArnHasBeenSet = false;

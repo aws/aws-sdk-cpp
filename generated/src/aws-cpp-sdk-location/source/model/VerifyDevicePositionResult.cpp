@@ -20,6 +20,7 @@ using namespace Aws;
 VerifyDevicePositionResult::VerifyDevicePositionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VerifyDevicePositionResult& VerifyDevicePositionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferredState")) {
     m_inferredState = jsonValue.GetObject("InferredState");

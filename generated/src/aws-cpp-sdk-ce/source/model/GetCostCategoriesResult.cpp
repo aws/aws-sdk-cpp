@@ -20,6 +20,7 @@ using namespace Aws;
 GetCostCategoriesResult::GetCostCategoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCostCategoriesResult& GetCostCategoriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextPageToken")) {
     m_nextPageToken = jsonValue.GetString("NextPageToken");

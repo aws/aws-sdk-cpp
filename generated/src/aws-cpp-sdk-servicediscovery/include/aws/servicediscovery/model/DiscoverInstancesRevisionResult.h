@@ -59,10 +59,13 @@ class DiscoverInstancesRevisionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_instancesRevision{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instancesRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

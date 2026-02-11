@@ -21,6 +21,7 @@ GetPackageVersionAssetResult::GetPackageVersionAssetResult(Aws::AmazonWebService
 }
 
 GetPackageVersionAssetResult& GetPackageVersionAssetResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_asset = result.TakeOwnershipOfPayload();
   m_assetHasBeenSet = true;
 

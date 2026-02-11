@@ -20,6 +20,7 @@ using namespace Aws;
 StartOutboundEmailContactResult::StartOutboundEmailContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartOutboundEmailContactResult& StartOutboundEmailContactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactId")) {
     m_contactId = jsonValue.GetString("ContactId");

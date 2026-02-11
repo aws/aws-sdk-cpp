@@ -181,6 +181,8 @@ class CarrierLookupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_e164PhoneNumber;
 
@@ -199,6 +201,7 @@ class CarrierLookupResult {
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_e164PhoneNumberHasBeenSet = false;
   bool m_dialingCountryCodeHasBeenSet = false;
   bool m_isoCountryCodeHasBeenSet = false;

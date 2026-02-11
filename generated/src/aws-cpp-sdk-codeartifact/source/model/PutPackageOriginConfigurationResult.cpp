@@ -22,6 +22,7 @@ PutPackageOriginConfigurationResult::PutPackageOriginConfigurationResult(const A
 }
 
 PutPackageOriginConfigurationResult& PutPackageOriginConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("originConfiguration")) {
     m_originConfiguration = jsonValue.GetObject("originConfiguration");

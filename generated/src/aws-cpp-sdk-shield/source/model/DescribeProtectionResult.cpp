@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeProtectionResult::DescribeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeProtectionResult& DescribeProtectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Protection")) {
     m_protection = jsonValue.GetObject("Protection");

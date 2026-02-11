@@ -20,6 +20,7 @@ using namespace Aws;
 ListMemoriesResult::ListMemoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMemoriesResult& ListMemoriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("memories")) {
     Aws::Utils::Array<JsonView> memoriesJsonList = jsonValue.GetArray("memories");

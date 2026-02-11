@@ -20,6 +20,7 @@ using namespace Aws;
 GetTelemetryPipelineResult::GetTelemetryPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTelemetryPipelineResult& GetTelemetryPipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Pipeline")) {
     m_pipeline = jsonValue.GetObject("Pipeline");

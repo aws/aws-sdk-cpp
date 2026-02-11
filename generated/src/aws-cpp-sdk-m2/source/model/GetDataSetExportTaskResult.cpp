@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataSetExportTaskResult::GetDataSetExportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataSetExportTaskResult& GetDataSetExportTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");

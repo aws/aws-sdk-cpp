@@ -113,6 +113,8 @@ class ListAccessKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AccessKeyMetadata> m_accessKeyMetadata;
 
@@ -121,6 +123,7 @@ class ListAccessKeysResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessKeyMetadataHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

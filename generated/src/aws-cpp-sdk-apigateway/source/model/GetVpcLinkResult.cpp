@@ -20,6 +20,7 @@ using namespace Aws;
 GetVpcLinkResult::GetVpcLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVpcLinkResult& GetVpcLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");

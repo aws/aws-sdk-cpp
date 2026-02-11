@@ -110,6 +110,8 @@ class DescribeApplicationProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationProviderArn;
 
@@ -120,6 +122,7 @@ class DescribeApplicationProviderResult {
   ResourceServerConfig m_resourceServerConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationProviderArnHasBeenSet = false;
   bool m_federationProtocolHasBeenSet = false;
   bool m_displayDataHasBeenSet = false;

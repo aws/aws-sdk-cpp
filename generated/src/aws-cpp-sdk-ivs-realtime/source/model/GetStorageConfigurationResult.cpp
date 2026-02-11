@@ -20,6 +20,7 @@ using namespace Aws;
 GetStorageConfigurationResult::GetStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStorageConfigurationResult& GetStorageConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("storageConfiguration")) {
     m_storageConfiguration = jsonValue.GetObject("storageConfiguration");

@@ -333,6 +333,8 @@ class GetEventPredictionMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_eventId;
 
@@ -365,6 +367,7 @@ class GetEventPredictionMetadataResult {
   Aws::String m_predictionTimestamp;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventIdHasBeenSet = false;
   bool m_eventTypeNameHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;

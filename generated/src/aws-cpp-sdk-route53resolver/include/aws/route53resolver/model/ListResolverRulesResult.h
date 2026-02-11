@@ -101,6 +101,8 @@ class ListResolverRulesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -109,6 +111,7 @@ class ListResolverRulesResult {
   Aws::Vector<ResolverRule> m_resolverRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_resolverRulesHasBeenSet = false;

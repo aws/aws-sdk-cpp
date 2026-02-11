@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePhoneNumberResult::DescribePhoneNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePhoneNumberResult& DescribePhoneNumberResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ClaimedPhoneNumberSummary")) {
     m_claimedPhoneNumberSummary = jsonValue.GetObject("ClaimedPhoneNumberSummary");

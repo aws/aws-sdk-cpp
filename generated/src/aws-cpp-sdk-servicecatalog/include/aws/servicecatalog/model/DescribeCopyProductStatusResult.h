@@ -90,6 +90,8 @@ class DescribeCopyProductStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CopyProductStatus m_copyProductStatus{CopyProductStatus::NOT_SET};
 
@@ -98,6 +100,7 @@ class DescribeCopyProductStatusResult {
   Aws::String m_statusDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_copyProductStatusHasBeenSet = false;
   bool m_targetProductIdHasBeenSet = false;
   bool m_statusDetailHasBeenSet = false;

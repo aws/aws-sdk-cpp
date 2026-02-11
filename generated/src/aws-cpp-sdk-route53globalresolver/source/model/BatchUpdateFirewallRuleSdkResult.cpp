@@ -20,6 +20,7 @@ using namespace Aws;
 BatchUpdateFirewallRuleSdkResult::BatchUpdateFirewallRuleSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchUpdateFirewallRuleSdkResult& BatchUpdateFirewallRuleSdkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("failures")) {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");

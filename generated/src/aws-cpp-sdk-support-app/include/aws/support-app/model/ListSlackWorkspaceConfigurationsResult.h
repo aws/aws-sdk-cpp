@@ -84,12 +84,15 @@ class ListSlackWorkspaceConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<SlackWorkspaceConfiguration> m_slackWorkspaceConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_slackWorkspaceConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

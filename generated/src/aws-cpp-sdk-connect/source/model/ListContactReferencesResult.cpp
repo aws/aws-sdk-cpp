@@ -20,6 +20,7 @@ using namespace Aws;
 ListContactReferencesResult::ListContactReferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListContactReferencesResult& ListContactReferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReferenceSummaryList")) {
     Aws::Utils::Array<JsonView> referenceSummaryListJsonList = jsonValue.GetArray("ReferenceSummaryList");

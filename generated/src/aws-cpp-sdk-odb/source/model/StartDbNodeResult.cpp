@@ -20,6 +20,7 @@ using namespace Aws;
 StartDbNodeResult::StartDbNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartDbNodeResult& StartDbNodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dbNodeId")) {
     m_dbNodeId = jsonValue.GetString("dbNodeId");

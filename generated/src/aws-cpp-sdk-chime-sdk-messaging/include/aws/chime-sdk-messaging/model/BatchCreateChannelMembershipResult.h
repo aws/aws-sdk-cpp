@@ -85,12 +85,15 @@ class BatchCreateChannelMembershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BatchChannelMemberships m_batchChannelMemberships;
 
   Aws::Vector<BatchCreateChannelMembershipError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_batchChannelMembershipsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

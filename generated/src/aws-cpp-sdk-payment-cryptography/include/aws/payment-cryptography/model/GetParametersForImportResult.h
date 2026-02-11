@@ -131,6 +131,8 @@ class GetParametersForImportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_wrappingKeyCertificate;
 
@@ -143,6 +145,7 @@ class GetParametersForImportResult {
   Aws::Utils::DateTime m_parametersValidUntilTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_wrappingKeyCertificateHasBeenSet = false;
   bool m_wrappingKeyCertificateChainHasBeenSet = false;
   bool m_wrappingKeyAlgorithmHasBeenSet = false;

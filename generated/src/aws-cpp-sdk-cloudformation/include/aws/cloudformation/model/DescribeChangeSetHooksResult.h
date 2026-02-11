@@ -167,6 +167,8 @@ class DescribeChangeSetHooksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_changeSetId;
 
@@ -183,6 +185,7 @@ class DescribeChangeSetHooksResult {
   Aws::String m_stackName;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_changeSetIdHasBeenSet = false;
   bool m_changeSetNameHasBeenSet = false;
   bool m_hooksHasBeenSet = false;

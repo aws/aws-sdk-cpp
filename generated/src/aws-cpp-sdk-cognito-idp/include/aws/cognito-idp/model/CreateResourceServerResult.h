@@ -59,10 +59,13 @@ class CreateResourceServerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResourceServerType m_resourceServer;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

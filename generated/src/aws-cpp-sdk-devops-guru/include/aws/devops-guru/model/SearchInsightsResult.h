@@ -107,6 +107,8 @@ class SearchInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ProactiveInsightSummary> m_proactiveInsights;
 
@@ -115,6 +117,7 @@ class SearchInsightsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proactiveInsightsHasBeenSet = false;
   bool m_reactiveInsightsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

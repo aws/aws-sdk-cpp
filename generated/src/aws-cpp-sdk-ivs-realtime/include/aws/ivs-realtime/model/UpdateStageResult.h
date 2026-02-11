@@ -58,10 +58,13 @@ class UpdateStageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Stage m_stage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

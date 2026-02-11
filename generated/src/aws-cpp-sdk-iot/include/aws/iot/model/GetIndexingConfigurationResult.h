@@ -76,12 +76,15 @@ class GetIndexingConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ThingIndexingConfiguration m_thingIndexingConfiguration;
 
   ThingGroupIndexingConfiguration m_thingGroupIndexingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_thingIndexingConfigurationHasBeenSet = false;
   bool m_thingGroupIndexingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

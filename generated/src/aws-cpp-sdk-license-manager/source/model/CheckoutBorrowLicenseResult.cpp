@@ -20,6 +20,7 @@ using namespace Aws;
 CheckoutBorrowLicenseResult::CheckoutBorrowLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckoutBorrowLicenseResult& CheckoutBorrowLicenseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseArn")) {
     m_licenseArn = jsonValue.GetString("LicenseArn");

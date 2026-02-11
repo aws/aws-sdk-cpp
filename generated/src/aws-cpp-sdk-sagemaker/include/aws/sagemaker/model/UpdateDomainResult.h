@@ -57,10 +57,13 @@ class UpdateDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

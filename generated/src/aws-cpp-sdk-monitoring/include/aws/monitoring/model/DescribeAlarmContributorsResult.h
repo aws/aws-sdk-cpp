@@ -99,6 +99,8 @@ class DescribeAlarmContributorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AlarmContributor> m_alarmContributors;
 
@@ -107,6 +109,7 @@ class DescribeAlarmContributorsResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_alarmContributorsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

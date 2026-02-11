@@ -241,6 +241,8 @@ class UpdatePartnershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_profileId;
 
@@ -265,6 +267,7 @@ class UpdatePartnershipResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_partnershipIdHasBeenSet = false;
   bool m_partnershipArnHasBeenSet = false;

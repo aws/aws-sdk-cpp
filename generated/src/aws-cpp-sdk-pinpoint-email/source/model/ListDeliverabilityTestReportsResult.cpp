@@ -22,6 +22,7 @@ ListDeliverabilityTestReportsResult::ListDeliverabilityTestReportsResult(const A
 }
 
 ListDeliverabilityTestReportsResult& ListDeliverabilityTestReportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeliverabilityTestReports")) {
     Aws::Utils::Array<JsonView> deliverabilityTestReportsJsonList = jsonValue.GetArray("DeliverabilityTestReports");

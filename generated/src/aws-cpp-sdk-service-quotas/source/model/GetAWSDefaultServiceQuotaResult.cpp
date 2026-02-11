@@ -20,6 +20,7 @@ using namespace Aws;
 GetAWSDefaultServiceQuotaResult::GetAWSDefaultServiceQuotaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAWSDefaultServiceQuotaResult& GetAWSDefaultServiceQuotaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Quota")) {
     m_quota = jsonValue.GetObject("Quota");

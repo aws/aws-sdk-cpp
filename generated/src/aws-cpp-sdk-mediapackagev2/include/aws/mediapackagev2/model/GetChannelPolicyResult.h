@@ -95,6 +95,8 @@ class GetChannelPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_channelGroupName;
 
@@ -103,6 +105,7 @@ class GetChannelPolicyResult {
   Aws::String m_policy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;

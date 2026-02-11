@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateVoiceChannelResult::UpdateVoiceChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateVoiceChannelResult& UpdateVoiceChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_voiceChannelResponse = jsonValue;
   m_voiceChannelResponseHasBeenSet = true;

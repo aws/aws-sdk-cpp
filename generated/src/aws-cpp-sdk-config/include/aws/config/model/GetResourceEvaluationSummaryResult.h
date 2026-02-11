@@ -165,6 +165,8 @@ class GetResourceEvaluationSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceEvaluationId;
 
@@ -181,6 +183,7 @@ class GetResourceEvaluationSummaryResult {
   ResourceDetails m_resourceDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceEvaluationIdHasBeenSet = false;
   bool m_evaluationModeHasBeenSet = false;
   bool m_evaluationStatusHasBeenSet = false;

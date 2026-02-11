@@ -65,10 +65,13 @@ class TestMetricFilterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<MetricFilterMatchRecord> m_matches;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_matchesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

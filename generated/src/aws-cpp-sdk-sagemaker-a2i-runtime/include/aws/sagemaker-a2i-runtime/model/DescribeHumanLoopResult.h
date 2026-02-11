@@ -182,6 +182,8 @@ class DescribeHumanLoopResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -200,6 +202,7 @@ class DescribeHumanLoopResult {
   HumanLoopOutput m_humanLoopOutput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;

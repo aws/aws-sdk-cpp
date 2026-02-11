@@ -23,6 +23,7 @@ PutOrganizationConformancePackResult::PutOrganizationConformancePackResult(const
 
 PutOrganizationConformancePackResult& PutOrganizationConformancePackResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationConformancePackArn")) {
     m_organizationConformancePackArn = jsonValue.GetString("OrganizationConformancePackArn");

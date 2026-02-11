@@ -59,10 +59,13 @@ class StartVoiceToneAnalysisTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VoiceToneAnalysisTask m_voiceToneAnalysisTask;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_voiceToneAnalysisTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

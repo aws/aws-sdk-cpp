@@ -203,6 +203,8 @@ class ListInsightsMetricDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trailARN;
 
@@ -221,6 +223,7 @@ class ListInsightsMetricDataResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trailARNHasBeenSet = false;
   bool m_eventSourceHasBeenSet = false;
   bool m_eventNameHasBeenSet = false;

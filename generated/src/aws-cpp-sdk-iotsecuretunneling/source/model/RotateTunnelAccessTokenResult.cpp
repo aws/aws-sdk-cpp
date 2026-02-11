@@ -20,6 +20,7 @@ using namespace Aws;
 RotateTunnelAccessTokenResult::RotateTunnelAccessTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RotateTunnelAccessTokenResult& RotateTunnelAccessTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tunnelArn")) {
     m_tunnelArn = jsonValue.GetString("tunnelArn");

@@ -128,6 +128,8 @@ class DescribeEncryptionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
 
@@ -140,6 +142,7 @@ class DescribeEncryptionConfigurationResult {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_kmsAccessRoleArnHasBeenSet = false;

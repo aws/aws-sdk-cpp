@@ -119,6 +119,8 @@ class SearchFacesByImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BoundingBox m_searchedFaceBoundingBox;
 
@@ -129,6 +131,7 @@ class SearchFacesByImageResult {
   Aws::String m_faceModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_searchedFaceBoundingBoxHasBeenSet = false;
   bool m_searchedFaceConfidenceHasBeenSet = false;
   bool m_faceMatchesHasBeenSet = false;

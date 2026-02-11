@@ -92,6 +92,8 @@ class DescribeReturnShippingLabelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ShippingLabelStatus m_status{ShippingLabelStatus::NOT_SET};
 
@@ -100,6 +102,7 @@ class DescribeReturnShippingLabelResult {
   Aws::String m_returnShippingLabelURI;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
   bool m_returnShippingLabelURIHasBeenSet = false;

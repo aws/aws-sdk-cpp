@@ -23,6 +23,7 @@ GetGraphqlApiEnvironmentVariablesResult::GetGraphqlApiEnvironmentVariablesResult
 
 GetGraphqlApiEnvironmentVariablesResult& GetGraphqlApiEnvironmentVariablesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environmentVariables")) {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();

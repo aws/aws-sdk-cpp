@@ -60,10 +60,13 @@ class DeleteDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DatasetStatus m_datasetStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

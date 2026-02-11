@@ -20,6 +20,7 @@ using namespace Aws;
 ImportDocumentResult::ImportDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportDocumentResult& ImportDocumentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fileId")) {
     m_fileId = jsonValue.GetString("fileId");

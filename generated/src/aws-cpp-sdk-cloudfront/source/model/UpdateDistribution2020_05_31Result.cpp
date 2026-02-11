@@ -21,6 +21,7 @@ UpdateDistribution2020_05_31Result::UpdateDistribution2020_05_31Result(const Aws
 }
 
 UpdateDistribution2020_05_31Result& UpdateDistribution2020_05_31Result::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

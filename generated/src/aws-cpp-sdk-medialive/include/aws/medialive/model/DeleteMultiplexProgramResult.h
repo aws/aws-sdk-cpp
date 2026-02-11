@@ -144,6 +144,8 @@ class DeleteMultiplexProgramResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_channelId;
 
@@ -156,6 +158,7 @@ class DeleteMultiplexProgramResult {
   Aws::String m_programName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelIdHasBeenSet = false;
   bool m_multiplexProgramSettingsHasBeenSet = false;
   bool m_packetIdentifiersMapHasBeenSet = false;

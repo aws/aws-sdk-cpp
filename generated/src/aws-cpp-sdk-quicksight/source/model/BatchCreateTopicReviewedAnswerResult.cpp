@@ -23,6 +23,7 @@ BatchCreateTopicReviewedAnswerResult::BatchCreateTopicReviewedAnswerResult(const
 
 BatchCreateTopicReviewedAnswerResult& BatchCreateTopicReviewedAnswerResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TopicId")) {
     m_topicId = jsonValue.GetString("TopicId");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetDASHStreamingSessionURLResult::GetDASHStreamingSessionURLResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDASHStreamingSessionURLResult& GetDASHStreamingSessionURLResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DASHStreamingSessionURL")) {
     m_dASHStreamingSessionURL = jsonValue.GetString("DASHStreamingSessionURL");

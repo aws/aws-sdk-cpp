@@ -157,6 +157,8 @@ class GetCostEstimationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CostEstimationResourceCollectionFilter m_resourceCollection;
 
@@ -171,6 +173,7 @@ class GetCostEstimationResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceCollectionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_costsHasBeenSet = false;

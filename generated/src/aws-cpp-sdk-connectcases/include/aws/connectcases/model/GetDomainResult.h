@@ -150,6 +150,8 @@ class GetDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainId;
 
@@ -164,6 +166,7 @@ class GetDomainResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_domainArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

@@ -72,12 +72,15 @@ class GetPersistentAppUIPresignedURLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_presignedURLReady{false};
 
   Aws::String m_presignedURL;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_presignedURLReadyHasBeenSet = false;
   bool m_presignedURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetReservationResult::GetReservationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetReservationResult& GetReservationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("reservation")) {
     m_reservation = jsonValue.GetObject("reservation");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePolicyResult::CreatePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePolicyResult& CreatePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("policyName")) {
     m_policyName = jsonValue.GetString("policyName");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetLensVersionDifferenceResult::GetLensVersionDifferenceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLensVersionDifferenceResult& GetLensVersionDifferenceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LensAlias")) {
     m_lensAlias = jsonValue.GetString("LensAlias");

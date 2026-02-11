@@ -20,6 +20,7 @@ using namespace Aws;
 ListLaunchPathsResult::ListLaunchPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLaunchPathsResult& ListLaunchPathsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LaunchPathSummaries")) {
     Aws::Utils::Array<JsonView> launchPathSummariesJsonList = jsonValue.GetArray("LaunchPathSummaries");

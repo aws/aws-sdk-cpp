@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTransitGatewayResponse::CreateTransitGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateTransitGatewayResponse& CreateTransitGatewayResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

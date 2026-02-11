@@ -73,12 +73,15 @@ class DescribeThemeAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ThemeAlias m_themeAlias;
 
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_themeAliasHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

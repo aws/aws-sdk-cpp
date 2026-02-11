@@ -20,6 +20,7 @@ using namespace Aws;
 CreateModelCardResult::CreateModelCardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateModelCardResult& CreateModelCardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelCardArn")) {
     m_modelCardArn = jsonValue.GetString("ModelCardArn");

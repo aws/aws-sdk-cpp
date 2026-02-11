@@ -20,6 +20,7 @@ using namespace Aws;
 GetCalculationExecutionResult::GetCalculationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCalculationExecutionResult& GetCalculationExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CalculationExecutionId")) {
     m_calculationExecutionId = jsonValue.GetString("CalculationExecutionId");

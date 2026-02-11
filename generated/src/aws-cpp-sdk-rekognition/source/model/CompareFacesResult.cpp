@@ -20,6 +20,7 @@ using namespace Aws;
 CompareFacesResult::CompareFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CompareFacesResult& CompareFacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SourceImageFace")) {
     m_sourceImageFace = jsonValue.GetObject("SourceImageFace");

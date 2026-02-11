@@ -59,10 +59,13 @@ class DescribeWebAppCustomizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DescribedWebAppCustomization m_webAppCustomization;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_webAppCustomizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

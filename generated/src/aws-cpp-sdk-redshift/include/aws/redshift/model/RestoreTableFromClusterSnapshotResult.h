@@ -57,10 +57,13 @@ class RestoreTableFromClusterSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TableRestoreStatus m_tableRestoreStatus;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableRestoreStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 GetTrustStoreCertificateResult::GetTrustStoreCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTrustStoreCertificateResult& GetTrustStoreCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("trustStoreArn")) {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");

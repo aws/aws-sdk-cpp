@@ -245,6 +245,8 @@ class GetBackupPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BackupPlan m_backupPlan;
 
@@ -267,6 +269,7 @@ class GetBackupPlanResult {
   Aws::Vector<ScheduledPlanExecutionMember> m_scheduledRunsPreview;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupPlanHasBeenSet = false;
   bool m_backupPlanIdHasBeenSet = false;
   bool m_backupPlanArnHasBeenSet = false;

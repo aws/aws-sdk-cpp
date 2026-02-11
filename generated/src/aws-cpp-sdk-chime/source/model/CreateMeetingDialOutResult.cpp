@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMeetingDialOutResult::CreateMeetingDialOutResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMeetingDialOutResult& CreateMeetingDialOutResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransactionId")) {
     m_transactionId = jsonValue.GetString("TransactionId");

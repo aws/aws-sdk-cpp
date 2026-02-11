@@ -98,6 +98,8 @@ class UpdateFrameworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_frameworkName;
 
@@ -106,6 +108,7 @@ class UpdateFrameworkResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_frameworkNameHasBeenSet = false;
   bool m_frameworkArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

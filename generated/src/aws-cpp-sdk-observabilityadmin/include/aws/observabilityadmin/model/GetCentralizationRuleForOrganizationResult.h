@@ -192,6 +192,8 @@ class GetCentralizationRuleForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ruleName;
 
@@ -212,6 +214,7 @@ class GetCentralizationRuleForOrganizationResult {
   CentralizationRule m_centralizationRule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ruleNameHasBeenSet = false;
   bool m_ruleArnHasBeenSet = false;
   bool m_creatorAccountIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetInferenceProfileResult::GetInferenceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInferenceProfileResult& GetInferenceProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inferenceProfileName")) {
     m_inferenceProfileName = jsonValue.GetString("inferenceProfileName");

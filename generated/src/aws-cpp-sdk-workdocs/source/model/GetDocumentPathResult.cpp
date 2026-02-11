@@ -20,6 +20,7 @@ using namespace Aws;
 GetDocumentPathResult::GetDocumentPathResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDocumentPathResult& GetDocumentPathResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetObject("Path");

@@ -20,6 +20,7 @@ using namespace Aws;
 TestTransformerResult::TestTransformerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestTransformerResult& TestTransformerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("transformedLogs")) {
     Aws::Utils::Array<JsonView> transformedLogsJsonList = jsonValue.GetArray("transformedLogs");

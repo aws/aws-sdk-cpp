@@ -20,6 +20,7 @@ using namespace Aws;
 ReplicateKeyResult::ReplicateKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReplicateKeyResult& ReplicateKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicaKeyMetadata")) {
     m_replicaKeyMetadata = jsonValue.GetObject("ReplicaKeyMetadata");

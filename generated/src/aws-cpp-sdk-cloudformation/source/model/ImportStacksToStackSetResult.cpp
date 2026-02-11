@@ -20,6 +20,7 @@ using namespace Aws;
 ImportStacksToStackSetResult::ImportStacksToStackSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ImportStacksToStackSetResult& ImportStacksToStackSetResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

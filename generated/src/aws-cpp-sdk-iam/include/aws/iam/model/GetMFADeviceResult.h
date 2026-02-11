@@ -122,6 +122,8 @@ class GetMFADeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userName;
 
@@ -132,6 +134,7 @@ class GetMFADeviceResult {
   Aws::Map<Aws::String, Aws::String> m_certifications;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userNameHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
   bool m_enableDateHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateThesaurusResult::CreateThesaurusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateThesaurusResult& CreateThesaurusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");

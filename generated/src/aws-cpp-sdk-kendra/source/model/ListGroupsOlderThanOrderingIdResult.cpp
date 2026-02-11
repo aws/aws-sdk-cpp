@@ -22,6 +22,7 @@ ListGroupsOlderThanOrderingIdResult::ListGroupsOlderThanOrderingIdResult(const A
 }
 
 ListGroupsOlderThanOrderingIdResult& ListGroupsOlderThanOrderingIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupsSummaries")) {
     Aws::Utils::Array<JsonView> groupsSummariesJsonList = jsonValue.GetArray("GroupsSummaries");

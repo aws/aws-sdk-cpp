@@ -92,6 +92,8 @@ class GetAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_url;
 
@@ -100,6 +102,7 @@ class GetAttachmentResult {
   long long m_attachmentSizeInBytes{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_urlHasBeenSet = false;
   bool m_urlExpiryHasBeenSet = false;
   bool m_attachmentSizeInBytesHasBeenSet = false;

@@ -65,10 +65,13 @@ class GetContainerServicesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ContainerService> m_containerServices;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_containerServicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

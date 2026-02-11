@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMountTargetResult::CreateMountTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMountTargetResult& CreateMountTargetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OwnerId")) {
     m_ownerId = jsonValue.GetString("OwnerId");

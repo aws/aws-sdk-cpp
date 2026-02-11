@@ -20,6 +20,7 @@ using namespace Aws;
 AddUploadBufferResult::AddUploadBufferResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddUploadBufferResult& AddUploadBufferResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GatewayARN")) {
     m_gatewayARN = jsonValue.GetString("GatewayARN");

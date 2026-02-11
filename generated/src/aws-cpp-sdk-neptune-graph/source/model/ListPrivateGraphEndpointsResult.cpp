@@ -20,6 +20,7 @@ using namespace Aws;
 ListPrivateGraphEndpointsResult::ListPrivateGraphEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPrivateGraphEndpointsResult& ListPrivateGraphEndpointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("privateGraphEndpoints")) {
     Aws::Utils::Array<JsonView> privateGraphEndpointsJsonList = jsonValue.GetArray("privateGraphEndpoints");

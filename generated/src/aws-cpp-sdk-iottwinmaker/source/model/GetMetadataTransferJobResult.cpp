@@ -20,6 +20,7 @@ using namespace Aws;
 GetMetadataTransferJobResult::GetMetadataTransferJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMetadataTransferJobResult& GetMetadataTransferJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metadataTransferJobId")) {
     m_metadataTransferJobId = jsonValue.GetString("metadataTransferJobId");

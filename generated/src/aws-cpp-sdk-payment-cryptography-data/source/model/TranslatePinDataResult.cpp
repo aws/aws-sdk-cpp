@@ -20,6 +20,7 @@ using namespace Aws;
 TranslatePinDataResult::TranslatePinDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TranslatePinDataResult& TranslatePinDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PinBlock")) {
     m_pinBlock = jsonValue.GetString("PinBlock");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListInputSecurityGroupsResult::ListInputSecurityGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInputSecurityGroupsResult& ListInputSecurityGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inputSecurityGroups")) {
     Aws::Utils::Array<JsonView> inputSecurityGroupsJsonList = jsonValue.GetArray("inputSecurityGroups");

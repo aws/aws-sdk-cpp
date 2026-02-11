@@ -103,6 +103,8 @@ class DetectProtectiveEquipmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_protectiveEquipmentModelVersion;
 
@@ -111,6 +113,7 @@ class DetectProtectiveEquipmentResult {
   ProtectiveEquipmentSummary m_summary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_protectiveEquipmentModelVersionHasBeenSet = false;
   bool m_personsHasBeenSet = false;
   bool m_summaryHasBeenSet = false;

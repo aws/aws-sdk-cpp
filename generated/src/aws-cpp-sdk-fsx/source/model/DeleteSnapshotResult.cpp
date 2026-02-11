@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSnapshotResult::DeleteSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSnapshotResult& DeleteSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SnapshotId")) {
     m_snapshotId = jsonValue.GetString("SnapshotId");

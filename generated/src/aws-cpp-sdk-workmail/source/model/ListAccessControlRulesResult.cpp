@@ -20,6 +20,7 @@ using namespace Aws;
 ListAccessControlRulesResult::ListAccessControlRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAccessControlRulesResult& ListAccessControlRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Rules")) {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");

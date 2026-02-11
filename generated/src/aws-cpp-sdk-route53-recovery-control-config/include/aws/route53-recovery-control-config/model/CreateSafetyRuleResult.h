@@ -77,12 +77,15 @@ class CreateSafetyRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AssertionRule m_assertionRule;
 
   GatingRule m_gatingRule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assertionRuleHasBeenSet = false;
   bool m_gatingRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

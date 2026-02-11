@@ -63,10 +63,13 @@ class StartExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ExportTask m_exportTask;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

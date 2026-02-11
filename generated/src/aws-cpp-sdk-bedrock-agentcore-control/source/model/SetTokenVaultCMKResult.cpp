@@ -20,6 +20,7 @@ using namespace Aws;
 SetTokenVaultCMKResult::SetTokenVaultCMKResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SetTokenVaultCMKResult& SetTokenVaultCMKResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tokenVaultId")) {
     m_tokenVaultId = jsonValue.GetString("tokenVaultId");

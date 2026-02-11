@@ -201,6 +201,8 @@ class GetCustomModelDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_customModelDeploymentArn;
 
@@ -221,6 +223,7 @@ class GetCustomModelDeploymentResult {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customModelDeploymentArnHasBeenSet = false;
   bool m_modelDeploymentNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;

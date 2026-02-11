@@ -20,6 +20,7 @@ using namespace Aws;
 SyncResourceResult::SyncResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SyncResourceResult& SyncResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("applicationArn")) {
     m_applicationArn = jsonValue.GetString("applicationArn");

@@ -71,10 +71,13 @@ class DescribeInstanceHealthResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<InstanceState> m_instanceStates;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceStatesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

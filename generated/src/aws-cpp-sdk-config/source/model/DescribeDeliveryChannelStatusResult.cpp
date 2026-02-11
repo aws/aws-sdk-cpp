@@ -22,6 +22,7 @@ DescribeDeliveryChannelStatusResult::DescribeDeliveryChannelStatusResult(const A
 }
 
 DescribeDeliveryChannelStatusResult& DescribeDeliveryChannelStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeliveryChannelsStatus")) {
     Aws::Utils::Array<JsonView> deliveryChannelsStatusJsonList = jsonValue.GetArray("DeliveryChannelsStatus");

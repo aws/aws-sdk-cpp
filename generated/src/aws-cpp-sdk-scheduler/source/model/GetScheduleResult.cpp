@@ -20,6 +20,7 @@ using namespace Aws;
 GetScheduleResult::GetScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetScheduleResult& GetScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ActionAfterCompletion")) {
     m_actionAfterCompletion = ActionAfterCompletionMapper::GetActionAfterCompletionForName(jsonValue.GetString("ActionAfterCompletion"));

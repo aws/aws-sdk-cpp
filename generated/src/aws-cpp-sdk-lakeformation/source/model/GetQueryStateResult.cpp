@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueryStateResult::GetQueryStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueryStateResult& GetQueryStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Error")) {
     m_error = jsonValue.GetString("Error");

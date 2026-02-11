@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSyncBlockerResult::UpdateSyncBlockerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSyncBlockerResult& UpdateSyncBlockerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceName")) {
     m_resourceName = jsonValue.GetString("ResourceName");

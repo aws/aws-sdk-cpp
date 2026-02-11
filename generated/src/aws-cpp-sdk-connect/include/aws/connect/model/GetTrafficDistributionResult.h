@@ -132,6 +132,8 @@ class GetTrafficDistributionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TelephonyConfig m_telephonyConfig;
 
@@ -144,6 +146,7 @@ class GetTrafficDistributionResult {
   AgentConfig m_agentConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_telephonyConfigHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;

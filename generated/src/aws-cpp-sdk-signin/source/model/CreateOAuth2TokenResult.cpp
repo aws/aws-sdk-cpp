@@ -20,6 +20,7 @@ using namespace Aws;
 CreateOAuth2TokenResult::CreateOAuth2TokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateOAuth2TokenResult& CreateOAuth2TokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_tokenOutput = jsonValue;
   m_tokenOutputHasBeenSet = true;

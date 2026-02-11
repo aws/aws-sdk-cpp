@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAuditSuppressionResult::DescribeAuditSuppressionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAuditSuppressionResult& DescribeAuditSuppressionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("checkName")) {
     m_checkName = jsonValue.GetString("checkName");

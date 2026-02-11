@@ -75,12 +75,15 @@ class GetCachePolicy2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CachePolicy m_cachePolicy;
 
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cachePolicyHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

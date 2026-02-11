@@ -20,6 +20,7 @@ using namespace Aws;
 GetCredentialsResult::GetCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCredentialsResult& GetCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dbPassword")) {
     m_dbPassword = jsonValue.GetString("dbPassword");

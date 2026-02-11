@@ -20,6 +20,7 @@ using namespace Aws;
 CreateArchiveResult::CreateArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateArchiveResult& CreateArchiveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ArchiveId")) {
     m_archiveId = jsonValue.GetString("ArchiveId");

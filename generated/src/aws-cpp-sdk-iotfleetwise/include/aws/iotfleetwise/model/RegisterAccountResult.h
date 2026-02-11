@@ -129,6 +129,8 @@ class RegisterAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RegistrationStatus m_registerAccountStatus{RegistrationStatus::NOT_SET};
 
@@ -141,6 +143,7 @@ class RegisterAccountResult {
   Aws::Utils::DateTime m_lastModificationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registerAccountStatusHasBeenSet = false;
   bool m_timestreamResourcesHasBeenSet = false;
   bool m_iamResourcesHasBeenSet = false;

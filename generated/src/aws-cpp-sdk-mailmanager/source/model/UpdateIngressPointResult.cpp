@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateIngressPointResult::UpdateIngressPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIngressPointResult& UpdateIngressPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

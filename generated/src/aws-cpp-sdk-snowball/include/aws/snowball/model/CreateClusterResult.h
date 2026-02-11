@@ -84,12 +84,15 @@ class CreateClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clusterId;
 
   Aws::Vector<JobListEntry> m_jobListEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterIdHasBeenSet = false;
   bool m_jobListEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

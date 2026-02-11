@@ -62,10 +62,13 @@ class EvaluateExpressionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_evaluatedExpression;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_evaluatedExpressionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

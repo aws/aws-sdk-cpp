@@ -72,10 +72,13 @@ class DescribeEnvironmentManagedActionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ManagedAction> m_managedActions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managedActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

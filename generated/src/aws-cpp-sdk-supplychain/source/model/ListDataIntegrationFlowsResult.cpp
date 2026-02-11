@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataIntegrationFlowsResult::ListDataIntegrationFlowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataIntegrationFlowsResult& ListDataIntegrationFlowsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flows")) {
     Aws::Utils::Array<JsonView> flowsJsonList = jsonValue.GetArray("flows");

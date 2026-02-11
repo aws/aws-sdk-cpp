@@ -66,10 +66,13 @@ class DeleteSchemaVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SchemaVersionErrorItem> m_schemaVersionErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_schemaVersionErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

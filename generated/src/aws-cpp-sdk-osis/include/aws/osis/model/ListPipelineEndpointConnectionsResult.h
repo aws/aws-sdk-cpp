@@ -84,12 +84,15 @@ class ListPipelineEndpointConnectionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<PipelineEndpointConnection> m_pipelineEndpointConnections;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_pipelineEndpointConnectionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

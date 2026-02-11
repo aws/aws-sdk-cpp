@@ -90,12 +90,15 @@ class BatchGetRouterInputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RouterInput> m_routerInputs;
 
   Aws::Vector<BatchGetRouterInputError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routerInputsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

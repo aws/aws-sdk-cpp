@@ -20,6 +20,7 @@ using namespace Aws;
 ListViewVersionsResult::ListViewVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListViewVersionsResult& ListViewVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ViewVersionSummaryList")) {
     Aws::Utils::Array<JsonView> viewVersionSummaryListJsonList = jsonValue.GetArray("ViewVersionSummaryList");

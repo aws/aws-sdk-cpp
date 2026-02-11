@@ -127,6 +127,8 @@ class DeleteBrowserProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_profileId;
 
@@ -139,6 +141,7 @@ class DeleteBrowserProfileResult {
   Aws::Utils::DateTime m_lastSavedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

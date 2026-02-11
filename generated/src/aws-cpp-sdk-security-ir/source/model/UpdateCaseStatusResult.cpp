@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateCaseStatusResult::UpdateCaseStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateCaseStatusResult& UpdateCaseStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("caseStatus")) {
     m_caseStatus = SelfManagedCaseStatusMapper::GetSelfManagedCaseStatusForName(jsonValue.GetString("caseStatus"));

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFleetLocationsResult::CreateFleetLocationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFleetLocationsResult& CreateFleetLocationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FleetId")) {
     m_fleetId = jsonValue.GetString("FleetId");

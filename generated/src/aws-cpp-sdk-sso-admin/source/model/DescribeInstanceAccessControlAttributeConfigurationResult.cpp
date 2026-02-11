@@ -24,6 +24,7 @@ DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAcces
 
 DescribeInstanceAccessControlAttributeConfigurationResult& DescribeInstanceAccessControlAttributeConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = InstanceAccessControlAttributeConfigurationStatusMapper::GetInstanceAccessControlAttributeConfigurationStatusForName(

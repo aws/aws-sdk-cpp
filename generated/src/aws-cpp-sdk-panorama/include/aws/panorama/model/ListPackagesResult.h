@@ -82,12 +82,15 @@ class ListPackagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<PackageListItem> m_packages;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_packagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

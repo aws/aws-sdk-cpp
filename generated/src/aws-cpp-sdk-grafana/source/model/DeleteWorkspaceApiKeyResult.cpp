@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteWorkspaceApiKeyResult::DeleteWorkspaceApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteWorkspaceApiKeyResult& DeleteWorkspaceApiKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keyName")) {
     m_keyName = jsonValue.GetString("keyName");

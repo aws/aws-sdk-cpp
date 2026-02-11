@@ -58,10 +58,13 @@ class CreateDefaultVpcResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Vpc m_vpc;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

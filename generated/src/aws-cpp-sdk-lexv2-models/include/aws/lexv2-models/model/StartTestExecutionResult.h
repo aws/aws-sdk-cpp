@@ -145,6 +145,8 @@ class StartTestExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testExecutionId;
 
@@ -159,6 +161,7 @@ class StartTestExecutionResult {
   TestExecutionModality m_testExecutionModality{TestExecutionModality::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testExecutionIdHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;
   bool m_testSetIdHasBeenSet = false;

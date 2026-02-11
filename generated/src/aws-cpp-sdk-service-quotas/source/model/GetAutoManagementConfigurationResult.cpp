@@ -23,6 +23,7 @@ GetAutoManagementConfigurationResult::GetAutoManagementConfigurationResult(const
 
 GetAutoManagementConfigurationResult& GetAutoManagementConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OptInLevel")) {
     m_optInLevel = OptInLevelMapper::GetOptInLevelForName(jsonValue.GetString("OptInLevel"));

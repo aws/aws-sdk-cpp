@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMedicalVocabularyResult::UpdateMedicalVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMedicalVocabularyResult& UpdateMedicalVocabularyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VocabularyName")) {
     m_vocabularyName = jsonValue.GetString("VocabularyName");

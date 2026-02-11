@@ -76,12 +76,15 @@ class GetExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Export m_export;
 
   ExportStatus m_exportStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportHasBeenSet = false;
   bool m_exportStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

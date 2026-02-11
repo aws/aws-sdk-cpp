@@ -20,6 +20,7 @@ using namespace Aws;
 StartStreamProcessorResult::StartStreamProcessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartStreamProcessorResult& StartStreamProcessorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SessionId")) {
     m_sessionId = jsonValue.GetString("SessionId");

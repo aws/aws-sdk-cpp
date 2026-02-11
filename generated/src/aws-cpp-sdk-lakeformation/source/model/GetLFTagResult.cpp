@@ -20,6 +20,7 @@ using namespace Aws;
 GetLFTagResult::GetLFTagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLFTagResult& GetLFTagResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CatalogId")) {
     m_catalogId = jsonValue.GetString("CatalogId");

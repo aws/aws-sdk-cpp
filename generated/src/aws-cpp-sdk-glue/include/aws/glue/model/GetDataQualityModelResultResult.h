@@ -83,12 +83,15 @@ class GetDataQualityModelResultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_completedOn{};
 
   Aws::Vector<StatisticModelResult> m_model;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_completedOnHasBeenSet = false;
   bool m_modelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

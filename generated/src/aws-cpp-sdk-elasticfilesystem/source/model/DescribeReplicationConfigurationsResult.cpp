@@ -23,6 +23,7 @@ DescribeReplicationConfigurationsResult::DescribeReplicationConfigurationsResult
 
 DescribeReplicationConfigurationsResult& DescribeReplicationConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Replications")) {
     Aws::Utils::Array<JsonView> replicationsJsonList = jsonValue.GetArray("Replications");

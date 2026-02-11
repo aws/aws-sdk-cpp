@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLoginProfileResult::CreateLoginProfileResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateLoginProfileResult& CreateLoginProfileResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

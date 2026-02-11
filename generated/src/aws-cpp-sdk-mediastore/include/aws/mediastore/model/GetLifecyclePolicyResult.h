@@ -57,10 +57,13 @@ class GetLifecyclePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_lifecyclePolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lifecyclePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

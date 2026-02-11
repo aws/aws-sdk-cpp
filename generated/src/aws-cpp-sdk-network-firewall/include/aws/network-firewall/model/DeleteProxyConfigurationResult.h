@@ -75,12 +75,15 @@ class DeleteProxyConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_proxyConfigurationName;
 
   Aws::String m_proxyConfigurationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proxyConfigurationNameHasBeenSet = false;
   bool m_proxyConfigurationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

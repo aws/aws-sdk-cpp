@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSqlInjectionMatchSetResult::DeleteSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSqlInjectionMatchSetResult& DeleteSqlInjectionMatchSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeToken")) {
     m_changeToken = jsonValue.GetString("ChangeToken");

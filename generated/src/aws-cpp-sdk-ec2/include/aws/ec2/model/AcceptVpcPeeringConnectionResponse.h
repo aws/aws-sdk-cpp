@@ -58,10 +58,13 @@ class AcceptVpcPeeringConnectionResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VpcPeeringConnection m_vpcPeeringConnection;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcPeeringConnectionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

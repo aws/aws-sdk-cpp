@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeKeyResult::DescribeKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeKeyResult& DescribeKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyMetadata")) {
     m_keyMetadata = jsonValue.GetObject("KeyMetadata");

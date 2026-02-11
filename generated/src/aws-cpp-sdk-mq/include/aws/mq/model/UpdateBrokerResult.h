@@ -300,6 +300,8 @@ class UpdateBrokerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
 
@@ -330,6 +332,7 @@ class UpdateBrokerResult {
   DataReplicationMode m_pendingDataReplicationMode{DataReplicationMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_authenticationStrategyHasBeenSet = false;
   bool m_autoMinorVersionUpgradeHasBeenSet = false;
   bool m_brokerIdHasBeenSet = false;

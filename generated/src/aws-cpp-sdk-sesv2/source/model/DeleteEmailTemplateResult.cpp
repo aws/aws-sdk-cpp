@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEmailTemplateResult::DeleteEmailTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEmailTemplateResult& DeleteEmailTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

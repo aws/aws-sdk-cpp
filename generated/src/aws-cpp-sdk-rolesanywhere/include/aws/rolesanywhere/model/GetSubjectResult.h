@@ -58,10 +58,13 @@ class GetSubjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SubjectDetail m_subject;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subjectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

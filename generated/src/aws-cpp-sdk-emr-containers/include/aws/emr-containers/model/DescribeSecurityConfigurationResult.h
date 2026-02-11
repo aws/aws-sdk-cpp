@@ -59,10 +59,13 @@ class DescribeSecurityConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SecurityConfiguration m_securityConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_securityConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

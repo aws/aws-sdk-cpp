@@ -88,12 +88,15 @@ class BatchGetTriggersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Trigger> m_triggers;
 
   Aws::Vector<Aws::String> m_triggersNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_triggersHasBeenSet = false;
   bool m_triggersNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

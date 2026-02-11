@@ -20,6 +20,7 @@ using namespace Aws;
 GetVersionsResult::GetVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVersionsResult& GetVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vcfVersions")) {
     Aws::Utils::Array<JsonView> vcfVersionsJsonList = jsonValue.GetArray("vcfVersions");

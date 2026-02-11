@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDomainNodesResult::DescribeDomainNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDomainNodesResult& DescribeDomainNodesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainNodesStatusList")) {
     Aws::Utils::Array<JsonView> domainNodesStatusListJsonList = jsonValue.GetArray("DomainNodesStatusList");

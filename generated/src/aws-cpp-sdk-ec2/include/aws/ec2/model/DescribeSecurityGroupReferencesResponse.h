@@ -65,10 +65,13 @@ class DescribeSecurityGroupReferencesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SecurityGroupReference> m_securityGroupReferenceSet;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_securityGroupReferenceSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

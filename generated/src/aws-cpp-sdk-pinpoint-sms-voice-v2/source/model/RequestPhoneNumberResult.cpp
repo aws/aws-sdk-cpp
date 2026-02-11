@@ -20,6 +20,7 @@ using namespace Aws;
 RequestPhoneNumberResult::RequestPhoneNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RequestPhoneNumberResult& RequestPhoneNumberResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PhoneNumberArn")) {
     m_phoneNumberArn = jsonValue.GetString("PhoneNumberArn");

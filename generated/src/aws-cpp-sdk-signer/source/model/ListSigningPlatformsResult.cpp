@@ -20,6 +20,7 @@ using namespace Aws;
 ListSigningPlatformsResult::ListSigningPlatformsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSigningPlatformsResult& ListSigningPlatformsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("platforms")) {
     Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetInstanceAccessResult::GetInstanceAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInstanceAccessResult& GetInstanceAccessResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceAccess")) {
     m_instanceAccess = jsonValue.GetObject("InstanceAccess");

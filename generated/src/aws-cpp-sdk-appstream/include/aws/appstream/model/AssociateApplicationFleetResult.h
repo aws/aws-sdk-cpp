@@ -60,10 +60,13 @@ class AssociateApplicationFleetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationFleetAssociation m_applicationFleetAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationFleetAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

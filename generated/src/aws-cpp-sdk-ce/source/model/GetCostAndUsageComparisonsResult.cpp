@@ -20,6 +20,7 @@ using namespace Aws;
 GetCostAndUsageComparisonsResult::GetCostAndUsageComparisonsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCostAndUsageComparisonsResult& GetCostAndUsageComparisonsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CostAndUsageComparisons")) {
     Aws::Utils::Array<JsonView> costAndUsageComparisonsJsonList = jsonValue.GetArray("CostAndUsageComparisons");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRegexMatchSetResult::CreateRegexMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRegexMatchSetResult& CreateRegexMatchSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegexMatchSet")) {
     m_regexMatchSet = jsonValue.GetObject("RegexMatchSet");

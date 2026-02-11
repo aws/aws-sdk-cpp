@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetPreparedStatementResult::BatchGetPreparedStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetPreparedStatementResult& BatchGetPreparedStatementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PreparedStatements")) {
     Aws::Utils::Array<JsonView> preparedStatementsJsonList = jsonValue.GetArray("PreparedStatements");

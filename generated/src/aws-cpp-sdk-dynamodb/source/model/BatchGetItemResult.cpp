@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetItemResult::BatchGetItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetItemResult& BatchGetItemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Responses")) {
     Aws::Map<Aws::String, JsonView> responsesJsonMap = jsonValue.GetObject("Responses").GetAllObjects();

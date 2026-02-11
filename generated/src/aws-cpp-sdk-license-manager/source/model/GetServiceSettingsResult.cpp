@@ -20,6 +20,7 @@ using namespace Aws;
 GetServiceSettingsResult::GetServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetServiceSettingsResult& GetServiceSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("S3BucketArn")) {
     m_s3BucketArn = jsonValue.GetString("S3BucketArn");

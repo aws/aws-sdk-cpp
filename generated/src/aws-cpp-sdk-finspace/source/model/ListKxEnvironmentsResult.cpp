@@ -20,6 +20,7 @@ using namespace Aws;
 ListKxEnvironmentsResult::ListKxEnvironmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKxEnvironmentsResult& ListKxEnvironmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environments")) {
     Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");

@@ -75,12 +75,15 @@ class StartSearchResultExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_exportJobArn;
 
   Aws::String m_exportJobIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportJobArnHasBeenSet = false;
   bool m_exportJobIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

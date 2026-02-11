@@ -73,12 +73,15 @@ class DeleteApplicationOutputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationARN;
 
   long long m_applicationVersionId{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationARNHasBeenSet = false;
   bool m_applicationVersionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

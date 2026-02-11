@@ -60,10 +60,13 @@ class GenerateOrganizationsAccessReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -58,10 +58,13 @@ class DescribeViewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   View m_view;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_viewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

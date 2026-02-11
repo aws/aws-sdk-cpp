@@ -609,6 +609,8 @@ class DescribeTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -665,6 +667,7 @@ class DescribeTypeResult {
   bool m_autoUpdate{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_typeNameHasBeenSet = false;

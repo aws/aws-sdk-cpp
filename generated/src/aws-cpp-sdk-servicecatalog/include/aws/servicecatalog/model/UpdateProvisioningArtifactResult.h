@@ -100,6 +100,8 @@ class UpdateProvisioningArtifactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProvisioningArtifactDetail m_provisioningArtifactDetail;
 
@@ -108,6 +110,7 @@ class UpdateProvisioningArtifactResult {
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_provisioningArtifactDetailHasBeenSet = false;
   bool m_infoHasBeenSet = false;
   bool m_statusHasBeenSet = false;

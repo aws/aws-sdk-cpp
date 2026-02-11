@@ -20,6 +20,7 @@ using namespace Aws;
 GetTermForReportResult::GetTermForReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTermForReportResult& GetTermForReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("documentPresignedUrl")) {
     m_documentPresignedUrl = jsonValue.GetString("documentPresignedUrl");

@@ -22,6 +22,7 @@ SearchAvailablePhoneNumbersResult::SearchAvailablePhoneNumbersResult(const Aws::
 }
 
 SearchAvailablePhoneNumbersResult& SearchAvailablePhoneNumbersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("E164PhoneNumbers")) {
     Aws::Utils::Array<JsonView> e164PhoneNumbersJsonList = jsonValue.GetArray("E164PhoneNumbers");

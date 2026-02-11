@@ -24,6 +24,7 @@ DescribeDominantLanguageDetectionJobResult::DescribeDominantLanguageDetectionJob
 
 DescribeDominantLanguageDetectionJobResult& DescribeDominantLanguageDetectionJobResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DominantLanguageDetectionJobProperties")) {
     m_dominantLanguageDetectionJobProperties = jsonValue.GetObject("DominantLanguageDetectionJobProperties");

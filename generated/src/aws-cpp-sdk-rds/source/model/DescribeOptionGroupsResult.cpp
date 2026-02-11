@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeOptionGroupsResult::DescribeOptionGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeOptionGroupsResult& DescribeOptionGroupsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

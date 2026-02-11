@@ -95,6 +95,8 @@ class StartFlowCaptureResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_firewallArn;
 
@@ -103,6 +105,7 @@ class StartFlowCaptureResult {
   FlowOperationStatus m_flowOperationStatus{FlowOperationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_flowOperationIdHasBeenSet = false;
   bool m_flowOperationStatusHasBeenSet = false;

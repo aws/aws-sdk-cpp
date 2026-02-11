@@ -76,12 +76,15 @@ class ModifySnapshotTierResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_snapshotId;
 
   Aws::Utils::DateTime m_tieringStartTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotIdHasBeenSet = false;
   bool m_tieringStartTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

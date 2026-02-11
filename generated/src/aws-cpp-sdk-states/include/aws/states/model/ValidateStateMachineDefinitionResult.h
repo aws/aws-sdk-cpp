@@ -102,6 +102,8 @@ class ValidateStateMachineDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ValidateStateMachineDefinitionResultCode m_result{ValidateStateMachineDefinitionResultCode::NOT_SET};
 
@@ -110,6 +112,7 @@ class ValidateStateMachineDefinitionResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resultHasBeenSet = false;
   bool m_diagnosticsHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

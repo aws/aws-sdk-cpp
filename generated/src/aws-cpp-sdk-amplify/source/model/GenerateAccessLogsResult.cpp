@@ -20,6 +20,7 @@ using namespace Aws;
 GenerateAccessLogsResult::GenerateAccessLogsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateAccessLogsResult& GenerateAccessLogsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logUrl")) {
     m_logUrl = jsonValue.GetString("logUrl");

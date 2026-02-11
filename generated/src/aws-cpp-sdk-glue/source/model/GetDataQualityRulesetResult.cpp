@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataQualityRulesetResult::GetDataQualityRulesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataQualityRulesetResult& GetDataQualityRulesetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");

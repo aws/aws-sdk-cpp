@@ -20,6 +20,7 @@ using namespace Aws;
 ListRulesPackagesResult::ListRulesPackagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRulesPackagesResult& ListRulesPackagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("rulesPackageArns")) {
     Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");

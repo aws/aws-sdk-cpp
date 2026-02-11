@@ -89,12 +89,15 @@ class DescribeTransitGatewayRouteTableAnnouncementsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TransitGatewayRouteTableAnnouncement> m_transitGatewayRouteTableAnnouncements;
 
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayRouteTableAnnouncementsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

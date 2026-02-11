@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queryLanguage")) {
     m_queryLanguage = QueryLanguageMapper::GetQueryLanguageForName(jsonValue.GetString("queryLanguage"));

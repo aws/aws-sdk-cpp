@@ -20,6 +20,7 @@ using namespace Aws;
 StartBotResourceGenerationResult::StartBotResourceGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartBotResourceGenerationResult& StartBotResourceGenerationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("generationInputPrompt")) {
     m_generationInputPrompt = jsonValue.GetString("generationInputPrompt");

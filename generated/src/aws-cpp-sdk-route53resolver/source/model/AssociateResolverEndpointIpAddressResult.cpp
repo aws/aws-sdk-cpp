@@ -23,6 +23,7 @@ AssociateResolverEndpointIpAddressResult::AssociateResolverEndpointIpAddressResu
 
 AssociateResolverEndpointIpAddressResult& AssociateResolverEndpointIpAddressResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverEndpoint")) {
     m_resolverEndpoint = jsonValue.GetObject("ResolverEndpoint");

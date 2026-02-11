@@ -19,6 +19,7 @@ using namespace Aws;
 GetHostedZoneLimitResult::GetHostedZoneLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetHostedZoneLimitResult& GetHostedZoneLimitResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

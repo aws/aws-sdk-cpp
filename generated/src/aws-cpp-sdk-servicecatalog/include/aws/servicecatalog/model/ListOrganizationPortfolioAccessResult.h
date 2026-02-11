@@ -84,12 +84,15 @@ class ListOrganizationPortfolioAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<OrganizationNode> m_organizationNodes;
 
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_organizationNodesHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

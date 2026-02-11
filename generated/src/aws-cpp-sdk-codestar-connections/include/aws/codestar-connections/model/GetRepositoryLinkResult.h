@@ -58,10 +58,13 @@ class GetRepositoryLinkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RepositoryLinkInfo m_repositoryLinkInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryLinkInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

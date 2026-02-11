@@ -121,6 +121,8 @@ class ListProtectConfigurationRuleSetNumberOverridesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_protectConfigurationArn;
 
@@ -131,6 +133,7 @@ class ListProtectConfigurationRuleSetNumberOverridesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_protectConfigurationArnHasBeenSet = false;
   bool m_protectConfigurationIdHasBeenSet = false;
   bool m_ruleSetNumberOverridesHasBeenSet = false;

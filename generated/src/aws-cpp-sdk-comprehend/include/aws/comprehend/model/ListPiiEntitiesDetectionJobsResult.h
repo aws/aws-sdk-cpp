@@ -84,12 +84,15 @@ class ListPiiEntitiesDetectionJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PiiEntitiesDetectionJobProperties> m_piiEntitiesDetectionJobPropertiesList;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_piiEntitiesDetectionJobPropertiesListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

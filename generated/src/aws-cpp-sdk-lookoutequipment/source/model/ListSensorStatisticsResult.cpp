@@ -20,6 +20,7 @@ using namespace Aws;
 ListSensorStatisticsResult::ListSensorStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSensorStatisticsResult& ListSensorStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SensorStatisticsSummaries")) {
     Aws::Utils::Array<JsonView> sensorStatisticsSummariesJsonList = jsonValue.GetArray("SensorStatisticsSummaries");

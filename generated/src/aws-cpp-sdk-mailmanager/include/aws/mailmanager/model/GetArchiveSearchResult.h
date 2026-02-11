@@ -149,6 +149,8 @@ class GetArchiveSearchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_archiveId;
 
@@ -163,6 +165,7 @@ class GetArchiveSearchResult {
   SearchStatus m_status;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_archiveIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_fromTimestampHasBeenSet = false;

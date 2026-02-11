@@ -20,6 +20,7 @@ using namespace Aws;
 GetKxEnvironmentResult::GetKxEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKxEnvironmentResult& GetKxEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");

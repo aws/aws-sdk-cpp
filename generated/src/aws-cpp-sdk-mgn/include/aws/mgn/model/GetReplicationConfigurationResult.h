@@ -339,6 +339,8 @@ class GetReplicationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sourceServerID;
 
@@ -376,6 +378,7 @@ class GetReplicationConfigurationResult {
   InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceServerIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_stagingAreaSubnetIdHasBeenSet = false;

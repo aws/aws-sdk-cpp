@@ -20,6 +20,7 @@ using namespace Aws;
 ValidateTemplateResult::ValidateTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ValidateTemplateResult& ValidateTemplateResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

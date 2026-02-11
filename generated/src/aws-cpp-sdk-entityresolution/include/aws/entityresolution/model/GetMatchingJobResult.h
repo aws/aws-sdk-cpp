@@ -170,6 +170,8 @@ class GetMatchingJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -186,6 +188,7 @@ class GetMatchingJobResult {
   Aws::Vector<JobOutputSource> m_outputSourceConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;

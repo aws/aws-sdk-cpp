@@ -59,10 +59,13 @@ class GetMobileSdkReleaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MobileSdkRelease m_mobileSdkRelease;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mobileSdkReleaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

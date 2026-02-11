@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetTaxExemptionsResult::BatchGetTaxExemptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetTaxExemptionsResult& BatchGetTaxExemptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("failedAccounts")) {
     Aws::Utils::Array<JsonView> failedAccountsJsonList = jsonValue.GetArray("failedAccounts");

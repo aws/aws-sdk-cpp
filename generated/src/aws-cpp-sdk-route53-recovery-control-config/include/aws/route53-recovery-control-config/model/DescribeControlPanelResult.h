@@ -59,10 +59,13 @@ class DescribeControlPanelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ControlPanel m_controlPanel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_controlPanelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

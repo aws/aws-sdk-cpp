@@ -195,6 +195,8 @@ class GetProductRestEndpointPageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EndpointDisplayContentResponse m_displayContent;
 
@@ -215,6 +217,7 @@ class GetProductRestEndpointPageResult {
   TryItState m_tryItState{TryItState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_displayContentHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_productRestEndpointPageArnHasBeenSet = false;

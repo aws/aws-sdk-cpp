@@ -269,6 +269,8 @@ class GetConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConnectionCredentials m_connectionCredentials;
 
@@ -297,6 +299,7 @@ class GetConnectionResult {
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionCredentialsHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

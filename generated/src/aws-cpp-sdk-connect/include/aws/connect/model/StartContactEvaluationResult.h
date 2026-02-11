@@ -74,12 +74,15 @@ class StartContactEvaluationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_evaluationId;
 
   Aws::String m_evaluationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_evaluationIdHasBeenSet = false;
   bool m_evaluationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

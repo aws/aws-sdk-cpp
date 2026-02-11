@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLimitsResult& DescribeLimitsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountMaxReadCapacityUnits")) {
     m_accountMaxReadCapacityUnits = jsonValue.GetInt64("AccountMaxReadCapacityUnits");

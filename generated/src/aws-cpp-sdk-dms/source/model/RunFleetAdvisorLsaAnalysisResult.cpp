@@ -20,6 +20,7 @@ using namespace Aws;
 RunFleetAdvisorLsaAnalysisResult::RunFleetAdvisorLsaAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RunFleetAdvisorLsaAnalysisResult& RunFleetAdvisorLsaAnalysisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LsaAnalysisId")) {
     m_lsaAnalysisId = jsonValue.GetString("LsaAnalysisId");

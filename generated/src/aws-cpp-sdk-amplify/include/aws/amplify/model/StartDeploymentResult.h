@@ -64,10 +64,13 @@ class StartDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobSummary m_jobSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

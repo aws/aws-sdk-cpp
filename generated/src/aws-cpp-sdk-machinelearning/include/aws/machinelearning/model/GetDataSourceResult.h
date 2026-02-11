@@ -403,6 +403,8 @@ class GetDataSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dataSourceId;
 
@@ -445,6 +447,7 @@ class GetDataSourceResult {
   Aws::String m_dataSourceSchema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_dataLocationS3HasBeenSet = false;
   bool m_dataRearrangementHasBeenSet = false;

@@ -57,10 +57,13 @@ class EnableImageBlockPublicAccessResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ImageBlockPublicAccessEnabledState m_imageBlockPublicAccessState{ImageBlockPublicAccessEnabledState::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_imageBlockPublicAccessStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

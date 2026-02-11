@@ -89,6 +89,8 @@ class UpdateConsumableResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_consumableResourceName;
 
@@ -97,6 +99,7 @@ class UpdateConsumableResourceResult {
   long long m_totalQuantity{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_consumableResourceNameHasBeenSet = false;
   bool m_consumableResourceArnHasBeenSet = false;
   bool m_totalQuantityHasBeenSet = false;

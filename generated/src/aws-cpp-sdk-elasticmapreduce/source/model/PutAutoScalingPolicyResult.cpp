@@ -20,6 +20,7 @@ using namespace Aws;
 PutAutoScalingPolicyResult::PutAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutAutoScalingPolicyResult& PutAutoScalingPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ClusterId")) {
     m_clusterId = jsonValue.GetString("ClusterId");

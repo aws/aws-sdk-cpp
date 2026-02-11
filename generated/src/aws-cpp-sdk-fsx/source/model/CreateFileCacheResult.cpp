@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFileCacheResult::CreateFileCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFileCacheResult& CreateFileCacheResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileCache")) {
     m_fileCache = jsonValue.GetObject("FileCache");

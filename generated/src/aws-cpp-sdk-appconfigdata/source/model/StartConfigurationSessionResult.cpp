@@ -20,6 +20,7 @@ using namespace Aws;
 StartConfigurationSessionResult::StartConfigurationSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartConfigurationSessionResult& StartConfigurationSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InitialConfigurationToken")) {
     m_initialConfigurationToken = jsonValue.GetString("InitialConfigurationToken");

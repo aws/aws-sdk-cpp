@@ -20,6 +20,7 @@ using namespace Aws;
 ListDirectoriesResult::ListDirectoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDirectoriesResult& ListDirectoriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Directories")) {
     Aws::Utils::Array<JsonView> directoriesJsonList = jsonValue.GetArray("Directories");

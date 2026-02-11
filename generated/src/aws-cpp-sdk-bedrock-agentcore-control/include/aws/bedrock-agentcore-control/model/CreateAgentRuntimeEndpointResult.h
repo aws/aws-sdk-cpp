@@ -160,6 +160,8 @@ class CreateAgentRuntimeEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_targetVersion;
 
@@ -176,6 +178,7 @@ class CreateAgentRuntimeEndpointResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_targetVersionHasBeenSet = false;
   bool m_agentRuntimeEndpointArnHasBeenSet = false;
   bool m_agentRuntimeArnHasBeenSet = false;

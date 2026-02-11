@@ -178,6 +178,8 @@ class GetJobOutputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -194,6 +196,7 @@ class GetJobOutputResult {
   Aws::String m_archiveDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bodyHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
   bool m_statusHasBeenSet = false;

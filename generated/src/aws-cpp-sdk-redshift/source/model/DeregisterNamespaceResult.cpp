@@ -20,6 +20,7 @@ using namespace Aws;
 DeregisterNamespaceResult::DeregisterNamespaceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeregisterNamespaceResult& DeregisterNamespaceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -77,12 +77,15 @@ class CreateTestGridUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_url;
 
   Aws::Utils::DateTime m_expires{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_urlHasBeenSet = false;
   bool m_expiresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

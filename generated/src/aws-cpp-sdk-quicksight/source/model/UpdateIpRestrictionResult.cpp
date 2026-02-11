@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateIpRestrictionResult::UpdateIpRestrictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIpRestrictionResult& UpdateIpRestrictionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AwsAccountId")) {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");

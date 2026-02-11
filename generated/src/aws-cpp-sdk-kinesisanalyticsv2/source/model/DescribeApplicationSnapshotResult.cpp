@@ -22,6 +22,7 @@ DescribeApplicationSnapshotResult::DescribeApplicationSnapshotResult(const Aws::
 }
 
 DescribeApplicationSnapshotResult& DescribeApplicationSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SnapshotDetails")) {
     m_snapshotDetails = jsonValue.GetObject("SnapshotDetails");

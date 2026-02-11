@@ -24,6 +24,7 @@ CreateConfiguredModelAlgorithmAssociationResult::CreateConfiguredModelAlgorithmA
 
 CreateConfiguredModelAlgorithmAssociationResult& CreateConfiguredModelAlgorithmAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredModelAlgorithmAssociationArn")) {
     m_configuredModelAlgorithmAssociationArn = jsonValue.GetString("configuredModelAlgorithmAssociationArn");

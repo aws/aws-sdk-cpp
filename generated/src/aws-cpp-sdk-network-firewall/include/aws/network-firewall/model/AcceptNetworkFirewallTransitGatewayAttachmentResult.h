@@ -87,12 +87,15 @@ class AcceptNetworkFirewallTransitGatewayAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_transitGatewayAttachmentId;
 
   TransitGatewayAttachmentStatus m_transitGatewayAttachmentStatus{TransitGatewayAttachmentStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayAttachmentIdHasBeenSet = false;
   bool m_transitGatewayAttachmentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

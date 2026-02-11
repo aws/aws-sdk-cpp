@@ -84,12 +84,15 @@ class GetBucketTaggingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<S3Tag> m_tagSet;
 
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tagSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;

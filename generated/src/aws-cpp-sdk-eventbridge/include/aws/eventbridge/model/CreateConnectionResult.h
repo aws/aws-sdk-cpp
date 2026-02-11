@@ -108,6 +108,8 @@ class CreateConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectionArn;
 
@@ -118,6 +120,7 @@ class CreateConnectionResult {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionArnHasBeenSet = false;
   bool m_connectionStateHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

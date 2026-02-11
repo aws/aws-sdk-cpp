@@ -58,10 +58,13 @@ class DescribeFlywheelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FlywheelProperties m_flywheelProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flywheelPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

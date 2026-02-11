@@ -23,6 +23,7 @@ ListDurableExecutionsByFunctionResult::ListDurableExecutionsByFunctionResult(con
 
 ListDurableExecutionsByFunctionResult& ListDurableExecutionsByFunctionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DurableExecutions")) {
     Aws::Utils::Array<JsonView> durableExecutionsJsonList = jsonValue.GetArray("DurableExecutions");

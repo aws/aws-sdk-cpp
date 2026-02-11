@@ -20,6 +20,7 @@ using namespace Aws;
 StopContinuousExportResult::StopContinuousExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopContinuousExportResult& StopContinuousExportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");

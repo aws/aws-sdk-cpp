@@ -20,6 +20,7 @@ using namespace Aws;
 GetJourneyResult::GetJourneyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetJourneyResult& GetJourneyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_journeyResponse = jsonValue;
   m_journeyResponseHasBeenSet = true;

@@ -290,6 +290,8 @@ class DescribeExplainabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_explainabilityArn;
 
@@ -320,6 +322,7 @@ class DescribeExplainabilityResult {
   Aws::Utils::DateTime m_lastModificationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_explainabilityArnHasBeenSet = false;
   bool m_explainabilityNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;

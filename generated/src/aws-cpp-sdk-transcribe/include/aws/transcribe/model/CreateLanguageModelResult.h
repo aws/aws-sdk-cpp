@@ -127,6 +127,8 @@ class CreateLanguageModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
 
@@ -139,6 +141,7 @@ class CreateLanguageModelResult {
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_languageCodeHasBeenSet = false;
   bool m_baseModelNameHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;

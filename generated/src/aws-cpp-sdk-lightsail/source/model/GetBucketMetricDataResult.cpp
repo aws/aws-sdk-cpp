@@ -20,6 +20,7 @@ using namespace Aws;
 GetBucketMetricDataResult::GetBucketMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBucketMetricDataResult& GetBucketMetricDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricName")) {
     m_metricName = BucketMetricNameMapper::GetBucketMetricNameForName(jsonValue.GetString("metricName"));

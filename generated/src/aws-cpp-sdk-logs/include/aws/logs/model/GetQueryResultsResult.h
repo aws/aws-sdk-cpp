@@ -149,6 +149,8 @@ class GetQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
 
@@ -161,6 +163,7 @@ class GetQueryResultsResult {
   Aws::String m_encryptionKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queryLanguageHasBeenSet = false;
   bool m_resultsHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;

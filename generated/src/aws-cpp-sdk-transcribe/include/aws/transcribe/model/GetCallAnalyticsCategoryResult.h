@@ -60,10 +60,13 @@ class GetCallAnalyticsCategoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CategoryProperties m_categoryProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_categoryPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

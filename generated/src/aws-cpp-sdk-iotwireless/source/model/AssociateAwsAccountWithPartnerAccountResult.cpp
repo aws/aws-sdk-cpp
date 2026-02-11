@@ -24,6 +24,7 @@ AssociateAwsAccountWithPartnerAccountResult::AssociateAwsAccountWithPartnerAccou
 
 AssociateAwsAccountWithPartnerAccountResult& AssociateAwsAccountWithPartnerAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Sidewalk")) {
     m_sidewalk = jsonValue.GetObject("Sidewalk");

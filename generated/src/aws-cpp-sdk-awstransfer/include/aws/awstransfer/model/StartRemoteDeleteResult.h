@@ -57,10 +57,13 @@ class StartRemoteDeleteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_deleteId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deleteIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

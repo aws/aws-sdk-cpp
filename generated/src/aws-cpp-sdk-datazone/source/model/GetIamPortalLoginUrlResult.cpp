@@ -20,6 +20,7 @@ using namespace Aws;
 GetIamPortalLoginUrlResult::GetIamPortalLoginUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIamPortalLoginUrlResult& GetIamPortalLoginUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authCodeUrl")) {
     m_authCodeUrl = jsonValue.GetString("authCodeUrl");

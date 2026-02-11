@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDevEnvironmentResult::CreateDevEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDevEnvironmentResult& CreateDevEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("spaceName")) {
     m_spaceName = jsonValue.GetString("spaceName");

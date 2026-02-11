@@ -20,6 +20,7 @@ using namespace Aws;
 DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DownloadDefaultKeyPairResult& DownloadDefaultKeyPairResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("publicKeyBase64")) {
     m_publicKeyBase64 = jsonValue.GetString("publicKeyBase64");

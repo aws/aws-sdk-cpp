@@ -89,12 +89,15 @@ class BatchGetCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CollectionDetail> m_collectionDetails;
 
   Aws::Vector<CollectionErrorDetail> m_collectionErrorDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_collectionDetailsHasBeenSet = false;
   bool m_collectionErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

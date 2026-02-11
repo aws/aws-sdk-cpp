@@ -78,12 +78,15 @@ class CreateTrainedModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trainedModelArn;
 
   Aws::String m_versionIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trainedModelArnHasBeenSet = false;
   bool m_versionIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

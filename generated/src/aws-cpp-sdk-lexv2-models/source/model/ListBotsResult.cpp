@@ -20,6 +20,7 @@ using namespace Aws;
 ListBotsResult::ListBotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBotsResult& ListBotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botSummaries")) {
     Aws::Utils::Array<JsonView> botSummariesJsonList = jsonValue.GetArray("botSummaries");

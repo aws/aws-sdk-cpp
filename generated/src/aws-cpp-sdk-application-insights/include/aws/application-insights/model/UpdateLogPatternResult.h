@@ -75,12 +75,15 @@ class UpdateLogPatternResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceGroupName;
 
   LogPattern m_logPattern;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceGroupNameHasBeenSet = false;
   bool m_logPatternHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

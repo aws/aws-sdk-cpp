@@ -23,6 +23,7 @@ ListEnforcedGuardrailsConfigurationResult::ListEnforcedGuardrailsConfigurationRe
 
 ListEnforcedGuardrailsConfigurationResult& ListEnforcedGuardrailsConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("guardrailsConfig")) {
     Aws::Utils::Array<JsonView> guardrailsConfigJsonList = jsonValue.GetArray("guardrailsConfig");

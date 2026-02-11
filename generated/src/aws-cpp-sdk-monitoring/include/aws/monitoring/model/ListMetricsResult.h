@@ -124,6 +124,8 @@ class ListMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Metric> m_metrics;
 
@@ -134,6 +136,7 @@ class ListMetricsResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metricsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_owningAccountsHasBeenSet = false;

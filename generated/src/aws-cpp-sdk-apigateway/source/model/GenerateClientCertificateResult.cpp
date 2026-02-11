@@ -20,6 +20,7 @@ using namespace Aws;
 GenerateClientCertificateResult::GenerateClientCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateClientCertificateResult& GenerateClientCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clientCertificateId")) {
     m_clientCertificateId = jsonValue.GetString("clientCertificateId");

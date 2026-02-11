@@ -20,6 +20,7 @@ using namespace Aws;
 ListAutomationEventStepsResult::ListAutomationEventStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAutomationEventStepsResult& ListAutomationEventStepsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("automationEventSteps")) {
     Aws::Utils::Array<JsonView> automationEventStepsJsonList = jsonValue.GetArray("automationEventSteps");

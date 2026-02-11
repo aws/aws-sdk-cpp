@@ -59,10 +59,13 @@ class CreateExportImageTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ExportImageTask m_exportImageTask;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportImageTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

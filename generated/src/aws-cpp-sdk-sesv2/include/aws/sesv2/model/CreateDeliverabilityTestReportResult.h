@@ -84,12 +84,15 @@ class CreateDeliverabilityTestReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reportId;
 
   DeliverabilityTestStatus m_deliverabilityTestStatus{DeliverabilityTestStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_deliverabilityTestStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

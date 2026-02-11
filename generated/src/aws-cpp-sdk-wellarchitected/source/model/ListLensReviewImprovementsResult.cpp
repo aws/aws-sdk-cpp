@@ -20,6 +20,7 @@ using namespace Aws;
 ListLensReviewImprovementsResult::ListLensReviewImprovementsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLensReviewImprovementsResult& ListLensReviewImprovementsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WorkloadId")) {
     m_workloadId = jsonValue.GetString("WorkloadId");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetBootstrapBrokersResult::GetBootstrapBrokersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBootstrapBrokersResult& GetBootstrapBrokersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("bootstrapBrokerString")) {
     m_bootstrapBrokerString = jsonValue.GetString("bootstrapBrokerString");

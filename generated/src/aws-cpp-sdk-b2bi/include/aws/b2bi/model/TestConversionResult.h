@@ -86,12 +86,15 @@ class TestConversionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_convertedFileContent;
 
   Aws::Vector<Aws::String> m_validationMessages;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_convertedFileContentHasBeenSet = false;
   bool m_validationMessagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

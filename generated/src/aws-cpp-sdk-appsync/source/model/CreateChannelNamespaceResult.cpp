@@ -20,6 +20,7 @@ using namespace Aws;
 CreateChannelNamespaceResult::CreateChannelNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateChannelNamespaceResult& CreateChannelNamespaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("channelNamespace")) {
     m_channelNamespace = jsonValue.GetObject("channelNamespace");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDataTableMetadataResult::UpdateDataTableMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDataTableMetadataResult& UpdateDataTableMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LockVersion")) {
     m_lockVersion = jsonValue.GetObject("LockVersion");

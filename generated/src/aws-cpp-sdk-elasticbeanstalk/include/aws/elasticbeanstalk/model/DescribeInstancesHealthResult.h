@@ -111,6 +111,8 @@ class DescribeInstancesHealthResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SingleInstanceHealth> m_instanceHealthList;
 
@@ -119,6 +121,7 @@ class DescribeInstancesHealthResult {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceHealthListHasBeenSet = false;
   bool m_refreshedAtHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

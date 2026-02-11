@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateThemeAliasResult::UpdateThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateThemeAliasResult& UpdateThemeAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ThemeAlias")) {
     m_themeAlias = jsonValue.GetObject("ThemeAlias");

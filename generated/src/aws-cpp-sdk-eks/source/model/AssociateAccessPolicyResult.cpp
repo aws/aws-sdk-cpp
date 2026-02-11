@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateAccessPolicyResult::AssociateAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateAccessPolicyResult& AssociateAccessPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");

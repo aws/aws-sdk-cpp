@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEventsDetectionJobResult::DescribeEventsDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEventsDetectionJobResult& DescribeEventsDetectionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventsDetectionJobProperties")) {
     m_eventsDetectionJobProperties = jsonValue.GetObject("EventsDetectionJobProperties");

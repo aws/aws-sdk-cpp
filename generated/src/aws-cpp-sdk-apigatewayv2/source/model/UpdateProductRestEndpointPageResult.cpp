@@ -22,6 +22,7 @@ UpdateProductRestEndpointPageResult::UpdateProductRestEndpointPageResult(const A
 }
 
 UpdateProductRestEndpointPageResult& UpdateProductRestEndpointPageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("displayContent")) {
     m_displayContent = jsonValue.GetObject("displayContent");

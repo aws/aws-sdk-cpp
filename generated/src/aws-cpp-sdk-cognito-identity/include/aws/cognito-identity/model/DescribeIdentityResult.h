@@ -121,6 +121,8 @@ class DescribeIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityId;
 
@@ -131,6 +133,7 @@ class DescribeIdentityResult {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityIdHasBeenSet = false;
   bool m_loginsHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

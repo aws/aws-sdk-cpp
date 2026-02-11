@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCanaryResult::CreateCanaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCanaryResult& CreateCanaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Canary")) {
     m_canary = jsonValue.GetObject("Canary");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountResult& GetAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DedicatedIpAutoWarmupEnabled")) {
     m_dedicatedIpAutoWarmupEnabled = jsonValue.GetBool("DedicatedIpAutoWarmupEnabled");

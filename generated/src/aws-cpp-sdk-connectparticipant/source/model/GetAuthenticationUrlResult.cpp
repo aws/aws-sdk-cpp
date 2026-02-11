@@ -20,6 +20,7 @@ using namespace Aws;
 GetAuthenticationUrlResult::GetAuthenticationUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAuthenticationUrlResult& GetAuthenticationUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthenticationUrl")) {
     m_authenticationUrl = jsonValue.GetString("AuthenticationUrl");

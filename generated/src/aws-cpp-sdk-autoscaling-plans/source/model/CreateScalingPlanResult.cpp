@@ -20,6 +20,7 @@ using namespace Aws;
 CreateScalingPlanResult::CreateScalingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateScalingPlanResult& CreateScalingPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScalingPlanVersion")) {
     m_scalingPlanVersion = jsonValue.GetInt64("ScalingPlanVersion");

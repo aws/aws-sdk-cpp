@@ -58,10 +58,13 @@ class DeprovisionIpamByoasnResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Byoasn m_byoasn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_byoasnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePlacementGroupsResponse::DescribePlacementGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribePlacementGroupsResponse& DescribePlacementGroupsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

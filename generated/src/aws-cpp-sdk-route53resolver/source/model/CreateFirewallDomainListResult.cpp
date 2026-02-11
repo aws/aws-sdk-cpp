@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFirewallDomainListResult::CreateFirewallDomainListResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFirewallDomainListResult& CreateFirewallDomainListResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallDomainList")) {
     m_firewallDomainList = jsonValue.GetObject("FirewallDomainList");

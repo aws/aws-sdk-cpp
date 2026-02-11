@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePatchBaselineResult::DeletePatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePatchBaselineResult& DeletePatchBaselineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BaselineId")) {
     m_baselineId = jsonValue.GetString("BaselineId");

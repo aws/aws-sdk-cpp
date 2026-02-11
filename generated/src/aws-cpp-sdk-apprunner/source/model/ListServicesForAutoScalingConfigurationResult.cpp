@@ -24,6 +24,7 @@ ListServicesForAutoScalingConfigurationResult::ListServicesForAutoScalingConfigu
 
 ListServicesForAutoScalingConfigurationResult& ListServicesForAutoScalingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServiceArnList")) {
     Aws::Utils::Array<JsonView> serviceArnListJsonList = jsonValue.GetArray("ServiceArnList");

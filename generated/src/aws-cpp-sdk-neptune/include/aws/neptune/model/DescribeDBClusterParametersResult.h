@@ -86,12 +86,15 @@ class DescribeDBClusterParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Parameter> m_parameters;
 
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_parametersHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -19,6 +19,7 @@ using namespace Aws;
 ListKeyGroups2020_05_31Result::ListKeyGroups2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListKeyGroups2020_05_31Result& ListKeyGroups2020_05_31Result::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

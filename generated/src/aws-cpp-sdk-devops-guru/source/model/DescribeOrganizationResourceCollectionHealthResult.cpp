@@ -24,6 +24,7 @@ DescribeOrganizationResourceCollectionHealthResult::DescribeOrganizationResource
 
 DescribeOrganizationResourceCollectionHealthResult& DescribeOrganizationResourceCollectionHealthResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CloudFormation")) {
     Aws::Utils::Array<JsonView> cloudFormationJsonList = jsonValue.GetArray("CloudFormation");

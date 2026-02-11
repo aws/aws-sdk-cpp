@@ -98,12 +98,15 @@ class BatchGetConfigurationPolicyAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ConfigurationPolicyAssociationSummary> m_configurationPolicyAssociations;
 
   Aws::Vector<UnprocessedConfigurationPolicyAssociation> m_unprocessedConfigurationPolicyAssociations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationPolicyAssociationsHasBeenSet = false;
   bool m_unprocessedConfigurationPolicyAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

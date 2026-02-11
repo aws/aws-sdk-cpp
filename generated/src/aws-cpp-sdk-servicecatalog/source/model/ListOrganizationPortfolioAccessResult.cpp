@@ -23,6 +23,7 @@ ListOrganizationPortfolioAccessResult::ListOrganizationPortfolioAccessResult(con
 
 ListOrganizationPortfolioAccessResult& ListOrganizationPortfolioAccessResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationNodes")) {
     Aws::Utils::Array<JsonView> organizationNodesJsonList = jsonValue.GetArray("OrganizationNodes");

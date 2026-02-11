@@ -20,6 +20,7 @@ using namespace Aws;
 ListIndicesResult::ListIndicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIndicesResult& ListIndicesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IndexConfigurationSummaryItems")) {
     Aws::Utils::Array<JsonView> indexConfigurationSummaryItemsJsonList = jsonValue.GetArray("IndexConfigurationSummaryItems");

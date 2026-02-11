@@ -22,6 +22,7 @@ DescribeAutomationExecutionsResult::DescribeAutomationExecutionsResult(const Aws
 }
 
 DescribeAutomationExecutionsResult& DescribeAutomationExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutomationExecutionMetadataList")) {
     Aws::Utils::Array<JsonView> automationExecutionMetadataListJsonList = jsonValue.GetArray("AutomationExecutionMetadataList");

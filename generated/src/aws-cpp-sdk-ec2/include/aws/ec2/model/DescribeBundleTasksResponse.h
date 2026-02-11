@@ -65,10 +65,13 @@ class DescribeBundleTasksResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BundleTask> m_bundleTasks;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bundleTasksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

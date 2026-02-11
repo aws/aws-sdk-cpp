@@ -85,12 +85,15 @@ class DescribeCreateCaseOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_languageAvailability;
 
   Aws::Vector<CommunicationTypeOptions> m_communicationTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_languageAvailabilityHasBeenSet = false;
   bool m_communicationTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

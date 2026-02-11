@@ -58,10 +58,13 @@ class DisassociateProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProfileAssociation m_profileAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_profileAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

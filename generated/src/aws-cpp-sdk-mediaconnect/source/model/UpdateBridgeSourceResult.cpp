@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateBridgeSourceResult::UpdateBridgeSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateBridgeSourceResult& UpdateBridgeSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("bridgeArn")) {
     m_bridgeArn = jsonValue.GetString("bridgeArn");

@@ -74,12 +74,15 @@ class ExtendLicenseConsumptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_licenseConsumptionToken;
 
   Aws::String m_expiration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_licenseConsumptionTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

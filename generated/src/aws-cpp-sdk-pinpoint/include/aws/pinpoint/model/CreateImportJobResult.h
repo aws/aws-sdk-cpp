@@ -56,10 +56,13 @@ class CreateImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ImportJobResponse m_importJobResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_importJobResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

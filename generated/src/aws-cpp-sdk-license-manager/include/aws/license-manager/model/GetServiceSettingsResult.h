@@ -186,6 +186,8 @@ class GetServiceSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_s3BucketArn;
 
@@ -204,6 +206,7 @@ class GetServiceSettingsResult {
   ServiceStatus m_serviceStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_s3BucketArnHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
   bool m_organizationConfigurationHasBeenSet = false;

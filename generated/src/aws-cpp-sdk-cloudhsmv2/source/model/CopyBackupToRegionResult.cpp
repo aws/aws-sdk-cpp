@@ -20,6 +20,7 @@ using namespace Aws;
 CopyBackupToRegionResult::CopyBackupToRegionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CopyBackupToRegionResult& CopyBackupToRegionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DestinationBackup")) {
     m_destinationBackup = jsonValue.GetObject("DestinationBackup");

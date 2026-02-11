@@ -56,10 +56,13 @@ class GetVoiceTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VoiceTemplateResponse m_voiceTemplateResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_voiceTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

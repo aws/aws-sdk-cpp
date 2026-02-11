@@ -116,6 +116,8 @@ class ListConfigurationRevisionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_configurationId;
 
@@ -126,6 +128,7 @@ class ListConfigurationRevisionsResult {
   Aws::Vector<ConfigurationRevision> m_revisions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

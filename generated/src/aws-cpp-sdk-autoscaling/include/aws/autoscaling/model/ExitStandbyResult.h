@@ -66,10 +66,13 @@ class ExitStandbyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Activity> m_activities;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activitiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteExternalModelResult::DeleteExternalModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteExternalModelResult& DeleteExternalModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

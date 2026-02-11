@@ -56,10 +56,13 @@ class UpdateMembershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Membership m_membership;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_membershipHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

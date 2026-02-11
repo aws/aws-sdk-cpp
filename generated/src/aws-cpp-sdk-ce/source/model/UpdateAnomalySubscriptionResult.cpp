@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAnomalySubscriptionResult::UpdateAnomalySubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAnomalySubscriptionResult& UpdateAnomalySubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SubscriptionArn")) {
     m_subscriptionArn = jsonValue.GetString("SubscriptionArn");

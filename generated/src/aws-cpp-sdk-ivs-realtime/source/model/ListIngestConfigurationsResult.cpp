@@ -20,6 +20,7 @@ using namespace Aws;
 ListIngestConfigurationsResult::ListIngestConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIngestConfigurationsResult& ListIngestConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ingestConfigurations")) {
     Aws::Utils::Array<JsonView> ingestConfigurationsJsonList = jsonValue.GetArray("ingestConfigurations");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDomainResult::UpdateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDomainResult& UpdateDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainArn")) {
     m_domainArn = jsonValue.GetString("DomainArn");

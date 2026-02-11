@@ -59,10 +59,13 @@ class GetIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Document m_indexSchema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_indexSchemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

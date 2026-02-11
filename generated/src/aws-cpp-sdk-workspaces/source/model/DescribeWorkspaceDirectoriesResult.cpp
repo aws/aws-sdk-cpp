@@ -22,6 +22,7 @@ DescribeWorkspaceDirectoriesResult::DescribeWorkspaceDirectoriesResult(const Aws
 }
 
 DescribeWorkspaceDirectoriesResult& DescribeWorkspaceDirectoriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Directories")) {
     Aws::Utils::Array<JsonView> directoriesJsonList = jsonValue.GetArray("Directories");

@@ -23,6 +23,7 @@ DisableKinesisStreamingDestinationResult::DisableKinesisStreamingDestinationResu
 
 DisableKinesisStreamingDestinationResult& DisableKinesisStreamingDestinationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");

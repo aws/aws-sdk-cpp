@@ -83,12 +83,15 @@ class UpdateProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProductViewDetail m_productViewDetail;
 
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productViewDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

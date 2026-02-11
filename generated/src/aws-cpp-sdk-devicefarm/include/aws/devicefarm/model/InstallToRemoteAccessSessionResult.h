@@ -64,10 +64,13 @@ class InstallToRemoteAccessSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Upload m_appUpload;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appUploadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

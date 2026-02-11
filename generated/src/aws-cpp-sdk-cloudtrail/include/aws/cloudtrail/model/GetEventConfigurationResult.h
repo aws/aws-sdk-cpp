@@ -143,6 +143,8 @@ class GetEventConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trailARN;
 
@@ -155,6 +157,7 @@ class GetEventConfigurationResult {
   Aws::Vector<AggregationConfiguration> m_aggregationConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trailARNHasBeenSet = false;
   bool m_eventDataStoreArnHasBeenSet = false;
   bool m_maxEventSizeHasBeenSet = false;

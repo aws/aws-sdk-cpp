@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeThumbnailsResult::DescribeThumbnailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeThumbnailsResult& DescribeThumbnailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("thumbnailDetails")) {
     Aws::Utils::Array<JsonView> thumbnailDetailsJsonList = jsonValue.GetArray("thumbnailDetails");

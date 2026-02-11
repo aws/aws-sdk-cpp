@@ -129,6 +129,8 @@ class GetSessionsStatisticsAggregationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Statistics> m_statistics;
 
@@ -139,6 +141,7 @@ class GetSessionsStatisticsAggregationResult {
   Aws::String m_statusMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statisticsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;

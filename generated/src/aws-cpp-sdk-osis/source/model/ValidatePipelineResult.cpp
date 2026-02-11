@@ -20,6 +20,7 @@ using namespace Aws;
 ValidatePipelineResult::ValidatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ValidatePipelineResult& ValidatePipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("isValid")) {
     m_isValid = jsonValue.GetBool("isValid");

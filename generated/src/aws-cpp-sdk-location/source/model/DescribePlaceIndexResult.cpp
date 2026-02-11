@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePlaceIndexResult::DescribePlaceIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePlaceIndexResult& DescribePlaceIndexResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IndexName")) {
     m_indexName = jsonValue.GetString("IndexName");

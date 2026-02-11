@@ -20,6 +20,7 @@ using namespace Aws;
 ListTaxRegistrationsResult::ListTaxRegistrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTaxRegistrationsResult& ListTaxRegistrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountDetails")) {
     Aws::Utils::Array<JsonView> accountDetailsJsonList = jsonValue.GetArray("accountDetails");

@@ -75,12 +75,15 @@ class CreateFpgaImageResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fpgaImageId;
 
   Aws::String m_fpgaImageGlobalId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fpgaImageIdHasBeenSet = false;
   bool m_fpgaImageGlobalIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

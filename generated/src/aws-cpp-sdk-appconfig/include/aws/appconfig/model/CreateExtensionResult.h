@@ -176,6 +176,8 @@ class CreateExtensionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -192,6 +194,7 @@ class CreateExtensionResult {
   Aws::Map<Aws::String, Parameter> m_parameters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;

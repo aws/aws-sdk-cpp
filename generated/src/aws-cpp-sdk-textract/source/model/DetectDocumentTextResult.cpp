@@ -20,6 +20,7 @@ using namespace Aws;
 DetectDocumentTextResult::DetectDocumentTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectDocumentTextResult& DetectDocumentTextResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentMetadata")) {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");

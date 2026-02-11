@@ -20,6 +20,7 @@ using namespace Aws;
 SearchEvaluationFormsResult::SearchEvaluationFormsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchEvaluationFormsResult& SearchEvaluationFormsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationFormSearchSummaryList")) {
     Aws::Utils::Array<JsonView> evaluationFormSearchSummaryListJsonList = jsonValue.GetArray("EvaluationFormSearchSummaryList");

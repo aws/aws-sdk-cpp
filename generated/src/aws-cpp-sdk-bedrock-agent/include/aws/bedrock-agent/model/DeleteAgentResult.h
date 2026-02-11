@@ -73,12 +73,15 @@ class DeleteAgentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_agentId;
 
   AgentStatus m_agentStatus{AgentStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agentIdHasBeenSet = false;
   bool m_agentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

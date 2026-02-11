@@ -99,6 +99,8 @@ class ListVPCConnectionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VPCConnectionSummary> m_vPCConnectionSummaries;
 
@@ -107,6 +109,7 @@ class ListVPCConnectionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vPCConnectionSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

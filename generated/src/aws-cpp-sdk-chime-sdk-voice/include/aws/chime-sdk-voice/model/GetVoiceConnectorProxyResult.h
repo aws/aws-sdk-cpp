@@ -58,10 +58,13 @@ class GetVoiceConnectorProxyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Proxy m_proxy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proxyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

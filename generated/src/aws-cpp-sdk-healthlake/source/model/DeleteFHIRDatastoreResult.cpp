@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFHIRDatastoreResult::DeleteFHIRDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFHIRDatastoreResult& DeleteFHIRDatastoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatastoreId")) {
     m_datastoreId = jsonValue.GetString("DatastoreId");

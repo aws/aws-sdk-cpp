@@ -80,12 +80,15 @@ class ListTagsForResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_statusCode{0};
 
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

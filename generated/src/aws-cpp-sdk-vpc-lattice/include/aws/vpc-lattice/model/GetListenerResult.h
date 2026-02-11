@@ -209,6 +209,8 @@ class GetListenerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -231,6 +233,7 @@ class GetListenerResult {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;

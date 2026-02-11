@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLicenseAssetRulesetResult::CreateLicenseAssetRulesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLicenseAssetRulesetResult& CreateLicenseAssetRulesetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseAssetRulesetArn")) {
     m_licenseAssetRulesetArn = jsonValue.GetString("LicenseAssetRulesetArn");

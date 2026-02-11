@@ -20,6 +20,7 @@ using namespace Aws;
 DeregisterScalableTargetResult::DeregisterScalableTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeregisterScalableTargetResult& DeregisterScalableTargetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

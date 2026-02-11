@@ -23,6 +23,7 @@ CreatePersistentContactAssociationResult::CreatePersistentContactAssociationResu
 
 CreatePersistentContactAssociationResult& CreatePersistentContactAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContinuedFromContactId")) {
     m_continuedFromContactId = jsonValue.GetString("ContinuedFromContactId");

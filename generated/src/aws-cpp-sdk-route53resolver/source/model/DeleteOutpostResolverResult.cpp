@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteOutpostResolverResult::DeleteOutpostResolverResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteOutpostResolverResult& DeleteOutpostResolverResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OutpostResolver")) {
     m_outpostResolver = jsonValue.GetObject("OutpostResolver");

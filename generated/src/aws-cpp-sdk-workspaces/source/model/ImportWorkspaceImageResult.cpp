@@ -20,6 +20,7 @@ using namespace Aws;
 ImportWorkspaceImageResult::ImportWorkspaceImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportWorkspaceImageResult& ImportWorkspaceImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImageId")) {
     m_imageId = jsonValue.GetString("ImageId");

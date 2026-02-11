@@ -142,6 +142,8 @@ class UpdateBackendAPIResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appId;
 
@@ -156,6 +158,7 @@ class UpdateBackendAPIResult {
   Aws::String m_status;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appIdHasBeenSet = false;
   bool m_backendEnvironmentNameHasBeenSet = false;
   bool m_errorHasBeenSet = false;

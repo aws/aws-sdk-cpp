@@ -75,12 +75,15 @@ class GetTaxRegistrationDocumentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_destinationFilePath;
 
   Aws::String m_presignedS3Url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_destinationFilePathHasBeenSet = false;
   bool m_presignedS3UrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -74,12 +74,15 @@ class StartConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectionId;
 
   Aws::String m_underlayIpAddress;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionIdHasBeenSet = false;
   bool m_underlayIpAddressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

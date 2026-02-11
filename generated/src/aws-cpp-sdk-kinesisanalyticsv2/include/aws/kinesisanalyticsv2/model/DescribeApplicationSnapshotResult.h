@@ -59,10 +59,13 @@ class DescribeApplicationSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SnapshotDetails m_snapshotDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

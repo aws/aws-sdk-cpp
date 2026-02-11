@@ -58,10 +58,13 @@ class GetTrackResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServerlessTrack m_track;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

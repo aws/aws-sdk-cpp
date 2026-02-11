@@ -20,6 +20,7 @@ using namespace Aws;
 PutTableBucketReplicationResult::PutTableBucketReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutTableBucketReplicationResult& PutTableBucketReplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("versionToken")) {
     m_versionToken = jsonValue.GetString("versionToken");

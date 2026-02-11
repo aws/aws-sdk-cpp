@@ -20,6 +20,7 @@ using namespace Aws;
 GetMergeCommitResult::GetMergeCommitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMergeCommitResult& GetMergeCommitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sourceCommitId")) {
     m_sourceCommitId = jsonValue.GetString("sourceCommitId");

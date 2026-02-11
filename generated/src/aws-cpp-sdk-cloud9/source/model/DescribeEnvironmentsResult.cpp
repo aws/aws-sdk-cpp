@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEnvironmentsResult::DescribeEnvironmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEnvironmentsResult& DescribeEnvironmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environments")) {
     Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");

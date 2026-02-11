@@ -279,6 +279,8 @@ class CreateSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryName;
 
@@ -309,6 +311,7 @@ class CreateSchemaResult {
   SchemaVersionStatus m_schemaVersionStatus{SchemaVersionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryNameHasBeenSet = false;
   bool m_registryArnHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;

@@ -202,6 +202,8 @@ class GetExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -222,6 +224,7 @@ class GetExportJobResult {
   ExportStatistics m_statistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_exportSourceTypeHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIndexResult::CreateIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIndexResult& CreateIndexResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

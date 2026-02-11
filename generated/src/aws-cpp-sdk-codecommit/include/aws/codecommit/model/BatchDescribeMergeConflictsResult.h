@@ -162,6 +162,8 @@ class BatchDescribeMergeConflictsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Conflict> m_conflicts;
 
@@ -176,6 +178,7 @@ class BatchDescribeMergeConflictsResult {
   Aws::String m_baseCommitId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_conflictsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

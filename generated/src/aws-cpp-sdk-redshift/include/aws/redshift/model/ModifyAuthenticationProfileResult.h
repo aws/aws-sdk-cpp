@@ -75,12 +75,15 @@ class ModifyAuthenticationProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_authenticationProfileName;
 
   Aws::String m_authenticationProfileContent;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_authenticationProfileNameHasBeenSet = false;
   bool m_authenticationProfileContentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

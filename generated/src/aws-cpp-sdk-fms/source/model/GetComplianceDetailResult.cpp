@@ -20,6 +20,7 @@ using namespace Aws;
 GetComplianceDetailResult::GetComplianceDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetComplianceDetailResult& GetComplianceDetailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PolicyComplianceDetail")) {
     m_policyComplianceDetail = jsonValue.GetObject("PolicyComplianceDetail");

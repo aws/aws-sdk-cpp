@@ -20,6 +20,7 @@ using namespace Aws;
 ListVocabulariesResult::ListVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVocabulariesResult& ListVocabulariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("Status"));

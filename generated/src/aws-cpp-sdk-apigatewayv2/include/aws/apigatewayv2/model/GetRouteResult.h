@@ -294,6 +294,8 @@ class GetRouteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_apiGatewayManaged{false};
 
@@ -322,6 +324,7 @@ class GetRouteResult {
   Aws::String m_target;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_apiKeyRequiredHasBeenSet = false;
   bool m_authorizationScopesHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateGameServerGroupResult::CreateGameServerGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateGameServerGroupResult& CreateGameServerGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GameServerGroup")) {
     m_gameServerGroup = jsonValue.GetObject("GameServerGroup");

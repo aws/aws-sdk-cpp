@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgentRuntimeResult::GetAgentRuntimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentRuntimeArn")) {
     m_agentRuntimeArn = jsonValue.GetString("agentRuntimeArn");

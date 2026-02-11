@@ -92,6 +92,8 @@ class CreateDataAccessorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dataAccessorId;
 
@@ -100,6 +102,7 @@ class CreateDataAccessorResult {
   Aws::String m_dataAccessorArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataAccessorIdHasBeenSet = false;
   bool m_idcApplicationArnHasBeenSet = false;
   bool m_dataAccessorArnHasBeenSet = false;

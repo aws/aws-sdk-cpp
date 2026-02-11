@@ -60,10 +60,13 @@ class DescribeFleetLocationCapacityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FleetCapacity m_fleetCapacity;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fleetCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

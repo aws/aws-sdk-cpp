@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSubnetGroupResult::DeleteSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSubnetGroupResult& DeleteSubnetGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeletionMessage")) {
     m_deletionMessage = jsonValue.GetString("DeletionMessage");

@@ -58,10 +58,13 @@ class DescribeBatchLoadTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BatchLoadTaskDescription m_batchLoadTaskDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_batchLoadTaskDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

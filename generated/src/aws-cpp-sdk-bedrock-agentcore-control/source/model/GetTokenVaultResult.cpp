@@ -20,6 +20,7 @@ using namespace Aws;
 GetTokenVaultResult::GetTokenVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTokenVaultResult& GetTokenVaultResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tokenVaultId")) {
     m_tokenVaultId = jsonValue.GetString("tokenVaultId");

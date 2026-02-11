@@ -413,6 +413,8 @@ class GetMLInputChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_membershipIdentifier;
 
@@ -455,6 +457,7 @@ class GetMLInputChannelResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_mlInputChannelArnHasBeenSet = false;

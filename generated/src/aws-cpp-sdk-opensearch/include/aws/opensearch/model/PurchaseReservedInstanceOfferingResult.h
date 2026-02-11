@@ -81,12 +81,15 @@ class PurchaseReservedInstanceOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reservedInstanceId;
 
   Aws::String m_reservationName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reservedInstanceIdHasBeenSet = false;
   bool m_reservationNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

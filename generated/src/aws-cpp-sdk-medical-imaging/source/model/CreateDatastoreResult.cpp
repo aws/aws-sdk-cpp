@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDatastoreResult::CreateDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDatastoreResult& CreateDatastoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datastoreId")) {
     m_datastoreId = jsonValue.GetString("datastoreId");

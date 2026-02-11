@@ -89,12 +89,15 @@ class DescribeRecommendationLimitationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<Limitation> m_limitations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_limitationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

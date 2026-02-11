@@ -20,6 +20,7 @@ using namespace Aws;
 CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CancelJobResult& CancelJobResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

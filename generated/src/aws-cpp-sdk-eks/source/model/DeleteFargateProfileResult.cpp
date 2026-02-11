@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFargateProfileResult::DeleteFargateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFargateProfileResult& DeleteFargateProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fargateProfile")) {
     m_fargateProfile = jsonValue.GetObject("fargateProfile");

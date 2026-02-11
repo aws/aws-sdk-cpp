@@ -83,12 +83,15 @@ class UnassignPrivateNatGatewayAddressResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_natGatewayId;
 
   Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_natGatewayIdHasBeenSet = false;
   bool m_natGatewayAddressesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

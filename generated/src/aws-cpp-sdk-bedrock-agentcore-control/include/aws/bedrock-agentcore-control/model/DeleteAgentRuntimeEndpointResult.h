@@ -91,6 +91,8 @@ class DeleteAgentRuntimeEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
 
@@ -99,6 +101,7 @@ class DeleteAgentRuntimeEndpointResult {
   Aws::String m_endpointName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_endpointNameHasBeenSet = false;

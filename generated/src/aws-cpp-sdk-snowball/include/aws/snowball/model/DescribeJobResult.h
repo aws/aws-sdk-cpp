@@ -84,12 +84,15 @@ class DescribeJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobMetadata m_jobMetadata;
 
   Aws::Vector<JobMetadata> m_subJobMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobMetadataHasBeenSet = false;
   bool m_subJobMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

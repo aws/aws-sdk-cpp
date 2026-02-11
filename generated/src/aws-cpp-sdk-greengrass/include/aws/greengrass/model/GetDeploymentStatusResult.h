@@ -134,6 +134,8 @@ class GetDeploymentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_deploymentStatus;
 
@@ -146,6 +148,7 @@ class GetDeploymentStatusResult {
   Aws::String m_updatedAt;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentStatusHasBeenSet = false;
   bool m_deploymentTypeHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;

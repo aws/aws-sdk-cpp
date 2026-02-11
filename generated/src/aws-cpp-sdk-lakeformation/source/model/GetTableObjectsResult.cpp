@@ -20,6 +20,7 @@ using namespace Aws;
 GetTableObjectsResult::GetTableObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTableObjectsResult& GetTableObjectsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Objects")) {
     Aws::Utils::Array<JsonView> objectsJsonList = jsonValue.GetArray("Objects");

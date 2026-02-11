@@ -22,6 +22,7 @@ TestAvailabilityConfigurationResult::TestAvailabilityConfigurationResult(const A
 }
 
 TestAvailabilityConfigurationResult& TestAvailabilityConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TestPassed")) {
     m_testPassed = jsonValue.GetBool("TestPassed");

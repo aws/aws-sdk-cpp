@@ -113,6 +113,8 @@ class ListPoliciesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Policy> m_policies;
 
@@ -121,6 +123,7 @@ class ListPoliciesResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policiesHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

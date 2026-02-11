@@ -20,6 +20,7 @@ using namespace Aws;
 GetChallengePasswordResult::GetChallengePasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetChallengePasswordResult& GetChallengePasswordResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Password")) {
     m_password = jsonValue.GetString("Password");

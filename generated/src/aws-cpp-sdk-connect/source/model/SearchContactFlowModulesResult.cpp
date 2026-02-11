@@ -20,6 +20,7 @@ using namespace Aws;
 SearchContactFlowModulesResult::SearchContactFlowModulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchContactFlowModulesResult& SearchContactFlowModulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactFlowModules")) {
     Aws::Utils::Array<JsonView> contactFlowModulesJsonList = jsonValue.GetArray("ContactFlowModules");

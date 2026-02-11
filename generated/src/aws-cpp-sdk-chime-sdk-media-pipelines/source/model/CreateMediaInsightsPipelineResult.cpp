@@ -22,6 +22,7 @@ CreateMediaInsightsPipelineResult::CreateMediaInsightsPipelineResult(const Aws::
 }
 
 CreateMediaInsightsPipelineResult& CreateMediaInsightsPipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MediaInsightsPipeline")) {
     m_mediaInsightsPipeline = jsonValue.GetObject("MediaInsightsPipeline");

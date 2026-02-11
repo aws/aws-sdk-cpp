@@ -19,6 +19,7 @@ using namespace Aws;
 CreateBucketResult::CreateBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateBucketResult& CreateBucketResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

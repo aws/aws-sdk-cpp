@@ -61,10 +61,13 @@ class GetAssessmentFrameworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Framework m_framework;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_frameworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

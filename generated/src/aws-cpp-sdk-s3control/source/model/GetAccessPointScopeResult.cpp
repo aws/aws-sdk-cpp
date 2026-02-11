@@ -19,6 +19,7 @@ using namespace Aws;
 GetAccessPointScopeResult::GetAccessPointScopeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetAccessPointScopeResult& GetAccessPointScopeResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

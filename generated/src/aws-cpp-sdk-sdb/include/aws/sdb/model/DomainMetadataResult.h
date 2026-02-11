@@ -145,6 +145,8 @@ class DomainMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_itemCount{0};
 
@@ -161,6 +163,7 @@ class DomainMetadataResult {
   int m_timestamp{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_itemCountHasBeenSet = false;
   bool m_itemNamesSizeBytesHasBeenSet = false;
   bool m_attributeNameCountHasBeenSet = false;

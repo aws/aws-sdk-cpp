@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateSessionLoggerResult::DisassociateSessionLoggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateSessionLoggerResult& DisassociateSessionLoggerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -24,6 +24,7 @@ ListDecoderManifestNetworkInterfacesResult::ListDecoderManifestNetworkInterfaces
 
 ListDecoderManifestNetworkInterfacesResult& ListDecoderManifestNetworkInterfacesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("networkInterfaces")) {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");

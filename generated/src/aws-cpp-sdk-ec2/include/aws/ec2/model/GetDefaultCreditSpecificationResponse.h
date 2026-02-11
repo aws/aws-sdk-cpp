@@ -60,10 +60,13 @@ class GetDefaultCreditSpecificationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceFamilyCreditSpecification m_instanceFamilyCreditSpecification;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceFamilyCreditSpecificationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

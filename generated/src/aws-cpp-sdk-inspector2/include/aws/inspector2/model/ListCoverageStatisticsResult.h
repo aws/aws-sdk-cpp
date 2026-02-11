@@ -100,6 +100,8 @@ class ListCoverageStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Counts> m_countsByGroup;
 
@@ -108,6 +110,7 @@ class ListCoverageStatisticsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_countsByGroupHasBeenSet = false;
   bool m_totalCountsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

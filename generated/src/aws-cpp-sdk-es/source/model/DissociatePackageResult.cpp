@@ -20,6 +20,7 @@ using namespace Aws;
 DissociatePackageResult::DissociatePackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DissociatePackageResult& DissociatePackageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainPackageDetails")) {
     m_domainPackageDetails = jsonValue.GetObject("DomainPackageDetails");

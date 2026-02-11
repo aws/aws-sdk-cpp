@@ -58,10 +58,13 @@ class CreateNotificationSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Subscription m_subscription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subscriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

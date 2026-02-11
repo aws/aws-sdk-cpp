@@ -69,12 +69,15 @@ class GetSolFunctionPackageContentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PackageContentType m_contentType{PackageContentType::NOT_SET};
 
   Aws::Utils::Stream::ResponseStream m_packageContent{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_packageContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

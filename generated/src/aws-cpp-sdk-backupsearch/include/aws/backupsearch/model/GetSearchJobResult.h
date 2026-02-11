@@ -267,6 +267,8 @@ class GetSearchJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -293,6 +295,7 @@ class GetSearchJobResult {
   Aws::String m_searchJobArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_searchScopeSummaryHasBeenSet = false;
   bool m_currentSearchProgressHasBeenSet = false;

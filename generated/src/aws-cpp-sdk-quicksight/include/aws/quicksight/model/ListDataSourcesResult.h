@@ -98,6 +98,8 @@ class ListDataSourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DataSource> m_dataSources;
 
@@ -106,6 +108,7 @@ class ListDataSourcesResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataSourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

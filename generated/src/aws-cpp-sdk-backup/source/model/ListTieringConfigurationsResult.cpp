@@ -20,6 +20,7 @@ using namespace Aws;
 ListTieringConfigurationsResult::ListTieringConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTieringConfigurationsResult& ListTieringConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TieringConfigurations")) {
     Aws::Utils::Array<JsonView> tieringConfigurationsJsonList = jsonValue.GetArray("TieringConfigurations");

@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateAccountsResult::DisassociateAccountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateAccountsResult& DisassociateAccountsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountIds")) {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");

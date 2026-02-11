@@ -20,6 +20,7 @@ using namespace Aws;
 GetVoiceTemplateResult::GetVoiceTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVoiceTemplateResult& GetVoiceTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_voiceTemplateResponse = jsonValue;
   m_voiceTemplateResponseHasBeenSet = true;

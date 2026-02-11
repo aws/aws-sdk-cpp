@@ -209,6 +209,8 @@ class GetUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userId;
 
@@ -231,6 +233,7 @@ class GetUserResult {
   Aws::Vector<Aws::String> m_securityGroupIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userIdHasBeenSet = false;
   bool m_firstNameHasBeenSet = false;
   bool m_lastNameHasBeenSet = false;

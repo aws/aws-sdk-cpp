@@ -20,6 +20,7 @@ using namespace Aws;
 SearchSecurityProfilesResult::SearchSecurityProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchSecurityProfilesResult& SearchSecurityProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecurityProfiles")) {
     Aws::Utils::Array<JsonView> securityProfilesJsonList = jsonValue.GetArray("SecurityProfiles");

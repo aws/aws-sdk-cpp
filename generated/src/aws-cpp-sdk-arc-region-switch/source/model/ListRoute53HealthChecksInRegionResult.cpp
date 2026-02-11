@@ -23,6 +23,7 @@ ListRoute53HealthChecksInRegionResult::ListRoute53HealthChecksInRegionResult(con
 
 ListRoute53HealthChecksInRegionResult& ListRoute53HealthChecksInRegionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("healthChecks")) {
     Aws::Utils::Array<JsonView> healthChecksJsonList = jsonValue.GetArray("healthChecks");

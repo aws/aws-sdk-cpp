@@ -20,6 +20,7 @@ using namespace Aws;
 GetBranchResult::GetBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBranchResult& GetBranchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("branch")) {
     m_branch = jsonValue.GetObject("branch");

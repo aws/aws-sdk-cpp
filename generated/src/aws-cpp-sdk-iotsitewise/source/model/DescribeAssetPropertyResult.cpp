@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAssetPropertyResult::DescribeAssetPropertyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAssetPropertyResult& DescribeAssetPropertyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assetId")) {
     m_assetId = jsonValue.GetString("assetId");

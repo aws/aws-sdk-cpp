@@ -20,6 +20,7 @@ using namespace Aws;
 GetMulticastGroupSessionResult::GetMulticastGroupSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMulticastGroupSessionResult& GetMulticastGroupSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LoRaWAN")) {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");

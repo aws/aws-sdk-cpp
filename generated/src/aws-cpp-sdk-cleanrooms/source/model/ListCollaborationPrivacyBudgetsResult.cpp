@@ -23,6 +23,7 @@ ListCollaborationPrivacyBudgetsResult::ListCollaborationPrivacyBudgetsResult(con
 
 ListCollaborationPrivacyBudgetsResult& ListCollaborationPrivacyBudgetsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaborationPrivacyBudgetSummaries")) {
     Aws::Utils::Array<JsonView> collaborationPrivacyBudgetSummariesJsonList = jsonValue.GetArray("collaborationPrivacyBudgetSummaries");

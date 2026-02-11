@@ -93,6 +93,8 @@ class UpdateEnrollmentConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EnrollmentStatus m_status{EnrollmentStatus::NOT_SET};
 
@@ -101,6 +103,7 @@ class UpdateEnrollmentConfigurationResult {
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;

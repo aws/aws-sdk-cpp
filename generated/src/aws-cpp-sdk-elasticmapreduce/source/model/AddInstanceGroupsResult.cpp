@@ -20,6 +20,7 @@ using namespace Aws;
 AddInstanceGroupsResult::AddInstanceGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddInstanceGroupsResult& AddInstanceGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobFlowId")) {
     m_jobFlowId = jsonValue.GetString("JobFlowId");

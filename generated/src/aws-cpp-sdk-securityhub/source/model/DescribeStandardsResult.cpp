@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStandardsResult::DescribeStandardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStandardsResult& DescribeStandardsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Standards")) {
     Aws::Utils::Array<JsonView> standardsJsonList = jsonValue.GetArray("Standards");

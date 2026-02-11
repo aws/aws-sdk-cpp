@@ -20,6 +20,7 @@ using namespace Aws;
 TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 TagResourceResult& TagResourceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

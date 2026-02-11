@@ -351,6 +351,8 @@ class DescribeIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -385,6 +387,7 @@ class DescribeIndexResult {
   UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_editionHasBeenSet = false;

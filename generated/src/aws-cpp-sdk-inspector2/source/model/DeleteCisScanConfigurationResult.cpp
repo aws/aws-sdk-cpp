@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCisScanConfigurationResult::DeleteCisScanConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCisScanConfigurationResult& DeleteCisScanConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scanConfigurationArn")) {
     m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");

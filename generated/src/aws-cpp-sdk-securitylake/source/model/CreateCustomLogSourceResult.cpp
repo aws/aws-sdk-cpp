@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCustomLogSourceResult::CreateCustomLogSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCustomLogSourceResult& CreateCustomLogSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetObject("source");

@@ -56,10 +56,13 @@ class GetSegmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SegmentResponse m_segmentResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_segmentResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

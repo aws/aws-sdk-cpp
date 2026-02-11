@@ -166,6 +166,8 @@ class GetNextMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MessageType m_type{MessageType::NOT_SET};
 
@@ -182,6 +184,7 @@ class GetNextMessageResult {
   bool m_chunkedResponseTerminated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_typeHasBeenSet = false;
   bool m_responseHasBeenSet = false;
   bool m_requestMessageIdHasBeenSet = false;

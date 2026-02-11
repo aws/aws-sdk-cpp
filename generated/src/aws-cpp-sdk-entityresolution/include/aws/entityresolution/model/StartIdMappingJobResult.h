@@ -106,6 +106,8 @@ class StartIdMappingJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -114,6 +116,7 @@ class StartIdMappingJobResult {
   JobType m_jobType{JobType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_outputSourceConfigHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;

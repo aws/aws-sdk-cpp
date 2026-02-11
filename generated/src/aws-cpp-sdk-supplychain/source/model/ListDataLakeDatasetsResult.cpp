@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataLakeDatasetsResult::ListDataLakeDatasetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataLakeDatasetsResult& ListDataLakeDatasetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datasets")) {
     Aws::Utils::Array<JsonView> datasetsJsonList = jsonValue.GetArray("datasets");

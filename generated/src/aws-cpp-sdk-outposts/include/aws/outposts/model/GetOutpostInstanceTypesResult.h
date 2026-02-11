@@ -110,6 +110,8 @@ class GetOutpostInstanceTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<InstanceTypeItem> m_instanceTypes;
 
@@ -120,6 +122,7 @@ class GetOutpostInstanceTypesResult {
   Aws::String m_outpostArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceTypesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_outpostIdHasBeenSet = false;

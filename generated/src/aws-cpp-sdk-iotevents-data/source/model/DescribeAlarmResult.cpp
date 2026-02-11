@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAlarmResult::DescribeAlarmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAlarmResult& DescribeAlarmResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("alarm")) {
     m_alarm = jsonValue.GetObject("alarm");

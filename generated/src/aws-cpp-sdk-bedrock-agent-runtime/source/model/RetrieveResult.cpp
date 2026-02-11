@@ -20,6 +20,7 @@ using namespace Aws;
 RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RetrieveResult& RetrieveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("guardrailAction")) {
     m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));

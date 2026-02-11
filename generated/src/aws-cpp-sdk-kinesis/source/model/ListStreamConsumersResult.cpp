@@ -20,6 +20,7 @@ using namespace Aws;
 ListStreamConsumersResult::ListStreamConsumersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListStreamConsumersResult& ListStreamConsumersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Consumers")) {
     Aws::Utils::Array<JsonView> consumersJsonList = jsonValue.GetArray("Consumers");

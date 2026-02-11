@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRouteResponseResult::CreateRouteResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRouteResponseResult& CreateRouteResponseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("modelSelectionExpression")) {
     m_modelSelectionExpression = jsonValue.GetString("modelSelectionExpression");

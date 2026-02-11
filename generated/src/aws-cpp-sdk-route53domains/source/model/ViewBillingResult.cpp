@@ -20,6 +20,7 @@ using namespace Aws;
 ViewBillingResult::ViewBillingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ViewBillingResult& ViewBillingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextPageMarker")) {
     m_nextPageMarker = jsonValue.GetString("NextPageMarker");

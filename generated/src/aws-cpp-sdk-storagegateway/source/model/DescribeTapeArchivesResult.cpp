@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTapeArchivesResult::DescribeTapeArchivesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTapeArchivesResult& DescribeTapeArchivesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TapeArchives")) {
     Aws::Utils::Array<JsonView> tapeArchivesJsonList = jsonValue.GetArray("TapeArchives");

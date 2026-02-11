@@ -66,10 +66,13 @@ class ModifyListenerAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ListenerAttribute> m_attributes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

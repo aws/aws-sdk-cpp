@@ -19,6 +19,7 @@ using namespace Aws;
 CreateHostedZoneResult::CreateHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateHostedZoneResult& CreateHostedZoneResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

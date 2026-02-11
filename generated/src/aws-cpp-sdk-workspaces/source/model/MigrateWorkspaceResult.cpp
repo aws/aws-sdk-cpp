@@ -20,6 +20,7 @@ using namespace Aws;
 MigrateWorkspaceResult::MigrateWorkspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 MigrateWorkspaceResult& MigrateWorkspaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SourceWorkspaceId")) {
     m_sourceWorkspaceId = jsonValue.GetString("SourceWorkspaceId");

@@ -72,12 +72,15 @@ class DescribeDashboardsQAConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DashboardsQAStatus m_dashboardsQAStatus{DashboardsQAStatus::NOT_SET};
 
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dashboardsQAStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

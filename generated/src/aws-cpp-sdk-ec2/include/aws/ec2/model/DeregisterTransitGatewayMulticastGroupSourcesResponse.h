@@ -62,10 +62,13 @@ class DeregisterTransitGatewayMulticastGroupSourcesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayMulticastDeregisteredGroupSources m_deregisteredMulticastGroupSources;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deregisteredMulticastGroupSourcesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

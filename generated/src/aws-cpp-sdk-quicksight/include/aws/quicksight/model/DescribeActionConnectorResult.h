@@ -74,12 +74,15 @@ class DescribeActionConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ActionConnector m_actionConnector;
 
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

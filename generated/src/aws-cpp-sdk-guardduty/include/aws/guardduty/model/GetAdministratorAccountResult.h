@@ -58,10 +58,13 @@ class GetAdministratorAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Administrator m_administrator;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_administratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

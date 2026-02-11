@@ -20,6 +20,7 @@ using namespace Aws;
 ListScansResult::ListScansResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListScansResult& ListScansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("summaries")) {
     Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("summaries");

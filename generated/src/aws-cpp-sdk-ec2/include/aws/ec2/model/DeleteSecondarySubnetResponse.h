@@ -77,12 +77,15 @@ class DeleteSecondarySubnetResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SecondarySubnet m_secondarySubnet;
 
   Aws::String m_clientToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_secondarySubnetHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

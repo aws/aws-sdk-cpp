@@ -84,12 +84,15 @@ class DisassociateMacSecKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectionId;
 
   Aws::Vector<MacSecKey> m_macSecKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionIdHasBeenSet = false;
   bool m_macSecKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

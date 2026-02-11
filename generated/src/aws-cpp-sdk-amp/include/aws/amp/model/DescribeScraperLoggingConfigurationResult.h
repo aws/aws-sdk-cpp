@@ -138,6 +138,8 @@ class DescribeScraperLoggingConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ScraperLoggingConfigurationStatus m_status;
 
@@ -150,6 +152,7 @@ class DescribeScraperLoggingConfigurationResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_scraperIdHasBeenSet = false;
   bool m_loggingDestinationHasBeenSet = false;

@@ -158,6 +158,8 @@ class TestInvokeMethodResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_status{0};
 
@@ -172,6 +174,7 @@ class TestInvokeMethodResult {
   long long m_latency{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
   bool m_headersHasBeenSet = false;

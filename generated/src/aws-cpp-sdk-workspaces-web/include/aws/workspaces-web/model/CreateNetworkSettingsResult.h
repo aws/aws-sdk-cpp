@@ -57,10 +57,13 @@ class CreateNetworkSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_networkSettingsArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_networkSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

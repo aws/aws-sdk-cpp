@@ -59,10 +59,13 @@ class CountTokensResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_inputTokens{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inputTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

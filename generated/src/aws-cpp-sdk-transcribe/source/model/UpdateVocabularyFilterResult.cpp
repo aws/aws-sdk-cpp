@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateVocabularyFilterResult::UpdateVocabularyFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateVocabularyFilterResult& UpdateVocabularyFilterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VocabularyFilterName")) {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");

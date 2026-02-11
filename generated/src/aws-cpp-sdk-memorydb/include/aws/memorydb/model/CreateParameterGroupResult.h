@@ -58,10 +58,13 @@ class CreateParameterGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ParameterGroup m_parameterGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_parameterGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

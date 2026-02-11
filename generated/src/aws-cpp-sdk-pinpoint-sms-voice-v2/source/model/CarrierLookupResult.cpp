@@ -20,6 +20,7 @@ using namespace Aws;
 CarrierLookupResult::CarrierLookupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CarrierLookupResult& CarrierLookupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("E164PhoneNumber")) {
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");

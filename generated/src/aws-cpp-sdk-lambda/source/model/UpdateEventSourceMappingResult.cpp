@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateEventSourceMappingResult::UpdateEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UUID")) {
     m_uUID = jsonValue.GetString("UUID");

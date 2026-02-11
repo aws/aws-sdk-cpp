@@ -104,6 +104,8 @@ class ListRegionalBucketsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RegionalBucket> m_regionalBucketList;
 
@@ -112,6 +114,7 @@ class ListRegionalBucketsResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_regionalBucketListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

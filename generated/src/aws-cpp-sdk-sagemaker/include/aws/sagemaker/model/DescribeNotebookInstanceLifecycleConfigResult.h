@@ -161,6 +161,8 @@ class DescribeNotebookInstanceLifecycleConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_notebookInstanceLifecycleConfigArn;
 
@@ -175,6 +177,7 @@ class DescribeNotebookInstanceLifecycleConfigResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
   bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
   bool m_onCreateHasBeenSet = false;

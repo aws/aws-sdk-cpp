@@ -56,10 +56,13 @@ class DescribeServiceIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceIntegrationConfig m_serviceIntegration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceIntegrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

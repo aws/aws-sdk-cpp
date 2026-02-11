@@ -20,6 +20,7 @@ using namespace Aws;
 GetArchiveRuleResult::GetArchiveRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetArchiveRuleResult& GetArchiveRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("archiveRule")) {
     m_archiveRule = jsonValue.GetObject("archiveRule");

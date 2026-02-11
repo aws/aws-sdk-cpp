@@ -20,6 +20,7 @@ using namespace Aws;
 GetEnabledBaselineResult::GetEnabledBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEnabledBaselineResult& GetEnabledBaselineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("enabledBaselineDetails")) {
     m_enabledBaselineDetails = jsonValue.GetObject("enabledBaselineDetails");

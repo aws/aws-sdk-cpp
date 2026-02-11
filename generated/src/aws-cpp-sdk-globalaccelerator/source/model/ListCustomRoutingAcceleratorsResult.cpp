@@ -22,6 +22,7 @@ ListCustomRoutingAcceleratorsResult::ListCustomRoutingAcceleratorsResult(const A
 }
 
 ListCustomRoutingAcceleratorsResult& ListCustomRoutingAcceleratorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Accelerators")) {
     Aws::Utils::Array<JsonView> acceleratorsJsonList = jsonValue.GetArray("Accelerators");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFleetInstancesResponse::DescribeFleetInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeFleetInstancesResponse& DescribeFleetInstancesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

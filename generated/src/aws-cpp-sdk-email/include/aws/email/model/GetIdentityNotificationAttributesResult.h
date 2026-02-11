@@ -73,10 +73,13 @@ class GetIdentityNotificationAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, IdentityNotificationAttributes> m_notificationAttributes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notificationAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

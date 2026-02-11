@@ -213,6 +213,8 @@ class GetLegalHoldResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_title;
 
@@ -235,6 +237,7 @@ class GetLegalHoldResult {
   RecoveryPointSelection m_recoveryPointSelection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_titleHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

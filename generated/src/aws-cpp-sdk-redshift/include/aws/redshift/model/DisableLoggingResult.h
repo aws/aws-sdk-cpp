@@ -191,6 +191,8 @@ class DisableLoggingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_loggingEnabled{false};
 
@@ -209,6 +211,7 @@ class DisableLoggingResult {
   Aws::Vector<Aws::String> m_logExports;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loggingEnabledHasBeenSet = false;
   bool m_bucketNameHasBeenSet = false;
   bool m_s3KeyPrefixHasBeenSet = false;

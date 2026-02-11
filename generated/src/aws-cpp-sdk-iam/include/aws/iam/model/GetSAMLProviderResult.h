@@ -187,6 +187,8 @@ class GetSAMLProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sAMLProviderUUID;
 
@@ -203,6 +205,7 @@ class GetSAMLProviderResult {
   Aws::Vector<SAMLPrivateKey> m_privateKeyList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sAMLProviderUUIDHasBeenSet = false;
   bool m_sAMLMetadataDocumentHasBeenSet = false;
   bool m_createDateHasBeenSet = false;

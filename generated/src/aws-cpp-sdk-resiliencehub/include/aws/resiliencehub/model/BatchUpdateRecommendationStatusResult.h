@@ -114,6 +114,8 @@ class BatchUpdateRecommendationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -122,6 +124,7 @@ class BatchUpdateRecommendationStatusResult {
   Aws::Vector<BatchUpdateRecommendationStatusSuccessfulEntry> m_successfulEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appArnHasBeenSet = false;
   bool m_failedEntriesHasBeenSet = false;
   bool m_successfulEntriesHasBeenSet = false;

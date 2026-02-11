@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Instances")) {
     m_instances = jsonValue.GetInteger("Instances");

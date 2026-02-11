@@ -20,6 +20,7 @@ using namespace Aws;
 GetAuthorizationTokenResult::GetAuthorizationTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAuthorizationTokenResult& GetAuthorizationTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authorizationData")) {
     m_authorizationData = jsonValue.GetObject("authorizationData");

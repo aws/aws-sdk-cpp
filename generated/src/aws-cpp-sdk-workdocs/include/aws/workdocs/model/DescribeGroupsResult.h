@@ -83,12 +83,15 @@ class DescribeGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<GroupMetadata> m_groups;
 
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

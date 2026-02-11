@@ -93,12 +93,15 @@ class DescribeReservedElasticsearchInstancesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ReservedElasticsearchInstance> m_reservedElasticsearchInstances;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_reservedElasticsearchInstancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -22,6 +22,7 @@ ListWhatsAppTemplateLibraryResult::ListWhatsAppTemplateLibraryResult(const Aws::
 }
 
 ListWhatsAppTemplateLibraryResult& ListWhatsAppTemplateLibraryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metaLibraryTemplates")) {
     Aws::Utils::Array<JsonView> metaLibraryTemplatesJsonList = jsonValue.GetArray("metaLibraryTemplates");

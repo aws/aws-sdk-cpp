@@ -88,12 +88,15 @@ class BatchGetBuildsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Build> m_builds;
 
   Aws::Vector<Aws::String> m_buildsNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_buildsHasBeenSet = false;
   bool m_buildsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

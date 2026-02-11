@@ -90,6 +90,8 @@ class CreatePresignedNotebookUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_notebookUrl;
 
@@ -98,6 +100,7 @@ class CreatePresignedNotebookUrlResult {
   long long m_authTokenExpirationTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notebookUrlHasBeenSet = false;
   bool m_authTokenHasBeenSet = false;
   bool m_authTokenExpirationTimeHasBeenSet = false;

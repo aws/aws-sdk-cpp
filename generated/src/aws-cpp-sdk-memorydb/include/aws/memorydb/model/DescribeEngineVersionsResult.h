@@ -87,12 +87,15 @@ class DescribeEngineVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<EngineVersionInfo> m_engineVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_engineVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeScheduledAuditResult::DescribeScheduledAuditResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeScheduledAuditResult& DescribeScheduledAuditResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("frequency")) {
     m_frequency = AuditFrequencyMapper::GetAuditFrequencyForName(jsonValue.GetString("frequency"));

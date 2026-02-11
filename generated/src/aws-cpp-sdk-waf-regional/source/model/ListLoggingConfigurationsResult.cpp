@@ -20,6 +20,7 @@ using namespace Aws;
 ListLoggingConfigurationsResult::ListLoggingConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLoggingConfigurationsResult& ListLoggingConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LoggingConfigurations")) {
     Aws::Utils::Array<JsonView> loggingConfigurationsJsonList = jsonValue.GetArray("LoggingConfigurations");

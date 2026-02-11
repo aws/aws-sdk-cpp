@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFargateProfileResult::CreateFargateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFargateProfileResult& CreateFargateProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fargateProfile")) {
     m_fargateProfile = jsonValue.GetObject("fargateProfile");

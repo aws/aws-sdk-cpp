@@ -20,6 +20,7 @@ using namespace Aws;
 RetrieveTapeRecoveryPointResult::RetrieveTapeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RetrieveTapeRecoveryPointResult& RetrieveTapeRecoveryPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TapeARN")) {
     m_tapeARN = jsonValue.GetString("TapeARN");

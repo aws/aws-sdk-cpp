@@ -322,6 +322,8 @@ class CreateCloudWatchAlarmTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -358,6 +360,7 @@ class CreateCloudWatchAlarmTemplateResult {
   CloudWatchAlarmTemplateTreatMissingData m_treatMissingData{CloudWatchAlarmTemplateTreatMissingData::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_comparisonOperatorHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

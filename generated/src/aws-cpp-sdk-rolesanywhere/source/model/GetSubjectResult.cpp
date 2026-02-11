@@ -20,6 +20,7 @@ using namespace Aws;
 GetSubjectResult::GetSubjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSubjectResult& GetSubjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subject")) {
     m_subject = jsonValue.GetObject("subject");

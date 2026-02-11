@@ -20,6 +20,7 @@ using namespace Aws;
 GetDeviceInstanceResult::GetDeviceInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDeviceInstanceResult& GetDeviceInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deviceInstance")) {
     m_deviceInstance = jsonValue.GetObject("deviceInstance");

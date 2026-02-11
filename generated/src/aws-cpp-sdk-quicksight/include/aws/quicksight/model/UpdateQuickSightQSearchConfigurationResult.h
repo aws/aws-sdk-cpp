@@ -72,12 +72,15 @@ class UpdateQuickSightQSearchConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   QSearchStatus m_qSearchStatus{QSearchStatus::NOT_SET};
 
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_qSearchStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

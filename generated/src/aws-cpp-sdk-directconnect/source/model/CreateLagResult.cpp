@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLagResult::CreateLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLagResult& CreateLagResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectionsBandwidth")) {
     m_connectionsBandwidth = jsonValue.GetString("connectionsBandwidth");

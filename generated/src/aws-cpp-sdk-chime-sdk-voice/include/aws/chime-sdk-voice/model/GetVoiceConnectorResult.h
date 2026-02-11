@@ -58,10 +58,13 @@ class GetVoiceConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VoiceConnector m_voiceConnector;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_voiceConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

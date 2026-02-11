@@ -162,6 +162,8 @@ class CompareFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ComparedSourceImageFace m_sourceImageFace;
 
@@ -174,6 +176,7 @@ class CompareFacesResult {
   OrientationCorrection m_targetImageOrientationCorrection{OrientationCorrection::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceImageFaceHasBeenSet = false;
   bool m_faceMatchesHasBeenSet = false;
   bool m_unmatchedFacesHasBeenSet = false;

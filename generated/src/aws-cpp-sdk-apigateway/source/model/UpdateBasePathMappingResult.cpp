@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateBasePathMappingResult::UpdateBasePathMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateBasePathMappingResult& UpdateBasePathMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("basePath")) {
     m_basePath = jsonValue.GetString("basePath");

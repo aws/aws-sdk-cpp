@@ -22,6 +22,7 @@ CreateClusterSchedulerConfigResult::CreateClusterSchedulerConfigResult(const Aws
 }
 
 CreateClusterSchedulerConfigResult& CreateClusterSchedulerConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ClusterSchedulerConfigArn")) {
     m_clusterSchedulerConfigArn = jsonValue.GetString("ClusterSchedulerConfigArn");

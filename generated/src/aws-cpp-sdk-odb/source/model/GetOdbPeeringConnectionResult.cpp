@@ -20,6 +20,7 @@ using namespace Aws;
 GetOdbPeeringConnectionResult::GetOdbPeeringConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOdbPeeringConnectionResult& GetOdbPeeringConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("odbPeeringConnection")) {
     m_odbPeeringConnection = jsonValue.GetObject("odbPeeringConnection");

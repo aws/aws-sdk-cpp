@@ -99,6 +99,8 @@ class DescribeInsightRulesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -107,6 +109,7 @@ class DescribeInsightRulesResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_insightRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

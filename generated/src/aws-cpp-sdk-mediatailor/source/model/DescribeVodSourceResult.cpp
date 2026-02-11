@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeVodSourceResult::DescribeVodSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeVodSourceResult& DescribeVodSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AdBreakOpportunities")) {
     Aws::Utils::Array<JsonView> adBreakOpportunitiesJsonList = jsonValue.GetArray("AdBreakOpportunities");

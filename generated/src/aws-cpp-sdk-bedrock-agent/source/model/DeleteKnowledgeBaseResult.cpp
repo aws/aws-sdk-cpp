@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteKnowledgeBaseResult::DeleteKnowledgeBaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteKnowledgeBaseResult& DeleteKnowledgeBaseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("knowledgeBaseId")) {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");

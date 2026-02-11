@@ -20,6 +20,7 @@ using namespace Aws;
 GetAggregateResourceConfigResult::GetAggregateResourceConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAggregateResourceConfigResult& GetAggregateResourceConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationItem")) {
     m_configurationItem = jsonValue.GetObject("ConfigurationItem");

@@ -63,10 +63,13 @@ class GetTenantResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Tenant m_tenant;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tenantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

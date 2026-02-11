@@ -58,10 +58,13 @@ class UpdateSyncConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SyncConfiguration m_syncConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_syncConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -56,10 +56,13 @@ class FailoverDBClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DBCluster m_dBCluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

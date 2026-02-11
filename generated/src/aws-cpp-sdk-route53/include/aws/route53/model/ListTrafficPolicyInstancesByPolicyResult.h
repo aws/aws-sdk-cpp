@@ -171,6 +171,8 @@ class ListTrafficPolicyInstancesByPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TrafficPolicyInstance> m_trafficPolicyInstances;
 
@@ -185,6 +187,7 @@ class ListTrafficPolicyInstancesByPolicyResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trafficPolicyInstancesHasBeenSet = false;
   bool m_hostedZoneIdMarkerHasBeenSet = false;
   bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;

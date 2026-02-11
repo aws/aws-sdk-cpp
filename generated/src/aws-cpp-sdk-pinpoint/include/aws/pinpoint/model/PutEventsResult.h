@@ -56,10 +56,13 @@ class PutEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EventsResponse m_eventsResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

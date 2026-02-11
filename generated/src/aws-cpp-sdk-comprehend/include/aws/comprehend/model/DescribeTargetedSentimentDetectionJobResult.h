@@ -63,10 +63,13 @@ class DescribeTargetedSentimentDetectionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TargetedSentimentDetectionJobProperties m_targetedSentimentDetectionJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_targetedSentimentDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

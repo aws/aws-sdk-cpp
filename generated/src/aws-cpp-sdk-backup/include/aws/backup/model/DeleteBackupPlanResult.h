@@ -115,6 +115,8 @@ class DeleteBackupPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_backupPlanId;
 
@@ -125,6 +127,7 @@ class DeleteBackupPlanResult {
   Aws::String m_versionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupPlanIdHasBeenSet = false;
   bool m_backupPlanArnHasBeenSet = false;
   bool m_deletionDateHasBeenSet = false;

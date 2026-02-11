@@ -113,6 +113,8 @@ class ListSigningCertificatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SigningCertificate> m_certificates;
 
@@ -121,6 +123,7 @@ class ListSigningCertificatesResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificatesHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

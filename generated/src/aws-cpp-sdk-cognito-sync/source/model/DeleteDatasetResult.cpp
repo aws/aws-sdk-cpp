@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDatasetResult::DeleteDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDatasetResult& DeleteDatasetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Dataset")) {
     m_dataset = jsonValue.GetObject("Dataset");

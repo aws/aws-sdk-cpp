@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFrameworkResult::UpdateFrameworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFrameworkResult& UpdateFrameworkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FrameworkName")) {
     m_frameworkName = jsonValue.GetString("FrameworkName");

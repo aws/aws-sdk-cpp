@@ -20,6 +20,7 @@ using namespace Aws;
 SendBonusResult::SendBonusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendBonusResult& SendBonusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

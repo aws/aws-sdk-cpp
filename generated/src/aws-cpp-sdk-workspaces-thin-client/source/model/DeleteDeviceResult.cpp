@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDeviceResult::DeleteDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDeviceResult& DeleteDeviceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -88,12 +88,15 @@ class ListMigrationTaskUpdatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<MigrationTaskUpdate> m_migrationTaskUpdateList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_migrationTaskUpdateListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

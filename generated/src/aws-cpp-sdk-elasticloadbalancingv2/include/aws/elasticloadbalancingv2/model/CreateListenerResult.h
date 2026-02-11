@@ -65,10 +65,13 @@ class CreateListenerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Listener> m_listeners;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_listenersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

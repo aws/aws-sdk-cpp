@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTrustAnchorResult::CreateTrustAnchorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTrustAnchorResult& CreateTrustAnchorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("trustAnchor")) {
     m_trustAnchor = jsonValue.GetObject("trustAnchor");

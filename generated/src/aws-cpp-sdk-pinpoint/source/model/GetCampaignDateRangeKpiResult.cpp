@@ -20,6 +20,7 @@ using namespace Aws;
 GetCampaignDateRangeKpiResult::GetCampaignDateRangeKpiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCampaignDateRangeKpiResult& GetCampaignDateRangeKpiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_campaignDateRangeKpiResponse = jsonValue;
   m_campaignDateRangeKpiResponseHasBeenSet = true;

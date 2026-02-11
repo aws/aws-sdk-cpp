@@ -293,6 +293,8 @@ class DescribeComputeQuotaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_computeQuotaArn;
 
@@ -325,6 +327,7 @@ class DescribeComputeQuotaResult {
   UserContext m_lastModifiedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_computeQuotaArnHasBeenSet = false;
   bool m_computeQuotaIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;

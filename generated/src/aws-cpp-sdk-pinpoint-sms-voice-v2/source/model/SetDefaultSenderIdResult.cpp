@@ -20,6 +20,7 @@ using namespace Aws;
 SetDefaultSenderIdResult::SetDefaultSenderIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SetDefaultSenderIdResult& SetDefaultSenderIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationSetArn")) {
     m_configurationSetArn = jsonValue.GetString("ConfigurationSetArn");

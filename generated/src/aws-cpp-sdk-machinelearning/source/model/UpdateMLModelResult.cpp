@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMLModelResult::UpdateMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMLModelResult& UpdateMLModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MLModelId")) {
     m_mLModelId = jsonValue.GetString("MLModelId");

@@ -218,6 +218,8 @@ class DescribeFlowDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_flowDefinitionArn;
 
@@ -240,6 +242,7 @@ class DescribeFlowDefinitionResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowDefinitionArnHasBeenSet = false;
   bool m_flowDefinitionNameHasBeenSet = false;
   bool m_flowDefinitionStatusHasBeenSet = false;

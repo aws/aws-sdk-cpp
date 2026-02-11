@@ -20,6 +20,7 @@ using namespace Aws;
 GetCoverageStatisticsResult::GetCoverageStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCoverageStatisticsResult& GetCoverageStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("coverageStatistics")) {
     m_coverageStatistics = jsonValue.GetObject("coverageStatistics");

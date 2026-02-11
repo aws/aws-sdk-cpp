@@ -140,6 +140,8 @@ class GetPipelineStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pipelineName;
 
@@ -152,6 +154,7 @@ class GetPipelineStateResult {
   Aws::Utils::DateTime m_updated{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineVersionHasBeenSet = false;
   bool m_stageStatesHasBeenSet = false;

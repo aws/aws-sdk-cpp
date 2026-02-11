@@ -20,6 +20,7 @@ using namespace Aws;
 GetPendingJobExecutionsResult::GetPendingJobExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inProgressJobs")) {
     Aws::Utils::Array<JsonView> inProgressJobsJsonList = jsonValue.GetArray("inProgressJobs");

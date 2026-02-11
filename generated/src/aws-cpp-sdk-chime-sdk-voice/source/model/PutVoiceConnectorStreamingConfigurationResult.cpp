@@ -24,6 +24,7 @@ PutVoiceConnectorStreamingConfigurationResult::PutVoiceConnectorStreamingConfigu
 
 PutVoiceConnectorStreamingConfigurationResult& PutVoiceConnectorStreamingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamingConfiguration")) {
     m_streamingConfiguration = jsonValue.GetObject("StreamingConfiguration");

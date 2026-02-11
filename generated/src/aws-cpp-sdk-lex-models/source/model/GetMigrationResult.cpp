@@ -20,6 +20,7 @@ using namespace Aws;
 GetMigrationResult::GetMigrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMigrationResult& GetMigrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("migrationId")) {
     m_migrationId = jsonValue.GetString("migrationId");

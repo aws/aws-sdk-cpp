@@ -58,10 +58,13 @@ class GetPreparedStatementResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PreparedStatement m_preparedStatement;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_preparedStatementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

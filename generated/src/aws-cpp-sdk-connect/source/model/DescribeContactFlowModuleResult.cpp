@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeContactFlowModuleResult::DescribeContactFlowModuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeContactFlowModuleResult& DescribeContactFlowModuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactFlowModule")) {
     m_contactFlowModule = jsonValue.GetObject("ContactFlowModule");

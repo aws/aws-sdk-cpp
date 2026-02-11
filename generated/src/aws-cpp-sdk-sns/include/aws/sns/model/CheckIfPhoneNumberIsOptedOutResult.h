@@ -64,10 +64,13 @@ class CheckIfPhoneNumberIsOptedOutResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isOptedOut{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isOptedOutHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

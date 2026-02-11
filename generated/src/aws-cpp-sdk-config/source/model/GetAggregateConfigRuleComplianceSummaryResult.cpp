@@ -24,6 +24,7 @@ GetAggregateConfigRuleComplianceSummaryResult::GetAggregateConfigRuleComplianceS
 
 GetAggregateConfigRuleComplianceSummaryResult& GetAggregateConfigRuleComplianceSummaryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupByKey")) {
     m_groupByKey = jsonValue.GetString("GroupByKey");

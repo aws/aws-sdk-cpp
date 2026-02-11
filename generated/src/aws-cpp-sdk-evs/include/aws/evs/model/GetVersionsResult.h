@@ -90,12 +90,15 @@ class GetVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VcfVersionInfo> m_vcfVersions;
 
   Aws::Vector<InstanceTypeEsxVersionsInfo> m_instanceTypeEsxVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vcfVersionsHasBeenSet = false;
   bool m_instanceTypeEsxVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

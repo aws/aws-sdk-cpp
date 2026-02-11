@@ -20,6 +20,7 @@ using namespace Aws;
 AddPolicyGrantResult::AddPolicyGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddPolicyGrantResult& AddPolicyGrantResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("grantId")) {
     m_grantId = jsonValue.GetString("grantId");

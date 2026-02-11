@@ -20,6 +20,7 @@ using namespace Aws;
 StartDomainMaintenanceResult::StartDomainMaintenanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartDomainMaintenanceResult& StartDomainMaintenanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MaintenanceId")) {
     m_maintenanceId = jsonValue.GetString("MaintenanceId");

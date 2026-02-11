@@ -221,6 +221,8 @@ class DescribeFlowOperationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_firewallArn;
 
@@ -243,6 +245,7 @@ class DescribeFlowOperationResult {
   FlowOperation m_flowOperation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_vpcEndpointAssociationArnHasBeenSet = false;

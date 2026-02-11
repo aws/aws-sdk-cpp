@@ -24,6 +24,7 @@ ListComputationModelDataBindingUsagesResult::ListComputationModelDataBindingUsag
 
 ListComputationModelDataBindingUsagesResult& ListComputationModelDataBindingUsagesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataBindingUsageSummaries")) {
     Aws::Utils::Array<JsonView> dataBindingUsageSummariesJsonList = jsonValue.GetArray("dataBindingUsageSummaries");

@@ -114,6 +114,8 @@ class GetDataSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DataSourceType m_dataSourceType;
 
@@ -124,6 +126,7 @@ class GetDataSourceResult {
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

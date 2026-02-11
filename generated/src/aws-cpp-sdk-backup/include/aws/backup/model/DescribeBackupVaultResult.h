@@ -365,6 +365,8 @@ class DescribeBackupVaultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_backupVaultName;
 
@@ -401,6 +403,7 @@ class DescribeBackupVaultResult {
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_vaultTypeHasBeenSet = false;

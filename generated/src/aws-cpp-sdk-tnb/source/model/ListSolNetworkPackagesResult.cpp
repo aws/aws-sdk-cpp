@@ -20,6 +20,7 @@ using namespace Aws;
 ListSolNetworkPackagesResult::ListSolNetworkPackagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSolNetworkPackagesResult& ListSolNetworkPackagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("networkPackages")) {
     Aws::Utils::Array<JsonView> networkPackagesJsonList = jsonValue.GetArray("networkPackages");

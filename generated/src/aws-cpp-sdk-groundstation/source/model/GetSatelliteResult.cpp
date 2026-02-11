@@ -20,6 +20,7 @@ using namespace Aws;
 GetSatelliteResult::GetSatelliteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSatelliteResult& GetSatelliteResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("satelliteId")) {
     m_satelliteId = jsonValue.GetString("satelliteId");

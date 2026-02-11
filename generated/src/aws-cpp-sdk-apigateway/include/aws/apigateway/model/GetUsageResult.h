@@ -140,6 +140,8 @@ class GetUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_usagePlanId;
 
@@ -152,6 +154,7 @@ class GetUsageResult {
   Aws::Map<Aws::String, Aws::Vector<Aws::Vector<long long>>> m_items;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_usagePlanIdHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;

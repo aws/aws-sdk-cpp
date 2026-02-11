@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEdgeConfigurationResult::DeleteEdgeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEdgeConfigurationResult& DeleteEdgeConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

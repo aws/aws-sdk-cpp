@@ -129,6 +129,8 @@ class StartImportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_importId;
 
@@ -141,6 +143,7 @@ class StartImportResult {
   Aws::Utils::DateTime m_creationDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_importIdHasBeenSet = false;
   bool m_resourceSpecificationHasBeenSet = false;
   bool m_mergeStrategyHasBeenSet = false;

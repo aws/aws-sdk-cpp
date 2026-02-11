@@ -20,6 +20,7 @@ using namespace Aws;
 SearchQuantumTasksResult::SearchQuantumTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchQuantumTasksResult& SearchQuantumTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("quantumTasks")) {
     Aws::Utils::Array<JsonView> quantumTasksJsonList = jsonValue.GetArray("quantumTasks");

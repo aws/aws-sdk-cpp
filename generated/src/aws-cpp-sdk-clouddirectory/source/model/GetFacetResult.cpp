@@ -20,6 +20,7 @@ using namespace Aws;
 GetFacetResult::GetFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFacetResult& GetFacetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Facet")) {
     m_facet = jsonValue.GetObject("Facet");

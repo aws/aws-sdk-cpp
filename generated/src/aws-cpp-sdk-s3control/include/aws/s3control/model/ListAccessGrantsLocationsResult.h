@@ -104,6 +104,8 @@ class ListAccessGrantsLocationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -112,6 +114,7 @@ class ListAccessGrantsLocationsResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_accessGrantsLocationsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

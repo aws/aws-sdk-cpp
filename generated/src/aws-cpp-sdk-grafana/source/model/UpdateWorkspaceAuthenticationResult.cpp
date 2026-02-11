@@ -22,6 +22,7 @@ UpdateWorkspaceAuthenticationResult::UpdateWorkspaceAuthenticationResult(const A
 }
 
 UpdateWorkspaceAuthenticationResult& UpdateWorkspaceAuthenticationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authentication")) {
     m_authentication = jsonValue.GetObject("authentication");

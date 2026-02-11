@@ -70,10 +70,13 @@ class ListAutomaticTapeCreationPoliciesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AutomaticTapeCreationPolicyInfo> m_automaticTapeCreationPolicyInfos;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_automaticTapeCreationPolicyInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

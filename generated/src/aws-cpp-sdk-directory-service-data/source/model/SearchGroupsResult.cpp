@@ -20,6 +20,7 @@ using namespace Aws;
 SearchGroupsResult::SearchGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchGroupsResult& SearchGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DirectoryId")) {
     m_directoryId = jsonValue.GetString("DirectoryId");

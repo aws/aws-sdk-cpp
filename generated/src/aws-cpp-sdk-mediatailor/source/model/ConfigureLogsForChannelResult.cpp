@@ -20,6 +20,7 @@ using namespace Aws;
 ConfigureLogsForChannelResult::ConfigureLogsForChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ConfigureLogsForChannelResult& ConfigureLogsForChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelName")) {
     m_channelName = jsonValue.GetString("ChannelName");

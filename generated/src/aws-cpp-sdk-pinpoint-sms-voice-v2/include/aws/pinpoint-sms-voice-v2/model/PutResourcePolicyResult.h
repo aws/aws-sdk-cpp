@@ -94,6 +94,8 @@ class PutResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -102,6 +104,7 @@ class PutResourcePolicyResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_policyHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;

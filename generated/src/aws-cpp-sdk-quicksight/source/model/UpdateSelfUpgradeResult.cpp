@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSelfUpgradeResult::UpdateSelfUpgradeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSelfUpgradeResult& UpdateSelfUpgradeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SelfUpgradeRequestDetail")) {
     m_selfUpgradeRequestDetail = jsonValue.GetObject("SelfUpgradeRequestDetail");

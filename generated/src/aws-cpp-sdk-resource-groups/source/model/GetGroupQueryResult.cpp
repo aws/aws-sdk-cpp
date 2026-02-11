@@ -20,6 +20,7 @@ using namespace Aws;
 GetGroupQueryResult::GetGroupQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGroupQueryResult& GetGroupQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupQuery")) {
     m_groupQuery = jsonValue.GetObject("GroupQuery");

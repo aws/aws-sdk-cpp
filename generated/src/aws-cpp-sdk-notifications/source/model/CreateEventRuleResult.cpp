@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEventRuleResult::CreateEventRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEventRuleResult& CreateEventRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");

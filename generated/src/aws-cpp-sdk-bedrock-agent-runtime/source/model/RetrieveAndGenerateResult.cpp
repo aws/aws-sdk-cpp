@@ -20,6 +20,7 @@ using namespace Aws;
 RetrieveAndGenerateResult::RetrieveAndGenerateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RetrieveAndGenerateResult& RetrieveAndGenerateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("citations")) {
     Aws::Utils::Array<JsonView> citationsJsonList = jsonValue.GetArray("citations");

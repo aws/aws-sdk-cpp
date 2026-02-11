@@ -59,10 +59,13 @@ class GetCollaborationAnalysisTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CollaborationAnalysisTemplate m_collaborationAnalysisTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_collaborationAnalysisTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -142,6 +142,8 @@ class DeriveSharedSecretResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -154,6 +156,7 @@ class DeriveSharedSecretResult {
   OriginType m_keyOrigin{OriginType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_sharedSecretHasBeenSet = false;
   bool m_ciphertextForRecipientHasBeenSet = false;

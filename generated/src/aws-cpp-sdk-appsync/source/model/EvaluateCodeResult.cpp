@@ -20,6 +20,7 @@ using namespace Aws;
 EvaluateCodeResult::EvaluateCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EvaluateCodeResult& EvaluateCodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("evaluationResult")) {
     m_evaluationResult = jsonValue.GetString("evaluationResult");

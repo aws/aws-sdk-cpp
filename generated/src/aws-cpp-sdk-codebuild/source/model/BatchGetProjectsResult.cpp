@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetProjectsResult::BatchGetProjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetProjectsResult& BatchGetProjectsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("projects")) {
     Aws::Utils::Array<JsonView> projectsJsonList = jsonValue.GetArray("projects");

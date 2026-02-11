@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePolicyResult::CreatePolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreatePolicyResult& CreatePolicyResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

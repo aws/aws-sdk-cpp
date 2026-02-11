@@ -58,10 +58,13 @@ class DescribeAlarmResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Alarm m_alarm;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_alarmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

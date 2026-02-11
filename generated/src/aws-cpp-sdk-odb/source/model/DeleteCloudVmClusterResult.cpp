@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCloudVmClusterResult::DeleteCloudVmClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCloudVmClusterResult& DeleteCloudVmClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

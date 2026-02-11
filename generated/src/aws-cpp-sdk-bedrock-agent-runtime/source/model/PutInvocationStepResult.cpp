@@ -20,6 +20,7 @@ using namespace Aws;
 PutInvocationStepResult::PutInvocationStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutInvocationStepResult& PutInvocationStepResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("invocationStepId")) {
     m_invocationStepId = jsonValue.GetString("invocationStepId");

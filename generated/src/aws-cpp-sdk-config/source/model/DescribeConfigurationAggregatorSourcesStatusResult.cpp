@@ -24,6 +24,7 @@ DescribeConfigurationAggregatorSourcesStatusResult::DescribeConfigurationAggrega
 
 DescribeConfigurationAggregatorSourcesStatusResult& DescribeConfigurationAggregatorSourcesStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AggregatedSourceStatusList")) {
     Aws::Utils::Array<JsonView> aggregatedSourceStatusListJsonList = jsonValue.GetArray("AggregatedSourceStatusList");

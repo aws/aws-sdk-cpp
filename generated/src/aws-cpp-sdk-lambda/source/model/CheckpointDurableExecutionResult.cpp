@@ -20,6 +20,7 @@ using namespace Aws;
 CheckpointDurableExecutionResult::CheckpointDurableExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckpointDurableExecutionResult& CheckpointDurableExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CheckpointToken")) {
     m_checkpointToken = jsonValue.GetString("CheckpointToken");

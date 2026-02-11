@@ -105,6 +105,8 @@ class DescribeComputationModelExecutionSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_computationModelId;
 
@@ -113,6 +115,7 @@ class DescribeComputationModelExecutionSummaryResult {
   Aws::Map<Aws::String, Aws::String> m_computationModelExecutionSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_computationModelIdHasBeenSet = false;
   bool m_resolveToHasBeenSet = false;
   bool m_computationModelExecutionSummaryHasBeenSet = false;

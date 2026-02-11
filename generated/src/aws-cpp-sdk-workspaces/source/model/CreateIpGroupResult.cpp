@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIpGroupResult::CreateIpGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIpGroupResult& CreateIpGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");

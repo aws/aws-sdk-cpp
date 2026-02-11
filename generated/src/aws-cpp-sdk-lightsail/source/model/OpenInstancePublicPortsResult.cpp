@@ -20,6 +20,7 @@ using namespace Aws;
 OpenInstancePublicPortsResult::OpenInstancePublicPortsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 OpenInstancePublicPortsResult& OpenInstancePublicPortsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("operation")) {
     m_operation = jsonValue.GetObject("operation");

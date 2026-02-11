@@ -111,6 +111,8 @@ class LookupDeveloperIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityId;
 
@@ -119,6 +121,7 @@ class LookupDeveloperIdentityResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityIdHasBeenSet = false;
   bool m_developerUserIdentifierListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

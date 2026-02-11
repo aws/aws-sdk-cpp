@@ -175,6 +175,8 @@ class UpdateImageSetMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datastoreId;
 
@@ -193,6 +195,7 @@ class UpdateImageSetMetadataResult {
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_imageSetIdHasBeenSet = false;
   bool m_latestVersionIdHasBeenSet = false;

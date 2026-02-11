@@ -20,6 +20,7 @@ using namespace Aws;
 GetMLDataProcessingJobResult::GetMLDataProcessingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMLDataProcessingJobResult& GetMLDataProcessingJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");

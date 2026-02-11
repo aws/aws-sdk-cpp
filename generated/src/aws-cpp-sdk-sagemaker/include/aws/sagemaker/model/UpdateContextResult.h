@@ -57,10 +57,13 @@ class UpdateContextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contextArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contextArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

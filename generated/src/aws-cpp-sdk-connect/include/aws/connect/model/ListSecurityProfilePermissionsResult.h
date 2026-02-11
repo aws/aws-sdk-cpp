@@ -120,6 +120,8 @@ class ListSecurityProfilePermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_permissions;
 
@@ -130,6 +132,7 @@ class ListSecurityProfilePermissionsResult {
   Aws::String m_lastModifiedRegion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_permissionsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

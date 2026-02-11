@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateFirewallPolicyResult::AssociateFirewallPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateFirewallPolicyResult& AssociateFirewallPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallArn")) {
     m_firewallArn = jsonValue.GetString("FirewallArn");

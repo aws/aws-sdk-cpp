@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDatasetGroupResult::DescribeDatasetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDatasetGroupResult& DescribeDatasetGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datasetGroup")) {
     m_datasetGroup = jsonValue.GetObject("datasetGroup");

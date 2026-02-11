@@ -20,6 +20,7 @@ using namespace Aws;
 PutRoutingRuleResult::PutRoutingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRoutingRuleResult& PutRoutingRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actions")) {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");

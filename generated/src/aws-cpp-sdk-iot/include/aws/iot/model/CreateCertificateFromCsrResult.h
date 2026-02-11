@@ -99,6 +99,8 @@ class CreateCertificateFromCsrResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_certificateArn;
 
@@ -107,6 +109,7 @@ class CreateCertificateFromCsrResult {
   Aws::String m_certificatePem;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificateArnHasBeenSet = false;
   bool m_certificateIdHasBeenSet = false;
   bool m_certificatePemHasBeenSet = false;

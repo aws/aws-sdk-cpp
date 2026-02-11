@@ -20,6 +20,7 @@ using namespace Aws;
 RebootDbClusterResult::RebootDbClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RebootDbClusterResult& RebootDbClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dbClusterStatus")) {
     m_dbClusterStatus = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("dbClusterStatus"));

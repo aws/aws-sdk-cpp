@@ -160,6 +160,8 @@ class GetApplicationVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_applicationVersion{0};
 
@@ -176,6 +178,7 @@ class GetApplicationVersionResult {
   Aws::String m_statusReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationVersionHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_definitionContentHasBeenSet = false;

@@ -58,10 +58,13 @@ class CreateRoomResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Room m_room;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_roomHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

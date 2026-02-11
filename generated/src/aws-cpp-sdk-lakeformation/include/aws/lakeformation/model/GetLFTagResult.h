@@ -101,6 +101,8 @@ class GetLFTagResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_catalogId;
 
@@ -109,6 +111,7 @@ class GetLFTagResult {
   Aws::Vector<Aws::String> m_tagValues;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_catalogIdHasBeenSet = false;
   bool m_tagKeyHasBeenSet = false;
   bool m_tagValuesHasBeenSet = false;

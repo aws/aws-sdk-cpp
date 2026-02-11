@@ -175,6 +175,8 @@ class CreateHostedConfigurationVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -193,6 +195,7 @@ class CreateHostedConfigurationVersionResult {
   Aws::String m_kmsKeyArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_configurationProfileIdHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;

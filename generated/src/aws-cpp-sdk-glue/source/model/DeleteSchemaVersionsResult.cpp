@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSchemaVersionsResult::DeleteSchemaVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSchemaVersionsResult& DeleteSchemaVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SchemaVersionErrors")) {
     Aws::Utils::Array<JsonView> schemaVersionErrorsJsonList = jsonValue.GetArray("SchemaVersionErrors");

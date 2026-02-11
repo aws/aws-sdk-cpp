@@ -75,12 +75,15 @@ class DeleteSigningConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryId;
 
   SigningConfiguration m_signingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_signingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

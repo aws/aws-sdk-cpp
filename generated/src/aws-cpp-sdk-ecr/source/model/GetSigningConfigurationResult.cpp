@@ -20,6 +20,7 @@ using namespace Aws;
 GetSigningConfigurationResult::GetSigningConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSigningConfigurationResult& GetSigningConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");

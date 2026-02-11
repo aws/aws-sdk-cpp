@@ -73,12 +73,15 @@ class DeleteFlowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_flowArn;
 
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

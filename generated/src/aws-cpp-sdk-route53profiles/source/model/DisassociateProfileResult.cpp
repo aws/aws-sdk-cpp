@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateProfileResult::DisassociateProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateProfileResult& DisassociateProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileAssociation")) {
     m_profileAssociation = jsonValue.GetObject("ProfileAssociation");

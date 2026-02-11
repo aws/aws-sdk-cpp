@@ -72,12 +72,15 @@ class CancelMessageMoveTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_approximateNumberOfMessagesMoved{0};
 
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_approximateNumberOfMessagesMovedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

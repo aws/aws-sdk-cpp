@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSignalingChannelResult::DescribeSignalingChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSignalingChannelResult& DescribeSignalingChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelInfo")) {
     m_channelInfo = jsonValue.GetObject("ChannelInfo");

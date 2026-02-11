@@ -116,6 +116,8 @@ class DescribeCacheParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
@@ -124,6 +126,7 @@ class DescribeCacheParametersResult {
   Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_cacheNodeTypeSpecificParametersHasBeenSet = false;

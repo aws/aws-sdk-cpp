@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteCallAnalyticsJobResult::DeleteCallAnalyticsJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteCallAnalyticsJobResult& DeleteCallAnalyticsJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

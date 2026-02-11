@@ -20,6 +20,7 @@ using namespace Aws;
 ListOperationEventsResult::ListOperationEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListOperationEventsResult& ListOperationEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OperationEvents")) {
     Aws::Utils::Array<JsonView> operationEventsJsonList = jsonValue.GetArray("OperationEvents");

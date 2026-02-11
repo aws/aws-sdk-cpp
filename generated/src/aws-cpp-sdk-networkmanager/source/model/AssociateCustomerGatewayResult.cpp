@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateCustomerGatewayResult::AssociateCustomerGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateCustomerGatewayResult& AssociateCustomerGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomerGatewayAssociation")) {
     m_customerGatewayAssociation = jsonValue.GetObject("CustomerGatewayAssociation");

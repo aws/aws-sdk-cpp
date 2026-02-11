@@ -110,6 +110,8 @@ class TestIdentityProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_response;
 
@@ -120,6 +122,7 @@ class TestIdentityProviderResult {
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_responseHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;

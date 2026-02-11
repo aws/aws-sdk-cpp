@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgentVersionResult::GetAgentVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgentVersionResult& GetAgentVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentVersion")) {
     m_agentVersion = jsonValue.GetObject("agentVersion");

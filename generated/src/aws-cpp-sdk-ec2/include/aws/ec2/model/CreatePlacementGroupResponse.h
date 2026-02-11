@@ -58,10 +58,13 @@ class CreatePlacementGroupResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PlacementGroup m_placementGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_placementGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

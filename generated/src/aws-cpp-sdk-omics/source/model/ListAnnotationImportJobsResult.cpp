@@ -20,6 +20,7 @@ using namespace Aws;
 ListAnnotationImportJobsResult::ListAnnotationImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAnnotationImportJobsResult& ListAnnotationImportJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("annotationImportJobs")) {
     Aws::Utils::Array<JsonView> annotationImportJobsJsonList = jsonValue.GetArray("annotationImportJobs");

@@ -20,6 +20,7 @@ using namespace Aws;
 TerminateRecoveryInstancesResult::TerminateRecoveryInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TerminateRecoveryInstancesResult& TerminateRecoveryInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("job")) {
     m_job = jsonValue.GetObject("job");

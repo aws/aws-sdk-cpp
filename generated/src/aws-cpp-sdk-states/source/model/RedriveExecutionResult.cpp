@@ -20,6 +20,7 @@ using namespace Aws;
 RedriveExecutionResult::RedriveExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RedriveExecutionResult& RedriveExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("redriveDate")) {
     m_redriveDate = jsonValue.GetDouble("redriveDate");

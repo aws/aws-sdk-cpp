@@ -23,6 +23,7 @@ PutProvisionedConcurrencyConfigResult::PutProvisionedConcurrencyConfigResult(con
 
 PutProvisionedConcurrencyConfigResult& PutProvisionedConcurrencyConfigResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RequestedProvisionedConcurrentExecutions")) {
     m_requestedProvisionedConcurrentExecutions = jsonValue.GetInteger("RequestedProvisionedConcurrentExecutions");

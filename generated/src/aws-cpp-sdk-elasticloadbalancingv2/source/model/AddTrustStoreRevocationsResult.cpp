@@ -20,6 +20,7 @@ using namespace Aws;
 AddTrustStoreRevocationsResult::AddTrustStoreRevocationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 AddTrustStoreRevocationsResult& AddTrustStoreRevocationsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

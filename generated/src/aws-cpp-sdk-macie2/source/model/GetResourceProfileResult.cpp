@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceProfileResult::GetResourceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceProfileResult& GetResourceProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("profileUpdatedAt")) {
     m_profileUpdatedAt = jsonValue.GetString("profileUpdatedAt");

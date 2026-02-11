@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteBuildsResult::BatchDeleteBuildsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteBuildsResult& BatchDeleteBuildsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("buildsDeleted")) {
     Aws::Utils::Array<JsonView> buildsDeletedJsonList = jsonValue.GetArray("buildsDeleted");

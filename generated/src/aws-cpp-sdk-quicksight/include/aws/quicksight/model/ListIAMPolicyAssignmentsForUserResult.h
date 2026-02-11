@@ -99,6 +99,8 @@ class ListIAMPolicyAssignmentsForUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ActiveIAMPolicyAssignment> m_activeAssignments;
 
@@ -107,6 +109,7 @@ class ListIAMPolicyAssignmentsForUserResult {
   Aws::String m_nextToken;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activeAssignmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

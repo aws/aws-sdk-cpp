@@ -20,6 +20,7 @@ using namespace Aws;
 AddNotificationChannelsResult::AddNotificationChannelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddNotificationChannelsResult& AddNotificationChannelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("notificationConfiguration")) {
     m_notificationConfiguration = jsonValue.GetObject("notificationConfiguration");

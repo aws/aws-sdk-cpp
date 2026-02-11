@@ -134,6 +134,8 @@ class CreateSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
 
@@ -146,6 +148,7 @@ class CreateSessionResult {
   SessionCredentials m_credentials;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serverSideEncryptionHasBeenSet = false;
   bool m_sSEKMSKeyIdHasBeenSet = false;
   bool m_sSEKMSEncryptionContextHasBeenSet = false;

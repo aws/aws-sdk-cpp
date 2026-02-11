@@ -20,6 +20,7 @@ using namespace Aws;
 GetInstancesHealthStatusResult::GetInstancesHealthStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInstancesHealthStatusResult& GetInstancesHealthStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     Aws::Map<Aws::String, JsonView> statusJsonMap = jsonValue.GetObject("Status").GetAllObjects();

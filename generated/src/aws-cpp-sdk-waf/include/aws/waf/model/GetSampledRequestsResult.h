@@ -106,6 +106,8 @@ class GetSampledRequestsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SampledHTTPRequest> m_sampledRequests;
 
@@ -114,6 +116,7 @@ class GetSampledRequestsResult {
   TimeWindow m_timeWindow;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sampledRequestsHasBeenSet = false;
   bool m_populationSizeHasBeenSet = false;
   bool m_timeWindowHasBeenSet = false;

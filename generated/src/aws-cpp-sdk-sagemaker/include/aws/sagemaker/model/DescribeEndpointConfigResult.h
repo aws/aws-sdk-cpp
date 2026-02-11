@@ -284,6 +284,8 @@ class DescribeEndpointConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_endpointConfigName;
 
@@ -312,6 +314,7 @@ class DescribeEndpointConfigResult {
   MetricsConfig m_metricsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointConfigNameHasBeenSet = false;
   bool m_endpointConfigArnHasBeenSet = false;
   bool m_productionVariantsHasBeenSet = false;

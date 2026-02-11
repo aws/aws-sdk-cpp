@@ -135,6 +135,8 @@ class GetQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
 
@@ -147,6 +149,7 @@ class GetQueryResultsResult {
   Aws::String m_errorMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queryStatusHasBeenSet = false;
   bool m_queryStatisticsHasBeenSet = false;
   bool m_queryResultRowsHasBeenSet = false;

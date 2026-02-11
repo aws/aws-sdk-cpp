@@ -20,6 +20,7 @@ using namespace Aws;
 MergePullRequestBySquashResult::MergePullRequestBySquashResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 MergePullRequestBySquashResult& MergePullRequestBySquashResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullRequest")) {
     m_pullRequest = jsonValue.GetObject("pullRequest");

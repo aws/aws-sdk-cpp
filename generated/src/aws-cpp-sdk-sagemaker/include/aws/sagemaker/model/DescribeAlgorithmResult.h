@@ -231,6 +231,8 @@ class DescribeAlgorithmResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_algorithmName;
 
@@ -255,6 +257,7 @@ class DescribeAlgorithmResult {
   bool m_certifyForMarketplace{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_algorithmNameHasBeenSet = false;
   bool m_algorithmArnHasBeenSet = false;
   bool m_algorithmDescriptionHasBeenSet = false;

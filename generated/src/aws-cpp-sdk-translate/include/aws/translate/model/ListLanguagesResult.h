@@ -99,6 +99,8 @@ class ListLanguagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Language> m_languages;
 
@@ -107,6 +109,7 @@ class ListLanguagesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_languagesHasBeenSet = false;
   bool m_displayLanguageCodeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

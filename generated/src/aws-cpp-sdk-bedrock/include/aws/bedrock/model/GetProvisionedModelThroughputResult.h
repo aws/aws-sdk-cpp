@@ -265,6 +265,8 @@ class GetProvisionedModelThroughputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_modelUnits{0};
 
@@ -293,6 +295,7 @@ class GetProvisionedModelThroughputResult {
   Aws::Utils::DateTime m_commitmentExpirationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelUnitsHasBeenSet = false;
   bool m_desiredModelUnitsHasBeenSet = false;
   bool m_provisionedModelNameHasBeenSet = false;

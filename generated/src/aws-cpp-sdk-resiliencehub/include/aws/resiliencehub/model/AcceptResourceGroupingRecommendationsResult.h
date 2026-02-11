@@ -90,12 +90,15 @@ class AcceptResourceGroupingRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appArn;
 
   Aws::Vector<FailedGroupingRecommendationEntry> m_failedEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appArnHasBeenSet = false;
   bool m_failedEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

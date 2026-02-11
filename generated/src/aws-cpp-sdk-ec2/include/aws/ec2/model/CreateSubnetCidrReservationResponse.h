@@ -58,10 +58,13 @@ class CreateSubnetCidrReservationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SubnetCidrReservation m_subnetCidrReservation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subnetCidrReservationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

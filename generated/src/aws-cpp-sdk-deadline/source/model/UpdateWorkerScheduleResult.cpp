@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateWorkerScheduleResult::UpdateWorkerScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateWorkerScheduleResult& UpdateWorkerScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assignedSessions")) {
     Aws::Map<Aws::String, JsonView> assignedSessionsJsonMap = jsonValue.GetObject("assignedSessions").GetAllObjects();

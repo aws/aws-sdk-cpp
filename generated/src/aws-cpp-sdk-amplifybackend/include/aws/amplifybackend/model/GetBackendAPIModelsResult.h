@@ -91,6 +91,8 @@ class GetBackendAPIModelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_models;
 
@@ -99,6 +101,7 @@ class GetBackendAPIModelsResult {
   Aws::String m_modelIntrospectionSchema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_modelIntrospectionSchemaHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetChangeTokenStatusResult::GetChangeTokenStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetChangeTokenStatusResult& GetChangeTokenStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeTokenStatus")) {
     m_changeTokenStatus = ChangeTokenStatusMapper::GetChangeTokenStatusForName(jsonValue.GetString("ChangeTokenStatus"));

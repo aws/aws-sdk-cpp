@@ -140,6 +140,8 @@ class AssumeRoleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Credentials m_credentials;
 
@@ -150,6 +152,7 @@ class AssumeRoleResult {
   Aws::String m_sourceIdentity;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_assumedRoleUserHasBeenSet = false;
   bool m_packedPolicySizeHasBeenSet = false;

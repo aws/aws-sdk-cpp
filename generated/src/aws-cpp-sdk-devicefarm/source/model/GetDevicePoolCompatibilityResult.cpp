@@ -20,6 +20,7 @@ using namespace Aws;
 GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("compatibleDevices")) {
     Aws::Utils::Array<JsonView> compatibleDevicesJsonList = jsonValue.GetArray("compatibleDevices");

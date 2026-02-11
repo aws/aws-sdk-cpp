@@ -376,6 +376,8 @@ class DescribeCompilationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_compilationJobName;
 
@@ -414,6 +416,7 @@ class DescribeCompilationJobResult {
   DerivedInformation m_derivedInformation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_compilationJobNameHasBeenSet = false;
   bool m_compilationJobArnHasBeenSet = false;
   bool m_compilationJobStatusHasBeenSet = false;

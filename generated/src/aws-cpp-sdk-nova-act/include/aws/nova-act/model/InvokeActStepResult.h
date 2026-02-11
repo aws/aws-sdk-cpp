@@ -82,12 +82,15 @@ class InvokeActStepResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Call> m_calls;
 
   Aws::String m_stepId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_callsHasBeenSet = false;
   bool m_stepIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

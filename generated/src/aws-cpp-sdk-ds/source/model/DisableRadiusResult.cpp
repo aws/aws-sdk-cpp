@@ -20,6 +20,7 @@ using namespace Aws;
 DisableRadiusResult::DisableRadiusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisableRadiusResult& DisableRadiusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

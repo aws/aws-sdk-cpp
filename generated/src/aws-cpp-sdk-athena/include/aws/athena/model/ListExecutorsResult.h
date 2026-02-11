@@ -102,6 +102,8 @@ class ListExecutorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -110,6 +112,7 @@ class ListExecutorsResult {
   Aws::Vector<ExecutorsSummary> m_executorsSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_executorsSummaryHasBeenSet = false;

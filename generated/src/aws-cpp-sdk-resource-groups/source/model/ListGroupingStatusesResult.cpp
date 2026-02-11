@@ -20,6 +20,7 @@ using namespace Aws;
 ListGroupingStatusesResult::ListGroupingStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListGroupingStatusesResult& ListGroupingStatusesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Group")) {
     m_group = jsonValue.GetString("Group");

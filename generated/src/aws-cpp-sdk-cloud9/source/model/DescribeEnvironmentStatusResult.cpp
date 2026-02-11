@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEnvironmentStatusResult::DescribeEnvironmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEnvironmentStatusResult& DescribeEnvironmentStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(jsonValue.GetString("status"));

@@ -23,6 +23,7 @@ DescribeRegistrationAttachmentsResult::DescribeRegistrationAttachmentsResult(con
 
 DescribeRegistrationAttachmentsResult& DescribeRegistrationAttachmentsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegistrationAttachments")) {
     Aws::Utils::Array<JsonView> registrationAttachmentsJsonList = jsonValue.GetArray("RegistrationAttachments");

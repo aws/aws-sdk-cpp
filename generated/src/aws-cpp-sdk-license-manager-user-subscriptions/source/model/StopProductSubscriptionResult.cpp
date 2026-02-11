@@ -20,6 +20,7 @@ using namespace Aws;
 StopProductSubscriptionResult::StopProductSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopProductSubscriptionResult& StopProductSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProductUserSummary")) {
     m_productUserSummary = jsonValue.GetObject("ProductUserSummary");

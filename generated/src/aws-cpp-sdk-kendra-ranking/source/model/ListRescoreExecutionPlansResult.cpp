@@ -20,6 +20,7 @@ using namespace Aws;
 ListRescoreExecutionPlansResult::ListRescoreExecutionPlansResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRescoreExecutionPlansResult& ListRescoreExecutionPlansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SummaryItems")) {
     Aws::Utils::Array<JsonView> summaryItemsJsonList = jsonValue.GetArray("SummaryItems");

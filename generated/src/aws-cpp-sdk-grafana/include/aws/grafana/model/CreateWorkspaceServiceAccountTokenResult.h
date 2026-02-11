@@ -94,6 +94,8 @@ class CreateWorkspaceServiceAccountTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceAccountTokenSummaryWithKey m_serviceAccountToken;
 
@@ -103,6 +105,7 @@ class CreateWorkspaceServiceAccountTokenResult {
 
   Aws::String m_requestId;
   bool m_serviceAccountTokenHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceAccountIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEndpointResult::CreateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEndpointResult& CreateEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EndpointArn")) {
     m_endpointArn = jsonValue.GetString("EndpointArn");

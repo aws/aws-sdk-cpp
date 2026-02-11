@@ -22,6 +22,7 @@ ListProvisionedProductPlansResult::ListProvisionedProductPlansResult(const Aws::
 }
 
 ListProvisionedProductPlansResult& ListProvisionedProductPlansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProvisionedProductPlans")) {
     Aws::Utils::Array<JsonView> provisionedProductPlansJsonList = jsonValue.GetArray("ProvisionedProductPlans");

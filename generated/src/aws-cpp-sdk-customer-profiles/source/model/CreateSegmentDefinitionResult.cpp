@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSegmentDefinitionResult::CreateSegmentDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSegmentDefinitionResult& CreateSegmentDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SegmentDefinitionName")) {
     m_segmentDefinitionName = jsonValue.GetString("SegmentDefinitionName");

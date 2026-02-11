@@ -99,6 +99,8 @@ class ListDashboardVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DashboardVersionSummary> m_dashboardVersionSummaryList;
 
@@ -107,6 +109,7 @@ class ListDashboardVersionsResult {
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dashboardVersionSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;

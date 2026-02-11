@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateTrackerResult::UpdateTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateTrackerResult& UpdateTrackerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrackerName")) {
     m_trackerName = jsonValue.GetString("TrackerName");

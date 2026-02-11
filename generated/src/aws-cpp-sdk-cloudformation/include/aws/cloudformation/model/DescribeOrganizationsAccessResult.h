@@ -57,10 +57,13 @@ class DescribeOrganizationsAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OrganizationStatus m_status{OrganizationStatus::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

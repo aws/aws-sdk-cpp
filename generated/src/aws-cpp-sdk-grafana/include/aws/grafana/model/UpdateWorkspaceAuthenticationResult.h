@@ -60,10 +60,13 @@ class UpdateWorkspaceAuthenticationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AuthenticationDescription m_authentication;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_authenticationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

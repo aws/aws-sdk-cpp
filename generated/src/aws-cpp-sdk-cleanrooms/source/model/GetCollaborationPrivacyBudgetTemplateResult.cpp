@@ -24,6 +24,7 @@ GetCollaborationPrivacyBudgetTemplateResult::GetCollaborationPrivacyBudgetTempla
 
 GetCollaborationPrivacyBudgetTemplateResult& GetCollaborationPrivacyBudgetTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaborationPrivacyBudgetTemplate")) {
     m_collaborationPrivacyBudgetTemplate = jsonValue.GetObject("collaborationPrivacyBudgetTemplate");

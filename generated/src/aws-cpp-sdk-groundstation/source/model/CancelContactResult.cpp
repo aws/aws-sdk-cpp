@@ -20,6 +20,7 @@ using namespace Aws;
 CancelContactResult::CancelContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelContactResult& CancelContactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("contactId")) {
     m_contactId = jsonValue.GetString("contactId");

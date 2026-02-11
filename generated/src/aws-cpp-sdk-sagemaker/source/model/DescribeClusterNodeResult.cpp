@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeClusterNodeResult::DescribeClusterNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeClusterNodeResult& DescribeClusterNodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NodeDetails")) {
     m_nodeDetails = jsonValue.GetObject("NodeDetails");

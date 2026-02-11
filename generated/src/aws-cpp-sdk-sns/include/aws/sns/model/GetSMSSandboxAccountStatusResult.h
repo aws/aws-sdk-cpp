@@ -56,10 +56,13 @@ class GetSMSSandboxAccountStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isInSandbox{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isInSandboxHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

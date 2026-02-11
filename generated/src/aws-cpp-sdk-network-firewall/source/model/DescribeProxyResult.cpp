@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeProxyResult::DescribeProxyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeProxyResult& DescribeProxyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Proxy")) {
     m_proxy = jsonValue.GetObject("Proxy");

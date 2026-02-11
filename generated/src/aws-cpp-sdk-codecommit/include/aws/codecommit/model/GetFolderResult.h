@@ -191,6 +191,8 @@ class GetFolderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commitId;
 
@@ -207,6 +209,7 @@ class GetFolderResult {
   Aws::Vector<SubModule> m_subModules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commitIdHasBeenSet = false;
   bool m_folderPathHasBeenSet = false;
   bool m_treeIdHasBeenSet = false;

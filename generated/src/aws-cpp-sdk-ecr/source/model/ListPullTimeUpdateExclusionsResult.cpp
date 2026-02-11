@@ -22,6 +22,7 @@ ListPullTimeUpdateExclusionsResult::ListPullTimeUpdateExclusionsResult(const Aws
 }
 
 ListPullTimeUpdateExclusionsResult& ListPullTimeUpdateExclusionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullTimeUpdateExclusions")) {
     Aws::Utils::Array<JsonView> pullTimeUpdateExclusionsJsonList = jsonValue.GetArray("pullTimeUpdateExclusions");

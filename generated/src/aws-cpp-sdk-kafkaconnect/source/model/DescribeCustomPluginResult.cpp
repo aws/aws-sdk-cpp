@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCustomPluginResult::DescribeCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCustomPluginResult& DescribeCustomPluginResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");

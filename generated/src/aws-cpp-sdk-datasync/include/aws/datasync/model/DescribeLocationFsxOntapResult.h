@@ -169,6 +169,8 @@ class DescribeLocationFsxOntapResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -185,6 +187,7 @@ class DescribeLocationFsxOntapResult {
   Aws::String m_fsxFilesystemArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 AddDirectQueryDataSourceResult::AddDirectQueryDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddDirectQueryDataSourceResult& AddDirectQueryDataSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataSourceArn")) {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");

@@ -203,6 +203,8 @@ class StartTestSetGenerationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testSetGenerationId;
 
@@ -223,6 +225,7 @@ class StartTestSetGenerationResult {
   Aws::Map<Aws::String, Aws::String> m_testSetTags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testSetGenerationIdHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;
   bool m_testSetGenerationStatusHasBeenSet = false;

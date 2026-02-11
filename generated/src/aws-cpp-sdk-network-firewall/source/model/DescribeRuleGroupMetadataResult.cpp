@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRuleGroupMetadataResult::DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRuleGroupMetadataResult& DescribeRuleGroupMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleGroupArn")) {
     m_ruleGroupArn = jsonValue.GetString("RuleGroupArn");

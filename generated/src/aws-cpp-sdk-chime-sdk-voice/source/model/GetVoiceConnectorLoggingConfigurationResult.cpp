@@ -24,6 +24,7 @@ GetVoiceConnectorLoggingConfigurationResult::GetVoiceConnectorLoggingConfigurati
 
 GetVoiceConnectorLoggingConfigurationResult& GetVoiceConnectorLoggingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LoggingConfiguration")) {
     m_loggingConfiguration = jsonValue.GetObject("LoggingConfiguration");

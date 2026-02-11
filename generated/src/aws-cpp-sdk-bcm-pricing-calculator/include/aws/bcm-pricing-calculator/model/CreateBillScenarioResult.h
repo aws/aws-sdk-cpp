@@ -195,6 +195,8 @@ class CreateBillScenarioResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -215,6 +217,7 @@ class CreateBillScenarioResult {
   Aws::String m_costCategoryGroupSharingPreferenceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_billIntervalHasBeenSet = false;

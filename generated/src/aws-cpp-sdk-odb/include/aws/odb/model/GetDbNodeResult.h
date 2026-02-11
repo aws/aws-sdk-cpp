@@ -56,10 +56,13 @@ class GetDbNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DbNode m_dbNode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dbNodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

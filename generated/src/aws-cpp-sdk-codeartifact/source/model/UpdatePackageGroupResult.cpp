@@ -20,6 +20,7 @@ using namespace Aws;
 UpdatePackageGroupResult::UpdatePackageGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdatePackageGroupResult& UpdatePackageGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("packageGroup")) {
     m_packageGroup = jsonValue.GetObject("packageGroup");

@@ -135,6 +135,8 @@ class GetServiceGraphResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_startTime{};
 
@@ -147,6 +149,7 @@ class GetServiceGraphResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_servicesHasBeenSet = false;

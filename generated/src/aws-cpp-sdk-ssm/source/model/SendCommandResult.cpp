@@ -20,6 +20,7 @@ using namespace Aws;
 SendCommandResult::SendCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendCommandResult& SendCommandResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Command")) {
     m_command = jsonValue.GetObject("Command");

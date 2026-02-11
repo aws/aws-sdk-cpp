@@ -23,6 +23,7 @@ DescribeAuditMitigationActionsTaskResult::DescribeAuditMitigationActionsTaskResu
 
 DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskStatus")) {
     m_taskStatus = AuditMitigationActionsTaskStatusMapper::GetAuditMitigationActionsTaskStatusForName(jsonValue.GetString("taskStatus"));

@@ -20,6 +20,7 @@ using namespace Aws;
 GetBlacklistReportsResult::GetBlacklistReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBlacklistReportsResult& GetBlacklistReportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BlacklistReport")) {
     Aws::Map<Aws::String, JsonView> blacklistReportJsonMap = jsonValue.GetObject("BlacklistReport").GetAllObjects();

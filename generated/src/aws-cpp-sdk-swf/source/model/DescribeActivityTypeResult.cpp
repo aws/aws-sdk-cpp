@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeActivityTypeResult::DescribeActivityTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeActivityTypeResult& DescribeActivityTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("typeInfo")) {
     m_typeInfo = jsonValue.GetObject("typeInfo");

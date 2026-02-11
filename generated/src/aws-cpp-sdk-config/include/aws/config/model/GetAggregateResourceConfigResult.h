@@ -58,10 +58,13 @@ class GetAggregateResourceConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConfigurationItem m_configurationItem;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationItemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

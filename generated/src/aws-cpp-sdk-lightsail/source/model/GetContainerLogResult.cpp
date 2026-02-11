@@ -20,6 +20,7 @@ using namespace Aws;
 GetContainerLogResult::GetContainerLogResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetContainerLogResult& GetContainerLogResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logEvents")) {
     Aws::Utils::Array<JsonView> logEventsJsonList = jsonValue.GetArray("logEvents");

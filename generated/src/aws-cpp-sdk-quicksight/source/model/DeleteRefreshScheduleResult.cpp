@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteRefreshScheduleResult::DeleteRefreshScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteRefreshScheduleResult& DeleteRefreshScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScheduleId")) {
     m_scheduleId = jsonValue.GetString("ScheduleId");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateContactChannelResult::CreateContactChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateContactChannelResult& CreateContactChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactChannelArn")) {
     m_contactChannelArn = jsonValue.GetString("ContactChannelArn");

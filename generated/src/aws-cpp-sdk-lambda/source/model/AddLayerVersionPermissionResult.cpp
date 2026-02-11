@@ -20,6 +20,7 @@ using namespace Aws;
 AddLayerVersionPermissionResult::AddLayerVersionPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddLayerVersionPermissionResult& AddLayerVersionPermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Statement")) {
     m_statement = jsonValue.GetString("Statement");

@@ -198,6 +198,8 @@ class GetServiceLastAccessedDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobStatusType m_jobStatus{JobStatusType::NOT_SET};
 
@@ -216,6 +218,7 @@ class GetServiceLastAccessedDetailsResult {
   ErrorDetails m_error;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
   bool m_jobCreationDateHasBeenSet = false;

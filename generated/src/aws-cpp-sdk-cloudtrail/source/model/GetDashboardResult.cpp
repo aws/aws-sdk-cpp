@@ -20,6 +20,7 @@ using namespace Aws;
 GetDashboardResult::GetDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDashboardResult& GetDashboardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DashboardArn")) {
     m_dashboardArn = jsonValue.GetString("DashboardArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEventStreamResult::CreateEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEventStreamResult& CreateEventStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventStreamArn")) {
     m_eventStreamArn = jsonValue.GetString("EventStreamArn");

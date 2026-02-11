@@ -20,6 +20,7 @@ using namespace Aws;
 NotifyWorkersResult::NotifyWorkersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 NotifyWorkersResult& NotifyWorkersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotifyWorkersFailureStatuses")) {
     Aws::Utils::Array<JsonView> notifyWorkersFailureStatusesJsonList = jsonValue.GetArray("NotifyWorkersFailureStatuses");

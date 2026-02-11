@@ -59,10 +59,13 @@ class GetShareResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ShareDetails m_share;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_shareHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

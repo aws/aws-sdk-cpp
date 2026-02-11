@@ -20,6 +20,7 @@ using namespace Aws;
 GetOutpostInstanceTypesResult::GetOutpostInstanceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOutpostInstanceTypesResult& GetOutpostInstanceTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceTypes")) {
     Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("InstanceTypes");

@@ -64,10 +64,13 @@ class DescribeSdiSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SdiSource m_sdiSource;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sdiSourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

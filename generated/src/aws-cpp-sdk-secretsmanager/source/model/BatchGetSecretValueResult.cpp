@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetSecretValueResult::BatchGetSecretValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetSecretValueResult& BatchGetSecretValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecretValues")) {
     Aws::Utils::Array<JsonView> secretValuesJsonList = jsonValue.GetArray("SecretValues");

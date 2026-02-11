@@ -20,6 +20,7 @@ using namespace Aws;
 GetApproximateUsageRecordsResult::GetApproximateUsageRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetApproximateUsageRecordsResult& GetApproximateUsageRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Services")) {
     Aws::Map<Aws::String, JsonView> servicesJsonMap = jsonValue.GetObject("Services").GetAllObjects();

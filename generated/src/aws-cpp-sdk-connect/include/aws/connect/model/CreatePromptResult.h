@@ -74,12 +74,15 @@ class CreatePromptResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_promptARN;
 
   Aws::String m_promptId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_promptARNHasBeenSet = false;
   bool m_promptIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

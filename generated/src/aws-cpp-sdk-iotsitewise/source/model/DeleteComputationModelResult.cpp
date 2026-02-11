@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteComputationModelResult::DeleteComputationModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteComputationModelResult& DeleteComputationModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("computationModelStatus")) {
     m_computationModelStatus = jsonValue.GetObject("computationModelStatus");

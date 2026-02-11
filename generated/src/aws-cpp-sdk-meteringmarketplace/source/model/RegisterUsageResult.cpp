@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterUsageResult::RegisterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterUsageResult& RegisterUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PublicKeyRotationTimestamp")) {
     m_publicKeyRotationTimestamp = jsonValue.GetDouble("PublicKeyRotationTimestamp");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTableStatisticsResult::DescribeTableStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationTaskArn")) {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");

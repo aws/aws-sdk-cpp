@@ -65,10 +65,13 @@ class RejectVpcEndpointConnectionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UnsuccessfulItem> m_unsuccessful;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_unsuccessfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

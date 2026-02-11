@@ -20,6 +20,7 @@ using namespace Aws;
 RejectDataShareResult::RejectDataShareResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 RejectDataShareResult& RejectDataShareResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

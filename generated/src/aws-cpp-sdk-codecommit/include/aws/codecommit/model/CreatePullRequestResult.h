@@ -58,10 +58,13 @@ class CreatePullRequestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PullRequest m_pullRequest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pullRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

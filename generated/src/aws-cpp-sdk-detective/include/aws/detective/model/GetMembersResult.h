@@ -92,12 +92,15 @@ class GetMembersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<MemberDetail> m_memberDetails;
 
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_memberDetailsHasBeenSet = false;
   bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

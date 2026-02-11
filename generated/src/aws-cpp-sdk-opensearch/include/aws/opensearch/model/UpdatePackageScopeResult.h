@@ -97,6 +97,8 @@ class UpdatePackageScopeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_packageID;
 
@@ -105,6 +107,7 @@ class UpdatePackageScopeResult {
   Aws::Vector<Aws::String> m_packageUserList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_packageIDHasBeenSet = false;
   bool m_operationHasBeenSet = false;
   bool m_packageUserListHasBeenSet = false;

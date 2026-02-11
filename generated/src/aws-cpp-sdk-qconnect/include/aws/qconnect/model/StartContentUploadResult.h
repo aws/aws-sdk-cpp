@@ -116,6 +116,8 @@ class StartContentUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_uploadId;
 
@@ -126,6 +128,7 @@ class StartContentUploadResult {
   Aws::Map<Aws::String, Aws::String> m_headersToInclude;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_uploadIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_urlExpiryHasBeenSet = false;

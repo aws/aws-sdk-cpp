@@ -183,6 +183,8 @@ class DescribeStackDriftDetectionStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_stackId;
 
@@ -199,6 +201,7 @@ class DescribeStackDriftDetectionStatusResult {
   Aws::Utils::DateTime m_timestamp{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackIdHasBeenSet = false;
   bool m_stackDriftDetectionIdHasBeenSet = false;
   bool m_stackDriftStatusHasBeenSet = false;

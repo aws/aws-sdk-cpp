@@ -76,12 +76,15 @@ class GetLinkedWhatsAppBusinessAccountPhoneNumberResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WhatsAppPhoneNumberDetail m_phoneNumber;
 
   Aws::String m_linkedWhatsAppBusinessAccountId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_phoneNumberHasBeenSet = false;
   bool m_linkedWhatsAppBusinessAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

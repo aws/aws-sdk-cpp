@@ -24,6 +24,7 @@ DescribeResourceGroupingRecommendationTaskResult::DescribeResourceGroupingRecomm
 
 DescribeResourceGroupingRecommendationTaskResult& DescribeResourceGroupingRecommendationTaskResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");

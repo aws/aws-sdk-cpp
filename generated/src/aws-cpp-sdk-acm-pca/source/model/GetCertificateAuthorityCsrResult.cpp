@@ -20,6 +20,7 @@ using namespace Aws;
 GetCertificateAuthorityCsrResult::GetCertificateAuthorityCsrResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCertificateAuthorityCsrResult& GetCertificateAuthorityCsrResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Csr")) {
     m_csr = jsonValue.GetString("Csr");

@@ -259,6 +259,8 @@ class GetMatchingWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workflowName;
 
@@ -283,6 +285,7 @@ class GetMatchingWorkflowResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workflowNameHasBeenSet = false;
   bool m_workflowArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

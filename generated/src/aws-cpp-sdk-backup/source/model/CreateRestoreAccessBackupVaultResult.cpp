@@ -23,6 +23,7 @@ CreateRestoreAccessBackupVaultResult::CreateRestoreAccessBackupVaultResult(const
 
 CreateRestoreAccessBackupVaultResult& CreateRestoreAccessBackupVaultResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RestoreAccessBackupVaultArn")) {
     m_restoreAccessBackupVaultArn = jsonValue.GetString("RestoreAccessBackupVaultArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeReleaseLabelResult::DescribeReleaseLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReleaseLabel")) {
     m_releaseLabel = jsonValue.GetString("ReleaseLabel");

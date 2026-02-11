@@ -20,6 +20,7 @@ using namespace Aws;
 SendMessageResult::SendMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendMessageResult& SendMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MD5OfMessageBody")) {
     m_mD5OfMessageBody = jsonValue.GetString("MD5OfMessageBody");

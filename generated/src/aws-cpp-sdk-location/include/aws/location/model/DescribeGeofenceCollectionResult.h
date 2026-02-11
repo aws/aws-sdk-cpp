@@ -194,6 +194,8 @@ class DescribeGeofenceCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_collectionName;
 
@@ -212,6 +214,7 @@ class DescribeGeofenceCollectionResult {
   int m_geofenceCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_collectionNameHasBeenSet = false;
   bool m_collectionArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

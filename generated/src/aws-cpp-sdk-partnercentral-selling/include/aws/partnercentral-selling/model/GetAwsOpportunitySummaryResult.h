@@ -279,6 +279,8 @@ class GetAwsOpportunitySummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_relatedOpportunityId;
 
@@ -305,6 +307,7 @@ class GetAwsOpportunitySummaryResult {
   Aws::String m_catalog;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_relatedOpportunityIdHasBeenSet = false;
   bool m_originHasBeenSet = false;
   bool m_involvementTypeHasBeenSet = false;

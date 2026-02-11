@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeNotificationRuleResult::DescribeNotificationRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeNotificationRuleResult& DescribeNotificationRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");

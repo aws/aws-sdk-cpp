@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAccessPointResult::CreateAccessPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAccessPointResult& CreateAccessPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ClientToken")) {
     m_clientToken = jsonValue.GetString("ClientToken");

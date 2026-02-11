@@ -109,6 +109,8 @@ class GetTestCaseExecutionSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_startTime{};
 
@@ -119,6 +121,7 @@ class GetTestCaseExecutionSummaryResult {
   ObservationSummary m_observationSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;

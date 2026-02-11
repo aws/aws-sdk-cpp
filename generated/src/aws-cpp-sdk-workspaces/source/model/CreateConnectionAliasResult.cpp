@@ -20,6 +20,7 @@ using namespace Aws;
 CreateConnectionAliasResult::CreateConnectionAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateConnectionAliasResult& CreateConnectionAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AliasId")) {
     m_aliasId = jsonValue.GetString("AliasId");

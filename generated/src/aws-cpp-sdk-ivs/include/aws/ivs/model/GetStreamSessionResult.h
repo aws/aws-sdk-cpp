@@ -58,10 +58,13 @@ class GetStreamSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StreamSession m_streamSession;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

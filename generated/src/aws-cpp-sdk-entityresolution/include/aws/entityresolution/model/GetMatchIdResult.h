@@ -74,12 +74,15 @@ class GetMatchIdResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_matchId;
 
   Aws::String m_matchRule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_matchIdHasBeenSet = false;
   bool m_matchRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

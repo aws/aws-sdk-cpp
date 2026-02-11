@@ -58,10 +58,13 @@ class ModifyIpPoolsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamPools m_ipamPools;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamPoolsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

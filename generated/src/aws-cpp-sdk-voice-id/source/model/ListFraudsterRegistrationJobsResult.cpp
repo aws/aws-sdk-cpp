@@ -22,6 +22,7 @@ ListFraudsterRegistrationJobsResult::ListFraudsterRegistrationJobsResult(const A
 }
 
 ListFraudsterRegistrationJobsResult& ListFraudsterRegistrationJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobSummaries")) {
     Aws::Utils::Array<JsonView> jobSummariesJsonList = jsonValue.GetArray("JobSummaries");

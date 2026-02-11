@@ -20,6 +20,7 @@ using namespace Aws;
 GetTelemetryMetadataResult::GetTelemetryMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTelemetryMetadataResult& GetTelemetryMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("telemetryMetadata")) {
     Aws::Utils::Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");

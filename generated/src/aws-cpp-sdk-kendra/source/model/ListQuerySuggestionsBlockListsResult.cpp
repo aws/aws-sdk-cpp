@@ -23,6 +23,7 @@ ListQuerySuggestionsBlockListsResult::ListQuerySuggestionsBlockListsResult(const
 
 ListQuerySuggestionsBlockListsResult& ListQuerySuggestionsBlockListsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BlockListSummaryItems")) {
     Aws::Utils::Array<JsonView> blockListSummaryItemsJsonList = jsonValue.GetArray("BlockListSummaryItems");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListHubContentVersionsResult::ListHubContentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListHubContentVersionsResult& ListHubContentVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HubContentSummaries")) {
     Aws::Utils::Array<JsonView> hubContentSummariesJsonList = jsonValue.GetArray("HubContentSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 AttachVolumeResponse::AttachVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 AttachVolumeResponse& AttachVolumeResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

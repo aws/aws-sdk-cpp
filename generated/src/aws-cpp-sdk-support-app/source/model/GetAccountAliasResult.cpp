@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountAliasResult::GetAccountAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountAliasResult& GetAccountAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountAlias")) {
     m_accountAlias = jsonValue.GetString("accountAlias");

@@ -20,6 +20,7 @@ using namespace Aws;
 PutDeliveryDestinationResult::PutDeliveryDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutDeliveryDestinationResult& PutDeliveryDestinationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deliveryDestination")) {
     m_deliveryDestination = jsonValue.GetObject("deliveryDestination");

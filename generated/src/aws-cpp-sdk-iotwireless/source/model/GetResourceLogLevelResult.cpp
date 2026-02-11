@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceLogLevelResult::GetResourceLogLevelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceLogLevelResult& GetResourceLogLevelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LogLevel")) {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));

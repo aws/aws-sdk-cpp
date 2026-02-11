@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateTopicResult::UpdateTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateTopicResult& UpdateTopicResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("topicArn")) {
     m_topicArn = jsonValue.GetString("topicArn");

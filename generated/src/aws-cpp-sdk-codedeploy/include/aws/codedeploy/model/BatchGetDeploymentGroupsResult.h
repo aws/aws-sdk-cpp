@@ -88,12 +88,15 @@ class BatchGetDeploymentGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DeploymentGroupInfo> m_deploymentGroupsInfo;
 
   Aws::String m_errorMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentGroupsInfoHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

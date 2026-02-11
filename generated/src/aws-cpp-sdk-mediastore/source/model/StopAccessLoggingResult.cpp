@@ -20,6 +20,7 @@ using namespace Aws;
 StopAccessLoggingResult::StopAccessLoggingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopAccessLoggingResult& StopAccessLoggingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

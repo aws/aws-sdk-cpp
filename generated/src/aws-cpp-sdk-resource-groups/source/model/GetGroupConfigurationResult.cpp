@@ -20,6 +20,7 @@ using namespace Aws;
 GetGroupConfigurationResult::GetGroupConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGroupConfigurationResult& GetGroupConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupConfiguration")) {
     m_groupConfiguration = jsonValue.GetObject("GroupConfiguration");

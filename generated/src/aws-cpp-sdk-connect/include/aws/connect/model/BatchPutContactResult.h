@@ -89,12 +89,15 @@ class BatchPutContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SuccessfulRequest> m_successfulRequestList;
 
   Aws::Vector<FailedRequest> m_failedRequestList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulRequestListHasBeenSet = false;
   bool m_failedRequestListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

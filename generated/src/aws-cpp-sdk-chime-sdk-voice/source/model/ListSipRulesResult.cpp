@@ -20,6 +20,7 @@ using namespace Aws;
 ListSipRulesResult::ListSipRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSipRulesResult& ListSipRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SipRules")) {
     Aws::Utils::Array<JsonView> sipRulesJsonList = jsonValue.GetArray("SipRules");

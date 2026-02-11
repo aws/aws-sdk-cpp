@@ -23,6 +23,7 @@ GetResponseHeadersPolicyConfig2020_05_31Result::GetResponseHeadersPolicyConfig20
 
 GetResponseHeadersPolicyConfig2020_05_31Result& GetResponseHeadersPolicyConfig2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

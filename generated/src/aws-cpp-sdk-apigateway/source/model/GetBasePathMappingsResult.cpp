@@ -20,6 +20,7 @@ using namespace Aws;
 GetBasePathMappingsResult::GetBasePathMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBasePathMappingsResult& GetBasePathMappingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("position")) {
     m_position = jsonValue.GetString("position");

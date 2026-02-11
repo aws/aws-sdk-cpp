@@ -20,6 +20,7 @@ using namespace Aws;
 StartWebAuthnRegistrationResult::StartWebAuthnRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartWebAuthnRegistrationResult& StartWebAuthnRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CredentialCreationOptions")) {
     m_credentialCreationOptions = jsonValue.GetObject("CredentialCreationOptions");

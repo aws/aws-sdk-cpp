@@ -77,12 +77,15 @@ class DeleteCoreNetworkPrefixListAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_coreNetworkId;
 
   Aws::String m_prefixListArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_coreNetworkIdHasBeenSet = false;
   bool m_prefixListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

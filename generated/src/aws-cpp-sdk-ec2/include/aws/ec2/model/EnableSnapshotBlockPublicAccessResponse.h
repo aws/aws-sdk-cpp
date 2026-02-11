@@ -58,10 +58,13 @@ class EnableSnapshotBlockPublicAccessResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SnapshotBlockPublicAccessState m_state{SnapshotBlockPublicAccessState::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

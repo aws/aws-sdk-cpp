@@ -23,6 +23,7 @@ ListSupportedPhoneNumberCountriesResult::ListSupportedPhoneNumberCountriesResult
 
 ListSupportedPhoneNumberCountriesResult& ListSupportedPhoneNumberCountriesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PhoneNumberCountries")) {
     Aws::Utils::Array<JsonView> phoneNumberCountriesJsonList = jsonValue.GetArray("PhoneNumberCountries");

@@ -67,10 +67,13 @@ class VerifyDnsConfiguration2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DnsConfiguration> m_dnsConfigurationList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dnsConfigurationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

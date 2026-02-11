@@ -75,12 +75,15 @@ class CreateInvalidationForDistributionTenant2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_location;
 
   Invalidation m_invalidation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationHasBeenSet = false;
   bool m_invalidationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

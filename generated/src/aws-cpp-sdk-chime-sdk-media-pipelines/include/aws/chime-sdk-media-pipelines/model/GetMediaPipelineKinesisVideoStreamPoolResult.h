@@ -62,10 +62,13 @@ class GetMediaPipelineKinesisVideoStreamPoolResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KinesisVideoStreamPoolConfiguration m_kinesisVideoStreamPoolConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_kinesisVideoStreamPoolConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

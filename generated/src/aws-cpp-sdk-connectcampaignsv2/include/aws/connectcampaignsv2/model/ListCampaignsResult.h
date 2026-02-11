@@ -83,12 +83,15 @@ class ListCampaignsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<CampaignSummary> m_campaignSummaryList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_campaignSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

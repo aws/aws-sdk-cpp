@@ -22,6 +22,7 @@ ListGitHubAccountTokenNamesResult::ListGitHubAccountTokenNamesResult(const Aws::
 }
 
 ListGitHubAccountTokenNamesResult& ListGitHubAccountTokenNamesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tokenNameList")) {
     Aws::Utils::Array<JsonView> tokenNameListJsonList = jsonValue.GetArray("tokenNameList");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListConfiguredTablesResult::ListConfiguredTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConfiguredTablesResult& ListConfiguredTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredTableSummaries")) {
     Aws::Utils::Array<JsonView> configuredTableSummariesJsonList = jsonValue.GetArray("configuredTableSummaries");

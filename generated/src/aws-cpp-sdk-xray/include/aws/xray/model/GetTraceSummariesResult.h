@@ -119,6 +119,8 @@ class GetTraceSummariesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TraceSummary> m_traceSummaries;
 
@@ -129,6 +131,7 @@ class GetTraceSummariesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_traceSummariesHasBeenSet = false;
   bool m_approximateTimeHasBeenSet = false;
   bool m_tracesProcessedCountHasBeenSet = false;

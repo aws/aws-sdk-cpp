@@ -65,10 +65,13 @@ class MonitorInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<InstanceMonitoring> m_instanceMonitorings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceMonitoringsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

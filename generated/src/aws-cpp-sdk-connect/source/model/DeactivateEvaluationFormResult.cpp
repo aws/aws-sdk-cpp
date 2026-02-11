@@ -20,6 +20,7 @@ using namespace Aws;
 DeactivateEvaluationFormResult::DeactivateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeactivateEvaluationFormResult& DeactivateEvaluationFormResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationFormId")) {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");

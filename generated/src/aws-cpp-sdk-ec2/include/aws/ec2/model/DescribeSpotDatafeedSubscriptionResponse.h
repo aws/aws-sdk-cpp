@@ -64,10 +64,13 @@ class DescribeSpotDatafeedSubscriptionResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SpotDatafeedSubscription m_spotDatafeedSubscription;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_spotDatafeedSubscriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

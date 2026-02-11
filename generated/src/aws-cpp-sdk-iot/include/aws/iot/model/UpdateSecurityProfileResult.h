@@ -237,6 +237,8 @@ class UpdateSecurityProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_securityProfileName;
 
@@ -259,6 +261,7 @@ class UpdateSecurityProfileResult {
   MetricsExportConfig m_metricsExportConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_securityProfileNameHasBeenSet = false;
   bool m_securityProfileArnHasBeenSet = false;
   bool m_securityProfileDescriptionHasBeenSet = false;

@@ -24,6 +24,7 @@ DescribeServiceActionExecutionParametersResult::DescribeServiceActionExecutionPa
 
 DescribeServiceActionExecutionParametersResult& DescribeServiceActionExecutionParametersResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServiceActionParameters")) {
     Aws::Utils::Array<JsonView> serviceActionParametersJsonList = jsonValue.GetArray("ServiceActionParameters");

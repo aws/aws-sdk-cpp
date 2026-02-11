@@ -199,6 +199,8 @@ class EnableFastLaunchResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_imageId;
 
@@ -219,6 +221,7 @@ class EnableFastLaunchResponse {
   Aws::Utils::DateTime m_stateTransitionTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_imageIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_snapshotConfigurationHasBeenSet = false;

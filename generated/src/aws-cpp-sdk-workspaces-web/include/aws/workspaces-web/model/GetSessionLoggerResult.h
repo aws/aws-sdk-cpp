@@ -58,10 +58,13 @@ class GetSessionLoggerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SessionLogger m_sessionLogger;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionLoggerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -80,12 +80,15 @@ class ValidateResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_policyValidationPassed{false};
 
   Aws::Vector<ValidationErrorsEntry> m_validationErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyValidationPassedHasBeenSet = false;
   bool m_validationErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -97,6 +97,8 @@ class UpdateGeofenceCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_collectionName;
 
@@ -105,6 +107,7 @@ class UpdateGeofenceCollectionResult {
   Aws::Utils::DateTime m_updateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_collectionNameHasBeenSet = false;
   bool m_collectionArnHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;

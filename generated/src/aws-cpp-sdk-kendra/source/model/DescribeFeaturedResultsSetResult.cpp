@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFeaturedResultsSetResult::DescribeFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFeaturedResultsSetResult& DescribeFeaturedResultsSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FeaturedResultsSetId")) {
     m_featuredResultsSetId = jsonValue.GetString("FeaturedResultsSetId");

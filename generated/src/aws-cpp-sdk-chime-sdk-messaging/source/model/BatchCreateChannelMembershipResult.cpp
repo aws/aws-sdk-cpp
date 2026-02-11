@@ -22,6 +22,7 @@ BatchCreateChannelMembershipResult::BatchCreateChannelMembershipResult(const Aws
 }
 
 BatchCreateChannelMembershipResult& BatchCreateChannelMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BatchChannelMemberships")) {
     m_batchChannelMemberships = jsonValue.GetObject("BatchChannelMemberships");

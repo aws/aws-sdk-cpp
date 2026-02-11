@@ -20,6 +20,7 @@ using namespace Aws;
 TestCustomDataIdentifierResult::TestCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestCustomDataIdentifierResult& TestCustomDataIdentifierResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("matchCount")) {
     m_matchCount = jsonValue.GetInteger("matchCount");

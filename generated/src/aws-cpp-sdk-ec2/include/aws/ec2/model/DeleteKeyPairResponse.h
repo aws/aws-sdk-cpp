@@ -73,12 +73,15 @@ class DeleteKeyPairResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_return{false};
 
   Aws::String m_keyPairId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_returnHasBeenSet = false;
   bool m_keyPairIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

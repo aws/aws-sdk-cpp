@@ -73,12 +73,15 @@ class StartCodeSecurityScanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_scanId;
 
   CodeScanStatus m_status{CodeScanStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scanIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

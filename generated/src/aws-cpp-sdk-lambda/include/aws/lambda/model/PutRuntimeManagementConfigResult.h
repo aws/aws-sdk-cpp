@@ -92,6 +92,8 @@ class PutRuntimeManagementConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   UpdateRuntimeOn m_updateRuntimeOn{UpdateRuntimeOn::NOT_SET};
 
@@ -100,6 +102,7 @@ class PutRuntimeManagementConfigResult {
   Aws::String m_runtimeVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_updateRuntimeOnHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_runtimeVersionArnHasBeenSet = false;

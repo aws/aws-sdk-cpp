@@ -23,6 +23,7 @@ DescribeTableReplicaAutoScalingResult::DescribeTableReplicaAutoScalingResult(con
 
 DescribeTableReplicaAutoScalingResult& DescribeTableReplicaAutoScalingResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TableAutoScalingDescription")) {
     m_tableAutoScalingDescription = jsonValue.GetObject("TableAutoScalingDescription");

@@ -65,10 +65,13 @@ class ListStreamingDistributions2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StreamingDistributionList m_streamingDistributionList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamingDistributionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

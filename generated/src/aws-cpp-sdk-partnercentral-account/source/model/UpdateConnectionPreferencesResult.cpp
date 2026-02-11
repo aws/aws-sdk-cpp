@@ -22,6 +22,7 @@ UpdateConnectionPreferencesResult::UpdateConnectionPreferencesResult(const Aws::
 }
 
 UpdateConnectionPreferencesResult& UpdateConnectionPreferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");

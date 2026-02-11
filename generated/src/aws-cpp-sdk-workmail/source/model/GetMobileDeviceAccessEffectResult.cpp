@@ -22,6 +22,7 @@ GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult(const Aws::
 }
 
 GetMobileDeviceAccessEffectResult& GetMobileDeviceAccessEffectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Effect")) {
     m_effect = MobileDeviceAccessRuleEffectMapper::GetMobileDeviceAccessRuleEffectForName(jsonValue.GetString("Effect"));

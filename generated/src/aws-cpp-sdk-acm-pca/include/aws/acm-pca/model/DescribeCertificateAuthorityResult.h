@@ -60,10 +60,13 @@ class DescribeCertificateAuthorityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CertificateAuthority m_certificateAuthority;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificateAuthorityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

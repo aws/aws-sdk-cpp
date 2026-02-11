@@ -20,6 +20,7 @@ using namespace Aws;
 ListEfficiencyMetricsResult::ListEfficiencyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEfficiencyMetricsResult& ListEfficiencyMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("efficiencyMetricsByGroup")) {
     Aws::Utils::Array<JsonView> efficiencyMetricsByGroupJsonList = jsonValue.GetArray("efficiencyMetricsByGroup");

@@ -58,10 +58,13 @@ class GetFacetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Facet m_facet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_facetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

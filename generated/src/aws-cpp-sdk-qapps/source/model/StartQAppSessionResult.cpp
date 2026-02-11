@@ -20,6 +20,7 @@ using namespace Aws;
 StartQAppSessionResult::StartQAppSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartQAppSessionResult& StartQAppSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sessionId")) {
     m_sessionId = jsonValue.GetString("sessionId");

@@ -131,6 +131,8 @@ class VerifyDevicePositionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InferredState m_inferredState;
 
@@ -143,6 +145,7 @@ class VerifyDevicePositionResult {
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inferredStateHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;
   bool m_sampleTimeHasBeenSet = false;

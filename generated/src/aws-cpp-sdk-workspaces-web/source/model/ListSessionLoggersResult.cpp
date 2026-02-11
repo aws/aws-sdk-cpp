@@ -20,6 +20,7 @@ using namespace Aws;
 ListSessionLoggersResult::ListSessionLoggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSessionLoggersResult& ListSessionLoggersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sessionLoggers")) {
     Aws::Utils::Array<JsonView> sessionLoggersJsonList = jsonValue.GetArray("sessionLoggers");

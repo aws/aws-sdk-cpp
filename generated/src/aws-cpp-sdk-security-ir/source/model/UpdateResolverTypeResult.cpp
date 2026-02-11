@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateResolverTypeResult::UpdateResolverTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateResolverTypeResult& UpdateResolverTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("caseId")) {
     m_caseId = jsonValue.GetString("caseId");

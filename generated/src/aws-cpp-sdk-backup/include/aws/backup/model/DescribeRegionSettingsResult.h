@@ -94,12 +94,15 @@ class DescribeRegionSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
 
   Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceTypeOptInPreferenceHasBeenSet = false;
   bool m_resourceTypeManagementPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetApiKeysResult::GetApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetApiKeysResult& GetApiKeysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("warnings")) {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");

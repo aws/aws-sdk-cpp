@@ -20,6 +20,7 @@ using namespace Aws;
 MeterUsageResult::MeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 MeterUsageResult& MeterUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MeteringRecordId")) {
     m_meteringRecordId = jsonValue.GetString("MeteringRecordId");

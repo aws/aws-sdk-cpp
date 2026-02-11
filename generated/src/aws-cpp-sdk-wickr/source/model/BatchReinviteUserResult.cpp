@@ -20,6 +20,7 @@ using namespace Aws;
 BatchReinviteUserResult::BatchReinviteUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchReinviteUserResult& BatchReinviteUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");

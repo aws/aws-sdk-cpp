@@ -89,6 +89,8 @@ class CreateDataAutomationProjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_projectArn;
 
@@ -97,6 +99,7 @@ class CreateDataAutomationProjectResult {
   DataAutomationProjectStatus m_status{DataAutomationProjectStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_projectArnHasBeenSet = false;
   bool m_projectStageHasBeenSet = false;
   bool m_statusHasBeenSet = false;

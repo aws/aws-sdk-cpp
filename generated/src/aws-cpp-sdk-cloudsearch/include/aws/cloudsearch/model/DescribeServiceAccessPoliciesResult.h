@@ -65,10 +65,13 @@ class DescribeServiceAccessPoliciesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccessPoliciesStatus m_accessPolicies;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessPoliciesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

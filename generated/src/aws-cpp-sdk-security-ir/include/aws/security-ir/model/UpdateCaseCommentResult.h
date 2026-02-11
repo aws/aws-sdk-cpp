@@ -75,12 +75,15 @@ class UpdateCaseCommentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commentId;
 
   Aws::String m_body;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commentIdHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

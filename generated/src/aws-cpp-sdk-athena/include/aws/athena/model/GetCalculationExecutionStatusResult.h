@@ -76,12 +76,15 @@ class GetCalculationExecutionStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CalculationStatus m_status;
 
   CalculationStatistics m_statistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

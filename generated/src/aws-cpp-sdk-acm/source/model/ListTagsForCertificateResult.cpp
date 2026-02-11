@@ -20,6 +20,7 @@ using namespace Aws;
 ListTagsForCertificateResult::ListTagsForCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTagsForCertificateResult& ListTagsForCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");

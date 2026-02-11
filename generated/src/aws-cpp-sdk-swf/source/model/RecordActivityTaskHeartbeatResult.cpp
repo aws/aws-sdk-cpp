@@ -22,6 +22,7 @@ RecordActivityTaskHeartbeatResult::RecordActivityTaskHeartbeatResult(const Aws::
 }
 
 RecordActivityTaskHeartbeatResult& RecordActivityTaskHeartbeatResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cancelRequested")) {
     m_cancelRequested = jsonValue.GetBool("cancelRequested");

@@ -65,10 +65,13 @@ class StopInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<InstanceStateChange> m_stoppingInstances;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stoppingInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

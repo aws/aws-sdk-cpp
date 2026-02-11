@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateAccessPolicyResult::DisassociateAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateAccessPolicyResult& DisassociateAccessPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

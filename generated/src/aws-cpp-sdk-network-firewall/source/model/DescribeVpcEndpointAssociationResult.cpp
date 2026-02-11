@@ -23,6 +23,7 @@ DescribeVpcEndpointAssociationResult::DescribeVpcEndpointAssociationResult(const
 
 DescribeVpcEndpointAssociationResult& DescribeVpcEndpointAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcEndpointAssociation")) {
     m_vpcEndpointAssociation = jsonValue.GetObject("VpcEndpointAssociation");

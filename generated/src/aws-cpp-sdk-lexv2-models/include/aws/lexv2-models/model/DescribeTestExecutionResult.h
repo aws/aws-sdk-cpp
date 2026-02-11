@@ -219,6 +219,8 @@ class DescribeTestExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testExecutionId;
 
@@ -241,6 +243,7 @@ class DescribeTestExecutionResult {
   Aws::Vector<Aws::String> m_failureReasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testExecutionIdHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;

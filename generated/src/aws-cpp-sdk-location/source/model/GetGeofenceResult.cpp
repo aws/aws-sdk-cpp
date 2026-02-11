@@ -20,6 +20,7 @@ using namespace Aws;
 GetGeofenceResult::GetGeofenceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGeofenceResult& GetGeofenceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GeofenceId")) {
     m_geofenceId = jsonValue.GetString("GeofenceId");

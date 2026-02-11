@@ -65,10 +65,13 @@ class CreateSnapshotsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SnapshotInfo> m_snapshots;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

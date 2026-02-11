@@ -20,6 +20,7 @@ using namespace Aws;
 ListFileCommitHistoryResult::ListFileCommitHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFileCommitHistoryResult& ListFileCommitHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("revisionDag")) {
     Aws::Utils::Array<JsonView> revisionDagJsonList = jsonValue.GetArray("revisionDag");

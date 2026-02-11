@@ -22,6 +22,7 @@ BatchGetRumMetricDefinitionsResult::BatchGetRumMetricDefinitionsResult(const Aws
 }
 
 BatchGetRumMetricDefinitionsResult& BatchGetRumMetricDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MetricDefinitions")) {
     Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");

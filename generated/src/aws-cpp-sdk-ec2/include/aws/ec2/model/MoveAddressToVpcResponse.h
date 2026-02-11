@@ -74,12 +74,15 @@ class MoveAddressToVpcResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_allocationId;
 
   Status m_status{Status::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_allocationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

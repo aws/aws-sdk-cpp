@@ -120,6 +120,8 @@ class CreateInferenceSchedulerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_inferenceSchedulerArn;
 
@@ -130,6 +132,7 @@ class CreateInferenceSchedulerResult {
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inferenceSchedulerArnHasBeenSet = false;
   bool m_inferenceSchedulerNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

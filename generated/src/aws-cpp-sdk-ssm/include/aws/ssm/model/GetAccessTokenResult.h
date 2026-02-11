@@ -75,12 +75,15 @@ class GetAccessTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Credentials m_credentials;
 
   AccessRequestStatus m_accessRequestStatus{AccessRequestStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_accessRequestStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

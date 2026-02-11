@@ -58,10 +58,13 @@ class CreateReportGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReportGroup m_reportGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

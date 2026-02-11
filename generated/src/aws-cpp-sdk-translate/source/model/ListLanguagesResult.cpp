@@ -20,6 +20,7 @@ using namespace Aws;
 ListLanguagesResult::ListLanguagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLanguagesResult& ListLanguagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Languages")) {
     Aws::Utils::Array<JsonView> languagesJsonList = jsonValue.GetArray("Languages");

@@ -72,10 +72,13 @@ class ListReceiptFiltersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ReceiptFilter> m_filters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_filtersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

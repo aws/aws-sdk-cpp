@@ -20,6 +20,7 @@ using namespace Aws;
 GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKeyRotationStatusResult& GetKeyRotationStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyRotationEnabled")) {
     m_keyRotationEnabled = jsonValue.GetBool("KeyRotationEnabled");

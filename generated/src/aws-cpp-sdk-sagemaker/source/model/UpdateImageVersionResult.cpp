@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateImageVersionResult::UpdateImageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateImageVersionResult& UpdateImageVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImageVersionArn")) {
     m_imageVersionArn = jsonValue.GetString("ImageVersionArn");

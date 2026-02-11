@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRegionResult::DescribeRegionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRegionResult& DescribeRegionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegionName")) {
     m_regionName = jsonValue.GetString("RegionName");

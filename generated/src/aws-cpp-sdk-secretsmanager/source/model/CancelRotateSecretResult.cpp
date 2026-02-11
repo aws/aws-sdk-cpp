@@ -20,6 +20,7 @@ using namespace Aws;
 CancelRotateSecretResult::CancelRotateSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelRotateSecretResult& CancelRotateSecretResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");

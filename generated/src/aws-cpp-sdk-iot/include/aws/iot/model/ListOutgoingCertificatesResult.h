@@ -88,12 +88,15 @@ class ListOutgoingCertificatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<OutgoingCertificate> m_outgoingCertificates;
 
   Aws::String m_nextMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_outgoingCertificatesHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -24,6 +24,7 @@ ListChannelsAssociatedWithChannelFlowResult::ListChannelsAssociatedWithChannelFl
 
 ListChannelsAssociatedWithChannelFlowResult& ListChannelsAssociatedWithChannelFlowResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Channels")) {
     Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");

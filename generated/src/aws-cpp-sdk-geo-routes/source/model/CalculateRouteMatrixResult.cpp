@@ -20,6 +20,7 @@ using namespace Aws;
 CalculateRouteMatrixResult::CalculateRouteMatrixResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ErrorCount")) {
     m_errorCount = jsonValue.GetInteger("ErrorCount");

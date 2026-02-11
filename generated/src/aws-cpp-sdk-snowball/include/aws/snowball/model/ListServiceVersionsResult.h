@@ -124,6 +124,8 @@ class ListServiceVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ServiceVersion> m_serviceVersions;
 
@@ -134,6 +136,7 @@ class ListServiceVersionsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceVersionsHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
   bool m_dependentServicesHasBeenSet = false;

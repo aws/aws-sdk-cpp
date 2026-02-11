@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetCollectionGroupResult::BatchGetCollectionGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetCollectionGroupResult& BatchGetCollectionGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collectionGroupDetails")) {
     Aws::Utils::Array<JsonView> collectionGroupDetailsJsonList = jsonValue.GetArray("collectionGroupDetails");

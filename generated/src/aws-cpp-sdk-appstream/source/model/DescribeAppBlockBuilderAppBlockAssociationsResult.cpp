@@ -24,6 +24,7 @@ DescribeAppBlockBuilderAppBlockAssociationsResult::DescribeAppBlockBuilderAppBlo
 
 DescribeAppBlockBuilderAppBlockAssociationsResult& DescribeAppBlockBuilderAppBlockAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppBlockBuilderAppBlockAssociations")) {
     Aws::Utils::Array<JsonView> appBlockBuilderAppBlockAssociationsJsonList = jsonValue.GetArray("AppBlockBuilderAppBlockAssociations");

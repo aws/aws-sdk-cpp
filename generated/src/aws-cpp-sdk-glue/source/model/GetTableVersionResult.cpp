@@ -20,6 +20,7 @@ using namespace Aws;
 GetTableVersionResult::GetTableVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTableVersionResult& GetTableVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TableVersion")) {
     m_tableVersion = jsonValue.GetObject("TableVersion");

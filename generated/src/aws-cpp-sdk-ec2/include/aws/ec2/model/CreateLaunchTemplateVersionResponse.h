@@ -78,12 +78,15 @@ class CreateLaunchTemplateVersionResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LaunchTemplateVersion m_launchTemplateVersion;
 
   ValidationWarning m_warning;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_launchTemplateVersionHasBeenSet = false;
   bool m_warningHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

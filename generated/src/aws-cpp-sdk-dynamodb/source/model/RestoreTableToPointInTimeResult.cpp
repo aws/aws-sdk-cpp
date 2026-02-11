@@ -20,6 +20,7 @@ using namespace Aws;
 RestoreTableToPointInTimeResult::RestoreTableToPointInTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RestoreTableToPointInTimeResult& RestoreTableToPointInTimeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TableDescription")) {
     m_tableDescription = jsonValue.GetObject("TableDescription");

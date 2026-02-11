@@ -20,6 +20,7 @@ using namespace Aws;
 ListRetrieversResult::ListRetrieversResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRetrieversResult& ListRetrieversResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("retrievers")) {
     Aws::Utils::Array<JsonView> retrieversJsonList = jsonValue.GetArray("retrievers");

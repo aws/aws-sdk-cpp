@@ -98,6 +98,8 @@ class SearchContactFlowsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ContactFlow> m_contactFlows;
 
@@ -106,6 +108,7 @@ class SearchContactFlowsResult {
   long long m_approximateTotalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactFlowsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_approximateTotalCountHasBeenSet = false;

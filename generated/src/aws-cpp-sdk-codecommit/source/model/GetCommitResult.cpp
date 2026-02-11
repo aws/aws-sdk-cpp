@@ -20,6 +20,7 @@ using namespace Aws;
 GetCommitResult::GetCommitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCommitResult& GetCommitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("commit")) {
     m_commit = jsonValue.GetObject("commit");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSigningConfigurationResult::DeleteSigningConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSigningConfigurationResult& DeleteSigningConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");

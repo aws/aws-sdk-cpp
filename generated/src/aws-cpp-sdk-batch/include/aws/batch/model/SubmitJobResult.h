@@ -91,6 +91,8 @@ class SubmitJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobArn;
 
@@ -99,6 +101,7 @@ class SubmitJobResult {
   Aws::String m_jobId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobArnHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;

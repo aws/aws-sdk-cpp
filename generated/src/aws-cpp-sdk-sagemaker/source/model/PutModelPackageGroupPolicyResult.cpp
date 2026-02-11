@@ -20,6 +20,7 @@ using namespace Aws;
 PutModelPackageGroupPolicyResult::PutModelPackageGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutModelPackageGroupPolicyResult& PutModelPackageGroupPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelPackageGroupArn")) {
     m_modelPackageGroupArn = jsonValue.GetString("ModelPackageGroupArn");

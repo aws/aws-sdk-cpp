@@ -106,6 +106,8 @@ class InvokeModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -116,6 +118,7 @@ class InvokeModelResult {
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bodyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_performanceConfigLatencyHasBeenSet = false;

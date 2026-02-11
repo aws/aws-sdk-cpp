@@ -22,6 +22,7 @@ DescribeDataSourcePermissionsResult::DescribeDataSourcePermissionsResult(const A
 }
 
 DescribeDataSourcePermissionsResult& DescribeDataSourcePermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataSourceArn")) {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetResolverRuleAssociationResult::GetResolverRuleAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResolverRuleAssociationResult& GetResolverRuleAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverRuleAssociation")) {
     m_resolverRuleAssociation = jsonValue.GetObject("ResolverRuleAssociation");

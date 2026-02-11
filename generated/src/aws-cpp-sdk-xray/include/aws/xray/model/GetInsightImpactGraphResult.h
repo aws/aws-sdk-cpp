@@ -168,6 +168,8 @@ class GetInsightImpactGraphResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_insightId;
 
@@ -184,6 +186,7 @@ class GetInsightImpactGraphResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_insightIdHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;

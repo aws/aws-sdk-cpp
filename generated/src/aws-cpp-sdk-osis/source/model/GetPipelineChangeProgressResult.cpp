@@ -20,6 +20,7 @@ using namespace Aws;
 GetPipelineChangeProgressResult::GetPipelineChangeProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPipelineChangeProgressResult& GetPipelineChangeProgressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeProgressStatuses")) {
     Aws::Utils::Array<JsonView> changeProgressStatusesJsonList = jsonValue.GetArray("ChangeProgressStatuses");

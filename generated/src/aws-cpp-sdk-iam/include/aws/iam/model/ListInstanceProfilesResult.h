@@ -113,6 +113,8 @@ class ListInstanceProfilesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<InstanceProfile> m_instanceProfiles;
 
@@ -121,6 +123,7 @@ class ListInstanceProfilesResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceProfilesHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

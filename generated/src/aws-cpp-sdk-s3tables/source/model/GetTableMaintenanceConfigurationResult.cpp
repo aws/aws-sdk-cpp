@@ -23,6 +23,7 @@ GetTableMaintenanceConfigurationResult::GetTableMaintenanceConfigurationResult(c
 
 GetTableMaintenanceConfigurationResult& GetTableMaintenanceConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tableARN")) {
     m_tableARN = jsonValue.GetString("tableARN");

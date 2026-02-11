@@ -20,6 +20,7 @@ using namespace Aws;
 AssumeRoleForPodIdentityResult::AssumeRoleForPodIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssumeRoleForPodIdentityResult& AssumeRoleForPodIdentityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subject")) {
     m_subject = jsonValue.GetObject("subject");

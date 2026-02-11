@@ -180,6 +180,8 @@ class DescribeKeyValueStoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_itemCount{0};
 
@@ -198,6 +200,7 @@ class DescribeKeyValueStoreResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_itemCountHasBeenSet = false;
   bool m_totalSizeInBytesHasBeenSet = false;
   bool m_kvsARNHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteLicenseAssetRulesetResult::DeleteLicenseAssetRulesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteLicenseAssetRulesetResult& DeleteLicenseAssetRulesetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

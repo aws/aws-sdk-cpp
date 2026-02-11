@@ -58,10 +58,13 @@ class GetIngestionDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IngestionDestination m_ingestionDestination;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ingestionDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

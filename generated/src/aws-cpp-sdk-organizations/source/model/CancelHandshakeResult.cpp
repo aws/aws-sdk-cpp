@@ -20,6 +20,7 @@ using namespace Aws;
 CancelHandshakeResult::CancelHandshakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelHandshakeResult& CancelHandshakeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Handshake")) {
     m_handshake = jsonValue.GetObject("Handshake");

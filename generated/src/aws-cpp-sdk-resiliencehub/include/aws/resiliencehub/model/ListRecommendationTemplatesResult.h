@@ -83,12 +83,15 @@ class ListRecommendationTemplatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<RecommendationTemplate> m_recommendationTemplates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_recommendationTemplatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

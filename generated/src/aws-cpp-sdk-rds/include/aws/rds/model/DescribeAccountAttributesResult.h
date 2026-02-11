@@ -73,10 +73,13 @@ class DescribeAccountAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AccountQuota> m_accountQuotas;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountQuotasHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

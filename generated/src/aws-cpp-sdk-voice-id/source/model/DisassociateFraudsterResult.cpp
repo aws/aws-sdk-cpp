@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateFraudsterResult::DisassociateFraudsterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateFraudsterResult& DisassociateFraudsterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Fraudster")) {
     m_fraudster = jsonValue.GetObject("Fraudster");

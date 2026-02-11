@@ -20,6 +20,7 @@ using namespace Aws;
 ListCustomRoutingListenersResult::ListCustomRoutingListenersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCustomRoutingListenersResult& ListCustomRoutingListenersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Listeners")) {
     Aws::Utils::Array<JsonView> listenersJsonList = jsonValue.GetArray("Listeners");

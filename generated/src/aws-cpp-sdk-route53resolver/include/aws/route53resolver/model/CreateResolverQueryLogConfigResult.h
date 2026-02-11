@@ -60,10 +60,13 @@ class CreateResolverQueryLogConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResolverQueryLogConfig m_resolverQueryLogConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resolverQueryLogConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -84,12 +84,15 @@ class ListSavingsPlansPurchaseRecommendationGenerationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<GenerationSummary> m_generationSummaryList;
 
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_generationSummaryListHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,7 @@ StartActiveApprovalTeamDeletionResult::StartActiveApprovalTeamDeletionResult(con
 
 StartActiveApprovalTeamDeletionResult& StartActiveApprovalTeamDeletionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeletionCompletionTime")) {
     m_deletionCompletionTime = jsonValue.GetString("DeletionCompletionTime");

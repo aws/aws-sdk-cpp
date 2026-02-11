@@ -20,6 +20,7 @@ using namespace Aws;
 SetUserPoolMfaConfigResult::SetUserPoolMfaConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SetUserPoolMfaConfigResult& SetUserPoolMfaConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SmsMfaConfiguration")) {
     m_smsMfaConfiguration = jsonValue.GetObject("SmsMfaConfiguration");

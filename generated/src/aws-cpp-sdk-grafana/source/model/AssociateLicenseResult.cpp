@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateLicenseResult::AssociateLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateLicenseResult& AssociateLicenseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workspace")) {
     m_workspace = jsonValue.GetObject("workspace");

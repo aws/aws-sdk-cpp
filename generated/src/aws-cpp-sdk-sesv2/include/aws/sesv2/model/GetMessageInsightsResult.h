@@ -148,6 +148,8 @@ class GetMessageInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_messageId;
 
@@ -160,6 +162,7 @@ class GetMessageInsightsResult {
   Aws::Vector<EmailInsights> m_insights;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_messageIdHasBeenSet = false;
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_subjectHasBeenSet = false;

@@ -23,6 +23,7 @@ DescribeUserHierarchyStructureResult::DescribeUserHierarchyStructureResult(const
 
 DescribeUserHierarchyStructureResult& DescribeUserHierarchyStructureResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HierarchyStructure")) {
     m_hierarchyStructure = jsonValue.GetObject("HierarchyStructure");

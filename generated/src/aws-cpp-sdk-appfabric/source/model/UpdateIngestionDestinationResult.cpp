@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateIngestionDestinationResult::UpdateIngestionDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIngestionDestinationResult& UpdateIngestionDestinationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ingestionDestination")) {
     m_ingestionDestination = jsonValue.GetObject("ingestionDestination");

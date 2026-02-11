@@ -20,6 +20,7 @@ using namespace Aws;
 GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetParametersForImportResult& GetParametersForImportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WrappingKeyCertificate")) {
     m_wrappingKeyCertificate = jsonValue.GetString("WrappingKeyCertificate");

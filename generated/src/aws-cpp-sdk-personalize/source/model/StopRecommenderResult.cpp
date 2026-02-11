@@ -20,6 +20,7 @@ using namespace Aws;
 StopRecommenderResult::StopRecommenderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopRecommenderResult& StopRecommenderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recommenderArn")) {
     m_recommenderArn = jsonValue.GetString("recommenderArn");

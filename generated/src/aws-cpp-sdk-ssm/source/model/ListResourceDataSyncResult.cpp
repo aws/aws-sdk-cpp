@@ -20,6 +20,7 @@ using namespace Aws;
 ListResourceDataSyncResult::ListResourceDataSyncResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListResourceDataSyncResult& ListResourceDataSyncResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceDataSyncItems")) {
     Aws::Utils::Array<JsonView> resourceDataSyncItemsJsonList = jsonValue.GetArray("ResourceDataSyncItems");

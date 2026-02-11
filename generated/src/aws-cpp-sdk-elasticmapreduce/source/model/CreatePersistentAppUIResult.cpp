@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePersistentAppUIResult::CreatePersistentAppUIResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePersistentAppUIResult& CreatePersistentAppUIResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PersistentAppUIId")) {
     m_persistentAppUIId = jsonValue.GetString("PersistentAppUIId");

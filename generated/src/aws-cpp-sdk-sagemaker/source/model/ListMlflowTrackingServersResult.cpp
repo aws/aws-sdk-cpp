@@ -20,6 +20,7 @@ using namespace Aws;
 ListMlflowTrackingServersResult::ListMlflowTrackingServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMlflowTrackingServersResult& ListMlflowTrackingServersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrackingServerSummaries")) {
     Aws::Utils::Array<JsonView> trackingServerSummariesJsonList = jsonValue.GetArray("TrackingServerSummaries");

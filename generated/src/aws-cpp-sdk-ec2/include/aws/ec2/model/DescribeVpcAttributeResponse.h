@@ -114,6 +114,8 @@ class DescribeVpcAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AttributeBooleanValue m_enableDnsHostnames;
 
@@ -124,6 +126,7 @@ class DescribeVpcAttributeResponse {
   Aws::String m_vpcId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_enableDnsHostnamesHasBeenSet = false;
   bool m_enableDnsSupportHasBeenSet = false;
   bool m_enableNetworkAddressUsageMetricsHasBeenSet = false;

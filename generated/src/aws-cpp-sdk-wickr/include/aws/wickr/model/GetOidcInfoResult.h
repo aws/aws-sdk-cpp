@@ -78,12 +78,15 @@ class GetOidcInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OidcConfigInfo m_openidConnectInfo;
 
   OidcTokenInfo m_tokenInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_openidConnectInfoHasBeenSet = false;
   bool m_tokenInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

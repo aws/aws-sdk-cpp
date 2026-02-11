@@ -23,6 +23,7 @@ ListAvailableResourceDimensionsResult::ListAvailableResourceDimensionsResult(con
 
 ListAvailableResourceDimensionsResult& ListAvailableResourceDimensionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MetricDimensions")) {
     Aws::Utils::Array<JsonView> metricDimensionsJsonList = jsonValue.GetArray("MetricDimensions");

@@ -83,12 +83,15 @@ class ListOdbNetworksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<OdbNetworkSummary> m_odbNetworks;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_odbNetworksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

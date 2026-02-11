@@ -20,6 +20,7 @@ using namespace Aws;
 CreateOtaTaskResult::CreateOtaTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateOtaTaskResult& CreateOtaTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskId")) {
     m_taskId = jsonValue.GetString("TaskId");

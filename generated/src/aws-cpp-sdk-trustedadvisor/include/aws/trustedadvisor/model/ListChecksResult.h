@@ -83,6 +83,8 @@ class ListChecksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -90,6 +92,7 @@ class ListChecksResult {
 
   Aws::String m_requestId;
   bool m_nextTokenHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_checkSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

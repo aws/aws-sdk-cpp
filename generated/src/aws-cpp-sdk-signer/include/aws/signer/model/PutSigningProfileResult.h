@@ -91,6 +91,8 @@ class PutSigningProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -99,6 +101,7 @@ class PutSigningProfileResult {
   Aws::String m_profileVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_profileVersionHasBeenSet = false;
   bool m_profileVersionArnHasBeenSet = false;

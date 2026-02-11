@@ -20,6 +20,7 @@ using namespace Aws;
 GetCodeSecurityIntegrationResult::GetCodeSecurityIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCodeSecurityIntegrationResult& GetCodeSecurityIntegrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("integrationArn")) {
     m_integrationArn = jsonValue.GetString("integrationArn");

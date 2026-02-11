@@ -76,12 +76,15 @@ class GetOriginRequestPolicy2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OriginRequestPolicy m_originRequestPolicy;
 
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_originRequestPolicyHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

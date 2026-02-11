@@ -74,12 +74,15 @@ class CreateCaseRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_caseRuleId;
 
   Aws::String m_caseRuleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_caseRuleIdHasBeenSet = false;
   bool m_caseRuleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

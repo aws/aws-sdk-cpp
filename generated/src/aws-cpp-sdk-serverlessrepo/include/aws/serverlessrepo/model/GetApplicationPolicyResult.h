@@ -67,10 +67,13 @@ class GetApplicationPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ApplicationPolicyStatement> m_statements;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statementsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

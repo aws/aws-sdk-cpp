@@ -20,6 +20,7 @@ using namespace Aws;
 VerifyOTPMessageResult::VerifyOTPMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VerifyOTPMessageResult& VerifyOTPMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_verificationResponse = jsonValue;
   m_verificationResponseHasBeenSet = true;

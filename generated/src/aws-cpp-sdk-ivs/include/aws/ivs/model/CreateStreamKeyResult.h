@@ -58,10 +58,13 @@ class CreateStreamKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StreamKey m_streamKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

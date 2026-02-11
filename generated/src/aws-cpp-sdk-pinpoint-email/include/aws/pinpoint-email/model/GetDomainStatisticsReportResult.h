@@ -93,12 +93,15 @@ class GetDomainStatisticsReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OverallVolume m_overallVolume;
 
   Aws::Vector<DailyVolume> m_dailyVolumes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_overallVolumeHasBeenSet = false;
   bool m_dailyVolumesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

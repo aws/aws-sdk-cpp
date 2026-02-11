@@ -115,6 +115,8 @@ class UpdateActionConnectorPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -125,6 +127,7 @@ class UpdateActionConnectorPermissionsResult {
   int m_status{0};
 
   Aws::Vector<ResourcePermission> m_permissions;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_actionConnectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

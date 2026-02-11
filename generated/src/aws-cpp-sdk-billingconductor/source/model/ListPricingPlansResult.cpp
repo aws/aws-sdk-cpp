@@ -20,6 +20,7 @@ using namespace Aws;
 ListPricingPlansResult::ListPricingPlansResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPricingPlansResult& ListPricingPlansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BillingPeriod")) {
     m_billingPeriod = jsonValue.GetString("BillingPeriod");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeVirtualInterfacesResult::DescribeVirtualInterfacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeVirtualInterfacesResult& DescribeVirtualInterfacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("virtualInterfaces")) {
     Aws::Utils::Array<JsonView> virtualInterfacesJsonList = jsonValue.GetArray("virtualInterfaces");

@@ -59,10 +59,13 @@ class UpdateApprovalRuleTemplateNameResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApprovalRuleTemplate m_approvalRuleTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_approvalRuleTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateComputeNodeGroupResult::UpdateComputeNodeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateComputeNodeGroupResult& UpdateComputeNodeGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("computeNodeGroup")) {
     m_computeNodeGroup = jsonValue.GetObject("computeNodeGroup");

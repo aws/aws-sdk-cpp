@@ -503,6 +503,8 @@ class DescribePredictorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_predictorArn;
 
@@ -553,6 +555,7 @@ class DescribePredictorResult {
   OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_predictorArnHasBeenSet = false;
   bool m_predictorNameHasBeenSet = false;
   bool m_algorithmArnHasBeenSet = false;

@@ -92,6 +92,8 @@ class DescribeLogPatternResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceGroupName;
 
@@ -100,6 +102,7 @@ class DescribeLogPatternResult {
   LogPattern m_logPattern;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceGroupNameHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_logPatternHasBeenSet = false;

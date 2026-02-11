@@ -20,6 +20,7 @@ using namespace Aws;
 ListLicenseEndpointsResult::ListLicenseEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLicenseEndpointsResult& ListLicenseEndpointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("licenseEndpoints")) {
     Aws::Utils::Array<JsonView> licenseEndpointsJsonList = jsonValue.GetArray("licenseEndpoints");

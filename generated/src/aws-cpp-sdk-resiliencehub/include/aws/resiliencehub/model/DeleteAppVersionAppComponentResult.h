@@ -99,6 +99,8 @@ class DeleteAppVersionAppComponentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -107,6 +109,7 @@ class DeleteAppVersionAppComponentResult {
   Aws::String m_appVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appComponentHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;

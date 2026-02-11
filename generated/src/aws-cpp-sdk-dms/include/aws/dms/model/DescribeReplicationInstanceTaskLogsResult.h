@@ -104,6 +104,8 @@ class DescribeReplicationInstanceTaskLogsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_replicationInstanceArn;
 
@@ -112,6 +114,7 @@ class DescribeReplicationInstanceTaskLogsResult {
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_replicationInstanceArnHasBeenSet = false;
   bool m_replicationInstanceTaskLogsHasBeenSet = false;
   bool m_markerHasBeenSet = false;

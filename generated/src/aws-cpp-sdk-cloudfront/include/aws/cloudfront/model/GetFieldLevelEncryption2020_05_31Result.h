@@ -77,12 +77,15 @@ class GetFieldLevelEncryption2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FieldLevelEncryption m_fieldLevelEncryption;
 
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fieldLevelEncryptionHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAccessPolicyResult::CreateAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAccessPolicyResult& CreateAccessPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessPolicyId")) {
     m_accessPolicyId = jsonValue.GetString("accessPolicyId");

@@ -106,6 +106,8 @@ class GetPackageVersionAssetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_asset{};
 
@@ -116,6 +118,7 @@ class GetPackageVersionAssetResult {
   Aws::String m_packageVersionRevision;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assetHasBeenSet = false;
   bool m_assetNameHasBeenSet = false;
   bool m_packageVersionHasBeenSet = false;

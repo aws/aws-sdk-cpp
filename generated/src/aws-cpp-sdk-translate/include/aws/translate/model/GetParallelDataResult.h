@@ -127,6 +127,8 @@ class GetParallelDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ParallelDataProperties m_parallelDataProperties;
 
@@ -137,6 +139,7 @@ class GetParallelDataResult {
   ParallelDataDataLocation m_latestUpdateAttemptAuxiliaryDataLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_parallelDataPropertiesHasBeenSet = false;
   bool m_dataLocationHasBeenSet = false;
   bool m_auxiliaryDataLocationHasBeenSet = false;

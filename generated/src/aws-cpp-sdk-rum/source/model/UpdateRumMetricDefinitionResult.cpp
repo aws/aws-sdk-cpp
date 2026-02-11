@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateRumMetricDefinitionResult::UpdateRumMetricDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateRumMetricDefinitionResult& UpdateRumMetricDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -74,12 +74,15 @@ class DeleteAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sourceArn;
 
   Aws::String m_destinationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceArnHasBeenSet = false;
   bool m_destinationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

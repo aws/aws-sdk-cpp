@@ -132,6 +132,8 @@ class SearchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SearchStatus m_status;
 
@@ -142,6 +144,7 @@ class SearchResult {
   Aws::Map<Aws::String, FieldStats> m_stats;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_hitsHasBeenSet = false;
   bool m_facetsHasBeenSet = false;

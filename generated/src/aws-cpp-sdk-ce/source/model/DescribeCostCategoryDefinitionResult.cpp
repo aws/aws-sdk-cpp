@@ -23,6 +23,7 @@ DescribeCostCategoryDefinitionResult::DescribeCostCategoryDefinitionResult(const
 
 DescribeCostCategoryDefinitionResult& DescribeCostCategoryDefinitionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CostCategory")) {
     m_costCategory = jsonValue.GetObject("CostCategory");

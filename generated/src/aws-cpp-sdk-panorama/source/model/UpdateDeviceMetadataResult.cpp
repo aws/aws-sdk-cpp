@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDeviceMetadataResult::UpdateDeviceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDeviceMetadataResult& UpdateDeviceMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeviceId")) {
     m_deviceId = jsonValue.GetString("DeviceId");

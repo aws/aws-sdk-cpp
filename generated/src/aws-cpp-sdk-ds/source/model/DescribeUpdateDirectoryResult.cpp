@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeUpdateDirectoryResult::DescribeUpdateDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeUpdateDirectoryResult& DescribeUpdateDirectoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpdateActivities")) {
     Aws::Utils::Array<JsonView> updateActivitiesJsonList = jsonValue.GetArray("UpdateActivities");

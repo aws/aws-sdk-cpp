@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterUserResult::RegisterUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterUserResult& RegisterUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("User")) {
     m_user = jsonValue.GetObject("User");

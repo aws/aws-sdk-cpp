@@ -179,6 +179,8 @@ class AllocateAddressResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_allocationId;
 
@@ -197,6 +199,7 @@ class AllocateAddressResponse {
   Aws::String m_publicIp;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_allocationIdHasBeenSet = false;
   bool m_publicIpv4PoolHasBeenSet = false;
   bool m_networkBorderGroupHasBeenSet = false;

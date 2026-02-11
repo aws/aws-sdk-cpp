@@ -119,6 +119,8 @@ class ListRealtimeContactAnalysisSegmentsV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RealTimeContactAnalysisSupportedChannel m_channel{RealTimeContactAnalysisSupportedChannel::NOT_SET};
 
@@ -129,6 +131,7 @@ class ListRealtimeContactAnalysisSegmentsV2Result {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_segmentsHasBeenSet = false;

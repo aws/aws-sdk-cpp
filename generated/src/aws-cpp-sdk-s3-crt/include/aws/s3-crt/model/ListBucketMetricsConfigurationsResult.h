@@ -120,6 +120,8 @@ class ListBucketMetricsConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isTruncated{false};
 
@@ -130,6 +132,7 @@ class ListBucketMetricsConfigurationsResult {
   Aws::Vector<MetricsConfiguration> m_metricsConfigurationList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isTruncatedHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;
   bool m_nextContinuationTokenHasBeenSet = false;

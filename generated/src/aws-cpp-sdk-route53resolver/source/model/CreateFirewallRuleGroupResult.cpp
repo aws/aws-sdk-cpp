@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFirewallRuleGroupResult::CreateFirewallRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFirewallRuleGroupResult& CreateFirewallRuleGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallRuleGroup")) {
     m_firewallRuleGroup = jsonValue.GetObject("FirewallRuleGroup");

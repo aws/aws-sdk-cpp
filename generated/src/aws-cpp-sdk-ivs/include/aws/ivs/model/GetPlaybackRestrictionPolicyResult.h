@@ -58,10 +58,13 @@ class GetPlaybackRestrictionPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PlaybackRestrictionPolicy m_playbackRestrictionPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_playbackRestrictionPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

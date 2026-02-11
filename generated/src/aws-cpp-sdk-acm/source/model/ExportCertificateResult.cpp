@@ -20,6 +20,7 @@ using namespace Aws;
 ExportCertificateResult::ExportCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExportCertificateResult& ExportCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Certificate")) {
     m_certificate = jsonValue.GetString("Certificate");

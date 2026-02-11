@@ -803,6 +803,8 @@ class CreateFunctionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_functionName;
 
@@ -885,6 +887,7 @@ class CreateFunctionResult {
   TenancyConfig m_tenancyConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_functionNameHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_runtimeHasBeenSet = false;

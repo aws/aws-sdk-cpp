@@ -20,6 +20,7 @@ using namespace Aws;
 GetTrafficDistributionResult::GetTrafficDistributionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTrafficDistributionResult& GetTrafficDistributionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TelephonyConfig")) {
     m_telephonyConfig = jsonValue.GetObject("TelephonyConfig");

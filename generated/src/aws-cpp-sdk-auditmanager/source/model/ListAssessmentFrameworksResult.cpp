@@ -20,6 +20,7 @@ using namespace Aws;
 ListAssessmentFrameworksResult::ListAssessmentFrameworksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAssessmentFrameworksResult& ListAssessmentFrameworksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("frameworkMetadataList")) {
     Aws::Utils::Array<JsonView> frameworkMetadataListJsonList = jsonValue.GetArray("frameworkMetadataList");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBatchSegmentJobResult::CreateBatchSegmentJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBatchSegmentJobResult& CreateBatchSegmentJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("batchSegmentJobArn")) {
     m_batchSegmentJobArn = jsonValue.GetString("batchSegmentJobArn");

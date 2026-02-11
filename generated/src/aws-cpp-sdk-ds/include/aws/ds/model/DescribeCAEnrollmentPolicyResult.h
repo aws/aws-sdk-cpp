@@ -147,6 +147,8 @@ class DescribeCAEnrollmentPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_directoryId;
 
@@ -159,6 +161,7 @@ class DescribeCAEnrollmentPolicyResult {
   Aws::String m_caEnrollmentPolicyStatusReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_directoryIdHasBeenSet = false;
   bool m_pcaConnectorArnHasBeenSet = false;
   bool m_caEnrollmentPolicyStatusHasBeenSet = false;

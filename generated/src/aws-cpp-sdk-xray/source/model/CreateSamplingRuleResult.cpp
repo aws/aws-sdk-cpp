@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSamplingRuleResult::CreateSamplingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSamplingRuleResult& CreateSamplingRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SamplingRuleRecord")) {
     m_samplingRuleRecord = jsonValue.GetObject("SamplingRuleRecord");

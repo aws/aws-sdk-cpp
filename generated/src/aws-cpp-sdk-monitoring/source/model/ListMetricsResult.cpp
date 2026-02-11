@@ -23,6 +23,7 @@ using namespace Aws;
 ListMetricsResult::ListMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) { *this = result; }
 
 ListMetricsResult& ListMetricsResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  m_responseCode = result.GetResponseCode();
   const auto& cborValue = result.GetPayload();
   const auto decoder = cborValue.GetDecoder();
 

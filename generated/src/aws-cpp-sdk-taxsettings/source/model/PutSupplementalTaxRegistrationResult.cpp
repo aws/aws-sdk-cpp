@@ -23,6 +23,7 @@ PutSupplementalTaxRegistrationResult::PutSupplementalTaxRegistrationResult(const
 
 PutSupplementalTaxRegistrationResult& PutSupplementalTaxRegistrationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authorityId")) {
     m_authorityId = jsonValue.GetString("authorityId");

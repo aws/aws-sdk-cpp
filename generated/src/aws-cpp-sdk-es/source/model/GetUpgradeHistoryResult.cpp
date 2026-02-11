@@ -20,6 +20,7 @@ using namespace Aws;
 GetUpgradeHistoryResult::GetUpgradeHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUpgradeHistoryResult& GetUpgradeHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpgradeHistories")) {
     Aws::Utils::Array<JsonView> upgradeHistoriesJsonList = jsonValue.GetArray("UpgradeHistories");

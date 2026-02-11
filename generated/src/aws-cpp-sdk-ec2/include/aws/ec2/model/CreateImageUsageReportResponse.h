@@ -58,10 +58,13 @@ class CreateImageUsageReportResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reportId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

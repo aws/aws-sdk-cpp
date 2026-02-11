@@ -56,10 +56,13 @@ class CreateDBSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DBSnapshot m_dBSnapshot;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBSnapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

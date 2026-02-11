@@ -64,10 +64,13 @@ class GetDeploymentGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeploymentGroupInfo m_deploymentGroupInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentGroupInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

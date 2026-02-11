@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFleetResult::UpdateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFleetResult& UpdateFleetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Fleet")) {
     m_fleet = jsonValue.GetObject("Fleet");

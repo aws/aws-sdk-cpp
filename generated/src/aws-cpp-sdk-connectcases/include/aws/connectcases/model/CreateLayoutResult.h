@@ -74,12 +74,15 @@ class CreateLayoutResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_layoutId;
 
   Aws::String m_layoutArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_layoutIdHasBeenSet = false;
   bool m_layoutArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchCreatePartitionResult::BatchCreatePartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchCreatePartitionResult& BatchCreatePartitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");

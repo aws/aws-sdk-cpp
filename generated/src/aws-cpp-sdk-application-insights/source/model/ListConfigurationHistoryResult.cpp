@@ -20,6 +20,7 @@ using namespace Aws;
 ListConfigurationHistoryResult::ListConfigurationHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConfigurationHistoryResult& ListConfigurationHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventList")) {
     Aws::Utils::Array<JsonView> eventListJsonList = jsonValue.GetArray("EventList");

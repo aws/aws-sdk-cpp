@@ -205,6 +205,8 @@ class GetModelVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_modelId;
 
@@ -225,6 +227,7 @@ class GetModelVersionResult {
   Aws::String m_arn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelIdHasBeenSet = false;
   bool m_modelTypeHasBeenSet = false;
   bool m_modelVersionNumberHasBeenSet = false;

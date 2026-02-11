@@ -20,6 +20,7 @@ using namespace Aws;
 StartTransformerJobResult::StartTransformerJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartTransformerJobResult& StartTransformerJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("transformerJobId")) {
     m_transformerJobId = jsonValue.GetString("transformerJobId");

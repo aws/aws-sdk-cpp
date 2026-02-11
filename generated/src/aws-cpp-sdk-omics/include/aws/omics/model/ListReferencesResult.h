@@ -82,12 +82,15 @@ class ListReferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ReferenceListItem> m_references;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_referencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

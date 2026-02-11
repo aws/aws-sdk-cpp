@@ -104,6 +104,8 @@ class UpdateShardCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_streamName;
 
@@ -114,6 +116,7 @@ class UpdateShardCountResult {
   Aws::String m_streamARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamNameHasBeenSet = false;
   bool m_currentShardCountHasBeenSet = false;
   bool m_targetShardCountHasBeenSet = false;

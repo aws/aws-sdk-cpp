@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSyncConfigurationResult::CreateSyncConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSyncConfigurationResult& CreateSyncConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SyncConfiguration")) {
     m_syncConfiguration = jsonValue.GetObject("SyncConfiguration");

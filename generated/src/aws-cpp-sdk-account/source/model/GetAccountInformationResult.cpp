@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountInformationResult::GetAccountInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountInformationResult& GetAccountInformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountCreatedDate")) {
     m_accountCreatedDate = jsonValue.GetString("AccountCreatedDate");

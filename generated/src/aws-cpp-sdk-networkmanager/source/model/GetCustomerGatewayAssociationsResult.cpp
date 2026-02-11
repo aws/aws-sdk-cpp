@@ -23,6 +23,7 @@ GetCustomerGatewayAssociationsResult::GetCustomerGatewayAssociationsResult(const
 
 GetCustomerGatewayAssociationsResult& GetCustomerGatewayAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomerGatewayAssociations")) {
     Aws::Utils::Array<JsonView> customerGatewayAssociationsJsonList = jsonValue.GetArray("CustomerGatewayAssociations");

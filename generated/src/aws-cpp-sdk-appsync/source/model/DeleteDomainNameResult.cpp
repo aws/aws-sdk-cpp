@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDomainNameResult::DeleteDomainNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDomainNameResult& DeleteDomainNameResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

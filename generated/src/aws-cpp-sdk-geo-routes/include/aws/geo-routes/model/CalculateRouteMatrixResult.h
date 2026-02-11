@@ -122,6 +122,8 @@ class CalculateRouteMatrixResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_errorCount{0};
 
@@ -132,6 +134,7 @@ class CalculateRouteMatrixResult {
   RouteMatrixBoundary m_routingBoundary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_errorCountHasBeenSet = false;
   bool m_pricingBucketHasBeenSet = false;
   bool m_routeMatrixHasBeenSet = false;

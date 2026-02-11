@@ -20,6 +20,7 @@ using namespace Aws;
 GetCapacityProviderResult::GetCapacityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCapacityProviderResult& GetCapacityProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CapacityProvider")) {
     m_capacityProvider = jsonValue.GetObject("CapacityProvider");

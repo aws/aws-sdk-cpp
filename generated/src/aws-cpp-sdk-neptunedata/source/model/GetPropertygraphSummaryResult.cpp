@@ -20,6 +20,7 @@ using namespace Aws;
 GetPropertygraphSummaryResult::GetPropertygraphSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPropertygraphSummaryResult& GetPropertygraphSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("payload")) {
     m_payload = jsonValue.GetObject("payload");

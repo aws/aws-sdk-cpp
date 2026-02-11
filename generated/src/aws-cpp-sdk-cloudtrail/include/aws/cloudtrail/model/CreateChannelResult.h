@@ -138,6 +138,8 @@ class CreateChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_channelArn;
 
@@ -150,6 +152,7 @@ class CreateChannelResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;

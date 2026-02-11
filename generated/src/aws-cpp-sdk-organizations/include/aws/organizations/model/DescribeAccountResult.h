@@ -65,10 +65,13 @@ class DescribeAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Account m_account;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFleetEventsResult::DescribeFleetEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFleetEventsResult& DescribeFleetEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Events")) {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");

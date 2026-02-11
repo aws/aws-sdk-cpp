@@ -23,6 +23,7 @@ CreateRecommenderConfigurationResult::CreateRecommenderConfigurationResult(const
 
 CreateRecommenderConfigurationResult& CreateRecommenderConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_recommenderConfigurationResponse = jsonValue;
   m_recommenderConfigurationResponseHasBeenSet = true;

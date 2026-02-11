@@ -20,6 +20,7 @@ using namespace Aws;
 GetBackendResult::GetBackendResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBackendResult& GetBackendResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("amplifyFeatureFlags")) {
     m_amplifyFeatureFlags = jsonValue.GetString("amplifyFeatureFlags");

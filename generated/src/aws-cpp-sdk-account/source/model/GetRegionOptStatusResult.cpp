@@ -20,6 +20,7 @@ using namespace Aws;
 GetRegionOptStatusResult::GetRegionOptStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRegionOptStatusResult& GetRegionOptStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegionName")) {
     m_regionName = jsonValue.GetString("RegionName");

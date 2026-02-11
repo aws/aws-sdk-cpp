@@ -20,6 +20,7 @@ using namespace Aws;
 SendProjectSessionActionResult::SendProjectSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendProjectSessionActionResult& SendProjectSessionActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Result")) {
     m_result = jsonValue.GetString("Result");

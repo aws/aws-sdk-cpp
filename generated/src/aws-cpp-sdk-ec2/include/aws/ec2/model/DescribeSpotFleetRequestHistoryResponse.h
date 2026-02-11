@@ -146,6 +146,8 @@ class DescribeSpotFleetRequestHistoryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<HistoryRecord> m_historyRecords;
 
@@ -158,6 +160,7 @@ class DescribeSpotFleetRequestHistoryResponse {
   Aws::Utils::DateTime m_startTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_historyRecordsHasBeenSet = false;
   bool m_lastEvaluatedTimeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

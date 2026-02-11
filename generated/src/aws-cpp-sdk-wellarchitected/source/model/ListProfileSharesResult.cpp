@@ -20,6 +20,7 @@ using namespace Aws;
 ListProfileSharesResult::ListProfileSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListProfileSharesResult& ListProfileSharesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileShareSummaries")) {
     Aws::Utils::Array<JsonView> profileShareSummariesJsonList = jsonValue.GetArray("ProfileShareSummaries");

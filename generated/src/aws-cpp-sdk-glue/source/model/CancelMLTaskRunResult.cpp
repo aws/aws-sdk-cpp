@@ -20,6 +20,7 @@ using namespace Aws;
 CancelMLTaskRunResult::CancelMLTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelMLTaskRunResult& CancelMLTaskRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransformId")) {
     m_transformId = jsonValue.GetString("TransformId");

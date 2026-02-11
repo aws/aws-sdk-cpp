@@ -84,12 +84,15 @@ class SearchAvailablePhoneNumbersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<AvailableNumberSummary> m_availableNumbersList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_availableNumbersListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

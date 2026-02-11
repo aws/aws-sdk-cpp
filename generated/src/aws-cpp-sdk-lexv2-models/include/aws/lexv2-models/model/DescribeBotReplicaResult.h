@@ -149,6 +149,8 @@ class DescribeBotReplicaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -163,6 +165,7 @@ class DescribeBotReplicaResult {
   Aws::Vector<Aws::String> m_failureReasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botIdHasBeenSet = false;
   bool m_replicaRegionHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;

@@ -128,6 +128,8 @@ class DetectLabelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Label> m_labels;
 
@@ -138,6 +140,7 @@ class DetectLabelsResult {
   DetectLabelsImageProperties m_imageProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_labelsHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;
   bool m_labelModelVersionHasBeenSet = false;

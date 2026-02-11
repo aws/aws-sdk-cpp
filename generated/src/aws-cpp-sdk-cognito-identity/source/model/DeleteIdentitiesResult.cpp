@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteIdentitiesResult::DeleteIdentitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteIdentitiesResult& DeleteIdentitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UnprocessedIdentityIds")) {
     Aws::Utils::Array<JsonView> unprocessedIdentityIdsJsonList = jsonValue.GetArray("UnprocessedIdentityIds");

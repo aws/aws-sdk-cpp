@@ -23,6 +23,7 @@ GetTimeSeriesServiceStatisticsResult::GetTimeSeriesServiceStatisticsResult(const
 
 GetTimeSeriesServiceStatisticsResult& GetTimeSeriesServiceStatisticsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TimeSeriesServiceStatistics")) {
     Aws::Utils::Array<JsonView> timeSeriesServiceStatisticsJsonList = jsonValue.GetArray("TimeSeriesServiceStatistics");

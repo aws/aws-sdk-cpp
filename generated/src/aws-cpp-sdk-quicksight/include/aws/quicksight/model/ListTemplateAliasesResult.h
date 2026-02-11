@@ -98,6 +98,8 @@ class ListTemplateAliasesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TemplateAlias> m_templateAliasList;
 
@@ -106,6 +108,7 @@ class ListTemplateAliasesResult {
   Aws::String m_requestId;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateAliasListHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

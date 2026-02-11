@@ -20,6 +20,7 @@ using namespace Aws;
 ResolveCustomerResult::ResolveCustomerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ResolveCustomerResult& ResolveCustomerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomerIdentifier")) {
     m_customerIdentifier = jsonValue.GetString("CustomerIdentifier");

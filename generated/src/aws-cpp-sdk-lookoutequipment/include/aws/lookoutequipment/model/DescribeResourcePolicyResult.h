@@ -109,6 +109,8 @@ class DescribeResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyRevisionId;
 
@@ -119,6 +121,7 @@ class DescribeResourcePolicyResult {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyRevisionIdHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

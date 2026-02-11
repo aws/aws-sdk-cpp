@@ -423,6 +423,8 @@ class DescribeServiceJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ServiceJobAttemptDetail> m_attempts;
 
@@ -467,6 +469,7 @@ class DescribeServiceJobResult {
   ServiceJobTimeout m_timeoutConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attemptsHasBeenSet = false;
   bool m_capacityUsageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

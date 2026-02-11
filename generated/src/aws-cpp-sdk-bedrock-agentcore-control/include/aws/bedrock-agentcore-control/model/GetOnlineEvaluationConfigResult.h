@@ -296,6 +296,8 @@ class GetOnlineEvaluationConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_onlineEvaluationConfigArn;
 
@@ -326,6 +328,7 @@ class GetOnlineEvaluationConfigResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_onlineEvaluationConfigArnHasBeenSet = false;
   bool m_onlineEvaluationConfigIdHasBeenSet = false;
   bool m_onlineEvaluationConfigNameHasBeenSet = false;

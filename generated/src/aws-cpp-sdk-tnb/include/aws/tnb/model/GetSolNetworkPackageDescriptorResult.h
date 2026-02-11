@@ -69,12 +69,15 @@ class GetSolNetworkPackageDescriptorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DescriptorContentType m_contentType{DescriptorContentType::NOT_SET};
 
   Aws::Utils::Stream::ResponseStream m_nsd{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_nsdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

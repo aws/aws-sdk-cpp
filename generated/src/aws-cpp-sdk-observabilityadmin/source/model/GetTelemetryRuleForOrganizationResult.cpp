@@ -23,6 +23,7 @@ GetTelemetryRuleForOrganizationResult::GetTelemetryRuleForOrganizationResult(con
 
 GetTelemetryRuleForOrganizationResult& GetTelemetryRuleForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleName")) {
     m_ruleName = jsonValue.GetString("RuleName");

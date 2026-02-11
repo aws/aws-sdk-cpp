@@ -106,6 +106,8 @@ class ListMedicalTranscriptionJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TranscriptionJobStatus m_status{TranscriptionJobStatus::NOT_SET};
 
@@ -114,6 +116,7 @@ class ListMedicalTranscriptionJobsResult {
   Aws::Vector<MedicalTranscriptionJobSummary> m_medicalTranscriptionJobSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_medicalTranscriptionJobSummariesHasBeenSet = false;

@@ -142,6 +142,8 @@ class GetFunctionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FunctionConfiguration m_configuration;
 
@@ -154,6 +156,7 @@ class GetFunctionResult {
   Concurrency m_concurrency;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationHasBeenSet = false;
   bool m_codeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

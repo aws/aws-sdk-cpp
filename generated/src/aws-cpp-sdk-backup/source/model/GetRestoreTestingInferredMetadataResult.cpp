@@ -23,6 +23,7 @@ GetRestoreTestingInferredMetadataResult::GetRestoreTestingInferredMetadataResult
 
 GetRestoreTestingInferredMetadataResult& GetRestoreTestingInferredMetadataResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferredMetadata")) {
     Aws::Map<Aws::String, JsonView> inferredMetadataJsonMap = jsonValue.GetObject("InferredMetadata").GetAllObjects();

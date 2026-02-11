@@ -100,6 +100,8 @@ class PutRecordBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_failedPutCount{0};
 
@@ -108,6 +110,7 @@ class PutRecordBatchResult {
   Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedPutCountHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;
   bool m_requestResponsesHasBeenSet = false;

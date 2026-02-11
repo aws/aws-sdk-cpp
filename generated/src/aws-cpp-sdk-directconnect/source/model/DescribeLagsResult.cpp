@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLagsResult::DescribeLagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLagsResult& DescribeLagsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("lags")) {
     Aws::Utils::Array<JsonView> lagsJsonList = jsonValue.GetArray("lags");

@@ -90,6 +90,8 @@ class CreateListingChangeSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_listingId;
 
@@ -98,6 +100,7 @@ class CreateListingChangeSetResult {
   ListingStatus m_status{ListingStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_listingIdHasBeenSet = false;
   bool m_listingRevisionHasBeenSet = false;
   bool m_statusHasBeenSet = false;

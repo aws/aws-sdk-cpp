@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateWebAppCustomizationResult::UpdateWebAppCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateWebAppCustomizationResult& UpdateWebAppCustomizationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WebAppId")) {
     m_webAppId = jsonValue.GetString("WebAppId");

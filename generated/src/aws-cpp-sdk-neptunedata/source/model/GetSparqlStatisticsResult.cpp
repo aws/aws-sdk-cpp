@@ -20,6 +20,7 @@ using namespace Aws;
 GetSparqlStatisticsResult::GetSparqlStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSparqlStatisticsResult& GetSparqlStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");

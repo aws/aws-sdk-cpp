@@ -23,6 +23,7 @@ ListSourcesForS3TableIntegrationResult::ListSourcesForS3TableIntegrationResult(c
 
 ListSourcesForS3TableIntegrationResult& ListSourcesForS3TableIntegrationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sources")) {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");

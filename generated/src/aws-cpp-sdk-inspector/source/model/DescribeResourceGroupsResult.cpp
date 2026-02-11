@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeResourceGroupsResult::DescribeResourceGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeResourceGroupsResult& DescribeResourceGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceGroups")) {
     Aws::Utils::Array<JsonView> resourceGroupsJsonList = jsonValue.GetArray("resourceGroups");

@@ -77,12 +77,15 @@ class AssociateSoftwareTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_secretCode;
 
   Aws::String m_session;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_secretCodeHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

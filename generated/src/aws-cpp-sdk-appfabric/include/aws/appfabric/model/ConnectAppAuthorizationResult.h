@@ -58,10 +58,13 @@ class ConnectAppAuthorizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AppAuthorizationSummary m_appAuthorizationSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appAuthorizationSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

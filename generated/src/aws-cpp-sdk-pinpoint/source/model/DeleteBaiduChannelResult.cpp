@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBaiduChannelResult::DeleteBaiduChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBaiduChannelResult& DeleteBaiduChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_baiduChannelResponse = jsonValue;
   m_baiduChannelResponseHasBeenSet = true;

@@ -19,6 +19,7 @@ using namespace Aws;
 PutImagePolicyResult::PutImagePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutImagePolicyResult& PutImagePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");

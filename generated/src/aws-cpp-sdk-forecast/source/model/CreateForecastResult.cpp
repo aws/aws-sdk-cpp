@@ -20,6 +20,7 @@ using namespace Aws;
 CreateForecastResult::CreateForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateForecastResult& CreateForecastResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ForecastArn")) {
     m_forecastArn = jsonValue.GetString("ForecastArn");

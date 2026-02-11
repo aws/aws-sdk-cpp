@@ -20,6 +20,7 @@ using namespace Aws;
 TestConversionResult::TestConversionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestConversionResult& TestConversionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("convertedFileContent")) {
     m_convertedFileContent = jsonValue.GetString("convertedFileContent");

@@ -20,6 +20,7 @@ using namespace Aws;
 PutTraceSegmentsResult::PutTraceSegmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutTraceSegmentsResult& PutTraceSegmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UnprocessedTraceSegments")) {
     Aws::Utils::Array<JsonView> unprocessedTraceSegmentsJsonList = jsonValue.GetArray("UnprocessedTraceSegments");

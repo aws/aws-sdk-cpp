@@ -20,6 +20,7 @@ using namespace Aws;
 StartADAssessmentResult::StartADAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartADAssessmentResult& StartADAssessmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssessmentId")) {
     m_assessmentId = jsonValue.GetString("AssessmentId");

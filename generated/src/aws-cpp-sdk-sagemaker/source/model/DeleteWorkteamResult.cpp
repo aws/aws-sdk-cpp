@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteWorkteamResult::DeleteWorkteamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteWorkteamResult& DeleteWorkteamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Success")) {
     m_success = jsonValue.GetBool("Success");

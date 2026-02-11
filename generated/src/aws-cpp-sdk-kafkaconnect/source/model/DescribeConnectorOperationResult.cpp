@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeConnectorOperationResult::DescribeConnectorOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeConnectorOperationResult& DescribeConnectorOperationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectorArn")) {
     m_connectorArn = jsonValue.GetString("connectorArn");

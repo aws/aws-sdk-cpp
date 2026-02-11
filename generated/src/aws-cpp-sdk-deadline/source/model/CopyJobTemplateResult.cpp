@@ -20,6 +20,7 @@ using namespace Aws;
 CopyJobTemplateResult::CopyJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CopyJobTemplateResult& CopyJobTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("templateType")) {
     m_templateType = JobTemplateTypeMapper::GetJobTemplateTypeForName(jsonValue.GetString("templateType"));

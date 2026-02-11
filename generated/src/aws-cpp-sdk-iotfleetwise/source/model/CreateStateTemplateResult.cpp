@@ -20,6 +20,7 @@ using namespace Aws;
 CreateStateTemplateResult::CreateStateTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateStateTemplateResult& CreateStateTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");

@@ -20,6 +20,7 @@ using namespace Aws;
 CommitTransactionResult::CommitTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CommitTransactionResult& CommitTransactionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransactionStatus")) {
     m_transactionStatus = TransactionStatusMapper::GetTransactionStatusForName(jsonValue.GetString("TransactionStatus"));

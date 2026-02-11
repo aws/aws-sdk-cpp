@@ -75,12 +75,15 @@ class GetPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Policy m_policy;
 
   Aws::String m_policyArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

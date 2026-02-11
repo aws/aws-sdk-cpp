@@ -76,12 +76,15 @@ class GetAssociatedPackageGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PackageGroupDescription m_packageGroup;
 
   PackageGroupAssociationType m_associationType{PackageGroupAssociationType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_packageGroupHasBeenSet = false;
   bool m_associationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

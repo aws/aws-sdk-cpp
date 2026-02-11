@@ -20,6 +20,7 @@ using namespace Aws;
 ListApprovalRuleTemplatesResult::ListApprovalRuleTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListApprovalRuleTemplatesResult& ListApprovalRuleTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("approvalRuleTemplateNames")) {
     Aws::Utils::Array<JsonView> approvalRuleTemplateNamesJsonList = jsonValue.GetArray("approvalRuleTemplateNames");

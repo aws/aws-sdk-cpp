@@ -19,6 +19,7 @@ using namespace Aws;
 GetMapSpritesResult::GetMapSpritesResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetMapSpritesResult& GetMapSpritesResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_blob = result.TakeOwnershipOfPayload();
   m_blobHasBeenSet = true;
 

@@ -20,6 +20,7 @@ using namespace Aws;
 ListRoleAliasesResult::ListRoleAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRoleAliasesResult& ListRoleAliasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("roleAliases")) {
     Aws::Utils::Array<JsonView> roleAliasesJsonList = jsonValue.GetArray("roleAliases");

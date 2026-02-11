@@ -58,10 +58,13 @@ class GetConfiguredTableAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConfiguredTableAssociation m_configuredTableAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configuredTableAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

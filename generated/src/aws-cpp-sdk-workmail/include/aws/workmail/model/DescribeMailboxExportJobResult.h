@@ -245,6 +245,8 @@ class DescribeMailboxExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_entityId;
 
@@ -271,6 +273,7 @@ class DescribeMailboxExportJobResult {
   Aws::Utils::DateTime m_endTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entityIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;

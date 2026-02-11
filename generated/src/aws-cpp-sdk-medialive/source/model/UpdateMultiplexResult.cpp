@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMultiplexResult::UpdateMultiplexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMultiplexResult& UpdateMultiplexResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("multiplex")) {
     m_multiplex = jsonValue.GetObject("multiplex");

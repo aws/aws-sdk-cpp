@@ -58,10 +58,13 @@ class GetFolderPathResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResourcePath m_path;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pathHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

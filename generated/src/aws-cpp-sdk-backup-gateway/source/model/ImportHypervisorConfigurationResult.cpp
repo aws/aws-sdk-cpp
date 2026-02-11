@@ -22,6 +22,7 @@ ImportHypervisorConfigurationResult::ImportHypervisorConfigurationResult(const A
 }
 
 ImportHypervisorConfigurationResult& ImportHypervisorConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HypervisorArn")) {
     m_hypervisorArn = jsonValue.GetString("HypervisorArn");

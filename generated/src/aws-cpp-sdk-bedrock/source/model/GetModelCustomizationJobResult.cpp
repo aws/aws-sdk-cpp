@@ -20,6 +20,7 @@ using namespace Aws;
 GetModelCustomizationJobResult::GetModelCustomizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobArn")) {
     m_jobArn = jsonValue.GetString("jobArn");

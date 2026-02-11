@@ -237,6 +237,8 @@ class GetMonitorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_monitorId;
 
@@ -261,6 +263,7 @@ class GetMonitorResult {
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_monitorIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_subdomainHasBeenSet = false;

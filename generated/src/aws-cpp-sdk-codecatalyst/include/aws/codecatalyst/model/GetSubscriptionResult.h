@@ -116,6 +116,8 @@ class GetSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_subscriptionType;
 
@@ -126,6 +128,7 @@ class GetSubscriptionResult {
   Aws::Utils::DateTime m_pendingSubscriptionStartTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subscriptionTypeHasBeenSet = false;
   bool m_awsAccountNameHasBeenSet = false;
   bool m_pendingSubscriptionTypeHasBeenSet = false;

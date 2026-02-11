@@ -20,6 +20,7 @@ using namespace Aws;
 GetGeoMatchSetResult::GetGeoMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGeoMatchSetResult& GetGeoMatchSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GeoMatchSet")) {
     m_geoMatchSet = jsonValue.GetObject("GeoMatchSet");

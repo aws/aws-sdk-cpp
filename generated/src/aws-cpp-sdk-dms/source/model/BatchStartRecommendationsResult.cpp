@@ -20,6 +20,7 @@ using namespace Aws;
 BatchStartRecommendationsResult::BatchStartRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchStartRecommendationsResult& BatchStartRecommendationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ErrorEntries")) {
     Aws::Utils::Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("ErrorEntries");

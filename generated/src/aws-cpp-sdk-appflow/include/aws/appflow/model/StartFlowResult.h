@@ -91,6 +91,8 @@ class StartFlowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_flowArn;
 
@@ -99,6 +101,7 @@ class StartFlowResult {
   Aws::String m_executionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_flowStatusHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;

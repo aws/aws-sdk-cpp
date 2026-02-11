@@ -90,6 +90,8 @@ class CreateRequesterGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_gatewayId;
 
@@ -98,6 +100,7 @@ class CreateRequesterGatewayResult {
   RequesterGatewayStatus m_status{RequesterGatewayStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -179,6 +179,8 @@ class GetDocumentAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DocumentMetadata m_documentMetadata;
 
@@ -195,6 +197,7 @@ class GetDocumentAnalysisResult {
   Aws::String m_analyzeDocumentModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentMetadataHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

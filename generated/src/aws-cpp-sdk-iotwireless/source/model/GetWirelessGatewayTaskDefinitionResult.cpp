@@ -23,6 +23,7 @@ GetWirelessGatewayTaskDefinitionResult::GetWirelessGatewayTaskDefinitionResult(c
 
 GetWirelessGatewayTaskDefinitionResult& GetWirelessGatewayTaskDefinitionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutoCreateTasks")) {
     m_autoCreateTasks = jsonValue.GetBool("AutoCreateTasks");

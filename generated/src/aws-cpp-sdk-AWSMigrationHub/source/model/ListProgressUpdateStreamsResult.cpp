@@ -20,6 +20,7 @@ using namespace Aws;
 ListProgressUpdateStreamsResult::ListProgressUpdateStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListProgressUpdateStreamsResult& ListProgressUpdateStreamsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProgressUpdateStreamSummaryList")) {
     Aws::Utils::Array<JsonView> progressUpdateStreamSummaryListJsonList = jsonValue.GetArray("ProgressUpdateStreamSummaryList");

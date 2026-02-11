@@ -92,6 +92,8 @@ class UpdateBenefitApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -100,6 +102,7 @@ class UpdateBenefitApplicationResult {
   Aws::String m_revision;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

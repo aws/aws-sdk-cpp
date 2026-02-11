@@ -20,6 +20,7 @@ using namespace Aws;
 ListIntentStageMetricsResult::ListIntentStageMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIntentStageMetricsResult& ListIntentStageMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botId")) {
     m_botId = jsonValue.GetString("botId");

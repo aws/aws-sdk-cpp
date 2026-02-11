@@ -63,10 +63,13 @@ class GetFunctionRecursionConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RecursiveLoop m_recursiveLoop{RecursiveLoop::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recursiveLoopHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

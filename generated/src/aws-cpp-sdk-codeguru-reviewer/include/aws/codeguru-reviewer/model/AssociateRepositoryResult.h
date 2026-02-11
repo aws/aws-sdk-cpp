@@ -89,12 +89,15 @@ class AssociateRepositoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RepositoryAssociation m_repositoryAssociation;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryAssociationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

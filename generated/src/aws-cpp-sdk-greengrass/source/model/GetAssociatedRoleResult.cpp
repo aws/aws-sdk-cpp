@@ -20,6 +20,7 @@ using namespace Aws;
 GetAssociatedRoleResult::GetAssociatedRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAssociatedRoleResult& GetAssociatedRoleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssociatedAt")) {
     m_associatedAt = jsonValue.GetString("AssociatedAt");

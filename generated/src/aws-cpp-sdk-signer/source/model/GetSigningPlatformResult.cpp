@@ -20,6 +20,7 @@ using namespace Aws;
 GetSigningPlatformResult::GetSigningPlatformResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSigningPlatformResult& GetSigningPlatformResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("platformId")) {
     m_platformId = jsonValue.GetString("platformId");

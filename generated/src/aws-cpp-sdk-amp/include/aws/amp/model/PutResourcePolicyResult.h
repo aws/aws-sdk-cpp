@@ -73,12 +73,15 @@ class PutResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WorkspacePolicyStatusCode m_policyStatus{WorkspacePolicyStatusCode::NOT_SET};
 
   Aws::String m_revisionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyStatusHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

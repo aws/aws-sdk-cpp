@@ -23,6 +23,7 @@ CreateNotificationSubscriptionResult::CreateNotificationSubscriptionResult(const
 
 CreateNotificationSubscriptionResult& CreateNotificationSubscriptionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Subscription")) {
     m_subscription = jsonValue.GetObject("Subscription");

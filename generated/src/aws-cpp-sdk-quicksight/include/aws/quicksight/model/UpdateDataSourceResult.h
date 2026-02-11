@@ -106,6 +106,8 @@ class UpdateDataSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -116,6 +118,7 @@ class UpdateDataSourceResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;

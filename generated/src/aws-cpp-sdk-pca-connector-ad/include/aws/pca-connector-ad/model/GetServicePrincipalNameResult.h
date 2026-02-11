@@ -59,10 +59,13 @@ class GetServicePrincipalNameResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServicePrincipalName m_servicePrincipalName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_servicePrincipalNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

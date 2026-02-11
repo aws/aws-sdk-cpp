@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWorkspacesPoolResult::CreateWorkspacesPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWorkspacesPoolResult& CreateWorkspacesPoolResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WorkspacesPool")) {
     m_workspacesPool = jsonValue.GetObject("WorkspacesPool");

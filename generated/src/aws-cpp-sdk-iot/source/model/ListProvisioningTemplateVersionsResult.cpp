@@ -23,6 +23,7 @@ ListProvisioningTemplateVersionsResult::ListProvisioningTemplateVersionsResult(c
 
 ListProvisioningTemplateVersionsResult& ListProvisioningTemplateVersionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("versions")) {
     Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");

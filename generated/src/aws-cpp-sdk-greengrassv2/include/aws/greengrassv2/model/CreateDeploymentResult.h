@@ -93,6 +93,8 @@ class CreateDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_deploymentId;
 
@@ -101,6 +103,7 @@ class CreateDeploymentResult {
   Aws::String m_iotJobArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentIdHasBeenSet = false;
   bool m_iotJobIdHasBeenSet = false;
   bool m_iotJobArnHasBeenSet = false;

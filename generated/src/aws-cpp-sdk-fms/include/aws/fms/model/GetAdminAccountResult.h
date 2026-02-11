@@ -74,12 +74,15 @@ class GetAdminAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_adminAccount;
 
   AccountRoleStatus m_roleStatus{AccountRoleStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_adminAccountHasBeenSet = false;
   bool m_roleStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

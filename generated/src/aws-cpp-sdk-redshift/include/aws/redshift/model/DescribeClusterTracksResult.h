@@ -86,12 +86,15 @@ class DescribeClusterTracksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<MaintenanceTrack> m_maintenanceTracks;
 
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_maintenanceTracksHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

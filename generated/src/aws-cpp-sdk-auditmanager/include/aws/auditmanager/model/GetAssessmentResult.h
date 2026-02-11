@@ -72,12 +72,15 @@ class GetAssessmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Assessment m_assessment;
 
   Role m_userRole;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assessmentHasBeenSet = false;
   bool m_userRoleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -63,10 +63,13 @@ class CreateCustomerGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CustomerGateway m_customerGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customerGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

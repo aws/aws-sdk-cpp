@@ -20,6 +20,7 @@ using namespace Aws;
 PredictQAppResult::PredictQAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PredictQAppResult& PredictQAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("app")) {
     m_app = jsonValue.GetObject("app");

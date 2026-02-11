@@ -66,10 +66,13 @@ class GetLoadBalancerTlsCertificatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<LoadBalancerTlsCertificate> m_tlsCertificates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tlsCertificatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

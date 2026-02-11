@@ -119,6 +119,8 @@ class BatchDescribeTypeConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchDescribeTypeConfigurationsError> m_errors;
 
@@ -127,6 +129,7 @@ class BatchDescribeTypeConfigurationsResult {
   Aws::Vector<TypeConfigurationDetails> m_typeConfigurations;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_errorsHasBeenSet = false;
   bool m_unprocessedTypeConfigurationsHasBeenSet = false;
   bool m_typeConfigurationsHasBeenSet = false;

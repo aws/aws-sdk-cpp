@@ -141,6 +141,8 @@ class DescribeWorkflowExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WorkflowExecutionInfo m_executionInfo;
 
@@ -153,6 +155,7 @@ class DescribeWorkflowExecutionResult {
   Aws::String m_latestExecutionContext;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionInfoHasBeenSet = false;
   bool m_executionConfigurationHasBeenSet = false;
   bool m_openCountsHasBeenSet = false;

@@ -65,10 +65,13 @@ class CreateInstanceProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceProfile m_instanceProfile;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

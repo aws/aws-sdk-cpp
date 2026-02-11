@@ -64,10 +64,13 @@ class CreateBackupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Backup m_backup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -74,12 +74,15 @@ class CreateJobTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobTemplateArn;
 
   Aws::String m_jobTemplateId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobTemplateArnHasBeenSet = false;
   bool m_jobTemplateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

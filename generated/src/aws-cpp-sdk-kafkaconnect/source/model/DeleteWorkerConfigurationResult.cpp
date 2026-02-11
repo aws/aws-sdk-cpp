@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteWorkerConfigurationResult::DeleteWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteWorkerConfigurationResult& DeleteWorkerConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workerConfigurationArn")) {
     m_workerConfigurationArn = jsonValue.GetString("workerConfigurationArn");

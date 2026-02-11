@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRoutingControlResult::DescribeRoutingControlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRoutingControlResult& DescribeRoutingControlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RoutingControl")) {
     m_routingControl = jsonValue.GetObject("RoutingControl");

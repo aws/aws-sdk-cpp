@@ -59,10 +59,13 @@ class DescribeAppInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AppInstance m_appInstance;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

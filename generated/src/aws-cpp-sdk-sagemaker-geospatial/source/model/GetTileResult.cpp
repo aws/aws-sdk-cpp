@@ -19,6 +19,7 @@ using namespace Aws;
 GetTileResult::GetTileResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetTileResult& GetTileResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_binaryFile = result.TakeOwnershipOfPayload();
   m_binaryFileHasBeenSet = true;
 

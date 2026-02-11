@@ -20,6 +20,7 @@ using namespace Aws;
 CreateChatTokenResult::CreateChatTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateChatTokenResult& CreateChatTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("token")) {
     m_token = jsonValue.GetString("token");

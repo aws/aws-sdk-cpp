@@ -20,6 +20,7 @@ using namespace Aws;
 ScheduleKeyDeletionResult::ScheduleKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ScheduleKeyDeletionResult& ScheduleKeyDeletionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");

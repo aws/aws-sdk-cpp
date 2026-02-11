@@ -24,6 +24,7 @@ GetQueryStatusMonitorTopContributorsResult::GetQueryStatusMonitorTopContributors
 
 GetQueryStatusMonitorTopContributorsResult& GetQueryStatusMonitorTopContributorsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("status"));

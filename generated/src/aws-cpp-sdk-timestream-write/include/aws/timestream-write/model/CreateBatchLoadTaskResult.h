@@ -57,10 +57,13 @@ class CreateBatchLoadTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_taskId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

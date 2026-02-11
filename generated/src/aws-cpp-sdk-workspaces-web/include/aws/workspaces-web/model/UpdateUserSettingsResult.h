@@ -58,10 +58,13 @@ class UpdateUserSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   UserSettings m_userSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

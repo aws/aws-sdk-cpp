@@ -22,6 +22,7 @@ ListRestoreTestingSelectionsResult::ListRestoreTestingSelectionsResult(const Aws
 }
 
 ListRestoreTestingSelectionsResult& ListRestoreTestingSelectionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetDurableExecutionStateResult::GetDurableExecutionStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDurableExecutionStateResult& GetDurableExecutionStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Operations")) {
     Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("Operations");

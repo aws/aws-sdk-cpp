@@ -20,6 +20,7 @@ using namespace Aws;
 GetRetrievedTracesGraphResult::GetRetrievedTracesGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRetrievedTracesGraphResult& GetRetrievedTracesGraphResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RetrievalStatus")) {
     m_retrievalStatus = RetrievalStatusMapper::GetRetrievalStatusForName(jsonValue.GetString("RetrievalStatus"));

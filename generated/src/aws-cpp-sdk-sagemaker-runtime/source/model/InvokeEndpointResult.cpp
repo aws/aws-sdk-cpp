@@ -19,6 +19,7 @@ using namespace Aws;
 InvokeEndpointResult::InvokeEndpointResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 InvokeEndpointResult& InvokeEndpointResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_body = result.TakeOwnershipOfPayload();
   m_bodyHasBeenSet = true;
 

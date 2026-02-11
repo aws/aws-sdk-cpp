@@ -23,6 +23,7 @@ ListConfiguredTableAssociationsResult::ListConfiguredTableAssociationsResult(con
 
 ListConfiguredTableAssociationsResult& ListConfiguredTableAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredTableAssociationSummaries")) {
     Aws::Utils::Array<JsonView> configuredTableAssociationSummariesJsonList = jsonValue.GetArray("configuredTableAssociationSummaries");

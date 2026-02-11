@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMLModelResult::CreateMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMLModelResult& CreateMLModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MLModelId")) {
     m_mLModelId = jsonValue.GetString("MLModelId");

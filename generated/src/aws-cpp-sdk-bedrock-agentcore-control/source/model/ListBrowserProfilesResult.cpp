@@ -20,6 +20,7 @@ using namespace Aws;
 ListBrowserProfilesResult::ListBrowserProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBrowserProfilesResult& ListBrowserProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("profileSummaries")) {
     Aws::Utils::Array<JsonView> profileSummariesJsonList = jsonValue.GetArray("profileSummaries");

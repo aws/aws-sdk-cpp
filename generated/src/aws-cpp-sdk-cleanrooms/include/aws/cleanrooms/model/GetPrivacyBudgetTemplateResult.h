@@ -58,10 +58,13 @@ class GetPrivacyBudgetTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PrivacyBudgetTemplate m_privacyBudgetTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_privacyBudgetTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

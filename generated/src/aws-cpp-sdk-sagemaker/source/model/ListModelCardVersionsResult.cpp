@@ -20,6 +20,7 @@ using namespace Aws;
 ListModelCardVersionsResult::ListModelCardVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListModelCardVersionsResult& ListModelCardVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelCardVersionSummaryList")) {
     Aws::Utils::Array<JsonView> modelCardVersionSummaryListJsonList = jsonValue.GetArray("ModelCardVersionSummaryList");

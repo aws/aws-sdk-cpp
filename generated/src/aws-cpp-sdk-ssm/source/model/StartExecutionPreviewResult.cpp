@@ -20,6 +20,7 @@ using namespace Aws;
 StartExecutionPreviewResult::StartExecutionPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartExecutionPreviewResult& StartExecutionPreviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExecutionPreviewId")) {
     m_executionPreviewId = jsonValue.GetString("ExecutionPreviewId");

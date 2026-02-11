@@ -23,6 +23,7 @@ DescribeWorkspaceImagePermissionsResult::DescribeWorkspaceImagePermissionsResult
 
 DescribeWorkspaceImagePermissionsResult& DescribeWorkspaceImagePermissionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImageId")) {
     m_imageId = jsonValue.GetString("ImageId");

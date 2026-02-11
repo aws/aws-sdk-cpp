@@ -74,12 +74,15 @@ class MergeBranchesBySquashResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commitId;
 
   Aws::String m_treeId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commitIdHasBeenSet = false;
   bool m_treeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

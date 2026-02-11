@@ -76,12 +76,15 @@ class EnableOrganizationAdminAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_adminAccountId;
 
   SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_adminAccountIdHasBeenSet = false;
   bool m_featureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

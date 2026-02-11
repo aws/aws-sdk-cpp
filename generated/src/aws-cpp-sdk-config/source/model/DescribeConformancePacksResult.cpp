@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeConformancePacksResult::DescribeConformancePacksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeConformancePacksResult& DescribeConformancePacksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConformancePackDetails")) {
     Aws::Utils::Array<JsonView> conformancePackDetailsJsonList = jsonValue.GetArray("ConformancePackDetails");

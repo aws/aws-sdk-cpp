@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFindingAggregatorResult::CreateFindingAggregatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFindingAggregatorResult& CreateFindingAggregatorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FindingAggregatorArn")) {
     m_findingAggregatorArn = jsonValue.GetString("FindingAggregatorArn");

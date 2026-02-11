@@ -57,10 +57,13 @@ class UpdateEphemerisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ephemerisId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ephemerisIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

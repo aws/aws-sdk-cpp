@@ -20,6 +20,7 @@ using namespace Aws;
 BatchPutGeofenceResult::BatchPutGeofenceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchPutGeofenceResult& BatchPutGeofenceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Successes")) {
     Aws::Utils::Array<JsonView> successesJsonList = jsonValue.GetArray("Successes");

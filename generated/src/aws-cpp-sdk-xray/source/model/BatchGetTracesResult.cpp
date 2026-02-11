@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetTracesResult::BatchGetTracesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetTracesResult& BatchGetTracesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Traces")) {
     Aws::Utils::Array<JsonView> tracesJsonList = jsonValue.GetArray("Traces");

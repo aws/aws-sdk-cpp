@@ -60,10 +60,13 @@ class DetectStackResourceDriftResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StackResourceDrift m_stackResourceDrift;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackResourceDriftHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

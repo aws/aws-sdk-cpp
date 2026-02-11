@@ -22,6 +22,7 @@ ListResourceProfileDetectionsResult::ListResourceProfileDetectionsResult(const A
 }
 
 ListResourceProfileDetectionsResult& ListResourceProfileDetectionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("detections")) {
     Aws::Utils::Array<JsonView> detectionsJsonList = jsonValue.GetArray("detections");

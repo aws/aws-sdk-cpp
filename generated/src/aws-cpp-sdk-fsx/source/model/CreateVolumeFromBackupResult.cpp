@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVolumeFromBackupResult::CreateVolumeFromBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVolumeFromBackupResult& CreateVolumeFromBackupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Volume")) {
     m_volume = jsonValue.GetObject("Volume");

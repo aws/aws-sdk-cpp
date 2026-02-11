@@ -74,12 +74,15 @@ class CreateAgentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_agentStatusARN;
 
   Aws::String m_agentStatusId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agentStatusARNHasBeenSet = false;
   bool m_agentStatusIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

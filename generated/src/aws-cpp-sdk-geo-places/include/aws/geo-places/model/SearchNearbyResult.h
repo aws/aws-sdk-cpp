@@ -103,6 +103,8 @@ class SearchNearbyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pricingBucket;
 
@@ -111,6 +113,7 @@ class SearchNearbyResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pricingBucketHasBeenSet = false;
   bool m_resultItemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

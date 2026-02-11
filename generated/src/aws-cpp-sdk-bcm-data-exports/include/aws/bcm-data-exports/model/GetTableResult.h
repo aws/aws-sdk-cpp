@@ -126,6 +126,8 @@ class GetTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_description;
 
@@ -136,6 +138,7 @@ class GetTableResult {
   Aws::Map<Aws::String, Aws::String> m_tableProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;

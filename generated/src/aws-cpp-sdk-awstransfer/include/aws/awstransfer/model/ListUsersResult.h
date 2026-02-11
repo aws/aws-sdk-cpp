@@ -104,6 +104,8 @@ class ListUsersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -112,6 +114,7 @@ class ListUsersResult {
   Aws::Vector<ListedUser> m_users;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_serverIdHasBeenSet = false;
   bool m_usersHasBeenSet = false;

@@ -95,12 +95,15 @@ class ListTablesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_tableNames;
 
   Aws::String m_lastEvaluatedTableName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableNamesHasBeenSet = false;
   bool m_lastEvaluatedTableNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

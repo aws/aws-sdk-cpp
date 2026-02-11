@@ -59,10 +59,13 @@ class CreateMeetingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Meeting m_meeting;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_meetingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

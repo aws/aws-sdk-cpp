@@ -23,6 +23,7 @@ ListUsageForLicenseConfigurationResult::ListUsageForLicenseConfigurationResult(c
 
 ListUsageForLicenseConfigurationResult& ListUsageForLicenseConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseConfigurationUsageList")) {
     Aws::Utils::Array<JsonView> licenseConfigurationUsageListJsonList = jsonValue.GetArray("LicenseConfigurationUsageList");

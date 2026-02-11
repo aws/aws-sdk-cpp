@@ -91,12 +91,15 @@ class ListVpcEndpointAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<VpcEndpointAssociationMetadata> m_vpcEndpointAssociations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_vpcEndpointAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

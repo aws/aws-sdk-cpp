@@ -20,6 +20,7 @@ using namespace Aws;
 GenerateMacEmvPinChangeResult::GenerateMacEmvPinChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateMacEmvPinChangeResult& GenerateMacEmvPinChangeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NewPinPekArn")) {
     m_newPinPekArn = jsonValue.GetString("NewPinPekArn");

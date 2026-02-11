@@ -22,6 +22,7 @@ GetSamplingStatisticSummariesResult::GetSamplingStatisticSummariesResult(const A
 }
 
 GetSamplingStatisticSummariesResult& GetSamplingStatisticSummariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SamplingStatisticSummaries")) {
     Aws::Utils::Array<JsonView> samplingStatisticSummariesJsonList = jsonValue.GetArray("SamplingStatisticSummaries");

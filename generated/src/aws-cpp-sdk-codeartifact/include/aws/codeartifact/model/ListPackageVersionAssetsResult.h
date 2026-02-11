@@ -179,6 +179,8 @@ class ListPackageVersionAssetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PackageFormat m_format{PackageFormat::NOT_SET};
 
@@ -195,6 +197,7 @@ class ListPackageVersionAssetsResult {
   Aws::Vector<AssetSummary> m_assets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_formatHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_packageHasBeenSet = false;

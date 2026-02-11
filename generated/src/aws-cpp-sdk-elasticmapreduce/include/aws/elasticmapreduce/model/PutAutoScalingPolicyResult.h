@@ -111,6 +111,8 @@ class PutAutoScalingPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clusterId;
 
@@ -121,6 +123,7 @@ class PutAutoScalingPolicyResult {
   Aws::String m_clusterArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterIdHasBeenSet = false;
   bool m_instanceGroupIdHasBeenSet = false;
   bool m_autoScalingPolicyHasBeenSet = false;

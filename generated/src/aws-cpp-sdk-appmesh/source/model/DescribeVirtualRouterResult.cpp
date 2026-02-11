@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeVirtualRouterResult::DescribeVirtualRouterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeVirtualRouterResult& DescribeVirtualRouterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_virtualRouter = jsonValue;
   m_virtualRouterHasBeenSet = true;

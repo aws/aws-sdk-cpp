@@ -23,6 +23,7 @@ ListDomainDeliverabilityCampaignsResult::ListDomainDeliverabilityCampaignsResult
 
 ListDomainDeliverabilityCampaignsResult& ListDomainDeliverabilityCampaignsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainDeliverabilityCampaigns")) {
     Aws::Utils::Array<JsonView> domainDeliverabilityCampaignsJsonList = jsonValue.GetArray("DomainDeliverabilityCampaigns");

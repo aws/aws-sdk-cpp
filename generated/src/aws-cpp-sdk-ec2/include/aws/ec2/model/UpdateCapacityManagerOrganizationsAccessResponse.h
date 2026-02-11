@@ -73,12 +73,15 @@ class UpdateCapacityManagerOrganizationsAccessResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CapacityManagerStatus m_capacityManagerStatus{CapacityManagerStatus::NOT_SET};
 
   bool m_organizationsAccess{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_capacityManagerStatusHasBeenSet = false;
   bool m_organizationsAccessHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

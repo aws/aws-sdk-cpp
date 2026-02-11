@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteVirtualGatewayResult::DeleteVirtualGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteVirtualGatewayResult& DeleteVirtualGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_virtualGateway = jsonValue;
   m_virtualGatewayHasBeenSet = true;

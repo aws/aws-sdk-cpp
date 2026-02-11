@@ -72,12 +72,15 @@ class RefreshTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_accessToken;
 
   int m_expiresIn{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessTokenHasBeenSet = false;
   bool m_expiresInHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

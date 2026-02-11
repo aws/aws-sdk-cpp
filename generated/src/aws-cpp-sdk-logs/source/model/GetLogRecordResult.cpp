@@ -20,6 +20,7 @@ using namespace Aws;
 GetLogRecordResult::GetLogRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLogRecordResult& GetLogRecordResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logRecord")) {
     Aws::Map<Aws::String, JsonView> logRecordJsonMap = jsonValue.GetObject("logRecord").GetAllObjects();

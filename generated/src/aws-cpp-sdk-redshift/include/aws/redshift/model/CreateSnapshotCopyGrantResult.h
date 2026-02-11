@@ -56,10 +56,13 @@ class CreateSnapshotCopyGrantResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SnapshotCopyGrant m_snapshotCopyGrant;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotCopyGrantHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

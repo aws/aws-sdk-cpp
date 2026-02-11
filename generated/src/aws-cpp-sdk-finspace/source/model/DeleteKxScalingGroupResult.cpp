@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteKxScalingGroupResult::DeleteKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteKxScalingGroupResult& DeleteKxScalingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

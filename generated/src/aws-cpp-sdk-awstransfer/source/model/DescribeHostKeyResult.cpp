@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeHostKeyResult::DescribeHostKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeHostKeyResult& DescribeHostKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HostKey")) {
     m_hostKey = jsonValue.GetObject("HostKey");

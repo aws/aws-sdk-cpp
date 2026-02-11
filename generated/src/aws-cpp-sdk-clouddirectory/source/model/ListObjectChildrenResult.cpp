@@ -20,6 +20,7 @@ using namespace Aws;
 ListObjectChildrenResult::ListObjectChildrenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListObjectChildrenResult& ListObjectChildrenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Children")) {
     Aws::Map<Aws::String, JsonView> childrenJsonMap = jsonValue.GetObject("Children").GetAllObjects();

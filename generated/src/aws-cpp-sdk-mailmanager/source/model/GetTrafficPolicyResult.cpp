@@ -20,6 +20,7 @@ using namespace Aws;
 GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTrafficPolicyResult& GetTrafficPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrafficPolicyName")) {
     m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");

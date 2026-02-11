@@ -20,6 +20,7 @@ using namespace Aws;
 GetReplicationSetResult::GetReplicationSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetReplicationSetResult& GetReplicationSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("replicationSet")) {
     m_replicationSet = jsonValue.GetObject("replicationSet");

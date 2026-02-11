@@ -20,6 +20,7 @@ using namespace Aws;
 PutLifecycleConfigurationResult::PutLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutLifecycleConfigurationResult& PutLifecycleConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LifecyclePolicies")) {
     Aws::Utils::Array<JsonView> lifecyclePoliciesJsonList = jsonValue.GetArray("LifecyclePolicies");

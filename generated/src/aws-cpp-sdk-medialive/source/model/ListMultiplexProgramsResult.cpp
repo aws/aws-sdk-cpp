@@ -20,6 +20,7 @@ using namespace Aws;
 ListMultiplexProgramsResult::ListMultiplexProgramsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMultiplexProgramsResult& ListMultiplexProgramsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("multiplexPrograms")) {
     Aws::Utils::Array<JsonView> multiplexProgramsJsonList = jsonValue.GetArray("multiplexPrograms");

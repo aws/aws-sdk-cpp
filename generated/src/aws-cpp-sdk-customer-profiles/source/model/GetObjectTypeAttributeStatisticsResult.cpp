@@ -23,6 +23,7 @@ GetObjectTypeAttributeStatisticsResult::GetObjectTypeAttributeStatisticsResult(c
 
 GetObjectTypeAttributeStatisticsResult& GetObjectTypeAttributeStatisticsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Statistics")) {
     m_statistics = jsonValue.GetObject("Statistics");

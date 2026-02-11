@@ -20,6 +20,7 @@ using namespace Aws;
 ListAllowedNodeTypeUpdatesResult::ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScaleUpNodeTypes")) {
     Aws::Utils::Array<JsonView> scaleUpNodeTypesJsonList = jsonValue.GetArray("ScaleUpNodeTypes");

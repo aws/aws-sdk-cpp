@@ -85,12 +85,15 @@ class DescribeTrustStoresResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TrustStore> m_trustStores;
 
   Aws::String m_nextMarker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trustStoresHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

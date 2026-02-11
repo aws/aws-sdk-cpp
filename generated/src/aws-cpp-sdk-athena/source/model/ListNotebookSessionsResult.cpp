@@ -20,6 +20,7 @@ using namespace Aws;
 ListNotebookSessionsResult::ListNotebookSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListNotebookSessionsResult& ListNotebookSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotebookSessionsList")) {
     Aws::Utils::Array<JsonView> notebookSessionsListJsonList = jsonValue.GetArray("NotebookSessionsList");

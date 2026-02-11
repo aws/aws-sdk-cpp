@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBGPPeerResult::DeleteBGPPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBGPPeerResult& DeleteBGPPeerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("virtualInterface")) {
     m_virtualInterface = jsonValue.GetObject("virtualInterface");

@@ -437,6 +437,8 @@ class GetCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_title;
 
@@ -479,6 +481,7 @@ class GetCaseResult {
   Aws::Vector<CaseMetadataEntry> m_caseMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_titleHasBeenSet = false;
   bool m_caseArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

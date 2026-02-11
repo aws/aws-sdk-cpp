@@ -20,6 +20,7 @@ using namespace Aws;
 GetTimelineEventResult::GetTimelineEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTimelineEventResult& GetTimelineEventResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("event")) {
     m_event = jsonValue.GetObject("event");

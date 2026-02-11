@@ -120,6 +120,8 @@ class GetTokenBalanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OwnerIdentifier m_ownerIdentifier;
 
@@ -132,6 +134,7 @@ class GetTokenBalanceResult {
   BlockchainInstant m_lastUpdatedTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ownerIdentifierHasBeenSet = false;
   bool m_tokenIdentifierHasBeenSet = false;
   bool m_balanceHasBeenSet = false;

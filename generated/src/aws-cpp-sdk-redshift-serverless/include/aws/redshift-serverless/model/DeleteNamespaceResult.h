@@ -58,10 +58,13 @@ class DeleteNamespaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Namespace m_namespace;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_namespaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

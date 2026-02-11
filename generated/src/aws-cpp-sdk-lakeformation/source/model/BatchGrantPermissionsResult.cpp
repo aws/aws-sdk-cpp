@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGrantPermissionsResult::BatchGrantPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGrantPermissionsResult& BatchGrantPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Failures")) {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");

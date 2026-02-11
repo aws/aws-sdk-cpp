@@ -20,6 +20,7 @@ using namespace Aws;
 PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutParameterResult& PutParameterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetInt64("Version");

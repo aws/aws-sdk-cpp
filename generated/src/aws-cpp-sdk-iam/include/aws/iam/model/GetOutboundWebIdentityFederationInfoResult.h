@@ -81,12 +81,15 @@ class GetOutboundWebIdentityFederationInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_issuerIdentifier;
 
   bool m_jwtVendingEnabled{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_issuerIdentifierHasBeenSet = false;
   bool m_jwtVendingEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -96,6 +96,8 @@ class CreateContainerRecipeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -104,6 +106,7 @@ class CreateContainerRecipeResult {
   Aws::String m_containerRecipeArn;
 
   LatestVersionReferences m_latestVersionReferences;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_containerRecipeArnHasBeenSet = false;

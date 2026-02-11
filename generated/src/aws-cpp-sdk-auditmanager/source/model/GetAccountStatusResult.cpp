@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountStatusResult::GetAccountStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountStatusResult& GetAccountStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("status"));

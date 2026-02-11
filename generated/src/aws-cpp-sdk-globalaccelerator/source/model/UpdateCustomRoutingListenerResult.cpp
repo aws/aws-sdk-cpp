@@ -22,6 +22,7 @@ UpdateCustomRoutingListenerResult::UpdateCustomRoutingListenerResult(const Aws::
 }
 
 UpdateCustomRoutingListenerResult& UpdateCustomRoutingListenerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Listener")) {
     m_listener = jsonValue.GetObject("Listener");

@@ -22,6 +22,7 @@ DescribeDirectConnectGatewaysResult::DescribeDirectConnectGatewaysResult(const A
 }
 
 DescribeDirectConnectGatewaysResult& DescribeDirectConnectGatewaysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("directConnectGateways")) {
     Aws::Utils::Array<JsonView> directConnectGatewaysJsonList = jsonValue.GetArray("directConnectGateways");

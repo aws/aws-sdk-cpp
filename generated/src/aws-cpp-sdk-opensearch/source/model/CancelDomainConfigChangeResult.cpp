@@ -20,6 +20,7 @@ using namespace Aws;
 CancelDomainConfigChangeResult::CancelDomainConfigChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelDomainConfigChangeResult& CancelDomainConfigChangeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CancelledChangeIds")) {
     Aws::Utils::Array<JsonView> cancelledChangeIdsJsonList = jsonValue.GetArray("CancelledChangeIds");

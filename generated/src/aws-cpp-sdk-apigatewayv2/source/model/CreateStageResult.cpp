@@ -20,6 +20,7 @@ using namespace Aws;
 CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateStageResult& CreateStageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessLogSettings")) {
     m_accessLogSettings = jsonValue.GetObject("accessLogSettings");

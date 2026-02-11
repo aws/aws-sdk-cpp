@@ -176,6 +176,8 @@ class GetAutomatedDiscoveryConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AutoEnableMode m_autoEnableOrganizationMembers{AutoEnableMode::NOT_SET};
 
@@ -192,6 +194,7 @@ class GetAutomatedDiscoveryConfigurationResult {
   AutomatedDiscoveryStatus m_status{AutomatedDiscoveryStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoEnableOrganizationMembersHasBeenSet = false;
   bool m_classificationScopeIdHasBeenSet = false;
   bool m_disabledAtHasBeenSet = false;

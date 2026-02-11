@@ -90,12 +90,15 @@ class DescribeReplicationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<Replication> m_replications;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_replicationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

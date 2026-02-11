@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateGatewayInstanceResult::UpdateGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateGatewayInstanceResult& UpdateGatewayInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("bridgePlacement")) {
     m_bridgePlacement = BridgePlacementMapper::GetBridgePlacementForName(jsonValue.GetString("bridgePlacement"));

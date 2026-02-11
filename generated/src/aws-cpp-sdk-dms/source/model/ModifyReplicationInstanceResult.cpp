@@ -20,6 +20,7 @@ using namespace Aws;
 ModifyReplicationInstanceResult::ModifyReplicationInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ModifyReplicationInstanceResult& ModifyReplicationInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationInstance")) {
     m_replicationInstance = jsonValue.GetObject("ReplicationInstance");

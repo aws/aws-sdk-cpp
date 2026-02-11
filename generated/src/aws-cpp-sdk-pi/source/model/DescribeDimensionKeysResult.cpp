@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDimensionKeysResult::DescribeDimensionKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDimensionKeysResult& DescribeDimensionKeysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AlignedStartTime")) {
     m_alignedStartTime = jsonValue.GetDouble("AlignedStartTime");

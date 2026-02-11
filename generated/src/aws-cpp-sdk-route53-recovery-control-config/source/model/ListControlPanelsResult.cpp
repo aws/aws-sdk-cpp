@@ -20,6 +20,7 @@ using namespace Aws;
 ListControlPanelsResult::ListControlPanelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListControlPanelsResult& ListControlPanelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ControlPanels")) {
     Aws::Utils::Array<JsonView> controlPanelsJsonList = jsonValue.GetArray("ControlPanels");

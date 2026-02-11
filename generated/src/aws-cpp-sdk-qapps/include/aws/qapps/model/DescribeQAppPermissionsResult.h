@@ -101,6 +101,8 @@ class DescribeQAppPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -109,6 +111,7 @@ class DescribeQAppPermissionsResult {
   Aws::Vector<PermissionOutput> m_permissions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_appIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

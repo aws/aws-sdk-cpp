@@ -85,12 +85,15 @@ class CreateRuleGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_updateToken;
 
   RuleGroupResponse m_ruleGroupResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_updateTokenHasBeenSet = false;
   bool m_ruleGroupResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

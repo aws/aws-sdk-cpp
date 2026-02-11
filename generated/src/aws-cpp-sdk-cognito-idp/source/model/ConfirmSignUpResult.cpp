@@ -20,6 +20,7 @@ using namespace Aws;
 ConfirmSignUpResult::ConfirmSignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ConfirmSignUpResult& ConfirmSignUpResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Session")) {
     m_session = jsonValue.GetString("Session");

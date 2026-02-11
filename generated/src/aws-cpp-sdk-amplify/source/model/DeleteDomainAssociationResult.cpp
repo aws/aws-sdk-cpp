@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDomainAssociationResult::DeleteDomainAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDomainAssociationResult& DeleteDomainAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainAssociation")) {
     m_domainAssociation = jsonValue.GetObject("domainAssociation");

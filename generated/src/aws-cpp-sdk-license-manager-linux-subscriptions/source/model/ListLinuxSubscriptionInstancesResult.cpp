@@ -23,6 +23,7 @@ ListLinuxSubscriptionInstancesResult::ListLinuxSubscriptionInstancesResult(const
 
 ListLinuxSubscriptionInstancesResult& ListLinuxSubscriptionInstancesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Instances")) {
     Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");

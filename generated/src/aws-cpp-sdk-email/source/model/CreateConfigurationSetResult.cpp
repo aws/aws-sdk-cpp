@@ -20,6 +20,7 @@ using namespace Aws;
 CreateConfigurationSetResult::CreateConfigurationSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateConfigurationSetResult& CreateConfigurationSetResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRoomMembershipResult::CreateRoomMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRoomMembershipResult& CreateRoomMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RoomMembership")) {
     m_roomMembership = jsonValue.GetObject("RoomMembership");

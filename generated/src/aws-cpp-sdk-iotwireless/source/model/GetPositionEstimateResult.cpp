@@ -19,6 +19,7 @@ using namespace Aws;
 GetPositionEstimateResult::GetPositionEstimateResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetPositionEstimateResult& GetPositionEstimateResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_geoJsonPayload = result.TakeOwnershipOfPayload();
   m_geoJsonPayloadHasBeenSet = true;
 

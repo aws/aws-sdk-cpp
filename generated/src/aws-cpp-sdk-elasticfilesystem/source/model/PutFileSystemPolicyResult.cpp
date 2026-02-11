@@ -20,6 +20,7 @@ using namespace Aws;
 PutFileSystemPolicyResult::PutFileSystemPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutFileSystemPolicyResult& PutFileSystemPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileSystemId")) {
     m_fileSystemId = jsonValue.GetString("FileSystemId");

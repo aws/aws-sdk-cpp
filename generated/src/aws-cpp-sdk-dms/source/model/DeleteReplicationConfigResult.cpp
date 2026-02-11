@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteReplicationConfigResult::DeleteReplicationConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteReplicationConfigResult& DeleteReplicationConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationConfig")) {
     m_replicationConfig = jsonValue.GetObject("ReplicationConfig");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListAddonSubscriptionsResult::ListAddonSubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAddonSubscriptionsResult& ListAddonSubscriptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AddonSubscriptions")) {
     Aws::Utils::Array<JsonView> addonSubscriptionsJsonList = jsonValue.GetArray("AddonSubscriptions");

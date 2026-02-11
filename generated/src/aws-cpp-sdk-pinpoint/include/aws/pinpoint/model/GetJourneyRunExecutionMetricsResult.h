@@ -58,10 +58,13 @@ class GetJourneyRunExecutionMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JourneyRunExecutionMetricsResponse m_journeyRunExecutionMetricsResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_journeyRunExecutionMetricsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

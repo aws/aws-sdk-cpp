@@ -20,6 +20,7 @@ using namespace Aws;
 GetBucketsAggregationResult::GetBucketsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBucketsAggregationResult& GetBucketsAggregationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("totalCount")) {
     m_totalCount = jsonValue.GetInteger("totalCount");

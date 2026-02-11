@@ -97,6 +97,8 @@ class ListAnalysesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AnalysisSummary> m_analysisSummaryList;
 
@@ -105,6 +107,7 @@ class ListAnalysesResult {
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;

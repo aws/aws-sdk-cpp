@@ -20,6 +20,7 @@ using namespace Aws;
 GetDeploymentGroupResult::GetDeploymentGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDeploymentGroupResult& GetDeploymentGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deploymentGroupInfo")) {
     m_deploymentGroupInfo = jsonValue.GetObject("deploymentGroupInfo");

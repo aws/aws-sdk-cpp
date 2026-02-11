@@ -20,6 +20,7 @@ using namespace Aws;
 ListEntityRecognizersResult::ListEntityRecognizersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEntityRecognizersResult& ListEntityRecognizersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntityRecognizerPropertiesList")) {
     Aws::Utils::Array<JsonView> entityRecognizerPropertiesListJsonList = jsonValue.GetArray("EntityRecognizerPropertiesList");

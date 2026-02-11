@@ -82,12 +82,15 @@ class ModifyClusterParameterGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_parameterGroupName;
 
   Aws::String m_parameterGroupStatus;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_parameterGroupNameHasBeenSet = false;
   bool m_parameterGroupStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

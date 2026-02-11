@@ -20,6 +20,7 @@ using namespace Aws;
 GetWebACLForResourceResult::GetWebACLForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetWebACLForResourceResult& GetWebACLForResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WebACLSummary")) {
     m_webACLSummary = jsonValue.GetObject("WebACLSummary");

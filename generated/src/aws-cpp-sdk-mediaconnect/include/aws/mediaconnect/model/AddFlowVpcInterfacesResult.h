@@ -82,12 +82,15 @@ class AddFlowVpcInterfacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_flowArn;
 
   Aws::Vector<VpcInterface> m_vpcInterfaces;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_vpcInterfacesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

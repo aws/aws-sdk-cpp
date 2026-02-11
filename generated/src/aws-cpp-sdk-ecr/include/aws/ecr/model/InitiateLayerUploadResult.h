@@ -74,12 +74,15 @@ class InitiateLayerUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_uploadId;
 
   long long m_partSize{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_uploadIdHasBeenSet = false;
   bool m_partSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

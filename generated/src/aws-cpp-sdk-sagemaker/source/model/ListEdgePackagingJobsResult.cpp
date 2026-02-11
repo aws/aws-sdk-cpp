@@ -20,6 +20,7 @@ using namespace Aws;
 ListEdgePackagingJobsResult::ListEdgePackagingJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEdgePackagingJobsResult& ListEdgePackagingJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EdgePackagingJobSummaries")) {
     Aws::Utils::Array<JsonView> edgePackagingJobSummariesJsonList = jsonValue.GetArray("EdgePackagingJobSummaries");

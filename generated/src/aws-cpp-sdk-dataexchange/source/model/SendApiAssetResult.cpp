@@ -18,6 +18,7 @@ using namespace Aws;
 SendApiAssetResult::SendApiAssetResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 SendApiAssetResult& SendApiAssetResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_body = result.TakeOwnershipOfPayload();
   m_bodyHasBeenSet = true;
 

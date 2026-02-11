@@ -20,6 +20,7 @@ using namespace Aws;
 SendMediaMessageResult::SendMediaMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendMediaMessageResult& SendMediaMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MessageId")) {
     m_messageId = jsonValue.GetString("MessageId");

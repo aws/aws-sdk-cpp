@@ -20,6 +20,7 @@ using namespace Aws;
 GetInventorySchemaResult::GetInventorySchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInventorySchemaResult& GetInventorySchemaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Schemas")) {
     Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("Schemas");

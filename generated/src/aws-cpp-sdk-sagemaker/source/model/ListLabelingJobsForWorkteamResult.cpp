@@ -22,6 +22,7 @@ ListLabelingJobsForWorkteamResult::ListLabelingJobsForWorkteamResult(const Aws::
 }
 
 ListLabelingJobsForWorkteamResult& ListLabelingJobsForWorkteamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LabelingJobSummaryList")) {
     Aws::Utils::Array<JsonView> labelingJobSummaryListJsonList = jsonValue.GetArray("LabelingJobSummaryList");

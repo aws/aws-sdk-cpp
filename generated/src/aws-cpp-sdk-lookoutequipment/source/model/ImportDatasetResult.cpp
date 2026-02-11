@@ -20,6 +20,7 @@ using namespace Aws;
 ImportDatasetResult::ImportDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportDatasetResult& ImportDatasetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatasetName")) {
     m_datasetName = jsonValue.GetString("DatasetName");

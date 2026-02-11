@@ -65,10 +65,13 @@ class GetPullRequestApprovalStatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Approval> m_approvals;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_approvalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

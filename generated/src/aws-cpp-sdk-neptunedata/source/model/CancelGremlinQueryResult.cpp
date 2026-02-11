@@ -20,6 +20,7 @@ using namespace Aws;
 CancelGremlinQueryResult::CancelGremlinQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelGremlinQueryResult& CancelGremlinQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetIntentVersionsResult::GetIntentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIntentVersionsResult& GetIntentVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("intents")) {
     Aws::Utils::Array<JsonView> intentsJsonList = jsonValue.GetArray("intents");

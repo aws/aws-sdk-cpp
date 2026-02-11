@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePoolResult::CreatePoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePoolResult& CreatePoolResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PoolArn")) {
     m_poolArn = jsonValue.GetString("PoolArn");

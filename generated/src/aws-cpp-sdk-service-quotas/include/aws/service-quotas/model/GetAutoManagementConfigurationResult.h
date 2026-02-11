@@ -140,6 +140,8 @@ class GetAutoManagementConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OptInLevel m_optInLevel{OptInLevel::NOT_SET};
 
@@ -152,6 +154,7 @@ class GetAutoManagementConfigurationResult {
   Aws::Map<Aws::String, Aws::Vector<QuotaInfo>> m_exclusionList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_optInLevelHasBeenSet = false;
   bool m_optInTypeHasBeenSet = false;
   bool m_notificationArnHasBeenSet = false;

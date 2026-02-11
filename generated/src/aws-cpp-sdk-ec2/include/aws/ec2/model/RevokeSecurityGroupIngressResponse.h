@@ -107,6 +107,8 @@ class RevokeSecurityGroupIngressResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_return{false};
 
@@ -115,6 +117,7 @@ class RevokeSecurityGroupIngressResponse {
   Aws::Vector<RevokedSecurityGroupRule> m_revokedSecurityGroupRules;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_returnHasBeenSet = false;
   bool m_unknownIpPermissionsHasBeenSet = false;
   bool m_revokedSecurityGroupRulesHasBeenSet = false;

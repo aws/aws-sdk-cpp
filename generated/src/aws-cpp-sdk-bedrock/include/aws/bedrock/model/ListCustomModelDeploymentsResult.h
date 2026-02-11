@@ -83,12 +83,15 @@ class ListCustomModelDeploymentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<CustomModelDeploymentSummary> m_modelDeploymentSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_modelDeploymentSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

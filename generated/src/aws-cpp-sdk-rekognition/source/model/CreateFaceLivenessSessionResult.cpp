@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFaceLivenessSessionResult::CreateFaceLivenessSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFaceLivenessSessionResult& CreateFaceLivenessSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SessionId")) {
     m_sessionId = jsonValue.GetString("SessionId");

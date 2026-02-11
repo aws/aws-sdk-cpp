@@ -22,6 +22,7 @@ GetCloudFormationStackRecordsResult::GetCloudFormationStackRecordsResult(const A
 }
 
 GetCloudFormationStackRecordsResult& GetCloudFormationStackRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cloudFormationStackRecords")) {
     Aws::Utils::Array<JsonView> cloudFormationStackRecordsJsonList = jsonValue.GetArray("cloudFormationStackRecords");

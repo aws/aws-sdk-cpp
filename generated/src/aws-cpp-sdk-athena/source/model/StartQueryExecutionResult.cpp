@@ -20,6 +20,7 @@ using namespace Aws;
 StartQueryExecutionResult::StartQueryExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartQueryExecutionResult& StartQueryExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QueryExecutionId")) {
     m_queryExecutionId = jsonValue.GetString("QueryExecutionId");

@@ -101,6 +101,8 @@ class CreateUploadUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_s3Url;
 
@@ -109,6 +111,7 @@ class CreateUploadUrlResult {
   Aws::String m_codeArtifactId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_s3UrlHasBeenSet = false;
   bool m_requestHeadersHasBeenSet = false;
   bool m_codeArtifactIdHasBeenSet = false;

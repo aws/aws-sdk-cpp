@@ -83,12 +83,15 @@ class UpdatePortfolioResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PortfolioDetail m_portfolioDetail;
 
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_portfolioDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

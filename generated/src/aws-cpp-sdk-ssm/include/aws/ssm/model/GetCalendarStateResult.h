@@ -97,6 +97,8 @@ class GetCalendarStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CalendarState m_state{CalendarState::NOT_SET};
 
@@ -105,6 +107,7 @@ class GetCalendarStateResult {
   Aws::String m_nextTransitionTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stateHasBeenSet = false;
   bool m_atTimeHasBeenSet = false;
   bool m_nextTransitionTimeHasBeenSet = false;

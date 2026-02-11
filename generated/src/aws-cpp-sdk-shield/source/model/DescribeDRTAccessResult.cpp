@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDRTAccessResult::DescribeDRTAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDRTAccessResult& DescribeDRTAccessResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");

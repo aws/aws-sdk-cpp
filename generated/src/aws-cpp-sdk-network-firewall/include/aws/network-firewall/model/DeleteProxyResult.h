@@ -92,6 +92,8 @@ class DeleteProxyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_natGatewayId;
 
@@ -100,6 +102,7 @@ class DeleteProxyResult {
   Aws::String m_proxyArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_natGatewayIdHasBeenSet = false;
   bool m_proxyNameHasBeenSet = false;
   bool m_proxyArnHasBeenSet = false;

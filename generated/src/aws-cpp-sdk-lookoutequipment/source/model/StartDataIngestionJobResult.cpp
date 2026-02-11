@@ -20,6 +20,7 @@ using namespace Aws;
 StartDataIngestionJobResult::StartDataIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartDataIngestionJobResult& StartDataIngestionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");

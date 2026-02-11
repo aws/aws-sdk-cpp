@@ -24,6 +24,7 @@ BatchGetCollaborationAnalysisTemplateResult::BatchGetCollaborationAnalysisTempla
 
 BatchGetCollaborationAnalysisTemplateResult& BatchGetCollaborationAnalysisTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaborationAnalysisTemplates")) {
     Aws::Utils::Array<JsonView> collaborationAnalysisTemplatesJsonList = jsonValue.GetArray("collaborationAnalysisTemplates");

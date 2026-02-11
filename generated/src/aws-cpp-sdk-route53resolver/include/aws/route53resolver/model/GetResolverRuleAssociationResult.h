@@ -60,10 +60,13 @@ class GetResolverRuleAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResolverRuleAssociation m_resolverRuleAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resolverRuleAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

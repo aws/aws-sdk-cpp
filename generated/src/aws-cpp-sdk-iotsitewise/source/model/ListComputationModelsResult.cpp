@@ -20,6 +20,7 @@ using namespace Aws;
 ListComputationModelsResult::ListComputationModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListComputationModelsResult& ListComputationModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("computationModelSummaries")) {
     Aws::Utils::Array<JsonView> computationModelSummariesJsonList = jsonValue.GetArray("computationModelSummaries");

@@ -482,6 +482,8 @@ class GetDomainNameResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -530,6 +532,7 @@ class GetDomainNameResult {
   RoutingMode m_routingMode{RoutingMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_domainNameIdHasBeenSet = false;
   bool m_domainNameArnHasBeenSet = false;

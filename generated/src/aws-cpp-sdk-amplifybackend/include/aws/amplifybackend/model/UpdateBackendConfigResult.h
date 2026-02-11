@@ -110,6 +110,8 @@ class UpdateBackendConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appId;
 
@@ -120,6 +122,7 @@ class UpdateBackendConfigResult {
   LoginAuthConfigReqObj m_loginAuthConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appIdHasBeenSet = false;
   bool m_backendManagerAppIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;

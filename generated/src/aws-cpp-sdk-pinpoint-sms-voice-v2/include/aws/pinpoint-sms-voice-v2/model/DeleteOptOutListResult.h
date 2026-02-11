@@ -93,6 +93,8 @@ class DeleteOptOutListResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_optOutListArn;
 
@@ -101,6 +103,7 @@ class DeleteOptOutListResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_optOutListArnHasBeenSet = false;
   bool m_optOutListNameHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFormResult::UpdateFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFormResult& UpdateFormResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_entity = jsonValue;
   m_entityHasBeenSet = true;

@@ -377,6 +377,8 @@ class DescribeConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CapacityDescription m_capacity;
 
@@ -415,6 +417,7 @@ class DescribeConnectorResult {
   StateDescription m_stateDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_capacityHasBeenSet = false;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorConfigurationHasBeenSet = false;

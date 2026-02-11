@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetDevEndpointsResult::BatchGetDevEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetDevEndpointsResult& BatchGetDevEndpointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DevEndpoints")) {
     Aws::Utils::Array<JsonView> devEndpointsJsonList = jsonValue.GetArray("DevEndpoints");

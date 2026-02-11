@@ -20,6 +20,7 @@ using namespace Aws;
 ListSchemaExtensionsResult::ListSchemaExtensionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSchemaExtensionsResult& ListSchemaExtensionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SchemaExtensionsInfo")) {
     Aws::Utils::Array<JsonView> schemaExtensionsInfoJsonList = jsonValue.GetArray("SchemaExtensionsInfo");

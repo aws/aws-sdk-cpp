@@ -81,12 +81,15 @@ class AnalyzeExpenseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DocumentMetadata m_documentMetadata;
 
   Aws::Vector<ExpenseDocument> m_expenseDocuments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentMetadataHasBeenSet = false;
   bool m_expenseDocumentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

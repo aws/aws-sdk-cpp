@@ -23,6 +23,7 @@ GetLoadBalancerTlsCertificatesResult::GetLoadBalancerTlsCertificatesResult(const
 
 GetLoadBalancerTlsCertificatesResult& GetLoadBalancerTlsCertificatesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tlsCertificates")) {
     Aws::Utils::Array<JsonView> tlsCertificatesJsonList = jsonValue.GetArray("tlsCertificates");

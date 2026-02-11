@@ -20,6 +20,7 @@ using namespace Aws;
 ListMonitoringExecutionsResult::ListMonitoringExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMonitoringExecutionsResult& ListMonitoringExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MonitoringExecutionSummaries")) {
     Aws::Utils::Array<JsonView> monitoringExecutionSummariesJsonList = jsonValue.GetArray("MonitoringExecutionSummaries");

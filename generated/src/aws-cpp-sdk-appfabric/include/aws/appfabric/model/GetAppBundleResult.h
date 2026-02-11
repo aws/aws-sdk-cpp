@@ -58,10 +58,13 @@ class GetAppBundleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AppBundle m_appBundle;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appBundleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

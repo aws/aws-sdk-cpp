@@ -77,12 +77,15 @@ class CreateFrameworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_frameworkName;
 
   Aws::String m_frameworkArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_frameworkNameHasBeenSet = false;
   bool m_frameworkArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

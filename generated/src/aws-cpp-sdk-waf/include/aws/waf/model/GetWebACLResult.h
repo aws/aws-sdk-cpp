@@ -67,10 +67,13 @@ class GetWebACLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WebACL m_webACL;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_webACLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

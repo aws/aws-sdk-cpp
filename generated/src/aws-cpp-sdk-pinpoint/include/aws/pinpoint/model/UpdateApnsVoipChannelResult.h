@@ -56,10 +56,13 @@ class UpdateApnsVoipChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   APNSVoipChannelResponse m_aPNSVoipChannelResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aPNSVoipChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

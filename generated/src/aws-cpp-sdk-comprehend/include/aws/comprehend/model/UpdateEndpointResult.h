@@ -57,10 +57,13 @@ class UpdateEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_desiredModelArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_desiredModelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

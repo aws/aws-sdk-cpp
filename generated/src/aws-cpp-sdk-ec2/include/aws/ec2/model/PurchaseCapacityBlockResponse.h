@@ -83,12 +83,15 @@ class PurchaseCapacityBlockResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CapacityReservation m_capacityReservation;
 
   Aws::Vector<CapacityBlock> m_capacityBlocks;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_capacityReservationHasBeenSet = false;
   bool m_capacityBlocksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

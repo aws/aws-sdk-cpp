@@ -76,12 +76,15 @@ class UpdateWorkloadShareResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workloadId;
 
   WorkloadShare m_workloadShare;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workloadIdHasBeenSet = false;
   bool m_workloadShareHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

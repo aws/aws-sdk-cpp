@@ -150,6 +150,8 @@ class CreateConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectorID;
 
@@ -164,6 +166,7 @@ class CreateConnectorResult {
   ConnectorSsmCommandConfig m_ssmCommandConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectorIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ssmInstanceIDHasBeenSet = false;

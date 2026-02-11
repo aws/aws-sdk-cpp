@@ -20,6 +20,7 @@ using namespace Aws;
 ListOutpostsWithS3Result::ListOutpostsWithS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListOutpostsWithS3Result& ListOutpostsWithS3Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Outposts")) {
     Aws::Utils::Array<JsonView> outpostsJsonList = jsonValue.GetArray("Outposts");

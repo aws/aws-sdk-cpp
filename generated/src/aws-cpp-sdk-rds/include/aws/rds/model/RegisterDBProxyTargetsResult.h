@@ -66,10 +66,13 @@ class RegisterDBProxyTargetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DBProxyTarget> m_dBProxyTargets;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBProxyTargetsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

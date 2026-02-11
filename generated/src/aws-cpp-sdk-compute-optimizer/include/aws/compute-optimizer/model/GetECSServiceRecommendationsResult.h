@@ -109,6 +109,8 @@ class GetECSServiceRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -117,6 +119,7 @@ class GetECSServiceRecommendationsResult {
   Aws::Vector<GetRecommendationError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_ecsServiceRecommendationsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

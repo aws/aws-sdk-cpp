@@ -20,6 +20,7 @@ using namespace Aws;
 GetSpeechSynthesisTaskResult::GetSpeechSynthesisTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSpeechSynthesisTaskResult& GetSpeechSynthesisTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SynthesisTask")) {
     m_synthesisTask = jsonValue.GetObject("SynthesisTask");

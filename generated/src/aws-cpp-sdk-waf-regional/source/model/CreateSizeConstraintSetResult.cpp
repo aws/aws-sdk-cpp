@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSizeConstraintSetResult::CreateSizeConstraintSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSizeConstraintSetResult& CreateSizeConstraintSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SizeConstraintSet")) {
     m_sizeConstraintSet = jsonValue.GetObject("SizeConstraintSet");

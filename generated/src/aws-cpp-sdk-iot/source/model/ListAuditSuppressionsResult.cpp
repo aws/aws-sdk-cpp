@@ -20,6 +20,7 @@ using namespace Aws;
 ListAuditSuppressionsResult::ListAuditSuppressionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAuditSuppressionsResult& ListAuditSuppressionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("suppressions")) {
     Aws::Utils::Array<JsonView> suppressionsJsonList = jsonValue.GetArray("suppressions");

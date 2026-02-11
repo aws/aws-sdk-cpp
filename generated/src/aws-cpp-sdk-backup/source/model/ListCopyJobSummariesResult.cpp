@@ -20,6 +20,7 @@ using namespace Aws;
 ListCopyJobSummariesResult::ListCopyJobSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCopyJobSummariesResult& ListCopyJobSummariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CopyJobSummaries")) {
     Aws::Utils::Array<JsonView> copyJobSummariesJsonList = jsonValue.GetArray("CopyJobSummaries");

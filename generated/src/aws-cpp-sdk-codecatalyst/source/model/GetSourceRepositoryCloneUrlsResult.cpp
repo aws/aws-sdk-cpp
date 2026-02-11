@@ -22,6 +22,7 @@ GetSourceRepositoryCloneUrlsResult::GetSourceRepositoryCloneUrlsResult(const Aws
 }
 
 GetSourceRepositoryCloneUrlsResult& GetSourceRepositoryCloneUrlsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("https")) {
     m_https = jsonValue.GetString("https");

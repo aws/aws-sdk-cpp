@@ -23,6 +23,7 @@ ListSecurityControlDefinitionsResult::ListSecurityControlDefinitionsResult(const
 
 ListSecurityControlDefinitionsResult& ListSecurityControlDefinitionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecurityControlDefinitions")) {
     Aws::Utils::Array<JsonView> securityControlDefinitionsJsonList = jsonValue.GetArray("SecurityControlDefinitions");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTestSetResult::DescribeTestSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTestSetResult& DescribeTestSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("testSetId")) {
     m_testSetId = jsonValue.GetString("testSetId");

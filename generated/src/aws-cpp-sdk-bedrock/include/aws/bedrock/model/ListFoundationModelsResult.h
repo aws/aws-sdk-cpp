@@ -65,10 +65,13 @@ class ListFoundationModelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FoundationModelSummary> m_modelSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 StartTestSetGenerationResult::StartTestSetGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartTestSetGenerationResult& StartTestSetGenerationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("testSetGenerationId")) {
     m_testSetGenerationId = jsonValue.GetString("testSetGenerationId");

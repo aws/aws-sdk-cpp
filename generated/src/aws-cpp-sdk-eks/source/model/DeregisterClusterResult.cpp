@@ -20,6 +20,7 @@ using namespace Aws;
 DeregisterClusterResult::DeregisterClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeregisterClusterResult& DeregisterClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cluster")) {
     m_cluster = jsonValue.GetObject("cluster");

@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateSourceGraphqlApiResult::AssociateSourceGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateSourceGraphqlApiResult& AssociateSourceGraphqlApiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sourceApiAssociation")) {
     m_sourceApiAssociation = jsonValue.GetObject("sourceApiAssociation");

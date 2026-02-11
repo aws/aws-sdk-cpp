@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataQualityModelResultResult::GetDataQualityModelResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataQualityModelResultResult& GetDataQualityModelResultResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CompletedOn")) {
     m_completedOn = jsonValue.GetDouble("CompletedOn");

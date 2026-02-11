@@ -107,6 +107,8 @@ class DeleteAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_status{0};
 
@@ -117,6 +119,7 @@ class DeleteAnalysisResult {
   Aws::Utils::DateTime m_deletionTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_analysisIdHasBeenSet = false;

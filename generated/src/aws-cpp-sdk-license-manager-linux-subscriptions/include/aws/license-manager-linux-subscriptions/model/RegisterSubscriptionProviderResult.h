@@ -93,6 +93,8 @@ class RegisterSubscriptionProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_subscriptionProviderArn;
 
@@ -101,6 +103,7 @@ class RegisterSubscriptionProviderResult {
   SubscriptionProviderStatus m_subscriptionProviderStatus{SubscriptionProviderStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subscriptionProviderArnHasBeenSet = false;
   bool m_subscriptionProviderSourceHasBeenSet = false;
   bool m_subscriptionProviderStatusHasBeenSet = false;

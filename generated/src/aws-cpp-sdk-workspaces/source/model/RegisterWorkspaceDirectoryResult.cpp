@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterWorkspaceDirectoryResult::RegisterWorkspaceDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterWorkspaceDirectoryResult& RegisterWorkspaceDirectoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DirectoryId")) {
     m_directoryId = jsonValue.GetString("DirectoryId");

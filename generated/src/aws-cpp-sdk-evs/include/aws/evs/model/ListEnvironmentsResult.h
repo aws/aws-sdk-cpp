@@ -83,12 +83,15 @@ class ListEnvironmentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<EnvironmentSummary> m_environmentSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_environmentSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

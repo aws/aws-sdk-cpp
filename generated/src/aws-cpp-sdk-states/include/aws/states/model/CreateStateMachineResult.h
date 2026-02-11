@@ -94,6 +94,8 @@ class CreateStateMachineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_stateMachineArn;
 
@@ -102,6 +104,7 @@ class CreateStateMachineResult {
   Aws::String m_stateMachineVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stateMachineArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_stateMachineVersionArnHasBeenSet = false;

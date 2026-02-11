@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeConnectionTypeResult::DescribeConnectionTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeConnectionTypeResult& DescribeConnectionTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectionType")) {
     m_connectionType = jsonValue.GetString("ConnectionType");

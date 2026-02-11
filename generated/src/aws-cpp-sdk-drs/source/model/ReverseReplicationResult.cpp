@@ -20,6 +20,7 @@ using namespace Aws;
 ReverseReplicationResult::ReverseReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReverseReplicationResult& ReverseReplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("reversedDirectionSourceServerArn")) {
     m_reversedDirectionSourceServerArn = jsonValue.GetString("reversedDirectionSourceServerArn");

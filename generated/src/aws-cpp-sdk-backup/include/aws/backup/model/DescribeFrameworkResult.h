@@ -204,6 +204,8 @@ class DescribeFrameworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_frameworkName;
 
@@ -222,6 +224,7 @@ class DescribeFrameworkResult {
   Aws::String m_idempotencyToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_frameworkNameHasBeenSet = false;
   bool m_frameworkArnHasBeenSet = false;
   bool m_frameworkDescriptionHasBeenSet = false;

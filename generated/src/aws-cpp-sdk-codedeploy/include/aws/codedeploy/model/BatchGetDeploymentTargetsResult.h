@@ -72,10 +72,13 @@ class BatchGetDeploymentTargetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DeploymentTarget> m_deploymentTargets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentTargetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

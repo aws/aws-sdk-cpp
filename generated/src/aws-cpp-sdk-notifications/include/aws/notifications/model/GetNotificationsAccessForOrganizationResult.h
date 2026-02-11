@@ -62,10 +62,13 @@ class GetNotificationsAccessForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   NotificationsAccessForOrganization m_notificationsAccessForOrganization;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notificationsAccessForOrganizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

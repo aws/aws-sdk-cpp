@@ -20,6 +20,7 @@ using namespace Aws;
 EnableMacieResult::EnableMacieResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EnableMacieResult& EnableMacieResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -58,10 +58,13 @@ class ShareDirectoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sharedDirectoryId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sharedDirectoryIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

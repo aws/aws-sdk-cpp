@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDBRecommendationsResult::DescribeDBRecommendationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

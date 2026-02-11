@@ -141,6 +141,8 @@ class StartActivityStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_kmsKeyId;
 
@@ -155,6 +157,7 @@ class StartActivityStreamResult {
   bool m_applyImmediately{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_kinesisStreamNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

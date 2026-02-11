@@ -20,6 +20,7 @@ using namespace Aws;
 ListGlobalTablesResult::ListGlobalTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListGlobalTablesResult& ListGlobalTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GlobalTables")) {
     Aws::Utils::Array<JsonView> globalTablesJsonList = jsonValue.GetArray("GlobalTables");

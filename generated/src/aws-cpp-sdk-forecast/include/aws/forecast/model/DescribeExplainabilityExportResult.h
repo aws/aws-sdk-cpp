@@ -205,6 +205,8 @@ class DescribeExplainabilityExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_explainabilityExportArn;
 
@@ -225,6 +227,7 @@ class DescribeExplainabilityExportResult {
   Aws::String m_format;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_explainabilityExportArnHasBeenSet = false;
   bool m_explainabilityExportNameHasBeenSet = false;
   bool m_explainabilityArnHasBeenSet = false;

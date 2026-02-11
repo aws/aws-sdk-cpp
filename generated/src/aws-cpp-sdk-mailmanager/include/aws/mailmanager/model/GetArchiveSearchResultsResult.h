@@ -71,10 +71,13 @@ class GetArchiveSearchResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Row> m_rows;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_rowsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

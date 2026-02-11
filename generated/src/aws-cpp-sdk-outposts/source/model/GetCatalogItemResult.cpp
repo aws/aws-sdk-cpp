@@ -20,6 +20,7 @@ using namespace Aws;
 GetCatalogItemResult::GetCatalogItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCatalogItemResult& GetCatalogItemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CatalogItem")) {
     m_catalogItem = jsonValue.GetObject("CatalogItem");

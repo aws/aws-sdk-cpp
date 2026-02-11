@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateACLResult::UpdateACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateACLResult& UpdateACLResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ACL")) {
     m_aCL = jsonValue.GetObject("ACL");

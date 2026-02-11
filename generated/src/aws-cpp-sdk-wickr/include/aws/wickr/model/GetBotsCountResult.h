@@ -85,6 +85,8 @@ class GetBotsCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_pending{0};
 
@@ -93,6 +95,7 @@ class GetBotsCountResult {
   int m_total{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pendingHasBeenSet = false;
   bool m_activeHasBeenSet = false;
   bool m_totalHasBeenSet = false;

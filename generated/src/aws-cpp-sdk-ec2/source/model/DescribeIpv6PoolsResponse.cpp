@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIpv6PoolsResponse::DescribeIpv6PoolsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeIpv6PoolsResponse& DescribeIpv6PoolsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

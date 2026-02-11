@@ -20,6 +20,7 @@ using namespace Aws;
 TerminateSessionResult::TerminateSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TerminateSessionResult& TerminateSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("State")) {
     m_state = SessionStateMapper::GetSessionStateForName(jsonValue.GetString("State"));

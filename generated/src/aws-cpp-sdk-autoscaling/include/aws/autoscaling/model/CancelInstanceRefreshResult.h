@@ -59,10 +59,13 @@ class CancelInstanceRefreshResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_instanceRefreshId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceRefreshIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

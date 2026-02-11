@@ -75,12 +75,15 @@ class DescribeRegistryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryId;
 
   ReplicationConfiguration m_replicationConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_replicationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

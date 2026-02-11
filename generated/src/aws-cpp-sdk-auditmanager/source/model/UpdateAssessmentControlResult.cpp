@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAssessmentControlResult::UpdateAssessmentControlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAssessmentControlResult& UpdateAssessmentControlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetObject("control");

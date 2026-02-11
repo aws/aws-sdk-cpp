@@ -20,6 +20,7 @@ using namespace Aws;
 StartTestCaseExecutionResult::StartTestCaseExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartTestCaseExecutionResult& StartTestCaseExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TestCaseExecutionId")) {
     m_testCaseExecutionId = jsonValue.GetString("TestCaseExecutionId");

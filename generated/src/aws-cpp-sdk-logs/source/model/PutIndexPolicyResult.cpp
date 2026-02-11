@@ -20,6 +20,7 @@ using namespace Aws;
 PutIndexPolicyResult::PutIndexPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutIndexPolicyResult& PutIndexPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("indexPolicy")) {
     m_indexPolicy = jsonValue.GetObject("indexPolicy");

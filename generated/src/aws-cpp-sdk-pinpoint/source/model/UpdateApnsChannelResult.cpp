@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateApnsChannelResult::UpdateApnsChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateApnsChannelResult& UpdateApnsChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_aPNSChannelResponse = jsonValue;
   m_aPNSChannelResponseHasBeenSet = true;

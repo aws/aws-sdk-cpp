@@ -133,6 +133,8 @@ class PutItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, AttributeValue> m_attributes;
 
@@ -141,6 +143,7 @@ class PutItemResult {
   ItemCollectionMetrics m_itemCollectionMetrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attributesHasBeenSet = false;
   bool m_consumedCapacityHasBeenSet = false;
   bool m_itemCollectionMetricsHasBeenSet = false;

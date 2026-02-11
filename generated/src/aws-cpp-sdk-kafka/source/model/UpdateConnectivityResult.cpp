@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateConnectivityResult::UpdateConnectivityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateConnectivityResult& UpdateConnectivityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clusterArn")) {
     m_clusterArn = jsonValue.GetString("clusterArn");

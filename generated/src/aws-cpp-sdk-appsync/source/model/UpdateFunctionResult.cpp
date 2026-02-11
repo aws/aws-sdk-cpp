@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFunctionResult::UpdateFunctionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFunctionResult& UpdateFunctionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("functionConfiguration")) {
     m_functionConfiguration = jsonValue.GetObject("functionConfiguration");

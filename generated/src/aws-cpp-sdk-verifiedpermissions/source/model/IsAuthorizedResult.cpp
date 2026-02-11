@@ -20,6 +20,7 @@ using namespace Aws;
 IsAuthorizedResult::IsAuthorizedResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 IsAuthorizedResult& IsAuthorizedResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("decision")) {
     m_decision = DecisionMapper::GetDecisionForName(jsonValue.GetString("decision"));

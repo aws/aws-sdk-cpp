@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMitigationActionResult::CreateMitigationActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMitigationActionResult& CreateMitigationActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionArn")) {
     m_actionArn = jsonValue.GetString("actionArn");

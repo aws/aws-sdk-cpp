@@ -20,6 +20,7 @@ using namespace Aws;
 GetTraceGraphResult::GetTraceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTraceGraphResult& GetTraceGraphResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Services")) {
     Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");

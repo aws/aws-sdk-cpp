@@ -20,6 +20,7 @@ using namespace Aws;
 GetUsageLimitResult::GetUsageLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUsageLimitResult& GetUsageLimitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("usageLimit")) {
     m_usageLimit = jsonValue.GetObject("usageLimit");

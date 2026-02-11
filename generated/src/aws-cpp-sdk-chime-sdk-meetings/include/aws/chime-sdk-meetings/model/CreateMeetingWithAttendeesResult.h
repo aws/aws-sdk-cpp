@@ -110,6 +110,8 @@ class CreateMeetingWithAttendeesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Meeting m_meeting;
 
@@ -118,6 +120,7 @@ class CreateMeetingWithAttendeesResult {
   Aws::Vector<CreateAttendeeError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_meetingHasBeenSet = false;
   bool m_attendeesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

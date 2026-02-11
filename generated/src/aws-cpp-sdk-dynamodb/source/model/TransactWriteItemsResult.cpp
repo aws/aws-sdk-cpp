@@ -20,6 +20,7 @@ using namespace Aws;
 TransactWriteItemsResult::TransactWriteItemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TransactWriteItemsResult& TransactWriteItemsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConsumedCapacity")) {
     Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");

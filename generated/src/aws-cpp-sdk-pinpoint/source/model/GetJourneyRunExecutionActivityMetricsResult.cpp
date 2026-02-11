@@ -24,6 +24,7 @@ GetJourneyRunExecutionActivityMetricsResult::GetJourneyRunExecutionActivityMetri
 
 GetJourneyRunExecutionActivityMetricsResult& GetJourneyRunExecutionActivityMetricsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_journeyRunExecutionActivityMetricsResponse = jsonValue;
   m_journeyRunExecutionActivityMetricsResponseHasBeenSet = true;

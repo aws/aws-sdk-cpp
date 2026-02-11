@@ -59,10 +59,13 @@ class DescribePermissionSetProvisioningStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PermissionSetProvisioningStatus m_permissionSetProvisioningStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_permissionSetProvisioningStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

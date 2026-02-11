@@ -20,6 +20,7 @@ using namespace Aws;
 ImportKeyResult::ImportKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportKeyResult& ImportKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetObject("Key");

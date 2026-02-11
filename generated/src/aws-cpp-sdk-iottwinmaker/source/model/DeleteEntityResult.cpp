@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEntityResult::DeleteEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEntityResult& DeleteEntityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("state")) {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));

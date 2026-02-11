@@ -96,6 +96,8 @@ class ListGremlinQueriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_acceptedQueryCount{0};
 
@@ -104,6 +106,7 @@ class ListGremlinQueriesResult {
   Aws::Vector<GremlinQueryStatus> m_queries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_acceptedQueryCountHasBeenSet = false;
   bool m_runningQueryCountHasBeenSet = false;
   bool m_queriesHasBeenSet = false;

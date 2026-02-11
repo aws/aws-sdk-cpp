@@ -58,10 +58,13 @@ class PutConfigurationAggregatorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConfigurationAggregator m_configurationAggregator;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationAggregatorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

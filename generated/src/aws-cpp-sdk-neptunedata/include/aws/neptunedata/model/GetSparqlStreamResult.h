@@ -142,6 +142,8 @@ class GetSparqlStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_lastEventId;
 
@@ -154,6 +156,7 @@ class GetSparqlStreamResult {
   int m_totalRecords{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lastEventIdHasBeenSet = false;
   bool m_lastTrxTimestampInMillisHasBeenSet = false;
   bool m_formatHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgentRuntimeEndpointResult::GetAgentRuntimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgentRuntimeEndpointResult& GetAgentRuntimeEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("liveVersion")) {
     m_liveVersion = jsonValue.GetString("liveVersion");

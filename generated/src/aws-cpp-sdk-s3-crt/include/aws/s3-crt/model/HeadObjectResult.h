@@ -834,6 +834,8 @@ class HeadObjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_deleteMarker{false};
 
@@ -914,6 +916,7 @@ class HeadObjectResult {
   Aws::String m_expiresString;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deleteMarkerHasBeenSet = false;
   bool m_acceptRangesHasBeenSet = false;
   bool m_expirationHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEnvironmentResult::CreateEnvironmentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateEnvironmentResult& CreateEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

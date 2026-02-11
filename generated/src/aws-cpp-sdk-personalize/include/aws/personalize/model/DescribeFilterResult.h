@@ -58,10 +58,13 @@ class DescribeFilterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Filter m_filter;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_filterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

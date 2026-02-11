@@ -58,10 +58,13 @@ class DescribeTableReplicaAutoScalingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TableAutoScalingDescription m_tableAutoScalingDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableAutoScalingDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

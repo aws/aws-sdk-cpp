@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateBaiduChannelResult::UpdateBaiduChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateBaiduChannelResult& UpdateBaiduChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_baiduChannelResponse = jsonValue;
   m_baiduChannelResponseHasBeenSet = true;

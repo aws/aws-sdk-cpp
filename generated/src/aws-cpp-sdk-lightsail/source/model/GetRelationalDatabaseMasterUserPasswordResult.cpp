@@ -24,6 +24,7 @@ GetRelationalDatabaseMasterUserPasswordResult::GetRelationalDatabaseMasterUserPa
 
 GetRelationalDatabaseMasterUserPasswordResult& GetRelationalDatabaseMasterUserPasswordResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("masterUserPassword")) {
     m_masterUserPassword = jsonValue.GetString("masterUserPassword");

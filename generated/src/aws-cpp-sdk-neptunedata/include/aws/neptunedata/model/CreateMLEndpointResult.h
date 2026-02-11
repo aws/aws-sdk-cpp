@@ -89,6 +89,8 @@ class CreateMLEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -97,6 +99,7 @@ class CreateMLEndpointResult {
   long long m_creationTimeInMillis{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_creationTimeInMillisHasBeenSet = false;

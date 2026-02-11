@@ -62,10 +62,13 @@ class DefineExpressionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ExpressionStatus m_expression;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_expressionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

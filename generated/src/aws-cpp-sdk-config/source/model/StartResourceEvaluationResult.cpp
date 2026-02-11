@@ -20,6 +20,7 @@ using namespace Aws;
 StartResourceEvaluationResult::StartResourceEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartResourceEvaluationResult& StartResourceEvaluationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceEvaluationId")) {
     m_resourceEvaluationId = jsonValue.GetString("ResourceEvaluationId");

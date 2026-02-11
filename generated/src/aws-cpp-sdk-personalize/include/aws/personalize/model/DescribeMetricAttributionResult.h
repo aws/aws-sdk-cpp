@@ -58,10 +58,13 @@ class DescribeMetricAttributionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MetricAttribution m_metricAttribution;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metricAttributionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

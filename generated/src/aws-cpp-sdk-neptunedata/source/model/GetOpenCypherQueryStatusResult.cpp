@@ -20,6 +20,7 @@ using namespace Aws;
 GetOpenCypherQueryStatusResult::GetOpenCypherQueryStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOpenCypherQueryStatusResult& GetOpenCypherQueryStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queryId")) {
     m_queryId = jsonValue.GetString("queryId");

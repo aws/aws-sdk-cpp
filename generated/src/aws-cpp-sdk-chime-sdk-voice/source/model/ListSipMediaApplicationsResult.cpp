@@ -20,6 +20,7 @@ using namespace Aws;
 ListSipMediaApplicationsResult::ListSipMediaApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSipMediaApplicationsResult& ListSipMediaApplicationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SipMediaApplications")) {
     Aws::Utils::Array<JsonView> sipMediaApplicationsJsonList = jsonValue.GetArray("SipMediaApplications");

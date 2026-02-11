@@ -20,6 +20,7 @@ using namespace Aws;
 CreateQueueEnvironmentResult::CreateQueueEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateQueueEnvironmentResult& CreateQueueEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queueEnvironmentId")) {
     m_queueEnvironmentId = jsonValue.GetString("queueEnvironmentId");

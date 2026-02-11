@@ -20,6 +20,7 @@ using namespace Aws;
 GetTrackResult::GetTrackResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTrackResult& GetTrackResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("track")) {
     m_track = jsonValue.GetObject("track");

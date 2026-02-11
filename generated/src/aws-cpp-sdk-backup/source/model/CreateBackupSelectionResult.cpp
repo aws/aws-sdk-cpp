@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBackupSelectionResult::CreateBackupSelectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBackupSelectionResult& CreateBackupSelectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SelectionId")) {
     m_selectionId = jsonValue.GetString("SelectionId");

@@ -95,6 +95,8 @@ class BatchImportFindingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_failedCount{0};
 
@@ -103,6 +105,7 @@ class BatchImportFindingsResult {
   Aws::Vector<ImportFindingsError> m_failedFindings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedCountHasBeenSet = false;
   bool m_successCountHasBeenSet = false;
   bool m_failedFindingsHasBeenSet = false;

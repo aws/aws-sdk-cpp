@@ -20,6 +20,7 @@ using namespace Aws;
 ListIpRoutesResult::ListIpRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIpRoutesResult& ListIpRoutesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IpRoutesInfo")) {
     Aws::Utils::Array<JsonView> ipRoutesInfoJsonList = jsonValue.GetArray("IpRoutesInfo");

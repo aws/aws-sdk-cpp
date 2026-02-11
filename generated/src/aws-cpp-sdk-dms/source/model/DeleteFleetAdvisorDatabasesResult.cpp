@@ -22,6 +22,7 @@ DeleteFleetAdvisorDatabasesResult::DeleteFleetAdvisorDatabasesResult(const Aws::
 }
 
 DeleteFleetAdvisorDatabasesResult& DeleteFleetAdvisorDatabasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatabaseIds")) {
     Aws::Utils::Array<JsonView> databaseIdsJsonList = jsonValue.GetArray("DatabaseIds");

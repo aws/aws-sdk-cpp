@@ -20,6 +20,7 @@ using namespace Aws;
 EnableSecurityHubV2Result::EnableSecurityHubV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EnableSecurityHubV2Result& EnableSecurityHubV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HubV2Arn")) {
     m_hubV2Arn = jsonValue.GetString("HubV2Arn");

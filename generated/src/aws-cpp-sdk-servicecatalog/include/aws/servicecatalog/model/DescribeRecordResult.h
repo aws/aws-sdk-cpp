@@ -103,6 +103,8 @@ class DescribeRecordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RecordDetail m_recordDetail;
 
@@ -111,6 +113,7 @@ class DescribeRecordResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recordDetailHasBeenSet = false;
   bool m_recordOutputsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

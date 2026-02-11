@@ -23,6 +23,7 @@ GetUnfilteredPartitionMetadataResult::GetUnfilteredPartitionMetadataResult(const
 
 GetUnfilteredPartitionMetadataResult& GetUnfilteredPartitionMetadataResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Partition")) {
     m_partition = jsonValue.GetObject("Partition");

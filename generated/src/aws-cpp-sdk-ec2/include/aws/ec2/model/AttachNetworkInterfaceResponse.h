@@ -78,12 +78,15 @@ class AttachNetworkInterfaceResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_attachmentId;
 
   int m_networkCardIndex{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attachmentIdHasBeenSet = false;
   bool m_networkCardIndexHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

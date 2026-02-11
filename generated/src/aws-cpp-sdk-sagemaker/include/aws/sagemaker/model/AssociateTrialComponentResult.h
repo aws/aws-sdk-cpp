@@ -74,12 +74,15 @@ class AssociateTrialComponentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trialComponentArn;
 
   Aws::String m_trialArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trialComponentArnHasBeenSet = false;
   bool m_trialArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

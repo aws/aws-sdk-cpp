@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDocumentationVersionResult::UpdateDocumentationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDocumentationVersionResult& UpdateDocumentationVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");

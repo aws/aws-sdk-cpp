@@ -209,6 +209,8 @@ class DescribeTestSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testSetId;
 
@@ -231,6 +233,7 @@ class DescribeTestSetResult {
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testSetIdHasBeenSet = false;
   bool m_testSetNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

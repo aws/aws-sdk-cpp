@@ -20,6 +20,7 @@ using namespace Aws;
 CreateProcessingJobResult::CreateProcessingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProcessingJobResult& CreateProcessingJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProcessingJobArn")) {
     m_processingJobArn = jsonValue.GetString("ProcessingJobArn");

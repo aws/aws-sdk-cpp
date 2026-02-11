@@ -21,6 +21,7 @@ GetMediaForFragmentListResult::GetMediaForFragmentListResult(Aws::AmazonWebServi
 }
 
 GetMediaForFragmentListResult& GetMediaForFragmentListResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_payload = result.TakeOwnershipOfPayload();
   m_payloadHasBeenSet = true;
 

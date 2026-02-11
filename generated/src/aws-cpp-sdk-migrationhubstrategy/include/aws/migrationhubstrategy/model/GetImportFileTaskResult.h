@@ -227,6 +227,8 @@ class GetImportFileTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_completionTime{};
 
@@ -251,6 +253,7 @@ class GetImportFileTaskResult {
   Aws::String m_statusReportS3Key;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_completionTimeHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_importNameHasBeenSet = false;

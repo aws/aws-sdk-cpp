@@ -20,6 +20,7 @@ using namespace Aws;
 ListConsumableResourcesResult::ListConsumableResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConsumableResourcesResult& ListConsumableResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("consumableResources")) {
     Aws::Utils::Array<JsonView> consumableResourcesJsonList = jsonValue.GetArray("consumableResources");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetVoiceConnectorProxyResult::GetVoiceConnectorProxyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVoiceConnectorProxyResult& GetVoiceConnectorProxyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Proxy")) {
     m_proxy = jsonValue.GetObject("Proxy");

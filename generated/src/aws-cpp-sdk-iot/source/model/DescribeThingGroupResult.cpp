@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeThingGroupResult::DescribeThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeThingGroupResult& DescribeThingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("thingGroupName")) {
     m_thingGroupName = jsonValue.GetString("thingGroupName");

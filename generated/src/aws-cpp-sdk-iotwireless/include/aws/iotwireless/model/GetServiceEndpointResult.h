@@ -90,6 +90,8 @@ class GetServiceEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WirelessGatewayServiceType m_serviceType{WirelessGatewayServiceType::NOT_SET};
 
@@ -98,6 +100,7 @@ class GetServiceEndpointResult {
   Aws::String m_serverTrust;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceTypeHasBeenSet = false;
   bool m_serviceEndpointHasBeenSet = false;
   bool m_serverTrustHasBeenSet = false;

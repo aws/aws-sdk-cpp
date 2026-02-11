@@ -108,6 +108,8 @@ class ListVolumesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_gatewayARN;
 
@@ -116,6 +118,7 @@ class ListVolumesResult {
   Aws::Vector<VolumeInfo> m_volumeInfos;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayARNHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_volumeInfosHasBeenSet = false;

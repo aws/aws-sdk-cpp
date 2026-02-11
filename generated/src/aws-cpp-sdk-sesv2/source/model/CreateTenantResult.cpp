@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTenantResult::CreateTenantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTenantResult& CreateTenantResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TenantName")) {
     m_tenantName = jsonValue.GetString("TenantName");

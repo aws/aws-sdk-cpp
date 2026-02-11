@@ -377,6 +377,8 @@ class DescribeFeatureGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_featureGroupArn;
 
@@ -415,6 +417,7 @@ class DescribeFeatureGroupResult {
   long long m_onlineStoreTotalSizeBytes{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_featureGroupArnHasBeenSet = false;
   bool m_featureGroupNameHasBeenSet = false;
   bool m_recordIdentifierFeatureNameHasBeenSet = false;

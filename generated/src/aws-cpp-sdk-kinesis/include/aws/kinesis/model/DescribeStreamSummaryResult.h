@@ -59,10 +59,13 @@ class DescribeStreamSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StreamDescriptionSummary m_streamDescriptionSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamDescriptionSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

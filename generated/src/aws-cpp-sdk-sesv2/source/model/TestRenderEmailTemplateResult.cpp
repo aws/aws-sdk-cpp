@@ -20,6 +20,7 @@ using namespace Aws;
 TestRenderEmailTemplateResult::TestRenderEmailTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestRenderEmailTemplateResult& TestRenderEmailTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RenderedTemplate")) {
     m_renderedTemplate = jsonValue.GetString("RenderedTemplate");

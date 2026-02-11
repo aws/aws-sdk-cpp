@@ -63,10 +63,13 @@ class DescribeScalingParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ScalingParametersStatus m_scalingParameters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scalingParametersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

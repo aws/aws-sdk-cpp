@@ -20,6 +20,7 @@ using namespace Aws;
 RejectClientVpcConnectionResult::RejectClientVpcConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RejectClientVpcConnectionResult& RejectClientVpcConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

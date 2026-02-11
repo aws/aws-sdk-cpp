@@ -23,6 +23,7 @@ ListOrganizationalUnitsForParentResult::ListOrganizationalUnitsForParentResult(c
 
 ListOrganizationalUnitsForParentResult& ListOrganizationalUnitsForParentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationalUnits")) {
     Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");

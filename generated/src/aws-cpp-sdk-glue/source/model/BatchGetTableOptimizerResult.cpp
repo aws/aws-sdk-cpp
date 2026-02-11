@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetTableOptimizerResult::BatchGetTableOptimizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetTableOptimizerResult& BatchGetTableOptimizerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TableOptimizers")) {
     Aws::Utils::Array<JsonView> tableOptimizersJsonList = jsonValue.GetArray("TableOptimizers");

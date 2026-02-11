@@ -22,6 +22,7 @@ StartEntitiesDetectionV2JobResult::StartEntitiesDetectionV2JobResult(const Aws::
 }
 
 StartEntitiesDetectionV2JobResult& StartEntitiesDetectionV2JobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");

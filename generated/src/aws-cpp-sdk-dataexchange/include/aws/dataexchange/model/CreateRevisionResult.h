@@ -258,6 +258,8 @@ class CreateRevisionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -284,6 +286,7 @@ class CreateRevisionResult {
   Aws::Utils::DateTime m_revokedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_commentHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

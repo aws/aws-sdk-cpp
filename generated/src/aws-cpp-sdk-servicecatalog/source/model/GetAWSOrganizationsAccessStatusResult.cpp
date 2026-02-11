@@ -23,6 +23,7 @@ GetAWSOrganizationsAccessStatusResult::GetAWSOrganizationsAccessStatusResult(con
 
 GetAWSOrganizationsAccessStatusResult& GetAWSOrganizationsAccessStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccessStatus")) {
     m_accessStatus = AccessStatusMapper::GetAccessStatusForName(jsonValue.GetString("AccessStatus"));

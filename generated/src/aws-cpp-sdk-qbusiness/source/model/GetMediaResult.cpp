@@ -21,6 +21,7 @@ using namespace Aws;
 GetMediaResult::GetMediaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMediaResult& GetMediaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mediaBytes")) {
     m_mediaBytes = HashingUtils::Base64Decode(jsonValue.GetString("mediaBytes"));

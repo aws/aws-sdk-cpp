@@ -94,12 +94,15 @@ class GetDevicePoolCompatibilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DevicePoolCompatibilityResult> m_compatibleDevices;
 
   Aws::Vector<DevicePoolCompatibilityResult> m_incompatibleDevices;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_compatibleDevicesHasBeenSet = false;
   bool m_incompatibleDevicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

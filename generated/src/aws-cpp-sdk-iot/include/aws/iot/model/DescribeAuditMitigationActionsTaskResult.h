@@ -190,6 +190,8 @@ class DescribeAuditMitigationActionsTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AuditMitigationActionsTaskStatus m_taskStatus{AuditMitigationActionsTaskStatus::NOT_SET};
 
@@ -206,6 +208,7 @@ class DescribeAuditMitigationActionsTaskResult {
   Aws::Vector<MitigationAction> m_actionsDefinition;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskStatusHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;

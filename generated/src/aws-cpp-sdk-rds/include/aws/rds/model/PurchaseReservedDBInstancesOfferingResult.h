@@ -56,10 +56,13 @@ class PurchaseReservedDBInstancesOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReservedDBInstance m_reservedDBInstance;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reservedDBInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

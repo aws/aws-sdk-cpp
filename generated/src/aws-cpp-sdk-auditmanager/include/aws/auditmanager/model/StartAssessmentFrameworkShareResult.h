@@ -60,10 +60,13 @@ class StartAssessmentFrameworkShareResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AssessmentFrameworkShareRequest m_assessmentFrameworkShareRequest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assessmentFrameworkShareRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

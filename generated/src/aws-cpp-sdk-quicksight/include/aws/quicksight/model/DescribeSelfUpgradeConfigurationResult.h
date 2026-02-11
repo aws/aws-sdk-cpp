@@ -74,12 +74,15 @@ class DescribeSelfUpgradeConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SelfUpgradeConfiguration m_selfUpgradeConfiguration;
 
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_selfUpgradeConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListFragmentsResult::ListFragmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFragmentsResult& ListFragmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Fragments")) {
     Aws::Utils::Array<JsonView> fragmentsJsonList = jsonValue.GetArray("Fragments");

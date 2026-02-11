@@ -56,10 +56,13 @@ class GetJourneyRunsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JourneyRunsResponse m_journeyRunsResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_journeyRunsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -85,12 +85,15 @@ class GetWebIdentityTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_webIdentityToken;
 
   Aws::Utils::DateTime m_expiration{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_webIdentityTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

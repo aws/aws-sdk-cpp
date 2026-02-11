@@ -20,6 +20,7 @@ using namespace Aws;
 EnableLoggingResult::EnableLoggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 EnableLoggingResult& EnableLoggingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -58,10 +58,13 @@ class UpdateUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Upload m_upload;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_uploadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

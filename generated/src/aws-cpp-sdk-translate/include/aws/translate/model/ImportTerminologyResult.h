@@ -79,12 +79,15 @@ class ImportTerminologyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TerminologyProperties m_terminologyProperties;
 
   TerminologyDataLocation m_auxiliaryDataLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_terminologyPropertiesHasBeenSet = false;
   bool m_auxiliaryDataLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

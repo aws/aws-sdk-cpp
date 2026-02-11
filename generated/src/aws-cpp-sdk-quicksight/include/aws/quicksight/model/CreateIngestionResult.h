@@ -105,6 +105,8 @@ class CreateIngestionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -115,6 +117,7 @@ class CreateIngestionResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_ingestionIdHasBeenSet = false;
   bool m_ingestionStatusHasBeenSet = false;

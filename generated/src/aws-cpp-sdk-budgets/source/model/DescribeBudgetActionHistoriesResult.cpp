@@ -22,6 +22,7 @@ DescribeBudgetActionHistoriesResult::DescribeBudgetActionHistoriesResult(const A
 }
 
 DescribeBudgetActionHistoriesResult& DescribeBudgetActionHistoriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ActionHistories")) {
     Aws::Utils::Array<JsonView> actionHistoriesJsonList = jsonValue.GetArray("ActionHistories");

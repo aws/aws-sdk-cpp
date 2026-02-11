@@ -98,6 +98,8 @@ class SearchUserHierarchyGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<HierarchyGroup> m_userHierarchyGroups;
 
@@ -106,6 +108,7 @@ class SearchUserHierarchyGroupsResult {
   long long m_approximateTotalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userHierarchyGroupsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_approximateTotalCountHasBeenSet = false;

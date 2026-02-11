@@ -59,10 +59,13 @@ class DescribeContainerGroupDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContainerGroupDefinition m_containerGroupDefinition;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_containerGroupDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

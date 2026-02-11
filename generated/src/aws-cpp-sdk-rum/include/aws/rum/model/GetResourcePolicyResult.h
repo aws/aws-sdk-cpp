@@ -75,12 +75,15 @@ class GetResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyDocument;
 
   Aws::String m_policyRevisionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyDocumentHasBeenSet = false;
   bool m_policyRevisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

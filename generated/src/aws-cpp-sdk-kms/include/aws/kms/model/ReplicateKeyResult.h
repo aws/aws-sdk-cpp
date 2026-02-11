@@ -108,6 +108,8 @@ class ReplicateKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KeyMetadata m_replicaKeyMetadata;
 
@@ -116,6 +118,7 @@ class ReplicateKeyResult {
   Aws::Vector<Tag> m_replicaTags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_replicaKeyMetadataHasBeenSet = false;
   bool m_replicaPolicyHasBeenSet = false;
   bool m_replicaTagsHasBeenSet = false;

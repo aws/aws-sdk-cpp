@@ -21,6 +21,7 @@ StartImagePipelineExecutionResult::StartImagePipelineExecutionResult(const Aws::
 }
 
 StartImagePipelineExecutionResult& StartImagePipelineExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");

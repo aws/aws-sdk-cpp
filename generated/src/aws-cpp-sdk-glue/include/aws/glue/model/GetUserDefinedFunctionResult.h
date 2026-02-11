@@ -58,10 +58,13 @@ class GetUserDefinedFunctionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   UserDefinedFunction m_userDefinedFunction;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userDefinedFunctionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

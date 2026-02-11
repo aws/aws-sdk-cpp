@@ -56,10 +56,13 @@ class UpdateClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Cluster m_cluster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

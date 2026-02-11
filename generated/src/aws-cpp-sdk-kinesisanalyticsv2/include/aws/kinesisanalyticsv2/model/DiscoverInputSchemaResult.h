@@ -132,6 +132,8 @@ class DiscoverInputSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SourceSchema m_inputSchema;
 
@@ -142,6 +144,7 @@ class DiscoverInputSchemaResult {
   Aws::Vector<Aws::String> m_rawInputRecords;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inputSchemaHasBeenSet = false;
   bool m_parsedInputRecordsHasBeenSet = false;
   bool m_processedInputRecordsHasBeenSet = false;

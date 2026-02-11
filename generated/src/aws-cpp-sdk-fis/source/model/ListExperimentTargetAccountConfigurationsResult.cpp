@@ -24,6 +24,7 @@ ListExperimentTargetAccountConfigurationsResult::ListExperimentTargetAccountConf
 
 ListExperimentTargetAccountConfigurationsResult& ListExperimentTargetAccountConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("targetAccountConfigurations")) {
     Aws::Utils::Array<JsonView> targetAccountConfigurationsJsonList = jsonValue.GetArray("targetAccountConfigurations");

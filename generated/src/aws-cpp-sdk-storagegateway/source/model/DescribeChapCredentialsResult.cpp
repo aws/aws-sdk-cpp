@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeChapCredentialsResult::DescribeChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeChapCredentialsResult& DescribeChapCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChapCredentials")) {
     Aws::Utils::Array<JsonView> chapCredentialsJsonList = jsonValue.GetArray("ChapCredentials");

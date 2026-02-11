@@ -24,6 +24,7 @@ ListResourceTelemetryForOrganizationResult::ListResourceTelemetryForOrganization
 
 ListResourceTelemetryForOrganizationResult& ListResourceTelemetryForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TelemetryConfigurations")) {
     Aws::Utils::Array<JsonView> telemetryConfigurationsJsonList = jsonValue.GetArray("TelemetryConfigurations");

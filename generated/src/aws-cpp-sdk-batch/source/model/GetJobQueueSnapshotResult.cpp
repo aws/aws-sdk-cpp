@@ -20,6 +20,7 @@ using namespace Aws;
 GetJobQueueSnapshotResult::GetJobQueueSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetJobQueueSnapshotResult& GetJobQueueSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("frontOfQueue")) {
     m_frontOfQueue = jsonValue.GetObject("frontOfQueue");

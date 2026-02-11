@@ -72,12 +72,15 @@ class DescribeOrganizationOverviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_reactiveInsights{0};
 
   int m_proactiveInsights{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reactiveInsightsHasBeenSet = false;
   bool m_proactiveInsightsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

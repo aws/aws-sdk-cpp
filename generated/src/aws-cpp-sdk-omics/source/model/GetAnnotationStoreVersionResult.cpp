@@ -20,6 +20,7 @@ using namespace Aws;
 GetAnnotationStoreVersionResult::GetAnnotationStoreVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAnnotationStoreVersionResult& GetAnnotationStoreVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("storeId")) {
     m_storeId = jsonValue.GetString("storeId");

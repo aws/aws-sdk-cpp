@@ -23,6 +23,7 @@ GetNetworkResourceRelationshipsResult::GetNetworkResourceRelationshipsResult(con
 
 GetNetworkResourceRelationshipsResult& GetNetworkResourceRelationshipsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Relationships")) {
     Aws::Utils::Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListFacetAttributesResult::ListFacetAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFacetAttributesResult& ListFacetAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");

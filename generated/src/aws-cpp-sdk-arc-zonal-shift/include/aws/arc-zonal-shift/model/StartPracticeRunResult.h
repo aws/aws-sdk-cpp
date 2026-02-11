@@ -169,6 +169,8 @@ class StartPracticeRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_zonalShiftId;
 
@@ -185,6 +187,7 @@ class StartPracticeRunResult {
   Aws::String m_comment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_zonalShiftIdHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
   bool m_awayFromHasBeenSet = false;

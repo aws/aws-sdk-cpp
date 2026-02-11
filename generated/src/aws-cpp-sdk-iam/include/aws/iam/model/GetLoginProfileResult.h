@@ -66,10 +66,13 @@ class GetLoginProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LoginProfile m_loginProfile;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loginProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

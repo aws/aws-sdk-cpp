@@ -20,6 +20,7 @@ using namespace Aws;
 SnapToRoadsResult::SnapToRoadsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SnapToRoadsResult& SnapToRoadsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Notices")) {
     Aws::Utils::Array<JsonView> noticesJsonList = jsonValue.GetArray("Notices");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSpaceResult::CreateSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSpaceResult& CreateSpaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SpaceArn")) {
     m_spaceArn = jsonValue.GetString("SpaceArn");

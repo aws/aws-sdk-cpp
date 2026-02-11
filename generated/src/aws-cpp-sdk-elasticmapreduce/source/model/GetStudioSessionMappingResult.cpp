@@ -20,6 +20,7 @@ using namespace Aws;
 GetStudioSessionMappingResult::GetStudioSessionMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStudioSessionMappingResult& GetStudioSessionMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SessionMapping")) {
     m_sessionMapping = jsonValue.GetObject("SessionMapping");

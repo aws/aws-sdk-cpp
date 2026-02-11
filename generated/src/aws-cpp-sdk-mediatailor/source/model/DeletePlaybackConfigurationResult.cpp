@@ -22,6 +22,7 @@ DeletePlaybackConfigurationResult::DeletePlaybackConfigurationResult(const Aws::
 }
 
 DeletePlaybackConfigurationResult& DeletePlaybackConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

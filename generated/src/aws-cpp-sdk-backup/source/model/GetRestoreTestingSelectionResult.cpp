@@ -20,6 +20,7 @@ using namespace Aws;
 GetRestoreTestingSelectionResult::GetRestoreTestingSelectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRestoreTestingSelectionResult& GetRestoreTestingSelectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RestoreTestingSelection")) {
     m_restoreTestingSelection = jsonValue.GetObject("RestoreTestingSelection");

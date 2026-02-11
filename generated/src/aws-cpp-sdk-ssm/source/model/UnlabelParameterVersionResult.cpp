@@ -20,6 +20,7 @@ using namespace Aws;
 UnlabelParameterVersionResult::UnlabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UnlabelParameterVersionResult& UnlabelParameterVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RemovedLabels")) {
     Aws::Utils::Array<JsonView> removedLabelsJsonList = jsonValue.GetArray("RemovedLabels");

@@ -162,6 +162,8 @@ class ListResourceRecordSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ResourceRecordSet> m_resourceRecordSets;
 
@@ -176,6 +178,7 @@ class ListResourceRecordSetsResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceRecordSetsHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_nextRecordNameHasBeenSet = false;

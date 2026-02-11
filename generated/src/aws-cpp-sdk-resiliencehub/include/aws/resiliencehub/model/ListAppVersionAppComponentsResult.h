@@ -123,6 +123,8 @@ class ListAppVersionAppComponentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -133,6 +135,7 @@ class ListAppVersionAppComponentsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appComponentsHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;

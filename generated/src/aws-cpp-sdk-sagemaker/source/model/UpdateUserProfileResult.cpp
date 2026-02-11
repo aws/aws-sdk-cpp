@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateUserProfileResult::UpdateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateUserProfileResult& UpdateUserProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserProfileArn")) {
     m_userProfileArn = jsonValue.GetString("UserProfileArn");

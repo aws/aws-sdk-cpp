@@ -76,12 +76,15 @@ class ReplaceRouteTableAssociationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_newAssociationId;
 
   RouteTableAssociationState m_associationState;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_newAssociationIdHasBeenSet = false;
   bool m_associationStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

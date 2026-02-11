@@ -20,6 +20,7 @@ using namespace Aws;
 StartRemediationExecutionResult::StartRemediationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartRemediationExecutionResult& StartRemediationExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailureMessage")) {
     m_failureMessage = jsonValue.GetString("FailureMessage");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateTimeToLiveResult::UpdateTimeToLiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateTimeToLiveResult& UpdateTimeToLiveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TimeToLiveSpecification")) {
     m_timeToLiveSpecification = jsonValue.GetObject("TimeToLiveSpecification");

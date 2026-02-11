@@ -81,12 +81,15 @@ class DescribeLoaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_loaContent{};
 
   LoaContentType m_loaContentType{LoaContentType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loaContentHasBeenSet = false;
   bool m_loaContentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

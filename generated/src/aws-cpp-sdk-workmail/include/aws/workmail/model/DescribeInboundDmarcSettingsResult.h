@@ -55,10 +55,13 @@ class DescribeInboundDmarcSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_enforced{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_enforcedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

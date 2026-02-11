@@ -147,6 +147,8 @@ class CreateCellResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_cellArn;
 
@@ -159,6 +161,7 @@ class CreateCellResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cellArnHasBeenSet = false;
   bool m_cellNameHasBeenSet = false;
   bool m_cellsHasBeenSet = false;

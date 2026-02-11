@@ -61,10 +61,13 @@ class GetBucketLocationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BucketLocationConstraint m_locationConstraint{BucketLocationConstraint::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationConstraintHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

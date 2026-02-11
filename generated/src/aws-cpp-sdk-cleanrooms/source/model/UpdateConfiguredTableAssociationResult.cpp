@@ -23,6 +23,7 @@ UpdateConfiguredTableAssociationResult::UpdateConfiguredTableAssociationResult(c
 
 UpdateConfiguredTableAssociationResult& UpdateConfiguredTableAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredTableAssociation")) {
     m_configuredTableAssociation = jsonValue.GetObject("configuredTableAssociation");

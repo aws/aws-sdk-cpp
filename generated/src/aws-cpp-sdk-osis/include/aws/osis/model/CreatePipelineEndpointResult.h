@@ -108,6 +108,8 @@ class CreatePipelineEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pipelineArn;
 
@@ -118,6 +120,7 @@ class CreatePipelineEndpointResult {
   Aws::String m_vpcId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pipelineArnHasBeenSet = false;
   bool m_endpointIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

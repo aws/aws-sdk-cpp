@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRestoreTestingPlanResult::CreateRestoreTestingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRestoreTestingPlanResult& CreateRestoreTestingPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");

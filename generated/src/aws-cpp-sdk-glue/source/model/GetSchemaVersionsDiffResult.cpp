@@ -20,6 +20,7 @@ using namespace Aws;
 GetSchemaVersionsDiffResult::GetSchemaVersionsDiffResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSchemaVersionsDiffResult& GetSchemaVersionsDiffResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Diff")) {
     m_diff = jsonValue.GetString("Diff");

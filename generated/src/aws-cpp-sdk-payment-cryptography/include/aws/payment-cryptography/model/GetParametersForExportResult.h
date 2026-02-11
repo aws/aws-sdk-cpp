@@ -132,6 +132,8 @@ class GetParametersForExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_signingKeyCertificate;
 
@@ -144,6 +146,7 @@ class GetParametersForExportResult {
   Aws::Utils::DateTime m_parametersValidUntilTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_signingKeyCertificateHasBeenSet = false;
   bool m_signingKeyCertificateChainHasBeenSet = false;
   bool m_signingKeyAlgorithmHasBeenSet = false;

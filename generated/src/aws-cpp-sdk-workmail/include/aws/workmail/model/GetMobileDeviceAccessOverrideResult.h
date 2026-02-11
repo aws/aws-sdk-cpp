@@ -142,6 +142,8 @@ class GetMobileDeviceAccessOverrideResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userId;
 
@@ -156,6 +158,7 @@ class GetMobileDeviceAccessOverrideResult {
   Aws::Utils::DateTime m_dateModified{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userIdHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;
   bool m_effectHasBeenSet = false;

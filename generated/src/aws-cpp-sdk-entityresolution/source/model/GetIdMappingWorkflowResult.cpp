@@ -20,6 +20,7 @@ using namespace Aws;
 GetIdMappingWorkflowResult::GetIdMappingWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIdMappingWorkflowResult& GetIdMappingWorkflowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workflowName")) {
     m_workflowName = jsonValue.GetString("workflowName");

@@ -23,6 +23,7 @@ using namespace Aws;
 StopMetricStreamsResult::StopMetricStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) { *this = result; }
 
 StopMetricStreamsResult& StopMetricStreamsResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  m_responseCode = result.GetResponseCode();
   const auto& cborValue = result.GetPayload();
   const auto decoder = cborValue.GetDecoder();
 

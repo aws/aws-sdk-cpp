@@ -74,12 +74,15 @@ class CreateProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_profileArn;
 
   Aws::String m_profileVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_profileArnHasBeenSet = false;
   bool m_profileVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

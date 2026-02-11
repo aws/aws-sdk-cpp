@@ -21,6 +21,7 @@ GetFunction2020_05_31Result::GetFunction2020_05_31Result(Aws::AmazonWebServiceRe
 }
 
 GetFunction2020_05_31Result& GetFunction2020_05_31Result::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_functionCode = result.TakeOwnershipOfPayload();
   m_functionCodeHasBeenSet = true;
 

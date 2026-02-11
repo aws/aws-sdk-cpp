@@ -148,6 +148,8 @@ class DescribeCustomMetricResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_metricName;
 
@@ -162,6 +164,7 @@ class DescribeCustomMetricResult {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_metricArnHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;

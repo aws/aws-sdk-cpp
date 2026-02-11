@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountLinkResult::GetAccountLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountLinkResult& GetAccountLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountLink")) {
     m_accountLink = jsonValue.GetObject("AccountLink");

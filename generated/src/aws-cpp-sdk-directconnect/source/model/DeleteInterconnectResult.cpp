@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteInterconnectResult::DeleteInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteInterconnectResult& DeleteInterconnectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("interconnectState")) {
     m_interconnectState = InterconnectStateMapper::GetInterconnectStateForName(jsonValue.GetString("interconnectState"));

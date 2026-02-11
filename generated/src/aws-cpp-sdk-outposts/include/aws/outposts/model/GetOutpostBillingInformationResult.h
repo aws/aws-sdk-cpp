@@ -101,6 +101,8 @@ class GetOutpostBillingInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -109,6 +111,7 @@ class GetOutpostBillingInformationResult {
   Aws::String m_contractEndDate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_subscriptionsHasBeenSet = false;
   bool m_contractEndDateHasBeenSet = false;

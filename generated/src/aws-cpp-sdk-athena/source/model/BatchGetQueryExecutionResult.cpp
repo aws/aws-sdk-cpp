@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetQueryExecutionResult::BatchGetQueryExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QueryExecutions")) {
     Aws::Utils::Array<JsonView> queryExecutionsJsonList = jsonValue.GetArray("QueryExecutions");

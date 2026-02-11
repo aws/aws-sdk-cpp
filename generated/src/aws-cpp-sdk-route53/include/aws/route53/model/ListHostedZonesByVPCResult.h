@@ -104,6 +104,8 @@ class ListHostedZonesByVPCResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<HostedZoneSummary> m_hostedZoneSummaries;
 
@@ -112,6 +114,7 @@ class ListHostedZonesByVPCResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hostedZoneSummariesHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

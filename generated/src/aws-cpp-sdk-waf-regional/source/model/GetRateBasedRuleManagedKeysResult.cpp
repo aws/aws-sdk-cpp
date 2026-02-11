@@ -22,6 +22,7 @@ GetRateBasedRuleManagedKeysResult::GetRateBasedRuleManagedKeysResult(const Aws::
 }
 
 GetRateBasedRuleManagedKeysResult& GetRateBasedRuleManagedKeysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedKeys")) {
     Aws::Utils::Array<JsonView> managedKeysJsonList = jsonValue.GetArray("ManagedKeys");

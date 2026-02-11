@@ -20,6 +20,7 @@ using namespace Aws;
 StopIngestionJobResult::StopIngestionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopIngestionJobResult& StopIngestionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ingestionJob")) {
     m_ingestionJob = jsonValue.GetObject("ingestionJob");

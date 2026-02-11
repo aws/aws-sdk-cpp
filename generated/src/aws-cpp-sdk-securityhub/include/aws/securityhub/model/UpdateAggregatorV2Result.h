@@ -116,6 +116,8 @@ class UpdateAggregatorV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_aggregatorV2Arn;
 
@@ -126,6 +128,7 @@ class UpdateAggregatorV2Result {
   Aws::Vector<Aws::String> m_linkedRegions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aggregatorV2ArnHasBeenSet = false;
   bool m_aggregationRegionHasBeenSet = false;
   bool m_regionLinkingModeHasBeenSet = false;

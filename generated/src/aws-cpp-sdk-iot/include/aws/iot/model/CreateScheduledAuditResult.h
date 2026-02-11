@@ -57,10 +57,13 @@ class CreateScheduledAuditResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_scheduledAuditArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scheduledAuditArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

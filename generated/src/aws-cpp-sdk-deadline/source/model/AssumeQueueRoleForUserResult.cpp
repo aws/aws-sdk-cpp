@@ -20,6 +20,7 @@ using namespace Aws;
 AssumeQueueRoleForUserResult::AssumeQueueRoleForUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssumeQueueRoleForUserResult& AssumeQueueRoleForUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("credentials")) {
     m_credentials = jsonValue.GetObject("credentials");

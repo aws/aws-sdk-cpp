@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMultiplexProgramResult::DeleteMultiplexProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMultiplexProgramResult& DeleteMultiplexProgramResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("channelId")) {
     m_channelId = jsonValue.GetString("channelId");

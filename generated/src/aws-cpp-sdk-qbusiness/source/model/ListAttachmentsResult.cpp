@@ -20,6 +20,7 @@ using namespace Aws;
 ListAttachmentsResult::ListAttachmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAttachmentsResult& ListAttachmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("attachments")) {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");

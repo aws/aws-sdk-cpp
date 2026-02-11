@@ -24,6 +24,7 @@ DescribeRegistrationSectionDefinitionsResult::DescribeRegistrationSectionDefinit
 
 DescribeRegistrationSectionDefinitionsResult& DescribeRegistrationSectionDefinitionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegistrationType")) {
     m_registrationType = jsonValue.GetString("RegistrationType");

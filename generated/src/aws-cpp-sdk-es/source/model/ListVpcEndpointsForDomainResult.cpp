@@ -20,6 +20,7 @@ using namespace Aws;
 ListVpcEndpointsForDomainResult::ListVpcEndpointsForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVpcEndpointsForDomainResult& ListVpcEndpointsForDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcEndpointSummaryList")) {
     Aws::Utils::Array<JsonView> vpcEndpointSummaryListJsonList = jsonValue.GetArray("VpcEndpointSummaryList");

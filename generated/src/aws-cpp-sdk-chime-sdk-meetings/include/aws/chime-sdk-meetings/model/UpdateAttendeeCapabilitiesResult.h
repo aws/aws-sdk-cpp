@@ -59,10 +59,13 @@ class UpdateAttendeeCapabilitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Attendee m_attendee;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attendeeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -19,6 +19,7 @@ using namespace Aws;
 InvokeAgentRuntimeResult::InvokeAgentRuntimeResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 InvokeAgentRuntimeResult& InvokeAgentRuntimeResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_response = result.TakeOwnershipOfPayload();
   m_responseHasBeenSet = true;
 

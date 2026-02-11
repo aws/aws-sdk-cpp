@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateChannelReadMarkerResult::UpdateChannelReadMarkerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateChannelReadMarkerResult& UpdateChannelReadMarkerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelArn")) {
     m_channelArn = jsonValue.GetString("ChannelArn");

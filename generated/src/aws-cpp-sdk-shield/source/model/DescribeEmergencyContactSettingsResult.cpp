@@ -23,6 +23,7 @@ DescribeEmergencyContactSettingsResult::DescribeEmergencyContactSettingsResult(c
 
 DescribeEmergencyContactSettingsResult& DescribeEmergencyContactSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EmergencyContactList")) {
     Aws::Utils::Array<JsonView> emergencyContactListJsonList = jsonValue.GetArray("EmergencyContactList");

@@ -74,12 +74,15 @@ class CreateNetworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_networkId;
 
   Aws::String m_memberId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_networkIdHasBeenSet = false;
   bool m_memberIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

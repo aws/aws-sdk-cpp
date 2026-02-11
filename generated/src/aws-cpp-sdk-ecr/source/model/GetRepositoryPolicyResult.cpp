@@ -20,6 +20,7 @@ using namespace Aws;
 GetRepositoryPolicyResult::GetRepositoryPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRepositoryPolicyResult& GetRepositoryPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");

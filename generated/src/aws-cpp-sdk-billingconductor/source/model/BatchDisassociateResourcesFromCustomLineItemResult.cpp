@@ -24,6 +24,7 @@ BatchDisassociateResourcesFromCustomLineItemResult::BatchDisassociateResourcesFr
 
 BatchDisassociateResourcesFromCustomLineItemResult& BatchDisassociateResourcesFromCustomLineItemResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SuccessfullyDisassociatedResources")) {
     Aws::Utils::Array<JsonView> successfullyDisassociatedResourcesJsonList = jsonValue.GetArray("SuccessfullyDisassociatedResources");

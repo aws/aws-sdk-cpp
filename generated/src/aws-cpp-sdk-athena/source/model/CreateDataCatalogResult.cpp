@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataCatalogResult::CreateDataCatalogResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataCatalogResult& CreateDataCatalogResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataCatalog")) {
     m_dataCatalog = jsonValue.GetObject("DataCatalog");

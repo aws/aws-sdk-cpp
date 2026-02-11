@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePullRequestResult::CreatePullRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePullRequestResult& CreatePullRequestResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullRequest")) {
     m_pullRequest = jsonValue.GetObject("pullRequest");

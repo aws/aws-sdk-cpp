@@ -23,6 +23,7 @@ CreateSlackChannelConfigurationResult::CreateSlackChannelConfigurationResult(con
 
 CreateSlackChannelConfigurationResult& CreateSlackChannelConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelConfiguration")) {
     m_channelConfiguration = jsonValue.GetObject("ChannelConfiguration");

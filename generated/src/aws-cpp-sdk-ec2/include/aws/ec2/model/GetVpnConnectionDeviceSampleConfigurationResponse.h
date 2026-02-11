@@ -60,10 +60,13 @@ class GetVpnConnectionDeviceSampleConfigurationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_vpnConnectionDeviceSampleConfiguration;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpnConnectionDeviceSampleConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

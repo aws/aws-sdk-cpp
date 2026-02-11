@@ -77,12 +77,15 @@ class StopContinuousExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_stopTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_startTimeHasBeenSet = false;
   bool m_stopTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

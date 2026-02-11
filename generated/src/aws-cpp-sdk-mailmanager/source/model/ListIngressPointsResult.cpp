@@ -20,6 +20,7 @@ using namespace Aws;
 ListIngressPointsResult::ListIngressPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIngressPointsResult& ListIngressPointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IngressPoints")) {
     Aws::Utils::Array<JsonView> ingressPointsJsonList = jsonValue.GetArray("IngressPoints");

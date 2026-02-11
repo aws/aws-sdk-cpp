@@ -100,6 +100,8 @@ class ListTrustStoreCertificatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CertificateSummary> m_certificateList;
 
@@ -108,6 +110,7 @@ class ListTrustStoreCertificatesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificateListHasBeenSet = false;
   bool m_trustStoreArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

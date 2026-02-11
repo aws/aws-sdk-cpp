@@ -75,12 +75,15 @@ class PredictQAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PredictAppDefinition m_app;
 
   Aws::String m_problemStatement;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appHasBeenSet = false;
   bool m_problemStatementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

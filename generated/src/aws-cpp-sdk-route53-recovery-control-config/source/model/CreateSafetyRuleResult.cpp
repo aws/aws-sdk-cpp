@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSafetyRuleResult::CreateSafetyRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSafetyRuleResult& CreateSafetyRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssertionRule")) {
     m_assertionRule = jsonValue.GetObject("AssertionRule");

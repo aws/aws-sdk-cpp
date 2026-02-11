@@ -20,6 +20,7 @@ using namespace Aws;
 ListModelMetadataResult::ListModelMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListModelMetadataResult& ListModelMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelMetadataSummaries")) {
     Aws::Utils::Array<JsonView> modelMetadataSummariesJsonList = jsonValue.GetArray("ModelMetadataSummaries");

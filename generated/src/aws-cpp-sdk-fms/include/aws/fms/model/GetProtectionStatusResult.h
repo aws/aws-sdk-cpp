@@ -121,6 +121,8 @@ class GetProtectionStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_adminAccountId;
 
@@ -131,6 +133,7 @@ class GetProtectionStatusResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_adminAccountIdHasBeenSet = false;
   bool m_serviceTypeHasBeenSet = false;
   bool m_dataHasBeenSet = false;

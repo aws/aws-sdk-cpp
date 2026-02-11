@@ -112,6 +112,8 @@ class CreatePolicyVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyArn;
 
@@ -122,6 +124,7 @@ class CreatePolicyVersionResult {
   bool m_isDefaultVersion{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_policyVersionIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLogPatternResult::CreateLogPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLogPatternResult& CreateLogPatternResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LogPattern")) {
     m_logPattern = jsonValue.GetObject("LogPattern");

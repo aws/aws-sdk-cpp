@@ -20,6 +20,7 @@ using namespace Aws;
 GetHITResult::GetHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetHITResult& GetHITResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HIT")) {
     m_hIT = jsonValue.GetObject("HIT");

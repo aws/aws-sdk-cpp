@@ -22,6 +22,7 @@ ListDelegatedAdministratorsResult::ListDelegatedAdministratorsResult(const Aws::
 }
 
 ListDelegatedAdministratorsResult& ListDelegatedAdministratorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DelegatedAdministrators")) {
     Aws::Utils::Array<JsonView> delegatedAdministratorsJsonList = jsonValue.GetArray("DelegatedAdministrators");

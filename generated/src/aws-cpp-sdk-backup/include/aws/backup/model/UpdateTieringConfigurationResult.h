@@ -116,6 +116,8 @@ class UpdateTieringConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tieringConfigurationArn;
 
@@ -126,6 +128,7 @@ class UpdateTieringConfigurationResult {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tieringConfigurationArnHasBeenSet = false;
   bool m_tieringConfigurationNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

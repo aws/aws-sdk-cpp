@@ -20,6 +20,7 @@ using namespace Aws;
 CreateComputationModelResult::CreateComputationModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateComputationModelResult& CreateComputationModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("computationModelId")) {
     m_computationModelId = jsonValue.GetString("computationModelId");

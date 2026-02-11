@@ -75,12 +75,15 @@ class DeregisterNotificationHubResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_notificationHubRegion;
 
   NotificationHubStatusSummary m_statusSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notificationHubRegionHasBeenSet = false;
   bool m_statusSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

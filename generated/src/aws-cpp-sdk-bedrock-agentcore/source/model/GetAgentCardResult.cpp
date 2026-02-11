@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgentCardResult::GetAgentCardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgentCardResult& GetAgentCardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_agentCard = jsonValue;
   m_agentCardHasBeenSet = true;

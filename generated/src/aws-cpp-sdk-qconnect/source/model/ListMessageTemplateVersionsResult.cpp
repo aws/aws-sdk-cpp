@@ -22,6 +22,7 @@ ListMessageTemplateVersionsResult::ListMessageTemplateVersionsResult(const Aws::
 }
 
 ListMessageTemplateVersionsResult& ListMessageTemplateVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("messageTemplateVersionSummaries")) {
     Aws::Utils::Array<JsonView> messageTemplateVersionSummariesJsonList = jsonValue.GetArray("messageTemplateVersionSummaries");

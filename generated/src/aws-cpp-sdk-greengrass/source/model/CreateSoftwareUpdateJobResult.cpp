@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSoftwareUpdateJobResult::CreateSoftwareUpdateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSoftwareUpdateJobResult& CreateSoftwareUpdateJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IotJobArn")) {
     m_iotJobArn = jsonValue.GetString("IotJobArn");

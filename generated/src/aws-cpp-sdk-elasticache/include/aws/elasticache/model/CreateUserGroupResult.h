@@ -216,6 +216,8 @@ class CreateUserGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userGroupId;
 
@@ -236,6 +238,7 @@ class CreateUserGroupResult {
   Aws::String m_aRN;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userGroupIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_engineHasBeenSet = false;

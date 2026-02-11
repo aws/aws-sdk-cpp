@@ -396,6 +396,8 @@ class DescribeDeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AlternateSoftwareMetadata> m_alternateSoftwares;
 
@@ -438,6 +440,7 @@ class DescribeDeviceResult {
   DeviceType m_type{DeviceType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_alternateSoftwaresHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_brandHasBeenSet = false;

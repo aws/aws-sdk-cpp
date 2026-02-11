@@ -87,12 +87,15 @@ class GetActionRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PredictedAction> m_actionList;
 
   Aws::String m_recommendationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionListHasBeenSet = false;
   bool m_recommendationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

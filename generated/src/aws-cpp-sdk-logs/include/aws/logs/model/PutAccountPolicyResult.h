@@ -58,10 +58,13 @@ class PutAccountPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccountPolicy m_accountPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

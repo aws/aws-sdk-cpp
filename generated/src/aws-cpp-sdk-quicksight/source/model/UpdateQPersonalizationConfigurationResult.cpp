@@ -23,6 +23,7 @@ UpdateQPersonalizationConfigurationResult::UpdateQPersonalizationConfigurationRe
 
 UpdateQPersonalizationConfigurationResult& UpdateQPersonalizationConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PersonalizationMode")) {
     m_personalizationMode = PersonalizationModeMapper::GetPersonalizationModeForName(jsonValue.GetString("PersonalizationMode"));

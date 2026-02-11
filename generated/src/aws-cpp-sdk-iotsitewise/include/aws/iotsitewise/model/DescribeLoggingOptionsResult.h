@@ -58,10 +58,13 @@ class DescribeLoggingOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LoggingOptions m_loggingOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loggingOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

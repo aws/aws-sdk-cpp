@@ -58,10 +58,13 @@ class CreateStackResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Stack m_stack;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

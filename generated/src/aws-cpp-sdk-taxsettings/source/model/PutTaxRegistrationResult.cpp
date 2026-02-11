@@ -20,6 +20,7 @@ using namespace Aws;
 PutTaxRegistrationResult::PutTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutTaxRegistrationResult& PutTaxRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = TaxRegistrationStatusMapper::GetTaxRegistrationStatusForName(jsonValue.GetString("status"));

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeChannelModeratorResult::DescribeChannelModeratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeChannelModeratorResult& DescribeChannelModeratorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelModerator")) {
     m_channelModerator = jsonValue.GetObject("ChannelModerator");

@@ -20,6 +20,7 @@ using namespace Aws;
 SearchImageSetsResult::SearchImageSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchImageSetsResult& SearchImageSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("imageSetsMetadataSummaries")) {
     Aws::Utils::Array<JsonView> imageSetsMetadataSummariesJsonList = jsonValue.GetArray("imageSetsMetadataSummaries");

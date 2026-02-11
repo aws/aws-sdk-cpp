@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCaseRuleResult::CreateCaseRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCaseRuleResult& CreateCaseRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("caseRuleId")) {
     m_caseRuleId = jsonValue.GetString("caseRuleId");

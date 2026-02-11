@@ -64,10 +64,13 @@ class CreateRepositoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RepositoryMetadata m_repositoryMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

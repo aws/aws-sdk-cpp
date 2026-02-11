@@ -98,12 +98,15 @@ class DescribeAccountAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AccountQuota> m_accountQuotas;
 
   Aws::String m_uniqueAccountIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountQuotasHasBeenSet = false;
   bool m_uniqueAccountIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

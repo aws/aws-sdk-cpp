@@ -21,6 +21,7 @@ DescribeFunction2020_05_31Result::DescribeFunction2020_05_31Result(const Aws::Am
 }
 
 DescribeFunction2020_05_31Result& DescribeFunction2020_05_31Result::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

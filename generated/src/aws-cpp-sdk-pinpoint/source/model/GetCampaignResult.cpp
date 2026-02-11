@@ -20,6 +20,7 @@ using namespace Aws;
 GetCampaignResult::GetCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCampaignResult& GetCampaignResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_campaignResponse = jsonValue;
   m_campaignResponseHasBeenSet = true;

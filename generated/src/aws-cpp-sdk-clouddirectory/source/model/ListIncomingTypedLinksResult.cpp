@@ -20,6 +20,7 @@ using namespace Aws;
 ListIncomingTypedLinksResult::ListIncomingTypedLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIncomingTypedLinksResult& ListIncomingTypedLinksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LinkSpecifiers")) {
     Aws::Utils::Array<JsonView> linkSpecifiersJsonList = jsonValue.GetArray("LinkSpecifiers");

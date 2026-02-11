@@ -20,6 +20,7 @@ using namespace Aws;
 GetSmsChannelResult::GetSmsChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSmsChannelResult& GetSmsChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_sMSChannelResponse = jsonValue;
   m_sMSChannelResponseHasBeenSet = true;

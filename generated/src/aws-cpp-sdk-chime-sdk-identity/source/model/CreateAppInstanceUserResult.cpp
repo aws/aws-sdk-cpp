@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAppInstanceUserResult::CreateAppInstanceUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAppInstanceUserResult& CreateAppInstanceUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppInstanceUserArn")) {
     m_appInstanceUserArn = jsonValue.GetString("AppInstanceUserArn");

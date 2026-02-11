@@ -23,6 +23,7 @@ GetRequestedServiceQuotaChangeResult::GetRequestedServiceQuotaChangeResult(const
 
 GetRequestedServiceQuotaChangeResult& GetRequestedServiceQuotaChangeResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RequestedQuota")) {
     m_requestedQuota = jsonValue.GetObject("RequestedQuota");

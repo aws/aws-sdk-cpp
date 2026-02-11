@@ -86,12 +86,15 @@ class DescribeListenerCertificatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Certificate> m_certificates;
 
   Aws::String m_nextMarker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificatesHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

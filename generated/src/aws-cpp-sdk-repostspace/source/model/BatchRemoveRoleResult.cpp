@@ -20,6 +20,7 @@ using namespace Aws;
 BatchRemoveRoleResult::BatchRemoveRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchRemoveRoleResult& BatchRemoveRoleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("removedAccessorIds")) {
     Aws::Utils::Array<JsonView> removedAccessorIdsJsonList = jsonValue.GetArray("removedAccessorIds");

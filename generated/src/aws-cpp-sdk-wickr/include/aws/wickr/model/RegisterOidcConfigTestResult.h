@@ -268,6 +268,8 @@ class RegisterOidcConfigTestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tokenEndpoint;
 
@@ -294,6 +296,7 @@ class RegisterOidcConfigTestResult {
   bool m_microsoftMultiRefreshToken{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tokenEndpointHasBeenSet = false;
   bool m_userinfoEndpointHasBeenSet = false;
   bool m_responseTypesSupportedHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 StopReplicationToReplicaResult::StopReplicationToReplicaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopReplicationToReplicaResult& StopReplicationToReplicaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");

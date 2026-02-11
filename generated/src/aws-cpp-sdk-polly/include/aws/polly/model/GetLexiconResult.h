@@ -78,12 +78,15 @@ class GetLexiconResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Lexicon m_lexicon;
 
   LexiconAttributes m_lexiconAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lexiconHasBeenSet = false;
   bool m_lexiconAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

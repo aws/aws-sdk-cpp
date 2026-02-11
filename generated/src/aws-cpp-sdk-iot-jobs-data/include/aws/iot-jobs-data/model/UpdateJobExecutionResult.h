@@ -75,12 +75,15 @@ class UpdateJobExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobExecutionState m_executionState;
 
   Aws::String m_jobDocument;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionStateHasBeenSet = false;
   bool m_jobDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

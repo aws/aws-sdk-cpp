@@ -20,6 +20,7 @@ using namespace Aws;
 DetectCustomLabelsResult::DetectCustomLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectCustomLabelsResult& DetectCustomLabelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomLabels")) {
     Aws::Utils::Array<JsonView> customLabelsJsonList = jsonValue.GetArray("CustomLabels");

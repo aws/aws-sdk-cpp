@@ -58,10 +58,13 @@ class MoveByoipCidrToIpamResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ByoipCidr m_byoipCidr;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_byoipCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

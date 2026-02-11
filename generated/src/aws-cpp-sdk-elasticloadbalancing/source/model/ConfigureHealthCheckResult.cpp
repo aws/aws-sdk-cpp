@@ -20,6 +20,7 @@ using namespace Aws;
 ConfigureHealthCheckResult::ConfigureHealthCheckResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ConfigureHealthCheckResult& ConfigureHealthCheckResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

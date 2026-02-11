@@ -78,12 +78,15 @@ class DeleteTagsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceId;
 
   TaggableResourceType m_resourceType{TaggableResourceType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

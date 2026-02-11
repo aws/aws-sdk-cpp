@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSuiteDefinitionResult::CreateSuiteDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSuiteDefinitionResult& CreateSuiteDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("suiteDefinitionId")) {
     m_suiteDefinitionId = jsonValue.GetString("suiteDefinitionId");

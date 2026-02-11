@@ -345,6 +345,8 @@ If not
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -381,6 +383,7 @@ If not
   Aws::Vector<Aws::String> m_whitelist;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_authorizationHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;

@@ -62,10 +62,13 @@ class GetAssociationForServiceQuotaTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceQuotaTemplateAssociationStatus m_serviceQuotaTemplateAssociationStatus{ServiceQuotaTemplateAssociationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceQuotaTemplateAssociationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -92,12 +92,15 @@ class PutAuditEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ResultErrorEntry> m_failed;
 
   Aws::Vector<AuditEventResultEntry> m_successful;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedHasBeenSet = false;
   bool m_successfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

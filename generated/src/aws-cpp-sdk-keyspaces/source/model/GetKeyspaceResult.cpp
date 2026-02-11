@@ -20,6 +20,7 @@ using namespace Aws;
 GetKeyspaceResult::GetKeyspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKeyspaceResult& GetKeyspaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keyspaceName")) {
     m_keyspaceName = jsonValue.GetString("keyspaceName");

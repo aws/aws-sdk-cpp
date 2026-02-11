@@ -59,10 +59,13 @@ class DeletePortalResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PortalStatus m_portalStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_portalStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

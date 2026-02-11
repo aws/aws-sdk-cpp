@@ -20,6 +20,7 @@ using namespace Aws;
 SendWhatsAppMessageResult::SendWhatsAppMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendWhatsAppMessageResult& SendWhatsAppMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("messageId")) {
     m_messageId = jsonValue.GetString("messageId");

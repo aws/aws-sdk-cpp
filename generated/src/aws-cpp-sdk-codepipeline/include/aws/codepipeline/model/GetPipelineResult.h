@@ -84,12 +84,15 @@ class GetPipelineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PipelineDeclaration m_pipeline;
 
   PipelineMetadata m_metadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pipelineHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

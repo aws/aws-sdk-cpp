@@ -96,6 +96,8 @@ class StartSearchJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_searchJobArn;
 
@@ -104,6 +106,7 @@ class StartSearchJobResult {
   Aws::String m_searchJobIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_searchJobArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_searchJobIdentifierHasBeenSet = false;

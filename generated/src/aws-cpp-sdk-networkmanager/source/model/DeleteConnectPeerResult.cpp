@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteConnectPeerResult::DeleteConnectPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteConnectPeerResult& DeleteConnectPeerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectPeer")) {
     m_connectPeer = jsonValue.GetObject("ConnectPeer");

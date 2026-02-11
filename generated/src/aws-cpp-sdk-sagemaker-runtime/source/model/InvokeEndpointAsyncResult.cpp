@@ -20,6 +20,7 @@ using namespace Aws;
 InvokeEndpointAsyncResult::InvokeEndpointAsyncResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 InvokeEndpointAsyncResult& InvokeEndpointAsyncResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferenceId")) {
     m_inferenceId = jsonValue.GetString("InferenceId");

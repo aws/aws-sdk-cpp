@@ -20,6 +20,7 @@ using namespace Aws;
 CreateNodegroupResult::CreateNodegroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateNodegroupResult& CreateNodegroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nodegroup")) {
     m_nodegroup = jsonValue.GetObject("nodegroup");

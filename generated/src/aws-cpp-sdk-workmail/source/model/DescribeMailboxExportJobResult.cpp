@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMailboxExportJobResult::DescribeMailboxExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMailboxExportJobResult& DescribeMailboxExportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntityId")) {
     m_entityId = jsonValue.GetString("EntityId");

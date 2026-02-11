@@ -59,10 +59,13 @@ class PutBackupPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BackupPolicy m_backupPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

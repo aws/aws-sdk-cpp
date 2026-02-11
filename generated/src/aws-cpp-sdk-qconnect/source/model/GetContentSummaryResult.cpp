@@ -20,6 +20,7 @@ using namespace Aws;
 GetContentSummaryResult::GetContentSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetContentSummaryResult& GetContentSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("contentSummary")) {
     m_contentSummary = jsonValue.GetObject("contentSummary");

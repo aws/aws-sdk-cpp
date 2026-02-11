@@ -106,6 +106,8 @@ class PrepareQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_queryString;
 
@@ -114,6 +116,7 @@ class PrepareQueryResult {
   Aws::Vector<ParameterMapping> m_parameters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queryStringHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
   bool m_parametersHasBeenSet = false;

@@ -91,6 +91,8 @@ class AcceptPredictionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainId;
 
@@ -99,6 +101,7 @@ class AcceptPredictionsResult {
   Aws::String m_revision;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

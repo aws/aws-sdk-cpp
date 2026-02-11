@@ -440,6 +440,8 @@ class GetJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -488,6 +490,7 @@ class GetJobResult {
   Aws::String m_sourceJobId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_lifecycleStatusHasBeenSet = false;

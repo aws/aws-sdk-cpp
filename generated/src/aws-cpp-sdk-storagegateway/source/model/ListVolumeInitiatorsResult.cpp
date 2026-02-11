@@ -20,6 +20,7 @@ using namespace Aws;
 ListVolumeInitiatorsResult::ListVolumeInitiatorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVolumeInitiatorsResult& ListVolumeInitiatorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Initiators")) {
     Aws::Utils::Array<JsonView> initiatorsJsonList = jsonValue.GetArray("Initiators");

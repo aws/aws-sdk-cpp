@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteApprovalRuleTemplateResult::DeleteApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteApprovalRuleTemplateResult& DeleteApprovalRuleTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("approvalRuleTemplateId")) {
     m_approvalRuleTemplateId = jsonValue.GetString("approvalRuleTemplateId");

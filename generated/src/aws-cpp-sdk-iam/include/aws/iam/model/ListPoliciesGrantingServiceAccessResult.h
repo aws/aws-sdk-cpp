@@ -108,6 +108,8 @@ class ListPoliciesGrantingServiceAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ListPoliciesGrantingServiceAccessEntry> m_policiesGrantingServiceAccess;
 
@@ -116,6 +118,7 @@ class ListPoliciesGrantingServiceAccessResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policiesGrantingServiceAccessHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

@@ -93,12 +93,15 @@ class GetDurableExecutionHistoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Event> m_events;
 
   Aws::String m_nextMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

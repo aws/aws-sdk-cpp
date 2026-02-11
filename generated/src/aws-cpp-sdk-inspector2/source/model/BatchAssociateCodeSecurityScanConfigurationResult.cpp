@@ -24,6 +24,7 @@ BatchAssociateCodeSecurityScanConfigurationResult::BatchAssociateCodeSecuritySca
 
 BatchAssociateCodeSecurityScanConfigurationResult& BatchAssociateCodeSecurityScanConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("failedAssociations")) {
     Aws::Utils::Array<JsonView> failedAssociationsJsonList = jsonValue.GetArray("failedAssociations");

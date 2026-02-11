@@ -422,6 +422,8 @@ class DescribeTransformJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_transformJobName;
 
@@ -466,6 +468,7 @@ class DescribeTransformJobResult {
   ExperimentConfig m_experimentConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transformJobNameHasBeenSet = false;
   bool m_transformJobArnHasBeenSet = false;
   bool m_transformJobStatusHasBeenSet = false;

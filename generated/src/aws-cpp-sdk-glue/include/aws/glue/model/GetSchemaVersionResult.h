@@ -156,6 +156,8 @@ class GetSchemaVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_schemaVersionId;
 
@@ -172,6 +174,7 @@ class GetSchemaVersionResult {
   Aws::String m_createdTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_schemaVersionIdHasBeenSet = false;
   bool m_schemaDefinitionHasBeenSet = false;
   bool m_dataFormatHasBeenSet = false;

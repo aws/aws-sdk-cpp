@@ -20,6 +20,7 @@ using namespace Aws;
 StartSearchResultExportJobResult::StartSearchResultExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartSearchResultExportJobResult& StartSearchResultExportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExportJobArn")) {
     m_exportJobArn = jsonValue.GetString("ExportJobArn");

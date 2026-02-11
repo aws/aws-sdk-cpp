@@ -404,6 +404,8 @@ class DescribeAutoPredictorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_predictorArn;
 
@@ -444,6 +446,7 @@ class DescribeAutoPredictorResult {
   TimeAlignmentBoundary m_timeAlignmentBoundary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_predictorArnHasBeenSet = false;
   bool m_predictorNameHasBeenSet = false;
   bool m_forecastHorizonHasBeenSet = false;

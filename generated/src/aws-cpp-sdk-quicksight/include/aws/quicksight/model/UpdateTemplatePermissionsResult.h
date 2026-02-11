@@ -114,6 +114,8 @@ class UpdateTemplatePermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_templateId;
 
@@ -124,6 +126,7 @@ class UpdateTemplatePermissionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

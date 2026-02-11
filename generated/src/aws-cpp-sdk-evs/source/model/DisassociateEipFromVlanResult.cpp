@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateEipFromVlanResult::DisassociateEipFromVlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateEipFromVlanResult& DisassociateEipFromVlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vlan")) {
     m_vlan = jsonValue.GetObject("vlan");

@@ -125,6 +125,8 @@ class ListProfilingGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -133,6 +135,7 @@ class ListProfilingGroupsResult {
   Aws::Vector<ProfilingGroupDescription> m_profilingGroups;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_profilingGroupNamesHasBeenSet = false;
   bool m_profilingGroupsHasBeenSet = false;

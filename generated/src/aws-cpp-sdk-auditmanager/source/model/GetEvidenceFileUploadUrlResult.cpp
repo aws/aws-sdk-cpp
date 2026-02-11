@@ -20,6 +20,7 @@ using namespace Aws;
 GetEvidenceFileUploadUrlResult::GetEvidenceFileUploadUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEvidenceFileUploadUrlResult& GetEvidenceFileUploadUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("evidenceFileName")) {
     m_evidenceFileName = jsonValue.GetString("evidenceFileName");

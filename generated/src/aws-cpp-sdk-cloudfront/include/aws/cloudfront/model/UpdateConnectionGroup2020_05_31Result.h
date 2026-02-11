@@ -76,12 +76,15 @@ class UpdateConnectionGroup2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConnectionGroup m_connectionGroup;
 
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionGroupHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

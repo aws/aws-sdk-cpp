@@ -289,6 +289,8 @@ class DescribeProjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_createDate{};
 
@@ -319,6 +321,7 @@ class DescribeProjectResult {
   Aws::Utils::DateTime m_openDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createDateHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;

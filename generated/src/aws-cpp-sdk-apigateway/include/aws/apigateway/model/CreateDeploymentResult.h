@@ -125,6 +125,8 @@ class CreateDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -135,6 +137,7 @@ class CreateDeploymentResult {
   Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>> m_apiSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;

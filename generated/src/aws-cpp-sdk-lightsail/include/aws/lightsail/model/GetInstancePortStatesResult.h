@@ -66,10 +66,13 @@ class GetInstancePortStatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<InstancePortState> m_portStates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_portStatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

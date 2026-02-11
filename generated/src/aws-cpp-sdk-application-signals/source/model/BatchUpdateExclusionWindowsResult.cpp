@@ -22,6 +22,7 @@ BatchUpdateExclusionWindowsResult::BatchUpdateExclusionWindowsResult(const Aws::
 }
 
 BatchUpdateExclusionWindowsResult& BatchUpdateExclusionWindowsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SloIds")) {
     Aws::Utils::Array<JsonView> sloIdsJsonList = jsonValue.GetArray("SloIds");

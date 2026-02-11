@@ -98,6 +98,8 @@ class GetJobsQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Job> m_jobs;
 
@@ -106,6 +108,7 @@ class GetJobsQueryResultsResult {
   JobsQueryStatus m_status{JobsQueryStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;

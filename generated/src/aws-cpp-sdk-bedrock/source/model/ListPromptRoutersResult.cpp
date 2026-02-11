@@ -20,6 +20,7 @@ using namespace Aws;
 ListPromptRoutersResult::ListPromptRoutersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPromptRoutersResult& ListPromptRoutersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("promptRouterSummaries")) {
     Aws::Utils::Array<JsonView> promptRouterSummariesJsonList = jsonValue.GetArray("promptRouterSummaries");

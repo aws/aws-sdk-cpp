@@ -58,10 +58,13 @@ class AssociateRouteServerResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RouteServerAssociation m_routeServerAssociation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routeServerAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

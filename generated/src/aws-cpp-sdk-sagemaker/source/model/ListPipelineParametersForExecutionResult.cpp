@@ -23,6 +23,7 @@ ListPipelineParametersForExecutionResult::ListPipelineParametersForExecutionResu
 
 ListPipelineParametersForExecutionResult& ListPipelineParametersForExecutionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PipelineParameters")) {
     Aws::Utils::Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");

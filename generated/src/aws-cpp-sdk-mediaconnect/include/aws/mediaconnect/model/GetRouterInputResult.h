@@ -59,10 +59,13 @@ class GetRouterInputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RouterInput m_routerInput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routerInputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

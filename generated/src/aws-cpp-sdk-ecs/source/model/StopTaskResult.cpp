@@ -20,6 +20,7 @@ using namespace Aws;
 StopTaskResult::StopTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopTaskResult& StopTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("task")) {
     m_task = jsonValue.GetObject("task");

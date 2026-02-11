@@ -260,6 +260,8 @@ class UpdateLibraryItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_libraryItemId;
 
@@ -288,6 +290,7 @@ class UpdateLibraryItemResult {
   bool m_isVerified{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_libraryItemIdHasBeenSet = false;
   bool m_appIdHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;

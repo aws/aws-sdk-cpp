@@ -91,12 +91,15 @@ class DescribeReservedInstancesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ReservedInstance> m_reservedInstances;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_reservedInstancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

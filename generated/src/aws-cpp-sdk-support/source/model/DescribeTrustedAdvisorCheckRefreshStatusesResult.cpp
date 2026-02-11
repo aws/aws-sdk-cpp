@@ -24,6 +24,7 @@ DescribeTrustedAdvisorCheckRefreshStatusesResult::DescribeTrustedAdvisorCheckRef
 
 DescribeTrustedAdvisorCheckRefreshStatusesResult& DescribeTrustedAdvisorCheckRefreshStatusesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("statuses")) {
     Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");

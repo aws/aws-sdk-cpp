@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInboundExternalLinkResult::CreateInboundExternalLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInboundExternalLinkResult& CreateInboundExternalLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("gatewayId")) {
     m_gatewayId = jsonValue.GetString("gatewayId");

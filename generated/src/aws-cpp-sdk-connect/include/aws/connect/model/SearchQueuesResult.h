@@ -98,6 +98,8 @@ class SearchQueuesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Queue> m_queues;
 
@@ -106,6 +108,7 @@ class SearchQueuesResult {
   long long m_approximateTotalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queuesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_approximateTotalCountHasBeenSet = false;

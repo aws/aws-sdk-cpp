@@ -269,6 +269,8 @@ class DescribeAssetModelCompositeModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_assetModelId;
 
@@ -293,6 +295,7 @@ class DescribeAssetModelCompositeModelResult {
   Aws::Vector<ActionDefinition> m_actionDefinitions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_assetModelCompositeModelIdHasBeenSet = false;
   bool m_assetModelCompositeModelExternalIdHasBeenSet = false;

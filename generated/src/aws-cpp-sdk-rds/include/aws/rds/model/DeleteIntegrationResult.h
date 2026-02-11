@@ -280,6 +280,8 @@ class DeleteIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sourceArn;
 
@@ -306,6 +308,7 @@ class DeleteIntegrationResult {
   Aws::Vector<IntegrationError> m_errors;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceArnHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;
   bool m_integrationNameHasBeenSet = false;

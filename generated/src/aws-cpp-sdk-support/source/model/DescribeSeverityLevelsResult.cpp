@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSeverityLevelsResult::DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSeverityLevelsResult& DescribeSeverityLevelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("severityLevels")) {
     Aws::Utils::Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");

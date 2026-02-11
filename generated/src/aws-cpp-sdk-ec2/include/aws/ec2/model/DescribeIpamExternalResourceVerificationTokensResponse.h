@@ -90,12 +90,15 @@ class DescribeIpamExternalResourceVerificationTokensResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<IpamExternalResourceVerificationToken> m_ipamExternalResourceVerificationTokens;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_ipamExternalResourceVerificationTokensHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

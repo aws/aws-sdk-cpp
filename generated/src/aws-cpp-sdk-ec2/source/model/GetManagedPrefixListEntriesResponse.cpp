@@ -23,6 +23,7 @@ GetManagedPrefixListEntriesResponse::GetManagedPrefixListEntriesResponse(const A
 
 GetManagedPrefixListEntriesResponse& GetManagedPrefixListEntriesResponse::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

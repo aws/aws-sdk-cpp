@@ -188,6 +188,8 @@ class DescribeExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_exportId;
 
@@ -206,6 +208,7 @@ class DescribeExportResult {
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportIdHasBeenSet = false;
   bool m_resourceSpecificationHasBeenSet = false;
   bool m_fileFormatHasBeenSet = false;

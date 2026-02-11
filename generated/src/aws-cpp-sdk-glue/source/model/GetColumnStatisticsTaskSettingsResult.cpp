@@ -23,6 +23,7 @@ GetColumnStatisticsTaskSettingsResult::GetColumnStatisticsTaskSettingsResult(con
 
 GetColumnStatisticsTaskSettingsResult& GetColumnStatisticsTaskSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ColumnStatisticsTaskSettings")) {
     m_columnStatisticsTaskSettings = jsonValue.GetObject("ColumnStatisticsTaskSettings");

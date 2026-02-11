@@ -134,6 +134,8 @@ class ValidateAssessmentReportIntegrityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_signatureValid{false};
 
@@ -146,6 +148,7 @@ class ValidateAssessmentReportIntegrityResult {
   Aws::Vector<Aws::String> m_validationErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_signatureValidHasBeenSet = false;
   bool m_signatureAlgorithmHasBeenSet = false;
   bool m_signatureDateTimeHasBeenSet = false;

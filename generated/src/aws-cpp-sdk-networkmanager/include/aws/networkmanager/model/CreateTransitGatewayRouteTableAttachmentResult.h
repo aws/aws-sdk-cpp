@@ -63,10 +63,13 @@ class CreateTransitGatewayRouteTableAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayRouteTableAttachment m_transitGatewayRouteTableAttachment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayRouteTableAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

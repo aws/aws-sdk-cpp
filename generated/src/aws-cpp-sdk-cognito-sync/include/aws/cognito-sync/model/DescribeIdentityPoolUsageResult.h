@@ -64,10 +64,13 @@ class DescribeIdentityPoolUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IdentityPoolUsage m_identityPoolUsage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityPoolUsageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

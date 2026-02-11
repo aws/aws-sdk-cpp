@@ -20,6 +20,7 @@ using namespace Aws;
 CreateReturnShippingLabelResult::CreateReturnShippingLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateReturnShippingLabelResult& CreateReturnShippingLabelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = ShippingLabelStatusMapper::GetShippingLabelStatusForName(jsonValue.GetString("Status"));

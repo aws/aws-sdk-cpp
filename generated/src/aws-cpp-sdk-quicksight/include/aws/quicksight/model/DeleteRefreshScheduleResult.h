@@ -89,6 +89,8 @@ class DeleteRefreshScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_status{0};
 
@@ -97,6 +99,7 @@ class DeleteRefreshScheduleResult {
   Aws::String m_scheduleId;
 
   Aws::String m_arn;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_scheduleIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRuntimeVersionsResult::DescribeRuntimeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRuntimeVersionsResult& DescribeRuntimeVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuntimeVersions")) {
     Aws::Utils::Array<JsonView> runtimeVersionsJsonList = jsonValue.GetArray("RuntimeVersions");

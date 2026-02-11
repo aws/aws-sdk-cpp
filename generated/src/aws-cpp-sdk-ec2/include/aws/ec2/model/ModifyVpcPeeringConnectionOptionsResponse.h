@@ -77,12 +77,15 @@ class ModifyVpcPeeringConnectionOptionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PeeringConnectionOptions m_accepterPeeringConnectionOptions;
 
   PeeringConnectionOptions m_requesterPeeringConnectionOptions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
   bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

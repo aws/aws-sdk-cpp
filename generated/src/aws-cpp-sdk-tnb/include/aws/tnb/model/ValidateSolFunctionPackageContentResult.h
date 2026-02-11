@@ -143,6 +143,8 @@ class ValidateSolFunctionPackageContentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -157,6 +159,7 @@ class ValidateSolFunctionPackageContentResult {
   Aws::String m_vnfdVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_vnfProductNameHasBeenSet = false;

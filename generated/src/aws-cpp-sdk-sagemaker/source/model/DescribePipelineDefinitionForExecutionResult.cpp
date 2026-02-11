@@ -24,6 +24,7 @@ DescribePipelineDefinitionForExecutionResult::DescribePipelineDefinitionForExecu
 
 DescribePipelineDefinitionForExecutionResult& DescribePipelineDefinitionForExecutionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PipelineDefinition")) {
     m_pipelineDefinition = jsonValue.GetString("PipelineDefinition");

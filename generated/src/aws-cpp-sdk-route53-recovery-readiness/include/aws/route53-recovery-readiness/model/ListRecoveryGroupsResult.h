@@ -83,12 +83,15 @@ class ListRecoveryGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<RecoveryGroupOutput> m_recoveryGroups;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_recoveryGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

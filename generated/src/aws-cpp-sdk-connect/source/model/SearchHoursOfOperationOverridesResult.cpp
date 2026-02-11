@@ -23,6 +23,7 @@ SearchHoursOfOperationOverridesResult::SearchHoursOfOperationOverridesResult(con
 
 SearchHoursOfOperationOverridesResult& SearchHoursOfOperationOverridesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HoursOfOperationOverrides")) {
     Aws::Utils::Array<JsonView> hoursOfOperationOverridesJsonList = jsonValue.GetArray("HoursOfOperationOverrides");

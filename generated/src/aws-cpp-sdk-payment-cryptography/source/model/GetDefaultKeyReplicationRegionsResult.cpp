@@ -23,6 +23,7 @@ GetDefaultKeyReplicationRegionsResult::GetDefaultKeyReplicationRegionsResult(con
 
 GetDefaultKeyReplicationRegionsResult& GetDefaultKeyReplicationRegionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EnabledReplicationRegions")) {
     Aws::Utils::Array<JsonView> enabledReplicationRegionsJsonList = jsonValue.GetArray("EnabledReplicationRegions");

@@ -61,10 +61,13 @@ class CreateTransitGatewayPrefixListReferenceResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayPrefixListReference m_transitGatewayPrefixListReference;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayPrefixListReferenceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

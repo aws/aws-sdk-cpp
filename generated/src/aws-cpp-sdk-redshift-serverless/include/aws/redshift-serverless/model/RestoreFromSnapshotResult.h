@@ -90,6 +90,8 @@ class RestoreFromSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Namespace m_namespace;
 
@@ -98,6 +100,7 @@ class RestoreFromSnapshotResult {
   Aws::String m_snapshotName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_namespaceHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
   bool m_snapshotNameHasBeenSet = false;

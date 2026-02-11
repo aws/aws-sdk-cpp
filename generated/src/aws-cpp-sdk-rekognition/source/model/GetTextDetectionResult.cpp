@@ -20,6 +20,7 @@ using namespace Aws;
 GetTextDetectionResult::GetTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTextDetectionResult& GetTextDetectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));

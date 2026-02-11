@@ -184,6 +184,8 @@ class CalculateIsolinesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arrivalTime;
 
@@ -200,6 +202,7 @@ class CalculateIsolinesResult {
   Aws::Vector<double> m_snappedOrigin;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arrivalTimeHasBeenSet = false;
   bool m_departureTimeHasBeenSet = false;
   bool m_isolineGeometryFormatHasBeenSet = false;

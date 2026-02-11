@@ -20,6 +20,7 @@ using namespace Aws;
 GetTaxExemptionTypesResult::GetTaxExemptionTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTaxExemptionTypesResult& GetTaxExemptionTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taxExemptionTypes")) {
     Aws::Utils::Array<JsonView> taxExemptionTypesJsonList = jsonValue.GetArray("taxExemptionTypes");

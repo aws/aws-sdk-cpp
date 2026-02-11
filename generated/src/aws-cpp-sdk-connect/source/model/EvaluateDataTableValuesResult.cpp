@@ -20,6 +20,7 @@ using namespace Aws;
 EvaluateDataTableValuesResult::EvaluateDataTableValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EvaluateDataTableValuesResult& EvaluateDataTableValuesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");

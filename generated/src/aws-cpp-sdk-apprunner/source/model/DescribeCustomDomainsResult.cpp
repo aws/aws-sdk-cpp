@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCustomDomainsResult::DescribeCustomDomainsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCustomDomainsResult& DescribeCustomDomainsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DNSTarget")) {
     m_dNSTarget = jsonValue.GetString("DNSTarget");

@@ -69,10 +69,13 @@ class AssociatePhoneNumbersWithVoiceConnectorGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PhoneNumberError> m_phoneNumberErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_phoneNumberErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -80,12 +80,15 @@ class CreateDelegationRequestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_consoleDeepLink;
 
   Aws::String m_delegationRequestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_consoleDeepLinkHasBeenSet = false;
   bool m_delegationRequestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

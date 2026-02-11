@@ -24,6 +24,7 @@ ListRepositoriesForApprovalRuleTemplateResult::ListRepositoriesForApprovalRuleTe
 
 ListRepositoriesForApprovalRuleTemplateResult& ListRepositoriesForApprovalRuleTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("repositoryNames")) {
     Aws::Utils::Array<JsonView> repositoryNamesJsonList = jsonValue.GetArray("repositoryNames");

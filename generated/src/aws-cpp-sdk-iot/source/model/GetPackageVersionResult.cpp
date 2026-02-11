@@ -20,6 +20,7 @@ using namespace Aws;
 GetPackageVersionResult::GetPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPackageVersionResult& GetPackageVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("packageVersionArn")) {
     m_packageVersionArn = jsonValue.GetString("packageVersionArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDataLakeResult::UpdateDataLakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDataLakeResult& UpdateDataLakeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataLakes")) {
     Aws::Utils::Array<JsonView> dataLakesJsonList = jsonValue.GetArray("dataLakes");

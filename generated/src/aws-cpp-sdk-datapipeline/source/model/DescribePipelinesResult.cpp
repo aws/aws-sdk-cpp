@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePipelinesResult::DescribePipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePipelinesResult& DescribePipelinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pipelineDescriptionList")) {
     Aws::Utils::Array<JsonView> pipelineDescriptionListJsonList = jsonValue.GetArray("pipelineDescriptionList");

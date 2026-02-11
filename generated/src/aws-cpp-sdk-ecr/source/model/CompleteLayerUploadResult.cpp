@@ -20,6 +20,7 @@ using namespace Aws;
 CompleteLayerUploadResult::CompleteLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CompleteLayerUploadResult& CompleteLayerUploadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");

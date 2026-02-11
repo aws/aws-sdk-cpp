@@ -133,6 +133,8 @@ class GetSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyStoreId;
 
@@ -145,6 +147,7 @@ class GetSchemaResult {
   Aws::Vector<Aws::String> m_namespaces;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyStoreIdHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;

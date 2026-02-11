@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVirtualNodeResult::CreateVirtualNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVirtualNodeResult& CreateVirtualNodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_virtualNode = jsonValue;
   m_virtualNodeHasBeenSet = true;

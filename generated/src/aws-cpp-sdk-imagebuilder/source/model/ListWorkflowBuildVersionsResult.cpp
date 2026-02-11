@@ -20,6 +20,7 @@ using namespace Aws;
 ListWorkflowBuildVersionsResult::ListWorkflowBuildVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListWorkflowBuildVersionsResult& ListWorkflowBuildVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workflowSummaryList")) {
     Aws::Utils::Array<JsonView> workflowSummaryListJsonList = jsonValue.GetArray("workflowSummaryList");

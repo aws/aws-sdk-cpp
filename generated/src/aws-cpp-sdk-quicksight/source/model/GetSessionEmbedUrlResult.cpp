@@ -20,6 +20,7 @@ using namespace Aws;
 GetSessionEmbedUrlResult::GetSessionEmbedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSessionEmbedUrlResult& GetSessionEmbedUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EmbedUrl")) {
     m_embedUrl = jsonValue.GetString("EmbedUrl");

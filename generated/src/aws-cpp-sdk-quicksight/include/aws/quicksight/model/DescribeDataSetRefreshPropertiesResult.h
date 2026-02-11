@@ -74,12 +74,15 @@ class DescribeDataSetRefreshPropertiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   int m_status{0};
 
   DataSetRefreshProperties m_dataSetRefreshProperties;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_dataSetRefreshPropertiesHasBeenSet = false;

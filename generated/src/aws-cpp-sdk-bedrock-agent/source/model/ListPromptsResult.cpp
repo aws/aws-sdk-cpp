@@ -20,6 +20,7 @@ using namespace Aws;
 ListPromptsResult::ListPromptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPromptsResult& ListPromptsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("promptSummaries")) {
     Aws::Utils::Array<JsonView> promptSummariesJsonList = jsonValue.GetArray("promptSummaries");

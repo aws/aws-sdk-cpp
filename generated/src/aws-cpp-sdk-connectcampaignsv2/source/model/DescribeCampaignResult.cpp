@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCampaignResult::DescribeCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCampaignResult& DescribeCampaignResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("campaign")) {
     m_campaign = jsonValue.GetObject("campaign");

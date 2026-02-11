@@ -20,6 +20,7 @@ using namespace Aws;
 CreateContentAssociationResult::CreateContentAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateContentAssociationResult& CreateContentAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("contentAssociation")) {
     m_contentAssociation = jsonValue.GetObject("contentAssociation");

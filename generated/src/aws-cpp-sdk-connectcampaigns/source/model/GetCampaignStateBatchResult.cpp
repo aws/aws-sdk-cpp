@@ -20,6 +20,7 @@ using namespace Aws;
 GetCampaignStateBatchResult::GetCampaignStateBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCampaignStateBatchResult& GetCampaignStateBatchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successfulRequests")) {
     Aws::Utils::Array<JsonView> successfulRequestsJsonList = jsonValue.GetArray("successfulRequests");

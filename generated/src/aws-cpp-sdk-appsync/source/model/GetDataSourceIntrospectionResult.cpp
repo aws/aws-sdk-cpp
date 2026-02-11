@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataSourceIntrospectionResult::GetDataSourceIntrospectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataSourceIntrospectionResult& GetDataSourceIntrospectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("introspectionId")) {
     m_introspectionId = jsonValue.GetString("introspectionId");

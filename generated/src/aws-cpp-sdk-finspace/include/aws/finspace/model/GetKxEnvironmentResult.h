@@ -344,6 +344,8 @@ class GetKxEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -380,6 +382,7 @@ class GetKxEnvironmentResult {
   Aws::String m_certificateAuthorityArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;

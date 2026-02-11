@@ -20,6 +20,7 @@ using namespace Aws;
 SetIdentityMailFromDomainResult::SetIdentityMailFromDomainResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 SetIdentityMailFromDomainResult& SetIdentityMailFromDomainResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

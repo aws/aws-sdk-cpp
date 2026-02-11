@@ -58,10 +58,13 @@ class DescribeFHIRImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ImportJobProperties m_importJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_importJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

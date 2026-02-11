@@ -23,6 +23,7 @@ DescribeContainerGroupDefinitionResult::DescribeContainerGroupDefinitionResult(c
 
 DescribeContainerGroupDefinitionResult& DescribeContainerGroupDefinitionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContainerGroupDefinition")) {
     m_containerGroupDefinition = jsonValue.GetObject("ContainerGroupDefinition");

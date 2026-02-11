@@ -20,6 +20,7 @@ using namespace Aws;
 GetHLSStreamingSessionURLResult::GetHLSStreamingSessionURLResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetHLSStreamingSessionURLResult& GetHLSStreamingSessionURLResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HLSStreamingSessionURL")) {
     m_hLSStreamingSessionURL = jsonValue.GetString("HLSStreamingSessionURL");

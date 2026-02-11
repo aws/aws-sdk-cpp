@@ -60,10 +60,13 @@ class StartMatchmakingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MatchmakingTicket m_matchmakingTicket;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_matchmakingTicketHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

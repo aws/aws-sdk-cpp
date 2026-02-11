@@ -22,6 +22,7 @@ ListOnlineEvaluationConfigsResult::ListOnlineEvaluationConfigsResult(const Aws::
 }
 
 ListOnlineEvaluationConfigsResult& ListOnlineEvaluationConfigsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("onlineEvaluationConfigs")) {
     Aws::Utils::Array<JsonView> onlineEvaluationConfigsJsonList = jsonValue.GetArray("onlineEvaluationConfigs");

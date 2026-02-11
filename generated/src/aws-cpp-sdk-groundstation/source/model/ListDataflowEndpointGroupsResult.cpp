@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataflowEndpointGroupsResult::ListDataflowEndpointGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataflowEndpointGroupsResult& ListDataflowEndpointGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

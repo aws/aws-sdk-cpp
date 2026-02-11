@@ -20,6 +20,7 @@ using namespace Aws;
 ListUniqueProblemsResult::ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListUniqueProblemsResult& ListUniqueProblemsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("uniqueProblems")) {
     Aws::Map<Aws::String, JsonView> uniqueProblemsJsonMap = jsonValue.GetObject("uniqueProblems").GetAllObjects();

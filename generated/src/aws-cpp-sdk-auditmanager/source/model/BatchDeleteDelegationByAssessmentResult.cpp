@@ -23,6 +23,7 @@ BatchDeleteDelegationByAssessmentResult::BatchDeleteDelegationByAssessmentResult
 
 BatchDeleteDelegationByAssessmentResult& BatchDeleteDelegationByAssessmentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");

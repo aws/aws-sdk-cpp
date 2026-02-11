@@ -20,6 +20,7 @@ using namespace Aws;
 EnableDomainTransferLockResult::EnableDomainTransferLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EnableDomainTransferLockResult& EnableDomainTransferLockResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OperationId")) {
     m_operationId = jsonValue.GetString("OperationId");

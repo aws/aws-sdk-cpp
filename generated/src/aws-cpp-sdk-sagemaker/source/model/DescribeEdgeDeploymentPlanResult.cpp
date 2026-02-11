@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEdgeDeploymentPlanResult::DescribeEdgeDeploymentPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEdgeDeploymentPlanResult& DescribeEdgeDeploymentPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EdgeDeploymentPlanArn")) {
     m_edgeDeploymentPlanArn = jsonValue.GetString("EdgeDeploymentPlanArn");

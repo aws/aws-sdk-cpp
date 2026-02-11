@@ -194,6 +194,8 @@ class CreateSnapshotScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_scheduleDefinitions;
 
@@ -210,6 +212,7 @@ class CreateSnapshotScheduleResult {
   Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scheduleDefinitionsHasBeenSet = false;
   bool m_scheduleIdentifierHasBeenSet = false;
   bool m_scheduleDescriptionHasBeenSet = false;

@@ -134,6 +134,8 @@ class ListGroupMembersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_directoryId;
 
@@ -146,6 +148,7 @@ class ListGroupMembersResult {
   Aws::String m_realm;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_directoryIdHasBeenSet = false;
   bool m_memberRealmHasBeenSet = false;
   bool m_membersHasBeenSet = false;

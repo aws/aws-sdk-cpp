@@ -229,6 +229,8 @@ class GetWirelessDeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WirelessDeviceType m_type{WirelessDeviceType::NOT_SET};
 
@@ -253,6 +255,7 @@ class GetWirelessDeviceResult {
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_typeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

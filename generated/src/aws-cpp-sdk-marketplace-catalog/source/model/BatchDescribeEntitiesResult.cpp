@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDescribeEntitiesResult::BatchDescribeEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDescribeEntitiesResult& BatchDescribeEntitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntityDetails")) {
     Aws::Map<Aws::String, JsonView> entityDetailsJsonMap = jsonValue.GetObject("EntityDetails").GetAllObjects();

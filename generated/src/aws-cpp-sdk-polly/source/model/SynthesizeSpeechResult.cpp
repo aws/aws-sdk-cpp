@@ -19,6 +19,7 @@ using namespace Aws;
 SynthesizeSpeechResult::SynthesizeSpeechResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 SynthesizeSpeechResult& SynthesizeSpeechResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_audioStream = result.TakeOwnershipOfPayload();
   m_audioStreamHasBeenSet = true;
 

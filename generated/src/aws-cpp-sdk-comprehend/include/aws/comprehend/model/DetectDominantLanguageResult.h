@@ -71,10 +71,13 @@ class DetectDominantLanguageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DominantLanguage> m_languages;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_languagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

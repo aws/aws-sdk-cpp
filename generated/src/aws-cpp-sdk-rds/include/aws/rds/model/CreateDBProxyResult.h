@@ -58,10 +58,13 @@ class CreateDBProxyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DBProxy m_dBProxy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBProxyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

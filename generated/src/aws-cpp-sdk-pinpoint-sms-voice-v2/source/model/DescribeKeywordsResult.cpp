@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeKeywordsResult::DescribeKeywordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeKeywordsResult& DescribeKeywordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OriginationIdentityArn")) {
     m_originationIdentityArn = jsonValue.GetString("OriginationIdentityArn");

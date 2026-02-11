@@ -22,6 +22,7 @@ GetOauth2CredentialProviderResult::GetOauth2CredentialProviderResult(const Aws::
 }
 
 GetOauth2CredentialProviderResult& GetOauth2CredentialProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clientSecretArn")) {
     m_clientSecretArn = jsonValue.GetObject("clientSecretArn");

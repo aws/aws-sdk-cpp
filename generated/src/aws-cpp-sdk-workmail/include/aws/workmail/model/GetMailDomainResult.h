@@ -130,6 +130,8 @@ class GetMailDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DnsRecord> m_records;
 
@@ -142,6 +144,7 @@ class GetMailDomainResult {
   DnsRecordVerificationStatus m_dkimVerificationStatus{DnsRecordVerificationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recordsHasBeenSet = false;
   bool m_isTestDomainHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;

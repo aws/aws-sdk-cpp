@@ -194,6 +194,8 @@ class ListHostedZonesByNameResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<HostedZone> m_hostedZones;
 
@@ -210,6 +212,7 @@ class ListHostedZonesByNameResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hostedZonesHasBeenSet = false;
   bool m_dNSNameHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;

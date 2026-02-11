@@ -58,10 +58,13 @@ class CreateTransitGatewayPolicyTableResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayPolicyTable m_transitGatewayPolicyTable;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayPolicyTableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

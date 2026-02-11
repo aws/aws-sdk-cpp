@@ -22,6 +22,7 @@ GetBandwidthRateLimitScheduleResult::GetBandwidthRateLimitScheduleResult(const A
 }
 
 GetBandwidthRateLimitScheduleResult& GetBandwidthRateLimitScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BandwidthRateLimitIntervals")) {
     Aws::Utils::Array<JsonView> bandwidthRateLimitIntervalsJsonList = jsonValue.GetArray("BandwidthRateLimitIntervals");

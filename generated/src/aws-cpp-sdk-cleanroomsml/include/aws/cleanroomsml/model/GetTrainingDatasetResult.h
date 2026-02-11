@@ -208,6 +208,8 @@ class GetTrainingDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_createTime{};
 
@@ -228,6 +230,7 @@ class GetTrainingDatasetResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_trainingDatasetArnHasBeenSet = false;

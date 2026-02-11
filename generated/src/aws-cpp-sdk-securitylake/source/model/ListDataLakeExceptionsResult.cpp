@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataLakeExceptionsResult::ListDataLakeExceptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataLakeExceptionsResult& ListDataLakeExceptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("exceptions")) {
     Aws::Utils::Array<JsonView> exceptionsJsonList = jsonValue.GetArray("exceptions");

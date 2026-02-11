@@ -89,6 +89,8 @@ class RegisterJobDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobDefinitionName;
 
@@ -97,6 +99,7 @@ class RegisterJobDefinitionResult {
   int m_revision{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobDefinitionNameHasBeenSet = false;
   bool m_jobDefinitionArnHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

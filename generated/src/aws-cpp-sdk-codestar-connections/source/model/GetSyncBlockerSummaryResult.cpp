@@ -20,6 +20,7 @@ using namespace Aws;
 GetSyncBlockerSummaryResult::GetSyncBlockerSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSyncBlockerSummaryResult& GetSyncBlockerSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SyncBlockerSummary")) {
     m_syncBlockerSummary = jsonValue.GetObject("SyncBlockerSummary");

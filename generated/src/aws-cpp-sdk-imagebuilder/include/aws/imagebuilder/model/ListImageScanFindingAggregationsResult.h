@@ -112,6 +112,8 @@ class ListImageScanFindingAggregationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -120,6 +122,7 @@ class ListImageScanFindingAggregationsResult {
   Aws::Vector<ImageScanFindingAggregation> m_responses;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_aggregationTypeHasBeenSet = false;
   bool m_responsesHasBeenSet = false;

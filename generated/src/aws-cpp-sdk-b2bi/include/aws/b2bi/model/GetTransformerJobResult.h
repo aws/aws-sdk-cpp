@@ -102,6 +102,8 @@ class GetTransformerJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransformerJobStatus m_status{TransformerJobStatus::NOT_SET};
 
@@ -110,6 +112,7 @@ class GetTransformerJobResult {
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_outputFilesHasBeenSet = false;
   bool m_messageHasBeenSet = false;

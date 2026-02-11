@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeHybridADUpdateResult::DescribeHybridADUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeHybridADUpdateResult& DescribeHybridADUpdateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpdateActivities")) {
     m_updateActivities = jsonValue.GetObject("UpdateActivities");

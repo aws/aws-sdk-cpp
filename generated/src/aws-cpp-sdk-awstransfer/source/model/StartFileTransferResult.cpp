@@ -20,6 +20,7 @@ using namespace Aws;
 StartFileTransferResult::StartFileTransferResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartFileTransferResult& StartFileTransferResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransferId")) {
     m_transferId = jsonValue.GetString("TransferId");

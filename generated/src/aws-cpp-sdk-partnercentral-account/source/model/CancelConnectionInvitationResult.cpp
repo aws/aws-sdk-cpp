@@ -20,6 +20,7 @@ using namespace Aws;
 CancelConnectionInvitationResult::CancelConnectionInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelConnectionInvitationResult& CancelConnectionInvitationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");

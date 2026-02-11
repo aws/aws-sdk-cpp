@@ -58,10 +58,13 @@ class GetTestGridProjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TestGridProject m_testGridProject;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testGridProjectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

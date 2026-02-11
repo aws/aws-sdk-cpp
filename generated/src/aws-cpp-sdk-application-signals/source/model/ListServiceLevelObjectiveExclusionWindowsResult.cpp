@@ -24,6 +24,7 @@ ListServiceLevelObjectiveExclusionWindowsResult::ListServiceLevelObjectiveExclus
 
 ListServiceLevelObjectiveExclusionWindowsResult& ListServiceLevelObjectiveExclusionWindowsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExclusionWindows")) {
     Aws::Utils::Array<JsonView> exclusionWindowsJsonList = jsonValue.GetArray("ExclusionWindows");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListInvocationStepsResult::ListInvocationStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInvocationStepsResult& ListInvocationStepsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("invocationStepSummaries")) {
     Aws::Utils::Array<JsonView> invocationStepSummariesJsonList = jsonValue.GetArray("invocationStepSummaries");

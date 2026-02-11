@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBrokerResult& DescribeBrokerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionsRequired")) {
     Aws::Utils::Array<JsonView> actionsRequiredJsonList = jsonValue.GetArray("actionsRequired");

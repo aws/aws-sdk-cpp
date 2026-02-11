@@ -20,6 +20,7 @@ using namespace Aws;
 CreateParameterGroupResult::CreateParameterGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateParameterGroupResult& CreateParameterGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ParameterGroup")) {
     m_parameterGroup = jsonValue.GetObject("ParameterGroup");

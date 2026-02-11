@@ -56,10 +56,13 @@ class CreateCodeReviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CodeReview m_codeReview;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_codeReviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

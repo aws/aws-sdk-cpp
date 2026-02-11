@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAccessEntryResult::DescribeAccessEntryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAccessEntryResult& DescribeAccessEntryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessEntry")) {
     m_accessEntry = jsonValue.GetObject("accessEntry");

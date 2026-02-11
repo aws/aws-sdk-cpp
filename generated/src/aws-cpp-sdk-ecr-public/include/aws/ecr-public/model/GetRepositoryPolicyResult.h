@@ -92,6 +92,8 @@ class GetRepositoryPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryId;
 
@@ -100,6 +102,7 @@ class GetRepositoryPolicyResult {
   Aws::String m_policyText;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
   bool m_policyTextHasBeenSet = false;

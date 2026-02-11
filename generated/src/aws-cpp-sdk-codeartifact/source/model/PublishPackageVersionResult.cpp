@@ -20,6 +20,7 @@ using namespace Aws;
 PublishPackageVersionResult::PublishPackageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PublishPackageVersionResult& PublishPackageVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("format")) {
     m_format = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("format"));

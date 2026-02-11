@@ -24,6 +24,7 @@ PutVoiceConnectorExternalSystemsConfigurationResult::PutVoiceConnectorExternalSy
 
 PutVoiceConnectorExternalSystemsConfigurationResult& PutVoiceConnectorExternalSystemsConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExternalSystemsConfiguration")) {
     m_externalSystemsConfiguration = jsonValue.GetObject("ExternalSystemsConfiguration");

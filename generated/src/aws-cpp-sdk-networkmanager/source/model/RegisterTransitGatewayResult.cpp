@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterTransitGatewayResult::RegisterTransitGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterTransitGatewayResult& RegisterTransitGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransitGatewayRegistration")) {
     m_transitGatewayRegistration = jsonValue.GetObject("TransitGatewayRegistration");

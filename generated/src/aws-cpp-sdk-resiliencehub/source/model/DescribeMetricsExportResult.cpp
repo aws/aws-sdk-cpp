@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMetricsExportResult::DescribeMetricsExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMetricsExportResult& DescribeMetricsExportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");

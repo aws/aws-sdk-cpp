@@ -20,6 +20,7 @@ using namespace Aws;
 GetDevicePositionHistoryResult::GetDevicePositionHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDevicePositionHistoryResult& GetDevicePositionHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DevicePositions")) {
     Aws::Utils::Array<JsonView> devicePositionsJsonList = jsonValue.GetArray("DevicePositions");

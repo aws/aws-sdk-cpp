@@ -24,6 +24,7 @@ RegisterSlackWorkspaceForOrganizationResult::RegisterSlackWorkspaceForOrganizati
 
 RegisterSlackWorkspaceForOrganizationResult& RegisterSlackWorkspaceForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountType")) {
     m_accountType = AccountTypeMapper::GetAccountTypeForName(jsonValue.GetString("accountType"));

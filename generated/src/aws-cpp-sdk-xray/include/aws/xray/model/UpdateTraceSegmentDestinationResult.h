@@ -72,12 +72,15 @@ class UpdateTraceSegmentDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TraceSegmentDestination m_destination{TraceSegmentDestination::NOT_SET};
 
   TraceSegmentDestinationStatus m_status{TraceSegmentDestinationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_destinationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

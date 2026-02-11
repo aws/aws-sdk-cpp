@@ -20,6 +20,7 @@ using namespace Aws;
 GetMergeConflictsResult::GetMergeConflictsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMergeConflictsResult& GetMergeConflictsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mergeable")) {
     m_mergeable = jsonValue.GetBool("mergeable");

@@ -22,6 +22,7 @@ GetRecoveryPointIndexDetailsResult::GetRecoveryPointIndexDetailsResult(const Aws
 }
 
 GetRecoveryPointIndexDetailsResult& GetRecoveryPointIndexDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecoveryPointArn")) {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");

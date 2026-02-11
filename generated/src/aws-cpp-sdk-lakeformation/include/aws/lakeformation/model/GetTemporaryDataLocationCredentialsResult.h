@@ -101,6 +101,8 @@ class GetTemporaryDataLocationCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TemporaryCredentials m_credentials;
 
@@ -109,6 +111,7 @@ class GetTemporaryDataLocationCredentialsResult {
   CredentialsScope m_credentialsScope{CredentialsScope::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_accessibleDataLocationsHasBeenSet = false;
   bool m_credentialsScopeHasBeenSet = false;

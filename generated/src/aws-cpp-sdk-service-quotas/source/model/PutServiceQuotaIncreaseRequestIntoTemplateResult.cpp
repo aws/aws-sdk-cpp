@@ -24,6 +24,7 @@ PutServiceQuotaIncreaseRequestIntoTemplateResult::PutServiceQuotaIncreaseRequest
 
 PutServiceQuotaIncreaseRequestIntoTemplateResult& PutServiceQuotaIncreaseRequestIntoTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServiceQuotaIncreaseRequestInTemplate")) {
     m_serviceQuotaIncreaseRequestInTemplate = jsonValue.GetObject("ServiceQuotaIncreaseRequestInTemplate");

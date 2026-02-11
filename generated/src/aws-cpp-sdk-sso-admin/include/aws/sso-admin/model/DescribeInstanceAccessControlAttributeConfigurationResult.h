@@ -98,6 +98,8 @@ class DescribeInstanceAccessControlAttributeConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceAccessControlAttributeConfigurationStatus m_status{InstanceAccessControlAttributeConfigurationStatus::NOT_SET};
 
@@ -106,6 +108,7 @@ class DescribeInstanceAccessControlAttributeConfigurationResult {
   InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;

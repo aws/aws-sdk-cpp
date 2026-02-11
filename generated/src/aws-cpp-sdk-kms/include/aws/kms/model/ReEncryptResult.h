@@ -164,6 +164,8 @@ class ReEncryptResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
 
@@ -180,6 +182,7 @@ class ReEncryptResult {
   Aws::String m_destinationKeyMaterialId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ciphertextBlobHasBeenSet = false;
   bool m_sourceKeyIdHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;

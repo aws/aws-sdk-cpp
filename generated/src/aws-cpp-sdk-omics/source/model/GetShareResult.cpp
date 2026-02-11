@@ -20,6 +20,7 @@ using namespace Aws;
 GetShareResult::GetShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetShareResult& GetShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("share")) {
     m_share = jsonValue.GetObject("share");

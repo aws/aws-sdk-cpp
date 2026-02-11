@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteAdmChannelResult::DeleteAdmChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAdmChannelResult& DeleteAdmChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_aDMChannelResponse = jsonValue;
   m_aDMChannelResponseHasBeenSet = true;

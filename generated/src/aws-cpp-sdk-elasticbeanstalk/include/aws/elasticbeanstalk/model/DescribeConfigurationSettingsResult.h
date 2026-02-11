@@ -72,10 +72,13 @@ class DescribeConfigurationSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ConfigurationSettingsDescription> m_configurationSettings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationSettingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateRoleAliasResult::UpdateRoleAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateRoleAliasResult& UpdateRoleAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("roleAlias")) {
     m_roleAlias = jsonValue.GetString("roleAlias");

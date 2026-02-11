@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFilterResult::DescribeFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFilterResult& DescribeFilterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("filter")) {
     m_filter = jsonValue.GetObject("filter");

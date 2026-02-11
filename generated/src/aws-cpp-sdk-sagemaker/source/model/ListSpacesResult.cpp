@@ -20,6 +20,7 @@ using namespace Aws;
 ListSpacesResult::ListSpacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSpacesResult& ListSpacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Spaces")) {
     Aws::Utils::Array<JsonView> spacesJsonList = jsonValue.GetArray("Spaces");

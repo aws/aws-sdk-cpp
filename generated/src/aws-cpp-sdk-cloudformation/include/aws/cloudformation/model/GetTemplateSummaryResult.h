@@ -268,6 +268,8 @@ class GetTemplateSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ParameterDeclaration> m_parameters;
 
@@ -290,6 +292,7 @@ class GetTemplateSummaryResult {
   Warnings m_warnings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_parametersHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;

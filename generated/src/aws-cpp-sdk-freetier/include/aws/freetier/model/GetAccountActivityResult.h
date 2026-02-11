@@ -215,6 +215,8 @@ class GetAccountActivityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_activityId;
 
@@ -237,6 +239,7 @@ class GetAccountActivityResult {
   Aws::Utils::DateTime m_completedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activityIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

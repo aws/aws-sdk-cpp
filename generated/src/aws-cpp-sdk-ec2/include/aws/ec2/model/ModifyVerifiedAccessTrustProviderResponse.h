@@ -58,10 +58,13 @@ class ModifyVerifiedAccessTrustProviderResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VerifiedAccessTrustProvider m_verifiedAccessTrustProvider;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verifiedAccessTrustProviderHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

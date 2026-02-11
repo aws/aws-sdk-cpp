@@ -58,10 +58,13 @@ class ModifyVolumeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VolumeModification m_volumeModification;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_volumeModificationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

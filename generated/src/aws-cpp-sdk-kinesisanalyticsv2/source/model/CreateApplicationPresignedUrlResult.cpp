@@ -22,6 +22,7 @@ CreateApplicationPresignedUrlResult::CreateApplicationPresignedUrlResult(const A
 }
 
 CreateApplicationPresignedUrlResult& CreateApplicationPresignedUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthorizedUrl")) {
     m_authorizedUrl = jsonValue.GetString("AuthorizedUrl");

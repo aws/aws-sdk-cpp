@@ -20,6 +20,7 @@ using namespace Aws;
 GetAutoSnapshotsResult::GetAutoSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAutoSnapshotsResult& GetAutoSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceName")) {
     m_resourceName = jsonValue.GetString("resourceName");

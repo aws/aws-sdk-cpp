@@ -20,6 +20,7 @@ using namespace Aws;
 ListTargetsForPolicyResult::ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTargetsForPolicyResult& ListTargetsForPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Targets")) {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");

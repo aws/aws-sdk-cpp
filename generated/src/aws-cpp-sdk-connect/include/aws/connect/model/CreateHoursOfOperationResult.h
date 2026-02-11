@@ -74,12 +74,15 @@ class CreateHoursOfOperationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_hoursOfOperationId;
 
   Aws::String m_hoursOfOperationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hoursOfOperationIdHasBeenSet = false;
   bool m_hoursOfOperationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

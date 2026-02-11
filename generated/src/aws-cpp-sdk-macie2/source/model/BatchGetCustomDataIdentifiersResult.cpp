@@ -22,6 +22,7 @@ BatchGetCustomDataIdentifiersResult::BatchGetCustomDataIdentifiersResult(const A
 }
 
 BatchGetCustomDataIdentifiersResult& BatchGetCustomDataIdentifiersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("customDataIdentifiers")) {
     Aws::Utils::Array<JsonView> customDataIdentifiersJsonList = jsonValue.GetArray("customDataIdentifiers");

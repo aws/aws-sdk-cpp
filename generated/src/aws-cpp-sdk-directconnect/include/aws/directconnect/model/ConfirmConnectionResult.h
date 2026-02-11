@@ -71,10 +71,13 @@ class ConfirmConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConnectionState m_connectionState{ConnectionState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

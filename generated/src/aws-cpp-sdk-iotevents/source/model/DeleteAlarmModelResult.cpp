@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteAlarmModelResult::DeleteAlarmModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAlarmModelResult& DeleteAlarmModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

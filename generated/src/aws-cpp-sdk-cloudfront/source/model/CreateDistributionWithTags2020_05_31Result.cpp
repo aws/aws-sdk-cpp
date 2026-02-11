@@ -23,6 +23,7 @@ CreateDistributionWithTags2020_05_31Result::CreateDistributionWithTags2020_05_31
 
 CreateDistributionWithTags2020_05_31Result& CreateDistributionWithTags2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

@@ -22,6 +22,7 @@ UpdateCrossAccountAttachmentResult::UpdateCrossAccountAttachmentResult(const Aws
 }
 
 UpdateCrossAccountAttachmentResult& UpdateCrossAccountAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CrossAccountAttachment")) {
     m_crossAccountAttachment = jsonValue.GetObject("CrossAccountAttachment");

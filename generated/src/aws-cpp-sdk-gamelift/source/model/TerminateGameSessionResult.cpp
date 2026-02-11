@@ -20,6 +20,7 @@ using namespace Aws;
 TerminateGameSessionResult::TerminateGameSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TerminateGameSessionResult& TerminateGameSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GameSession")) {
     m_gameSession = jsonValue.GetObject("GameSession");

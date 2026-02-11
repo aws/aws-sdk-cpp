@@ -118,6 +118,8 @@ class CreateEngagementContextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_engagementId;
 
@@ -128,6 +130,7 @@ class CreateEngagementContextResult {
   Aws::String m_contextId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_engagementIdHasBeenSet = false;
   bool m_engagementArnHasBeenSet = false;
   bool m_engagementLastModifiedAtHasBeenSet = false;

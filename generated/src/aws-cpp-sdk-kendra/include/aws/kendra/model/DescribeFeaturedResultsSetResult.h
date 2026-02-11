@@ -228,6 +228,8 @@ class DescribeFeaturedResultsSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_featuredResultsSetId;
 
@@ -248,6 +250,7 @@ class DescribeFeaturedResultsSetResult {
   long long m_creationTimestamp{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_featuredResultsSetIdHasBeenSet = false;
   bool m_featuredResultsSetNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

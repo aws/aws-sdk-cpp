@@ -20,6 +20,7 @@ using namespace Aws;
 GetStageSessionResult::GetStageSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStageSessionResult& GetStageSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stageSession")) {
     m_stageSession = jsonValue.GetObject("stageSession");

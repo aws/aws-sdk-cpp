@@ -130,6 +130,8 @@ class DeleteRegistrationAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registrationAttachmentArn;
 
@@ -142,6 +144,7 @@ class DeleteRegistrationAttachmentResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registrationAttachmentArnHasBeenSet = false;
   bool m_registrationAttachmentIdHasBeenSet = false;
   bool m_attachmentStatusHasBeenSet = false;

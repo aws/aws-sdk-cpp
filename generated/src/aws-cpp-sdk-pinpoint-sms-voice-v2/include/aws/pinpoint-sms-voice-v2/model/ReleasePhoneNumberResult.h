@@ -322,6 +322,8 @@ class ReleasePhoneNumberResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_phoneNumberArn;
 
@@ -356,6 +358,7 @@ class ReleasePhoneNumberResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_phoneNumberArnHasBeenSet = false;
   bool m_phoneNumberIdHasBeenSet = false;
   bool m_phoneNumberHasBeenSet = false;

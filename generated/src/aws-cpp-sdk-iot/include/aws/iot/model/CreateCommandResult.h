@@ -76,12 +76,15 @@ class CreateCommandResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commandId;
 
   Aws::String m_commandArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commandIdHasBeenSet = false;
   bool m_commandArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

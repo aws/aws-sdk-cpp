@@ -20,6 +20,7 @@ using namespace Aws;
 GetTaskProtectionResult::GetTaskProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTaskProtectionResult& GetTaskProtectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("protectedTasks")) {
     Aws::Utils::Array<JsonView> protectedTasksJsonList = jsonValue.GetArray("protectedTasks");

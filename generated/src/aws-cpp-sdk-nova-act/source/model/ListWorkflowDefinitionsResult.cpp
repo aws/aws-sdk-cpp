@@ -20,6 +20,7 @@ using namespace Aws;
 ListWorkflowDefinitionsResult::ListWorkflowDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListWorkflowDefinitionsResult& ListWorkflowDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workflowDefinitionSummaries")) {
     Aws::Utils::Array<JsonView> workflowDefinitionSummariesJsonList = jsonValue.GetArray("workflowDefinitionSummaries");

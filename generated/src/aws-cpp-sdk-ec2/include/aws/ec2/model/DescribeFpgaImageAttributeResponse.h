@@ -58,10 +58,13 @@ class DescribeFpgaImageAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FpgaImageAttribute m_fpgaImageAttribute;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fpgaImageAttributeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

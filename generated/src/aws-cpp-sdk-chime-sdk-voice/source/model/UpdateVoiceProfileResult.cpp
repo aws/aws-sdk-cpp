@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateVoiceProfileResult::UpdateVoiceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateVoiceProfileResult& UpdateVoiceProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VoiceProfile")) {
     m_voiceProfile = jsonValue.GetObject("VoiceProfile");

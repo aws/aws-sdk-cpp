@@ -58,10 +58,13 @@ class GetRoleCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RoleCredentials m_roleCredentials;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_roleCredentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

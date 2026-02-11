@@ -78,12 +78,15 @@ class StartFleetActionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fleetId;
 
   Aws::String m_fleetArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

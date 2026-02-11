@@ -20,6 +20,7 @@ using namespace Aws;
 ListUpdatesResult::ListUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListUpdatesResult& ListUpdatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("updateIds")) {
     Aws::Utils::Array<JsonView> updateIdsJsonList = jsonValue.GetArray("updateIds");

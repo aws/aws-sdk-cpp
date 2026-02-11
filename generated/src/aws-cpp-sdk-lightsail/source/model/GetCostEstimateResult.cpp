@@ -20,6 +20,7 @@ using namespace Aws;
 GetCostEstimateResult::GetCostEstimateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCostEstimateResult& GetCostEstimateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourcesBudgetEstimate")) {
     Aws::Utils::Array<JsonView> resourcesBudgetEstimateJsonList = jsonValue.GetArray("resourcesBudgetEstimate");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateEmailTemplateResult::UpdateEmailTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateEmailTemplateResult& UpdateEmailTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_messageBody = jsonValue;
   m_messageBodyHasBeenSet = true;

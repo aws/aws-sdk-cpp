@@ -20,6 +20,7 @@ using namespace Aws;
 ListSecurityProfilesResult::ListSecurityProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSecurityProfilesResult& ListSecurityProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("securityProfileIdentifiers")) {
     Aws::Utils::Array<JsonView> securityProfileIdentifiersJsonList = jsonValue.GetArray("securityProfileIdentifiers");

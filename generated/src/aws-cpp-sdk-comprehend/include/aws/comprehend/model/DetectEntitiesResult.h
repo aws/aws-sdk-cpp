@@ -172,6 +172,8 @@ class DetectEntitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Entity> m_entities;
 
@@ -184,6 +186,7 @@ class DetectEntitiesResult {
   Aws::Vector<ErrorsListItem> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_documentMetadataHasBeenSet = false;
   bool m_documentTypeHasBeenSet = false;

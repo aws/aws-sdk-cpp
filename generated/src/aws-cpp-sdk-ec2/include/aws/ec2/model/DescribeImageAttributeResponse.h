@@ -328,6 +328,8 @@ class DescribeImageAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AttributeValue m_description;
 
@@ -358,6 +360,7 @@ class DescribeImageAttributeResponse {
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_kernelIdHasBeenSet = false;
   bool m_ramdiskIdHasBeenSet = false;

@@ -84,12 +84,15 @@ class GetUsageTotalsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TimeRange m_timeRange{TimeRange::NOT_SET};
 
   Aws::Vector<UsageTotal> m_usageTotals;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_timeRangeHasBeenSet = false;
   bool m_usageTotalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

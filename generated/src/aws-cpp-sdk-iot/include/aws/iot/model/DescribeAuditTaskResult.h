@@ -152,6 +152,8 @@ class DescribeAuditTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AuditTaskStatus m_taskStatus{AuditTaskStatus::NOT_SET};
 
@@ -166,6 +168,7 @@ class DescribeAuditTaskResult {
   Aws::Map<Aws::String, AuditCheckDetails> m_auditDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskStatusHasBeenSet = false;
   bool m_taskTypeHasBeenSet = false;
   bool m_taskStartTimeHasBeenSet = false;

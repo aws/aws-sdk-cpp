@@ -95,6 +95,8 @@ class ReEncryptDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyArn;
 
@@ -103,6 +105,7 @@ class ReEncryptDataResult {
   Aws::String m_cipherText;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyArnHasBeenSet = false;
   bool m_keyCheckValueHasBeenSet = false;
   bool m_cipherTextHasBeenSet = false;

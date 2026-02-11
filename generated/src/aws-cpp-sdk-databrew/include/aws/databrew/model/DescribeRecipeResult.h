@@ -278,6 +278,8 @@ class DescribeRecipeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_createdBy;
 
@@ -306,6 +308,7 @@ class DescribeRecipeResult {
   Aws::String m_recipeVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createdByHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;

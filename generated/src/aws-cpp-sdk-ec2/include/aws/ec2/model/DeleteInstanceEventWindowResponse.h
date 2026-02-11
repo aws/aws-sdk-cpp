@@ -58,10 +58,13 @@ class DeleteInstanceEventWindowResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceEventWindowStateChange m_instanceEventWindowState;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceEventWindowStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

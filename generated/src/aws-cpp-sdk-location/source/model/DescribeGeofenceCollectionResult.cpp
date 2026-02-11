@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeGeofenceCollectionResult& DescribeGeofenceCollectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CollectionName")) {
     m_collectionName = jsonValue.GetString("CollectionName");

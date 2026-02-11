@@ -22,6 +22,7 @@ GetNotificationConfigurationResult::GetNotificationConfigurationResult(const Aws
 }
 
 GetNotificationConfigurationResult& GetNotificationConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventType")) {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("EventType"));

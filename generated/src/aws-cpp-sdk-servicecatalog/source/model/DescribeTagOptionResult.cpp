@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTagOptionResult::DescribeTagOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTagOptionResult& DescribeTagOptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TagOptionDetail")) {
     m_tagOptionDetail = jsonValue.GetObject("TagOptionDetail");

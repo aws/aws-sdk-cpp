@@ -129,6 +129,8 @@ class GetApiKeyCredentialProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Secret m_apiKeySecretArn;
 
@@ -141,6 +143,7 @@ class GetApiKeyCredentialProviderResult {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_apiKeySecretArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_credentialProviderArnHasBeenSet = false;

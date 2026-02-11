@@ -85,12 +85,15 @@ class ListInferenceEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<InferenceEventSummary> m_inferenceEventSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_inferenceEventSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

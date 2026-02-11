@@ -172,6 +172,8 @@ class DescribeAnalysisDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_analysisId;
 
@@ -188,6 +190,7 @@ class DescribeAnalysisDefinitionResult {
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

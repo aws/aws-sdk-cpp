@@ -65,10 +65,13 @@ class DescribeRegionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Region> m_regions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_regionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

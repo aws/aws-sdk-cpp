@@ -80,12 +80,15 @@ class PutDraftAppVersionTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appArn;
 
   Aws::String m_appVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

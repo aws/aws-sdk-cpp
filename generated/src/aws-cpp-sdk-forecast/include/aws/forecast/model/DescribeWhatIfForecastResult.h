@@ -262,6 +262,8 @@ class DescribeWhatIfForecastResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_whatIfForecastName;
 
@@ -286,6 +288,7 @@ class DescribeWhatIfForecastResult {
   Aws::Vector<Aws::String> m_forecastTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_whatIfForecastNameHasBeenSet = false;
   bool m_whatIfForecastArnHasBeenSet = false;
   bool m_whatIfAnalysisArnHasBeenSet = false;

@@ -93,6 +93,8 @@ class PutEnforcedGuardrailConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_configId;
 
@@ -101,6 +103,7 @@ class PutEnforcedGuardrailConfigurationResult {
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configIdHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;

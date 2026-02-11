@@ -93,6 +93,8 @@ class RegisterSlackWorkspaceForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccountType m_accountType{AccountType::NOT_SET};
 
@@ -101,6 +103,7 @@ class RegisterSlackWorkspaceForOrganizationResult {
   Aws::String m_teamName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountTypeHasBeenSet = false;
   bool m_teamIdHasBeenSet = false;
   bool m_teamNameHasBeenSet = false;

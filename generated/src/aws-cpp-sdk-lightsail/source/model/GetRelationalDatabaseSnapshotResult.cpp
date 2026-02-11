@@ -22,6 +22,7 @@ GetRelationalDatabaseSnapshotResult::GetRelationalDatabaseSnapshotResult(const A
 }
 
 GetRelationalDatabaseSnapshotResult& GetRelationalDatabaseSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("relationalDatabaseSnapshot")) {
     m_relationalDatabaseSnapshot = jsonValue.GetObject("relationalDatabaseSnapshot");

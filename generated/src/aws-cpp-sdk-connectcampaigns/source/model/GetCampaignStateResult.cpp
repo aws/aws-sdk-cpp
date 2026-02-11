@@ -20,6 +20,7 @@ using namespace Aws;
 GetCampaignStateResult::GetCampaignStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCampaignStateResult& GetCampaignStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("state")) {
     m_state = CampaignStateMapper::GetCampaignStateForName(jsonValue.GetString("state"));

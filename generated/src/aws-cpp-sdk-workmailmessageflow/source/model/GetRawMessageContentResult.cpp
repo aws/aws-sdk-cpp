@@ -19,6 +19,7 @@ using namespace Aws;
 GetRawMessageContentResult::GetRawMessageContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetRawMessageContentResult& GetRawMessageContentResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_messageContent = result.TakeOwnershipOfPayload();
   m_messageContentHasBeenSet = true;
 

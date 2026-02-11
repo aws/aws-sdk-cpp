@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVPCEConfigurationResult::CreateVPCEConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVPCEConfigurationResult& CreateVPCEConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vpceConfiguration")) {
     m_vpceConfiguration = jsonValue.GetObject("vpceConfiguration");

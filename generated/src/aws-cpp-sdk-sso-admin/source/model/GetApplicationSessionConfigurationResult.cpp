@@ -23,6 +23,7 @@ GetApplicationSessionConfigurationResult::GetApplicationSessionConfigurationResu
 
 GetApplicationSessionConfigurationResult& GetApplicationSessionConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserBackgroundSessionApplicationStatus")) {
     m_userBackgroundSessionApplicationStatus =

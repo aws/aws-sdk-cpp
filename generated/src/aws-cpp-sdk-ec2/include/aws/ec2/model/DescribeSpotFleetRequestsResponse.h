@@ -90,12 +90,15 @@ class DescribeSpotFleetRequestsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<SpotFleetRequestConfig> m_spotFleetRequestConfigs;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_spotFleetRequestConfigsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

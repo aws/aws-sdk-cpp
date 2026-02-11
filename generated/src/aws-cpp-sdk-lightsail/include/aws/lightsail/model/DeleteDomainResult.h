@@ -60,10 +60,13 @@ class DeleteDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Operation m_operation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

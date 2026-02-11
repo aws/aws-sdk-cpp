@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWebACLMigrationStackResult::CreateWebACLMigrationStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWebACLMigrationStackResult& CreateWebACLMigrationStackResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("S3ObjectUrl")) {
     m_s3ObjectUrl = jsonValue.GetString("S3ObjectUrl");

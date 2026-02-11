@@ -24,6 +24,7 @@ UpdateInferenceComponentRuntimeConfigResult::UpdateInferenceComponentRuntimeConf
 
 UpdateInferenceComponentRuntimeConfigResult& UpdateInferenceComponentRuntimeConfigResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferenceComponentArn")) {
     m_inferenceComponentArn = jsonValue.GetString("InferenceComponentArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetSnapshotsResult::GetSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSnapshotsResult& GetSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SnapShotTimeFilter")) {
     m_snapShotTimeFilter = jsonValue.GetObject("SnapShotTimeFilter");

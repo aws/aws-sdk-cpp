@@ -117,6 +117,8 @@ class DescribeCapacityReservationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_lastModifiedTime{};
 
@@ -127,6 +129,7 @@ class DescribeCapacityReservationResult {
   Aws::Vector<ZonalCapacityReservationState> m_capacityReservationState;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_decreaseRequestsRemainingHasBeenSet = false;
   bool m_minimumLoadBalancerCapacityHasBeenSet = false;

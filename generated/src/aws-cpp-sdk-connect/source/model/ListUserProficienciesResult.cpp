@@ -20,6 +20,7 @@ using namespace Aws;
 ListUserProficienciesResult::ListUserProficienciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListUserProficienciesResult& ListUserProficienciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

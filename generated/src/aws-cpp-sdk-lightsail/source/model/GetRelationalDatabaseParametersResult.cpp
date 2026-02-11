@@ -23,6 +23,7 @@ GetRelationalDatabaseParametersResult::GetRelationalDatabaseParametersResult(con
 
 GetRelationalDatabaseParametersResult& GetRelationalDatabaseParametersResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeObservationResult::DescribeObservationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeObservationResult& DescribeObservationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Observation")) {
     m_observation = jsonValue.GetObject("Observation");

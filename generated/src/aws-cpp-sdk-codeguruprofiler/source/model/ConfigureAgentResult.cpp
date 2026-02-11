@@ -20,6 +20,7 @@ using namespace Aws;
 ConfigureAgentResult::ConfigureAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ConfigureAgentResult& ConfigureAgentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_configuration = jsonValue;
   m_configurationHasBeenSet = true;

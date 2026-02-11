@@ -220,6 +220,8 @@ class GetStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_streamArn;
 
@@ -240,6 +242,7 @@ class GetStreamResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamArnHasBeenSet = false;
   bool m_streamLabelHasBeenSet = false;
   bool m_streamStatusHasBeenSet = false;

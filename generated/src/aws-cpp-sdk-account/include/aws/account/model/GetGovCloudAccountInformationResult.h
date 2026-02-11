@@ -73,12 +73,15 @@ class GetGovCloudAccountInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AwsAccountState m_accountState{AwsAccountState::NOT_SET};
 
   Aws::String m_govCloudAccountId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountStateHasBeenSet = false;
   bool m_govCloudAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

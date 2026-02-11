@@ -123,6 +123,8 @@ class GetRecoveryGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_cells;
 
@@ -133,6 +135,7 @@ class GetRecoveryGroupResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cellsHasBeenSet = false;
   bool m_recoveryGroupArnHasBeenSet = false;
   bool m_recoveryGroupNameHasBeenSet = false;

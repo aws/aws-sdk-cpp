@@ -20,6 +20,7 @@ using namespace Aws;
 GetOdbNetworkResult::GetOdbNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOdbNetworkResult& GetOdbNetworkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("odbNetwork")) {
     m_odbNetwork = jsonValue.GetObject("odbNetwork");

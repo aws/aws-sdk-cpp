@@ -82,12 +82,15 @@ class DescribeGlobalTableSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_globalTableName;
 
   Aws::Vector<ReplicaSettingsDescription> m_replicaSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_globalTableNameHasBeenSet = false;
   bool m_replicaSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

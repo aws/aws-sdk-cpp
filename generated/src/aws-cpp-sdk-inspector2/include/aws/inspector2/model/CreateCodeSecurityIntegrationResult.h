@@ -90,6 +90,8 @@ class CreateCodeSecurityIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_integrationArn;
 
@@ -98,6 +100,7 @@ class CreateCodeSecurityIntegrationResult {
   Aws::String m_authorizationUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_integrationArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_authorizationUrlHasBeenSet = false;

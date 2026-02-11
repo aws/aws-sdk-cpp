@@ -134,6 +134,8 @@ class GetNetworkRoutesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_routeTableArn;
 
@@ -146,6 +148,7 @@ class GetNetworkRoutesResult {
   Aws::Vector<NetworkRoute> m_networkRoutes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routeTableArnHasBeenSet = false;
   bool m_coreNetworkSegmentEdgeHasBeenSet = false;
   bool m_routeTableTypeHasBeenSet = false;

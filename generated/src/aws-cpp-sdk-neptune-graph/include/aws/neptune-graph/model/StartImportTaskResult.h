@@ -176,6 +176,8 @@ class StartImportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_graphId;
 
@@ -194,6 +196,7 @@ class StartImportTaskResult {
   ImportOptions m_importOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_graphIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_sourceHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetThemeResult::GetThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetThemeResult& GetThemeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_theme = jsonValue;
   m_themeHasBeenSet = true;

@@ -82,12 +82,15 @@ class BatchUpdateScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BatchScheduleActionCreateResult m_creates;
 
   BatchScheduleActionDeleteResult m_deletes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createsHasBeenSet = false;
   bool m_deletesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

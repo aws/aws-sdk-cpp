@@ -105,6 +105,8 @@ class CreateCustomPluginResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_customPluginArn;
 
@@ -115,6 +117,7 @@ class CreateCustomPluginResult {
   long long m_revision{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customPluginArnHasBeenSet = false;
   bool m_customPluginStateHasBeenSet = false;
   bool m_nameHasBeenSet = false;

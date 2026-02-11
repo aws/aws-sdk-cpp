@@ -22,6 +22,7 @@ ListJobParameterDefinitionsResult::ListJobParameterDefinitionsResult(const Aws::
 }
 
 ListJobParameterDefinitionsResult& ListJobParameterDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobParameterDefinitions")) {
     Aws::Utils::Array<JsonView> jobParameterDefinitionsJsonList = jsonValue.GetArray("jobParameterDefinitions");

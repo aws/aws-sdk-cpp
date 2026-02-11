@@ -20,6 +20,7 @@ using namespace Aws;
 GetComputeAuthTokenResult::GetComputeAuthTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetComputeAuthTokenResult& GetComputeAuthTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FleetId")) {
     m_fleetId = jsonValue.GetString("FleetId");

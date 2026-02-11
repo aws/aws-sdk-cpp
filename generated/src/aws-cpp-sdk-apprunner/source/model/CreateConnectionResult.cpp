@@ -20,6 +20,7 @@ using namespace Aws;
 CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateConnectionResult& CreateConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Connection")) {
     m_connection = jsonValue.GetObject("Connection");

@@ -75,12 +75,15 @@ class GetMemberOfAddressListResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_address;
 
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_addressHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

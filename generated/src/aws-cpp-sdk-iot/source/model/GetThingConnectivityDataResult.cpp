@@ -20,6 +20,7 @@ using namespace Aws;
 GetThingConnectivityDataResult::GetThingConnectivityDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetThingConnectivityDataResult& GetThingConnectivityDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("thingName")) {
     m_thingName = jsonValue.GetString("thingName");

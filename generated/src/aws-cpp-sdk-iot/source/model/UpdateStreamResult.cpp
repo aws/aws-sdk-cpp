@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateStreamResult::UpdateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateStreamResult& UpdateStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("streamId")) {
     m_streamId = jsonValue.GetString("streamId");

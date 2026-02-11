@@ -56,10 +56,13 @@ class GetBucketLoggingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LoggingEnabled m_loggingEnabled;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loggingEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

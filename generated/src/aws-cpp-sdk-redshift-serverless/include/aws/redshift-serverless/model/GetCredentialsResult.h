@@ -115,6 +115,8 @@ class GetCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dbPassword;
 
@@ -125,6 +127,7 @@ class GetCredentialsResult {
   Aws::Utils::DateTime m_nextRefreshTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dbPasswordHasBeenSet = false;
   bool m_dbUserHasBeenSet = false;
   bool m_expirationHasBeenSet = false;

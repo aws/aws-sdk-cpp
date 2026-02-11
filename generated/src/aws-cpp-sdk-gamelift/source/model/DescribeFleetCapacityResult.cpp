@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFleetCapacityResult::DescribeFleetCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFleetCapacityResult& DescribeFleetCapacityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FleetCapacity")) {
     Aws::Utils::Array<JsonView> fleetCapacityJsonList = jsonValue.GetArray("FleetCapacity");

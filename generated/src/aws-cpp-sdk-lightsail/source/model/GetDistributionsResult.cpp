@@ -20,6 +20,7 @@ using namespace Aws;
 GetDistributionsResult::GetDistributionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDistributionsResult& GetDistributionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("distributions")) {
     Aws::Utils::Array<JsonView> distributionsJsonList = jsonValue.GetArray("distributions");

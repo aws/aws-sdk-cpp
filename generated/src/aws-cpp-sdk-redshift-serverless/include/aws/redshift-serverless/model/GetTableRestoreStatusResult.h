@@ -59,10 +59,13 @@ class GetTableRestoreStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TableRestoreStatus m_tableRestoreStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableRestoreStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

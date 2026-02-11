@@ -61,10 +61,13 @@ class GetCollaborationIdNamespaceAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CollaborationIdNamespaceAssociation m_collaborationIdNamespaceAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_collaborationIdNamespaceAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

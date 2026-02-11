@@ -22,6 +22,7 @@ UpdateTableMetadataLocationResult::UpdateTableMetadataLocationResult(const Aws::
 }
 
 UpdateTableMetadataLocationResult& UpdateTableMetadataLocationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");

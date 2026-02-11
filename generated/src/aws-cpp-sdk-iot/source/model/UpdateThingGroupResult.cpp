@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateThingGroupResult::UpdateThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateThingGroupResult& UpdateThingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetInt64("version");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeNFSFileSharesResult::DescribeNFSFileSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeNFSFileSharesResult& DescribeNFSFileSharesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NFSFileShareInfoList")) {
     Aws::Utils::Array<JsonView> nFSFileShareInfoListJsonList = jsonValue.GetArray("NFSFileShareInfoList");

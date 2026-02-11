@@ -24,6 +24,7 @@ ListAssessmentFrameworkShareRequestsResult::ListAssessmentFrameworkShareRequests
 
 ListAssessmentFrameworkShareRequestsResult& ListAssessmentFrameworkShareRequestsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assessmentFrameworkShareRequests")) {
     Aws::Utils::Array<JsonView> assessmentFrameworkShareRequestsJsonList = jsonValue.GetArray("assessmentFrameworkShareRequests");

@@ -59,10 +59,13 @@ class CreateExclusionsPreviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_previewToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_previewTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

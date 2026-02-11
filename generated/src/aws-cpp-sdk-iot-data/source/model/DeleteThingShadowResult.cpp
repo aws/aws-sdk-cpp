@@ -19,6 +19,7 @@ using namespace Aws;
 DeleteThingShadowResult::DeleteThingShadowResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 DeleteThingShadowResult& DeleteThingShadowResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_payload = result.TakeOwnershipOfPayload();
   m_payloadHasBeenSet = true;
 

@@ -23,6 +23,7 @@ UpdateZonalAutoshiftConfigurationResult::UpdateZonalAutoshiftConfigurationResult
 
 UpdateZonalAutoshiftConfigurationResult& UpdateZonalAutoshiftConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceIdentifier")) {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");

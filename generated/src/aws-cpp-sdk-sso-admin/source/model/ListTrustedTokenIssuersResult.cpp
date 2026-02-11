@@ -20,6 +20,7 @@ using namespace Aws;
 ListTrustedTokenIssuersResult::ListTrustedTokenIssuersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTrustedTokenIssuersResult& ListTrustedTokenIssuersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrustedTokenIssuers")) {
     Aws::Utils::Array<JsonView> trustedTokenIssuersJsonList = jsonValue.GetArray("TrustedTokenIssuers");

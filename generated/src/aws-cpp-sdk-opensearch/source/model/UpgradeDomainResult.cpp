@@ -20,6 +20,7 @@ using namespace Aws;
 UpgradeDomainResult::UpgradeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpgradeDomainResult& UpgradeDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpgradeId")) {
     m_upgradeId = jsonValue.GetString("UpgradeId");

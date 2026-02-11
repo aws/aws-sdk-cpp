@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWorkforceResult::CreateWorkforceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWorkforceResult& CreateWorkforceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WorkforceArn")) {
     m_workforceArn = jsonValue.GetString("WorkforceArn");

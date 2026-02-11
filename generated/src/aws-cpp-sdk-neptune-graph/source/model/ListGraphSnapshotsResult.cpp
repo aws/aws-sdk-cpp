@@ -20,6 +20,7 @@ using namespace Aws;
 ListGraphSnapshotsResult::ListGraphSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListGraphSnapshotsResult& ListGraphSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("graphSnapshots")) {
     Aws::Utils::Array<JsonView> graphSnapshotsJsonList = jsonValue.GetArray("graphSnapshots");

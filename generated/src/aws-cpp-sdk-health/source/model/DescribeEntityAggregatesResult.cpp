@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEntityAggregatesResult::DescribeEntityAggregatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEntityAggregatesResult& DescribeEntityAggregatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("entityAggregates")) {
     Aws::Utils::Array<JsonView> entityAggregatesJsonList = jsonValue.GetArray("entityAggregates");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAddonVersionsResult::DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAddonVersionsResult& DescribeAddonVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("addons")) {
     Aws::Utils::Array<JsonView> addonsJsonList = jsonValue.GetArray("addons");

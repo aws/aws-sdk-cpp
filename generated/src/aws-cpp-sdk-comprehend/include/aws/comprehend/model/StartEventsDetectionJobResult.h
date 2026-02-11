@@ -98,6 +98,8 @@ class StartEventsDetectionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -106,6 +108,7 @@ class StartEventsDetectionJobResult {
   JobStatus m_jobStatus{JobStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobArnHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;

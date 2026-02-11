@@ -22,6 +22,7 @@ DescribeSoftwareAssociationsResult::DescribeSoftwareAssociationsResult(const Aws
 }
 
 DescribeSoftwareAssociationsResult& DescribeSoftwareAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssociatedResource")) {
     m_associatedResource = jsonValue.GetString("AssociatedResource");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetDurableExecutionResult::GetDurableExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDurableExecutionResult& GetDurableExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DurableExecutionArn")) {
     m_durableExecutionArn = jsonValue.GetString("DurableExecutionArn");

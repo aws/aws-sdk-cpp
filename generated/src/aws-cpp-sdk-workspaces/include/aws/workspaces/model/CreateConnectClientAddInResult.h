@@ -57,10 +57,13 @@ class CreateConnectClientAddInResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_addInId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_addInIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

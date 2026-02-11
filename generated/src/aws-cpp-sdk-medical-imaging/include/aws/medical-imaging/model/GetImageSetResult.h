@@ -278,6 +278,8 @@ class GetImageSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datastoreId;
 
@@ -308,6 +310,7 @@ class GetImageSetResult {
   StorageTier m_storageTier{StorageTier::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_imageSetIdHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

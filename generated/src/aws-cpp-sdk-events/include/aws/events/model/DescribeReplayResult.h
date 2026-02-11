@@ -247,6 +247,8 @@ class DescribeReplayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_replayName;
 
@@ -273,6 +275,7 @@ class DescribeReplayResult {
   Aws::Utils::DateTime m_replayEndTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_replayNameHasBeenSet = false;
   bool m_replayArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

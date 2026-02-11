@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeQueueResult::DescribeQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeQueueResult& DescribeQueueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Queue")) {
     m_queue = jsonValue.GetObject("Queue");

@@ -65,10 +65,13 @@ class GetDirectoryLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DirectoryLimits m_directoryLimits;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_directoryLimitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

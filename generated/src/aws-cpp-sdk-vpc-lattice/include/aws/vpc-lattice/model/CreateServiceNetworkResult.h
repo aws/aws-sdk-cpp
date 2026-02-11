@@ -125,6 +125,8 @@ class CreateServiceNetworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -137,6 +139,7 @@ class CreateServiceNetworkResult {
   AuthType m_authType{AuthType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;

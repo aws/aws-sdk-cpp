@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAttackStatisticsResult::DescribeAttackStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAttackStatisticsResult& DescribeAttackStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TimeRange")) {
     m_timeRange = jsonValue.GetObject("TimeRange");

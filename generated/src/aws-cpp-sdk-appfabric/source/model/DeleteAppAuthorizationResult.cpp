@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteAppAuthorizationResult::DeleteAppAuthorizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAppAuthorizationResult& DeleteAppAuthorizationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

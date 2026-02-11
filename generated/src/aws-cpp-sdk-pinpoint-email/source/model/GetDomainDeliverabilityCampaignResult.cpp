@@ -23,6 +23,7 @@ GetDomainDeliverabilityCampaignResult::GetDomainDeliverabilityCampaignResult(con
 
 GetDomainDeliverabilityCampaignResult& GetDomainDeliverabilityCampaignResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainDeliverabilityCampaign")) {
     m_domainDeliverabilityCampaign = jsonValue.GetObject("DomainDeliverabilityCampaign");

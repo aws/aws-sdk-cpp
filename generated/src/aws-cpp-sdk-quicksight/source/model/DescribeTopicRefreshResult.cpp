@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTopicRefreshResult::DescribeTopicRefreshResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTopicRefreshResult& DescribeTopicRefreshResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RefreshDetails")) {
     m_refreshDetails = jsonValue.GetObject("RefreshDetails");

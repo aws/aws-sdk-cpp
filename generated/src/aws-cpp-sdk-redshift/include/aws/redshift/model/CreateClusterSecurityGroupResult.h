@@ -56,10 +56,13 @@ class CreateClusterSecurityGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ClusterSecurityGroup m_clusterSecurityGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

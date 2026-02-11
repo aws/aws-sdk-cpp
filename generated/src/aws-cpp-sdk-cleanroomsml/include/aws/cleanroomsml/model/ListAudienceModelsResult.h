@@ -82,12 +82,15 @@ class ListAudienceModelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<AudienceModelSummary> m_audienceModels;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_audienceModelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

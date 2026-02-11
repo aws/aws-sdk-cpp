@@ -24,6 +24,7 @@ BatchGetServiceLevelObjectiveBudgetReportResult::BatchGetServiceLevelObjectiveBu
 
 BatchGetServiceLevelObjectiveBudgetReportResult& BatchGetServiceLevelObjectiveBudgetReportResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Timestamp")) {
     m_timestamp = jsonValue.GetDouble("Timestamp");

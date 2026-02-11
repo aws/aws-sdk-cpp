@@ -20,6 +20,7 @@ using namespace Aws;
 ExportKeyResult::ExportKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExportKeyResult& ExportKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WrappedKey")) {
     m_wrappedKey = jsonValue.GetObject("WrappedKey");

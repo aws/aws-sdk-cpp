@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBatchPredictionResult::DeleteBatchPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBatchPredictionResult& DeleteBatchPredictionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BatchPredictionId")) {
     m_batchPredictionId = jsonValue.GetString("BatchPredictionId");

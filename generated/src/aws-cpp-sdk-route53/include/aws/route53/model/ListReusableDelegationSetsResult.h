@@ -150,6 +150,8 @@ class ListReusableDelegationSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DelegationSet> m_delegationSets;
 
@@ -162,6 +164,7 @@ class ListReusableDelegationSetsResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_delegationSetsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;

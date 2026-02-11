@@ -23,6 +23,7 @@ ListRelatedResourcesForAuditFindingResult::ListRelatedResourcesForAuditFindingRe
 
 ListRelatedResourcesForAuditFindingResult& ListRelatedResourcesForAuditFindingResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("relatedResources")) {
     Aws::Utils::Array<JsonView> relatedResourcesJsonList = jsonValue.GetArray("relatedResources");

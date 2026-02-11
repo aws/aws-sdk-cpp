@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateLibraryItemResult::UpdateLibraryItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateLibraryItemResult& UpdateLibraryItemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("libraryItemId")) {
     m_libraryItemId = jsonValue.GetString("libraryItemId");

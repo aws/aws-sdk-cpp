@@ -187,6 +187,8 @@ class GetFindingRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_startedAt{};
 
@@ -205,6 +207,7 @@ class GetFindingRecommendationResult {
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_startedAtHasBeenSet = false;
   bool m_completedAtHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

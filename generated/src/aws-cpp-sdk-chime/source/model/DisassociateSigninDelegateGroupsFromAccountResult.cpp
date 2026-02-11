@@ -24,6 +24,7 @@ DisassociateSigninDelegateGroupsFromAccountResult::DisassociateSigninDelegateGro
 
 DisassociateSigninDelegateGroupsFromAccountResult& DisassociateSigninDelegateGroupsFromAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

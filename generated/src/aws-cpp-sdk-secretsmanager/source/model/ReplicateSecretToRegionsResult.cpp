@@ -20,6 +20,7 @@ using namespace Aws;
 ReplicateSecretToRegionsResult::ReplicateSecretToRegionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReplicateSecretToRegionsResult& ReplicateSecretToRegionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");

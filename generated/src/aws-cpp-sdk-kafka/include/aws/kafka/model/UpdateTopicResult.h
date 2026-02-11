@@ -97,6 +97,8 @@ class UpdateTopicResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_topicArn;
 
@@ -105,6 +107,7 @@ class UpdateTopicResult {
   TopicState m_status{TopicState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_topicArnHasBeenSet = false;
   bool m_topicNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

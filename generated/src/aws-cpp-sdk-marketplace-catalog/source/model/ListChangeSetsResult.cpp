@@ -20,6 +20,7 @@ using namespace Aws;
 ListChangeSetsResult::ListChangeSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListChangeSetsResult& ListChangeSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeSetSummaryList")) {
     Aws::Utils::Array<JsonView> changeSetSummaryListJsonList = jsonValue.GetArray("ChangeSetSummaryList");

@@ -73,12 +73,15 @@ class PutMessageFeedbackResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_messageId;
 
   MessageFeedbackStatus m_messageFeedbackStatus{MessageFeedbackStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_messageIdHasBeenSet = false;
   bool m_messageFeedbackStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

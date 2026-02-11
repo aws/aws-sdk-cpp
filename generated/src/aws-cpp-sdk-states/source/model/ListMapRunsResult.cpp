@@ -20,6 +20,7 @@ using namespace Aws;
 ListMapRunsResult::ListMapRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMapRunsResult& ListMapRunsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mapRuns")) {
     Aws::Utils::Array<JsonView> mapRunsJsonList = jsonValue.GetArray("mapRuns");

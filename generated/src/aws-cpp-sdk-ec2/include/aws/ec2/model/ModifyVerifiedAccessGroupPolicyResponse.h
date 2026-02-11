@@ -91,6 +91,8 @@ class ModifyVerifiedAccessGroupPolicyResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_policyEnabled{false};
 
@@ -99,6 +101,7 @@ class ModifyVerifiedAccessGroupPolicyResponse {
   VerifiedAccessSseSpecificationResponse m_sseSpecification;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyEnabledHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_sseSpecificationHasBeenSet = false;

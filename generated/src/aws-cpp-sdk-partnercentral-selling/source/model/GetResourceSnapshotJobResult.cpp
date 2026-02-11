@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceSnapshotJobResult::GetResourceSnapshotJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceSnapshotJobResult& GetResourceSnapshotJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");

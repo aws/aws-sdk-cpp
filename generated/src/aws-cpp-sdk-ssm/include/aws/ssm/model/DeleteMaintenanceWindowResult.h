@@ -57,10 +57,13 @@ class DeleteMaintenanceWindowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_windowId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_windowIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

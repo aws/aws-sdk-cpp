@@ -299,6 +299,8 @@ class DescribeClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clusterArn;
 
@@ -329,6 +331,7 @@ class DescribeClusterResult {
   ClusterAutoScalingConfigOutput m_autoScaling;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
   bool m_clusterStatusHasBeenSet = false;

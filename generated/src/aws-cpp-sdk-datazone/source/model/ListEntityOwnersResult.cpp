@@ -20,6 +20,7 @@ using namespace Aws;
 ListEntityOwnersResult::ListEntityOwnersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEntityOwnersResult& ListEntityOwnersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("owners")) {
     Aws::Utils::Array<JsonView> ownersJsonList = jsonValue.GetArray("owners");

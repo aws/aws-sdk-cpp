@@ -20,6 +20,7 @@ using namespace Aws;
 RetryWorkflowStepResult::RetryWorkflowStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RetryWorkflowStepResult& RetryWorkflowStepResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stepGroupId")) {
     m_stepGroupId = jsonValue.GetString("stepGroupId");

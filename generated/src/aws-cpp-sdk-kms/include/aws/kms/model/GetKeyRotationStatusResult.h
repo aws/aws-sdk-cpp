@@ -128,6 +128,8 @@ class GetKeyRotationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_keyRotationEnabled{false};
 
@@ -140,6 +142,7 @@ class GetKeyRotationStatusResult {
   Aws::Utils::DateTime m_onDemandRotationStartDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyRotationEnabledHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
   bool m_rotationPeriodInDaysHasBeenSet = false;

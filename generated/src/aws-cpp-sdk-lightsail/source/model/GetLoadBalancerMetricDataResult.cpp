@@ -20,6 +20,7 @@ using namespace Aws;
 GetLoadBalancerMetricDataResult::GetLoadBalancerMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLoadBalancerMetricDataResult& GetLoadBalancerMetricDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricName")) {
     m_metricName = LoadBalancerMetricNameMapper::GetLoadBalancerMetricNameForName(jsonValue.GetString("metricName"));

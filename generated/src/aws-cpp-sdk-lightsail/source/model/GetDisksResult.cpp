@@ -20,6 +20,7 @@ using namespace Aws;
 GetDisksResult::GetDisksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDisksResult& GetDisksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("disks")) {
     Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");

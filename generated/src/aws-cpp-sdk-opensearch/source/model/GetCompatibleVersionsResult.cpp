@@ -20,6 +20,7 @@ using namespace Aws;
 GetCompatibleVersionsResult::GetCompatibleVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCompatibleVersionsResult& GetCompatibleVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CompatibleVersions")) {
     Aws::Utils::Array<JsonView> compatibleVersionsJsonList = jsonValue.GetArray("CompatibleVersions");

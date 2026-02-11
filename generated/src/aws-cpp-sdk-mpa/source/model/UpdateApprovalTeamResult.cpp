@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateApprovalTeamResult::UpdateApprovalTeamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateApprovalTeamResult& UpdateApprovalTeamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VersionId")) {
     m_versionId = jsonValue.GetString("VersionId");

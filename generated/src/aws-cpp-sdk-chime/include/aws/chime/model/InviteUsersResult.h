@@ -65,10 +65,13 @@ class InviteUsersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Invite> m_invites;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_invitesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

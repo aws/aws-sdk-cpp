@@ -58,10 +58,13 @@ class DescribeEffectivePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EffectivePolicy m_effectivePolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_effectivePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

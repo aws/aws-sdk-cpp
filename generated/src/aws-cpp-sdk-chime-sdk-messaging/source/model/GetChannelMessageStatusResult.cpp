@@ -20,6 +20,7 @@ using namespace Aws;
 GetChannelMessageStatusResult::GetChannelMessageStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetChannelMessageStatusResult& GetChannelMessageStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetObject("Status");

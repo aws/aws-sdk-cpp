@@ -82,12 +82,15 @@ class GetManagedThingMetaDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_managedThingId;
 
   Aws::Map<Aws::String, Aws::String> m_metaData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managedThingIdHasBeenSet = false;
   bool m_metaDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

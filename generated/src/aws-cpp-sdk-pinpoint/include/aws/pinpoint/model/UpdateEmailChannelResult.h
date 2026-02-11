@@ -56,10 +56,13 @@ class UpdateEmailChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EmailChannelResponse m_emailChannelResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_emailChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 EvictFilesFailingUploadResult::EvictFilesFailingUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EvictFilesFailingUploadResult& EvictFilesFailingUploadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotificationId")) {
     m_notificationId = jsonValue.GetString("NotificationId");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteProtectionGroupResult::DeleteProtectionGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteProtectionGroupResult& DeleteProtectionGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

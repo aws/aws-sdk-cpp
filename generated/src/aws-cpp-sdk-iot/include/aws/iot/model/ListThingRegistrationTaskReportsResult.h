@@ -98,6 +98,8 @@ class ListThingRegistrationTaskReportsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_resourceLinks;
 
@@ -106,6 +108,7 @@ class ListThingRegistrationTaskReportsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceLinksHasBeenSet = false;
   bool m_reportTypeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

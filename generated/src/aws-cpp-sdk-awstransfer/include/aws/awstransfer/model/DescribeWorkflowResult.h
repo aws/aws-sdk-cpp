@@ -58,10 +58,13 @@ class DescribeWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DescribedWorkflow m_workflow;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workflowHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -137,6 +137,8 @@ class CreateHostedZoneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HostedZone m_hostedZone;
 
@@ -149,6 +151,7 @@ class CreateHostedZoneResult {
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hostedZoneHasBeenSet = false;
   bool m_changeInfoHasBeenSet = false;
   bool m_delegationSetHasBeenSet = false;

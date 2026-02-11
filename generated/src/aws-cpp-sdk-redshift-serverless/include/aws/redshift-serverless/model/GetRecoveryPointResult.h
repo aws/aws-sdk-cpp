@@ -58,10 +58,13 @@ class GetRecoveryPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RecoveryPoint m_recoveryPoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recoveryPointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

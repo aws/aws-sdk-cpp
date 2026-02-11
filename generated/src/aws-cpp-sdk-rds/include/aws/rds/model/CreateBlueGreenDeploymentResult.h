@@ -56,10 +56,13 @@ class CreateBlueGreenDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BlueGreenDeployment m_blueGreenDeployment;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_blueGreenDeploymentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

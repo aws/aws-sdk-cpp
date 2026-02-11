@@ -111,6 +111,8 @@ class GetQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<QueryField> m_fields;
 
@@ -119,6 +121,7 @@ class GetQueryResultsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fieldsHasBeenSet = false;
   bool m_dataHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

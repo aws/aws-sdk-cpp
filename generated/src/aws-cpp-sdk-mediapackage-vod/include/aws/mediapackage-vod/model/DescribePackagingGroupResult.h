@@ -177,6 +177,8 @@ class DescribePackagingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_approximateAssetCount{0};
 
@@ -195,6 +197,7 @@ class DescribePackagingGroupResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_approximateAssetCountHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_authorizationHasBeenSet = false;

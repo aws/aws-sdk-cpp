@@ -20,6 +20,7 @@ using namespace Aws;
 ListKxDatabasesResult::ListKxDatabasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKxDatabasesResult& ListKxDatabasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("kxDatabases")) {
     Aws::Utils::Array<JsonView> kxDatabasesJsonList = jsonValue.GetArray("kxDatabases");

@@ -250,6 +250,8 @@ class GetSceneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -274,6 +276,7 @@ class GetSceneResult {
   SceneError m_error;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_sceneIdHasBeenSet = false;
   bool m_contentLocationHasBeenSet = false;

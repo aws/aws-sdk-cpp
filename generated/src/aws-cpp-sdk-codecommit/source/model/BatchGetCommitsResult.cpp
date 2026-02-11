@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetCommitsResult::BatchGetCommitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetCommitsResult& BatchGetCommitsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("commits")) {
     Aws::Utils::Array<JsonView> commitsJsonList = jsonValue.GetArray("commits");

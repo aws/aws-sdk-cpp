@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateStreamWarmThroughputResult::UpdateStreamWarmThroughputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateStreamWarmThroughputResult& UpdateStreamWarmThroughputResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamARN")) {
     m_streamARN = jsonValue.GetString("StreamARN");

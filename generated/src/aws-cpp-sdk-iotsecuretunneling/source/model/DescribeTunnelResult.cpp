@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTunnelResult::DescribeTunnelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTunnelResult& DescribeTunnelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tunnel")) {
     m_tunnel = jsonValue.GetObject("tunnel");

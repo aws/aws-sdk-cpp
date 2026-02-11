@@ -58,10 +58,13 @@ class GetTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Table m_table;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

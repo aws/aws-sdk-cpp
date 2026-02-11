@@ -58,10 +58,13 @@ class CreateTransitGatewayConnectPeerResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayConnectPeer m_transitGatewayConnectPeer;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayConnectPeerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

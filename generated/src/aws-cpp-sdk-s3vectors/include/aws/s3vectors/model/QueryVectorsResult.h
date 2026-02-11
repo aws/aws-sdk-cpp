@@ -83,12 +83,15 @@ class QueryVectorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<QueryOutputVector> m_vectors;
 
   DistanceMetric m_distanceMetric{DistanceMetric::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vectorsHasBeenSet = false;
   bool m_distanceMetricHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

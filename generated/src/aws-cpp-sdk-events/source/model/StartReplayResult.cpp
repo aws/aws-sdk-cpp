@@ -20,6 +20,7 @@ using namespace Aws;
 StartReplayResult::StartReplayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartReplayResult& StartReplayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplayArn")) {
     m_replayArn = jsonValue.GetString("ReplayArn");

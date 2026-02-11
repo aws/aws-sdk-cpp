@@ -55,10 +55,13 @@ class ValidateMatchmakingRuleSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_valid{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_validHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

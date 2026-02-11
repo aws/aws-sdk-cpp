@@ -126,6 +126,8 @@ class DescribeHumanTaskUiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_humanTaskUiArn;
 
@@ -138,6 +140,7 @@ class DescribeHumanTaskUiResult {
   UiTemplateInfo m_uiTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_humanTaskUiArnHasBeenSet = false;
   bool m_humanTaskUiNameHasBeenSet = false;
   bool m_humanTaskUiStatusHasBeenSet = false;

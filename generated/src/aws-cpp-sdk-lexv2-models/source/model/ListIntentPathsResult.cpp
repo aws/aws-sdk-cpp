@@ -20,6 +20,7 @@ using namespace Aws;
 ListIntentPathsResult::ListIntentPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIntentPathsResult& ListIntentPathsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nodeSummaries")) {
     Aws::Utils::Array<JsonView> nodeSummariesJsonList = jsonValue.GetArray("nodeSummaries");

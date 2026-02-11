@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAccountPreferencesResult::UpdateAccountPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAccountPreferencesResult& UpdateAccountPreferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountPreferences")) {
     m_accountPreferences = jsonValue.GetObject("AccountPreferences");

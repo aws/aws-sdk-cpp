@@ -22,6 +22,7 @@ DeleteDataflowEndpointGroupResult::DeleteDataflowEndpointGroupResult(const Aws::
 }
 
 DeleteDataflowEndpointGroupResult& DeleteDataflowEndpointGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataflowEndpointGroupId")) {
     m_dataflowEndpointGroupId = jsonValue.GetString("dataflowEndpointGroupId");

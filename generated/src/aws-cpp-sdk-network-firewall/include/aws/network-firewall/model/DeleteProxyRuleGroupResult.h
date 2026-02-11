@@ -75,12 +75,15 @@ class DeleteProxyRuleGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_proxyRuleGroupName;
 
   Aws::String m_proxyRuleGroupArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_proxyRuleGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

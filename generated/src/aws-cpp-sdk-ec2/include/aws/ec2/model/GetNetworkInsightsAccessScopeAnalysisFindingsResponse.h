@@ -120,6 +120,8 @@ class GetNetworkInsightsAccessScopeAnalysisFindingsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_networkInsightsAccessScopeAnalysisId;
 
@@ -130,6 +132,7 @@ class GetNetworkInsightsAccessScopeAnalysisFindingsResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
   bool m_analysisStatusHasBeenSet = false;
   bool m_analysisFindingsHasBeenSet = false;

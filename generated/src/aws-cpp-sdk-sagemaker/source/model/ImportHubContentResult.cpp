@@ -20,6 +20,7 @@ using namespace Aws;
 ImportHubContentResult::ImportHubContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportHubContentResult& ImportHubContentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HubArn")) {
     m_hubArn = jsonValue.GetString("HubArn");

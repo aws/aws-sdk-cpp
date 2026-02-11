@@ -22,6 +22,7 @@ CreateIntegrationAssociationResult::CreateIntegrationAssociationResult(const Aws
 }
 
 CreateIntegrationAssociationResult& CreateIntegrationAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IntegrationAssociationId")) {
     m_integrationAssociationId = jsonValue.GetString("IntegrationAssociationId");

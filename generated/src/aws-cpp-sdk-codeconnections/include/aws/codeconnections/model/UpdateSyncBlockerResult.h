@@ -92,6 +92,8 @@ class UpdateSyncBlockerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceName;
 
@@ -100,6 +102,7 @@ class UpdateSyncBlockerResult {
   SyncBlocker m_syncBlocker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceNameHasBeenSet = false;
   bool m_parentResourceNameHasBeenSet = false;
   bool m_syncBlockerHasBeenSet = false;

@@ -58,10 +58,13 @@ class IncreaseNodeGroupsInGlobalReplicationGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GlobalReplicationGroup m_globalReplicationGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_globalReplicationGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

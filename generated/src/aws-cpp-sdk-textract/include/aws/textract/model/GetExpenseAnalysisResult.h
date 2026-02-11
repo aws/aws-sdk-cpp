@@ -180,6 +180,8 @@ class GetExpenseAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DocumentMetadata m_documentMetadata;
 
@@ -196,6 +198,7 @@ class GetExpenseAnalysisResult {
   Aws::String m_analyzeExpenseModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentMetadataHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

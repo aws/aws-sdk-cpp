@@ -20,6 +20,7 @@ using namespace Aws;
 GetUserAuthFactorsResult::GetUserAuthFactorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUserAuthFactorsResult& GetUserAuthFactorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Username")) {
     m_username = jsonValue.GetString("Username");

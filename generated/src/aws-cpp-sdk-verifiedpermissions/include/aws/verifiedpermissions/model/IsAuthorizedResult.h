@@ -113,6 +113,8 @@ class IsAuthorizedResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Decision m_decision{Decision::NOT_SET};
 
@@ -121,6 +123,7 @@ class IsAuthorizedResult {
   Aws::Vector<EvaluationErrorItem> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_decisionHasBeenSet = false;
   bool m_determiningPoliciesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

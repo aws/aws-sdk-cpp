@@ -59,10 +59,13 @@ class CreateDelegateMacVolumeOwnershipTaskResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MacModificationTask m_macModificationTask;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_macModificationTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

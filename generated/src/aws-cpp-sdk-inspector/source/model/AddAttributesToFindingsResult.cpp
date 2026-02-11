@@ -20,6 +20,7 @@ using namespace Aws;
 AddAttributesToFindingsResult::AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("failedItems")) {
     Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();

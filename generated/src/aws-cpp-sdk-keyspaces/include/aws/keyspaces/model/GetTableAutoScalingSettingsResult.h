@@ -135,6 +135,8 @@ class GetTableAutoScalingSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyspaceName;
 
@@ -147,6 +149,7 @@ class GetTableAutoScalingSettingsResult {
   Aws::Vector<ReplicaAutoScalingSpecification> m_replicaSpecifications;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
