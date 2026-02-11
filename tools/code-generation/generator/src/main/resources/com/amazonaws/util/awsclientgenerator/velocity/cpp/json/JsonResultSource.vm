@@ -29,6 +29,7 @@ ${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<J
 
 ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
+    m_responseCode = result.GetResponseCode();
 #if($shape.hasPayloadMembers())
   JsonView jsonValue = result.GetPayload().View();
 #else
