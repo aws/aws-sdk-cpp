@@ -9,6 +9,7 @@
 
 using namespace Aws::Auth;
 using namespace Aws::Utils::Threading;
+using namespace Aws::Client;
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
  public:
