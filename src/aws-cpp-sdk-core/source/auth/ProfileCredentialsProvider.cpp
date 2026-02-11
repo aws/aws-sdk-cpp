@@ -17,6 +17,13 @@ using namespace Aws::Client;
 using Aws::Utils::Threading::ReaderLockGuard;
 using Aws::Utils::Threading::WriterLockGuard;
 
+extern const char AWS_CONFIG_FILE[] = "AWS_CONFIG_FILE";
+extern const char AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
+
+extern const char PROFILE_DIRECTORY[] = ".aws";
+extern const char DEFAULT_CONFIG_FILE[] = "config";
+extern const char DEFAULT_CREDENTIALS_FILE[] = "credentials";
+
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
  public:
   ProfileCredentialsProviderImp(long refreshRateMs)
