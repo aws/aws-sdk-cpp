@@ -6,6 +6,7 @@
 
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/platform/Environment.h>

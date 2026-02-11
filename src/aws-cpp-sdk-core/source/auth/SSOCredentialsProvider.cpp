@@ -5,6 +5,7 @@
 
 
 #include <aws/core/auth/SSOCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/platform/Environment.h>
