@@ -7,20 +7,17 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 
-using namespace Aws::Utils;
-using namespace Aws::Utils::Logging;
 using namespace Aws::Auth;
-using namespace Aws::Internal;
-using namespace Aws::FileSystem;
-using namespace Aws::Utils::Xml;
 using namespace Aws::Client;
-using Aws::Utils::Threading::ReaderLockGuard;
-using Aws::Utils::Threading::WriterLockGuard;
+using namespace Aws::FileSystem;
+using namespace Aws::Utils::Threading;
 
-extern const char AWS_CREDENTIALS_FILE[];
-
-extern const char PROFILE_DIRECTORY[];
-extern const char DEFAULT_CREDENTIALS_FILE[];
+namespace {
+const char* PROFILE_LOG_TAG = "ProfileCredentialsProvider";
+const char* AWS_CREDENTIALS_FILE = "AWS_SHARED_CREDENTIALS_FILE";
+const char* PROFILE_DIRECTORY = ".aws";
+const char* DEFAULT_CREDENTIALS_FILE = "credentials";
+}
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
  public:
@@ -46,7 +43,7 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCred
     auto credentialsFileNameFromVar = Aws::Environment::GetEnv(AWS_CREDENTIALS_FILE);
 
     if (credentialsFileNameFromVar.empty()) {
-      return Aws::FileSystem::GetHomeDirectory() + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CREDENTIALS_FILE;
+      return GetHomeDirectory() + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CREDENTIALS_FILE;
     }
     return credentialsFileNameFromVar;
   }
