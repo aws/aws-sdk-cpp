@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteReceiptFilterResult::DeleteReceiptFilterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteReceiptFilterResult& DeleteReceiptFilterResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

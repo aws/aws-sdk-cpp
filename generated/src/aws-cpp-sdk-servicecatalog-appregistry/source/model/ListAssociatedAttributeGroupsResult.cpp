@@ -22,6 +22,7 @@ ListAssociatedAttributeGroupsResult::ListAssociatedAttributeGroupsResult(const A
 }
 
 ListAssociatedAttributeGroupsResult& ListAssociatedAttributeGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("attributeGroups")) {
     Aws::Utils::Array<JsonView> attributeGroupsJsonList = jsonValue.GetArray("attributeGroups");

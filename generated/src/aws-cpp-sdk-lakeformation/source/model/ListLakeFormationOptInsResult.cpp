@@ -20,6 +20,7 @@ using namespace Aws;
 ListLakeFormationOptInsResult::ListLakeFormationOptInsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLakeFormationOptInsResult& ListLakeFormationOptInsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LakeFormationOptInsInfoList")) {
     Aws::Utils::Array<JsonView> lakeFormationOptInsInfoListJsonList = jsonValue.GetArray("LakeFormationOptInsInfoList");

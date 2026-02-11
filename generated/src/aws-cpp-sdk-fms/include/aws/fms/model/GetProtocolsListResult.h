@@ -75,12 +75,15 @@ class GetProtocolsListResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProtocolsListData m_protocolsList;
 
   Aws::String m_protocolsListArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_protocolsListHasBeenSet = false;
   bool m_protocolsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

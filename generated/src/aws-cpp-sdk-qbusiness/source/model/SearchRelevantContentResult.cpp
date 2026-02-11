@@ -20,6 +20,7 @@ using namespace Aws;
 SearchRelevantContentResult::SearchRelevantContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchRelevantContentResult& SearchRelevantContentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("relevantContent")) {
     Aws::Utils::Array<JsonView> relevantContentJsonList = jsonValue.GetArray("relevantContent");

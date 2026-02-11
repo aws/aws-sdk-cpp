@@ -20,6 +20,7 @@ using namespace Aws;
 DetectFacesResult::DetectFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectFacesResult& DetectFacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FaceDetails")) {
     Aws::Utils::Array<JsonView> faceDetailsJsonList = jsonValue.GetArray("FaceDetails");

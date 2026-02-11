@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePermissionSetResult::DescribePermissionSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePermissionSetResult& DescribePermissionSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PermissionSet")) {
     m_permissionSet = jsonValue.GetObject("PermissionSet");

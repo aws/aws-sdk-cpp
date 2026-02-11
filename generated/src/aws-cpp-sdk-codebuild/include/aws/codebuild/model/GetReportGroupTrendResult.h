@@ -83,12 +83,15 @@ class GetReportGroupTrendResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReportGroupTrendStats m_stats;
 
   Aws::Vector<ReportWithRawData> m_rawData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statsHasBeenSet = false;
   bool m_rawDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

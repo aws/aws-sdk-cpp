@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRecipeResult::DescribeRecipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRecipeResult& DescribeRecipeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recipe")) {
     m_recipe = jsonValue.GetObject("recipe");

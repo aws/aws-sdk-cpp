@@ -183,6 +183,8 @@ class GetOutboundExternalLinkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_gatewayId;
 
@@ -201,6 +203,7 @@ class GetOutboundExternalLinkResult {
   LinkLogSettings m_logSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

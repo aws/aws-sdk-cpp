@@ -20,6 +20,7 @@ using namespace Aws;
 GetCaseAuditEventsResult::GetCaseAuditEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCaseAuditEventsResult& GetCaseAuditEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

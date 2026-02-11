@@ -108,6 +108,8 @@ class GetWebACLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WebACL m_webACL;
 
@@ -116,6 +118,7 @@ class GetWebACLResult {
   Aws::String m_applicationIntegrationURL;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_webACLHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
   bool m_applicationIntegrationURLHasBeenSet = false;

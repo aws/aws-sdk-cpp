@@ -88,12 +88,15 @@ class DescribeGlobalSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_globalSettings;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_globalSettingsHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

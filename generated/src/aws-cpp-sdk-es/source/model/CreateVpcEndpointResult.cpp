@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVpcEndpointResult::CreateVpcEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVpcEndpointResult& CreateVpcEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcEndpoint")) {
     m_vpcEndpoint = jsonValue.GetObject("VpcEndpoint");

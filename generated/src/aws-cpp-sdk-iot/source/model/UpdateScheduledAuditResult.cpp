@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateScheduledAuditResult::UpdateScheduledAuditResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateScheduledAuditResult& UpdateScheduledAuditResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scheduledAuditArn")) {
     m_scheduledAuditArn = jsonValue.GetString("scheduledAuditArn");

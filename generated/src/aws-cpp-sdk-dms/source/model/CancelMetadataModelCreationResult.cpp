@@ -22,6 +22,7 @@ CancelMetadataModelCreationResult::CancelMetadataModelCreationResult(const Aws::
 }
 
 CancelMetadataModelCreationResult& CancelMetadataModelCreationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Request")) {
     m_request = jsonValue.GetObject("Request");

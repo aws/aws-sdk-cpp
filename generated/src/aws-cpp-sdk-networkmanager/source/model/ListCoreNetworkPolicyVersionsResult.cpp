@@ -22,6 +22,7 @@ ListCoreNetworkPolicyVersionsResult::ListCoreNetworkPolicyVersionsResult(const A
 }
 
 ListCoreNetworkPolicyVersionsResult& ListCoreNetworkPolicyVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CoreNetworkPolicyVersions")) {
     Aws::Utils::Array<JsonView> coreNetworkPolicyVersionsJsonList = jsonValue.GetArray("CoreNetworkPolicyVersions");

@@ -65,10 +65,13 @@ class CreateApplicationVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationVersionDescription m_applicationVersion;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationVersionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

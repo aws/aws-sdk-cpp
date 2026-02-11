@@ -58,10 +58,13 @@ class DescribeStackInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StackInstance m_stackInstance;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

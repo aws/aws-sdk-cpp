@@ -20,6 +20,7 @@ using namespace Aws;
 CreateUploadUrlResult::CreateUploadUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateUploadUrlResult& CreateUploadUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("s3Url")) {
     m_s3Url = jsonValue.GetString("s3Url");

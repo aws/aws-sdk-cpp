@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeChannelBanResult::DescribeChannelBanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeChannelBanResult& DescribeChannelBanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelBan")) {
     m_channelBan = jsonValue.GetObject("ChannelBan");

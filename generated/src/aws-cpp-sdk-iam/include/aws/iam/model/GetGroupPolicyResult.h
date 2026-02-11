@@ -102,6 +102,8 @@ class GetGroupPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_groupName;
 
@@ -110,6 +112,7 @@ class GetGroupPolicyResult {
   Aws::String m_policyDocument;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;

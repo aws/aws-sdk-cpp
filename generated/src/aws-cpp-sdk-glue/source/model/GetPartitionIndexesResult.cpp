@@ -20,6 +20,7 @@ using namespace Aws;
 GetPartitionIndexesResult::GetPartitionIndexesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPartitionIndexesResult& GetPartitionIndexesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PartitionIndexDescriptorList")) {
     Aws::Utils::Array<JsonView> partitionIndexDescriptorListJsonList = jsonValue.GetArray("PartitionIndexDescriptorList");

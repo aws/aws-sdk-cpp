@@ -20,6 +20,7 @@ using namespace Aws;
 GetV2LoggingOptionsResult::GetV2LoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetV2LoggingOptionsResult& GetV2LoggingOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");

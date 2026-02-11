@@ -20,6 +20,7 @@ using namespace Aws;
 TranslateDocumentResult::TranslateDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TranslateDocumentResult& TranslateDocumentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TranslatedDocument")) {
     m_translatedDocument = jsonValue.GetObject("TranslatedDocument");

@@ -153,6 +153,8 @@ class GetMergeConflictsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_mergeable{false};
 
@@ -167,6 +169,7 @@ class GetMergeConflictsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mergeableHasBeenSet = false;
   bool m_destinationCommitIdHasBeenSet = false;
   bool m_sourceCommitIdHasBeenSet = false;

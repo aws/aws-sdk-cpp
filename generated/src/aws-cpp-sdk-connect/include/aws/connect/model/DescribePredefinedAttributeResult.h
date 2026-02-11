@@ -58,10 +58,13 @@ class DescribePredefinedAttributeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PredefinedAttribute m_predefinedAttribute;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_predefinedAttributeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

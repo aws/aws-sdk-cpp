@@ -19,6 +19,7 @@ using namespace Aws;
 DeleteKeySigningKeyResult::DeleteKeySigningKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteKeySigningKeyResult& DeleteKeySigningKeyResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

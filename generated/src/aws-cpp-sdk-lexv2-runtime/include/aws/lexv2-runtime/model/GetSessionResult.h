@@ -132,6 +132,8 @@ class GetSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -142,6 +144,7 @@ class GetSessionResult {
   SessionState m_sessionState;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_interpretationsHasBeenSet = false;

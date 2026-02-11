@@ -88,6 +88,8 @@ class UpdateProjectVisibilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_projectArn;
 
@@ -96,6 +98,7 @@ class UpdateProjectVisibilityResult {
   ProjectVisibilityType m_projectVisibility{ProjectVisibilityType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_projectArnHasBeenSet = false;
   bool m_publicProjectAliasHasBeenSet = false;
   bool m_projectVisibilityHasBeenSet = false;

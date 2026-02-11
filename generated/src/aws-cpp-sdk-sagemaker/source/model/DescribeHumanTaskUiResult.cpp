@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeHumanTaskUiResult::DescribeHumanTaskUiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeHumanTaskUiResult& DescribeHumanTaskUiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HumanTaskUiArn")) {
     m_humanTaskUiArn = jsonValue.GetString("HumanTaskUiArn");

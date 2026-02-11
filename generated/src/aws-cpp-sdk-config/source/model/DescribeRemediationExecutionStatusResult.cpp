@@ -23,6 +23,7 @@ DescribeRemediationExecutionStatusResult::DescribeRemediationExecutionStatusResu
 
 DescribeRemediationExecutionStatusResult& DescribeRemediationExecutionStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RemediationExecutionStatuses")) {
     Aws::Utils::Array<JsonView> remediationExecutionStatusesJsonList = jsonValue.GetArray("RemediationExecutionStatuses");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTokenResult::CreateTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTokenResult& CreateTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessToken")) {
     m_accessToken = jsonValue.GetString("accessToken");

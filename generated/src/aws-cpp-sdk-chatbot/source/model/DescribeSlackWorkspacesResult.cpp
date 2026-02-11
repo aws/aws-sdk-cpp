@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSlackWorkspacesResult::DescribeSlackWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSlackWorkspacesResult& DescribeSlackWorkspacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SlackWorkspaces")) {
     Aws::Utils::Array<JsonView> slackWorkspacesJsonList = jsonValue.GetArray("SlackWorkspaces");

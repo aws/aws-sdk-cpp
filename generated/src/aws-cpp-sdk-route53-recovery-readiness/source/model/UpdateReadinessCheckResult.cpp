@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateReadinessCheckResult::UpdateReadinessCheckResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateReadinessCheckResult& UpdateReadinessCheckResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("readinessCheckArn")) {
     m_readinessCheckArn = jsonValue.GetString("readinessCheckArn");

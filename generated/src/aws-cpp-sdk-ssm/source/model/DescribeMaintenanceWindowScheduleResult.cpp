@@ -23,6 +23,7 @@ DescribeMaintenanceWindowScheduleResult::DescribeMaintenanceWindowScheduleResult
 
 DescribeMaintenanceWindowScheduleResult& DescribeMaintenanceWindowScheduleResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScheduledWindowExecutions")) {
     Aws::Utils::Array<JsonView> scheduledWindowExecutionsJsonList = jsonValue.GetArray("ScheduledWindowExecutions");

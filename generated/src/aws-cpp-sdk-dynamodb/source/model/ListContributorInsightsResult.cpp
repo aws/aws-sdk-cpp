@@ -20,6 +20,7 @@ using namespace Aws;
 ListContributorInsightsResult::ListContributorInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListContributorInsightsResult& ListContributorInsightsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContributorInsightsSummaries")) {
     Aws::Utils::Array<JsonView> contributorInsightsSummariesJsonList = jsonValue.GetArray("ContributorInsightsSummaries");

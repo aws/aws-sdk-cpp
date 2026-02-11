@@ -22,6 +22,7 @@ DescribeProvisioningTemplateResult::DescribeProvisioningTemplateResult(const Aws
 }
 
 DescribeProvisioningTemplateResult& DescribeProvisioningTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("templateArn")) {
     m_templateArn = jsonValue.GetString("templateArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueueLimitAssociationResult::GetQueueLimitAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueueLimitAssociationResult& GetQueueLimitAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");

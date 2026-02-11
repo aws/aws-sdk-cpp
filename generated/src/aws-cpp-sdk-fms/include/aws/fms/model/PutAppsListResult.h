@@ -75,12 +75,15 @@ class PutAppsListResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AppsListData m_appsList;
 
   Aws::String m_appsListArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appsListHasBeenSet = false;
   bool m_appsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

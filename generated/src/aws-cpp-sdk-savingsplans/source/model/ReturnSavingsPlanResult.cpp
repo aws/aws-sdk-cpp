@@ -20,6 +20,7 @@ using namespace Aws;
 ReturnSavingsPlanResult::ReturnSavingsPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReturnSavingsPlanResult& ReturnSavingsPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("savingsPlanId")) {
     m_savingsPlanId = jsonValue.GetString("savingsPlanId");

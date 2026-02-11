@@ -23,6 +23,7 @@ ListDistributionsByAnycastIpListId2020_05_31Result::ListDistributionsByAnycastIp
 
 ListDistributionsByAnycastIpListId2020_05_31Result& ListDistributionsByAnycastIpListId2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

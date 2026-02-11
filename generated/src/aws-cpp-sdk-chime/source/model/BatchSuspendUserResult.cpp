@@ -20,6 +20,7 @@ using namespace Aws;
 BatchSuspendUserResult::BatchSuspendUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchSuspendUserResult& BatchSuspendUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserErrors")) {
     Aws::Utils::Array<JsonView> userErrorsJsonList = jsonValue.GetArray("UserErrors");

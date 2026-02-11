@@ -22,6 +22,7 @@ ListEnabledProductsForImportResult::ListEnabledProductsForImportResult(const Aws
 }
 
 ListEnabledProductsForImportResult& ListEnabledProductsForImportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProductSubscriptions")) {
     Aws::Utils::Array<JsonView> productSubscriptionsJsonList = jsonValue.GetArray("ProductSubscriptions");

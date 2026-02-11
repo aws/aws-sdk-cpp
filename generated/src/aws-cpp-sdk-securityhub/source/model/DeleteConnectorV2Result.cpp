@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteConnectorV2Result::DeleteConnectorV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteConnectorV2Result& DeleteConnectorV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

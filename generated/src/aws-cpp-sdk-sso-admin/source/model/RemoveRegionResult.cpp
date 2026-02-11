@@ -20,6 +20,7 @@ using namespace Aws;
 RemoveRegionResult::RemoveRegionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RemoveRegionResult& RemoveRegionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = RegionStatusMapper::GetRegionStatusForName(jsonValue.GetString("Status"));

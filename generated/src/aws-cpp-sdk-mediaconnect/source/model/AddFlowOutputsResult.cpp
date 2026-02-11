@@ -20,6 +20,7 @@ using namespace Aws;
 AddFlowOutputsResult::AddFlowOutputsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddFlowOutputsResult& AddFlowOutputsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowArn")) {
     m_flowArn = jsonValue.GetString("flowArn");

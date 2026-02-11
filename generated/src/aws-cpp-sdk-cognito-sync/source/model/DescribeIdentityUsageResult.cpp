@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIdentityUsageResult::DescribeIdentityUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeIdentityUsageResult& DescribeIdentityUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityUsage")) {
     m_identityUsage = jsonValue.GetObject("IdentityUsage");

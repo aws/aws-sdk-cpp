@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetFindingDetailsResult::BatchGetFindingDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetFindingDetailsResult& BatchGetFindingDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("findingDetails")) {
     Aws::Utils::Array<JsonView> findingDetailsJsonList = jsonValue.GetArray("findingDetails");

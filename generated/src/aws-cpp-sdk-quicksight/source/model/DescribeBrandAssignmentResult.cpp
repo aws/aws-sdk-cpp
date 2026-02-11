@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBrandAssignmentResult::DescribeBrandAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBrandAssignmentResult& DescribeBrandAssignmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BrandArn")) {
     m_brandArn = jsonValue.GetString("BrandArn");

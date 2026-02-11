@@ -23,6 +23,7 @@ DescribeMappedResourceConfigurationResult::DescribeMappedResourceConfigurationRe
 
 DescribeMappedResourceConfigurationResult& DescribeMappedResourceConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MappedResourceConfigurationList")) {
     Aws::Utils::Array<JsonView> mappedResourceConfigurationListJsonList = jsonValue.GetArray("MappedResourceConfigurationList");

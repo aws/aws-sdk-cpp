@@ -20,6 +20,7 @@ using namespace Aws;
 PutSchemaVersionMetadataResult::PutSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutSchemaVersionMetadataResult& PutSchemaVersionMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SchemaArn")) {
     m_schemaArn = jsonValue.GetString("SchemaArn");

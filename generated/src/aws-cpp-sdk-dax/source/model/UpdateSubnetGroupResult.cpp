@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSubnetGroupResult::UpdateSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSubnetGroupResult& UpdateSubnetGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SubnetGroup")) {
     m_subnetGroup = jsonValue.GetObject("SubnetGroup");

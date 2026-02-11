@@ -90,12 +90,15 @@ class BatchGetReportGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ReportGroup> m_reportGroups;
 
   Aws::Vector<Aws::String> m_reportGroupsNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportGroupsHasBeenSet = false;
   bool m_reportGroupsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,7 @@ DescribePredictorBacktestExportJobResult::DescribePredictorBacktestExportJobResu
 
 DescribePredictorBacktestExportJobResult& DescribePredictorBacktestExportJobResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PredictorBacktestExportJobArn")) {
     m_predictorBacktestExportJobArn = jsonValue.GetString("PredictorBacktestExportJobArn");

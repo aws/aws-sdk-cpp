@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateCertificateProviderResult::UpdateCertificateProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateCertificateProviderResult& UpdateCertificateProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("certificateProviderName")) {
     m_certificateProviderName = jsonValue.GetString("certificateProviderName");

@@ -63,10 +63,13 @@ class BundleInstanceResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BundleTask m_bundleTask;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bundleTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

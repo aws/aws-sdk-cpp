@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDistributionResult::CreateDistributionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDistributionResult& CreateDistributionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("distribution")) {
     m_distribution = jsonValue.GetObject("distribution");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetSigningProfileResult::GetSigningProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSigningProfileResult& GetSigningProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("profileName")) {
     m_profileName = jsonValue.GetString("profileName");

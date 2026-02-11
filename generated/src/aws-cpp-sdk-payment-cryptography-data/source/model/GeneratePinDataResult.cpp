@@ -20,6 +20,7 @@ using namespace Aws;
 GeneratePinDataResult::GeneratePinDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GeneratePinDataResult& GeneratePinDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GenerationKeyArn")) {
     m_generationKeyArn = jsonValue.GetString("GenerationKeyArn");

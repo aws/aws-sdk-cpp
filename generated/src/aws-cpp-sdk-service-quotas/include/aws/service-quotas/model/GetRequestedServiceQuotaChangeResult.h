@@ -59,10 +59,13 @@ class GetRequestedServiceQuotaChangeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RequestedServiceQuotaChange m_requestedQuota;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestedQuotaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -95,12 +95,15 @@ class CancelSpotFleetRequestsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CancelSpotFleetRequestsSuccessItem> m_successfulFleetRequests;
 
   Aws::Vector<CancelSpotFleetRequestsErrorItem> m_unsuccessfulFleetRequests;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulFleetRequestsHasBeenSet = false;
   bool m_unsuccessfulFleetRequestsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

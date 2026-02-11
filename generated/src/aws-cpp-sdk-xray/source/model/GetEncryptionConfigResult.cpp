@@ -20,6 +20,7 @@ using namespace Aws;
 GetEncryptionConfigResult::GetEncryptionConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEncryptionConfigResult& GetEncryptionConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EncryptionConfig")) {
     m_encryptionConfig = jsonValue.GetObject("EncryptionConfig");

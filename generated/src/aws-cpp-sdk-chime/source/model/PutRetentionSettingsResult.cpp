@@ -20,6 +20,7 @@ using namespace Aws;
 PutRetentionSettingsResult::PutRetentionSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRetentionSettingsResult& PutRetentionSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RetentionSettings")) {
     m_retentionSettings = jsonValue.GetObject("RetentionSettings");

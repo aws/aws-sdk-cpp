@@ -85,12 +85,15 @@ class ListTrafficDistributionGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<TrafficDistributionGroupSummary> m_trafficDistributionGroupSummaryList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_trafficDistributionGroupSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -66,10 +66,13 @@ class DescribeLoadBalancerAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LoadBalancerAttributes m_loadBalancerAttributes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loadBalancerAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

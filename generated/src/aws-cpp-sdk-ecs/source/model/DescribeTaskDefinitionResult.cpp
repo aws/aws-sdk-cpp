@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTaskDefinitionResult::DescribeTaskDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTaskDefinitionResult& DescribeTaskDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskDefinition")) {
     m_taskDefinition = jsonValue.GetObject("taskDefinition");

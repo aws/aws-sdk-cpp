@@ -113,6 +113,8 @@ class CreateKeyPairResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KeyPair m_keyPair;
 
@@ -123,6 +125,7 @@ class CreateKeyPairResult {
   Operation m_operation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyPairHasBeenSet = false;
   bool m_publicKeyBase64HasBeenSet = false;
   bool m_privateKeyBase64HasBeenSet = false;

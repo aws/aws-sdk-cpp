@@ -20,6 +20,7 @@ using namespace Aws;
 MergeBranchesBySquashResult::MergeBranchesBySquashResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 MergeBranchesBySquashResult& MergeBranchesBySquashResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("commitId")) {
     m_commitId = jsonValue.GetString("commitId");

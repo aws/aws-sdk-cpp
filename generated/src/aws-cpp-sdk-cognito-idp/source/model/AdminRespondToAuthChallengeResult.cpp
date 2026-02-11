@@ -22,6 +22,7 @@ AdminRespondToAuthChallengeResult::AdminRespondToAuthChallengeResult(const Aws::
 }
 
 AdminRespondToAuthChallengeResult& AdminRespondToAuthChallengeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChallengeName")) {
     m_challengeName = ChallengeNameTypeMapper::GetChallengeNameTypeForName(jsonValue.GetString("ChallengeName"));

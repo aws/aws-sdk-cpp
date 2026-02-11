@@ -133,6 +133,8 @@ class DescribeOrganizationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_memberAccountLimitReached{false};
 
@@ -143,6 +145,7 @@ class DescribeOrganizationConfigurationResult {
   AutoEnableMembers m_autoEnableOrganizationMembers{AutoEnableMembers::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_memberAccountLimitReachedHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

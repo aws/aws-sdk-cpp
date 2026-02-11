@@ -22,6 +22,7 @@ DescribeServiceEnvironmentsResult::DescribeServiceEnvironmentsResult(const Aws::
 }
 
 DescribeServiceEnvironmentsResult& DescribeServiceEnvironmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("serviceEnvironments")) {
     Aws::Utils::Array<JsonView> serviceEnvironmentsJsonList = jsonValue.GetArray("serviceEnvironments");

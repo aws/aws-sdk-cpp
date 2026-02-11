@@ -22,6 +22,7 @@ StartDataCollectionByAgentIdsResult::StartDataCollectionByAgentIdsResult(const A
 }
 
 StartDataCollectionByAgentIdsResult& StartDataCollectionByAgentIdsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentsConfigurationStatus")) {
     Aws::Utils::Array<JsonView> agentsConfigurationStatusJsonList = jsonValue.GetArray("agentsConfigurationStatus");

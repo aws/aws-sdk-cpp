@@ -20,6 +20,7 @@ using namespace Aws;
 PutEventStreamResult::PutEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutEventStreamResult& PutEventStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_eventStream = jsonValue;
   m_eventStreamHasBeenSet = true;

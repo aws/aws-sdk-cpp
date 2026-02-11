@@ -65,10 +65,13 @@ class DescribePartnersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PartnerIntegrationInfo> m_partnerIntegrationInfoList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_partnerIntegrationInfoListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

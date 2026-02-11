@@ -73,10 +73,13 @@ class GetConfigurationSetEventDestinationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EventDestination> m_eventDestinations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventDestinationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

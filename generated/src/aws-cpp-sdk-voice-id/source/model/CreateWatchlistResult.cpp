@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWatchlistResult::CreateWatchlistResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWatchlistResult& CreateWatchlistResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Watchlist")) {
     m_watchlist = jsonValue.GetObject("Watchlist");

@@ -59,10 +59,13 @@ class DescribeUserPoolDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DomainDescriptionType m_domainDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBudgetResult::CreateBudgetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBudgetResult& CreateBudgetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("budgetId")) {
     m_budgetId = jsonValue.GetString("budgetId");

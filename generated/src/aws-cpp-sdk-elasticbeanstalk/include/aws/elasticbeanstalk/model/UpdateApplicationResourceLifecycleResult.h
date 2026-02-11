@@ -78,12 +78,15 @@ class UpdateApplicationResourceLifecycleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationName;
 
   ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationNameHasBeenSet = false;
   bool m_resourceLifecycleConfigHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

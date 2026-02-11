@@ -83,12 +83,15 @@ class AddAttachmentsToSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_attachmentSetId;
 
   Aws::String m_expiryTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attachmentSetIdHasBeenSet = false;
   bool m_expiryTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

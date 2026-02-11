@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTrustedEntitySetResult::CreateTrustedEntitySetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTrustedEntitySetResult& CreateTrustedEntitySetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("trustedEntitySetId")) {
     m_trustedEntitySetId = jsonValue.GetString("trustedEntitySetId");

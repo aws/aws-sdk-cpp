@@ -58,10 +58,13 @@ class UpdateTimeToLiveResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TimeToLiveSpecification m_timeToLiveSpecification;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_timeToLiveSpecificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -57,10 +57,13 @@ class DescribeApplicationVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationDetail m_applicationVersionDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationVersionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

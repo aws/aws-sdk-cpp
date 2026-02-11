@@ -112,6 +112,8 @@ class GetResourceLFTagsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<LFTagPair> m_lFTagOnDatabase;
 
@@ -120,6 +122,7 @@ class GetResourceLFTagsResult {
   Aws::Vector<ColumnLFTag> m_lFTagsOnColumns;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lFTagOnDatabaseHasBeenSet = false;
   bool m_lFTagsOnTableHasBeenSet = false;
   bool m_lFTagsOnColumnsHasBeenSet = false;

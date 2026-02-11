@@ -20,6 +20,7 @@ using namespace Aws;
 CreateQuickResponseResult::CreateQuickResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateQuickResponseResult& CreateQuickResponseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("quickResponse")) {
     m_quickResponse = jsonValue.GetObject("quickResponse");

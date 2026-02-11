@@ -71,10 +71,13 @@ class BatchGetApplicationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ApplicationInfo> m_applicationsInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationsInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

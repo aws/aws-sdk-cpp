@@ -22,6 +22,7 @@ ListPiiEntitiesDetectionJobsResult::ListPiiEntitiesDetectionJobsResult(const Aws
 }
 
 ListPiiEntitiesDetectionJobsResult& ListPiiEntitiesDetectionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PiiEntitiesDetectionJobPropertiesList")) {
     Aws::Utils::Array<JsonView> piiEntitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("PiiEntitiesDetectionJobPropertiesList");

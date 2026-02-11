@@ -65,10 +65,13 @@ class DeleteBranchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Branch m_branch;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_branchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

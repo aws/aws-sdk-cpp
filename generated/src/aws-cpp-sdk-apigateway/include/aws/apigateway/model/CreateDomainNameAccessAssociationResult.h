@@ -142,6 +142,8 @@ class CreateDomainNameAccessAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainNameAccessAssociationArn;
 
@@ -154,6 +156,7 @@ class CreateDomainNameAccessAssociationResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainNameAccessAssociationArnHasBeenSet = false;
   bool m_domainNameArnHasBeenSet = false;
   bool m_accessAssociationSourceTypeHasBeenSet = false;

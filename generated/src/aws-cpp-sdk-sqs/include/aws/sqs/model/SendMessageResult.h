@@ -162,6 +162,8 @@ class SendMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_mD5OfMessageBody;
 
@@ -176,6 +178,7 @@ class SendMessageResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mD5OfMessageBodyHasBeenSet = false;
   bool m_mD5OfMessageAttributesHasBeenSet = false;
   bool m_mD5OfMessageSystemAttributesHasBeenSet = false;

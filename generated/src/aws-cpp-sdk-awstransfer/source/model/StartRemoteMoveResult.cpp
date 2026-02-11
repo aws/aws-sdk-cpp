@@ -20,6 +20,7 @@ using namespace Aws;
 StartRemoteMoveResult::StartRemoteMoveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartRemoteMoveResult& StartRemoteMoveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MoveId")) {
     m_moveId = jsonValue.GetString("MoveId");

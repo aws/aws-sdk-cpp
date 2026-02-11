@@ -75,12 +75,15 @@ class RefreshCacheResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fileShareARN;
 
   Aws::String m_notificationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fileShareARNHasBeenSet = false;
   bool m_notificationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

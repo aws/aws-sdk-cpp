@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCodeReviewResult::CreateCodeReviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCodeReviewResult& CreateCodeReviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CodeReview")) {
     m_codeReview = jsonValue.GetObject("CodeReview");

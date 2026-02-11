@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRecommenderResult::DescribeRecommenderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRecommenderResult& DescribeRecommenderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recommender")) {
     m_recommender = jsonValue.GetObject("recommender");

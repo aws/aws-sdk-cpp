@@ -20,6 +20,7 @@ using namespace Aws;
 GetAdminScopeResult::GetAdminScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAdminScopeResult& GetAdminScopeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AdminScope")) {
     m_adminScope = jsonValue.GetObject("AdminScope");

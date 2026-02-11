@@ -106,6 +106,8 @@ class ExecuteQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ColumnInfo> m_columns;
 
@@ -114,6 +116,7 @@ class ExecuteQueryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_columnsHasBeenSet = false;
   bool m_rowsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

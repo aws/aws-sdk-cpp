@@ -245,6 +245,8 @@ class GetConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_account;
 
@@ -269,6 +271,7 @@ class GetConfigurationResult {
   Aws::String m_typeVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountHasBeenSet = false;
   bool m_configurationDefinitionIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

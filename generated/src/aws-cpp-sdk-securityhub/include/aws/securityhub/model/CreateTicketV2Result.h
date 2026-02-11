@@ -74,12 +74,15 @@ class CreateTicketV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ticketId;
 
   Aws::String m_ticketSrcUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ticketIdHasBeenSet = false;
   bool m_ticketSrcUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

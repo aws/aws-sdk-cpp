@@ -183,6 +183,8 @@ class ListEffectivePolicyValidationErrorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -197,6 +199,7 @@ class ListEffectivePolicyValidationErrorsResult {
   Aws::Vector<EffectivePolicyValidationError> m_effectivePolicyValidationErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_pathHasBeenSet = false;

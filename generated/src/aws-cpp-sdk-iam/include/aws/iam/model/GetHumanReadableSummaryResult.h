@@ -94,6 +94,8 @@ class GetHumanReadableSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_summaryContent;
 
@@ -102,6 +104,7 @@ class GetHumanReadableSummaryResult {
   SummaryStateType m_summaryState{SummaryStateType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_summaryContentHasBeenSet = false;
   bool m_localeHasBeenSet = false;
   bool m_summaryStateHasBeenSet = false;

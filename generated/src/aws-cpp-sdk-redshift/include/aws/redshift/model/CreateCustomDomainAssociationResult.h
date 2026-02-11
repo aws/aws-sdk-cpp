@@ -110,6 +110,8 @@ class CreateCustomDomainAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_customDomainName;
 
@@ -120,6 +122,7 @@ class CreateCustomDomainAssociationResult {
   Aws::String m_customDomainCertExpiryTime;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customDomainNameHasBeenSet = false;
   bool m_customDomainCertificateArnHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;

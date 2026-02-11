@@ -20,6 +20,7 @@ using namespace Aws;
 CancelMessageMoveTaskResult::CancelMessageMoveTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelMessageMoveTaskResult& CancelMessageMoveTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApproximateNumberOfMessagesMoved")) {
     m_approximateNumberOfMessagesMoved = jsonValue.GetInt64("ApproximateNumberOfMessagesMoved");

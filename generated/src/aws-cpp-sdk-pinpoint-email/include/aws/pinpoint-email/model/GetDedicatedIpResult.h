@@ -63,10 +63,13 @@ class GetDedicatedIpResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DedicatedIp m_dedicatedIp;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dedicatedIpHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

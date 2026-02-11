@@ -59,10 +59,13 @@ class GetMessagingSessionEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MessagingSessionEndpoint m_endpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

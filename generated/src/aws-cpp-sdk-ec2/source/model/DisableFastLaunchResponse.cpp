@@ -20,6 +20,7 @@ using namespace Aws;
 DisableFastLaunchResponse::DisableFastLaunchResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DisableFastLaunchResponse& DisableFastLaunchResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

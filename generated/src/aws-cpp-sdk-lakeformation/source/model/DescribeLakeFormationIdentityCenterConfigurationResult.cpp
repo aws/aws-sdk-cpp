@@ -24,6 +24,7 @@ DescribeLakeFormationIdentityCenterConfigurationResult::DescribeLakeFormationIde
 
 DescribeLakeFormationIdentityCenterConfigurationResult& DescribeLakeFormationIdentityCenterConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CatalogId")) {
     m_catalogId = jsonValue.GetString("CatalogId");

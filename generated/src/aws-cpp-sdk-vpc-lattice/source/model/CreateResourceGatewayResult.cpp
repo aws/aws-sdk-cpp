@@ -20,6 +20,7 @@ using namespace Aws;
 CreateResourceGatewayResult::CreateResourceGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateResourceGatewayResult& CreateResourceGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");

@@ -280,6 +280,8 @@ class GetAccessPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -308,6 +310,7 @@ class GetAccessPointResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_bucketHasBeenSet = false;
   bool m_networkOriginHasBeenSet = false;

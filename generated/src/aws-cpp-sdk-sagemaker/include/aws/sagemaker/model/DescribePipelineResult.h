@@ -293,6 +293,8 @@ class DescribePipelineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pipelineArn;
 
@@ -325,6 +327,7 @@ class DescribePipelineResult {
   Aws::String m_pipelineVersionDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineDisplayNameHasBeenSet = false;

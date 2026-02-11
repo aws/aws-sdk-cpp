@@ -183,6 +183,8 @@ class GetInsightRuleReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_keyLabels;
 
@@ -199,6 +201,7 @@ class GetInsightRuleReportResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyLabelsHasBeenSet = false;
   bool m_aggregationStatisticHasBeenSet = false;
   bool m_aggregateValueHasBeenSet = false;

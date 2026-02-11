@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAccountPoolResult::UpdateAccountPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAccountPoolResult& UpdateAccountPoolResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");

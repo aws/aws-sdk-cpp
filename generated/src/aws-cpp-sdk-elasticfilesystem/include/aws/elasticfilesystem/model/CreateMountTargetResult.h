@@ -241,6 +241,8 @@ class CreateMountTargetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ownerId;
 
@@ -265,6 +267,7 @@ class CreateMountTargetResult {
   Aws::String m_vpcId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ownerIdHasBeenSet = false;
   bool m_mountTargetIdHasBeenSet = false;
   bool m_fileSystemIdHasBeenSet = false;

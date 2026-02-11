@@ -23,6 +23,7 @@ CreateContainerServiceDeploymentResult::CreateContainerServiceDeploymentResult(c
 
 CreateContainerServiceDeploymentResult& CreateContainerServiceDeploymentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("containerService")) {
     m_containerService = jsonValue.GetObject("containerService");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateCapabilityResult::UpdateCapabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateCapabilityResult& UpdateCapabilityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("capabilityId")) {
     m_capabilityId = jsonValue.GetString("capabilityId");

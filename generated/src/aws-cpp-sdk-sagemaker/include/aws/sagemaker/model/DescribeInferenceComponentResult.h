@@ -252,6 +252,8 @@ class DescribeInferenceComponentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_inferenceComponentName;
 
@@ -278,6 +280,7 @@ class DescribeInferenceComponentResult {
   InferenceComponentDeploymentConfig m_lastDeploymentConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inferenceComponentNameHasBeenSet = false;
   bool m_inferenceComponentArnHasBeenSet = false;
   bool m_endpointNameHasBeenSet = false;

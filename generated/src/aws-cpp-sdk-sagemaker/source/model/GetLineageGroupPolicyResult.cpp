@@ -20,6 +20,7 @@ using namespace Aws;
 GetLineageGroupPolicyResult::GetLineageGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLineageGroupPolicyResult& GetLineageGroupPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LineageGroupArn")) {
     m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");

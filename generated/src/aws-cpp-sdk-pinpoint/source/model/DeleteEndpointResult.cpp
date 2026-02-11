@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEndpointResult::DeleteEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEndpointResult& DeleteEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_endpointResponse = jsonValue;
   m_endpointResponseHasBeenSet = true;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListTagsForDeliveryStreamResult::ListTagsForDeliveryStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTagsForDeliveryStreamResult& ListTagsForDeliveryStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");

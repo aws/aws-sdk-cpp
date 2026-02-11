@@ -111,6 +111,8 @@ class GetDeployablePatchSnapshotForInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_instanceId;
 
@@ -121,6 +123,7 @@ class GetDeployablePatchSnapshotForInstanceResult {
   Aws::String m_product;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
   bool m_snapshotDownloadUrlHasBeenSet = false;

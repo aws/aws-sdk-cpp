@@ -20,6 +20,7 @@ using namespace Aws;
 GetBuyerDashboardResult::GetBuyerDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBuyerDashboardResult& GetBuyerDashboardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("embedUrl")) {
     m_embedUrl = jsonValue.GetString("embedUrl");

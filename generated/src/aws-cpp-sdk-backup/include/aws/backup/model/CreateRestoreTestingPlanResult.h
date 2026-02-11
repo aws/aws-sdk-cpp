@@ -98,6 +98,8 @@ class CreateRestoreTestingPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -106,6 +108,7 @@ class CreateRestoreTestingPlanResult {
   Aws::String m_restoreTestingPlanName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_restoreTestingPlanArnHasBeenSet = false;
   bool m_restoreTestingPlanNameHasBeenSet = false;

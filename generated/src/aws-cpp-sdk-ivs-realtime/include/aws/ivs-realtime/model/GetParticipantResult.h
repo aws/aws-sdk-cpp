@@ -58,10 +58,13 @@ class GetParticipantResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Participant m_participant;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_participantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -58,10 +58,13 @@ class GetInstanceMetadataDefaultsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceMetadataDefaultsResponse m_accountLevel;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountLevelHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

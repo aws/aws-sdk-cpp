@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMatchmakingResult::DescribeMatchmakingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMatchmakingResult& DescribeMatchmakingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TicketList")) {
     Aws::Utils::Array<JsonView> ticketListJsonList = jsonValue.GetArray("TicketList");

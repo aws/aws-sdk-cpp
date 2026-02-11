@@ -20,6 +20,7 @@ using namespace Aws;
 AddTagsResult::AddTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 AddTagsResult& AddTagsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

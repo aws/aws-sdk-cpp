@@ -203,6 +203,8 @@ class GetSegmentDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_segmentDefinitionName;
 
@@ -223,6 +225,7 @@ class GetSegmentDefinitionResult {
   SegmentType m_segmentType{SegmentType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_segmentDefinitionNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

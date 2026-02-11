@@ -20,6 +20,7 @@ using namespace Aws;
 GetTrustStoreResult::GetTrustStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTrustStoreResult& GetTrustStoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("trustStore")) {
     m_trustStore = jsonValue.GetObject("trustStore");

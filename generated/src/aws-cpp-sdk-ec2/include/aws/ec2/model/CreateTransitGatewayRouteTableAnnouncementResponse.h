@@ -62,10 +62,13 @@ class CreateTransitGatewayRouteTableAnnouncementResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayRouteTableAnnouncement m_transitGatewayRouteTableAnnouncement;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayRouteTableAnnouncementHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

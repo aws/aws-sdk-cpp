@@ -20,6 +20,7 @@ using namespace Aws;
 ListImageReferrersResult::ListImageReferrersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListImageReferrersResult& ListImageReferrersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("referrers")) {
     Aws::Utils::Array<JsonView> referrersJsonList = jsonValue.GetArray("referrers");

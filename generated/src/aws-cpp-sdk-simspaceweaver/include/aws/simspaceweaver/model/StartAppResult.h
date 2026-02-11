@@ -91,6 +91,8 @@ class StartAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domain;
 
@@ -99,6 +101,7 @@ class StartAppResult {
   Aws::String m_simulation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_simulationHasBeenSet = false;

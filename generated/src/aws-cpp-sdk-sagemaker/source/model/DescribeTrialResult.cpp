@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTrialResult::DescribeTrialResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTrialResult& DescribeTrialResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrialName")) {
     m_trialName = jsonValue.GetString("TrialName");

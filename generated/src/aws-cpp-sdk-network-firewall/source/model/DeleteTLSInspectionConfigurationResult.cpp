@@ -23,6 +23,7 @@ DeleteTLSInspectionConfigurationResult::DeleteTLSInspectionConfigurationResult(c
 
 DeleteTLSInspectionConfigurationResult& DeleteTLSInspectionConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TLSInspectionConfigurationResponse")) {
     m_tLSInspectionConfigurationResponse = jsonValue.GetObject("TLSInspectionConfigurationResponse");

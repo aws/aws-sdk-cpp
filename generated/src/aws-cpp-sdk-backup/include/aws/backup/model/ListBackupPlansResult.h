@@ -85,12 +85,15 @@ class ListBackupPlansResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<BackupPlansListMember> m_backupPlansList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_backupPlansListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

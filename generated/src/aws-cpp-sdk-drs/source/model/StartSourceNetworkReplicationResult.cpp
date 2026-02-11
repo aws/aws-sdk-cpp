@@ -22,6 +22,7 @@ StartSourceNetworkReplicationResult::StartSourceNetworkReplicationResult(const A
 }
 
 StartSourceNetworkReplicationResult& StartSourceNetworkReplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sourceNetwork")) {
     m_sourceNetwork = jsonValue.GetObject("sourceNetwork");

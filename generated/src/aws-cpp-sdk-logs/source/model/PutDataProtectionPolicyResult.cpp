@@ -20,6 +20,7 @@ using namespace Aws;
 PutDataProtectionPolicyResult::PutDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutDataProtectionPolicyResult& PutDataProtectionPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logGroupIdentifier")) {
     m_logGroupIdentifier = jsonValue.GetString("logGroupIdentifier");

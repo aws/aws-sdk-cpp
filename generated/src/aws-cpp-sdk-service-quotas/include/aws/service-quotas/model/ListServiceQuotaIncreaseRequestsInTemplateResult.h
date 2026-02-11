@@ -92,12 +92,15 @@ class ListServiceQuotaIncreaseRequestsInTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ServiceQuotaIncreaseRequestInTemplate> m_serviceQuotaIncreaseRequestInTemplateList;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceQuotaIncreaseRequestInTemplateListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

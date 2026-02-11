@@ -185,6 +185,8 @@ class GetAccountAuthorizationDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UserDetail> m_userDetailList;
 
@@ -199,6 +201,7 @@ class GetAccountAuthorizationDetailsResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userDetailListHasBeenSet = false;
   bool m_groupDetailListHasBeenSet = false;
   bool m_roleDetailListHasBeenSet = false;

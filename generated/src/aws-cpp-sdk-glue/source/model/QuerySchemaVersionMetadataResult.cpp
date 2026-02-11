@@ -20,6 +20,7 @@ using namespace Aws;
 QuerySchemaVersionMetadataResult::QuerySchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 QuerySchemaVersionMetadataResult& QuerySchemaVersionMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MetadataInfoMap")) {
     Aws::Map<Aws::String, JsonView> metadataInfoMapJsonMap = jsonValue.GetObject("MetadataInfoMap").GetAllObjects();

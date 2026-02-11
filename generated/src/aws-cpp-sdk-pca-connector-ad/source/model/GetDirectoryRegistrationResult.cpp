@@ -20,6 +20,7 @@ using namespace Aws;
 GetDirectoryRegistrationResult::GetDirectoryRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDirectoryRegistrationResult& GetDirectoryRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DirectoryRegistration")) {
     m_directoryRegistration = jsonValue.GetObject("DirectoryRegistration");

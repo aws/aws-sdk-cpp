@@ -20,6 +20,7 @@ using namespace Aws;
 ListInstalledComponentsResult::ListInstalledComponentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInstalledComponentsResult& ListInstalledComponentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("installedComponents")) {
     Aws::Utils::Array<JsonView> installedComponentsJsonList = jsonValue.GetArray("installedComponents");

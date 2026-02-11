@@ -20,6 +20,7 @@ using namespace Aws;
 SearchUsersByImageResult::SearchUsersByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchUsersByImageResult& SearchUsersByImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserMatches")) {
     Aws::Utils::Array<JsonView> userMatchesJsonList = jsonValue.GetArray("UserMatches");

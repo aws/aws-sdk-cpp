@@ -20,6 +20,7 @@ using namespace Aws;
 StartReportJobResult::StartReportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartReportJobResult& StartReportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReportJobId")) {
     m_reportJobId = jsonValue.GetString("ReportJobId");

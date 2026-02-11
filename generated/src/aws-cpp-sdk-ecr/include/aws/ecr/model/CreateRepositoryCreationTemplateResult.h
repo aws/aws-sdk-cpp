@@ -76,12 +76,15 @@ class CreateRepositoryCreationTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryId;
 
   RepositoryCreationTemplate m_repositoryCreationTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_repositoryCreationTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

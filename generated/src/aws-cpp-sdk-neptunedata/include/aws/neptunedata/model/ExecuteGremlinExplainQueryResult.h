@@ -55,10 +55,13 @@ class ExecuteGremlinExplainQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_output{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_outputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 GetKeyPairResult::GetKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKeyPairResult& GetKeyPairResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keyPair")) {
     m_keyPair = jsonValue.GetObject("keyPair");

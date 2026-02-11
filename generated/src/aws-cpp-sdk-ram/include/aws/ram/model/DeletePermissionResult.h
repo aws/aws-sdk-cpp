@@ -93,6 +93,8 @@ class DeletePermissionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_returnValue{false};
 
@@ -101,6 +103,7 @@ class DeletePermissionResult {
   PermissionStatus m_permissionStatus{PermissionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_returnValueHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_permissionStatusHasBeenSet = false;

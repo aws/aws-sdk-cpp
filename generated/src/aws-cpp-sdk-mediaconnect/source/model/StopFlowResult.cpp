@@ -20,6 +20,7 @@ using namespace Aws;
 StopFlowResult::StopFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopFlowResult& StopFlowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowArn")) {
     m_flowArn = jsonValue.GetString("flowArn");

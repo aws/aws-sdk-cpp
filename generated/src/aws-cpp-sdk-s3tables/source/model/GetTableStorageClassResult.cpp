@@ -20,6 +20,7 @@ using namespace Aws;
 GetTableStorageClassResult::GetTableStorageClassResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTableStorageClassResult& GetTableStorageClassResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("storageClassConfiguration")) {
     m_storageClassConfiguration = jsonValue.GetObject("storageClassConfiguration");

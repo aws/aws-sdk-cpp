@@ -91,12 +91,15 @@ class BatchCreateVehicleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CreateVehicleResponseItem> m_vehicles;
 
   Aws::Vector<CreateVehicleError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vehiclesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

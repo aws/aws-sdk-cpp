@@ -74,12 +74,15 @@ class CreateUserHierarchyGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_hierarchyGroupId;
 
   Aws::String m_hierarchyGroupArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hierarchyGroupIdHasBeenSet = false;
   bool m_hierarchyGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListVPCEConfigurationsResult::ListVPCEConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVPCEConfigurationsResult& ListVPCEConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vpceConfigurations")) {
     Aws::Utils::Array<JsonView> vpceConfigurationsJsonList = jsonValue.GetArray("vpceConfigurations");

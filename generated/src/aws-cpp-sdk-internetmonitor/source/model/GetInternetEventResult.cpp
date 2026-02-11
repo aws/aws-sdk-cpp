@@ -20,6 +20,7 @@ using namespace Aws;
 GetInternetEventResult::GetInternetEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInternetEventResult& GetInternetEventResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventId")) {
     m_eventId = jsonValue.GetString("EventId");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteWorkgroupResult::DeleteWorkgroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteWorkgroupResult& DeleteWorkgroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workgroup")) {
     m_workgroup = jsonValue.GetObject("workgroup");

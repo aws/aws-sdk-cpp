@@ -20,6 +20,7 @@ using namespace Aws;
 GetRoleCredentialsResult::GetRoleCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRoleCredentialsResult& GetRoleCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("roleCredentials")) {
     m_roleCredentials = jsonValue.GetObject("roleCredentials");

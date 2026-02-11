@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateLicenseAssetGroupResult::UpdateLicenseAssetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateLicenseAssetGroupResult& UpdateLicenseAssetGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseAssetGroupArn")) {
     m_licenseAssetGroupArn = jsonValue.GetString("LicenseAssetGroupArn");

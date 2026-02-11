@@ -68,10 +68,13 @@ class UpdateCostAllocationTagsStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UpdateCostAllocationTagsStatusError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

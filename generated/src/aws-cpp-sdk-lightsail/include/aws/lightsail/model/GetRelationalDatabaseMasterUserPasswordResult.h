@@ -77,12 +77,15 @@ class GetRelationalDatabaseMasterUserPasswordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_masterUserPassword;
 
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_masterUserPasswordHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

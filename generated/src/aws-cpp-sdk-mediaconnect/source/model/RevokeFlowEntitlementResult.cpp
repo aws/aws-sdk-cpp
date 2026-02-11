@@ -20,6 +20,7 @@ using namespace Aws;
 RevokeFlowEntitlementResult::RevokeFlowEntitlementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RevokeFlowEntitlementResult& RevokeFlowEntitlementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("entitlementArn")) {
     m_entitlementArn = jsonValue.GetString("entitlementArn");

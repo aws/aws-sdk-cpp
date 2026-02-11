@@ -20,6 +20,7 @@ using namespace Aws;
 GetNetworkSettingsResult::GetNetworkSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetNetworkSettingsResult& GetNetworkSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("networkSettings")) {
     m_networkSettings = jsonValue.GetObject("networkSettings");

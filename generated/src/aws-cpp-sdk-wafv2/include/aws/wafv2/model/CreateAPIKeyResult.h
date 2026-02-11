@@ -58,10 +58,13 @@ class CreateAPIKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_aPIKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aPIKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

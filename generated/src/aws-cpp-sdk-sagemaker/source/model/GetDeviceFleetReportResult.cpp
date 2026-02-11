@@ -20,6 +20,7 @@ using namespace Aws;
 GetDeviceFleetReportResult::GetDeviceFleetReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDeviceFleetReportResult& GetDeviceFleetReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeviceFleetArn")) {
     m_deviceFleetArn = jsonValue.GetString("DeviceFleetArn");

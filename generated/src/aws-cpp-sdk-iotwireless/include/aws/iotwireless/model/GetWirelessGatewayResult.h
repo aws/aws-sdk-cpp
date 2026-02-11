@@ -161,6 +161,8 @@ class GetWirelessGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -177,6 +179,7 @@ class GetWirelessGatewayResult {
   Aws::String m_thingArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -99,6 +99,8 @@ class GetCellReadinessSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -107,6 +109,7 @@ class GetCellReadinessSummaryResult {
   Aws::Vector<ReadinessCheckSummary> m_readinessChecks;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_readinessHasBeenSet = false;
   bool m_readinessChecksHasBeenSet = false;

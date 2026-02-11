@@ -79,12 +79,15 @@ class GetComponentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   Component m_component;
 
   LatestVersionReferences m_latestVersionReferences;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_componentHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;

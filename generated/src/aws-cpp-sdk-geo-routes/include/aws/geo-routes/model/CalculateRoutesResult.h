@@ -123,6 +123,8 @@ class CalculateRoutesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GeometryFormat m_legGeometryFormat{GeometryFormat::NOT_SET};
 
@@ -133,6 +135,7 @@ class CalculateRoutesResult {
   Aws::Vector<Route> m_routes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_legGeometryFormatHasBeenSet = false;
   bool m_noticesHasBeenSet = false;
   bool m_pricingBucketHasBeenSet = false;

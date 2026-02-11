@@ -104,6 +104,8 @@ class ListVocabulariesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VocabularyState m_status{VocabularyState::NOT_SET};
 
@@ -112,6 +114,7 @@ class ListVocabulariesResult {
   Aws::Vector<VocabularyInfo> m_vocabularies;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_vocabulariesHasBeenSet = false;

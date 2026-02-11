@@ -439,6 +439,8 @@ class DescribeExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_executionArn;
 
@@ -481,6 +483,7 @@ class DescribeExecutionResult {
   Aws::String m_redriveStatusReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionArnHasBeenSet = false;
   bool m_stateMachineArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

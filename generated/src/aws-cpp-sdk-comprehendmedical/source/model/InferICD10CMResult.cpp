@@ -20,6 +20,7 @@ using namespace Aws;
 InferICD10CMResult::InferICD10CMResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 InferICD10CMResult& InferICD10CMResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Entities")) {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");

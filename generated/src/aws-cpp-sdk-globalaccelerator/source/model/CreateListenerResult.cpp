@@ -20,6 +20,7 @@ using namespace Aws;
 CreateListenerResult::CreateListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateListenerResult& CreateListenerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Listener")) {
     m_listener = jsonValue.GetObject("Listener");

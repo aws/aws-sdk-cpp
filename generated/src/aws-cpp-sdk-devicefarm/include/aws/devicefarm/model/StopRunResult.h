@@ -64,10 +64,13 @@ class StopRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Run m_run;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_runHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteDetectorResult::BatchDeleteDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteDetectorResult& BatchDeleteDetectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("batchDeleteDetectorErrorEntries")) {
     Aws::Utils::Array<JsonView> batchDeleteDetectorErrorEntriesJsonList = jsonValue.GetArray("batchDeleteDetectorErrorEntries");

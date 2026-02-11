@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeReservedCapacityResult::DescribeReservedCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeReservedCapacityResult& DescribeReservedCapacityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReservedCapacityArn")) {
     m_reservedCapacityArn = jsonValue.GetString("ReservedCapacityArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 VerifyPinDataResult::VerifyPinDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VerifyPinDataResult& VerifyPinDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VerificationKeyArn")) {
     m_verificationKeyArn = jsonValue.GetString("VerificationKeyArn");

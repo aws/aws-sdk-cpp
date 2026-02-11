@@ -177,6 +177,8 @@ class GetRelayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_relayId;
 
@@ -195,6 +197,7 @@ class GetRelayResult {
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_relayIdHasBeenSet = false;
   bool m_relayArnHasBeenSet = false;
   bool m_relayNameHasBeenSet = false;

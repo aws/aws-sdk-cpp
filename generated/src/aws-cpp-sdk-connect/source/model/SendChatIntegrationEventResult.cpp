@@ -20,6 +20,7 @@ using namespace Aws;
 SendChatIntegrationEventResult::SendChatIntegrationEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendChatIntegrationEventResult& SendChatIntegrationEventResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InitialContactId")) {
     m_initialContactId = jsonValue.GetString("InitialContactId");

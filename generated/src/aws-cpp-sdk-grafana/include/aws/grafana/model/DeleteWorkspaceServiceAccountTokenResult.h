@@ -92,6 +92,8 @@ class DeleteWorkspaceServiceAccountTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_serviceAccountId;
 
@@ -100,6 +102,7 @@ class DeleteWorkspaceServiceAccountTokenResult {
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceAccountIdHasBeenSet = false;
   bool m_tokenIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;

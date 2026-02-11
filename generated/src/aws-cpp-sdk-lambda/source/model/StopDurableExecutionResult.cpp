@@ -20,6 +20,7 @@ using namespace Aws;
 StopDurableExecutionResult::StopDurableExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopDurableExecutionResult& StopDurableExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StopTimestamp")) {
     m_stopTimestamp = jsonValue.GetDouble("StopTimestamp");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateConstraintResult::CreateConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateConstraintResult& CreateConstraintResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConstraintDetail")) {
     m_constraintDetail = jsonValue.GetObject("ConstraintDetail");

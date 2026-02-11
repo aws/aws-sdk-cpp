@@ -20,6 +20,7 @@ using namespace Aws;
 GetCalendarStateResult::GetCalendarStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCalendarStateResult& GetCalendarStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("State")) {
     m_state = CalendarStateMapper::GetCalendarStateForName(jsonValue.GetString("State"));

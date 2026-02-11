@@ -208,6 +208,8 @@ class QueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_queryId;
 
@@ -224,6 +226,7 @@ class QueryResult {
   Aws::Vector<FeaturedResultsItem> m_featuredResultsItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queryIdHasBeenSet = false;
   bool m_resultItemsHasBeenSet = false;
   bool m_facetResultsHasBeenSet = false;

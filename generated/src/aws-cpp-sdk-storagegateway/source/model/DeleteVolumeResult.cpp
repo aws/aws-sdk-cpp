@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteVolumeResult::DeleteVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteVolumeResult& DeleteVolumeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VolumeARN")) {
     m_volumeARN = jsonValue.GetString("VolumeARN");

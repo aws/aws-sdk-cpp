@@ -20,6 +20,7 @@ using namespace Aws;
 GetTrainedModelResult::GetTrainedModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTrainedModelResult& GetTrainedModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("membershipIdentifier")) {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");

@@ -111,6 +111,8 @@ class ListVPCAssociationAuthorizationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_hostedZoneId;
 
@@ -119,6 +121,7 @@ class ListVPCAssociationAuthorizationsResult {
   Aws::Vector<VPC> m_vPCs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hostedZoneIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_vPCsHasBeenSet = false;

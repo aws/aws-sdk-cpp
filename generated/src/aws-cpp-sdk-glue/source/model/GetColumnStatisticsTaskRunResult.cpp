@@ -20,6 +20,7 @@ using namespace Aws;
 GetColumnStatisticsTaskRunResult::GetColumnStatisticsTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetColumnStatisticsTaskRunResult& GetColumnStatisticsTaskRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ColumnStatisticsTaskRun")) {
     m_columnStatisticsTaskRun = jsonValue.GetObject("ColumnStatisticsTaskRun");

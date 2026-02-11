@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateGuardrailResult::UpdateGuardrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateGuardrailResult& UpdateGuardrailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("guardrailId")) {
     m_guardrailId = jsonValue.GetString("guardrailId");

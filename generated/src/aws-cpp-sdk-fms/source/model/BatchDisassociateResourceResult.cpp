@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDisassociateResourceResult::BatchDisassociateResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDisassociateResourceResult& BatchDisassociateResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceSetIdentifier")) {
     m_resourceSetIdentifier = jsonValue.GetString("ResourceSetIdentifier");

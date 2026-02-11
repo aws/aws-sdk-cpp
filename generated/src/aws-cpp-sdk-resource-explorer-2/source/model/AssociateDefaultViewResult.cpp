@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateDefaultViewResult::AssociateDefaultViewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateDefaultViewResult& AssociateDefaultViewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ViewArn")) {
     m_viewArn = jsonValue.GetString("ViewArn");

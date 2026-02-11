@@ -22,6 +22,7 @@ DescribeRuleGroupsNamespaceResult::DescribeRuleGroupsNamespaceResult(const Aws::
 }
 
 DescribeRuleGroupsNamespaceResult& DescribeRuleGroupsNamespaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ruleGroupsNamespace")) {
     m_ruleGroupsNamespace = jsonValue.GetObject("ruleGroupsNamespace");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetSetupHistoryResult::GetSetupHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSetupHistoryResult& GetSetupHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("setupHistory")) {
     Aws::Utils::Array<JsonView> setupHistoryJsonList = jsonValue.GetArray("setupHistory");

@@ -110,6 +110,8 @@ class AssociateFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AssociatedFace> m_associatedFaces;
 
@@ -118,6 +120,7 @@ class AssociateFacesResult {
   UserStatus m_userStatus{UserStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associatedFacesHasBeenSet = false;
   bool m_unsuccessfulFaceAssociationsHasBeenSet = false;
   bool m_userStatusHasBeenSet = false;

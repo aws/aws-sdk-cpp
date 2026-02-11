@@ -89,12 +89,15 @@ class DeleteTaskDefinitionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TaskDefinition> m_taskDefinitions;
 
   Aws::Vector<Failure> m_failures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskDefinitionsHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

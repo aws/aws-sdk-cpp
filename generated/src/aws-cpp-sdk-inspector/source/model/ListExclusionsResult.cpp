@@ -20,6 +20,7 @@ using namespace Aws;
 ListExclusionsResult::ListExclusionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListExclusionsResult& ListExclusionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("exclusionArns")) {
     Aws::Utils::Array<JsonView> exclusionArnsJsonList = jsonValue.GetArray("exclusionArns");

@@ -58,10 +58,13 @@ class CreateOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Organization m_organization;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_organizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

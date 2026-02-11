@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSettingsResult::UpdateSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSettingsResult& UpdateSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("settings")) {
     m_settings = jsonValue.GetObject("settings");

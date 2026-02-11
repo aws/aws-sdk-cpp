@@ -20,6 +20,7 @@ using namespace Aws;
 GetExportSnapshotRecordsResult::GetExportSnapshotRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetExportSnapshotRecordsResult& GetExportSnapshotRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("exportSnapshotRecords")) {
     Aws::Utils::Array<JsonView> exportSnapshotRecordsJsonList = jsonValue.GetArray("exportSnapshotRecords");

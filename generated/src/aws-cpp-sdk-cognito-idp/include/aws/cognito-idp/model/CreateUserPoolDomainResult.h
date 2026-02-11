@@ -80,12 +80,15 @@ class CreateUserPoolDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_managedLoginVersion{0};
 
   Aws::String m_cloudFrontDomain;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managedLoginVersionHasBeenSet = false;
   bool m_cloudFrontDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -22,6 +22,7 @@ SendSerialConsoleSSHPublicKeyResult::SendSerialConsoleSSHPublicKeyResult(const A
 }
 
 SendSerialConsoleSSHPublicKeyResult& SendSerialConsoleSSHPublicKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Success")) {
     m_success = jsonValue.GetBool("Success");

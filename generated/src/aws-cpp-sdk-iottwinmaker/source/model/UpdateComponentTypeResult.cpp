@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateComponentTypeResult::UpdateComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateComponentTypeResult& UpdateComponentTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workspaceId")) {
     m_workspaceId = jsonValue.GetString("workspaceId");

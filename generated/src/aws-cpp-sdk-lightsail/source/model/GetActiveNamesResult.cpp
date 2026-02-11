@@ -20,6 +20,7 @@ using namespace Aws;
 GetActiveNamesResult::GetActiveNamesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetActiveNamesResult& GetActiveNamesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("activeNames")) {
     Aws::Utils::Array<JsonView> activeNamesJsonList = jsonValue.GetArray("activeNames");

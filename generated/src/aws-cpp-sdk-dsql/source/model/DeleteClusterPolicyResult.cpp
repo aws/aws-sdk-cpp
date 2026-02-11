@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteClusterPolicyResult::DeleteClusterPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteClusterPolicyResult& DeleteClusterPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("policyVersion")) {
     m_policyVersion = jsonValue.GetString("policyVersion");

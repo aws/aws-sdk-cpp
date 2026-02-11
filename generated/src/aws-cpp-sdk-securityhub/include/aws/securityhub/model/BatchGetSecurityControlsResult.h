@@ -94,12 +94,15 @@ class BatchGetSecurityControlsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SecurityControl> m_securityControls;
 
   Aws::Vector<UnprocessedSecurityControl> m_unprocessedIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_securityControlsHasBeenSet = false;
   bool m_unprocessedIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

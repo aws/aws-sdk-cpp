@@ -65,10 +65,13 @@ class GetCorsPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CorsRule> m_corsPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_corsPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -107,6 +107,8 @@ class ListBuiltInSlotTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BuiltInSlotTypeSummary> m_builtInSlotTypeSummaries;
 
@@ -115,6 +117,7 @@ class ListBuiltInSlotTypesResult {
   Aws::String m_localeId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_builtInSlotTypeSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_localeIdHasBeenSet = false;

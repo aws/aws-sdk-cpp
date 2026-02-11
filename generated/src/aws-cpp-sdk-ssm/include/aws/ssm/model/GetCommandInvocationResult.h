@@ -388,6 +388,8 @@ class GetCommandInvocationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commandId;
 
@@ -424,6 +426,7 @@ class GetCommandInvocationResult {
   CloudWatchOutputConfig m_cloudWatchOutputConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commandIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_commentHasBeenSet = false;

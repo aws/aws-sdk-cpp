@@ -154,6 +154,8 @@ class GetConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_configId;
 
@@ -168,6 +170,7 @@ class GetConfigResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configIdHasBeenSet = false;
   bool m_configArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetCardinalityResult::GetCardinalityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCardinalityResult& GetCardinalityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cardinality")) {
     m_cardinality = jsonValue.GetInteger("cardinality");

@@ -23,6 +23,7 @@ ListAppAssessmentComplianceDriftsResult::ListAppAssessmentComplianceDriftsResult
 
 ListAppAssessmentComplianceDriftsResult& ListAppAssessmentComplianceDriftsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("complianceDrifts")) {
     Aws::Utils::Array<JsonView> complianceDriftsJsonList = jsonValue.GetArray("complianceDrifts");

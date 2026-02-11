@@ -19,6 +19,7 @@ using namespace Aws;
 GetStaticMapResult::GetStaticMapResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetStaticMapResult& GetStaticMapResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_blob = result.TakeOwnershipOfPayload();
   m_blobHasBeenSet = true;
 

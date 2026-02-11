@@ -22,6 +22,7 @@ CreateParticipantConnectionResult::CreateParticipantConnectionResult(const Aws::
 }
 
 CreateParticipantConnectionResult& CreateParticipantConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Websocket")) {
     m_websocket = jsonValue.GetObject("Websocket");

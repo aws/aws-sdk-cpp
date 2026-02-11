@@ -114,6 +114,8 @@ class ListProfilePermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_revisionId;
 
@@ -124,6 +126,7 @@ class ListProfilePermissionsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_revisionIdHasBeenSet = false;
   bool m_policySizeBytesHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

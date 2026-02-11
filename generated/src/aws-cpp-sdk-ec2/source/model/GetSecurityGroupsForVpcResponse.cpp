@@ -20,6 +20,7 @@ using namespace Aws;
 GetSecurityGroupsForVpcResponse::GetSecurityGroupsForVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetSecurityGroupsForVpcResponse& GetSecurityGroupsForVpcResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

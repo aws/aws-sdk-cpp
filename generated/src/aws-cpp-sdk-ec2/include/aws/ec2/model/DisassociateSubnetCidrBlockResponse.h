@@ -76,12 +76,15 @@ class DisassociateSubnetCidrBlockResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
 
   Aws::String m_subnetId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipv6CidrBlockAssociationHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

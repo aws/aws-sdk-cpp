@@ -95,6 +95,8 @@ class ExecuteGremlinQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -103,6 +105,7 @@ class ExecuteGremlinQueryResult {
   Aws::Utils::Document m_result;
 
   Aws::Utils::Document m_meta;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_resultHasBeenSet = false;

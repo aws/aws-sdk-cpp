@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSavingsPlanResult::CreateSavingsPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSavingsPlanResult& CreateSavingsPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("savingsPlanId")) {
     m_savingsPlanId = jsonValue.GetString("savingsPlanId");

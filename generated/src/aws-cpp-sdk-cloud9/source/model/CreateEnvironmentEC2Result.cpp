@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEnvironmentEC2Result::CreateEnvironmentEC2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEnvironmentEC2Result& CreateEnvironmentEC2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environmentId")) {
     m_environmentId = jsonValue.GetString("environmentId");

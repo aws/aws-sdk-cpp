@@ -23,6 +23,7 @@ ListElasticsearchInstanceTypesResult::ListElasticsearchInstanceTypesResult(const
 
 ListElasticsearchInstanceTypesResult& ListElasticsearchInstanceTypesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ElasticsearchInstanceTypes")) {
     Aws::Utils::Array<JsonView> elasticsearchInstanceTypesJsonList = jsonValue.GetArray("ElasticsearchInstanceTypes");

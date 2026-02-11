@@ -23,6 +23,7 @@ GetRelationalDatabaseLogEventsResult::GetRelationalDatabaseLogEventsResult(const
 
 GetRelationalDatabaseLogEventsResult& GetRelationalDatabaseLogEventsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceLogEvents")) {
     Aws::Utils::Array<JsonView> resourceLogEventsJsonList = jsonValue.GetArray("resourceLogEvents");

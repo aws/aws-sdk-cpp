@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLensShareResult::CreateLensShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLensShareResult& CreateLensShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ShareId")) {
     m_shareId = jsonValue.GetString("ShareId");

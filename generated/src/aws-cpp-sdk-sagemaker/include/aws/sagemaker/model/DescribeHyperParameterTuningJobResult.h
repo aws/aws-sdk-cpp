@@ -390,6 +390,8 @@ class DescribeHyperParameterTuningJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_hyperParameterTuningJobName;
 
@@ -428,6 +430,7 @@ class DescribeHyperParameterTuningJobResult {
   HyperParameterTuningJobConsumedResources m_consumedResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hyperParameterTuningJobNameHasBeenSet = false;
   bool m_hyperParameterTuningJobArnHasBeenSet = false;
   bool m_hyperParameterTuningJobConfigHasBeenSet = false;

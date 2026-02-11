@@ -23,6 +23,7 @@ UpdateRecoveryPointIndexSettingsResult::UpdateRecoveryPointIndexSettingsResult(c
 
 UpdateRecoveryPointIndexSettingsResult& UpdateRecoveryPointIndexSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BackupVaultName")) {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");

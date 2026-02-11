@@ -216,6 +216,8 @@ class GetReservedInstancesExchangeQuoteResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_currencyCode;
 
@@ -236,6 +238,7 @@ class GetReservedInstancesExchangeQuoteResponse {
   Aws::String m_validationFailureReason;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_currencyCodeHasBeenSet = false;
   bool m_isValidExchangeHasBeenSet = false;
   bool m_outputReservedInstancesWillExpireAtHasBeenSet = false;

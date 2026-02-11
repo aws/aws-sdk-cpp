@@ -337,6 +337,8 @@ class GetEvaluationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_evaluationId;
 
@@ -369,6 +371,7 @@ class GetEvaluationResult {
   Aws::Utils::DateTime m_startedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_evaluationIdHasBeenSet = false;
   bool m_mLModelIdHasBeenSet = false;
   bool m_evaluationDataSourceIdHasBeenSet = false;

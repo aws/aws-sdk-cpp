@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEventTrackerResult::DescribeEventTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEventTrackerResult& DescribeEventTrackerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("eventTracker")) {
     m_eventTracker = jsonValue.GetObject("eventTracker");

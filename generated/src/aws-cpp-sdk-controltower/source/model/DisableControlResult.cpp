@@ -20,6 +20,7 @@ using namespace Aws;
 DisableControlResult::DisableControlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisableControlResult& DisableControlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("operationIdentifier")) {
     m_operationIdentifier = jsonValue.GetString("operationIdentifier");

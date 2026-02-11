@@ -20,6 +20,7 @@ using namespace Aws;
 StartWebRTCContactResult::StartWebRTCContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartWebRTCContactResult& StartWebRTCContactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectionData")) {
     m_connectionData = jsonValue.GetObject("ConnectionData");

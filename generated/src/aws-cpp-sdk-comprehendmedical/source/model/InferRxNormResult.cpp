@@ -20,6 +20,7 @@ using namespace Aws;
 InferRxNormResult::InferRxNormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 InferRxNormResult& InferRxNormResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Entities")) {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");

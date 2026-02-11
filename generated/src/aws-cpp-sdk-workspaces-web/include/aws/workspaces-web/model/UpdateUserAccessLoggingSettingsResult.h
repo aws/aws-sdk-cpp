@@ -59,10 +59,13 @@ class UpdateUserAccessLoggingSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   UserAccessLoggingSettings m_userAccessLoggingSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userAccessLoggingSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

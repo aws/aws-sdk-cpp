@@ -20,6 +20,7 @@ using namespace Aws;
 StopEntitiesDetectionV2JobResult::StopEntitiesDetectionV2JobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopEntitiesDetectionV2JobResult& StopEntitiesDetectionV2JobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");

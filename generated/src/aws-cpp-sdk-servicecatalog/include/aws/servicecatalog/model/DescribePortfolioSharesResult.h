@@ -83,12 +83,15 @@ class DescribePortfolioSharesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextPageToken;
 
   Aws::Vector<PortfolioShareDetail> m_portfolioShareDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_portfolioShareDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

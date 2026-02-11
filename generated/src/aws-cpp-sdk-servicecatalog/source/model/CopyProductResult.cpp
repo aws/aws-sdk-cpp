@@ -20,6 +20,7 @@ using namespace Aws;
 CopyProductResult::CopyProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CopyProductResult& CopyProductResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CopyProductToken")) {
     m_copyProductToken = jsonValue.GetString("CopyProductToken");

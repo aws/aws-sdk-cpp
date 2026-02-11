@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteLandingZoneResult::DeleteLandingZoneResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteLandingZoneResult& DeleteLandingZoneResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("operationIdentifier")) {
     m_operationIdentifier = jsonValue.GetString("operationIdentifier");

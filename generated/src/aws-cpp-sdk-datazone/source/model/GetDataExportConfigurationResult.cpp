@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataExportConfigurationResult::GetDataExportConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataExportConfigurationResult& GetDataExportConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("isExportEnabled")) {
     m_isExportEnabled = jsonValue.GetBool("isExportEnabled");

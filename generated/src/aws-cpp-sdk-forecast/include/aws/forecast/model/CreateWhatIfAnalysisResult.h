@@ -57,10 +57,13 @@ class CreateWhatIfAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_whatIfAnalysisArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_whatIfAnalysisArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

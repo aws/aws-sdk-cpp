@@ -152,6 +152,8 @@ class DescribeStateMachineAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_stateMachineAliasArn;
 
@@ -166,6 +168,7 @@ class DescribeStateMachineAliasResult {
   Aws::Utils::DateTime m_updateDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stateMachineAliasArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 StartBgpFailoverTestResult::StartBgpFailoverTestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartBgpFailoverTestResult& StartBgpFailoverTestResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("virtualInterfaceTest")) {
     m_virtualInterfaceTest = jsonValue.GetObject("virtualInterfaceTest");

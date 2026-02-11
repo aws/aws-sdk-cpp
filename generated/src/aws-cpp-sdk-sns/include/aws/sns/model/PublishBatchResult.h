@@ -89,12 +89,15 @@ class PublishBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<PublishBatchResultEntry> m_successful;
 
   Aws::Vector<BatchResultErrorEntry> m_failed;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

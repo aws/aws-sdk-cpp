@@ -20,6 +20,7 @@ using namespace Aws;
 GetServicesInScopeResult::GetServicesInScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetServicesInScopeResult& GetServicesInScopeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("serviceMetadata")) {
     Aws::Utils::Array<JsonView> serviceMetadataJsonList = jsonValue.GetArray("serviceMetadata");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListFeaturedResultsSetsResult::ListFeaturedResultsSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFeaturedResultsSetsResult& ListFeaturedResultsSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FeaturedResultsSetSummaryItems")) {
     Aws::Utils::Array<JsonView> featuredResultsSetSummaryItemsJsonList = jsonValue.GetArray("FeaturedResultsSetSummaryItems");

@@ -239,6 +239,8 @@ class CreateCapacityReservationFleetResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_capacityReservationFleetId;
 
@@ -263,6 +265,7 @@ class CreateCapacityReservationFleetResponse {
   Aws::Vector<Tag> m_tags;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_capacityReservationFleetIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_totalTargetCapacityHasBeenSet = false;

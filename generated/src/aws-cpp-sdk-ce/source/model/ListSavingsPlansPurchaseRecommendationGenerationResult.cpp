@@ -24,6 +24,7 @@ ListSavingsPlansPurchaseRecommendationGenerationResult::ListSavingsPlansPurchase
 
 ListSavingsPlansPurchaseRecommendationGenerationResult& ListSavingsPlansPurchaseRecommendationGenerationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GenerationSummaryList")) {
     Aws::Utils::Array<JsonView> generationSummaryListJsonList = jsonValue.GetArray("GenerationSummaryList");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCustomDataIdentifierResult::CreateCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCustomDataIdentifierResult& CreateCustomDataIdentifierResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("customDataIdentifierId")) {
     m_customDataIdentifierId = jsonValue.GetString("customDataIdentifierId");

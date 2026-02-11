@@ -23,6 +23,7 @@ DescribeS3AccessPointAttachmentsResult::DescribeS3AccessPointAttachmentsResult(c
 
 DescribeS3AccessPointAttachmentsResult& DescribeS3AccessPointAttachmentsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("S3AccessPointAttachments")) {
     Aws::Utils::Array<JsonView> s3AccessPointAttachmentsJsonList = jsonValue.GetArray("S3AccessPointAttachments");

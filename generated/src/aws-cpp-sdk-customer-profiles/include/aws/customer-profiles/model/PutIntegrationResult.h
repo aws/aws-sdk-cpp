@@ -275,6 +275,8 @@ class PutIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -301,6 +303,7 @@ class PutIntegrationResult {
   Scope m_scope{Scope::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_uriHasBeenSet = false;
   bool m_objectTypeNameHasBeenSet = false;

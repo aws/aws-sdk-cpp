@@ -20,6 +20,7 @@ using namespace Aws;
 CalculateRoutesResult::CalculateRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CalculateRoutesResult& CalculateRoutesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LegGeometryFormat")) {
     m_legGeometryFormat = GeometryFormatMapper::GetGeometryFormatForName(jsonValue.GetString("LegGeometryFormat"));

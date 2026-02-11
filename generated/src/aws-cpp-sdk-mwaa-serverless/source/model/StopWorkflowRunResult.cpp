@@ -20,6 +20,7 @@ using namespace Aws;
 StopWorkflowRunResult::StopWorkflowRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopWorkflowRunResult& StopWorkflowRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WorkflowArn")) {
     m_workflowArn = jsonValue.GetString("WorkflowArn");

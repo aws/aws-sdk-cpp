@@ -74,12 +74,15 @@ class AssociateWhatsAppBusinessAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WhatsAppSignupCallbackResult m_signupCallbackResult;
 
   int m_statusCode{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_signupCallbackResultHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

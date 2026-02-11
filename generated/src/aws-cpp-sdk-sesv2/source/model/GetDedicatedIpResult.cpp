@@ -20,6 +20,7 @@ using namespace Aws;
 GetDedicatedIpResult::GetDedicatedIpResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDedicatedIpResult& GetDedicatedIpResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DedicatedIp")) {
     m_dedicatedIp = jsonValue.GetObject("DedicatedIp");

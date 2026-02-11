@@ -20,6 +20,7 @@ using namespace Aws;
 ListDeadLetterSourceQueuesResult::ListDeadLetterSourceQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDeadLetterSourceQueuesResult& ListDeadLetterSourceQueuesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queueUrls")) {
     Aws::Utils::Array<JsonView> queueUrlsJsonList = jsonValue.GetArray("queueUrls");

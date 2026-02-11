@@ -210,6 +210,8 @@ class DescribeForecastExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_forecastExportJobArn;
 
@@ -230,6 +232,7 @@ class DescribeForecastExportJobResult {
   Aws::String m_format;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_forecastExportJobArnHasBeenSet = false;
   bool m_forecastExportJobNameHasBeenSet = false;
   bool m_forecastArnHasBeenSet = false;

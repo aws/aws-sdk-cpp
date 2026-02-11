@@ -79,12 +79,15 @@ class CreateRegexMatchSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RegexMatchSet m_regexMatchSet;
 
   Aws::String m_changeToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_regexMatchSetHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

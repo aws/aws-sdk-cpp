@@ -146,6 +146,8 @@ class CreateProvisioningProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -160,6 +162,7 @@ class CreateProvisioningProfileResult {
   Aws::String m_claimCertificatePrivateKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_provisioningTypeHasBeenSet = false;

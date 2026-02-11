@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFileSystemResult::DeleteFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFileSystemResult& DeleteFileSystemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileSystemId")) {
     m_fileSystemId = jsonValue.GetString("FileSystemId");

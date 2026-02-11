@@ -20,6 +20,7 @@ using namespace Aws;
 GetKxScalingGroupResult::GetKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKxScalingGroupResult& GetKxScalingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scalingGroupName")) {
     m_scalingGroupName = jsonValue.GetString("scalingGroupName");

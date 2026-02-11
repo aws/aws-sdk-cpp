@@ -63,10 +63,13 @@ class CreateVpnGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VpnGateway m_vpnGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpnGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

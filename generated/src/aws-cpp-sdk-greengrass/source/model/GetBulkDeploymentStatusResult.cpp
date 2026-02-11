@@ -20,6 +20,7 @@ using namespace Aws;
 GetBulkDeploymentStatusResult::GetBulkDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBulkDeploymentStatusResult& GetBulkDeploymentStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BulkDeploymentMetrics")) {
     m_bulkDeploymentMetrics = jsonValue.GetObject("BulkDeploymentMetrics");

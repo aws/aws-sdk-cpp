@@ -20,6 +20,7 @@ using namespace Aws;
 GetOutpostResult::GetOutpostResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOutpostResult& GetOutpostResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Outpost")) {
     m_outpost = jsonValue.GetObject("Outpost");

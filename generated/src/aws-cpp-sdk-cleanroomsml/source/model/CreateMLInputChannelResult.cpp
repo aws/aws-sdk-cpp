@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMLInputChannelResult::CreateMLInputChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMLInputChannelResult& CreateMLInputChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mlInputChannelArn")) {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");

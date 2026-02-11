@@ -85,12 +85,15 @@ class GetHostedZoneLimitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HostedZoneLimit m_limit;
 
   long long m_count{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_limitHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

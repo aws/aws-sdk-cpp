@@ -204,6 +204,8 @@ class ListRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Record> m_records;
 
@@ -224,6 +226,7 @@ class ListRecordsResult {
   Aws::String m_syncSessionToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_countHasBeenSet = false;

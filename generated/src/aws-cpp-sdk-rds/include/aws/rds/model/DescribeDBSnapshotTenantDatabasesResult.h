@@ -85,12 +85,15 @@ class DescribeDBSnapshotTenantDatabasesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<DBSnapshotTenantDatabase> m_dBSnapshotTenantDatabases;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_dBSnapshotTenantDatabasesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

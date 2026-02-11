@@ -56,10 +56,13 @@ class ModifyClusterSubnetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ClusterSubnetGroup m_clusterSubnetGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

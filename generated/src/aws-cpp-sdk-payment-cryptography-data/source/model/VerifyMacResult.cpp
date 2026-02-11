@@ -20,6 +20,7 @@ using namespace Aws;
 VerifyMacResult::VerifyMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VerifyMacResult& VerifyMacResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyArn")) {
     m_keyArn = jsonValue.GetString("KeyArn");

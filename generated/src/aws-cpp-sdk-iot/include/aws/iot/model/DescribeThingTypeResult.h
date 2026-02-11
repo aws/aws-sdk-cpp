@@ -136,6 +136,8 @@ class DescribeThingTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_thingTypeName;
 
@@ -148,6 +150,7 @@ class DescribeThingTypeResult {
   ThingTypeMetadata m_thingTypeMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_thingTypeNameHasBeenSet = false;
   bool m_thingTypeIdHasBeenSet = false;
   bool m_thingTypeArnHasBeenSet = false;

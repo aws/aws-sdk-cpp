@@ -137,6 +137,8 @@ class GetSatelliteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_satelliteId;
 
@@ -149,6 +151,7 @@ class GetSatelliteResult {
   EphemerisMetaData m_currentEphemeris;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_satelliteIdHasBeenSet = false;
   bool m_satelliteArnHasBeenSet = false;
   bool m_noradSatelliteIDHasBeenSet = false;

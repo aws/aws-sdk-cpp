@@ -20,6 +20,7 @@ using namespace Aws;
 GetSignedBluinsightsUrlResult::GetSignedBluinsightsUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSignedBluinsightsUrlResult& GetSignedBluinsightsUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("signedBiUrl")) {
     m_signedBiUrl = jsonValue.GetString("signedBiUrl");

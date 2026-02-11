@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeApplicationStateResult::DescribeApplicationStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeApplicationStateResult& DescribeApplicationStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationStatus")) {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));

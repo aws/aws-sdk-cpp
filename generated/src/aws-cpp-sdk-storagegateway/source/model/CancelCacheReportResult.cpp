@@ -20,6 +20,7 @@ using namespace Aws;
 CancelCacheReportResult::CancelCacheReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelCacheReportResult& CancelCacheReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CacheReportARN")) {
     m_cacheReportARN = jsonValue.GetString("CacheReportARN");

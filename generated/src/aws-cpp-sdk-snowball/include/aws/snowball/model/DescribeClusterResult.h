@@ -59,10 +59,13 @@ class DescribeClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ClusterMetadata m_clusterMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

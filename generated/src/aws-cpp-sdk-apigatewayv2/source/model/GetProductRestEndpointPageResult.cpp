@@ -20,6 +20,7 @@ using namespace Aws;
 GetProductRestEndpointPageResult::GetProductRestEndpointPageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetProductRestEndpointPageResult& GetProductRestEndpointPageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("displayContent")) {
     m_displayContent = jsonValue.GetObject("displayContent");

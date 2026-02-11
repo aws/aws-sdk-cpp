@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateTrialComponentResult::DisassociateTrialComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateTrialComponentResult& DisassociateTrialComponentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrialComponentArn")) {
     m_trialComponentArn = jsonValue.GetString("TrialComponentArn");

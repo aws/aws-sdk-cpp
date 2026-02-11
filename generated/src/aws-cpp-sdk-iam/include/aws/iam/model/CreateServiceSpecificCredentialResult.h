@@ -63,10 +63,13 @@ class CreateServiceSpecificCredentialResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceSpecificCredential m_serviceSpecificCredential;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceSpecificCredentialHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -226,6 +226,8 @@ class RestoreSnapshotFromRecycleBinResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_snapshotId;
 
@@ -250,6 +252,7 @@ class RestoreSnapshotFromRecycleBinResponse {
   SSEType m_sseType{SSEType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotIdHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

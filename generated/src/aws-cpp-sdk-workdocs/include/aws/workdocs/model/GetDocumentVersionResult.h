@@ -82,12 +82,15 @@ class GetDocumentVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DocumentVersionMetadata m_metadata;
 
   Aws::Map<Aws::String, Aws::String> m_customMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metadataHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

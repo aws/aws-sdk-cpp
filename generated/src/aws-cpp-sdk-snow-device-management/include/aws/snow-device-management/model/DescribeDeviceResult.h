@@ -254,6 +254,8 @@ class DescribeDeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_associatedWithJob;
 
@@ -278,6 +280,7 @@ class DescribeDeviceResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associatedWithJobHasBeenSet = false;
   bool m_deviceCapacitiesHasBeenSet = false;
   bool m_deviceStateHasBeenSet = false;

@@ -72,12 +72,15 @@ class DeleteFirewallResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Firewall m_firewall;
 
   FirewallStatus m_firewallStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_firewallHasBeenSet = false;
   bool m_firewallStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

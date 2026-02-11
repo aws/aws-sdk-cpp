@@ -20,6 +20,7 @@ using namespace Aws;
 GetStaticIpResult::GetStaticIpResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStaticIpResult& GetStaticIpResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("staticIp")) {
     m_staticIp = jsonValue.GetObject("staticIp");

@@ -23,6 +23,7 @@ AssociateWhatsAppBusinessAccountResult::AssociateWhatsAppBusinessAccountResult(c
 
 AssociateWhatsAppBusinessAccountResult& AssociateWhatsAppBusinessAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("signupCallbackResult")) {
     m_signupCallbackResult = jsonValue.GetObject("signupCallbackResult");

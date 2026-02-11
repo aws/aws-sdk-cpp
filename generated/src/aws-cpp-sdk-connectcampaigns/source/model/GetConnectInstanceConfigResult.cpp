@@ -20,6 +20,7 @@ using namespace Aws;
 GetConnectInstanceConfigResult::GetConnectInstanceConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetConnectInstanceConfigResult& GetConnectInstanceConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectInstanceConfig")) {
     m_connectInstanceConfig = jsonValue.GetObject("connectInstanceConfig");

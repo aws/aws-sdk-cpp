@@ -56,10 +56,13 @@ class UpdateAutomaticTapeCreationPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_gatewayARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

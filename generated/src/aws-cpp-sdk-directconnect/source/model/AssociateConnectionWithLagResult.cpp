@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateConnectionWithLagResult::AssociateConnectionWithLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ownerAccount")) {
     m_ownerAccount = jsonValue.GetString("ownerAccount");

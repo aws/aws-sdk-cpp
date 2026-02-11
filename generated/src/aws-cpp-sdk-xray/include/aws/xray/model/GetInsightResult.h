@@ -58,10 +58,13 @@ class GetInsightResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Insight m_insight;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_insightHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAccountSettingsResult::DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAccountSettingsResult& DescribeAccountSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MinimumThroughputBillingCommitment")) {
     m_minimumThroughputBillingCommitment = jsonValue.GetObject("MinimumThroughputBillingCommitment");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMLTransformResult::DeleteMLTransformResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMLTransformResult& DeleteMLTransformResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransformId")) {
     m_transformId = jsonValue.GetString("TransformId");

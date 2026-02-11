@@ -20,6 +20,7 @@ using namespace Aws;
 CopyBackupResult::CopyBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CopyBackupResult& CopyBackupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Backup")) {
     m_backup = jsonValue.GetObject("Backup");

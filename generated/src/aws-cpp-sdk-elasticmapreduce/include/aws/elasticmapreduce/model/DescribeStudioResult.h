@@ -58,10 +58,13 @@ class DescribeStudioResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Studio m_studio;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_studioHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

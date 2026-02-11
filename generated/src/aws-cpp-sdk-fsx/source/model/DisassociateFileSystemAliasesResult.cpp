@@ -22,6 +22,7 @@ DisassociateFileSystemAliasesResult::DisassociateFileSystemAliasesResult(const A
 }
 
 DisassociateFileSystemAliasesResult& DisassociateFileSystemAliasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Aliases")) {
     Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");

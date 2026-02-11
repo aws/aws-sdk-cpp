@@ -20,6 +20,7 @@ using namespace Aws;
 AdminGetUserResult::AdminGetUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AdminGetUserResult& AdminGetUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Username")) {
     m_username = jsonValue.GetString("Username");

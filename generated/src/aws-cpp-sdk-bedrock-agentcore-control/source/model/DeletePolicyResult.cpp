@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePolicyResult::DeletePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePolicyResult& DeletePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("policyId")) {
     m_policyId = jsonValue.GetString("policyId");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListCaseRulesResult::ListCaseRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCaseRulesResult& ListCaseRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("caseRules")) {
     Aws::Utils::Array<JsonView> caseRulesJsonList = jsonValue.GetArray("caseRules");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetBrowserSettingsResult::GetBrowserSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBrowserSettingsResult& GetBrowserSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("browserSettings")) {
     m_browserSettings = jsonValue.GetObject("browserSettings");

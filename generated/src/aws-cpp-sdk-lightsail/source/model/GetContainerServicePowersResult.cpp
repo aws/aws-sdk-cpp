@@ -20,6 +20,7 @@ using namespace Aws;
 GetContainerServicePowersResult::GetContainerServicePowersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetContainerServicePowersResult& GetContainerServicePowersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("powers")) {
     Aws::Utils::Array<JsonView> powersJsonList = jsonValue.GetArray("powers");

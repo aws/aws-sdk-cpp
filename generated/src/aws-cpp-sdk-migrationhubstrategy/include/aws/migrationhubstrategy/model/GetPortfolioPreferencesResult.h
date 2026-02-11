@@ -112,6 +112,8 @@ class GetPortfolioPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
 
@@ -122,6 +124,7 @@ class GetPortfolioPreferencesResult {
   PrioritizeBusinessGoals m_prioritizeBusinessGoals;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationModeHasBeenSet = false;
   bool m_applicationPreferencesHasBeenSet = false;
   bool m_databasePreferencesHasBeenSet = false;

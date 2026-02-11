@@ -20,6 +20,7 @@ using namespace Aws;
 ResetJobBookmarkResult::ResetJobBookmarkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ResetJobBookmarkResult& ResetJobBookmarkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobBookmarkEntry")) {
     m_jobBookmarkEntry = jsonValue.GetObject("JobBookmarkEntry");

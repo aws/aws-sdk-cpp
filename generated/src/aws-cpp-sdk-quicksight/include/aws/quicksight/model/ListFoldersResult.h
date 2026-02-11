@@ -99,6 +99,8 @@ class ListFoldersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_status{0};
 
@@ -107,6 +109,7 @@ class ListFoldersResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_folderSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

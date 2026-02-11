@@ -20,6 +20,7 @@ using namespace Aws;
 ImportTableResult::ImportTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportTableResult& ImportTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImportTableDescription")) {
     m_importTableDescription = jsonValue.GetObject("ImportTableDescription");

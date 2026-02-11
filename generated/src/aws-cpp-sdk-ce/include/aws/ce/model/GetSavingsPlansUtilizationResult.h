@@ -87,12 +87,15 @@ class GetSavingsPlansUtilizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SavingsPlansUtilizationByTime> m_savingsPlansUtilizationsByTime;
 
   SavingsPlansUtilizationAggregates m_total;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_savingsPlansUtilizationsByTimeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

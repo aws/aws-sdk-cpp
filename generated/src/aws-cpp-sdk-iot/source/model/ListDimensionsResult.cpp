@@ -20,6 +20,7 @@ using namespace Aws;
 ListDimensionsResult::ListDimensionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDimensionsResult& ListDimensionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dimensionNames")) {
     Aws::Utils::Array<JsonView> dimensionNamesJsonList = jsonValue.GetArray("dimensionNames");

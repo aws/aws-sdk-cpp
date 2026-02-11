@@ -20,6 +20,7 @@ using namespace Aws;
 PutGroupingConfigurationResult::PutGroupingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutGroupingConfigurationResult& PutGroupingConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupingConfiguration")) {
     m_groupingConfiguration = jsonValue.GetObject("GroupingConfiguration");

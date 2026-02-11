@@ -124,6 +124,8 @@ class UpdateRecoveryPointLifecycleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_backupVaultArn;
 
@@ -134,6 +136,7 @@ class UpdateRecoveryPointLifecycleResult {
   CalculatedLifecycle m_calculatedLifecycle;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;

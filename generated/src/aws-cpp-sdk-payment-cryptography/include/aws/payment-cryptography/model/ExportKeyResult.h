@@ -59,10 +59,13 @@ class ExportKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WrappedKey m_wrappedKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_wrappedKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateUserGroupResult::CreateUserGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateUserGroupResult& CreateUserGroupResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

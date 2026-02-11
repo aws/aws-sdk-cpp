@@ -86,12 +86,15 @@ class DescribeServerlessCachesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ServerlessCache> m_serverlessCaches;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_serverlessCachesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

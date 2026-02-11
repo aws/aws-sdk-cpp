@@ -72,12 +72,15 @@ class CreateProfileShareResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_shareId;
 
   Aws::String m_profileArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_shareIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

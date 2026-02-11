@@ -98,6 +98,8 @@ class SetSubnetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AvailabilityZone> m_availabilityZones;
 
@@ -106,6 +108,7 @@ class SetSubnetsResult {
   EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat{EnablePrefixForIpv6SourceNatEnum::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;

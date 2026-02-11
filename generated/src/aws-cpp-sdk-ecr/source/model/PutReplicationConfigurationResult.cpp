@@ -22,6 +22,7 @@ PutReplicationConfigurationResult::PutReplicationConfigurationResult(const Aws::
 }
 
 PutReplicationConfigurationResult& PutReplicationConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("replicationConfiguration")) {
     m_replicationConfiguration = jsonValue.GetObject("replicationConfiguration");

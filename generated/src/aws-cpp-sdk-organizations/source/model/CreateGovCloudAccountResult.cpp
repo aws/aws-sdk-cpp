@@ -20,6 +20,7 @@ using namespace Aws;
 CreateGovCloudAccountResult::CreateGovCloudAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateGovCloudAccountResult& CreateGovCloudAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CreateAccountStatus")) {
     m_createAccountStatus = jsonValue.GetObject("CreateAccountStatus");

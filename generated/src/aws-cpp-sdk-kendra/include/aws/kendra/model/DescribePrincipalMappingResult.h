@@ -130,6 +130,8 @@ class DescribePrincipalMappingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_indexId;
 
@@ -140,6 +142,7 @@ class DescribePrincipalMappingResult {
   Aws::Vector<GroupOrderingIdSummary> m_groupOrderingIdSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_indexIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;

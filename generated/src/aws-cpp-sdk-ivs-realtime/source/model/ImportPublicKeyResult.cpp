@@ -20,6 +20,7 @@ using namespace Aws;
 ImportPublicKeyResult::ImportPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportPublicKeyResult& ImportPublicKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("publicKey")) {
     m_publicKey = jsonValue.GetObject("publicKey");

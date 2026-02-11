@@ -134,6 +134,8 @@ class GetTemporaryGlueTableCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_accessKeyId;
 
@@ -146,6 +148,7 @@ class GetTemporaryGlueTableCredentialsResult {
   Aws::Vector<Aws::String> m_vendedS3Path;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessKeyIdHasBeenSet = false;
   bool m_secretAccessKeyHasBeenSet = false;
   bool m_sessionTokenHasBeenSet = false;

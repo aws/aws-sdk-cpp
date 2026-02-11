@@ -23,6 +23,7 @@ ListGroupingAttributeDefinitionsResult::ListGroupingAttributeDefinitionsResult(c
 
 ListGroupingAttributeDefinitionsResult& ListGroupingAttributeDefinitionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GroupingAttributeDefinitions")) {
     Aws::Utils::Array<JsonView> groupingAttributeDefinitionsJsonList = jsonValue.GetArray("GroupingAttributeDefinitions");

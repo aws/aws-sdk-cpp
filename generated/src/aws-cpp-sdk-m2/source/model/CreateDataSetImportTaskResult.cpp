@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataSetImportTaskResult::CreateDataSetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataSetImportTaskResult& CreateDataSetImportTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskId")) {
     m_taskId = jsonValue.GetString("taskId");

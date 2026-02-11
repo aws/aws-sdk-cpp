@@ -370,6 +370,8 @@ class GetComponentTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -406,6 +408,7 @@ class GetComponentTypeResult {
   Aws::Map<Aws::String, CompositeComponentTypeResponse> m_compositeComponentTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_isSingletonHasBeenSet = false;
   bool m_componentTypeIdHasBeenSet = false;

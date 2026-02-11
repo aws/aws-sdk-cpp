@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountBalanceResult::GetAccountBalanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountBalanceResult& GetAccountBalanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AvailableBalance")) {
     m_availableBalance = jsonValue.GetString("AvailableBalance");

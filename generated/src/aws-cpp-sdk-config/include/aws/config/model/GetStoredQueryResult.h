@@ -58,10 +58,13 @@ class GetStoredQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StoredQuery m_storedQuery;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_storedQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

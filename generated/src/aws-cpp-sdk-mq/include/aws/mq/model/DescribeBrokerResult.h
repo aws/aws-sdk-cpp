@@ -669,6 +669,8 @@ class DescribeBrokerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ActionRequired> m_actionsRequired;
 
@@ -737,6 +739,7 @@ class DescribeBrokerResult {
   DataReplicationMode m_pendingDataReplicationMode{DataReplicationMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionsRequiredHasBeenSet = false;
   bool m_authenticationStrategyHasBeenSet = false;
   bool m_autoMinorVersionUpgradeHasBeenSet = false;

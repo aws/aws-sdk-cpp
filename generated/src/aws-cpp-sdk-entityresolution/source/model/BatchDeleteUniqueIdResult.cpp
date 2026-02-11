@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteUniqueIdResult& BatchDeleteUniqueIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = DeleteUniqueIdStatusMapper::GetDeleteUniqueIdStatusForName(jsonValue.GetString("status"));

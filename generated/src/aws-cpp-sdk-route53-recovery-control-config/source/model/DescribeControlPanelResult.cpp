@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeControlPanelResult::DescribeControlPanelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeControlPanelResult& DescribeControlPanelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ControlPanel")) {
     m_controlPanel = jsonValue.GetObject("ControlPanel");

@@ -59,10 +59,13 @@ class CreateCollectionGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CreateCollectionGroupDetail m_createCollectionGroupDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createCollectionGroupDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

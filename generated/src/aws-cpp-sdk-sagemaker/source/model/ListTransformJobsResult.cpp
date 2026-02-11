@@ -20,6 +20,7 @@ using namespace Aws;
 ListTransformJobsResult::ListTransformJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTransformJobsResult& ListTransformJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransformJobSummaries")) {
     Aws::Utils::Array<JsonView> transformJobSummariesJsonList = jsonValue.GetArray("TransformJobSummaries");

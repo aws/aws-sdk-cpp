@@ -59,10 +59,13 @@ class CreateMemoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Memory m_memory;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_memoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

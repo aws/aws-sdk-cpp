@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMatchmakingRuleSetResult::CreateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMatchmakingRuleSetResult& CreateMatchmakingRuleSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleSet")) {
     m_ruleSet = jsonValue.GetObject("RuleSet");

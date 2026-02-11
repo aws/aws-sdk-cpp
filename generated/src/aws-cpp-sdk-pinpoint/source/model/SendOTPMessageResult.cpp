@@ -20,6 +20,7 @@ using namespace Aws;
 SendOTPMessageResult::SendOTPMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendOTPMessageResult& SendOTPMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_messageResponse = jsonValue;
   m_messageResponseHasBeenSet = true;

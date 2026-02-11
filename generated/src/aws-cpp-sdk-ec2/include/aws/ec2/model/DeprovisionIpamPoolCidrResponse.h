@@ -58,10 +58,13 @@ class DeprovisionIpamPoolCidrResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamPoolCidr m_ipamPoolCidr;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamPoolCidrHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ListHubsResult::ListHubsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListHubsResult& ListHubsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HubSummaries")) {
     Aws::Utils::Array<JsonView> hubSummariesJsonList = jsonValue.GetArray("HubSummaries");

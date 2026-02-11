@@ -238,6 +238,8 @@ class DescribeModelCardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_modelCardArn;
 
@@ -262,6 +264,7 @@ class DescribeModelCardResult {
   ModelCardProcessingStatus m_modelCardProcessingStatus{ModelCardProcessingStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelCardArnHasBeenSet = false;
   bool m_modelCardNameHasBeenSet = false;
   bool m_modelCardVersionHasBeenSet = false;

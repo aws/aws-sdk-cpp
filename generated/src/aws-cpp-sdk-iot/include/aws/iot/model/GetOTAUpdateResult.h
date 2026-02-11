@@ -58,10 +58,13 @@ class GetOTAUpdateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OTAUpdateInfo m_otaUpdateInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_otaUpdateInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

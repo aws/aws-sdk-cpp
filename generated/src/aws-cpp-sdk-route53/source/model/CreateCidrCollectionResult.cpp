@@ -19,6 +19,7 @@ using namespace Aws;
 CreateCidrCollectionResult::CreateCidrCollectionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateCidrCollectionResult& CreateCidrCollectionResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

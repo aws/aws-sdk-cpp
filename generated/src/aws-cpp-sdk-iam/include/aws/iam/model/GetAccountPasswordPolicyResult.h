@@ -65,10 +65,13 @@ class GetAccountPasswordPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PasswordPolicy m_passwordPolicy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_passwordPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

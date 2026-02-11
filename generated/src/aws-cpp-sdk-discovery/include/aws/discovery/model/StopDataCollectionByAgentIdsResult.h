@@ -69,10 +69,13 @@ class StopDataCollectionByAgentIdsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AgentConfigurationStatus> m_agentsConfigurationStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agentsConfigurationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

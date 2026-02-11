@@ -20,6 +20,7 @@ using namespace Aws;
 DiscoverInputSchemaResult::DiscoverInputSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InputSchema")) {
     m_inputSchema = jsonValue.GetObject("InputSchema");

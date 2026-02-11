@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDynamicThingGroupResult::CreateDynamicThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDynamicThingGroupResult& CreateDynamicThingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("thingGroupName")) {
     m_thingGroupName = jsonValue.GetString("thingGroupName");

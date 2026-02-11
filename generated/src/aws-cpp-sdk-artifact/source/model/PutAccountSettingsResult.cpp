@@ -20,6 +20,7 @@ using namespace Aws;
 PutAccountSettingsResult::PutAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutAccountSettingsResult& PutAccountSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountSettings")) {
     m_accountSettings = jsonValue.GetObject("accountSettings");

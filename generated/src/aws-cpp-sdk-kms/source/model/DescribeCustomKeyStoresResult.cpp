@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCustomKeyStoresResult::DescribeCustomKeyStoresResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCustomKeyStoresResult& DescribeCustomKeyStoresResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomKeyStores")) {
     Aws::Utils::Array<JsonView> customKeyStoresJsonList = jsonValue.GetArray("CustomKeyStores");

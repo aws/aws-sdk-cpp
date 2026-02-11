@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeConnectorEntityResult::DescribeConnectorEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeConnectorEntityResult& DescribeConnectorEntityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectorEntityFields")) {
     Aws::Utils::Array<JsonView> connectorEntityFieldsJsonList = jsonValue.GetArray("connectorEntityFields");

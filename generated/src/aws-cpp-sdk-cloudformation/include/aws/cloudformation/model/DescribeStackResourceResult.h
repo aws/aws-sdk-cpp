@@ -65,10 +65,13 @@ class DescribeStackResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StackResourceDetail m_stackResourceDetail;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackResourceDetailHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

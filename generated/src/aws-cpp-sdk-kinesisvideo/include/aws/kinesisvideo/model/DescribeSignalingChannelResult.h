@@ -59,10 +59,13 @@ class DescribeSignalingChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ChannelInfo m_channelInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

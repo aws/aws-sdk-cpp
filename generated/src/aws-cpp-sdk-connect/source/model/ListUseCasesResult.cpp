@@ -20,6 +20,7 @@ using namespace Aws;
 ListUseCasesResult::ListUseCasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListUseCasesResult& ListUseCasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UseCaseSummaryList")) {
     Aws::Utils::Array<JsonView> useCaseSummaryListJsonList = jsonValue.GetArray("UseCaseSummaryList");

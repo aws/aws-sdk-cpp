@@ -58,10 +58,13 @@ class GetAgentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Agent m_agent;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

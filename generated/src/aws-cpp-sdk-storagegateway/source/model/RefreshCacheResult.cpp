@@ -20,6 +20,7 @@ using namespace Aws;
 RefreshCacheResult::RefreshCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RefreshCacheResult& RefreshCacheResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileShareARN")) {
     m_fileShareARN = jsonValue.GetString("FileShareARN");

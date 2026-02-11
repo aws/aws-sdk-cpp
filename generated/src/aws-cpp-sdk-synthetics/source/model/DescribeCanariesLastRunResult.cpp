@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCanariesLastRunResult::DescribeCanariesLastRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCanariesLastRunResult& DescribeCanariesLastRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CanariesLastRun")) {
     Aws::Utils::Array<JsonView> canariesLastRunJsonList = jsonValue.GetArray("CanariesLastRun");

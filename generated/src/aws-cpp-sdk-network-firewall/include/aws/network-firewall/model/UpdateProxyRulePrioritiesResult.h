@@ -144,6 +144,8 @@ class UpdateProxyRulePrioritiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_proxyRuleGroupName;
 
@@ -156,6 +158,7 @@ class UpdateProxyRulePrioritiesResult {
   Aws::String m_updateToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_proxyRuleGroupArnHasBeenSet = false;
   bool m_ruleGroupRequestPhaseHasBeenSet = false;

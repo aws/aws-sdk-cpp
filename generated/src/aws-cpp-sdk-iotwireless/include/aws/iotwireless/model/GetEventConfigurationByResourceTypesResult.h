@@ -135,6 +135,8 @@ class GetEventConfigurationByResourceTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
 
@@ -147,6 +149,7 @@ class GetEventConfigurationByResourceTypesResult {
   MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deviceRegistrationStateHasBeenSet = false;
   bool m_proximityHasBeenSet = false;
   bool m_joinHasBeenSet = false;

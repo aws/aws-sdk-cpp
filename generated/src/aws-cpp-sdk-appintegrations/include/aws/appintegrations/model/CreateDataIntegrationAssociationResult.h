@@ -76,12 +76,15 @@ class CreateDataIntegrationAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dataIntegrationAssociationId;
 
   Aws::String m_dataIntegrationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataIntegrationAssociationIdHasBeenSet = false;
   bool m_dataIntegrationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

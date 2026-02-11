@@ -22,6 +22,7 @@ GetResourceShareAssociationsResult::GetResourceShareAssociationsResult(const Aws
 }
 
 GetResourceShareAssociationsResult& GetResourceShareAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceShareAssociations")) {
     Aws::Utils::Array<JsonView> resourceShareAssociationsJsonList = jsonValue.GetArray("resourceShareAssociations");

@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateResourceTypesResult::DisassociateResourceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateResourceTypesResult& DisassociateResourceTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationRecorder")) {
     m_configurationRecorder = jsonValue.GetObject("ConfigurationRecorder");

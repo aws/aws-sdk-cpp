@@ -59,10 +59,13 @@ class GetTargetSelectionRulesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_targetSelectionRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_targetSelectionRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

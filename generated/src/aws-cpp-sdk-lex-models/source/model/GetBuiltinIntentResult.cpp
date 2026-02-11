@@ -20,6 +20,7 @@ using namespace Aws;
 GetBuiltinIntentResult::GetBuiltinIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBuiltinIntentResult& GetBuiltinIntentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("signature")) {
     m_signature = jsonValue.GetString("signature");

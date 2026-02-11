@@ -65,10 +65,13 @@ class DescribeVpcClassicLinkResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VpcClassicLink> m_vpcs;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

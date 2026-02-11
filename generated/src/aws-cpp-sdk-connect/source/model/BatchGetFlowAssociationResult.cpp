@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetFlowAssociationResult::BatchGetFlowAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetFlowAssociationResult& BatchGetFlowAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FlowAssociationSummaryList")) {
     Aws::Utils::Array<JsonView> flowAssociationSummaryListJsonList = jsonValue.GetArray("FlowAssociationSummaryList");

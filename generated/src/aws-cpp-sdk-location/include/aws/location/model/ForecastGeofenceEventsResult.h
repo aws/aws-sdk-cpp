@@ -115,6 +115,8 @@ class ForecastGeofenceEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ForecastedEvent> m_forecastedEvents;
 
@@ -125,6 +127,7 @@ class ForecastGeofenceEventsResult {
   SpeedUnit m_speedUnit{SpeedUnit::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_forecastedEventsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_distanceUnitHasBeenSet = false;

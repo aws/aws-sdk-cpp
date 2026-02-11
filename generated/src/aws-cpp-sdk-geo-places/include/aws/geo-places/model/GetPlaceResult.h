@@ -485,6 +485,8 @@ class GetPlaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_placeId;
 
@@ -529,6 +531,7 @@ class GetPlaceResult {
   Aws::Vector<RelatedPlace> m_secondaryAddresses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_placeIdHasBeenSet = false;
   bool m_placeTypeHasBeenSet = false;
   bool m_titleHasBeenSet = false;

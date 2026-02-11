@@ -334,6 +334,8 @@ class ImportImageResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_architecture;
 
@@ -368,6 +370,7 @@ class ImportImageResponse {
   Aws::String m_usageOperation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_architectureHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;

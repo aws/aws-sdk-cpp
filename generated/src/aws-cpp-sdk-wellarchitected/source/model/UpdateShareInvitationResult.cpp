@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateShareInvitationResult::UpdateShareInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateShareInvitationResult& UpdateShareInvitationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ShareInvitation")) {
     m_shareInvitation = jsonValue.GetObject("ShareInvitation");

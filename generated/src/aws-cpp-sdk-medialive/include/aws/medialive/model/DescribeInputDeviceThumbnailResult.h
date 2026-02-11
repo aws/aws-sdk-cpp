@@ -126,6 +126,8 @@ class DescribeInputDeviceThumbnailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -138,6 +140,7 @@ class DescribeInputDeviceThumbnailResult {
   Aws::Utils::DateTime m_lastModified{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bodyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_contentLengthHasBeenSet = false;

@@ -74,12 +74,15 @@ class InvokeRestApiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_restApiStatusCode{0};
 
   Aws::Utils::Document m_restApiResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_restApiStatusCodeHasBeenSet = false;
   bool m_restApiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

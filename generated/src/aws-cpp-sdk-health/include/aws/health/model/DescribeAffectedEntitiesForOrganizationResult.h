@@ -115,6 +115,8 @@ class DescribeAffectedEntitiesForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AffectedEntity> m_entities;
 
@@ -123,6 +125,7 @@ class DescribeAffectedEntitiesForOrganizationResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_failedSetHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

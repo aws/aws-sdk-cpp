@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeScheduledQueryResult::DescribeScheduledQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeScheduledQueryResult& DescribeScheduledQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScheduledQuery")) {
     m_scheduledQuery = jsonValue.GetObject("ScheduledQuery");

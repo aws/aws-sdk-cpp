@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteTopicResult::DeleteTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteTopicResult& DeleteTopicResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");

@@ -92,6 +92,8 @@ class GetSessionEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_endpointUrl;
 
@@ -100,6 +102,7 @@ class GetSessionEndpointResult {
   Aws::Utils::DateTime m_authTokenExpirationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointUrlHasBeenSet = false;
   bool m_authTokenHasBeenSet = false;
   bool m_authTokenExpirationTimeHasBeenSet = false;

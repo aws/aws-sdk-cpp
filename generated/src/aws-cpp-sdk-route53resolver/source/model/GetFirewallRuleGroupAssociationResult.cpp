@@ -23,6 +23,7 @@ GetFirewallRuleGroupAssociationResult::GetFirewallRuleGroupAssociationResult(con
 
 GetFirewallRuleGroupAssociationResult& GetFirewallRuleGroupAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallRuleGroupAssociation")) {
     m_firewallRuleGroupAssociation = jsonValue.GetObject("FirewallRuleGroupAssociation");

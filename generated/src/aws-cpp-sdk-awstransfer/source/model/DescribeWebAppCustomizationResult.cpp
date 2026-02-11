@@ -22,6 +22,7 @@ DescribeWebAppCustomizationResult::DescribeWebAppCustomizationResult(const Aws::
 }
 
 DescribeWebAppCustomizationResult& DescribeWebAppCustomizationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WebAppCustomization")) {
     m_webAppCustomization = jsonValue.GetObject("WebAppCustomization");

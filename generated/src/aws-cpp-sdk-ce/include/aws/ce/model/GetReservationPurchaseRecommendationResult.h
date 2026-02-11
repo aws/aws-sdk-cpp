@@ -102,6 +102,8 @@ class GetReservationPurchaseRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReservationPurchaseRecommendationMetadata m_metadata;
 
@@ -110,6 +112,7 @@ class GetReservationPurchaseRecommendationResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metadataHasBeenSet = false;
   bool m_recommendationsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

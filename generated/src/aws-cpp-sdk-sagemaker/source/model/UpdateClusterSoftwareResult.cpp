@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateClusterSoftwareResult::UpdateClusterSoftwareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateClusterSoftwareResult& UpdateClusterSoftwareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ClusterArn")) {
     m_clusterArn = jsonValue.GetString("ClusterArn");

@@ -67,10 +67,13 @@ class BatchSuspendUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UserError> m_userErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

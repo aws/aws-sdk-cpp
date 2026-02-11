@@ -90,12 +90,15 @@ class BatchCreateFirewallRuleSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchCreateFirewallRuleOutputItem> m_failures;
 
   Aws::Vector<BatchCreateFirewallRuleOutputItem> m_successes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failuresHasBeenSet = false;
   bool m_successesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

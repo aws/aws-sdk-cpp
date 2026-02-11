@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteApnsVoipChannelResult::DeleteApnsVoipChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteApnsVoipChannelResult& DeleteApnsVoipChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_aPNSVoipChannelResponse = jsonValue;
   m_aPNSVoipChannelResponseHasBeenSet = true;

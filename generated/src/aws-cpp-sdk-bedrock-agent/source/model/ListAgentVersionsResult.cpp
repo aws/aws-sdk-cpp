@@ -20,6 +20,7 @@ using namespace Aws;
 ListAgentVersionsResult::ListAgentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAgentVersionsResult& ListAgentVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentVersionSummaries")) {
     Aws::Utils::Array<JsonView> agentVersionSummariesJsonList = jsonValue.GetArray("agentVersionSummaries");

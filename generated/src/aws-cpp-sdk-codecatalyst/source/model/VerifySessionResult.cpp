@@ -20,6 +20,7 @@ using namespace Aws;
 VerifySessionResult::VerifySessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VerifySessionResult& VerifySessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("identity")) {
     m_identity = jsonValue.GetString("identity");

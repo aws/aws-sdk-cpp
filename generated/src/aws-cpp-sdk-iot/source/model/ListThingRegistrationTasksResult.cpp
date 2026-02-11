@@ -20,6 +20,7 @@ using namespace Aws;
 ListThingRegistrationTasksResult::ListThingRegistrationTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListThingRegistrationTasksResult& ListThingRegistrationTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskIds")) {
     Aws::Utils::Array<JsonView> taskIdsJsonList = jsonValue.GetArray("taskIds");

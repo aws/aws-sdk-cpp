@@ -238,6 +238,8 @@ class DescribeThingRegistrationTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_taskId;
 
@@ -264,6 +266,7 @@ class DescribeThingRegistrationTaskResult {
   int m_percentageProgress{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskIdHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;

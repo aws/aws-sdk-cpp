@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIAMPolicyAssignmentResult& CreateIAMPolicyAssignmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssignmentName")) {
     m_assignmentName = jsonValue.GetString("AssignmentName");

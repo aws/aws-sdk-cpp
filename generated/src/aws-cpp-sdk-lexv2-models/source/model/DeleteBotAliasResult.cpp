@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBotAliasResult::DeleteBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBotAliasResult& DeleteBotAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botAliasId")) {
     m_botAliasId = jsonValue.GetString("botAliasId");

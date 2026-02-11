@@ -59,10 +59,13 @@ class CreateIdentityProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IdentityProviderType m_identityProvider;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityProviderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

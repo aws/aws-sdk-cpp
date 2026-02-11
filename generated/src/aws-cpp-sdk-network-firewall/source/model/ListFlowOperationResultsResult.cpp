@@ -20,6 +20,7 @@ using namespace Aws;
 ListFlowOperationResultsResult::ListFlowOperationResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFlowOperationResultsResult& ListFlowOperationResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallArn")) {
     m_firewallArn = jsonValue.GetString("FirewallArn");

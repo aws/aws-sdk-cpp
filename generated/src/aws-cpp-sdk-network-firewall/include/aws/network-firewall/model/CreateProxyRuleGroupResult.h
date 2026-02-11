@@ -83,12 +83,15 @@ class CreateProxyRuleGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProxyRuleGroup m_proxyRuleGroup;
 
   Aws::String m_updateToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_proxyRuleGroupHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

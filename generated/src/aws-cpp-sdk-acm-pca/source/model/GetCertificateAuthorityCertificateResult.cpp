@@ -23,6 +23,7 @@ GetCertificateAuthorityCertificateResult::GetCertificateAuthorityCertificateResu
 
 GetCertificateAuthorityCertificateResult& GetCertificateAuthorityCertificateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Certificate")) {
     m_certificate = jsonValue.GetString("Certificate");

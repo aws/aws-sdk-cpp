@@ -20,6 +20,7 @@ using namespace Aws;
 GetCustomDomainAssociationResult::GetCustomDomainAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCustomDomainAssociationResult& GetCustomDomainAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("customDomainCertificateArn")) {
     m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");

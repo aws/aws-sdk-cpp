@@ -262,6 +262,8 @@ class DescribeThesaurusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -290,6 +292,7 @@ class DescribeThesaurusResult {
   long long m_synonymRuleCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_indexIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;

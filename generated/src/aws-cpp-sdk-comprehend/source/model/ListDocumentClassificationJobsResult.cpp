@@ -23,6 +23,7 @@ ListDocumentClassificationJobsResult::ListDocumentClassificationJobsResult(const
 
 ListDocumentClassificationJobsResult& ListDocumentClassificationJobsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentClassificationJobPropertiesList")) {
     Aws::Utils::Array<JsonView> documentClassificationJobPropertiesListJsonList =

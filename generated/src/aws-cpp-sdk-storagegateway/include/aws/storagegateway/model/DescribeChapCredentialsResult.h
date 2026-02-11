@@ -81,10 +81,13 @@ class DescribeChapCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ChapInfo> m_chapCredentials;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_chapCredentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

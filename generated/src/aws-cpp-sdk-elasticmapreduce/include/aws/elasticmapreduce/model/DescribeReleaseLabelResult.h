@@ -129,6 +129,8 @@ class DescribeReleaseLabelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_releaseLabel;
 
@@ -139,6 +141,7 @@ class DescribeReleaseLabelResult {
   Aws::Vector<OSRelease> m_availableOSReleases;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_releaseLabelHasBeenSet = false;
   bool m_applicationsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -89,12 +89,15 @@ class BatchGetQueryExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<QueryExecution> m_queryExecutions;
 
   Aws::Vector<UnprocessedQueryExecutionId> m_unprocessedQueryExecutionIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queryExecutionsHasBeenSet = false;
   bool m_unprocessedQueryExecutionIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

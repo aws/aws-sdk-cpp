@@ -20,6 +20,7 @@ using namespace Aws;
 ListInstanceFleetsResult::ListInstanceFleetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInstanceFleetsResult& ListInstanceFleetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceFleets")) {
     Aws::Utils::Array<JsonView> instanceFleetsJsonList = jsonValue.GetArray("InstanceFleets");

@@ -22,6 +22,7 @@ GetConnectionFunction2020_05_31Result::GetConnectionFunction2020_05_31Result(Aws
 
 GetConnectionFunction2020_05_31Result& GetConnectionFunction2020_05_31Result::operator=(
     Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_connectionFunctionCode = result.TakeOwnershipOfPayload();
   m_connectionFunctionCodeHasBeenSet = true;
 

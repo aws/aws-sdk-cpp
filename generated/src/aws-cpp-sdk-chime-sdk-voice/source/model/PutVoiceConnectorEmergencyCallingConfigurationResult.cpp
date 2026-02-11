@@ -24,6 +24,7 @@ PutVoiceConnectorEmergencyCallingConfigurationResult::PutVoiceConnectorEmergency
 
 PutVoiceConnectorEmergencyCallingConfigurationResult& PutVoiceConnectorEmergencyCallingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EmergencyCallingConfiguration")) {
     m_emergencyCallingConfiguration = jsonValue.GetObject("EmergencyCallingConfiguration");

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateProxyRulePrioritiesResult::UpdateProxyRulePrioritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateProxyRulePrioritiesResult& UpdateProxyRulePrioritiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProxyRuleGroupName")) {
     m_proxyRuleGroupName = jsonValue.GetString("ProxyRuleGroupName");

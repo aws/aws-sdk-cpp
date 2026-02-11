@@ -58,10 +58,13 @@ class CreateInstanceExportTaskResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ExportTask m_exportTask;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

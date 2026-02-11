@@ -161,6 +161,8 @@ class GetReportDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reportId;
 
@@ -177,6 +179,7 @@ class GetReportDefinitionResult {
   Aws::Utils::DateTime m_lastUpdated{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_reportDescriptionHasBeenSet = false;
   bool m_reportFrequencyHasBeenSet = false;

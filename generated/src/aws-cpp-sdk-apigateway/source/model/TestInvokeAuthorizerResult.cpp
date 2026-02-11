@@ -20,6 +20,7 @@ using namespace Aws;
 TestInvokeAuthorizerResult::TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clientStatus")) {
     m_clientStatus = jsonValue.GetInteger("clientStatus");

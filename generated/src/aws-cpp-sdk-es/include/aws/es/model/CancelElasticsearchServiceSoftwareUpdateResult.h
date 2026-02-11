@@ -66,10 +66,13 @@ class CancelElasticsearchServiceSoftwareUpdateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceSoftwareOptions m_serviceSoftwareOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceSoftwareOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

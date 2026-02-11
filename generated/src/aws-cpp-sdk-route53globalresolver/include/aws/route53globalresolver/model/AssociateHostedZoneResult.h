@@ -180,6 +180,8 @@ class AssociateHostedZoneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -198,6 +200,7 @@ class AssociateHostedZoneResult {
   HostedZoneAssociationStatus m_status{HostedZoneAssociationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;

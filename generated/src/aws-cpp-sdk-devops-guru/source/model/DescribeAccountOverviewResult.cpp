@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAccountOverviewResult::DescribeAccountOverviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAccountOverviewResult& DescribeAccountOverviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReactiveInsights")) {
     m_reactiveInsights = jsonValue.GetInteger("ReactiveInsights");

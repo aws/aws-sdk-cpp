@@ -22,6 +22,7 @@ CreateHubContentPresignedUrlsResult::CreateHubContentPresignedUrlsResult(const A
 }
 
 CreateHubContentPresignedUrlsResult& CreateHubContentPresignedUrlsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthorizedUrlConfigs")) {
     Aws::Utils::Array<JsonView> authorizedUrlConfigsJsonList = jsonValue.GetArray("AuthorizedUrlConfigs");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListBotVersionsResult::ListBotVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBotVersionsResult& ListBotVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botId")) {
     m_botId = jsonValue.GetString("botId");

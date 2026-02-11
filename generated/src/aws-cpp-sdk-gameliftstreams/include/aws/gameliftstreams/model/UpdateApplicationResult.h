@@ -344,6 +344,8 @@ class UpdateApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -374,6 +376,7 @@ class UpdateApplicationResult {
   Aws::Vector<Aws::String> m_associatedStreamGroups;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_runtimeEnvironmentHasBeenSet = false;

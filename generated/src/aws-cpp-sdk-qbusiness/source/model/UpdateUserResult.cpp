@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateUserResult::UpdateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateUserResult& UpdateUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("userAliasesAdded")) {
     Aws::Utils::Array<JsonView> userAliasesAddedJsonList = jsonValue.GetArray("userAliasesAdded");

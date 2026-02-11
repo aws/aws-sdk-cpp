@@ -118,6 +118,8 @@ class DescribeActivityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_activityArn;
 
@@ -128,6 +130,7 @@ class DescribeActivityResult {
   EncryptionConfiguration m_encryptionConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activityArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

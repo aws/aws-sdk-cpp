@@ -20,6 +20,7 @@ using namespace Aws;
 GetOTAUpdateResult::GetOTAUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOTAUpdateResult& GetOTAUpdateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("otaUpdateInfo")) {
     m_otaUpdateInfo = jsonValue.GetObject("otaUpdateInfo");

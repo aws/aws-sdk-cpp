@@ -24,6 +24,7 @@ DescribeComponentConfigurationRecommendationResult::DescribeComponentConfigurati
 
 DescribeComponentConfigurationRecommendationResult& DescribeComponentConfigurationRecommendationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComponentConfiguration")) {
     m_componentConfiguration = jsonValue.GetString("ComponentConfiguration");

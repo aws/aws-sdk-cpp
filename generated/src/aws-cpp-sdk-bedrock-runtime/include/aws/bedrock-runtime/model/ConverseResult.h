@@ -184,6 +184,8 @@ class ConverseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConverseOutput m_output;
 
@@ -202,6 +204,7 @@ class ConverseResult {
   ServiceTier m_serviceTier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_outputHasBeenSet = false;
   bool m_stopReasonHasBeenSet = false;
   bool m_usageHasBeenSet = false;

@@ -22,6 +22,7 @@ CreateDirectoryRegistrationResult::CreateDirectoryRegistrationResult(const Aws::
 }
 
 CreateDirectoryRegistrationResult& CreateDirectoryRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DirectoryRegistrationArn")) {
     m_directoryRegistrationArn = jsonValue.GetString("DirectoryRegistrationArn");

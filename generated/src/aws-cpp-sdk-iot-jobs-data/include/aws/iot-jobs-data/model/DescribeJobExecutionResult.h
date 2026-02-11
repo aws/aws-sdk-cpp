@@ -58,10 +58,13 @@ class DescribeJobExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobExecution m_execution;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

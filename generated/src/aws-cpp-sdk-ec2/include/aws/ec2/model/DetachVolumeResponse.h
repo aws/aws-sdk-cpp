@@ -202,6 +202,8 @@ class DetachVolumeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_deleteOnTermination{false};
 
@@ -222,6 +224,7 @@ class DetachVolumeResponse {
   Aws::Utils::DateTime m_attachTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deleteOnTerminationHasBeenSet = false;
   bool m_associatedResourceHasBeenSet = false;
   bool m_instanceOwningServiceHasBeenSet = false;

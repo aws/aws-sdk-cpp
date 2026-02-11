@@ -20,6 +20,7 @@ using namespace Aws;
 CreateOutboundConnectionResult::CreateOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateOutboundConnectionResult& CreateOutboundConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LocalDomainInfo")) {
     m_localDomainInfo = jsonValue.GetObject("LocalDomainInfo");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeGlobalSettingsResult::DescribeGlobalSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeGlobalSettingsResult& DescribeGlobalSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GlobalSettings")) {
     Aws::Map<Aws::String, JsonView> globalSettingsJsonMap = jsonValue.GetObject("GlobalSettings").GetAllObjects();

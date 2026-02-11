@@ -90,12 +90,15 @@ class DescribeWorkspaceSnapshotsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Snapshot> m_rebuildSnapshots;
 
   Aws::Vector<Snapshot> m_restoreSnapshots;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_rebuildSnapshotsHasBeenSet = false;
   bool m_restoreSnapshotsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

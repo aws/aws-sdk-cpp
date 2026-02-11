@@ -20,6 +20,7 @@ using namespace Aws;
 PhoneNumberValidateResult::PhoneNumberValidateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PhoneNumberValidateResult& PhoneNumberValidateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_numberValidateResponse = jsonValue;
   m_numberValidateResponseHasBeenSet = true;

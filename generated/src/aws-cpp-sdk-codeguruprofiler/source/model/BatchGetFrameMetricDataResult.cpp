@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetString("endTime");

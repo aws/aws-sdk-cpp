@@ -56,10 +56,13 @@ class UpdateAdmChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ADMChannelResponse m_aDMChannelResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aDMChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

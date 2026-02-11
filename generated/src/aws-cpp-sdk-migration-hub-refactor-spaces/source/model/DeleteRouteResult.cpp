@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteRouteResult::DeleteRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteRouteResult& DeleteRouteResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationId")) {
     m_applicationId = jsonValue.GetString("ApplicationId");

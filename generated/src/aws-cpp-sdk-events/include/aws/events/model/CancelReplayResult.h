@@ -90,6 +90,8 @@ class CancelReplayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_replayArn;
 
@@ -98,6 +100,7 @@ class CancelReplayResult {
   Aws::String m_stateReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_replayArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_stateReasonHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteLifecycleHookResult::DeleteLifecycleHookResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteLifecycleHookResult& DeleteLifecycleHookResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -134,6 +134,8 @@ class GetCostAndUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextPageToken;
 
@@ -144,6 +146,7 @@ class GetCostAndUsageResult {
   Aws::Vector<DimensionValuesWithAttributes> m_dimensionValueAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_groupDefinitionsHasBeenSet = false;
   bool m_resultsByTimeHasBeenSet = false;

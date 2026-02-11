@@ -22,6 +22,7 @@ DescribeCertificateAuthorityResult::DescribeCertificateAuthorityResult(const Aws
 }
 
 DescribeCertificateAuthorityResult& DescribeCertificateAuthorityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CertificateAuthority")) {
     m_certificateAuthority = jsonValue.GetObject("CertificateAuthority");

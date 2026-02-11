@@ -58,10 +58,13 @@ class DeleteTrafficMirrorTargetResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trafficMirrorTargetId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trafficMirrorTargetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

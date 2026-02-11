@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateBucketResult::UpdateBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateBucketResult& UpdateBucketResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetObject("bucket");

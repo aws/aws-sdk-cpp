@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeContainerInstancesResult::DescribeContainerInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeContainerInstancesResult& DescribeContainerInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("containerInstances")) {
     Aws::Utils::Array<JsonView> containerInstancesJsonList = jsonValue.GetArray("containerInstances");

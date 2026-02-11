@@ -58,10 +58,13 @@ class CreateServerlessCacheResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServerlessCache m_serverlessCache;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serverlessCacheHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

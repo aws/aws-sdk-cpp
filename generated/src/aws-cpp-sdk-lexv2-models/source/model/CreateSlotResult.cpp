@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSlotResult::CreateSlotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSlotResult& CreateSlotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("slotId")) {
     m_slotId = jsonValue.GetString("slotId");

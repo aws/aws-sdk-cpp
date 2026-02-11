@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRotationOverrideResult::CreateRotationOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRotationOverrideResult& CreateRotationOverrideResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RotationOverrideId")) {
     m_rotationOverrideId = jsonValue.GetString("RotationOverrideId");

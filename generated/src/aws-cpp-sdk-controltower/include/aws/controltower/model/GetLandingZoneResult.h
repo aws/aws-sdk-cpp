@@ -58,10 +58,13 @@ class GetLandingZoneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LandingZoneDetail m_landingZone;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_landingZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

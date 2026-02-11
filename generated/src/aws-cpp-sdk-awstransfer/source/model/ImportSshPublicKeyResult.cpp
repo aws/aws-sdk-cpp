@@ -20,6 +20,7 @@ using namespace Aws;
 ImportSshPublicKeyResult::ImportSshPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportSshPublicKeyResult& ImportSshPublicKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServerId")) {
     m_serverId = jsonValue.GetString("ServerId");

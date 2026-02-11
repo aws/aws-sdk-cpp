@@ -58,10 +58,13 @@ class GetPackageConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VersionUpdateByJobsConfig m_versionUpdateByJobsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_versionUpdateByJobsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

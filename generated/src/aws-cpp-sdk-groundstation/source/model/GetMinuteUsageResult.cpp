@@ -20,6 +20,7 @@ using namespace Aws;
 GetMinuteUsageResult::GetMinuteUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMinuteUsageResult& GetMinuteUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("isReservedMinutesCustomer")) {
     m_isReservedMinutesCustomer = jsonValue.GetBool("isReservedMinutesCustomer");

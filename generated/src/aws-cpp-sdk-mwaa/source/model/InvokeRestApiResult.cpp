@@ -20,6 +20,7 @@ using namespace Aws;
 InvokeRestApiResult::InvokeRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 InvokeRestApiResult& InvokeRestApiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RestApiStatusCode")) {
     m_restApiStatusCode = jsonValue.GetInteger("RestApiStatusCode");

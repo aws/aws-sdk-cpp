@@ -58,10 +58,13 @@ class GetCatalogItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CatalogItem m_catalogItem;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_catalogItemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateGlobalClusterResult::CreateGlobalClusterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateGlobalClusterResult& CreateGlobalClusterResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

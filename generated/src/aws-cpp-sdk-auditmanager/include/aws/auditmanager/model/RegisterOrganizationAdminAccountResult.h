@@ -75,12 +75,15 @@ class RegisterOrganizationAdminAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_adminAccountId;
 
   Aws::String m_organizationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_adminAccountIdHasBeenSet = false;
   bool m_organizationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

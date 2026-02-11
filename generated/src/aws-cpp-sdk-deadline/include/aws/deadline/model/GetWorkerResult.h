@@ -212,6 +212,8 @@ class GetWorkerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_farmId;
 
@@ -234,6 +236,7 @@ class GetWorkerResult {
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_farmIdHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
   bool m_workerIdHasBeenSet = false;

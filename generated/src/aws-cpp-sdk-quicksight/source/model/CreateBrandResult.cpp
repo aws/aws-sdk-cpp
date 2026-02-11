@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBrandResult::CreateBrandResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBrandResult& CreateBrandResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BrandDetail")) {
     m_brandDetail = jsonValue.GetObject("BrandDetail");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetExportImageTaskResult::GetExportImageTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetExportImageTaskResult& GetExportImageTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExportImageTask")) {
     m_exportImageTask = jsonValue.GetObject("ExportImageTask");

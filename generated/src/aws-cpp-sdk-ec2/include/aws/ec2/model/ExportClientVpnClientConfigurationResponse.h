@@ -59,10 +59,13 @@ class ExportClientVpnClientConfigurationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clientConfiguration;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clientConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

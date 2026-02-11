@@ -20,6 +20,7 @@ using namespace Aws;
 DetectDominantLanguageResult::DetectDominantLanguageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectDominantLanguageResult& DetectDominantLanguageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Languages")) {
     Aws::Utils::Array<JsonView> languagesJsonList = jsonValue.GetArray("Languages");

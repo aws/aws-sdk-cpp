@@ -20,6 +20,7 @@ using namespace Aws;
 GetFunctionUrlConfigResult::GetFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFunctionUrlConfigResult& GetFunctionUrlConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FunctionUrl")) {
     m_functionUrl = jsonValue.GetString("FunctionUrl");

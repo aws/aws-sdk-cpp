@@ -20,6 +20,7 @@ using namespace Aws;
 PutProfileObjectResult::PutProfileObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutProfileObjectResult& PutProfileObjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileObjectUniqueKey")) {
     m_profileObjectUniqueKey = jsonValue.GetString("ProfileObjectUniqueKey");

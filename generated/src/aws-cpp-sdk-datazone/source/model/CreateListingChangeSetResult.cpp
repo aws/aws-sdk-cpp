@@ -20,6 +20,7 @@ using namespace Aws;
 CreateListingChangeSetResult::CreateListingChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateListingChangeSetResult& CreateListingChangeSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("listingId")) {
     m_listingId = jsonValue.GetString("listingId");

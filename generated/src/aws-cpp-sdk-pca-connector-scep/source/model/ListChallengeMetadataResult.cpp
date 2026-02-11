@@ -20,6 +20,7 @@ using namespace Aws;
 ListChallengeMetadataResult::ListChallengeMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListChallengeMetadataResult& ListChallengeMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Challenges")) {
     Aws::Utils::Array<JsonView> challengesJsonList = jsonValue.GetArray("Challenges");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetMonitorResult::GetMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMonitorResult& GetMonitorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MonitorName")) {
     m_monitorName = jsonValue.GetString("MonitorName");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateExclusionsPreviewResult::CreateExclusionsPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateExclusionsPreviewResult& CreateExclusionsPreviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("previewToken")) {
     m_previewToken = jsonValue.GetString("previewToken");

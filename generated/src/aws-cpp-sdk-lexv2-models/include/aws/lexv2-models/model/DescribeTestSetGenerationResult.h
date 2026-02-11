@@ -237,6 +237,8 @@ class DescribeTestSetGenerationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testSetGenerationId;
 
@@ -261,6 +263,7 @@ class DescribeTestSetGenerationResult {
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testSetGenerationIdHasBeenSet = false;
   bool m_testSetGenerationStatusHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;

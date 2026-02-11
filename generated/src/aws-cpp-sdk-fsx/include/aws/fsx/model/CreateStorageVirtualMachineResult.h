@@ -59,10 +59,13 @@ class CreateStorageVirtualMachineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StorageVirtualMachine m_storageVirtualMachine;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_storageVirtualMachineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

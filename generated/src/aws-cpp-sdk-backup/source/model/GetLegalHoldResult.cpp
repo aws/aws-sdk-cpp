@@ -20,6 +20,7 @@ using namespace Aws;
 GetLegalHoldResult::GetLegalHoldResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLegalHoldResult& GetLegalHoldResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Title")) {
     m_title = jsonValue.GetString("Title");

@@ -84,12 +84,15 @@ class ListCreatedArtifactsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<CreatedArtifact> m_createdArtifactList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_createdArtifactListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

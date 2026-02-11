@@ -91,6 +91,8 @@ class DeleteDevEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_spaceName;
 
@@ -99,6 +101,7 @@ class DeleteDevEnvironmentResult {
   Aws::String m_id;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_spaceNameHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;
   bool m_idHasBeenSet = false;

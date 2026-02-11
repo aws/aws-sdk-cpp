@@ -20,6 +20,7 @@ using namespace Aws;
 PutHubConfigurationResult::PutHubConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutHubConfigurationResult& PutHubConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HubTokenTimerExpirySettingInSeconds")) {
     m_hubTokenTimerExpirySettingInSeconds = jsonValue.GetInt64("HubTokenTimerExpirySettingInSeconds");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIdentitySourceResult::CreateIdentitySourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIdentitySourceResult& CreateIdentitySourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentitySourceType")) {
     m_identitySourceType = IdentitySourceTypeMapper::GetIdentitySourceTypeForName(jsonValue.GetString("IdentitySourceType"));

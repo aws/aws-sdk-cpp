@@ -20,6 +20,7 @@ using namespace Aws;
 ListComputeQuotasResult::ListComputeQuotasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListComputeQuotasResult& ListComputeQuotasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComputeQuotaSummaries")) {
     Aws::Utils::Array<JsonView> computeQuotaSummariesJsonList = jsonValue.GetArray("ComputeQuotaSummaries");

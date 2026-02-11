@@ -162,6 +162,8 @@ class GetIdentitySourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IdentitySourceType m_identitySourceType{IdentitySourceType::NOT_SET};
 
@@ -178,6 +180,7 @@ class GetIdentitySourceResult {
   Aws::String m_statusMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identitySourceTypeHasBeenSet = false;
   bool m_identitySourceParametersHasBeenSet = false;
   bool m_identitySourceArnHasBeenSet = false;

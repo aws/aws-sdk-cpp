@@ -461,6 +461,8 @@ class DescribeAutoMLJobV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_autoMLJobName;
 
@@ -509,6 +511,7 @@ class DescribeAutoMLJobV2Result {
   AutoMLComputeConfig m_autoMLComputeConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoMLJobNameHasBeenSet = false;
   bool m_autoMLJobArnHasBeenSet = false;
   bool m_autoMLJobInputDataConfigHasBeenSet = false;

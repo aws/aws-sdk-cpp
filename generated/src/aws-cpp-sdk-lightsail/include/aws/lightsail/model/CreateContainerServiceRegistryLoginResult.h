@@ -60,10 +60,13 @@ class CreateContainerServiceRegistryLoginResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContainerServiceRegistryLogin m_registryLogin;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryLoginHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

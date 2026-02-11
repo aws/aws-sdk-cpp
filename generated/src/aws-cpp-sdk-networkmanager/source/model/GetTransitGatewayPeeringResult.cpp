@@ -20,6 +20,7 @@ using namespace Aws;
 GetTransitGatewayPeeringResult::GetTransitGatewayPeeringResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTransitGatewayPeeringResult& GetTransitGatewayPeeringResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransitGatewayPeering")) {
     m_transitGatewayPeering = jsonValue.GetObject("TransitGatewayPeering");

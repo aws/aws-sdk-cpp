@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteResolverRuleResult::DeleteResolverRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteResolverRuleResult& DeleteResolverRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverRule")) {
     m_resolverRule = jsonValue.GetObject("ResolverRule");

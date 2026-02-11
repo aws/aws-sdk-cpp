@@ -57,10 +57,13 @@ class UpdateSolutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_solutionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_solutionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

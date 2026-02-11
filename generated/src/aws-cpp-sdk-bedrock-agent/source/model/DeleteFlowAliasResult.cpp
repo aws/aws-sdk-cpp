@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFlowAliasResult::DeleteFlowAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFlowAliasResult& DeleteFlowAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowId")) {
     m_flowId = jsonValue.GetString("flowId");

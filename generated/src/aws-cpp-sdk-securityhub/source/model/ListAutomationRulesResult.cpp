@@ -20,6 +20,7 @@ using namespace Aws;
 ListAutomationRulesResult::ListAutomationRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAutomationRulesResult& ListAutomationRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutomationRulesMetadata")) {
     Aws::Utils::Array<JsonView> automationRulesMetadataJsonList = jsonValue.GetArray("AutomationRulesMetadata");

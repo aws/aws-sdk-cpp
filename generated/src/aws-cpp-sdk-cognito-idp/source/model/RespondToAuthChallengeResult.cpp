@@ -20,6 +20,7 @@ using namespace Aws;
 RespondToAuthChallengeResult::RespondToAuthChallengeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RespondToAuthChallengeResult& RespondToAuthChallengeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChallengeName")) {
     m_challengeName = ChallengeNameTypeMapper::GetChallengeNameTypeForName(jsonValue.GetString("ChallengeName"));

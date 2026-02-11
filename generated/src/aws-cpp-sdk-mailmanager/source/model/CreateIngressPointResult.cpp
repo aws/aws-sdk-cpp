@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIngressPointResult::CreateIngressPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIngressPointResult& CreateIngressPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IngressPointId")) {
     m_ingressPointId = jsonValue.GetString("IngressPointId");

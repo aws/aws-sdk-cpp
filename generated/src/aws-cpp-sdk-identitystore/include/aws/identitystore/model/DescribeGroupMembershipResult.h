@@ -177,6 +177,8 @@ class DescribeGroupMembershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityStoreId;
 
@@ -195,6 +197,7 @@ class DescribeGroupMembershipResult {
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;

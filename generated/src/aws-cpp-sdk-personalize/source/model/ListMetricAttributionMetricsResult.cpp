@@ -22,6 +22,7 @@ ListMetricAttributionMetricsResult::ListMetricAttributionMetricsResult(const Aws
 }
 
 ListMetricAttributionMetricsResult& ListMetricAttributionMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metrics")) {
     Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("metrics");

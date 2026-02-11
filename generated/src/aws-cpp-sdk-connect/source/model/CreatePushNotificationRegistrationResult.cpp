@@ -23,6 +23,7 @@ CreatePushNotificationRegistrationResult::CreatePushNotificationRegistrationResu
 
 CreatePushNotificationRegistrationResult& CreatePushNotificationRegistrationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegistrationId")) {
     m_registrationId = jsonValue.GetString("RegistrationId");

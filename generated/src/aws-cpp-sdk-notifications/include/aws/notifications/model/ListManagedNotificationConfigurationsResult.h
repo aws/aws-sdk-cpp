@@ -87,12 +87,15 @@ class ListManagedNotificationConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ManagedNotificationConfigurationStructure> m_managedNotificationConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_managedNotificationConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -429,6 +429,8 @@ class StartDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -475,6 +477,7 @@ class StartDeploymentResult {
   Aws::String m_versionLabel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_deploymentStrategyIdHasBeenSet = false;

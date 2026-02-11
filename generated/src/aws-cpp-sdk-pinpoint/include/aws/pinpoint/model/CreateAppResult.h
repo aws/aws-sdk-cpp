@@ -56,10 +56,13 @@ class CreateAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationResponse m_applicationResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

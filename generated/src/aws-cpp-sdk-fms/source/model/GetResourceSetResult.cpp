@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceSetResult::GetResourceSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceSetResult& GetResourceSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceSet")) {
     m_resourceSet = jsonValue.GetObject("ResourceSet");

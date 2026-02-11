@@ -65,10 +65,13 @@ class DescribeConversionTasksResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ConversionTask> m_conversionTasks;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_conversionTasksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateTrustedEntitySetResult::UpdateTrustedEntitySetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateTrustedEntitySetResult& UpdateTrustedEntitySetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,6 +20,7 @@ using namespace Aws;
 CancelMembershipResult::CancelMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelMembershipResult& CancelMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("membershipId")) {
     m_membershipId = jsonValue.GetString("membershipId");

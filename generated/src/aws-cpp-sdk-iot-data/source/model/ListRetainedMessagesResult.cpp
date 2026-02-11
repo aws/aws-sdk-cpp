@@ -20,6 +20,7 @@ using namespace Aws;
 ListRetainedMessagesResult::ListRetainedMessagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRetainedMessagesResult& ListRetainedMessagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("retainedTopics")) {
     Aws::Utils::Array<JsonView> retainedTopicsJsonList = jsonValue.GetArray("retainedTopics");

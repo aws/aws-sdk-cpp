@@ -81,12 +81,15 @@ class RegisterThingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_certificatePem;
 
   Aws::Map<Aws::String, Aws::String> m_resourceArns;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificatePemHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

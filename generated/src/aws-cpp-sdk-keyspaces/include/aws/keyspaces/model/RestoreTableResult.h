@@ -57,10 +57,13 @@ class RestoreTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_restoredTableARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_restoredTableARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

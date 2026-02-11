@@ -98,6 +98,8 @@ class GetCurrentUserDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -106,6 +108,7 @@ class GetCurrentUserDataResult {
   long long m_approximateTotalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_userDataListHasBeenSet = false;
   bool m_approximateTotalCountHasBeenSet = false;

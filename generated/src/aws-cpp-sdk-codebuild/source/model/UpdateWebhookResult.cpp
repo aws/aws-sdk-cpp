@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateWebhookResult::UpdateWebhookResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateWebhookResult& UpdateWebhookResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("webhook")) {
     m_webhook = jsonValue.GetObject("webhook");

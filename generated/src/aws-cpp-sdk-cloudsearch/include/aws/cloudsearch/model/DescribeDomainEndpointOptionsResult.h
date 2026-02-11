@@ -66,10 +66,13 @@ class DescribeDomainEndpointOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DomainEndpointOptionsStatus m_domainEndpointOptions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainEndpointOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

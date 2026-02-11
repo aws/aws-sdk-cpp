@@ -20,6 +20,7 @@ using namespace Aws;
 GetProfileTemplateResult::GetProfileTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetProfileTemplateResult& GetProfileTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileTemplate")) {
     m_profileTemplate = jsonValue.GetObject("ProfileTemplate");

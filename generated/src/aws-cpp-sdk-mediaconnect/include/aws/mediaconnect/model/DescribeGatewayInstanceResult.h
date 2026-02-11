@@ -58,10 +58,13 @@ class DescribeGatewayInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GatewayInstance m_gatewayInstance;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

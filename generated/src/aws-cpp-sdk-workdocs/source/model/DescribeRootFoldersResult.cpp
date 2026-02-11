@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRootFoldersResult::DescribeRootFoldersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRootFoldersResult& DescribeRootFoldersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Folders")) {
     Aws::Utils::Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");

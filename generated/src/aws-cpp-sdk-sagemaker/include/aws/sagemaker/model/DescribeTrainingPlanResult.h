@@ -360,6 +360,8 @@ class DescribeTrainingPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trainingPlanArn;
 
@@ -398,6 +400,7 @@ class DescribeTrainingPlanResult {
   Aws::Vector<ReservedCapacitySummary> m_reservedCapacitySummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trainingPlanArnHasBeenSet = false;
   bool m_trainingPlanNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

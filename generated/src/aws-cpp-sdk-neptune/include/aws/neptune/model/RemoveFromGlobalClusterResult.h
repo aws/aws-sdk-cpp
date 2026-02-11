@@ -56,10 +56,13 @@ class RemoveFromGlobalClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GlobalCluster m_globalCluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_globalClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

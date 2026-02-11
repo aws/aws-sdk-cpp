@@ -23,6 +23,7 @@ DescribeQuerySuggestionsBlockListResult::DescribeQuerySuggestionsBlockListResult
 
 DescribeQuerySuggestionsBlockListResult& DescribeQuerySuggestionsBlockListResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IndexId")) {
     m_indexId = jsonValue.GetString("IndexId");

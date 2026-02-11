@@ -76,12 +76,15 @@ class CreateComputeEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_computeEnvironmentName;
 
   Aws::String m_computeEnvironmentArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_computeEnvironmentNameHasBeenSet = false;
   bool m_computeEnvironmentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,7 @@ ListMobileDeviceAccessOverridesResult::ListMobileDeviceAccessOverridesResult(con
 
 ListMobileDeviceAccessOverridesResult& ListMobileDeviceAccessOverridesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Overrides")) {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");

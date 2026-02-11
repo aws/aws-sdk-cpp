@@ -20,6 +20,7 @@ using namespace Aws;
 GetPrivateGraphEndpointResult::GetPrivateGraphEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPrivateGraphEndpointResult& GetPrivateGraphEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vpcId")) {
     m_vpcId = jsonValue.GetString("vpcId");

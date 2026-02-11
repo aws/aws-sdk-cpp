@@ -20,6 +20,7 @@ using namespace Aws;
 DeregisterNotificationHubResult::DeregisterNotificationHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeregisterNotificationHubResult& DeregisterNotificationHubResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("notificationHubRegion")) {
     m_notificationHubRegion = jsonValue.GetString("notificationHubRegion");

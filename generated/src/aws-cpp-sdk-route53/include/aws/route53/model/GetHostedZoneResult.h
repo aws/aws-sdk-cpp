@@ -110,6 +110,8 @@ class GetHostedZoneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HostedZone m_hostedZone;
 
@@ -118,6 +120,7 @@ class GetHostedZoneResult {
   Aws::Vector<VPC> m_vPCs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hostedZoneHasBeenSet = false;
   bool m_delegationSetHasBeenSet = false;
   bool m_vPCsHasBeenSet = false;

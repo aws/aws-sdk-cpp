@@ -20,6 +20,7 @@ using namespace Aws;
 SearchFacesByImageResult::SearchFacesByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchFacesByImageResult& SearchFacesByImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SearchedFaceBoundingBox")) {
     m_searchedFaceBoundingBox = jsonValue.GetObject("SearchedFaceBoundingBox");

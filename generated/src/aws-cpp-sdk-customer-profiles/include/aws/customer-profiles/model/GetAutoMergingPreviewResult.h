@@ -104,6 +104,8 @@ class GetAutoMergingPreviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -114,6 +116,7 @@ class GetAutoMergingPreviewResult {
   long long m_numberOfProfilesWillBeMerged{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_numberOfMatchesInSampleHasBeenSet = false;
   bool m_numberOfProfilesInSampleHasBeenSet = false;

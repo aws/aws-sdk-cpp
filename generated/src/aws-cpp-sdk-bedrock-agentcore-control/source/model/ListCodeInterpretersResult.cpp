@@ -20,6 +20,7 @@ using namespace Aws;
 ListCodeInterpretersResult::ListCodeInterpretersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCodeInterpretersResult& ListCodeInterpretersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("codeInterpreterSummaries")) {
     Aws::Utils::Array<JsonView> codeInterpreterSummariesJsonList = jsonValue.GetArray("codeInterpreterSummaries");

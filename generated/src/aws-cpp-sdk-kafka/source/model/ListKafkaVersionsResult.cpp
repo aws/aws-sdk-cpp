@@ -20,6 +20,7 @@ using namespace Aws;
 ListKafkaVersionsResult::ListKafkaVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKafkaVersionsResult& ListKafkaVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("kafkaVersions")) {
     Aws::Utils::Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");

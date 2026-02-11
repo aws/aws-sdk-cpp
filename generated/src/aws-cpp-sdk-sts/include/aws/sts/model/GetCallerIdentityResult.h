@@ -105,6 +105,8 @@ class GetCallerIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_userId;
 
@@ -113,6 +115,7 @@ class GetCallerIdentityResult {
   Aws::String m_arn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userIdHasBeenSet = false;
   bool m_accountHasBeenSet = false;
   bool m_arnHasBeenSet = false;

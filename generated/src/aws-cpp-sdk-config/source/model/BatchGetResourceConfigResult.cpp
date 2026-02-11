@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetResourceConfigResult::BatchGetResourceConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetResourceConfigResult& BatchGetResourceConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("baseConfigurationItems")) {
     Aws::Utils::Array<JsonView> baseConfigurationItemsJsonList = jsonValue.GetArray("baseConfigurationItems");

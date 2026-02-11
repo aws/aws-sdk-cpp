@@ -22,6 +22,7 @@ DeleteExpressGatewayServiceResult::DeleteExpressGatewayServiceResult(const Aws::
 }
 
 DeleteExpressGatewayServiceResult& DeleteExpressGatewayServiceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("service")) {
     m_service = jsonValue.GetObject("service");

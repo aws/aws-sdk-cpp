@@ -20,6 +20,7 @@ using namespace Aws;
 SearchTablesResult::SearchTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchTablesResult& SearchTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

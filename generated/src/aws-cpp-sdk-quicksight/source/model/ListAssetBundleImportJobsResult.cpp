@@ -20,6 +20,7 @@ using namespace Aws;
 ListAssetBundleImportJobsResult::ListAssetBundleImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAssetBundleImportJobsResult& ListAssetBundleImportJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssetBundleImportJobSummaryList")) {
     Aws::Utils::Array<JsonView> assetBundleImportJobSummaryListJsonList = jsonValue.GetArray("AssetBundleImportJobSummaryList");

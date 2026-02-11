@@ -20,6 +20,7 @@ using namespace Aws;
 GetHarvestJobResult::GetHarvestJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetHarvestJobResult& GetHarvestJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChannelGroupName")) {
     m_channelGroupName = jsonValue.GetString("ChannelGroupName");

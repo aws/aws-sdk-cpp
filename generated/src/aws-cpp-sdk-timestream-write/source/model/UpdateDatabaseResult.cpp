@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDatabaseResult::UpdateDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDatabaseResult& UpdateDatabaseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Database")) {
     m_database = jsonValue.GetObject("Database");

@@ -109,6 +109,8 @@ class DescribeTrustedTokenIssuerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trustedTokenIssuerArn;
 
@@ -119,6 +121,7 @@ class DescribeTrustedTokenIssuerResult {
   TrustedTokenIssuerConfiguration m_trustedTokenIssuerConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trustedTokenIssuerArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_trustedTokenIssuerTypeHasBeenSet = false;

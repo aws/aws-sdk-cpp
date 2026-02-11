@@ -84,12 +84,15 @@ class ListSecurityPoliciesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<Aws::String> m_securityPolicyNames;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_securityPolicyNamesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

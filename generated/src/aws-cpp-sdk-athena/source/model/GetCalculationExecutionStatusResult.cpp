@@ -22,6 +22,7 @@ GetCalculationExecutionStatusResult::GetCalculationExecutionStatusResult(const A
 }
 
 GetCalculationExecutionStatusResult& GetCalculationExecutionStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetObject("Status");

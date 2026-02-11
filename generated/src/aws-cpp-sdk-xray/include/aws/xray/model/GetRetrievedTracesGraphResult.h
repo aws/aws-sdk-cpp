@@ -99,6 +99,8 @@ class GetRetrievedTracesGraphResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RetrievalStatus m_retrievalStatus{RetrievalStatus::NOT_SET};
 
@@ -107,6 +109,7 @@ class GetRetrievedTracesGraphResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_retrievalStatusHasBeenSet = false;
   bool m_servicesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

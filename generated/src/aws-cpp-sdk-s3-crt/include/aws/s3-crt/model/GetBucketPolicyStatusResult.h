@@ -58,10 +58,13 @@ class GetBucketPolicyStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PolicyStatus m_policyStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

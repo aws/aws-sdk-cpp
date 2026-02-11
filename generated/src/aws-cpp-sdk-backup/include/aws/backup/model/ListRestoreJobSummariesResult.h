@@ -108,6 +108,8 @@ class ListRestoreJobSummariesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RestoreJobSummary> m_restoreJobSummaries;
 
@@ -116,6 +118,7 @@ class ListRestoreJobSummariesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_restoreJobSummariesHasBeenSet = false;
   bool m_aggregationPeriodHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -108,6 +108,8 @@ class CreateBrowserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_browserId;
 
@@ -118,6 +120,7 @@ class CreateBrowserResult {
   BrowserStatus m_status{BrowserStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_browserIdHasBeenSet = false;
   bool m_browserArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

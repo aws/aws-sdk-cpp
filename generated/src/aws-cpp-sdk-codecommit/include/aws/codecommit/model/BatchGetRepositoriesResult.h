@@ -120,6 +120,8 @@ class BatchGetRepositoriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RepositoryMetadata> m_repositories;
 
@@ -128,6 +130,7 @@ class BatchGetRepositoriesResult {
   Aws::Vector<BatchGetRepositoriesError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoriesHasBeenSet = false;
   bool m_repositoriesNotFoundHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

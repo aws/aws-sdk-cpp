@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWebAppResult::CreateWebAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWebAppResult& CreateWebAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WebAppId")) {
     m_webAppId = jsonValue.GetString("WebAppId");

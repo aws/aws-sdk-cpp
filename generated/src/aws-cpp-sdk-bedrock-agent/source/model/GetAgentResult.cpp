@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgentResult::GetAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgentResult& GetAgentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agent")) {
     m_agent = jsonValue.GetObject("agent");

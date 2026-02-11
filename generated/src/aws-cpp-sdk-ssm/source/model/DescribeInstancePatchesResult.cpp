@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeInstancePatchesResult::DescribeInstancePatchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeInstancePatchesResult& DescribeInstancePatchesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Patches")) {
     Aws::Utils::Array<JsonView> patchesJsonList = jsonValue.GetArray("Patches");

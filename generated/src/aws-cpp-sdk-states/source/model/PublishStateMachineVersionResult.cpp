@@ -20,6 +20,7 @@ using namespace Aws;
 PublishStateMachineVersionResult::PublishStateMachineVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PublishStateMachineVersionResult& PublishStateMachineVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetDouble("creationDate");

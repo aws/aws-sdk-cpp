@@ -20,6 +20,7 @@ using namespace Aws;
 StartPrimaryEmailUpdateResult::StartPrimaryEmailUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartPrimaryEmailUpdateResult& StartPrimaryEmailUpdateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = PrimaryEmailUpdateStatusMapper::GetPrimaryEmailUpdateStatusForName(jsonValue.GetString("Status"));

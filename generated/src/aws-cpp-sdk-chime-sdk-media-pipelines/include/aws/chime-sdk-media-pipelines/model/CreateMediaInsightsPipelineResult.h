@@ -59,10 +59,13 @@ class CreateMediaInsightsPipelineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MediaInsightsPipeline m_mediaInsightsPipeline;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mediaInsightsPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

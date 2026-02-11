@@ -19,6 +19,7 @@ using namespace Aws;
 ListRegionalBucketsResult::ListRegionalBucketsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListRegionalBucketsResult& ListRegionalBucketsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

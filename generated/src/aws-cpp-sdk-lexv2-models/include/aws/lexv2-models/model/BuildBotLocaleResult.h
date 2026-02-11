@@ -130,6 +130,8 @@ class BuildBotLocaleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -142,6 +144,7 @@ class BuildBotLocaleResult {
   Aws::Utils::DateTime m_lastBuildSubmittedDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botIdHasBeenSet = false;
   bool m_botVersionHasBeenSet = false;
   bool m_localeIdHasBeenSet = false;

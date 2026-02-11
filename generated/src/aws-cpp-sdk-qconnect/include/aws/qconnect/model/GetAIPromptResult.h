@@ -75,12 +75,15 @@ class GetAIPromptResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AIPromptData m_aiPrompt;
 
   long long m_versionNumber{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aiPromptHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

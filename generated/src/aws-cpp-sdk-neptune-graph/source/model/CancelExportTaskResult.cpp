@@ -20,6 +20,7 @@ using namespace Aws;
 CancelExportTaskResult::CancelExportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelExportTaskResult& CancelExportTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("graphId")) {
     m_graphId = jsonValue.GetString("graphId");

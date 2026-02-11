@@ -116,6 +116,8 @@ class UpdateMedicalVocabularyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_vocabularyName;
 
@@ -126,6 +128,7 @@ class UpdateMedicalVocabularyResult {
   VocabularyState m_vocabularyState{VocabularyState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vocabularyNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

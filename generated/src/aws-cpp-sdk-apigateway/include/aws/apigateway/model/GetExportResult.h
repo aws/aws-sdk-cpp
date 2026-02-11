@@ -94,6 +94,8 @@ class GetExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contentType;
 
@@ -102,6 +104,7 @@ class GetExportResult {
   Aws::Utils::Stream::ResponseStream m_body{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_contentDispositionHasBeenSet = false;
   bool m_bodyHasBeenSet = false;

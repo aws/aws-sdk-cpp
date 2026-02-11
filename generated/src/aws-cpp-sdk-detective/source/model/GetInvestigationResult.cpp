@@ -20,6 +20,7 @@ using namespace Aws;
 GetInvestigationResult::GetInvestigationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInvestigationResult& GetInvestigationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GraphArn")) {
     m_graphArn = jsonValue.GetString("GraphArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 StartUploadJobResult::StartUploadJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartUploadJobResult& StartUploadJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

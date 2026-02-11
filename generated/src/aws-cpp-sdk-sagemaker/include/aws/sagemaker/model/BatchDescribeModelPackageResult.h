@@ -95,12 +95,15 @@ class BatchDescribeModelPackageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, BatchDescribeModelPackageSummary> m_modelPackageSummaries;
 
   Aws::Map<Aws::String, BatchDescribeModelPackageError> m_batchDescribeModelPackageErrorMap;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelPackageSummariesHasBeenSet = false;
   bool m_batchDescribeModelPackageErrorMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

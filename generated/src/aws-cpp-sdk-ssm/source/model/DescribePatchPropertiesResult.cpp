@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePatchPropertiesResult::DescribePatchPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePatchPropertiesResult& DescribePatchPropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Properties")) {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");

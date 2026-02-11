@@ -78,12 +78,15 @@ class GetInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceOwner;
 
   Instance m_instance;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceOwnerHasBeenSet = false;
   bool m_instanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

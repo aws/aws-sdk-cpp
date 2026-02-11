@@ -74,12 +74,15 @@ class CreateWebExperienceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_webExperienceId;
 
   Aws::String m_webExperienceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_webExperienceIdHasBeenSet = false;
   bool m_webExperienceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

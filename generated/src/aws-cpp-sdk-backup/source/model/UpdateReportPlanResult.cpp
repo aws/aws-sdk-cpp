@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateReportPlanResult::UpdateReportPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateReportPlanResult& UpdateReportPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReportPlanName")) {
     m_reportPlanName = jsonValue.GetString("ReportPlanName");

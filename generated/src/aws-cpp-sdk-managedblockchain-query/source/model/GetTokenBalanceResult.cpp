@@ -20,6 +20,7 @@ using namespace Aws;
 GetTokenBalanceResult::GetTokenBalanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTokenBalanceResult& GetTokenBalanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ownerIdentifier")) {
     m_ownerIdentifier = jsonValue.GetObject("ownerIdentifier");

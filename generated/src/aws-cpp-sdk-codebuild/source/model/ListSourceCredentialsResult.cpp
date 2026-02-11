@@ -20,6 +20,7 @@ using namespace Aws;
 ListSourceCredentialsResult::ListSourceCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSourceCredentialsResult& ListSourceCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sourceCredentialsInfos")) {
     Aws::Utils::Array<JsonView> sourceCredentialsInfosJsonList = jsonValue.GetArray("sourceCredentialsInfos");

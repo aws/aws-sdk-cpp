@@ -20,6 +20,7 @@ using namespace Aws;
 AddProfileKeyResult::AddProfileKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddProfileKeyResult& AddProfileKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyName")) {
     m_keyName = jsonValue.GetString("KeyName");

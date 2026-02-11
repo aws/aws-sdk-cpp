@@ -80,12 +80,15 @@ class ListTagsForResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextMarker;
 
   TagInfoForResource m_tagInfoForResource;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_tagInfoForResourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

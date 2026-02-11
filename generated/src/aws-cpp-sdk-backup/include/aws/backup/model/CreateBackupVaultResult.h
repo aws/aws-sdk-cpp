@@ -100,6 +100,8 @@ class CreateBackupVaultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_backupVaultName;
 
@@ -108,6 +110,7 @@ class CreateBackupVaultResult {
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

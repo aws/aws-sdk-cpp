@@ -90,12 +90,15 @@ class DescribeConnectionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<Connection> m_connections;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_connectionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

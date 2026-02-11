@@ -22,6 +22,7 @@ BatchCheckLayerAvailabilityResult::BatchCheckLayerAvailabilityResult(const Aws::
 }
 
 BatchCheckLayerAvailabilityResult& BatchCheckLayerAvailabilityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("layers")) {
     Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("layers");

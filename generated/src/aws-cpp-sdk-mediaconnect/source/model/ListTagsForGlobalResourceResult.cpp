@@ -20,6 +20,7 @@ using namespace Aws;
 ListTagsForGlobalResourceResult::ListTagsForGlobalResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTagsForGlobalResourceResult& ListTagsForGlobalResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

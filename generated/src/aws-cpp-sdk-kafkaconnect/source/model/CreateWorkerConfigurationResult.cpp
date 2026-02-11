@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWorkerConfigurationResult::CreateWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWorkerConfigurationResult& CreateWorkerConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");

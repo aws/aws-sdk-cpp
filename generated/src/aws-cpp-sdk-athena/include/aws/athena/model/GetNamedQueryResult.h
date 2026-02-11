@@ -58,10 +58,13 @@ class GetNamedQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   NamedQuery m_namedQuery;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_namedQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

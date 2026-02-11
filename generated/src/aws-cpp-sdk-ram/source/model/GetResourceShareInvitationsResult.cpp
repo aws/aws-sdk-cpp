@@ -22,6 +22,7 @@ GetResourceShareInvitationsResult::GetResourceShareInvitationsResult(const Aws::
 }
 
 GetResourceShareInvitationsResult& GetResourceShareInvitationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceShareInvitations")) {
     Aws::Utils::Array<JsonView> resourceShareInvitationsJsonList = jsonValue.GetArray("resourceShareInvitations");

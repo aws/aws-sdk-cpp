@@ -109,6 +109,8 @@ class ListCollectionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_collectionIds;
 
@@ -117,6 +119,7 @@ class ListCollectionsResult {
   Aws::Vector<Aws::String> m_faceModelVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_collectionIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_faceModelVersionsHasBeenSet = false;

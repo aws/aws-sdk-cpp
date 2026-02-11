@@ -22,6 +22,7 @@ DeleteDataAutomationProjectResult::DeleteDataAutomationProjectResult(const Aws::
 }
 
 DeleteDataAutomationProjectResult& DeleteDataAutomationProjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("projectArn")) {
     m_projectArn = jsonValue.GetString("projectArn");

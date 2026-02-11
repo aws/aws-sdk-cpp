@@ -59,10 +59,13 @@ class DescribeDocumentClassifierResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DocumentClassifierProperties m_documentClassifierProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentClassifierPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

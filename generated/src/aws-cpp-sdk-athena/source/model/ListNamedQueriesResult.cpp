@@ -20,6 +20,7 @@ using namespace Aws;
 ListNamedQueriesResult::ListNamedQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListNamedQueriesResult& ListNamedQueriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NamedQueryIds")) {
     Aws::Utils::Array<JsonView> namedQueryIdsJsonList = jsonValue.GetArray("NamedQueryIds");

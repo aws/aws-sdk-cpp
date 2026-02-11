@@ -132,6 +132,8 @@ class SearchUsersByImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UserMatch> m_userMatches;
 
@@ -142,6 +144,7 @@ class SearchUsersByImageResult {
   Aws::Vector<UnsearchedFace> m_unsearchedFaces;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userMatchesHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;
   bool m_searchedFaceHasBeenSet = false;

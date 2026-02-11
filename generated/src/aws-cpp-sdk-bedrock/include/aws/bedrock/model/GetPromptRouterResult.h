@@ -218,6 +218,8 @@ class GetPromptRouterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_promptRouterName;
 
@@ -240,6 +242,7 @@ class GetPromptRouterResult {
   PromptRouterType m_type{PromptRouterType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_promptRouterNameHasBeenSet = false;
   bool m_routingCriteriaHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

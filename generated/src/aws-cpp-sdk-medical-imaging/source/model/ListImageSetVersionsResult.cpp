@@ -20,6 +20,7 @@ using namespace Aws;
 ListImageSetVersionsResult::ListImageSetVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListImageSetVersionsResult& ListImageSetVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("imageSetPropertiesList")) {
     Aws::Utils::Array<JsonView> imageSetPropertiesListJsonList = jsonValue.GetArray("imageSetPropertiesList");

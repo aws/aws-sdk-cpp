@@ -23,6 +23,7 @@ ListMicrosoftTeamsUserIdentitiesResult::ListMicrosoftTeamsUserIdentitiesResult(c
 
 ListMicrosoftTeamsUserIdentitiesResult& ListMicrosoftTeamsUserIdentitiesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TeamsUserIdentities")) {
     Aws::Utils::Array<JsonView> teamsUserIdentitiesJsonList = jsonValue.GetArray("TeamsUserIdentities");

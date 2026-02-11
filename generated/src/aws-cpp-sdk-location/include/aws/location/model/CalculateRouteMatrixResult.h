@@ -145,6 +145,8 @@ class CalculateRouteMatrixResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::Vector<RouteMatrixEntry>> m_routeMatrix;
 
@@ -155,6 +157,7 @@ class CalculateRouteMatrixResult {
   CalculateRouteMatrixSummary m_summary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routeMatrixHasBeenSet = false;
   bool m_snappedDeparturePositionsHasBeenSet = false;
   bool m_snappedDestinationPositionsHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetBackendAPIModelsResult::GetBackendAPIModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBackendAPIModelsResult& GetBackendAPIModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("models")) {
     m_models = jsonValue.GetString("models");

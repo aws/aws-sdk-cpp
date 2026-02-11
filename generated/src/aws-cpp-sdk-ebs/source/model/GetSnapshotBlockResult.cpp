@@ -19,6 +19,7 @@ using namespace Aws;
 GetSnapshotBlockResult::GetSnapshotBlockResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetSnapshotBlockResult& GetSnapshotBlockResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_blockData = result.TakeOwnershipOfPayload();
   m_blockDataHasBeenSet = true;
 

@@ -20,6 +20,7 @@ using namespace Aws;
 PutImageResult::PutImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutImageResult& PutImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("image")) {
     m_image = jsonValue.GetObject("image");

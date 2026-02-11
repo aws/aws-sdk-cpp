@@ -20,6 +20,7 @@ using namespace Aws;
 GetAdmChannelResult::GetAdmChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAdmChannelResult& GetAdmChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_aDMChannelResponse = jsonValue;
   m_aDMChannelResponseHasBeenSet = true;

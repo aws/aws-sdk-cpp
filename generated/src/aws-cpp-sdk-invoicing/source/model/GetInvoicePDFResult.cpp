@@ -20,6 +20,7 @@ using namespace Aws;
 GetInvoicePDFResult::GetInvoicePDFResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInvoicePDFResult& GetInvoicePDFResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InvoicePDF")) {
     m_invoicePDF = jsonValue.GetObject("InvoicePDF");

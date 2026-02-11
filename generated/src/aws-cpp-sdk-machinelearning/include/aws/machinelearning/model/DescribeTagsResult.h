@@ -103,6 +103,8 @@ class DescribeTagsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceId;
 
@@ -111,6 +113,7 @@ class DescribeTagsResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

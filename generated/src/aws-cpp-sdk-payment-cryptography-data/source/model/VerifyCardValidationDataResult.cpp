@@ -20,6 +20,7 @@ using namespace Aws;
 VerifyCardValidationDataResult::VerifyCardValidationDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VerifyCardValidationDataResult& VerifyCardValidationDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyArn")) {
     m_keyArn = jsonValue.GetString("KeyArn");

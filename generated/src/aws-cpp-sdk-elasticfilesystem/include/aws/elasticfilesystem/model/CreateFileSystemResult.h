@@ -384,6 +384,8 @@ class CreateFileSystemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ownerId;
 
@@ -422,6 +424,7 @@ class CreateFileSystemResult {
   FileSystemProtectionDescription m_fileSystemProtection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ownerIdHasBeenSet = false;
   bool m_creationTokenHasBeenSet = false;
   bool m_fileSystemIdHasBeenSet = false;

@@ -59,10 +59,13 @@ class RejectChannelHandshakeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RejectChannelHandshakeDetail m_channelHandshakeDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelHandshakeDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRelationalDatabaseResult::CreateRelationalDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRelationalDatabaseResult& CreateRelationalDatabaseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("operations")) {
     Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");

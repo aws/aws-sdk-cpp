@@ -23,6 +23,7 @@ GetDataCatalogEncryptionSettingsResult::GetDataCatalogEncryptionSettingsResult(c
 
 GetDataCatalogEncryptionSettingsResult& GetDataCatalogEncryptionSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataCatalogEncryptionSettings")) {
     m_dataCatalogEncryptionSettings = jsonValue.GetObject("DataCatalogEncryptionSettings");

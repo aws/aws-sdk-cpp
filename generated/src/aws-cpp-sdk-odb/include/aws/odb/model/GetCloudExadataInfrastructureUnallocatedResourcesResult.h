@@ -64,10 +64,13 @@ class GetCloudExadataInfrastructureUnallocatedResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CloudExadataInfrastructureUnallocatedResources m_cloudExadataInfrastructureUnallocatedResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cloudExadataInfrastructureUnallocatedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

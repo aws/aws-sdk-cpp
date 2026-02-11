@@ -74,12 +74,15 @@ class GetNotificationChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_snsTopicArn;
 
   Aws::String m_snsRoleName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snsTopicArnHasBeenSet = false;
   bool m_snsRoleNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -104,6 +104,8 @@ class ListSessionMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -112,6 +114,7 @@ class ListSessionMetricsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botIdHasBeenSet = false;
   bool m_resultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

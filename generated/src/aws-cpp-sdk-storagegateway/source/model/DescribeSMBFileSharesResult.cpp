@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSMBFileSharesResult::DescribeSMBFileSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSMBFileSharesResult& DescribeSMBFileSharesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SMBFileShareInfoList")) {
     Aws::Utils::Array<JsonView> sMBFileShareInfoListJsonList = jsonValue.GetArray("SMBFileShareInfoList");

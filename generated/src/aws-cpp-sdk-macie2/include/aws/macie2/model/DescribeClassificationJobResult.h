@@ -486,6 +486,8 @@ class DescribeClassificationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_allowListIds;
 
@@ -530,6 +532,7 @@ class DescribeClassificationJobResult {
   UserPausedDetails m_userPausedDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_allowListIdsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_createdAtHasBeenSet = false;

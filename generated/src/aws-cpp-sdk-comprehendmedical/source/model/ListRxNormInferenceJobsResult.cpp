@@ -20,6 +20,7 @@ using namespace Aws;
 ListRxNormInferenceJobsResult::ListRxNormInferenceJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRxNormInferenceJobsResult& ListRxNormInferenceJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComprehendMedicalAsyncJobPropertiesList")) {
     Aws::Utils::Array<JsonView> comprehendMedicalAsyncJobPropertiesListJsonList =

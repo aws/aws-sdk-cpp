@@ -99,6 +99,8 @@ class GetApplicationRevisionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationName;
 
@@ -107,6 +109,7 @@ class GetApplicationRevisionResult {
   GenericRevisionInfo m_revisionInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationNameHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
   bool m_revisionInfoHasBeenSet = false;

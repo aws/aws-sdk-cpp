@@ -20,6 +20,7 @@ using namespace Aws;
 AddJobFlowStepsResult::AddJobFlowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddJobFlowStepsResult& AddJobFlowStepsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StepIds")) {
     Aws::Utils::Array<JsonView> stepIdsJsonList = jsonValue.GetArray("StepIds");

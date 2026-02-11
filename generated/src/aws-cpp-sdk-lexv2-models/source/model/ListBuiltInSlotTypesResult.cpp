@@ -20,6 +20,7 @@ using namespace Aws;
 ListBuiltInSlotTypesResult::ListBuiltInSlotTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBuiltInSlotTypesResult& ListBuiltInSlotTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("builtInSlotTypeSummaries")) {
     Aws::Utils::Array<JsonView> builtInSlotTypeSummariesJsonList = jsonValue.GetArray("builtInSlotTypeSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 PutPartnerEventsResult::PutPartnerEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutPartnerEventsResult& PutPartnerEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedEntryCount")) {
     m_failedEntryCount = jsonValue.GetInteger("FailedEntryCount");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListAnnotationStoresResult::ListAnnotationStoresResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAnnotationStoresResult& ListAnnotationStoresResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("annotationStores")) {
     Aws::Utils::Array<JsonView> annotationStoresJsonList = jsonValue.GetArray("annotationStores");

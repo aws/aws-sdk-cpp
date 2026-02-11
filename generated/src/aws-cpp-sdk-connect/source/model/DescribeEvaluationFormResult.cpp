@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEvaluationFormResult::DescribeEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEvaluationFormResult& DescribeEvaluationFormResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationForm")) {
     m_evaluationForm = jsonValue.GetObject("EvaluationForm");

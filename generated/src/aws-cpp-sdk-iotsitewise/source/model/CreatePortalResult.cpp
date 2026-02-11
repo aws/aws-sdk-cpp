@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePortalResult::CreatePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePortalResult& CreatePortalResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("portalId")) {
     m_portalId = jsonValue.GetString("portalId");

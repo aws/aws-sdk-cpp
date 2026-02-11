@@ -87,12 +87,15 @@ class ListRegexMatchSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextMarker;
 
   Aws::Vector<RegexMatchSetSummary> m_regexMatchSets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_regexMatchSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

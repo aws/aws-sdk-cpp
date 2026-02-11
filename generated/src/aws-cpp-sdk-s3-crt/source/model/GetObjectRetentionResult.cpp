@@ -19,6 +19,7 @@ using namespace Aws;
 GetObjectRetentionResult::GetObjectRetentionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetObjectRetentionResult& GetObjectRetentionResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

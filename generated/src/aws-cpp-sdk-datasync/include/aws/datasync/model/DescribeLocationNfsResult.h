@@ -131,6 +131,8 @@ class DescribeLocationNfsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_locationArn;
 
@@ -143,6 +145,7 @@ class DescribeLocationNfsResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_onPremConfigHasBeenSet = false;

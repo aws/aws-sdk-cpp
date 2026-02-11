@@ -96,6 +96,8 @@ class CreateMapResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_mapName;
 
@@ -104,6 +106,7 @@ class CreateMapResult {
   Aws::Utils::DateTime m_createTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mapNameHasBeenSet = false;
   bool m_mapArnHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;

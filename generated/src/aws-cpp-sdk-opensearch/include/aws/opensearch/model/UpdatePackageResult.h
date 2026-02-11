@@ -64,10 +64,13 @@ class UpdatePackageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PackageDetails m_packageDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_packageDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

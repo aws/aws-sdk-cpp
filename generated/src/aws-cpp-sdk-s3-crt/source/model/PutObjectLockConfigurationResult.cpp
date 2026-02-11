@@ -21,6 +21,7 @@ PutObjectLockConfigurationResult::PutObjectLockConfigurationResult(const Aws::Am
 }
 
 PutObjectLockConfigurationResult& PutObjectLockConfigurationResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

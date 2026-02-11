@@ -20,6 +20,7 @@ using namespace Aws;
 ListEvaluationFormVersionsResult::ListEvaluationFormVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEvaluationFormVersionsResult& ListEvaluationFormVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationFormVersionSummaryList")) {
     Aws::Utils::Array<JsonView> evaluationFormVersionSummaryListJsonList = jsonValue.GetArray("EvaluationFormVersionSummaryList");

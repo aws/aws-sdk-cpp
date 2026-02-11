@@ -23,6 +23,7 @@ UpdateStreamingDistribution2020_05_31Result::UpdateStreamingDistribution2020_05_
 
 UpdateStreamingDistribution2020_05_31Result& UpdateStreamingDistribution2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

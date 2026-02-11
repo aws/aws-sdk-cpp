@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRoutingProfileResult::DescribeRoutingProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRoutingProfileResult& DescribeRoutingProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RoutingProfile")) {
     m_routingProfile = jsonValue.GetObject("RoutingProfile");

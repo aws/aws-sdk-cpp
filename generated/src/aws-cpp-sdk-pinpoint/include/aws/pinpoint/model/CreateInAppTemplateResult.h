@@ -56,10 +56,13 @@ class CreateInAppTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TemplateCreateMessageBody m_templateCreateMessageBody;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateCreateMessageBodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

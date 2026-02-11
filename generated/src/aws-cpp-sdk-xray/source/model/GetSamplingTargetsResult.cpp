@@ -20,6 +20,7 @@ using namespace Aws;
 GetSamplingTargetsResult::GetSamplingTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSamplingTargetsResult& GetSamplingTargetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SamplingTargetDocuments")) {
     Aws::Utils::Array<JsonView> samplingTargetDocumentsJsonList = jsonValue.GetArray("SamplingTargetDocuments");

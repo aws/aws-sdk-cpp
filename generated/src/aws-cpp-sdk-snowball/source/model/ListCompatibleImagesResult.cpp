@@ -20,6 +20,7 @@ using namespace Aws;
 ListCompatibleImagesResult::ListCompatibleImagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCompatibleImagesResult& ListCompatibleImagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CompatibleImages")) {
     Aws::Utils::Array<JsonView> compatibleImagesJsonList = jsonValue.GetArray("CompatibleImages");

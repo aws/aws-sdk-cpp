@@ -20,6 +20,7 @@ using namespace Aws;
 PredictQAResultsResult::PredictQAResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PredictQAResultsResult& PredictQAResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PrimaryResult")) {
     m_primaryResult = jsonValue.GetObject("PrimaryResult");

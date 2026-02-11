@@ -63,10 +63,13 @@ class GetEmailAddressInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MailboxValidation m_mailboxValidation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_mailboxValidationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDataMigrationResult::DeleteDataMigrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDataMigrationResult& DeleteDataMigrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataMigration")) {
     m_dataMigration = jsonValue.GetObject("DataMigration");

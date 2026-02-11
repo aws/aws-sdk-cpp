@@ -109,6 +109,8 @@ class DescribePublisherResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_publisherId;
 
@@ -119,6 +121,7 @@ class DescribePublisherResult {
   Aws::String m_publisherProfile;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_publisherIdHasBeenSet = false;
   bool m_publisherStatusHasBeenSet = false;
   bool m_identityProviderHasBeenSet = false;

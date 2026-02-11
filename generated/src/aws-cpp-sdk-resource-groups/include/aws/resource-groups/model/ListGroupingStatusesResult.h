@@ -105,6 +105,8 @@ class ListGroupingStatusesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_group;
 
@@ -113,6 +115,7 @@ class ListGroupingStatusesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupHasBeenSet = false;
   bool m_groupingStatusesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

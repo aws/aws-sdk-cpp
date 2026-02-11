@@ -61,10 +61,13 @@ class GetAccountLevelServiceConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OrgConfiguration m_orgConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_orgConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -60,10 +60,13 @@ class DescribeProtectionGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProtectionGroup m_protectionGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_protectionGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

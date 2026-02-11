@@ -61,10 +61,13 @@ class DescribeClusterEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ClusterEventDetail m_eventDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

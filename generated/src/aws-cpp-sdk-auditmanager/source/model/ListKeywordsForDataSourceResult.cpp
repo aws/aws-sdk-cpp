@@ -20,6 +20,7 @@ using namespace Aws;
 ListKeywordsForDataSourceResult::ListKeywordsForDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKeywordsForDataSourceResult& ListKeywordsForDataSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keywords")) {
     Aws::Utils::Array<JsonView> keywordsJsonList = jsonValue.GetArray("keywords");

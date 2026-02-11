@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeProtectionGroupResult::DescribeProtectionGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeProtectionGroupResult& DescribeProtectionGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProtectionGroup")) {
     m_protectionGroup = jsonValue.GetObject("ProtectionGroup");

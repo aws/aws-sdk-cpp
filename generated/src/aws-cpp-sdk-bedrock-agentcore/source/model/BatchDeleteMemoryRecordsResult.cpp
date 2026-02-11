@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteMemoryRecordsResult::BatchDeleteMemoryRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteMemoryRecordsResult& BatchDeleteMemoryRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successfulRecords")) {
     Aws::Utils::Array<JsonView> successfulRecordsJsonList = jsonValue.GetArray("successfulRecords");

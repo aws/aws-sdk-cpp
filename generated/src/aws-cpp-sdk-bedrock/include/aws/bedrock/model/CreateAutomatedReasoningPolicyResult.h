@@ -163,6 +163,8 @@ class CreateAutomatedReasoningPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyArn;
 
@@ -179,6 +181,7 @@ class CreateAutomatedReasoningPolicyResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_nameHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 PutQueryDefinitionResult::PutQueryDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutQueryDefinitionResult& PutQueryDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queryDefinitionId")) {
     m_queryDefinitionId = jsonValue.GetString("queryDefinitionId");

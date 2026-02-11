@@ -108,6 +108,8 @@ class PutCodeBindingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationDate{};
 
@@ -118,6 +120,7 @@ class PutCodeBindingResult {
   CodeGenerationStatus m_status{CodeGenerationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_schemaVersionHasBeenSet = false;

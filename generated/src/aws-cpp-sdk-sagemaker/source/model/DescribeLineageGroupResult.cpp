@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLineageGroupResult::DescribeLineageGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLineageGroupResult& DescribeLineageGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LineageGroupName")) {
     m_lineageGroupName = jsonValue.GetString("LineageGroupName");

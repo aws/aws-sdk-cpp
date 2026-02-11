@@ -24,6 +24,7 @@ ListEngagementByAcceptingInvitationTasksResult::ListEngagementByAcceptingInvitat
 
 ListEngagementByAcceptingInvitationTasksResult& ListEngagementByAcceptingInvitationTasksResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskSummaries")) {
     Aws::Utils::Array<JsonView> taskSummariesJsonList = jsonValue.GetArray("TaskSummaries");

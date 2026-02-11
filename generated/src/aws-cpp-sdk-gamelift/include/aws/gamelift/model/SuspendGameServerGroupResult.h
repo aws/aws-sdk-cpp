@@ -60,10 +60,13 @@ class SuspendGameServerGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GameServerGroup m_gameServerGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gameServerGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -83,12 +83,15 @@ class DescribeProductViewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProductViewSummary m_productViewSummary;
 
   Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productViewSummaryHasBeenSet = false;
   bool m_provisioningArtifactsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

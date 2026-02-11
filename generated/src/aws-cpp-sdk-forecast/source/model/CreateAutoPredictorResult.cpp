@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAutoPredictorResult::CreateAutoPredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAutoPredictorResult& CreateAutoPredictorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PredictorArn")) {
     m_predictorArn = jsonValue.GetString("PredictorArn");

@@ -56,10 +56,13 @@ class UpdateAssistantAIAgentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AssistantData m_assistant;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assistantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

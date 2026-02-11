@@ -107,6 +107,8 @@ class ListBotAliasesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BotAliasSummary> m_botAliasSummaries;
 
@@ -115,6 +117,7 @@ class ListBotAliasesResult {
   Aws::String m_botId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botAliasSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_botIdHasBeenSet = false;

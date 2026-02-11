@@ -20,6 +20,7 @@ using namespace Aws;
 ListDomainAssociationsResult::ListDomainAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDomainAssociationsResult& ListDomainAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainAssociations")) {
     Aws::Utils::Array<JsonView> domainAssociationsJsonList = jsonValue.GetArray("domainAssociations");

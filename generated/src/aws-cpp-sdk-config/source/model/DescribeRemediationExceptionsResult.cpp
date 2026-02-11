@@ -22,6 +22,7 @@ DescribeRemediationExceptionsResult::DescribeRemediationExceptionsResult(const A
 }
 
 DescribeRemediationExceptionsResult& DescribeRemediationExceptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RemediationExceptions")) {
     Aws::Utils::Array<JsonView> remediationExceptionsJsonList = jsonValue.GetArray("RemediationExceptions");

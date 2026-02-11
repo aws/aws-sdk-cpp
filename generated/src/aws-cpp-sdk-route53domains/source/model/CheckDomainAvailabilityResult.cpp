@@ -20,6 +20,7 @@ using namespace Aws;
 CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckDomainAvailabilityResult& CheckDomainAvailabilityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Availability")) {
     m_availability = DomainAvailabilityMapper::GetDomainAvailabilityForName(jsonValue.GetString("Availability"));

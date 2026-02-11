@@ -86,12 +86,15 @@ class ListRasterDataCollectionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<RasterDataCollectionMetadata> m_rasterDataCollectionSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_rasterDataCollectionSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

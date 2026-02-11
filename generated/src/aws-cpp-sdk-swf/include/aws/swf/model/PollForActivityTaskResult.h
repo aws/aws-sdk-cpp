@@ -152,6 +152,8 @@ class PollForActivityTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_taskToken;
 
@@ -166,6 +168,7 @@ class PollForActivityTaskResult {
   Aws::String m_input;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskTokenHasBeenSet = false;
   bool m_activityIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;

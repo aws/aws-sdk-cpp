@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePeeringResult::DeletePeeringResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePeeringResult& DeletePeeringResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Peering")) {
     m_peering = jsonValue.GetObject("Peering");

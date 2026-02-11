@@ -58,10 +58,13 @@ class ModifyVpcBlockPublicAccessOptionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VpcBlockPublicAccessOptions m_vpcBlockPublicAccessOptions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcBlockPublicAccessOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

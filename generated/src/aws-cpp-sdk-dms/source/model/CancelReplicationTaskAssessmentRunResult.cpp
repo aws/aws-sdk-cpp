@@ -23,6 +23,7 @@ CancelReplicationTaskAssessmentRunResult::CancelReplicationTaskAssessmentRunResu
 
 CancelReplicationTaskAssessmentRunResult& CancelReplicationTaskAssessmentRunResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationTaskAssessmentRun")) {
     m_replicationTaskAssessmentRun = jsonValue.GetObject("ReplicationTaskAssessmentRun");

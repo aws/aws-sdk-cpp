@@ -69,10 +69,13 @@ class CreateContainerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Container m_container;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_containerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

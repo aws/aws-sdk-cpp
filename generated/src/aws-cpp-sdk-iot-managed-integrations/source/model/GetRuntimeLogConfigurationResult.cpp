@@ -20,6 +20,7 @@ using namespace Aws;
 GetRuntimeLogConfigurationResult::GetRuntimeLogConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRuntimeLogConfigurationResult& GetRuntimeLogConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedThingId")) {
     m_managedThingId = jsonValue.GetString("ManagedThingId");

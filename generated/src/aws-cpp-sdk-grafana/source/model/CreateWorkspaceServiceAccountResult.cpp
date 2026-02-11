@@ -22,6 +22,7 @@ CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult(const A
 }
 
 CreateWorkspaceServiceAccountResult& CreateWorkspaceServiceAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("grafanaRole")) {
     m_grafanaRole = RoleMapper::GetRoleForName(jsonValue.GetString("grafanaRole"));

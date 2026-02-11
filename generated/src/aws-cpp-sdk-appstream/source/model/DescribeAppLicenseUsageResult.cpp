@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAppLicenseUsageResult::DescribeAppLicenseUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAppLicenseUsageResult& DescribeAppLicenseUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppLicenseUsages")) {
     Aws::Utils::Array<JsonView> appLicenseUsagesJsonList = jsonValue.GetArray("AppLicenseUsages");

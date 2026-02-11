@@ -58,10 +58,13 @@ class GetDeploymentPatternVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeploymentPatternVersionDataSummary m_deploymentPatternVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentPatternVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -59,10 +59,13 @@ class DescribeAddressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Address m_address;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_addressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

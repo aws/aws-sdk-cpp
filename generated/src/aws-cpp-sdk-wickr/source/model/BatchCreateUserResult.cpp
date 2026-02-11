@@ -20,6 +20,7 @@ using namespace Aws;
 BatchCreateUserResult::BatchCreateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchCreateUserResult& BatchCreateUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");

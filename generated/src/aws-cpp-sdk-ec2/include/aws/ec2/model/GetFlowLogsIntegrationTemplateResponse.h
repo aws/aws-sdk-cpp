@@ -58,10 +58,13 @@ class GetFlowLogsIntegrationTemplateResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_result;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

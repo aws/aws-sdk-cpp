@@ -20,6 +20,7 @@ using namespace Aws;
 StartSNOMEDCTInferenceJobResult::StartSNOMEDCTInferenceJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartSNOMEDCTInferenceJobResult& StartSNOMEDCTInferenceJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");

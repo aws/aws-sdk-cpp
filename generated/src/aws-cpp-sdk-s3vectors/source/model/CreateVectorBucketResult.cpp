@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVectorBucketResult::CreateVectorBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVectorBucketResult& CreateVectorBucketResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vectorBucketArn")) {
     m_vectorBucketArn = jsonValue.GetString("vectorBucketArn");

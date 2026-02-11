@@ -20,6 +20,7 @@ using namespace Aws;
 PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRecordBatchResult& PutRecordBatchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedPutCount")) {
     m_failedPutCount = jsonValue.GetInteger("FailedPutCount");

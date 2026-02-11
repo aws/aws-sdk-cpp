@@ -22,6 +22,7 @@ SearchTrainingPlanOfferingsResult::SearchTrainingPlanOfferingsResult(const Aws::
 }
 
 SearchTrainingPlanOfferingsResult& SearchTrainingPlanOfferingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrainingPlanOfferings")) {
     Aws::Utils::Array<JsonView> trainingPlanOfferingsJsonList = jsonValue.GetArray("TrainingPlanOfferings");

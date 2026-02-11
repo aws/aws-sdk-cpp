@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateProfilingGroupResult::UpdateProfilingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateProfilingGroupResult& UpdateProfilingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_profilingGroup = jsonValue;
   m_profilingGroupHasBeenSet = true;

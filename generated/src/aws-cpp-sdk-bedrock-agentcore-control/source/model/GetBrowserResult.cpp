@@ -20,6 +20,7 @@ using namespace Aws;
 GetBrowserResult::GetBrowserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBrowserResult& GetBrowserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("browserId")) {
     m_browserId = jsonValue.GetString("browserId");

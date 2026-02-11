@@ -58,10 +58,13 @@ class UpdateFileSystemAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fileSystemAssociationARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fileSystemAssociationARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -84,12 +84,15 @@ class SuggestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SuggestStatus m_status;
 
   SuggestModel m_suggest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_suggestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

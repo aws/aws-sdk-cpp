@@ -59,10 +59,13 @@ class GetAutoTerminationPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AutoTerminationPolicy m_autoTerminationPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoTerminationPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

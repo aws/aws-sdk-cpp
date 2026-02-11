@@ -20,6 +20,7 @@ using namespace Aws;
 GetUserDefinedFunctionsResult::GetUserDefinedFunctionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUserDefinedFunctionsResult& GetUserDefinedFunctionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserDefinedFunctions")) {
     Aws::Utils::Array<JsonView> userDefinedFunctionsJsonList = jsonValue.GetArray("UserDefinedFunctions");

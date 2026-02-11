@@ -20,6 +20,7 @@ using namespace Aws;
 ListPackagesForDomainResult::ListPackagesForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPackagesForDomainResult& ListPackagesForDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainPackageDetailsList")) {
     Aws::Utils::Array<JsonView> domainPackageDetailsListJsonList = jsonValue.GetArray("DomainPackageDetailsList");

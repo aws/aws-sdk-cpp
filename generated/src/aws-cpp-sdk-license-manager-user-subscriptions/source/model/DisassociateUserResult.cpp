@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateUserResult::DisassociateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateUserResult& DisassociateUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceUserSummary")) {
     m_instanceUserSummary = jsonValue.GetObject("InstanceUserSummary");

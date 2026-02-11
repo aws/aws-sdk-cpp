@@ -63,10 +63,13 @@ class CreateVirtualNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VirtualNodeData m_virtualNode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_virtualNodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

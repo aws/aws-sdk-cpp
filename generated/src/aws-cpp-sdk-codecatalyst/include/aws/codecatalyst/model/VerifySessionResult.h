@@ -57,10 +57,13 @@ class VerifySessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identity;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

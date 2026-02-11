@@ -115,6 +115,8 @@ class ApplyEnvironmentManagedActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_actionId;
 
@@ -125,6 +127,7 @@ class ApplyEnvironmentManagedActionResult {
   Aws::String m_status;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionIdHasBeenSet = false;
   bool m_actionDescriptionHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;

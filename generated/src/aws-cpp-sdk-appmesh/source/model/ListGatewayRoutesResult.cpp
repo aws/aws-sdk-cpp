@@ -20,6 +20,7 @@ using namespace Aws;
 ListGatewayRoutesResult::ListGatewayRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListGatewayRoutesResult& ListGatewayRoutesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("gatewayRoutes")) {
     Aws::Utils::Array<JsonView> gatewayRoutesJsonList = jsonValue.GetArray("gatewayRoutes");

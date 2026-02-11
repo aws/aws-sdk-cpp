@@ -90,6 +90,8 @@ class PutS3AccessPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_s3AccessPointArn;
 
@@ -98,6 +100,7 @@ class PutS3AccessPolicyResult {
   StoreType m_storeType{StoreType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_s3AccessPointArnHasBeenSet = false;
   bool m_storeIdHasBeenSet = false;
   bool m_storeTypeHasBeenSet = false;

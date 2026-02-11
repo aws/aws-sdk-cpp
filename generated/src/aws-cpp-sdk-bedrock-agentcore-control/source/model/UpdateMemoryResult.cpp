@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMemoryResult::UpdateMemoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMemoryResult& UpdateMemoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("memory")) {
     m_memory = jsonValue.GetObject("memory");

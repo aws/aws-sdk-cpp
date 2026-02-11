@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSolNetworkPackageResult::UpdateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSolNetworkPackageResult& UpdateSolNetworkPackageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nsdOperationalState")) {
     m_nsdOperationalState = NsdOperationalStateMapper::GetNsdOperationalStateForName(jsonValue.GetString("nsdOperationalState"));

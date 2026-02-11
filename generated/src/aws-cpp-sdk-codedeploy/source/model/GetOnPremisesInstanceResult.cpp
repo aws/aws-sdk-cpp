@@ -20,6 +20,7 @@ using namespace Aws;
 GetOnPremisesInstanceResult::GetOnPremisesInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetOnPremisesInstanceResult& GetOnPremisesInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("instanceInfo")) {
     m_instanceInfo = jsonValue.GetObject("instanceInfo");

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchPutContactResult::BatchPutContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchPutContactResult& BatchPutContactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SuccessfulRequestList")) {
     Aws::Utils::Array<JsonView> successfulRequestListJsonList = jsonValue.GetArray("SuccessfulRequestList");

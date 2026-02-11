@@ -94,6 +94,8 @@ class DescribeStreamStorageConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_streamName;
 
@@ -102,6 +104,7 @@ class DescribeStreamStorageConfigurationResult {
   StreamStorageConfiguration m_streamStorageConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamNameHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
   bool m_streamStorageConfigurationHasBeenSet = false;

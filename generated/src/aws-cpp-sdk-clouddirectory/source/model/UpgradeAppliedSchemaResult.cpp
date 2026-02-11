@@ -20,6 +20,7 @@ using namespace Aws;
 UpgradeAppliedSchemaResult::UpgradeAppliedSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpgradeAppliedSchemaResult& UpgradeAppliedSchemaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpgradedSchemaArn")) {
     m_upgradedSchemaArn = jsonValue.GetString("UpgradedSchemaArn");

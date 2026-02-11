@@ -20,6 +20,7 @@ using namespace Aws;
 ListByoipCidrsResult::ListByoipCidrsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListByoipCidrsResult& ListByoipCidrsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ByoipCidrs")) {
     Aws::Utils::Array<JsonView> byoipCidrsJsonList = jsonValue.GetArray("ByoipCidrs");

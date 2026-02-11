@@ -338,6 +338,8 @@ class GetPlanExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_planArn;
 
@@ -372,6 +374,7 @@ class GetPlanExecutionResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_planArnHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;
   bool m_versionHasBeenSet = false;

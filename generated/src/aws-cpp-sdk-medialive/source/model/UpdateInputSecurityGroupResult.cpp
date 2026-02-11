@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateInputSecurityGroupResult::UpdateInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateInputSecurityGroupResult& UpdateInputSecurityGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("securityGroup")) {
     m_securityGroup = jsonValue.GetObject("securityGroup");

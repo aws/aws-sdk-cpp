@@ -75,12 +75,15 @@ class SendChatIntegrationEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_initialContactId;
 
   bool m_newChatCreated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_initialContactIdHasBeenSet = false;
   bool m_newChatCreatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetBucketStatisticsResult::GetBucketStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBucketStatisticsResult& GetBucketStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("bucketCount")) {
     m_bucketCount = jsonValue.GetInt64("bucketCount");

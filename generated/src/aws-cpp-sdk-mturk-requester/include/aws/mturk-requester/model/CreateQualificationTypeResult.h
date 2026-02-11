@@ -59,10 +59,13 @@ class CreateQualificationTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   QualificationType m_qualificationType;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_qualificationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

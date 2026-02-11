@@ -61,10 +61,13 @@ class CreateRecommendationTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RecommendationTemplate m_recommendationTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recommendationTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

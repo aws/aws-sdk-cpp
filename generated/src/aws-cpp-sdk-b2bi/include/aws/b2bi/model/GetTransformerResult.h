@@ -221,6 +221,8 @@ class GetTransformerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_transformerId;
 
@@ -243,6 +245,7 @@ class GetTransformerResult {
   SampleDocuments m_sampleDocuments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transformerIdHasBeenSet = false;
   bool m_transformerArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

@@ -58,10 +58,13 @@ class CreateTransitGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGateway m_transitGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

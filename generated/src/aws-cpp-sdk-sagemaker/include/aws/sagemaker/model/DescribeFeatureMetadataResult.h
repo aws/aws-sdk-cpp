@@ -187,6 +187,8 @@ class DescribeFeatureMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_featureGroupArn;
 
@@ -205,6 +207,7 @@ class DescribeFeatureMetadataResult {
   Aws::Vector<FeatureParameter> m_parameters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_featureGroupArnHasBeenSet = false;
   bool m_featureGroupNameHasBeenSet = false;
   bool m_featureNameHasBeenSet = false;

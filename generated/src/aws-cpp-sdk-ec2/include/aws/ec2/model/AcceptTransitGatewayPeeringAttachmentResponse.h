@@ -59,10 +59,13 @@ class AcceptTransitGatewayPeeringAttachmentResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayPeeringAttachment m_transitGatewayPeeringAttachment;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayPeeringAttachmentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -91,12 +91,15 @@ class DescribeSpotPriceHistoryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<SpotPrice> m_spotPriceHistory;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_spotPriceHistoryHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

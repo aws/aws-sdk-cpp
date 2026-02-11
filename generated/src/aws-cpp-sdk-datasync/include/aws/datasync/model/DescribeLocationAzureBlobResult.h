@@ -236,6 +236,8 @@ class DescribeLocationAzureBlobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_locationArn;
 
@@ -258,6 +260,7 @@ class DescribeLocationAzureBlobResult {
   CustomSecretConfig m_customSecretConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;

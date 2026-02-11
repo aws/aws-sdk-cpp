@@ -20,6 +20,7 @@ using namespace Aws;
 CancelResizeResult::CancelResizeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CancelResizeResult& CancelResizeResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

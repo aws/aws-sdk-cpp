@@ -92,6 +92,8 @@ class GetDataLakeExceptionSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_exceptionTimeToLive{0};
 
@@ -100,6 +102,7 @@ class GetDataLakeExceptionSubscriptionResult {
   Aws::String m_subscriptionProtocol;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exceptionTimeToLiveHasBeenSet = false;
   bool m_notificationEndpointHasBeenSet = false;
   bool m_subscriptionProtocolHasBeenSet = false;

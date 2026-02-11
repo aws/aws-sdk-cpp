@@ -92,6 +92,8 @@ class UpdateStreamWarmThroughputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_streamARN;
 
@@ -100,6 +102,7 @@ class UpdateStreamWarmThroughputResult {
   WarmThroughputObject m_warmThroughput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamARNHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdatePortfolioShareResult::UpdatePortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdatePortfolioShareResult& UpdatePortfolioShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PortfolioShareToken")) {
     m_portfolioShareToken = jsonValue.GetString("PortfolioShareToken");

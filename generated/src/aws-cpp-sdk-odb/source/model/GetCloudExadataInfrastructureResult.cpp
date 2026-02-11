@@ -22,6 +22,7 @@ GetCloudExadataInfrastructureResult::GetCloudExadataInfrastructureResult(const A
 }
 
 GetCloudExadataInfrastructureResult& GetCloudExadataInfrastructureResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cloudExadataInfrastructure")) {
     m_cloudExadataInfrastructure = jsonValue.GetObject("cloudExadataInfrastructure");

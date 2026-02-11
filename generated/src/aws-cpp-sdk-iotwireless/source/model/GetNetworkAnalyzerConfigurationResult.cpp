@@ -23,6 +23,7 @@ GetNetworkAnalyzerConfigurationResult::GetNetworkAnalyzerConfigurationResult(con
 
 GetNetworkAnalyzerConfigurationResult& GetNetworkAnalyzerConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TraceContent")) {
     m_traceContent = jsonValue.GetObject("TraceContent");

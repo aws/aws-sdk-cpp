@@ -20,6 +20,7 @@ using namespace Aws;
 ListDomainNamesResult::ListDomainNamesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListDomainNamesResult& ListDomainNamesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

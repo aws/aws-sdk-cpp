@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMembersResult::CreateMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMembersResult& CreateMembersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UnprocessedAccounts")) {
     Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("UnprocessedAccounts");

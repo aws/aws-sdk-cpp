@@ -20,6 +20,7 @@ using namespace Aws;
 ImportApiResult::ImportApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportApiResult& ImportApiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("apiEndpoint")) {
     m_apiEndpoint = jsonValue.GetString("apiEndpoint");

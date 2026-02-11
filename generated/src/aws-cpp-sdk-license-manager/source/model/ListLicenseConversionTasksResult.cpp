@@ -20,6 +20,7 @@ using namespace Aws;
 ListLicenseConversionTasksResult::ListLicenseConversionTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLicenseConversionTasksResult& ListLicenseConversionTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseConversionTasks")) {
     Aws::Utils::Array<JsonView> licenseConversionTasksJsonList = jsonValue.GetArray("LicenseConversionTasks");

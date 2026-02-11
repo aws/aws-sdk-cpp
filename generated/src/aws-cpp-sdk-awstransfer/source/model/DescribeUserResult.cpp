@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeUserResult& DescribeUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServerId")) {
     m_serverId = jsonValue.GetString("ServerId");

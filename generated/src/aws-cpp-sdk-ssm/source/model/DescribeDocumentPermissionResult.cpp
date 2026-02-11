@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDocumentPermissionResult::DescribeDocumentPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountIds")) {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");

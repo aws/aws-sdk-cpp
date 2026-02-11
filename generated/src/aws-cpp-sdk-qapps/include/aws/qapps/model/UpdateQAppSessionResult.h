@@ -74,12 +74,15 @@ class UpdateQAppSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sessionId;
 
   Aws::String m_sessionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -268,6 +268,8 @@ class GetWorkflowExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -296,6 +298,7 @@ class GetWorkflowExecutionResult {
   Aws::String m_endTime;
 
   Aws::String m_parallelGroup;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_workflowBuildVersionArnHasBeenSet = false;
   bool m_workflowExecutionIdHasBeenSet = false;

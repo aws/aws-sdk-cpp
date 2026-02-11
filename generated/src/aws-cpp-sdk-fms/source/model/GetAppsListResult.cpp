@@ -20,6 +20,7 @@ using namespace Aws;
 GetAppsListResult::GetAppsListResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAppsListResult& GetAppsListResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppsList")) {
     m_appsList = jsonValue.GetObject("AppsList");

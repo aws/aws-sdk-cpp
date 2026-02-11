@@ -58,10 +58,13 @@ class GetBucketAnalyticsConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AnalyticsConfiguration m_analyticsConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analyticsConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

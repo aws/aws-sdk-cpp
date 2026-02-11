@@ -72,10 +72,13 @@ class DescribeAnalysisSchemesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AnalysisSchemeStatus> m_analysisSchemes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisSchemesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetCodeSnippetResult::BatchGetCodeSnippetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetCodeSnippetResult& BatchGetCodeSnippetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("codeSnippetResults")) {
     Aws::Utils::Array<JsonView> codeSnippetResultsJsonList = jsonValue.GetArray("codeSnippetResults");

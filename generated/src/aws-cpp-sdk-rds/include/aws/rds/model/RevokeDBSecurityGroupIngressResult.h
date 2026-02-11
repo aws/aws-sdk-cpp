@@ -56,10 +56,13 @@ class RevokeDBSecurityGroupIngressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DBSecurityGroup m_dBSecurityGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

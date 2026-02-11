@@ -94,6 +94,8 @@ class EncryptResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
 
@@ -102,6 +104,7 @@ class EncryptResult {
   EncryptionAlgorithmSpec m_encryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ciphertextBlobHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
   bool m_encryptionAlgorithmHasBeenSet = false;

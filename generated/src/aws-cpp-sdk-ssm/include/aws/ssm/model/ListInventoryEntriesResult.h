@@ -152,6 +152,8 @@ class ListInventoryEntriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_typeName;
 
@@ -166,6 +168,7 @@ class ListInventoryEntriesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_typeNameHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_schemaVersionHasBeenSet = false;

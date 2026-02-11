@@ -20,6 +20,7 @@ using namespace Aws;
 ListResourcesForTagOptionResult::ListResourcesForTagOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListResourcesForTagOptionResult& ListResourcesForTagOptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceDetails")) {
     Aws::Utils::Array<JsonView> resourceDetailsJsonList = jsonValue.GetArray("ResourceDetails");

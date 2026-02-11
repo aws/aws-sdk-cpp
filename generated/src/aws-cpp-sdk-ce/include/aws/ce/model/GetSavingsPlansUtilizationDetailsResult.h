@@ -122,6 +122,8 @@ class GetSavingsPlansUtilizationDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SavingsPlansUtilizationDetail> m_savingsPlansUtilizationDetails;
 
@@ -132,6 +134,7 @@ class GetSavingsPlansUtilizationDetailsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_savingsPlansUtilizationDetailsHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;

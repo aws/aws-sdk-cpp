@@ -20,6 +20,7 @@ using namespace Aws;
 GetDownloadUrlForLayerResult::GetDownloadUrlForLayerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDownloadUrlForLayerResult& GetDownloadUrlForLayerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("downloadUrl")) {
     m_downloadUrl = jsonValue.GetString("downloadUrl");

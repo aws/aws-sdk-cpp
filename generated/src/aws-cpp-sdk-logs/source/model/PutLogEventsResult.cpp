@@ -20,6 +20,7 @@ using namespace Aws;
 PutLogEventsResult::PutLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutLogEventsResult& PutLogEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextSequenceToken")) {
     m_nextSequenceToken = jsonValue.GetString("nextSequenceToken");

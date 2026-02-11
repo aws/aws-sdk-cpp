@@ -59,10 +59,13 @@ class GetVoiceConnectorTerminationHealthResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TerminationHealth m_terminationHealth;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_terminationHealthHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

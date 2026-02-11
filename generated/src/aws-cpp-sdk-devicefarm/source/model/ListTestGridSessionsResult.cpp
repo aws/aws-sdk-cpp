@@ -20,6 +20,7 @@ using namespace Aws;
 ListTestGridSessionsResult::ListTestGridSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTestGridSessionsResult& ListTestGridSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("testGridSessions")) {
     Aws::Utils::Array<JsonView> testGridSessionsJsonList = jsonValue.GetArray("testGridSessions");

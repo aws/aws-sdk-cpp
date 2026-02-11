@@ -22,6 +22,7 @@ DescribeDeliveryDestinationsResult::DescribeDeliveryDestinationsResult(const Aws
 }
 
 DescribeDeliveryDestinationsResult& DescribeDeliveryDestinationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deliveryDestinations")) {
     Aws::Utils::Array<JsonView> deliveryDestinationsJsonList = jsonValue.GetArray("deliveryDestinations");

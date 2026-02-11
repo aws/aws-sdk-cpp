@@ -20,6 +20,7 @@ using namespace Aws;
 ListMLModelTransformJobsResult::ListMLModelTransformJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMLModelTransformJobsResult& ListMLModelTransformJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ids")) {
     Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("ids");

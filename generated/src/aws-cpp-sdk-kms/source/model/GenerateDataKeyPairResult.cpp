@@ -21,6 +21,7 @@ using namespace Aws;
 GenerateDataKeyPairResult::GenerateDataKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateDataKeyPairResult& GenerateDataKeyPairResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PrivateKeyCiphertextBlob")) {
     m_privateKeyCiphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("PrivateKeyCiphertextBlob"));

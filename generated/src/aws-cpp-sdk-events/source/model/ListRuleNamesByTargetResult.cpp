@@ -20,6 +20,7 @@ using namespace Aws;
 ListRuleNamesByTargetResult::ListRuleNamesByTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRuleNamesByTargetResult& ListRuleNamesByTargetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleNames")) {
     Aws::Utils::Array<JsonView> ruleNamesJsonList = jsonValue.GetArray("RuleNames");

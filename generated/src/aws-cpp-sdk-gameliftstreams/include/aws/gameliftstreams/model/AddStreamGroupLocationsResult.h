@@ -98,12 +98,15 @@ class AddStreamGroupLocationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identifier;
 
   Aws::Vector<LocationState> m_locations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identifierHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

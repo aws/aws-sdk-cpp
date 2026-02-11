@@ -20,6 +20,7 @@ using namespace Aws;
 TestRepositoryTriggersResult::TestRepositoryTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successfulExecutions")) {
     Aws::Utils::Array<JsonView> successfulExecutionsJsonList = jsonValue.GetArray("successfulExecutions");

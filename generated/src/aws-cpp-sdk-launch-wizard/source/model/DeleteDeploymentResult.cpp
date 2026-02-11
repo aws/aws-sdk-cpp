@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDeploymentResult::DeleteDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDeploymentResult& DeleteDeploymentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("status"));

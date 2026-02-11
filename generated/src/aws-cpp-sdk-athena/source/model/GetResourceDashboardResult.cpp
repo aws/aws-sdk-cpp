@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceDashboardResult::GetResourceDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceDashboardResult& GetResourceDashboardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");

@@ -23,6 +23,7 @@ CreateWorkspaceServiceAccountTokenResult::CreateWorkspaceServiceAccountTokenResu
 
 CreateWorkspaceServiceAccountTokenResult& CreateWorkspaceServiceAccountTokenResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("serviceAccountId")) {
     m_serviceAccountId = jsonValue.GetString("serviceAccountId");

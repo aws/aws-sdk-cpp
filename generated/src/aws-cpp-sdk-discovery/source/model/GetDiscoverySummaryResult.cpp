@@ -20,6 +20,7 @@ using namespace Aws;
 GetDiscoverySummaryResult::GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDiscoverySummaryResult& GetDiscoverySummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("servers")) {
     m_servers = jsonValue.GetInt64("servers");

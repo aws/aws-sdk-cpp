@@ -212,6 +212,8 @@ class GetTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyspaceName;
 
@@ -232,6 +234,7 @@ class GetTypeResult {
   Aws::String m_keyspaceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_typeNameHasBeenSet = false;
   bool m_fieldDefinitionsHasBeenSet = false;

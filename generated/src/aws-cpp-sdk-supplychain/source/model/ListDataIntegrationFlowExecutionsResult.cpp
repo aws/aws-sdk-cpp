@@ -23,6 +23,7 @@ ListDataIntegrationFlowExecutionsResult::ListDataIntegrationFlowExecutionsResult
 
 ListDataIntegrationFlowExecutionsResult& ListDataIntegrationFlowExecutionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowExecutions")) {
     Aws::Utils::Array<JsonView> flowExecutionsJsonList = jsonValue.GetArray("flowExecutions");

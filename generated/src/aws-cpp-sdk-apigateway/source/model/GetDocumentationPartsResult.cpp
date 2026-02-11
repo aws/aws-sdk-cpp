@@ -20,6 +20,7 @@ using namespace Aws;
 GetDocumentationPartsResult::GetDocumentationPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDocumentationPartsResult& GetDocumentationPartsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("position")) {
     m_position = jsonValue.GetString("position");

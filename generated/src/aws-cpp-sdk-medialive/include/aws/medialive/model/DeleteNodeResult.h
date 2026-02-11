@@ -255,6 +255,8 @@ class DeleteNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -279,6 +281,7 @@ class DeleteNodeResult {
   Aws::Vector<SdiSourceMapping> m_sdiSourceMappings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelPlacementGroupsHasBeenSet = false;
   bool m_clusterIdHasBeenSet = false;

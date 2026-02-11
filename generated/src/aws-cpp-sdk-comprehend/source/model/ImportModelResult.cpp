@@ -20,6 +20,7 @@ using namespace Aws;
 ImportModelResult::ImportModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportModelResult& ImportModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelArn")) {
     m_modelArn = jsonValue.GetString("ModelArn");

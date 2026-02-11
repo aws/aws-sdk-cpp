@@ -280,6 +280,8 @@ class GetMissionProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_missionProfileId;
 
@@ -308,6 +310,7 @@ class GetMissionProfileResult {
   Aws::String m_streamsKmsRole;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_missionProfileIdHasBeenSet = false;
   bool m_missionProfileArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

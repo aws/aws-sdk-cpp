@@ -100,6 +100,8 @@ class ListSubChannelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_channelArn;
 
@@ -108,6 +110,7 @@ class ListSubChannelsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelArnHasBeenSet = false;
   bool m_subChannelsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

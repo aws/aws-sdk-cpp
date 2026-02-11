@@ -109,6 +109,8 @@ class CreateFunctionDefinitionVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -119,6 +121,7 @@ class CreateFunctionDefinitionVersionResult {
   Aws::String m_version;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_creationTimestampHasBeenSet = false;
   bool m_idHasBeenSet = false;

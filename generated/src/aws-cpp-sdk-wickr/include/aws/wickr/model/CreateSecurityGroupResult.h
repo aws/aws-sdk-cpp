@@ -59,10 +59,13 @@ class CreateSecurityGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SecurityGroup m_securityGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_securityGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

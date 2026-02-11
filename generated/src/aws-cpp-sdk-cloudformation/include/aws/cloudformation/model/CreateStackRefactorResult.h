@@ -59,10 +59,13 @@ class CreateStackRefactorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_stackRefactorId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stackRefactorIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

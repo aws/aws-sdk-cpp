@@ -20,6 +20,7 @@ using namespace Aws;
 UntagResourcesResult::UntagResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UntagResourcesResult& UntagResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedResourcesMap")) {
     Aws::Map<Aws::String, JsonView> failedResourcesMapJsonMap = jsonValue.GetObject("FailedResourcesMap").GetAllObjects();

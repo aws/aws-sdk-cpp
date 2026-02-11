@@ -143,6 +143,8 @@ class DescribeWorkerConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -157,6 +159,7 @@ class DescribeWorkerConfigurationResult {
   WorkerConfigurationState m_workerConfigurationState{WorkerConfigurationState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_latestRevisionHasBeenSet = false;

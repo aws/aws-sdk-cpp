@@ -96,6 +96,8 @@ class PutGeofenceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_geofenceId;
 
@@ -104,6 +106,7 @@ class PutGeofenceResult {
   Aws::Utils::DateTime m_updateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_geofenceIdHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;

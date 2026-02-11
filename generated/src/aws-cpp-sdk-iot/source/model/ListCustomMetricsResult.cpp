@@ -20,6 +20,7 @@ using namespace Aws;
 ListCustomMetricsResult::ListCustomMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCustomMetricsResult& ListCustomMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricNames")) {
     Aws::Utils::Array<JsonView> metricNamesJsonList = jsonValue.GetArray("metricNames");

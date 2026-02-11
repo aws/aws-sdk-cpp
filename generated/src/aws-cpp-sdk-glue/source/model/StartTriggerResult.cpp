@@ -20,6 +20,7 @@ using namespace Aws;
 StartTriggerResult::StartTriggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartTriggerResult& StartTriggerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");

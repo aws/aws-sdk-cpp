@@ -58,10 +58,13 @@ class DisassociateIpamResourceDiscoveryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamResourceDiscoveryAssociation m_ipamResourceDiscoveryAssociation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamResourceDiscoveryAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

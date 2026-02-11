@@ -20,6 +20,7 @@ using namespace Aws;
 StartEngagementResult::StartEngagementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartEngagementResult& StartEngagementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EngagementArn")) {
     m_engagementArn = jsonValue.GetString("EngagementArn");

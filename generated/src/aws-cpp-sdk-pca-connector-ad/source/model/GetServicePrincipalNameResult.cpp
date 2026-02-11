@@ -20,6 +20,7 @@ using namespace Aws;
 GetServicePrincipalNameResult::GetServicePrincipalNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetServicePrincipalNameResult& GetServicePrincipalNameResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServicePrincipalName")) {
     m_servicePrincipalName = jsonValue.GetObject("ServicePrincipalName");

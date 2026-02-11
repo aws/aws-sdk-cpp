@@ -20,6 +20,7 @@ using namespace Aws;
 ListQuickConnectsResult::ListQuickConnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListQuickConnectsResult& ListQuickConnectsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QuickConnectSummaryList")) {
     Aws::Utils::Array<JsonView> quickConnectSummaryListJsonList = jsonValue.GetArray("QuickConnectSummaryList");

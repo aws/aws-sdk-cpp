@@ -73,12 +73,15 @@ class GetPartnerAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SidewalkAccountInfoWithFingerprint m_sidewalk;
 
   bool m_accountLinked{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sidewalkHasBeenSet = false;
   bool m_accountLinkedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

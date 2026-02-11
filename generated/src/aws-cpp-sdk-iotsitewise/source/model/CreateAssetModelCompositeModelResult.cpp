@@ -23,6 +23,7 @@ CreateAssetModelCompositeModelResult::CreateAssetModelCompositeModelResult(const
 
 CreateAssetModelCompositeModelResult& CreateAssetModelCompositeModelResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assetModelCompositeModelId")) {
     m_assetModelCompositeModelId = jsonValue.GetString("assetModelCompositeModelId");

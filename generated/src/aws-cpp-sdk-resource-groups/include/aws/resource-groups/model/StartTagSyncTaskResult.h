@@ -160,6 +160,8 @@ class StartTagSyncTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_groupArn;
 
@@ -176,6 +178,7 @@ class StartTagSyncTaskResult {
   Aws::String m_roleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupArnHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;

@@ -58,10 +58,13 @@ class UpdateFormResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Form m_entity;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

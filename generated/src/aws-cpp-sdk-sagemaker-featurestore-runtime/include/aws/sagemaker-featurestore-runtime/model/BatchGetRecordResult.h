@@ -115,6 +115,8 @@ class BatchGetRecordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchGetRecordResultDetail> m_records;
 
@@ -123,6 +125,7 @@ class BatchGetRecordResult {
   Aws::Vector<BatchGetRecordIdentifier> m_unprocessedIdentifiers;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recordsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_unprocessedIdentifiersHasBeenSet = false;

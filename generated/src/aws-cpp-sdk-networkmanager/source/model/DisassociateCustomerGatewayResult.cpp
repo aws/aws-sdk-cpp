@@ -22,6 +22,7 @@ DisassociateCustomerGatewayResult::DisassociateCustomerGatewayResult(const Aws::
 }
 
 DisassociateCustomerGatewayResult& DisassociateCustomerGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomerGatewayAssociation")) {
     m_customerGatewayAssociation = jsonValue.GetObject("CustomerGatewayAssociation");

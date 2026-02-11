@@ -23,6 +23,7 @@ ListOutboundResponsibilityTransfersResult::ListOutboundResponsibilityTransfersRe
 
 ListOutboundResponsibilityTransfersResult& ListOutboundResponsibilityTransfersResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResponsibilityTransfers")) {
     Aws::Utils::Array<JsonView> responsibilityTransfersJsonList = jsonValue.GetArray("ResponsibilityTransfers");

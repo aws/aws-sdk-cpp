@@ -20,6 +20,7 @@ using namespace Aws;
 GetMatchIdResult::GetMatchIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMatchIdResult& GetMatchIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("matchId")) {
     m_matchId = jsonValue.GetString("matchId");

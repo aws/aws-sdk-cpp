@@ -22,6 +22,7 @@ GetEvidenceByEvidenceFolderResult::GetEvidenceByEvidenceFolderResult(const Aws::
 }
 
 GetEvidenceByEvidenceFolderResult& GetEvidenceByEvidenceFolderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("evidence")) {
     Aws::Utils::Array<JsonView> evidenceJsonList = jsonValue.GetArray("evidence");

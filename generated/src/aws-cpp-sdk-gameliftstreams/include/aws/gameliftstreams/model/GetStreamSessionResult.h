@@ -519,6 +519,8 @@ class GetStreamSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -563,6 +565,7 @@ class GetStreamSessionResult {
   ExportFilesMetadata m_exportFilesMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_streamGroupIdHasBeenSet = false;

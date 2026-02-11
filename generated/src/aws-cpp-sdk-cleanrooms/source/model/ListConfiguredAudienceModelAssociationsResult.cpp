@@ -24,6 +24,7 @@ ListConfiguredAudienceModelAssociationsResult::ListConfiguredAudienceModelAssoci
 
 ListConfiguredAudienceModelAssociationsResult& ListConfiguredAudienceModelAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredAudienceModelAssociationSummaries")) {
     Aws::Utils::Array<JsonView> configuredAudienceModelAssociationSummariesJsonList =

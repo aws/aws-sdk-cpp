@@ -97,6 +97,8 @@ class PredictQAResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   QAResult m_primaryResult;
 
@@ -105,6 +107,7 @@ class PredictQAResultsResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_primaryResultHasBeenSet = false;
   bool m_additionalResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

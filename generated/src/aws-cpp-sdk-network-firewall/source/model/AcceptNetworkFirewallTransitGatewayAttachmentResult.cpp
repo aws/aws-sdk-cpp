@@ -24,6 +24,7 @@ AcceptNetworkFirewallTransitGatewayAttachmentResult::AcceptNetworkFirewallTransi
 
 AcceptNetworkFirewallTransitGatewayAttachmentResult& AcceptNetworkFirewallTransitGatewayAttachmentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransitGatewayAttachmentId")) {
     m_transitGatewayAttachmentId = jsonValue.GetString("TransitGatewayAttachmentId");

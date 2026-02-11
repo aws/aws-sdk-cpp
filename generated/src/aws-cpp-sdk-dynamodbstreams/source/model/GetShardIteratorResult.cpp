@@ -20,6 +20,7 @@ using namespace Aws;
 GetShardIteratorResult::GetShardIteratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetShardIteratorResult& GetShardIteratorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ShardIterator")) {
     m_shardIterator = jsonValue.GetString("ShardIterator");

@@ -23,6 +23,7 @@ DescribeConfigurationRecorderStatusResult::DescribeConfigurationRecorderStatusRe
 
 DescribeConfigurationRecorderStatusResult& DescribeConfigurationRecorderStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationRecordersStatus")) {
     Aws::Utils::Array<JsonView> configurationRecordersStatusJsonList = jsonValue.GetArray("ConfigurationRecordersStatus");

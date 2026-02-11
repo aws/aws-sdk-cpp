@@ -20,6 +20,7 @@ using namespace Aws;
 StartAppBlockBuilderResult::StartAppBlockBuilderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartAppBlockBuilderResult& StartAppBlockBuilderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppBlockBuilder")) {
     m_appBlockBuilder = jsonValue.GetObject("AppBlockBuilder");

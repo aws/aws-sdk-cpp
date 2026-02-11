@@ -22,6 +22,7 @@ DescribeAssociationExecutionsResult::DescribeAssociationExecutionsResult(const A
 }
 
 DescribeAssociationExecutionsResult& DescribeAssociationExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssociationExecutions")) {
     Aws::Utils::Array<JsonView> associationExecutionsJsonList = jsonValue.GetArray("AssociationExecutions");

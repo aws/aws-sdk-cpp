@@ -75,10 +75,13 @@ class GetCompatibleElasticsearchVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CompatibleVersionsMap> m_compatibleElasticsearchVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_compatibleElasticsearchVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

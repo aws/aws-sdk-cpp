@@ -22,6 +22,7 @@ DescribeFleetAdvisorSchemasResult::DescribeFleetAdvisorSchemasResult(const Aws::
 }
 
 DescribeFleetAdvisorSchemasResult& DescribeFleetAdvisorSchemasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FleetAdvisorSchemas")) {
     Aws::Utils::Array<JsonView> fleetAdvisorSchemasJsonList = jsonValue.GetArray("FleetAdvisorSchemas");

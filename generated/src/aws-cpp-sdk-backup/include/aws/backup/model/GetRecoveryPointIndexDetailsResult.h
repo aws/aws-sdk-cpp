@@ -210,6 +210,8 @@ class GetRecoveryPointIndexDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_recoveryPointArn;
 
@@ -230,6 +232,7 @@ class GetRecoveryPointIndexDetailsResult {
   long long m_totalItemsIndexed{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_sourceResourceArnHasBeenSet = false;

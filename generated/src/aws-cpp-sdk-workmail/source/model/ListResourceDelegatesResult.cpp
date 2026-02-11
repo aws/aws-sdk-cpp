@@ -20,6 +20,7 @@ using namespace Aws;
 ListResourceDelegatesResult::ListResourceDelegatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListResourceDelegatesResult& ListResourceDelegatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Delegates")) {
     Aws::Utils::Array<JsonView> delegatesJsonList = jsonValue.GetArray("Delegates");

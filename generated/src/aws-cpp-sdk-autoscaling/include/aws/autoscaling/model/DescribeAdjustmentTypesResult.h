@@ -65,10 +65,13 @@ class DescribeAdjustmentTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AdjustmentType> m_adjustmentTypes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_adjustmentTypesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

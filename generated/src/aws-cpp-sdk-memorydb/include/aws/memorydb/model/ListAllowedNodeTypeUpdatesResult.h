@@ -87,12 +87,15 @@ class ListAllowedNodeTypeUpdatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_scaleUpNodeTypes;
 
   Aws::Vector<Aws::String> m_scaleDownNodeTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scaleUpNodeTypesHasBeenSet = false;
   bool m_scaleDownNodeTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

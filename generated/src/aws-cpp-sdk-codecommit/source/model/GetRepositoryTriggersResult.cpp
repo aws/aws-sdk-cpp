@@ -20,6 +20,7 @@ using namespace Aws;
 GetRepositoryTriggersResult::GetRepositoryTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRepositoryTriggersResult& GetRepositoryTriggersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configurationId")) {
     m_configurationId = jsonValue.GetString("configurationId");

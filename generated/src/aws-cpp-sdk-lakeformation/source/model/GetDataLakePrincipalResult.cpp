@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataLakePrincipalResult::GetDataLakePrincipalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataLakePrincipalResult& GetDataLakePrincipalResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Identity")) {
     m_identity = jsonValue.GetString("Identity");

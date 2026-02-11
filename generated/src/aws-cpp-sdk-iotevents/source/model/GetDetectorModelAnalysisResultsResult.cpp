@@ -23,6 +23,7 @@ GetDetectorModelAnalysisResultsResult::GetDetectorModelAnalysisResultsResult(con
 
 GetDetectorModelAnalysisResultsResult& GetDetectorModelAnalysisResultsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("analysisResults")) {
     Aws::Utils::Array<JsonView> analysisResultsJsonList = jsonValue.GetArray("analysisResults");

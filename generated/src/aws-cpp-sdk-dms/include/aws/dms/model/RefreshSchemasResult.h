@@ -63,10 +63,13 @@ class RefreshSchemasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RefreshSchemasStatus m_refreshSchemasStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_refreshSchemasStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

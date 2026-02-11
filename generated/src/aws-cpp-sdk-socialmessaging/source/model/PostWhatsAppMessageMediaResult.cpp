@@ -20,6 +20,7 @@ using namespace Aws;
 PostWhatsAppMessageMediaResult::PostWhatsAppMessageMediaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PostWhatsAppMessageMediaResult& PostWhatsAppMessageMediaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mediaId")) {
     m_mediaId = jsonValue.GetString("mediaId");

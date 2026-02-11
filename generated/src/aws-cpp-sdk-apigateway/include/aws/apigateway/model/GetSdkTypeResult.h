@@ -121,6 +121,8 @@ class GetSdkTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -131,6 +133,7 @@ class GetSdkTypeResult {
   Aws::Vector<SdkConfigurationProperty> m_configurationProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_friendlyNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

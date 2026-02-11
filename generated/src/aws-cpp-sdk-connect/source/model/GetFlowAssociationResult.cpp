@@ -20,6 +20,7 @@ using namespace Aws;
 GetFlowAssociationResult::GetFlowAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFlowAssociationResult& GetFlowAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");

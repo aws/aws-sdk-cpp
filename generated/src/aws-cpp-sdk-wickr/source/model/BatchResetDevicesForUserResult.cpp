@@ -20,6 +20,7 @@ using namespace Aws;
 BatchResetDevicesForUserResult::BatchResetDevicesForUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchResetDevicesForUserResult& BatchResetDevicesForUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");

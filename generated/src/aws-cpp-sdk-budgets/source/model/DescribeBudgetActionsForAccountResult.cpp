@@ -23,6 +23,7 @@ DescribeBudgetActionsForAccountResult::DescribeBudgetActionsForAccountResult(con
 
 DescribeBudgetActionsForAccountResult& DescribeBudgetActionsForAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Actions")) {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");

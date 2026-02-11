@@ -20,6 +20,7 @@ using namespace Aws;
 DeauthorizeConnectionResult::DeauthorizeConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeauthorizeConnectionResult& DeauthorizeConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectionArn")) {
     m_connectionArn = jsonValue.GetString("ConnectionArn");

@@ -109,6 +109,8 @@ class GetFederationTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Credentials m_credentials;
 
@@ -119,6 +121,7 @@ class GetFederationTokenResult {
   Aws::String m_userId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_signInUrlHasBeenSet = false;
   bool m_userArnHasBeenSet = false;

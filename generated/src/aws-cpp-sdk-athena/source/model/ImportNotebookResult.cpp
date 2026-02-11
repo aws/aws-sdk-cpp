@@ -20,6 +20,7 @@ using namespace Aws;
 ImportNotebookResult::ImportNotebookResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportNotebookResult& ImportNotebookResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotebookId")) {
     m_notebookId = jsonValue.GetString("NotebookId");

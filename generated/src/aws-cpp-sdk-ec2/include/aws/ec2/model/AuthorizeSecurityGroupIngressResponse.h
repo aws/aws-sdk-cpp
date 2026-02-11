@@ -82,12 +82,15 @@ class AuthorizeSecurityGroupIngressResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_return{false};
 
   Aws::Vector<SecurityGroupRule> m_securityGroupRules;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_returnHasBeenSet = false;
   bool m_securityGroupRulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

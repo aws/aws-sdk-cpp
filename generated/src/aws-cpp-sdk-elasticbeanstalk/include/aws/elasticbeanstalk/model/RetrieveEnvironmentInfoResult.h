@@ -72,10 +72,13 @@ class RetrieveEnvironmentInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EnvironmentInfoDescription> m_environmentInfo;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_environmentInfoHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

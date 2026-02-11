@@ -209,6 +209,8 @@ class GetImportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_importId;
 
@@ -229,6 +231,7 @@ class GetImportResult {
   ImportStatistics m_importStatistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_importIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
   bool m_importSourceHasBeenSet = false;

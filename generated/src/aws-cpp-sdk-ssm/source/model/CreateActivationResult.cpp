@@ -20,6 +20,7 @@ using namespace Aws;
 CreateActivationResult::CreateActivationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateActivationResult& CreateActivationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ActivationId")) {
     m_activationId = jsonValue.GetString("ActivationId");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetEnvironmentCredentialsResult::GetEnvironmentCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEnvironmentCredentialsResult& GetEnvironmentCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessKeyId")) {
     m_accessKeyId = jsonValue.GetString("accessKeyId");

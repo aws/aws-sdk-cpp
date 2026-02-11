@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeInstancePropertiesResult::DescribeInstancePropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeInstancePropertiesResult& DescribeInstancePropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceProperties")) {
     Aws::Utils::Array<JsonView> instancePropertiesJsonList = jsonValue.GetArray("InstanceProperties");

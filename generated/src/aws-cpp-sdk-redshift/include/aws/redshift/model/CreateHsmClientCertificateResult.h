@@ -56,10 +56,13 @@ class CreateHsmClientCertificateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HsmClientCertificate m_hsmClientCertificate;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hsmClientCertificateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

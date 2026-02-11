@@ -20,6 +20,7 @@ using namespace Aws;
 ListEntitledApplicationsResult::ListEntitledApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEntitledApplicationsResult& ListEntitledApplicationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntitledApplications")) {
     Aws::Utils::Array<JsonView> entitledApplicationsJsonList = jsonValue.GetArray("EntitledApplications");

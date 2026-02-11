@@ -20,6 +20,7 @@ using namespace Aws;
 CreateHsmResult::CreateHsmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateHsmResult& CreateHsmResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Hsm")) {
     m_hsm = jsonValue.GetObject("Hsm");

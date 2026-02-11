@@ -20,6 +20,7 @@ using namespace Aws;
 GetRasterDataCollectionResult::GetRasterDataCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRasterDataCollectionResult& GetRasterDataCollectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");

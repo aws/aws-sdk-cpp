@@ -20,6 +20,7 @@ using namespace Aws;
 PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutObjectResult& PutObjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContentSHA256")) {
     m_contentSHA256 = jsonValue.GetString("ContentSHA256");

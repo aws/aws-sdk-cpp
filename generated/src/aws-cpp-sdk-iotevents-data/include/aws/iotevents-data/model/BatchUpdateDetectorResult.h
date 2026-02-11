@@ -68,10 +68,13 @@ class BatchUpdateDetectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchUpdateDetectorErrorEntry> m_batchUpdateDetectorErrorEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_batchUpdateDetectorErrorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

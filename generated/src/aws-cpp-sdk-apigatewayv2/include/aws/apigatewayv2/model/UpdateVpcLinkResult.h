@@ -212,6 +212,8 @@ class UpdateVpcLinkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_createdDate{};
 
@@ -232,6 +234,7 @@ class UpdateVpcLinkResult {
   VpcLinkVersion m_vpcLinkVersion{VpcLinkVersion::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createdDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;

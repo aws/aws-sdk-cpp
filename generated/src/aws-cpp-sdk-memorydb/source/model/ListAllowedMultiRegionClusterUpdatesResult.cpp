@@ -24,6 +24,7 @@ ListAllowedMultiRegionClusterUpdatesResult::ListAllowedMultiRegionClusterUpdates
 
 ListAllowedMultiRegionClusterUpdatesResult& ListAllowedMultiRegionClusterUpdatesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScaleUpNodeTypes")) {
     Aws::Utils::Array<JsonView> scaleUpNodeTypesJsonList = jsonValue.GetArray("ScaleUpNodeTypes");

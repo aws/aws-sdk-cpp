@@ -20,6 +20,7 @@ using namespace Aws;
 GetSpeakerSearchTaskResult::GetSpeakerSearchTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSpeakerSearchTaskResult& GetSpeakerSearchTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SpeakerSearchTask")) {
     m_speakerSearchTask = jsonValue.GetObject("SpeakerSearchTask");

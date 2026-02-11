@@ -22,6 +22,7 @@ CreateLicenseServerEndpointResult::CreateLicenseServerEndpointResult(const Aws::
 }
 
 CreateLicenseServerEndpointResult& CreateLicenseServerEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityProviderArn")) {
     m_identityProviderArn = jsonValue.GetString("IdentityProviderArn");

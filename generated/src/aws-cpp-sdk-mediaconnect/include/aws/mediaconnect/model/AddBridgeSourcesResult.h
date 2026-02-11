@@ -82,12 +82,15 @@ class AddBridgeSourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_bridgeArn;
 
   Aws::Vector<BridgeSource> m_sources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bridgeArnHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

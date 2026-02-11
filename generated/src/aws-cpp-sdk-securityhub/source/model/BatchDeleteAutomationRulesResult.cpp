@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteAutomationRulesResult::BatchDeleteAutomationRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteAutomationRulesResult& BatchDeleteAutomationRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProcessedAutomationRules")) {
     Aws::Utils::Array<JsonView> processedAutomationRulesJsonList = jsonValue.GetArray("ProcessedAutomationRules");

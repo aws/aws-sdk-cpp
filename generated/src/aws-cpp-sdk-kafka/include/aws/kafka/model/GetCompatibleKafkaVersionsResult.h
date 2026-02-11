@@ -67,10 +67,13 @@ class GetCompatibleKafkaVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CompatibleKafkaVersion> m_compatibleKafkaVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_compatibleKafkaVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

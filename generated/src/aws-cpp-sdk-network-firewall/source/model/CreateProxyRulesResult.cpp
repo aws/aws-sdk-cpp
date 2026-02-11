@@ -20,6 +20,7 @@ using namespace Aws;
 CreateProxyRulesResult::CreateProxyRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProxyRulesResult& CreateProxyRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProxyRuleGroup")) {
     m_proxyRuleGroup = jsonValue.GetObject("ProxyRuleGroup");

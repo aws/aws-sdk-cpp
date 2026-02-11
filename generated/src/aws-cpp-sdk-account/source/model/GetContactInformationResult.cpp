@@ -20,6 +20,7 @@ using namespace Aws;
 GetContactInformationResult::GetContactInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetContactInformationResult& GetContactInformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactInformation")) {
     m_contactInformation = jsonValue.GetObject("ContactInformation");

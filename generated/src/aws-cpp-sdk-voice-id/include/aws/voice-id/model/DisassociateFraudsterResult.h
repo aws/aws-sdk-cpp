@@ -56,10 +56,13 @@ class DisassociateFraudsterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Fraudster m_fraudster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fraudsterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

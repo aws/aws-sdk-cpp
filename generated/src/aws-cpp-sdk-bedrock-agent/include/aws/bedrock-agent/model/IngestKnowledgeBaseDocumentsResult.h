@@ -67,10 +67,13 @@ class IngestKnowledgeBaseDocumentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<KnowledgeBaseDocumentDetail> m_documentDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

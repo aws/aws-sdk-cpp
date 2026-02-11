@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSourceRepositoryResult::DeleteSourceRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSourceRepositoryResult& DeleteSourceRepositoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("spaceName")) {
     m_spaceName = jsonValue.GetString("spaceName");

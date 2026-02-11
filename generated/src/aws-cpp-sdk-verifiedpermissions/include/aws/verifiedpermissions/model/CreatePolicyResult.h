@@ -208,6 +208,8 @@ class CreatePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyStoreId;
 
@@ -228,6 +230,7 @@ class CreatePolicyResult {
   PolicyEffect m_effect{PolicyEffect::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyStoreIdHasBeenSet = false;
   bool m_policyIdHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;

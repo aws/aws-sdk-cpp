@@ -22,6 +22,7 @@ CreateGUISessionAccessDetailsResult::CreateGUISessionAccessDetailsResult(const A
 }
 
 CreateGUISessionAccessDetailsResult& CreateGUISessionAccessDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourceName")) {
     m_resourceName = jsonValue.GetString("resourceName");

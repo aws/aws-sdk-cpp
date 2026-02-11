@@ -58,10 +58,13 @@ class CreateInternetGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InternetGateway m_internetGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_internetGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

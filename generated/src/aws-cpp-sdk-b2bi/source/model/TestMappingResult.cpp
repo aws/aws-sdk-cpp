@@ -20,6 +20,7 @@ using namespace Aws;
 TestMappingResult::TestMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestMappingResult& TestMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mappedFileContent")) {
     m_mappedFileContent = jsonValue.GetString("mappedFileContent");

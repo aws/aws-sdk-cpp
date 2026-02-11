@@ -20,6 +20,7 @@ using namespace Aws;
 UpdatePreferencesResult::UpdatePreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdatePreferencesResult& UpdatePreferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("savingsEstimationMode")) {
     m_savingsEstimationMode = SavingsEstimationModeMapper::GetSavingsEstimationModeForName(jsonValue.GetString("savingsEstimationMode"));

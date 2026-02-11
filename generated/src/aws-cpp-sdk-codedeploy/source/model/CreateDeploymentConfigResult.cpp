@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDeploymentConfigResult::CreateDeploymentConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDeploymentConfigResult& CreateDeploymentConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deploymentConfigId")) {
     m_deploymentConfigId = jsonValue.GetString("deploymentConfigId");

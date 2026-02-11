@@ -294,6 +294,8 @@ class GetSigningProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_profileName;
 
@@ -324,6 +326,7 @@ class GetSigningProfileResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_profileNameHasBeenSet = false;
   bool m_profileVersionHasBeenSet = false;
   bool m_profileVersionArnHasBeenSet = false;

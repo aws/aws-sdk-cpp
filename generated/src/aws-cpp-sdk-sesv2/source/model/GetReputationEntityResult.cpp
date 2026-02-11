@@ -20,6 +20,7 @@ using namespace Aws;
 GetReputationEntityResult::GetReputationEntityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetReputationEntityResult& GetReputationEntityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReputationEntity")) {
     m_reputationEntity = jsonValue.GetObject("ReputationEntity");

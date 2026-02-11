@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWebExperienceResult::CreateWebExperienceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWebExperienceResult& CreateWebExperienceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("webExperienceId")) {
     m_webExperienceId = jsonValue.GetString("webExperienceId");

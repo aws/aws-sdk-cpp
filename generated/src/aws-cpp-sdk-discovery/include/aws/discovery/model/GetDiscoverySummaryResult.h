@@ -175,6 +175,8 @@ class GetDiscoverySummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_servers{0};
 
@@ -193,6 +195,7 @@ class GetDiscoverySummaryResult {
   CustomerAgentlessCollectorInfo m_agentlessCollectorSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serversHasBeenSet = false;
   bool m_applicationsHasBeenSet = false;
   bool m_serversMappedToApplicationsHasBeenSet = false;

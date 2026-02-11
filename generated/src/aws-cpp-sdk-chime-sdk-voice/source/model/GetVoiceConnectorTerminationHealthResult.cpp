@@ -23,6 +23,7 @@ GetVoiceConnectorTerminationHealthResult::GetVoiceConnectorTerminationHealthResu
 
 GetVoiceConnectorTerminationHealthResult& GetVoiceConnectorTerminationHealthResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TerminationHealth")) {
     m_terminationHealth = jsonValue.GetObject("TerminationHealth");

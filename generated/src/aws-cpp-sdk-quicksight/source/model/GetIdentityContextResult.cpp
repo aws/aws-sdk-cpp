@@ -20,6 +20,7 @@ using namespace Aws;
 GetIdentityContextResult::GetIdentityContextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIdentityContextResult& GetIdentityContextResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Context")) {
     m_context = jsonValue.GetString("Context");

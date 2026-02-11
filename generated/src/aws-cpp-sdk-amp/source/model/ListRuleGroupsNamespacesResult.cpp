@@ -20,6 +20,7 @@ using namespace Aws;
 ListRuleGroupsNamespacesResult::ListRuleGroupsNamespacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRuleGroupsNamespacesResult& ListRuleGroupsNamespacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ruleGroupsNamespaces")) {
     Aws::Utils::Array<JsonView> ruleGroupsNamespacesJsonList = jsonValue.GetArray("ruleGroupsNamespaces");

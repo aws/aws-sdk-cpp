@@ -92,6 +92,8 @@ class UpdateRepositoryEncryptionKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_repositoryId;
 
@@ -100,6 +102,7 @@ class UpdateRepositoryEncryptionKeyResult {
   Aws::String m_originalKmsKeyId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryIdHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_originalKmsKeyIdHasBeenSet = false;

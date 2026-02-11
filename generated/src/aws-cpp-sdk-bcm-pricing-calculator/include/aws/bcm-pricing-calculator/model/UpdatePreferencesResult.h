@@ -108,6 +108,8 @@ class UpdatePreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RateType> m_managementAccountRateTypeSelections;
 
@@ -116,6 +118,7 @@ class UpdatePreferencesResult {
   Aws::Vector<RateType> m_standaloneAccountRateTypeSelections;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managementAccountRateTypeSelectionsHasBeenSet = false;
   bool m_memberAccountRateTypeSelectionsHasBeenSet = false;
   bool m_standaloneAccountRateTypeSelectionsHasBeenSet = false;

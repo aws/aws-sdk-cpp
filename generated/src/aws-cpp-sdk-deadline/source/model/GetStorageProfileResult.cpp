@@ -20,6 +20,7 @@ using namespace Aws;
 GetStorageProfileResult::GetStorageProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStorageProfileResult& GetStorageProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("storageProfileId")) {
     m_storageProfileId = jsonValue.GetString("storageProfileId");

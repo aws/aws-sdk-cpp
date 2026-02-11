@@ -347,6 +347,8 @@ class CancelResizeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_targetNodeType;
 
@@ -381,6 +383,7 @@ class CancelResizeResult {
   double m_dataTransferProgressPercent{0.0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_targetNodeTypeHasBeenSet = false;
   bool m_targetNumberOfNodesHasBeenSet = false;
   bool m_targetClusterTypeHasBeenSet = false;

@@ -424,6 +424,8 @@ class GetRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_recommendationId;
 
@@ -472,6 +474,7 @@ class GetRecommendationResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recommendationIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;

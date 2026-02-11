@@ -110,6 +110,8 @@ class ValidatePipelineDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ValidationError> m_validationErrors;
 
@@ -118,6 +120,7 @@ class ValidatePipelineDefinitionResult {
   bool m_errored{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_validationErrorsHasBeenSet = false;
   bool m_validationWarningsHasBeenSet = false;
   bool m_erroredHasBeenSet = false;

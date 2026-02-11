@@ -20,6 +20,7 @@ using namespace Aws;
 ListRoute53HealthChecksResult::ListRoute53HealthChecksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRoute53HealthChecksResult& ListRoute53HealthChecksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("healthChecks")) {
     Aws::Utils::Array<JsonView> healthChecksJsonList = jsonValue.GetArray("healthChecks");

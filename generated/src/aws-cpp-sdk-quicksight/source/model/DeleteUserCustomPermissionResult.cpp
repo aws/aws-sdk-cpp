@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteUserCustomPermissionResult::DeleteUserCustomPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteUserCustomPermissionResult& DeleteUserCustomPermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

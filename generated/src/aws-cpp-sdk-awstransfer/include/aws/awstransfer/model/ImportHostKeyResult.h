@@ -74,12 +74,15 @@ class ImportHostKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_serverId;
 
   Aws::String m_hostKeyId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serverIdHasBeenSet = false;
   bool m_hostKeyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

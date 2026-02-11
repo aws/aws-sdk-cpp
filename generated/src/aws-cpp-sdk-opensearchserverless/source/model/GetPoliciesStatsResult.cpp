@@ -20,6 +20,7 @@ using namespace Aws;
 GetPoliciesStatsResult::GetPoliciesStatsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPoliciesStatsResult& GetPoliciesStatsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccessPolicyStats")) {
     m_accessPolicyStats = jsonValue.GetObject("AccessPolicyStats");

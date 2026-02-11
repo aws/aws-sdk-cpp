@@ -23,6 +23,7 @@ GetManagedThingConnectivityDataResult::GetManagedThingConnectivityDataResult(con
 
 GetManagedThingConnectivityDataResult& GetManagedThingConnectivityDataResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedThingId")) {
     m_managedThingId = jsonValue.GetString("ManagedThingId");

@@ -84,12 +84,15 @@ class ListBrandsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<BrandSummary> m_brands;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_brandsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

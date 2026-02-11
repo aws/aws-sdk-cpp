@@ -20,6 +20,7 @@ using namespace Aws;
 GetProfileObjectTypeResult::GetProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetProfileObjectTypeResult& GetProfileObjectTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ObjectTypeName")) {
     m_objectTypeName = jsonValue.GetString("ObjectTypeName");

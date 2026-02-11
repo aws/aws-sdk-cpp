@@ -20,6 +20,7 @@ using namespace Aws;
 StartCacheReportResult::StartCacheReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartCacheReportResult& StartCacheReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CacheReportARN")) {
     m_cacheReportARN = jsonValue.GetString("CacheReportARN");

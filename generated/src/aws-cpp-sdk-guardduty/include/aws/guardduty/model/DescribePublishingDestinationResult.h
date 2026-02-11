@@ -150,6 +150,8 @@ class DescribePublishingDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_destinationId;
 
@@ -164,6 +166,7 @@ class DescribePublishingDestinationResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_destinationIdHasBeenSet = false;
   bool m_destinationTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;

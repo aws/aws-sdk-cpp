@@ -20,6 +20,7 @@ using namespace Aws;
 ListNetworkProfilesResult::ListNetworkProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListNetworkProfilesResult& ListNetworkProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("networkProfiles")) {
     Aws::Utils::Array<JsonView> networkProfilesJsonList = jsonValue.GetArray("networkProfiles");

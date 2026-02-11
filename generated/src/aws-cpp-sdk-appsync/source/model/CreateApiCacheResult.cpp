@@ -20,6 +20,7 @@ using namespace Aws;
 CreateApiCacheResult::CreateApiCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateApiCacheResult& CreateApiCacheResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("apiCache")) {
     m_apiCache = jsonValue.GetObject("apiCache");

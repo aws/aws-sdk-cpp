@@ -20,6 +20,7 @@ using namespace Aws;
 ConfirmDeviceResult::ConfirmDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ConfirmDeviceResult& ConfirmDeviceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserConfirmationNecessary")) {
     m_userConfirmationNecessary = jsonValue.GetBool("UserConfirmationNecessary");

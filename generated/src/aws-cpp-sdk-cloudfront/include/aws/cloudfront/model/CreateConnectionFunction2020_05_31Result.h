@@ -94,6 +94,8 @@ class CreateConnectionFunction2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConnectionFunctionSummary m_connectionFunctionSummary;
 
@@ -102,6 +104,7 @@ class CreateConnectionFunction2020_05_31Result {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionFunctionSummaryHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_eTagHasBeenSet = false;

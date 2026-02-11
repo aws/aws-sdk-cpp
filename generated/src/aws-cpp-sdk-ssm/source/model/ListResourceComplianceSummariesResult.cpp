@@ -23,6 +23,7 @@ ListResourceComplianceSummariesResult::ListResourceComplianceSummariesResult(con
 
 ListResourceComplianceSummariesResult& ListResourceComplianceSummariesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceComplianceSummaryItems")) {
     Aws::Utils::Array<JsonView> resourceComplianceSummaryItemsJsonList = jsonValue.GetArray("ResourceComplianceSummaryItems");

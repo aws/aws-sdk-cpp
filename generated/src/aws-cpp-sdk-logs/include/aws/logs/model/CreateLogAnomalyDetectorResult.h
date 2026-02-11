@@ -57,10 +57,13 @@ class CreateLogAnomalyDetectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_anomalyDetectorArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_anomalyDetectorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

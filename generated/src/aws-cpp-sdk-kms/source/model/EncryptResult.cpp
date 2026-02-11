@@ -21,6 +21,7 @@ using namespace Aws;
 EncryptResult::EncryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EncryptResult& EncryptResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CiphertextBlob")) {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));

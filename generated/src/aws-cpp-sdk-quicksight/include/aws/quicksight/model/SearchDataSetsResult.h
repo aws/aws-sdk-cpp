@@ -98,6 +98,8 @@ class SearchDataSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DataSetSummary> m_dataSetSummaries;
 
@@ -106,6 +108,7 @@ class SearchDataSetsResult {
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataSetSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;

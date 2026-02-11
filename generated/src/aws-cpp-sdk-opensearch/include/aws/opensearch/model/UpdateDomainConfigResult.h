@@ -100,6 +100,8 @@ class UpdateDomainConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DomainConfig m_domainConfig;
 
@@ -108,6 +110,7 @@ class UpdateDomainConfigResult {
   DryRunProgressStatus m_dryRunProgressStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainConfigHasBeenSet = false;
   bool m_dryRunResultsHasBeenSet = false;
   bool m_dryRunProgressStatusHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetImpersonationRoleEffectResult::GetImpersonationRoleEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetImpersonationRoleEffectResult& GetImpersonationRoleEffectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Type")) {
     m_type = ImpersonationRoleTypeMapper::GetImpersonationRoleTypeForName(jsonValue.GetString("Type"));

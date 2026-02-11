@@ -90,6 +90,8 @@ class DeleteSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_schemaArn;
 
@@ -98,6 +100,7 @@ class DeleteSchemaResult {
   SchemaStatus m_status{SchemaStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_schemaArnHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

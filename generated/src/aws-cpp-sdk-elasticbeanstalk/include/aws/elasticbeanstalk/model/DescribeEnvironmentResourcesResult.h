@@ -65,10 +65,13 @@ class DescribeEnvironmentResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EnvironmentResourceDescription m_environmentResources;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_environmentResourcesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

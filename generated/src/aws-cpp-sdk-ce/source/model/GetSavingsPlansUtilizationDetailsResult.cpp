@@ -23,6 +23,7 @@ GetSavingsPlansUtilizationDetailsResult::GetSavingsPlansUtilizationDetailsResult
 
 GetSavingsPlansUtilizationDetailsResult& GetSavingsPlansUtilizationDetailsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SavingsPlansUtilizationDetails")) {
     Aws::Utils::Array<JsonView> savingsPlansUtilizationDetailsJsonList = jsonValue.GetArray("SavingsPlansUtilizationDetails");

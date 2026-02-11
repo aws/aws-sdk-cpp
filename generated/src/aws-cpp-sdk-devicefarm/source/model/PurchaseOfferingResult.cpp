@@ -20,6 +20,7 @@ using namespace Aws;
 PurchaseOfferingResult::PurchaseOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PurchaseOfferingResult& PurchaseOfferingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("offeringTransaction")) {
     m_offeringTransaction = jsonValue.GetObject("offeringTransaction");

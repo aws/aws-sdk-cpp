@@ -19,6 +19,7 @@ using namespace Aws;
 GetLineageEventResult::GetLineageEventResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetLineageEventResult& GetLineageEventResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_event = result.TakeOwnershipOfPayload();
   m_eventHasBeenSet = true;
 

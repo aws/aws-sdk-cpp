@@ -20,6 +20,7 @@ using namespace Aws;
 ListBranchesResult::ListBranchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBranchesResult& ListBranchesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("branches")) {
     Aws::Utils::Array<JsonView> branchesJsonList = jsonValue.GetArray("branches");

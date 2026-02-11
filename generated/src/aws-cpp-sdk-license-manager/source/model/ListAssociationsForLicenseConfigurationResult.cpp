@@ -24,6 +24,7 @@ ListAssociationsForLicenseConfigurationResult::ListAssociationsForLicenseConfigu
 
 ListAssociationsForLicenseConfigurationResult& ListAssociationsForLicenseConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseConfigurationAssociations")) {
     Aws::Utils::Array<JsonView> licenseConfigurationAssociationsJsonList = jsonValue.GetArray("LicenseConfigurationAssociations");

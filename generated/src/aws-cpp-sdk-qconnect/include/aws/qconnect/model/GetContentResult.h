@@ -58,10 +58,13 @@ class GetContentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContentData m_content;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

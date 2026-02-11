@@ -201,6 +201,8 @@ class DescribeSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_content;
 
@@ -221,6 +223,7 @@ class DescribeSchemaResult {
   Aws::Utils::DateTime m_versionCreatedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;

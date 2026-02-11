@@ -24,6 +24,7 @@ GetAggregateConformancePackComplianceSummaryResult::GetAggregateConformancePackC
 
 GetAggregateConformancePackComplianceSummaryResult& GetAggregateConformancePackComplianceSummaryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AggregateConformancePackComplianceSummaries")) {
     Aws::Utils::Array<JsonView> aggregateConformancePackComplianceSummariesJsonList =

@@ -79,12 +79,15 @@ class RequestUploadCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AwsCredentials m_uploadCredentials;
 
   S3Location m_storageLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_uploadCredentialsHasBeenSet = false;
   bool m_storageLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

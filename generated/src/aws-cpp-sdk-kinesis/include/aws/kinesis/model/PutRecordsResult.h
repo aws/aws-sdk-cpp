@@ -109,6 +109,8 @@ class PutRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_failedRecordCount{0};
 
@@ -117,6 +119,7 @@ class PutRecordsResult {
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedRecordCountHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
   bool m_encryptionTypeHasBeenSet = false;

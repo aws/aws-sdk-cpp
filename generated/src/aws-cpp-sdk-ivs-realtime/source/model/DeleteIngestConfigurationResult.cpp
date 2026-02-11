@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteIngestConfigurationResult::DeleteIngestConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteIngestConfigurationResult& DeleteIngestConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

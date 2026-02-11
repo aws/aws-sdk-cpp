@@ -149,6 +149,8 @@ class TestStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_output;
 
@@ -163,6 +165,7 @@ class TestStateResult {
   TestExecutionStatus m_status{TestExecutionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_outputHasBeenSet = false;
   bool m_errorHasBeenSet = false;
   bool m_causeHasBeenSet = false;

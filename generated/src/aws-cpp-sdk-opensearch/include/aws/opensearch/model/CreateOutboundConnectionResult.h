@@ -170,6 +170,8 @@ class CreateOutboundConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DomainInformationContainer m_localDomainInfo;
 
@@ -186,6 +188,7 @@ class CreateOutboundConnectionResult {
   ConnectionProperties m_connectionProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_localDomainInfoHasBeenSet = false;
   bool m_remoteDomainInfoHasBeenSet = false;
   bool m_connectionAliasHasBeenSet = false;

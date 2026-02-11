@@ -20,6 +20,7 @@ using namespace Aws;
 CreateThemeForStackResult::CreateThemeForStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateThemeForStackResult& CreateThemeForStackResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Theme")) {
     m_theme = jsonValue.GetObject("Theme");

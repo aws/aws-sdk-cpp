@@ -20,6 +20,7 @@ using namespace Aws;
 DistributeImageResult::DistributeImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DistributeImageResult& DistributeImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clientToken")) {
     m_clientToken = jsonValue.GetString("clientToken");

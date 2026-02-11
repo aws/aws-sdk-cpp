@@ -20,6 +20,7 @@ using namespace Aws;
 SearchUserHierarchyGroupsResult::SearchUserHierarchyGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchUserHierarchyGroupsResult& SearchUserHierarchyGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserHierarchyGroups")) {
     Aws::Utils::Array<JsonView> userHierarchyGroupsJsonList = jsonValue.GetArray("UserHierarchyGroups");

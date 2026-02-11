@@ -20,6 +20,7 @@ using namespace Aws;
 ExtendLicenseConsumptionResult::ExtendLicenseConsumptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExtendLicenseConsumptionResult& ExtendLicenseConsumptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseConsumptionToken")) {
     m_licenseConsumptionToken = jsonValue.GetString("LicenseConsumptionToken");

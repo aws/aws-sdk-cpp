@@ -23,6 +23,7 @@ CreateSnapshotCopyConfigurationResult::CreateSnapshotCopyConfigurationResult(con
 
 CreateSnapshotCopyConfigurationResult& CreateSnapshotCopyConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("snapshotCopyConfiguration")) {
     m_snapshotCopyConfiguration = jsonValue.GetObject("snapshotCopyConfiguration");

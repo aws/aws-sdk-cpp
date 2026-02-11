@@ -20,6 +20,7 @@ using namespace Aws;
 CreateKxChangesetResult::CreateKxChangesetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateKxChangesetResult& CreateKxChangesetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("changesetId")) {
     m_changesetId = jsonValue.GetString("changesetId");

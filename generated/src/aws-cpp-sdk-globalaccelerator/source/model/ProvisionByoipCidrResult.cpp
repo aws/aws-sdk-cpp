@@ -20,6 +20,7 @@ using namespace Aws;
 ProvisionByoipCidrResult::ProvisionByoipCidrResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ProvisionByoipCidrResult& ProvisionByoipCidrResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ByoipCidr")) {
     m_byoipCidr = jsonValue.GetObject("ByoipCidr");

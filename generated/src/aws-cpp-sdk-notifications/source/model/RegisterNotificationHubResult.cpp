@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterNotificationHubResult::RegisterNotificationHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterNotificationHubResult& RegisterNotificationHubResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("notificationHubRegion")) {
     m_notificationHubRegion = jsonValue.GetString("notificationHubRegion");

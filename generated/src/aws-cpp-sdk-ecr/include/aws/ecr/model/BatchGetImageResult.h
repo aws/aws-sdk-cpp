@@ -90,12 +90,15 @@ class BatchGetImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Image> m_images;
 
   Aws::Vector<ImageFailure> m_failures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_imagesHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -21,6 +21,7 @@ using namespace Aws;
 GetUseCaseForModelAccessResult::GetUseCaseForModelAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUseCaseForModelAccessResult& GetUseCaseForModelAccessResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("formData")) {
     m_formData = HashingUtils::Base64Decode(jsonValue.GetString("formData"));

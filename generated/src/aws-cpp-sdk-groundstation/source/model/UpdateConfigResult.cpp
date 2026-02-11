@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateConfigResult::UpdateConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateConfigResult& UpdateConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configId")) {
     m_configId = jsonValue.GetString("configId");

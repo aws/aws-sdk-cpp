@@ -20,6 +20,7 @@ using namespace Aws;
 CreateGrantResult::CreateGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateGrantResult& CreateGrantResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GrantToken")) {
     m_grantToken = jsonValue.GetString("GrantToken");

@@ -102,6 +102,8 @@ class DetectDocumentTextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DocumentMetadata m_documentMetadata;
 
@@ -110,6 +112,7 @@ class DetectDocumentTextResult {
   Aws::String m_detectDocumentTextModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentMetadataHasBeenSet = false;
   bool m_blocksHasBeenSet = false;
   bool m_detectDocumentTextModelVersionHasBeenSet = false;

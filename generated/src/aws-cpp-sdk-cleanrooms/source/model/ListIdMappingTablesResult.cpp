@@ -20,6 +20,7 @@ using namespace Aws;
 ListIdMappingTablesResult::ListIdMappingTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIdMappingTablesResult& ListIdMappingTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("idMappingTableSummaries")) {
     Aws::Utils::Array<JsonView> idMappingTableSummariesJsonList = jsonValue.GetArray("idMappingTableSummaries");

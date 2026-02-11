@@ -20,6 +20,7 @@ using namespace Aws;
 ListSupportedInstanceTypesResult::ListSupportedInstanceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSupportedInstanceTypesResult& ListSupportedInstanceTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SupportedInstanceTypes")) {
     Aws::Utils::Array<JsonView> supportedInstanceTypesJsonList = jsonValue.GetArray("SupportedInstanceTypes");

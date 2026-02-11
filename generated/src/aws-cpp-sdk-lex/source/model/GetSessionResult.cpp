@@ -20,6 +20,7 @@ using namespace Aws;
 GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recentIntentSummaryView")) {
     Aws::Utils::Array<JsonView> recentIntentSummaryViewJsonList = jsonValue.GetArray("recentIntentSummaryView");

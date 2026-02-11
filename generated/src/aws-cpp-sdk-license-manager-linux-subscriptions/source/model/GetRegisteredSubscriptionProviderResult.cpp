@@ -23,6 +23,7 @@ GetRegisteredSubscriptionProviderResult::GetRegisteredSubscriptionProviderResult
 
 GetRegisteredSubscriptionProviderResult& GetRegisteredSubscriptionProviderResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LastSuccessfulDataRetrievalTime")) {
     m_lastSuccessfulDataRetrievalTime = jsonValue.GetString("LastSuccessfulDataRetrievalTime");

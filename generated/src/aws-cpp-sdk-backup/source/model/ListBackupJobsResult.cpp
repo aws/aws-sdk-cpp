@@ -20,6 +20,7 @@ using namespace Aws;
 ListBackupJobsResult::ListBackupJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBackupJobsResult& ListBackupJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BackupJobs")) {
     Aws::Utils::Array<JsonView> backupJobsJsonList = jsonValue.GetArray("BackupJobs");

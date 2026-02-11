@@ -23,6 +23,7 @@ DescribeConfigurationAggregatorsResult::DescribeConfigurationAggregatorsResult(c
 
 DescribeConfigurationAggregatorsResult& DescribeConfigurationAggregatorsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationAggregators")) {
     Aws::Utils::Array<JsonView> configurationAggregatorsJsonList = jsonValue.GetArray("ConfigurationAggregators");

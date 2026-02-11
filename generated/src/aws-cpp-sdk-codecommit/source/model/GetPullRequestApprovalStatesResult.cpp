@@ -22,6 +22,7 @@ GetPullRequestApprovalStatesResult::GetPullRequestApprovalStatesResult(const Aws
 }
 
 GetPullRequestApprovalStatesResult& GetPullRequestApprovalStatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("approvals")) {
     Aws::Utils::Array<JsonView> approvalsJsonList = jsonValue.GetArray("approvals");

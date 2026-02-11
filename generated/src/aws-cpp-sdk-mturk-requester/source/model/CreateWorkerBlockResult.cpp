@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWorkerBlockResult::CreateWorkerBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWorkerBlockResult& CreateWorkerBlockResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

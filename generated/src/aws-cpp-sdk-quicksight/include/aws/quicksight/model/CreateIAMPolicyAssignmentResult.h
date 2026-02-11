@@ -155,6 +155,8 @@ class CreateIAMPolicyAssignmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_assignmentName;
 
@@ -169,6 +171,7 @@ class CreateIAMPolicyAssignmentResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assignmentNameHasBeenSet = false;
   bool m_assignmentIdHasBeenSet = false;
   bool m_assignmentStatusHasBeenSet = false;

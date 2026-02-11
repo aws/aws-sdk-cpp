@@ -23,6 +23,7 @@ ListCrossAccountAuthorizationsResult::ListCrossAccountAuthorizationsResult(const
 
 ListCrossAccountAuthorizationsResult& ListCrossAccountAuthorizationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("crossAccountAuthorizations")) {
     Aws::Utils::Array<JsonView> crossAccountAuthorizationsJsonList = jsonValue.GetArray("crossAccountAuthorizations");

@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateFacesResult::AssociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateFacesResult& AssociateFacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssociatedFaces")) {
     Aws::Utils::Array<JsonView> associatedFacesJsonList = jsonValue.GetArray("AssociatedFaces");

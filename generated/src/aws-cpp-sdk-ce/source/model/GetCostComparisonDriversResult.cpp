@@ -20,6 +20,7 @@ using namespace Aws;
 GetCostComparisonDriversResult::GetCostComparisonDriversResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCostComparisonDriversResult& GetCostComparisonDriversResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CostComparisonDrivers")) {
     Aws::Utils::Array<JsonView> costComparisonDriversJsonList = jsonValue.GetArray("CostComparisonDrivers");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteTrialResult::DeleteTrialResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteTrialResult& DeleteTrialResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrialArn")) {
     m_trialArn = jsonValue.GetString("TrialArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetTemplateResult::GetTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetTemplateResult& GetTemplateResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

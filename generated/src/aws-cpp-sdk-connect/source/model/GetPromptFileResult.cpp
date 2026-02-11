@@ -20,6 +20,7 @@ using namespace Aws;
 GetPromptFileResult::GetPromptFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPromptFileResult& GetPromptFileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PromptPresignedUrl")) {
     m_promptPresignedUrl = jsonValue.GetString("PromptPresignedUrl");

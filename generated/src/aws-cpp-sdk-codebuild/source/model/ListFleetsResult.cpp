@@ -20,6 +20,7 @@ using namespace Aws;
 ListFleetsResult::ListFleetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFleetsResult& ListFleetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

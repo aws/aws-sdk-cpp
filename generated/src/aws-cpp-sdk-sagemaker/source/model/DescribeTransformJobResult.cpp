@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTransformJobResult::DescribeTransformJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTransformJobResult& DescribeTransformJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransformJobName")) {
     m_transformJobName = jsonValue.GetString("TransformJobName");

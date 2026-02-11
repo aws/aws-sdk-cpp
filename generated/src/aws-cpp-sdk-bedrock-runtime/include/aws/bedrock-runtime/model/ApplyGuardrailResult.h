@@ -158,6 +158,8 @@ class ApplyGuardrailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GuardrailUsage m_usage;
 
@@ -172,6 +174,7 @@ class ApplyGuardrailResult {
   GuardrailCoverage m_guardrailCoverage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_usageHasBeenSet = false;
   bool m_actionHasBeenSet = false;
   bool m_actionReasonHasBeenSet = false;

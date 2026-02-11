@@ -20,6 +20,7 @@ using namespace Aws;
 UpdatePromptResult::UpdatePromptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdatePromptResult& UpdatePromptResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PromptARN")) {
     m_promptARN = jsonValue.GetString("PromptARN");

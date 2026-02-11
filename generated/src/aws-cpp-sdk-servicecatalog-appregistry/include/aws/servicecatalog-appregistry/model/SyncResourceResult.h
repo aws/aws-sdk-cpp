@@ -91,6 +91,8 @@ class SyncResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationArn;
 
@@ -99,6 +101,7 @@ class SyncResourceResult {
   SyncAction m_actionTaken{SyncAction::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_actionTakenHasBeenSet = false;

@@ -99,6 +99,8 @@ class ListBotReplicasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -107,6 +109,7 @@ class ListBotReplicasResult {
   Aws::Vector<BotReplicaSummary> m_botReplicaSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botIdHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
   bool m_botReplicaSummariesHasBeenSet = false;

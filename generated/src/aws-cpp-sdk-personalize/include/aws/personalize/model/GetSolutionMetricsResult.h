@@ -82,12 +82,15 @@ class GetSolutionMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_solutionVersionArn;
 
   Aws::Map<Aws::String, double> m_metrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_solutionVersionArnHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

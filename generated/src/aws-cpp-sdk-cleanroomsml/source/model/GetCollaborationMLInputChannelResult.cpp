@@ -23,6 +23,7 @@ GetCollaborationMLInputChannelResult::GetCollaborationMLInputChannelResult(const
 
 GetCollaborationMLInputChannelResult& GetCollaborationMLInputChannelResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("membershipIdentifier")) {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");

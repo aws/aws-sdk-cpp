@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAIAgentVersionResult::CreateAIAgentVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAIAgentVersionResult& CreateAIAgentVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("aiAgent")) {
     m_aiAgent = jsonValue.GetObject("aiAgent");

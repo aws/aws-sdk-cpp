@@ -24,6 +24,7 @@ DescribeOrganizationConfigRuleStatusesResult::DescribeOrganizationConfigRuleStat
 
 DescribeOrganizationConfigRuleStatusesResult& DescribeOrganizationConfigRuleStatusesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationConfigRuleStatuses")) {
     Aws::Utils::Array<JsonView> organizationConfigRuleStatusesJsonList = jsonValue.GetArray("OrganizationConfigRuleStatuses");

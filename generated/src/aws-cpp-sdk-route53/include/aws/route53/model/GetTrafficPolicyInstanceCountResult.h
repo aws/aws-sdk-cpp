@@ -63,10 +63,13 @@ class GetTrafficPolicyInstanceCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_trafficPolicyInstanceCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trafficPolicyInstanceCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

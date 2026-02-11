@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetSchemaAnalysisRuleResult::BatchGetSchemaAnalysisRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetSchemaAnalysisRuleResult& BatchGetSchemaAnalysisRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("analysisRules")) {
     Aws::Utils::Array<JsonView> analysisRulesJsonList = jsonValue.GetArray("analysisRules");

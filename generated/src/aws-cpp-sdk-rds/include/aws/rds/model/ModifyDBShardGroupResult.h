@@ -250,6 +250,8 @@ class ModifyDBShardGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dBShardGroupResourceId;
 
@@ -274,6 +276,7 @@ class ModifyDBShardGroupResult {
   Aws::Vector<Tag> m_tagList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBShardGroupResourceIdHasBeenSet = false;
   bool m_dBShardGroupIdentifierHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;

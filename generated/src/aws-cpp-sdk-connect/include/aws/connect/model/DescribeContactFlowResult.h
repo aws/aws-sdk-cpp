@@ -58,10 +58,13 @@ class DescribeContactFlowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContactFlow m_contactFlow;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactFlowHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

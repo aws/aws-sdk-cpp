@@ -20,6 +20,7 @@ using namespace Aws;
 StartArchiveSearchResult::StartArchiveSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartArchiveSearchResult& StartArchiveSearchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SearchId")) {
     m_searchId = jsonValue.GetString("SearchId");

@@ -223,6 +223,8 @@ class DescribeRuleGroupMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ruleGroupArn;
 
@@ -245,6 +247,7 @@ class DescribeRuleGroupMetadataResult {
   Aws::String m_listingName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ruleGroupArnHasBeenSet = false;
   bool m_ruleGroupNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

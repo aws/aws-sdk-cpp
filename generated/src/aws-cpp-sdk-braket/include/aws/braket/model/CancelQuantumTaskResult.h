@@ -73,12 +73,15 @@ class CancelQuantumTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_quantumTaskArn;
 
   CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_quantumTaskArnHasBeenSet = false;
   bool m_cancellationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

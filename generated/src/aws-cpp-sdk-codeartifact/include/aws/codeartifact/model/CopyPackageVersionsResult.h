@@ -96,12 +96,15 @@ class CopyPackageVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, SuccessfulPackageVersionInfo> m_successfulVersions;
 
   Aws::Map<Aws::String, PackageVersionError> m_failedVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulVersionsHasBeenSet = false;
   bool m_failedVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

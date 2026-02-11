@@ -20,6 +20,7 @@ using namespace Aws;
 ListImpersonationRolesResult::ListImpersonationRolesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListImpersonationRolesResult& ListImpersonationRolesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Roles")) {
     Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");

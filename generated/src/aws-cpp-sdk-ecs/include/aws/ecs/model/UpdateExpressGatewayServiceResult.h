@@ -59,10 +59,13 @@ class UpdateExpressGatewayServiceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   UpdatedExpressGatewayService m_service;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

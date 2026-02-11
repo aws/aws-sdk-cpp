@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSchemasResult::DescribeSchemasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSchemasResult& DescribeSchemasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Marker")) {
     m_marker = jsonValue.GetString("Marker");

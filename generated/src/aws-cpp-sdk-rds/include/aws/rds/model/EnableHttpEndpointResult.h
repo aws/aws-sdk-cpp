@@ -74,12 +74,15 @@ class EnableHttpEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceArn;
 
   bool m_httpEndpointEnabled{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_httpEndpointEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

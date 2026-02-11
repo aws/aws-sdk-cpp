@@ -24,6 +24,7 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesResult::BatchAssociateApproval
 
 BatchAssociateApprovalRuleTemplateWithRepositoriesResult& BatchAssociateApprovalRuleTemplateWithRepositoriesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("associatedRepositoryNames")) {
     Aws::Utils::Array<JsonView> associatedRepositoryNamesJsonList = jsonValue.GetArray("associatedRepositoryNames");

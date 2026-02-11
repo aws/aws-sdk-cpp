@@ -20,6 +20,7 @@ using namespace Aws;
 RetrieveSdkResult::RetrieveSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RetrieveSdkResult& RetrieveSdkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("results")) {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("results");

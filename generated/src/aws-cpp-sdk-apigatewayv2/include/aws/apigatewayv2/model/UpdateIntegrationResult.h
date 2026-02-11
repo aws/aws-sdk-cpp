@@ -500,6 +500,8 @@ class UpdateIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_apiGatewayManaged{false};
 
@@ -542,6 +544,7 @@ class UpdateIntegrationResult {
   TlsConfig m_tlsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;

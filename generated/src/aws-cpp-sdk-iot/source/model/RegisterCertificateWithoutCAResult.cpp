@@ -22,6 +22,7 @@ RegisterCertificateWithoutCAResult::RegisterCertificateWithoutCAResult(const Aws
 }
 
 RegisterCertificateWithoutCAResult& RegisterCertificateWithoutCAResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("certificateArn")) {
     m_certificateArn = jsonValue.GetString("certificateArn");

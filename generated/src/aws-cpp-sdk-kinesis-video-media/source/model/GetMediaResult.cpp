@@ -19,6 +19,7 @@ using namespace Aws;
 GetMediaResult::GetMediaResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetMediaResult& GetMediaResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_payload = result.TakeOwnershipOfPayload();
   m_payloadHasBeenSet = true;
 

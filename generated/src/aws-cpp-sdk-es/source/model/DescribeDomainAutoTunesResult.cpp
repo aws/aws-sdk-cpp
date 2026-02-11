@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDomainAutoTunesResult::DescribeDomainAutoTunesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDomainAutoTunesResult& DescribeDomainAutoTunesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutoTunes")) {
     Aws::Utils::Array<JsonView> autoTunesJsonList = jsonValue.GetArray("AutoTunes");

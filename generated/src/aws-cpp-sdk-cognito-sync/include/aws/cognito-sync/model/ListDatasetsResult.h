@@ -102,6 +102,8 @@ class ListDatasetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Dataset> m_datasets;
 
@@ -110,6 +112,7 @@ class ListDatasetsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetsHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

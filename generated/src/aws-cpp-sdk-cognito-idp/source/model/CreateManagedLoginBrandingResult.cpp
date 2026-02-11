@@ -20,6 +20,7 @@ using namespace Aws;
 CreateManagedLoginBrandingResult::CreateManagedLoginBrandingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateManagedLoginBrandingResult& CreateManagedLoginBrandingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedLoginBranding")) {
     m_managedLoginBranding = jsonValue.GetObject("ManagedLoginBranding");

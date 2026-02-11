@@ -59,10 +59,13 @@ class DescribeTextTranslationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TextTranslationJobProperties m_textTranslationJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_textTranslationJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

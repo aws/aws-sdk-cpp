@@ -23,6 +23,7 @@ GetCompatibleElasticsearchVersionsResult::GetCompatibleElasticsearchVersionsResu
 
 GetCompatibleElasticsearchVersionsResult& GetCompatibleElasticsearchVersionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CompatibleElasticsearchVersions")) {
     Aws::Utils::Array<JsonView> compatibleElasticsearchVersionsJsonList = jsonValue.GetArray("CompatibleElasticsearchVersions");

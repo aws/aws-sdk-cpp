@@ -143,6 +143,8 @@ class GetDataExportConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isExportEnabled{false};
 
@@ -157,6 +159,7 @@ class GetDataExportConfigurationResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isExportEnabledHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;

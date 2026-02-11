@@ -20,6 +20,7 @@ using namespace Aws;
 ListEnvironmentVpcsResult::ListEnvironmentVpcsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEnvironmentVpcsResult& ListEnvironmentVpcsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EnvironmentVpcList")) {
     Aws::Utils::Array<JsonView> environmentVpcListJsonList = jsonValue.GetArray("EnvironmentVpcList");

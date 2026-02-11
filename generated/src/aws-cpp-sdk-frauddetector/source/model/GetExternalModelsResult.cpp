@@ -20,6 +20,7 @@ using namespace Aws;
 GetExternalModelsResult::GetExternalModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetExternalModelsResult& GetExternalModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("externalModels")) {
     Aws::Utils::Array<JsonView> externalModelsJsonList = jsonValue.GetArray("externalModels");

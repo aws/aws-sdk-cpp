@@ -20,6 +20,7 @@ using namespace Aws;
 GetDICOMImportJobResult::GetDICOMImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDICOMImportJobResult& GetDICOMImportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobProperties")) {
     m_jobProperties = jsonValue.GetObject("jobProperties");

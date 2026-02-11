@@ -24,6 +24,7 @@ DescribeBatchDeleteConfigurationTaskResult::DescribeBatchDeleteConfigurationTask
 
 DescribeBatchDeleteConfigurationTaskResult& DescribeBatchDeleteConfigurationTaskResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("task")) {
     m_task = jsonValue.GetObject("task");

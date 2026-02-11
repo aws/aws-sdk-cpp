@@ -22,6 +22,7 @@ GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult(Aws
 
 GetSolFunctionPackageDescriptorResult& GetSolFunctionPackageDescriptorResult::operator=(
     Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_vnfd = result.TakeOwnershipOfPayload();
   m_vnfdHasBeenSet = true;
 

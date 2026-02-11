@@ -209,6 +209,8 @@ class DescribeThingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_thingGroupName;
 
@@ -231,6 +233,7 @@ class DescribeThingGroupResult {
   DynamicGroupStatus m_status{DynamicGroupStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_thingGroupNameHasBeenSet = false;
   bool m_thingGroupIdHasBeenSet = false;
   bool m_thingGroupArnHasBeenSet = false;

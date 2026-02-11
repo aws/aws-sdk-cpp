@@ -65,10 +65,13 @@ class PutPackageOriginConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PackageOriginConfiguration m_originConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_originConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

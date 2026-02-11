@@ -74,12 +74,15 @@ class CreateQuickConnectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_quickConnectARN;
 
   Aws::String m_quickConnectId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_quickConnectARNHasBeenSet = false;
   bool m_quickConnectIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

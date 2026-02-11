@@ -23,6 +23,7 @@ GetEffectivePermissionsForPathResult::GetEffectivePermissionsForPathResult(const
 
 GetEffectivePermissionsForPathResult& GetEffectivePermissionsForPathResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Permissions")) {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");

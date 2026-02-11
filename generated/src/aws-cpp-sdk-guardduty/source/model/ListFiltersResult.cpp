@@ -20,6 +20,7 @@ using namespace Aws;
 ListFiltersResult::ListFiltersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFiltersResult& ListFiltersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("filterNames")) {
     Aws::Utils::Array<JsonView> filterNamesJsonList = jsonValue.GetArray("filterNames");

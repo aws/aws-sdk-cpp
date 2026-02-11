@@ -20,6 +20,7 @@ using namespace Aws;
 CancelSubscriptionResult::CancelSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelSubscriptionResult& CancelSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subscriptionArn")) {
     m_subscriptionArn = jsonValue.GetString("subscriptionArn");

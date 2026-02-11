@@ -63,10 +63,13 @@ class RenewOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OfferingTransaction m_offeringTransaction;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_offeringTransactionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

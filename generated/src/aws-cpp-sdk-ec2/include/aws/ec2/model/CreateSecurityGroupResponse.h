@@ -100,6 +100,8 @@ class CreateSecurityGroupResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_groupId;
 
@@ -108,6 +110,7 @@ class CreateSecurityGroupResponse {
   Aws::String m_securityGroupArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_securityGroupArnHasBeenSet = false;

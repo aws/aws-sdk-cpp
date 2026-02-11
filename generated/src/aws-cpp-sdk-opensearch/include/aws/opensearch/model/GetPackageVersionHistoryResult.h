@@ -109,6 +109,8 @@ class GetPackageVersionHistoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_packageID;
 
@@ -117,6 +119,7 @@ class GetPackageVersionHistoryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_packageIDHasBeenSet = false;
   bool m_packageVersionHistoryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

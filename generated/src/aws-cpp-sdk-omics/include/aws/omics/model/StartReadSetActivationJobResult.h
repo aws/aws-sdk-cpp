@@ -108,6 +108,8 @@ class StartReadSetActivationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -118,6 +120,7 @@ class StartReadSetActivationJobResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_sequenceStoreIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

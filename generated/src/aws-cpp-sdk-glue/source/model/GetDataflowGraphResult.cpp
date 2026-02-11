@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataflowGraphResult::GetDataflowGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataflowGraphResult& GetDataflowGraphResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DagNodes")) {
     Aws::Utils::Array<JsonView> dagNodesJsonList = jsonValue.GetArray("DagNodes");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetKxClusterResult::GetKxClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetKxClusterResult& GetKxClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = KxClusterStatusMapper::GetKxClusterStatusForName(jsonValue.GetString("status"));

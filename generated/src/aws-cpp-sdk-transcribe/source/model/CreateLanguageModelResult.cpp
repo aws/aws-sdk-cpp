@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLanguageModelResult::CreateLanguageModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLanguageModelResult& CreateLanguageModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = CLMLanguageCodeMapper::GetCLMLanguageCodeForName(jsonValue.GetString("LanguageCode"));

@@ -60,10 +60,13 @@ class CreateDirectConnectGatewayAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DirectConnectGatewayAttachment m_directConnectGatewayAttachment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_directConnectGatewayAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -93,6 +93,8 @@ class CreateKeyValueStore2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   KeyValueStore m_keyValueStore;
 
@@ -101,6 +103,7 @@ class CreateKeyValueStore2020_05_31Result {
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyValueStoreHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_locationHasBeenSet = false;

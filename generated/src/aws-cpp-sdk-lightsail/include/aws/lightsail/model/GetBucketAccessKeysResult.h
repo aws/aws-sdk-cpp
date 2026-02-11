@@ -65,10 +65,13 @@ class GetBucketAccessKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AccessKey> m_accessKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

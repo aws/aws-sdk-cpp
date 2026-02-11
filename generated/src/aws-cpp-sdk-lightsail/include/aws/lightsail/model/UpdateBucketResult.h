@@ -85,12 +85,15 @@ class UpdateBucketResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Bucket m_bucket;
 
   Aws::Vector<Operation> m_operations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bucketHasBeenSet = false;
   bool m_operationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

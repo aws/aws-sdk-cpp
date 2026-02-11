@@ -20,6 +20,7 @@ using namespace Aws;
 GetNetworkRoutesResult::GetNetworkRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetNetworkRoutesResult& GetNetworkRoutesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RouteTableArn")) {
     m_routeTableArn = jsonValue.GetString("RouteTableArn");

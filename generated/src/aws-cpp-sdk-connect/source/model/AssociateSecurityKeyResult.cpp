@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateSecurityKeyResult::AssociateSecurityKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateSecurityKeyResult& AssociateSecurityKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssociationId")) {
     m_associationId = jsonValue.GetString("AssociationId");

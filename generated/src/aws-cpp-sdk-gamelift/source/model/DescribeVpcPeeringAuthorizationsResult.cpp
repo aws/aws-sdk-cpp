@@ -23,6 +23,7 @@ DescribeVpcPeeringAuthorizationsResult::DescribeVpcPeeringAuthorizationsResult(c
 
 DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcPeeringAuthorizations")) {
     Aws::Utils::Array<JsonView> vpcPeeringAuthorizationsJsonList = jsonValue.GetArray("VpcPeeringAuthorizations");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeInstanceAttributeResult::DescribeInstanceAttributeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeInstanceAttributeResult& DescribeInstanceAttributeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Attribute")) {
     m_attribute = jsonValue.GetObject("Attribute");

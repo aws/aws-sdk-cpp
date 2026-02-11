@@ -135,6 +135,8 @@ class TranslateDocumentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TranslatedDocument m_translatedDocument;
 
@@ -147,6 +149,7 @@ class TranslateDocumentResult {
   TranslationSettings m_appliedSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_translatedDocumentHasBeenSet = false;
   bool m_sourceLanguageCodeHasBeenSet = false;
   bool m_targetLanguageCodeHasBeenSet = false;

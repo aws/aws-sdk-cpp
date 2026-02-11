@@ -74,10 +74,13 @@ class GetIdentityDkimAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, IdentityDkimAttributes> m_dkimAttributes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dkimAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

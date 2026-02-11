@@ -59,10 +59,13 @@ class DescribeDataTableAttributeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DataTableAttribute m_attribute;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attributeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 GetEventStreamResult::GetEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEventStreamResult& GetEventStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListTableStorageOptimizersResult::ListTableStorageOptimizersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTableStorageOptimizersResult& ListTableStorageOptimizersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StorageOptimizerList")) {
     Aws::Utils::Array<JsonView> storageOptimizerListJsonList = jsonValue.GetArray("StorageOptimizerList");

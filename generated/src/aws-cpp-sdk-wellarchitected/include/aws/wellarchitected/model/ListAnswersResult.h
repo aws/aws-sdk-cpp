@@ -143,6 +143,8 @@ class ListAnswersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workloadId;
 
@@ -157,6 +159,7 @@ class ListAnswersResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workloadIdHasBeenSet = false;
   bool m_milestoneNumberHasBeenSet = false;
   bool m_lensAliasHasBeenSet = false;

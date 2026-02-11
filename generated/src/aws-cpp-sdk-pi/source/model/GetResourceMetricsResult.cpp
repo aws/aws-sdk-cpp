@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceMetricsResult::GetResourceMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceMetricsResult& GetResourceMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AlignedStartTime")) {
     m_alignedStartTime = jsonValue.GetDouble("AlignedStartTime");

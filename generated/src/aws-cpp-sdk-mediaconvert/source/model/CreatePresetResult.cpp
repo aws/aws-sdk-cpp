@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePresetResult::CreatePresetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePresetResult& CreatePresetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("preset")) {
     m_preset = jsonValue.GetObject("preset");

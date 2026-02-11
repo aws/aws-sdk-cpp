@@ -20,6 +20,7 @@ using namespace Aws;
 ListCrossAccountResourcesResult::ListCrossAccountResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCrossAccountResourcesResult& ListCrossAccountResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CrossAccountResources")) {
     Aws::Utils::Array<JsonView> crossAccountResourcesJsonList = jsonValue.GetArray("CrossAccountResources");

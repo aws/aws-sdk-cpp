@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeResourcePoliciesResult::DescribeResourcePoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeResourcePoliciesResult& DescribeResourcePoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resourcePolicies")) {
     Aws::Utils::Array<JsonView> resourcePoliciesJsonList = jsonValue.GetArray("resourcePolicies");

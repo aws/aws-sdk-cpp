@@ -155,6 +155,8 @@ class GetDeliverabilityTestReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeliverabilityTestReport m_deliverabilityTestReport;
 
@@ -167,6 +169,7 @@ class GetDeliverabilityTestReportResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deliverabilityTestReportHasBeenSet = false;
   bool m_overallPlacementHasBeenSet = false;
   bool m_ispPlacementsHasBeenSet = false;

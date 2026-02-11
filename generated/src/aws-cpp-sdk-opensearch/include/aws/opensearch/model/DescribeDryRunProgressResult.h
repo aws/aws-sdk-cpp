@@ -94,6 +94,8 @@ class DescribeDryRunProgressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DryRunProgressStatus m_dryRunProgressStatus;
 
@@ -102,6 +104,7 @@ class DescribeDryRunProgressResult {
   DryRunResults m_dryRunResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dryRunProgressStatusHasBeenSet = false;
   bool m_dryRunConfigHasBeenSet = false;
   bool m_dryRunResultsHasBeenSet = false;

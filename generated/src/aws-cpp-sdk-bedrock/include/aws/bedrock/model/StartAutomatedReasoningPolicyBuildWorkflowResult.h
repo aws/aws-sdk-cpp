@@ -76,12 +76,15 @@ class StartAutomatedReasoningPolicyBuildWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyArn;
 
   Aws::String m_buildWorkflowId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_buildWorkflowIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

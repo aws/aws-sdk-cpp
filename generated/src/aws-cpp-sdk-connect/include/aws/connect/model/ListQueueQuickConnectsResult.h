@@ -118,6 +118,8 @@ class ListQueueQuickConnectsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -128,6 +130,7 @@ class ListQueueQuickConnectsResult {
   Aws::String m_lastModifiedRegion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_quickConnectSummaryListHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

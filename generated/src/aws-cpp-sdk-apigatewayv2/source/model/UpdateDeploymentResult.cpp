@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDeploymentResult::UpdateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDeploymentResult& UpdateDeploymentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("autoDeployed")) {
     m_autoDeployed = jsonValue.GetBool("autoDeployed");

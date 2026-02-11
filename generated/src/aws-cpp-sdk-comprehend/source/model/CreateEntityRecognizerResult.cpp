@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEntityRecognizerResult::CreateEntityRecognizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEntityRecognizerResult& CreateEntityRecognizerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EntityRecognizerArn")) {
     m_entityRecognizerArn = jsonValue.GetString("EntityRecognizerArn");

@@ -156,6 +156,8 @@ class CreateTenantResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tenantName;
 
@@ -170,6 +172,7 @@ class CreateTenantResult {
   SendingStatus m_sendingStatus{SendingStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tenantNameHasBeenSet = false;
   bool m_tenantIdHasBeenSet = false;
   bool m_tenantArnHasBeenSet = false;

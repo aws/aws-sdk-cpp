@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetFieldResult::BatchGetFieldResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetFieldResult& BatchGetFieldResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fields")) {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");

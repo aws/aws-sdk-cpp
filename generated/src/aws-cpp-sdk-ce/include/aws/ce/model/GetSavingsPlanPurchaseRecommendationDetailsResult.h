@@ -78,12 +78,15 @@ class GetSavingsPlanPurchaseRecommendationDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_recommendationDetailId;
 
   RecommendationDetailData m_recommendationDetailData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recommendationDetailIdHasBeenSet = false;
   bool m_recommendationDetailDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

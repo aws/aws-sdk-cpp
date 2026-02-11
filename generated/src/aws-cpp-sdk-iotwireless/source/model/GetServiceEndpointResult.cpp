@@ -20,6 +20,7 @@ using namespace Aws;
 GetServiceEndpointResult::GetServiceEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetServiceEndpointResult& GetServiceEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServiceType")) {
     m_serviceType = WirelessGatewayServiceTypeMapper::GetWirelessGatewayServiceTypeForName(jsonValue.GetString("ServiceType"));

@@ -90,12 +90,15 @@ class ExecuteTransactionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ItemResponse> m_responses;
 
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_responsesHasBeenSet = false;
   bool m_consumedCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

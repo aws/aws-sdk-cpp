@@ -20,6 +20,7 @@ using namespace Aws;
 CreateNotebookInstanceResult::CreateNotebookInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateNotebookInstanceResult& CreateNotebookInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotebookInstanceArn")) {
     m_notebookInstanceArn = jsonValue.GetString("NotebookInstanceArn");

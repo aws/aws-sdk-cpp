@@ -56,10 +56,13 @@ class GetInAppMessagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InAppMessagesResponse m_inAppMessagesResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inAppMessagesResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

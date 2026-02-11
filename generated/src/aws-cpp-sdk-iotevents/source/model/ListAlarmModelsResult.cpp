@@ -20,6 +20,7 @@ using namespace Aws;
 ListAlarmModelsResult::ListAlarmModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAlarmModelsResult& ListAlarmModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("alarmModelSummaries")) {
     Aws::Utils::Array<JsonView> alarmModelSummariesJsonList = jsonValue.GetArray("alarmModelSummaries");

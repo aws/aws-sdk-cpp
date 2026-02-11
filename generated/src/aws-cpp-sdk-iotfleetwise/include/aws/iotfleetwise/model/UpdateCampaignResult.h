@@ -97,6 +97,8 @@ class UpdateCampaignResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -105,6 +107,7 @@ class UpdateCampaignResult {
   CampaignStatus m_status{CampaignStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

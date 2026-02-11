@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteNodegroupResult::DeleteNodegroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteNodegroupResult& DeleteNodegroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nodegroup")) {
     m_nodegroup = jsonValue.GetObject("nodegroup");

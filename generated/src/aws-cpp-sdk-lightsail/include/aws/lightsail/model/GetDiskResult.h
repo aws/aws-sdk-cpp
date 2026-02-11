@@ -58,10 +58,13 @@ class GetDiskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Disk m_disk;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_diskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

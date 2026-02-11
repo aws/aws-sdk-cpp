@@ -164,6 +164,8 @@ class GetMultiRegionEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_endpointName;
 
@@ -178,6 +180,7 @@ class GetMultiRegionEndpointResult {
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointNameHasBeenSet = false;
   bool m_endpointIdHasBeenSet = false;
   bool m_routesHasBeenSet = false;

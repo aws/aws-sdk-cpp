@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTrainingDatasetResult::CreateTrainingDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTrainingDatasetResult& CreateTrainingDatasetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("trainingDatasetArn")) {
     m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");

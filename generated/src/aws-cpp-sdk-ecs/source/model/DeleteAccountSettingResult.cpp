@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteAccountSettingResult::DeleteAccountSettingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAccountSettingResult& DeleteAccountSettingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("setting")) {
     m_setting = jsonValue.GetObject("setting");

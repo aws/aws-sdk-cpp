@@ -126,6 +126,8 @@ class ListResolverQueryLogConfigsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -136,6 +138,7 @@ class ListResolverQueryLogConfigsResult {
   Aws::Vector<ResolverQueryLogConfig> m_resolverQueryLogConfigs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
   bool m_totalFilteredCountHasBeenSet = false;

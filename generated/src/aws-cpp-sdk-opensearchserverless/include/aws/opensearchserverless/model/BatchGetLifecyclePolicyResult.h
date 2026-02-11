@@ -92,12 +92,15 @@ class BatchGetLifecyclePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<LifecyclePolicyDetail> m_lifecyclePolicyDetails;
 
   Aws::Vector<LifecyclePolicyErrorDetail> m_lifecyclePolicyErrorDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lifecyclePolicyDetailsHasBeenSet = false;
   bool m_lifecyclePolicyErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

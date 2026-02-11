@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateUserPoolClientResult::UpdateUserPoolClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateUserPoolClientResult& UpdateUserPoolClientResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserPoolClient")) {
     m_userPoolClient = jsonValue.GetObject("UserPoolClient");

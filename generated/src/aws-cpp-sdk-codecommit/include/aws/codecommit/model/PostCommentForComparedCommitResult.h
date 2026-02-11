@@ -164,6 +164,8 @@ class PostCommentForComparedCommitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_repositoryName;
 
@@ -180,6 +182,7 @@ class PostCommentForComparedCommitResult {
   Comment m_comment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryNameHasBeenSet = false;
   bool m_beforeCommitIdHasBeenSet = false;
   bool m_afterCommitIdHasBeenSet = false;

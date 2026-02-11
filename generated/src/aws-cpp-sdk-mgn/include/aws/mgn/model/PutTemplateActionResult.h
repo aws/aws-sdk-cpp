@@ -268,6 +268,8 @@ class PutTemplateActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_actionID;
 
@@ -296,6 +298,7 @@ class PutTemplateActionResult {
   ActionCategory m_category{ActionCategory::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionIDHasBeenSet = false;
   bool m_actionNameHasBeenSet = false;
   bool m_documentIdentifierHasBeenSet = false;

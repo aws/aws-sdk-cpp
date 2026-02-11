@@ -78,12 +78,15 @@ class CreateVpcEndpointServiceConfigurationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ServiceConfiguration m_serviceConfiguration;
 
   Aws::String m_clientToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

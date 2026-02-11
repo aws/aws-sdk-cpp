@@ -58,10 +58,13 @@ class UpdateAccountPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccountPreferences m_accountPreferences;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountPreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

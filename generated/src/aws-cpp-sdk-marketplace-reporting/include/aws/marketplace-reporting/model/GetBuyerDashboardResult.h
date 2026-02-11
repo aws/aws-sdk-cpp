@@ -103,6 +103,8 @@ class GetBuyerDashboardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_embedUrl;
 
@@ -111,6 +113,7 @@ class GetBuyerDashboardResult {
   Aws::Vector<Aws::String> m_embeddingDomains;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_embedUrlHasBeenSet = false;
   bool m_dashboardIdentifierHasBeenSet = false;
   bool m_embeddingDomainsHasBeenSet = false;

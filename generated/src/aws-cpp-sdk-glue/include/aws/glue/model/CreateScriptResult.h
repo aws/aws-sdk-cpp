@@ -74,12 +74,15 @@ class CreateScriptResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_pythonScript;
 
   Aws::String m_scalaCode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_pythonScriptHasBeenSet = false;
   bool m_scalaCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

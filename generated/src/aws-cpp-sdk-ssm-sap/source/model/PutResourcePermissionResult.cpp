@@ -20,6 +20,7 @@ using namespace Aws;
 PutResourcePermissionResult::PutResourcePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutResourcePermissionResult& PutResourcePermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Policy")) {
     m_policy = jsonValue.GetString("Policy");

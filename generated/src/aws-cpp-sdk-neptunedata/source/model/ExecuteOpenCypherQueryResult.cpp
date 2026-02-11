@@ -20,6 +20,7 @@ using namespace Aws;
 ExecuteOpenCypherQueryResult::ExecuteOpenCypherQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExecuteOpenCypherQueryResult& ExecuteOpenCypherQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("results")) {
     m_results = jsonValue.GetObject("results");

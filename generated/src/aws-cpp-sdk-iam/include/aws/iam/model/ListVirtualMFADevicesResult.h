@@ -114,6 +114,8 @@ class ListVirtualMFADevicesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VirtualMFADevice> m_virtualMFADevices;
 
@@ -122,6 +124,7 @@ class ListVirtualMFADevicesResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_virtualMFADevicesHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_markerHasBeenSet = false;

@@ -88,12 +88,15 @@ class ListImageRecipesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   Aws::Vector<ImageRecipeSummary> m_imageRecipeSummaryList;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_imageRecipeSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

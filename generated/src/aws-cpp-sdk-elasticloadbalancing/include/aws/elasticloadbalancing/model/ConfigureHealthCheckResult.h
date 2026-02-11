@@ -64,10 +64,13 @@ class ConfigureHealthCheckResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HealthCheck m_healthCheck;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_healthCheckHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

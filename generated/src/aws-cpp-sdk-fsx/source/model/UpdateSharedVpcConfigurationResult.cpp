@@ -22,6 +22,7 @@ UpdateSharedVpcConfigurationResult::UpdateSharedVpcConfigurationResult(const Aws
 }
 
 UpdateSharedVpcConfigurationResult& UpdateSharedVpcConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EnableFsxRouteTableUpdatesFromParticipantAccounts")) {
     m_enableFsxRouteTableUpdatesFromParticipantAccounts = jsonValue.GetString("EnableFsxRouteTableUpdatesFromParticipantAccounts");

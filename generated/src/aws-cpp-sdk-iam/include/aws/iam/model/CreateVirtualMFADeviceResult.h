@@ -65,10 +65,13 @@ class CreateVirtualMFADeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VirtualMFADevice m_virtualMFADevice;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_virtualMFADeviceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

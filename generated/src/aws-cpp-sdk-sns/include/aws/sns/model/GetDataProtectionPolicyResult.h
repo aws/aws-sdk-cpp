@@ -58,10 +58,13 @@ class GetDataProtectionPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dataProtectionPolicy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataProtectionPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

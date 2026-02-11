@@ -20,6 +20,7 @@ using namespace Aws;
 StartResourceStateUpdateResult::StartResourceStateUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartResourceStateUpdateResult& StartResourceStateUpdateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("lifecycleExecutionId")) {
     m_lifecycleExecutionId = jsonValue.GetString("lifecycleExecutionId");

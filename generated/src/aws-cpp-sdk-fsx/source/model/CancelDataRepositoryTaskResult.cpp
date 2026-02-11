@@ -20,6 +20,7 @@ using namespace Aws;
 CancelDataRepositoryTaskResult::CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelDataRepositoryTaskResult& CancelDataRepositoryTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Lifecycle")) {
     m_lifecycle = DataRepositoryTaskLifecycleMapper::GetDataRepositoryTaskLifecycleForName(jsonValue.GetString("Lifecycle"));

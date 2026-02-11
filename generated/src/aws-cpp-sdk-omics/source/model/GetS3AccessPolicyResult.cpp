@@ -20,6 +20,7 @@ using namespace Aws;
 GetS3AccessPolicyResult::GetS3AccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetS3AccessPolicyResult& GetS3AccessPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("s3AccessPointArn")) {
     m_s3AccessPointArn = jsonValue.GetString("s3AccessPointArn");

@@ -20,6 +20,7 @@ using namespace Aws;
 StartFailbackLaunchResult::StartFailbackLaunchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartFailbackLaunchResult& StartFailbackLaunchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("job")) {
     m_job = jsonValue.GetObject("job");

@@ -68,10 +68,13 @@ class SendBulkTemplatedEmailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BulkEmailDestinationStatus> m_status;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

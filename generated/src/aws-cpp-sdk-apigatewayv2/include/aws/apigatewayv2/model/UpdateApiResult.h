@@ -360,6 +360,8 @@ class UpdateApiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_apiEndpoint;
 
@@ -396,6 +398,7 @@ class UpdateApiResult {
   Aws::Vector<Aws::String> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_apiEndpointHasBeenSet = false;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_apiIdHasBeenSet = false;

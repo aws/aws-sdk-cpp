@@ -58,10 +58,13 @@ class DescribeHoursOfOperationOverrideResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HoursOfOperationOverride m_hoursOfOperationOverride;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hoursOfOperationOverrideHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

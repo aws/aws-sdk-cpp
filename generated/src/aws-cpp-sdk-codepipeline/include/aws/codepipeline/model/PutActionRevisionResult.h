@@ -79,12 +79,15 @@ class PutActionRevisionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_newRevision{false};
 
   Aws::String m_pipelineExecutionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_newRevisionHasBeenSet = false;
   bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

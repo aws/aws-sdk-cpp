@@ -58,10 +58,13 @@ class CreateVoiceProfileDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VoiceProfileDomain m_voiceProfileDomain;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_voiceProfileDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 PutAccountPolicyResult::PutAccountPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutAccountPolicyResult& PutAccountPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountPolicy")) {
     m_accountPolicy = jsonValue.GetObject("accountPolicy");

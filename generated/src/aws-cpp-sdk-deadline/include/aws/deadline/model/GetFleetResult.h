@@ -364,6 +364,8 @@ class GetFleetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fleetId;
 
@@ -404,6 +406,7 @@ class GetFleetResult {
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_farmIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

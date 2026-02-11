@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFileShareResult::DeleteFileShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFileShareResult& DeleteFileShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileShareARN")) {
     m_fileShareARN = jsonValue.GetString("FileShareARN");

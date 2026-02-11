@@ -20,6 +20,7 @@ using namespace Aws;
 GetLayerVersionResult::GetLayerVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLayerVersionResult& GetLayerVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetObject("Content");

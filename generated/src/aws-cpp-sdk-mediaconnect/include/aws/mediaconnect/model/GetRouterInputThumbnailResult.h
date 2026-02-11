@@ -93,6 +93,8 @@ class GetRouterInputThumbnailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -101,6 +103,7 @@ class GetRouterInputThumbnailResult {
   RouterInputThumbnailDetails m_thumbnailDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_thumbnailDetailsHasBeenSet = false;

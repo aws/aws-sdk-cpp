@@ -210,6 +210,8 @@ class GetCodeInterpreterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_codeInterpreterId;
 
@@ -232,6 +234,7 @@ class GetCodeInterpreterResult {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_codeInterpreterIdHasBeenSet = false;
   bool m_codeInterpreterArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

@@ -150,6 +150,8 @@ class DescribeAssetPropertyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_assetId;
 
@@ -164,6 +166,7 @@ class DescribeAssetPropertyResult {
   CompositeModelProperty m_compositeModel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assetIdHasBeenSet = false;
   bool m_assetExternalIdHasBeenSet = false;
   bool m_assetNameHasBeenSet = false;

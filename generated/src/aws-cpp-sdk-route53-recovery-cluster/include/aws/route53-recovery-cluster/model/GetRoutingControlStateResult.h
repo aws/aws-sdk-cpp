@@ -91,6 +91,8 @@ class GetRoutingControlStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_routingControlArn;
 
@@ -99,6 +101,7 @@ class GetRoutingControlStateResult {
   Aws::String m_routingControlName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routingControlArnHasBeenSet = false;
   bool m_routingControlStateHasBeenSet = false;
   bool m_routingControlNameHasBeenSet = false;

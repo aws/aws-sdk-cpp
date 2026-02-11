@@ -75,12 +75,15 @@ class StartMessageMoveTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_taskHandle;
 
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_taskHandleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

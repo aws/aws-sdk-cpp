@@ -111,6 +111,8 @@ class SearchProductsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ProductViewSummary> m_productViewSummaries;
 
@@ -119,6 +121,7 @@ class SearchProductsResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productViewSummariesHasBeenSet = false;
   bool m_productViewAggregationsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

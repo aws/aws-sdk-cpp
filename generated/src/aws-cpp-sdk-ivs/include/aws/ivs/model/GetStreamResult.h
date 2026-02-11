@@ -58,10 +58,13 @@ class GetStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Stream m_stream;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

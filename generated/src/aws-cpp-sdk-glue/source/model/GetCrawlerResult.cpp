@@ -20,6 +20,7 @@ using namespace Aws;
 GetCrawlerResult::GetCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCrawlerResult& GetCrawlerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Crawler")) {
     m_crawler = jsonValue.GetObject("Crawler");

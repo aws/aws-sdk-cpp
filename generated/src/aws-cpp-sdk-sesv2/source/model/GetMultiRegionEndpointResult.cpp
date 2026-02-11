@@ -20,6 +20,7 @@ using namespace Aws;
 GetMultiRegionEndpointResult::GetMultiRegionEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMultiRegionEndpointResult& GetMultiRegionEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EndpointName")) {
     m_endpointName = jsonValue.GetString("EndpointName");

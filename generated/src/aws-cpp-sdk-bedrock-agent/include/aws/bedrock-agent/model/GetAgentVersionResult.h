@@ -58,10 +58,13 @@ class GetAgentVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AgentVersion m_agentVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agentVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

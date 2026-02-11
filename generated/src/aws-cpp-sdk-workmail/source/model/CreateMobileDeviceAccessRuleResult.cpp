@@ -22,6 +22,7 @@ CreateMobileDeviceAccessRuleResult::CreateMobileDeviceAccessRuleResult(const Aws
 }
 
 CreateMobileDeviceAccessRuleResult& CreateMobileDeviceAccessRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MobileDeviceAccessRuleId")) {
     m_mobileDeviceAccessRuleId = jsonValue.GetString("MobileDeviceAccessRuleId");

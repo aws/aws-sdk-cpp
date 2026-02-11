@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateScraperResult::UpdateScraperResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateScraperResult& UpdateScraperResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scraperId")) {
     m_scraperId = jsonValue.GetString("scraperId");

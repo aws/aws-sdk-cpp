@@ -22,6 +22,7 @@ DeleteRemediationExceptionsResult::DeleteRemediationExceptionsResult(const Aws::
 }
 
 DeleteRemediationExceptionsResult& DeleteRemediationExceptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedBatches")) {
     Aws::Utils::Array<JsonView> failedBatchesJsonList = jsonValue.GetArray("FailedBatches");

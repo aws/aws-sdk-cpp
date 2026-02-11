@@ -20,6 +20,7 @@ using namespace Aws;
 GetDocumentAnalysisResult::GetDocumentAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDocumentAnalysisResult& GetDocumentAnalysisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentMetadata")) {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");

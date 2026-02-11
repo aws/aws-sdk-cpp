@@ -281,6 +281,8 @@ class GetHookResultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_hookResultId;
 
@@ -309,6 +311,7 @@ class GetHookResultResult {
   Aws::Vector<Annotation> m_annotations;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hookResultIdHasBeenSet = false;
   bool m_invocationPointHasBeenSet = false;
   bool m_failureModeHasBeenSet = false;

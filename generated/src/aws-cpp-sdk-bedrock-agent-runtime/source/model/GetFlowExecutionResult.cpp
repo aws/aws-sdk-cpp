@@ -20,6 +20,7 @@ using namespace Aws;
 GetFlowExecutionResult::GetFlowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFlowExecutionResult& GetFlowExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("endedAt")) {
     m_endedAt = jsonValue.GetString("endedAt");

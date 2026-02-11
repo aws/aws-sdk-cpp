@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeInterconnectsResult::DescribeInterconnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeInterconnectsResult& DescribeInterconnectsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("interconnects")) {
     Aws::Utils::Array<JsonView> interconnectsJsonList = jsonValue.GetArray("interconnects");

@@ -23,6 +23,7 @@ UpdateChimeWebhookConfigurationResult::UpdateChimeWebhookConfigurationResult(con
 
 UpdateChimeWebhookConfigurationResult& UpdateChimeWebhookConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WebhookConfiguration")) {
     m_webhookConfiguration = jsonValue.GetObject("WebhookConfiguration");

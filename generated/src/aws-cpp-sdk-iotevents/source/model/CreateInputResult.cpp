@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInputResult::CreateInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInputResult& CreateInputResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inputConfiguration")) {
     m_inputConfiguration = jsonValue.GetObject("inputConfiguration");

@@ -58,10 +58,13 @@ class DescribeFHIRExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ExportJobProperties m_exportJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

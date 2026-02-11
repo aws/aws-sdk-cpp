@@ -89,6 +89,8 @@ class GetLensReviewReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workloadId;
 
@@ -97,6 +99,7 @@ class GetLensReviewReportResult {
   LensReviewReport m_lensReviewReport;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workloadIdHasBeenSet = false;
   bool m_milestoneNumberHasBeenSet = false;
   bool m_lensReviewReportHasBeenSet = false;

@@ -63,10 +63,13 @@ class GetInstanceCommunicationLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InstanceCommunicationLimitsConfig m_communicationLimitsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_communicationLimitsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

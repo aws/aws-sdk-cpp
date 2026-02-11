@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteDataTableValueResult::BatchDeleteDataTableValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteDataTableValueResult& BatchDeleteDataTableValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Successful")) {
     Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");

@@ -22,6 +22,7 @@ ListHyperParameterTuningJobsResult::ListHyperParameterTuningJobsResult(const Aws
 }
 
 ListHyperParameterTuningJobsResult& ListHyperParameterTuningJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HyperParameterTuningJobSummaries")) {
     Aws::Utils::Array<JsonView> hyperParameterTuningJobSummariesJsonList = jsonValue.GetArray("HyperParameterTuningJobSummaries");

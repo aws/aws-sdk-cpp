@@ -23,6 +23,7 @@ DescribeTrafficDistributionGroupResult::DescribeTrafficDistributionGroupResult(c
 
 DescribeTrafficDistributionGroupResult& DescribeTrafficDistributionGroupResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrafficDistributionGroup")) {
     m_trafficDistributionGroup = jsonValue.GetObject("TrafficDistributionGroup");

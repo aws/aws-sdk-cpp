@@ -21,6 +21,7 @@ using namespace Aws;
 SignResult::SignResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SignResult& SignResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");

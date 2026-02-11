@@ -66,10 +66,13 @@ class NotifyWorkersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<NotifyWorkersFailureStatus> m_notifyWorkersFailureStatuses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notifyWorkersFailureStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

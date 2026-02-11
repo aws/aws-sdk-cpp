@@ -56,10 +56,13 @@ class CreateHsmConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HsmConfiguration m_hsmConfiguration;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hsmConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

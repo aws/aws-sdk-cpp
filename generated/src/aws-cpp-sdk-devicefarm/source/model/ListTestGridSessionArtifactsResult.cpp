@@ -22,6 +22,7 @@ ListTestGridSessionArtifactsResult::ListTestGridSessionArtifactsResult(const Aws
 }
 
 ListTestGridSessionArtifactsResult& ListTestGridSessionArtifactsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("artifacts")) {
     Aws::Utils::Array<JsonView> artifactsJsonList = jsonValue.GetArray("artifacts");

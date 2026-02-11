@@ -116,6 +116,8 @@ class VerifyPinDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_verificationKeyArn;
 
@@ -126,6 +128,7 @@ class VerifyPinDataResult {
   Aws::String m_encryptionKeyCheckValue;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verificationKeyArnHasBeenSet = false;
   bool m_verificationKeyCheckValueHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;

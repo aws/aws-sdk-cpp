@@ -289,6 +289,8 @@ class StartSyncExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_executionArn;
 
@@ -319,6 +321,7 @@ class StartSyncExecutionResult {
   BillingDetails m_billingDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionArnHasBeenSet = false;
   bool m_stateMachineArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

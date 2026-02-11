@@ -58,10 +58,13 @@ class GetPerformanceAnalysisReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AnalysisReport m_analysisReport;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

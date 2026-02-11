@@ -22,6 +22,7 @@ DescribeAccountModificationsResult::DescribeAccountModificationsResult(const Aws
 }
 
 DescribeAccountModificationsResult& DescribeAccountModificationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountModifications")) {
     Aws::Utils::Array<JsonView> accountModificationsJsonList = jsonValue.GetArray("AccountModifications");

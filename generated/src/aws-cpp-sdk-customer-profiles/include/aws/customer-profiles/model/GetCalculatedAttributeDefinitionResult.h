@@ -276,6 +276,8 @@ class GetCalculatedAttributeDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_calculatedAttributeName;
 
@@ -304,6 +306,7 @@ class GetCalculatedAttributeDefinitionResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_calculatedAttributeNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

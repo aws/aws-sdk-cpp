@@ -58,10 +58,13 @@ class GetQueryRuntimeStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   QueryRuntimeStatistics m_queryRuntimeStatistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_queryRuntimeStatisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

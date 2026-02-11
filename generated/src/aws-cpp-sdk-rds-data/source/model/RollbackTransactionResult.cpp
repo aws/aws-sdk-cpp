@@ -20,6 +20,7 @@ using namespace Aws;
 RollbackTransactionResult::RollbackTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RollbackTransactionResult& RollbackTransactionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("transactionStatus")) {
     m_transactionStatus = jsonValue.GetString("transactionStatus");

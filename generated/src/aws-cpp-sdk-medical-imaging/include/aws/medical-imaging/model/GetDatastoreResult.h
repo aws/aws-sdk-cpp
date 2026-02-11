@@ -58,10 +58,13 @@ class GetDatastoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DatastoreProperties m_datastoreProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datastorePropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

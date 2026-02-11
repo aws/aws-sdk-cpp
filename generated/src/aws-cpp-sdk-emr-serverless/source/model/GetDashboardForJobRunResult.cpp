@@ -20,6 +20,7 @@ using namespace Aws;
 GetDashboardForJobRunResult::GetDashboardForJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDashboardForJobRunResult& GetDashboardForJobRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");

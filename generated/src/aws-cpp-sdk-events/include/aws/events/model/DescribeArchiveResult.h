@@ -221,6 +221,8 @@ class DescribeArchiveResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_archiveArn;
 
@@ -245,6 +247,7 @@ class DescribeArchiveResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_archiveArnHasBeenSet = false;
   bool m_archiveNameHasBeenSet = false;
   bool m_eventSourceArnHasBeenSet = false;

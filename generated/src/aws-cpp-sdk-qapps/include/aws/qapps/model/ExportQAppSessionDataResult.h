@@ -93,6 +93,8 @@ class ExportQAppSessionDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_csvFileLink;
 
@@ -101,6 +103,7 @@ class ExportQAppSessionDataResult {
   Aws::String m_sessionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_csvFileLinkHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;

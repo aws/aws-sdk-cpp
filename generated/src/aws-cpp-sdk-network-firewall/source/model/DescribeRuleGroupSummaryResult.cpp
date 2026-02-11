@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRuleGroupSummaryResult::DescribeRuleGroupSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRuleGroupSummaryResult& DescribeRuleGroupSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleGroupName")) {
     m_ruleGroupName = jsonValue.GetString("RuleGroupName");

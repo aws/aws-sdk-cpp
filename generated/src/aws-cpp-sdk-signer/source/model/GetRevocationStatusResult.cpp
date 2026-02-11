@@ -20,6 +20,7 @@ using namespace Aws;
 GetRevocationStatusResult::GetRevocationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRevocationStatusResult& GetRevocationStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("revokedEntities")) {
     Aws::Utils::Array<JsonView> revokedEntitiesJsonList = jsonValue.GetArray("revokedEntities");

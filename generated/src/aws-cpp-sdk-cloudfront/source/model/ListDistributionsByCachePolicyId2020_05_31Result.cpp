@@ -23,6 +23,7 @@ ListDistributionsByCachePolicyId2020_05_31Result::ListDistributionsByCachePolicy
 
 ListDistributionsByCachePolicyId2020_05_31Result& ListDistributionsByCachePolicyId2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

@@ -67,10 +67,13 @@ class DescribeVpcPeeringAuthorizationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VpcPeeringAuthorization> m_vpcPeeringAuthorizations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcPeeringAuthorizationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

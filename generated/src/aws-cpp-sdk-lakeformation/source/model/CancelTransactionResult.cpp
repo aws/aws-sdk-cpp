@@ -20,6 +20,7 @@ using namespace Aws;
 CancelTransactionResult::CancelTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelTransactionResult& CancelTransactionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

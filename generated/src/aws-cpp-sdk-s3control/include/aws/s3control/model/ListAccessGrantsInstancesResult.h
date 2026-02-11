@@ -103,6 +103,8 @@ class ListAccessGrantsInstancesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -111,6 +113,7 @@ class ListAccessGrantsInstancesResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_accessGrantsInstancesListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

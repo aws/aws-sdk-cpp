@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeHoursOfOperationResult::DescribeHoursOfOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeHoursOfOperationResult& DescribeHoursOfOperationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HoursOfOperation")) {
     m_hoursOfOperation = jsonValue.GetObject("HoursOfOperation");

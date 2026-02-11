@@ -118,6 +118,8 @@ class ListSecurityProfileFlowModulesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FlowModule> m_allowedFlowModules;
 
@@ -128,6 +130,7 @@ class ListSecurityProfileFlowModulesResult {
   Aws::String m_lastModifiedRegion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_allowedFlowModulesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

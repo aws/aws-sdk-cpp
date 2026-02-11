@@ -20,6 +20,7 @@ using namespace Aws;
 CreateComputerResult::CreateComputerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateComputerResult& CreateComputerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Computer")) {
     m_computer = jsonValue.GetObject("Computer");

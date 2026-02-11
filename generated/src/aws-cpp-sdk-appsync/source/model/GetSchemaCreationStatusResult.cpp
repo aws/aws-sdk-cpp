@@ -20,6 +20,7 @@ using namespace Aws;
 GetSchemaCreationStatusResult::GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSchemaCreationStatusResult& GetSchemaCreationStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = SchemaStatusMapper::GetSchemaStatusForName(jsonValue.GetString("status"));

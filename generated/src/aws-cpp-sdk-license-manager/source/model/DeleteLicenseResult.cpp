@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteLicenseResult::DeleteLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteLicenseResult& DeleteLicenseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = LicenseDeletionStatusMapper::GetLicenseDeletionStatusForName(jsonValue.GetString("Status"));

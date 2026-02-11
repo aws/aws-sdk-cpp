@@ -61,10 +61,13 @@ class AcceptDirectConnectGatewayAssociationProposalResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DirectConnectGatewayAssociation m_directConnectGatewayAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_directConnectGatewayAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -74,12 +74,15 @@ class GetPropertygraphSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_statusCode{0};
 
   PropertygraphSummaryValueMap m_payload;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

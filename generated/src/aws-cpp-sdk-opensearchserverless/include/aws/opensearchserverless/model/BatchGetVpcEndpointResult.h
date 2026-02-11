@@ -89,12 +89,15 @@ class BatchGetVpcEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VpcEndpointDetail> m_vpcEndpointDetails;
 
   Aws::Vector<VpcEndpointErrorDetail> m_vpcEndpointErrorDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcEndpointDetailsHasBeenSet = false;
   bool m_vpcEndpointErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

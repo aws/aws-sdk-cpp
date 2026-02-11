@@ -20,6 +20,7 @@ using namespace Aws;
 GetDiskSnapshotsResult::GetDiskSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDiskSnapshotsResult& GetDiskSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("diskSnapshots")) {
     Aws::Utils::Array<JsonView> diskSnapshotsJsonList = jsonValue.GetArray("diskSnapshots");

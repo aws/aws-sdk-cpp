@@ -101,6 +101,8 @@ class CreateProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProductViewDetail m_productViewDetail;
 
@@ -109,6 +111,7 @@ class CreateProductResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productViewDetailHasBeenSet = false;
   bool m_provisioningArtifactDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

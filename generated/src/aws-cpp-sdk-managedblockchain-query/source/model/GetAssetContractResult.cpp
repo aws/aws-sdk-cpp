@@ -20,6 +20,7 @@ using namespace Aws;
 GetAssetContractResult::GetAssetContractResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAssetContractResult& GetAssetContractResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("contractIdentifier")) {
     m_contractIdentifier = jsonValue.GetObject("contractIdentifier");

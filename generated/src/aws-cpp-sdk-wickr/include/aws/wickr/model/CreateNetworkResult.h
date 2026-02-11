@@ -92,6 +92,8 @@ class CreateNetworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_networkId;
 
@@ -100,6 +102,7 @@ class CreateNetworkResult {
   Aws::String m_encryptionKeyArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_networkIdHasBeenSet = false;
   bool m_networkNameHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;

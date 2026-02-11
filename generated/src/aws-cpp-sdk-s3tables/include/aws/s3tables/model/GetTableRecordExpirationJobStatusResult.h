@@ -112,6 +112,8 @@ class GetTableRecordExpirationJobStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TableRecordExpirationJobStatus m_status{TableRecordExpirationJobStatus::NOT_SET};
 
@@ -122,6 +124,7 @@ class GetTableRecordExpirationJobStatusResult {
   TableRecordExpirationJobMetrics m_metrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_lastRunTimestampHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;

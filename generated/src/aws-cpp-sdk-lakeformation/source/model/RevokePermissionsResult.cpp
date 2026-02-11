@@ -20,6 +20,7 @@ using namespace Aws;
 RevokePermissionsResult::RevokePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RevokePermissionsResult& RevokePermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

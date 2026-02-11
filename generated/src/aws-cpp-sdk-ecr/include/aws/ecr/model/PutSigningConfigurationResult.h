@@ -58,10 +58,13 @@ class PutSigningConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SigningConfiguration m_signingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_signingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

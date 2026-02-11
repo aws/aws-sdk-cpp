@@ -24,6 +24,7 @@ DescribeChannelModeratedByAppInstanceUserResult::DescribeChannelModeratedByAppIn
 
 DescribeChannelModeratedByAppInstanceUserResult& DescribeChannelModeratedByAppInstanceUserResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Channel")) {
     m_channel = jsonValue.GetObject("Channel");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountConfigurationResult::GetAccountConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountConfigurationResult& GetAccountConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExpiryEvents")) {
     m_expiryEvents = jsonValue.GetObject("ExpiryEvents");

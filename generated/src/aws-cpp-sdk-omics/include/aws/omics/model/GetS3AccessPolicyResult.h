@@ -125,6 +125,8 @@ class GetS3AccessPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_s3AccessPointArn;
 
@@ -137,6 +139,7 @@ class GetS3AccessPolicyResult {
   Aws::String m_s3AccessPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_s3AccessPointArnHasBeenSet = false;
   bool m_storeIdHasBeenSet = false;
   bool m_storeTypeHasBeenSet = false;

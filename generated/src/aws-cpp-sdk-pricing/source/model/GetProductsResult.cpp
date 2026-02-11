@@ -20,6 +20,7 @@ using namespace Aws;
 GetProductsResult::GetProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetProductsResult& GetProductsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FormatVersion")) {
     m_formatVersion = jsonValue.GetString("FormatVersion");

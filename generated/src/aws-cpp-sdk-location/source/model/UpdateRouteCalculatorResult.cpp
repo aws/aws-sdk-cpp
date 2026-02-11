@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateRouteCalculatorResult::UpdateRouteCalculatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateRouteCalculatorResult& UpdateRouteCalculatorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CalculatorName")) {
     m_calculatorName = jsonValue.GetString("CalculatorName");

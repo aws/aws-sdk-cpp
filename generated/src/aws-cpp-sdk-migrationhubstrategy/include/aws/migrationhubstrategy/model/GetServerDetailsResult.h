@@ -104,6 +104,8 @@ class GetServerDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AssociatedApplication> m_associatedApplications;
 
@@ -112,6 +114,7 @@ class GetServerDetailsResult {
   ServerDetail m_serverDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associatedApplicationsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_serverDetailHasBeenSet = false;

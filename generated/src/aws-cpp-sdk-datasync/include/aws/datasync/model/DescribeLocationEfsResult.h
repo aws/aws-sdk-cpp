@@ -170,6 +170,8 @@ class DescribeLocationEfsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_locationArn;
 
@@ -186,6 +188,7 @@ class DescribeLocationEfsResult {
   EfsInTransitEncryption m_inTransitEncryption{EfsInTransitEncryption::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_ec2ConfigHasBeenSet = false;

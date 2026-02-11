@@ -60,10 +60,13 @@ class GetLicenseManagerReportGeneratorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReportGenerator m_reportGenerator;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportGeneratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

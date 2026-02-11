@@ -140,6 +140,8 @@ class AssumeRoleForPodIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Subject m_subject;
 
@@ -152,6 +154,7 @@ class AssumeRoleForPodIdentityResult {
   Credentials m_credentials;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subjectHasBeenSet = false;
   bool m_audienceHasBeenSet = false;
   bool m_podIdentityAssociationHasBeenSet = false;

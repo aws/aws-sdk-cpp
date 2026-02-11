@@ -191,6 +191,8 @@ class ModifyUsageLimitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_usageLimitId;
 
@@ -209,6 +211,7 @@ class ModifyUsageLimitResult {
   Aws::Vector<Tag> m_tags;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_usageLimitIdHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_featureTypeHasBeenSet = false;

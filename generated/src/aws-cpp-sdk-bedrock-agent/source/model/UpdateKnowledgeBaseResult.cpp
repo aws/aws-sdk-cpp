@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateKnowledgeBaseResult::UpdateKnowledgeBaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateKnowledgeBaseResult& UpdateKnowledgeBaseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("knowledgeBase")) {
     m_knowledgeBase = jsonValue.GetObject("knowledgeBase");

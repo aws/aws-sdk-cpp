@@ -95,12 +95,15 @@ class DescribeTapeArchivesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TapeArchive> m_tapeArchives;
 
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tapeArchivesHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

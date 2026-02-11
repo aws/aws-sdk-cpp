@@ -80,12 +80,15 @@ class GetTopicRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ruleArn;
 
   TopicRule m_rule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ruleArnHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

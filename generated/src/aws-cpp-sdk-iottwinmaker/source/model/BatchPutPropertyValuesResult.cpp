@@ -20,6 +20,7 @@ using namespace Aws;
 BatchPutPropertyValuesResult::BatchPutPropertyValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchPutPropertyValuesResult& BatchPutPropertyValuesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("errorEntries")) {
     Aws::Utils::Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("errorEntries");

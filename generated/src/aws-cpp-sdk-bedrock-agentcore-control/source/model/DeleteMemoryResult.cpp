@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMemoryResult::DeleteMemoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMemoryResult& DeleteMemoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("memoryId")) {
     m_memoryId = jsonValue.GetString("memoryId");

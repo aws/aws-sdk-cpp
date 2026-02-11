@@ -22,6 +22,7 @@ DisableDelegatedAdminAccountResult::DisableDelegatedAdminAccountResult(const Aws
 }
 
 DisableDelegatedAdminAccountResult& DisableDelegatedAdminAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("delegatedAdminAccountId")) {
     m_delegatedAdminAccountId = jsonValue.GetString("delegatedAdminAccountId");

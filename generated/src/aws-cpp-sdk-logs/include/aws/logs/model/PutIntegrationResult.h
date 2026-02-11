@@ -75,12 +75,15 @@ class PutIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_integrationName;
 
   IntegrationStatus m_integrationStatus{IntegrationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_integrationNameHasBeenSet = false;
   bool m_integrationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

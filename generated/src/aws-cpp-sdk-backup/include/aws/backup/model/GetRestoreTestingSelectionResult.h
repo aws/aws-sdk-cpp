@@ -58,10 +58,13 @@ class GetRestoreTestingSelectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RestoreTestingSelectionForGet m_restoreTestingSelection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_restoreTestingSelectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

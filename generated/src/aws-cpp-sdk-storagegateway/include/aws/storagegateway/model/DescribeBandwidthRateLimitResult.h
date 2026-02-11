@@ -93,6 +93,8 @@ class DescribeBandwidthRateLimitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_gatewayARN;
 
@@ -101,6 +103,7 @@ class DescribeBandwidthRateLimitResult {
   long long m_averageDownloadRateLimitInBitsPerSec{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayARNHasBeenSet = false;
   bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
   bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;

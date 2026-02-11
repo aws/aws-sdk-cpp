@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteWorkloadEstimateResult::DeleteWorkloadEstimateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteWorkloadEstimateResult& DeleteWorkloadEstimateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

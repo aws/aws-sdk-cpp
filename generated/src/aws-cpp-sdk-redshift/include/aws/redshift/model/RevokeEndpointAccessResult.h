@@ -206,6 +206,8 @@ class RevokeEndpointAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_grantor;
 
@@ -226,6 +228,7 @@ class RevokeEndpointAccessResult {
   int m_endpointCount{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_grantorHasBeenSet = false;
   bool m_granteeHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;

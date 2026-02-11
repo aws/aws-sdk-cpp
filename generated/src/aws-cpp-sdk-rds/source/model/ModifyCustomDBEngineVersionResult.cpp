@@ -22,6 +22,7 @@ ModifyCustomDBEngineVersionResult::ModifyCustomDBEngineVersionResult(const Aws::
 }
 
 ModifyCustomDBEngineVersionResult& ModifyCustomDBEngineVersionResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchStopResult::BatchStopResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchStopResult& BatchStopResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("failed")) {
     Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("failed");

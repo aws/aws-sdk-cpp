@@ -20,6 +20,7 @@ using namespace Aws;
 AcceptPredictionsResult::AcceptPredictionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AcceptPredictionsResult& AcceptPredictionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");

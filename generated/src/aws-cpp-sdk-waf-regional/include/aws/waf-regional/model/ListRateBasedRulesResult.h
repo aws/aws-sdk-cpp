@@ -87,12 +87,15 @@ class ListRateBasedRulesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextMarker;
 
   Aws::Vector<RuleSummary> m_rules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

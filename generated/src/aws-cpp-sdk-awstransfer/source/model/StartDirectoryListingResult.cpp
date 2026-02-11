@@ -20,6 +20,7 @@ using namespace Aws;
 StartDirectoryListingResult::StartDirectoryListingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartDirectoryListingResult& StartDirectoryListingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ListingId")) {
     m_listingId = jsonValue.GetString("ListingId");

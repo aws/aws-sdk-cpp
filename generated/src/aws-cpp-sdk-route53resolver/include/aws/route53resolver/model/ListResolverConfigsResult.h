@@ -90,12 +90,15 @@ class ListResolverConfigsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ResolverConfig> m_resolverConfigs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_resolverConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

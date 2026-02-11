@@ -56,10 +56,13 @@ class RestoreDBInstanceToPointInTimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DBInstance m_dBInstance;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

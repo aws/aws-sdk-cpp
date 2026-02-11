@@ -108,6 +108,8 @@ class QueryLineageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Vertex> m_vertices;
 
@@ -116,6 +118,7 @@ class QueryLineageResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verticesHasBeenSet = false;
   bool m_edgesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

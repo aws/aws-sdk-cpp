@@ -20,6 +20,7 @@ using namespace Aws;
 GetDomainLayoutResult::GetDomainLayoutResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDomainLayoutResult& GetDomainLayoutResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LayoutDefinitionName")) {
     m_layoutDefinitionName = jsonValue.GetString("LayoutDefinitionName");

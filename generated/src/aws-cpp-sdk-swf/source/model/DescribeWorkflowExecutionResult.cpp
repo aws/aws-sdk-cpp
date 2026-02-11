@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeWorkflowExecutionResult& DescribeWorkflowExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("executionInfo")) {
     m_executionInfo = jsonValue.GetObject("executionInfo");

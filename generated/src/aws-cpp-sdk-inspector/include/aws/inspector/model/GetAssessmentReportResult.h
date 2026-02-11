@@ -74,12 +74,15 @@ class GetAssessmentReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReportStatus m_status{ReportStatus::NOT_SET};
 
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

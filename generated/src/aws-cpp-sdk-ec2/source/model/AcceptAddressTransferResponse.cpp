@@ -20,6 +20,7 @@ using namespace Aws;
 AcceptAddressTransferResponse::AcceptAddressTransferResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 AcceptAddressTransferResponse& AcceptAddressTransferResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

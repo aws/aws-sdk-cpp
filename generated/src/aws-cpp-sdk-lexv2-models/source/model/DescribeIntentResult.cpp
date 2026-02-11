@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIntentResult::DescribeIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeIntentResult& DescribeIntentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("intentId")) {
     m_intentId = jsonValue.GetString("intentId");

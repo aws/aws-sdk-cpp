@@ -65,10 +65,13 @@ class DescribeKeyPairsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<KeyPairInfo> m_keyPairs;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyPairsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

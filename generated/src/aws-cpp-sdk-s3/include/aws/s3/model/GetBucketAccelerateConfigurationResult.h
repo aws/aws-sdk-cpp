@@ -70,12 +70,15 @@ class GetBucketAccelerateConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BucketAccelerateStatus m_status{BucketAccelerateStatus::NOT_SET};
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

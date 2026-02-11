@@ -91,12 +91,15 @@ class DescribeAssessmentTemplatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AssessmentTemplate> m_assessmentTemplates;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assessmentTemplatesHasBeenSet = false;
   bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

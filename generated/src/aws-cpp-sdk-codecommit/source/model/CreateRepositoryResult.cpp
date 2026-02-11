@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRepositoryResult::CreateRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRepositoryResult& CreateRepositoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("repositoryMetadata")) {
     m_repositoryMetadata = jsonValue.GetObject("repositoryMetadata");

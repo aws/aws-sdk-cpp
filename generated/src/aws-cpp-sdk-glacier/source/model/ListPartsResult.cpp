@@ -20,6 +20,7 @@ using namespace Aws;
 ListPartsResult::ListPartsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPartsResult& ListPartsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MultipartUploadId")) {
     m_multipartUploadId = jsonValue.GetString("MultipartUploadId");

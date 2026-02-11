@@ -20,6 +20,7 @@ using namespace Aws;
 ListTrustStoreCertificatesResult::ListTrustStoreCertificatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTrustStoreCertificatesResult& ListTrustStoreCertificatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("certificateList")) {
     Aws::Utils::Array<JsonView> certificateListJsonList = jsonValue.GetArray("certificateList");

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDetectKeyPhrasesResult::BatchDetectKeyPhrasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDetectKeyPhrasesResult& BatchDetectKeyPhrasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResultList")) {
     Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");

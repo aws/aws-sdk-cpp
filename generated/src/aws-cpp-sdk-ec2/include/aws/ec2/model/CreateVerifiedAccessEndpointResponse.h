@@ -58,10 +58,13 @@ class CreateVerifiedAccessEndpointResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VerifiedAccessEndpoint m_verifiedAccessEndpoint;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verifiedAccessEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ListVPCConnectionsResult::ListVPCConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVPCConnectionsResult& ListVPCConnectionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VPCConnectionSummaries")) {
     Aws::Utils::Array<JsonView> vPCConnectionSummariesJsonList = jsonValue.GetArray("VPCConnectionSummaries");

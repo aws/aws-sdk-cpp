@@ -146,6 +146,8 @@ class CreateConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -160,6 +162,7 @@ class CreateConfigurationResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_authenticationStrategyHasBeenSet = false;
   bool m_createdHasBeenSet = false;

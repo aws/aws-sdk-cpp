@@ -89,12 +89,15 @@ class CreateFleetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   FleetAttributes m_fleetAttributes;
 
   Aws::Vector<LocationState> m_locationStates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fleetAttributesHasBeenSet = false;
   bool m_locationStatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

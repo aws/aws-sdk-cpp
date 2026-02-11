@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDataLakeNamespaceResult::UpdateDataLakeNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDataLakeNamespaceResult& UpdateDataLakeNamespaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("namespace")) {
     m_namespace = jsonValue.GetObject("namespace");

@@ -21,6 +21,7 @@ using namespace Aws;
 GenerateMacResult::GenerateMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateMacResult& GenerateMacResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Mac")) {
     m_mac = HashingUtils::Base64Decode(jsonValue.GetString("Mac"));

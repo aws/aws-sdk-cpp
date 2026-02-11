@@ -94,6 +94,8 @@ class GetConsoleOutputResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_instanceId;
 
@@ -102,6 +104,7 @@ class GetConsoleOutputResponse {
   Aws::String m_output;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_outputHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetRemainingFreeTrialDaysResult::GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accounts")) {
     Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");

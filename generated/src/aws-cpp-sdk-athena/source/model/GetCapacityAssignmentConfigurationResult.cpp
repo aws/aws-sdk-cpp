@@ -23,6 +23,7 @@ GetCapacityAssignmentConfigurationResult::GetCapacityAssignmentConfigurationResu
 
 GetCapacityAssignmentConfigurationResult& GetCapacityAssignmentConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CapacityAssignmentConfiguration")) {
     m_capacityAssignmentConfiguration = jsonValue.GetObject("CapacityAssignmentConfiguration");

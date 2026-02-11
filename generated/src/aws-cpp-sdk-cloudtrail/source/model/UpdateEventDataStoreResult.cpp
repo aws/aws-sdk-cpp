@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateEventDataStoreResult::UpdateEventDataStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateEventDataStoreResult& UpdateEventDataStoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventDataStoreArn")) {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");

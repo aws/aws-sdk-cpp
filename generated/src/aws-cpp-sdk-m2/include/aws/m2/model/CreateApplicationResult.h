@@ -89,6 +89,8 @@ class CreateApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationArn;
 
@@ -97,6 +99,7 @@ class CreateApplicationResult {
   int m_applicationVersion{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
   bool m_applicationVersionHasBeenSet = false;

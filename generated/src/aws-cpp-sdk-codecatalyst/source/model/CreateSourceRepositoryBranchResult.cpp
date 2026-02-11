@@ -22,6 +22,7 @@ CreateSourceRepositoryBranchResult::CreateSourceRepositoryBranchResult(const Aws
 }
 
 CreateSourceRepositoryBranchResult& CreateSourceRepositoryBranchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ref")) {
     m_ref = jsonValue.GetString("ref");

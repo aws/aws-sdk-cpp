@@ -56,10 +56,13 @@ class GetTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Template m_template;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

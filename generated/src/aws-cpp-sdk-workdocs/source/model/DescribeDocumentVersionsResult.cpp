@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDocumentVersionsResult::DescribeDocumentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDocumentVersionsResult& DescribeDocumentVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentVersions")) {
     Aws::Utils::Array<JsonView> documentVersionsJsonList = jsonValue.GetArray("DocumentVersions");

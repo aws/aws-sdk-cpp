@@ -20,6 +20,7 @@ using namespace Aws;
 StartAttachmentUploadResult::StartAttachmentUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartAttachmentUploadResult& StartAttachmentUploadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AttachmentId")) {
     m_attachmentId = jsonValue.GetString("AttachmentId");

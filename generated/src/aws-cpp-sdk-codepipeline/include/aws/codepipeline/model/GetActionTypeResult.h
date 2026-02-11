@@ -59,10 +59,13 @@ class GetActionTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ActionTypeDeclaration m_actionType;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

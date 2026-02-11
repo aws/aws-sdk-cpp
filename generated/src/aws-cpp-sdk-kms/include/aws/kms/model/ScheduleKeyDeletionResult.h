@@ -117,6 +117,8 @@ class ScheduleKeyDeletionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -127,6 +129,7 @@ class ScheduleKeyDeletionResult {
   int m_pendingWindowInDays{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_deletionDateHasBeenSet = false;
   bool m_keyStateHasBeenSet = false;

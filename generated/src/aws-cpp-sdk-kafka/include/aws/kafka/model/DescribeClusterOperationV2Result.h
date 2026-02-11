@@ -59,10 +59,13 @@ class DescribeClusterOperationV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ClusterOperationV2 m_clusterOperationInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterOperationInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

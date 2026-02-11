@@ -282,6 +282,8 @@ class GetIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -310,6 +312,7 @@ class GetIndexResult {
   IndexStatistics m_indexStatistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_indexIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

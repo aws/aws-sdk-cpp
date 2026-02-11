@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMultiplexProgramResult::DescribeMultiplexProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMultiplexProgramResult& DescribeMultiplexProgramResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("channelId")) {
     m_channelId = jsonValue.GetString("channelId");

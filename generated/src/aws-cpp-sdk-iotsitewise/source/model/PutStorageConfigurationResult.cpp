@@ -20,6 +20,7 @@ using namespace Aws;
 PutStorageConfigurationResult::PutStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutStorageConfigurationResult& PutStorageConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("storageType")) {
     m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("storageType"));

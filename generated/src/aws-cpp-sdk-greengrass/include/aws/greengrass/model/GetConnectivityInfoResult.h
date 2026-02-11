@@ -82,12 +82,15 @@ class GetConnectivityInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ConnectivityInfo> m_connectivityInfo;
 
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectivityInfoHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

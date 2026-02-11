@@ -64,10 +64,13 @@ class DeleteAnalysisSchemeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AnalysisSchemeStatus m_analysisScheme;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisSchemeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

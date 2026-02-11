@@ -103,6 +103,8 @@ class AddInstanceGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobFlowId;
 
@@ -111,6 +113,7 @@ class AddInstanceGroupsResult {
   Aws::String m_clusterArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobFlowIdHasBeenSet = false;
   bool m_instanceGroupIdsHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;

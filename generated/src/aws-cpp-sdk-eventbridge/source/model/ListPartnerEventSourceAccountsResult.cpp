@@ -23,6 +23,7 @@ ListPartnerEventSourceAccountsResult::ListPartnerEventSourceAccountsResult(const
 
 ListPartnerEventSourceAccountsResult& ListPartnerEventSourceAccountsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PartnerEventSourceAccounts")) {
     Aws::Utils::Array<JsonView> partnerEventSourceAccountsJsonList = jsonValue.GetArray("PartnerEventSourceAccounts");

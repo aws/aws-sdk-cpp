@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSavingsPlansResult::DescribeSavingsPlansResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSavingsPlansResult& DescribeSavingsPlansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("savingsPlans")) {
     Aws::Utils::Array<JsonView> savingsPlansJsonList = jsonValue.GetArray("savingsPlans");

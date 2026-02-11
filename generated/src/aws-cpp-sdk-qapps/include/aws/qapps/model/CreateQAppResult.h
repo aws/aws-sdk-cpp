@@ -250,6 +250,8 @@ class CreateQAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_appId;
 
@@ -276,6 +278,7 @@ class CreateQAppResult {
   Aws::Vector<AppRequiredCapability> m_requiredCapabilities;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appIdHasBeenSet = false;
   bool m_appArnHasBeenSet = false;
   bool m_titleHasBeenSet = false;

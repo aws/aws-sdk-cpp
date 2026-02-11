@@ -20,6 +20,7 @@ using namespace Aws;
 ReportTaskProgressResult::ReportTaskProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReportTaskProgressResult& ReportTaskProgressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("canceled")) {
     m_canceled = jsonValue.GetBool("canceled");

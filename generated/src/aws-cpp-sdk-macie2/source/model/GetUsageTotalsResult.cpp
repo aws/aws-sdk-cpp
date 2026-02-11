@@ -20,6 +20,7 @@ using namespace Aws;
 GetUsageTotalsResult::GetUsageTotalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUsageTotalsResult& GetUsageTotalsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("timeRange")) {
     m_timeRange = TimeRangeMapper::GetTimeRangeForName(jsonValue.GetString("timeRange"));

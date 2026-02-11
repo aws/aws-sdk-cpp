@@ -92,12 +92,15 @@ class DisassociateApplicationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
   Aws::Vector<Aws::String> m_applicationArns;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_applicationArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,6 +23,7 @@ CreateAutoScalingConfigurationResult::CreateAutoScalingConfigurationResult(const
 
 CreateAutoScalingConfigurationResult& CreateAutoScalingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutoScalingConfiguration")) {
     m_autoScalingConfiguration = jsonValue.GetObject("AutoScalingConfiguration");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSMBFileShareResult::CreateSMBFileShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSMBFileShareResult& CreateSMBFileShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileShareARN")) {
     m_fileShareARN = jsonValue.GetString("FileShareARN");

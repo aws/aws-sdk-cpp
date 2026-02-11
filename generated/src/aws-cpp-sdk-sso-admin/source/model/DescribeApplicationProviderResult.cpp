@@ -22,6 +22,7 @@ DescribeApplicationProviderResult::DescribeApplicationProviderResult(const Aws::
 }
 
 DescribeApplicationProviderResult& DescribeApplicationProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationProviderArn")) {
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");

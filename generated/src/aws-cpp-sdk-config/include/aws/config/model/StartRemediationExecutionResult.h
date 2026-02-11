@@ -84,12 +84,15 @@ class StartRemediationExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_failureMessage;
 
   Aws::Vector<ResourceKey> m_failedItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failureMessageHasBeenSet = false;
   bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

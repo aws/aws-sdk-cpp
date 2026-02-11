@@ -59,10 +59,13 @@ class DescribeAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   App m_app;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_appHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

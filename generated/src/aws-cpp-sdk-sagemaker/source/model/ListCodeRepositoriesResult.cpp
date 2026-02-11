@@ -20,6 +20,7 @@ using namespace Aws;
 ListCodeRepositoriesResult::ListCodeRepositoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCodeRepositoriesResult& ListCodeRepositoriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CodeRepositorySummaryList")) {
     Aws::Utils::Array<JsonView> codeRepositorySummaryListJsonList = jsonValue.GetArray("CodeRepositorySummaryList");

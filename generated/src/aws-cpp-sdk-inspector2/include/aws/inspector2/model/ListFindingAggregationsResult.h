@@ -101,6 +101,8 @@ class ListFindingAggregationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AggregationType m_aggregationType{AggregationType::NOT_SET};
 
@@ -109,6 +111,7 @@ class ListFindingAggregationsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aggregationTypeHasBeenSet = false;
   bool m_responsesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAccountLimitsResult::DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountLimits")) {
     Aws::Utils::Array<JsonView> accountLimitsJsonList = jsonValue.GetArray("AccountLimits");

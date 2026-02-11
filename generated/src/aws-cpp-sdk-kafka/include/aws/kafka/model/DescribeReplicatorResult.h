@@ -285,6 +285,8 @@ class DescribeReplicatorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -313,6 +315,7 @@ class DescribeReplicatorResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
   bool m_isReplicatorReferenceHasBeenSet = false;

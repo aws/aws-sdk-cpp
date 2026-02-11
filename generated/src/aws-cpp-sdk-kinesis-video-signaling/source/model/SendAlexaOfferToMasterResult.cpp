@@ -20,6 +20,7 @@ using namespace Aws;
 SendAlexaOfferToMasterResult::SendAlexaOfferToMasterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendAlexaOfferToMasterResult& SendAlexaOfferToMasterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Answer")) {
     m_answer = jsonValue.GetString("Answer");

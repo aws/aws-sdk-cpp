@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteDocumentResult::BatchDeleteDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteDocumentResult& BatchDeleteDocumentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedDocuments")) {
     Aws::Utils::Array<JsonView> failedDocumentsJsonList = jsonValue.GetArray("FailedDocuments");

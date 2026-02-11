@@ -20,6 +20,7 @@ using namespace Aws;
 BatchAcknowledgeAlarmResult::BatchAcknowledgeAlarmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchAcknowledgeAlarmResult& BatchAcknowledgeAlarmResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("errorEntries")) {
     Aws::Utils::Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("errorEntries");

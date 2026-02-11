@@ -76,12 +76,15 @@ class DescribeBrandPublishedVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   BrandDetail m_brandDetail;
 
   BrandDefinition m_brandDefinition;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_brandDetailHasBeenSet = false;
   bool m_brandDefinitionHasBeenSet = false;

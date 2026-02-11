@@ -20,6 +20,7 @@ using namespace Aws;
 DeprovisionByoipCidrResponse::DeprovisionByoipCidrResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeprovisionByoipCidrResponse& DeprovisionByoipCidrResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

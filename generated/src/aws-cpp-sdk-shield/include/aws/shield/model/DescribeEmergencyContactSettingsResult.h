@@ -67,10 +67,13 @@ class DescribeEmergencyContactSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EmergencyContact> m_emergencyContactList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_emergencyContactListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

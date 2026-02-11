@@ -75,12 +75,15 @@ class GetConsoleScreenshotResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_imageData;
 
   Aws::String m_instanceId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_imageDataHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

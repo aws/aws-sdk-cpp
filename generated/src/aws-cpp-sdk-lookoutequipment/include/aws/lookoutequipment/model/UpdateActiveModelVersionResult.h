@@ -145,6 +145,8 @@ class UpdateActiveModelVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_modelName;
 
@@ -159,6 +161,7 @@ class UpdateActiveModelVersionResult {
   Aws::String m_previousActiveVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_currentActiveVersionHasBeenSet = false;

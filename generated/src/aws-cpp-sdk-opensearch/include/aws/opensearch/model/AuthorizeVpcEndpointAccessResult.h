@@ -60,10 +60,13 @@ class AuthorizeVpcEndpointAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AuthorizedPrincipal m_authorizedPrincipal;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_authorizedPrincipalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

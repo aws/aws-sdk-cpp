@@ -22,6 +22,7 @@ DescribeResourcePermissionsResult::DescribeResourcePermissionsResult(const Aws::
 }
 
 DescribeResourcePermissionsResult& DescribeResourcePermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Principals")) {
     Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("Principals");

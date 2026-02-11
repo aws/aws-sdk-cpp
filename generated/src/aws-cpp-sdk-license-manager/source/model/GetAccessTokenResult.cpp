@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccessTokenResult::GetAccessTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccessTokenResult& GetAccessTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccessToken")) {
     m_accessToken = jsonValue.GetString("AccessToken");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetUploadJobResult::GetUploadJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUploadJobResult& GetUploadJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");

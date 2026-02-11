@@ -20,6 +20,7 @@ using namespace Aws;
 ExportNotebookResult::ExportNotebookResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExportNotebookResult& ExportNotebookResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotebookMetadata")) {
     m_notebookMetadata = jsonValue.GetObject("NotebookMetadata");

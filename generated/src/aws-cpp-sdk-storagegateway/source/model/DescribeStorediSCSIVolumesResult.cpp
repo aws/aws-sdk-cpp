@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStorediSCSIVolumesResult::DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStorediSCSIVolumesResult& DescribeStorediSCSIVolumesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StorediSCSIVolumes")) {
     Aws::Utils::Array<JsonView> storediSCSIVolumesJsonList = jsonValue.GetArray("StorediSCSIVolumes");

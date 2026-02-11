@@ -114,6 +114,8 @@ class CreatePrivateGraphEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_vpcId;
 
@@ -124,6 +126,7 @@ class CreatePrivateGraphEndpointResult {
   Aws::String m_vpcEndpointId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_statusHasBeenSet = false;

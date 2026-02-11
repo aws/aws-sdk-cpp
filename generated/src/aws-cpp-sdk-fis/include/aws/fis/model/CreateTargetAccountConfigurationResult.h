@@ -58,10 +58,13 @@ class CreateTargetAccountConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TargetAccountConfiguration m_targetAccountConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_targetAccountConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

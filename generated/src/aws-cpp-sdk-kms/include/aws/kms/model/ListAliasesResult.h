@@ -101,6 +101,8 @@ class ListAliasesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AliasListEntry> m_aliases;
 
@@ -109,6 +111,7 @@ class ListAliasesResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aliasesHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

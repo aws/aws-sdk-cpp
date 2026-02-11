@@ -56,10 +56,13 @@ class CreateWorkspaceBundleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   WorkspaceBundle m_workspaceBundle;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workspaceBundleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

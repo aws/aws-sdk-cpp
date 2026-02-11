@@ -20,6 +20,7 @@ using namespace Aws;
 GetClusterPolicyResult::GetClusterPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetClusterPolicyResult& GetClusterPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("currentVersion")) {
     m_currentVersion = jsonValue.GetString("currentVersion");

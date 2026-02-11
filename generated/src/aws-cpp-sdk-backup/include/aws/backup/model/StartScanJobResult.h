@@ -78,12 +78,15 @@ class StartScanJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::String m_scanJobId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_creationDateHasBeenSet = false;
   bool m_scanJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

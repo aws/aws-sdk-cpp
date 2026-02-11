@@ -58,10 +58,13 @@ class GetDICOMImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DICOMImportJobProperties m_jobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

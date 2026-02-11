@@ -71,10 +71,13 @@ class DescribeApplicationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ApplicationDescription> m_applications;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

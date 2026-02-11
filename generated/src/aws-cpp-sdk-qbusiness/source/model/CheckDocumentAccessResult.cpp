@@ -20,6 +20,7 @@ using namespace Aws;
 CheckDocumentAccessResult::CheckDocumentAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckDocumentAccessResult& CheckDocumentAccessResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("userGroups")) {
     Aws::Utils::Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");

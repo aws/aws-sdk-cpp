@@ -23,6 +23,7 @@ ListResourceGroupingRecommendationsResult::ListResourceGroupingRecommendationsRe
 
 ListResourceGroupingRecommendationsResult& ListResourceGroupingRecommendationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("groupingRecommendations")) {
     Aws::Utils::Array<JsonView> groupingRecommendationsJsonList = jsonValue.GetArray("groupingRecommendations");

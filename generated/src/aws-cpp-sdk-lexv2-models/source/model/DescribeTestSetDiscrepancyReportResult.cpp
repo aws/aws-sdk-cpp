@@ -23,6 +23,7 @@ DescribeTestSetDiscrepancyReportResult::DescribeTestSetDiscrepancyReportResult(c
 
 DescribeTestSetDiscrepancyReportResult& DescribeTestSetDiscrepancyReportResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("testSetDiscrepancyReportId")) {
     m_testSetDiscrepancyReportId = jsonValue.GetString("testSetDiscrepancyReportId");

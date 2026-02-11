@@ -99,6 +99,8 @@ class GetUploadJobPathResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_url;
 
@@ -107,6 +109,7 @@ class GetUploadJobPathResult {
   Aws::Utils::DateTime m_validUntil{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_urlHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_validUntilHasBeenSet = false;

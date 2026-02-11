@@ -20,6 +20,7 @@ using namespace Aws;
 CreateKxDataviewResult::CreateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateKxDataviewResult& CreateKxDataviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataviewName")) {
     m_dataviewName = jsonValue.GetString("dataviewName");

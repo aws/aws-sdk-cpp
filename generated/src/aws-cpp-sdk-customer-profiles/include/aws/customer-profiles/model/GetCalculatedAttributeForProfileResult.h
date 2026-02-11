@@ -129,6 +129,8 @@ class GetCalculatedAttributeForProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_calculatedAttributeName;
 
@@ -141,6 +143,7 @@ class GetCalculatedAttributeForProfileResult {
   Aws::Utils::DateTime m_lastObjectTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_calculatedAttributeNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_isDataPartialHasBeenSet = false;

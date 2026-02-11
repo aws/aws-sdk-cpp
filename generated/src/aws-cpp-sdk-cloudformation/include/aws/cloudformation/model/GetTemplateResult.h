@@ -92,12 +92,15 @@ class GetTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_templateBody;
 
   Aws::Vector<TemplateStage> m_stagesAvailable;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateBodyHasBeenSet = false;
   bool m_stagesAvailableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateApiMappingResult::CreateApiMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateApiMappingResult& CreateApiMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("apiId")) {
     m_apiId = jsonValue.GetString("apiId");

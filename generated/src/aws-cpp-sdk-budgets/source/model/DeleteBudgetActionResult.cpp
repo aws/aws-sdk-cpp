@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBudgetActionResult::DeleteBudgetActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBudgetActionResult& DeleteBudgetActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");

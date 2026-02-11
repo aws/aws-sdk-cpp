@@ -109,6 +109,8 @@ class GetKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_key;
 
@@ -119,6 +121,7 @@ class GetKeyResult {
   long long m_totalSizeInBytes{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
   bool m_itemCountHasBeenSet = false;

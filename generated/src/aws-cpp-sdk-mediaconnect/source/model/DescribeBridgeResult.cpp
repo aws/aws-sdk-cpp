@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBridgeResult::DescribeBridgeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBridgeResult& DescribeBridgeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("bridge")) {
     m_bridge = jsonValue.GetObject("bridge");

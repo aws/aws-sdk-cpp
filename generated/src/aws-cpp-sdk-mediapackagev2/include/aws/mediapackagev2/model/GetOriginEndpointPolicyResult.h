@@ -135,6 +135,8 @@ class GetOriginEndpointPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_channelGroupName;
 
@@ -147,6 +149,7 @@ class GetOriginEndpointPolicyResult {
   CdnAuthConfiguration m_cdnAuthConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_originEndpointNameHasBeenSet = false;

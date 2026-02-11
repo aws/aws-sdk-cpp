@@ -85,12 +85,15 @@ class ListCalculationExecutionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<CalculationSummary> m_calculations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_calculationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

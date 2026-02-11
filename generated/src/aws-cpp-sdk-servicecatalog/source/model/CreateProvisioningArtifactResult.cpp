@@ -20,6 +20,7 @@ using namespace Aws;
 CreateProvisioningArtifactResult::CreateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProvisioningArtifactResult& CreateProvisioningArtifactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProvisioningArtifactDetail")) {
     m_provisioningArtifactDetail = jsonValue.GetObject("ProvisioningArtifactDetail");

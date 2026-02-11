@@ -22,6 +22,7 @@ CreateFleetAdvisorCollectorResult::CreateFleetAdvisorCollectorResult(const Aws::
 }
 
 CreateFleetAdvisorCollectorResult& CreateFleetAdvisorCollectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CollectorReferencedId")) {
     m_collectorReferencedId = jsonValue.GetString("CollectorReferencedId");

@@ -292,6 +292,8 @@ class GetCommandExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_executionId;
 
@@ -320,6 +322,7 @@ class GetCommandExecutionResult {
   Aws::Utils::DateTime m_timeToLive{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionIdHasBeenSet = false;
   bool m_commandArnHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetTargetSelectionRulesResult::GetTargetSelectionRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTargetSelectionRulesResult& GetTargetSelectionRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TargetSelectionRules")) {
     m_targetSelectionRules = jsonValue.GetString("TargetSelectionRules");

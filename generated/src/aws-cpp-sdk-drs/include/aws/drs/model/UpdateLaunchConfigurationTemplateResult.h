@@ -58,10 +58,13 @@ class UpdateLaunchConfigurationTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LaunchConfigurationTemplate m_launchConfigurationTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_launchConfigurationTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

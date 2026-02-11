@@ -66,10 +66,13 @@ class TestTransformerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TransformedLogRecord> m_transformedLogs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transformedLogsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

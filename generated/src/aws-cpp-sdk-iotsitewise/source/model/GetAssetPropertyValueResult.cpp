@@ -20,6 +20,7 @@ using namespace Aws;
 GetAssetPropertyValueResult::GetAssetPropertyValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAssetPropertyValueResult& GetAssetPropertyValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("propertyValue")) {
     m_propertyValue = jsonValue.GetObject("propertyValue");

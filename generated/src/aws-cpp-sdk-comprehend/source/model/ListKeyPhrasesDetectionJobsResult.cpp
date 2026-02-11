@@ -22,6 +22,7 @@ ListKeyPhrasesDetectionJobsResult::ListKeyPhrasesDetectionJobsResult(const Aws::
 }
 
 ListKeyPhrasesDetectionJobsResult& ListKeyPhrasesDetectionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyPhrasesDetectionJobPropertiesList")) {
     Aws::Utils::Array<JsonView> keyPhrasesDetectionJobPropertiesListJsonList = jsonValue.GetArray("KeyPhrasesDetectionJobPropertiesList");

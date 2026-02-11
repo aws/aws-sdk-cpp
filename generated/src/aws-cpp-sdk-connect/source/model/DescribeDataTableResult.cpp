@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDataTableResult::DescribeDataTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDataTableResult& DescribeDataTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataTable")) {
     m_dataTable = jsonValue.GetObject("DataTable");

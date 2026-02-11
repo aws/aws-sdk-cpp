@@ -20,6 +20,7 @@ using namespace Aws;
 SendEmailResult::SendEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendEmailResult& SendEmailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MessageId")) {
     m_messageId = jsonValue.GetString("MessageId");

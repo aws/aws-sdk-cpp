@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteTypeResult::DeleteTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteTypeResult& DeleteTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keyspaceArn")) {
     m_keyspaceArn = jsonValue.GetString("keyspaceArn");
