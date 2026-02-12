@@ -12,12 +12,11 @@ using namespace Aws::Client;
 using namespace Aws::FileSystem;
 using namespace Aws::Utils::Threading;
 
-extern const char PROFILE_DIRECTORY[];
-extern const char DEFAULT_CREDENTIALS_FILE[];
-
 namespace {
-const char* PROFILE_LOG_TAG = "ProfileCredentialsProvider";
-const char* AWS_CREDENTIALS_FILE = "AWS_SHARED_CREDENTIALS_FILE";
+const char PROFILE_PROVIDER_LOG_TAG[] = "ProfileCredentialsProvider";
+const char PROFILE_AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
+const char PROFILE_DEFAULT_CREDENTIALS_FILE[] = "credentials";
+const char PROFILE_PROFILE_DIRECTORY[] = ".aws";
 }
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
@@ -26,7 +25,7 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCred
       : m_profileToUse(Aws::Auth::GetConfigProfileName()),
         m_credentialsFileLoader(GetCredentialsProfileFilename()),
         m_loadFrequencyMs(refreshRateMs) {
-    AWS_LOGSTREAM_INFO(PROFILE_LOG_TAG, "Setting provider to read credentials from "
+    AWS_LOGSTREAM_INFO(PROFILE_PROVIDER_LOG_TAG, "Setting provider to read credentials from "
                                             << GetCredentialsProfileFilename() << " for credentials file"
                                             << " and " << GetConfigProfileFilename() << " for the config file "
                                             << ", for use with profile " << m_profileToUse);
@@ -34,17 +33,17 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCred
 
   ProfileCredentialsProviderImp(const char* profile, long refreshRateMs)
       : m_profileToUse(profile), m_credentialsFileLoader(GetCredentialsProfileFilename()), m_loadFrequencyMs(refreshRateMs) {
-    AWS_LOGSTREAM_INFO(PROFILE_LOG_TAG, "Setting provider to read credentials from "
+    AWS_LOGSTREAM_INFO(PROFILE_PROVIDER_LOG_TAG, "Setting provider to read credentials from "
                                             << GetCredentialsProfileFilename() << " for credentials file"
                                             << " and " << GetConfigProfileFilename() << " for the config file "
                                             << ", for use with profile " << m_profileToUse);
   }
 
   static Aws::String GetCredentialsProfileFilename() {
-    auto credentialsFileNameFromVar = Aws::Environment::GetEnv(AWS_CREDENTIALS_FILE);
+    auto credentialsFileNameFromVar = Aws::Environment::GetEnv(PROFILE_AWS_CREDENTIALS_FILE);
 
     if (credentialsFileNameFromVar.empty()) {
-      return GetHomeDirectory() + PROFILE_DIRECTORY + PATH_DELIM + DEFAULT_CREDENTIALS_FILE;
+      return GetHomeDirectory() + PROFILE_PROFILE_DIRECTORY + PATH_DELIM + PROFILE_DEFAULT_CREDENTIALS_FILE;
     }
     return credentialsFileNameFromVar;
   }
