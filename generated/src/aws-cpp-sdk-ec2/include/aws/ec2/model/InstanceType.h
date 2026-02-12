@@ -1183,7 +1183,20 @@ enum class InstanceType {
   g7e_8xlarge,
   g7e_12xlarge,
   g7e_24xlarge,
-  g7e_48xlarge
+  g7e_48xlarge,
+  r8id_large,
+  r8id_xlarge,
+  r8id_2xlarge,
+  r8id_4xlarge,
+  r8id_8xlarge,
+  r8id_12xlarge,
+  r8id_16xlarge,
+  r8id_24xlarge,
+  r8id_32xlarge,
+  r8id_48xlarge,
+  r8id_96xlarge,
+  r8id_metal_48xl,
+  r8id_metal_96xl
 };
 
 namespace InstanceTypeMapper {

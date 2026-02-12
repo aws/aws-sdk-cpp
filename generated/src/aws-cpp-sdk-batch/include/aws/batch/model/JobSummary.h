@@ -7,9 +7,11 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/ArrayPropertiesSummary.h>
 #include <aws/batch/model/ContainerSummary.h>
+#include <aws/batch/model/JobCapacityUsageSummary.h>
 #include <aws/batch/model/JobStatus.h>
 #include <aws/batch/model/NodePropertiesSummary.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -91,6 +93,31 @@ class JobSummary {
 
   ///@{
   /**
+   * <p>The configured capacity usage information for this job, including the unit of
+   * measure and quantity of resources.</p>
+   */
+  inline const Aws::Vector<JobCapacityUsageSummary>& GetCapacityUsage() const { return m_capacityUsage; }
+  inline bool CapacityUsageHasBeenSet() const { return m_capacityUsageHasBeenSet; }
+  template <typename CapacityUsageT = Aws::Vector<JobCapacityUsageSummary>>
+  void SetCapacityUsage(CapacityUsageT&& value) {
+    m_capacityUsageHasBeenSet = true;
+    m_capacityUsage = std::forward<CapacityUsageT>(value);
+  }
+  template <typename CapacityUsageT = Aws::Vector<JobCapacityUsageSummary>>
+  JobSummary& WithCapacityUsage(CapacityUsageT&& value) {
+    SetCapacityUsage(std::forward<CapacityUsageT>(value));
+    return *this;
+  }
+  template <typename CapacityUsageT = JobCapacityUsageSummary>
+  JobSummary& AddCapacityUsage(CapacityUsageT&& value) {
+    m_capacityUsageHasBeenSet = true;
+    m_capacityUsage.emplace_back(std::forward<CapacityUsageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Unix timestamp (in milliseconds) for when the job was created. For
    * non-array jobs and parent array jobs, this is when the job entered the
    * <code>SUBMITTED</code> state (at the time <a
@@ -106,6 +133,44 @@ class JobSummary {
   }
   inline JobSummary& WithCreatedAt(long long value) {
     SetCreatedAt(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the job was scheduled for
+   * execution. For more information on job statues, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service
+   * job status</a> in the <i>Batch User Guide</i>.</p>
+   */
+  inline long long GetScheduledAt() const { return m_scheduledAt; }
+  inline bool ScheduledAtHasBeenSet() const { return m_scheduledAtHasBeenSet; }
+  inline void SetScheduledAt(long long value) {
+    m_scheduledAtHasBeenSet = true;
+    m_scheduledAt = value;
+  }
+  inline JobSummary& WithScheduledAt(long long value) {
+    SetScheduledAt(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The share identifier for the fairshare scheduling queue that this job is
+   * associated with.</p>
+   */
+  inline const Aws::String& GetShareIdentifier() const { return m_shareIdentifier; }
+  inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
+  template <typename ShareIdentifierT = Aws::String>
+  void SetShareIdentifier(ShareIdentifierT&& value) {
+    m_shareIdentifierHasBeenSet = true;
+    m_shareIdentifier = std::forward<ShareIdentifierT>(value);
+  }
+  template <typename ShareIdentifierT = Aws::String>
+  JobSummary& WithShareIdentifier(ShareIdentifierT&& value) {
+    SetShareIdentifier(std::forward<ShareIdentifierT>(value));
     return *this;
   }
   ///@}
@@ -262,7 +327,13 @@ class JobSummary {
 
   Aws::String m_jobName;
 
+  Aws::Vector<JobCapacityUsageSummary> m_capacityUsage;
+
   long long m_createdAt{0};
+
+  long long m_scheduledAt{0};
+
+  Aws::String m_shareIdentifier;
 
   JobStatus m_status{JobStatus::NOT_SET};
 
@@ -282,7 +353,10 @@ class JobSummary {
   bool m_jobArnHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
+  bool m_capacityUsageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
+  bool m_scheduledAtHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;

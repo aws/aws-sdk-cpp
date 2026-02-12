@@ -38,6 +38,10 @@ AutoScalingUpdate& AutoScalingUpdate::operator=(JsonView jsonValue) {
     m_scaleOutPolicy = jsonValue.GetObject("scaleOutPolicy");
     m_scaleOutPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maxAutoscalingTaskCount")) {
+    m_maxAutoscalingTaskCount = jsonValue.GetInteger("maxAutoscalingTaskCount");
+    m_maxAutoscalingTaskCountHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue AutoScalingUpdate::Jsonize() const {
 
   if (m_scaleOutPolicyHasBeenSet) {
     payload.WithObject("scaleOutPolicy", m_scaleOutPolicy.Jsonize());
+  }
+
+  if (m_maxAutoscalingTaskCountHasBeenSet) {
+    payload.WithInteger("maxAutoscalingTaskCount", m_maxAutoscalingTaskCount);
   }
 
   return payload;

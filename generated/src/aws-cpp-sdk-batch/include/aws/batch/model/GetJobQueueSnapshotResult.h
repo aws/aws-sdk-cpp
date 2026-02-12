@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/FrontOfQueueDetail.h>
+#include <aws/batch/model/QueueSnapshotUtilizationDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -48,6 +49,24 @@ class GetJobQueueSnapshotResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The job queue's capacity utilization, including total usage and breakdown by
+   * fairshare scheduling queue.</p>
+   */
+  inline const QueueSnapshotUtilizationDetail& GetQueueUtilization() const { return m_queueUtilization; }
+  template <typename QueueUtilizationT = QueueSnapshotUtilizationDetail>
+  void SetQueueUtilization(QueueUtilizationT&& value) {
+    m_queueUtilizationHasBeenSet = true;
+    m_queueUtilization = std::forward<QueueUtilizationT>(value);
+  }
+  template <typename QueueUtilizationT = QueueSnapshotUtilizationDetail>
+  GetJobQueueSnapshotResult& WithQueueUtilization(QueueUtilizationT&& value) {
+    SetQueueUtilization(std::forward<QueueUtilizationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -64,8 +83,11 @@ class GetJobQueueSnapshotResult {
  private:
   FrontOfQueueDetail m_frontOfQueue;
 
+  QueueSnapshotUtilizationDetail m_queueUtilization;
+
   Aws::String m_requestId;
   bool m_frontOfQueueHasBeenSet = false;
+  bool m_queueUtilizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

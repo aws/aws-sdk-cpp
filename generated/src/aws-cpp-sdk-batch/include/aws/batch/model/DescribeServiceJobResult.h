@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/LatestServiceJobAttempt.h>
 #include <aws/batch/model/ServiceJobAttemptDetail.h>
+#include <aws/batch/model/ServiceJobCapacityUsageDetail.h>
 #include <aws/batch/model/ServiceJobRetryStrategy.h>
 #include <aws/batch/model/ServiceJobStatus.h>
 #include <aws/batch/model/ServiceJobTimeout.h>
@@ -53,6 +54,31 @@ class DescribeServiceJobResult {
   DescribeServiceJobResult& AddAttempts(AttemptsT&& value) {
     m_attemptsHasBeenSet = true;
     m_attempts.emplace_back(std::forward<AttemptsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configured capacity for the service job, such as the number of instances.
+   * The number of instances should be the same value as the
+   * <code>serviceRequestPayload.InstanceCount</code> field.</p>
+   */
+  inline const Aws::Vector<ServiceJobCapacityUsageDetail>& GetCapacityUsage() const { return m_capacityUsage; }
+  template <typename CapacityUsageT = Aws::Vector<ServiceJobCapacityUsageDetail>>
+  void SetCapacityUsage(CapacityUsageT&& value) {
+    m_capacityUsageHasBeenSet = true;
+    m_capacityUsage = std::forward<CapacityUsageT>(value);
+  }
+  template <typename CapacityUsageT = Aws::Vector<ServiceJobCapacityUsageDetail>>
+  DescribeServiceJobResult& WithCapacityUsage(CapacityUsageT&& value) {
+    SetCapacityUsage(std::forward<CapacityUsageT>(value));
+    return *this;
+  }
+  template <typename CapacityUsageT = ServiceJobCapacityUsageDetail>
+  DescribeServiceJobResult& AddCapacityUsage(CapacityUsageT&& value) {
+    m_capacityUsageHasBeenSet = true;
+    m_capacityUsage.emplace_back(std::forward<CapacityUsageT>(value));
     return *this;
   }
   ///@}
@@ -187,6 +213,23 @@ class DescribeServiceJobResult {
   template <typename RetryStrategyT = ServiceJobRetryStrategy>
   DescribeServiceJobResult& WithRetryStrategy(RetryStrategyT&& value) {
     SetRetryStrategy(std::forward<RetryStrategyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the service job was scheduled.
+   * This represents when the service job was dispatched to SageMaker and the service
+   * job transitioned to the <code>SCHEDULED</code> state.</p>
+   */
+  inline long long GetScheduledAt() const { return m_scheduledAt; }
+  inline void SetScheduledAt(long long value) {
+    m_scheduledAtHasBeenSet = true;
+    m_scheduledAt = value;
+  }
+  inline DescribeServiceJobResult& WithScheduledAt(long long value) {
+    SetScheduledAt(value);
     return *this;
   }
   ///@}
@@ -383,6 +426,8 @@ class DescribeServiceJobResult {
  private:
   Aws::Vector<ServiceJobAttemptDetail> m_attempts;
 
+  Aws::Vector<ServiceJobCapacityUsageDetail> m_capacityUsage;
+
   long long m_createdAt{0};
 
   bool m_isTerminated{false};
@@ -398,6 +443,8 @@ class DescribeServiceJobResult {
   LatestServiceJobAttempt m_latestAttempt;
 
   ServiceJobRetryStrategy m_retryStrategy;
+
+  long long m_scheduledAt{0};
 
   int m_schedulingPriority{0};
 
@@ -421,6 +468,7 @@ class DescribeServiceJobResult {
 
   Aws::String m_requestId;
   bool m_attemptsHasBeenSet = false;
+  bool m_capacityUsageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_isTerminatedHasBeenSet = false;
   bool m_jobArnHasBeenSet = false;
@@ -429,6 +477,7 @@ class DescribeServiceJobResult {
   bool m_jobQueueHasBeenSet = false;
   bool m_latestAttemptHasBeenSet = false;
   bool m_retryStrategyHasBeenSet = false;
+  bool m_scheduledAtHasBeenSet = false;
   bool m_schedulingPriorityHasBeenSet = false;
   bool m_serviceRequestPayloadHasBeenSet = false;
   bool m_serviceJobTypeHasBeenSet = false;
