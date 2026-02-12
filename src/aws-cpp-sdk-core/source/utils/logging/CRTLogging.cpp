@@ -26,7 +26,7 @@ namespace Logging {
 static std::shared_ptr<CRTLogSystemInterface> CRTLogSystem(nullptr);
 static aws_logger s_sdkCrtLogger;
 
-static int s_aws_logger_redirect_log(
+static AWS_NO_SANITIZE_CFI int s_aws_logger_redirect_log(
         struct aws_logger *logger,
         enum aws_log_level log_level,
         aws_log_subject_t subject,
@@ -48,7 +48,7 @@ static int s_aws_logger_redirect_log(
     return AWS_OP_SUCCESS;
 }
 
-static enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger *logger, aws_log_subject_t subject)
+static AWS_NO_SANITIZE_CFI enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger *logger, aws_log_subject_t subject)
 {
     AWS_UNREFERENCED_PARAM(logger);
     AWS_UNREFERENCED_PARAM(subject);
@@ -61,7 +61,7 @@ static enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger 
     return AWS_LL_NONE;
 }
 
-static void s_aws_logger_redirect_clean_up(struct aws_logger *logger)
+static AWS_NO_SANITIZE_CFI void s_aws_logger_redirect_clean_up(struct aws_logger *logger)
 {
     AWS_UNREFERENCED_PARAM(logger);
     CRTLogSystemInterface* pLogger = CRTLogSystem.get();
@@ -72,7 +72,7 @@ static void s_aws_logger_redirect_clean_up(struct aws_logger *logger)
     }
 }
 
-static int s_aws_logger_redirect_set_log_level(struct aws_logger *logger, enum aws_log_level log_level)
+static AWS_NO_SANITIZE_CFI int s_aws_logger_redirect_set_log_level(struct aws_logger *logger, enum aws_log_level log_level)
 {
     AWS_UNREFERENCED_PARAM(logger);
     CRTLogSystemInterface* pLogger = CRTLogSystem.get();

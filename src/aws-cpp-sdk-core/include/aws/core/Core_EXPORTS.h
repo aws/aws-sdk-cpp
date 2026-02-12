@@ -110,3 +110,10 @@
         #define AWS_DEPRECATED(msg)
     #endif
 #endif
+
+// Disable CFI checks across ABI boundaries i,e. C++ calling CRT
+#if defined(__clang__) && __has_attribute(no_sanitize)
+#define AWS_NO_SANITIZE_CFI __attribute__((no_sanitize("cfi")))
+#else
+#define AWS_NO_SANITIZE_CFI
+#endif
