@@ -17,13 +17,13 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
   /**
    * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
    */
-  ProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
+  ProfileCredentialsProvider();
 
   /**
    * Initializes with a profile override and
    * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
    */
-  ProfileCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
+  ProfileCredentialsProvider(const char* profile);
 
   /**
    * Retrieves the credentials if found, otherwise returns empty credential set.
@@ -39,9 +39,6 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
    * Returns the directory storing the profile file.
    */
   static Aws::String GetProfileDirectory();
-
- protected:
-  void Reload() override;
 
  private:
   class ProfileCredentialsProviderImp;
