@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/OSISPaginationBase.h>
 #include <aws/osis/OSISServiceClientModel.h>
 #include <aws/osis/OSIS_EXPORTS.h>
 
@@ -21,7 +22,9 @@ namespace OSIS {
  * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ingestion.html">Getting
  * data into your cluster using OpenSearch Ingestion</a>.</p>
  */
-class AWS_OSIS_API OSISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OSISClient> {
+class AWS_OSIS_API OSISClient : public Aws::Client::AWSJsonClient,
+                                public Aws::Client::ClientWithAsyncTemplateMethods<OSISClient>,
+                                public OSISPaginationBase<OSISClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

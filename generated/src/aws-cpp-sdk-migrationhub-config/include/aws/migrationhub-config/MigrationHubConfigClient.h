@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhub-config/MigrationHubConfigPaginationBase.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace MigrationHubConfig {
  * follow in this AWS Migration Hub Home Region API reference. </p>
  */
 class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>,
+                                                            public MigrationHubConfigPaginationBase<MigrationHubConfigClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

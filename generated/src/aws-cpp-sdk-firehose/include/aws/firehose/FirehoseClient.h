@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/firehose/FirehosePaginationBase.h>
 #include <aws/firehose/FirehoseServiceClientModel.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace Firehose {
  * destinations.</p>
  */
 class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>,
+                                        public FirehosePaginationBase<FirehoseClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/importexport/ImportExportPaginationBase.h>
 #include <aws/importexport/ImportExportServiceClientModel.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace ImportExport {
  * than Internet transfer and more cost effective than upgrading your connectivity.
  */
 class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>,
+                                                public ImportExportPaginationBase<ImportExportClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

@@ -17,8 +17,46 @@ import java.util.Optional;
 
 public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData<PaginatedTrait>> {
 
+    private final List<TokenResolver> resolvers;
+
     public PaginationTraitsGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, String smithyServiceName) {
         super(context, service, paginatedOps, smithyServiceName);
+        this.resolvers = List.of(
+            // Pattern A: Nested token
+            new TokenResolver() {
+                public boolean canResolve(String token, OperationShape op) { return token.contains("."); }
+                public void writeLogic(CppWriter writer, String token, OperationShape op) {
+                    String[] parts = token.split("\\.", 2);
+                    boolean isNumeric = ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, parts[0], parts[1]);
+                    writeResultLogic(writer, Optional.of(ServiceNameUtil.capitalize(parts[0])), 
+                        ServiceNameUtil.capitalize(parts[1]), isNumeric);
+                }
+            },
+            // Pattern B: Top-level token
+            new TokenResolver() {
+                public boolean canResolve(String token, OperationShape op) { 
+                    return ShapeUtil.hasTopLevelMember(context.getModel(), op, token); 
+                }
+                public void writeLogic(CppWriter writer, String token, OperationShape op) {
+                    boolean isNumeric = ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, null, token);
+                    writeResultLogic(writer, Optional.empty(), ServiceNameUtil.capitalize(token), isNumeric);
+                }
+            },
+            // Pattern C: Wrapped token
+            new TokenResolver() {
+                public boolean canResolve(String token, OperationShape op) { 
+                    return Optional.ofNullable(ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, token)).isPresent(); 
+                }
+                public void writeLogic(CppWriter writer, String token, OperationShape op) {
+                    Optional.ofNullable(ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, token))
+                        .ifPresent(wrapper -> {
+                            boolean isNumeric = ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, wrapper, token);
+                            writeResultLogic(writer, Optional.of(ServiceNameUtil.capitalize(wrapper)), 
+                                ServiceNameUtil.capitalize(token), isNumeric);
+                        });
+                }
+            }
+        );
     }
 
     @Override
@@ -102,56 +140,20 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
         }
 
         String token = outToken.get();
-        List<TokenResolver> resolvers = List.of(
-            // Pattern A: Nested token
-            new TokenResolver() {
-                public boolean canResolve(String token, OperationShape op) { return token.contains("."); }
-                public void writeLogic(CppWriter writer, String token, OperationShape op) {
-                    String[] parts = token.split("\\.", 2);
-                    boolean isNumeric = ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, parts[0], parts[1]);
-                    writeResultLogic(writer, Optional.of(ServiceNameUtil.capitalize(parts[0])), 
-                        ServiceNameUtil.capitalize(parts[1]), isNumeric);
-                }
-            },
-            // Pattern B: Top-level token
-            new TokenResolver() {
-                public boolean canResolve(String token, OperationShape op) { 
-                    return ShapeUtil.hasTopLevelMember(context.getModel(), op, token); 
-                }
-                public void writeLogic(CppWriter writer, String token, OperationShape op) {
-                    boolean isNumeric = ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, null, token);
-                    writeResultLogic(writer, Optional.empty(), ServiceNameUtil.capitalize(token), isNumeric);
-                }
-            },
-            // Pattern C: Wrapped token
-            new TokenResolver() {
-                public boolean canResolve(String token, OperationShape op) { 
-                    return Optional.ofNullable(ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, token)).isPresent(); 
-                }
-                public void writeLogic(CppWriter writer, String token, OperationShape op) {
-                    Optional.ofNullable(ShapeUtil.findWrapperMemberContainingToken(context.getModel(), op, token))
-                        .ifPresent(wrapper -> {
-                            boolean isNumeric = ShapeUtil.isNumericToken(context.getModel(), op, smithyServiceName, wrapper, token);
-                            writeResultLogic(writer, Optional.of(ServiceNameUtil.capitalize(wrapper)), 
-                                ServiceNameUtil.capitalize(token), isNumeric);
-                        });
-                }
-            }
-        );
 
-        for (TokenResolver resolver : resolvers) {
-            if (resolver.canResolve(token, op)) {
-                resolver.writeLogic(writer, token, op);
-                return;
-            }
-        }
-
-        // Fallback
-        if (ShapeUtil.hasTopLevelMember(context.getModel(), op, "IsTruncated")) {
-            writer.write("        return result.GetIsTruncated();");
-        } else {
-            writer.write("        return false;");
-        }
+        resolvers.stream()
+            .filter(resolver -> resolver.canResolve(token, op))
+            .findFirst()
+            .ifPresentOrElse(
+                resolver -> resolver.writeLogic(writer, token, op),
+                () -> {
+                    if (ShapeUtil.hasTopLevelMember(context.getModel(), op, "IsTruncated")) {
+                        writer.write("        return result.GetIsTruncated();");
+                    } else {
+                        writer.write("        return false;");
+                    }
+                }
+            );
     }
     
     private void writeResultLogic(CppWriter writer, Optional<String> wrapperMember, String tokenName, boolean isNumeric) {

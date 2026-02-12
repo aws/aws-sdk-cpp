@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/simspaceweaver/SimSpaceWeaverPaginationBase.h>
 #include <aws/simspaceweaver/SimSpaceWeaverServiceClientModel.h>
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace SimSpaceWeaver {
  * part of the SimSpace Weaver app SDK distributable package.</p>
  */
 class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>,
+                                                    public SimSpaceWeaverPaginationBase<SimSpaceWeaverClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/freetier/FreeTierPaginationBase.h>
 #include <aws/freetier/FreeTierServiceClientModel.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace FreeTier {
  * the Amazon Web Services Free Tier</a> in the <i>Billing User Guide</i>.</p>
  */
 class AWS_FREETIER_API FreeTierClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<FreeTierClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<FreeTierClient>,
+                                        public FreeTierPaginationBase<FreeTierClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStoragePaginationBase.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageServiceClientModel.h>
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorage_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace KinesisVideoWebRTCStorage {
  */
 class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>,
+      public KinesisVideoWebRTCStoragePaginationBase<KinesisVideoWebRTCStorageClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

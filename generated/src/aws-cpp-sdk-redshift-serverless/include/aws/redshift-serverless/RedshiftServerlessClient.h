@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/RedshiftServerlessPaginationBase.h>
 #include <aws/redshift-serverless/RedshiftServerlessServiceClientModel.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace RedshiftServerless {
  * is Amazon Redshift Serverless?</a>.</p>
  */
 class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>,
+                                                            public RedshiftServerlessPaginationBase<RedshiftServerlessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

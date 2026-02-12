@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pca-connector-scep/PcaConnectorScepPaginationBase.h>
 #include <aws/pca-connector-scep/PcaConnectorScepServiceClientModel.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace PcaConnectorScep {
  * for SCEP</a> in the <i>Amazon Web Services Private CA User Guide</i>.</p>
  */
 class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>,
+                                                        public PcaConnectorScepPaginationBase<PcaConnectorScepClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

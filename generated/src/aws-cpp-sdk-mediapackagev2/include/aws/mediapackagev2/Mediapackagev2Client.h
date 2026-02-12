@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackagev2/Mediapackagev2PaginationBase.h>
 #include <aws/mediapackagev2/Mediapackagev2ServiceClientModel.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 
@@ -35,7 +36,8 @@ namespace mediapackagev2 {
  * described in the AWS Elemental MediaPackage User Guide.</p></p>
  */
 class AWS_MEDIAPACKAGEV2_API Mediapackagev2Client : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client>,
+                                                    public Mediapackagev2PaginationBase<Mediapackagev2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

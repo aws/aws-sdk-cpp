@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/odb/OdbPaginationBase.h>
 #include <aws/odb/OdbServiceClientModel.h>
 #include <aws/odb/Odb_EXPORTS.h>
 
@@ -40,7 +41,9 @@ namespace odb {
  * href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonErrors.html">Common
  * Errors</a>.</p> </li> </ul>
  */
-class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OdbClient> {
+class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<OdbClient>,
+                              public OdbPaginationBase<OdbClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

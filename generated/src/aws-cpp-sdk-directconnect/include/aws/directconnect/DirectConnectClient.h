@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/directconnect/DirectConnectPaginationBase.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace DirectConnect {
  * through locations associated with those Regions.</p>
  */
 class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>,
+                                                  public DirectConnectPaginationBase<DirectConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

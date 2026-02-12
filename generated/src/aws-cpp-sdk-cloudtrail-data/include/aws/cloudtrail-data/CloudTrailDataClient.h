@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudtrail-data/CloudTrailDataPaginationBase.h>
 #include <aws/cloudtrail-data/CloudTrailDataServiceClientModel.h>
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -24,7 +25,8 @@ namespace CloudTrailData {
  * logged from your applications.</p>
  */
 class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>,
+                                                    public CloudTrailDataPaginationBase<CloudTrailDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

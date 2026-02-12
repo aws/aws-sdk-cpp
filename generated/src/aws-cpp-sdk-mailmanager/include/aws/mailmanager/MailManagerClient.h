@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mailmanager/MailManagerPaginationBase.h>
 #include <aws/mailmanager/MailManagerServiceClientModel.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace MailManager {
  * chapter</a> in the <i>Amazon SES Developer Guide</i>.</p></p>
  */
 class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>,
+                                              public MailManagerPaginationBase<MailManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

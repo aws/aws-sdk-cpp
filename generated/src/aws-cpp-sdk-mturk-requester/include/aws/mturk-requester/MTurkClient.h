@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/MTurkPaginationBase.h>
 #include <aws/mturk-requester/MTurkServiceClientModel.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 
@@ -16,7 +17,9 @@ namespace MTurk {
 /**
  * <fullname>Amazon Mechanical Turk API Reference</fullname>
  */
-class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient> {
+class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>,
+                                  public MTurkPaginationBase<MTurkClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

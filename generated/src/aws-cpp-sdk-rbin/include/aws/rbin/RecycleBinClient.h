@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rbin/RecycleBinPaginationBase.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 
@@ -31,7 +32,8 @@ namespace RecycleBin {
  * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
  */
 class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>,
+                                            public RecycleBinPaginationBase<RecycleBinClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

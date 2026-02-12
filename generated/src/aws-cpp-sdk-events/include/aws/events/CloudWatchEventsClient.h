@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/CloudWatchEventsPaginationBase.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace CloudWatchEvents {
  * EventBridge User Guide</a>.</p>
  */
 class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>,
+                                                        public CloudWatchEventsPaginationBase<CloudWatchEventsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

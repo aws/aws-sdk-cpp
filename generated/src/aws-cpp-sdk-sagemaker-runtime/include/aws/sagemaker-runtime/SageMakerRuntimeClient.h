@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-runtime/SageMakerRuntimePaginationBase.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace SageMakerRuntime {
  * <p> The Amazon SageMaker AI runtime API. </p>
  */
 class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>,
+                                                        public SageMakerRuntimePaginationBase<SageMakerRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

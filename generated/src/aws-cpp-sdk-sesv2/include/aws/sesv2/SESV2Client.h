@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/SESV2PaginationBase.h>
 #include <aws/sesv2/SESV2ServiceClientModel.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 
@@ -23,7 +24,9 @@ namespace SESV2 {
  * provides information and code samples that demonstrate how to use Amazon SES API
  * v2 features programmatically.</p>
  */
-class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client> {
+class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<SESV2Client>,
+                                  public SESV2PaginationBase<SESV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

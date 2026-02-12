@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connect/ConnectPaginationBase.h>
 #include <aws/connect/ConnectServiceClientModel.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -34,7 +35,9 @@ namespace Connect {
  * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
  * Connect Endpoints</a>.</p>
  */
-class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient> {
+class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>,
+                                      public ConnectPaginationBase<ConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

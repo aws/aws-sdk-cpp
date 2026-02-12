@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/states/SFNPaginationBase.h>
 #include <aws/states/SFNServiceClientModel.h>
 #include <aws/states/SFN_EXPORTS.h>
 
@@ -31,7 +32,9 @@ namespace SFN {
  * example, you might use Step Functions API action <code>startSyncExecution</code>
  * and specify its parameter as <code>StateMachineArn</code>.</p>
  */
-class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient> {
+class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>,
+                              public SFNPaginationBase<SFNClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/NetworkFirewallPaginationBase.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
@@ -79,7 +80,8 @@ namespace NetworkFirewall {
  * defining the new VPC subnets as VPC endpoint associations. </p>
  */
 class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>,
+                                                      public NetworkFirewallPaginationBase<NetworkFirewallClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/IoTTwinMakerPaginationBase.h>
 #include <aws/iottwinmaker/IoTTwinMakerServiceClientModel.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace IoTTwinMaker {
  * errors.</p>
  */
 class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>,
+                                                public IoTTwinMakerPaginationBase<IoTTwinMakerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/LocationServicePaginationBase.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
 #include <aws/location/LocationService_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace LocationService {
  * Geofencing"</p>
  */
 class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>,
+                                                      public LocationServicePaginationBase<LocationServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

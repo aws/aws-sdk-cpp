@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/LexModelsV2PaginationBase.h>
 #include <aws/lexv2-models/LexModelsV2ServiceClientModel.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace LexModelsV2 {
  * deploying conversational bots and their components.</p>
  */
 class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>,
+                                              public LexModelsV2PaginationBase<LexModelsV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

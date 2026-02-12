@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/batch/BatchPaginationBase.h>
 #include <aws/batch/BatchServiceClientModel.h>
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -29,7 +30,9 @@ namespace Batch {
  * install or manage batch computing software. This means that you can focus on
  * analyzing results and solving your specific problems instead.</p>
  */
-class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient> {
+class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>,
+                                  public BatchPaginationBase<BatchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

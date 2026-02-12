@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ebs/EBSPaginationBase.h>
 #include <aws/ebs/EBSServiceClientModel.h>
 #include <aws/ebs/EBS_EXPORTS.h>
 
@@ -40,7 +41,9 @@ namespace EBS {
  * Elastic Block Store Endpoints and Quotas</a> in the <i>Amazon Web Services
  * General Reference</i>.</p>
  */
-class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EBSClient> {
+class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>,
+                              public EBSPaginationBase<EBSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
