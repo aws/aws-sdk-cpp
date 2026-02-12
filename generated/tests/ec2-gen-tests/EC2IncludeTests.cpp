@@ -2122,6 +2122,7 @@
 #include <aws/ec2/model/NatGatewayAttachedAppliance.h>
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/NativeApplicationOidcOptions.h>
+#include <aws/ec2/model/NestedVirtualizationSpecification.h>
 #include <aws/ec2/model/NetworkAcl.h>
 #include <aws/ec2/model/NetworkAclAssociation.h>
 #include <aws/ec2/model/NetworkAclEntry.h>

@@ -41,6 +41,12 @@ CpuOptions& CpuOptions::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amdSevSnpNode.GetText()).c_str()));
       m_amdSevSnpHasBeenSet = true;
     }
+    XmlNode nestedVirtualizationNode = resultNode.FirstChild("nestedVirtualization");
+    if (!nestedVirtualizationNode.IsNull()) {
+      m_nestedVirtualization = NestedVirtualizationSpecificationMapper::GetNestedVirtualizationSpecificationForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nestedVirtualizationNode.GetText()).c_str()));
+      m_nestedVirtualizationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -59,6 +65,13 @@ void CpuOptions::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue
             << ".AmdSevSnp=" << StringUtils::URLEncode(AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp)) << "&";
   }
+
+  if (m_nestedVirtualizationHasBeenSet) {
+    oStream << location << index << locationValue << ".NestedVirtualization="
+            << StringUtils::URLEncode(
+                   NestedVirtualizationSpecificationMapper::GetNameForNestedVirtualizationSpecification(m_nestedVirtualization))
+            << "&";
+  }
 }
 
 void CpuOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -71,6 +84,12 @@ void CpuOptions::OutputToStream(Aws::OStream& oStream, const char* location) con
   if (m_amdSevSnpHasBeenSet) {
     oStream << location
             << ".AmdSevSnp=" << StringUtils::URLEncode(AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp)) << "&";
+  }
+  if (m_nestedVirtualizationHasBeenSet) {
+    oStream << location << ".NestedVirtualization="
+            << StringUtils::URLEncode(
+                   NestedVirtualizationSpecificationMapper::GetNameForNestedVirtualizationSpecification(m_nestedVirtualization))
+            << "&";
   }
 }
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/NestedVirtualizationSpecification.h>
 
 #include <utility>
 
@@ -84,6 +85,24 @@ class ModifyInstanceCpuOptionsRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>Indicates whether to enable or disable nested virtualization for the
+   * instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is
+   * automatically disabled for the instance.</p>
+   */
+  inline NestedVirtualizationSpecification GetNestedVirtualization() const { return m_nestedVirtualization; }
+  inline bool NestedVirtualizationHasBeenSet() const { return m_nestedVirtualizationHasBeenSet; }
+  inline void SetNestedVirtualization(NestedVirtualizationSpecification value) {
+    m_nestedVirtualizationHasBeenSet = true;
+    m_nestedVirtualization = value;
+  }
+  inline ModifyInstanceCpuOptionsRequest& WithNestedVirtualization(NestedVirtualizationSpecification value) {
+    SetNestedVirtualization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -107,10 +126,13 @@ class ModifyInstanceCpuOptionsRequest : public EC2Request {
 
   int m_threadsPerCore{0};
 
+  NestedVirtualizationSpecification m_nestedVirtualization{NestedVirtualizationSpecification::NOT_SET};
+
   bool m_dryRun{false};
   bool m_instanceIdHasBeenSet = false;
   bool m_coreCountHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;
+  bool m_nestedVirtualizationHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 
