@@ -17,6 +17,8 @@
 #include <fstream>
 #include <cassert>
 #include <thread>
+
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 using namespace Aws::Auth;
 using namespace Aws::STS;
 using namespace Aws::Utils;
@@ -82,7 +84,7 @@ public:
         SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
 
-        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileCredentialsProvider::GetProfileDirectory().c_str());
 
         Aws::StringStream ss;
         ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();

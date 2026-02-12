@@ -15,6 +15,8 @@
 #include <thread>
 #include <aws/core/utils/logging/LogMacros.h>
 
+#include <aws/core/auth/ProfileCredentialsProvider.h>
+
 
 class AWSConfigTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
@@ -40,7 +42,7 @@ protected:
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
     Aws::Environment::UnSetEnv("DISABLE_REQUEST_COMPRESSION");
 
-    auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    auto profileDirectory = Aws::Auth::ProfileCredentialsProvider::GetProfileDirectory();
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
   }
 

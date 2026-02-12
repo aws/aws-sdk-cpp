@@ -5,6 +5,7 @@
 
 #include <aws/core/config/ConfigAndCredentialsCacheManager.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <fstream>
@@ -29,7 +30,7 @@ namespace Aws
 
 
         ConfigAndCredentialsCacheManager::ConfigAndCredentialsCacheManager() :
-                m_credentialsFileLoader(Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename()),
+                m_credentialsFileLoader(Aws::Auth::ProfileCredentialsProvider::GetCredentialsProfileFilename()),
                 m_configFileLoader(Aws::Auth::GetConfigProfileFilename(), true/*use profile prefix*/)
         {
             ReloadCredentialsFile();
@@ -46,7 +47,7 @@ namespace Aws
         void ConfigAndCredentialsCacheManager::ReloadCredentialsFile()
         {
             Aws::Utils::Threading::WriterLockGuard guard(m_credentialsLock);
-            m_credentialsFileLoader.SetFileName(Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename());
+            m_credentialsFileLoader.SetFileName(Aws::Auth::ProfileCredentialsProvider::GetCredentialsProfileFilename());
             m_credentialsFileLoader.Load();
         }
 
