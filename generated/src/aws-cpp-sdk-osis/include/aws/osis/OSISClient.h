@@ -697,8 +697,8 @@ class AWS_OSIS_API OSISClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&OSISClient::ValidatePipeline, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OSISEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OSISEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OSISClient>;

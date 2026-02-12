@@ -306,8 +306,8 @@ class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&DLMClient::UpdateLifecyclePolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DLMEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DLMEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>;

@@ -1705,8 +1705,8 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&S3TablesClient::UpdateTableMetadataLocation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<S3TablesEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<S3TablesEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>;

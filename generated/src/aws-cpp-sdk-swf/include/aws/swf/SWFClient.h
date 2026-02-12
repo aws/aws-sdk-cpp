@@ -1914,8 +1914,8 @@ class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&SWFClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SWFEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SWFEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>;

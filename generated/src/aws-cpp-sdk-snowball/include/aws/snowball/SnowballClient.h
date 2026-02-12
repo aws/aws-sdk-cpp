@@ -908,8 +908,8 @@ class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SnowballClient::UpdateLongTermPricing, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SnowballEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SnowballEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>;

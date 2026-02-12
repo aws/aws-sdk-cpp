@@ -752,8 +752,8 @@ class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient
     return SubmitAsync(&AppIntegrationsServiceClient::UpdateEventIntegration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>;

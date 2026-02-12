@@ -84,8 +84,8 @@ class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient,
   /* End of legacy constructors due deprecation */
   virtual ~CloudHSMClient();
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudHSMEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudHSMEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>;

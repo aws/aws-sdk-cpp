@@ -1362,8 +1362,8 @@ class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&MTurkClient::UpdateQualificationType, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MTurkEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MTurkEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>;

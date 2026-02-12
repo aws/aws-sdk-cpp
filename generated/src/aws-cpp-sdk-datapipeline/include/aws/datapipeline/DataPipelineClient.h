@@ -662,8 +662,8 @@ class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&DataPipelineClient::ValidatePipelineDefinition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DataPipelineEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DataPipelineEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>;

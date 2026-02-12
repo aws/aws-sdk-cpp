@@ -1235,8 +1235,8 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&BatchClient::UpdateServiceEnvironment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>;

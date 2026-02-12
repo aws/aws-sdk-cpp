@@ -436,8 +436,8 @@ class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SupportAppClient::UpdateSlackChannelConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SupportAppEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SupportAppEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>;

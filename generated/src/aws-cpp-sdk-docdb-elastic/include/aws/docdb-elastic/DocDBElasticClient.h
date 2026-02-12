@@ -598,8 +598,8 @@ class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&DocDBElasticClient::UpdateCluster, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DocDBElasticEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DocDBElasticEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>;

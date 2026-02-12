@@ -2202,8 +2202,8 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&VPCLatticeClient::UpdateTargetGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<VPCLatticeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<VPCLatticeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<VPCLatticeClient>;

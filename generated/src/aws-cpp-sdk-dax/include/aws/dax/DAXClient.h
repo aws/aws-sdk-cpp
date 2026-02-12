@@ -669,8 +669,8 @@ class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&DAXClient::UpdateSubnetGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DAXEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DAXEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>;

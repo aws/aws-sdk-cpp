@@ -207,8 +207,8 @@ class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&SSOClient::Logout, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SSOEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SSOEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOClient>;

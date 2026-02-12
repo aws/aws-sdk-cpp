@@ -819,8 +819,8 @@ class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&ResourceGroupsClient::UpdateGroupQuery, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ResourceGroupsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ResourceGroupsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>;

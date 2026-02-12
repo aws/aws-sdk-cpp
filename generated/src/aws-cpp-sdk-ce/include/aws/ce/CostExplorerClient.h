@@ -1573,8 +1573,8 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CostExplorerClient::UpdateCostCategoryDefinition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CostExplorerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CostExplorerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>;

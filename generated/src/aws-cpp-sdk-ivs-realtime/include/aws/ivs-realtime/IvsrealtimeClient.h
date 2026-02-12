@@ -1212,8 +1212,8 @@ class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&IvsrealtimeClient::UpdateStage, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IvsrealtimeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IvsrealtimeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>;

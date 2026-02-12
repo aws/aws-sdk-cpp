@@ -806,8 +806,8 @@ class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&FISClient::UpdateTargetAccountConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FISClient>;

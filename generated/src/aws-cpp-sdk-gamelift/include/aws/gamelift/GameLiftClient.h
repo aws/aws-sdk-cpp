@@ -5307,8 +5307,8 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GameLiftClient::ValidateMatchmakingRuleSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<GameLiftEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<GameLiftEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>;

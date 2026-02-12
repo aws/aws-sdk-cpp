@@ -560,8 +560,8 @@ class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&MedicalImagingClient::UpdateImageSetMetadata, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MedicalImagingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MedicalImagingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>;

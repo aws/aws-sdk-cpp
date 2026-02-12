@@ -501,8 +501,8 @@ class AWS_NOVAACT_API NovaActClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&NovaActClient::UpdateWorkflowRun, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NovaActEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NovaActEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NovaActClient>;

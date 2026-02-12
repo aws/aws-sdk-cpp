@@ -1262,8 +1262,8 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&NotificationsClient::UpdateNotificationConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NotificationsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NotificationsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>;

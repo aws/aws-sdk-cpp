@@ -1149,8 +1149,8 @@ class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&AppMeshClient::UpdateVirtualService, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppMeshEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppMeshEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppMeshClient>;

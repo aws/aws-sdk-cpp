@@ -784,8 +784,8 @@ class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient
     return SubmitAsync(&Route53RecoveryControlConfigClient::UpdateSafetyRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>;

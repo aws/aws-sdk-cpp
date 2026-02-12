@@ -797,8 +797,8 @@ class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJ
     return SubmitAsync(&CodeGuruProfilerClient::UpdateProfilingGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>;

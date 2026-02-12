@@ -1106,8 +1106,8 @@ class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient
     return SubmitAsync(&ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListener, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ElasticLoadBalancingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ElasticLoadBalancingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>;

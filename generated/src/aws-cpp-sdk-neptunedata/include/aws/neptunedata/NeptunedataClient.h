@@ -1605,8 +1605,8 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&NeptunedataClient::StartMLModelTransformJob, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NeptunedataEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NeptunedataEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>;

@@ -1068,8 +1068,8 @@ class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&QAppsClient::UpdateQAppSessionMetadata, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<QAppsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<QAppsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>;

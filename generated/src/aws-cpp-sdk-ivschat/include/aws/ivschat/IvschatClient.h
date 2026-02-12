@@ -619,8 +619,8 @@ class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&IvschatClient::UpdateRoom, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IvschatEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IvschatEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>;

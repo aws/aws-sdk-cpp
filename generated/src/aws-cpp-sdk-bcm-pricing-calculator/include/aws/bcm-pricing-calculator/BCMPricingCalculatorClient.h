@@ -1164,8 +1164,8 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
     return SubmitAsync(&BCMPricingCalculatorClient::UpdateWorkloadEstimate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BCMPricingCalculatorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BCMPricingCalculatorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>;

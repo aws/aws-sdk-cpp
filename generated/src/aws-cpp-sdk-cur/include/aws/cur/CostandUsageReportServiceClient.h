@@ -278,8 +278,8 @@ class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient
     return SubmitAsync(&CostandUsageReportServiceClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CostandUsageReportServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CostandUsageReportServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>;

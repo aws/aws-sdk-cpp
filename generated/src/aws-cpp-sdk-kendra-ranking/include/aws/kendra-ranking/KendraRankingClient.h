@@ -350,8 +350,8 @@ class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&KendraRankingClient::UpdateRescoreExecutionPlan, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KendraRankingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KendraRankingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>;

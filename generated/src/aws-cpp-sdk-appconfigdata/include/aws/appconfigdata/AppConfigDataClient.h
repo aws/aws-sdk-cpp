@@ -188,8 +188,8 @@ class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&AppConfigDataClient::StartConfigurationSession, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppConfigDataEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppConfigDataEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>;

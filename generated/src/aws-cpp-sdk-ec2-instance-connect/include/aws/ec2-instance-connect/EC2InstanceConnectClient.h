@@ -149,8 +149,8 @@ class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::
     return SubmitAsync(&EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>;

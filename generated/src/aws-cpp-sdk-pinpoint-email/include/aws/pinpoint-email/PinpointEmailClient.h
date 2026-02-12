@@ -1428,8 +1428,8 @@ class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&PinpointEmailClient::UpdateConfigurationSetEventDestination, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PinpointEmailEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PinpointEmailEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>;

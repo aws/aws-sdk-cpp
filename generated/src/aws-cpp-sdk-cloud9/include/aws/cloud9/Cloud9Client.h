@@ -510,8 +510,8 @@ class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&Cloud9Client::UpdateEnvironmentMembership, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<Cloud9EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<Cloud9EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>;

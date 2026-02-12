@@ -505,8 +505,8 @@ class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient
     return SubmitAsync(&WorkSpacesThinClientClient::UpdateSoftwareSet, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WorkSpacesThinClientEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WorkSpacesThinClientEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>;

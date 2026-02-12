@@ -238,8 +238,8 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
     return SubmitAsync(&AgreementServiceClient::SearchAgreements, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AgreementServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AgreementServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>;

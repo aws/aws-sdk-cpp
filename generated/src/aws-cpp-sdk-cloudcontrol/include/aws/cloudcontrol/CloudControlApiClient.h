@@ -340,8 +340,8 @@ class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJso
     return SubmitAsync(&CloudControlApiClient::UpdateResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudControlApiEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudControlApiEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>;

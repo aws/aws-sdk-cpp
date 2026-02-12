@@ -1197,8 +1197,8 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&SecretsManagerClient::ValidateResourcePolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SecretsManagerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SecretsManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>;

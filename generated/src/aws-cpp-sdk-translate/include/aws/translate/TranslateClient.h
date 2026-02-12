@@ -630,8 +630,8 @@ class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&TranslateClient::UpdateParallelData, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TranslateEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TranslateEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>;

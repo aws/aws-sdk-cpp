@@ -1684,8 +1684,8 @@ class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AW
     return SubmitAsync(&ChimeSDKMessagingClient::UpdateChannelReadMarker, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>;

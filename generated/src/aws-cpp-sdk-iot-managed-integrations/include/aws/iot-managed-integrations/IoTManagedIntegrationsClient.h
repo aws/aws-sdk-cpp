@@ -2430,8 +2430,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
     return SubmitAsync(&IoTManagedIntegrationsClient::UpdateOtaTask, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTManagedIntegrationsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTManagedIntegrationsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>;

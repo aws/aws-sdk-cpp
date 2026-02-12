@@ -1016,8 +1016,8 @@ class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DetectiveClient::UpdateOrganizationConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DetectiveEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DetectiveEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>;
