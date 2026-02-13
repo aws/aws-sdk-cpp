@@ -19,12 +19,18 @@ namespace Pagination
 template <class ServiceClient, class OperationRequest, class OperationTraits>
 class Paginator
 {
-private:
-  struct EndSentinel {};
 public:
     using OutcomeType = typename OperationTraits::OutcomeType;
     using ResultType = typename OperationTraits::ResultType;
 
+private:
+    struct State
+    {
+        explicit State(ServiceClient* c) : client(c) {}
+        ServiceClient* client;
+    };
+
+public:
     class Iterator
     {
     public:
@@ -34,10 +40,18 @@ public:
         using pointer = const OutcomeType*;
         using reference = const OutcomeType&;
 
-        Iterator(ServiceClient& client, const OperationRequest& firstReq)
-            : m_client(client),
+        Iterator(std::shared_ptr<State> state, const OperationRequest& firstReq)
+            : m_state(std::move(state)),
               m_request(firstReq),
-              m_currentOutcome{OperationTraits::Invoke(m_client, m_request)}
+              m_currentOutcome(OperationTraits::Invoke(*m_state->client, m_request)),
+              m_atEnd(false)
+        {}
+
+        Iterator(std::shared_ptr<State> state, bool atEnd)
+            : m_state(std::move(state)),
+              m_request{},
+              m_currentOutcome{},
+              m_atEnd(atEnd)
         {}
 
         const OutcomeType& operator*() const { return m_currentOutcome; }
@@ -60,39 +74,45 @@ public:
 
             OperationTraits::SetNextRequest(m_currentOutcome.GetResult(), m_request);
             Fetch();
-
             return *this;
         }
 
-        friend bool operator==(const Iterator& lhs, const EndSentinel&) {
-          return lhs.m_atEnd;
+        friend bool operator==(const Iterator& lhs, const Iterator& rhs)
+        {
+            if (lhs.m_state.get() != rhs.m_state.get())
+            {
+                return false;
+            }
+            return lhs.m_atEnd == rhs.m_atEnd;
         }
 
-        friend bool operator!=(const Iterator& lhs, const EndSentinel& rhs) {
-          return !(lhs == rhs);
+        friend bool operator!=(const Iterator& lhs, const Iterator& rhs)
+        {
+            return !(lhs == rhs);
         }
 
-       private:
+    private:
         void Fetch()
         {
-            m_currentOutcome = OperationTraits::Invoke(m_client, m_request);
+            m_currentOutcome = OperationTraits::Invoke(*m_state->client, m_request);
         }
 
-        ServiceClient& m_client;
+        std::shared_ptr<State> m_state;
         OperationRequest m_request{};
         OutcomeType m_currentOutcome{};
         bool m_atEnd{false};
     };
 
     Paginator(ServiceClient& client, const OperationRequest& firstReq)
-        : m_client(client),
-          m_firstRequest(firstReq) {}
+        : m_state(std::make_shared<State>(&client)),
+          m_firstRequest(firstReq)
+    {}
 
-    Iterator begin() const { return Iterator(m_client, m_firstRequest); }
-    EndSentinel end() const { return EndSentinel{}; }
+    Iterator begin() const { return Iterator(m_state, m_firstRequest); }
+    Iterator end() const { return Iterator(m_state, true); }
 
 private:
-    ServiceClient& m_client;
+    std::shared_ptr<State> m_state;
     OperationRequest m_firstRequest{};
 };
 

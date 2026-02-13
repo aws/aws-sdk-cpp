@@ -132,8 +132,7 @@ TEST_F(ListObjectsV2PaginationTest, TestPaginationTraits) {
     size_t pageCount = 0;
     auto paginator = Client.ListObjectsV2Paginator(request);
     
-    for (auto pageIter = paginator.begin(); pageIter != paginator.end(); ++pageIter) {
-        const auto& outcome = *pageIter;
+    for (const auto& outcome : paginator) {
         AWS_ASSERT_SUCCESS(outcome);
         pageCount++;
     }
