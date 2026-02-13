@@ -123,6 +123,10 @@ ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jso
     m_activeSoftwareUpdateConfig = jsonValue.GetObject("ActiveSoftwareUpdateConfig");
     m_activeSoftwareUpdateConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SlurmConfig")) {
+    m_slurmConfig = jsonValue.GetObject("SlurmConfig");
+    m_slurmConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -235,6 +239,10 @@ JsonValue ClusterInstanceGroupDetails::Jsonize() const {
 
   if (m_activeSoftwareUpdateConfigHasBeenSet) {
     payload.WithObject("ActiveSoftwareUpdateConfig", m_activeSoftwareUpdateConfig.Jsonize());
+  }
+
+  if (m_slurmConfigHasBeenSet) {
+    payload.WithObject("SlurmConfig", m_slurmConfig.Jsonize());
   }
 
   return payload;

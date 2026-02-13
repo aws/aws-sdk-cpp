@@ -132,7 +132,13 @@ enum class ProcessingInstanceType {
   ml_r7i_16xlarge,
   ml_r7i_24xlarge,
   ml_r7i_48xlarge,
-  ml_p5_4xlarge
+  ml_p5_4xlarge,
+  ml_g7e_2xlarge,
+  ml_g7e_4xlarge,
+  ml_g7e_8xlarge,
+  ml_g7e_12xlarge,
+  ml_g7e_24xlarge,
+  ml_g7e_48xlarge
 };
 
 namespace ProcessingInstanceTypeMapper {

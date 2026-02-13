@@ -28,6 +28,17 @@ Region& Region::operator=(const XmlNode& xmlNode) {
       m_optInStatus = Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText());
       m_optInStatusHasBeenSet = true;
     }
+    XmlNode geographyNode = resultNode.FirstChild("geographySet");
+    if (!geographyNode.IsNull()) {
+      XmlNode geographyMember = geographyNode.FirstChild("item");
+      m_geographyHasBeenSet = !geographyMember.IsNull();
+      while (!geographyMember.IsNull()) {
+        m_geography.push_back(geographyMember);
+        geographyMember = geographyMember.NextNode("item");
+      }
+
+      m_geographyHasBeenSet = true;
+    }
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if (!regionNameNode.IsNull()) {
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
@@ -48,6 +59,15 @@ void Region::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
     oStream << location << index << locationValue << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
   }
 
+  if (m_geographyHasBeenSet) {
+    unsigned geographyIdx = 1;
+    for (auto& item : m_geography) {
+      Aws::StringStream geographySs;
+      geographySs << location << index << locationValue << ".GeographySet." << geographyIdx++;
+      item.OutputToStream(oStream, geographySs.str().c_str());
+    }
+  }
+
   if (m_regionNameHasBeenSet) {
     oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
@@ -60,6 +80,14 @@ void Region::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 void Region::OutputToStream(Aws::OStream& oStream, const char* location) const {
   if (m_optInStatusHasBeenSet) {
     oStream << location << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
+  }
+  if (m_geographyHasBeenSet) {
+    unsigned geographyIdx = 1;
+    for (auto& item : m_geography) {
+      Aws::StringStream geographySs;
+      geographySs << location << ".GeographySet." << geographyIdx++;
+      item.OutputToStream(oStream, geographySs.str().c_str());
+    }
   }
   if (m_regionNameHasBeenSet) {
     oStream << location << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";

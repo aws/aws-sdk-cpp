@@ -22,6 +22,10 @@ ClusterOrchestrator& ClusterOrchestrator::operator=(JsonView jsonValue) {
     m_eks = jsonValue.GetObject("Eks");
     m_eksHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Slurm")) {
+    m_slurm = jsonValue.GetObject("Slurm");
+    m_slurmHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ClusterOrchestrator::Jsonize() const {
 
   if (m_eksHasBeenSet) {
     payload.WithObject("Eks", m_eks.Jsonize());
+  }
+
+  if (m_slurmHasBeenSet) {
+    payload.WithObject("Slurm", m_slurm.Jsonize());
   }
 
   return payload;
