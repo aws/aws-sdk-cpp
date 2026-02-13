@@ -1282,6 +1282,7 @@ TEST_F(EnvironmentModifyingTest, TestChainReturnsEmptyWhenNoProviderSucceeds)
         {"AWS_SECRET_ACCESS_KEY", ""},
         {"AWS_EC2_METADATA_DISABLED", "true"},
         {"AWS_CONFIG_FILE", ""},
+        {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
     }};
 
     // No profile file
@@ -1478,6 +1479,7 @@ TEST_F(EnvironmentModifyingTest, TestChainSkipsWebIdentityWhenNotConfigured)
         {"AWS_ROLE_ARN", ""},
         {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
         {"AWS_EC2_METADATA_DISABLED", "true"},
+        {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
     }};
 
     // No profile or config files
@@ -1525,6 +1527,7 @@ TEST_F(EnvironmentModifyingTest, TestChainProcessProviderFailureFallsThrough)
         {"AWS_SECRET_ACCESS_KEY", ""},
         {"AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/TestRole"},
         {"AWS_WEB_IDENTITY_TOKEN_FILE", tokenFile.c_str()},
+        {"AWS_EC2_METADATA_DISABLED", "true"},
     }};
 
     // No profile credentials
@@ -1689,6 +1692,7 @@ TEST_F(EnvironmentModifyingTest, TestChainIMDSNotAttemptedWhenDisabled)
         {"AWS_ACCESS_KEY_ID", ""},
         {"AWS_SECRET_ACCESS_KEY", ""},
         {"AWS_EC2_METADATA_DISABLED", "true"},
+        {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
     }};
 
     // No profile or config files

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/NestedVirtualizationSpecification.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 
 #include <utility>
@@ -77,6 +78,21 @@ class ModifyInstanceCpuOptionsResponse {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+   */
+  inline NestedVirtualizationSpecification GetNestedVirtualization() const { return m_nestedVirtualization; }
+  inline void SetNestedVirtualization(NestedVirtualizationSpecification value) {
+    m_nestedVirtualizationHasBeenSet = true;
+    m_nestedVirtualization = value;
+  }
+  inline ModifyInstanceCpuOptionsResponse& WithNestedVirtualization(NestedVirtualizationSpecification value) {
+    SetNestedVirtualization(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -97,10 +113,13 @@ class ModifyInstanceCpuOptionsResponse {
 
   int m_threadsPerCore{0};
 
+  NestedVirtualizationSpecification m_nestedVirtualization{NestedVirtualizationSpecification::NOT_SET};
+
   ResponseMetadata m_responseMetadata;
   bool m_instanceIdHasBeenSet = false;
   bool m_coreCountHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;
+  bool m_nestedVirtualizationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

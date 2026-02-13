@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class SupportedAdditionalProcessorFeature { NOT_SET, amd_sev_snp };
+enum class SupportedAdditionalProcessorFeature { NOT_SET, amd_sev_snp, nested_virtualization };
 
 namespace SupportedAdditionalProcessorFeatureMapper {
 AWS_EC2_API SupportedAdditionalProcessorFeature GetSupportedAdditionalProcessorFeatureForName(const Aws::String& name);

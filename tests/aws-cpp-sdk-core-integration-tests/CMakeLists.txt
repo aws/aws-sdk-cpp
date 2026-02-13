@@ -16,9 +16,9 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/STSWebIdentityProviderIntegrationTest.cpp ${CMAKE_CURRENT_SOURCE_DIR} / DefaultCredentialsProviderChainIntegrationTest.cpp)
+    add_library(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/STSWebIdentityProviderIntegrationTest.cpp ${CMAKE_CURRENT_SOURCE_DIR}/DefaultCredentialsProviderChainIntegrationTest.cpp)
 else()
-    add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/STSWebIdentityProviderIntegrationTest.cpp ${CMAKE_CURRENT_SOURCE_DIR} / DefaultCredentialsProviderChainIntegrationTest.cpp)
+    add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/STSWebIdentityProviderIntegrationTest.cpp ${CMAKE_CURRENT_SOURCE_DIR}/DefaultCredentialsProviderChainIntegrationTest.cpp)
 endif()
 
 set_compiler_flags(${PROJECT_NAME})
