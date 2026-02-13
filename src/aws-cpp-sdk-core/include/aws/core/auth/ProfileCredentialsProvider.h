@@ -1,9 +1,10 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <memory>
 
 namespace Aws {
@@ -17,13 +18,13 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
   /**
    * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
    */
-  ProfileCredentialsProvider();
+  ProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
   /**
    * Initializes with a profile override and
    * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
    */
-  ProfileCredentialsProvider(const char* profile);
+  ProfileCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
   /**
    * Retrieves the credentials if found, otherwise returns empty credential set.
@@ -39,6 +40,9 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
    * Returns the directory storing the profile file.
    */
   static Aws::String GetProfileDirectory();
+
+ protected:
+  void Reload() override;
 
  private:
   class ProfileCredentialsProviderImp;
