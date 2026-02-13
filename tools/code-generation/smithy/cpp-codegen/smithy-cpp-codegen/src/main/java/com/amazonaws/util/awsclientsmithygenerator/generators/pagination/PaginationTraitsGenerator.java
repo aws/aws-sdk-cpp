@@ -99,8 +99,8 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
                   .write("");
             
             // Invoke method - no template needed since struct is templated
-            writer.openBlock("    static OutcomeType Invoke(Client& client, const RequestType& request)\n    {", "    }", () -> {
-                writer.write("        return client.$L(request);", methodName);
+            writer.openBlock("    static OutcomeType Invoke(Client* client, const RequestType& request)\n    {", "    }", () -> {
+                writer.write("        return client->$L(request);", methodName);
             });
             
             writer.write("");

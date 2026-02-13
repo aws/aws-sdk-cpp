@@ -20,7 +20,7 @@ struct ListDirectoryBucketsPaginationTraits {
   using OutcomeType = Model::ListDirectoryBucketsOutcome;
   using ClientType = Client;
 
-  static OutcomeType Invoke(Client& client, const RequestType& request) { return client.ListDirectoryBuckets(request); }
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListDirectoryBuckets(request); }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetContinuationToken().empty(); }
 

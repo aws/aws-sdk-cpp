@@ -23,14 +23,6 @@ public:
     using OutcomeType = typename OperationTraits::OutcomeType;
     using ResultType = typename OperationTraits::ResultType;
 
-private:
-    struct State
-    {
-        explicit State(ServiceClient* c) : client(c) {}
-        ServiceClient* client;
-    };
-
-public:
     class Iterator
     {
     public:
@@ -40,19 +32,8 @@ public:
         using pointer = const OutcomeType*;
         using reference = const OutcomeType&;
 
-        Iterator(std::shared_ptr<State> state, const OperationRequest& firstReq)
-            : m_state(std::move(state)),
-              m_request(firstReq),
-              m_currentOutcome(OperationTraits::Invoke(*m_state->client, m_request)),
-              m_atEnd(false)
-        {}
-
-        Iterator(std::shared_ptr<State> state, bool atEnd)
-            : m_state(std::move(state)),
-              m_request{},
-              m_currentOutcome{},
-              m_atEnd(atEnd)
-        {}
+    Iterator(ServiceClient* client, const OperationRequest& firstReq)
+        : m_client(client), m_request(firstReq), m_currentOutcome{OperationTraits::Invoke(m_client, m_request)} {}
 
         const OutcomeType& operator*() const { return m_currentOutcome; }
 
@@ -77,43 +58,39 @@ public:
             return *this;
         }
 
-        friend bool operator==(const Iterator& lhs, const Iterator& rhs)
-        {
-            if (lhs.m_state.get() != rhs.m_state.get())
-            {
-                return false;
-            }
-            return lhs.m_atEnd == rhs.m_atEnd;
-        }
+    friend bool operator==(const Iterator& lhs, const Iterator& rhs) {
+      if (rhs.m_isSentinel) {
+        return lhs.m_atEnd;
+      }
 
-        friend bool operator!=(const Iterator& lhs, const Iterator& rhs)
-        {
-            return !(lhs == rhs);
-        }
+      return lhs.m_atEnd == rhs.m_atEnd && lhs.m_isSentinel == rhs.m_isSentinel &&
+              lhs.m_client == rhs.m_client;
+    }
 
-    private:
-        void Fetch()
-        {
-            m_currentOutcome = OperationTraits::Invoke(*m_state->client, m_request);
-        }
+    friend bool operator!=(const Iterator& lhs, const Iterator& rhs) { return !(lhs == rhs); }
+    static Iterator constructSentinel() {return Iterator{};}
 
-        std::shared_ptr<State> m_state;
-        OperationRequest m_request{};
-        OutcomeType m_currentOutcome{};
-        bool m_atEnd{false};
-    };
+   private:
+    Iterator() : m_isSentinel{true} {};
 
-    Paginator(ServiceClient& client, const OperationRequest& firstReq)
-        : m_state(std::make_shared<State>(&client)),
-          m_firstRequest(firstReq)
-    {}
+    void Fetch() { m_currentOutcome = OperationTraits::Invoke(m_client, m_request); }
 
-    Iterator begin() const { return Iterator(m_state, m_firstRequest); }
-    Iterator end() const { return Iterator(m_state, true); }
 
-private:
-    std::shared_ptr<State> m_state;
-    OperationRequest m_firstRequest{};
+    ServiceClient* m_client;
+    OperationRequest m_request{};
+    OutcomeType m_currentOutcome{};
+    bool m_atEnd{false};
+    bool m_isSentinel{false};
+  };
+
+  Paginator(ServiceClient* client, const OperationRequest& firstReq) : m_client(client), m_firstRequest(firstReq) {}
+
+  Iterator begin() const { return Iterator(m_client, m_firstRequest); }
+  Iterator end() const { return Iterator::constructSentinel(); }
+
+ private:
+  ServiceClient* m_client;
+  OperationRequest m_firstRequest{};
 };
 
 } // namespace Pagination

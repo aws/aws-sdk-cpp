@@ -20,7 +20,7 @@ struct ListObjectsV2PaginationTraits {
   using OutcomeType = Model::ListObjectsV2Outcome;
   using ClientType = Client;
 
-  static OutcomeType Invoke(Client& client, const RequestType& request) { return client.ListObjectsV2(request); }
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListObjectsV2(request); }
 
   static bool HasMoreResults(const ResultType& result) { return !result.GetNextContinuationToken().empty(); }
 

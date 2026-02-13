@@ -20,7 +20,7 @@ struct ListPartsPaginationTraits {
   using OutcomeType = Model::ListPartsOutcome;
   using ClientType = Client;
 
-  static OutcomeType Invoke(Client& client, const RequestType& request) { return client.ListParts(request); }
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListParts(request); }
 
   static bool HasMoreResults(const ResultType& result) { return result.GetNextPartNumberMarker() != 0; }
 

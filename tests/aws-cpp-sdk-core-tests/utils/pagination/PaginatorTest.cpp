@@ -97,8 +97,8 @@ struct ListItemsTraits {
     using OutcomeType = TestOutcome;
     using ResultType = TestResult;
     
-    static OutcomeType Invoke(PaginatorTestClient& client, const TestRequest& request) {
-        return client.ListItems(request);
+    static OutcomeType Invoke(PaginatorTestClient* client, const TestRequest& request) {
+        return client->ListItems(request);
     }
     
     static bool HasMoreResults(const TestResult& result) {
@@ -129,7 +129,7 @@ protected:
 
 TEST_F(PaginatorTest, TestIteratesThroughAllPages)
 {
-    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(client, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     Aws::Vector<Aws::String> allItems;
     int pageCount = 0;
@@ -159,7 +159,7 @@ TEST_F(PaginatorTest, TestIteratesThroughAllPages)
 TEST_F(PaginatorTest, TestHandlesErrorGracefully)
 {
     client.SetShouldFail(true);
-    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(client, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     ASSERT_TRUE(it != paginator.end());
@@ -175,7 +175,7 @@ TEST_F(PaginatorTest, TestHandlesErrorGracefully)
 TEST_F(PaginatorTest, TestEmptyResultSet)
 {
     client.SetData({});
-    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(client, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     ASSERT_TRUE(it != paginator.end());
@@ -191,7 +191,7 @@ TEST_F(PaginatorTest, TestEmptyResultSet)
 
 TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
 {
-    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(client, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto begin = paginator.begin();
     auto end = paginator.end();
@@ -209,7 +209,7 @@ TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
 TEST_F(PaginatorTest, TestHandlesErrorOnSecondPage)
 {
     client.SetFailOnPage(1); // Fail on second page (0-indexed)
-    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(client, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     
