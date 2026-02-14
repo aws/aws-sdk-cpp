@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/secretsmanager/SecretsManagerPaginationBase.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 
@@ -48,7 +49,8 @@ namespace SecretsManager {
  * Web Services CloudTrail User Guide</a>.</p>
  */
 class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>,
+                                                    public SecretsManagerPaginationBase<SecretsManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

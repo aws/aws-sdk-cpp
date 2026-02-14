@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/SecurityHubPaginationBase.h>
 #include <aws/securityhub/SecurityHubServiceClientModel.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
@@ -84,7 +85,8 @@ namespace SecurityHub {
  * requests per second.</p> </li> </ul>
  */
 class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<SecurityHubClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<SecurityHubClient>,
+                                              public SecurityHubPaginationBase<SecurityHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

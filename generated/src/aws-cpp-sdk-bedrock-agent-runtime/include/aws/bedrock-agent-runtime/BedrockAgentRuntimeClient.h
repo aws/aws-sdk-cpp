@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
+#include <aws/bedrock-agent-runtime/BedrockAgentRuntimePaginationBase.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeServiceClientModel.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -26,7 +27,8 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
       public smithy::client::AwsSmithyClientT<
           Aws::BedrockAgentRuntime::SERVICE_NAME, Aws::BedrockAgentRuntime::BedrockAgentRuntimeClientConfiguration,
           smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>, BedrockAgentRuntimeEndpointProviderBase,
-          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockAgentRuntimeErrorMarshaller> {
+          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockAgentRuntimeErrorMarshaller>,
+      public BedrockAgentRuntimePaginationBase<BedrockAgentRuntimeClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();

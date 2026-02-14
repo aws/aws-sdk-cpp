@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/oam/OAMPaginationBase.h>
 #include <aws/oam/OAMServiceClientModel.h>
 #include <aws/oam/OAM_EXPORTS.h>
 
@@ -37,7 +38,9 @@ namespace OAM {
  * share all log groups with the monitoring account, or filter to a subset of log
  * groups. </p>
  */
-class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient> {
+class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>,
+                              public OAMPaginationBase<OAMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

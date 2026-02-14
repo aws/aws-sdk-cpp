@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography-data/PaymentCryptographyDataPaginationBase.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataServiceClientModel.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
@@ -29,7 +30,8 @@ namespace PaymentCryptographyData {
  */
 class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>,
+      public PaymentCryptographyDataPaginationBase<PaymentCryptographyDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

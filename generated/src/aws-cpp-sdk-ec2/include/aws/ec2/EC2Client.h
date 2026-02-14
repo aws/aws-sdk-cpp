@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/EC2PaginationBase.h>
 #include <aws/ec2/EC2ServiceClientModel.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 
@@ -21,7 +22,9 @@ namespace EC2 {
  * href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon EC2 Developer
  * Guide</a>.</p>
  */
-class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client> {
+class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>,
+                              public EC2PaginationBase<EC2Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

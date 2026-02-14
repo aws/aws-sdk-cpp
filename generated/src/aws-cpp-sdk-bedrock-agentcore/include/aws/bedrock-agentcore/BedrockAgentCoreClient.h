@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bedrock-agentcore/BedrockAgentCorePaginationBase.h>
 #include <aws/bedrock-agentcore/BedrockAgentCoreServiceClientModel.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -19,7 +20,8 @@ namespace BedrockAgentCore {
  * services. </p>
  */
 class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreClient>,
+                                                        public BedrockAgentCorePaginationBase<BedrockAgentCoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

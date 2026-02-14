@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/WorkMailPaginationBase.h>
 #include <aws/workmail/WorkMailServiceClientModel.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
@@ -35,7 +36,8 @@ namespace WorkMail {
  * access on a selective basis using the IAM model.</p>
  */
 class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>,
+                                        public WorkMailPaginationBase<WorkMailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

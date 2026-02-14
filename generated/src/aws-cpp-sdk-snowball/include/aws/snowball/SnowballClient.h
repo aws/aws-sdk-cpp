@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/snowball/SnowballPaginationBase.h>
 #include <aws/snowball/SnowballServiceClientModel.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 
@@ -27,7 +28,8 @@ namespace Snowball {
  * Guide</a>.</p>
  */
 class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>,
+                                        public SnowballPaginationBase<SnowballClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

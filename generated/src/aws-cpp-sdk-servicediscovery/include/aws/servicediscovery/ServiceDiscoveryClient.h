@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/ServiceDiscoveryPaginationBase.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace ServiceDiscovery {
  * an answer that contains up to eight healthy records. </p>
  */
 class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>,
+                                                        public ServiceDiscoveryPaginationBase<ServiceDiscoveryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

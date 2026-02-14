@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dlm/DLMPaginationBase.h>
 #include <aws/dlm/DLMServiceClientModel.h>
 #include <aws/dlm/DLM_EXPORTS.h>
 
@@ -23,7 +24,9 @@ namespace DLM {
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">
  * Amazon Data Lifecycle Manager</a> in the <i>Amazon EC2 User Guide</i>.</p>
  */
-class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DLMClient> {
+class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<DLMClient>,
+                              public DLMPaginationBase<DLMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

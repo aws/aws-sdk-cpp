@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/grafana/ManagedGrafanaPaginationBase.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace ManagedGrafana {
  * build, package, or deploy any hardware to run Grafana servers. </p>
  */
 class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>,
+                                                    public ManagedGrafanaPaginationBase<ManagedGrafanaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

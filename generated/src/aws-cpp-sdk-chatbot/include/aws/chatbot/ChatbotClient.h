@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chatbot/ChatbotPaginationBase.h>
 #include <aws/chatbot/ChatbotServiceClientModel.h>
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -26,7 +27,9 @@ namespace chatbot {
  * logged in whatever Region you call from, not US East (N. Virginia) by
  * default.</p>
  */
-class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient> {
+class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>,
+                                      public ChatbotPaginationBase<ChatbotClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

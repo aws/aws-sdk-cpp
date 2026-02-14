@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sms-voice/PinpointSMSVoicePaginationBase.h>
 #include <aws/sms-voice/PinpointSMSVoiceServiceClientModel.h>
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace PinpointSMSVoice {
  * Pinpoint SMS and Voice Messaging public facing APIs
  */
 class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>,
+                                                        public PinpointSMSVoicePaginationBase<PinpointSMSVoiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

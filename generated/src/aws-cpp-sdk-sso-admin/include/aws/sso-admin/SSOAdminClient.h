@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/SSOAdminPaginationBase.h>
 #include <aws/sso-admin/SSOAdminServiceClientModel.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 
@@ -41,7 +42,8 @@ namespace SSOAdmin {
  *
  */
 class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>,
+                                        public SSOAdminPaginationBase<SSOAdminClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

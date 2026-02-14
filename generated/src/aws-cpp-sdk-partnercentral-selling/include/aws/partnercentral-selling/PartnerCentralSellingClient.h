@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/partnercentral-selling/PartnerCentralSellingPaginationBase.h>
 #include <aws/partnercentral-selling/PartnerCentralSellingServiceClientModel.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
@@ -51,7 +52,8 @@ namespace PartnerCentralSelling {
  */
 class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>,
+      public PartnerCentralSellingPaginationBase<PartnerCentralSellingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

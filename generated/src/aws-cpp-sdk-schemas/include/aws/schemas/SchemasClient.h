@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/schemas/SchemasPaginationBase.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
 
@@ -16,7 +17,9 @@ namespace Schemas {
 /**
  * <p>Amazon EventBridge Schema Registry</p>
  */
-class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient> {
+class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>,
+                                      public SchemasPaginationBase<SchemasClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

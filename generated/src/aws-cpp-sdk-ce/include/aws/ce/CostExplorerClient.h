@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/ce/CostExplorerPaginationBase.h>
 #include <aws/ce/CostExplorerServiceClientModel.h>
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -26,7 +27,8 @@ namespace CostExplorer {
  * Cost Management Pricing</a>.</p>
  */
 class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>,
+                                                public CostExplorerPaginationBase<CostExplorerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

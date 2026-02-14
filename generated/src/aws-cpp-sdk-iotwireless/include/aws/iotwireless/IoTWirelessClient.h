@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/IoTWirelessPaginationBase.h>
 #include <aws/iotwireless/IoTWirelessServiceClientModel.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
@@ -39,7 +40,8 @@ namespace IoTWireless {
  * IPv6 with AWS IoT Wireless</a>.</p>
  */
 class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>,
+                                              public IoTWirelessPaginationBase<IoTWirelessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

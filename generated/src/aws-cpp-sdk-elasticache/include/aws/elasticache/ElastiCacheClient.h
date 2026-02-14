@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/ElastiCachePaginationBase.h>
 #include <aws/elasticache/ElastiCacheServiceClientModel.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 
@@ -26,7 +27,8 @@ namespace ElastiCache {
  * with their cache and can receive alarms if a part of their cache runs hot.</p>
  */
 class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<ElastiCacheClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<ElastiCacheClient>,
+                                              public ElastiCachePaginationBase<ElastiCacheClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

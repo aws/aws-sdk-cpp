@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/synthetics/SyntheticsPaginationBase.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 
@@ -31,7 +32,8 @@ namespace Synthetics {
  * Considerations for Synthetics Canaries</a>.</p>
  */
 class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>,
+                                            public SyntheticsPaginationBase<SyntheticsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

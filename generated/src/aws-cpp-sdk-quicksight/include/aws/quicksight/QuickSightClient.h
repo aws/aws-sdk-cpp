@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/QuickSightPaginationBase.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace QuickSight {
  * interface that you can use to manage Amazon Quick Sight. </p>
  */
 class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>,
+                                            public QuickSightPaginationBase<QuickSightClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

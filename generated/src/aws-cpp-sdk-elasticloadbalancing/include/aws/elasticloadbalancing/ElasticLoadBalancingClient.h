@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingPaginationBase.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
@@ -38,7 +39,8 @@ namespace ElasticLoadBalancing {
  */
 class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient
     : public Aws::Client::AWSXMLClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>,
+      public ElasticLoadBalancingPaginationBase<ElasticLoadBalancingClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

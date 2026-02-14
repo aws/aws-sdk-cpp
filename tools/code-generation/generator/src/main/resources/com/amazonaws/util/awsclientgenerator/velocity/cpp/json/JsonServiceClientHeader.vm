@@ -11,6 +11,7 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}PaginationBase.h>
 
 namespace ${rootNamespace}
 {
@@ -25,7 +26,7 @@ namespace ${serviceNamespace}
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
 #end
-  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>, public ${metadata.classNamePrefix}PaginationBase<${className}>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;

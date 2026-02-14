@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appfabric/AppFabricPaginationBase.h>
 #include <aws/appfabric/AppFabricServiceClientModel.h>
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -28,7 +29,8 @@ namespace AppFabric {
  * section of the CLI Reference</a>.</p>
  */
 class AWS_APPFABRIC_API AppFabricClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>,
+                                          public AppFabricPaginationBase<AppFabricClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/s3outposts/S3OutpostsPaginationBase.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace S3Outposts {
  * <p>Amazon S3 on Outposts provides access to S3 on Outposts operations.</p>
  */
 class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>,
+                                            public S3OutpostsPaginationBase<S3OutpostsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

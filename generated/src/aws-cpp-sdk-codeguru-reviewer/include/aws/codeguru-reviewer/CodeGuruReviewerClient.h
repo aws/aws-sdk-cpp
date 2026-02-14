@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codeguru-reviewer/CodeGuruReviewerPaginationBase.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerServiceClientModel.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -32,7 +33,8 @@ namespace CodeGuruReviewer {
  * the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
  */
 class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruReviewerClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruReviewerClient>,
+                                                        public CodeGuruReviewerPaginationBase<CodeGuruReviewerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/repostspace/RepostspacePaginationBase.h>
 #include <aws/repostspace/RepostspaceServiceClientModel.h>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 
@@ -26,7 +27,8 @@ namespace repostspace {
  * cloud.</p>
  */
 class AWS_REPOSTSPACE_API RepostspaceClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>,
+                                              public RepostspacePaginationBase<RepostspaceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/s3vectors/S3VectorsPaginationBase.h>
 #include <aws/s3vectors/S3VectorsServiceClientModel.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace S3Vectors {
  * vector. The key uniquely identifies the vector in a vector index.</p>
  */
 class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient>,
+                                          public S3VectorsPaginationBase<S3VectorsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
