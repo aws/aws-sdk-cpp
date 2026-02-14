@@ -234,6 +234,8 @@ class ListFlowOperationResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_firewallArn;
 
@@ -256,6 +258,7 @@ class ListFlowOperationResultsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_vpcEndpointAssociationArnHasBeenSet = false;

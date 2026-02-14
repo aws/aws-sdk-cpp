@@ -20,6 +20,7 @@ using namespace Aws;
 ListProxySessionsResult::ListProxySessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListProxySessionsResult& ListProxySessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProxySessions")) {
     Aws::Utils::Array<JsonView> proxySessionsJsonList = jsonValue.GetArray("ProxySessions");

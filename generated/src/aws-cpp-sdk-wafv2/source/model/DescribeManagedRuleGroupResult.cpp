@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VersionName")) {
     m_versionName = jsonValue.GetString("VersionName");

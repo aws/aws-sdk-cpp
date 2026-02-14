@@ -20,6 +20,7 @@ using namespace Aws;
 AcceptSharedDirectoryResult::AcceptSharedDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AcceptSharedDirectoryResult& AcceptSharedDirectoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SharedDirectory")) {
     m_sharedDirectory = jsonValue.GetObject("SharedDirectory");

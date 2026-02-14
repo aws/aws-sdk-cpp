@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMultiRegionClusterResult::UpdateMultiRegionClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMultiRegionClusterResult& UpdateMultiRegionClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MultiRegionCluster")) {
     m_multiRegionCluster = jsonValue.GetObject("MultiRegionCluster");

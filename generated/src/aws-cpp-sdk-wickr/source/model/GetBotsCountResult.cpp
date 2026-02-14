@@ -20,6 +20,7 @@ using namespace Aws;
 GetBotsCountResult::GetBotsCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBotsCountResult& GetBotsCountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pending")) {
     m_pending = jsonValue.GetInteger("pending");

@@ -248,6 +248,8 @@ class DeleteDBClusterEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dBClusterEndpointIdentifier;
 
@@ -270,6 +272,7 @@ class DeleteDBClusterEndpointResult {
   Aws::String m_dBClusterEndpointArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBClusterEndpointIdentifierHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;

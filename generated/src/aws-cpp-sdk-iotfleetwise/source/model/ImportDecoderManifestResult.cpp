@@ -20,6 +20,7 @@ using namespace Aws;
 ImportDecoderManifestResult::ImportDecoderManifestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportDecoderManifestResult& ImportDecoderManifestResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");

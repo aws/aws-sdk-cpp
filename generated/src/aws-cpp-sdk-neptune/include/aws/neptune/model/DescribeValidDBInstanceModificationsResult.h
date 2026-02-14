@@ -59,10 +59,13 @@ class DescribeValidDBInstanceModificationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ValidDBInstanceModificationsMessage m_validDBInstanceModificationsMessage;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_validDBInstanceModificationsMessageHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

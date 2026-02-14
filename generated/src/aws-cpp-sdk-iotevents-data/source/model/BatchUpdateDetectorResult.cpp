@@ -20,6 +20,7 @@ using namespace Aws;
 BatchUpdateDetectorResult::BatchUpdateDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchUpdateDetectorResult& BatchUpdateDetectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("batchUpdateDetectorErrorEntries")) {
     Aws::Utils::Array<JsonView> batchUpdateDetectorErrorEntriesJsonList = jsonValue.GetArray("batchUpdateDetectorErrorEntries");

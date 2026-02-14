@@ -91,12 +91,15 @@ class DetectFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FaceDetail> m_faceDetails;
 
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_faceDetailsHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

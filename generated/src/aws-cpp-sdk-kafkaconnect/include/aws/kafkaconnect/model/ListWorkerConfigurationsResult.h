@@ -84,12 +84,15 @@ class ListWorkerConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<WorkerConfigurationSummary> m_workerConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_workerConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

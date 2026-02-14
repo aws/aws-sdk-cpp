@@ -23,6 +23,7 @@ DeleteVerifiedDestinationNumberResult::DeleteVerifiedDestinationNumberResult(con
 
 DeleteVerifiedDestinationNumberResult& DeleteVerifiedDestinationNumberResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VerifiedDestinationNumberArn")) {
     m_verifiedDestinationNumberArn = jsonValue.GetString("VerifiedDestinationNumberArn");

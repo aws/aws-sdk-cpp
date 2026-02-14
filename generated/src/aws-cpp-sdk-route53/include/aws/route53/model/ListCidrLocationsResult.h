@@ -85,12 +85,15 @@ class ListCidrLocationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<LocationSummary> m_cidrLocations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_cidrLocationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

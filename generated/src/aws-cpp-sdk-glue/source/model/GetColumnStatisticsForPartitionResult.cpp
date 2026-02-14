@@ -23,6 +23,7 @@ GetColumnStatisticsForPartitionResult::GetColumnStatisticsForPartitionResult(con
 
 GetColumnStatisticsForPartitionResult& GetColumnStatisticsForPartitionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ColumnStatisticsList")) {
     Aws::Utils::Array<JsonView> columnStatisticsListJsonList = jsonValue.GetArray("ColumnStatisticsList");

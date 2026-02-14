@@ -24,6 +24,7 @@ DescribeClientAuthenticationSettingsResult::DescribeClientAuthenticationSettings
 
 DescribeClientAuthenticationSettingsResult& DescribeClientAuthenticationSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ClientAuthenticationSettingsInfo")) {
     Aws::Utils::Array<JsonView> clientAuthenticationSettingsInfoJsonList = jsonValue.GetArray("ClientAuthenticationSettingsInfo");

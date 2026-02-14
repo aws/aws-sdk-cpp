@@ -90,12 +90,15 @@ class DescribeEventDetailsForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<OrganizationEventDetails> m_successfulSet;
 
   Aws::Vector<OrganizationEventDetailsErrorItem> m_failedSet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulSetHasBeenSet = false;
   bool m_failedSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

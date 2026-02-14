@@ -20,6 +20,7 @@ using namespace Aws;
 ListCustomActionsResult::ListCustomActionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCustomActionsResult& ListCustomActionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomActions")) {
     Aws::Utils::Array<JsonView> customActionsJsonList = jsonValue.GetArray("CustomActions");

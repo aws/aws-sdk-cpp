@@ -20,6 +20,7 @@ using namespace Aws;
 StartRemoteDeleteResult::StartRemoteDeleteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartRemoteDeleteResult& StartRemoteDeleteResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeleteId")) {
     m_deleteId = jsonValue.GetString("DeleteId");

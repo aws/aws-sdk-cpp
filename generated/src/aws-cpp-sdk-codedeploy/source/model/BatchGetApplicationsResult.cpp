@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetApplicationsResult::BatchGetApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetApplicationsResult& BatchGetApplicationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("applicationsInfo")) {
     Aws::Utils::Array<JsonView> applicationsInfoJsonList = jsonValue.GetArray("applicationsInfo");

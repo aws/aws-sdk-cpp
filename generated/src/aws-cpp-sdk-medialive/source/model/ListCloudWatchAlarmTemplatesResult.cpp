@@ -22,6 +22,7 @@ ListCloudWatchAlarmTemplatesResult::ListCloudWatchAlarmTemplatesResult(const Aws
 }
 
 ListCloudWatchAlarmTemplatesResult& ListCloudWatchAlarmTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cloudWatchAlarmTemplates")) {
     Aws::Utils::Array<JsonView> cloudWatchAlarmTemplatesJsonList = jsonValue.GetArray("cloudWatchAlarmTemplates");

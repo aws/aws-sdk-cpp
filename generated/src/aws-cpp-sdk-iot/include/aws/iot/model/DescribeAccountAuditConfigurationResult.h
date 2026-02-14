@@ -115,6 +115,8 @@ class DescribeAccountAuditConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_roleArn;
 
@@ -123,6 +125,7 @@ class DescribeAccountAuditConfigurationResult {
   Aws::Map<Aws::String, AuditCheckConfiguration> m_auditCheckConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_roleArnHasBeenSet = false;
   bool m_auditNotificationTargetConfigurationsHasBeenSet = false;
   bool m_auditCheckConfigurationsHasBeenSet = false;

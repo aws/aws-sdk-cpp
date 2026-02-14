@@ -20,6 +20,7 @@ using namespace Aws;
 SearchSessionsResult::SearchSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchSessionsResult& SearchSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sessionSummaries")) {
     Aws::Utils::Array<JsonView> sessionSummariesJsonList = jsonValue.GetArray("sessionSummaries");

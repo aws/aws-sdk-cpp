@@ -20,6 +20,7 @@ using namespace Aws;
 ListReadinessChecksResult::ListReadinessChecksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListReadinessChecksResult& ListReadinessChecksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

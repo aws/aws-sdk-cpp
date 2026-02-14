@@ -267,6 +267,8 @@ class GetBatchJobExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -295,6 +297,7 @@ class GetBatchJobExecutionResult {
   Aws::String m_statusReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_batchJobIdentifierHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;

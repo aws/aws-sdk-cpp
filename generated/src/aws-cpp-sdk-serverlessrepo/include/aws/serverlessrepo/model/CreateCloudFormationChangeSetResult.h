@@ -114,6 +114,8 @@ class CreateCloudFormationChangeSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -124,6 +126,7 @@ class CreateCloudFormationChangeSetResult {
   Aws::String m_stackId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_changeSetIdHasBeenSet = false;
   bool m_semanticVersionHasBeenSet = false;

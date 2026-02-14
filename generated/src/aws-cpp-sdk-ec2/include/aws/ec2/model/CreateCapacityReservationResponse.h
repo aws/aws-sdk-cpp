@@ -58,10 +58,13 @@ class CreateCapacityReservationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CapacityReservation m_capacityReservation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_capacityReservationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

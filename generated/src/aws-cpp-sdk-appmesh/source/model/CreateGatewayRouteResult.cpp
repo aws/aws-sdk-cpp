@@ -20,6 +20,7 @@ using namespace Aws;
 CreateGatewayRouteResult::CreateGatewayRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateGatewayRouteResult& CreateGatewayRouteResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_gatewayRoute = jsonValue;
   m_gatewayRouteHasBeenSet = true;

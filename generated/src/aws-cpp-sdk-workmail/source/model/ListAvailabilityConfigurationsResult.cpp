@@ -23,6 +23,7 @@ ListAvailabilityConfigurationsResult::ListAvailabilityConfigurationsResult(const
 
 ListAvailabilityConfigurationsResult& ListAvailabilityConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AvailabilityConfigurations")) {
     Aws::Utils::Array<JsonView> availabilityConfigurationsJsonList = jsonValue.GetArray("AvailabilityConfigurations");

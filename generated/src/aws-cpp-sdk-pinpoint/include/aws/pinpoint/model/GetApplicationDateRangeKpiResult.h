@@ -56,10 +56,13 @@ class GetApplicationDateRangeKpiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationDateRangeKpiResponse m_applicationDateRangeKpiResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationDateRangeKpiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

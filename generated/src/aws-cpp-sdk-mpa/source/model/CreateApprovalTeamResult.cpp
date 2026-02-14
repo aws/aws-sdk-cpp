@@ -20,6 +20,7 @@ using namespace Aws;
 CreateApprovalTeamResult::CreateApprovalTeamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateApprovalTeamResult& CreateApprovalTeamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetString("CreationTime");

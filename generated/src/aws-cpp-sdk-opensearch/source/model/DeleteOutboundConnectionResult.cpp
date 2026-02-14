@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteOutboundConnectionResult::DeleteOutboundConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteOutboundConnectionResult& DeleteOutboundConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Connection")) {
     m_connection = jsonValue.GetObject("Connection");

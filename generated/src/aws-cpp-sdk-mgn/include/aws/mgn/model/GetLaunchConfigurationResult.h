@@ -237,6 +237,8 @@ class GetLaunchConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sourceServerID;
 
@@ -263,6 +265,7 @@ class GetLaunchConfigurationResult {
   Aws::String m_mapAutoTaggingMpeID;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceServerIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ec2LaunchTemplateIDHasBeenSet = false;

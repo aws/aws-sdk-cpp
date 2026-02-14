@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeHomeRegionControlsResult::DescribeHomeRegionControlsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeHomeRegionControlsResult& DescribeHomeRegionControlsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HomeRegionControls")) {
     Aws::Utils::Array<JsonView> homeRegionControlsJsonList = jsonValue.GetArray("HomeRegionControls");

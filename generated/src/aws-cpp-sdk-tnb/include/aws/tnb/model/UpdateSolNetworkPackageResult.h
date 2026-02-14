@@ -57,10 +57,13 @@ class UpdateSolNetworkPackageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   NsdOperationalState m_nsdOperationalState{NsdOperationalState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nsdOperationalStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -22,6 +22,7 @@ DescribeOrganizationOverviewResult::DescribeOrganizationOverviewResult(const Aws
 }
 
 DescribeOrganizationOverviewResult& DescribeOrganizationOverviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReactiveInsights")) {
     m_reactiveInsights = jsonValue.GetInteger("ReactiveInsights");

@@ -21,6 +21,7 @@ GetIntrospectionSchemaResult::GetIntrospectionSchemaResult(Aws::AmazonWebService
 }
 
 GetIntrospectionSchemaResult& GetIntrospectionSchemaResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_schema = result.TakeOwnershipOfPayload();
   m_schemaHasBeenSet = true;
 

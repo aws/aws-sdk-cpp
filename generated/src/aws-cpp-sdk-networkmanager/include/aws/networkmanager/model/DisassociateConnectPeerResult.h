@@ -58,10 +58,13 @@ class DisassociateConnectPeerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ConnectPeerAssociation m_connectPeerAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectPeerAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

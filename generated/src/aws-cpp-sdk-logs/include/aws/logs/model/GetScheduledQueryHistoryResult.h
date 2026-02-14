@@ -114,6 +114,8 @@ class GetScheduledQueryHistoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -124,6 +126,7 @@ class GetScheduledQueryHistoryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_scheduledQueryArnHasBeenSet = false;
   bool m_triggerHistoryHasBeenSet = false;

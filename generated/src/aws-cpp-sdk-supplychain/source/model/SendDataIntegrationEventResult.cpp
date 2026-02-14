@@ -20,6 +20,7 @@ using namespace Aws;
 SendDataIntegrationEventResult::SendDataIntegrationEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendDataIntegrationEventResult& SendDataIntegrationEventResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("eventId")) {
     m_eventId = jsonValue.GetString("eventId");

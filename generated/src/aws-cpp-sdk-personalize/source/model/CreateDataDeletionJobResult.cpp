@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataDeletionJobResult::CreateDataDeletionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataDeletionJobResult& CreateDataDeletionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataDeletionJobArn")) {
     m_dataDeletionJobArn = jsonValue.GetString("dataDeletionJobArn");

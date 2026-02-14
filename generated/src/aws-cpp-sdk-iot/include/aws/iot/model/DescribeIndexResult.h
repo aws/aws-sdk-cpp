@@ -100,6 +100,8 @@ class DescribeIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_indexName;
 
@@ -108,6 +110,7 @@ class DescribeIndexResult {
   Aws::String m_schema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_indexNameHasBeenSet = false;
   bool m_indexStatusHasBeenSet = false;
   bool m_schemaHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTicketV2Result::CreateTicketV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTicketV2Result& CreateTicketV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TicketId")) {
     m_ticketId = jsonValue.GetString("TicketId");

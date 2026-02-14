@@ -58,10 +58,13 @@ class GetAutomationExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AutomationExecution m_automationExecution;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_automationExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

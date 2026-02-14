@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInterconnectResult& CreateInterconnectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("interconnectId")) {
     m_interconnectId = jsonValue.GetString("interconnectId");

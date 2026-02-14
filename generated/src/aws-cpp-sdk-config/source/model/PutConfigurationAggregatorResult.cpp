@@ -20,6 +20,7 @@ using namespace Aws;
 PutConfigurationAggregatorResult::PutConfigurationAggregatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutConfigurationAggregatorResult& PutConfigurationAggregatorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationAggregator")) {
     m_configurationAggregator = jsonValue.GetObject("ConfigurationAggregator");

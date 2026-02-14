@@ -58,10 +58,13 @@ class StartSourceNetworkReplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SourceNetwork m_sourceNetwork;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceNetworkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

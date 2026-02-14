@@ -20,6 +20,7 @@ using namespace Aws;
 ListTableRestoreStatusResult::ListTableRestoreStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTableRestoreStatusResult& ListTableRestoreStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

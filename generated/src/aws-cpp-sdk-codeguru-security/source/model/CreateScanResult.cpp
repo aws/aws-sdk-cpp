@@ -20,6 +20,7 @@ using namespace Aws;
 CreateScanResult::CreateScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateScanResult& CreateScanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scanName")) {
     m_scanName = jsonValue.GetString("scanName");

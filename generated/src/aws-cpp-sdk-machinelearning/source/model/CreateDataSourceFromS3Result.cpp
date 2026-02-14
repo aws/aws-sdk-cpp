@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataSourceFromS3Result::CreateDataSourceFromS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataSourceFromS3Result& CreateDataSourceFromS3Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataSourceId")) {
     m_dataSourceId = jsonValue.GetString("DataSourceId");

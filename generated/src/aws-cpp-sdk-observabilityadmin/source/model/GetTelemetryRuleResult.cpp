@@ -20,6 +20,7 @@ using namespace Aws;
 GetTelemetryRuleResult::GetTelemetryRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTelemetryRuleResult& GetTelemetryRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleName")) {
     m_ruleName = jsonValue.GetString("RuleName");

@@ -58,10 +58,13 @@ class UpdatePlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Plan m_plan;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_planHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

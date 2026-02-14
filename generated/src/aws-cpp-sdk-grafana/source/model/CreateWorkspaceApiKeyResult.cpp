@@ -20,6 +20,7 @@ using namespace Aws;
 CreateWorkspaceApiKeyResult::CreateWorkspaceApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWorkspaceApiKeyResult& CreateWorkspaceApiKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");

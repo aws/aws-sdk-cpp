@@ -58,10 +58,13 @@ class DisassociateLinkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LinkAssociation m_linkAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_linkAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -82,12 +82,15 @@ class ListNamespacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<NamespaceSummary> m_namespaces;
 
   Aws::String m_continuationToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_namespacesHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

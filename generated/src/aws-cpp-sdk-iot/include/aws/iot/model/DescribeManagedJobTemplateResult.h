@@ -177,6 +177,8 @@ class DescribeManagedJobTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_templateName;
 
@@ -193,6 +195,7 @@ class DescribeManagedJobTemplateResult {
   Aws::String m_document;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateNameHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

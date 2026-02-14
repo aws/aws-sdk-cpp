@@ -67,10 +67,13 @@ class ApplyPendingMaintenanceActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResourcePendingMaintenanceActions m_resourcePendingMaintenanceActions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourcePendingMaintenanceActionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -58,10 +58,13 @@ class CancelMembershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_membershipId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_membershipIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

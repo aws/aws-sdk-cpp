@@ -131,6 +131,8 @@ class AssociateAvailabilityZonesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_firewallArn;
 
@@ -141,6 +143,7 @@ class AssociateAvailabilityZonesResult {
   Aws::String m_updateToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;
   bool m_availabilityZoneMappingsHasBeenSet = false;

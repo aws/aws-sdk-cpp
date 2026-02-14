@@ -58,10 +58,13 @@ class DescribeVirtualGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VirtualGatewayData m_virtualGateway;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_virtualGatewayHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

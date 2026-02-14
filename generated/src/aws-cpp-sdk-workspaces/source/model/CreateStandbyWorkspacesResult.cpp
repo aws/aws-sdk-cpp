@@ -20,6 +20,7 @@ using namespace Aws;
 CreateStandbyWorkspacesResult::CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateStandbyWorkspacesResult& CreateStandbyWorkspacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedStandbyRequests")) {
     Aws::Utils::Array<JsonView> failedStandbyRequestsJsonList = jsonValue.GetArray("FailedStandbyRequests");

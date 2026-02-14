@@ -147,6 +147,8 @@ class PutSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contentType;
 
@@ -161,6 +163,7 @@ class PutSessionResult {
   Aws::Utils::Stream::ResponseStream m_audioStream{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_sessionStateHasBeenSet = false;

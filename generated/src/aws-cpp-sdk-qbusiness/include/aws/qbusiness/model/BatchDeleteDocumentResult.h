@@ -67,10 +67,13 @@ class BatchDeleteDocumentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FailedDocument> m_failedDocuments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedDocumentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

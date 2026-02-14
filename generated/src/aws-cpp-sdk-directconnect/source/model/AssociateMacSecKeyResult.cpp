@@ -20,6 +20,7 @@ using namespace Aws;
 AssociateMacSecKeyResult::AssociateMacSecKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateMacSecKeyResult& AssociateMacSecKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectionId")) {
     m_connectionId = jsonValue.GetString("connectionId");

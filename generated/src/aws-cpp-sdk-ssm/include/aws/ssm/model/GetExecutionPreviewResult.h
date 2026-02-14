@@ -125,6 +125,8 @@ class GetExecutionPreviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_executionPreviewId;
 
@@ -137,6 +139,7 @@ class GetExecutionPreviewResult {
   ExecutionPreview m_executionPreview;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_executionPreviewIdHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;

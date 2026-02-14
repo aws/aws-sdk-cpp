@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDocumentResult::CreateDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDocumentResult& CreateDocumentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentDescription")) {
     m_documentDescription = jsonValue.GetObject("DocumentDescription");

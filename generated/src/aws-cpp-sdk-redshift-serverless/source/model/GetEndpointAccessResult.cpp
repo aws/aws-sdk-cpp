@@ -20,6 +20,7 @@ using namespace Aws;
 GetEndpointAccessResult::GetEndpointAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEndpointAccessResult& GetEndpointAccessResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetObject("endpoint");

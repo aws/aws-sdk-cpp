@@ -20,6 +20,7 @@ using namespace Aws;
 SynchronizeGatewayTargetsResult::SynchronizeGatewayTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SynchronizeGatewayTargetsResult& SynchronizeGatewayTargetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("targets")) {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");

@@ -22,6 +22,7 @@ DescribeFlowSourceThumbnailResult::DescribeFlowSourceThumbnailResult(const Aws::
 }
 
 DescribeFlowSourceThumbnailResult& DescribeFlowSourceThumbnailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("thumbnailDetails")) {
     m_thumbnailDetails = jsonValue.GetObject("thumbnailDetails");

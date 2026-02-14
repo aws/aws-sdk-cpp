@@ -59,10 +59,13 @@ class RegisterContainerImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContainerImage m_containerImage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_containerImageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

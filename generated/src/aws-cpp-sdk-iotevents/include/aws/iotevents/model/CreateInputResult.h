@@ -58,10 +58,13 @@ class CreateInputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   InputConfiguration m_inputConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_inputConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

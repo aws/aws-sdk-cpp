@@ -20,6 +20,7 @@ using namespace Aws;
 PreviewPrivacyImpactResult::PreviewPrivacyImpactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PreviewPrivacyImpactResult& PreviewPrivacyImpactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("privacyImpact")) {
     m_privacyImpact = jsonValue.GetObject("privacyImpact");

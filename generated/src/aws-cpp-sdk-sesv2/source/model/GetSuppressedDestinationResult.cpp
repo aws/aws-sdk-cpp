@@ -20,6 +20,7 @@ using namespace Aws;
 GetSuppressedDestinationResult::GetSuppressedDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSuppressedDestinationResult& GetSuppressedDestinationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SuppressedDestination")) {
     m_suppressedDestination = jsonValue.GetObject("SuppressedDestination");

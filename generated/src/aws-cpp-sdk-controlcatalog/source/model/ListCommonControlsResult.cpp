@@ -20,6 +20,7 @@ using namespace Aws;
 ListCommonControlsResult::ListCommonControlsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCommonControlsResult& ListCommonControlsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CommonControls")) {
     Aws::Utils::Array<JsonView> commonControlsJsonList = jsonValue.GetArray("CommonControls");

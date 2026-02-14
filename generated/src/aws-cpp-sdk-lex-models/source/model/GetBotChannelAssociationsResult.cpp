@@ -20,6 +20,7 @@ using namespace Aws;
 GetBotChannelAssociationsResult::GetBotChannelAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBotChannelAssociationsResult& GetBotChannelAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botChannelAssociations")) {
     Aws::Utils::Array<JsonView> botChannelAssociationsJsonList = jsonValue.GetArray("botChannelAssociations");

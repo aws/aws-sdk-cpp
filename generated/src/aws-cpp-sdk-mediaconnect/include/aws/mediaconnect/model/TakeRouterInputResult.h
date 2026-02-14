@@ -124,6 +124,8 @@ class TakeRouterInputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RouterOutputRoutedState m_routedState{RouterOutputRoutedState::NOT_SET};
 
@@ -136,6 +138,7 @@ class TakeRouterInputResult {
   Aws::String m_routerInputName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routedStateHasBeenSet = false;
   bool m_routerOutputArnHasBeenSet = false;
   bool m_routerOutputNameHasBeenSet = false;

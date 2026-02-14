@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePackageVersionsResult::DeletePackageVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePackageVersionsResult& DeletePackageVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successfulVersions")) {
     Aws::Map<Aws::String, JsonView> successfulVersionsJsonMap = jsonValue.GetObject("successfulVersions").GetAllObjects();

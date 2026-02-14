@@ -20,6 +20,7 @@ using namespace Aws;
 GetLifecyclePolicyPreviewResult::GetLifecyclePolicyPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLifecyclePolicyPreviewResult& GetLifecyclePolicyPreviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");

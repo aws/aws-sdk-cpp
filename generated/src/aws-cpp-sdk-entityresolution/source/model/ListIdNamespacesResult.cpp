@@ -20,6 +20,7 @@ using namespace Aws;
 ListIdNamespacesResult::ListIdNamespacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListIdNamespacesResult& ListIdNamespacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("idNamespaceSummaries")) {
     Aws::Utils::Array<JsonView> idNamespaceSummariesJsonList = jsonValue.GetArray("idNamespaceSummaries");

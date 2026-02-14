@@ -56,10 +56,13 @@ class VerifyOTPMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VerificationResponse m_verificationResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verificationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

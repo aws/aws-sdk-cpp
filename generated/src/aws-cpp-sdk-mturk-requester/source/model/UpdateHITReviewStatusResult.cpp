@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateHITReviewStatusResult::UpdateHITReviewStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateHITReviewStatusResult& UpdateHITReviewStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

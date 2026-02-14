@@ -66,10 +66,13 @@ class DescribeSupportedLanguagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SupportedLanguage> m_supportedLanguages;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_supportedLanguagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ListTokenBalancesResult::ListTokenBalancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTokenBalancesResult& ListTokenBalancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tokenBalances")) {
     Aws::Utils::Array<JsonView> tokenBalancesJsonList = jsonValue.GetArray("tokenBalances");

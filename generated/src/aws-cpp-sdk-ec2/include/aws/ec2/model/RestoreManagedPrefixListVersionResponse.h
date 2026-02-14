@@ -58,10 +58,13 @@ class RestoreManagedPrefixListVersionResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ManagedPrefixList m_prefixList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_prefixListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

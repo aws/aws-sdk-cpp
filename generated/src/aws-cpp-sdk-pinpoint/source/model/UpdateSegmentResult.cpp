@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSegmentResult::UpdateSegmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSegmentResult& UpdateSegmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_segmentResponse = jsonValue;
   m_segmentResponseHasBeenSet = true;

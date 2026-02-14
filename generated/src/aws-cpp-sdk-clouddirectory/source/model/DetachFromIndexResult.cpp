@@ -20,6 +20,7 @@ using namespace Aws;
 DetachFromIndexResult::DetachFromIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetachFromIndexResult& DetachFromIndexResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DetachedObjectIdentifier")) {
     m_detachedObjectIdentifier = jsonValue.GetString("DetachedObjectIdentifier");

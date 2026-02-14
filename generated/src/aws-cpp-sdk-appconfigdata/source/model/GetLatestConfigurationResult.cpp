@@ -21,6 +21,7 @@ GetLatestConfigurationResult::GetLatestConfigurationResult(Aws::AmazonWebService
 }
 
 GetLatestConfigurationResult& GetLatestConfigurationResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_configuration = result.TakeOwnershipOfPayload();
   m_configurationHasBeenSet = true;
 

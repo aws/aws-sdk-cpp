@@ -58,10 +58,13 @@ class ListCachePolicies2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CachePolicyList m_cachePolicyList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cachePolicyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

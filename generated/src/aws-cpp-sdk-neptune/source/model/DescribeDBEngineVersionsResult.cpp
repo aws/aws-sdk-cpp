@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDBEngineVersionsResult::DescribeDBEngineVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeDBEngineVersionsResult& DescribeDBEngineVersionsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -21,6 +21,7 @@ using namespace Aws;
 GenerateRandomResult::GenerateRandomResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateRandomResult& GenerateRandomResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Plaintext")) {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));

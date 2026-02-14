@@ -89,12 +89,15 @@ class BatchGetNamedQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<NamedQuery> m_namedQueries;
 
   Aws::Vector<UnprocessedNamedQueryId> m_unprocessedNamedQueryIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_namedQueriesHasBeenSet = false;
   bool m_unprocessedNamedQueryIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

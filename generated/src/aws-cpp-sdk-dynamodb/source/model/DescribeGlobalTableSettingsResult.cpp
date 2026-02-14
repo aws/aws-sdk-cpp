@@ -22,6 +22,7 @@ DescribeGlobalTableSettingsResult::DescribeGlobalTableSettingsResult(const Aws::
 }
 
 DescribeGlobalTableSettingsResult& DescribeGlobalTableSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GlobalTableName")) {
     m_globalTableName = jsonValue.GetString("GlobalTableName");

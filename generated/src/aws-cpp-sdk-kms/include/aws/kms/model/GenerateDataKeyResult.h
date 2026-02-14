@@ -145,6 +145,8 @@ class GenerateDataKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
 
@@ -157,6 +159,7 @@ class GenerateDataKeyResult {
   Aws::String m_keyMaterialId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ciphertextBlobHasBeenSet = false;
   bool m_plaintextHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;

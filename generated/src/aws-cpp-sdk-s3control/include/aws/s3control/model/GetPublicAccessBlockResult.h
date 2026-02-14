@@ -78,12 +78,15 @@ class GetPublicAccessBlockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
 
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_publicAccessBlockConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;

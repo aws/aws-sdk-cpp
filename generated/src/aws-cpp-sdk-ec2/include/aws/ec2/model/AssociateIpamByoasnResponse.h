@@ -58,10 +58,13 @@ class AssociateIpamByoasnResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AsnAssociation m_asnAssociation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_asnAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

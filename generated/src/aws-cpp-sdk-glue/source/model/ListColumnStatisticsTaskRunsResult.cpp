@@ -22,6 +22,7 @@ ListColumnStatisticsTaskRunsResult::ListColumnStatisticsTaskRunsResult(const Aws
 }
 
 ListColumnStatisticsTaskRunsResult& ListColumnStatisticsTaskRunsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ColumnStatisticsTaskRunIds")) {
     Aws::Utils::Array<JsonView> columnStatisticsTaskRunIdsJsonList = jsonValue.GetArray("ColumnStatisticsTaskRunIds");

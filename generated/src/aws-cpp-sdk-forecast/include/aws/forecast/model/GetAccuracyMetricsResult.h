@@ -117,6 +117,8 @@ class GetAccuracyMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EvaluationResult> m_predictorEvaluationResults;
 
@@ -127,6 +129,7 @@ class GetAccuracyMetricsResult {
   OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_predictorEvaluationResultsHasBeenSet = false;
   bool m_isAutoPredictorHasBeenSet = false;
   bool m_autoMLOverrideStrategyHasBeenSet = false;

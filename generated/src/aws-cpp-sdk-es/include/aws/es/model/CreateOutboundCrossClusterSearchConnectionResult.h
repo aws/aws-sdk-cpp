@@ -142,6 +142,8 @@ class CreateOutboundCrossClusterSearchConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DomainInformation m_sourceDomainInfo;
 
@@ -154,6 +156,7 @@ class CreateOutboundCrossClusterSearchConnectionResult {
   Aws::String m_crossClusterSearchConnectionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceDomainInfoHasBeenSet = false;
   bool m_destinationDomainInfoHasBeenSet = false;
   bool m_connectionAliasHasBeenSet = false;

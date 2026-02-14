@@ -20,6 +20,7 @@ using namespace Aws;
 GetPromptRouterResult::GetPromptRouterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPromptRouterResult& GetPromptRouterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("promptRouterName")) {
     m_promptRouterName = jsonValue.GetString("promptRouterName");

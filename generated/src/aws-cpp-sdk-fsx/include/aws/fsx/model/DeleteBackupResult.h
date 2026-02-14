@@ -80,12 +80,15 @@ class DeleteBackupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_backupId;
 
   BackupLifecycle m_lifecycle{BackupLifecycle::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backupIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

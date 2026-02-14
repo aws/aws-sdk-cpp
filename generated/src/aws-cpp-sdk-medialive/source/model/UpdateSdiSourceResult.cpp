@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSdiSourceResult::UpdateSdiSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSdiSourceResult& UpdateSdiSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sdiSource")) {
     m_sdiSource = jsonValue.GetObject("sdiSource");

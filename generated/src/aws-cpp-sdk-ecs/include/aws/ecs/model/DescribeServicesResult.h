@@ -89,12 +89,15 @@ class DescribeServicesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Service> m_services;
 
   Aws::Vector<Failure> m_failures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_servicesHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

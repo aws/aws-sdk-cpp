@@ -306,6 +306,8 @@ class GetCollaborationMLInputChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_membershipIdentifier;
 
@@ -338,6 +340,7 @@ class GetCollaborationMLInputChannelResult {
   Aws::String m_creatorAccountId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_mlInputChannelArnHasBeenSet = false;

@@ -92,6 +92,8 @@ class PutSinkPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policy;
 
@@ -100,6 +102,7 @@ class PutSinkPolicyResult {
   Aws::String m_sinkId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyHasBeenSet = false;
   bool m_sinkArnHasBeenSet = false;
   bool m_sinkIdHasBeenSet = false;

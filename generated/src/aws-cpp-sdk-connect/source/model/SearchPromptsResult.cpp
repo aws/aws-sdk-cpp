@@ -20,6 +20,7 @@ using namespace Aws;
 SearchPromptsResult::SearchPromptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchPromptsResult& SearchPromptsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Prompts")) {
     Aws::Utils::Array<JsonView> promptsJsonList = jsonValue.GetArray("Prompts");

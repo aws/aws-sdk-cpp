@@ -73,12 +73,15 @@ class DeleteStorageVirtualMachineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_storageVirtualMachineId;
 
   StorageVirtualMachineLifecycle m_lifecycle{StorageVirtualMachineLifecycle::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_storageVirtualMachineIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

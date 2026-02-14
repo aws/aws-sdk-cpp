@@ -32,6 +32,7 @@ using namespace Aws;
 
   ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebServiceResult<${typeInfo.CborType}>& result)
     {
+    m_responseCode = result.GetResponseCode();
     const auto& cborValue = result.GetPayload();
     const auto decoder = cborValue.GetDecoder();
 

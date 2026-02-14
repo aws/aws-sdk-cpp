@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInferenceExperimentResult::CreateInferenceExperimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInferenceExperimentResult& CreateInferenceExperimentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InferenceExperimentArn")) {
     m_inferenceExperimentArn = jsonValue.GetString("InferenceExperimentArn");

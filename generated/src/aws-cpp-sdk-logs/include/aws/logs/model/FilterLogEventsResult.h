@@ -110,6 +110,8 @@ class FilterLogEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FilteredLogEvent> m_events;
 
@@ -118,6 +120,7 @@ class FilterLogEventsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventsHasBeenSet = false;
   bool m_searchedLogStreamsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

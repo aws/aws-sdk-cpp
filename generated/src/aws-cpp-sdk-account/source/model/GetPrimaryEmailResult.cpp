@@ -20,6 +20,7 @@ using namespace Aws;
 GetPrimaryEmailResult::GetPrimaryEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPrimaryEmailResult& GetPrimaryEmailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PrimaryEmail")) {
     m_primaryEmail = jsonValue.GetString("PrimaryEmail");

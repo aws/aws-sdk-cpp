@@ -58,10 +58,13 @@ class DeleteLocalGatewayRouteTableResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LocalGatewayRouteTable m_localGatewayRouteTable;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_localGatewayRouteTableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

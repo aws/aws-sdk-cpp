@@ -21,6 +21,7 @@ using namespace Aws;
 DeriveSharedSecretResult::DeriveSharedSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeriveSharedSecretResult& DeriveSharedSecretResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");

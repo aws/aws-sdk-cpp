@@ -21,6 +21,7 @@ using namespace Aws;
 DescribeLoaResult::DescribeLoaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLoaResult& DescribeLoaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("loaContent")) {
     m_loaContent = HashingUtils::Base64Decode(jsonValue.GetString("loaContent"));

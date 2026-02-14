@@ -20,6 +20,7 @@ using namespace Aws;
 ListFHIRDatastoresResult::ListFHIRDatastoresResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFHIRDatastoresResult& ListFHIRDatastoresResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatastorePropertiesList")) {
     Aws::Utils::Array<JsonView> datastorePropertiesListJsonList = jsonValue.GetArray("DatastorePropertiesList");

@@ -22,6 +22,7 @@ DescribeSubscriptionFiltersResult::DescribeSubscriptionFiltersResult(const Aws::
 }
 
 DescribeSubscriptionFiltersResult& DescribeSubscriptionFiltersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subscriptionFilters")) {
     Aws::Utils::Array<JsonView> subscriptionFiltersJsonList = jsonValue.GetArray("subscriptionFilters");

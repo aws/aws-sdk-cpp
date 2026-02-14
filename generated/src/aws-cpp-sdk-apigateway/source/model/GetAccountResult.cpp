@@ -20,6 +20,7 @@ using namespace Aws;
 GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAccountResult& GetAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cloudwatchRoleArn")) {
     m_cloudwatchRoleArn = jsonValue.GetString("cloudwatchRoleArn");

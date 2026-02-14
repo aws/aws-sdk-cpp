@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTransactionResult::DescribeTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTransactionResult& DescribeTransactionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransactionDescription")) {
     m_transactionDescription = jsonValue.GetObject("TransactionDescription");

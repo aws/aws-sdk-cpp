@@ -23,6 +23,7 @@ GetUserAttributeVerificationCodeResult::GetUserAttributeVerificationCodeResult(c
 
 GetUserAttributeVerificationCodeResult& GetUserAttributeVerificationCodeResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CodeDeliveryDetails")) {
     m_codeDeliveryDetails = jsonValue.GetObject("CodeDeliveryDetails");

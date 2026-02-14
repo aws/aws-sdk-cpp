@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVariableResult::CreateVariableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVariableResult& CreateVariableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterIdentityProviderResult::RegisterIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterIdentityProviderResult& RegisterIdentityProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityProviderSummary")) {
     m_identityProviderSummary = jsonValue.GetObject("IdentityProviderSummary");

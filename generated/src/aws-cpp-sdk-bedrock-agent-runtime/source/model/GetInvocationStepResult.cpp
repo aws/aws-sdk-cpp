@@ -20,6 +20,7 @@ using namespace Aws;
 GetInvocationStepResult::GetInvocationStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInvocationStepResult& GetInvocationStepResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("invocationStep")) {
     m_invocationStep = jsonValue.GetObject("invocationStep");

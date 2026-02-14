@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBatchPredictionsResult::DescribeBatchPredictionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBatchPredictionsResult& DescribeBatchPredictionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Results")) {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");

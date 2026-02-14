@@ -66,10 +66,13 @@ class GetImageAncestryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ImageAncestryEntry> m_imageAncestryEntries;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_imageAncestryEntriesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

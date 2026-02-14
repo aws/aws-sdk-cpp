@@ -20,6 +20,7 @@ using namespace Aws;
 ListDeviceDefinitionsResult::ListDeviceDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDeviceDefinitionsResult& ListDeviceDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Definitions")) {
     Aws::Utils::Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");

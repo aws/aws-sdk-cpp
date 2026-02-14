@@ -20,6 +20,7 @@ using namespace Aws;
 ListAppBundlesResult::ListAppBundlesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAppBundlesResult& ListAppBundlesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("appBundleSummaryList")) {
     Aws::Utils::Array<JsonView> appBundleSummaryListJsonList = jsonValue.GetArray("appBundleSummaryList");

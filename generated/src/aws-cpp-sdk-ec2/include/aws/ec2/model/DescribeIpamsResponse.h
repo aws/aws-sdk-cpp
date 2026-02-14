@@ -84,12 +84,15 @@ class DescribeIpamsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<Ipam> m_ipams;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_ipamsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

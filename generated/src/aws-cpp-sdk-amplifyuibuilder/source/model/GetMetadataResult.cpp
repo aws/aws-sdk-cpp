@@ -20,6 +20,7 @@ using namespace Aws;
 GetMetadataResult::GetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMetadataResult& GetMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("features")) {
     Aws::Map<Aws::String, JsonView> featuresJsonMap = jsonValue.GetObject("features").GetAllObjects();

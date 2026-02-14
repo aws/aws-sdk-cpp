@@ -64,10 +64,13 @@ class CreateStorageLocationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_s3Bucket;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_s3BucketHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

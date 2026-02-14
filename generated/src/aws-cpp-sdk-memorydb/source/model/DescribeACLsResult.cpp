@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeACLsResult::DescribeACLsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeACLsResult& DescribeACLsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ACLs")) {
     Aws::Utils::Array<JsonView> aCLsJsonList = jsonValue.GetArray("ACLs");

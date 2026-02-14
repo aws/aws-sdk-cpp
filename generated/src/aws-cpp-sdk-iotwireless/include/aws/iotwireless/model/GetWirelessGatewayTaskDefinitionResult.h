@@ -110,6 +110,8 @@ class GetWirelessGatewayTaskDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_autoCreateTasks{false};
 
@@ -120,6 +122,7 @@ class GetWirelessGatewayTaskDefinitionResult {
   Aws::String m_arn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoCreateTasksHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_updateHasBeenSet = false;

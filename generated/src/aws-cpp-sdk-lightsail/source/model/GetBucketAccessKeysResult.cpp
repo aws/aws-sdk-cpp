@@ -20,6 +20,7 @@ using namespace Aws;
 GetBucketAccessKeysResult::GetBucketAccessKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBucketAccessKeysResult& GetBucketAccessKeysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessKeys")) {
     Aws::Utils::Array<JsonView> accessKeysJsonList = jsonValue.GetArray("accessKeys");

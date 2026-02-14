@@ -20,6 +20,7 @@ using namespace Aws;
 GrantFlowEntitlementsResult::GrantFlowEntitlementsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GrantFlowEntitlementsResult& GrantFlowEntitlementsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("entitlements")) {
     Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("entitlements");

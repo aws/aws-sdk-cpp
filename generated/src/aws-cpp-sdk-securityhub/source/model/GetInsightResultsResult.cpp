@@ -20,6 +20,7 @@ using namespace Aws;
 GetInsightResultsResult::GetInsightResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInsightResultsResult& GetInsightResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InsightResults")) {
     m_insightResults = jsonValue.GetObject("InsightResults");

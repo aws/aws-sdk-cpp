@@ -123,6 +123,8 @@ class GetTileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_blob{};
 
@@ -135,6 +137,7 @@ class GetTileResult {
   Aws::String m_pricingBucket;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_blobHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_cacheControlHasBeenSet = false;

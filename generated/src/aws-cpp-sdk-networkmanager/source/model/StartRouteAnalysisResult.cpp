@@ -20,6 +20,7 @@ using namespace Aws;
 StartRouteAnalysisResult::StartRouteAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartRouteAnalysisResult& StartRouteAnalysisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RouteAnalysis")) {
     m_routeAnalysis = jsonValue.GetObject("RouteAnalysis");

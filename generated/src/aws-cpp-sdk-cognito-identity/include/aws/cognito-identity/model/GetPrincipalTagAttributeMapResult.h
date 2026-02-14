@@ -117,6 +117,8 @@ class GetPrincipalTagAttributeMapResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityPoolId;
 
@@ -127,6 +129,7 @@ class GetPrincipalTagAttributeMapResult {
   Aws::Map<Aws::String, Aws::String> m_principalTags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_identityProviderNameHasBeenSet = false;
   bool m_useDefaultsHasBeenSet = false;

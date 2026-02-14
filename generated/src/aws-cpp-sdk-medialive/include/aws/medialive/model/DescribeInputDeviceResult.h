@@ -337,6 +337,8 @@ class DescribeInputDeviceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -371,6 +373,7 @@ class DescribeInputDeviceResult {
   InputDeviceOutputType m_outputType{InputDeviceOutputType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_connectionStateHasBeenSet = false;
   bool m_deviceSettingsSyncStateHasBeenSet = false;

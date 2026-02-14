@@ -20,6 +20,7 @@ using namespace Aws;
 SearchVocabulariesResult::SearchVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchVocabulariesResult& SearchVocabulariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VocabularySummaryList")) {
     Aws::Utils::Array<JsonView> vocabularySummaryListJsonList = jsonValue.GetArray("VocabularySummaryList");

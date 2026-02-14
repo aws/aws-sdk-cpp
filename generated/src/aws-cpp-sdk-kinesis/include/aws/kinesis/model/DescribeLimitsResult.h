@@ -100,6 +100,8 @@ class DescribeLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_shardLimit{0};
 
@@ -110,6 +112,7 @@ class DescribeLimitsResult {
   int m_onDemandStreamCountLimit{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_shardLimitHasBeenSet = false;
   bool m_openShardCountHasBeenSet = false;
   bool m_onDemandStreamCountHasBeenSet = false;

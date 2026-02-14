@@ -142,6 +142,8 @@ class GetBucketNotificationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TopicConfiguration> m_topicConfigurations;
 
@@ -152,6 +154,7 @@ class GetBucketNotificationConfigurationResult {
   EventBridgeConfiguration m_eventBridgeConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_topicConfigurationsHasBeenSet = false;
   bool m_queueConfigurationsHasBeenSet = false;
   bool m_lambdaFunctionConfigurationsHasBeenSet = false;

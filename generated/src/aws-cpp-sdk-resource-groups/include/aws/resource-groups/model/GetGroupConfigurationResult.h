@@ -61,10 +61,13 @@ class GetGroupConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GroupConfiguration m_groupConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

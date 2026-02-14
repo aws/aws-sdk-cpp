@@ -20,6 +20,7 @@ using namespace Aws;
 GetVerificationResult::GetVerificationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVerificationResult& GetVerificationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VerificationType")) {
     m_verificationType = VerificationTypeMapper::GetVerificationTypeForName(jsonValue.GetString("VerificationType"));

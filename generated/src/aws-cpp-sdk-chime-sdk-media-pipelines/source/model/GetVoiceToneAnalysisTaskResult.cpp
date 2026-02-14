@@ -20,6 +20,7 @@ using namespace Aws;
 GetVoiceToneAnalysisTaskResult::GetVoiceToneAnalysisTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVoiceToneAnalysisTaskResult& GetVoiceToneAnalysisTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VoiceToneAnalysisTask")) {
     m_voiceToneAnalysisTask = jsonValue.GetObject("VoiceToneAnalysisTask");

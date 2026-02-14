@@ -20,6 +20,7 @@ using namespace Aws;
 GetAudienceModelResult::GetAudienceModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAudienceModelResult& GetAudienceModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");

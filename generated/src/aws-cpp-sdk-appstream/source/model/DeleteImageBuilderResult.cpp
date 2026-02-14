@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteImageBuilderResult::DeleteImageBuilderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteImageBuilderResult& DeleteImageBuilderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImageBuilder")) {
     m_imageBuilder = jsonValue.GetObject("ImageBuilder");

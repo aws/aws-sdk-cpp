@@ -20,6 +20,7 @@ using namespace Aws;
 ListDefaultVocabulariesResult::ListDefaultVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDefaultVocabulariesResult& ListDefaultVocabulariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DefaultVocabularyList")) {
     Aws::Utils::Array<JsonView> defaultVocabularyListJsonList = jsonValue.GetArray("DefaultVocabularyList");

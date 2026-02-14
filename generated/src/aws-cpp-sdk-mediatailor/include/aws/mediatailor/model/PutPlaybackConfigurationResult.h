@@ -482,6 +482,8 @@ class PutPlaybackConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_adDecisionServerUrl;
 
@@ -528,6 +530,7 @@ class PutPlaybackConfigurationResult {
   AdDecisionServerConfiguration m_adDecisionServerConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_availSuppressionHasBeenSet = false;
   bool m_bumperHasBeenSet = false;

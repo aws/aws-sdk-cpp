@@ -147,6 +147,8 @@ class GetFileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commitId;
 
@@ -161,6 +163,7 @@ class GetFileResult {
   Aws::Utils::ByteBuffer m_fileContent{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commitIdHasBeenSet = false;
   bool m_blobIdHasBeenSet = false;
   bool m_filePathHasBeenSet = false;

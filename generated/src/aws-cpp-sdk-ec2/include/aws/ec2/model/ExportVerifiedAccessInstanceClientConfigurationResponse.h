@@ -162,6 +162,8 @@ class ExportVerifiedAccessInstanceClientConfigurationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_version;
 
@@ -176,6 +178,7 @@ class ExportVerifiedAccessInstanceClientConfigurationResponse {
   Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfiguration> m_openVpnConfigurations;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_versionHasBeenSet = false;
   bool m_verifiedAccessInstanceIdHasBeenSet = false;
   bool m_regionHasBeenSet = false;

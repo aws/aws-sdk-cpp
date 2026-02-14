@@ -22,6 +22,7 @@ DescribeConnectClientAddInsResult::DescribeConnectClientAddInsResult(const Aws::
 }
 
 DescribeConnectClientAddInsResult& DescribeConnectClientAddInsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AddIns")) {
     Aws::Utils::Array<JsonView> addInsJsonList = jsonValue.GetArray("AddIns");

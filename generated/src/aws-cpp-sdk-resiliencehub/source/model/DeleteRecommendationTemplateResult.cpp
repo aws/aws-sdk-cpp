@@ -22,6 +22,7 @@ DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult(const Aws
 }
 
 DeleteRecommendationTemplateResult& DeleteRecommendationTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recommendationTemplateArn")) {
     m_recommendationTemplateArn = jsonValue.GetString("recommendationTemplateArn");

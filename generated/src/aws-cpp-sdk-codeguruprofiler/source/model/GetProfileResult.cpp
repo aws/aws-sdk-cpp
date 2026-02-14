@@ -19,6 +19,7 @@ using namespace Aws;
 GetProfileResult::GetProfileResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetProfileResult& GetProfileResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_profile = result.TakeOwnershipOfPayload();
   m_profileHasBeenSet = true;
 

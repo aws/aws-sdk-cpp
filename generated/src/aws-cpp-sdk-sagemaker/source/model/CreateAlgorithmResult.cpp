@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAlgorithmResult::CreateAlgorithmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAlgorithmResult& CreateAlgorithmResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AlgorithmArn")) {
     m_algorithmArn = jsonValue.GetString("AlgorithmArn");

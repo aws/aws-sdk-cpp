@@ -23,6 +23,7 @@ CreateQueryLoggingConfigurationResult::CreateQueryLoggingConfigurationResult(con
 
 CreateQueryLoggingConfigurationResult& CreateQueryLoggingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetObject("status");

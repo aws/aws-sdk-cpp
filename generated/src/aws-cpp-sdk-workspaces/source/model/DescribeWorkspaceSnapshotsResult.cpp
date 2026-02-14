@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeWorkspaceSnapshotsResult::DescribeWorkspaceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeWorkspaceSnapshotsResult& DescribeWorkspaceSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RebuildSnapshots")) {
     Aws::Utils::Array<JsonView> rebuildSnapshotsJsonList = jsonValue.GetArray("RebuildSnapshots");

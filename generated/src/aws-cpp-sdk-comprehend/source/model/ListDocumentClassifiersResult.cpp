@@ -20,6 +20,7 @@ using namespace Aws;
 ListDocumentClassifiersResult::ListDocumentClassifiersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDocumentClassifiersResult& ListDocumentClassifiersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentClassifierPropertiesList")) {
     Aws::Utils::Array<JsonView> documentClassifierPropertiesListJsonList = jsonValue.GetArray("DocumentClassifierPropertiesList");

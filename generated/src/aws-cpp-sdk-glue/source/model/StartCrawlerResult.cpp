@@ -20,6 +20,7 @@ using namespace Aws;
 StartCrawlerResult::StartCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartCrawlerResult& StartCrawlerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

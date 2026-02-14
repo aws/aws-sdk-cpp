@@ -22,6 +22,7 @@ GetMultiRegionAccessPointPolicyResult::GetMultiRegionAccessPointPolicyResult(con
 
 GetMultiRegionAccessPointPolicyResult& GetMultiRegionAccessPointPolicyResult::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

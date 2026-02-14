@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetLifecyclePolicyResult::BatchGetLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetLifecyclePolicyResult& BatchGetLifecyclePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("lifecyclePolicyDetails")) {
     Aws::Utils::Array<JsonView> lifecyclePolicyDetailsJsonList = jsonValue.GetArray("lifecyclePolicyDetails");

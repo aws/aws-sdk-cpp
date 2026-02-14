@@ -115,6 +115,8 @@ class ListTopicRefreshSchedulesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_topicId;
 
@@ -125,6 +127,7 @@ class ListTopicRefreshSchedulesResult {
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_topicIdHasBeenSet = false;
   bool m_topicArnHasBeenSet = false;
   bool m_refreshSchedulesHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetParametersForExportResult::GetParametersForExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetParametersForExportResult& GetParametersForExportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SigningKeyCertificate")) {
     m_signingKeyCertificate = jsonValue.GetString("SigningKeyCertificate");

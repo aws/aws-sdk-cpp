@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFlowMediaStreamResult::UpdateFlowMediaStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFlowMediaStreamResult& UpdateFlowMediaStreamResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowArn")) {
     m_flowArn = jsonValue.GetString("flowArn");

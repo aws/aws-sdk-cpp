@@ -20,6 +20,7 @@ using namespace Aws;
 GetBillingViewResult::GetBillingViewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBillingViewResult& GetBillingViewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("billingView")) {
     m_billingView = jsonValue.GetObject("billingView");

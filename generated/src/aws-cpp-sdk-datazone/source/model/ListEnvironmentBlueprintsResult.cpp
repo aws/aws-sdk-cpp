@@ -20,6 +20,7 @@ using namespace Aws;
 ListEnvironmentBlueprintsResult::ListEnvironmentBlueprintsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEnvironmentBlueprintsResult& ListEnvironmentBlueprintsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");

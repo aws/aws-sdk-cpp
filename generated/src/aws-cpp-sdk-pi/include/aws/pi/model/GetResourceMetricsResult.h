@@ -147,6 +147,8 @@ class GetResourceMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_alignedStartTime{};
 
@@ -159,6 +161,7 @@ class GetResourceMetricsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_alignedStartTimeHasBeenSet = false;
   bool m_alignedEndTimeHasBeenSet = false;
   bool m_identifierHasBeenSet = false;

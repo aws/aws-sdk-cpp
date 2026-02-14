@@ -22,6 +22,7 @@ GetInvestigationGroupPolicyResult::GetInvestigationGroupPolicyResult(const Aws::
 }
 
 GetInvestigationGroupPolicyResult& GetInvestigationGroupPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("investigationGroupArn")) {
     m_investigationGroupArn = jsonValue.GetString("investigationGroupArn");

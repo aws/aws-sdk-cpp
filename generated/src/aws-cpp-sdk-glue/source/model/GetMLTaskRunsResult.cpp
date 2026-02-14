@@ -20,6 +20,7 @@ using namespace Aws;
 GetMLTaskRunsResult::GetMLTaskRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMLTaskRunsResult& GetMLTaskRunsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskRuns")) {
     Aws::Utils::Array<JsonView> taskRunsJsonList = jsonValue.GetArray("TaskRuns");

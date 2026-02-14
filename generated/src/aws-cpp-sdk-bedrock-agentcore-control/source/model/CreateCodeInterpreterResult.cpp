@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCodeInterpreterResult::CreateCodeInterpreterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCodeInterpreterResult& CreateCodeInterpreterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("codeInterpreterId")) {
     m_codeInterpreterId = jsonValue.GetString("codeInterpreterId");

@@ -77,12 +77,15 @@ class GetAssignmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Assignment m_assignment;
 
   HIT m_hIT;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assignmentHasBeenSet = false;
   bool m_hITHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

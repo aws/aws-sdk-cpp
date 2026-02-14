@@ -20,6 +20,7 @@ using namespace Aws;
 GetPrivacyBudgetTemplateResult::GetPrivacyBudgetTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPrivacyBudgetTemplateResult& GetPrivacyBudgetTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("privacyBudgetTemplate")) {
     m_privacyBudgetTemplate = jsonValue.GetObject("privacyBudgetTemplate");

@@ -96,6 +96,8 @@ class GetResourceSyncStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Revision m_desiredState;
 
@@ -104,6 +106,7 @@ class GetResourceSyncStatusResult {
   ResourceSyncAttempt m_latestSync;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_desiredStateHasBeenSet = false;
   bool m_latestSuccessfulSyncHasBeenSet = false;
   bool m_latestSyncHasBeenSet = false;

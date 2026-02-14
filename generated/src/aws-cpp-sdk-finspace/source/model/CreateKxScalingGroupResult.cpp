@@ -20,6 +20,7 @@ using namespace Aws;
 CreateKxScalingGroupResult::CreateKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateKxScalingGroupResult& CreateKxScalingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environmentId")) {
     m_environmentId = jsonValue.GetString("environmentId");

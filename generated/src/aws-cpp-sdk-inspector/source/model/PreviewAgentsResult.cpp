@@ -20,6 +20,7 @@ using namespace Aws;
 PreviewAgentsResult::PreviewAgentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PreviewAgentsResult& PreviewAgentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentPreviews")) {
     Aws::Utils::Array<JsonView> agentPreviewsJsonList = jsonValue.GetArray("agentPreviews");

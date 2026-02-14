@@ -57,10 +57,13 @@ class DescribeDefaultClusterParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DefaultClusterParameters m_defaultClusterParameters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_defaultClusterParametersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

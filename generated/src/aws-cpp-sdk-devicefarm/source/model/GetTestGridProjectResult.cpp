@@ -20,6 +20,7 @@ using namespace Aws;
 GetTestGridProjectResult::GetTestGridProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTestGridProjectResult& GetTestGridProjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("testGridProject")) {
     m_testGridProject = jsonValue.GetObject("testGridProject");

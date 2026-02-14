@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataSourcesResult::ListDataSourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataSourcesResult& ListDataSourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataSourceSummaries")) {
     Aws::Utils::Array<JsonView> dataSourceSummariesJsonList = jsonValue.GetArray("dataSourceSummaries");

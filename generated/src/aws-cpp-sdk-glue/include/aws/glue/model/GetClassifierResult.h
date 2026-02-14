@@ -58,10 +58,13 @@ class GetClassifierResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Classifier m_classifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_classifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

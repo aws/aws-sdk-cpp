@@ -20,6 +20,7 @@ using namespace Aws;
 StartReplicationResult::StartReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartReplicationResult& StartReplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sourceServerID")) {
     m_sourceServerID = jsonValue.GetString("sourceServerID");

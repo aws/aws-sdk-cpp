@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTemplateResult::DescribeTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTemplateResult& DescribeTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Template")) {
     m_template = jsonValue.GetObject("Template");

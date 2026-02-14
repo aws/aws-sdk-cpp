@@ -165,6 +165,8 @@ class GetWorkspaceInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<WorkspaceInstanceError> m_workspaceInstanceErrors;
 
@@ -179,6 +181,7 @@ class GetWorkspaceInstanceResult {
   BillingConfiguration m_billingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workspaceInstanceErrorsHasBeenSet = false;
   bool m_eC2InstanceErrorsHasBeenSet = false;
   bool m_provisionStateHasBeenSet = false;

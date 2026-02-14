@@ -20,6 +20,7 @@ using namespace Aws;
 ListControlDomainInsightsResult::ListControlDomainInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListControlDomainInsightsResult& ListControlDomainInsightsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("controlDomainInsights")) {
     Aws::Utils::Array<JsonView> controlDomainInsightsJsonList = jsonValue.GetArray("controlDomainInsights");

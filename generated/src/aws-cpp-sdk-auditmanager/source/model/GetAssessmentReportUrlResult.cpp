@@ -20,6 +20,7 @@ using namespace Aws;
 GetAssessmentReportUrlResult::GetAssessmentReportUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAssessmentReportUrlResult& GetAssessmentReportUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("preSignedUrl")) {
     m_preSignedUrl = jsonValue.GetObject("preSignedUrl");

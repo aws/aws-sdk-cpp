@@ -23,6 +23,7 @@ GetBlockPublicAccessConfigurationResult::GetBlockPublicAccessConfigurationResult
 
 GetBlockPublicAccessConfigurationResult& GetBlockPublicAccessConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BlockPublicAccessConfiguration")) {
     m_blockPublicAccessConfiguration = jsonValue.GetObject("BlockPublicAccessConfiguration");

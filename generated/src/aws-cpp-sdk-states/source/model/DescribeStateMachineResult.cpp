@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStateMachineResult::DescribeStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStateMachineResult& DescribeStateMachineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stateMachineArn")) {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");

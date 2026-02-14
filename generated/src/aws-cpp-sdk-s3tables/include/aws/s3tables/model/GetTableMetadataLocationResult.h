@@ -91,6 +91,8 @@ class GetTableMetadataLocationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_versionToken;
 
@@ -99,6 +101,7 @@ class GetTableMetadataLocationResult {
   Aws::String m_warehouseLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_versionTokenHasBeenSet = false;
   bool m_metadataLocationHasBeenSet = false;
   bool m_warehouseLocationHasBeenSet = false;

@@ -58,10 +58,13 @@ class CreateAnalysisTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AnalysisTemplate m_analysisTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_analysisTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

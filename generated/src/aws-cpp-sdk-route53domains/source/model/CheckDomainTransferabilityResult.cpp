@@ -20,6 +20,7 @@ using namespace Aws;
 CheckDomainTransferabilityResult::CheckDomainTransferabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckDomainTransferabilityResult& CheckDomainTransferabilityResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Transferability")) {
     m_transferability = jsonValue.GetObject("Transferability");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetRestoreJobMetadataResult::GetRestoreJobMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRestoreJobMetadataResult& GetRestoreJobMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RestoreJobId")) {
     m_restoreJobId = jsonValue.GetString("RestoreJobId");

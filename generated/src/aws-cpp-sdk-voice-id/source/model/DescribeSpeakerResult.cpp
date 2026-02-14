@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSpeakerResult::DescribeSpeakerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSpeakerResult& DescribeSpeakerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Speaker")) {
     m_speaker = jsonValue.GetObject("Speaker");

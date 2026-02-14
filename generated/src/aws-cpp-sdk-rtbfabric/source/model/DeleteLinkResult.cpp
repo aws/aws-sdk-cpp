@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteLinkResult::DeleteLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteLinkResult& DeleteLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("linkId")) {
     m_linkId = jsonValue.GetString("linkId");

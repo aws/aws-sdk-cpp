@@ -58,10 +58,13 @@ class EnableRouteServerPropagationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RouteServerPropagation m_routeServerPropagation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routeServerPropagationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

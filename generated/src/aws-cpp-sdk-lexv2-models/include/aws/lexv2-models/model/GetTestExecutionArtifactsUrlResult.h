@@ -74,12 +74,15 @@ class GetTestExecutionArtifactsUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testExecutionId;
 
   Aws::String m_downloadArtifactsUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testExecutionIdHasBeenSet = false;
   bool m_downloadArtifactsUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

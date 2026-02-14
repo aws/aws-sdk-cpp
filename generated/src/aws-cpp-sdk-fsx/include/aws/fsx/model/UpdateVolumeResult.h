@@ -59,10 +59,13 @@ class UpdateVolumeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Volume m_volume;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_volumeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

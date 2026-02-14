@@ -76,12 +76,15 @@ class CreateEnvironmentHostResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EnvironmentSummary m_environmentSummary;
 
   Host m_host;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_environmentSummaryHasBeenSet = false;
   bool m_hostHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

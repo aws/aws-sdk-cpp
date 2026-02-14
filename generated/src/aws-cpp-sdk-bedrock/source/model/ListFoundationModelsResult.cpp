@@ -20,6 +20,7 @@ using namespace Aws;
 ListFoundationModelsResult::ListFoundationModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFoundationModelsResult& ListFoundationModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("modelSummaries")) {
     Aws::Utils::Array<JsonView> modelSummariesJsonList = jsonValue.GetArray("modelSummaries");

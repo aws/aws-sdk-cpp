@@ -238,6 +238,8 @@ class CreateDataSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -262,6 +264,7 @@ class CreateDataSetResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_assetTypeHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

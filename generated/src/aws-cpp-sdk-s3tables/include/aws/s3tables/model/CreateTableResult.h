@@ -74,12 +74,15 @@ class CreateTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tableARN;
 
   Aws::String m_versionToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableARNHasBeenSet = false;
   bool m_versionTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ConfirmConnectionResult::ConfirmConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ConfirmConnectionResult& ConfirmConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectionState")) {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("connectionState"));

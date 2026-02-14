@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteUserPoolDomainResult::DeleteUserPoolDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteUserPoolDomainResult& DeleteUserPoolDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -84,12 +84,15 @@ class ListReplicatorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ReplicatorSummary> m_replicators;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_replicatorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

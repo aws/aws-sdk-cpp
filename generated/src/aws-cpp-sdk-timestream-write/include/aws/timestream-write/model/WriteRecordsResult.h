@@ -58,10 +58,13 @@ class WriteRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RecordsIngested m_recordsIngested;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_recordsIngestedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

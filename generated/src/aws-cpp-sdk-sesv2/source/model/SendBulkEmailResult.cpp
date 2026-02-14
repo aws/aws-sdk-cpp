@@ -20,6 +20,7 @@ using namespace Aws;
 SendBulkEmailResult::SendBulkEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendBulkEmailResult& SendBulkEmailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BulkEmailEntryResults")) {
     Aws::Utils::Array<JsonView> bulkEmailEntryResultsJsonList = jsonValue.GetArray("BulkEmailEntryResults");

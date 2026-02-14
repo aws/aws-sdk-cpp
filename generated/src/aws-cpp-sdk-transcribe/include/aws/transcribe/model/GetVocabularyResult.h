@@ -151,6 +151,8 @@ class GetVocabularyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_vocabularyName;
 
@@ -165,6 +167,7 @@ class GetVocabularyResult {
   Aws::String m_downloadUri;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vocabularyNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_vocabularyStateHasBeenSet = false;

@@ -115,6 +115,8 @@ class UpdateFlowPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_status{0};
 
@@ -125,6 +127,7 @@ class UpdateFlowPermissionsResult {
   Aws::String m_requestId;
 
   Aws::String m_flowId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

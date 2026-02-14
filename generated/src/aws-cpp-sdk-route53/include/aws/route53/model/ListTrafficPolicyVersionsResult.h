@@ -132,6 +132,8 @@ class ListTrafficPolicyVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<TrafficPolicy> m_trafficPolicies;
 
@@ -142,6 +144,7 @@ class ListTrafficPolicyVersionsResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trafficPoliciesHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_trafficPolicyVersionMarkerHasBeenSet = false;

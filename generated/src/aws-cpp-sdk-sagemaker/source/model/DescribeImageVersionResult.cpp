@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeImageVersionResult::DescribeImageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeImageVersionResult& DescribeImageVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BaseImage")) {
     m_baseImage = jsonValue.GetString("BaseImage");

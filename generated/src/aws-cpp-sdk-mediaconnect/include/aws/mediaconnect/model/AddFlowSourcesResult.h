@@ -82,12 +82,15 @@ class AddFlowSourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_flowArn;
 
   Aws::Vector<Source> m_sources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

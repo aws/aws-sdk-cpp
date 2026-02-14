@@ -20,6 +20,7 @@ using namespace Aws;
 CreateTrustResult::CreateTrustResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateTrustResult& CreateTrustResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrustId")) {
     m_trustId = jsonValue.GetString("TrustId");

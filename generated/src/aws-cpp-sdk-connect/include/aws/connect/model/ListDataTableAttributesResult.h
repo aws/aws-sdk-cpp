@@ -84,12 +84,15 @@ class ListDataTableAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<DataTableAttribute> m_attributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

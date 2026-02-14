@@ -20,6 +20,7 @@ using namespace Aws;
 GetDifferencesResult::GetDifferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDifferencesResult& GetDifferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("differences")) {
     Aws::Utils::Array<JsonView> differencesJsonList = jsonValue.GetArray("differences");

@@ -22,6 +22,7 @@ GetProfileResourceAssociationResult::GetProfileResourceAssociationResult(const A
 }
 
 GetProfileResourceAssociationResult& GetProfileResourceAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileResourceAssociation")) {
     m_profileResourceAssociation = jsonValue.GetObject("ProfileResourceAssociation");

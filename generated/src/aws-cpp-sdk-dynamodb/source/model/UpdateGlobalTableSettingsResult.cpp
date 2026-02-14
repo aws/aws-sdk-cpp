@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateGlobalTableSettingsResult::UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateGlobalTableSettingsResult& UpdateGlobalTableSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GlobalTableName")) {
     m_globalTableName = jsonValue.GetString("GlobalTableName");

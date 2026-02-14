@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateWorkspaceResult::DisassociateWorkspaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateWorkspaceResult& DisassociateWorkspaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SuccessfulList")) {
     Aws::Utils::Array<JsonView> successfulListJsonList = jsonValue.GetArray("SuccessfulList");

@@ -56,10 +56,13 @@ class GetJourneyDateRangeKpiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JourneyDateRangeKpiResponse m_journeyDateRangeKpiResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_journeyDateRangeKpiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

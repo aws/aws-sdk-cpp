@@ -76,12 +76,15 @@ class DescribeConversionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_migrationProjectIdentifier;
 
   Aws::String m_conversionConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_migrationProjectIdentifierHasBeenSet = false;
   bool m_conversionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

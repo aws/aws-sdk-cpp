@@ -106,6 +106,8 @@ class GetDataLakeSourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dataLakeArn;
 
@@ -114,6 +116,7 @@ class GetDataLakeSourcesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataLakeArnHasBeenSet = false;
   bool m_dataLakeSourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -60,10 +60,13 @@ class ListContinuousDeploymentPolicies2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContinuousDeploymentPolicyList m_continuousDeploymentPolicyList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_continuousDeploymentPolicyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -65,10 +65,13 @@ class CreateGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Group m_group;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

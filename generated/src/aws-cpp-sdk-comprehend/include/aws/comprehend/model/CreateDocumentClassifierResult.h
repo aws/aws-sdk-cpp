@@ -57,10 +57,13 @@ class CreateDocumentClassifierResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_documentClassifierArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_documentClassifierArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

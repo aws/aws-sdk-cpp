@@ -22,6 +22,7 @@ PurchaseReservedNodesOfferingResult::PurchaseReservedNodesOfferingResult(const A
 }
 
 PurchaseReservedNodesOfferingResult& PurchaseReservedNodesOfferingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReservedNode")) {
     m_reservedNode = jsonValue.GetObject("ReservedNode");

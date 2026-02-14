@@ -100,6 +100,8 @@ class QuerySchemaVersionMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<Aws::String, MetadataInfo> m_metadataInfoMap;
 
@@ -108,6 +110,7 @@ class QuerySchemaVersionMetadataResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metadataInfoMapHasBeenSet = false;
   bool m_schemaVersionIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -86,12 +86,15 @@ class ListImagePipelinesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   Aws::Vector<ImagePipeline> m_imagePipelineList;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_imagePipelineListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

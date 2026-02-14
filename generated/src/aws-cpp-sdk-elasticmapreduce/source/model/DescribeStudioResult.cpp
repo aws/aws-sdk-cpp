@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStudioResult::DescribeStudioResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStudioResult& DescribeStudioResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Studio")) {
     m_studio = jsonValue.GetObject("Studio");

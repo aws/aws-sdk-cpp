@@ -20,6 +20,7 @@ using namespace Aws;
 ImportTerminologyResult::ImportTerminologyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportTerminologyResult& ImportTerminologyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TerminologyProperties")) {
     m_terminologyProperties = jsonValue.GetObject("TerminologyProperties");

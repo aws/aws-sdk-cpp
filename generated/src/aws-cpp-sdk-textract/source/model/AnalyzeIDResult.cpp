@@ -20,6 +20,7 @@ using namespace Aws;
 AnalyzeIDResult::AnalyzeIDResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AnalyzeIDResult& AnalyzeIDResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityDocuments")) {
     Aws::Utils::Array<JsonView> identityDocumentsJsonList = jsonValue.GetArray("IdentityDocuments");

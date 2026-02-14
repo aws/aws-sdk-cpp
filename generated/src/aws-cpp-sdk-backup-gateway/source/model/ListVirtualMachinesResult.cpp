@@ -20,6 +20,7 @@ using namespace Aws;
 ListVirtualMachinesResult::ListVirtualMachinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVirtualMachinesResult& ListVirtualMachinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

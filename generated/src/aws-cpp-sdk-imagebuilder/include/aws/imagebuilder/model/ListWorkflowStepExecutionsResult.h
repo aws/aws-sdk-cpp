@@ -158,6 +158,8 @@ class ListWorkflowStepExecutionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -172,6 +174,7 @@ class ListWorkflowStepExecutionsResult {
   Aws::String m_message;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
   bool m_workflowBuildVersionArnHasBeenSet = false;

@@ -144,6 +144,8 @@ class UpdateInterruptibleCapacityReservationAllocationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_interruptibleCapacityReservationId;
 
@@ -158,6 +160,7 @@ class UpdateInterruptibleCapacityReservationAllocationResponse {
   InterruptionType m_interruptionType{InterruptionType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_interruptibleCapacityReservationIdHasBeenSet = false;
   bool m_sourceCapacityReservationIdHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;

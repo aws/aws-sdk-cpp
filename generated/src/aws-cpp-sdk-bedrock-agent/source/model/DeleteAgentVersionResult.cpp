@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteAgentVersionResult::DeleteAgentVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAgentVersionResult& DeleteAgentVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentId")) {
     m_agentId = jsonValue.GetString("agentId");

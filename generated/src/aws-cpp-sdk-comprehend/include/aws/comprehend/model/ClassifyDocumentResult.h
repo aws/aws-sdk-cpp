@@ -197,6 +197,8 @@ class ClassifyDocumentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DocumentClass> m_classes;
 
@@ -211,6 +213,7 @@ class ClassifyDocumentResult {
   Aws::Vector<WarningsListItem> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_classesHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
   bool m_documentMetadataHasBeenSet = false;

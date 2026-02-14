@@ -20,6 +20,7 @@ using namespace Aws;
 StartBuildBatchResult::StartBuildBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartBuildBatchResult& StartBuildBatchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("buildBatch")) {
     m_buildBatch = jsonValue.GetObject("buildBatch");

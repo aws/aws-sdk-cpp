@@ -140,6 +140,8 @@ class CreateDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_autoDeployed{false};
 
@@ -154,6 +156,7 @@ class CreateDeploymentResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoDeployedHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_deploymentIdHasBeenSet = false;

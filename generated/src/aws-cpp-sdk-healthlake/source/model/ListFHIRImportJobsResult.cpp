@@ -20,6 +20,7 @@ using namespace Aws;
 ListFHIRImportJobsResult::ListFHIRImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFHIRImportJobsResult& ListFHIRImportJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImportJobPropertiesList")) {
     Aws::Utils::Array<JsonView> importJobPropertiesListJsonList = jsonValue.GetArray("ImportJobPropertiesList");

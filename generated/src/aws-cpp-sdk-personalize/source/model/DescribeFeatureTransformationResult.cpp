@@ -22,6 +22,7 @@ DescribeFeatureTransformationResult::DescribeFeatureTransformationResult(const A
 }
 
 DescribeFeatureTransformationResult& DescribeFeatureTransformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("featureTransformation")) {
     m_featureTransformation = jsonValue.GetObject("featureTransformation");

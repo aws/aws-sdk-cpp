@@ -20,6 +20,7 @@ using namespace Aws;
 ListSecurityConfigsResult::ListSecurityConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSecurityConfigsResult& ListSecurityConfigsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("securityConfigSummaries")) {
     Aws::Utils::Array<JsonView> securityConfigSummariesJsonList = jsonValue.GetArray("securityConfigSummaries");

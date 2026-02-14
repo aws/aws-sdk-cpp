@@ -171,6 +171,8 @@ class GetLicenseEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_licenseEndpointId;
 
@@ -187,6 +189,7 @@ class GetLicenseEndpointResult {
   Aws::Vector<Aws::String> m_securityGroupIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_licenseEndpointIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;

@@ -122,6 +122,8 @@ class GetBucketWebsiteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RedirectAllRequestsTo m_redirectAllRequestsTo;
 
@@ -132,6 +134,7 @@ class GetBucketWebsiteResult {
   Aws::Vector<RoutingRule> m_routingRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_redirectAllRequestsToHasBeenSet = false;
   bool m_indexDocumentHasBeenSet = false;
   bool m_errorDocumentHasBeenSet = false;

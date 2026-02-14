@@ -216,6 +216,8 @@ class GetRunCacheResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -238,6 +240,7 @@ class GetRunCacheResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_cacheBehaviorHasBeenSet = false;
   bool m_cacheBucketOwnerIdHasBeenSet = false;

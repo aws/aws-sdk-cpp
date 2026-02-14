@@ -59,10 +59,13 @@ class DeleteLocalGatewayVirtualInterfaceResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LocalGatewayVirtualInterface m_localGatewayVirtualInterface;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_localGatewayVirtualInterfaceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

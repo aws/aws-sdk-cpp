@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBrokerEngineTypesResult::DescribeBrokerEngineTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBrokerEngineTypesResult& DescribeBrokerEngineTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("brokerEngineTypes")) {
     Aws::Utils::Array<JsonView> brokerEngineTypesJsonList = jsonValue.GetArray("brokerEngineTypes");

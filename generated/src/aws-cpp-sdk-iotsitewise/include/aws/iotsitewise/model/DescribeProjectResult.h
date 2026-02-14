@@ -164,6 +164,8 @@ class DescribeProjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_projectId;
 
@@ -180,6 +182,7 @@ class DescribeProjectResult {
   Aws::Utils::DateTime m_projectLastUpdateDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_projectIdHasBeenSet = false;
   bool m_projectArnHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;

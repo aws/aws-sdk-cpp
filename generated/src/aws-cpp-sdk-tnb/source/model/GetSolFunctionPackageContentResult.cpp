@@ -21,6 +21,7 @@ GetSolFunctionPackageContentResult::GetSolFunctionPackageContentResult(Aws::Amaz
 }
 
 GetSolFunctionPackageContentResult& GetSolFunctionPackageContentResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_packageContent = result.TakeOwnershipOfPayload();
   m_packageContentHasBeenSet = true;
 

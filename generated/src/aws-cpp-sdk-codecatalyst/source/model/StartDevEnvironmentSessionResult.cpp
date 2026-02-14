@@ -20,6 +20,7 @@ using namespace Aws;
 StartDevEnvironmentSessionResult::StartDevEnvironmentSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartDevEnvironmentSessionResult& StartDevEnvironmentSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accessDetails")) {
     m_accessDetails = jsonValue.GetObject("accessDetails");

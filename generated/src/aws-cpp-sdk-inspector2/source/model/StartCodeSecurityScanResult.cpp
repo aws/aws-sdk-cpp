@@ -20,6 +20,7 @@ using namespace Aws;
 StartCodeSecurityScanResult::StartCodeSecurityScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartCodeSecurityScanResult& StartCodeSecurityScanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scanId")) {
     m_scanId = jsonValue.GetString("scanId");

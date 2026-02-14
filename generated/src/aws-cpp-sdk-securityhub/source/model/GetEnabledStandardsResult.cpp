@@ -20,6 +20,7 @@ using namespace Aws;
 GetEnabledStandardsResult::GetEnabledStandardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEnabledStandardsResult& GetEnabledStandardsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StandardsSubscriptions")) {
     Aws::Utils::Array<JsonView> standardsSubscriptionsJsonList = jsonValue.GetArray("StandardsSubscriptions");

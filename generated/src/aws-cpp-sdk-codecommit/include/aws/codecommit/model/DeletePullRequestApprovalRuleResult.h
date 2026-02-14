@@ -59,10 +59,13 @@ class DeletePullRequestApprovalRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_approvalRuleId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_approvalRuleIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

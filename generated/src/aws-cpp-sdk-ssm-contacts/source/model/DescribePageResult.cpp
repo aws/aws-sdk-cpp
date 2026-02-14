@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePageResult::DescribePageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePageResult& DescribePageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PageArn")) {
     m_pageArn = jsonValue.GetString("PageArn");

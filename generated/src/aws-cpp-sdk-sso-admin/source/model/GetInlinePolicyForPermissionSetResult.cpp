@@ -23,6 +23,7 @@ GetInlinePolicyForPermissionSetResult::GetInlinePolicyForPermissionSetResult(con
 
 GetInlinePolicyForPermissionSetResult& GetInlinePolicyForPermissionSetResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InlinePolicy")) {
     m_inlinePolicy = jsonValue.GetString("InlinePolicy");

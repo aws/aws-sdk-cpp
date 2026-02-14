@@ -22,6 +22,7 @@ ListCrossAccountAttachmentsResult::ListCrossAccountAttachmentsResult(const Aws::
 }
 
 ListCrossAccountAttachmentsResult& ListCrossAccountAttachmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CrossAccountAttachments")) {
     Aws::Utils::Array<JsonView> crossAccountAttachmentsJsonList = jsonValue.GetArray("CrossAccountAttachments");

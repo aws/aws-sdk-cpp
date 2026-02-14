@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateMonitorResult::UpdateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateMonitorResult& UpdateMonitorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("monitorArn")) {
     m_monitorArn = jsonValue.GetString("monitorArn");

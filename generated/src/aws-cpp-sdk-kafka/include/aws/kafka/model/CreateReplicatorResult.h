@@ -90,6 +90,8 @@ class CreateReplicatorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_replicatorArn;
 
@@ -98,6 +100,7 @@ class CreateReplicatorResult {
   ReplicatorState m_replicatorState{ReplicatorState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_replicatorArnHasBeenSet = false;
   bool m_replicatorNameHasBeenSet = false;
   bool m_replicatorStateHasBeenSet = false;

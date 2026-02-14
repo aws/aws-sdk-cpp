@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterAccountResult::RegisterAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterAccountResult& RegisterAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("status"));

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRecoveryPointResult::DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecoveryPointArn")) {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");

@@ -56,10 +56,13 @@ class StopBuildBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BuildBatch m_buildBatch;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_buildBatchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

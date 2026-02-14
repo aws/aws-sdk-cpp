@@ -181,6 +181,8 @@ class DescribeChannelPlacementGroupSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -197,6 +199,7 @@ class DescribeChannelPlacementGroupSdkResult {
   ChannelPlacementGroupState m_state{ChannelPlacementGroupState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelsHasBeenSet = false;
   bool m_clusterIdHasBeenSet = false;

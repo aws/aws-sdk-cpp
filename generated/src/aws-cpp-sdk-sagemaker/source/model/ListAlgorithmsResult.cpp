@@ -20,6 +20,7 @@ using namespace Aws;
 ListAlgorithmsResult::ListAlgorithmsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAlgorithmsResult& ListAlgorithmsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AlgorithmSummaryList")) {
     Aws::Utils::Array<JsonView> algorithmSummaryListJsonList = jsonValue.GetArray("AlgorithmSummaryList");

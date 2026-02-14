@@ -219,6 +219,8 @@ class DescribeMonitoringScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_monitoringScheduleArn;
 
@@ -241,6 +243,7 @@ class DescribeMonitoringScheduleResult {
   MonitoringExecutionSummary m_lastMonitoringExecutionSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_monitoringScheduleArnHasBeenSet = false;
   bool m_monitoringScheduleNameHasBeenSet = false;
   bool m_monitoringScheduleStatusHasBeenSet = false;

@@ -123,6 +123,8 @@ class DescribeFleetLocationAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fleetId;
 
@@ -133,6 +135,7 @@ class DescribeFleetLocationAttributesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_locationAttributesHasBeenSet = false;

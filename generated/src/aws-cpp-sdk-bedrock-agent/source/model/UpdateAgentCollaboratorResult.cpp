@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAgentCollaboratorResult::UpdateAgentCollaboratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAgentCollaboratorResult& UpdateAgentCollaboratorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentCollaborator")) {
     m_agentCollaborator = jsonValue.GetObject("agentCollaborator");

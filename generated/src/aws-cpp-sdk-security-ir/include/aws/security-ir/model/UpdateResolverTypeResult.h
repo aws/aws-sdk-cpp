@@ -92,6 +92,8 @@ class UpdateResolverTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_caseId;
 
@@ -100,6 +102,7 @@ class UpdateResolverTypeResult {
   ResolverType m_resolverType{ResolverType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_caseIdHasBeenSet = false;
   bool m_caseStatusHasBeenSet = false;
   bool m_resolverTypeHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteInventoryResult::DeleteInventoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteInventoryResult& DeleteInventoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeletionId")) {
     m_deletionId = jsonValue.GetString("DeletionId");

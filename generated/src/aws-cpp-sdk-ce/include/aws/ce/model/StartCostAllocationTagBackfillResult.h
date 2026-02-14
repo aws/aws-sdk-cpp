@@ -59,10 +59,13 @@ class StartCostAllocationTagBackfillResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CostAllocationTagBackfillRequest m_backfillRequest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_backfillRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

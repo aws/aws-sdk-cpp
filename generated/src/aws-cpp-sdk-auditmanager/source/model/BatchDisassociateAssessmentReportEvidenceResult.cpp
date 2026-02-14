@@ -24,6 +24,7 @@ BatchDisassociateAssessmentReportEvidenceResult::BatchDisassociateAssessmentRepo
 
 BatchDisassociateAssessmentReportEvidenceResult& BatchDisassociateAssessmentReportEvidenceResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("evidenceIds")) {
     Aws::Utils::Array<JsonView> evidenceIdsJsonList = jsonValue.GetArray("evidenceIds");

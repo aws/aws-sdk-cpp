@@ -20,6 +20,7 @@ using namespace Aws;
 ListTrialComponentsResult::ListTrialComponentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTrialComponentsResult& ListTrialComponentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrialComponentSummaries")) {
     Aws::Utils::Array<JsonView> trialComponentSummariesJsonList = jsonValue.GetArray("TrialComponentSummaries");

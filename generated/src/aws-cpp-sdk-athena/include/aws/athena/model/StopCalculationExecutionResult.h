@@ -64,10 +64,13 @@ class StopCalculationExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CalculationExecutionState m_state{CalculationExecutionState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

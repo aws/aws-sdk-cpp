@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteProxyResult::DeleteProxyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteProxyResult& DeleteProxyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NatGatewayId")) {
     m_natGatewayId = jsonValue.GetString("NatGatewayId");

@@ -152,6 +152,8 @@ class GetRotationOverrideResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_rotationOverrideId;
 
@@ -166,6 +168,7 @@ class GetRotationOverrideResult {
   Aws::Utils::DateTime m_createTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_rotationOverrideIdHasBeenSet = false;
   bool m_rotationArnHasBeenSet = false;
   bool m_newContactIdsHasBeenSet = false;

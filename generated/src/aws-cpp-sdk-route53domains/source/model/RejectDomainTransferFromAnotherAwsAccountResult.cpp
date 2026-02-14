@@ -24,6 +24,7 @@ RejectDomainTransferFromAnotherAwsAccountResult::RejectDomainTransferFromAnother
 
 RejectDomainTransferFromAnotherAwsAccountResult& RejectDomainTransferFromAnotherAwsAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OperationId")) {
     m_operationId = jsonValue.GetString("OperationId");

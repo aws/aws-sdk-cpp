@@ -300,6 +300,8 @@ class DescribeStreamProcessorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -330,6 +332,7 @@ class DescribeStreamProcessorResult {
   StreamProcessorDataSharingPreference m_dataSharingPreference;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_streamProcessorArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

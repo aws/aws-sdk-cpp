@@ -65,10 +65,13 @@ class TestAuthorizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<AuthResult> m_authResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_authResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

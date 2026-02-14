@@ -24,6 +24,7 @@ UpdateManagedRuleSetVersionExpiryDateResult::UpdateManagedRuleSetVersionExpiryDa
 
 UpdateManagedRuleSetVersionExpiryDateResult& UpdateManagedRuleSetVersionExpiryDateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExpiringVersion")) {
     m_expiringVersion = jsonValue.GetString("ExpiringVersion");

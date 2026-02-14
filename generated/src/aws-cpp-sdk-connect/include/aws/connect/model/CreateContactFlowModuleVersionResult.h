@@ -72,12 +72,15 @@ class CreateContactFlowModuleVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contactFlowModuleArn;
 
   long long m_version{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactFlowModuleArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

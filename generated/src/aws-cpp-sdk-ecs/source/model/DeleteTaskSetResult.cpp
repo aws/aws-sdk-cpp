@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteTaskSetResult::DeleteTaskSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteTaskSetResult& DeleteTaskSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskSet")) {
     m_taskSet = jsonValue.GetObject("taskSet");

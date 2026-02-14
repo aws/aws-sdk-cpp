@@ -20,6 +20,7 @@ using namespace Aws;
 ListCostAllocationTagsResult::ListCostAllocationTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCostAllocationTagsResult& ListCostAllocationTagsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CostAllocationTags")) {
     Aws::Utils::Array<JsonView> costAllocationTagsJsonList = jsonValue.GetArray("CostAllocationTags");

@@ -58,10 +58,13 @@ class DescribeContactFlowModuleAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContactFlowModuleAliasInfo m_contactFlowModuleAlias;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactFlowModuleAliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

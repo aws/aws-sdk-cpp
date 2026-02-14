@@ -20,6 +20,7 @@ using namespace Aws;
 ListEngagementInvitationsResult::ListEngagementInvitationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListEngagementInvitationsResult& ListEngagementInvitationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EngagementInvitationSummaries")) {
     Aws::Utils::Array<JsonView> engagementInvitationSummariesJsonList = jsonValue.GetArray("EngagementInvitationSummaries");

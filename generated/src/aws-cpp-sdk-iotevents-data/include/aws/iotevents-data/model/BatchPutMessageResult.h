@@ -65,10 +65,13 @@ class BatchPutMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchPutMessageErrorEntry> m_batchPutMessageErrorEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_batchPutMessageErrorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

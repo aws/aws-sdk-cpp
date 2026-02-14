@@ -22,6 +22,7 @@ GetVoiceConnectorOriginationResult::GetVoiceConnectorOriginationResult(const Aws
 }
 
 GetVoiceConnectorOriginationResult& GetVoiceConnectorOriginationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Origination")) {
     m_origination = jsonValue.GetObject("Origination");

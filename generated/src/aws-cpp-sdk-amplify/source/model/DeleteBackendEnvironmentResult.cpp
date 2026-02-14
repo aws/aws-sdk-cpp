@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBackendEnvironmentResult::DeleteBackendEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBackendEnvironmentResult& DeleteBackendEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("backendEnvironment")) {
     m_backendEnvironment = jsonValue.GetObject("backendEnvironment");

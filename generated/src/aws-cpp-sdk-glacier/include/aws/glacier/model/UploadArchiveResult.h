@@ -102,6 +102,8 @@ class UploadArchiveResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_location;
 
@@ -110,6 +112,7 @@ class UploadArchiveResult {
   Aws::String m_archiveId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
   bool m_archiveIdHasBeenSet = false;

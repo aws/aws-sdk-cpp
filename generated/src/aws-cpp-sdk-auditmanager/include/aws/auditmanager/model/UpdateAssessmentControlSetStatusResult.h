@@ -60,10 +60,13 @@ class UpdateAssessmentControlSetStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AssessmentControlSet m_controlSet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_controlSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

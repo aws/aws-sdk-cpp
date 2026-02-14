@@ -20,6 +20,7 @@ using namespace Aws;
 GetWorkflowRunPropertiesResult::GetWorkflowRunPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetWorkflowRunPropertiesResult& GetWorkflowRunPropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RunProperties")) {
     Aws::Map<Aws::String, JsonView> runPropertiesJsonMap = jsonValue.GetObject("RunProperties").GetAllObjects();

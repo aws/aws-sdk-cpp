@@ -75,12 +75,15 @@ class RegisterUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_publicKeyRotationTimestamp{};
 
   Aws::String m_signature;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_publicKeyRotationTimestampHasBeenSet = false;
   bool m_signatureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

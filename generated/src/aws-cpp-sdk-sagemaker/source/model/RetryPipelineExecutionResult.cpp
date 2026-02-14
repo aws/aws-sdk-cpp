@@ -20,6 +20,7 @@ using namespace Aws;
 RetryPipelineExecutionResult::RetryPipelineExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RetryPipelineExecutionResult& RetryPipelineExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PipelineExecutionArn")) {
     m_pipelineExecutionArn = jsonValue.GetString("PipelineExecutionArn");

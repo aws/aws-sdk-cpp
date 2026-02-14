@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLimitResult::CreateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLimitResult& CreateLimitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("limitId")) {
     m_limitId = jsonValue.GetString("limitId");

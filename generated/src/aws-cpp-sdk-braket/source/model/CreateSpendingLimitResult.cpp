@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSpendingLimitResult::CreateSpendingLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSpendingLimitResult& CreateSpendingLimitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("spendingLimitArn")) {
     m_spendingLimitArn = jsonValue.GetString("spendingLimitArn");

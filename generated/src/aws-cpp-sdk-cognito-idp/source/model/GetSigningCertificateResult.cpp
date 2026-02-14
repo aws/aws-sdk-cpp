@@ -20,6 +20,7 @@ using namespace Aws;
 GetSigningCertificateResult::GetSigningCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSigningCertificateResult& GetSigningCertificateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Certificate")) {
     m_certificate = jsonValue.GetString("Certificate");

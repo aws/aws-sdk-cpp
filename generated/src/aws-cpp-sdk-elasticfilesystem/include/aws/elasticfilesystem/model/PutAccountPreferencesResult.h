@@ -56,10 +56,13 @@ class PutAccountPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResourceIdPreference m_resourceIdPreference;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceIdPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -381,6 +381,8 @@ class DescribeAssetBundleExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AssetBundleExportJobStatus m_jobStatus{AssetBundleExportJobStatus::NOT_SET};
 
@@ -419,6 +421,7 @@ class DescribeAssetBundleExportJobResult {
   bool m_includeFolderMemberships{false};
 
   IncludeFolderMembers m_includeFolderMembers{IncludeFolderMembers::NOT_SET};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_downloadUrlHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

@@ -96,6 +96,8 @@ class StartQuotaUtilizationReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reportId;
 
@@ -104,6 +106,7 @@ class StartQuotaUtilizationReportResult {
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;

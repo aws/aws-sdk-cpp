@@ -20,6 +20,7 @@ using namespace Aws;
 AdminListUserAuthEventsResult::AdminListUserAuthEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AdminListUserAuthEventsResult& AdminListUserAuthEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthEvents")) {
     Aws::Utils::Array<JsonView> authEventsJsonList = jsonValue.GetArray("AuthEvents");

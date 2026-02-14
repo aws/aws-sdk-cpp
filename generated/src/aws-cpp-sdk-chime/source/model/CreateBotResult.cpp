@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBotResult::CreateBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBotResult& CreateBotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Bot")) {
     m_bot = jsonValue.GetObject("Bot");

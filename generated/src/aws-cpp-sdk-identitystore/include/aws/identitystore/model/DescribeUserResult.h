@@ -542,6 +542,8 @@ class DescribeUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityStoreId;
 
@@ -596,6 +598,7 @@ class DescribeUserResult {
   Aws::Map<Aws::String, Aws::Utils::Document> m_extensions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;

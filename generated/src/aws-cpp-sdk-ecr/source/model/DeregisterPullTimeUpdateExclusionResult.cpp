@@ -23,6 +23,7 @@ DeregisterPullTimeUpdateExclusionResult::DeregisterPullTimeUpdateExclusionResult
 
 DeregisterPullTimeUpdateExclusionResult& DeregisterPullTimeUpdateExclusionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("principalArn")) {
     m_principalArn = jsonValue.GetString("principalArn");

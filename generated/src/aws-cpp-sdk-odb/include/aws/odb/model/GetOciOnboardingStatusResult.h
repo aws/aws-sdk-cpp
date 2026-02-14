@@ -108,6 +108,8 @@ class GetOciOnboardingStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OciOnboardingStatus m_status{OciOnboardingStatus::NOT_SET};
 
@@ -118,6 +120,7 @@ class GetOciOnboardingStatusResult {
   OciIdentityDomain m_ociIdentityDomain;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_existingTenancyActivationLinkHasBeenSet = false;
   bool m_newTenancyActivationLinkHasBeenSet = false;

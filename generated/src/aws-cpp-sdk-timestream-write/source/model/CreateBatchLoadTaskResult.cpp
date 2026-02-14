@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBatchLoadTaskResult::CreateBatchLoadTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBatchLoadTaskResult& CreateBatchLoadTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskId")) {
     m_taskId = jsonValue.GetString("TaskId");

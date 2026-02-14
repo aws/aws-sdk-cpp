@@ -115,6 +115,8 @@ class GetBlueprintOptimizationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   BlueprintOptimizationJobStatus m_status{BlueprintOptimizationJobStatus::NOT_SET};
 
@@ -125,6 +127,7 @@ class GetBlueprintOptimizationStatusResult {
   BlueprintOptimizationOutputConfiguration m_outputConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListDatasourcePackagesResult::ListDatasourcePackagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDatasourcePackagesResult& ListDatasourcePackagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatasourcePackages")) {
     Aws::Map<Aws::String, JsonView> datasourcePackagesJsonMap = jsonValue.GetObject("DatasourcePackages").GetAllObjects();

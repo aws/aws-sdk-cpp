@@ -58,10 +58,13 @@ class GetEvidenceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Evidence m_evidence;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_evidenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

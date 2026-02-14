@@ -24,6 +24,7 @@ GetQueryResultsWorkloadInsightsTopContributorsResult::GetQueryResultsWorkloadIns
 
 GetQueryResultsWorkloadInsightsTopContributorsResult& GetQueryResultsWorkloadInsightsTopContributorsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("topContributors")) {
     Aws::Utils::Array<JsonView> topContributorsJsonList = jsonValue.GetArray("topContributors");

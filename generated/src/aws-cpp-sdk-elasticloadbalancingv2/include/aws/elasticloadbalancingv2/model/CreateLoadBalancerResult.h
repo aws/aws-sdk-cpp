@@ -66,10 +66,13 @@ class CreateLoadBalancerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<LoadBalancer> m_loadBalancers;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loadBalancersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -85,12 +85,15 @@ class ListModelInvocationJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ModelInvocationJobSummary> m_invocationJobSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_invocationJobSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

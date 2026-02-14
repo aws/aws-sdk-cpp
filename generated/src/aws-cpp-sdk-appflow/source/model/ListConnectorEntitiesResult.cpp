@@ -20,6 +20,7 @@ using namespace Aws;
 ListConnectorEntitiesResult::ListConnectorEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConnectorEntitiesResult& ListConnectorEntitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectorEntityMap")) {
     Aws::Map<Aws::String, JsonView> connectorEntityMapJsonMap = jsonValue.GetObject("connectorEntityMap").GetAllObjects();

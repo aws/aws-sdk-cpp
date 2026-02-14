@@ -24,6 +24,7 @@ BatchAssociateResourcesToCustomLineItemResult::BatchAssociateResourcesToCustomLi
 
 BatchAssociateResourcesToCustomLineItemResult& BatchAssociateResourcesToCustomLineItemResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SuccessfullyAssociatedResources")) {
     Aws::Utils::Array<JsonView> successfullyAssociatedResourcesJsonList = jsonValue.GetArray("SuccessfullyAssociatedResources");

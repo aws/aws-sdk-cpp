@@ -124,6 +124,8 @@ class UpdateEc2DeepInspectionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_packagePaths;
 
@@ -134,6 +136,7 @@ class UpdateEc2DeepInspectionConfigurationResult {
   Aws::String m_errorMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_packagePathsHasBeenSet = false;
   bool m_orgPackagePathsHasBeenSet = false;
   bool m_statusHasBeenSet = false;

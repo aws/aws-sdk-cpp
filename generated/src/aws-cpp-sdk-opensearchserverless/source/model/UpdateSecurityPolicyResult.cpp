@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateSecurityPolicyResult::UpdateSecurityPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateSecurityPolicyResult& UpdateSecurityPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("securityPolicyDetail")) {
     m_securityPolicyDetail = jsonValue.GetObject("securityPolicyDetail");

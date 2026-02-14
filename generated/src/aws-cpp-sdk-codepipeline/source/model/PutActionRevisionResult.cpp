@@ -20,6 +20,7 @@ using namespace Aws;
 PutActionRevisionResult::PutActionRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutActionRevisionResult& PutActionRevisionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("newRevision")) {
     m_newRevision = jsonValue.GetBool("newRevision");

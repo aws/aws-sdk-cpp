@@ -82,12 +82,15 @@ class GetDecryptedAPIKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_tokenDomains;
 
   Aws::Utils::DateTime m_creationTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tokenDomainsHasBeenSet = false;
   bool m_creationTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

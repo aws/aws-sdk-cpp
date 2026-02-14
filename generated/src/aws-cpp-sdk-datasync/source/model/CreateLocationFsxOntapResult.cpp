@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLocationFsxOntapResult::CreateLocationFsxOntapResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLocationFsxOntapResult& CreateLocationFsxOntapResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LocationArn")) {
     m_locationArn = jsonValue.GetString("LocationArn");

@@ -91,12 +91,15 @@ class BatchGetFreeTrialInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FreeTrialAccountInfo> m_accounts;
 
   Aws::Vector<FreeTrialInfoError> m_failedAccounts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountsHasBeenSet = false;
   bool m_failedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

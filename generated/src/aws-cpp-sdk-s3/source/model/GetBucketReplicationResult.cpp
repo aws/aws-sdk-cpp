@@ -19,6 +19,7 @@ using namespace Aws;
 GetBucketReplicationResult::GetBucketReplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetBucketReplicationResult& GetBucketReplicationResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

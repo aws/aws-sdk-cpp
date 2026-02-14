@@ -58,10 +58,13 @@ class DescribeJobTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobTemplate m_jobTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

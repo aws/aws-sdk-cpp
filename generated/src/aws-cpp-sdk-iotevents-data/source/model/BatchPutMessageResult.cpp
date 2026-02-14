@@ -20,6 +20,7 @@ using namespace Aws;
 BatchPutMessageResult::BatchPutMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchPutMessageResult& BatchPutMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BatchPutMessageErrorEntries")) {
     Aws::Utils::Array<JsonView> batchPutMessageErrorEntriesJsonList = jsonValue.GetArray("BatchPutMessageErrorEntries");

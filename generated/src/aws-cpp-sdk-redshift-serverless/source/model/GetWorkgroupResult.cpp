@@ -20,6 +20,7 @@ using namespace Aws;
 GetWorkgroupResult::GetWorkgroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetWorkgroupResult& GetWorkgroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workgroup")) {
     m_workgroup = jsonValue.GetObject("workgroup");

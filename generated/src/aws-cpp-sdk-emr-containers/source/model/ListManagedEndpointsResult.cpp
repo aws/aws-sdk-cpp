@@ -20,6 +20,7 @@ using namespace Aws;
 ListManagedEndpointsResult::ListManagedEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListManagedEndpointsResult& ListManagedEndpointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("endpoints")) {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");

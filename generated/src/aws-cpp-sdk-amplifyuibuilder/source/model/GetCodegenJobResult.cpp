@@ -20,6 +20,7 @@ using namespace Aws;
 GetCodegenJobResult::GetCodegenJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCodegenJobResult& GetCodegenJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_job = jsonValue;
   m_jobHasBeenSet = true;

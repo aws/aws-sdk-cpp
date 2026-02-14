@@ -70,12 +70,15 @@ class ModifyClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_stepConcurrencyLevel{0};
 
   bool m_extendedSupport{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stepConcurrencyLevelHasBeenSet = false;
   bool m_extendedSupportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

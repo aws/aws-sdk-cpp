@@ -20,6 +20,7 @@ using namespace Aws;
 GetCaseEventConfigurationResult::GetCaseEventConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCaseEventConfigurationResult& GetCaseEventConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("eventBridge")) {
     m_eventBridge = jsonValue.GetObject("eventBridge");

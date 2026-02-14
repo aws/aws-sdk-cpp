@@ -23,6 +23,7 @@ DescribeComponentConfigurationResult::DescribeComponentConfigurationResult(const
 
 DescribeComponentConfigurationResult& DescribeComponentConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Monitor")) {
     m_monitor = jsonValue.GetBool("Monitor");

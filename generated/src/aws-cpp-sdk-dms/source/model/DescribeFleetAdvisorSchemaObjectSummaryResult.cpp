@@ -24,6 +24,7 @@ DescribeFleetAdvisorSchemaObjectSummaryResult::DescribeFleetAdvisorSchemaObjectS
 
 DescribeFleetAdvisorSchemaObjectSummaryResult& DescribeFleetAdvisorSchemaObjectSummaryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FleetAdvisorSchemaObjects")) {
     Aws::Utils::Array<JsonView> fleetAdvisorSchemaObjectsJsonList = jsonValue.GetArray("FleetAdvisorSchemaObjects");

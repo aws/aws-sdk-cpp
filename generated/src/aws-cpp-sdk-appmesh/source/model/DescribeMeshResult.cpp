@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMeshResult::DescribeMeshResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMeshResult& DescribeMeshResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_mesh = jsonValue;
   m_meshHasBeenSet = true;

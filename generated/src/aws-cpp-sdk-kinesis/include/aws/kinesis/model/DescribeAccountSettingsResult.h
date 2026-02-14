@@ -61,10 +61,13 @@ class DescribeAccountSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   MinimumThroughputBillingCommitmentOutput m_minimumThroughputBillingCommitment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_minimumThroughputBillingCommitmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

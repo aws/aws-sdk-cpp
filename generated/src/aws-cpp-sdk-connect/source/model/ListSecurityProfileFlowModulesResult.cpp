@@ -23,6 +23,7 @@ ListSecurityProfileFlowModulesResult::ListSecurityProfileFlowModulesResult(const
 
 ListSecurityProfileFlowModulesResult& ListSecurityProfileFlowModulesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AllowedFlowModules")) {
     Aws::Utils::Array<JsonView> allowedFlowModulesJsonList = jsonValue.GetArray("AllowedFlowModules");

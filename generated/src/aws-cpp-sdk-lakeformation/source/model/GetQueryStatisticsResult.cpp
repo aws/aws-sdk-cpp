@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueryStatisticsResult::GetQueryStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueryStatisticsResult& GetQueryStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExecutionStatistics")) {
     m_executionStatistics = jsonValue.GetObject("ExecutionStatistics");

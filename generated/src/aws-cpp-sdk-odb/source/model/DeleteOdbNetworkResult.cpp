@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteOdbNetworkResult::DeleteOdbNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteOdbNetworkResult& DeleteOdbNetworkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFeatureGroupResult::DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFeatureGroupResult& DescribeFeatureGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FeatureGroupArn")) {
     m_featureGroupArn = jsonValue.GetString("FeatureGroupArn");

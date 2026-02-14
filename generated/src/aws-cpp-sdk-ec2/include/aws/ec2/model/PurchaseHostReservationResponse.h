@@ -139,6 +139,8 @@ class PurchaseHostReservationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clientToken;
 
@@ -151,6 +153,7 @@ class PurchaseHostReservationResponse {
   Aws::String m_totalUpfrontPrice;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
   bool m_purchaseHasBeenSet = false;

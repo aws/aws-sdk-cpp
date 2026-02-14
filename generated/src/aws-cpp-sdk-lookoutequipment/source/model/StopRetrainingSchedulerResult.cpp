@@ -20,6 +20,7 @@ using namespace Aws;
 StopRetrainingSchedulerResult::StopRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopRetrainingSchedulerResult& StopRetrainingSchedulerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelName")) {
     m_modelName = jsonValue.GetString("ModelName");

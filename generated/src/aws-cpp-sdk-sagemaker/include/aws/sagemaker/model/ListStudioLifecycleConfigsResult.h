@@ -83,12 +83,15 @@ class ListStudioLifecycleConfigsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<StudioLifecycleConfigDetails> m_studioLifecycleConfigs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_studioLifecycleConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

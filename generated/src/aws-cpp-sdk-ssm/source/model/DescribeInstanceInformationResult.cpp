@@ -22,6 +22,7 @@ DescribeInstanceInformationResult::DescribeInstanceInformationResult(const Aws::
 }
 
 DescribeInstanceInformationResult& DescribeInstanceInformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InstanceInformationList")) {
     Aws::Utils::Array<JsonView> instanceInformationListJsonList = jsonValue.GetArray("InstanceInformationList");

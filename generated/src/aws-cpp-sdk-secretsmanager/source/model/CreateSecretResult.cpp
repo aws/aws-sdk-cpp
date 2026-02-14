@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSecretResult::CreateSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSecretResult& CreateSecretResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");

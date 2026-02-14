@@ -20,6 +20,7 @@ using namespace Aws;
 GetScopeResult::GetScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetScopeResult& GetScopeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scopeId")) {
     m_scopeId = jsonValue.GetString("scopeId");

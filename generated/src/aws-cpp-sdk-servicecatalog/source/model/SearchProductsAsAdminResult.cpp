@@ -20,6 +20,7 @@ using namespace Aws;
 SearchProductsAsAdminResult::SearchProductsAsAdminResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchProductsAsAdminResult& SearchProductsAsAdminResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProductViewDetails")) {
     Aws::Utils::Array<JsonView> productViewDetailsJsonList = jsonValue.GetArray("ProductViewDetails");

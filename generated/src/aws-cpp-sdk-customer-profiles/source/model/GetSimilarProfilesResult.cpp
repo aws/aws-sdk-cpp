@@ -20,6 +20,7 @@ using namespace Aws;
 GetSimilarProfilesResult::GetSimilarProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSimilarProfilesResult& GetSimilarProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProfileIds")) {
     Aws::Utils::Array<JsonView> profileIdsJsonList = jsonValue.GetArray("ProfileIds");

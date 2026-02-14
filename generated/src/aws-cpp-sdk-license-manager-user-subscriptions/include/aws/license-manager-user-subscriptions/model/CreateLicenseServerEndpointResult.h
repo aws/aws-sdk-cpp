@@ -77,12 +77,15 @@ class CreateLicenseServerEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_identityProviderArn;
 
   Aws::String m_licenseServerEndpointArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_identityProviderArnHasBeenSet = false;
   bool m_licenseServerEndpointArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

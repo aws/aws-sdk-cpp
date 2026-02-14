@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeScriptResult::DescribeScriptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeScriptResult& DescribeScriptResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Script")) {
     m_script = jsonValue.GetObject("Script");

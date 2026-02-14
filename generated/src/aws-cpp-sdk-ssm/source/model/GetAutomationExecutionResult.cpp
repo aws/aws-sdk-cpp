@@ -20,6 +20,7 @@ using namespace Aws;
 GetAutomationExecutionResult::GetAutomationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAutomationExecutionResult& GetAutomationExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutomationExecution")) {
     m_automationExecution = jsonValue.GetObject("AutomationExecution");

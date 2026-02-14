@@ -23,6 +23,7 @@ BatchDisassociateAnalyticsDataSetResult::BatchDisassociateAnalyticsDataSetResult
 
 BatchDisassociateAnalyticsDataSetResult& BatchDisassociateAnalyticsDataSetResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Deleted")) {
     Aws::Utils::Array<JsonView> deletedJsonList = jsonValue.GetArray("Deleted");

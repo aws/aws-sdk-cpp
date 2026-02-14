@@ -20,6 +20,7 @@ using namespace Aws;
 RestartRouterInputResult::RestartRouterInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RestartRouterInputResult& RestartRouterInputResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");

@@ -20,6 +20,7 @@ using namespace Aws;
 OptimizeWaypointsResult::OptimizeWaypointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 OptimizeWaypointsResult& OptimizeWaypointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Connections")) {
     Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");

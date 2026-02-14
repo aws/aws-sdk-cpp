@@ -73,12 +73,15 @@ class DeleteDatastoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datastoreId;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

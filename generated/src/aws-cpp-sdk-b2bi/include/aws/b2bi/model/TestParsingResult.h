@@ -112,6 +112,8 @@ class TestParsingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_parsedFileContent;
 
@@ -120,6 +122,7 @@ class TestParsingResult {
   Aws::Vector<Aws::String> m_validationMessages;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_parsedFileContentHasBeenSet = false;
   bool m_parsedSplitFileContentsHasBeenSet = false;
   bool m_validationMessagesHasBeenSet = false;

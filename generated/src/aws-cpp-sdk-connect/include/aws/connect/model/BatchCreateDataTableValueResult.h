@@ -91,12 +91,15 @@ class BatchCreateDataTableValueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchCreateDataTableValueSuccessResult> m_successful;
 
   Aws::Vector<BatchCreateDataTableValueFailureResult> m_failed;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

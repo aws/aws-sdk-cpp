@@ -20,6 +20,7 @@ using namespace Aws;
 ExecuteActionResult::ExecuteActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExecuteActionResult& ExecuteActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionId")) {
     m_actionId = jsonValue.GetString("actionId");

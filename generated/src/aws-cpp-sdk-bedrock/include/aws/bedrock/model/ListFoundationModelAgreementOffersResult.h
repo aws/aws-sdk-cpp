@@ -83,12 +83,15 @@ class ListFoundationModelAgreementOffersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_modelId;
 
   Aws::Vector<Offer> m_offers;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelIdHasBeenSet = false;
   bool m_offersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -95,6 +95,8 @@ class CreateStorediSCSIVolumeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_volumeARN;
 
@@ -103,6 +105,7 @@ class CreateStorediSCSIVolumeResult {
   Aws::String m_targetARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_volumeARNHasBeenSet = false;
   bool m_volumeSizeInBytesHasBeenSet = false;
   bool m_targetARNHasBeenSet = false;

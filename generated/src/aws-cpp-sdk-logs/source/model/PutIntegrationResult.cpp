@@ -20,6 +20,7 @@ using namespace Aws;
 PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutIntegrationResult& PutIntegrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("integrationName")) {
     m_integrationName = jsonValue.GetString("integrationName");

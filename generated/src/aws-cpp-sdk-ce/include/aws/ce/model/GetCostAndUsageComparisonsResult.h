@@ -111,6 +111,8 @@ class GetCostAndUsageComparisonsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CostAndUsageComparison> m_costAndUsageComparisons;
 
@@ -119,6 +121,7 @@ class GetCostAndUsageComparisonsResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_costAndUsageComparisonsHasBeenSet = false;
   bool m_totalCostAndUsageHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

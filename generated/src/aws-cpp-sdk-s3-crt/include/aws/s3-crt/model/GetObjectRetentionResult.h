@@ -58,10 +58,13 @@ class GetObjectRetentionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ObjectLockRetention m_retention;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_retentionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -57,10 +57,13 @@ class EnableSerialConsoleAccessResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_serialConsoleAccessEnabled{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serialConsoleAccessEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

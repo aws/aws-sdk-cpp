@@ -22,6 +22,7 @@ GetDeploymentPatternVersionResult::GetDeploymentPatternVersionResult(const Aws::
 }
 
 GetDeploymentPatternVersionResult& GetDeploymentPatternVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deploymentPatternVersion")) {
     m_deploymentPatternVersion = jsonValue.GetObject("deploymentPatternVersion");

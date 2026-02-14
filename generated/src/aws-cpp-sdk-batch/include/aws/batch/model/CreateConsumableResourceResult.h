@@ -74,12 +74,15 @@ class CreateConsumableResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_consumableResourceName;
 
   Aws::String m_consumableResourceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_consumableResourceNameHasBeenSet = false;
   bool m_consumableResourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

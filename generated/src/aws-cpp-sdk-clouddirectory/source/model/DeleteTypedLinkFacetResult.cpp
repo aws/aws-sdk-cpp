@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteTypedLinkFacetResult::DeleteTypedLinkFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteTypedLinkFacetResult& DeleteTypedLinkFacetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

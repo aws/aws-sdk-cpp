@@ -142,6 +142,8 @@ class GetS3TableIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -156,6 +158,7 @@ class GetS3TableIntegrationResult {
   long long m_createdTimeStamp{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

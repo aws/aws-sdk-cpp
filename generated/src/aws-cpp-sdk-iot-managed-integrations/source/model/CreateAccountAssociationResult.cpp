@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAccountAssociationResult::CreateAccountAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAccountAssociationResult& CreateAccountAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OAuthAuthorizationUrl")) {
     m_oAuthAuthorizationUrl = jsonValue.GetString("OAuthAuthorizationUrl");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetCommentResult::GetCommentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCommentResult& GetCommentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("comment")) {
     m_comment = jsonValue.GetObject("comment");

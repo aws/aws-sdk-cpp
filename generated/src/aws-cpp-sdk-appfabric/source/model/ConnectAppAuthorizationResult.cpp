@@ -20,6 +20,7 @@ using namespace Aws;
 ConnectAppAuthorizationResult::ConnectAppAuthorizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ConnectAppAuthorizationResult& ConnectAppAuthorizationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("appAuthorizationSummary")) {
     m_appAuthorizationSummary = jsonValue.GetObject("appAuthorizationSummary");

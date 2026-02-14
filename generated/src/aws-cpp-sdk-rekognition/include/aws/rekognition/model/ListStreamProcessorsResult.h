@@ -84,12 +84,15 @@ class ListStreamProcessorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<StreamProcessor> m_streamProcessors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_streamProcessorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

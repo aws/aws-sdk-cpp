@@ -21,6 +21,7 @@ using namespace Aws;
 GetSecretValueResult::GetSecretValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSecretValueResult& GetSecretValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");

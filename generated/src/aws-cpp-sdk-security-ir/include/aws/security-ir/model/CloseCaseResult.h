@@ -77,12 +77,15 @@ class CloseCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CaseStatus m_caseStatus{CaseStatus::NOT_SET};
 
   Aws::Utils::DateTime m_closedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_caseStatusHasBeenSet = false;
   bool m_closedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetRouterOutputResult::BatchGetRouterOutputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetRouterOutputResult& BatchGetRouterOutputResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("routerOutputs")) {
     Aws::Utils::Array<JsonView> routerOutputsJsonList = jsonValue.GetArray("routerOutputs");

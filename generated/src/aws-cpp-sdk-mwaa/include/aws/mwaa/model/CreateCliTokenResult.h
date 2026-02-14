@@ -74,12 +74,15 @@ class CreateCliTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_cliToken;
 
   Aws::String m_webServerHostname;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cliTokenHasBeenSet = false;
   bool m_webServerHostnameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

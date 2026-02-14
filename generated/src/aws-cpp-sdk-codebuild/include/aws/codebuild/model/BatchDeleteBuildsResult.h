@@ -88,12 +88,15 @@ class BatchDeleteBuildsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_buildsDeleted;
 
   Aws::Vector<BuildNotDeleted> m_buildsNotDeleted;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_buildsDeletedHasBeenSet = false;
   bool m_buildsNotDeletedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

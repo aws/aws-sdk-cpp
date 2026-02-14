@@ -23,6 +23,7 @@ EnableImportFindingsForProductResult::EnableImportFindingsForProductResult(const
 
 EnableImportFindingsForProductResult& EnableImportFindingsForProductResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProductSubscriptionArn")) {
     m_productSubscriptionArn = jsonValue.GetString("ProductSubscriptionArn");

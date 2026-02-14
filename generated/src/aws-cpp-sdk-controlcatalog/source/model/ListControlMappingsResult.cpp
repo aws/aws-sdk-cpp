@@ -20,6 +20,7 @@ using namespace Aws;
 ListControlMappingsResult::ListControlMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListControlMappingsResult& ListControlMappingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ControlMappings")) {
     Aws::Utils::Array<JsonView> controlMappingsJsonList = jsonValue.GetArray("ControlMappings");

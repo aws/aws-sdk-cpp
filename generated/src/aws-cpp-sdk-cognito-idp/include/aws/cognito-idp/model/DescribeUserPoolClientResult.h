@@ -65,10 +65,13 @@ class DescribeUserPoolClientResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   UserPoolClientType m_userPoolClient;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userPoolClientHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

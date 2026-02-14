@@ -108,6 +108,8 @@ class CreateWorkspaceServiceAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Role m_grafanaRole{Role::NOT_SET};
 
@@ -118,6 +120,7 @@ class CreateWorkspaceServiceAccountResult {
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_grafanaRoleHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;

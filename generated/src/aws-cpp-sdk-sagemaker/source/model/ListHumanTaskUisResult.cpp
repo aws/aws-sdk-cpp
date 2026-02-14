@@ -20,6 +20,7 @@ using namespace Aws;
 ListHumanTaskUisResult::ListHumanTaskUisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListHumanTaskUisResult& ListHumanTaskUisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HumanTaskUiSummaries")) {
     Aws::Utils::Array<JsonView> humanTaskUiSummariesJsonList = jsonValue.GetArray("HumanTaskUiSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetEnrollmentStatusResult::GetEnrollmentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEnrollmentStatusResult& GetEnrollmentStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));

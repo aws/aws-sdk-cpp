@@ -75,12 +75,15 @@ class UpdateEnrollmentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Status m_status{Status::NOT_SET};
 
   Aws::String m_statusReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

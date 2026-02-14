@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSnapshotScheduleResult::DeleteSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSnapshotScheduleResult& DeleteSnapshotScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VolumeARN")) {
     m_volumeARN = jsonValue.GetString("VolumeARN");

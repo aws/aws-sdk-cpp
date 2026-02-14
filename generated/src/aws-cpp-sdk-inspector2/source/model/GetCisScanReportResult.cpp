@@ -20,6 +20,7 @@ using namespace Aws;
 GetCisScanReportResult::GetCisScanReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCisScanReportResult& GetCisScanReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");

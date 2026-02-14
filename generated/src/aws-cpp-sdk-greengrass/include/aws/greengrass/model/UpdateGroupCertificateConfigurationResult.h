@@ -94,6 +94,8 @@ class UpdateGroupCertificateConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_certificateAuthorityExpiryInMilliseconds;
 
@@ -102,6 +104,7 @@ class UpdateGroupCertificateConfigurationResult {
   Aws::String m_groupId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificateAuthorityExpiryInMillisecondsHasBeenSet = false;
   bool m_certificateExpiryInMillisecondsHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;

@@ -146,6 +146,8 @@ class PutGatewayResponseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
 
@@ -158,6 +160,7 @@ class PutGatewayResponseResult {
   bool m_defaultResponse{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_responseTypeHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_responseParametersHasBeenSet = false;

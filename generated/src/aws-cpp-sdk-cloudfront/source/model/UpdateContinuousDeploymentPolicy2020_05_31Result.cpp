@@ -23,6 +23,7 @@ UpdateContinuousDeploymentPolicy2020_05_31Result::UpdateContinuousDeploymentPoli
 
 UpdateContinuousDeploymentPolicy2020_05_31Result& UpdateContinuousDeploymentPolicy2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

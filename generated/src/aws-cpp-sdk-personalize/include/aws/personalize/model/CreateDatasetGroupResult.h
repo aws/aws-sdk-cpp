@@ -73,12 +73,15 @@ class CreateDatasetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datasetGroupArn;
 
   Domain m_domain{Domain::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetGroupArnHasBeenSet = false;
   bool m_domainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

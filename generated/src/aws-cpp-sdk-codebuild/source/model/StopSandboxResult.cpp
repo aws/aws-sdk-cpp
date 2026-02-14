@@ -20,6 +20,7 @@ using namespace Aws;
 StopSandboxResult::StopSandboxResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopSandboxResult& StopSandboxResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sandbox")) {
     m_sandbox = jsonValue.GetObject("sandbox");

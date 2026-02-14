@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateRateBasedRuleResult::UpdateRateBasedRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateRateBasedRuleResult& UpdateRateBasedRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeToken")) {
     m_changeToken = jsonValue.GetString("ChangeToken");

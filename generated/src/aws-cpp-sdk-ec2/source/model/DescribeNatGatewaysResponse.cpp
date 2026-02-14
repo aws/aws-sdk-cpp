@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeNatGatewaysResponse::DescribeNatGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

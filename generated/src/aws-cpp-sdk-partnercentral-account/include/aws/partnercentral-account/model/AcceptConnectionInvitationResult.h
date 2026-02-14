@@ -59,10 +59,13 @@ class AcceptConnectionInvitationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Connection m_connection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -161,6 +161,8 @@ class UpdateAgentRuntimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_agentRuntimeArn;
 
@@ -177,6 +179,7 @@ class UpdateAgentRuntimeResult {
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_workloadIdentityDetailsHasBeenSet = false;

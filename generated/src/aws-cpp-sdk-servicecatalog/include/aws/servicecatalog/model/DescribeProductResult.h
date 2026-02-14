@@ -131,6 +131,8 @@ class DescribeProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProductViewSummary m_productViewSummary;
 
@@ -141,6 +143,7 @@ class DescribeProductResult {
   Aws::Vector<LaunchPath> m_launchPaths;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productViewSummaryHasBeenSet = false;
   bool m_provisioningArtifactsHasBeenSet = false;
   bool m_budgetsHasBeenSet = false;

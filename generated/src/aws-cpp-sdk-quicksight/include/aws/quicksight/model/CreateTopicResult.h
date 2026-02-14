@@ -107,6 +107,8 @@ class CreateTopicResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -117,6 +119,7 @@ class CreateTopicResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_topicIdHasBeenSet = false;
   bool m_refreshArnHasBeenSet = false;

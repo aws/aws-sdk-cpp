@@ -22,6 +22,7 @@ DescribeIAMPolicyAssignmentResult::DescribeIAMPolicyAssignmentResult(const Aws::
 }
 
 DescribeIAMPolicyAssignmentResult& DescribeIAMPolicyAssignmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IAMPolicyAssignment")) {
     m_iAMPolicyAssignment = jsonValue.GetObject("IAMPolicyAssignment");

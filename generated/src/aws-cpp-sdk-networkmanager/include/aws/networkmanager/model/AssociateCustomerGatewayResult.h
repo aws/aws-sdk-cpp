@@ -58,10 +58,13 @@ class AssociateCustomerGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CustomerGatewayAssociation m_customerGatewayAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_customerGatewayAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

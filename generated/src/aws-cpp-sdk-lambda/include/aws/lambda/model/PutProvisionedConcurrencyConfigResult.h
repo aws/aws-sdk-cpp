@@ -140,6 +140,8 @@ class PutProvisionedConcurrencyConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_requestedProvisionedConcurrentExecutions{0};
 
@@ -154,6 +156,7 @@ class PutProvisionedConcurrencyConfigResult {
   Aws::String m_lastModified;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestedProvisionedConcurrentExecutionsHasBeenSet = false;
   bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
   bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet = false;

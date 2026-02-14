@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAIPromptResult::CreateAIPromptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAIPromptResult& CreateAIPromptResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("aiPrompt")) {
     m_aiPrompt = jsonValue.GetObject("aiPrompt");

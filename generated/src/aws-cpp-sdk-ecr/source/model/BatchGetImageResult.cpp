@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetImageResult::BatchGetImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetImageResult& BatchGetImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("images")) {
     Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("images");

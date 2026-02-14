@@ -172,6 +172,8 @@ class CreateCapabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_capabilityId;
 
@@ -188,6 +190,7 @@ class CreateCapabilityResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_capabilityIdHasBeenSet = false;
   bool m_capabilityArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

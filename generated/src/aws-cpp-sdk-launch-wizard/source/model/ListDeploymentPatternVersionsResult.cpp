@@ -22,6 +22,7 @@ ListDeploymentPatternVersionsResult::ListDeploymentPatternVersionsResult(const A
 }
 
 ListDeploymentPatternVersionsResult& ListDeploymentPatternVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deploymentPatternVersions")) {
     Aws::Utils::Array<JsonView> deploymentPatternVersionsJsonList = jsonValue.GetArray("deploymentPatternVersions");

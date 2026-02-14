@@ -20,6 +20,7 @@ using namespace Aws;
 ListPlaybackKeyPairsResult::ListPlaybackKeyPairsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPlaybackKeyPairsResult& ListPlaybackKeyPairsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keyPairs")) {
     Aws::Utils::Array<JsonView> keyPairsJsonList = jsonValue.GetArray("keyPairs");

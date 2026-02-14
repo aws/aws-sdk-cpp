@@ -76,12 +76,15 @@ class GetServiceIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
   IndexType m_type{IndexType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

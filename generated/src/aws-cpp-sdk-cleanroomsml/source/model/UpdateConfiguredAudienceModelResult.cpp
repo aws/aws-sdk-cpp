@@ -22,6 +22,7 @@ UpdateConfiguredAudienceModelResult::UpdateConfiguredAudienceModelResult(const A
 }
 
 UpdateConfiguredAudienceModelResult& UpdateConfiguredAudienceModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredAudienceModelArn")) {
     m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");

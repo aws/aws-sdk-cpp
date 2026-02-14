@@ -190,6 +190,8 @@ class GetPolicyEngineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_policyEngineId;
 
@@ -208,6 +210,7 @@ class GetPolicyEngineResult {
   Aws::Vector<Aws::String> m_statusReasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

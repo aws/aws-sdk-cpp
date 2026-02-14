@@ -20,6 +20,7 @@ using namespace Aws;
 ListKeyRotationsResult::ListKeyRotationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKeyRotationsResult& ListKeyRotationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Rotations")) {
     Aws::Utils::Array<JsonView> rotationsJsonList = jsonValue.GetArray("Rotations");

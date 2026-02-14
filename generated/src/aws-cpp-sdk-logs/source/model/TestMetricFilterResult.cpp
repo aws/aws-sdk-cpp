@@ -20,6 +20,7 @@ using namespace Aws;
 TestMetricFilterResult::TestMetricFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestMetricFilterResult& TestMetricFilterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("matches")) {
     Aws::Utils::Array<JsonView> matchesJsonList = jsonValue.GetArray("matches");

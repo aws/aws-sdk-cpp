@@ -90,12 +90,15 @@ class DescribeScheduledInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ScheduledInstance> m_scheduledInstanceSet;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_scheduledInstanceSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

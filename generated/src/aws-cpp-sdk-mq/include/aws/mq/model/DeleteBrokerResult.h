@@ -57,10 +57,13 @@ class DeleteBrokerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_brokerId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_brokerIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

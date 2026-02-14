@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteMultiRegionEndpointResult::DeleteMultiRegionEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteMultiRegionEndpointResult& DeleteMultiRegionEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));

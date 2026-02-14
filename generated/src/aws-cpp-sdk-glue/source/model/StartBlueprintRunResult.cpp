@@ -20,6 +20,7 @@ using namespace Aws;
 StartBlueprintRunResult::StartBlueprintRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartBlueprintRunResult& StartBlueprintRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RunId")) {
     m_runId = jsonValue.GetString("RunId");

@@ -20,6 +20,7 @@ using namespace Aws;
 EnableEnhancedMonitoringResult::EnableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EnableEnhancedMonitoringResult& EnableEnhancedMonitoringResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamName")) {
     m_streamName = jsonValue.GetString("StreamName");

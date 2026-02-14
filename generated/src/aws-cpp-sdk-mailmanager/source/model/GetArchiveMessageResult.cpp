@@ -20,6 +20,7 @@ using namespace Aws;
 GetArchiveMessageResult::GetArchiveMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetArchiveMessageResult& GetArchiveMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MessageDownloadLink")) {
     m_messageDownloadLink = jsonValue.GetString("MessageDownloadLink");

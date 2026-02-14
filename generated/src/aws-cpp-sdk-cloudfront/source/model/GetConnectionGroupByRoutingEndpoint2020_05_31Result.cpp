@@ -23,6 +23,7 @@ GetConnectionGroupByRoutingEndpoint2020_05_31Result::GetConnectionGroupByRouting
 
 GetConnectionGroupByRoutingEndpoint2020_05_31Result& GetConnectionGroupByRoutingEndpoint2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

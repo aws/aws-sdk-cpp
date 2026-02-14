@@ -20,6 +20,7 @@ using namespace Aws;
 GenerateDataSetResult::GenerateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateDataSetResult& GenerateDataSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataSetRequestId")) {
     m_dataSetRequestId = jsonValue.GetString("dataSetRequestId");

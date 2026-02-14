@@ -59,10 +59,13 @@ class GetMetricConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SummaryMetricConfiguration m_summaryMetric;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_summaryMetricHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

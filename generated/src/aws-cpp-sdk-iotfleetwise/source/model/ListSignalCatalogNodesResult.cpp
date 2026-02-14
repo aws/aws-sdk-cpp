@@ -20,6 +20,7 @@ using namespace Aws;
 ListSignalCatalogNodesResult::ListSignalCatalogNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSignalCatalogNodesResult& ListSignalCatalogNodesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nodes")) {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");

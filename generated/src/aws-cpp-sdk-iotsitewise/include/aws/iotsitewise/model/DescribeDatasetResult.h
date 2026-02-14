@@ -202,6 +202,8 @@ class DescribeDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datasetId;
 
@@ -222,6 +224,7 @@ class DescribeDatasetResult {
   Aws::String m_datasetVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListInvoiceUnitsResult::ListInvoiceUnitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInvoiceUnitsResult& ListInvoiceUnitsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InvoiceUnits")) {
     Aws::Utils::Array<JsonView> invoiceUnitsJsonList = jsonValue.GetArray("InvoiceUnits");

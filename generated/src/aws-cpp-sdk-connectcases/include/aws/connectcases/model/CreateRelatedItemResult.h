@@ -74,12 +74,15 @@ class CreateRelatedItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_relatedItemId;
 
   Aws::String m_relatedItemArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_relatedItemIdHasBeenSet = false;
   bool m_relatedItemArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -377,6 +377,8 @@ class DescribeAssetModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_assetModelId;
 
@@ -411,6 +413,7 @@ class DescribeAssetModelResult {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_assetModelExternalIdHasBeenSet = false;
   bool m_assetModelArnHasBeenSet = false;

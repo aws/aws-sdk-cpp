@@ -22,6 +22,7 @@ DescribeSNOMEDCTInferenceJobResult::DescribeSNOMEDCTInferenceJobResult(const Aws
 }
 
 DescribeSNOMEDCTInferenceJobResult& DescribeSNOMEDCTInferenceJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComprehendMedicalAsyncJobProperties")) {
     m_comprehendMedicalAsyncJobProperties = jsonValue.GetObject("ComprehendMedicalAsyncJobProperties");

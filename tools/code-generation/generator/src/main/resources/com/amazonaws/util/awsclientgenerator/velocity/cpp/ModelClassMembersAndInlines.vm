@@ -138,7 +138,10 @@
     ///@}
 #end##if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
 #end##foreach($member in $shape.members.entrySet())
-#if($shape.members.size() > 0 || $operation.result.shape.hasEventStreamMembers())##next contains private only
+#if ($shape.result)
+    inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+#end
+#if($shape.members.size() > 0 || $operation.result.shape.hasEventStreamMembers() || $shape.result)##next contains private only
   private:
 #foreach($member in $shape.members.entrySet())
 
@@ -153,6 +156,9 @@
     ${operation.name}Handler m_handler;
     Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
+#end
+#if ($shape.result)
+    Aws::Http::HttpResponseCode m_responseCode;
 #end
 #end##if($shape.members.size() > 0)
 #foreach($member in $shape.members.entrySet())

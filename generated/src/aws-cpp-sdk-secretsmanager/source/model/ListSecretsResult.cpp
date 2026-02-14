@@ -20,6 +20,7 @@ using namespace Aws;
 ListSecretsResult::ListSecretsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSecretsResult& ListSecretsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecretList")) {
     Aws::Utils::Array<JsonView> secretListJsonList = jsonValue.GetArray("SecretList");

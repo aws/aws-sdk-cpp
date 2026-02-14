@@ -20,6 +20,7 @@ using namespace Aws;
 GetJobTemplateResult::GetJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetJobTemplateResult& GetJobTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobTemplate")) {
     m_jobTemplate = jsonValue.GetObject("jobTemplate");

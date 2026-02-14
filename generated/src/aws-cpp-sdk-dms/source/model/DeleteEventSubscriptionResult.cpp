@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEventSubscriptionResult::DeleteEventSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEventSubscriptionResult& DeleteEventSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventSubscription")) {
     m_eventSubscription = jsonValue.GetObject("EventSubscription");

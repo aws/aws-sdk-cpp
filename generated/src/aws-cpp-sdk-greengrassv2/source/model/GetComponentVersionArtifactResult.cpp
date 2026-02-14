@@ -22,6 +22,7 @@ GetComponentVersionArtifactResult::GetComponentVersionArtifactResult(const Aws::
 }
 
 GetComponentVersionArtifactResult& GetComponentVersionArtifactResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("preSignedUrl")) {
     m_preSignedUrl = jsonValue.GetString("preSignedUrl");

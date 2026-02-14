@@ -20,6 +20,7 @@ using namespace Aws;
 ResolveComponentCandidatesResult::ResolveComponentCandidatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ResolveComponentCandidatesResult& ResolveComponentCandidatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resolvedComponentVersions")) {
     Aws::Utils::Array<JsonView> resolvedComponentVersionsJsonList = jsonValue.GetArray("resolvedComponentVersions");

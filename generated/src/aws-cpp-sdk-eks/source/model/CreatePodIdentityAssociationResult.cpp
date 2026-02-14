@@ -22,6 +22,7 @@ CreatePodIdentityAssociationResult::CreatePodIdentityAssociationResult(const Aws
 }
 
 CreatePodIdentityAssociationResult& CreatePodIdentityAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("association")) {
     m_association = jsonValue.GetObject("association");

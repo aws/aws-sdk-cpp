@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCustomPermissionsResult::CreateCustomPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCustomPermissionsResult& CreateCustomPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetInteger("Status");

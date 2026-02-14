@@ -108,6 +108,8 @@ class StartDICOMImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datastoreId;
 
@@ -118,6 +120,7 @@ class StartDICOMImportJobResult {
   Aws::Utils::DateTime m_submittedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;

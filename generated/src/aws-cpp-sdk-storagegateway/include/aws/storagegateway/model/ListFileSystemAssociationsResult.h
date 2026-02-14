@@ -106,6 +106,8 @@ class ListFileSystemAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
@@ -114,6 +116,7 @@ class ListFileSystemAssociationsResult {
   Aws::Vector<FileSystemAssociationSummary> m_fileSystemAssociationSummaryList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_fileSystemAssociationSummaryListHasBeenSet = false;

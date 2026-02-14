@@ -79,12 +79,15 @@ class GetAccessPointConfigurationForObjectLambdaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ObjectLambdaConfiguration m_configuration;
 
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;

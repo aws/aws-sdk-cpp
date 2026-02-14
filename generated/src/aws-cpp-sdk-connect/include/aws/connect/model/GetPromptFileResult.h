@@ -93,6 +93,8 @@ class GetPromptFileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_promptPresignedUrl;
 
@@ -101,6 +103,7 @@ class GetPromptFileResult {
   Aws::String m_lastModifiedRegion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_promptPresignedUrlHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;

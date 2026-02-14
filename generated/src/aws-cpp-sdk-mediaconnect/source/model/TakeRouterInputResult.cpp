@@ -20,6 +20,7 @@ using namespace Aws;
 TakeRouterInputResult::TakeRouterInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TakeRouterInputResult& TakeRouterInputResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("routedState")) {
     m_routedState = RouterOutputRoutedStateMapper::GetRouterOutputRoutedStateForName(jsonValue.GetString("routedState"));

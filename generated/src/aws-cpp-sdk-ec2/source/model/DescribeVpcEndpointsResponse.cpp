@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeVpcEndpointsResponse::DescribeVpcEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

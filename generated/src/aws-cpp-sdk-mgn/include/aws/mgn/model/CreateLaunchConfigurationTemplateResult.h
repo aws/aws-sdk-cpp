@@ -358,6 +358,8 @@ class CreateLaunchConfigurationTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_launchConfigurationTemplateID;
 
@@ -398,6 +400,7 @@ class CreateLaunchConfigurationTemplateResult {
   Aws::String m_parametersEncryptionKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_launchConfigurationTemplateIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_postLaunchActionsHasBeenSet = false;

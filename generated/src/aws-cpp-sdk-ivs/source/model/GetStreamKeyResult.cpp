@@ -20,6 +20,7 @@ using namespace Aws;
 GetStreamKeyResult::GetStreamKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStreamKeyResult& GetStreamKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("streamKey")) {
     m_streamKey = jsonValue.GetObject("streamKey");

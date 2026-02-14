@@ -805,6 +805,8 @@ class DescribeModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_modelName;
 
@@ -891,6 +893,7 @@ class DescribeModelResult {
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;

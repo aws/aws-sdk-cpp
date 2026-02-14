@@ -23,6 +23,7 @@ ListNotificationConfigurationsResult::ListNotificationConfigurationsResult(const
 
 ListNotificationConfigurationsResult& ListNotificationConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotificationConfigurationList")) {
     Aws::Utils::Array<JsonView> notificationConfigurationListJsonList = jsonValue.GetArray("NotificationConfigurationList");

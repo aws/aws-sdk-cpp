@@ -23,6 +23,7 @@ ListConfigurationCheckOperationsResult::ListConfigurationCheckOperationsResult(c
 
 ListConfigurationCheckOperationsResult& ListConfigurationCheckOperationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationCheckOperations")) {
     Aws::Utils::Array<JsonView> configurationCheckOperationsJsonList = jsonValue.GetArray("ConfigurationCheckOperations");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeVpcConnectorResult::DescribeVpcConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeVpcConnectorResult& DescribeVpcConnectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VpcConnector")) {
     m_vpcConnector = jsonValue.GetObject("VpcConnector");

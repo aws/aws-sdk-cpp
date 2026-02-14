@@ -22,6 +22,7 @@ DescribeManagedLoginBrandingResult::DescribeManagedLoginBrandingResult(const Aws
 }
 
 DescribeManagedLoginBrandingResult& DescribeManagedLoginBrandingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedLoginBranding")) {
     m_managedLoginBranding = jsonValue.GetObject("ManagedLoginBranding");

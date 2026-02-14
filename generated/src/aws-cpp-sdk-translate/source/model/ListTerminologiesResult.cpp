@@ -20,6 +20,7 @@ using namespace Aws;
 ListTerminologiesResult::ListTerminologiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTerminologiesResult& ListTerminologiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TerminologyPropertiesList")) {
     Aws::Utils::Array<JsonView> terminologyPropertiesListJsonList = jsonValue.GetArray("TerminologyPropertiesList");

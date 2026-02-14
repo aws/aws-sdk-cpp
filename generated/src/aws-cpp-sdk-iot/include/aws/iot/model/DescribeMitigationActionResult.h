@@ -179,6 +179,8 @@ class DescribeMitigationActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_actionName;
 
@@ -197,6 +199,7 @@ class DescribeMitigationActionResult {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionNameHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;
   bool m_actionArnHasBeenSet = false;

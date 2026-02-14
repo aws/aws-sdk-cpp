@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeScalingPlansResult::DescribeScalingPlansResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeScalingPlansResult& DescribeScalingPlansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScalingPlans")) {
     Aws::Utils::Array<JsonView> scalingPlansJsonList = jsonValue.GetArray("ScalingPlans");

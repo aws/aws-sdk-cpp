@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeWorkflowResult::DescribeWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeWorkflowResult& DescribeWorkflowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Workflow")) {
     m_workflow = jsonValue.GetObject("Workflow");

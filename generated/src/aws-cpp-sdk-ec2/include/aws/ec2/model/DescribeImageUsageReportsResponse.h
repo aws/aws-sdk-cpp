@@ -84,12 +84,15 @@ class DescribeImageUsageReportsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ImageUsageReport> m_imageUsageReports;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_imageUsageReportsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetSlotTypeVersionsResult::GetSlotTypeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSlotTypeVersionsResult& GetSlotTypeVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("slotTypes")) {
     Aws::Utils::Array<JsonView> slotTypesJsonList = jsonValue.GetArray("slotTypes");

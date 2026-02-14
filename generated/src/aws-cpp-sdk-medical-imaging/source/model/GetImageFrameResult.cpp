@@ -19,6 +19,7 @@ using namespace Aws;
 GetImageFrameResult::GetImageFrameResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetImageFrameResult& GetImageFrameResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_imageFrameBlob = result.TakeOwnershipOfPayload();
   m_imageFrameBlobHasBeenSet = true;
 

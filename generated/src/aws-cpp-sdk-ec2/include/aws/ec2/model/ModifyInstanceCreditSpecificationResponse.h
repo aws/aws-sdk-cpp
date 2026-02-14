@@ -97,12 +97,15 @@ class ModifyInstanceCreditSpecificationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SuccessfulInstanceCreditSpecificationItem> m_successfulInstanceCreditSpecifications;
 
   Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem> m_unsuccessfulInstanceCreditSpecifications;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulInstanceCreditSpecificationsHasBeenSet = false;
   bool m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

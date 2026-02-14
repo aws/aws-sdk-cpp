@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UUID")) {
     m_uUID = jsonValue.GetString("UUID");

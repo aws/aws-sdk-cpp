@@ -20,6 +20,7 @@ using namespace Aws;
 DetectTargetedSentimentResult::DetectTargetedSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectTargetedSentimentResult& DetectTargetedSentimentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Entities")) {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");

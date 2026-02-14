@@ -20,6 +20,7 @@ using namespace Aws;
 GetPushTemplateResult::GetPushTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPushTemplateResult& GetPushTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_pushNotificationTemplateResponse = jsonValue;
   m_pushNotificationTemplateResponseHasBeenSet = true;

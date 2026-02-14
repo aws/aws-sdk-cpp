@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFileSystemResult::CreateFileSystemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFileSystemResult& CreateFileSystemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileSystem")) {
     m_fileSystem = jsonValue.GetObject("FileSystem");

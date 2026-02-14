@@ -72,12 +72,15 @@ class UpdateClusterSchedulerConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clusterSchedulerConfigArn;
 
   int m_clusterSchedulerConfigVersion{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterSchedulerConfigArnHasBeenSet = false;
   bool m_clusterSchedulerConfigVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

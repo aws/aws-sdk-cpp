@@ -20,6 +20,7 @@ using namespace Aws;
 AssignIpv6AddressesResponse::AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

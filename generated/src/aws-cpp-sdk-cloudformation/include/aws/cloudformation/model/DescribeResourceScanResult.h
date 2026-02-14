@@ -235,6 +235,8 @@ class DescribeResourceScanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceScanId;
 
@@ -257,6 +259,7 @@ class DescribeResourceScanResult {
   Aws::Vector<ScanFilter> m_scanFilters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceScanIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;

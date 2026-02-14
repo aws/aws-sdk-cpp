@@ -20,6 +20,7 @@ using namespace Aws;
 ListThemeVersionsResult::ListThemeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListThemeVersionsResult& ListThemeVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ThemeVersionSummaryList")) {
     Aws::Utils::Array<JsonView> themeVersionSummaryListJsonList = jsonValue.GetArray("ThemeVersionSummaryList");

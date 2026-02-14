@@ -148,6 +148,8 @@ class UpdateResourceSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceSetArn;
 
@@ -160,6 +162,7 @@ class UpdateResourceSetResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceSetArnHasBeenSet = false;
   bool m_resourceSetNameHasBeenSet = false;
   bool m_resourceSetTypeHasBeenSet = false;

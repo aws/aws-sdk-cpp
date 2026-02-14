@@ -20,6 +20,7 @@ using namespace Aws;
 GetJobManifestResult::GetJobManifestResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetJobManifestResult& GetJobManifestResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManifestURI")) {
     m_manifestURI = jsonValue.GetString("ManifestURI");

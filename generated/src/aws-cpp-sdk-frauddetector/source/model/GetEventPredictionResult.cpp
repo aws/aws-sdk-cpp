@@ -20,6 +20,7 @@ using namespace Aws;
 GetEventPredictionResult::GetEventPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEventPredictionResult& GetEventPredictionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("modelScores")) {
     Aws::Utils::Array<JsonView> modelScoresJsonList = jsonValue.GetArray("modelScores");

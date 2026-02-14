@@ -23,6 +23,7 @@ DescribeContactFlowModuleAliasResult::DescribeContactFlowModuleAliasResult(const
 
 DescribeContactFlowModuleAliasResult& DescribeContactFlowModuleAliasResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactFlowModuleAlias")) {
     m_contactFlowModuleAlias = jsonValue.GetObject("ContactFlowModuleAlias");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIpamPoliciesResponse::DescribeIpamPoliciesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DescribeIpamPoliciesResponse& DescribeIpamPoliciesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

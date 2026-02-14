@@ -20,6 +20,7 @@ using namespace Aws;
 GenerateMappingResult::GenerateMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GenerateMappingResult& GenerateMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mappingTemplate")) {
     m_mappingTemplate = jsonValue.GetString("mappingTemplate");

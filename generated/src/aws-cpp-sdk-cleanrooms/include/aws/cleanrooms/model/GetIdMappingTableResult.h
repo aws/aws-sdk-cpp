@@ -58,10 +58,13 @@ class GetIdMappingTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IdMappingTable m_idMappingTable;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idMappingTableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDashboardPermissionsResult::UpdateDashboardPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDashboardPermissionsResult& UpdateDashboardPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DashboardArn")) {
     m_dashboardArn = jsonValue.GetString("DashboardArn");

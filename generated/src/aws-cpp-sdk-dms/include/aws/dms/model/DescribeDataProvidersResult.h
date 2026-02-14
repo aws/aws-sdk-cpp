@@ -90,12 +90,15 @@ class DescribeDataProvidersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<DataProvider> m_dataProviders;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_dataProvidersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

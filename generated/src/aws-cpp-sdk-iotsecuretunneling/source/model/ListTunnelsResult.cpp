@@ -20,6 +20,7 @@ using namespace Aws;
 ListTunnelsResult::ListTunnelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTunnelsResult& ListTunnelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tunnelSummaries")) {
     Aws::Utils::Array<JsonView> tunnelSummariesJsonList = jsonValue.GetArray("tunnelSummaries");

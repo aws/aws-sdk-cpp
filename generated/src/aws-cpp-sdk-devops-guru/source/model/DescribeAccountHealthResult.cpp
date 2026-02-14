@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAccountHealthResult::DescribeAccountHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAccountHealthResult& DescribeAccountHealthResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OpenReactiveInsights")) {
     m_openReactiveInsights = jsonValue.GetInteger("OpenReactiveInsights");

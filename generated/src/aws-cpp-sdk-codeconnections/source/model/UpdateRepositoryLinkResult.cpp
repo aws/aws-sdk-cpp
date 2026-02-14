@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateRepositoryLinkResult::UpdateRepositoryLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateRepositoryLinkResult& UpdateRepositoryLinkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RepositoryLinkInfo")) {
     m_repositoryLinkInfo = jsonValue.GetObject("RepositoryLinkInfo");

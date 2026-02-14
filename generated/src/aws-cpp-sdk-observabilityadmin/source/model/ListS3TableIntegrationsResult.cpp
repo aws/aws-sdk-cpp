@@ -20,6 +20,7 @@ using namespace Aws;
 ListS3TableIntegrationsResult::ListS3TableIntegrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListS3TableIntegrationsResult& ListS3TableIntegrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IntegrationSummaries")) {
     Aws::Utils::Array<JsonView> integrationSummariesJsonList = jsonValue.GetArray("IntegrationSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetAppsResult::GetAppsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAppsResult& GetAppsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_applicationsResponse = jsonValue;
   m_applicationsResponseHasBeenSet = true;

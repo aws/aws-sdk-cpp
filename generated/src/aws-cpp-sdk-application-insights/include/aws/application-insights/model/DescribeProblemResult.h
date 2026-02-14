@@ -75,12 +75,15 @@ class DescribeProblemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Problem m_problem;
 
   Aws::String m_sNSNotificationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_problemHasBeenSet = false;
   bool m_sNSNotificationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

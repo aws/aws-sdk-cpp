@@ -21,6 +21,7 @@ ExecuteGremlinExplainQueryResult::ExecuteGremlinExplainQueryResult(Aws::AmazonWe
 }
 
 ExecuteGremlinExplainQueryResult& ExecuteGremlinExplainQueryResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_output = result.TakeOwnershipOfPayload();
   m_outputHasBeenSet = true;
 

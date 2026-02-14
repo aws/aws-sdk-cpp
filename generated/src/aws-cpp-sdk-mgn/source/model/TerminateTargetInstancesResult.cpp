@@ -20,6 +20,7 @@ using namespace Aws;
 TerminateTargetInstancesResult::TerminateTargetInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TerminateTargetInstancesResult& TerminateTargetInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("job")) {
     m_job = jsonValue.GetObject("job");

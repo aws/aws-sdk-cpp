@@ -93,6 +93,8 @@ class GetManagedThingCapabilitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_managedThingId;
 
@@ -101,6 +103,7 @@ class GetManagedThingCapabilitiesResult {
   CapabilityReport m_capabilityReport;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managedThingIdHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
   bool m_capabilityReportHasBeenSet = false;

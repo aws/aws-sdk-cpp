@@ -124,6 +124,8 @@ class ModifyCurrentDBClusterCapacityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -136,6 +138,7 @@ class ModifyCurrentDBClusterCapacityResult {
   Aws::String m_timeoutAction;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_pendingCapacityHasBeenSet = false;
   bool m_currentCapacityHasBeenSet = false;

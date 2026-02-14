@@ -88,12 +88,15 @@ class GetRepositoryTriggersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_configurationId;
 
   Aws::Vector<RepositoryTrigger> m_triggers;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationIdHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

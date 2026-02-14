@@ -20,6 +20,7 @@ using namespace Aws;
 ListKxClustersResult::ListKxClustersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKxClustersResult& ListKxClustersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("kxClusterSummaries")) {
     Aws::Utils::Array<JsonView> kxClusterSummariesJsonList = jsonValue.GetArray("kxClusterSummaries");

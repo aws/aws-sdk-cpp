@@ -152,6 +152,8 @@ class UpdateAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_aliasArn;
 
@@ -166,6 +168,7 @@ class UpdateAliasResult {
   Aws::String m_revisionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aliasArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_functionVersionHasBeenSet = false;

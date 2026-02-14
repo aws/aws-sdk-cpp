@@ -58,10 +58,13 @@ class ModifyIpamScopeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamScope m_ipamScope;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamScopeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

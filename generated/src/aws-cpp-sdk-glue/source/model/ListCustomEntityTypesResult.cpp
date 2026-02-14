@@ -20,6 +20,7 @@ using namespace Aws;
 ListCustomEntityTypesResult::ListCustomEntityTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCustomEntityTypesResult& ListCustomEntityTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomEntityTypes")) {
     Aws::Utils::Array<JsonView> customEntityTypesJsonList = jsonValue.GetArray("CustomEntityTypes");

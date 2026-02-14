@@ -74,12 +74,15 @@ class CreateTestCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_testCaseId;
 
   Aws::String m_testCaseArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_testCaseIdHasBeenSet = false;
   bool m_testCaseArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

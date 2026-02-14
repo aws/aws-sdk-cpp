@@ -20,6 +20,7 @@ using namespace Aws;
 GetDomainStatisticsReportResult::GetDomainStatisticsReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDomainStatisticsReportResult& GetDomainStatisticsReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OverallVolume")) {
     m_overallVolume = jsonValue.GetObject("OverallVolume");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAssessmentTargetResult::CreateAssessmentTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAssessmentTargetResult& CreateAssessmentTargetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assessmentTargetArn")) {
     m_assessmentTargetArn = jsonValue.GetString("assessmentTargetArn");

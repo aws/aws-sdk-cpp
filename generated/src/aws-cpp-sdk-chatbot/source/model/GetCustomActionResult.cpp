@@ -20,6 +20,7 @@ using namespace Aws;
 GetCustomActionResult::GetCustomActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCustomActionResult& GetCustomActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomAction")) {
     m_customAction = jsonValue.GetObject("CustomAction");

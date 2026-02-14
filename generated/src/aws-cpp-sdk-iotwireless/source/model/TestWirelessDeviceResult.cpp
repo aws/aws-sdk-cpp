@@ -20,6 +20,7 @@ using namespace Aws;
 TestWirelessDeviceResult::TestWirelessDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestWirelessDeviceResult& TestWirelessDeviceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Result")) {
     m_result = jsonValue.GetString("Result");

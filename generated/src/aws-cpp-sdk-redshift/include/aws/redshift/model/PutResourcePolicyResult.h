@@ -58,10 +58,13 @@ class PutResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResourcePolicy m_resourcePolicy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourcePolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

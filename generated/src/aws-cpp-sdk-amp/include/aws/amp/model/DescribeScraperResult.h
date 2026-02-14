@@ -64,10 +64,13 @@ class DescribeScraperResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ScraperDescription m_scraper;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scraperHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

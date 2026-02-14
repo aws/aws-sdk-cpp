@@ -24,6 +24,7 @@ BatchGetRepositoryScanningConfigurationResult::BatchGetRepositoryScanningConfigu
 
 BatchGetRepositoryScanningConfigurationResult& BatchGetRepositoryScanningConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scanningConfigurations")) {
     Aws::Utils::Array<JsonView> scanningConfigurationsJsonList = jsonValue.GetArray("scanningConfigurations");

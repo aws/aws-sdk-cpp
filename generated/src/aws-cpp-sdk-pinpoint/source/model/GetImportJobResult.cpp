@@ -20,6 +20,7 @@ using namespace Aws;
 GetImportJobResult::GetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetImportJobResult& GetImportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_importJobResponse = jsonValue;
   m_importJobResponseHasBeenSet = true;

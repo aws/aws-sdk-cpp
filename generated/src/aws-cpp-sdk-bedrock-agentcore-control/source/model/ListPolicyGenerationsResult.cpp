@@ -20,6 +20,7 @@ using namespace Aws;
 ListPolicyGenerationsResult::ListPolicyGenerationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPolicyGenerationsResult& ListPolicyGenerationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("policyGenerations")) {
     Aws::Utils::Array<JsonView> policyGenerationsJsonList = jsonValue.GetArray("policyGenerations");

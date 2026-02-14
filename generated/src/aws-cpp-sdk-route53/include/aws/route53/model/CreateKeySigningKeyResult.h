@@ -91,6 +91,8 @@ class CreateKeySigningKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ChangeInfo m_changeInfo;
 
@@ -99,6 +101,7 @@ class CreateKeySigningKeyResult {
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_changeInfoHasBeenSet = false;
   bool m_keySigningKeyHasBeenSet = false;
   bool m_locationHasBeenSet = false;

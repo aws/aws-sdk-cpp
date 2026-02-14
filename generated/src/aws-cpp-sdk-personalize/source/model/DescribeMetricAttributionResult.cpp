@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeMetricAttributionResult::DescribeMetricAttributionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeMetricAttributionResult& DescribeMetricAttributionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metricAttribution")) {
     m_metricAttribution = jsonValue.GetObject("metricAttribution");

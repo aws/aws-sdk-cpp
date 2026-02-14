@@ -311,6 +311,8 @@ class DescribeMlflowTrackingServerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_trackingServerArn;
 
@@ -345,6 +347,7 @@ class DescribeMlflowTrackingServerResult {
   UserContext m_lastModifiedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trackingServerArnHasBeenSet = false;
   bool m_trackingServerNameHasBeenSet = false;
   bool m_artifactStoreUriHasBeenSet = false;

@@ -73,12 +73,15 @@ class DeregisterGatewayInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_gatewayInstanceArn;
 
   InstanceState m_instanceState{InstanceState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gatewayInstanceArnHasBeenSet = false;
   bool m_instanceStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

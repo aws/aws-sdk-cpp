@@ -59,10 +59,13 @@ class CreateTransitGatewayMulticastDomainResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayMulticastDomain m_transitGatewayMulticastDomain;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayMulticastDomainHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 SubmitContainerStateChangeResult::SubmitContainerStateChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SubmitContainerStateChangeResult& SubmitContainerStateChangeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("acknowledgment")) {
     m_acknowledgment = jsonValue.GetString("acknowledgment");

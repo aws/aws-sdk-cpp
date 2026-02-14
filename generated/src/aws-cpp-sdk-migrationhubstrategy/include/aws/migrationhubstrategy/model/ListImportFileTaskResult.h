@@ -85,12 +85,15 @@ class ListImportFileTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ImportFileTaskInformation> m_taskInfos;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_taskInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -85,12 +85,15 @@ class GetGeneratedTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GeneratedTemplateStatus m_status{GeneratedTemplateStatus::NOT_SET};
 
   Aws::String m_templateBody;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_templateBodyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

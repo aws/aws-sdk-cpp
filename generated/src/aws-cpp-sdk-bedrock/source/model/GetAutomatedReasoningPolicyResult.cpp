@@ -22,6 +22,7 @@ GetAutomatedReasoningPolicyResult::GetAutomatedReasoningPolicyResult(const Aws::
 }
 
 GetAutomatedReasoningPolicyResult& GetAutomatedReasoningPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("policyArn")) {
     m_policyArn = jsonValue.GetString("policyArn");

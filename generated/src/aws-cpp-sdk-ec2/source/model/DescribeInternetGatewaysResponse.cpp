@@ -22,6 +22,7 @@ DescribeInternetGatewaysResponse::DescribeInternetGatewaysResponse(const Aws::Am
 }
 
 DescribeInternetGatewaysResponse& DescribeInternetGatewaysResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

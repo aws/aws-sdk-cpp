@@ -95,12 +95,15 @@ class BatchGetStandardsControlAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<StandardsControlAssociationDetail> m_standardsControlAssociationDetails;
 
   Aws::Vector<UnprocessedStandardsControlAssociation> m_unprocessedAssociations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_standardsControlAssociationDetailsHasBeenSet = false;
   bool m_unprocessedAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

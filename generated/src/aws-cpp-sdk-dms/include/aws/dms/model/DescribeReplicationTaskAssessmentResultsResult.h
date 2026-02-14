@@ -110,6 +110,8 @@ class DescribeReplicationTaskAssessmentResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
@@ -118,6 +120,7 @@ class DescribeReplicationTaskAssessmentResultsResult {
   Aws::Vector<ReplicationTaskAssessmentResult> m_replicationTaskAssessmentResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_bucketNameHasBeenSet = false;
   bool m_replicationTaskAssessmentResultsHasBeenSet = false;

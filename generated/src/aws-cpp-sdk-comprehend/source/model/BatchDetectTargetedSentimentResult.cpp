@@ -22,6 +22,7 @@ BatchDetectTargetedSentimentResult::BatchDetectTargetedSentimentResult(const Aws
 }
 
 BatchDetectTargetedSentimentResult& BatchDetectTargetedSentimentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResultList")) {
     Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");

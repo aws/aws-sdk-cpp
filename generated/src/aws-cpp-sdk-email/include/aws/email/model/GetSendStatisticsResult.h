@@ -72,10 +72,13 @@ class GetSendStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SendDataPoint> m_sendDataPoints;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sendDataPointsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

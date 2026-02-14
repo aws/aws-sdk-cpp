@@ -104,6 +104,8 @@ class ListServiceSpecificCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ServiceSpecificCredentialMetadata> m_serviceSpecificCredentials;
 
@@ -112,6 +114,7 @@ class ListServiceSpecificCredentialsResult {
   bool m_isTruncated{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serviceSpecificCredentialsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;

@@ -104,6 +104,8 @@ class SignResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -112,6 +114,7 @@ class SignResult {
   SigningAlgorithmSpec m_signingAlgorithm{SigningAlgorithmSpec::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_signatureHasBeenSet = false;
   bool m_signingAlgorithmHasBeenSet = false;

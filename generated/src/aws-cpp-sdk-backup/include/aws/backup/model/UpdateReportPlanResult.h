@@ -96,6 +96,8 @@ class UpdateReportPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reportPlanName;
 
@@ -104,6 +106,7 @@ class UpdateReportPlanResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reportPlanNameHasBeenSet = false;
   bool m_reportPlanArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

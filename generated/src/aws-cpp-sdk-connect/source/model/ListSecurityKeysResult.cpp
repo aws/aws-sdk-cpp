@@ -20,6 +20,7 @@ using namespace Aws;
 ListSecurityKeysResult::ListSecurityKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSecurityKeysResult& ListSecurityKeysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SecurityKeys")) {
     Aws::Utils::Array<JsonView> securityKeysJsonList = jsonValue.GetArray("SecurityKeys");

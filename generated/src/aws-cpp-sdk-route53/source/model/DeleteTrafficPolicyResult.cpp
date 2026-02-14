@@ -19,6 +19,7 @@ using namespace Aws;
 DeleteTrafficPolicyResult::DeleteTrafficPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DeleteTrafficPolicyResult& DeleteTrafficPolicyResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

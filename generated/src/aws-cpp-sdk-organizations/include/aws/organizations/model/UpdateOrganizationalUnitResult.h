@@ -59,10 +59,13 @@ class UpdateOrganizationalUnitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OrganizationalUnit m_organizationalUnit;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_organizationalUnitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

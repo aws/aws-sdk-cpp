@@ -23,6 +23,7 @@ UpdateApiKeyCredentialProviderResult::UpdateApiKeyCredentialProviderResult(const
 
 UpdateApiKeyCredentialProviderResult& UpdateApiKeyCredentialProviderResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("apiKeySecretArn")) {
     m_apiKeySecretArn = jsonValue.GetObject("apiKeySecretArn");

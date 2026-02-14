@@ -22,6 +22,7 @@ ListRegistrationAssociationsResult::ListRegistrationAssociationsResult(const Aws
 }
 
 ListRegistrationAssociationsResult& ListRegistrationAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegistrationArn")) {
     m_registrationArn = jsonValue.GetString("RegistrationArn");

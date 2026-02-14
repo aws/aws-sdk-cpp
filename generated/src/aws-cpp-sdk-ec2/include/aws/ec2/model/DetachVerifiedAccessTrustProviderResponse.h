@@ -76,12 +76,15 @@ class DetachVerifiedAccessTrustProviderResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VerifiedAccessTrustProvider m_verifiedAccessTrustProvider;
 
   VerifiedAccessInstance m_verifiedAccessInstance;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_verifiedAccessTrustProviderHasBeenSet = false;
   bool m_verifiedAccessInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

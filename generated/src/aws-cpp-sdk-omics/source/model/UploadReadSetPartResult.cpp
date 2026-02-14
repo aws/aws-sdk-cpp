@@ -20,6 +20,7 @@ using namespace Aws;
 UploadReadSetPartResult::UploadReadSetPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UploadReadSetPartResult& UploadReadSetPartResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("checksum")) {
     m_checksum = jsonValue.GetString("checksum");

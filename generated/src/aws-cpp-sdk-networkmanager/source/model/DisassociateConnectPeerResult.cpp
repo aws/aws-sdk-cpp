@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociateConnectPeerResult::DisassociateConnectPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateConnectPeerResult& DisassociateConnectPeerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectPeerAssociation")) {
     m_connectPeerAssociation = jsonValue.GetObject("ConnectPeerAssociation");

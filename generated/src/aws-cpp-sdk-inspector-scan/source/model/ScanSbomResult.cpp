@@ -20,6 +20,7 @@ using namespace Aws;
 ScanSbomResult::ScanSbomResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ScanSbomResult& ScanSbomResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sbom")) {
     m_sbom = jsonValue.GetObject("sbom");

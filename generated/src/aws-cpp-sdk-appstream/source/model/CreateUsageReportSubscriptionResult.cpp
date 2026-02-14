@@ -22,6 +22,7 @@ CreateUsageReportSubscriptionResult::CreateUsageReportSubscriptionResult(const A
 }
 
 CreateUsageReportSubscriptionResult& CreateUsageReportSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("S3BucketName")) {
     m_s3BucketName = jsonValue.GetString("S3BucketName");

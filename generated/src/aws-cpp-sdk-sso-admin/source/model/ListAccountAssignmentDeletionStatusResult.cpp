@@ -23,6 +23,7 @@ ListAccountAssignmentDeletionStatusResult::ListAccountAssignmentDeletionStatusRe
 
 ListAccountAssignmentDeletionStatusResult& ListAccountAssignmentDeletionStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountAssignmentsDeletionStatus")) {
     Aws::Utils::Array<JsonView> accountAssignmentsDeletionStatusJsonList = jsonValue.GetArray("AccountAssignmentsDeletionStatus");

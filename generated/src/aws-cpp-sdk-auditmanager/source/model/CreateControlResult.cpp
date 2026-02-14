@@ -20,6 +20,7 @@ using namespace Aws;
 CreateControlResult::CreateControlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateControlResult& CreateControlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("control")) {
     m_control = jsonValue.GetObject("control");

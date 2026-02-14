@@ -59,10 +59,13 @@ class CreateResiliencyPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResiliencyPolicy m_policy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_policyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

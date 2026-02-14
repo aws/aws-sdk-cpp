@@ -93,12 +93,15 @@ class DeleteQueuedReservedInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SuccessfulQueuedPurchaseDeletion> m_successfulQueuedPurchaseDeletions;
 
   Aws::Vector<FailedQueuedPurchaseDeletion> m_failedQueuedPurchaseDeletions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulQueuedPurchaseDeletionsHasBeenSet = false;
   bool m_failedQueuedPurchaseDeletionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

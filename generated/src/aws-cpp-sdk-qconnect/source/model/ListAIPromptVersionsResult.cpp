@@ -20,6 +20,7 @@ using namespace Aws;
 ListAIPromptVersionsResult::ListAIPromptVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAIPromptVersionsResult& ListAIPromptVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("aiPromptVersionSummaries")) {
     Aws::Utils::Array<JsonView> aiPromptVersionSummariesJsonList = jsonValue.GetArray("aiPromptVersionSummaries");

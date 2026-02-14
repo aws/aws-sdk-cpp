@@ -20,6 +20,7 @@ using namespace Aws;
 GetRepositoryEndpointResult::GetRepositoryEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRepositoryEndpointResult& GetRepositoryEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("repositoryEndpoint")) {
     m_repositoryEndpoint = jsonValue.GetString("repositoryEndpoint");

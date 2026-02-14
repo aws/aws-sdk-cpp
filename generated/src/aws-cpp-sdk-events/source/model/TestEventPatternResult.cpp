@@ -20,6 +20,7 @@ using namespace Aws;
 TestEventPatternResult::TestEventPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestEventPatternResult& TestEventPatternResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Result")) {
     m_result = jsonValue.GetBool("Result");

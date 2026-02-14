@@ -20,6 +20,7 @@ using namespace Aws;
 GetManagedScalingPolicyResult::GetManagedScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetManagedScalingPolicyResult& GetManagedScalingPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedScalingPolicy")) {
     m_managedScalingPolicy = jsonValue.GetObject("ManagedScalingPolicy");

@@ -65,10 +65,13 @@ class ListAvailableVoiceConnectorRegionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<VoiceConnectorAwsRegion> m_voiceConnectorRegions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_voiceConnectorRegionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

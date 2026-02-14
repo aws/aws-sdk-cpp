@@ -66,10 +66,13 @@ class DescribeAllManagedProductsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ManagedProductDescriptor> m_managedProducts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managedProductsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

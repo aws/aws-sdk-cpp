@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeVirtualGatewaysResult::DescribeVirtualGatewaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeVirtualGatewaysResult& DescribeVirtualGatewaysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("virtualGateways")) {
     Aws::Utils::Array<JsonView> virtualGatewaysJsonList = jsonValue.GetArray("virtualGateways");

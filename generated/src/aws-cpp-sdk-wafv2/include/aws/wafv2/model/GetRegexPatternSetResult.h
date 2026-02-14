@@ -82,12 +82,15 @@ class GetRegexPatternSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RegexPatternSet m_regexPatternSet;
 
   Aws::String m_lockToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_regexPatternSetHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateWorkspaceBundleResult::UpdateWorkspaceBundleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateWorkspaceBundleResult& UpdateWorkspaceBundleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

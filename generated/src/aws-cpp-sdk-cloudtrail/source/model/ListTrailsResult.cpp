@@ -20,6 +20,7 @@ using namespace Aws;
 ListTrailsResult::ListTrailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTrailsResult& ListTrailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Trails")) {
     Aws::Utils::Array<JsonView> trailsJsonList = jsonValue.GetArray("Trails");

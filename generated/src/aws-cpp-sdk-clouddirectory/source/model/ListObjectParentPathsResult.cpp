@@ -20,6 +20,7 @@ using namespace Aws;
 ListObjectParentPathsResult::ListObjectParentPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListObjectParentPathsResult& ListObjectParentPathsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PathToObjectIdentifiersList")) {
     Aws::Utils::Array<JsonView> pathToObjectIdentifiersListJsonList = jsonValue.GetArray("PathToObjectIdentifiersList");

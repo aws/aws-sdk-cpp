@@ -20,6 +20,7 @@ using namespace Aws;
 GetMappingResult::GetMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMappingResult& GetMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Mapping")) {
     Aws::Utils::Array<JsonView> mappingJsonList = jsonValue.GetArray("Mapping");

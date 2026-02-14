@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteJobResult::DeleteJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteJobResult& DeleteJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobSummary")) {
     m_jobSummary = jsonValue.GetObject("jobSummary");

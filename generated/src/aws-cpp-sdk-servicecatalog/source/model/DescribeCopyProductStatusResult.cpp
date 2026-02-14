@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCopyProductStatusResult::DescribeCopyProductStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCopyProductStatusResult& DescribeCopyProductStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CopyProductStatus")) {
     m_copyProductStatus = CopyProductStatusMapper::GetCopyProductStatusForName(jsonValue.GetString("CopyProductStatus"));

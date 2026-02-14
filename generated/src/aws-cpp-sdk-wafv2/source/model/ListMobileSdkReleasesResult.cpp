@@ -20,6 +20,7 @@ using namespace Aws;
 ListMobileSdkReleasesResult::ListMobileSdkReleasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMobileSdkReleasesResult& ListMobileSdkReleasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReleaseSummaries")) {
     Aws::Utils::Array<JsonView> releaseSummariesJsonList = jsonValue.GetArray("ReleaseSummaries");

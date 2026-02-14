@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetWorkflowsResult::BatchGetWorkflowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetWorkflowsResult& BatchGetWorkflowsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Workflows")) {
     Aws::Utils::Array<JsonView> workflowsJsonList = jsonValue.GetArray("Workflows");

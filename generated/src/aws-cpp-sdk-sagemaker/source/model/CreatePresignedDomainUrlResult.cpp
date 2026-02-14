@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePresignedDomainUrlResult::CreatePresignedDomainUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePresignedDomainUrlResult& CreatePresignedDomainUrlResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AuthorizedUrl")) {
     m_authorizedUrl = jsonValue.GetString("AuthorizedUrl");

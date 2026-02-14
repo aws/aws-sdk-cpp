@@ -21,6 +21,7 @@ GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(Aws::Amazon
 }
 
 GetSolNetworkPackageContentResult& GetSolNetworkPackageContentResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_nsdContent = result.TakeOwnershipOfPayload();
   m_nsdContentHasBeenSet = true;
 

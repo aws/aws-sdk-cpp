@@ -22,6 +22,7 @@ CreateSipMediaApplicationCallResult::CreateSipMediaApplicationCallResult(const A
 }
 
 CreateSipMediaApplicationCallResult& CreateSipMediaApplicationCallResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SipMediaApplicationCall")) {
     m_sipMediaApplicationCall = jsonValue.GetObject("SipMediaApplicationCall");

@@ -288,6 +288,8 @@ class GetCommandResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_commandId;
 
@@ -318,6 +320,7 @@ class GetCommandResult {
   bool m_pendingDeletion{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_commandIdHasBeenSet = false;
   bool m_commandArnHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;

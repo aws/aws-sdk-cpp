@@ -20,6 +20,7 @@ using namespace Aws;
 BatchImportFindingsResult::BatchImportFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchImportFindingsResult& BatchImportFindingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedCount")) {
     m_failedCount = jsonValue.GetInteger("FailedCount");

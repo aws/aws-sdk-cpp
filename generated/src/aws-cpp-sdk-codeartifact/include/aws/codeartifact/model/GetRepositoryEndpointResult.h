@@ -57,10 +57,13 @@ class GetRepositoryEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_repositoryEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

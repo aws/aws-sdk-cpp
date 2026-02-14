@@ -20,6 +20,7 @@ using namespace Aws;
 ListScheduledActionsResult::ListScheduledActionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListScheduledActionsResult& ListScheduledActionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScheduledActions")) {
     Aws::Utils::Array<JsonView> scheduledActionsJsonList = jsonValue.GetArray("ScheduledActions");

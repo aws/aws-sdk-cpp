@@ -56,10 +56,13 @@ class GetApnsVoipSandboxChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   APNSVoipSandboxChannelResponse m_aPNSVoipSandboxChannelResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_aPNSVoipSandboxChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

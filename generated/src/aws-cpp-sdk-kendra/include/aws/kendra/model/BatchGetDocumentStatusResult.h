@@ -93,12 +93,15 @@ class BatchGetDocumentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BatchGetDocumentStatusResponseError> m_errors;
 
   Aws::Vector<Status> m_documentStatusList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_errorsHasBeenSet = false;
   bool m_documentStatusListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

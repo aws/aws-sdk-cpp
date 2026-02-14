@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFileCachesResult::DescribeFileCachesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFileCachesResult& DescribeFileCachesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileCaches")) {
     Aws::Utils::Array<JsonView> fileCachesJsonList = jsonValue.GetArray("FileCaches");

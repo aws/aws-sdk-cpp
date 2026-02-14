@@ -58,10 +58,13 @@ class GetNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Node m_node;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

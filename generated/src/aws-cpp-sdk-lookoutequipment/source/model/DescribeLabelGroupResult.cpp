@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLabelGroupResult::DescribeLabelGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLabelGroupResult& DescribeLabelGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LabelGroupName")) {
     m_labelGroupName = jsonValue.GetString("LabelGroupName");

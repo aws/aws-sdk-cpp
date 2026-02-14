@@ -20,6 +20,7 @@ using namespace Aws;
 UpdatePackagingGroupResult::UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdatePackagingGroupResult& UpdatePackagingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("approximateAssetCount")) {
     m_approximateAssetCount = jsonValue.GetInteger("approximateAssetCount");

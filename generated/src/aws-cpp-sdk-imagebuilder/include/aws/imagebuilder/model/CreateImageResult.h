@@ -95,6 +95,8 @@ class CreateImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -103,6 +105,7 @@ class CreateImageResult {
   Aws::String m_imageBuildVersionArn;
 
   LatestVersionReferences m_latestVersionReferences;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_imageBuildVersionArnHasBeenSet = false;

@@ -524,6 +524,8 @@ class GetTrainedModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_membershipIdentifier;
 
@@ -576,6 +578,7 @@ class GetTrainedModelResult {
   Aws::Vector<ModelTrainingDataChannel> m_dataChannels;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_trainedModelArnHasBeenSet = false;

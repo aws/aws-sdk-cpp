@@ -95,6 +95,8 @@ class SynthesizeSpeechResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_audioStream{};
 
@@ -103,6 +105,7 @@ class SynthesizeSpeechResult {
   int m_requestCharacters{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_audioStreamHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_requestCharactersHasBeenSet = false;

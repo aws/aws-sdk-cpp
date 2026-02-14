@@ -20,6 +20,7 @@ using namespace Aws;
 ListQuickSetupTypesResult::ListQuickSetupTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListQuickSetupTypesResult& ListQuickSetupTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QuickSetupTypeList")) {
     Aws::Utils::Array<JsonView> quickSetupTypeListJsonList = jsonValue.GetArray("QuickSetupTypeList");

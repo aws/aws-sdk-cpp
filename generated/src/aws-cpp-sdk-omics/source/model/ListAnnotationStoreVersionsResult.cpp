@@ -22,6 +22,7 @@ ListAnnotationStoreVersionsResult::ListAnnotationStoreVersionsResult(const Aws::
 }
 
 ListAnnotationStoreVersionsResult& ListAnnotationStoreVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("annotationStoreVersions")) {
     Aws::Utils::Array<JsonView> annotationStoreVersionsJsonList = jsonValue.GetArray("annotationStoreVersions");

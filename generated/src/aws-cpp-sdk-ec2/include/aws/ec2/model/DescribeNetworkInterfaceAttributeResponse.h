@@ -160,6 +160,8 @@ class DescribeNetworkInterfaceAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   NetworkInterfaceAttachment m_attachment;
 
@@ -174,6 +176,7 @@ class DescribeNetworkInterfaceAttributeResponse {
   bool m_associatePublicIpAddress{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_attachmentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_groupsHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetAppliedSchemaVersionResult::GetAppliedSchemaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAppliedSchemaVersionResult& GetAppliedSchemaVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppliedSchemaArn")) {
     m_appliedSchemaArn = jsonValue.GetString("AppliedSchemaArn");

@@ -99,6 +99,8 @@ class ListAppVersionResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -107,6 +109,7 @@ class ListAppVersionResourcesResult {
   Aws::String m_resolutionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_physicalResourcesHasBeenSet = false;
   bool m_resolutionIdHasBeenSet = false;

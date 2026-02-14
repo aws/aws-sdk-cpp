@@ -20,6 +20,7 @@ using namespace Aws;
 ListCustomPermissionsResult::ListCustomPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCustomPermissionsResult& ListCustomPermissionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomPermissionsList")) {
     Aws::Utils::Array<JsonView> customPermissionsListJsonList = jsonValue.GetArray("CustomPermissionsList");

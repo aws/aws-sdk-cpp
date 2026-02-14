@@ -104,6 +104,8 @@ class DescribeRepositoryCreationTemplatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryId;
 
@@ -112,6 +114,7 @@ class DescribeRepositoryCreationTemplatesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_repositoryCreationTemplatesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 PutInventoryResult::PutInventoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutInventoryResult& PutInventoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");

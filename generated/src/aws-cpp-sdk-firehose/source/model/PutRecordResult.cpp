@@ -20,6 +20,7 @@ using namespace Aws;
 PutRecordResult::PutRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRecordResult& PutRecordResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecordId")) {
     m_recordId = jsonValue.GetString("RecordId");

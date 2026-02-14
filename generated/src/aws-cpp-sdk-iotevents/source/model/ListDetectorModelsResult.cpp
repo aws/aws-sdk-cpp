@@ -20,6 +20,7 @@ using namespace Aws;
 ListDetectorModelsResult::ListDetectorModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDetectorModelsResult& ListDetectorModelsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("detectorModelSummaries")) {
     Aws::Utils::Array<JsonView> detectorModelSummariesJsonList = jsonValue.GetArray("detectorModelSummaries");

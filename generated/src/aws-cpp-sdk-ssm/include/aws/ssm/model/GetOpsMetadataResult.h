@@ -100,6 +100,8 @@ class GetOpsMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_resourceId;
 
@@ -108,6 +110,7 @@ class GetOpsMetadataResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resourceIdHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

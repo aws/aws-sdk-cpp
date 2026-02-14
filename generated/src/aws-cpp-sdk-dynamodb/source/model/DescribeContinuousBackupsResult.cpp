@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeContinuousBackupsResult::DescribeContinuousBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContinuousBackupsDescription")) {
     m_continuousBackupsDescription = jsonValue.GetObject("ContinuousBackupsDescription");

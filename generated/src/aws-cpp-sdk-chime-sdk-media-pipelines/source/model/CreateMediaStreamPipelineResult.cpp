@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMediaStreamPipelineResult::CreateMediaStreamPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMediaStreamPipelineResult& CreateMediaStreamPipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MediaStreamPipeline")) {
     m_mediaStreamPipeline = jsonValue.GetObject("MediaStreamPipeline");

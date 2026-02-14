@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFlywheelResult::DescribeFlywheelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFlywheelResult& DescribeFlywheelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FlywheelProperties")) {
     m_flywheelProperties = jsonValue.GetObject("FlywheelProperties");

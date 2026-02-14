@@ -58,10 +58,13 @@ class GetSipRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SipRule m_sipRule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sipRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

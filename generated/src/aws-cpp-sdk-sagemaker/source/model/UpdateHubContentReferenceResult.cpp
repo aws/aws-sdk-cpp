@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateHubContentReferenceResult::UpdateHubContentReferenceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateHubContentReferenceResult& UpdateHubContentReferenceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HubArn")) {
     m_hubArn = jsonValue.GetString("HubArn");

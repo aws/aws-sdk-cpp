@@ -177,6 +177,8 @@ class TestInvokeAuthorizerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_clientStatus{0};
 
@@ -193,6 +195,7 @@ class TestInvokeAuthorizerResult {
   Aws::Map<Aws::String, Aws::String> m_claims;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clientStatusHasBeenSet = false;
   bool m_logHasBeenSet = false;
   bool m_latencyHasBeenSet = false;

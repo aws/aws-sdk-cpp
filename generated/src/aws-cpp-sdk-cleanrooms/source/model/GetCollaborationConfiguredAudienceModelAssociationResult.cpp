@@ -24,6 +24,7 @@ GetCollaborationConfiguredAudienceModelAssociationResult::GetCollaborationConfig
 
 GetCollaborationConfiguredAudienceModelAssociationResult& GetCollaborationConfiguredAudienceModelAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaborationConfiguredAudienceModelAssociation")) {
     m_collaborationConfiguredAudienceModelAssociation = jsonValue.GetObject("collaborationConfiguredAudienceModelAssociation");

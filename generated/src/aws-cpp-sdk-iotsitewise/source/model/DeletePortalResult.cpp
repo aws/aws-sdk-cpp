@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePortalResult::DeletePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePortalResult& DeletePortalResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("portalStatus")) {
     m_portalStatus = jsonValue.GetObject("portalStatus");

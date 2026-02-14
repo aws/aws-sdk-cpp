@@ -20,6 +20,7 @@ using namespace Aws;
 GetEventConfigurationResult::GetEventConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetEventConfigurationResult& GetEventConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrailARN")) {
     m_trailARN = jsonValue.GetString("TrailARN");

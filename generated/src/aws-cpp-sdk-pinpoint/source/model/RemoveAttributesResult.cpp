@@ -20,6 +20,7 @@ using namespace Aws;
 RemoveAttributesResult::RemoveAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RemoveAttributesResult& RemoveAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_attributesResource = jsonValue;
   m_attributesResourceHasBeenSet = true;

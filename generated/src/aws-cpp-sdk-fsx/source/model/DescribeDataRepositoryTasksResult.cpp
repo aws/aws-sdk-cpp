@@ -22,6 +22,7 @@ DescribeDataRepositoryTasksResult::DescribeDataRepositoryTasksResult(const Aws::
 }
 
 DescribeDataRepositoryTasksResult& DescribeDataRepositoryTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataRepositoryTasks")) {
     Aws::Utils::Array<JsonView> dataRepositoryTasksJsonList = jsonValue.GetArray("DataRepositoryTasks");

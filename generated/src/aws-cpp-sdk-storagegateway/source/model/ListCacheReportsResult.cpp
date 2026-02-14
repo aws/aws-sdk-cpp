@@ -20,6 +20,7 @@ using namespace Aws;
 ListCacheReportsResult::ListCacheReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCacheReportsResult& ListCacheReportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CacheReportList")) {
     Aws::Utils::Array<JsonView> cacheReportListJsonList = jsonValue.GetArray("CacheReportList");

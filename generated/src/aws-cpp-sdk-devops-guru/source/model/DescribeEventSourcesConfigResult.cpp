@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeEventSourcesConfigResult::DescribeEventSourcesConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeEventSourcesConfigResult& DescribeEventSourcesConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EventSources")) {
     m_eventSources = jsonValue.GetObject("EventSources");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDatasetImportJobResult::CreateDatasetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDatasetImportJobResult& CreateDatasetImportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datasetImportJobArn")) {
     m_datasetImportJobArn = jsonValue.GetString("datasetImportJobArn");

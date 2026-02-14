@@ -348,6 +348,8 @@ class GetTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyspaceName;
 
@@ -384,6 +386,7 @@ class GetTableResult {
   WarmThroughputSpecificationSummary m_warmThroughputSpecification;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;

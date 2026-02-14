@@ -58,10 +58,13 @@ class DescribePersistentAppUIResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   PersistentAppUI m_persistentAppUI;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_persistentAppUIHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

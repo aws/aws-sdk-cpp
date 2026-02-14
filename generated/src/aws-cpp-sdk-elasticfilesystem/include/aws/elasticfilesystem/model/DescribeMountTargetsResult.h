@@ -108,6 +108,8 @@ class DescribeMountTargetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
@@ -116,6 +118,7 @@ class DescribeMountTargetsResult {
   Aws::String m_nextMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_mountTargetsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;

@@ -292,6 +292,8 @@ class PutMethodResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_httpMethod;
 
@@ -316,6 +318,7 @@ class PutMethodResult {
   Aws::Vector<Aws::String> m_authorizationScopes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_httpMethodHasBeenSet = false;
   bool m_authorizationTypeHasBeenSet = false;
   bool m_authorizerIdHasBeenSet = false;

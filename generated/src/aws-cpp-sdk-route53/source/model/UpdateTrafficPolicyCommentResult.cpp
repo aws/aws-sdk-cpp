@@ -21,6 +21,7 @@ UpdateTrafficPolicyCommentResult::UpdateTrafficPolicyCommentResult(const Aws::Am
 }
 
 UpdateTrafficPolicyCommentResult& UpdateTrafficPolicyCommentResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

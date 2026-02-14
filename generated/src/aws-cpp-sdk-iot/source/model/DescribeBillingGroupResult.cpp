@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBillingGroupResult::DescribeBillingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBillingGroupResult& DescribeBillingGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("billingGroupName")) {
     m_billingGroupName = jsonValue.GetString("billingGroupName");

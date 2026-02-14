@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueueFleetAssociationResult::GetQueueFleetAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueueFleetAssociationResult& GetQueueFleetAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queueId")) {
     m_queueId = jsonValue.GetString("queueId");

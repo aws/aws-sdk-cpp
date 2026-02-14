@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDescribeModelPackageResult::BatchDescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDescribeModelPackageResult& BatchDescribeModelPackageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelPackageSummaries")) {
     Aws::Map<Aws::String, JsonView> modelPackageSummariesJsonMap = jsonValue.GetObject("ModelPackageSummaries").GetAllObjects();

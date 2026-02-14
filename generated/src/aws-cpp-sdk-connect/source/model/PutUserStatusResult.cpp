@@ -20,6 +20,7 @@ using namespace Aws;
 PutUserStatusResult::PutUserStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutUserStatusResult& PutUserStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

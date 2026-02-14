@@ -59,10 +59,13 @@ class PutDeliverySourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeliverySource m_deliverySource;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deliverySourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

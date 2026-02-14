@@ -181,6 +181,8 @@ class DescribeDatasetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_datasetGroupName;
 
@@ -197,6 +199,7 @@ class DescribeDatasetGroupResult {
   Aws::Utils::DateTime m_lastModificationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetGroupNameHasBeenSet = false;
   bool m_datasetGroupArnHasBeenSet = false;
   bool m_datasetArnsHasBeenSet = false;

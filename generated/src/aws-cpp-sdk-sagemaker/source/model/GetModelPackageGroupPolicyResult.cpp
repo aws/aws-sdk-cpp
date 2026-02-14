@@ -20,6 +20,7 @@ using namespace Aws;
 GetModelPackageGroupPolicyResult::GetModelPackageGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetModelPackageGroupPolicyResult& GetModelPackageGroupPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourcePolicy")) {
     m_resourcePolicy = jsonValue.GetString("ResourcePolicy");

@@ -223,6 +223,8 @@ class ModifyEndpointAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clusterIdentifier;
 
@@ -245,6 +247,7 @@ class ModifyEndpointAccessResult {
   VpcEndpoint m_vpcEndpoint;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
   bool m_subnetGroupNameHasBeenSet = false;

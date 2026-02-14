@@ -57,10 +57,13 @@ class RemoveSourceIdentifierFromSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EventSubscription m_eventSubscription;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventSubscriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

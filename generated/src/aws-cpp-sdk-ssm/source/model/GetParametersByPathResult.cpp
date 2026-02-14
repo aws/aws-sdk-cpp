@@ -20,6 +20,7 @@ using namespace Aws;
 GetParametersByPathResult::GetParametersByPathResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetParametersByPathResult& GetParametersByPathResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");

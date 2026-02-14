@@ -23,6 +23,7 @@ DisassociateServiceRoleFromAccountResult::DisassociateServiceRoleFromAccountResu
 
 DisassociateServiceRoleFromAccountResult& DisassociateServiceRoleFromAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DisassociatedAt")) {
     m_disassociatedAt = jsonValue.GetString("DisassociatedAt");

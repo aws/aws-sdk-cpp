@@ -20,6 +20,7 @@ using namespace Aws;
 GetViolationDetailsResult::GetViolationDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetViolationDetailsResult& GetViolationDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ViolationDetail")) {
     m_violationDetail = jsonValue.GetObject("ViolationDetail");

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchAddRoleResult::BatchAddRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchAddRoleResult& BatchAddRoleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("addedAccessorIds")) {
     Aws::Utils::Array<JsonView> addedAccessorIdsJsonList = jsonValue.GetArray("addedAccessorIds");

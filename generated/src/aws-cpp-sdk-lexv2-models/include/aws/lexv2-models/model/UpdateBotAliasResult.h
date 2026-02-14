@@ -237,6 +237,8 @@ class UpdateBotAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_botAliasId;
 
@@ -261,6 +263,7 @@ class UpdateBotAliasResult {
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_botAliasIdHasBeenSet = false;
   bool m_botAliasNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

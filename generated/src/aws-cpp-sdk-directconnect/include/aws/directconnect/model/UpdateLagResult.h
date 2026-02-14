@@ -432,6 +432,8 @@ class UpdateLagResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_connectionsBandwidth;
 
@@ -476,6 +478,7 @@ class UpdateLagResult {
   Aws::Vector<MacSecKey> m_macSecKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectionsBandwidthHasBeenSet = false;
   bool m_numberOfConnectionsHasBeenSet = false;
   bool m_lagIdHasBeenSet = false;

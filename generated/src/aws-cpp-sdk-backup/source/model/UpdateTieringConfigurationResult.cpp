@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateTieringConfigurationResult::UpdateTieringConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateTieringConfigurationResult& UpdateTieringConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TieringConfigurationArn")) {
     m_tieringConfigurationArn = jsonValue.GetString("TieringConfigurationArn");

@@ -64,10 +64,13 @@ class DeleteSuggesterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SuggesterStatus m_suggester;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_suggesterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

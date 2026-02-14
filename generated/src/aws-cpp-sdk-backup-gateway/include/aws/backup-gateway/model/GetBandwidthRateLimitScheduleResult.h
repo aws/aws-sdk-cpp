@@ -88,12 +88,15 @@ class GetBandwidthRateLimitScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
 
   Aws::String m_gatewayArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   bool m_gatewayArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetPortfolioSummaryResult::GetPortfolioSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPortfolioSummaryResult& GetPortfolioSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assessmentSummary")) {
     m_assessmentSummary = jsonValue.GetObject("assessmentSummary");

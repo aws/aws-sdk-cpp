@@ -92,12 +92,15 @@ class BatchGetFindingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Finding> m_findings;
 
   Aws::Vector<BatchGetFindingsError> m_failedFindings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_findingsHasBeenSet = false;
   bool m_failedFindingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

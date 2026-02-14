@@ -152,6 +152,8 @@ class DescribeEntityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_entityType;
 
@@ -166,6 +168,7 @@ class DescribeEntityResult {
   Aws::Utils::Document m_detailsDocument;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entityTypeHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityArnHasBeenSet = false;

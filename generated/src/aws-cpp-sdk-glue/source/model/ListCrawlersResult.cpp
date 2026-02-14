@@ -20,6 +20,7 @@ using namespace Aws;
 ListCrawlersResult::ListCrawlersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCrawlersResult& ListCrawlersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CrawlerNames")) {
     Aws::Utils::Array<JsonView> crawlerNamesJsonList = jsonValue.GetArray("CrawlerNames");

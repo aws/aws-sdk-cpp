@@ -111,6 +111,8 @@ class GetAllowedImagesSettingsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_state;
 
@@ -119,6 +121,7 @@ class GetAllowedImagesSettingsResponse {
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_stateHasBeenSet = false;
   bool m_imageCriteriaHasBeenSet = false;
   bool m_managedByHasBeenSet = false;

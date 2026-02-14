@@ -92,6 +92,8 @@ class StopBrowserSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_browserIdentifier;
 
@@ -100,6 +102,7 @@ class StopBrowserSessionResult {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_browserIdentifierHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;

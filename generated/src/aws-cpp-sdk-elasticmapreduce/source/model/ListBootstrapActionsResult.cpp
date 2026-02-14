@@ -20,6 +20,7 @@ using namespace Aws;
 ListBootstrapActionsResult::ListBootstrapActionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBootstrapActionsResult& ListBootstrapActionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BootstrapActions")) {
     Aws::Utils::Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");

@@ -57,10 +57,13 @@ class AssociateServiceRoleToAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_associatedAt;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

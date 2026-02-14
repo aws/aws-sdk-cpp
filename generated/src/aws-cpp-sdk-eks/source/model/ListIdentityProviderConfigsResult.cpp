@@ -22,6 +22,7 @@ ListIdentityProviderConfigsResult::ListIdentityProviderConfigsResult(const Aws::
 }
 
 ListIdentityProviderConfigsResult& ListIdentityProviderConfigsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("identityProviderConfigs")) {
     Aws::Utils::Array<JsonView> identityProviderConfigsJsonList = jsonValue.GetArray("identityProviderConfigs");

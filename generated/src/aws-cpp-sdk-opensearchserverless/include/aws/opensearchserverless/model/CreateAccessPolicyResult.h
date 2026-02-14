@@ -58,10 +58,13 @@ class CreateAccessPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccessPolicyDetail m_accessPolicyDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessPolicyDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

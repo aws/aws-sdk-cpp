@@ -20,6 +20,7 @@ using namespace Aws;
 ListThreatIntelSetsResult::ListThreatIntelSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListThreatIntelSetsResult& ListThreatIntelSetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("threatIntelSetIds")) {
     Aws::Utils::Array<JsonView> threatIntelSetIdsJsonList = jsonValue.GetArray("threatIntelSetIds");

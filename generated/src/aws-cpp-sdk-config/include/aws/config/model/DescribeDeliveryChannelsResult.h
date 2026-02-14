@@ -71,10 +71,13 @@ class DescribeDeliveryChannelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DeliveryChannel> m_deliveryChannels;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deliveryChannelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 UpgradeAccountPlanResult::UpgradeAccountPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpgradeAccountPlanResult& UpgradeAccountPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");

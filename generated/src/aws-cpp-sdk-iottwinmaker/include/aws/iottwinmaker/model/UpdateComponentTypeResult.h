@@ -107,6 +107,8 @@ class UpdateComponentTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -117,6 +119,7 @@ class UpdateComponentTypeResult {
   State m_state{State::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_componentTypeIdHasBeenSet = false;

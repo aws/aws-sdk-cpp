@@ -22,6 +22,7 @@ ListModelBiasJobDefinitionsResult::ListModelBiasJobDefinitionsResult(const Aws::
 }
 
 ListModelBiasJobDefinitionsResult& ListModelBiasJobDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobDefinitionSummaries")) {
     Aws::Utils::Array<JsonView> jobDefinitionSummariesJsonList = jsonValue.GetArray("JobDefinitionSummaries");

@@ -23,6 +23,7 @@ DescribeConfigurationTemplatesResult::DescribeConfigurationTemplatesResult(const
 
 DescribeConfigurationTemplatesResult& DescribeConfigurationTemplatesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configurationTemplates")) {
     Aws::Utils::Array<JsonView> configurationTemplatesJsonList = jsonValue.GetArray("configurationTemplates");

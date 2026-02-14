@@ -75,12 +75,15 @@ class GetRateBasedStatementManagedKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RateBasedStatementManagedKeysIPSet m_managedKeysIPV4;
 
   RateBasedStatementManagedKeysIPSet m_managedKeysIPV6;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_managedKeysIPV4HasBeenSet = false;
   bool m_managedKeysIPV6HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -90,6 +90,8 @@ class StartFHIRExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -98,6 +100,7 @@ class StartFHIRExportJobResult {
   Aws::String m_datastoreId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;
   bool m_datastoreIdHasBeenSet = false;

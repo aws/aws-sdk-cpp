@@ -58,10 +58,13 @@ class DescribeDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DatasetProperties m_datasetProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_datasetPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

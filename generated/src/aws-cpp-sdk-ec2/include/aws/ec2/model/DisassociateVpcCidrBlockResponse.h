@@ -94,6 +94,8 @@ class DisassociateVpcCidrBlockResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
 
@@ -102,6 +104,7 @@ class DisassociateVpcCidrBlockResponse {
   Aws::String m_vpcId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipv6CidrBlockAssociationHasBeenSet = false;
   bool m_cidrBlockAssociationHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;

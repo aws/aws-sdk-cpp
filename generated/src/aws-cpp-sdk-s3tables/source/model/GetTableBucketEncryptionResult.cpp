@@ -20,6 +20,7 @@ using namespace Aws;
 GetTableBucketEncryptionResult::GetTableBucketEncryptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTableBucketEncryptionResult& GetTableBucketEncryptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("encryptionConfiguration")) {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");

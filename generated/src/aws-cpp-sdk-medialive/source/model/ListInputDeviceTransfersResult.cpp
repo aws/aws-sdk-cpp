@@ -20,6 +20,7 @@ using namespace Aws;
 ListInputDeviceTransfersResult::ListInputDeviceTransfersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInputDeviceTransfersResult& ListInputDeviceTransfersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inputDeviceTransfers")) {
     Aws::Utils::Array<JsonView> inputDeviceTransfersJsonList = jsonValue.GetArray("inputDeviceTransfers");

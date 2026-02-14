@@ -98,6 +98,8 @@ class SearchContactsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ContactSearchSummary> m_contacts;
 
@@ -106,6 +108,7 @@ class SearchContactsResult {
   long long m_totalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;

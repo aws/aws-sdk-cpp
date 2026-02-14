@@ -20,6 +20,7 @@ using namespace Aws;
 ListLexiconsResult::ListLexiconsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLexiconsResult& ListLexiconsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Lexicons")) {
     Aws::Utils::Array<JsonView> lexiconsJsonList = jsonValue.GetArray("Lexicons");

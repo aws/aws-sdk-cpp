@@ -20,6 +20,7 @@ using namespace Aws;
 AttachObjectResult::AttachObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AttachObjectResult& AttachObjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AttachedObjectIdentifier")) {
     m_attachedObjectIdentifier = jsonValue.GetString("AttachedObjectIdentifier");

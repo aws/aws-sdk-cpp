@@ -101,6 +101,8 @@ class ListKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<KeyListEntry> m_keys;
 
@@ -109,6 +111,7 @@ class ListKeysResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keysHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

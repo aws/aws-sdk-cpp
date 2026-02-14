@@ -20,6 +20,7 @@ using namespace Aws;
 SearchVulnerabilitiesResult::SearchVulnerabilitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SearchVulnerabilitiesResult& SearchVulnerabilitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("vulnerabilities")) {
     Aws::Utils::Array<JsonView> vulnerabilitiesJsonList = jsonValue.GetArray("vulnerabilities");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetLicenseAssetGroupResult::GetLicenseAssetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLicenseAssetGroupResult& GetLicenseAssetGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LicenseAssetGroup")) {
     m_licenseAssetGroup = jsonValue.GetObject("LicenseAssetGroup");

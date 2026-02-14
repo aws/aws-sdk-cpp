@@ -20,6 +20,7 @@ using namespace Aws;
 CreateThreatEntitySetResult::CreateThreatEntitySetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateThreatEntitySetResult& CreateThreatEntitySetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("threatEntitySetId")) {
     m_threatEntitySetId = jsonValue.GetString("threatEntitySetId");

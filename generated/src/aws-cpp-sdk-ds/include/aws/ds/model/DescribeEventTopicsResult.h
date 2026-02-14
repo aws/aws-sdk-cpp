@@ -71,10 +71,13 @@ class DescribeEventTopicsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EventTopic> m_eventTopics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventTopicsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

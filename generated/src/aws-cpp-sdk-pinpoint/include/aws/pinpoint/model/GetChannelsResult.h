@@ -56,10 +56,13 @@ class GetChannelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ChannelsResponse m_channelsResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

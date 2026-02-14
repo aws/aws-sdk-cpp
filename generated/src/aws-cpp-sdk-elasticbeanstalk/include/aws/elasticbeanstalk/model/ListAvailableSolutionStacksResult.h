@@ -97,12 +97,15 @@ class ListAvailableSolutionStacksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_solutionStacks;
 
   Aws::Vector<SolutionStackDescription> m_solutionStackDetails;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_solutionStacksHasBeenSet = false;
   bool m_solutionStackDetailsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

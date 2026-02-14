@@ -20,6 +20,7 @@ using namespace Aws;
 ListOtaTasksResult::ListOtaTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListOtaTasksResult& ListOtaTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Tasks")) {
     Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("Tasks");

@@ -56,10 +56,13 @@ class CopyOptionGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   OptionGroup m_optionGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_optionGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -65,10 +65,13 @@ class GetNotificationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   NotificationConfiguration m_notificationConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notificationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

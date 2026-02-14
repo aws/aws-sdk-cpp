@@ -58,10 +58,13 @@ class ModifyIpamPolicyAllocationRulesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IpamPolicyDocument m_ipamPolicyDocument;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ipamPolicyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

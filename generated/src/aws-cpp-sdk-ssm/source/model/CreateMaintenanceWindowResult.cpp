@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMaintenanceWindowResult::CreateMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMaintenanceWindowResult& CreateMaintenanceWindowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WindowId")) {
     m_windowId = jsonValue.GetString("WindowId");

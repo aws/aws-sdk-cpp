@@ -127,6 +127,8 @@ class GetContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contactArn;
 
@@ -139,6 +141,7 @@ class GetContactResult {
   Plan m_plan;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactArnHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

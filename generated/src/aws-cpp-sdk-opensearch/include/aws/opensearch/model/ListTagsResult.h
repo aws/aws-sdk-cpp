@@ -72,10 +72,13 @@ class ListTagsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Tag> m_tagList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tagListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

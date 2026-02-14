@@ -90,12 +90,15 @@ class UpdateKeyRegistrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<FailedKeyRegistrationEntry> m_failedKeyRegistration;
 
   Aws::Vector<SuccessfulKeyRegistrationEntry> m_successfulKeyRegistration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_failedKeyRegistrationHasBeenSet = false;
   bool m_successfulKeyRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

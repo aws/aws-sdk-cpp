@@ -300,6 +300,8 @@ class GetAnnotationStoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -332,6 +334,7 @@ class GetAnnotationStoreResult {
   int m_numVersions{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_referenceHasBeenSet = false;
   bool m_statusHasBeenSet = false;

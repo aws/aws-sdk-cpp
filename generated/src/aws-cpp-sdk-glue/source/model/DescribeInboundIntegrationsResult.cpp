@@ -22,6 +22,7 @@ DescribeInboundIntegrationsResult::DescribeInboundIntegrationsResult(const Aws::
 }
 
 DescribeInboundIntegrationsResult& DescribeInboundIntegrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InboundIntegrations")) {
     Aws::Utils::Array<JsonView> inboundIntegrationsJsonList = jsonValue.GetArray("InboundIntegrations");

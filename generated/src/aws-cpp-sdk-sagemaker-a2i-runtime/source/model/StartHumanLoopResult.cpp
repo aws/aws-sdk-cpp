@@ -20,6 +20,7 @@ using namespace Aws;
 StartHumanLoopResult::StartHumanLoopResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartHumanLoopResult& StartHumanLoopResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HumanLoopArn")) {
     m_humanLoopArn = jsonValue.GetString("HumanLoopArn");

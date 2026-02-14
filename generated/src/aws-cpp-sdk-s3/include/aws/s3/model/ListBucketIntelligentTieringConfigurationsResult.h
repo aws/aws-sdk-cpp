@@ -124,6 +124,8 @@ class ListBucketIntelligentTieringConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_isTruncated{false};
 
@@ -134,6 +136,7 @@ class ListBucketIntelligentTieringConfigurationsResult {
   Aws::Vector<IntelligentTieringConfiguration> m_intelligentTieringConfigurationList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_isTruncatedHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;
   bool m_nextContinuationTokenHasBeenSet = false;

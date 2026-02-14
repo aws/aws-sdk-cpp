@@ -20,6 +20,7 @@ using namespace Aws;
 ListProtectionGroupsResult::ListProtectionGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListProtectionGroupsResult& ListProtectionGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProtectionGroups")) {
     Aws::Utils::Array<JsonView> protectionGroupsJsonList = jsonValue.GetArray("ProtectionGroups");

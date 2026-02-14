@@ -121,6 +121,8 @@ class ValidateE911AddressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_validationResult{0};
 
@@ -131,6 +133,7 @@ class ValidateE911AddressResult {
   Aws::Vector<CandidateAddress> m_candidateAddressList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_validationResultHasBeenSet = false;
   bool m_addressExternalIdHasBeenSet = false;
   bool m_addressHasBeenSet = false;

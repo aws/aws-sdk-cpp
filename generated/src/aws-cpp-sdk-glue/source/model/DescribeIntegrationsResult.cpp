@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIntegrationsResult::DescribeIntegrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeIntegrationsResult& DescribeIntegrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Integrations")) {
     Aws::Utils::Array<JsonView> integrationsJsonList = jsonValue.GetArray("Integrations");

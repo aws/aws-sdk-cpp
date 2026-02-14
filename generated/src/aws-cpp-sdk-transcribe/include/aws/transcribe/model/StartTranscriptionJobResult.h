@@ -59,10 +59,13 @@ class StartTranscriptionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TranscriptionJob m_transcriptionJob;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transcriptionJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ListRemoteAccessSessionsResult::ListRemoteAccessSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListRemoteAccessSessionsResult& ListRemoteAccessSessionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("remoteAccessSessions")) {
     Aws::Utils::Array<JsonView> remoteAccessSessionsJsonList = jsonValue.GetArray("remoteAccessSessions");

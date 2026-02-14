@@ -20,6 +20,7 @@ using namespace Aws;
 ListGuardrailsResult::ListGuardrailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListGuardrailsResult& ListGuardrailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("guardrails")) {
     Aws::Utils::Array<JsonView> guardrailsJsonList = jsonValue.GetArray("guardrails");

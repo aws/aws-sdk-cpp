@@ -23,6 +23,7 @@ DescribeWorkspacesPoolSessionsResult::DescribeWorkspacesPoolSessionsResult(const
 
 DescribeWorkspacesPoolSessionsResult& DescribeWorkspacesPoolSessionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Sessions")) {
     Aws::Utils::Array<JsonView> sessionsJsonList = jsonValue.GetArray("Sessions");

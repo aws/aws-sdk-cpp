@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePatchGroupsResult::DescribePatchGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePatchGroupsResult& DescribePatchGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Mappings")) {
     Aws::Utils::Array<JsonView> mappingsJsonList = jsonValue.GetArray("Mappings");

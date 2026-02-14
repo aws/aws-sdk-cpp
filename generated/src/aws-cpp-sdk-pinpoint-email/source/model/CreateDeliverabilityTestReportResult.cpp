@@ -23,6 +23,7 @@ CreateDeliverabilityTestReportResult::CreateDeliverabilityTestReportResult(const
 
 CreateDeliverabilityTestReportResult& CreateDeliverabilityTestReportResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReportId")) {
     m_reportId = jsonValue.GetString("ReportId");

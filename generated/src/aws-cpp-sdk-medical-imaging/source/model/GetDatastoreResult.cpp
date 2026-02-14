@@ -20,6 +20,7 @@ using namespace Aws;
 GetDatastoreResult::GetDatastoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDatastoreResult& GetDatastoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datastoreProperties")) {
     m_datastoreProperties = jsonValue.GetObject("datastoreProperties");

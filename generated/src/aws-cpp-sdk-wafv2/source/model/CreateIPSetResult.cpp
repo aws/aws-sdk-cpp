@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIPSetResult::CreateIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIPSetResult& CreateIPSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Summary")) {
     m_summary = jsonValue.GetObject("Summary");

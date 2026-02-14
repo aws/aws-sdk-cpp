@@ -23,6 +23,7 @@ ListTelemetryRulesForOrganizationResult::ListTelemetryRulesForOrganizationResult
 
 ListTelemetryRulesForOrganizationResult& ListTelemetryRulesForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TelemetryRuleSummaries")) {
     Aws::Utils::Array<JsonView> telemetryRuleSummariesJsonList = jsonValue.GetArray("TelemetryRuleSummaries");

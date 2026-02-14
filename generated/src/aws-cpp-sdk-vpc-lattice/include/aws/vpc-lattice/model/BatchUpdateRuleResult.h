@@ -89,12 +89,15 @@ class BatchUpdateRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RuleUpdateSuccess> m_successful;
 
   Aws::Vector<RuleUpdateFailure> m_unsuccessful;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulHasBeenSet = false;
   bool m_unsuccessfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

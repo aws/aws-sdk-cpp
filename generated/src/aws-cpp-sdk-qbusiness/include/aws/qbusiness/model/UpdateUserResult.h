@@ -111,6 +111,8 @@ class UpdateUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UserAlias> m_userAliasesAdded;
 
@@ -119,6 +121,7 @@ class UpdateUserResult {
   Aws::Vector<UserAlias> m_userAliasesDeleted;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userAliasesAddedHasBeenSet = false;
   bool m_userAliasesUpdatedHasBeenSet = false;
   bool m_userAliasesDeletedHasBeenSet = false;

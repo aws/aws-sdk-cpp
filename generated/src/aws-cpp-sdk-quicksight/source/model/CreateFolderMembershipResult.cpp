@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFolderMembershipResult::CreateFolderMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFolderMembershipResult& CreateFolderMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetInteger("Status");

@@ -56,10 +56,13 @@ class GetInvitationsCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_invitationsCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_invitationsCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

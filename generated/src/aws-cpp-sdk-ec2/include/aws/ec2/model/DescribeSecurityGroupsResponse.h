@@ -84,12 +84,15 @@ class DescribeSecurityGroupsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<SecurityGroup> m_securityGroups;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

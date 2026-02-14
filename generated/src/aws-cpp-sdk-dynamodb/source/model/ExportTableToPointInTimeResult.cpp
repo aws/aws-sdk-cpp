@@ -20,6 +20,7 @@ using namespace Aws;
 ExportTableToPointInTimeResult::ExportTableToPointInTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExportTableToPointInTimeResult& ExportTableToPointInTimeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExportDescription")) {
     m_exportDescription = jsonValue.GetObject("ExportDescription");

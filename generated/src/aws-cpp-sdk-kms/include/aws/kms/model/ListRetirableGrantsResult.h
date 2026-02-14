@@ -101,6 +101,8 @@ class ListRetirableGrantsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<GrantListEntry> m_grants;
 
@@ -109,6 +111,7 @@ class ListRetirableGrantsResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_grantsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

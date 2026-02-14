@@ -78,12 +78,15 @@ class GetGeneratedPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   JobDetails m_jobDetails;
 
   GeneratedPolicyResults m_generatedPolicyResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobDetailsHasBeenSet = false;
   bool m_generatedPolicyResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -119,6 +119,8 @@ class UploadDocumentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_status;
 
@@ -129,6 +131,7 @@ class UploadDocumentsResult {
   Aws::Vector<DocumentServiceWarning> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_addsHasBeenSet = false;
   bool m_deletesHasBeenSet = false;

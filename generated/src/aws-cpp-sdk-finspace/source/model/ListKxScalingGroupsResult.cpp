@@ -20,6 +20,7 @@ using namespace Aws;
 ListKxScalingGroupsResult::ListKxScalingGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListKxScalingGroupsResult& ListKxScalingGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scalingGroups")) {
     Aws::Utils::Array<JsonView> scalingGroupsJsonList = jsonValue.GetArray("scalingGroups");

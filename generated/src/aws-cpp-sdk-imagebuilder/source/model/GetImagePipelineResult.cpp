@@ -19,6 +19,7 @@ using namespace Aws;
 GetImagePipelineResult::GetImagePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetImagePipelineResult& GetImagePipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");

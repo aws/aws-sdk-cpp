@@ -20,6 +20,7 @@ using namespace Aws;
 PublishSchemaResult::PublishSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PublishSchemaResult& PublishSchemaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PublishedSchemaArn")) {
     m_publishedSchemaArn = jsonValue.GetString("PublishedSchemaArn");

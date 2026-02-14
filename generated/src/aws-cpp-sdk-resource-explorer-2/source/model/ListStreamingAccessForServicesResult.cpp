@@ -23,6 +23,7 @@ ListStreamingAccessForServicesResult::ListStreamingAccessForServicesResult(const
 
 ListStreamingAccessForServicesResult& ListStreamingAccessForServicesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamingAccessForServices")) {
     Aws::Utils::Array<JsonView> streamingAccessForServicesJsonList = jsonValue.GetArray("StreamingAccessForServices");

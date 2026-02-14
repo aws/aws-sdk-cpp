@@ -118,6 +118,8 @@ class DescribeImageSigningStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_repositoryName;
 
@@ -128,6 +130,7 @@ class DescribeImageSigningStatusResult {
   Aws::Vector<ImageSigningStatus> m_signingStatuses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_repositoryNameHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_registryIdHasBeenSet = false;

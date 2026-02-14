@@ -118,6 +118,8 @@ class GetCoipPoolUsageResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_coipPoolId;
 
@@ -128,6 +130,7 @@ class GetCoipPoolUsageResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_coipPoolIdHasBeenSet = false;
   bool m_coipAddressUsagesHasBeenSet = false;
   bool m_localGatewayRouteTableIdHasBeenSet = false;

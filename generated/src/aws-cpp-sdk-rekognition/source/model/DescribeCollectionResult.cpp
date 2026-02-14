@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCollectionResult::DescribeCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCollectionResult& DescribeCollectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FaceCount")) {
     m_faceCount = jsonValue.GetInt64("FaceCount");

@@ -20,6 +20,7 @@ using namespace Aws;
 PopulateIdMappingTableResult::PopulateIdMappingTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PopulateIdMappingTableResult& PopulateIdMappingTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("idMappingJobId")) {
     m_idMappingJobId = jsonValue.GetString("idMappingJobId");

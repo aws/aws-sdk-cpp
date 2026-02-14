@@ -20,6 +20,7 @@ using namespace Aws;
 CreateInAppTemplateResult::CreateInAppTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateInAppTemplateResult& CreateInAppTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_templateCreateMessageBody = jsonValue;
   m_templateCreateMessageBodyHasBeenSet = true;

@@ -61,10 +61,13 @@ class RegisterTransitGatewayMulticastGroupMembersResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayMulticastRegisteredGroupMembers m_registeredMulticastGroupMembers;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registeredMulticastGroupMembersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ListPhoneNumbersOptedOutResult::ListPhoneNumbersOptedOutResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListPhoneNumbersOptedOutResult& ListPhoneNumbersOptedOutResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

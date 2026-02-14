@@ -59,10 +59,13 @@ class CreateContainerServiceDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContainerService m_containerService;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_containerServiceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

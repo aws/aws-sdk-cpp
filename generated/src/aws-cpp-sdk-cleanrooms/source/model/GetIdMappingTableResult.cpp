@@ -20,6 +20,7 @@ using namespace Aws;
 GetIdMappingTableResult::GetIdMappingTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIdMappingTableResult& GetIdMappingTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("idMappingTable")) {
     m_idMappingTable = jsonValue.GetObject("idMappingTable");

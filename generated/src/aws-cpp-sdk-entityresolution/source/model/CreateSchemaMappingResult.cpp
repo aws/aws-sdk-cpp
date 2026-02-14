@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSchemaMappingResult::CreateSchemaMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSchemaMappingResult& CreateSchemaMappingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("schemaName")) {
     m_schemaName = jsonValue.GetString("schemaName");

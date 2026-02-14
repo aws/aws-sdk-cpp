@@ -147,6 +147,8 @@ class SetUserPoolMfaConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SmsMfaConfigType m_smsMfaConfiguration;
 
@@ -159,6 +161,7 @@ class SetUserPoolMfaConfigResult {
   WebAuthnConfigurationType m_webAuthnConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_smsMfaConfigurationHasBeenSet = false;
   bool m_softwareTokenMfaConfigurationHasBeenSet = false;
   bool m_emailMfaConfigurationHasBeenSet = false;

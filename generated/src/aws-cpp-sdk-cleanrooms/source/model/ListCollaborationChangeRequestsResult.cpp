@@ -23,6 +23,7 @@ ListCollaborationChangeRequestsResult::ListCollaborationChangeRequestsResult(con
 
 ListCollaborationChangeRequestsResult& ListCollaborationChangeRequestsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaborationChangeRequestSummaries")) {
     Aws::Utils::Array<JsonView> collaborationChangeRequestSummariesJsonList = jsonValue.GetArray("collaborationChangeRequestSummaries");

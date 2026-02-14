@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteSdiSourceResult::DeleteSdiSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteSdiSourceResult& DeleteSdiSourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sdiSource")) {
     m_sdiSource = jsonValue.GetObject("sdiSource");

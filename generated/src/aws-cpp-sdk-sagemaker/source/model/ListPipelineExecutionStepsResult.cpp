@@ -20,6 +20,7 @@ using namespace Aws;
 ListPipelineExecutionStepsResult::ListPipelineExecutionStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPipelineExecutionStepsResult& ListPipelineExecutionStepsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PipelineExecutionSteps")) {
     Aws::Utils::Array<JsonView> pipelineExecutionStepsJsonList = jsonValue.GetArray("PipelineExecutionSteps");

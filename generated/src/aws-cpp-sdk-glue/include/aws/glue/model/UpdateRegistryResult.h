@@ -74,12 +74,15 @@ class UpdateRegistryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_registryName;
 
   Aws::String m_registryArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryNameHasBeenSet = false;
   bool m_registryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

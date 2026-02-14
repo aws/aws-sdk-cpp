@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIndexPoliciesResult::DescribeIndexPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeIndexPoliciesResult& DescribeIndexPoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("indexPolicies")) {
     Aws::Utils::Array<JsonView> indexPoliciesJsonList = jsonValue.GetArray("indexPolicies");

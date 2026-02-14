@@ -20,6 +20,7 @@ using namespace Aws;
 StopPipelineExecutionResult::StopPipelineExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopPipelineExecutionResult& StopPipelineExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pipelineExecutionId")) {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");

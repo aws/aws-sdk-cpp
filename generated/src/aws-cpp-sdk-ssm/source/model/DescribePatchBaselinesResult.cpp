@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePatchBaselinesResult::DescribePatchBaselinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePatchBaselinesResult& DescribePatchBaselinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BaselineIdentities")) {
     Aws::Utils::Array<JsonView> baselineIdentitiesJsonList = jsonValue.GetArray("BaselineIdentities");

@@ -151,6 +151,8 @@ class GetCustomVerificationEmailTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_templateName;
 
@@ -165,6 +167,7 @@ class GetCustomVerificationEmailTemplateResult {
   Aws::String m_failureRedirectionURL;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_templateNameHasBeenSet = false;
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_templateSubjectHasBeenSet = false;

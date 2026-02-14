@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCopyJobResult::DescribeCopyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCopyJobResult& DescribeCopyJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CopyJob")) {
     m_copyJob = jsonValue.GetObject("CopyJob");

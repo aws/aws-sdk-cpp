@@ -20,6 +20,7 @@ using namespace Aws;
 DescribePullRequestEventsResult::DescribePullRequestEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePullRequestEventsResult& DescribePullRequestEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullRequestEvents")) {
     Aws::Utils::Array<JsonView> pullRequestEventsJsonList = jsonValue.GetArray("pullRequestEvents");

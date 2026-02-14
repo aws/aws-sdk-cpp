@@ -100,6 +100,8 @@ class TerminateClientVpnConnectionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -108,6 +110,7 @@ class TerminateClientVpnConnectionsResponse {
   Aws::Vector<TerminateConnectionStatus> m_connectionStatuses;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
   bool m_connectionStatusesHasBeenSet = false;

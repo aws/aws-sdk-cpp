@@ -91,12 +91,15 @@ class ListVirtualRoutersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<VirtualRouterRef> m_virtualRouters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_virtualRoutersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

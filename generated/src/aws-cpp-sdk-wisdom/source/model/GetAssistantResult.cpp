@@ -20,6 +20,7 @@ using namespace Aws;
 GetAssistantResult::GetAssistantResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAssistantResult& GetAssistantResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assistant")) {
     m_assistant = jsonValue.GetObject("assistant");

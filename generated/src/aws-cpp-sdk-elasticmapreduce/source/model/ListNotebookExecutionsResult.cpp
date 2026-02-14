@@ -20,6 +20,7 @@ using namespace Aws;
 ListNotebookExecutionsResult::ListNotebookExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListNotebookExecutionsResult& ListNotebookExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotebookExecutions")) {
     Aws::Utils::Array<JsonView> notebookExecutionsJsonList = jsonValue.GetArray("NotebookExecutions");

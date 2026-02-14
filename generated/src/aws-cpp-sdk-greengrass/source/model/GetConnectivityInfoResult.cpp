@@ -20,6 +20,7 @@ using namespace Aws;
 GetConnectivityInfoResult::GetConnectivityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetConnectivityInfoResult& GetConnectivityInfoResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectivityInfo")) {
     Aws::Utils::Array<JsonView> connectivityInfoJsonList = jsonValue.GetArray("ConnectivityInfo");

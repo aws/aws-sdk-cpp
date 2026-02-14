@@ -88,12 +88,15 @@ class BatchGetBlueprintsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Blueprint> m_blueprints;
 
   Aws::Vector<Aws::String> m_missingBlueprints;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_blueprintsHasBeenSet = false;
   bool m_missingBlueprintsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

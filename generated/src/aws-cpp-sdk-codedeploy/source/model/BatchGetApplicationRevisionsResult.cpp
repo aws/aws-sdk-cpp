@@ -22,6 +22,7 @@ BatchGetApplicationRevisionsResult::BatchGetApplicationRevisionsResult(const Aws
 }
 
 BatchGetApplicationRevisionsResult& BatchGetApplicationRevisionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("applicationName")) {
     m_applicationName = jsonValue.GetString("applicationName");

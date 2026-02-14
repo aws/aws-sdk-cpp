@@ -20,6 +20,7 @@ using namespace Aws;
 DisableSnapshotCopyResult::DisableSnapshotCopyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 DisableSnapshotCopyResult& DisableSnapshotCopyResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

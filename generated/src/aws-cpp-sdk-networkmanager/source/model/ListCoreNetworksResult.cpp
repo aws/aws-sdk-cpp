@@ -20,6 +20,7 @@ using namespace Aws;
 ListCoreNetworksResult::ListCoreNetworksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCoreNetworksResult& ListCoreNetworksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CoreNetworks")) {
     Aws::Utils::Array<JsonView> coreNetworksJsonList = jsonValue.GetArray("CoreNetworks");

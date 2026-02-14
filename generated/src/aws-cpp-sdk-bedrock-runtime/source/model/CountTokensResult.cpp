@@ -20,6 +20,7 @@ using namespace Aws;
 CountTokensResult::CountTokensResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CountTokensResult& CountTokensResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("inputTokens")) {
     m_inputTokens = jsonValue.GetInteger("inputTokens");

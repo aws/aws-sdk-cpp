@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataCellsFilterResult::GetDataCellsFilterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataCellsFilterResult& GetDataCellsFilterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataCellsFilter")) {
     m_dataCellsFilter = jsonValue.GetObject("DataCellsFilter");

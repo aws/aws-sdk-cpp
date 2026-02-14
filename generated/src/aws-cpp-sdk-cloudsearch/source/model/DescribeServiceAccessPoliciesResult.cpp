@@ -23,6 +23,7 @@ DescribeServiceAccessPoliciesResult::DescribeServiceAccessPoliciesResult(const A
 
 DescribeServiceAccessPoliciesResult& DescribeServiceAccessPoliciesResult::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

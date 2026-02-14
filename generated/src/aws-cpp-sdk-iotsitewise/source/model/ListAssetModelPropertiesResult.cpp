@@ -20,6 +20,7 @@ using namespace Aws;
 ListAssetModelPropertiesResult::ListAssetModelPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAssetModelPropertiesResult& ListAssetModelPropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assetModelPropertySummaries")) {
     Aws::Utils::Array<JsonView> assetModelPropertySummariesJsonList = jsonValue.GetArray("assetModelPropertySummaries");

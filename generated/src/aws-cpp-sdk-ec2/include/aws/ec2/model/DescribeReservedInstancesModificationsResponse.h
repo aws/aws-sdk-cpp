@@ -93,12 +93,15 @@ class DescribeReservedInstancesModificationsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ReservedInstancesModification> m_reservedInstancesModifications;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_reservedInstancesModificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

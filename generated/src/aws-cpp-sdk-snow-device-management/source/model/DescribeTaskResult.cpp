@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTaskResult::DescribeTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTaskResult& DescribeTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("completedAt")) {
     m_completedAt = jsonValue.GetDouble("completedAt");

@@ -107,6 +107,8 @@ class CreateDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -115,6 +117,7 @@ class CreateDeploymentResult {
   Aws::String m_zipUploadUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_fileUploadUrlsHasBeenSet = false;
   bool m_zipUploadUrlHasBeenSet = false;

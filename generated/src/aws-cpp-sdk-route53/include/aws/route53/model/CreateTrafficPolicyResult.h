@@ -81,12 +81,15 @@ class CreateTrafficPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TrafficPolicy m_trafficPolicy;
 
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_trafficPolicyHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -56,10 +56,13 @@ class CreateDBSubnetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DBSubnetGroup m_dBSubnetGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dBSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

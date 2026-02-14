@@ -95,6 +95,8 @@ class GetProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contentEncoding;
 
@@ -103,6 +105,7 @@ class GetProfileResult {
   Aws::Utils::Stream::ResponseStream m_profile{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contentEncodingHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_profileHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteImportResult::DeleteImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteImportResult& DeleteImportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("importId")) {
     m_importId = jsonValue.GetString("importId");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIntegrationResult::CreateIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateIntegrationResult& CreateIntegrationResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

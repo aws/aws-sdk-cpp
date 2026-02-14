@@ -20,6 +20,7 @@ using namespace Aws;
 GetResolverQueryLogConfigResult::GetResolverQueryLogConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResolverQueryLogConfigResult& GetResolverQueryLogConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverQueryLogConfig")) {
     m_resolverQueryLogConfig = jsonValue.GetObject("ResolverQueryLogConfig");

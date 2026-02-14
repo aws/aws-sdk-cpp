@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteBrokerResult::DeleteBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBrokerResult& DeleteBrokerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("brokerId")) {
     m_brokerId = jsonValue.GetString("brokerId");

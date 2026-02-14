@@ -58,10 +58,13 @@ class UpdateRuleVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Rule m_rule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ruleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

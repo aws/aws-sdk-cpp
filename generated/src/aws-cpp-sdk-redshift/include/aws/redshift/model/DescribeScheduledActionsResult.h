@@ -88,12 +88,15 @@ class DescribeScheduledActionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<ScheduledAction> m_scheduledActions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_markerHasBeenSet = false;
   bool m_scheduledActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

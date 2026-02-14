@@ -20,6 +20,7 @@ using namespace Aws;
 GetGroupMembershipIdResult::GetGroupMembershipIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGroupMembershipIdResult& GetGroupMembershipIdResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MembershipId")) {
     m_membershipId = jsonValue.GetString("MembershipId");

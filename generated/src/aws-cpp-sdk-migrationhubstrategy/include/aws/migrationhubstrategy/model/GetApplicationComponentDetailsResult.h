@@ -126,6 +126,8 @@ class GetApplicationComponentDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationComponentDetail m_applicationComponentDetail;
 
@@ -136,6 +138,7 @@ class GetApplicationComponentDetailsResult {
   bool m_moreApplicationResource{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationComponentDetailHasBeenSet = false;
   bool m_associatedApplicationsHasBeenSet = false;
   bool m_associatedServerIdsHasBeenSet = false;

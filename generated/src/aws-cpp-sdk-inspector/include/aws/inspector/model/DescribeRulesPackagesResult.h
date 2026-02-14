@@ -91,12 +91,15 @@ class DescribeRulesPackagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RulesPackage> m_rulesPackages;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_rulesPackagesHasBeenSet = false;
   bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateProbeResult::CreateProbeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProbeResult& CreateProbeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("probeId")) {
     m_probeId = jsonValue.GetString("probeId");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetWirelessGatewayTaskResult::GetWirelessGatewayTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetWirelessGatewayTaskResult& GetWirelessGatewayTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WirelessGatewayId")) {
     m_wirelessGatewayId = jsonValue.GetString("WirelessGatewayId");

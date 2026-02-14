@@ -58,10 +58,13 @@ class DescribeHoursOfOperationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   HoursOfOperation m_hoursOfOperation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hoursOfOperationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 ExecuteQueryResult::ExecuteQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExecuteQueryResult& ExecuteQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("columnDescriptions")) {
     Aws::Utils::Array<JsonView> columnDescriptionsJsonList = jsonValue.GetArray("columnDescriptions");

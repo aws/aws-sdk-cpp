@@ -89,12 +89,15 @@ class DeleteFleetsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DeleteFleetSuccessItem> m_successfulFleetDeletions;
 
   Aws::Vector<DeleteFleetErrorItem> m_unsuccessfulFleetDeletions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulFleetDeletionsHasBeenSet = false;
   bool m_unsuccessfulFleetDeletionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

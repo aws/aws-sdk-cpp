@@ -20,6 +20,7 @@ using namespace Aws;
 ImportHostKeyResult::ImportHostKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ImportHostKeyResult& ImportHostKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServerId")) {
     m_serverId = jsonValue.GetString("ServerId");

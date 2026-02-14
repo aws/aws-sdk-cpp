@@ -20,6 +20,7 @@ using namespace Aws;
 TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TagResourceResult& TagResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceARN")) {
     m_resourceARN = jsonValue.GetString("ResourceARN");

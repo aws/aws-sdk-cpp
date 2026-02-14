@@ -91,12 +91,15 @@ class BatchCreateMemoryRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<MemoryRecordOutput> m_successfulRecords;
 
   Aws::Vector<MemoryRecordOutput> m_failedRecords;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_successfulRecordsHasBeenSet = false;
   bool m_failedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

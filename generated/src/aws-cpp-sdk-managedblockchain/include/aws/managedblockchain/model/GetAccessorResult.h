@@ -58,10 +58,13 @@ class GetAccessorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Accessor m_accessor;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accessorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

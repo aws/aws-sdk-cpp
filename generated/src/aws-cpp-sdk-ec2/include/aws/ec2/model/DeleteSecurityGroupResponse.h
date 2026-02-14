@@ -74,12 +74,15 @@ class DeleteSecurityGroupResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_return{false};
 
   Aws::String m_groupId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_returnHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

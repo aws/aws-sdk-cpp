@@ -56,10 +56,13 @@ class DeleteEgressOnlyInternetGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   bool m_returnCode{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_returnCodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -20,6 +20,7 @@ using namespace Aws;
 GetSegmentSnapshotResult::GetSegmentSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSegmentSnapshotResult& GetSegmentSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SnapshotId")) {
     m_snapshotId = jsonValue.GetString("SnapshotId");

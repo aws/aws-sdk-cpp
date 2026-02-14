@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataLakeNamespacesResult::ListDataLakeNamespacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataLakeNamespacesResult& ListDataLakeNamespacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("namespaces")) {
     Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");

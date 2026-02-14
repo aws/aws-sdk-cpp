@@ -20,6 +20,7 @@ using namespace Aws;
 DeregisterGatewayInstanceResult::DeregisterGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeregisterGatewayInstanceResult& DeregisterGatewayInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("gatewayInstanceArn")) {
     m_gatewayInstanceArn = jsonValue.GetString("gatewayInstanceArn");

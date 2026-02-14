@@ -59,10 +59,13 @@ class CreateVpcIngressConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VpcIngressConnection m_vpcIngressConnection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcIngressConnectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

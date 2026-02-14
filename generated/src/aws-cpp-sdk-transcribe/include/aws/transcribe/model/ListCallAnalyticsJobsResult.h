@@ -103,6 +103,8 @@ class ListCallAnalyticsJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CallAnalyticsJobStatus m_status{CallAnalyticsJobStatus::NOT_SET};
 
@@ -111,6 +113,7 @@ class ListCallAnalyticsJobsResult {
   Aws::Vector<CallAnalyticsJobSummary> m_callAnalyticsJobSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_callAnalyticsJobSummariesHasBeenSet = false;

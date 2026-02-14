@@ -20,6 +20,7 @@ using namespace Aws;
 GetSiteToSiteVpnAttachmentResult::GetSiteToSiteVpnAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSiteToSiteVpnAttachmentResult& GetSiteToSiteVpnAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SiteToSiteVpnAttachment")) {
     m_siteToSiteVpnAttachment = jsonValue.GetObject("SiteToSiteVpnAttachment");

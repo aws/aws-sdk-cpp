@@ -24,6 +24,7 @@ BatchUpdateStandardsControlAssociationsResult::BatchUpdateStandardsControlAssoci
 
 BatchUpdateStandardsControlAssociationsResult& BatchUpdateStandardsControlAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UnprocessedAssociationUpdates")) {
     Aws::Utils::Array<JsonView> unprocessedAssociationUpdatesJsonList = jsonValue.GetArray("UnprocessedAssociationUpdates");

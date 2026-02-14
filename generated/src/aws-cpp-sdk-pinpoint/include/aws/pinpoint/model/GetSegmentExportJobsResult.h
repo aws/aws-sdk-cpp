@@ -56,10 +56,13 @@ class GetSegmentExportJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ExportJobsResponse m_exportJobsResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_exportJobsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

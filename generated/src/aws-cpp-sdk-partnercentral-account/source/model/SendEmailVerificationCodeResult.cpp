@@ -20,6 +20,7 @@ using namespace Aws;
 SendEmailVerificationCodeResult::SendEmailVerificationCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendEmailVerificationCodeResult& SendEmailVerificationCodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

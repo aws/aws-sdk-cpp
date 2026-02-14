@@ -93,6 +93,8 @@ class SendMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -101,6 +103,7 @@ class SendMessageResult {
   MessageProcessingMetadata m_messageMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_absoluteTimeHasBeenSet = false;
   bool m_messageMetadataHasBeenSet = false;

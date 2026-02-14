@@ -57,10 +57,13 @@ class ModifySnapshotCopyRetentionPeriodResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Cluster m_cluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

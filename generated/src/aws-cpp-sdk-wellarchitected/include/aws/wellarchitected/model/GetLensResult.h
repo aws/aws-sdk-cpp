@@ -58,10 +58,13 @@ class GetLensResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Lens m_lens;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_lensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

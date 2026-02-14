@@ -108,6 +108,8 @@ class GetAssetContractResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ContractIdentifier m_contractIdentifier;
 
@@ -118,6 +120,7 @@ class GetAssetContractResult {
   ContractMetadata m_metadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contractIdentifierHasBeenSet = false;
   bool m_tokenStandardHasBeenSet = false;
   bool m_deployerAddressHasBeenSet = false;

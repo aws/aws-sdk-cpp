@@ -79,12 +79,15 @@ class GetImageRecipeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   ImageRecipe m_imageRecipe;
 
   LatestVersionReferences m_latestVersionReferences;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_imageRecipeHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;

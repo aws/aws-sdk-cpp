@@ -97,12 +97,15 @@ class TransactWriteItemsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
   Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>> m_itemCollectionMetrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_consumedCapacityHasBeenSet = false;
   bool m_itemCollectionMetricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 ListHandshakesForAccountResult::ListHandshakesForAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListHandshakesForAccountResult& ListHandshakesForAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Handshakes")) {
     Aws::Utils::Array<JsonView> handshakesJsonList = jsonValue.GetArray("Handshakes");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListMediaPipelinesResult::ListMediaPipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMediaPipelinesResult& ListMediaPipelinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MediaPipelines")) {
     Aws::Utils::Array<JsonView> mediaPipelinesJsonList = jsonValue.GetArray("MediaPipelines");

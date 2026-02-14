@@ -24,6 +24,7 @@ ListProtectConfigurationRuleSetNumberOverridesResult::ListProtectConfigurationRu
 
 ListProtectConfigurationRuleSetNumberOverridesResult& ListProtectConfigurationRuleSetNumberOverridesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProtectConfigurationArn")) {
     m_protectConfigurationArn = jsonValue.GetString("ProtectConfigurationArn");

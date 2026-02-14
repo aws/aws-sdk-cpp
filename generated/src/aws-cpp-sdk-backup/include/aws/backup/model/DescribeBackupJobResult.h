@@ -653,6 +653,8 @@ class DescribeBackupJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -719,6 +721,7 @@ class DescribeBackupJobResult {
   Aws::String m_messageCategory;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_backupJobIdHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;

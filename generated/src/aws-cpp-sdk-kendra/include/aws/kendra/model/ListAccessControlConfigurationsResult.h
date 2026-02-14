@@ -86,12 +86,15 @@ class ListAccessControlConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<AccessControlConfigurationSummary> m_accessControlConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_accessControlConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

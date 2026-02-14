@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAnalysisTemplateResult::CreateAnalysisTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAnalysisTemplateResult& CreateAnalysisTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("analysisTemplate")) {
     m_analysisTemplate = jsonValue.GetObject("analysisTemplate");

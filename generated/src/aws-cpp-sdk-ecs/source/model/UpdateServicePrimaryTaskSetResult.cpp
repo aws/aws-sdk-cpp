@@ -22,6 +22,7 @@ UpdateServicePrimaryTaskSetResult::UpdateServicePrimaryTaskSetResult(const Aws::
 }
 
 UpdateServicePrimaryTaskSetResult& UpdateServicePrimaryTaskSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskSet")) {
     m_taskSet = jsonValue.GetObject("taskSet");

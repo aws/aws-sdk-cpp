@@ -165,6 +165,8 @@ class GetDataAutomationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AutomationJobStatus m_status{AutomationJobStatus::NOT_SET};
 
@@ -181,6 +183,7 @@ class GetDataAutomationStatusResult {
   int m_jobDurationInSeconds{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

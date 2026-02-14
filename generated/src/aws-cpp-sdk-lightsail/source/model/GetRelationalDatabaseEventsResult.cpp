@@ -22,6 +22,7 @@ GetRelationalDatabaseEventsResult::GetRelationalDatabaseEventsResult(const Aws::
 }
 
 GetRelationalDatabaseEventsResult& GetRelationalDatabaseEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("relationalDatabaseEvents")) {
     Aws::Utils::Array<JsonView> relationalDatabaseEventsJsonList = jsonValue.GetArray("relationalDatabaseEvents");

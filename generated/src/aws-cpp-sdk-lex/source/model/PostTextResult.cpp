@@ -20,6 +20,7 @@ using namespace Aws;
 PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PostTextResult& PostTextResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("intentName")) {
     m_intentName = jsonValue.GetString("intentName");

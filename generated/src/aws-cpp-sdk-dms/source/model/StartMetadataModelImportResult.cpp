@@ -20,6 +20,7 @@ using namespace Aws;
 StartMetadataModelImportResult::StartMetadataModelImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartMetadataModelImportResult& StartMetadataModelImportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RequestIdentifier")) {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");

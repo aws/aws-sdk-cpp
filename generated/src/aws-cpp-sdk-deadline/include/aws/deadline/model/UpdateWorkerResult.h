@@ -77,12 +77,15 @@ class UpdateWorkerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LogConfiguration m_log;
 
   HostConfiguration m_hostConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_logHasBeenSet = false;
   bool m_hostConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

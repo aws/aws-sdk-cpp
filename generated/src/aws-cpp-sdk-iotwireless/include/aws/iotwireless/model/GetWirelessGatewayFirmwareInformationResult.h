@@ -59,10 +59,13 @@ class GetWirelessGatewayFirmwareInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   LoRaWANGatewayCurrentVersion m_loRaWAN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_loRaWANHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

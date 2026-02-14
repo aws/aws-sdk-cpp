@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteShareResult::DeleteShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteShareResult& DeleteShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("status"));

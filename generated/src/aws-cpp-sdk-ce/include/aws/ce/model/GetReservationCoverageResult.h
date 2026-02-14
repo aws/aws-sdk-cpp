@@ -102,6 +102,8 @@ class GetReservationCoverageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<CoverageByTime> m_coveragesByTime;
 
@@ -110,6 +112,7 @@ class GetReservationCoverageResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_coveragesByTimeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

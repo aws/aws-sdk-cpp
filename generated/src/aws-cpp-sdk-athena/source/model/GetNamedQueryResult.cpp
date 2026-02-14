@@ -20,6 +20,7 @@ using namespace Aws;
 GetNamedQueryResult::GetNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetNamedQueryResult& GetNamedQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NamedQuery")) {
     m_namedQuery = jsonValue.GetObject("NamedQuery");

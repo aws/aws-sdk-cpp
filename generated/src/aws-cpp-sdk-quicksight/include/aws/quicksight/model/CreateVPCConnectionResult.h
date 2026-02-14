@@ -122,6 +122,8 @@ class CreateVPCConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -134,6 +136,7 @@ class CreateVPCConnectionResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_vPCConnectionIdHasBeenSet = false;
   bool m_creationStatusHasBeenSet = false;

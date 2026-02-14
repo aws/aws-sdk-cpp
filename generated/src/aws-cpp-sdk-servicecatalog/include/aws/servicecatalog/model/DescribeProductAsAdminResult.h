@@ -158,6 +158,8 @@ class DescribeProductAsAdminResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProductViewDetail m_productViewDetail;
 
@@ -170,6 +172,7 @@ class DescribeProductAsAdminResult {
   Aws::Vector<BudgetDetail> m_budgets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_productViewDetailHasBeenSet = false;
   bool m_provisioningArtifactSummariesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

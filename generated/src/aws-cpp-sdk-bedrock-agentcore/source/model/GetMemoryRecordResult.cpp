@@ -20,6 +20,7 @@ using namespace Aws;
 GetMemoryRecordResult::GetMemoryRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMemoryRecordResult& GetMemoryRecordResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("memoryRecord")) {
     m_memoryRecord = jsonValue.GetObject("memoryRecord");

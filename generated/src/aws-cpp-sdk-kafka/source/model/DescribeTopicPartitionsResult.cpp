@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTopicPartitionsResult::DescribeTopicPartitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTopicPartitionsResult& DescribeTopicPartitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("partitions")) {
     Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("partitions");

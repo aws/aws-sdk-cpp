@@ -20,6 +20,7 @@ using namespace Aws;
 BatchReplaceClusterNodesResult::BatchReplaceClusterNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchReplaceClusterNodesResult& BatchReplaceClusterNodesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Successful")) {
     Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");

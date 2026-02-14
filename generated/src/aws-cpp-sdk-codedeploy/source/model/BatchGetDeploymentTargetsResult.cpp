@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetDeploymentTargetsResult::BatchGetDeploymentTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetDeploymentTargetsResult& BatchGetDeploymentTargetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deploymentTargets")) {
     Aws::Utils::Array<JsonView> deploymentTargetsJsonList = jsonValue.GetArray("deploymentTargets");

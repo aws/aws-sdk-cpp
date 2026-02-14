@@ -144,6 +144,8 @@ class GetContactChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_contactArn;
 
@@ -158,6 +160,7 @@ class GetContactChannelResult {
   ActivationStatus m_activationStatus{ActivationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_contactArnHasBeenSet = false;
   bool m_contactChannelArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

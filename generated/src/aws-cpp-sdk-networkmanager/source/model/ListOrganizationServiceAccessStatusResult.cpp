@@ -23,6 +23,7 @@ ListOrganizationServiceAccessStatusResult::ListOrganizationServiceAccessStatusRe
 
 ListOrganizationServiceAccessStatusResult& ListOrganizationServiceAccessStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationStatus")) {
     m_organizationStatus = jsonValue.GetObject("OrganizationStatus");

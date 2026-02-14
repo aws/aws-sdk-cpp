@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteRepositoryResult::DeleteRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteRepositoryResult& DeleteRepositoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("repositoryId")) {
     m_repositoryId = jsonValue.GetString("repositoryId");

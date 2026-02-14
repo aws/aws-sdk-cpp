@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCommentsResult::DescribeCommentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCommentsResult& DescribeCommentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Comments")) {
     Aws::Utils::Array<JsonView> commentsJsonList = jsonValue.GetArray("Comments");

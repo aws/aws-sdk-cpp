@@ -22,6 +22,7 @@ GetDefaultApplicationSettingResult::GetDefaultApplicationSettingResult(const Aws
 }
 
 GetDefaultApplicationSettingResult& GetDefaultApplicationSettingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("applicationArn")) {
     m_applicationArn = jsonValue.GetString("applicationArn");

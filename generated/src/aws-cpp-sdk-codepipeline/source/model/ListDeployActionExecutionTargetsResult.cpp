@@ -23,6 +23,7 @@ ListDeployActionExecutionTargetsResult::ListDeployActionExecutionTargetsResult(c
 
 ListDeployActionExecutionTargetsResult& ListDeployActionExecutionTargetsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("targets")) {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");

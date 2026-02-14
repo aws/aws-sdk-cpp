@@ -20,6 +20,7 @@ using namespace Aws;
 ListVoiceProfilesResult::ListVoiceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVoiceProfilesResult& ListVoiceProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VoiceProfiles")) {
     Aws::Utils::Array<JsonView> voiceProfilesJsonList = jsonValue.GetArray("VoiceProfiles");

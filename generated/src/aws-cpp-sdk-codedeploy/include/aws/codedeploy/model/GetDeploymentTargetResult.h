@@ -62,10 +62,13 @@ class GetDeploymentTargetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DeploymentTarget m_deploymentTarget;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deploymentTargetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

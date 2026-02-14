@@ -71,12 +71,15 @@ class GetSnowballUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   int m_snowballLimit{0};
 
   int m_snowballsInUse{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snowballLimitHasBeenSet = false;
   bool m_snowballsInUseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -126,6 +126,8 @@ class StopInferenceSchedulerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_modelArn;
 
@@ -138,6 +140,7 @@ class StopInferenceSchedulerResult {
   InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_modelArnHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;
   bool m_inferenceSchedulerNameHasBeenSet = false;

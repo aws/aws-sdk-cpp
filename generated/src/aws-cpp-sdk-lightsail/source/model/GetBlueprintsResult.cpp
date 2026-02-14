@@ -20,6 +20,7 @@ using namespace Aws;
 GetBlueprintsResult::GetBlueprintsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetBlueprintsResult& GetBlueprintsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("blueprints")) {
     Aws::Utils::Array<JsonView> blueprintsJsonList = jsonValue.GetArray("blueprints");

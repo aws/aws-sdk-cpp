@@ -20,6 +20,7 @@ using namespace Aws;
 ListSentimentDetectionJobsResult::ListSentimentDetectionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSentimentDetectionJobsResult& ListSentimentDetectionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SentimentDetectionJobPropertiesList")) {
     Aws::Utils::Array<JsonView> sentimentDetectionJobPropertiesListJsonList = jsonValue.GetArray("SentimentDetectionJobPropertiesList");

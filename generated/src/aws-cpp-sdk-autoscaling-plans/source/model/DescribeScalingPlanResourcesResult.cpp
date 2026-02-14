@@ -22,6 +22,7 @@ DescribeScalingPlanResourcesResult::DescribeScalingPlanResourcesResult(const Aws
 }
 
 DescribeScalingPlanResourcesResult& DescribeScalingPlanResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ScalingPlanResources")) {
     Aws::Utils::Array<JsonView> scalingPlanResourcesJsonList = jsonValue.GetArray("ScalingPlanResources");

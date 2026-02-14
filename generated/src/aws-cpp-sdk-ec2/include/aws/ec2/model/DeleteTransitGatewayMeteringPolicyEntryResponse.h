@@ -61,10 +61,13 @@ class DeleteTransitGatewayMeteringPolicyEntryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayMeteringPolicyEntry m_transitGatewayMeteringPolicyEntry;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transitGatewayMeteringPolicyEntryHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

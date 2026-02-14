@@ -74,12 +74,15 @@ class CreateStudioResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_studioId;
 
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_studioIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

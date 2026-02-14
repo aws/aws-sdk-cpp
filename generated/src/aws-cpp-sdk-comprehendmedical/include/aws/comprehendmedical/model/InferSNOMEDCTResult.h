@@ -143,6 +143,8 @@ class InferSNOMEDCTResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SNOMEDCTEntity> m_entities;
 
@@ -155,6 +157,7 @@ class InferSNOMEDCTResult {
   Characters m_characters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;

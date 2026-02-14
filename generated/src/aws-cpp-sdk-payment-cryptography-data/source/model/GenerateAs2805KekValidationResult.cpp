@@ -22,6 +22,7 @@ GenerateAs2805KekValidationResult::GenerateAs2805KekValidationResult(const Aws::
 }
 
 GenerateAs2805KekValidationResult& GenerateAs2805KekValidationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyArn")) {
     m_keyArn = jsonValue.GetString("KeyArn");

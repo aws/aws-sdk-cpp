@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeBotResult::DescribeBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeBotResult& DescribeBotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botId")) {
     m_botId = jsonValue.GetString("botId");

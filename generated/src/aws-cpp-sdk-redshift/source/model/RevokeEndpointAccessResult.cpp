@@ -20,6 +20,7 @@ using namespace Aws;
 RevokeEndpointAccessResult::RevokeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 RevokeEndpointAccessResult& RevokeEndpointAccessResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

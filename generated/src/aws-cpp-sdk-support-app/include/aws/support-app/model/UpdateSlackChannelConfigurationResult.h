@@ -180,6 +180,8 @@ class UpdateSlackChannelConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_channelId;
 
@@ -198,6 +200,7 @@ class UpdateSlackChannelConfigurationResult {
   Aws::String m_teamId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_channelIdHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_channelRoleArnHasBeenSet = false;

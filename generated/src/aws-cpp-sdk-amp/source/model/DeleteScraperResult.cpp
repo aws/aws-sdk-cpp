@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteScraperResult::DeleteScraperResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteScraperResult& DeleteScraperResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("scraperId")) {
     m_scraperId = jsonValue.GetString("scraperId");

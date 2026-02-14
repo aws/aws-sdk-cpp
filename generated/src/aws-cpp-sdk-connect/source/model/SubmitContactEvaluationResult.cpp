@@ -20,6 +20,7 @@ using namespace Aws;
 SubmitContactEvaluationResult::SubmitContactEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SubmitContactEvaluationResult& SubmitContactEvaluationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationId")) {
     m_evaluationId = jsonValue.GetString("EvaluationId");

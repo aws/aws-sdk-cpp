@@ -20,6 +20,7 @@ using namespace Aws;
 RemoveAllBackendsResult::RemoveAllBackendsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RemoveAllBackendsResult& RemoveAllBackendsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("appId")) {
     m_appId = jsonValue.GetString("appId");

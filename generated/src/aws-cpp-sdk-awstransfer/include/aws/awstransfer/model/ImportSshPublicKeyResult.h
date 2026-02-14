@@ -99,6 +99,8 @@ class ImportSshPublicKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_serverId;
 
@@ -107,6 +109,7 @@ class ImportSshPublicKeyResult {
   Aws::String m_userName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_serverIdHasBeenSet = false;
   bool m_sshPublicKeyIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;

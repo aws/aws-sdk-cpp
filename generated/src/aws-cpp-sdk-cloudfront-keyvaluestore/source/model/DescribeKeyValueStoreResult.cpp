@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeKeyValueStoreResult::DescribeKeyValueStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeKeyValueStoreResult& DescribeKeyValueStoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ItemCount")) {
     m_itemCount = jsonValue.GetInteger("ItemCount");

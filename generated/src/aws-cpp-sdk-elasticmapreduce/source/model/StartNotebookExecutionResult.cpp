@@ -20,6 +20,7 @@ using namespace Aws;
 StartNotebookExecutionResult::StartNotebookExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartNotebookExecutionResult& StartNotebookExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NotebookExecutionId")) {
     m_notebookExecutionId = jsonValue.GetString("NotebookExecutionId");

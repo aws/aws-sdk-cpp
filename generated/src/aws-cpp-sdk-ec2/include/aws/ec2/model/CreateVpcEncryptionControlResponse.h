@@ -58,10 +58,13 @@ class CreateVpcEncryptionControlResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   VpcEncryptionControl m_vpcEncryptionControl;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcEncryptionControlHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

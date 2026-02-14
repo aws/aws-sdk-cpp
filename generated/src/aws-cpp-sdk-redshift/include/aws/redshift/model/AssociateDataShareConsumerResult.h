@@ -151,6 +151,8 @@ class AssociateDataShareConsumerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_dataShareArn;
 
@@ -165,6 +167,7 @@ class AssociateDataShareConsumerResult {
   DataShareType m_dataShareType{DataShareType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_dataShareArnHasBeenSet = false;
   bool m_producerArnHasBeenSet = false;
   bool m_allowPubliclyAccessibleConsumersHasBeenSet = false;

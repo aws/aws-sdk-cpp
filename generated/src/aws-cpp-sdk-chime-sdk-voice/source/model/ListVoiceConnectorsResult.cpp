@@ -20,6 +20,7 @@ using namespace Aws;
 ListVoiceConnectorsResult::ListVoiceConnectorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListVoiceConnectorsResult& ListVoiceConnectorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VoiceConnectors")) {
     Aws::Utils::Array<JsonView> voiceConnectorsJsonList = jsonValue.GetArray("VoiceConnectors");

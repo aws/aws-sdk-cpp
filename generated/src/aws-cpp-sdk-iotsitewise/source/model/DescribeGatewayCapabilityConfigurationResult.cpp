@@ -24,6 +24,7 @@ DescribeGatewayCapabilityConfigurationResult::DescribeGatewayCapabilityConfigura
 
 DescribeGatewayCapabilityConfigurationResult& DescribeGatewayCapabilityConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("gatewayId")) {
     m_gatewayId = jsonValue.GetString("gatewayId");

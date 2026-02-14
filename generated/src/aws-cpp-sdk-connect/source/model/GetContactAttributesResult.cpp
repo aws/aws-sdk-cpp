@@ -20,6 +20,7 @@ using namespace Aws;
 GetContactAttributesResult::GetContactAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetContactAttributesResult& GetContactAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDiscovererResult::UpdateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDiscovererResult& UpdateDiscovererResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchAddClusterNodesResult::BatchAddClusterNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchAddClusterNodesResult& BatchAddClusterNodesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Successful")) {
     Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");

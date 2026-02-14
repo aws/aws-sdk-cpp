@@ -89,6 +89,8 @@ class SendProjectSessionActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_result;
 
@@ -97,6 +99,7 @@ class SendProjectSessionActionResult {
   int m_actionId{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_resultHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_actionIdHasBeenSet = false;

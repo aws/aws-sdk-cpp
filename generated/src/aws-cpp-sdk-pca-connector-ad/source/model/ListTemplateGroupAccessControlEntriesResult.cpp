@@ -24,6 +24,7 @@ ListTemplateGroupAccessControlEntriesResult::ListTemplateGroupAccessControlEntri
 
 ListTemplateGroupAccessControlEntriesResult& ListTemplateGroupAccessControlEntriesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccessControlEntries")) {
     Aws::Utils::Array<JsonView> accessControlEntriesJsonList = jsonValue.GetArray("AccessControlEntries");

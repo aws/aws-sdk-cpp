@@ -20,6 +20,7 @@ using namespace Aws;
 ListParallelDataResult::ListParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListParallelDataResult& ListParallelDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ParallelDataPropertiesList")) {
     Aws::Utils::Array<JsonView> parallelDataPropertiesListJsonList = jsonValue.GetArray("ParallelDataPropertiesList");

@@ -59,10 +59,13 @@ class DisassociateTransitGatewayPolicyTableResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayPolicyTableAssociation m_association;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_associationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

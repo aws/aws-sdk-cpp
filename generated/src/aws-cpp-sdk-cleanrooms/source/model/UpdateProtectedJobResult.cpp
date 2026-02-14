@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateProtectedJobResult::UpdateProtectedJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateProtectedJobResult& UpdateProtectedJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("protectedJob")) {
     m_protectedJob = jsonValue.GetObject("protectedJob");

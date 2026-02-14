@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateKxUserResult::UpdateKxUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateKxUserResult& UpdateKxUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("userName")) {
     m_userName = jsonValue.GetString("userName");

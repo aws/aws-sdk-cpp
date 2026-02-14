@@ -20,6 +20,7 @@ using namespace Aws;
 ListGraphqlApisResult::ListGraphqlApisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListGraphqlApisResult& ListGraphqlApisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("graphqlApis")) {
     Aws::Utils::Array<JsonView> graphqlApisJsonList = jsonValue.GetArray("graphqlApis");

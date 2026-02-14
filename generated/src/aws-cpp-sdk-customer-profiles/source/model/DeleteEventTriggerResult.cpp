@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteEventTriggerResult::DeleteEventTriggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteEventTriggerResult& DeleteEventTriggerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");

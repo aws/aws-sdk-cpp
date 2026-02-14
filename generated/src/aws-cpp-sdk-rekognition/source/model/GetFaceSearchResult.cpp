@@ -20,6 +20,7 @@ using namespace Aws;
 GetFaceSearchResult::GetFaceSearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFaceSearchResult& GetFaceSearchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));

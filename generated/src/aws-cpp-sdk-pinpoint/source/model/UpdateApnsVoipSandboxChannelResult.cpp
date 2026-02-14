@@ -22,6 +22,7 @@ UpdateApnsVoipSandboxChannelResult::UpdateApnsVoipSandboxChannelResult(const Aws
 }
 
 UpdateApnsVoipSandboxChannelResult& UpdateApnsVoipSandboxChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_aPNSVoipSandboxChannelResponse = jsonValue;
   m_aPNSVoipSandboxChannelResponseHasBeenSet = true;

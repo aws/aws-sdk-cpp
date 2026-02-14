@@ -303,6 +303,8 @@ class UpdateSubscriptionRequestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_id;
 
@@ -333,6 +335,7 @@ class UpdateSubscriptionRequestResult {
   Aws::Vector<FormOutput> m_metadataForms;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_idHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;

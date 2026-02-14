@@ -20,6 +20,7 @@ using namespace Aws;
 PutPlaybackConfigurationResult::PutPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AdDecisionServerUrl")) {
     m_adDecisionServerUrl = jsonValue.GetString("AdDecisionServerUrl");

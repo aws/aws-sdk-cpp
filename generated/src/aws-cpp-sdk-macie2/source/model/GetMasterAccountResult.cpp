@@ -20,6 +20,7 @@ using namespace Aws;
 GetMasterAccountResult::GetMasterAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMasterAccountResult& GetMasterAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("master")) {
     m_master = jsonValue.GetObject("master");

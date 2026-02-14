@@ -76,12 +76,15 @@ class StartImagePipelineExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_requestId;
 
   Aws::String m_clientToken;
 
   Aws::String m_imageBuildVersionArn;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_imageBuildVersionArnHasBeenSet = false;

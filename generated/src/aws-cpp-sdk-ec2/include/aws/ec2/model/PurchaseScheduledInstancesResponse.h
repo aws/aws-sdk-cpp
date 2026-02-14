@@ -71,10 +71,13 @@ class PurchaseScheduledInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ScheduledInstance> m_scheduledInstanceSet;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scheduledInstanceSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

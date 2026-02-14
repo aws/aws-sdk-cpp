@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterThingResult::RegisterThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterThingResult& RegisterThingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("certificatePem")) {
     m_certificatePem = jsonValue.GetString("certificatePem");

@@ -189,6 +189,8 @@ class DescribeProvisioningParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
 
@@ -203,6 +205,7 @@ class DescribeProvisioningParametersResult {
   Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_provisioningArtifactParametersHasBeenSet = false;
   bool m_constraintSummariesHasBeenSet = false;
   bool m_usageInstructionsHasBeenSet = false;

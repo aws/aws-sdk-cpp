@@ -79,12 +79,15 @@ class ListDeliveryStreamsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Aws::String> m_deliveryStreamNames;
 
   bool m_hasMoreDeliveryStreams{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deliveryStreamNamesHasBeenSet = false;
   bool m_hasMoreDeliveryStreamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

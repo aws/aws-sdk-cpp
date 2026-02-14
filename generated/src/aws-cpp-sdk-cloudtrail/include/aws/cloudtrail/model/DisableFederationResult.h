@@ -74,12 +74,15 @@ class DisableFederationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_eventDataStoreArn;
 
   FederationStatus m_federationStatus{FederationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventDataStoreArnHasBeenSet = false;
   bool m_federationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

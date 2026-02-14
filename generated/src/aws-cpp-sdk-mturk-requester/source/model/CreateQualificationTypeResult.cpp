@@ -20,6 +20,7 @@ using namespace Aws;
 CreateQualificationTypeResult::CreateQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateQualificationTypeResult& CreateQualificationTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QualificationType")) {
     m_qualificationType = jsonValue.GetObject("QualificationType");

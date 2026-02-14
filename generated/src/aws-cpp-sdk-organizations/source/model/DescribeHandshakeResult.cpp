@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeHandshakeResult::DescribeHandshakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeHandshakeResult& DescribeHandshakeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Handshake")) {
     m_handshake = jsonValue.GetObject("Handshake");

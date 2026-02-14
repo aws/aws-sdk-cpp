@@ -20,6 +20,7 @@ using namespace Aws;
 GetImpersonationRoleResult::GetImpersonationRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetImpersonationRoleResult& GetImpersonationRoleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ImpersonationRoleId")) {
     m_impersonationRoleId = jsonValue.GetString("ImpersonationRoleId");

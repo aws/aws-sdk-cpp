@@ -160,6 +160,8 @@ class DescribeLocationS3Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_locationArn;
 
@@ -174,6 +176,7 @@ class DescribeLocationS3Result {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_s3StorageClassHasBeenSet = false;

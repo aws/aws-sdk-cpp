@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeFirewallMetadataResult::DescribeFirewallMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeFirewallMetadataResult& DescribeFirewallMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallArn")) {
     m_firewallArn = jsonValue.GetString("FirewallArn");

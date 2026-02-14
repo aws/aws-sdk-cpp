@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataLakeSettingsResult::GetDataLakeSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataLakeSettingsResult& GetDataLakeSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataLakeSettings")) {
     m_dataLakeSettings = jsonValue.GetObject("DataLakeSettings");

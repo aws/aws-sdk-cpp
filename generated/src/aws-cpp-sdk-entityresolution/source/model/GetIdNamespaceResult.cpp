@@ -20,6 +20,7 @@ using namespace Aws;
 GetIdNamespaceResult::GetIdNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetIdNamespaceResult& GetIdNamespaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("idNamespaceName")) {
     m_idNamespaceName = jsonValue.GetString("idNamespaceName");

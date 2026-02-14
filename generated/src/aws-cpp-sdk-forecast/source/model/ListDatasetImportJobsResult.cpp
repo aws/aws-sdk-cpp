@@ -20,6 +20,7 @@ using namespace Aws;
 ListDatasetImportJobsResult::ListDatasetImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDatasetImportJobsResult& ListDatasetImportJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DatasetImportJobs")) {
     Aws::Utils::Array<JsonView> datasetImportJobsJsonList = jsonValue.GetArray("DatasetImportJobs");

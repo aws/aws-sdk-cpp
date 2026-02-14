@@ -22,6 +22,7 @@ CreateDistributionTenant2020_05_31Result::CreateDistributionTenant2020_05_31Resu
 
 CreateDistributionTenant2020_05_31Result& CreateDistributionTenant2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

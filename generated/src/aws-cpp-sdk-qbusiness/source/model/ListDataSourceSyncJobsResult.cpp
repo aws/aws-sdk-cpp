@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataSourceSyncJobsResult::ListDataSourceSyncJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataSourceSyncJobsResult& ListDataSourceSyncJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("history")) {
     Aws::Utils::Array<JsonView> historyJsonList = jsonValue.GetArray("history");

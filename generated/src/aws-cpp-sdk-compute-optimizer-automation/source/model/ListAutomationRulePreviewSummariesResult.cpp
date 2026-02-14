@@ -23,6 +23,7 @@ ListAutomationRulePreviewSummariesResult::ListAutomationRulePreviewSummariesResu
 
 ListAutomationRulePreviewSummariesResult& ListAutomationRulePreviewSummariesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("previewResultSummaries")) {
     Aws::Utils::Array<JsonView> previewResultSummariesJsonList = jsonValue.GetArray("previewResultSummaries");

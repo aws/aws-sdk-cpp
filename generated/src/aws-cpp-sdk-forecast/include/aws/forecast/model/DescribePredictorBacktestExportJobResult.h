@@ -206,6 +206,8 @@ class DescribePredictorBacktestExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_predictorBacktestExportJobArn;
 
@@ -226,6 +228,7 @@ class DescribePredictorBacktestExportJobResult {
   Aws::String m_format;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_predictorBacktestExportJobArnHasBeenSet = false;
   bool m_predictorBacktestExportJobNameHasBeenSet = false;
   bool m_predictorArnHasBeenSet = false;

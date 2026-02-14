@@ -64,10 +64,13 @@ class DescribeCertificateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CertificateDescription m_certificateDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_certificateDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

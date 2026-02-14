@@ -107,6 +107,8 @@ class DescribeConnectorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Map<ConnectorType, ConnectorConfiguration> m_connectorConfigurations;
 
@@ -115,6 +117,7 @@ class DescribeConnectorsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_connectorConfigurationsHasBeenSet = false;
   bool m_connectorsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

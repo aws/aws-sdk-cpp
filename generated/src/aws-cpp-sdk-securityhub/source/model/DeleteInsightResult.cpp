@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteInsightResult::DeleteInsightResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteInsightResult& DeleteInsightResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InsightArn")) {
     m_insightArn = jsonValue.GetString("InsightArn");

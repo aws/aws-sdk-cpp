@@ -23,6 +23,7 @@ GetFindingsReportAccountSummaryResult::GetFindingsReportAccountSummaryResult(con
 
 GetFindingsReportAccountSummaryResult& GetFindingsReportAccountSummaryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

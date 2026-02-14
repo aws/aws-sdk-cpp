@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateIpAccessSettingsResult::UpdateIpAccessSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIpAccessSettingsResult& UpdateIpAccessSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ipAccessSettings")) {
     m_ipAccessSettings = jsonValue.GetObject("ipAccessSettings");

@@ -74,12 +74,15 @@ class CreateMitigationActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_actionArn;
 
   Aws::String m_actionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_actionArnHasBeenSet = false;
   bool m_actionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

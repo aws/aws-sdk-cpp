@@ -20,6 +20,7 @@ using namespace Aws;
 GetRouterNetworkInterfaceResult::GetRouterNetworkInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRouterNetworkInterfaceResult& GetRouterNetworkInterfaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("routerNetworkInterface")) {
     m_routerNetworkInterface = jsonValue.GetObject("routerNetworkInterface");

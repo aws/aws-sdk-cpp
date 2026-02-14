@@ -58,10 +58,13 @@ class CreateGameSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   GameSession m_gameSession;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_gameSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

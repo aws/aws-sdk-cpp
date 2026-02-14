@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateClusterResult::UpdateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateClusterResult& UpdateClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Cluster")) {
     m_cluster = jsonValue.GetObject("Cluster");

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteDomainLayoutResult::DeleteDomainLayoutResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDomainLayoutResult& DeleteDomainLayoutResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");

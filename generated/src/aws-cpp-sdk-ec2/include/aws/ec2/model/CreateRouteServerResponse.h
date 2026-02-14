@@ -58,10 +58,13 @@ class CreateRouteServerResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RouteServer m_routeServer;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routeServerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

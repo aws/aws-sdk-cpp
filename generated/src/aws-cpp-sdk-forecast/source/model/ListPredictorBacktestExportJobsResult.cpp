@@ -23,6 +23,7 @@ ListPredictorBacktestExportJobsResult::ListPredictorBacktestExportJobsResult(con
 
 ListPredictorBacktestExportJobsResult& ListPredictorBacktestExportJobsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PredictorBacktestExportJobs")) {
     Aws::Utils::Array<JsonView> predictorBacktestExportJobsJsonList = jsonValue.GetArray("PredictorBacktestExportJobs");

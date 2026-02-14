@@ -22,6 +22,7 @@ AssociateExternalConnectionResult::AssociateExternalConnectionResult(const Aws::
 }
 
 AssociateExternalConnectionResult& AssociateExternalConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("repository")) {
     m_repository = jsonValue.GetObject("repository");

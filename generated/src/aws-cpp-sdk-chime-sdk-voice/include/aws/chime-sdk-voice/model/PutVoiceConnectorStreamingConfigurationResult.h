@@ -60,10 +60,13 @@ class PutVoiceConnectorStreamingConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   StreamingConfiguration m_streamingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_streamingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

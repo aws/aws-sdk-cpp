@@ -23,6 +23,7 @@ CreatePerformanceAnalysisReportResult::CreatePerformanceAnalysisReportResult(con
 
 CreatePerformanceAnalysisReportResult& CreatePerformanceAnalysisReportResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AnalysisReportId")) {
     m_analysisReportId = jsonValue.GetString("AnalysisReportId");

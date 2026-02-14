@@ -58,10 +58,13 @@ class DeleteInstanceConnectEndpointResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Ec2InstanceConnectEndpoint m_instanceConnectEndpoint;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_instanceConnectEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

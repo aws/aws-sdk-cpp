@@ -20,6 +20,7 @@ using namespace Aws;
 GetReportGroupTrendResult::GetReportGroupTrendResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetReportGroupTrendResult& GetReportGroupTrendResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stats")) {
     m_stats = jsonValue.GetObject("stats");

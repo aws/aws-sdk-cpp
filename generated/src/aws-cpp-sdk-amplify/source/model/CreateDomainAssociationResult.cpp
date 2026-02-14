@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDomainAssociationResult::CreateDomainAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDomainAssociationResult& CreateDomainAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainAssociation")) {
     m_domainAssociation = jsonValue.GetObject("domainAssociation");

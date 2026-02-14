@@ -20,6 +20,7 @@ using namespace Aws;
 CreateProfileShareResult::CreateProfileShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProfileShareResult& CreateProfileShareResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ShareId")) {
     m_shareId = jsonValue.GetString("ShareId");

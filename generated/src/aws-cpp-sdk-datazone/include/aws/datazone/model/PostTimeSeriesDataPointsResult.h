@@ -116,6 +116,8 @@ class PostTimeSeriesDataPointsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_domainId;
 
@@ -126,6 +128,7 @@ class PostTimeSeriesDataPointsResult {
   Aws::Vector<TimeSeriesDataPointFormOutput> m_forms;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;

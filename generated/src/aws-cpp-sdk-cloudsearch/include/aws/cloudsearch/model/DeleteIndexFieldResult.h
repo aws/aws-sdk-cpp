@@ -64,10 +64,13 @@ class DeleteIndexFieldResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   IndexFieldStatus m_indexField;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_indexFieldHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

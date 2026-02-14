@@ -57,10 +57,13 @@ class PutOrganizationConfigRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_organizationConfigRuleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_organizationConfigRuleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

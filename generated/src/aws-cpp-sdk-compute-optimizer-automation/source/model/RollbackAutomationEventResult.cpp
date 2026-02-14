@@ -20,6 +20,7 @@ using namespace Aws;
 RollbackAutomationEventResult::RollbackAutomationEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RollbackAutomationEventResult& RollbackAutomationEventResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("eventId")) {
     m_eventId = jsonValue.GetString("eventId");

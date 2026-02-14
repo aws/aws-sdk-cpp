@@ -58,10 +58,13 @@ class GetTableEncryptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EncryptionConfiguration m_encryptionConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_encryptionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

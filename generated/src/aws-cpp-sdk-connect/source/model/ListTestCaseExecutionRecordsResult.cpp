@@ -22,6 +22,7 @@ ListTestCaseExecutionRecordsResult::ListTestCaseExecutionRecordsResult(const Aws
 }
 
 ListTestCaseExecutionRecordsResult& ListTestCaseExecutionRecordsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExecutionRecords")) {
     Aws::Utils::Array<JsonView> executionRecordsJsonList = jsonValue.GetArray("ExecutionRecords");

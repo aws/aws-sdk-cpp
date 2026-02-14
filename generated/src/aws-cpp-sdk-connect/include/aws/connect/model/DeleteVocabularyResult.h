@@ -90,6 +90,8 @@ class DeleteVocabularyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_vocabularyArn;
 
@@ -98,6 +100,7 @@ class DeleteVocabularyResult {
   VocabularyState m_state{VocabularyState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vocabularyArnHasBeenSet = false;
   bool m_vocabularyIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;

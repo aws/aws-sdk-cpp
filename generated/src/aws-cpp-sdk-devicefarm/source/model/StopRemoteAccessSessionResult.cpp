@@ -20,6 +20,7 @@ using namespace Aws;
 StopRemoteAccessSessionResult::StopRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopRemoteAccessSessionResult& StopRemoteAccessSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("remoteAccessSession")) {
     m_remoteAccessSession = jsonValue.GetObject("remoteAccessSession");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetInsightImpactGraphResult::GetInsightImpactGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInsightImpactGraphResult& GetInsightImpactGraphResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InsightId")) {
     m_insightId = jsonValue.GetString("InsightId");

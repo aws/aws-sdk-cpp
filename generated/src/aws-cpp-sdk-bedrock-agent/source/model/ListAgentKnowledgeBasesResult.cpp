@@ -20,6 +20,7 @@ using namespace Aws;
 ListAgentKnowledgeBasesResult::ListAgentKnowledgeBasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAgentKnowledgeBasesResult& ListAgentKnowledgeBasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentKnowledgeBaseSummaries")) {
     Aws::Utils::Array<JsonView> agentKnowledgeBaseSummariesJsonList = jsonValue.GetArray("agentKnowledgeBaseSummaries");

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAutomationRuleResult::CreateAutomationRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAutomationRuleResult& CreateAutomationRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleArn")) {
     m_ruleArn = jsonValue.GetString("RuleArn");

@@ -65,10 +65,13 @@ class GetUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<UserAlias> m_userAliases;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_userAliasesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

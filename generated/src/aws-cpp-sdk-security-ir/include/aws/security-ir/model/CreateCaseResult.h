@@ -58,10 +58,13 @@ class CreateCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_caseId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_caseIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -75,12 +75,15 @@ class CreateEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_endpointArn;
 
   Aws::String m_modelArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointArnHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

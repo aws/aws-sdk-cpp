@@ -24,6 +24,7 @@ DescribeDefaultEncryptionConfigurationResult::DescribeDefaultEncryptionConfigura
 
 DescribeDefaultEncryptionConfigurationResult& DescribeDefaultEncryptionConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("encryptionType")) {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("encryptionType"));

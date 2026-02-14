@@ -58,10 +58,13 @@ class UpdateShareInvitationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ShareInvitation m_shareInvitation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_shareInvitationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

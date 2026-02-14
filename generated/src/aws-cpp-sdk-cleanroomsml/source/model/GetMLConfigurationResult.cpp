@@ -20,6 +20,7 @@ using namespace Aws;
 GetMLConfigurationResult::GetMLConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMLConfigurationResult& GetMLConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("membershipIdentifier")) {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");

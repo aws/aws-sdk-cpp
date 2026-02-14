@@ -20,6 +20,7 @@ using namespace Aws;
 CreateProvisioningClaimResult::CreateProvisioningClaimResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProvisioningClaimResult& CreateProvisioningClaimResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("certificateId")) {
     m_certificateId = jsonValue.GetString("certificateId");

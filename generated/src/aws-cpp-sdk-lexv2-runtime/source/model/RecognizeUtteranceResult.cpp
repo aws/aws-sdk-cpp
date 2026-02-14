@@ -19,6 +19,7 @@ using namespace Aws;
 RecognizeUtteranceResult::RecognizeUtteranceResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 RecognizeUtteranceResult& RecognizeUtteranceResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_responseCode = result.GetResponseCode();
   m_audioStream = result.TakeOwnershipOfPayload();
   m_audioStreamHasBeenSet = true;
 

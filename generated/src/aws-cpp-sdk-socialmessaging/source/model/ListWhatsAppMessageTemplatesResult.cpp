@@ -22,6 +22,7 @@ ListWhatsAppMessageTemplatesResult::ListWhatsAppMessageTemplatesResult(const Aws
 }
 
 ListWhatsAppMessageTemplatesResult& ListWhatsAppMessageTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("templates")) {
     Aws::Utils::Array<JsonView> templatesJsonList = jsonValue.GetArray("templates");

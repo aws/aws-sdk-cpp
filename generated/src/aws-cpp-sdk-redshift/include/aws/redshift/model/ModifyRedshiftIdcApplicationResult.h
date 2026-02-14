@@ -56,10 +56,13 @@ class ModifyRedshiftIdcApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RedshiftIdcApplication m_redshiftIdcApplication;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_redshiftIdcApplicationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

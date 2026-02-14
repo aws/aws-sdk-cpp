@@ -193,6 +193,8 @@ class CreateKxChangesetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_changesetId;
 
@@ -211,6 +213,7 @@ class CreateKxChangesetResult {
   ErrorInfo m_errorInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_changesetIdHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;

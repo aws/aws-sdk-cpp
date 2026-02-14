@@ -20,6 +20,7 @@ using namespace Aws;
 StartContinuousExportResult::StartContinuousExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartContinuousExportResult& StartContinuousExportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("exportId")) {
     m_exportId = jsonValue.GetString("exportId");

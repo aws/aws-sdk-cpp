@@ -20,6 +20,7 @@ using namespace Aws;
 GetFunctionRecursionConfigResult::GetFunctionRecursionConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFunctionRecursionConfigResult& GetFunctionRecursionConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecursiveLoop")) {
     m_recursiveLoop = RecursiveLoopMapper::GetRecursiveLoopForName(jsonValue.GetString("RecursiveLoop"));

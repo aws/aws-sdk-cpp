@@ -261,6 +261,8 @@ class GetRequesterGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RequesterGatewayStatus m_status{RequesterGatewayStatus::NOT_SET};
 
@@ -287,6 +289,7 @@ class GetRequesterGatewayResult {
   int m_totalLinksCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_statusHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

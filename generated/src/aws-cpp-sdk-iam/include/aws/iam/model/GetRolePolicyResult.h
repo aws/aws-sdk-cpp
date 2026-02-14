@@ -102,6 +102,8 @@ class GetRolePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_roleName;
 
@@ -110,6 +112,7 @@ class GetRolePolicyResult {
   Aws::String m_policyDocument;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_roleNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;

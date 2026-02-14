@@ -109,6 +109,8 @@ class RestoreSnapshotTierResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_snapshotId;
 
@@ -119,6 +121,7 @@ class RestoreSnapshotTierResponse {
   bool m_isPermanentRestore{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_snapshotIdHasBeenSet = false;
   bool m_restoreStartTimeHasBeenSet = false;
   bool m_restoreDurationHasBeenSet = false;

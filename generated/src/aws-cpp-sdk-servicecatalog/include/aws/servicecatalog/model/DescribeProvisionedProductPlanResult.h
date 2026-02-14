@@ -103,6 +103,8 @@ class DescribeProvisionedProductPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ProvisionedProductPlanDetails m_provisionedProductPlanDetails;
 
@@ -111,6 +113,7 @@ class DescribeProvisionedProductPlanResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_provisionedProductPlanDetailsHasBeenSet = false;
   bool m_resourceChangesHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

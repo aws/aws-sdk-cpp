@@ -134,6 +134,8 @@ class ListTableOptimizerRunsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_catalogId;
 
@@ -146,6 +148,7 @@ class ListTableOptimizerRunsResult {
   Aws::Vector<TableOptimizerRun> m_tableOptimizerRuns;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_catalogIdHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;

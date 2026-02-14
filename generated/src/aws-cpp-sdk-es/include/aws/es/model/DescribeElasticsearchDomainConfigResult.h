@@ -68,10 +68,13 @@ class DescribeElasticsearchDomainConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ElasticsearchDomainConfig m_domainConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_domainConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

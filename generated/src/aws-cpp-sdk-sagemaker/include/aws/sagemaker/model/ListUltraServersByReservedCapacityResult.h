@@ -84,12 +84,15 @@ class ListUltraServersByReservedCapacityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<UltraServer> m_ultraServers;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_ultraServersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

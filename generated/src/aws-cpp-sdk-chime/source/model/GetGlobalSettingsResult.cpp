@@ -20,6 +20,7 @@ using namespace Aws;
 GetGlobalSettingsResult::GetGlobalSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetGlobalSettingsResult& GetGlobalSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BusinessCalling")) {
     m_businessCalling = jsonValue.GetObject("BusinessCalling");

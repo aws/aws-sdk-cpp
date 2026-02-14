@@ -22,6 +22,7 @@ ListRecoveryPointsByLegalHoldResult::ListRecoveryPointsByLegalHoldResult(const A
 }
 
 ListRecoveryPointsByLegalHoldResult& ListRecoveryPointsByLegalHoldResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecoveryPoints")) {
     Aws::Utils::Array<JsonView> recoveryPointsJsonList = jsonValue.GetArray("RecoveryPoints");

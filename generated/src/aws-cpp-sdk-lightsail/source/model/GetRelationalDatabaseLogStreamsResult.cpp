@@ -23,6 +23,7 @@ GetRelationalDatabaseLogStreamsResult::GetRelationalDatabaseLogStreamsResult(con
 
 GetRelationalDatabaseLogStreamsResult& GetRelationalDatabaseLogStreamsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logStreams")) {
     Aws::Utils::Array<JsonView> logStreamsJsonList = jsonValue.GetArray("logStreams");

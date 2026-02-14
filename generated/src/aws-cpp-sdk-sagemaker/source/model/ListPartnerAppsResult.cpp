@@ -20,6 +20,7 @@ using namespace Aws;
 ListPartnerAppsResult::ListPartnerAppsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPartnerAppsResult& ListPartnerAppsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Summaries")) {
     Aws::Utils::Array<JsonView> summariesJsonList = jsonValue.GetArray("Summaries");

@@ -78,12 +78,15 @@ class GetRevealConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RevealConfiguration m_configuration;
 
   RetrievalConfiguration m_retrievalConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configurationHasBeenSet = false;
   bool m_retrievalConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -78,12 +78,15 @@ class GetClusterSessionCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Credentials m_credentials;
 
   Aws::Utils::DateTime m_expiresAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

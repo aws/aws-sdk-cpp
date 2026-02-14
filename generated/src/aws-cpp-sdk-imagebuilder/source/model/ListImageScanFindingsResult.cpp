@@ -19,6 +19,7 @@ using namespace Aws;
 ListImageScanFindingsResult::ListImageScanFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListImageScanFindingsResult& ListImageScanFindingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");

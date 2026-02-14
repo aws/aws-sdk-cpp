@@ -58,10 +58,13 @@ class UpdateSubscriberResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SubscriberResource m_subscriber;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_subscriberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

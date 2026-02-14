@@ -56,10 +56,13 @@ class CreateSmsTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CreateTemplateMessageBody m_createTemplateMessageBody;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_createTemplateMessageBodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

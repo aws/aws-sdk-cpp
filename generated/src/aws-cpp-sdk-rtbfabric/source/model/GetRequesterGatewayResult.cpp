@@ -20,6 +20,7 @@ using namespace Aws;
 GetRequesterGatewayResult::GetRequesterGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRequesterGatewayResult& GetRequesterGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = RequesterGatewayStatusMapper::GetRequesterGatewayStatusForName(jsonValue.GetString("status"));

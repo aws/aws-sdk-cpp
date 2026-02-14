@@ -102,6 +102,8 @@ class DescribeFleetInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<ActiveInstance> m_activeInstances;
 
@@ -110,6 +112,7 @@ class DescribeFleetInstancesResponse {
   Aws::String m_fleetId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activeInstancesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;

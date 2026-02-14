@@ -20,6 +20,7 @@ using namespace Aws;
 GetRateBasedRuleResult::GetRateBasedRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRateBasedRuleResult& GetRateBasedRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Rule")) {
     m_rule = jsonValue.GetObject("Rule");

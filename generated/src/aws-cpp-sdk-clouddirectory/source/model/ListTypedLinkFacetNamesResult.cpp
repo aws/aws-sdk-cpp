@@ -20,6 +20,7 @@ using namespace Aws;
 ListTypedLinkFacetNamesResult::ListTypedLinkFacetNamesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTypedLinkFacetNamesResult& ListTypedLinkFacetNamesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FacetNames")) {
     Aws::Utils::Array<JsonView> facetNamesJsonList = jsonValue.GetArray("FacetNames");

@@ -20,6 +20,7 @@ using namespace Aws;
 GetConfigurationResult::GetConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetConfigurationResult& GetConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuration")) {
     m_configuration = jsonValue.GetObject("configuration");

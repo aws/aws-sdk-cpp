@@ -23,6 +23,7 @@ AssociateSourceToS3TableIntegrationResult::AssociateSourceToS3TableIntegrationRe
 
 AssociateSourceToS3TableIntegrationResult& AssociateSourceToS3TableIntegrationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetString("identifier");

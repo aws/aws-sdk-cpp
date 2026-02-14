@@ -23,6 +23,7 @@ ListAWSServiceAccessForOrganizationResult::ListAWSServiceAccessForOrganizationRe
 
 ListAWSServiceAccessForOrganizationResult& ListAWSServiceAccessForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EnabledServicePrincipals")) {
     Aws::Utils::Array<JsonView> enabledServicePrincipalsJsonList = jsonValue.GetArray("EnabledServicePrincipals");

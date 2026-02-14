@@ -22,6 +22,7 @@ DescribeUserStackAssociationsResult::DescribeUserStackAssociationsResult(const A
 }
 
 DescribeUserStackAssociationsResult& DescribeUserStackAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserStackAssociations")) {
     Aws::Utils::Array<JsonView> userStackAssociationsJsonList = jsonValue.GetArray("UserStackAssociations");

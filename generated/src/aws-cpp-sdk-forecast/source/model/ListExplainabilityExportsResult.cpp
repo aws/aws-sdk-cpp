@@ -20,6 +20,7 @@ using namespace Aws;
 ListExplainabilityExportsResult::ListExplainabilityExportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListExplainabilityExportsResult& ListExplainabilityExportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ExplainabilityExports")) {
     Aws::Utils::Array<JsonView> explainabilityExportsJsonList = jsonValue.GetArray("ExplainabilityExports");

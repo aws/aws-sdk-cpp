@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePipelineResult::DeletePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePipelineResult& DeletePipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PipelineArn")) {
     m_pipelineArn = jsonValue.GetString("PipelineArn");

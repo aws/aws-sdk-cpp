@@ -90,12 +90,15 @@ class BatchGetPartitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Partition> m_partitions;
 
   Aws::Vector<PartitionValueList> m_unprocessedKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_partitionsHasBeenSet = false;
   bool m_unprocessedKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

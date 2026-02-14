@@ -20,6 +20,7 @@ using namespace Aws;
 SetTypeDefaultVersionResult::SetTypeDefaultVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 SetTypeDefaultVersionResult& SetTypeDefaultVersionResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAliasResult::UpdateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAliasResult& UpdateAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AliasArn")) {
     m_aliasArn = jsonValue.GetString("AliasArn");

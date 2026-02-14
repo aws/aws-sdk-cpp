@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteClusterNodesResult::BatchDeleteClusterNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteClusterNodesResult& BatchDeleteClusterNodesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Failed")) {
     Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");

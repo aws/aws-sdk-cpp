@@ -70,10 +70,13 @@ class DescribeNFSFileSharesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<NFSFileShareInfo> m_nFSFileShareInfoList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nFSFileShareInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

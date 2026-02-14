@@ -94,6 +94,8 @@ class GetQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_updateCount{0};
 
@@ -102,6 +104,7 @@ class GetQueryResultsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_updateCountHasBeenSet = false;
   bool m_resultSetHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

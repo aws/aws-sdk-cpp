@@ -73,12 +73,15 @@ class RollbackApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApplicationDetail m_applicationDetail;
 
   Aws::String m_operationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_applicationDetailHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

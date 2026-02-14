@@ -83,12 +83,15 @@ class PurchaseReservedElasticsearchInstanceOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_reservedElasticsearchInstanceId;
 
   Aws::String m_reservationName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_reservedElasticsearchInstanceIdHasBeenSet = false;
   bool m_reservationNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

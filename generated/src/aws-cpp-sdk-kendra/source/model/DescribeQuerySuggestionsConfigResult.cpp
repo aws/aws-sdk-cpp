@@ -23,6 +23,7 @@ DescribeQuerySuggestionsConfigResult::DescribeQuerySuggestionsConfigResult(const
 
 DescribeQuerySuggestionsConfigResult& DescribeQuerySuggestionsConfigResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Mode")) {
     m_mode = ModeMapper::GetModeForName(jsonValue.GetString("Mode"));

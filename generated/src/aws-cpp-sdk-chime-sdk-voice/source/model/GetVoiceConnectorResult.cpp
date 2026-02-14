@@ -20,6 +20,7 @@ using namespace Aws;
 GetVoiceConnectorResult::GetVoiceConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetVoiceConnectorResult& GetVoiceConnectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("VoiceConnector")) {
     m_voiceConnector = jsonValue.GetObject("VoiceConnector");

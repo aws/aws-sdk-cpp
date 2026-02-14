@@ -56,10 +56,13 @@ class DeleteEventStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EventStream m_eventStream;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventStreamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

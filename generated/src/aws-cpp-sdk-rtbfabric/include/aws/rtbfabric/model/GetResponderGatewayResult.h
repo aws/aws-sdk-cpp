@@ -343,6 +343,8 @@ class GetResponderGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_vpcId;
 
@@ -379,6 +381,7 @@ class GetResponderGatewayResult {
   int m_inboundLinksCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_vpcIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;

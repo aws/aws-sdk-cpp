@@ -20,6 +20,7 @@ using namespace Aws;
 GetFederationTokenResult::GetFederationTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFederationTokenResult& GetFederationTokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Credentials")) {
     m_credentials = jsonValue.GetObject("Credentials");

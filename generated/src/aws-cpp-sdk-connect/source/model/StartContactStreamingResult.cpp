@@ -20,6 +20,7 @@ using namespace Aws;
 StartContactStreamingResult::StartContactStreamingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartContactStreamingResult& StartContactStreamingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StreamingId")) {
     m_streamingId = jsonValue.GetString("StreamingId");

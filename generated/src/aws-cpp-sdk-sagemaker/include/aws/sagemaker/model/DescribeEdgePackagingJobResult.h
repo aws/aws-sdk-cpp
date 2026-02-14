@@ -300,6 +300,8 @@ class DescribeEdgePackagingJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_edgePackagingJobArn;
 
@@ -332,6 +334,7 @@ class DescribeEdgePackagingJobResult {
   EdgePresetDeploymentOutput m_presetDeploymentOutput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_edgePackagingJobArnHasBeenSet = false;
   bool m_edgePackagingJobNameHasBeenSet = false;
   bool m_compilationJobNameHasBeenSet = false;

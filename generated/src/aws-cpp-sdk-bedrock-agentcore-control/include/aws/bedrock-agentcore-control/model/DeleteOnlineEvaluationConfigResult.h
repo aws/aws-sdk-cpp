@@ -93,6 +93,8 @@ class DeleteOnlineEvaluationConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_onlineEvaluationConfigArn;
 
@@ -101,6 +103,7 @@ class DeleteOnlineEvaluationConfigResult {
   OnlineEvaluationConfigStatus m_status{OnlineEvaluationConfigStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_onlineEvaluationConfigArnHasBeenSet = false;
   bool m_onlineEvaluationConfigIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

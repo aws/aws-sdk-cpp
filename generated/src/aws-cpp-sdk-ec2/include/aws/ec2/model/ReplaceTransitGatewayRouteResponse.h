@@ -58,10 +58,13 @@ class ReplaceTransitGatewayRouteResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   TransitGatewayRoute m_route;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

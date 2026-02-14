@@ -130,6 +130,8 @@ class GetLatestConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextPollConfigurationToken;
 
@@ -142,6 +144,7 @@ class GetLatestConfigurationResult {
   Aws::String m_versionLabel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextPollConfigurationTokenHasBeenSet = false;
   bool m_nextPollIntervalInSecondsHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;

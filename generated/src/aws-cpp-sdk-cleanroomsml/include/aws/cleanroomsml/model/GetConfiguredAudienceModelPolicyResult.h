@@ -93,6 +93,8 @@ class GetConfiguredAudienceModelPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_configuredAudienceModelArn;
 
@@ -101,6 +103,7 @@ class GetConfiguredAudienceModelPolicyResult {
   Aws::String m_policyHash;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configuredAudienceModelArnHasBeenSet = false;
   bool m_configuredAudienceModelPolicyHasBeenSet = false;
   bool m_policyHashHasBeenSet = false;

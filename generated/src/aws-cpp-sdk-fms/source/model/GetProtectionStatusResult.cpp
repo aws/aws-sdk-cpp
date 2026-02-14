@@ -20,6 +20,7 @@ using namespace Aws;
 GetProtectionStatusResult::GetProtectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetProtectionStatusResult& GetProtectionStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AdminAccountId")) {
     m_adminAccountId = jsonValue.GetString("AdminAccountId");

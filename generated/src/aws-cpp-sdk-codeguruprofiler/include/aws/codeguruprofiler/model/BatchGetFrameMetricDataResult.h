@@ -185,6 +185,8 @@ class BatchGetFrameMetricDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::DateTime m_endTime{};
 
@@ -199,6 +201,7 @@ class BatchGetFrameMetricDataResult {
   Aws::Map<Aws::String, Aws::Vector<TimestampStructure>> m_unprocessedEndTimes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endTimeHasBeenSet = false;
   bool m_endTimesHasBeenSet = false;
   bool m_frameMetricDataHasBeenSet = false;

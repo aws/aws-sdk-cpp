@@ -20,6 +20,7 @@ using namespace Aws;
 DisassociatePricingRulesResult::DisassociatePricingRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociatePricingRulesResult& DisassociatePricingRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");

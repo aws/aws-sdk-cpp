@@ -58,10 +58,13 @@ class GetPlaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Place m_place;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_placeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

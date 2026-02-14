@@ -83,12 +83,15 @@ class GetBucketAclResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Owner m_owner;
 
   Aws::Vector<Grant> m_grants;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ownerHasBeenSet = false;
   bool m_grantsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

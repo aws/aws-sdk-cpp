@@ -20,6 +20,7 @@ using namespace Aws;
 GetRuleResult::GetRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRuleResult& GetRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Identifier")) {
     m_identifier = jsonValue.GetString("Identifier");

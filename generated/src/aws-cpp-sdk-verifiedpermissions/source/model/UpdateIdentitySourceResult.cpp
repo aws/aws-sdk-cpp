@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateIdentitySourceResult::UpdateIdentitySourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIdentitySourceResult& UpdateIdentitySourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("createdDate")) {
     m_createdDate = jsonValue.GetString("createdDate");

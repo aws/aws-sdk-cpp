@@ -20,6 +20,7 @@ using namespace Aws;
 CreateExtendedSourceServerResult::CreateExtendedSourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateExtendedSourceServerResult& CreateExtendedSourceServerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sourceServer")) {
     m_sourceServer = jsonValue.GetObject("sourceServer");

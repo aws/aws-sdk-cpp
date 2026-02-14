@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeTableResult::DescribeTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTableResult& DescribeTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");

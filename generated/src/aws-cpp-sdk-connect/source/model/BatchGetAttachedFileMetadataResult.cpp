@@ -22,6 +22,7 @@ BatchGetAttachedFileMetadataResult::BatchGetAttachedFileMetadataResult(const Aws
 }
 
 BatchGetAttachedFileMetadataResult& BatchGetAttachedFileMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Files")) {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("Files");

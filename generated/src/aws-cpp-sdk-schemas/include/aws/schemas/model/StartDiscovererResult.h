@@ -73,12 +73,15 @@ class StartDiscovererResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_discovererId;
 
   DiscovererState m_state{DiscovererState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_discovererIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

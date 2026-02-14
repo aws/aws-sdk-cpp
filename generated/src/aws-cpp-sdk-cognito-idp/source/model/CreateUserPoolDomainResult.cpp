@@ -20,6 +20,7 @@ using namespace Aws;
 CreateUserPoolDomainResult::CreateUserPoolDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateUserPoolDomainResult& CreateUserPoolDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedLoginVersion")) {
     m_managedLoginVersion = jsonValue.GetInteger("ManagedLoginVersion");

@@ -58,10 +58,13 @@ class DeleteAccountAssignmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AccountAssignmentOperationStatus m_accountAssignmentDeletionStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_accountAssignmentDeletionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

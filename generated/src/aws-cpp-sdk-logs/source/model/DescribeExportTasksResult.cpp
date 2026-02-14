@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeExportTasksResult::DescribeExportTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeExportTasksResult& DescribeExportTasksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("exportTasks")) {
     Aws::Utils::Array<JsonView> exportTasksJsonList = jsonValue.GetArray("exportTasks");

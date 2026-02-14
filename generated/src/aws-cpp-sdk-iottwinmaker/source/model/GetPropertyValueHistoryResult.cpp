@@ -20,6 +20,7 @@ using namespace Aws;
 GetPropertyValueHistoryResult::GetPropertyValueHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPropertyValueHistoryResult& GetPropertyValueHistoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("propertyValues")) {
     Aws::Utils::Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");

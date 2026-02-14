@@ -20,6 +20,7 @@ using namespace Aws;
 CreateRelationshipResult::CreateRelationshipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRelationshipResult& CreateRelationshipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("relationshipDetail")) {
     m_relationshipDetail = jsonValue.GetObject("relationshipDetail");

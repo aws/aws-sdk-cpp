@@ -22,6 +22,7 @@ CreateReplicationSubnetGroupResult::CreateReplicationSubnetGroupResult(const Aws
 }
 
 CreateReplicationSubnetGroupResult& CreateReplicationSubnetGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationSubnetGroup")) {
     m_replicationSubnetGroup = jsonValue.GetObject("ReplicationSubnetGroup");

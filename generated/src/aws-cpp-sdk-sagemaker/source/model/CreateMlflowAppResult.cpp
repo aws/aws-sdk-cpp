@@ -20,6 +20,7 @@ using namespace Aws;
 CreateMlflowAppResult::CreateMlflowAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateMlflowAppResult& CreateMlflowAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");

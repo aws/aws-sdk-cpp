@@ -20,6 +20,7 @@ using namespace Aws;
 CreatePluginResult::CreatePluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreatePluginResult& CreatePluginResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pluginId")) {
     m_pluginId = jsonValue.GetString("pluginId");

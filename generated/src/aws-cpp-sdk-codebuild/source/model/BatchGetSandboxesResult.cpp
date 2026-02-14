@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetSandboxesResult::BatchGetSandboxesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetSandboxesResult& BatchGetSandboxesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("sandboxes")) {
     Aws::Utils::Array<JsonView> sandboxesJsonList = jsonValue.GetArray("sandboxes");

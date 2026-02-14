@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteOdbPeeringConnectionResult::DeleteOdbPeeringConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteOdbPeeringConnectionResult& DeleteOdbPeeringConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

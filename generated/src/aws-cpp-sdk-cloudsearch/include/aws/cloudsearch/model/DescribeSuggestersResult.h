@@ -71,10 +71,13 @@ class DescribeSuggestersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SuggesterStatus> m_suggesters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_suggestersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

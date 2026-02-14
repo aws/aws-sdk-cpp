@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateDataIntegrationFlowResult::UpdateDataIntegrationFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateDataIntegrationFlowResult& UpdateDataIntegrationFlowResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flow")) {
     m_flow = jsonValue.GetObject("flow");

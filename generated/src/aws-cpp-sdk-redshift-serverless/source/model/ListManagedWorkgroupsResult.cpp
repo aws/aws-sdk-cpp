@@ -20,6 +20,7 @@ using namespace Aws;
 ListManagedWorkgroupsResult::ListManagedWorkgroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListManagedWorkgroupsResult& ListManagedWorkgroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("managedWorkgroups")) {
     Aws::Utils::Array<JsonView> managedWorkgroupsJsonList = jsonValue.GetArray("managedWorkgroups");

@@ -20,6 +20,7 @@ using namespace Aws;
 ListStateMachineAliasesResult::ListStateMachineAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListStateMachineAliasesResult& ListStateMachineAliasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stateMachineAliases")) {
     Aws::Utils::Array<JsonView> stateMachineAliasesJsonList = jsonValue.GetArray("stateMachineAliases");

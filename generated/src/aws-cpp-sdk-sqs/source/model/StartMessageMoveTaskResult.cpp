@@ -20,6 +20,7 @@ using namespace Aws;
 StartMessageMoveTaskResult::StartMessageMoveTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartMessageMoveTaskResult& StartMessageMoveTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskHandle")) {
     m_taskHandle = jsonValue.GetString("TaskHandle");

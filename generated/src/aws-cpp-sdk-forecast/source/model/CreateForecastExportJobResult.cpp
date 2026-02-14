@@ -20,6 +20,7 @@ using namespace Aws;
 CreateForecastExportJobResult::CreateForecastExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateForecastExportJobResult& CreateForecastExportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ForecastExportJobArn")) {
     m_forecastExportJobArn = jsonValue.GetString("ForecastExportJobArn");

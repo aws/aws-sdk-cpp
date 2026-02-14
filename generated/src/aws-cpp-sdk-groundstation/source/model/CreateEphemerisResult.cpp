@@ -20,6 +20,7 @@ using namespace Aws;
 CreateEphemerisResult::CreateEphemerisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEphemerisResult& CreateEphemerisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ephemerisId")) {
     m_ephemerisId = jsonValue.GetString("ephemerisId");

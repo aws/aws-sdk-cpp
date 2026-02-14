@@ -23,6 +23,7 @@ DescribeBudgetPerformanceHistoryResult::DescribeBudgetPerformanceHistoryResult(c
 
 DescribeBudgetPerformanceHistoryResult& DescribeBudgetPerformanceHistoryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BudgetPerformanceHistory")) {
     m_budgetPerformanceHistory = jsonValue.GetObject("BudgetPerformanceHistory");

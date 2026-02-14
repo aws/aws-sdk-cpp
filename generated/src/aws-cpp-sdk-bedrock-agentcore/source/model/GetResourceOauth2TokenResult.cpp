@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourceOauth2TokenResult::GetResourceOauth2TokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourceOauth2TokenResult& GetResourceOauth2TokenResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("authorizationUrl")) {
     m_authorizationUrl = jsonValue.GetString("authorizationUrl");

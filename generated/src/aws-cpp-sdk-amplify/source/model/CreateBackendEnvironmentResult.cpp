@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBackendEnvironmentResult::CreateBackendEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBackendEnvironmentResult& CreateBackendEnvironmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("backendEnvironment")) {
     m_backendEnvironment = jsonValue.GetObject("backendEnvironment");

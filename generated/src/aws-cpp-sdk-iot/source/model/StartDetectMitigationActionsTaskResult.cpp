@@ -23,6 +23,7 @@ StartDetectMitigationActionsTaskResult::StartDetectMitigationActionsTaskResult(c
 
 StartDetectMitigationActionsTaskResult& StartDetectMitigationActionsTaskResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("taskId")) {
     m_taskId = jsonValue.GetString("taskId");

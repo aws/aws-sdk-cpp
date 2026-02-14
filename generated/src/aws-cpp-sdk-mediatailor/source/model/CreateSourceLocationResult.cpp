@@ -20,6 +20,7 @@ using namespace Aws;
 CreateSourceLocationResult::CreateSourceLocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateSourceLocationResult& CreateSourceLocationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccessConfiguration")) {
     m_accessConfiguration = jsonValue.GetObject("AccessConfiguration");

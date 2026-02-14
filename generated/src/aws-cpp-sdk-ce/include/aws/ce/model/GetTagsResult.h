@@ -113,6 +113,8 @@ class GetTagsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextPageToken;
 
@@ -123,6 +125,7 @@ class GetTagsResult {
   int m_totalSize{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_returnSizeHasBeenSet = false;

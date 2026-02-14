@@ -75,12 +75,15 @@ class GetHubConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   long long m_hubTokenTimerExpirySettingInSeconds{0};
 
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_hubTokenTimerExpirySettingInSecondsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

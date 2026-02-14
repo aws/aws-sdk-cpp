@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDataSetResult::DescribeDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDataSetResult& DescribeDataSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataSet")) {
     m_dataSet = jsonValue.GetObject("DataSet");

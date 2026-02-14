@@ -90,12 +90,15 @@ class BatchGetRepositoryScanningConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<RepositoryScanningConfiguration> m_scanningConfigurations;
 
   Aws::Vector<RepositoryScanningConfigurationFailure> m_failures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_scanningConfigurationsHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteFirewallRuleResult::DeleteFirewallRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteFirewallRuleResult& DeleteFirewallRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FirewallRule")) {
     m_firewallRule = jsonValue.GetObject("FirewallRule");

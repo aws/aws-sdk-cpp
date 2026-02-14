@@ -77,12 +77,15 @@ class CreateEgressOnlyInternetGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clientToken;
 
   EgressOnlyInternetGateway m_egressOnlyInternetGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_egressOnlyInternetGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

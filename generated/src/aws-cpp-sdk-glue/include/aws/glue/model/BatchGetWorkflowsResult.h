@@ -88,12 +88,15 @@ class BatchGetWorkflowsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<Workflow> m_workflows;
 
   Aws::Vector<Aws::String> m_missingWorkflows;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_workflowsHasBeenSet = false;
   bool m_missingWorkflowsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

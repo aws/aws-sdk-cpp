@@ -56,10 +56,13 @@ class ModifyCacheSubnetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   CacheSubnetGroup m_cacheSubnetGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_cacheSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

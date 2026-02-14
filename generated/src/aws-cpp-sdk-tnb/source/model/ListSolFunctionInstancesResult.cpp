@@ -20,6 +20,7 @@ using namespace Aws;
 ListSolFunctionInstancesResult::ListSolFunctionInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSolFunctionInstancesResult& ListSolFunctionInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("functionInstances")) {
     Aws::Utils::Array<JsonView> functionInstancesJsonList = jsonValue.GetArray("functionInstances");

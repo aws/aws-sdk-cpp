@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeIpGroupsResult::DescribeIpGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeIpGroupsResult& DescribeIpGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Result")) {
     Aws::Utils::Array<JsonView> resultJsonList = jsonValue.GetArray("Result");

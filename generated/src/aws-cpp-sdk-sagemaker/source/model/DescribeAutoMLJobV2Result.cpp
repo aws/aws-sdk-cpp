@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeAutoMLJobV2Result::DescribeAutoMLJobV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAutoMLJobV2Result& DescribeAutoMLJobV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AutoMLJobName")) {
     m_autoMLJobName = jsonValue.GetString("AutoMLJobName");

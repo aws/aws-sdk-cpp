@@ -231,6 +231,8 @@ class GetUploadJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -253,6 +255,7 @@ class GetUploadJobResult {
   int m_dataExpiry{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

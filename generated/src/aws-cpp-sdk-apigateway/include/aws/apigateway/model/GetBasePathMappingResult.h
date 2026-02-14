@@ -98,6 +98,8 @@ class GetBasePathMappingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_basePath;
 
@@ -106,6 +108,7 @@ class GetBasePathMappingResult {
   Aws::String m_stage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_basePathHasBeenSet = false;
   bool m_restApiIdHasBeenSet = false;
   bool m_stageHasBeenSet = false;

@@ -95,6 +95,8 @@ class UpdateConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_configId;
 
@@ -103,6 +105,7 @@ class UpdateConfigResult {
   Aws::String m_configArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_configIdHasBeenSet = false;
   bool m_configTypeHasBeenSet = false;
   bool m_configArnHasBeenSet = false;

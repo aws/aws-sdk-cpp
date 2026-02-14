@@ -123,6 +123,8 @@ class CancelImportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_importId;
 
@@ -135,6 +137,7 @@ class CancelImportTaskResult {
   long long m_lastUpdatedTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_importIdHasBeenSet = false;
   bool m_importStatisticsHasBeenSet = false;
   bool m_importStatusHasBeenSet = false;

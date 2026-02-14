@@ -58,10 +58,13 @@ class UpdateRouterOutputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RouterOutput m_routerOutput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_routerOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

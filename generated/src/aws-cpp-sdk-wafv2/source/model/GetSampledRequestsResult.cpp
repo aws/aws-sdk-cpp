@@ -20,6 +20,7 @@ using namespace Aws;
 GetSampledRequestsResult::GetSampledRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSampledRequestsResult& GetSampledRequestsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SampledRequests")) {
     Aws::Utils::Array<JsonView> sampledRequestsJsonList = jsonValue.GetArray("SampledRequests");

@@ -164,6 +164,8 @@ class CreateDiscovererResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_description;
 
@@ -180,6 +182,7 @@ class CreateDiscovererResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_discovererArnHasBeenSet = false;
   bool m_discovererIdHasBeenSet = false;

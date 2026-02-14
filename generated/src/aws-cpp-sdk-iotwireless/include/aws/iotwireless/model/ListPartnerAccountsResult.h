@@ -83,12 +83,15 @@ class ListPartnerAccountsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<SidewalkAccountInfoWithFingerprint> m_sidewalk;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_sidewalkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

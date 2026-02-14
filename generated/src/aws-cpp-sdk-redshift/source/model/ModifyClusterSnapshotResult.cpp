@@ -20,6 +20,7 @@ using namespace Aws;
 ModifyClusterSnapshotResult::ModifyClusterSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ModifyClusterSnapshotResult& ModifyClusterSnapshotResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

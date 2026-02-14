@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateKxDataviewResult::UpdateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateKxDataviewResult& UpdateKxDataviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("environmentId")) {
     m_environmentId = jsonValue.GetString("environmentId");

@@ -112,6 +112,8 @@ class DisableKinesisStreamingDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_tableName;
 
@@ -122,6 +124,7 @@ class DisableKinesisStreamingDestinationResult {
   EnableKinesisStreamingConfiguration m_enableKinesisStreamingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_tableNameHasBeenSet = false;
   bool m_streamArnHasBeenSet = false;
   bool m_destinationStatusHasBeenSet = false;

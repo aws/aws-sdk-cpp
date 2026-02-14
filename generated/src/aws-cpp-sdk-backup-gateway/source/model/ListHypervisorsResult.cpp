@@ -20,6 +20,7 @@ using namespace Aws;
 ListHypervisorsResult::ListHypervisorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListHypervisorsResult& ListHypervisorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Hypervisors")) {
     Aws::Utils::Array<JsonView> hypervisorsJsonList = jsonValue.GetArray("Hypervisors");

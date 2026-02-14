@@ -58,10 +58,13 @@ class PutRegistryCatalogDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   RegistryCatalogData m_registryCatalogData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_registryCatalogDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

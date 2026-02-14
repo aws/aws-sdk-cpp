@@ -20,6 +20,7 @@ using namespace Aws;
 GetSnowballUsageResult::GetSnowballUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSnowballUsageResult& GetSnowballUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SnowballLimit")) {
     m_snowballLimit = jsonValue.GetInteger("SnowballLimit");

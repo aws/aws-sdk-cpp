@@ -23,6 +23,7 @@ GetScalingPlanResourceForecastDataResult::GetScalingPlanResourceForecastDataResu
 
 GetScalingPlanResourceForecastDataResult& GetScalingPlanResourceForecastDataResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Datapoints")) {
     Aws::Utils::Array<JsonView> datapointsJsonList = jsonValue.GetArray("Datapoints");

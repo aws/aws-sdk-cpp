@@ -58,10 +58,13 @@ class CreateReplaceRootVolumeTaskResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ReplaceRootVolumeTask m_replaceRootVolumeTask;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_replaceRootVolumeTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

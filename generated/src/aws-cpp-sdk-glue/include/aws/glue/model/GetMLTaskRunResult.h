@@ -209,6 +209,8 @@ class GetMLTaskRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_transformId;
 
@@ -231,6 +233,7 @@ class GetMLTaskRunResult {
   int m_executionTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_transformIdHasBeenSet = false;
   bool m_taskRunIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

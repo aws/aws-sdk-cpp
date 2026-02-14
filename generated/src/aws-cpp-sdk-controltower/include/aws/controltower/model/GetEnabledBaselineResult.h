@@ -58,10 +58,13 @@ class GetEnabledBaselineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   EnabledBaselineDetails m_enabledBaselineDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_enabledBaselineDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

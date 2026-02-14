@@ -20,6 +20,7 @@ using namespace Aws;
 PutReportDefinitionResult::PutReportDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutReportDefinitionResult& PutReportDefinitionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("reportId")) {
     m_reportId = jsonValue.GetString("reportId");

@@ -558,6 +558,8 @@ class AssociateVirtualInterfaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_ownerAccount;
 
@@ -614,6 +616,7 @@ class AssociateVirtualInterfaceResult {
   bool m_siteLinkEnabled{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_ownerAccountHasBeenSet = false;
   bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_locationHasBeenSet = false;

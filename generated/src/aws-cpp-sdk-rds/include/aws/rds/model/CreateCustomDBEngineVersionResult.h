@@ -779,6 +779,8 @@ class CreateCustomDBEngineVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_engine;
 
@@ -855,6 +857,7 @@ class CreateCustomDBEngineVersionResult {
   ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_engineHasBeenSet = false;
   bool m_majorEngineVersionHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRuleGroupResult::DescribeRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRuleGroupResult& DescribeRuleGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpdateToken")) {
     m_updateToken = jsonValue.GetString("UpdateToken");

@@ -168,6 +168,8 @@ class CreateEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_name;
 
@@ -184,6 +186,7 @@ class CreateEndpointResult {
   EndpointState m_state{EndpointState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_routingConfigHasBeenSet = false;

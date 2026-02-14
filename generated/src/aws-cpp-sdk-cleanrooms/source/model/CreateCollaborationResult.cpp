@@ -20,6 +20,7 @@ using namespace Aws;
 CreateCollaborationResult::CreateCollaborationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCollaborationResult& CreateCollaborationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaboration")) {
     m_collaboration = jsonValue.GetObject("collaboration");

@@ -20,6 +20,7 @@ using namespace Aws;
 CheckInLicenseResult::CheckInLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckInLicenseResult& CheckInLicenseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,6 +20,7 @@ using namespace Aws;
 VoteOnProposalResult::VoteOnProposalResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 VoteOnProposalResult& VoteOnProposalResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

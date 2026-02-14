@@ -68,10 +68,13 @@ class EvaluateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<EvaluationResultContent> m_evaluationResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_evaluationResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

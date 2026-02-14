@@ -20,6 +20,7 @@ using namespace Aws;
 CreateBGPPeerResult::CreateBGPPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateBGPPeerResult& CreateBGPPeerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("virtualInterface")) {
     m_virtualInterface = jsonValue.GetObject("virtualInterface");

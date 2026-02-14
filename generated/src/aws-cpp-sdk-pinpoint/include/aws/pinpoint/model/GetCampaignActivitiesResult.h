@@ -56,10 +56,13 @@ class GetCampaignActivitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ActivitiesResponse m_activitiesResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_activitiesResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

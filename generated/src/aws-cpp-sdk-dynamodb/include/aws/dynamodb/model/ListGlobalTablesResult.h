@@ -82,12 +82,15 @@ class ListGlobalTablesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<GlobalTable> m_globalTables;
 
   Aws::String m_lastEvaluatedGlobalTableName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_globalTablesHasBeenSet = false;
   bool m_lastEvaluatedGlobalTableNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

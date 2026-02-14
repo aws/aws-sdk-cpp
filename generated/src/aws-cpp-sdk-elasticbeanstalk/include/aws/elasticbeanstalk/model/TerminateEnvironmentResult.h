@@ -440,6 +440,8 @@ class TerminateEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_environmentName;
 
@@ -484,6 +486,7 @@ class TerminateEnvironmentResult {
   Aws::String m_operationsRole;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_environmentNameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_applicationNameHasBeenSet = false;

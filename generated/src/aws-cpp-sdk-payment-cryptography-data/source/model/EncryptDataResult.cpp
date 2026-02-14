@@ -20,6 +20,7 @@ using namespace Aws;
 EncryptDataResult::EncryptDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 EncryptDataResult& EncryptDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("KeyArn")) {
     m_keyArn = jsonValue.GetString("KeyArn");

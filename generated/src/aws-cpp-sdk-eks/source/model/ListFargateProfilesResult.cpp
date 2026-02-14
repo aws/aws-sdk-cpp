@@ -20,6 +20,7 @@ using namespace Aws;
 ListFargateProfilesResult::ListFargateProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFargateProfilesResult& ListFargateProfilesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("fargateProfileNames")) {
     Aws::Utils::Array<JsonView> fargateProfileNamesJsonList = jsonValue.GetArray("fargateProfileNames");

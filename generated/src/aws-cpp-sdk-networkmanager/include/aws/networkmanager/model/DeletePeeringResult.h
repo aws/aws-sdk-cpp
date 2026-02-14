@@ -58,10 +58,13 @@ class DeletePeeringResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Peering m_peering;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_peeringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

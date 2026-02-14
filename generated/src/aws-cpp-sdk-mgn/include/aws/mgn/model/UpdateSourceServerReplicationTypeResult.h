@@ -287,6 +287,8 @@ class UpdateSourceServerReplicationTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sourceServerID;
 
@@ -317,6 +319,7 @@ class UpdateSourceServerReplicationTypeResult {
   SourceServerConnectorAction m_connectorAction;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sourceServerIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_isArchivedHasBeenSet = false;

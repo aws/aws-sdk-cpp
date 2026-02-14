@@ -24,6 +24,7 @@ UpdateMediaInsightsPipelineConfigurationResult::UpdateMediaInsightsPipelineConfi
 
 UpdateMediaInsightsPipelineConfigurationResult& UpdateMediaInsightsPipelineConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MediaInsightsPipelineConfiguration")) {
     m_mediaInsightsPipelineConfiguration = jsonValue.GetObject("MediaInsightsPipelineConfiguration");

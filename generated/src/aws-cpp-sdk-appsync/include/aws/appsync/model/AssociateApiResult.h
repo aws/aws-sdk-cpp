@@ -58,10 +58,13 @@ class AssociateApiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ApiAssociation m_apiAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_apiAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

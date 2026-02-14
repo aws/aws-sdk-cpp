@@ -20,6 +20,7 @@ using namespace Aws;
 ResolveCaseResult::ResolveCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ResolveCaseResult& ResolveCaseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("initialCaseStatus")) {
     m_initialCaseStatus = jsonValue.GetString("initialCaseStatus");

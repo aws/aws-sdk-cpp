@@ -23,6 +23,7 @@ GetDataQualityRulesetEvaluationRunResult::GetDataQualityRulesetEvaluationRunResu
 
 GetDataQualityRulesetEvaluationRunResult& GetDataQualityRulesetEvaluationRunResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RunId")) {
     m_runId = jsonValue.GetString("RunId");

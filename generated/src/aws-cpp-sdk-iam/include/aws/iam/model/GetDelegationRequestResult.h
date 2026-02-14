@@ -106,6 +106,8 @@ class GetDelegationRequestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   DelegationRequest m_delegationRequest;
 
@@ -114,6 +116,7 @@ class GetDelegationRequestResult {
   PermissionCheckResultType m_permissionCheckResult{PermissionCheckResultType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_delegationRequestHasBeenSet = false;
   bool m_permissionCheckStatusHasBeenSet = false;
   bool m_permissionCheckResultHasBeenSet = false;

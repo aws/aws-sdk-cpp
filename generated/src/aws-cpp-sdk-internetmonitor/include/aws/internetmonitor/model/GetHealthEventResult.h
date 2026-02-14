@@ -237,6 +237,8 @@ class GetHealthEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_eventArn;
 
@@ -261,6 +263,7 @@ class GetHealthEventResult {
   double m_healthScoreThreshold{0.0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_eventArnHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;

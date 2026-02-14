@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeClusterOperationV2Result::DescribeClusterOperationV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeClusterOperationV2Result& DescribeClusterOperationV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clusterOperationInfo")) {
     m_clusterOperationInfo = jsonValue.GetObject("clusterOperationInfo");

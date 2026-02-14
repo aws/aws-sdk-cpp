@@ -20,6 +20,7 @@ using namespace Aws;
 CreateLocationEfsResult::CreateLocationEfsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateLocationEfsResult& CreateLocationEfsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LocationArn")) {
     m_locationArn = jsonValue.GetString("LocationArn");

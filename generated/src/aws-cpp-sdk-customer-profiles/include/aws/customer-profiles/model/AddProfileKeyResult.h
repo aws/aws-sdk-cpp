@@ -81,12 +81,15 @@ class AddProfileKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_keyName;
 
   Aws::Vector<Aws::String> m_values;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_keyNameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

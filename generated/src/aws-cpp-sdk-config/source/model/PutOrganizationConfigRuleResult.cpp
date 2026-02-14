@@ -20,6 +20,7 @@ using namespace Aws;
 PutOrganizationConfigRuleResult::PutOrganizationConfigRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutOrganizationConfigRuleResult& PutOrganizationConfigRuleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationConfigRuleArn")) {
     m_organizationConfigRuleArn = jsonValue.GetString("OrganizationConfigRuleArn");

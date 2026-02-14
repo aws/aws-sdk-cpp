@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteThemeAliasResult::DeleteThemeAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteThemeAliasResult& DeleteThemeAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AliasName")) {
     m_aliasName = jsonValue.GetString("AliasName");

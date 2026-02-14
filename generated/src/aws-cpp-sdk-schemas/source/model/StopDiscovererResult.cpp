@@ -20,6 +20,7 @@ using namespace Aws;
 StopDiscovererResult::StopDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopDiscovererResult& StopDiscovererResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DiscovererId")) {
     m_discovererId = jsonValue.GetString("DiscovererId");

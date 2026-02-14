@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateAccountConfigurationResult::UpdateAccountConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAccountConfigurationResult& UpdateAccountConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("encryptionConfig")) {
     m_encryptionConfig = jsonValue.GetObject("encryptionConfig");

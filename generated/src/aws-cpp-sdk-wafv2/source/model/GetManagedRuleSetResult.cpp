@@ -20,6 +20,7 @@ using namespace Aws;
 GetManagedRuleSetResult::GetManagedRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetManagedRuleSetResult& GetManagedRuleSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedRuleSet")) {
     m_managedRuleSet = jsonValue.GetObject("ManagedRuleSet");

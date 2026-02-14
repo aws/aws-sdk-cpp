@@ -24,6 +24,7 @@ ListDataQualityRuleRecommendationRunsResult::ListDataQualityRuleRecommendationRu
 
 ListDataQualityRuleRecommendationRunsResult& ListDataQualityRuleRecommendationRunsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Runs")) {
     Aws::Utils::Array<JsonView> runsJsonList = jsonValue.GetArray("Runs");

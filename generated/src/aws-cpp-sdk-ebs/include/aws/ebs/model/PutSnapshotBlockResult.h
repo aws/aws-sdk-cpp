@@ -73,12 +73,15 @@ class PutSnapshotBlockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_checksum;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_checksumHasBeenSet = false;
   bool m_checksumAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

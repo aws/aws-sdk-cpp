@@ -23,6 +23,7 @@ DescribeRemediationConfigurationsResult::DescribeRemediationConfigurationsResult
 
 DescribeRemediationConfigurationsResult& DescribeRemediationConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RemediationConfigurations")) {
     Aws::Utils::Array<JsonView> remediationConfigurationsJsonList = jsonValue.GetArray("RemediationConfigurations");

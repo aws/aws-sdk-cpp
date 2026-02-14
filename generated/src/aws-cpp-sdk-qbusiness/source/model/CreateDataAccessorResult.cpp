@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDataAccessorResult::CreateDataAccessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDataAccessorResult& CreateDataAccessorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataAccessorId")) {
     m_dataAccessorId = jsonValue.GetString("dataAccessorId");

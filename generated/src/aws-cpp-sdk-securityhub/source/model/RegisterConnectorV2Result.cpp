@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterConnectorV2Result::RegisterConnectorV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterConnectorV2Result& RegisterConnectorV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectorArn")) {
     m_connectorArn = jsonValue.GetString("ConnectorArn");

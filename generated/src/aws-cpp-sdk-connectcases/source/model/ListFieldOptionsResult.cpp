@@ -20,6 +20,7 @@ using namespace Aws;
 ListFieldOptionsResult::ListFieldOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFieldOptionsResult& ListFieldOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("options")) {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");

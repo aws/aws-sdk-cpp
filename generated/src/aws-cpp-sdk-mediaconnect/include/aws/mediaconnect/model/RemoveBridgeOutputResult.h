@@ -74,12 +74,15 @@ class RemoveBridgeOutputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_bridgeArn;
 
   Aws::String m_outputName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_bridgeArnHasBeenSet = false;
   bool m_outputNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

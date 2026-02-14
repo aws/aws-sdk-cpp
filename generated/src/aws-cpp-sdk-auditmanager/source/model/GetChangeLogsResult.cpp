@@ -20,6 +20,7 @@ using namespace Aws;
 GetChangeLogsResult::GetChangeLogsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetChangeLogsResult& GetChangeLogsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("changeLogs")) {
     Aws::Utils::Array<JsonView> changeLogsJsonList = jsonValue.GetArray("changeLogs");

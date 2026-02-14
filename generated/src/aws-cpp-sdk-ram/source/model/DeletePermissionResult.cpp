@@ -20,6 +20,7 @@ using namespace Aws;
 DeletePermissionResult::DeletePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeletePermissionResult& DeletePermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("returnValue")) {
     m_returnValue = jsonValue.GetBool("returnValue");

@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeDryRunProgressResult::DescribeDryRunProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDryRunProgressResult& DescribeDryRunProgressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DryRunProgressStatus")) {
     m_dryRunProgressStatus = jsonValue.GetObject("DryRunProgressStatus");

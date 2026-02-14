@@ -190,6 +190,8 @@ class GetPrefetchScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -208,6 +210,7 @@ class GetPrefetchScheduleResult {
   Aws::String m_streamId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_arnHasBeenSet = false;
   bool m_consumptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;

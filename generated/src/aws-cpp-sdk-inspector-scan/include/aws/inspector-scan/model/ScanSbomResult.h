@@ -58,10 +58,13 @@ class ScanSbomResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Utils::Document m_sbom;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sbomHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

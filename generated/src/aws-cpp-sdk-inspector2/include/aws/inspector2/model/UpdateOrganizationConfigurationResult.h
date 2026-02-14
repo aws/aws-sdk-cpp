@@ -60,10 +60,13 @@ class UpdateOrganizationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   AutoEnable m_autoEnable;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_autoEnableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

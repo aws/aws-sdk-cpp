@@ -99,6 +99,8 @@ class GetSavingsPlansPurchaseRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SavingsPlansPurchaseRecommendationMetadata m_metadata;
 
@@ -107,6 +109,7 @@ class GetSavingsPlansPurchaseRecommendationResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_metadataHasBeenSet = false;
   bool m_savingsPlansPurchaseRecommendationHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

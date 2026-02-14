@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeLoggingOptionsResult::DescribeLoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLoggingOptionsResult& DescribeLoggingOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("loggingOptions")) {
     m_loggingOptions = jsonValue.GetObject("loggingOptions");

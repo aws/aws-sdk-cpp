@@ -22,6 +22,7 @@ CreateAccountLinkInvitationResult::CreateAccountLinkInvitationResult(const Aws::
 }
 
 CreateAccountLinkInvitationResult& CreateAccountLinkInvitationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountLink")) {
     m_accountLink = jsonValue.GetObject("AccountLink");

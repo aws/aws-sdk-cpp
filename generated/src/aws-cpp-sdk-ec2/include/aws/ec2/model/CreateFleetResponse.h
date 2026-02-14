@@ -109,6 +109,8 @@ class CreateFleetResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_fleetId;
 
@@ -117,6 +119,7 @@ class CreateFleetResponse {
   Aws::Vector<CreateFleetInstance> m_instances;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_instancesHasBeenSet = false;

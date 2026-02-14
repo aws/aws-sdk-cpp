@@ -20,6 +20,7 @@ using namespace Aws;
 SendWorkflowStepActionResult::SendWorkflowStepActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SendWorkflowStepActionResult& SendWorkflowStepActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stepExecutionId")) {
     m_stepExecutionId = jsonValue.GetString("stepExecutionId");

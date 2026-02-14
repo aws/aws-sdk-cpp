@@ -20,6 +20,7 @@ using namespace Aws;
 ListBaselinesResult::ListBaselinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBaselinesResult& ListBaselinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("baselines")) {
     Aws::Utils::Array<JsonView> baselinesJsonList = jsonValue.GetArray("baselines");

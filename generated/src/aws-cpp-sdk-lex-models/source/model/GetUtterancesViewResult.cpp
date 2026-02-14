@@ -20,6 +20,7 @@ using namespace Aws;
 GetUtterancesViewResult::GetUtterancesViewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUtterancesViewResult& GetUtterancesViewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("botName")) {
     m_botName = jsonValue.GetString("botName");

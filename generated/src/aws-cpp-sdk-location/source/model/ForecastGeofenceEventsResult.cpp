@@ -20,6 +20,7 @@ using namespace Aws;
 ForecastGeofenceEventsResult::ForecastGeofenceEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ForecastGeofenceEventsResult& ForecastGeofenceEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ForecastedEvents")) {
     Aws::Utils::Array<JsonView> forecastedEventsJsonList = jsonValue.GetArray("ForecastedEvents");

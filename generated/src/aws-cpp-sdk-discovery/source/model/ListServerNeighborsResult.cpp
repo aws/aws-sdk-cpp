@@ -20,6 +20,7 @@ using namespace Aws;
 ListServerNeighborsResult::ListServerNeighborsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListServerNeighborsResult& ListServerNeighborsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("neighbors")) {
     Aws::Utils::Array<JsonView> neighborsJsonList = jsonValue.GetArray("neighbors");

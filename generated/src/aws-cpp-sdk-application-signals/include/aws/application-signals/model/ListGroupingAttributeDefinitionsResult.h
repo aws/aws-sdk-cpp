@@ -105,6 +105,8 @@ class ListGroupingAttributeDefinitionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<GroupingAttributeDefinition> m_groupingAttributeDefinitions;
 
@@ -113,6 +115,7 @@ class ListGroupingAttributeDefinitionsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupingAttributeDefinitionsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

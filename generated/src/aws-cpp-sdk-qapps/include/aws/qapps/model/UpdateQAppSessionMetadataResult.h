@@ -110,6 +110,8 @@ class UpdateQAppSessionMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -120,6 +122,7 @@ class UpdateQAppSessionMetadataResult {
   SessionSharingConfiguration m_sharingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;
   bool m_sessionNameHasBeenSet = false;

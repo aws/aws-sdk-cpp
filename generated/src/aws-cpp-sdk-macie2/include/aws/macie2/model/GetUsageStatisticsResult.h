@@ -103,6 +103,8 @@ class GetUsageStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -111,6 +113,7 @@ class GetUsageStatisticsResult {
   TimeRange m_timeRange{TimeRange::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
   bool m_timeRangeHasBeenSet = false;

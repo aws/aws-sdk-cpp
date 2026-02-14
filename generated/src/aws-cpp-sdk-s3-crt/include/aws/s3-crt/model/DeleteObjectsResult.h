@@ -105,6 +105,8 @@ class DeleteObjectsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<DeletedObject> m_deleted;
 
@@ -113,6 +115,7 @@ class DeleteObjectsResult {
   Aws::Vector<Error> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_deletedHasBeenSet = false;
   bool m_requestChargedHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

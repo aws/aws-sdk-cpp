@@ -186,6 +186,8 @@ class GetChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_spaceId;
 
@@ -204,6 +206,7 @@ class GetChannelResult {
   ChannelStatus m_channelStatus{ChannelStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_spaceIdHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;

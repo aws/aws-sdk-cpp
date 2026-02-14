@@ -91,6 +91,8 @@ class GetGroupCertificateAuthorityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_groupCertificateAuthorityArn;
 
@@ -99,6 +101,7 @@ class GetGroupCertificateAuthorityResult {
   Aws::String m_pemEncodedCertificate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_groupCertificateAuthorityArnHasBeenSet = false;
   bool m_groupCertificateAuthorityIdHasBeenSet = false;
   bool m_pemEncodedCertificateHasBeenSet = false;

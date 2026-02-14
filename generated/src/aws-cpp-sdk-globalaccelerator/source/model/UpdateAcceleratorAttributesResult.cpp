@@ -22,6 +22,7 @@ UpdateAcceleratorAttributesResult::UpdateAcceleratorAttributesResult(const Aws::
 }
 
 UpdateAcceleratorAttributesResult& UpdateAcceleratorAttributesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AcceleratorAttributes")) {
     m_acceleratorAttributes = jsonValue.GetObject("AcceleratorAttributes");

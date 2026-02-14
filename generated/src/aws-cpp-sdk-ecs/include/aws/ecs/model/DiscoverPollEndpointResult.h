@@ -94,6 +94,8 @@ class DiscoverPollEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_endpoint;
 
@@ -102,6 +104,7 @@ class DiscoverPollEndpointResult {
   Aws::String m_serviceConnectEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_endpointHasBeenSet = false;
   bool m_telemetryEndpointHasBeenSet = false;
   bool m_serviceConnectEndpointHasBeenSet = false;

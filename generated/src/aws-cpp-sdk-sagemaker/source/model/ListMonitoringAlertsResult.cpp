@@ -20,6 +20,7 @@ using namespace Aws;
 ListMonitoringAlertsResult::ListMonitoringAlertsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMonitoringAlertsResult& ListMonitoringAlertsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MonitoringAlertSummaries")) {
     Aws::Utils::Array<JsonView> monitoringAlertSummariesJsonList = jsonValue.GetArray("MonitoringAlertSummaries");

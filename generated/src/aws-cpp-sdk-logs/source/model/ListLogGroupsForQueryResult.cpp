@@ -20,6 +20,7 @@ using namespace Aws;
 ListLogGroupsForQueryResult::ListLogGroupsForQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLogGroupsForQueryResult& ListLogGroupsForQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logGroupIdentifiers")) {
     Aws::Utils::Array<JsonView> logGroupIdentifiersJsonList = jsonValue.GetArray("logGroupIdentifiers");

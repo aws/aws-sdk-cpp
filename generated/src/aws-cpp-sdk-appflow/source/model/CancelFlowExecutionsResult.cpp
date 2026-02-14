@@ -20,6 +20,7 @@ using namespace Aws;
 CancelFlowExecutionsResult::CancelFlowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CancelFlowExecutionsResult& CancelFlowExecutionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("invalidExecutions")) {
     Aws::Utils::Array<JsonView> invalidExecutionsJsonList = jsonValue.GetArray("invalidExecutions");

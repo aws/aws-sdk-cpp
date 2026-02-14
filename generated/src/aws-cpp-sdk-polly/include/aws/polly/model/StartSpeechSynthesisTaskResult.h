@@ -59,10 +59,13 @@ class StartSpeechSynthesisTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   SynthesisTask m_synthesisTask;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_synthesisTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -84,12 +84,15 @@ class GetObjectInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<SchemaFacet> m_schemaFacets;
 
   Aws::String m_objectIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_schemaFacetsHasBeenSet = false;
   bool m_objectIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateVirtualServiceResult::CreateVirtualServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVirtualServiceResult& CreateVirtualServiceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_virtualService = jsonValue;
   m_virtualServiceHasBeenSet = true;

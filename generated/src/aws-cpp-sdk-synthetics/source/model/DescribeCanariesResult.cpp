@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeCanariesResult::DescribeCanariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeCanariesResult& DescribeCanariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Canaries")) {
     Aws::Utils::Array<JsonView> canariesJsonList = jsonValue.GetArray("Canaries");

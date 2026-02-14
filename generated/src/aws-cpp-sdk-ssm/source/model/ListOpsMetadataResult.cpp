@@ -20,6 +20,7 @@ using namespace Aws;
 ListOpsMetadataResult::ListOpsMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListOpsMetadataResult& ListOpsMetadataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OpsMetadataList")) {
     Aws::Utils::Array<JsonView> opsMetadataListJsonList = jsonValue.GetArray("OpsMetadataList");

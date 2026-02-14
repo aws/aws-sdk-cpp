@@ -93,6 +93,8 @@ class CreateClientVpnEndpointResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_clientVpnEndpointId;
 
@@ -101,6 +103,7 @@ class CreateClientVpnEndpointResponse {
   Aws::String m_dnsName;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_clientVpnEndpointIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_dnsNameHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 BatchDeleteConnectionResult::BatchDeleteConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchDeleteConnectionResult& BatchDeleteConnectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Succeeded")) {
     Aws::Utils::Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");

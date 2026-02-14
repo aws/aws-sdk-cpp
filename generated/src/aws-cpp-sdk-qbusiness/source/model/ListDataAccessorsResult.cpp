@@ -20,6 +20,7 @@ using namespace Aws;
 ListDataAccessorsResult::ListDataAccessorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListDataAccessorsResult& ListDataAccessorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataAccessors")) {
     Aws::Utils::Array<JsonView> dataAccessorsJsonList = jsonValue.GetArray("dataAccessors");

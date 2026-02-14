@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeRoleAliasResult::DescribeRoleAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeRoleAliasResult& DescribeRoleAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("roleAliasDescription")) {
     m_roleAliasDescription = jsonValue.GetObject("roleAliasDescription");

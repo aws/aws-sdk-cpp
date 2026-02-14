@@ -20,6 +20,7 @@ using namespace Aws;
 CreateAnomalyMonitorResult::CreateAnomalyMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateAnomalyMonitorResult& CreateAnomalyMonitorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MonitorArn")) {
     m_monitorArn = jsonValue.GetString("MonitorArn");

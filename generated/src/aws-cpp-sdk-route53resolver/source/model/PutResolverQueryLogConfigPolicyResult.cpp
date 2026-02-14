@@ -23,6 +23,7 @@ PutResolverQueryLogConfigPolicyResult::PutResolverQueryLogConfigPolicyResult(con
 
 PutResolverQueryLogConfigPolicyResult& PutResolverQueryLogConfigPolicyResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReturnValue")) {
     m_returnValue = jsonValue.GetBool("ReturnValue");

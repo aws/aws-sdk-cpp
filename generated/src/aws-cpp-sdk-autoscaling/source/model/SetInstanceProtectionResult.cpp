@@ -20,6 +20,7 @@ using namespace Aws;
 SetInstanceProtectionResult::SetInstanceProtectionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 SetInstanceProtectionResult& SetInstanceProtectionResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_responseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

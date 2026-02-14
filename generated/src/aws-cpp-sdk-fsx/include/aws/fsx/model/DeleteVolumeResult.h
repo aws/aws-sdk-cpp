@@ -94,6 +94,8 @@ class DeleteVolumeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::String m_volumeId;
 
@@ -102,6 +104,7 @@ class DeleteVolumeResult {
   DeleteVolumeOntapResponse m_ontapResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_volumeIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_ontapResponseHasBeenSet = false;

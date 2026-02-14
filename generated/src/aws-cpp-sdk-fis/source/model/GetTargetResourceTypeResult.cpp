@@ -20,6 +20,7 @@ using namespace Aws;
 GetTargetResourceTypeResult::GetTargetResourceTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTargetResourceTypeResult& GetTargetResourceTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("targetResourceType")) {
     m_targetResourceType = jsonValue.GetObject("targetResourceType");

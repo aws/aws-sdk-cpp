@@ -20,6 +20,7 @@ using namespace Aws;
 CreateOrganizationResult::CreateOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateOrganizationResult& CreateOrganizationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("OrganizationId")) {
     m_organizationId = jsonValue.GetString("OrganizationId");

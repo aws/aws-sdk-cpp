@@ -20,6 +20,7 @@ using namespace Aws;
 GetSoftwareUpdatesResult::GetSoftwareUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSoftwareUpdatesResult& GetSoftwareUpdatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UpdatesURI")) {
     m_updatesURI = jsonValue.GetString("UpdatesURI");

@@ -24,6 +24,7 @@ GetAssociationForServiceQuotaTemplateResult::GetAssociationForServiceQuotaTempla
 
 GetAssociationForServiceQuotaTemplateResult& GetAssociationForServiceQuotaTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ServiceQuotaTemplateAssociationStatus")) {
     m_serviceQuotaTemplateAssociationStatus = ServiceQuotaTemplateAssociationStatusMapper::GetServiceQuotaTemplateAssociationStatusForName(

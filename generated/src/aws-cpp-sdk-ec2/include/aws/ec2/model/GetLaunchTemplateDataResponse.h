@@ -58,10 +58,13 @@ class GetLaunchTemplateDataResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   ResponseLaunchTemplateData m_launchTemplateData;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_launchTemplateDataHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

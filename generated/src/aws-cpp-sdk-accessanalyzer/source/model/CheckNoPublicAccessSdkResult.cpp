@@ -20,6 +20,7 @@ using namespace Aws;
 CheckNoPublicAccessSdkResult::CheckNoPublicAccessSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CheckNoPublicAccessSdkResult& CheckNoPublicAccessSdkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("result")) {
     m_result = CheckNoPublicAccessResultMapper::GetCheckNoPublicAccessResultForName(jsonValue.GetString("result"));

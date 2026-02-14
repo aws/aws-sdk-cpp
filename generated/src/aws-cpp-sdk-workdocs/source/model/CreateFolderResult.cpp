@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFolderResult::CreateFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFolderResult& CreateFolderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_responseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetObject("Metadata");
