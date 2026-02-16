@@ -477,7 +477,7 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromCredentialsFile)
   DynamoDBClientConfiguration configuration;
   configuration.region = "us-east-1";
 
-  auto credsProvider = Aws::MakeShared<ProfileCredentialsProvider>(LOG_TAG);
+  auto credsProvider = Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(LOG_TAG);
 
   const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, std::move(credsProvider), nullptr, configuration);
 

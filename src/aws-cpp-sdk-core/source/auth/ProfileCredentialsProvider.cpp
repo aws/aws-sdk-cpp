@@ -1,43 +1,41 @@
-#include <aws/core/auth/AWSCredentialsProvider.h>
-
-#include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/auth/CrtCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/client/UserAgent.h>
-#include <aws/core/auth/ProfileCredentialsProvider.h>
+#include <aws/crt/auth/Credentials.h>
 
 using namespace Aws::Auth;
 using namespace Aws::Client;
 using namespace Aws::FileSystem;
-using namespace Aws::Utils::Threading;
+using namespace Aws::Crt::Auth;
 
 namespace {
-const char PROFILE_PROVIDER_LOG_TAG[] = "ProfileCredentialsProvider";
 const char PROFILE_AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 const char PROFILE_DEFAULT_CREDENTIALS_FILE[] = "credentials";
 const char PROFILE_PROFILE_DIRECTORY[] = ".aws";
-}
+const long DEFAULT_REFRESH_RATE_MS = 50000;
+}  // namespace
 
-class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCredentialsProvider {
+class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCredentialsProvider {
  public:
-  ProfileCredentialsProviderImp(long refreshRateMs)
-      : m_profileToUse(Aws::Auth::GetConfigProfileName()),
-        m_credentialsFileLoader(GetCredentialsProfileFilename()),
-        m_loadFrequencyMs(refreshRateMs) {
-    AWS_LOGSTREAM_INFO(PROFILE_PROVIDER_LOG_TAG, "Setting provider to read credentials from "
-                                            << GetCredentialsProfileFilename() << " for credentials file"
-                                            << " and " << GetConfigProfileFilename() << " for the config file "
-                                            << ", for use with profile " << m_profileToUse);
-  }
+  ProfileCredentialsProviderImp()
+      : CrtCredentialsProvider(
+            []() -> std::shared_ptr<ICredentialsProvider> {
+              CredentialsProviderProfileConfig config;
+              return CredentialsProvider::CreateCredentialsProviderProfile(config);
+            },
+            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider") {}
 
-  ProfileCredentialsProviderImp(const char* profile, long refreshRateMs)
-      : m_profileToUse(profile), m_credentialsFileLoader(GetCredentialsProfileFilename()), m_loadFrequencyMs(refreshRateMs) {
-    AWS_LOGSTREAM_INFO(PROFILE_PROVIDER_LOG_TAG, "Setting provider to read credentials from "
-                                            << GetCredentialsProfileFilename() << " for credentials file"
-                                            << " and " << GetConfigProfileFilename() << " for the config file "
-                                            << ", for use with profile " << m_profileToUse);
-  }
+  ProfileCredentialsProviderImp(const char* profile)
+      : CrtCredentialsProvider(
+            [profile]() -> std::shared_ptr<ICredentialsProvider> {
+              CredentialsProviderProfileConfig config;
+              config.ProfileNameOverride = Aws::Crt::ByteCursorFromCString(profile);
+              return CredentialsProvider::CreateCredentialsProviderProfile(config);
+            },
+            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE,
+            "ProfileCredentialsProvider") {}
 
   static Aws::String GetCredentialsProfileFilename() {
     auto credentialsFileNameFromVar = Aws::Environment::GetEnv(PROFILE_AWS_CREDENTIALS_FILE);
@@ -57,55 +55,18 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public AWSCred
       return {};
     }
   }
-
-  AWSCredentials GetAWSCredentials() override {
-    RefreshIfExpired();
-    ReaderLockGuard guard(m_reloadLock);
-    const Aws::Map<Aws::String, Aws::Config::Profile>& profiles = m_credentialsFileLoader.GetProfiles();
-    auto credsFileProfileIter = profiles.find(m_profileToUse);
-
-    if (credsFileProfileIter != profiles.end()) {
-      AWSCredentials credentials = credsFileProfileIter->second.GetCredentials();
-      if (!credentials.IsEmpty()) {
-        credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_PROFILE);
-      }
-      return credentials;
-    }
-
-    return AWSCredentials();
-  }
-
-  void Reload() override {
-    m_credentialsFileLoader.Load();
-    AWSCredentialsProvider::Reload();
-  }
-
- private:
-  Aws::String m_profileToUse;
-  Aws::Config::AWSConfigFileProfileConfigLoader m_credentialsFileLoader;
-  long m_loadFrequencyMs;
-
-  void RefreshIfExpired() {
-    ReaderLockGuard guard(m_reloadLock);
-    if (!IsTimeToRefresh(m_loadFrequencyMs)) {
-      return;
-    }
-
-    guard.UpgradeToWriterLock();
-    if (!IsTimeToRefresh(m_loadFrequencyMs))  // double-checked lock to avoid refreshing twice
-    {
-      return;
-    }
-
-    Reload();
-  }
 };
 
-ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs)
-    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(refreshRateMs)) {}
+ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs) : m_impl(std::make_shared<ProfileCredentialsProviderImp>()) {
+  (void)refreshRateMs;
+}
 
 ProfileCredentialsProvider::ProfileCredentialsProvider(const char* profile, long refreshRateMs)
-    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(profile, refreshRateMs)) {}
+    : m_impl(std::make_shared<ProfileCredentialsProviderImp>(profile)) {
+  (void)refreshRateMs;
+}
+
+void ProfileCredentialsProvider::Reload() {}
 
 Aws::String ProfileCredentialsProvider::GetCredentialsProfileFilename() {
   return ProfileCredentialsProviderImp::GetCredentialsProfileFilename();
@@ -114,5 +75,3 @@ Aws::String ProfileCredentialsProvider::GetCredentialsProfileFilename() {
 Aws::String ProfileCredentialsProvider::GetProfileDirectory() { return ProfileCredentialsProviderImp::GetProfileDirectory(); }
 
 AWSCredentials ProfileCredentialsProvider::GetAWSCredentials() { return m_impl->GetAWSCredentials(); }
-
-void ProfileCredentialsProvider::Reload() { m_impl->Reload(); }
