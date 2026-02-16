@@ -8,6 +8,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/crt/Variant.h>
 
+#include <algorithm>
 #include <functional>
 #include <utility>
 #include <thread>
@@ -37,13 +38,6 @@ using PathMatcher = std::function<bool(const OutcomeT&, const ExpectedValue&)>;
 
 template <typename RequestT, typename OutcomeT>
 class Waiter {
-  int delay;
-  int maxAttempts;
-  std::vector<Acceptor> acceptors;
-  std::function<OutcomeT(const RequestT&)> operation;
-  Aws::String name;
-  PathMatcher<OutcomeT> pathMatcher;
-
   bool Matches(const Acceptor& acceptor, const OutcomeT& outcome) {
     switch (acceptor.matcher) {
       case MatcherType::STATUS: {
@@ -64,39 +58,46 @@ class Waiter {
       case MatcherType::PATH:
       case MatcherType::PATH_ALL:
       case MatcherType::PATH_ANY:
-        return pathMatcher ? pathMatcher(outcome, acceptor.expected) : false;
+        return m_pathMatcher(outcome, acceptor.expected);
     }
     return false;
   }
 
  public:
   Waiter(int delay, int maxAttempts, std::vector<Acceptor> acceptors, std::function<OutcomeT(const RequestT&)> op,
-         const Aws::String& waiterName = "Waiter", PathMatcher<OutcomeT> pathMatcher = nullptr)
-      : delay(delay),
-        maxAttempts(maxAttempts),
-        acceptors(std::move(acceptors)),
-        operation(std::move(op)),
-        name(waiterName),
-        pathMatcher(std::move(pathMatcher)) {}
+         const Aws::String& waiterName = "Waiter", PathMatcher<OutcomeT> pathMatcher = [](const OutcomeT&, const ExpectedValue&) { return false; })
+      : m_delay(delay),
+        m_maxAttempts(maxAttempts),
+        m_acceptors(std::move(acceptors)),
+        m_operation(std::move(op)),
+        m_name(waiterName),
+        m_pathMatcher(std::move(pathMatcher)) {}
 
   WaiterOutcome<OutcomeT> Wait(const RequestT& request) {
-    for (int attempt = 0; attempt < maxAttempts; ++attempt) {
-      auto outcome = operation(request);
+    for (int attempt = 0; attempt < m_maxAttempts; ++attempt) {
+      auto outcome = m_operation(request);
 
-      for (const auto& acceptor : acceptors) {
-        if (Matches(acceptor, outcome)) {
-          return outcome;
-        }
+      auto matched = std::find_if(m_acceptors.begin(), m_acceptors.end(),
+                             [this, &outcome](const Acceptor& acceptor) -> bool { return Matches(acceptor, outcome); });
+      if (matched != m_acceptors.end()) {
+        return WaiterOutcome<OutcomeT>(outcome);
       }
 
-      if (attempt < maxAttempts - 1) {
-        std::this_thread::sleep_for(std::chrono::seconds(delay));
+      if (attempt < m_maxAttempts - 1) {
+        std::this_thread::sleep_for(std::chrono::seconds(m_delay));
       }
     }
-    AWS_LOG_TRACE(name.c_str(), "Waiter hit max attempts");
-    return WaiterError(WaiterErrors::MAX_ATTEMPTS, "", "Max attempts for operation reached", false /*retryable*/);;
+    AWS_LOG_TRACE(m_name.c_str(), "Waiter hit max attempts");
+    return WaiterOutcome<OutcomeT>(WaiterError(WaiterErrors::MAX_ATTEMPTS, "", "Max attempts for operation reached", false /*retryable*/));
   }
+
 private:
+  int m_delay;
+  int m_maxAttempts;
+  std::vector<Acceptor> m_acceptors;
+  std::function<OutcomeT(const RequestT&)> m_operation;
+  Aws::String m_name;
+  PathMatcher<OutcomeT> m_pathMatcher;
   /**
    * Returns the HTTP status code from the result or error.
    * Fails at compile time if GetResponseCode() is not available.
