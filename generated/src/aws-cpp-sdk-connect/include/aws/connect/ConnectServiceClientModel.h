@@ -55,6 +55,7 @@
 #include <aws/connect/model/CreateHoursOfOperationResult.h>
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
+#include <aws/connect/model/CreateNotificationResult.h>
 #include <aws/connect/model/CreateParticipantResult.h>
 #include <aws/connect/model/CreatePersistentContactAssociationResult.h>
 #include <aws/connect/model/CreatePromptResult.h>
@@ -85,6 +86,7 @@
 #include <aws/connect/model/DeleteDataTableAttributeResult.h>
 #include <aws/connect/model/DeleteDataTableResult.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
+#include <aws/connect/model/DeleteNotificationResult.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteTestCaseResult.h>
@@ -111,6 +113,7 @@
 #include <aws/connect/model/DescribeInstanceAttributeResult.h>
 #include <aws/connect/model/DescribeInstanceResult.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigResult.h>
+#include <aws/connect/model/DescribeNotificationResult.h>
 #include <aws/connect/model/DescribePhoneNumberResult.h>
 #include <aws/connect/model/DescribePredefinedAttributeResult.h>
 #include <aws/connect/model/DescribePromptResult.h>
@@ -182,6 +185,7 @@
 #include <aws/connect/model/ListIntegrationAssociationsResult.h>
 #include <aws/connect/model/ListLambdaFunctionsResult.h>
 #include <aws/connect/model/ListLexBotsResult.h>
+#include <aws/connect/model/ListNotificationsResult.h>
 #include <aws/connect/model/ListPhoneNumbersResult.h>
 #include <aws/connect/model/ListPhoneNumbersV2Request.h>
 #include <aws/connect/model/ListPhoneNumbersV2Result.h>
@@ -210,6 +214,7 @@
 #include <aws/connect/model/ListTrafficDistributionGroupsResult.h>
 #include <aws/connect/model/ListUseCasesResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
+#include <aws/connect/model/ListUserNotificationsResult.h>
 #include <aws/connect/model/ListUserProficienciesResult.h>
 #include <aws/connect/model/ListUsersResult.h>
 #include <aws/connect/model/ListViewVersionsResult.h>
@@ -234,6 +239,7 @@
 #include <aws/connect/model/SearchEvaluationFormsResult.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
+#include <aws/connect/model/SearchNotificationsResult.h>
 #include <aws/connect/model/SearchPredefinedAttributesResult.h>
 #include <aws/connect/model/SearchPromptsResult.h>
 #include <aws/connect/model/SearchQueuesResult.h>
@@ -292,6 +298,7 @@
 #include <aws/connect/model/UpdateDataTablePrimaryValuesResult.h>
 #include <aws/connect/model/UpdateEmailAddressMetadataResult.h>
 #include <aws/connect/model/UpdateEvaluationFormResult.h>
+#include <aws/connect/model/UpdateNotificationContentResult.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
@@ -299,6 +306,7 @@
 #include <aws/connect/model/UpdateTaskTemplateResult.h>
 #include <aws/connect/model/UpdateTestCaseResult.h>
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
+#include <aws/connect/model/UpdateUserNotificationStatusResult.h>
 #include <aws/connect/model/UpdateViewContentResult.h>
 #include <aws/connect/model/UpdateViewMetadataResult.h>
 #include <aws/connect/model/UpdateWorkspaceMetadataResult.h>
@@ -385,6 +393,7 @@ class CreateHoursOfOperationRequest;
 class CreateHoursOfOperationOverrideRequest;
 class CreateInstanceRequest;
 class CreateIntegrationAssociationRequest;
+class CreateNotificationRequest;
 class CreateParticipantRequest;
 class CreatePersistentContactAssociationRequest;
 class CreatePredefinedAttributeRequest;
@@ -422,6 +431,7 @@ class DeleteHoursOfOperationRequest;
 class DeleteHoursOfOperationOverrideRequest;
 class DeleteInstanceRequest;
 class DeleteIntegrationAssociationRequest;
+class DeleteNotificationRequest;
 class DeletePredefinedAttributeRequest;
 class DeletePromptRequest;
 class DeletePushNotificationRegistrationRequest;
@@ -458,6 +468,7 @@ class DescribeHoursOfOperationOverrideRequest;
 class DescribeInstanceRequest;
 class DescribeInstanceAttributeRequest;
 class DescribeInstanceStorageConfigRequest;
+class DescribeNotificationRequest;
 class DescribePhoneNumberRequest;
 class DescribePredefinedAttributeRequest;
 class DescribePromptRequest;
@@ -541,6 +552,7 @@ class ListInstancesRequest;
 class ListIntegrationAssociationsRequest;
 class ListLambdaFunctionsRequest;
 class ListLexBotsRequest;
+class ListNotificationsRequest;
 class ListPhoneNumbersRequest;
 class ListPhoneNumbersV2Request;
 class ListPredefinedAttributesRequest;
@@ -567,6 +579,7 @@ class ListTrafficDistributionGroupUsersRequest;
 class ListTrafficDistributionGroupsRequest;
 class ListUseCasesRequest;
 class ListUserHierarchyGroupsRequest;
+class ListUserNotificationsRequest;
 class ListUserProficienciesRequest;
 class ListUsersRequest;
 class ListViewVersionsRequest;
@@ -592,6 +605,7 @@ class SearchEmailAddressesRequest;
 class SearchEvaluationFormsRequest;
 class SearchHoursOfOperationOverridesRequest;
 class SearchHoursOfOperationsRequest;
+class SearchNotificationsRequest;
 class SearchPredefinedAttributesRequest;
 class SearchPromptsRequest;
 class SearchQueuesRequest;
@@ -656,6 +670,7 @@ class UpdateHoursOfOperationRequest;
 class UpdateHoursOfOperationOverrideRequest;
 class UpdateInstanceAttributeRequest;
 class UpdateInstanceStorageConfigRequest;
+class UpdateNotificationContentRequest;
 class UpdateParticipantAuthenticationRequest;
 class UpdateParticipantRoleConfigRequest;
 class UpdatePhoneNumberRequest;
@@ -685,6 +700,7 @@ class UpdateUserHierarchyRequest;
 class UpdateUserHierarchyGroupNameRequest;
 class UpdateUserHierarchyStructureRequest;
 class UpdateUserIdentityInfoRequest;
+class UpdateUserNotificationStatusRequest;
 class UpdateUserPhoneConfigRequest;
 class UpdateUserProficienciesRequest;
 class UpdateUserRoutingProfileRequest;
@@ -744,6 +760,7 @@ typedef Aws::Utils::Outcome<CreateHoursOfOperationResult, ConnectError> CreateHo
 typedef Aws::Utils::Outcome<CreateHoursOfOperationOverrideResult, ConnectError> CreateHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
 typedef Aws::Utils::Outcome<CreateIntegrationAssociationResult, ConnectError> CreateIntegrationAssociationOutcome;
+typedef Aws::Utils::Outcome<CreateNotificationResult, ConnectError> CreateNotificationOutcome;
 typedef Aws::Utils::Outcome<CreateParticipantResult, ConnectError> CreateParticipantOutcome;
 typedef Aws::Utils::Outcome<CreatePersistentContactAssociationResult, ConnectError> CreatePersistentContactAssociationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> CreatePredefinedAttributeOutcome;
@@ -781,6 +798,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationO
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
+typedef Aws::Utils::Outcome<DeleteNotificationResult, ConnectError> DeleteNotificationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeletePredefinedAttributeOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeletePromptOutcome;
 typedef Aws::Utils::Outcome<DeletePushNotificationRegistrationResult, ConnectError> DeletePushNotificationRegistrationOutcome;
@@ -817,6 +835,7 @@ typedef Aws::Utils::Outcome<DescribeHoursOfOperationOverrideResult, ConnectError
 typedef Aws::Utils::Outcome<DescribeInstanceResult, ConnectError> DescribeInstanceOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceAttributeResult, ConnectError> DescribeInstanceAttributeOutcome;
 typedef Aws::Utils::Outcome<DescribeInstanceStorageConfigResult, ConnectError> DescribeInstanceStorageConfigOutcome;
+typedef Aws::Utils::Outcome<DescribeNotificationResult, ConnectError> DescribeNotificationOutcome;
 typedef Aws::Utils::Outcome<DescribePhoneNumberResult, ConnectError> DescribePhoneNumberOutcome;
 typedef Aws::Utils::Outcome<DescribePredefinedAttributeResult, ConnectError> DescribePredefinedAttributeOutcome;
 typedef Aws::Utils::Outcome<DescribePromptResult, ConnectError> DescribePromptOutcome;
@@ -900,6 +919,7 @@ typedef Aws::Utils::Outcome<ListInstancesResult, ConnectError> ListInstancesOutc
 typedef Aws::Utils::Outcome<ListIntegrationAssociationsResult, ConnectError> ListIntegrationAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListLambdaFunctionsResult, ConnectError> ListLambdaFunctionsOutcome;
 typedef Aws::Utils::Outcome<ListLexBotsResult, ConnectError> ListLexBotsOutcome;
+typedef Aws::Utils::Outcome<ListNotificationsResult, ConnectError> ListNotificationsOutcome;
 typedef Aws::Utils::Outcome<ListPhoneNumbersResult, ConnectError> ListPhoneNumbersOutcome;
 typedef Aws::Utils::Outcome<ListPhoneNumbersV2Result, ConnectError> ListPhoneNumbersV2Outcome;
 typedef Aws::Utils::Outcome<ListPredefinedAttributesResult, ConnectError> ListPredefinedAttributesOutcome;
@@ -926,6 +946,7 @@ typedef Aws::Utils::Outcome<ListTrafficDistributionGroupUsersResult, ConnectErro
 typedef Aws::Utils::Outcome<ListTrafficDistributionGroupsResult, ConnectError> ListTrafficDistributionGroupsOutcome;
 typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
 typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
+typedef Aws::Utils::Outcome<ListUserNotificationsResult, ConnectError> ListUserNotificationsOutcome;
 typedef Aws::Utils::Outcome<ListUserProficienciesResult, ConnectError> ListUserProficienciesOutcome;
 typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
 typedef Aws::Utils::Outcome<ListViewVersionsResult, ConnectError> ListViewVersionsOutcome;
@@ -951,6 +972,7 @@ typedef Aws::Utils::Outcome<SearchEmailAddressesResult, ConnectError> SearchEmai
 typedef Aws::Utils::Outcome<SearchEvaluationFormsResult, ConnectError> SearchEvaluationFormsOutcome;
 typedef Aws::Utils::Outcome<SearchHoursOfOperationOverridesResult, ConnectError> SearchHoursOfOperationOverridesOutcome;
 typedef Aws::Utils::Outcome<SearchHoursOfOperationsResult, ConnectError> SearchHoursOfOperationsOutcome;
+typedef Aws::Utils::Outcome<SearchNotificationsResult, ConnectError> SearchNotificationsOutcome;
 typedef Aws::Utils::Outcome<SearchPredefinedAttributesResult, ConnectError> SearchPredefinedAttributesOutcome;
 typedef Aws::Utils::Outcome<SearchPromptsResult, ConnectError> SearchPromptsOutcome;
 typedef Aws::Utils::Outcome<SearchQueuesResult, ConnectError> SearchQueuesOutcome;
@@ -1015,6 +1037,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationO
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOverrideOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
+typedef Aws::Utils::Outcome<UpdateNotificationContentResult, ConnectError> UpdateNotificationContentOutcome;
 typedef Aws::Utils::Outcome<UpdateParticipantAuthenticationResult, ConnectError> UpdateParticipantAuthenticationOutcome;
 typedef Aws::Utils::Outcome<UpdateParticipantRoleConfigResult, ConnectError> UpdateParticipantRoleConfigOutcome;
 typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
@@ -1044,6 +1067,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyOutc
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyGroupNameOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyStructureOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserIdentityInfoOutcome;
+typedef Aws::Utils::Outcome<UpdateUserNotificationStatusResult, ConnectError> UpdateUserNotificationStatusOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserPhoneConfigOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserProficienciesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserRoutingProfileOutcome;
@@ -1103,6 +1127,7 @@ typedef std::future<CreateHoursOfOperationOutcome> CreateHoursOfOperationOutcome
 typedef std::future<CreateHoursOfOperationOverrideOutcome> CreateHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 typedef std::future<CreateIntegrationAssociationOutcome> CreateIntegrationAssociationOutcomeCallable;
+typedef std::future<CreateNotificationOutcome> CreateNotificationOutcomeCallable;
 typedef std::future<CreateParticipantOutcome> CreateParticipantOutcomeCallable;
 typedef std::future<CreatePersistentContactAssociationOutcome> CreatePersistentContactAssociationOutcomeCallable;
 typedef std::future<CreatePredefinedAttributeOutcome> CreatePredefinedAttributeOutcomeCallable;
@@ -1140,6 +1165,7 @@ typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcome
 typedef std::future<DeleteHoursOfOperationOverrideOutcome> DeleteHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
+typedef std::future<DeleteNotificationOutcome> DeleteNotificationOutcomeCallable;
 typedef std::future<DeletePredefinedAttributeOutcome> DeletePredefinedAttributeOutcomeCallable;
 typedef std::future<DeletePromptOutcome> DeletePromptOutcomeCallable;
 typedef std::future<DeletePushNotificationRegistrationOutcome> DeletePushNotificationRegistrationOutcomeCallable;
@@ -1176,6 +1202,7 @@ typedef std::future<DescribeHoursOfOperationOverrideOutcome> DescribeHoursOfOper
 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
 typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
 typedef std::future<DescribeInstanceStorageConfigOutcome> DescribeInstanceStorageConfigOutcomeCallable;
+typedef std::future<DescribeNotificationOutcome> DescribeNotificationOutcomeCallable;
 typedef std::future<DescribePhoneNumberOutcome> DescribePhoneNumberOutcomeCallable;
 typedef std::future<DescribePredefinedAttributeOutcome> DescribePredefinedAttributeOutcomeCallable;
 typedef std::future<DescribePromptOutcome> DescribePromptOutcomeCallable;
@@ -1259,6 +1286,7 @@ typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 typedef std::future<ListIntegrationAssociationsOutcome> ListIntegrationAssociationsOutcomeCallable;
 typedef std::future<ListLambdaFunctionsOutcome> ListLambdaFunctionsOutcomeCallable;
 typedef std::future<ListLexBotsOutcome> ListLexBotsOutcomeCallable;
+typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
 typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
 typedef std::future<ListPhoneNumbersV2Outcome> ListPhoneNumbersV2OutcomeCallable;
 typedef std::future<ListPredefinedAttributesOutcome> ListPredefinedAttributesOutcomeCallable;
@@ -1285,6 +1313,7 @@ typedef std::future<ListTrafficDistributionGroupUsersOutcome> ListTrafficDistrib
 typedef std::future<ListTrafficDistributionGroupsOutcome> ListTrafficDistributionGroupsOutcomeCallable;
 typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
 typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
+typedef std::future<ListUserNotificationsOutcome> ListUserNotificationsOutcomeCallable;
 typedef std::future<ListUserProficienciesOutcome> ListUserProficienciesOutcomeCallable;
 typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 typedef std::future<ListViewVersionsOutcome> ListViewVersionsOutcomeCallable;
@@ -1310,6 +1339,7 @@ typedef std::future<SearchEmailAddressesOutcome> SearchEmailAddressesOutcomeCall
 typedef std::future<SearchEvaluationFormsOutcome> SearchEvaluationFormsOutcomeCallable;
 typedef std::future<SearchHoursOfOperationOverridesOutcome> SearchHoursOfOperationOverridesOutcomeCallable;
 typedef std::future<SearchHoursOfOperationsOutcome> SearchHoursOfOperationsOutcomeCallable;
+typedef std::future<SearchNotificationsOutcome> SearchNotificationsOutcomeCallable;
 typedef std::future<SearchPredefinedAttributesOutcome> SearchPredefinedAttributesOutcomeCallable;
 typedef std::future<SearchPromptsOutcome> SearchPromptsOutcomeCallable;
 typedef std::future<SearchQueuesOutcome> SearchQueuesOutcomeCallable;
@@ -1374,6 +1404,7 @@ typedef std::future<UpdateHoursOfOperationOutcome> UpdateHoursOfOperationOutcome
 typedef std::future<UpdateHoursOfOperationOverrideOutcome> UpdateHoursOfOperationOverrideOutcomeCallable;
 typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
 typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
+typedef std::future<UpdateNotificationContentOutcome> UpdateNotificationContentOutcomeCallable;
 typedef std::future<UpdateParticipantAuthenticationOutcome> UpdateParticipantAuthenticationOutcomeCallable;
 typedef std::future<UpdateParticipantRoleConfigOutcome> UpdateParticipantRoleConfigOutcomeCallable;
 typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
@@ -1403,6 +1434,7 @@ typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallab
 typedef std::future<UpdateUserHierarchyGroupNameOutcome> UpdateUserHierarchyGroupNameOutcomeCallable;
 typedef std::future<UpdateUserHierarchyStructureOutcome> UpdateUserHierarchyStructureOutcomeCallable;
 typedef std::future<UpdateUserIdentityInfoOutcome> UpdateUserIdentityInfoOutcomeCallable;
+typedef std::future<UpdateUserNotificationStatusOutcome> UpdateUserNotificationStatusOutcomeCallable;
 typedef std::future<UpdateUserPhoneConfigOutcome> UpdateUserPhoneConfigOutcomeCallable;
 typedef std::future<UpdateUserProficienciesOutcome> UpdateUserProficienciesOutcomeCallable;
 typedef std::future<UpdateUserRoutingProfileOutcome> UpdateUserRoutingProfileOutcomeCallable;
@@ -1568,6 +1600,9 @@ typedef std::function<void(const ConnectClient*, const Model::CreateIntegrationA
                            const Model::CreateIntegrationAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateIntegrationAssociationResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::CreateNotificationRequest&, const Model::CreateNotificationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateNotificationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::CreateParticipantRequest&, const Model::CreateParticipantOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateParticipantResponseReceivedHandler;
@@ -1686,6 +1721,9 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationA
                            const Model::DeleteIntegrationAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteIntegrationAssociationResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DeleteNotificationRequest&, const Model::DeleteNotificationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteNotificationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DeletePredefinedAttributeRequest&,
                            const Model::DeletePredefinedAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePredefinedAttributeResponseReceivedHandler;
@@ -1800,6 +1838,9 @@ typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceSt
                            const Model::DescribeInstanceStorageConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeInstanceStorageConfigResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeNotificationRequest&, const Model::DescribeNotificationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeNotificationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribePhoneNumberRequest&, const Model::DescribePhoneNumberOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribePhoneNumberResponseReceivedHandler;
@@ -2067,6 +2108,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListLambdaFunction
 typedef std::function<void(const ConnectClient*, const Model::ListLexBotsRequest&, const Model::ListLexBotsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListLexBotsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNotificationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPhoneNumbersResponseReceivedHandler;
@@ -2153,6 +2197,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListUseCasesReques
 typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListUserHierarchyGroupsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListUserNotificationsRequest&, const Model::ListUserNotificationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListUserNotificationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListUserProficienciesRequest&, const Model::ListUserProficienciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListUserProficienciesResponseReceivedHandler;
@@ -2229,6 +2276,9 @@ typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOpera
 typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOperationsRequest&, const Model::SearchHoursOfOperationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchHoursOfOperationsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::SearchNotificationsRequest&, const Model::SearchNotificationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SearchNotificationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::SearchPredefinedAttributesRequest&,
                            const Model::SearchPredefinedAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchPredefinedAttributesResponseReceivedHandler;
@@ -2426,6 +2476,9 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceAttr
 typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&,
                            const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateInstanceStorageConfigResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateNotificationContentRequest&,
+                           const Model::UpdateNotificationContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateNotificationContentResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantAuthenticationRequest&,
                            const Model::UpdateParticipantAuthenticationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2521,6 +2574,10 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarch
 typedef std::function<void(const ConnectClient*, const Model::UpdateUserIdentityInfoRequest&, const Model::UpdateUserIdentityInfoOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateUserIdentityInfoResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateUserNotificationStatusRequest&,
+                           const Model::UpdateUserNotificationStatusOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateUserNotificationStatusResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateUserPhoneConfigRequest&, const Model::UpdateUserPhoneConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateUserPhoneConfigResponseReceivedHandler;

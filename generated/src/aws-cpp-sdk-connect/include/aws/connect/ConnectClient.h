@@ -1578,6 +1578,35 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Creates a new notification to be delivered to specified recipients.
+   * Notifications can include localized content with embedded links, and an optional
+   * expiration time. Recipients can be specified as individual user ARNs or instance
+   * ARNs to target all users in an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateNotificationOutcome CreateNotification(const Model::CreateNotificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateNotification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateNotificationRequestT = Model::CreateNotificationRequest>
+  Model::CreateNotificationOutcomeCallable CreateNotificationCallable(const CreateNotificationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateNotification, request);
+  }
+
+  /**
+   * An Async wrapper for CreateNotification that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateNotificationRequestT = Model::CreateNotificationRequest>
+  void CreateNotificationAsync(const CreateNotificationRequestT& request, const CreateNotificationResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateNotification, request, handler, context);
+  }
+
+  /**
    * <p>Adds a new participant into an on-going chat contact or webRTC call. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
@@ -2716,6 +2745,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Deletes a notification. Once deleted, the notification is no longer visible
+   * to all users and cannot be managed through the Admin Website or
+   * APIs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteNotificationOutcome DeleteNotification(const Model::DeleteNotificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteNotification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteNotificationRequestT = Model::DeleteNotificationRequest>
+  Model::DeleteNotificationOutcomeCallable DeleteNotificationCallable(const DeleteNotificationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteNotification, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteNotification that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteNotificationRequestT = Model::DeleteNotificationRequest>
+  void DeleteNotificationAsync(const DeleteNotificationRequestT& request, const DeleteNotificationResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteNotification, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a predefined attribute from the specified Amazon Connect
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePredefinedAttribute">AWS
@@ -3774,6 +3831,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                           const DescribeInstanceStorageConfigResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DescribeInstanceStorageConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific notification, including its
+   * content, priority, recipients, and metadata.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeNotificationOutcome DescribeNotification(const Model::DescribeNotificationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeNotification that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeNotificationRequestT = Model::DescribeNotificationRequest>
+  Model::DescribeNotificationOutcomeCallable DescribeNotificationCallable(const DescribeNotificationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeNotification, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeNotification that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeNotificationRequestT = Model::DescribeNotificationRequest>
+  void DescribeNotificationAsync(const DescribeNotificationRequestT& request, const DescribeNotificationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeNotification, request, handler, context);
   }
 
   /**
@@ -6342,6 +6426,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Retrieves a paginated list of all notifications in the Amazon Connect
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNotificationsOutcome ListNotifications(const Model::ListNotificationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNotifications that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListNotificationsRequestT = Model::ListNotificationsRequest>
+  Model::ListNotificationsOutcomeCallable ListNotificationsCallable(const ListNotificationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListNotifications, request);
+  }
+
+  /**
+   * An Async wrapper for ListNotifications that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListNotificationsRequestT = Model::ListNotificationsRequest>
+  void ListNotificationsAsync(const ListNotificationsRequestT& request, const ListNotificationsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListNotifications, request, handler, context);
+  }
+
+  /**
    * <p>Provides information about the phone numbers for the specified Amazon Connect
    * instance. </p> <p>For more information about phone numbers, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
@@ -7159,6 +7270,33 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Retrieves a paginated list of notifications for a specific user, including
+   * the notification status for that user.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListUserNotificationsOutcome ListUserNotifications(const Model::ListUserNotificationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListUserNotifications that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListUserNotificationsRequestT = Model::ListUserNotificationsRequest>
+  Model::ListUserNotificationsOutcomeCallable ListUserNotificationsCallable(const ListUserNotificationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListUserNotifications, request);
+  }
+
+  /**
+   * An Async wrapper for ListUserNotifications that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListUserNotificationsRequestT = Model::ListUserNotificationsRequest>
+  void ListUserNotificationsAsync(const ListUserNotificationsRequestT& request, const ListUserNotificationsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListUserNotifications, request, handler, context);
+  }
+
+  /**
    * <p>Lists proficiencies associated with a user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserProficiencies">AWS
    * API Reference</a></p>
@@ -7892,6 +8030,35 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                     const SearchHoursOfOperationsResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::SearchHoursOfOperations, request, handler, context);
+  }
+
+  /**
+   * <p>Searches for notifications based on specified criteria and filters. Returns a
+   * paginated list of notifications matching the search parameters, ordered by
+   * descending creation time. Supports filtering by content and tags.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchNotificationsOutcome SearchNotifications(const Model::SearchNotificationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchNotifications that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchNotificationsRequestT = Model::SearchNotificationsRequest>
+  Model::SearchNotificationsOutcomeCallable SearchNotificationsCallable(const SearchNotificationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::SearchNotifications, request);
+  }
+
+  /**
+   * An Async wrapper for SearchNotifications that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchNotificationsRequestT = Model::SearchNotificationsRequest>
+  void SearchNotificationsAsync(const SearchNotificationsRequestT& request, const SearchNotificationsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::SearchNotifications, request, handler, context);
   }
 
   /**
@@ -9944,6 +10111,36 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
+   * <p>Updates the localized content of an existing notification. This operation
+   * applies to all users for whom the notification was sent.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateNotificationContentOutcome UpdateNotificationContent(const Model::UpdateNotificationContentRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateNotificationContent that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateNotificationContentRequestT = Model::UpdateNotificationContentRequest>
+  Model::UpdateNotificationContentOutcomeCallable UpdateNotificationContentCallable(
+      const UpdateNotificationContentRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateNotificationContent, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateNotificationContent that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateNotificationContentRequestT = Model::UpdateNotificationContentRequest>
+  void UpdateNotificationContentAsync(const UpdateNotificationContentRequestT& request,
+                                      const UpdateNotificationContentResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateNotificationContent, request, handler, context);
+  }
+
+  /**
    * <p>Instructs Amazon Connect to resume the authentication process. The subsequent
    * actions depend on the request body contents:</p> <ul> <li> <p> <b>If a code is
    * provided</b>: Connect retrieves the identity information from Amazon Cognito and
@@ -10863,6 +11060,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
                                    const UpdateUserIdentityInfoResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateUserIdentityInfo, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the status of a notification for a specific user, such as marking it
+   * as read or hidden. Users can only update notification status for notifications
+   * that have been sent to them. READ status deprioritizes the notification and
+   * greys it out, while HIDDEN status removes it from the notification
+   * widget.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateUserNotificationStatusOutcome UpdateUserNotificationStatus(
+      const Model::UpdateUserNotificationStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateUserNotificationStatus that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateUserNotificationStatusRequestT = Model::UpdateUserNotificationStatusRequest>
+  Model::UpdateUserNotificationStatusOutcomeCallable UpdateUserNotificationStatusCallable(
+      const UpdateUserNotificationStatusRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateUserNotificationStatus, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateUserNotificationStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateUserNotificationStatusRequestT = Model::UpdateUserNotificationStatusRequest>
+  void UpdateUserNotificationStatusAsync(const UpdateUserNotificationStatusRequestT& request,
+                                         const UpdateUserNotificationStatusResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateUserNotificationStatus, request, handler, context);
   }
 
   /**

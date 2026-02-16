@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterNodeProvisioningMode.h>
 #include <aws/sagemaker/model/ClusterNodeRecovery.h>
+#include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterTieredStorageConfig.h>
 
@@ -226,6 +227,22 @@ class UpdateClusterRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const ClusterOrchestrator& GetOrchestrator() const { return m_orchestrator; }
+  inline bool OrchestratorHasBeenSet() const { return m_orchestratorHasBeenSet; }
+  template <typename OrchestratorT = ClusterOrchestrator>
+  void SetOrchestrator(OrchestratorT&& value) {
+    m_orchestratorHasBeenSet = true;
+    m_orchestrator = std::forward<OrchestratorT>(value);
+  }
+  template <typename OrchestratorT = ClusterOrchestrator>
+  UpdateClusterRequest& WithOrchestrator(OrchestratorT&& value) {
+    SetOrchestrator(std::forward<OrchestratorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clusterName;
 
@@ -244,6 +261,8 @@ class UpdateClusterRequest : public SageMakerRequest {
   Aws::String m_clusterRole;
 
   ClusterAutoScalingConfig m_autoScaling;
+
+  ClusterOrchestrator m_orchestrator;
   bool m_clusterNameHasBeenSet = false;
   bool m_instanceGroupsHasBeenSet = false;
   bool m_restrictedInstanceGroupsHasBeenSet = false;
@@ -253,6 +272,7 @@ class UpdateClusterRequest : public SageMakerRequest {
   bool m_nodeProvisioningModeHasBeenSet = false;
   bool m_clusterRoleHasBeenSet = false;
   bool m_autoScalingHasBeenSet = false;
+  bool m_orchestratorHasBeenSet = false;
 };
 
 }  // namespace Model

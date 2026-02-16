@@ -36,6 +36,8 @@ static const int DOTNET_6_HASH = HashingUtils::HashString("DOTNET_6");
 static const int DOTNET_7_HASH = HashingUtils::HashString("DOTNET_7");
 static const int RUBY_2_7_HASH = HashingUtils::HashString("RUBY_2_7");
 static const int RUBY_3_2_HASH = HashingUtils::HashString("RUBY_3_2");
+static const int DOTNET_10_HASH = HashingUtils::HashString("DOTNET_10");
+static const int NODEJS_24_X_HASH = HashingUtils::HashString("NODEJS_24_X");
 
 Runtime GetRuntimeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -81,6 +83,10 @@ Runtime GetRuntimeForName(const Aws::String& name) {
     return Runtime::RUBY_2_7;
   } else if (hashCode == RUBY_3_2_HASH) {
     return Runtime::RUBY_3_2;
+  } else if (hashCode == DOTNET_10_HASH) {
+    return Runtime::DOTNET_10;
+  } else if (hashCode == NODEJS_24_X_HASH) {
+    return Runtime::NODEJS_24_X;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -137,6 +143,10 @@ Aws::String GetNameForRuntime(Runtime enumValue) {
       return "RUBY_2_7";
     case Runtime::RUBY_3_2:
       return "RUBY_3_2";
+    case Runtime::DOTNET_10:
+      return "DOTNET_10";
+    case Runtime::NODEJS_24_X:
+      return "NODEJS_24_X";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

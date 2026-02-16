@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ClusterOrchestratorEksConfig.h>
+#include <aws/sagemaker/model/ClusterOrchestratorSlurmConfig.h>
 
 #include <utility>
 
@@ -50,9 +51,30 @@ class ClusterOrchestrator {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Slurm orchestrator configuration for the SageMaker HyperPod cluster.</p>
+   */
+  inline const ClusterOrchestratorSlurmConfig& GetSlurm() const { return m_slurm; }
+  inline bool SlurmHasBeenSet() const { return m_slurmHasBeenSet; }
+  template <typename SlurmT = ClusterOrchestratorSlurmConfig>
+  void SetSlurm(SlurmT&& value) {
+    m_slurmHasBeenSet = true;
+    m_slurm = std::forward<SlurmT>(value);
+  }
+  template <typename SlurmT = ClusterOrchestratorSlurmConfig>
+  ClusterOrchestrator& WithSlurm(SlurmT&& value) {
+    SetSlurm(std::forward<SlurmT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClusterOrchestratorEksConfig m_eks;
+
+  ClusterOrchestratorSlurmConfig m_slurm;
   bool m_eksHasBeenSet = false;
+  bool m_slurmHasBeenSet = false;
 };
 
 }  // namespace Model

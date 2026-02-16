@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ClusterEbsVolumeConfig.h>
+#include <aws/sagemaker/model/ClusterFsxLustreConfig.h>
+#include <aws/sagemaker/model/ClusterFsxOpenZfsConfig.h>
 
 #include <utility>
 
@@ -54,9 +56,53 @@ class ClusterInstanceStorageConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Defines the configuration for attaching an Amazon FSx for Lustre file system
+   * to the instances in the SageMaker HyperPod cluster instance group.</p>
+   */
+  inline const ClusterFsxLustreConfig& GetFsxLustreConfig() const { return m_fsxLustreConfig; }
+  inline bool FsxLustreConfigHasBeenSet() const { return m_fsxLustreConfigHasBeenSet; }
+  template <typename FsxLustreConfigT = ClusterFsxLustreConfig>
+  void SetFsxLustreConfig(FsxLustreConfigT&& value) {
+    m_fsxLustreConfigHasBeenSet = true;
+    m_fsxLustreConfig = std::forward<FsxLustreConfigT>(value);
+  }
+  template <typename FsxLustreConfigT = ClusterFsxLustreConfig>
+  ClusterInstanceStorageConfig& WithFsxLustreConfig(FsxLustreConfigT&& value) {
+    SetFsxLustreConfig(std::forward<FsxLustreConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Defines the configuration for attaching an Amazon FSx for OpenZFS file system
+   * to the instances in the SageMaker HyperPod cluster instance group.</p>
+   */
+  inline const ClusterFsxOpenZfsConfig& GetFsxOpenZfsConfig() const { return m_fsxOpenZfsConfig; }
+  inline bool FsxOpenZfsConfigHasBeenSet() const { return m_fsxOpenZfsConfigHasBeenSet; }
+  template <typename FsxOpenZfsConfigT = ClusterFsxOpenZfsConfig>
+  void SetFsxOpenZfsConfig(FsxOpenZfsConfigT&& value) {
+    m_fsxOpenZfsConfigHasBeenSet = true;
+    m_fsxOpenZfsConfig = std::forward<FsxOpenZfsConfigT>(value);
+  }
+  template <typename FsxOpenZfsConfigT = ClusterFsxOpenZfsConfig>
+  ClusterInstanceStorageConfig& WithFsxOpenZfsConfig(FsxOpenZfsConfigT&& value) {
+    SetFsxOpenZfsConfig(std::forward<FsxOpenZfsConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClusterEbsVolumeConfig m_ebsVolumeConfig;
+
+  ClusterFsxLustreConfig m_fsxLustreConfig;
+
+  ClusterFsxOpenZfsConfig m_fsxOpenZfsConfig;
   bool m_ebsVolumeConfigHasBeenSet = false;
+  bool m_fsxLustreConfigHasBeenSet = false;
+  bool m_fsxOpenZfsConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -83,6 +83,10 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator=(
     m_kubernetesConfig = jsonValue.GetObject("KubernetesConfig");
     m_kubernetesConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SlurmConfig")) {
+    m_slurmConfig = jsonValue.GetObject("SlurmConfig");
+    m_slurmConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CapacityRequirements")) {
     m_capacityRequirements = jsonValue.GetObject("CapacityRequirements");
     m_capacityRequirementsHasBeenSet = true;
@@ -158,6 +162,10 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const {
 
   if (m_kubernetesConfigHasBeenSet) {
     payload.WithObject("KubernetesConfig", m_kubernetesConfig.Jsonize());
+  }
+
+  if (m_slurmConfigHasBeenSet) {
+    payload.WithObject("SlurmConfig", m_slurmConfig.Jsonize());
   }
 
   if (m_capacityRequirementsHasBeenSet) {

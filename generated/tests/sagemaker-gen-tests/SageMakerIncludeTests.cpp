@@ -209,6 +209,8 @@
 #include <aws/sagemaker/model/ClusterEventDetail.h>
 #include <aws/sagemaker/model/ClusterEventResourceType.h>
 #include <aws/sagemaker/model/ClusterEventSummary.h>
+#include <aws/sagemaker/model/ClusterFsxLustreConfig.h>
+#include <aws/sagemaker/model/ClusterFsxOpenZfsConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
@@ -230,9 +232,14 @@
 #include <aws/sagemaker/model/ClusterOnDemandOptions.h>
 #include <aws/sagemaker/model/ClusterOrchestrator.h>
 #include <aws/sagemaker/model/ClusterOrchestratorEksConfig.h>
+#include <aws/sagemaker/model/ClusterOrchestratorSlurmConfig.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupDetails.h>
 #include <aws/sagemaker/model/ClusterRestrictedInstanceGroupSpecification.h>
 #include <aws/sagemaker/model/ClusterSchedulerConfigSummary.h>
+#include <aws/sagemaker/model/ClusterSlurmConfig.h>
+#include <aws/sagemaker/model/ClusterSlurmConfigDetails.h>
+#include <aws/sagemaker/model/ClusterSlurmConfigStrategy.h>
+#include <aws/sagemaker/model/ClusterSlurmNodeType.h>
 #include <aws/sagemaker/model/ClusterSortBy.h>
 #include <aws/sagemaker/model/ClusterSpotOptions.h>
 #include <aws/sagemaker/model/ClusterStatus.h>

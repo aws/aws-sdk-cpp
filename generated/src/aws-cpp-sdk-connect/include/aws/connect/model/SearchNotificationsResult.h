@@ -1,0 +1,118 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/NotificationSearchSummary.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
+class SearchNotificationsResult {
+ public:
+  AWS_CONNECT_API SearchNotificationsResult() = default;
+  AWS_CONNECT_API SearchNotificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CONNECT_API SearchNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A list of notifications matching the search criteria.</p>
+   */
+  inline const Aws::Vector<NotificationSearchSummary>& GetNotifications() const { return m_notifications; }
+  template <typename NotificationsT = Aws::Vector<NotificationSearchSummary>>
+  void SetNotifications(NotificationsT&& value) {
+    m_notificationsHasBeenSet = true;
+    m_notifications = std::forward<NotificationsT>(value);
+  }
+  template <typename NotificationsT = Aws::Vector<NotificationSearchSummary>>
+  SearchNotificationsResult& WithNotifications(NotificationsT&& value) {
+    SetNotifications(std::forward<NotificationsT>(value));
+    return *this;
+  }
+  template <typename NotificationsT = NotificationSearchSummary>
+  SearchNotificationsResult& AddNotifications(NotificationsT&& value) {
+    m_notificationsHasBeenSet = true;
+    m_notifications.emplace_back(std::forward<NotificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next set of results. If present, there are more results
+   * available.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  SearchNotificationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The approximate total number of notifications matching the search
+   * criteria.</p>
+   */
+  inline long long GetApproximateTotalCount() const { return m_approximateTotalCount; }
+  inline void SetApproximateTotalCount(long long value) {
+    m_approximateTotalCountHasBeenSet = true;
+    m_approximateTotalCount = value;
+  }
+  inline SearchNotificationsResult& WithApproximateTotalCount(long long value) {
+    SetApproximateTotalCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  SearchNotificationsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<NotificationSearchSummary> m_notifications;
+
+  Aws::String m_nextToken;
+
+  long long m_approximateTotalCount{0};
+
+  Aws::String m_requestId;
+  bool m_notificationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_approximateTotalCountHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

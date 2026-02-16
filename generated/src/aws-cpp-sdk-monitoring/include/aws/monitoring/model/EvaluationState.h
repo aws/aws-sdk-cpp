@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudWatch {
 namespace Model {
-enum class EvaluationState { NOT_SET, PARTIAL_DATA };
+enum class EvaluationState { NOT_SET, PARTIAL_DATA, EVALUATION_FAILURE, EVALUATION_ERROR };
 
 namespace EvaluationStateMapper {
 AWS_CLOUDWATCH_API EvaluationState GetEvaluationStateForName(const Aws::String& name);

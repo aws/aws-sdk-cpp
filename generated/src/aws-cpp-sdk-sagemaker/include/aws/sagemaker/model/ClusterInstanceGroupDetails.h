@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfigDetails.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/ClusterSlurmConfigDetails.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <aws/sagemaker/model/DeploymentConfiguration.h>
 #include <aws/sagemaker/model/InstanceGroupStatus.h>
@@ -506,6 +507,24 @@ class ClusterInstanceGroupDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Slurm configuration for the instance group.</p>
+   */
+  inline const ClusterSlurmConfigDetails& GetSlurmConfig() const { return m_slurmConfig; }
+  inline bool SlurmConfigHasBeenSet() const { return m_slurmConfigHasBeenSet; }
+  template <typename SlurmConfigT = ClusterSlurmConfigDetails>
+  void SetSlurmConfig(SlurmConfigT&& value) {
+    m_slurmConfigHasBeenSet = true;
+    m_slurmConfig = std::forward<SlurmConfigT>(value);
+  }
+  template <typename SlurmConfigT = ClusterSlurmConfigDetails>
+  ClusterInstanceGroupDetails& WithSlurmConfig(SlurmConfigT&& value) {
+    SetSlurmConfig(std::forward<SlurmConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_currentCount{0};
 
@@ -552,6 +571,8 @@ class ClusterInstanceGroupDetails {
   SoftwareUpdateStatus m_softwareUpdateStatus{SoftwareUpdateStatus::NOT_SET};
 
   DeploymentConfiguration m_activeSoftwareUpdateConfig;
+
+  ClusterSlurmConfigDetails m_slurmConfig;
   bool m_currentCountHasBeenSet = false;
   bool m_targetCountHasBeenSet = false;
   bool m_minCountHasBeenSet = false;
@@ -575,6 +596,7 @@ class ClusterInstanceGroupDetails {
   bool m_targetStateCountHasBeenSet = false;
   bool m_softwareUpdateStatusHasBeenSet = false;
   bool m_activeSoftwareUpdateConfigHasBeenSet = false;
+  bool m_slurmConfigHasBeenSet = false;
 };
 
 }  // namespace Model
