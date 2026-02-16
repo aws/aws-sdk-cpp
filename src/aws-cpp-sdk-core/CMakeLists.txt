@@ -330,6 +330,7 @@ elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
 
   file(GLOB PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared/*.cpp")
   if(CMAKE_SYSTEM_NAME STREQUAL "AIX")
+      list(REMOVE_ITEM PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared/Time.cpp")
       list(APPEND PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/aix/*.cpp")
   endif()
 
