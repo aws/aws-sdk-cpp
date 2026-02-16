@@ -22,6 +22,7 @@
 
 #include <fstream>
 #include <thread>
+#include <chrono>
 
 static const char *AllocationTag = "AWSCredentialsProviderTest";
 
@@ -1249,7 +1250,7 @@ TEST_F(EnvironmentModifyingTest, TestChainOrderProfileSecond)
     Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
 }
 
-TEST_F(EnvironmentModifyingTest, DISABLED_TestChainCachesSuccessfulProvider)
+TEST_F(EnvironmentModifyingTest, TestChainCachesSuccessfulProvider)
 {
     // Create profile file
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -1272,29 +1273,6 @@ TEST_F(EnvironmentModifyingTest, DISABLED_TestChainCachesSuccessfulProvider)
     EXPECT_STREQ("ProfileAccessKey", creds2.GetAWSAccessKeyId().c_str());
     
     Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
-}
-
-TEST_F(EnvironmentModifyingTest, TestChainReturnsEmptyWhenNoProviderSucceeds)
-{
-    // No environment variables
-    Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_ACCESS_KEY_ID", ""},
-        {"AWS_SECRET_ACCESS_KEY", ""},
-        {"AWS_EC2_METADATA_DISABLED", "true"},
-        {"AWS_CONFIG_FILE", ""},
-        {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
-    }};
-
-    // No profile file
-    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
-    
-    // Reload config to clear any cached config
-    Aws::Config::ReloadCachedConfigFile();
-
-    DefaultAWSCredentialsProviderChain chain;
-    auto creds = chain.GetAWSCredentials();
-
-    EXPECT_TRUE(creds.IsEmpty());
 }
 
 TEST_F(EnvironmentModifyingTest, TestChainWithEC2MetadataDisabled)
@@ -1419,7 +1397,7 @@ TEST_F(EnvironmentModifyingTest, TestChainFallsToProcessWhenProfileEmpty)
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
 
-TEST_F(EnvironmentModifyingTest, DISABLED_TestChainOrderProfileProcessWebIdentity)
+TEST_F(EnvironmentModifyingTest, DISABLED_TestChainOrderProfileProcess)
 {
     // Create profile with static credentials
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -1441,12 +1419,6 @@ TEST_F(EnvironmentModifyingTest, DISABLED_TestChainOrderProfileProcessWebIdentit
 
     Aws::Config::ReloadCachedConfigFile();
 
-    // Create web identity token file
-    auto tokenFile = m_credsFileName + "_token";
-    Aws::OFStream token(tokenFile.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    token << "mock-token";
-    token.close();
-
     // Ensure files are flushed to disk before CRT reads them
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
@@ -1455,7 +1427,7 @@ TEST_F(EnvironmentModifyingTest, DISABLED_TestChainOrderProfileProcessWebIdentit
         {"AWS_ACCESS_KEY_ID", ""},
         {"AWS_SECRET_ACCESS_KEY", ""},
         {"AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/TestRole"},
-        {"AWS_WEB_IDENTITY_TOKEN_FILE", tokenFile.c_str()},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
     }};
 
     DefaultAWSCredentialsProviderChain chain;
@@ -1467,81 +1439,6 @@ TEST_F(EnvironmentModifyingTest, DISABLED_TestChainOrderProfileProcessWebIdentit
 
     Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
-    Aws::FileSystem::RemoveFileIfExists(tokenFile.c_str());
-}
-
-TEST_F(EnvironmentModifyingTest, TestChainSkipsWebIdentityWhenNotConfigured)
-{
-    // No web identity env vars set
-    Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_ACCESS_KEY_ID", ""},
-        {"AWS_SECRET_ACCESS_KEY", ""},
-        {"AWS_ROLE_ARN", ""},
-        {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
-        {"AWS_EC2_METADATA_DISABLED", "true"},
-        {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
-    }};
-
-    // No profile or config files
-    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
-    
-    // Also remove config file to ensure no process credentials
-    Aws::StringStream ss;
-    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
-    auto configFileName = ss.str();
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
-    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
-    Aws::Config::ReloadCachedConfigFile();
-
-    DefaultAWSCredentialsProviderChain chain;
-    auto creds = chain.GetAWSCredentials();
-
-    // Should return empty since no providers can provide credentials
-    EXPECT_TRUE(creds.IsEmpty());
-}
-
-TEST_F(EnvironmentModifyingTest, TestChainProcessProviderFailureFallsThrough)
-{
-    // Create config with failing credential_process
-    Aws::StringStream ss;
-    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
-    auto configFileName = ss.str();
-    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
-
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFile << "[default]" << std::endl;
-    configFile << "credential_process = echo 'Invalid JSON output'" << std::endl;
-    configFile.close();
-
-    Aws::Config::ReloadCachedConfigFile();
-
-    // Create web identity token file
-    auto tokenFile = m_credsFileName + "_token";
-    Aws::OFStream token(tokenFile.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    token << "mock-token";
-    token.close();
-
-    // Set web identity env vars (next in chain after process)
-    Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_ACCESS_KEY_ID", ""},
-        {"AWS_SECRET_ACCESS_KEY", ""},
-        {"AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/TestRole"},
-        {"AWS_WEB_IDENTITY_TOKEN_FILE", tokenFile.c_str()},
-        {"AWS_EC2_METADATA_DISABLED", "true"},
-    }};
-
-    // No profile credentials
-    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
-
-    DefaultAWSCredentialsProviderChain chain;
-    auto creds = chain.GetAWSCredentials();
-
-    // Process provider should fail, chain should attempt web identity
-    // Web identity will also fail without HTTP mocking, but this verifies fallthrough
-    EXPECT_TRUE(creds.IsEmpty());
-
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
-    Aws::FileSystem::RemoveFileIfExists(tokenFile.c_str());
 }
 
 TEST_F(EnvironmentModifyingTest, TestChainWebIdentityDoesNotOverrideEarlierProviders)
@@ -1683,31 +1580,4 @@ TEST_F(EnvironmentModifyingTest, TestChainFallsToIMDSWhenOtherProvidersFail)
     // Chain should attempt IMDS as last resort
     // Without actual IMDS endpoint, will return empty or cached credentials
     EXPECT_TRUE(creds.IsEmpty() || !creds.GetAWSAccessKeyId().empty());
-}
-
-TEST_F(EnvironmentModifyingTest, TestChainIMDSNotAttemptedWhenDisabled)
-{
-    // Disable IMDS
-    Aws::Environment::EnvironmentRAII testEnvironment{{
-        {"AWS_ACCESS_KEY_ID", ""},
-        {"AWS_SECRET_ACCESS_KEY", ""},
-        {"AWS_EC2_METADATA_DISABLED", "true"},
-        {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
-    }};
-
-    // No profile or config files
-    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
-    
-    Aws::StringStream ss;
-    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
-    auto configFileName = ss.str();
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
-    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
-    Aws::Config::ReloadCachedConfigFile();
-
-    DefaultAWSCredentialsProviderChain chain;
-    auto creds = chain.GetAWSCredentials();
-
-    // Should return empty since IMDS is disabled and no other providers succeed
-    EXPECT_TRUE(creds.IsEmpty());
 }

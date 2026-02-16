@@ -5,6 +5,8 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/crt/auth/Credentials.h>
 
+#include <chrono>
+
 using namespace Aws::Auth;
 using namespace Aws::Client;
 using namespace Aws::FileSystem;
@@ -14,7 +16,7 @@ namespace {
 const char PROFILE_AWS_CREDENTIALS_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 const char PROFILE_DEFAULT_CREDENTIALS_FILE[] = "credentials";
 const char PROFILE_PROFILE_DIRECTORY[] = ".aws";
-const long DEFAULT_REFRESH_RATE_MS = 50000;
+const long DEFAULT_REFRESH_RATE_MS = 300000;
 }  // namespace
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCredentialsProvider {
@@ -34,7 +36,7 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
               config.ProfileNameOverride = Aws::Crt::ByteCursorFromCString(profile);
               return CredentialsProvider::CreateCredentialsProviderProfile(config);
             },
-            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), Aws::Client::UserAgentFeature::CREDENTIALS_PROFILE,
+            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE,
             "ProfileCredentialsProvider") {}
 
   static Aws::String GetCredentialsProfileFilename() {
@@ -58,12 +60,12 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
 };
 
 ProfileCredentialsProvider::ProfileCredentialsProvider(long refreshRateMs) : m_impl(std::make_shared<ProfileCredentialsProviderImp>()) {
-  (void)refreshRateMs;
+  AWS_UNREFERENCED_PARAM(refreshRateMs);
 }
 
 ProfileCredentialsProvider::ProfileCredentialsProvider(const char* profile, long refreshRateMs)
     : m_impl(std::make_shared<ProfileCredentialsProviderImp>(profile)) {
-  (void)refreshRateMs;
+  AWS_UNREFERENCED_PARAM(refreshRateMs);
 }
 
 void ProfileCredentialsProvider::Reload() {}

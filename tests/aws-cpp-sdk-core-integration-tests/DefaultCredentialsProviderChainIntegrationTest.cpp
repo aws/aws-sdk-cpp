@@ -5,6 +5,7 @@
 
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/testing/AwsTestHelpers.h>
@@ -15,6 +16,15 @@ using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Environment;
 using namespace Aws::Utils;
+
+static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
+{
+#ifndef _WIN32
+    str.insert(0, 1, '\'');
+    str.append(1, '\'');
+#endif
+    return str;
+}
 
 /**
  * Integration tests for DefaultAWSCredentialsProviderChain
@@ -103,7 +113,7 @@ TEST_F(DefaultCredentialsProviderChainIntegrationTest, ChainWithProcessCredentia
     // Create temporary config file with credential_process
     TempFile configFile{std::ios_base::out | std::ios_base::trunc};
     configFile << "[default]\n";
-    configFile << "credential_process = echo '{\"Version\": 1, \"AccessKeyId\": \"AKIAPROCESSEXAMPLE\", \"SecretAccessKey\": \"ProcessSecretKeyExample\"}'\n";
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AKIAPROCESSEXAMPLE\", \"SecretAccessKey\": \"ProcessSecretKeyExample\"}") << "\n";
     configFile.close();
 
     // Create empty credentials file to override ~/.aws/credentials
@@ -117,6 +127,13 @@ TEST_F(DefaultCredentialsProviderChainIntegrationTest, ChainWithProcessCredentia
         {"AWS_ACCESS_KEY_ID", ""},
         {"AWS_SECRET_ACCESS_KEY", ""},
         {"AWS_SESSION_TOKEN", ""},
+        {"AWS_PROFILE", ""},
+        {"AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", ""},
+        {"AWS_CONTAINER_CREDENTIALS_FULL_URI", ""},
+        {"AWS_CONTAINER_AUTHORIZATION_TOKEN", ""},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
+        {"AWS_ROLE_ARN", ""},
+        {"AWS_ROLE_SESSION_NAME", ""},
         {"AWS_EC2_METADATA_DISABLED", "true"},
     }};
 
@@ -164,14 +181,29 @@ TEST_F(DefaultCredentialsProviderChainIntegrationTest, ChainHandlesSessionToken)
     credsFile << "aws_session_token = TempSessionTokenExample123\n";
     credsFile.close();
 
+    // Create empty config file
+    TempFile configFile{std::ios_base::out | std::ios_base::trunc};
+    configFile << "[default]\n";
+    configFile.close();
+
     const EnvironmentRAII environmentRAII{{
+        {"AWS_CONFIG_FILE", configFile.GetFileName()},
         {"AWS_SHARED_CREDENTIALS_FILE", credsFile.GetFileName()},
         {"AWS_ACCESS_KEY_ID", ""},
         {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_SESSION_TOKEN", ""},
+        {"AWS_PROFILE", ""},
+        {"AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", ""},
+        {"AWS_CONTAINER_CREDENTIALS_FULL_URI", ""},
+        {"AWS_CONTAINER_AUTHORIZATION_TOKEN", ""},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
+        {"AWS_ROLE_ARN", ""},
+        {"AWS_ROLE_SESSION_NAME", ""},
         {"AWS_EC2_METADATA_DISABLED", "true"},
     }};
 
     Aws::Config::ReloadCachedConfigFile();
+    Aws::Config::ReloadCachedCredentialsFile();
 
     DefaultAWSCredentialsProviderChain chain;
     auto creds = chain.GetAWSCredentials();
@@ -186,8 +218,15 @@ TEST_F(DefaultCredentialsProviderChainIntegrationTest, ChainReturnsEmptyWhenNoCr
     const EnvironmentRAII environmentRAII{{
         {"AWS_ACCESS_KEY_ID", ""},
         {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_SESSION_TOKEN", ""},
         {"AWS_SHARED_CREDENTIALS_FILE", "/nonexistent/credentials"},
         {"AWS_CONFIG_FILE", "/nonexistent/config"},
+        {"AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", ""},
+        {"AWS_CONTAINER_CREDENTIALS_FULL_URI", ""},
+        {"AWS_CONTAINER_AUTHORIZATION_TOKEN", ""},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
+        {"AWS_ROLE_ARN", ""},
+        {"AWS_ROLE_SESSION_NAME", ""},
         {"AWS_EC2_METADATA_DISABLED", "true"},
     }};
 
