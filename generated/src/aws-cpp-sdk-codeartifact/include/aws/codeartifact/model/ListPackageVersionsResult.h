@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/model/PackageFormat.h>
 #include <aws/codeartifact/model/PackageVersionSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

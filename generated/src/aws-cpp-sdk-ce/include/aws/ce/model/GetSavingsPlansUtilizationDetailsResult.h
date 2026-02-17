@@ -8,6 +8,7 @@
 #include <aws/ce/model/DateInterval.h>
 #include <aws/ce/model/SavingsPlansUtilizationAggregates.h>
 #include <aws/ce/model/SavingsPlansUtilizationDetail.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

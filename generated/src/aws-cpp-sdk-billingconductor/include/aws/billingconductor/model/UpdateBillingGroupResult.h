@@ -7,6 +7,7 @@
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/model/BillingGroupStatus.h>
 #include <aws/billingconductor/model/UpdateBillingGroupAccountGrouping.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

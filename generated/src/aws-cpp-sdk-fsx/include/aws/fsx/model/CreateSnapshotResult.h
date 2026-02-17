@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/Snapshot.h>

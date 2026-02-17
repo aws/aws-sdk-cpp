@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/DeliverabilityTestStatus.h>

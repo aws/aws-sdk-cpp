@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/workmail/model/EntityType.h>

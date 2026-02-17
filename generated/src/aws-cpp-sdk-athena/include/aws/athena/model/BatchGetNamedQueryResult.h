@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/NamedQuery.h>
 #include <aws/athena/model/UnprocessedNamedQueryId.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

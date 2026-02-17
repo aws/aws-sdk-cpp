@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/Speaker.h>

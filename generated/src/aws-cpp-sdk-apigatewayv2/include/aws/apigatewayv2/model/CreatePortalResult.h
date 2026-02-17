@@ -10,6 +10,7 @@
 #include <aws/apigatewayv2/model/PortalContent.h>
 #include <aws/apigatewayv2/model/PublishStatus.h>
 #include <aws/apigatewayv2/model/StatusException.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

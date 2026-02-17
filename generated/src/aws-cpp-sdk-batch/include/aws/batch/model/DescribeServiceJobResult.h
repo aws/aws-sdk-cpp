@@ -12,6 +12,7 @@
 #include <aws/batch/model/ServiceJobStatus.h>
 #include <aws/batch/model/ServiceJobTimeout.h>
 #include <aws/batch/model/ServiceJobType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

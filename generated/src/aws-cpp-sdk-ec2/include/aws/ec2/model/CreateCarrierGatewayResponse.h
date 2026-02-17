@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CarrierGateway.h>
 #include <aws/ec2/model/ResponseMetadata.h>

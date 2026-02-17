@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/backupsearch/model/ExportJobSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

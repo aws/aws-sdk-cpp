@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

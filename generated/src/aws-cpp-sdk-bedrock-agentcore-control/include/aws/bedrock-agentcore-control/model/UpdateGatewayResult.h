@@ -14,6 +14,7 @@
 #include <aws/bedrock-agentcore-control/model/GatewayProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/GatewayStatus.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

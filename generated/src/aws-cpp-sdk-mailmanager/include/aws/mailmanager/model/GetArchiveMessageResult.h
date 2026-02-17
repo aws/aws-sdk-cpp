@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/Envelope.h>

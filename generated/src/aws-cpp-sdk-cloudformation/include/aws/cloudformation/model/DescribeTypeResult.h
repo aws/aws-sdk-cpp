@@ -13,6 +13,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TypeTestsStatus.h>
 #include <aws/cloudformation/model/Visibility.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

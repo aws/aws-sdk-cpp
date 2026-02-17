@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/chime-sdk-messaging/model/ExpirationSettings.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/AudienceModelSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

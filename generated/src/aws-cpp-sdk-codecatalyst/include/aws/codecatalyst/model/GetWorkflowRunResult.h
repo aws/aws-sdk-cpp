@@ -7,6 +7,7 @@
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/codecatalyst/model/WorkflowRunStatus.h>
 #include <aws/codecatalyst/model/WorkflowRunStatusReason.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

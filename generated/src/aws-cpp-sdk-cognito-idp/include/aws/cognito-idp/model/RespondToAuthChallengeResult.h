@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AuthenticationResultType.h>
 #include <aws/cognito-idp/model/ChallengeNameType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

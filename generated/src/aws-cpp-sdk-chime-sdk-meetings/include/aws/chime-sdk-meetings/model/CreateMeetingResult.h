@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/chime-sdk-meetings/model/Meeting.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

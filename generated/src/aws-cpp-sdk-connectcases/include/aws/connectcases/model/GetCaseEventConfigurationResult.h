@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/EventBridgeConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

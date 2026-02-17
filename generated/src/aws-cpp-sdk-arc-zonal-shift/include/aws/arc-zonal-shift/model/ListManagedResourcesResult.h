@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/arc-zonal-shift/model/ManagedResourceSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

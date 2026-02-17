@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/controlcatalog/model/ControlMapping.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

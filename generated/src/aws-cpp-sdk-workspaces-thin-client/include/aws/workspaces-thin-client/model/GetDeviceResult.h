@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 #include <aws/workspaces-thin-client/model/Device.h>

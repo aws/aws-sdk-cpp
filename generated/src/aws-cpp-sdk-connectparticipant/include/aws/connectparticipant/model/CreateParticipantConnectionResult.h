@@ -8,6 +8,7 @@
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
 #include <aws/connectparticipant/model/WebRTCConnection.h>
 #include <aws/connectparticipant/model/Websocket.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

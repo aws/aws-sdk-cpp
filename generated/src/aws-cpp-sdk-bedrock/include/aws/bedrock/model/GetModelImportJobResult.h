@@ -8,6 +8,7 @@
 #include <aws/bedrock/model/ModelDataSource.h>
 #include <aws/bedrock/model/ModelImportJobStatus.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

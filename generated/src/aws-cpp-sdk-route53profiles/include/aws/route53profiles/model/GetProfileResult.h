@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 #include <aws/route53profiles/model/Profile.h>

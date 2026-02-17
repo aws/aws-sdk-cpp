@@ -9,6 +9,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TypeConfigurationDetails.h>
 #include <aws/cloudformation/model/TypeConfigurationIdentifier.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>

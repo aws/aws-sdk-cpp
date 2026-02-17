@@ -10,6 +10,7 @@
 #include <aws/cloudtrail/model/EventDataStoreStatus.h>
 #include <aws/cloudtrail/model/FederationStatus.h>
 #include <aws/cloudtrail/model/PartitionKey.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

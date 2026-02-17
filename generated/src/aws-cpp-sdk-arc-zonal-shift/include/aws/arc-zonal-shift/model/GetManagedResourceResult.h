@@ -9,6 +9,7 @@
 #include <aws/arc-zonal-shift/model/PracticeRunConfiguration.h>
 #include <aws/arc-zonal-shift/model/ZonalAutoshiftStatus.h>
 #include <aws/arc-zonal-shift/model/ZonalShiftInResource.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

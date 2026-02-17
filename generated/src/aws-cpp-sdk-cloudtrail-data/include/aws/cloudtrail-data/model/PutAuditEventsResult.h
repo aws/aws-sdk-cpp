@@ -7,6 +7,7 @@
 #include <aws/cloudtrail-data/CloudTrailData_EXPORTS.h>
 #include <aws/cloudtrail-data/model/AuditEventResultEntry.h>
 #include <aws/cloudtrail-data/model/ResultErrorEntry.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

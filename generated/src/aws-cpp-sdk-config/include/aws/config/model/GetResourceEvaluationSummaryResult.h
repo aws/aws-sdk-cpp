@@ -10,6 +10,7 @@
 #include <aws/config/model/EvaluationMode.h>
 #include <aws/config/model/EvaluationStatus.h>
 #include <aws/config/model/ResourceDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

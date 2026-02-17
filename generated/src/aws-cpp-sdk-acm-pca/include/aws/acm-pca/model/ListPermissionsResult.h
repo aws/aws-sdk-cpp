@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/acm-pca/model/Permission.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

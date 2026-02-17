@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/compute-optimizer-automation/model/EventStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorLevel.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/aiops/model/ListInvestigationGroupsModel.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

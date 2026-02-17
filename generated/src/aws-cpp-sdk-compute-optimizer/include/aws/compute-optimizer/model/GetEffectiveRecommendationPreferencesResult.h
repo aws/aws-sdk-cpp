@@ -10,6 +10,7 @@
 #include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
 #include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
 #include <aws/compute-optimizer/model/UtilizationPreference.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

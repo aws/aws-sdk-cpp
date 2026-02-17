@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/route53resolver/model/FirewallDomainListStatus.h>

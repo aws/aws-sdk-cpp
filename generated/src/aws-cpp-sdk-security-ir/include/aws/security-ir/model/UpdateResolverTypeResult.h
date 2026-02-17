@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/security-ir/model/CaseStatus.h>

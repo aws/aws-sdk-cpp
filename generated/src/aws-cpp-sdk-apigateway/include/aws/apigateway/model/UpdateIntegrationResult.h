@@ -11,6 +11,7 @@
 #include <aws/apigateway/model/IntegrationType.h>
 #include <aws/apigateway/model/ResponseTransferMode.h>
 #include <aws/apigateway/model/TlsConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

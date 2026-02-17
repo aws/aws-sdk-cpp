@@ -9,6 +9,7 @@
 #include <aws/cloudsearchdomain/model/FieldStats.h>
 #include <aws/cloudsearchdomain/model/Hits.h>
 #include <aws/cloudsearchdomain/model/SearchStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

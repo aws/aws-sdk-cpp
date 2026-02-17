@@ -7,6 +7,7 @@
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/appconfig/model/EnvironmentState.h>
 #include <aws/appconfig/model/Monitor.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

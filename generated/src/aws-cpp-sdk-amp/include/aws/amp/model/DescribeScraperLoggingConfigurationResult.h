@@ -8,6 +8,7 @@
 #include <aws/amp/model/ScraperComponent.h>
 #include <aws/amp/model/ScraperLoggingConfigurationStatus.h>
 #include <aws/amp/model/ScraperLoggingDestination.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

@@ -13,6 +13,7 @@
 #include <aws/cleanroomsml/model/ModelInferenceDataSource.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <aws/cleanroomsml/model/TrainedModelInferenceJobStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

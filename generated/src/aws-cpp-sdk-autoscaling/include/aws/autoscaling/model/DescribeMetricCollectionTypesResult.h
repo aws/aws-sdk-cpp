@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/MetricCollectionType.h>
 #include <aws/autoscaling/model/MetricGranularityType.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>

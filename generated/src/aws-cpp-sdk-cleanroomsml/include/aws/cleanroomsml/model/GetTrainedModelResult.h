@@ -14,6 +14,7 @@
 #include <aws/cleanroomsml/model/StoppingCondition.h>
 #include <aws/cleanroomsml/model/TrainedModelStatus.h>
 #include <aws/cleanroomsml/model/TrainingInputMode.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

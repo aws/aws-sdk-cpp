@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/EngineDefaults.h>
 #include <aws/neptune/model/ResponseMetadata.h>

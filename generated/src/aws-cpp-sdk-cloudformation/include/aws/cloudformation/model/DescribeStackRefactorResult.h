@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackRefactorExecutionStatus.h>
 #include <aws/cloudformation/model/StackRefactorStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

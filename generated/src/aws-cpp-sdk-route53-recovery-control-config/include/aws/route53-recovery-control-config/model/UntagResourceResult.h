@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
 

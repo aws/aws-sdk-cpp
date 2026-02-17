@@ -10,6 +10,7 @@
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/WebAuthnConfigurationType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

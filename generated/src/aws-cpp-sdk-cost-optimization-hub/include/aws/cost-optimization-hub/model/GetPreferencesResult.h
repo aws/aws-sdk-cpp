@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>

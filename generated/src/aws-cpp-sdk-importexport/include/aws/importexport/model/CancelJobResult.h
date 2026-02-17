@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/importexport/model/ResponseMetadata.h>
 

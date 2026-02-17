@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/connect-contact-lens/model/RealtimeContactAnalysisSegment.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

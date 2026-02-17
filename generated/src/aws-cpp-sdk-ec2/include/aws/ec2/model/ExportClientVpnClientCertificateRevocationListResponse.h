@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ClientCertificateRevocationListStatus.h>

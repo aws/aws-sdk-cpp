@@ -9,6 +9,7 @@
 #include <aws/bedrock/model/PromptRouterTargetModel.h>
 #include <aws/bedrock/model/PromptRouterType.h>
 #include <aws/bedrock/model/RoutingCriteria.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

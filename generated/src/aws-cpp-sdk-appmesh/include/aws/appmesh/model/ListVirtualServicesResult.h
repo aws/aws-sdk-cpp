@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/VirtualServiceRef.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

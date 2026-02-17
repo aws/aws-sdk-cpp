@@ -12,6 +12,7 @@
 #include <aws/bedrock-runtime/model/ServiceTier.h>
 #include <aws/bedrock-runtime/model/StopReason.h>
 #include <aws/bedrock-runtime/model/TokenUsage.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

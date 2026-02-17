@@ -9,6 +9,7 @@
 #include <aws/appconfig/model/DeploymentEvent.h>
 #include <aws/appconfig/model/DeploymentState.h>
 #include <aws/appconfig/model/GrowthType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

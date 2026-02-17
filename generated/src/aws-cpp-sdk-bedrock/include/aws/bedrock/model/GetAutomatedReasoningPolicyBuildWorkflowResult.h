@@ -8,6 +8,7 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildDocumentContentType.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowStatus.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

@@ -7,6 +7,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/GenericRevisionInfo.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

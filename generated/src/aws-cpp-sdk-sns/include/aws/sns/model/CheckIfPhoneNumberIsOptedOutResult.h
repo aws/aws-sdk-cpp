@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/model/ResponseMetadata.h>
 

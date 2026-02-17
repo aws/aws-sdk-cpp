@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/AuthorizerType.h>
 #include <aws/apigatewayv2/model/JWTConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

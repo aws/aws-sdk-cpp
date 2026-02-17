@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 #include <aws/migrationhuborchestrator/model/StepStatus.h>

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/license-manager-user-subscriptions/model/ProductUserSummary.h>

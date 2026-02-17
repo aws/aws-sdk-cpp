@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/MemoryRecord.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

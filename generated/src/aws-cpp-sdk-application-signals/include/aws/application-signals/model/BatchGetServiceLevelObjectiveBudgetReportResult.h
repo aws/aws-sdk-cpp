@@ -7,6 +7,7 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/ServiceLevelObjectiveBudgetReport.h>
 #include <aws/application-signals/model/ServiceLevelObjectiveBudgetReportError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

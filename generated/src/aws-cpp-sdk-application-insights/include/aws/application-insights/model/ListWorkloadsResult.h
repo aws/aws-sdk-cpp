@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/application-insights/model/Workload.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

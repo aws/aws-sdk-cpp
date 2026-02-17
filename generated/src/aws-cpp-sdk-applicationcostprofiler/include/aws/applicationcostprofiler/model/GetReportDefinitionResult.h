@@ -8,6 +8,7 @@
 #include <aws/applicationcostprofiler/model/Format.h>
 #include <aws/applicationcostprofiler/model/ReportFrequency.h>
 #include <aws/applicationcostprofiler/model/S3Location.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

@@ -8,6 +8,7 @@
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
 #include <aws/billingconductor/model/UpdateTieringInput.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

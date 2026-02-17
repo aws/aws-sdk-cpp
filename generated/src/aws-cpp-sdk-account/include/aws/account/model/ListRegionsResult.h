@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/account/model/Region.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

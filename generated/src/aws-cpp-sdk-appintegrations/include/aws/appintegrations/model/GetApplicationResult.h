@@ -9,6 +9,7 @@
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/appintegrations/model/IframeConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

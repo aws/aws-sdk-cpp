@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/HsmConfiguration.h>
 #include <aws/redshift/model/ResponseMetadata.h>

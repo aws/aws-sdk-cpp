@@ -9,6 +9,7 @@
 #include <aws/accessanalyzer/model/RecommendationType.h>
 #include <aws/accessanalyzer/model/RecommendedStep.h>
 #include <aws/accessanalyzer/model/Status.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

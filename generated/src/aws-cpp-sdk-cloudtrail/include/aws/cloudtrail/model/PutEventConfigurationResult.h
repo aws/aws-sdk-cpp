@@ -8,6 +8,7 @@
 #include <aws/cloudtrail/model/AggregationConfiguration.h>
 #include <aws/cloudtrail/model/ContextKeySelector.h>
 #include <aws/cloudtrail/model/MaxEventSize.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

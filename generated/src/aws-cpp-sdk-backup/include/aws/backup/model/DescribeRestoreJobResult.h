@@ -9,6 +9,7 @@
 #include <aws/backup/model/RestoreJobCreator.h>
 #include <aws/backup/model/RestoreJobStatus.h>
 #include <aws/backup/model/RestoreValidationStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

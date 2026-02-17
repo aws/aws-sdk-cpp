@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/PerformanceConfigLatency.h>
 #include <aws/bedrock-runtime/model/ServiceTierType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>

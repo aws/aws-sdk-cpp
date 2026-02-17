@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/appfabric/model/AppAuthorizationSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

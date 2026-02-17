@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/AnomalyMonitor.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

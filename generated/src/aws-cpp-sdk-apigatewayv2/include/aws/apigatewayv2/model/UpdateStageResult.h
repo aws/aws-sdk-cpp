@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/AccessLogSettings.h>
 #include <aws/apigatewayv2/model/RouteSettings.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

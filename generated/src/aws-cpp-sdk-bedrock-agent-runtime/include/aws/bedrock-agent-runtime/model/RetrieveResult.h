@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/GuadrailAction.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalResult.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

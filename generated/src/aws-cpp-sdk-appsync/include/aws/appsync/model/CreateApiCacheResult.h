@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/model/ApiCache.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

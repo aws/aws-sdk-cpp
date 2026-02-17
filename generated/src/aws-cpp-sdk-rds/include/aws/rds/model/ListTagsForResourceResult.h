@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ResponseMetadata.h>

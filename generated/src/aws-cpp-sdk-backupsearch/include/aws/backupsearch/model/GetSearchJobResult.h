@@ -10,6 +10,7 @@
 #include <aws/backupsearch/model/SearchJobState.h>
 #include <aws/backupsearch/model/SearchScope.h>
 #include <aws/backupsearch/model/SearchScopeSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

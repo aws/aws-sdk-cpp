@@ -9,6 +9,7 @@
 #include <aws/codestar-notifications/model/EventTypeSummary.h>
 #include <aws/codestar-notifications/model/NotificationRuleStatus.h>
 #include <aws/codestar-notifications/model/TargetSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

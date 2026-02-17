@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/IdentityProvider.h>
 #include <aws/cloudformation/model/PublisherStatus.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

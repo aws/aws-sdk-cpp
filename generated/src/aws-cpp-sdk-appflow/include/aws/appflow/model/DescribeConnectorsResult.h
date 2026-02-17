@@ -8,6 +8,7 @@
 #include <aws/appflow/model/ConnectorConfiguration.h>
 #include <aws/appflow/model/ConnectorDetail.h>
 #include <aws/appflow/model/ConnectorType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

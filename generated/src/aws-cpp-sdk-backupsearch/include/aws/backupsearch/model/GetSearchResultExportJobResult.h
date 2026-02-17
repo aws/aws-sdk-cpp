@@ -7,6 +7,7 @@
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/backupsearch/model/ExportJobStatus.h>
 #include <aws/backupsearch/model/ExportSpecification.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

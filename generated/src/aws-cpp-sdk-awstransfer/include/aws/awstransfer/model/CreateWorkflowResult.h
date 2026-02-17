@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

@@ -8,6 +8,7 @@
 #include <aws/cloudtrail/model/DashboardType.h>
 #include <aws/cloudtrail/model/RefreshSchedule.h>
 #include <aws/cloudtrail/model/Widget.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

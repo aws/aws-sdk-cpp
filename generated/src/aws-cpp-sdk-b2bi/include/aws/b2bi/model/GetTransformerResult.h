@@ -10,6 +10,7 @@
 #include <aws/b2bi/model/OutputConversion.h>
 #include <aws/b2bi/model/SampleDocuments.h>
 #include <aws/b2bi/model/TransformerStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

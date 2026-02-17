@@ -7,6 +7,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/model/Activity.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 

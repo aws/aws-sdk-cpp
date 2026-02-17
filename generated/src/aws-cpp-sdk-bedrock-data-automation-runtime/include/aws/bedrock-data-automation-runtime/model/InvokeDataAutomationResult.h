@@ -8,6 +8,7 @@
 #include <aws/bedrock-data-automation-runtime/model/OutputConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/OutputSegment.h>
 #include <aws/bedrock-data-automation-runtime/model/SemanticModality.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

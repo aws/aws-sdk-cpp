@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/AgentVersion.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

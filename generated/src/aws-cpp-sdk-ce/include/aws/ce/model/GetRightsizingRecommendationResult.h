@@ -9,6 +9,7 @@
 #include <aws/ce/model/RightsizingRecommendationConfiguration.h>
 #include <aws/ce/model/RightsizingRecommendationMetadata.h>
 #include <aws/ce/model/RightsizingRecommendationSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

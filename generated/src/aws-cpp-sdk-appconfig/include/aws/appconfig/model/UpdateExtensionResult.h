@@ -8,6 +8,7 @@
 #include <aws/appconfig/model/Action.h>
 #include <aws/appconfig/model/ActionPoint.h>
 #include <aws/appconfig/model/Parameter.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

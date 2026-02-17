@@ -8,6 +8,7 @@
 #include <aws/connect/model/AgentConfig.h>
 #include <aws/connect/model/SignInConfig.h>
 #include <aws/connect/model/TelephonyConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

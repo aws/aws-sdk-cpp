@@ -13,6 +13,7 @@
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

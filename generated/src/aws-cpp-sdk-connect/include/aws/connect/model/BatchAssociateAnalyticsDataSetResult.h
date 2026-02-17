@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/AnalyticsDataAssociationResult.h>
 #include <aws/connect/model/ErrorResult.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

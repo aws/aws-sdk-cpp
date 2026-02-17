@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/Logging.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/DBSubnetGroup.h>
 #include <aws/docdb/model/ResponseMetadata.h>

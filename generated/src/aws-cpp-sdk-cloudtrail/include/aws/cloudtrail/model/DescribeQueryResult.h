@@ -8,6 +8,7 @@
 #include <aws/cloudtrail/model/DeliveryStatus.h>
 #include <aws/cloudtrail/model/QueryStatisticsForDescribeQuery.h>
 #include <aws/cloudtrail/model/QueryStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

@@ -7,6 +7,7 @@
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/codestar-connections/model/ProviderType.h>
 #include <aws/codestar-connections/model/VpcConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

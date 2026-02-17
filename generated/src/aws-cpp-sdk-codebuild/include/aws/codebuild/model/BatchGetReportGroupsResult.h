@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/ReportGroup.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

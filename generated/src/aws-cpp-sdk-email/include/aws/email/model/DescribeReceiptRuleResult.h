@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ReceiptRule.h>
 #include <aws/email/model/ResponseMetadata.h>

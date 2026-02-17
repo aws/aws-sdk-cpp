@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/AssetPropertyValue.h>

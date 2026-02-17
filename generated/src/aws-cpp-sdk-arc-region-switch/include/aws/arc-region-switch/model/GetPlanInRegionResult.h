@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/Plan.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

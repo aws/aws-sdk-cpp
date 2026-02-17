@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/CustomVocabularyStatus.h>

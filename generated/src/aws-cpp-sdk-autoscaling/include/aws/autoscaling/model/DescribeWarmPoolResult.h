@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/autoscaling/model/WarmPoolConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

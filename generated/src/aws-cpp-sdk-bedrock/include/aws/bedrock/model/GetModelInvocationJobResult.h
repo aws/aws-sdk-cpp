@@ -9,6 +9,7 @@
 #include <aws/bedrock/model/ModelInvocationJobOutputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobStatus.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

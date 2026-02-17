@@ -8,6 +8,7 @@
 #include <aws/cloudtrail/model/Destination.h>
 #include <aws/cloudtrail/model/IngestionStatus.h>
 #include <aws/cloudtrail/model/SourceConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/appconfig/model/HostedConfigurationVersionSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

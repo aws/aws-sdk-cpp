@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/FlowDefinition.h>
 #include <aws/bedrock-agent/model/FlowStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

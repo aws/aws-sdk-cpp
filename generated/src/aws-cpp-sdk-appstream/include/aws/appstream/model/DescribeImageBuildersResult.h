@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/ImageBuilder.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

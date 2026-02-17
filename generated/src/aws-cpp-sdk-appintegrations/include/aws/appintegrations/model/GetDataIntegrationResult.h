@@ -7,6 +7,7 @@
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/appintegrations/model/FileConfiguration.h>
 #include <aws/appintegrations/model/ScheduleConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/appintegrations/model/DataIntegrationSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

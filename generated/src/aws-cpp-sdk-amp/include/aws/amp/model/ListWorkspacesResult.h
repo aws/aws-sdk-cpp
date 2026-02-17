@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/model/WorkspaceSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

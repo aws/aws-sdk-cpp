@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/User.h>

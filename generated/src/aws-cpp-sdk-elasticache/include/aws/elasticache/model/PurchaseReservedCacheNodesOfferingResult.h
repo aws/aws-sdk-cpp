@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ReservedCacheNode.h>
 #include <aws/elasticache/model/ResponseMetadata.h>

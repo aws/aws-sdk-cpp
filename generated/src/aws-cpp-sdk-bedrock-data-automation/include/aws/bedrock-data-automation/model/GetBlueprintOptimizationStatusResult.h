@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/BlueprintOptimizationJobStatus.h>
 #include <aws/bedrock-data-automation/model/BlueprintOptimizationOutputConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

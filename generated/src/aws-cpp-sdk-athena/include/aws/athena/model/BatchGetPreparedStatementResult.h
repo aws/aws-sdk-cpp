@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/PreparedStatement.h>
 #include <aws/athena/model/UnprocessedPreparedStatementName.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

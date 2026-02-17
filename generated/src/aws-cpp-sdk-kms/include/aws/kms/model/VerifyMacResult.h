@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/model/MacAlgorithmSpec.h>

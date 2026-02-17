@@ -7,6 +7,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/cloudsearch/model/SuggesterStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>

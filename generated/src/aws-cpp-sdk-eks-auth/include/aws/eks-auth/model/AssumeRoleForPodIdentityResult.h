@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks-auth/EKSAuth_EXPORTS.h>
 #include <aws/eks-auth/model/AssumedRoleUser.h>

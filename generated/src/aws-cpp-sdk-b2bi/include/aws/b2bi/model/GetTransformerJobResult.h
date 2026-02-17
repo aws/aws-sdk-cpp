@@ -7,6 +7,7 @@
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/S3Location.h>
 #include <aws/b2bi/model/TransformerJobStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

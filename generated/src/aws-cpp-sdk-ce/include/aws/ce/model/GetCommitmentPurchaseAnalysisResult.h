@@ -9,6 +9,7 @@
 #include <aws/ce/model/AnalysisStatus.h>
 #include <aws/ce/model/CommitmentPurchaseAnalysisConfiguration.h>
 #include <aws/ce/model/ErrorCode.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

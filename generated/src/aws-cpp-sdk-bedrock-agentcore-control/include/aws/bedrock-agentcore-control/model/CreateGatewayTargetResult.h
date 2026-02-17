@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

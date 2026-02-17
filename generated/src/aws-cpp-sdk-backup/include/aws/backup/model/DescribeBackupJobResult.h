@@ -8,6 +8,7 @@
 #include <aws/backup/model/BackupJobState.h>
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/backup/model/RecoveryPointCreator.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

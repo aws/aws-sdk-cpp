@@ -8,6 +8,7 @@
 #include <aws/bedrock/model/InferenceProfileModel.h>
 #include <aws/bedrock/model/InferenceProfileStatus.h>
 #include <aws/bedrock/model/InferenceProfileType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

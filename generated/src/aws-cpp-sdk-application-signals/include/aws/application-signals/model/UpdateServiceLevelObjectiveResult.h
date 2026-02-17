@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/ServiceLevelObjective.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

@@ -8,6 +8,7 @@
 #include <aws/codeartifact/model/AssetSummary.h>
 #include <aws/codeartifact/model/PackageFormat.h>
 #include <aws/codeartifact/model/PackageVersionStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

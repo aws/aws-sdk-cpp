@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/ProxyRule.h>

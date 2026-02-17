@@ -8,6 +8,7 @@
 #include <aws/backup/model/AdvancedBackupSetting.h>
 #include <aws/backup/model/BackupPlan.h>
 #include <aws/backup/model/ScheduledPlanExecutionMember.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

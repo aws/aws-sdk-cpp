@@ -7,6 +7,7 @@
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/connectcampaigns/model/FailedRequest.h>
 #include <aws/connectcampaigns/model/SuccessfulRequest.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

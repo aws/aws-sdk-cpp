@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/CommentsForComparedCommit.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/appflow/model/ConnectorDetail.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

@@ -7,6 +7,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/cloudsearchdomain/model/SuggestModel.h>
 #include <aws/cloudsearchdomain/model/SuggestStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

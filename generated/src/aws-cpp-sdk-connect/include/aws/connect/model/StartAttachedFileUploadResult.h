@@ -8,6 +8,7 @@
 #include <aws/connect/model/CreatedByInfo.h>
 #include <aws/connect/model/FileStatusType.h>
 #include <aws/connect/model/UploadUrlMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

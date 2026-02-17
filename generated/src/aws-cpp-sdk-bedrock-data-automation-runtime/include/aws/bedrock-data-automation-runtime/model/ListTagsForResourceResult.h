@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/bedrock-data-automation-runtime/model/Tag.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

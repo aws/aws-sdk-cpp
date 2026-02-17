@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/model/Account.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

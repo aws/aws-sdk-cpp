@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/CredentialProviderVendorType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

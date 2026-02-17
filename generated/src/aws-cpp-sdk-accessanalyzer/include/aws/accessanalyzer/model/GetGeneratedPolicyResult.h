@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/GeneratedPolicyResults.h>
 #include <aws/accessanalyzer/model/JobDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

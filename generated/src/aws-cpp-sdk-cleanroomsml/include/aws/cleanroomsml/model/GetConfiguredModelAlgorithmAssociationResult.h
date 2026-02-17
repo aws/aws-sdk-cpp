@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/PrivacyConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

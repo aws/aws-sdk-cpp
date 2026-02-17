@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/appintegrations/model/EventFilter.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

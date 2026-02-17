@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobError.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobItem.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

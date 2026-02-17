@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/bedrock-data-automation-runtime/model/AutomationJobStatus.h>
 #include <aws/bedrock-data-automation-runtime/model/OutputConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

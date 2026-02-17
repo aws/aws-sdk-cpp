@@ -8,6 +8,7 @@
 #include <aws/bcm-pricing-calculator/model/BillInterval.h>
 #include <aws/bcm-pricing-calculator/model/BillScenarioStatus.h>
 #include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

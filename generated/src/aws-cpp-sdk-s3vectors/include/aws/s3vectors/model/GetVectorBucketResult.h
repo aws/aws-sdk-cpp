@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 #include <aws/s3vectors/model/VectorBucket.h>

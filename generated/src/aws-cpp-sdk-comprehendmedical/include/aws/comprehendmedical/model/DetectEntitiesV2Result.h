@@ -7,6 +7,7 @@
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/comprehendmedical/model/Entity.h>
 #include <aws/comprehendmedical/model/UnmappedAttribute.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

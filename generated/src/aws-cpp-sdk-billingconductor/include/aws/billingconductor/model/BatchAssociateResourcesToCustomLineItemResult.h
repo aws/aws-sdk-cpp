@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/model/AssociateResourceResponseElement.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

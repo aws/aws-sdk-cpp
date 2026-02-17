@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/CaseRuleError.h>
 #include <aws/connectcases/model/GetCaseRuleResponse.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

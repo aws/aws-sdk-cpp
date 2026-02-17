@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/ReservationAggregates.h>
 #include <aws/ce/model/UtilizationByTime.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

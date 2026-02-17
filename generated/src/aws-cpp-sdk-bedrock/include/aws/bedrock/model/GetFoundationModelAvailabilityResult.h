@@ -9,6 +9,7 @@
 #include <aws/bedrock/model/AuthorizationStatus.h>
 #include <aws/bedrock/model/EntitlementAvailability.h>
 #include <aws/bedrock/model/RegionAvailability.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

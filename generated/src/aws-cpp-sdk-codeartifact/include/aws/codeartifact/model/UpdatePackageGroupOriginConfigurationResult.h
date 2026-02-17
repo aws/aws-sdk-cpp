@@ -8,6 +8,7 @@
 #include <aws/codeartifact/model/PackageGroupAllowedRepositoryUpdateType.h>
 #include <aws/codeartifact/model/PackageGroupDescription.h>
 #include <aws/codeartifact/model/PackageGroupOriginRestrictionType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

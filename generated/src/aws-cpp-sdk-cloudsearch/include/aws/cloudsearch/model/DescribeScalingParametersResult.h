@@ -7,6 +7,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/cloudsearch/model/ScalingParametersStatus.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 

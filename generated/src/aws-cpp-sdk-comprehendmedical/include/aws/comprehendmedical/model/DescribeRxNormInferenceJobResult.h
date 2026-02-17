@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/comprehendmedical/model/ComprehendMedicalAsyncJobProperties.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

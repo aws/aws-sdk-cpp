@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/NetworkInsightsAccessScope.h>
 #include <aws/ec2/model/NetworkInsightsAccessScopeContent.h>

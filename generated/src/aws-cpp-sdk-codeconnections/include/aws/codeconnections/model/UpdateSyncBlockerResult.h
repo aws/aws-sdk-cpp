@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/codeconnections/model/SyncBlocker.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

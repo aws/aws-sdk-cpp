@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/billing/model/BillingViewElement.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

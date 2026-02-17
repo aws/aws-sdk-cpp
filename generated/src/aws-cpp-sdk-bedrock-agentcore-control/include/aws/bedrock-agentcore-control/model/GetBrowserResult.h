@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

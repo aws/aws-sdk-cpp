@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackInstance.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 

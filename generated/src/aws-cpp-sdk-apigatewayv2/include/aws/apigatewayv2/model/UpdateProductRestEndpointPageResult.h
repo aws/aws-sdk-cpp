@@ -10,6 +10,7 @@
 #include <aws/apigatewayv2/model/Status.h>
 #include <aws/apigatewayv2/model/StatusException.h>
 #include <aws/apigatewayv2/model/TryItState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

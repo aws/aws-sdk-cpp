@@ -9,6 +9,7 @@
 #include <aws/codecommit/model/Folder.h>
 #include <aws/codecommit/model/SubModule.h>
 #include <aws/codecommit/model/SymbolicLink.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

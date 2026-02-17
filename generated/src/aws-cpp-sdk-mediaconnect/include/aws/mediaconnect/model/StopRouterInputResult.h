@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/RouterInputState.h>

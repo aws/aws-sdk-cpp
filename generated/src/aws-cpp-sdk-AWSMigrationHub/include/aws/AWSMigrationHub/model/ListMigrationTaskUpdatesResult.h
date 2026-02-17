@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/AWSMigrationHub/model/MigrationTaskUpdate.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

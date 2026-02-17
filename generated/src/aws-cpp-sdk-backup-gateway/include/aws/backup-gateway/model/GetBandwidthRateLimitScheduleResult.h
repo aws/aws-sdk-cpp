@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/backup-gateway/model/BandwidthRateLimitInterval.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

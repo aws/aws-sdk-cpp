@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/IPSet.h>

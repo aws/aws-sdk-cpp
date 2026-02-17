@@ -7,6 +7,7 @@
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/CustomDomain.h>
 #include <aws/apprunner/model/VpcDNSTarget.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

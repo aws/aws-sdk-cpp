@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

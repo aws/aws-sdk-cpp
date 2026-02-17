@@ -9,6 +9,7 @@
 #include <aws/backup/model/LatestMpaApprovalTeamUpdate.h>
 #include <aws/backup/model/VaultState.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

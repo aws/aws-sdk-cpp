@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/autoscaling-plans/model/Datapoint.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

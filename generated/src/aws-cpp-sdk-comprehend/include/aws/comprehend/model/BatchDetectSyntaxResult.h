@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/BatchDetectSyntaxItemResult.h>
 #include <aws/comprehend/model/BatchItemError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

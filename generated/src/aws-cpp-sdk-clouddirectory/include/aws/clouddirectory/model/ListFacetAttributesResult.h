@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/FacetAttribute.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

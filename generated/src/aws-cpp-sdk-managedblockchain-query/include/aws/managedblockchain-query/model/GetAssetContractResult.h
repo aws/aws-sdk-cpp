@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 #include <aws/managedblockchain-query/model/ContractIdentifier.h>

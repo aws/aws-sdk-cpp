@@ -8,6 +8,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisStatus.h>
 #include <aws/connect/model/RealTimeContactAnalysisSupportedChannel.h>
 #include <aws/connect/model/RealtimeContactAnalysisSegment.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

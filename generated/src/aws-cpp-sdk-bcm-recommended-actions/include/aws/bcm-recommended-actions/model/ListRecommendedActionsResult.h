@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
 #include <aws/bcm-recommended-actions/model/RecommendedAction.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

@@ -7,6 +7,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/Comment.h>
 #include <aws/codecommit/model/Location.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

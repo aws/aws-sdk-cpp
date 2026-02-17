@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

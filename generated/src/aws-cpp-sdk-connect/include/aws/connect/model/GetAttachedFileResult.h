@@ -9,6 +9,7 @@
 #include <aws/connect/model/DownloadUrlMetadata.h>
 #include <aws/connect/model/FileStatusType.h>
 #include <aws/connect/model/FileUseCaseType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 

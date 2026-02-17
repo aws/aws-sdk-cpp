@@ -8,6 +8,7 @@
 #include <aws/comprehendmedical/model/Characters.h>
 #include <aws/comprehendmedical/model/SNOMEDCTDetails.h>
 #include <aws/comprehendmedical/model/SNOMEDCTEntity.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

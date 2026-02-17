@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/SpendingLimitSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

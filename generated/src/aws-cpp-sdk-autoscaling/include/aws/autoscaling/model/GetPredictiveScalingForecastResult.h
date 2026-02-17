@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/CapacityForecast.h>
 #include <aws/autoscaling/model/LoadForecast.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

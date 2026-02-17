@@ -10,6 +10,7 @@
 #include <aws/athena/model/SessionConfiguration.h>
 #include <aws/athena/model/SessionStatistics.h>
 #include <aws/athena/model/SessionStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

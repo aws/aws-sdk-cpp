@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 #include <aws/dynamodbstreams/model/StreamDescription.h>

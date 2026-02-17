@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/Credentials.h>
 #include <aws/sts/model/FederatedUser.h>

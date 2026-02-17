@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/connectparticipant/model/View.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

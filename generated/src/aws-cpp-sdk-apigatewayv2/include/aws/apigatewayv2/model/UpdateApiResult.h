@@ -8,6 +8,7 @@
 #include <aws/apigatewayv2/model/Cors.h>
 #include <aws/apigatewayv2/model/IpAddressType.h>
 #include <aws/apigatewayv2/model/ProtocolType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

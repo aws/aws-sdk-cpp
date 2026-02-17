@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent-runtime/model/Citation.h>
 #include <aws/bedrock-agent-runtime/model/GuadrailAction.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateOutput.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

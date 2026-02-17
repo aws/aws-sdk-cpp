@@ -7,6 +7,7 @@
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/codeguru-security/model/BatchGetFindingsError.h>
 #include <aws/codeguru-security/model/Finding.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

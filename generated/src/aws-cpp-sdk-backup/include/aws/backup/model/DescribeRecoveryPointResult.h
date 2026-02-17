@@ -14,6 +14,7 @@
 #include <aws/backup/model/ScanResult.h>
 #include <aws/backup/model/StorageClass.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/CalculatedLifecycle.h>
 #include <aws/backup/model/Lifecycle.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>

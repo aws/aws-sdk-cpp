@@ -9,6 +9,7 @@
 #include <aws/accessanalyzer/model/FindingStatus.h>
 #include <aws/accessanalyzer/model/FindingType.h>
 #include <aws/accessanalyzer/model/ResourceType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>

@@ -7,6 +7,7 @@
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/cloudcontrol/model/HookProgressEvent.h>
 #include <aws/cloudcontrol/model/ProgressEvent.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/DeletionTaskFailureReasonType.h>
 #include <aws/iam/model/DeletionTaskStatusType.h>
