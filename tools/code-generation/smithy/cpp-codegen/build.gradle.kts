@@ -69,7 +69,7 @@ tasks.register("generate-smithy-build") {
         }
         
         // Legacy services without full Smithy models - generate mock projections for base classes
-        val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB", "s3-crt" to "S3Crt")
+        val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB")
         legacyServices.forEach { (c2jName, serviceName) ->
             if (filteredServiceList.isEmpty() || c2jName in filteredServiceList) {
                 val mockProjectionContents = Node.objectNodeBuilder()
@@ -79,6 +79,20 @@ tasks.register("generate-smithy-build") {
                             .build()))
                     .build()
                 projectionsBuilder.withMember("$c2jName.mock", mockProjectionContents)
+            }
+        }
+        
+        // S3-CRT: Uses S3 model but generates with S3Crt namespace
+        if (filteredServiceList.isEmpty() || "s3-crt" in filteredServiceList) {
+            fileTree(models).filter { it.isFile && it.name == "s3.json" }.files.firstOrNull()?.let { s3ModelFile ->
+                val s3CrtProjectionContents = Node.objectNodeBuilder()
+                    .withMember("imports", Node.fromStrings(s3ModelFile.absolutePath))
+                    .withMember("plugins", Node.objectNode()
+                        .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
+                            .withMember("c2jMap", Node.from(c2jMapStr))
+                            .build()))
+                    .build()
+                projectionsBuilder.withMember("s3-crt.2006-03-01", s3CrtProjectionContents)
             }
         }
         

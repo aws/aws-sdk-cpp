@@ -12,6 +12,10 @@ import java.util.Set;
 
 public final class ServiceNameUtil {
     
+    // S3-CRT projection prefix for detecting S3-CRT builds from projection name
+    private static final String S3_CRT_PROJECTION_PREFIX = "s3-crt";
+    private static final String S3_CRT_NAMESPACE = "S3Crt";
+    
     // Legacy service IDs that need special handling to match what the legacy c2j code generator produced
     // This logic is copied from C2jModelToGeneratorModelTransformer.convertMetadata() method
     // Hardcoded mappings for legacy services where C2J used fullServiceName for file naming
@@ -94,6 +98,11 @@ public final class ServiceNameUtil {
     );
     
     public static String getServiceName(ServiceShape service) {
+        // S3-CRT override: when service is S3-CRT, use S3Crt namespace
+        if (isS3CrtProjection(service)) {
+            return S3_CRT_NAMESPACE;
+        }
+        
         String serviceId = service.getTrait(ServiceTrait.class)
             .map(ServiceTrait::getSdkId)
             .orElse(service.getId().getName());
@@ -129,6 +138,11 @@ public final class ServiceNameUtil {
     }
     
     public static String getSmithyServiceName(ServiceShape service, Map<String, String> serviceMap) {
+        // S3-CRT override: use s3-crt as the smithy service name for file paths
+        if (isS3CrtProjection(service)) {
+            return S3_CRT_PROJECTION_PREFIX;
+        }
+        
         String sdkId = service.getTrait(ServiceTrait.class)
             .map(ServiceTrait::getSdkId)
             .orElse(service.getId().getName())
@@ -137,5 +151,32 @@ public final class ServiceNameUtil {
             .replace(" ", "-");
         
         return serviceMap != null ? serviceMap.getOrDefault(sdkId, sdkId) : sdkId;
+    }
+
+    public static boolean isS3CrtProjection(ServiceShape service) {
+        String serviceId = service.getTrait(ServiceTrait.class)
+            .map(ServiceTrait::getSdkId)
+            .orElse(service.getId().getName());
+        return "s3-crt".equals(serviceId.toLowerCase());
+    }
+
+    /**
+     * Process service shape for S3-CRT projection by injecting s3-crt service ID
+     */
+    public static ServiceShape processS3CrtProjection(ServiceShape service, String projectionName) {
+        if (!projectionName.toLowerCase().startsWith("s3-crt")) {
+            return service;
+        }
+        
+        return service.toBuilder()
+            .addTrait(ServiceTrait.builder()
+                .sdkId("s3-crt")
+                .arnNamespace(service.getTrait(ServiceTrait.class).map(ServiceTrait::getArnNamespace).orElse(null))
+                .cloudFormationName(service.getTrait(ServiceTrait.class).map(ServiceTrait::getCloudFormationName).orElse(null))
+                .cloudTrailEventSource(service.getTrait(ServiceTrait.class).map(ServiceTrait::getCloudTrailEventSource).orElse(null))
+                .docId(service.getTrait(ServiceTrait.class).map(trait -> trait.getSdkId()).orElse(null))
+                .endpointPrefix(service.getTrait(ServiceTrait.class).map(ServiceTrait::getEndpointPrefix).orElse(null))
+                .build())
+            .build();
     }
 }
