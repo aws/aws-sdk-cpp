@@ -119,8 +119,8 @@ class CreateNotificationRequest : public ConnectRequest {
   ///@{
   /**
    * <p>The localized content of the notification. A map where keys are locale codes
-   * and values are the notification text in that locale. Content supports markdown
-   * formatting and embedded links. Maximum 250 characters per locale.</p>
+   * and values are the notification text in that locale. Content supports links.
+   * Maximum 250 characters per locale.</p>
    */
   inline const Aws::Map<LocaleCode, Aws::String>& GetContent() const { return m_content; }
   inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

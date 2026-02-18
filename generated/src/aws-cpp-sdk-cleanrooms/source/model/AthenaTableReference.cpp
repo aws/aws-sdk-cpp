@@ -38,6 +38,10 @@ AthenaTableReference& AthenaTableReference::operator=(JsonView jsonValue) {
     m_tableName = jsonValue.GetString("tableName");
     m_tableNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("catalogName")) {
+    m_catalogName = jsonValue.GetString("catalogName");
+    m_catalogNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue AthenaTableReference::Jsonize() const {
 
   if (m_tableNameHasBeenSet) {
     payload.WithString("tableName", m_tableName);
+  }
+
+  if (m_catalogNameHasBeenSet) {
+    payload.WithString("catalogName", m_catalogName);
   }
 
   return payload;

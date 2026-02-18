@@ -121,6 +121,24 @@ class AthenaTableReference {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The catalog name.</p>
+   */
+  inline const Aws::String& GetCatalogName() const { return m_catalogName; }
+  inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
+  template <typename CatalogNameT = Aws::String>
+  void SetCatalogName(CatalogNameT&& value) {
+    m_catalogNameHasBeenSet = true;
+    m_catalogName = std::forward<CatalogNameT>(value);
+  }
+  template <typename CatalogNameT = Aws::String>
+  AthenaTableReference& WithCatalogName(CatalogNameT&& value) {
+    SetCatalogName(std::forward<CatalogNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CommercialRegion m_region{CommercialRegion::NOT_SET};
 
@@ -131,11 +149,14 @@ class AthenaTableReference {
   Aws::String m_databaseName;
 
   Aws::String m_tableName;
+
+  Aws::String m_catalogName;
   bool m_regionHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
   bool m_outputLocationHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
+  bool m_catalogNameHasBeenSet = false;
 };
 
 }  // namespace Model
