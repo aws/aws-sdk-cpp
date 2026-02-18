@@ -55,6 +55,10 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::CREDENTIALS_LOGIN, "AD"},
     {UserAgentFeature::PROTOCOL_RPC_V2_CBOR, "M"},
     {UserAgentFeature::BEARER_SERVICE_ENV_VARS, "3"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA512, "AE"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH64, "AG"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH3, "AF"},
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH128, "AH"}
 };
 
 const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {
