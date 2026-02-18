@@ -103,8 +103,8 @@ class CreateWorkspaceApiKeyResult {
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
-  bool m_keyNameHasBeenSet = false;
   Aws::Http::HttpResponseCode m_responseCode;
+  bool m_keyNameHasBeenSet = false;
   bool m_keyHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -122,7 +122,6 @@ class CreateWorkspaceServiceAccountResult {
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_responseCode;
-  bool m_grafanaRoleHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_grafanaRoleHasBeenSet = false;

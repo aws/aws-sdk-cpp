@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/NotificationSearchSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -99,6 +100,8 @@ class SearchNotificationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+
  private:
   Aws::Vector<NotificationSearchSummary> m_notifications;
 
@@ -107,6 +110,7 @@ class SearchNotificationsResult {
   long long m_approximateTotalCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_responseCode;
   bool m_notificationsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_approximateTotalCountHasBeenSet = false;
