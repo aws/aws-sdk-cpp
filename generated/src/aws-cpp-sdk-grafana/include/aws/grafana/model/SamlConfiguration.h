@@ -38,26 +38,19 @@ class SamlConfiguration {
 
   ///@{
   /**
-   * <p>Lists which organizations defined in the SAML assertion are allowed to use
-   * the Amazon Managed Grafana workspace. If this is empty, all organizations in the
-   * assertion attribute have access.</p>
+   * <p>A structure containing the identity provider (IdP) metadata used to integrate
+   * the identity provider with this workspace.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetAllowedOrganizations() const { return m_allowedOrganizations; }
-  inline bool AllowedOrganizationsHasBeenSet() const { return m_allowedOrganizationsHasBeenSet; }
-  template <typename AllowedOrganizationsT = Aws::Vector<Aws::String>>
-  void SetAllowedOrganizations(AllowedOrganizationsT&& value) {
-    m_allowedOrganizationsHasBeenSet = true;
-    m_allowedOrganizations = std::forward<AllowedOrganizationsT>(value);
+  inline const IdpMetadata& GetIdpMetadata() const { return m_idpMetadata; }
+  inline bool IdpMetadataHasBeenSet() const { return m_idpMetadataHasBeenSet; }
+  template <typename IdpMetadataT = IdpMetadata>
+  void SetIdpMetadata(IdpMetadataT&& value) {
+    m_idpMetadataHasBeenSet = true;
+    m_idpMetadata = std::forward<IdpMetadataT>(value);
   }
-  template <typename AllowedOrganizationsT = Aws::Vector<Aws::String>>
-  SamlConfiguration& WithAllowedOrganizations(AllowedOrganizationsT&& value) {
-    SetAllowedOrganizations(std::forward<AllowedOrganizationsT>(value));
-    return *this;
-  }
-  template <typename AllowedOrganizationsT = Aws::String>
-  SamlConfiguration& AddAllowedOrganizations(AllowedOrganizationsT&& value) {
-    m_allowedOrganizationsHasBeenSet = true;
-    m_allowedOrganizations.emplace_back(std::forward<AllowedOrganizationsT>(value));
+  template <typename IdpMetadataT = IdpMetadata>
+  SamlConfiguration& WithIdpMetadata(IdpMetadataT&& value) {
+    SetIdpMetadata(std::forward<IdpMetadataT>(value));
     return *this;
   }
   ///@}
@@ -84,19 +77,46 @@ class SamlConfiguration {
 
   ///@{
   /**
-   * <p>A structure containing the identity provider (IdP) metadata used to integrate
-   * the identity provider with this workspace.</p>
+   * <p>A structure containing arrays that map group names in the SAML assertion to
+   * the Grafana <code>Admin</code> and <code>Editor</code> roles in the
+   * workspace.</p>
    */
-  inline const IdpMetadata& GetIdpMetadata() const { return m_idpMetadata; }
-  inline bool IdpMetadataHasBeenSet() const { return m_idpMetadataHasBeenSet; }
-  template <typename IdpMetadataT = IdpMetadata>
-  void SetIdpMetadata(IdpMetadataT&& value) {
-    m_idpMetadataHasBeenSet = true;
-    m_idpMetadata = std::forward<IdpMetadataT>(value);
+  inline const RoleValues& GetRoleValues() const { return m_roleValues; }
+  inline bool RoleValuesHasBeenSet() const { return m_roleValuesHasBeenSet; }
+  template <typename RoleValuesT = RoleValues>
+  void SetRoleValues(RoleValuesT&& value) {
+    m_roleValuesHasBeenSet = true;
+    m_roleValues = std::forward<RoleValuesT>(value);
   }
-  template <typename IdpMetadataT = IdpMetadata>
-  SamlConfiguration& WithIdpMetadata(IdpMetadataT&& value) {
-    SetIdpMetadata(std::forward<IdpMetadataT>(value));
+  template <typename RoleValuesT = RoleValues>
+  SamlConfiguration& WithRoleValues(RoleValuesT&& value) {
+    SetRoleValues(std::forward<RoleValuesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Lists which organizations defined in the SAML assertion are allowed to use
+   * the Amazon Managed Grafana workspace. If this is empty, all organizations in the
+   * assertion attribute have access.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAllowedOrganizations() const { return m_allowedOrganizations; }
+  inline bool AllowedOrganizationsHasBeenSet() const { return m_allowedOrganizationsHasBeenSet; }
+  template <typename AllowedOrganizationsT = Aws::Vector<Aws::String>>
+  void SetAllowedOrganizations(AllowedOrganizationsT&& value) {
+    m_allowedOrganizationsHasBeenSet = true;
+    m_allowedOrganizations = std::forward<AllowedOrganizationsT>(value);
+  }
+  template <typename AllowedOrganizationsT = Aws::Vector<Aws::String>>
+  SamlConfiguration& WithAllowedOrganizations(AllowedOrganizationsT&& value) {
+    SetAllowedOrganizations(std::forward<AllowedOrganizationsT>(value));
+    return *this;
+  }
+  template <typename AllowedOrganizationsT = Aws::String>
+  SamlConfiguration& AddAllowedOrganizations(AllowedOrganizationsT&& value) {
+    m_allowedOrganizationsHasBeenSet = true;
+    m_allowedOrganizations.emplace_back(std::forward<AllowedOrganizationsT>(value));
     return *this;
   }
   ///@}
@@ -117,41 +137,21 @@ class SamlConfiguration {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>A structure containing arrays that map group names in the SAML assertion to
-   * the Grafana <code>Admin</code> and <code>Editor</code> roles in the
-   * workspace.</p>
-   */
-  inline const RoleValues& GetRoleValues() const { return m_roleValues; }
-  inline bool RoleValuesHasBeenSet() const { return m_roleValuesHasBeenSet; }
-  template <typename RoleValuesT = RoleValues>
-  void SetRoleValues(RoleValuesT&& value) {
-    m_roleValuesHasBeenSet = true;
-    m_roleValues = std::forward<RoleValuesT>(value);
-  }
-  template <typename RoleValuesT = RoleValues>
-  SamlConfiguration& WithRoleValues(RoleValuesT&& value) {
-    SetRoleValues(std::forward<RoleValuesT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<Aws::String> m_allowedOrganizations;
+  IdpMetadata m_idpMetadata;
 
   AssertionAttributes m_assertionAttributes;
 
-  IdpMetadata m_idpMetadata;
+  RoleValues m_roleValues;
+
+  Aws::Vector<Aws::String> m_allowedOrganizations;
 
   int m_loginValidityDuration{0};
-
-  RoleValues m_roleValues;
-  bool m_allowedOrganizationsHasBeenSet = false;
-  bool m_assertionAttributesHasBeenSet = false;
   bool m_idpMetadataHasBeenSet = false;
-  bool m_loginValidityDurationHasBeenSet = false;
+  bool m_assertionAttributesHasBeenSet = false;
   bool m_roleValuesHasBeenSet = false;
+  bool m_allowedOrganizationsHasBeenSet = false;
+  bool m_loginValidityDurationHasBeenSet = false;
 };
 
 }  // namespace Model

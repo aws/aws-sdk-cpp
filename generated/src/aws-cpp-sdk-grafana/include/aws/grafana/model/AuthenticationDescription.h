@@ -37,25 +37,6 @@ class AuthenticationDescription {
 
   ///@{
   /**
-   * <p>A structure containing information about how this workspace works with IAM
-   * Identity Center. </p>
-   */
-  inline const AwsSsoAuthentication& GetAwsSso() const { return m_awsSso; }
-  inline bool AwsSsoHasBeenSet() const { return m_awsSsoHasBeenSet; }
-  template <typename AwsSsoT = AwsSsoAuthentication>
-  void SetAwsSso(AwsSsoT&& value) {
-    m_awsSsoHasBeenSet = true;
-    m_awsSso = std::forward<AwsSsoT>(value);
-  }
-  template <typename AwsSsoT = AwsSsoAuthentication>
-  AuthenticationDescription& WithAwsSso(AwsSsoT&& value) {
-    SetAwsSso(std::forward<AwsSsoT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
    * methods to authenticate users to use the Grafana console in the Amazon Managed
    * Grafana workspace.</p>
@@ -98,15 +79,34 @@ class AuthenticationDescription {
     return *this;
   }
   ///@}
- private:
-  AwsSsoAuthentication m_awsSso;
 
+  ///@{
+  /**
+   * <p>A structure containing information about how this workspace works with IAM
+   * Identity Center. </p>
+   */
+  inline const AwsSsoAuthentication& GetAwsSso() const { return m_awsSso; }
+  inline bool AwsSsoHasBeenSet() const { return m_awsSsoHasBeenSet; }
+  template <typename AwsSsoT = AwsSsoAuthentication>
+  void SetAwsSso(AwsSsoT&& value) {
+    m_awsSsoHasBeenSet = true;
+    m_awsSso = std::forward<AwsSsoT>(value);
+  }
+  template <typename AwsSsoT = AwsSsoAuthentication>
+  AuthenticationDescription& WithAwsSso(AwsSsoT&& value) {
+    SetAwsSso(std::forward<AwsSsoT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<AuthenticationProviderTypes> m_providers;
 
   SamlAuthentication m_saml;
-  bool m_awsSsoHasBeenSet = false;
+
+  AwsSsoAuthentication m_awsSso;
   bool m_providersHasBeenSet = false;
   bool m_samlHasBeenSet = false;
+  bool m_awsSsoHasBeenSet = false;
 };
 
 }  // namespace Model

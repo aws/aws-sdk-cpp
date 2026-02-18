@@ -24,13 +24,13 @@ DeleteWorkspaceServiceAccountTokenResult::DeleteWorkspaceServiceAccountTokenResu
 DeleteWorkspaceServiceAccountTokenResult& DeleteWorkspaceServiceAccountTokenResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("serviceAccountId")) {
-    m_serviceAccountId = jsonValue.GetString("serviceAccountId");
-    m_serviceAccountIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("tokenId")) {
     m_tokenId = jsonValue.GetString("tokenId");
     m_tokenIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serviceAccountId")) {
+    m_serviceAccountId = jsonValue.GetString("serviceAccountId");
+    m_serviceAccountIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("workspaceId")) {
     m_workspaceId = jsonValue.GetString("workspaceId");

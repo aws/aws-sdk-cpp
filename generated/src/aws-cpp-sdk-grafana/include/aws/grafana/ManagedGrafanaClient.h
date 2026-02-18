@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/grafana/ManagedGrafanaPaginationBase.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace ManagedGrafana {
  * build, package, or deploy any hardware to run Grafana servers. </p>
  */
 class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>,
+                                                    public ManagedGrafanaPaginationBase<ManagedGrafanaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -648,7 +650,7 @@ class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonC
    * <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some
    * information about each workspace. For more complete information about one
    * workspace, use <a
-   * href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaces">AWS
    * API Reference</a></p>

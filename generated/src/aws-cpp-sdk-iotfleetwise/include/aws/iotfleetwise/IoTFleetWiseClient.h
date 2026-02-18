@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/IoTFleetWisePaginationBase.h>
 #include <aws/iotfleetwise/IoTFleetWiseServiceClientModel.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
@@ -29,7 +30,8 @@ namespace IoTFleetWise {
  * IoT FleetWise Developer Guide</i>.</p>
  */
 class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>,
+                                                public IoTFleetWisePaginationBase<IoTFleetWiseClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

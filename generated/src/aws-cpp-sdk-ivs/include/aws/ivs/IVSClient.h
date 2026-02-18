@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs/IVSPaginationBase.h>
 #include <aws/ivs/IVSServiceClientModel.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 
@@ -93,7 +94,9 @@ namespace IVS {
  * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
  * Resource Names</a> in the <i>AWS General Reference</i>.</p>
  */
-class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IVSClient> {
+class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>,
+                              public IVSPaginationBase<IVSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

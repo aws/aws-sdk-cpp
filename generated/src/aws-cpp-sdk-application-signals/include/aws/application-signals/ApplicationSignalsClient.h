@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/application-signals/ApplicationSignalsPaginationBase.h>
 #include <aws/application-signals/ApplicationSignalsServiceClientModel.h>
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -33,7 +34,8 @@ namespace ApplicationSignals {
  * maps.</p>
  */
 class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>,
+                                                            public ApplicationSignalsPaginationBase<ApplicationSignalsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

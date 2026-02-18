@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/KMSPaginationBase.h>
 #include <aws/kms/KMSServiceClientModel.h>
 #include <aws/kms/KMS_EXPORTS.h>
 
@@ -81,7 +82,9 @@ namespace KMS {
  * <a>GenerateDataKey</a> </p> </li> <li> <p>
  * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
  */
-class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient> {
+class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>,
+                              public KMSPaginationBase<KMSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -557,34 +560,33 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * the KMS key is created.</p> <p>HMAC KMS keys are symmetric keys that never leave
    * KMS unencrypted. You can use HMAC keys to generate (<a>GenerateMac</a>) and
    * verify (<a>VerifyMac</a>) HMAC codes for messages up to 4096 bytes.</p> <p> </p>
-   * </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd>
-   * <p>To create a multi-Region <i>primary key</i> in the local Amazon Web Services
-   * Region, use the <code>MultiRegion</code> parameter with a value of
-   * <code>True</code>. To create a multi-Region <i>replica key</i>, that is, a KMS
-   * key with the same key ID and key material as a primary key, but in a different
-   * Amazon Web Services Region, use the <a>ReplicateKey</a> operation. To change a
-   * replica key to a primary key, and its primary key to a replica key, use the
-   * <a>UpdatePrimaryRegion</a> operation.</p> <p>You can create multi-Region KMS
-   * keys for all supported KMS key types: symmetric encryption KMS keys, HMAC KMS
-   * keys, asymmetric encryption KMS keys, and asymmetric signing KMS keys. You can
-   * also create multi-Region keys with imported key material. However, you can't
-   * create multi-Region keys in a custom key store.</p> <p>This operation supports
-   * <i>multi-Region keys</i>, an KMS feature that lets you create multiple
-   * interoperable KMS keys in different Amazon Web Services Regions. Because these
-   * KMS keys have the same key ID, key material, and other metadata, you can use
-   * them interchangeably to encrypt data in one Amazon Web Services Region and
-   * decrypt it in a different Amazon Web Services Region without re-encrypting the
-   * data or making a cross-Region call. For more information about multi-Region
-   * keys, see <a
+   * </dd> <dt>Multi-Region primary keys</dt> <dd> <p>To create a multi-Region
+   * <i>primary key</i> in the local Amazon Web Services Region, use the
+   * <code>MultiRegion</code> parameter with a value of <code>True</code>. To create
+   * a multi-Region <i>replica key</i>, that is, a KMS key with the same key ID and
+   * key material as a primary key, but in a different Amazon Web Services Region,
+   * use the <a>ReplicateKey</a> operation. To change a replica key to a primary key,
+   * and its primary key to a replica key, use the <a>UpdatePrimaryRegion</a>
+   * operation.</p> <p>You can create multi-Region KMS keys for all supported KMS key
+   * types: symmetric encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS
+   * keys, and asymmetric signing KMS keys. You can also create multi-Region keys
+   * with imported key material. However, you can't create multi-Region keys in a
+   * custom key store.</p> <p>This operation supports <i>multi-Region keys</i>, an
+   * KMS feature that lets you create multiple interoperable KMS keys in different
+   * Amazon Web Services Regions. Because these KMS keys have the same key ID, key
+   * material, and other metadata, you can use them interchangeably to encrypt data
+   * in one Amazon Web Services Region and decrypt it in a different Amazon Web
+   * Services Region without re-encrypting the data or making a cross-Region call.
+   * For more information about multi-Region keys, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
    * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>
-   * </p> </dd> <dd> <p>To import your own key material into a KMS key, begin by
-   * creating a KMS key with no key material. To do this, use the <code>Origin</code>
-   * parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next,
-   * use <a>GetParametersForImport</a> operation to get a public key and import
-   * token. Use the wrapping public key to encrypt your key material. Then, use
-   * <a>ImportKeyMaterial</a> with your import token to import the key material. For
-   * step-by-step instructions, see <a
+   * </p> </dd> <dt>Imported key material</dt> <dd> <p>To import your own key
+   * material into a KMS key, begin by creating a KMS key with no key material. To do
+   * this, use the <code>Origin</code> parameter of <code>CreateKey</code> with a
+   * value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a>
+   * operation to get a public key and import token. Use the wrapping public key to
+   * encrypt your key material. Then, use <a>ImportKeyMaterial</a> with your import
+   * token to import the key material. For step-by-step instructions, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
    * Key Material</a> in the <i> <i>Key Management Service Developer Guide</i>
    * </i>.</p> <p>You can import key material into KMS keys of all supported KMS key
@@ -749,13 +751,13 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">AWS API
    * Reference</a></p>
    */
-  virtual Model::DecryptOutcome Decrypt(const Model::DecryptRequest& request) const;
+  virtual Model::DecryptOutcome Decrypt(const Model::DecryptRequest& request = {}) const;
 
   /**
    * A Callable wrapper for Decrypt that returns a future to the operation so that it can be executed in parallel to other requests.
    */
   template <typename DecryptRequestT = Model::DecryptRequest>
-  Model::DecryptOutcomeCallable DecryptCallable(const DecryptRequestT& request) const {
+  Model::DecryptOutcomeCallable DecryptCallable(const DecryptRequestT& request = {}) const {
     return SubmitCallable(&KMSClient::Decrypt, request);
   }
 
@@ -764,8 +766,9 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * finished.
    */
   template <typename DecryptRequestT = Model::DecryptRequest>
-  void DecryptAsync(const DecryptRequestT& request, const DecryptResponseReceivedHandler& handler,
-                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void DecryptAsync(const DecryptResponseReceivedHandler& handler,
+                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                    const DecryptRequestT& request = {}) const {
     return SubmitAsync(&KMSClient::Decrypt, request, handler, context);
   }
 
@@ -3091,7 +3094,7 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * to automatically rotate on April 14, 2024, and you perform an on-demand rotation
    * on April 10, 2024, the key will automatically rotate, as scheduled, on April 14,
    * 2024 and every 730 days thereafter.</p>  <p>You can perform on-demand key
-   * rotation a <b>maximum of 10 times</b> per KMS key. You can use the KMS console
+   * rotation a <b>maximum of 25 times</b> per KMS key. You can use the KMS console
    * to view the number of remaining on-demand rotations available for a KMS key.</p>
    *  <p>You can use <a>GetKeyRotationStatus</a> to identify any in progress
    * on-demand rotations. You can use <a>ListKeyRotations</a> to identify the date

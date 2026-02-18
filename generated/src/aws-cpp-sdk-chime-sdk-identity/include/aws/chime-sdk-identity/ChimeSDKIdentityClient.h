@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-identity/ChimeSDKIdentityPaginationBase.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -22,7 +23,8 @@ namespace ChimeSDKIdentity {
  * Chime SDK identity</a>.</p>
  */
 class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>,
+                                                        public ChimeSDKIdentityPaginationBase<ChimeSDKIdentityClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

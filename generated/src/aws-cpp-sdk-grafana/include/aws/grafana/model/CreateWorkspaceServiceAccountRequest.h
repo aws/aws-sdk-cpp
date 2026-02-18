@@ -31,25 +31,6 @@ class CreateWorkspaceServiceAccountRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>The permission level to use for this service account.</p>  <p>For more
-   * information about the roles and the permissions each has, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User
-   * roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
-   */
-  inline Role GetGrafanaRole() const { return m_grafanaRole; }
-  inline bool GrafanaRoleHasBeenSet() const { return m_grafanaRoleHasBeenSet; }
-  inline void SetGrafanaRole(Role value) {
-    m_grafanaRoleHasBeenSet = true;
-    m_grafanaRole = value;
-  }
-  inline CreateWorkspaceServiceAccountRequest& WithGrafanaRole(Role value) {
-    SetGrafanaRole(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A name for the service account. The name must be unique within the workspace,
    * as it determines the ID associated with the service account.</p>
    */
@@ -63,6 +44,25 @@ class CreateWorkspaceServiceAccountRequest : public ManagedGrafanaRequest {
   template <typename NameT = Aws::String>
   CreateWorkspaceServiceAccountRequest& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The permission level to use for this service account.</p>  <p>For more
+   * information about the roles and the permissions each has, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User
+   * roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+   */
+  inline Role GetGrafanaRole() const { return m_grafanaRole; }
+  inline bool GrafanaRoleHasBeenSet() const { return m_grafanaRoleHasBeenSet; }
+  inline void SetGrafanaRole(Role value) {
+    m_grafanaRoleHasBeenSet = true;
+    m_grafanaRole = value;
+  }
+  inline CreateWorkspaceServiceAccountRequest& WithGrafanaRole(Role value) {
+    SetGrafanaRole(value);
     return *this;
   }
   ///@}
@@ -85,13 +85,13 @@ class CreateWorkspaceServiceAccountRequest : public ManagedGrafanaRequest {
   }
   ///@}
  private:
-  Role m_grafanaRole{Role::NOT_SET};
-
   Aws::String m_name;
 
+  Role m_grafanaRole{Role::NOT_SET};
+
   Aws::String m_workspaceId;
-  bool m_grafanaRoleHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_grafanaRoleHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

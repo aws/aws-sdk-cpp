@@ -28,10 +28,6 @@ ListWorkspaceServiceAccountTokensResult& ListWorkspaceServiceAccountTokensResult
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("serviceAccountId")) {
-    m_serviceAccountId = jsonValue.GetString("serviceAccountId");
-    m_serviceAccountIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("serviceAccountTokens")) {
     Aws::Utils::Array<JsonView> serviceAccountTokensJsonList = jsonValue.GetArray("serviceAccountTokens");
     for (unsigned serviceAccountTokensIndex = 0; serviceAccountTokensIndex < serviceAccountTokensJsonList.GetLength();
@@ -39,6 +35,10 @@ ListWorkspaceServiceAccountTokensResult& ListWorkspaceServiceAccountTokensResult
       m_serviceAccountTokens.push_back(serviceAccountTokensJsonList[serviceAccountTokensIndex].AsObject());
     }
     m_serviceAccountTokensHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serviceAccountId")) {
+    m_serviceAccountId = jsonValue.GetString("serviceAccountId");
+    m_serviceAccountIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("workspaceId")) {
     m_workspaceId = jsonValue.GetString("workspaceId");

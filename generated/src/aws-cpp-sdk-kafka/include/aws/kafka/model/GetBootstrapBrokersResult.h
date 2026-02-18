@@ -229,6 +229,86 @@ class GetBootstrapBrokersResult {
   ///@}
 
   ///@{
+  /**
+   *
+          <p>A string that contains one or more DNS names (or IP) and port
+   * pairs for IPv6 connectivity.</p>
+
+   */
+  inline const Aws::String& GetBootstrapBrokerStringIpv6() const { return m_bootstrapBrokerStringIpv6; }
+  template <typename BootstrapBrokerStringIpv6T = Aws::String>
+  void SetBootstrapBrokerStringIpv6(BootstrapBrokerStringIpv6T&& value) {
+    m_bootstrapBrokerStringIpv6HasBeenSet = true;
+    m_bootstrapBrokerStringIpv6 = std::forward<BootstrapBrokerStringIpv6T>(value);
+  }
+  template <typename BootstrapBrokerStringIpv6T = Aws::String>
+  GetBootstrapBrokersResult& WithBootstrapBrokerStringIpv6(BootstrapBrokerStringIpv6T&& value) {
+    SetBootstrapBrokerStringIpv6(std::forward<BootstrapBrokerStringIpv6T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>A string that contains one or more DNS names (or IP) and TLS
+   * port pairs for IPv6 connectivity.</p>
+
+   */
+  inline const Aws::String& GetBootstrapBrokerStringTlsIpv6() const { return m_bootstrapBrokerStringTlsIpv6; }
+  template <typename BootstrapBrokerStringTlsIpv6T = Aws::String>
+  void SetBootstrapBrokerStringTlsIpv6(BootstrapBrokerStringTlsIpv6T&& value) {
+    m_bootstrapBrokerStringTlsIpv6HasBeenSet = true;
+    m_bootstrapBrokerStringTlsIpv6 = std::forward<BootstrapBrokerStringTlsIpv6T>(value);
+  }
+  template <typename BootstrapBrokerStringTlsIpv6T = Aws::String>
+  GetBootstrapBrokersResult& WithBootstrapBrokerStringTlsIpv6(BootstrapBrokerStringTlsIpv6T&& value) {
+    SetBootstrapBrokerStringTlsIpv6(std::forward<BootstrapBrokerStringTlsIpv6T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>A string that contains one or more DNS names (or IP) and SASL
+   * SCRAM port pairs for IPv6 connectivity.</p>
+
+   */
+  inline const Aws::String& GetBootstrapBrokerStringSaslScramIpv6() const { return m_bootstrapBrokerStringSaslScramIpv6; }
+  template <typename BootstrapBrokerStringSaslScramIpv6T = Aws::String>
+  void SetBootstrapBrokerStringSaslScramIpv6(BootstrapBrokerStringSaslScramIpv6T&& value) {
+    m_bootstrapBrokerStringSaslScramIpv6HasBeenSet = true;
+    m_bootstrapBrokerStringSaslScramIpv6 = std::forward<BootstrapBrokerStringSaslScramIpv6T>(value);
+  }
+  template <typename BootstrapBrokerStringSaslScramIpv6T = Aws::String>
+  GetBootstrapBrokersResult& WithBootstrapBrokerStringSaslScramIpv6(BootstrapBrokerStringSaslScramIpv6T&& value) {
+    SetBootstrapBrokerStringSaslScramIpv6(std::forward<BootstrapBrokerStringSaslScramIpv6T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *
+          <p>A string that contains one or more DNS names (or IP) and SASL
+   * IAM port pairs for IPv6 connectivity.</p>
+
+   */
+  inline const Aws::String& GetBootstrapBrokerStringSaslIamIpv6() const { return m_bootstrapBrokerStringSaslIamIpv6; }
+  template <typename BootstrapBrokerStringSaslIamIpv6T = Aws::String>
+  void SetBootstrapBrokerStringSaslIamIpv6(BootstrapBrokerStringSaslIamIpv6T&& value) {
+    m_bootstrapBrokerStringSaslIamIpv6HasBeenSet = true;
+    m_bootstrapBrokerStringSaslIamIpv6 = std::forward<BootstrapBrokerStringSaslIamIpv6T>(value);
+  }
+  template <typename BootstrapBrokerStringSaslIamIpv6T = Aws::String>
+  GetBootstrapBrokersResult& WithBootstrapBrokerStringSaslIamIpv6(BootstrapBrokerStringSaslIamIpv6T&& value) {
+    SetBootstrapBrokerStringSaslIamIpv6(std::forward<BootstrapBrokerStringSaslIamIpv6T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -263,6 +343,14 @@ class GetBootstrapBrokersResult {
 
   Aws::String m_bootstrapBrokerStringVpcConnectivitySaslIam;
 
+  Aws::String m_bootstrapBrokerStringIpv6;
+
+  Aws::String m_bootstrapBrokerStringTlsIpv6;
+
+  Aws::String m_bootstrapBrokerStringSaslScramIpv6;
+
+  Aws::String m_bootstrapBrokerStringSaslIamIpv6;
+
   Aws::String m_requestId;
   bool m_bootstrapBrokerStringHasBeenSet = false;
   bool m_bootstrapBrokerStringTlsHasBeenSet = false;
@@ -274,6 +362,10 @@ class GetBootstrapBrokersResult {
   bool m_bootstrapBrokerStringVpcConnectivityTlsHasBeenSet = false;
   bool m_bootstrapBrokerStringVpcConnectivitySaslScramHasBeenSet = false;
   bool m_bootstrapBrokerStringVpcConnectivitySaslIamHasBeenSet = false;
+  bool m_bootstrapBrokerStringIpv6HasBeenSet = false;
+  bool m_bootstrapBrokerStringTlsIpv6HasBeenSet = false;
+  bool m_bootstrapBrokerStringSaslScramIpv6HasBeenSet = false;
+  bool m_bootstrapBrokerStringSaslIamIpv6HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

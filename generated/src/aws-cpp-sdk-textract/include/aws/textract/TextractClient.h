@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/TextractPaginationBase.h>
 #include <aws/textract/TextractServiceClientModel.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
@@ -19,7 +20,8 @@ namespace Textract {
  * Textract.</p>
  */
 class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<TextractClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>,
+                                        public TextractPaginationBase<TextractClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

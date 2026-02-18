@@ -69,6 +69,7 @@ file(GLOB UTILS_MEMORY_HEADERS "include/aws/core/utils/memory/*.h")
 file(GLOB UTILS_COMPONENT_REGISTRY_HEADERS "include/aws/core/utils/component-registry/*.h")
 file(GLOB UTILS_STL_HEADERS "include/aws/core/utils/memory/stl/*.h")
 file(GLOB UTILS_LOGGING_HEADERS "include/aws/core/utils/logging/*.h")
+file(GLOB UTILS_PAGINATION_HEADERS "include/aws/core/utils/pagination/*.h")
 file(GLOB UTILS_RATE_LIMITER_HEADERS "include/aws/core/utils/ratelimiter/*.h")
 file(GLOB UTILS_STREAM_HEADERS "include/aws/core/utils/stream/*.h")
 file(GLOB CJSON_HEADERS "include/aws/core/external/cjson/*.h")
@@ -279,6 +280,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_COMPONENT_REGISTRY_HEADERS}
   ${UTILS_STL_HEADERS}
   ${UTILS_STREAM_HEADERS}
+  ${UTILS_PAGINATION_HEADERS}
   ${UTILS_RATE_LIMITER_HEADERS}
   ${CJSON_HEADERS}
   ${TINYXML2_HEADERS}
@@ -418,6 +420,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\pagination" FILES ${UTILS_PAGINATION_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
     source_group("Header Files\\aws\\core\\external\\cjson" FILES ${CJSON_HEADERS})
     source_group("Header Files\\aws\\core\\external\\tinyxml2" FILES ${TINYXML2_HEADERS})
@@ -697,6 +700,7 @@ install (FILES ${UTILS_LOGGING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/cor
 install (FILES ${UTILS_MEMORY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/memory)
 install (FILES ${UTILS_COMPONENT_REGISTRY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/component-registry)
 install (FILES ${UTILS_STL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/memory/stl)
+install (FILES ${UTILS_PAGINATION_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/pagination)
 install (FILES ${UTILS_RATE_LIMITER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/ratelimiter)
 install (FILES ${UTILS_STREAM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/stream)
 install (FILES ${UTILS_THREADING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/threading)

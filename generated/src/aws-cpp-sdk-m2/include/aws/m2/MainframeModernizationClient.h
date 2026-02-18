@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/MainframeModernizationPaginationBase.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace MainframeModernization {
  */
 class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>,
+      public MainframeModernizationPaginationBase<MainframeModernizationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/ServerlessClientAuthentication.h>
+#include <aws/kafka/model/ServerlessConnectivityInfo.h>
 #include <aws/kafka/model/VpcConfig.h>
 
 #include <utility>
@@ -81,12 +82,36 @@ class Serverless {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   *
+          <p>Describes the cluster's connectivity information, such as its
+   * network type, which is IPv4 or DUAL.</p>
+
+   */
+  inline const ServerlessConnectivityInfo& GetConnectivityInfo() const { return m_connectivityInfo; }
+  inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
+  template <typename ConnectivityInfoT = ServerlessConnectivityInfo>
+  void SetConnectivityInfo(ConnectivityInfoT&& value) {
+    m_connectivityInfoHasBeenSet = true;
+    m_connectivityInfo = std::forward<ConnectivityInfoT>(value);
+  }
+  template <typename ConnectivityInfoT = ServerlessConnectivityInfo>
+  Serverless& WithConnectivityInfo(ConnectivityInfoT&& value) {
+    SetConnectivityInfo(std::forward<ConnectivityInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<VpcConfig> m_vpcConfigs;
 
   ServerlessClientAuthentication m_clientAuthentication;
+
+  ServerlessConnectivityInfo m_connectivityInfo;
   bool m_vpcConfigsHasBeenSet = false;
   bool m_clientAuthenticationHasBeenSet = false;
+  bool m_connectivityInfoHasBeenSet = false;
 };
 
 }  // namespace Model

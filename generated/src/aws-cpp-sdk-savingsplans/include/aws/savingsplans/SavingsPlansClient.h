@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/savingsplans/SavingsPlansPaginationBase.h>
 #include <aws/savingsplans/SavingsPlansServiceClientModel.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace SavingsPlans {
  * Services Savings Plans User Guide</a>.</p>
  */
 class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>,
+                                                public SavingsPlansPaginationBase<SavingsPlansClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

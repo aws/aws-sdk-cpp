@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsPaginationBase.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace DynamoDBStreams {
  * Guide.</p>
  */
 class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>,
+                                                      public DynamoDBStreamsPaginationBase<DynamoDBStreamsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

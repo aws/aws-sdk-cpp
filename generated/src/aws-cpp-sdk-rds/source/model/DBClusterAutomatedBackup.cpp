@@ -92,6 +92,12 @@ DBClusterAutomatedBackup& DBClusterAutomatedBackup::operator=(const XmlNode& xml
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptedNode.GetText()).c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
     if (!allocatedStorageNode.IsNull()) {
       m_allocatedStorage = StringUtils::ConvertToInt32(
@@ -244,6 +250,11 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
     oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_allocatedStorageHasBeenSet) {
     oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
@@ -355,6 +366,10 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
   }
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_allocatedStorageHasBeenSet) {
     oStream << location << ".AllocatedStorage=" << m_allocatedStorage << "&";

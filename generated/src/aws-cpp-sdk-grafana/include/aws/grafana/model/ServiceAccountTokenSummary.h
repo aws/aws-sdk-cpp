@@ -35,6 +35,42 @@ class ServiceAccountTokenSummary {
 
   ///@{
   /**
+   * <p>The unique ID of the service account token.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  ServiceAccountTokenSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the service account token.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ServiceAccountTokenSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>When the service account token was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -71,24 +107,6 @@ class ServiceAccountTokenSummary {
 
   ///@{
   /**
-   * <p>The unique ID of the service account token.</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  ServiceAccountTokenSummary& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The last time the token was used to authorize a Grafana HTTP API.</p>
    */
   inline const Aws::Utils::DateTime& GetLastUsedAt() const { return m_lastUsedAt; }
@@ -104,39 +122,21 @@ class ServiceAccountTokenSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the service account token.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ServiceAccountTokenSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_id;
+
+  Aws::String m_name;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_expiresAt{};
 
-  Aws::String m_id;
-
   Aws::Utils::DateTime m_lastUsedAt{};
-
-  Aws::String m_name;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
-  bool m_idHasBeenSet = false;
   bool m_lastUsedAtHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
 };
 
 }  // namespace Model

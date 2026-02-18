@@ -13,6 +13,8 @@ from codegen.legacy_c2j_cpp_gen import LegacyC2jCppGen, CLIENT_MODEL_FILE_LOCATI
 from codegen.model_utils import ModelUtils
 from codegen.protocol_tests_gen import ProtocolTestsGen
 from codegen.smoke_tests_gen import SmokeTestsGen
+from codegen.smithy_cpp_gen import SmithyCppGen
+from codegen.format_util import format_directories
 
 
 def parse_arguments() -> dict:
@@ -158,11 +160,25 @@ def main():
     # generate code using smithy for all discoverable clients
     # clients_to_build check is present because user can generate only defaults or partitions or protocol-tests
     clients_to_build = model_utils.get_clients_to_build()
+    
+    if clients_to_build:
+        smithy_cpp_gen = SmithyCppGen(args["debug"])
+        if smithy_cpp_gen.generate(clients_to_build) != 0:
+            print("ERROR: Failed to generate Smithy code!")
+            return -1
+    
     if args["generate_smoke_tests"] and clients_to_build:
         smoke_tests_gen = SmokeTestsGen(args["debug"])
         if smoke_tests_gen.generate(clients_to_build) != 0:
             print("ERROR: Failed to generate smoke test(s)!")
             return -1
+
+    # Format all generated C++ code at the end
+    if clients_to_build:
+        client_dirs = [f"{args['output_location']}/src/aws-cpp-sdk-{client}" for client in clients_to_build]
+        existing_dirs = [d for d in client_dirs if os.path.exists(d)]
+        if existing_dirs:
+            format_directories(existing_dirs)
 
     return 0
 

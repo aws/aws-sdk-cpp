@@ -61,6 +61,22 @@ GetBootstrapBrokersResult& GetBootstrapBrokersResult::operator=(const Aws::Amazo
     m_bootstrapBrokerStringVpcConnectivitySaslIam = jsonValue.GetString("bootstrapBrokerStringVpcConnectivitySaslIam");
     m_bootstrapBrokerStringVpcConnectivitySaslIamHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bootstrapBrokerStringIpv6")) {
+    m_bootstrapBrokerStringIpv6 = jsonValue.GetString("bootstrapBrokerStringIpv6");
+    m_bootstrapBrokerStringIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bootstrapBrokerStringTlsIpv6")) {
+    m_bootstrapBrokerStringTlsIpv6 = jsonValue.GetString("bootstrapBrokerStringTlsIpv6");
+    m_bootstrapBrokerStringTlsIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bootstrapBrokerStringSaslScramIpv6")) {
+    m_bootstrapBrokerStringSaslScramIpv6 = jsonValue.GetString("bootstrapBrokerStringSaslScramIpv6");
+    m_bootstrapBrokerStringSaslScramIpv6HasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bootstrapBrokerStringSaslIamIpv6")) {
+    m_bootstrapBrokerStringSaslIamIpv6 = jsonValue.GetString("bootstrapBrokerStringSaslIamIpv6");
+    m_bootstrapBrokerStringSaslIamIpv6HasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

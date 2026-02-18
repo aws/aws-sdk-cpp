@@ -29,23 +29,6 @@ class DeleteWorkspaceServiceAccountTokenResult {
 
   ///@{
   /**
-   * <p>The ID of the service account where the token was deleted.</p>
-   */
-  inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
-  template <typename ServiceAccountIdT = Aws::String>
-  void SetServiceAccountId(ServiceAccountIdT&& value) {
-    m_serviceAccountIdHasBeenSet = true;
-    m_serviceAccountId = std::forward<ServiceAccountIdT>(value);
-  }
-  template <typename ServiceAccountIdT = Aws::String>
-  DeleteWorkspaceServiceAccountTokenResult& WithServiceAccountId(ServiceAccountIdT&& value) {
-    SetServiceAccountId(std::forward<ServiceAccountIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the token that was deleted.</p>
    */
   inline const Aws::String& GetTokenId() const { return m_tokenId; }
@@ -57,6 +40,23 @@ class DeleteWorkspaceServiceAccountTokenResult {
   template <typename TokenIdT = Aws::String>
   DeleteWorkspaceServiceAccountTokenResult& WithTokenId(TokenIdT&& value) {
     SetTokenId(std::forward<TokenIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the service account where the token was deleted.</p>
+   */
+  inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
+  template <typename ServiceAccountIdT = Aws::String>
+  void SetServiceAccountId(ServiceAccountIdT&& value) {
+    m_serviceAccountIdHasBeenSet = true;
+    m_serviceAccountId = std::forward<ServiceAccountIdT>(value);
+  }
+  template <typename ServiceAccountIdT = Aws::String>
+  DeleteWorkspaceServiceAccountTokenResult& WithServiceAccountId(ServiceAccountIdT&& value) {
+    SetServiceAccountId(std::forward<ServiceAccountIdT>(value));
     return *this;
   }
   ///@}
@@ -93,15 +93,15 @@ class DeleteWorkspaceServiceAccountTokenResult {
   }
   ///@}
  private:
-  Aws::String m_serviceAccountId;
-
   Aws::String m_tokenId;
+
+  Aws::String m_serviceAccountId;
 
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
-  bool m_serviceAccountIdHasBeenSet = false;
   bool m_tokenIdHasBeenSet = false;
+  bool m_serviceAccountIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

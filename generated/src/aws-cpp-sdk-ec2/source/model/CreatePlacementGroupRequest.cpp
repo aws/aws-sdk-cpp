@@ -33,6 +33,10 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const {
     ss << "LinkedGroupId=" << StringUtils::URLEncode(m_linkedGroupId.c_str()) << "&";
   }
 
+  if (m_operatorHasBeenSet) {
+    m_operator.OutputToStream(ss, "Operator");
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

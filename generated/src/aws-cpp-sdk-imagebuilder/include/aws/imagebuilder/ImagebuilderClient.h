@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/ImagebuilderPaginationBase.h>
 #include <aws/imagebuilder/ImagebuilderServiceClientModel.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace imagebuilder {
  * pre-configured with software and settings to meet specific IT standards.</p>
  */
 class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>,
+                                                public ImagebuilderPaginationBase<ImagebuilderClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

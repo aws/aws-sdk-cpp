@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/PlacementGroupState.h>
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/ec2/model/SpreadLevel.h>
@@ -199,6 +200,24 @@ class PlacementGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The service provider that manages the Placement Group.</p>
+   */
+  inline const OperatorResponse& GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  template <typename OperatorT = OperatorResponse>
+  void SetOperator(OperatorT&& value) {
+    m_operatorHasBeenSet = true;
+    m_operator = std::forward<OperatorT>(value);
+  }
+  template <typename OperatorT = OperatorResponse>
+  PlacementGroup& WithOperator(OperatorT&& value) {
+    SetOperator(std::forward<OperatorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_groupName;
 
@@ -217,6 +236,8 @@ class PlacementGroup {
   SpreadLevel m_spreadLevel{SpreadLevel::NOT_SET};
 
   Aws::String m_linkedGroupId;
+
+  OperatorResponse m_operator;
   bool m_groupNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
@@ -226,6 +247,7 @@ class PlacementGroup {
   bool m_groupArnHasBeenSet = false;
   bool m_spreadLevelHasBeenSet = false;
   bool m_linkedGroupIdHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/deadline/DeadlinePaginationBase.h>
 #include <aws/deadline/DeadlineServiceClientModel.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace deadline {
  * high-speed storage, licenses, and cost management services.</p>
  */
 class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>,
+                                        public DeadlinePaginationBase<DeadlineClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

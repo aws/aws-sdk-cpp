@@ -61,33 +61,6 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
-   * to authenticate users for using the Grafana console within a workspace. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
-   * authentication in Amazon Managed Grafana</a>.</p>
-   */
-  inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const { return m_authenticationProviders; }
-  inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
-  template <typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
-  void SetAuthenticationProviders(AuthenticationProvidersT&& value) {
-    m_authenticationProvidersHasBeenSet = true;
-    m_authenticationProviders = std::forward<AuthenticationProvidersT>(value);
-  }
-  template <typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
-  CreateWorkspaceRequest& WithAuthenticationProviders(AuthenticationProvidersT&& value) {
-    SetAuthenticationProviders(std::forward<AuthenticationProvidersT>(value));
-    return *this;
-  }
-  inline CreateWorkspaceRequest& AddAuthenticationProviders(AuthenticationProviderTypes value) {
-    m_authenticationProvidersHasBeenSet = true;
-    m_authenticationProviders.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency
    * of the request.</p>
    */
@@ -101,70 +74,6 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
   template <typename ClientTokenT = Aws::String>
   CreateWorkspaceRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration string for the workspace that you create. For more
-   * information about the format and configuration options available, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
-   * in your Grafana workspace</a>.</p>
-   */
-  inline const Aws::String& GetConfiguration() const { return m_configuration; }
-  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-  template <typename ConfigurationT = Aws::String>
-  void SetConfiguration(ConfigurationT&& value) {
-    m_configurationHasBeenSet = true;
-    m_configuration = std::forward<ConfigurationT>(value);
-  }
-  template <typename ConfigurationT = Aws::String>
-  CreateWorkspaceRequest& WithConfiguration(ConfigurationT&& value) {
-    SetConfiguration(std::forward<ConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the version of Grafana to support in the new workspace. If not
-   * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
-   * list of supported versions, use the <code>ListVersions</code> operation.</p>
-   */
-  inline const Aws::String& GetGrafanaVersion() const { return m_grafanaVersion; }
-  inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
-  template <typename GrafanaVersionT = Aws::String>
-  void SetGrafanaVersion(GrafanaVersionT&& value) {
-    m_grafanaVersionHasBeenSet = true;
-    m_grafanaVersion = std::forward<GrafanaVersionT>(value);
-  }
-  template <typename GrafanaVersionT = Aws::String>
-  CreateWorkspaceRequest& WithGrafanaVersion(GrafanaVersionT&& value) {
-    SetGrafanaVersion(std::forward<GrafanaVersionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Configuration for network access to your workspace.</p> <p>When this is
-   * configured, only listed IP addresses and VPC endpoints will be able to access
-   * your workspace. Standard Grafana authentication and authorization will still be
-   * required.</p> <p>If this is not configured, or is removed, then all IP addresses
-   * and VPC endpoints will be allowed. Standard Grafana authentication and
-   * authorization will still be required.</p>
-   */
-  inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
-  inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
-  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
-  void SetNetworkAccessControl(NetworkAccessControlT&& value) {
-    m_networkAccessControlHasBeenSet = true;
-    m_networkAccessControl = std::forward<NetworkAccessControlT>(value);
-  }
-  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
-  CreateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessControlT&& value) {
-    SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value));
     return *this;
   }
   ///@}
@@ -234,51 +143,6 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
   template <typename StackSetNameT = Aws::String>
   CreateWorkspaceRequest& WithStackSetName(StackSetNameT&& value) {
     SetStackSetName(std::forward<StackSetNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The list of tags associated with the workspace.</p>
-   */
-  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  void SetTags(TagsT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags = std::forward<TagsT>(value);
-  }
-  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  CreateWorkspaceRequest& WithTags(TagsT&& value) {
-    SetTags(std::forward<TagsT>(value));
-    return *this;
-  }
-  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  CreateWorkspaceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-    m_tagsHasBeenSet = true;
-    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration settings for an Amazon VPC that contains data sources for
-   * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
-   * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
-   *
-   */
-  inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
-  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-  template <typename VpcConfigurationT = VpcConfiguration>
-  void SetVpcConfiguration(VpcConfigurationT&& value) {
-    m_vpcConfigurationHasBeenSet = true;
-    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
-  }
-  template <typename VpcConfigurationT = VpcConfiguration>
-  CreateWorkspaceRequest& WithVpcConfiguration(VpcConfigurationT&& value) {
-    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -418,28 +282,171 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+   * to authenticate users for using the Grafana console within a workspace. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
+   * authentication in Amazon Managed Grafana</a>.</p>
+   */
+  inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const { return m_authenticationProviders; }
+  inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
+  template <typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
+  void SetAuthenticationProviders(AuthenticationProvidersT&& value) {
+    m_authenticationProvidersHasBeenSet = true;
+    m_authenticationProviders = std::forward<AuthenticationProvidersT>(value);
+  }
+  template <typename AuthenticationProvidersT = Aws::Vector<AuthenticationProviderTypes>>
+  CreateWorkspaceRequest& WithAuthenticationProviders(AuthenticationProvidersT&& value) {
+    SetAuthenticationProviders(std::forward<AuthenticationProvidersT>(value));
+    return *this;
+  }
+  inline CreateWorkspaceRequest& AddAuthenticationProviders(AuthenticationProviderTypes value) {
+    m_authenticationProvidersHasBeenSet = true;
+    m_authenticationProviders.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of tags associated with the workspace.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateWorkspaceRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  CreateWorkspaceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings for an Amazon VPC that contains data sources for
+   * your Grafana workspace to connect to.</p>  <p>Connecting to a private VPC
+   * is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
+   *
+   */
+  inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  void SetVpcConfiguration(VpcConfigurationT&& value) {
+    m_vpcConfigurationHasBeenSet = true;
+    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
+  }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  CreateWorkspaceRequest& WithVpcConfiguration(VpcConfigurationT&& value) {
+    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration string for the workspace that you create. For more
+   * information about the format and configuration options available, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+   * in your Grafana workspace</a>.</p>
+   */
+  inline const Aws::String& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = Aws::String>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = Aws::String>
+  CreateWorkspaceRequest& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for network access to your workspace.</p> <p>When this is
+   * configured, only listed IP addresses and VPC endpoints will be able to access
+   * your workspace. Standard Grafana authentication and authorization will still be
+   * required.</p> <p>If this is not configured, or is removed, then all IP addresses
+   * and VPC endpoints will be allowed. Standard Grafana authentication and
+   * authorization will still be required.</p>
+   */
+  inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
+  inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
+  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
+  void SetNetworkAccessControl(NetworkAccessControlT&& value) {
+    m_networkAccessControlHasBeenSet = true;
+    m_networkAccessControl = std::forward<NetworkAccessControlT>(value);
+  }
+  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
+  CreateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessControlT&& value) {
+    SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the version of Grafana to support in the new workspace. If not
+   * specified, defaults to the latest version (for example, 10.4).</p> <p>To get a
+   * list of supported versions, use the <code>ListVersions</code> operation.</p>
+   */
+  inline const Aws::String& GetGrafanaVersion() const { return m_grafanaVersion; }
+  inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
+  template <typename GrafanaVersionT = Aws::String>
+  void SetGrafanaVersion(GrafanaVersionT&& value) {
+    m_grafanaVersionHasBeenSet = true;
+    m_grafanaVersion = std::forward<GrafanaVersionT>(value);
+  }
+  template <typename GrafanaVersionT = Aws::String>
+  CreateWorkspaceRequest& WithGrafanaVersion(GrafanaVersionT&& value) {
+    SetGrafanaVersion(std::forward<GrafanaVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID or ARN of the Key Management Service key to use for encrypting
+   * workspace data.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  CreateWorkspaceRequest& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
 
-  Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
-
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  Aws::String m_configuration;
-
-  Aws::String m_grafanaVersion;
-
-  NetworkAccessConfiguration m_networkAccessControl;
 
   Aws::String m_organizationRoleName;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
 
   Aws::String m_stackSetName;
-
-  Aws::Map<Aws::String, Aws::String> m_tags;
-
-  VpcConfiguration m_vpcConfiguration;
 
   Aws::Vector<DataSourceType> m_workspaceDataSources;
 
@@ -452,23 +459,38 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
   Aws::Vector<Aws::String> m_workspaceOrganizationalUnits;
 
   Aws::String m_workspaceRoleArn;
+
+  Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
+  VpcConfiguration m_vpcConfiguration;
+
+  Aws::String m_configuration;
+
+  NetworkAccessConfiguration m_networkAccessControl;
+
+  Aws::String m_grafanaVersion;
+
+  Aws::String m_kmsKeyId;
   bool m_accountAccessTypeHasBeenSet = false;
-  bool m_authenticationProvidersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
-  bool m_configurationHasBeenSet = false;
-  bool m_grafanaVersionHasBeenSet = false;
-  bool m_networkAccessControlHasBeenSet = false;
   bool m_organizationRoleNameHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
   bool m_stackSetNameHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
-  bool m_vpcConfigurationHasBeenSet = false;
   bool m_workspaceDataSourcesHasBeenSet = false;
   bool m_workspaceDescriptionHasBeenSet = false;
   bool m_workspaceNameHasBeenSet = false;
   bool m_workspaceNotificationDestinationsHasBeenSet = false;
   bool m_workspaceOrganizationalUnitsHasBeenSet = false;
   bool m_workspaceRoleArnHasBeenSet = false;
+  bool m_authenticationProvidersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_networkAccessControlHasBeenSet = false;
+  bool m_grafanaVersionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
 };
 
 }  // namespace Model

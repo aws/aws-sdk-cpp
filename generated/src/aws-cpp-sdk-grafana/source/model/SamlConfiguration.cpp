@@ -18,6 +18,18 @@ namespace Model {
 SamlConfiguration::SamlConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 SamlConfiguration& SamlConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("idpMetadata")) {
+    m_idpMetadata = jsonValue.GetObject("idpMetadata");
+    m_idpMetadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("assertionAttributes")) {
+    m_assertionAttributes = jsonValue.GetObject("assertionAttributes");
+    m_assertionAttributesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("roleValues")) {
+    m_roleValues = jsonValue.GetObject("roleValues");
+    m_roleValuesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("allowedOrganizations")) {
     Aws::Utils::Array<JsonView> allowedOrganizationsJsonList = jsonValue.GetArray("allowedOrganizations");
     for (unsigned allowedOrganizationsIndex = 0; allowedOrganizationsIndex < allowedOrganizationsJsonList.GetLength();
@@ -26,27 +38,27 @@ SamlConfiguration& SamlConfiguration::operator=(JsonView jsonValue) {
     }
     m_allowedOrganizationsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("assertionAttributes")) {
-    m_assertionAttributes = jsonValue.GetObject("assertionAttributes");
-    m_assertionAttributesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("idpMetadata")) {
-    m_idpMetadata = jsonValue.GetObject("idpMetadata");
-    m_idpMetadataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("loginValidityDuration")) {
     m_loginValidityDuration = jsonValue.GetInteger("loginValidityDuration");
     m_loginValidityDurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("roleValues")) {
-    m_roleValues = jsonValue.GetObject("roleValues");
-    m_roleValuesHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue SamlConfiguration::Jsonize() const {
   JsonValue payload;
+
+  if (m_idpMetadataHasBeenSet) {
+    payload.WithObject("idpMetadata", m_idpMetadata.Jsonize());
+  }
+
+  if (m_assertionAttributesHasBeenSet) {
+    payload.WithObject("assertionAttributes", m_assertionAttributes.Jsonize());
+  }
+
+  if (m_roleValuesHasBeenSet) {
+    payload.WithObject("roleValues", m_roleValues.Jsonize());
+  }
 
   if (m_allowedOrganizationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> allowedOrganizationsJsonList(m_allowedOrganizations.size());
@@ -57,20 +69,8 @@ JsonValue SamlConfiguration::Jsonize() const {
     payload.WithArray("allowedOrganizations", std::move(allowedOrganizationsJsonList));
   }
 
-  if (m_assertionAttributesHasBeenSet) {
-    payload.WithObject("assertionAttributes", m_assertionAttributes.Jsonize());
-  }
-
-  if (m_idpMetadataHasBeenSet) {
-    payload.WithObject("idpMetadata", m_idpMetadata.Jsonize());
-  }
-
   if (m_loginValidityDurationHasBeenSet) {
     payload.WithInteger("loginValidityDuration", m_loginValidityDuration);
-  }
-
-  if (m_roleValuesHasBeenSet) {
-    payload.WithObject("roleValues", m_roleValues.Jsonize());
   }
 
   return payload;

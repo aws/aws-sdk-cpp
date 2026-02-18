@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appconfigdata/AppConfigDataPaginationBase.h>
 #include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -56,7 +57,8 @@ namespace AppConfigData {
  * the configuration</a> in the <i>AppConfig User Guide</i>.</p>
  */
 class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>,
+                                                  public AppConfigDataPaginationBase<AppConfigDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

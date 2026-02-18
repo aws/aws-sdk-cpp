@@ -19,31 +19,8 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const {
     payload.WithString("accountAccessType", AccountAccessTypeMapper::GetNameForAccountAccessType(m_accountAccessType));
   }
 
-  if (m_authenticationProvidersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> authenticationProvidersJsonList(m_authenticationProviders.size());
-    for (unsigned authenticationProvidersIndex = 0; authenticationProvidersIndex < authenticationProvidersJsonList.GetLength();
-         ++authenticationProvidersIndex) {
-      authenticationProvidersJsonList[authenticationProvidersIndex].AsString(
-          AuthenticationProviderTypesMapper::GetNameForAuthenticationProviderTypes(
-              m_authenticationProviders[authenticationProvidersIndex]));
-    }
-    payload.WithArray("authenticationProviders", std::move(authenticationProvidersJsonList));
-  }
-
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
-  }
-
-  if (m_configurationHasBeenSet) {
-    payload.WithString("configuration", m_configuration);
-  }
-
-  if (m_grafanaVersionHasBeenSet) {
-    payload.WithString("grafanaVersion", m_grafanaVersion);
-  }
-
-  if (m_networkAccessControlHasBeenSet) {
-    payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
   }
 
   if (m_organizationRoleNameHasBeenSet) {
@@ -56,18 +33,6 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const {
 
   if (m_stackSetNameHasBeenSet) {
     payload.WithString("stackSetName", m_stackSetName);
-  }
-
-  if (m_tagsHasBeenSet) {
-    JsonValue tagsJsonMap;
-    for (auto& tagsItem : m_tags) {
-      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-    }
-    payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_vpcConfigurationHasBeenSet) {
-    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
   if (m_workspaceDataSourcesHasBeenSet) {
@@ -112,6 +77,45 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const {
 
   if (m_workspaceRoleArnHasBeenSet) {
     payload.WithString("workspaceRoleArn", m_workspaceRoleArn);
+  }
+
+  if (m_authenticationProvidersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> authenticationProvidersJsonList(m_authenticationProviders.size());
+    for (unsigned authenticationProvidersIndex = 0; authenticationProvidersIndex < authenticationProvidersJsonList.GetLength();
+         ++authenticationProvidersIndex) {
+      authenticationProvidersJsonList[authenticationProvidersIndex].AsString(
+          AuthenticationProviderTypesMapper::GetNameForAuthenticationProviderTypes(
+              m_authenticationProviders[authenticationProvidersIndex]));
+    }
+    payload.WithArray("authenticationProviders", std::move(authenticationProvidersJsonList));
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_vpcConfigurationHasBeenSet) {
+    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+  }
+
+  if (m_configurationHasBeenSet) {
+    payload.WithString("configuration", m_configuration);
+  }
+
+  if (m_networkAccessControlHasBeenSet) {
+    payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
+  }
+
+  if (m_grafanaVersionHasBeenSet) {
+    payload.WithString("grafanaVersion", m_grafanaVersion);
+  }
+
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload.View().WriteReadable();

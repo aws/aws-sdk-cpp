@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rtbfabric/RTBFabricPaginationBase.h>
 #include <aws/rtbfabric/RTBFabricServiceClientModel.h>
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace RTBFabric {
  * Services RTB Fabric User Guide</a>.</p>
  */
 class AWS_RTBFABRIC_API RTBFabricClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<RTBFabricClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<RTBFabricClient>,
+                                          public RTBFabricPaginationBase<RTBFabricClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

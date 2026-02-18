@@ -17,6 +17,7 @@
 #include <aws/s3-crt/ClientConfiguration.h>
 #include <aws/s3-crt/S3CrtErrorMarshaller.h>
 #include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
+#include <aws/s3-crt/S3CrtPaginationBase.h>
 #include <aws/s3-crt/S3CrtServiceClientModel.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
@@ -48,7 +49,9 @@ class S3ExpressIdentityProvider;
 /**
  * <p/>
  */
-class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient> {
+class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>,
+                                  public S3CrtPaginationBase<S3CrtClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QConnect {
 namespace Model {
-enum class MessageType { NOT_SET, TEXT };
+enum class MessageType { NOT_SET, TEXT, TOOL_USE_RESULT };
 
 namespace MessageTypeMapper {
 AWS_QCONNECT_API MessageType GetMessageTypeForName(const Aws::String& name);

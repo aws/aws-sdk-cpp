@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/ForecastServicePaginationBase.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
 #include <aws/forecast/ForecastService_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace ForecastService {
  * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
  */
 class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>,
+                                                      public ForecastServicePaginationBase<ForecastServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mq/MQPaginationBase.h>
 #include <aws/mq/MQServiceClientModel.h>
 #include <aws/mq/MQ_EXPORTS.h>
 
@@ -20,7 +21,9 @@ namespace MQ {
  * using various programming languages, operating systems, and formal messaging
  * protocols.</p>
  */
-class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MQClient> {
+class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient,
+                            public Aws::Client::ClientWithAsyncTemplateMethods<MQClient>,
+                            public MQPaginationBase<MQClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

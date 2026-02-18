@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/ECSPaginationBase.h>
 #include <aws/ecs/ECSServiceClientModel.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 
@@ -30,7 +31,9 @@ namespace ECS {
  * management systems. You also don't need to worry about scaling your management
  * infrastructure. </p>
  */
-class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient> {
+class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>,
+                              public ECSPaginationBase<ECSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

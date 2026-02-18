@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resource-groups/ResourceGroupsPaginationBase.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
@@ -41,7 +42,8 @@ namespace ResourceGroups {
  * Web Services resources based on a resource query</p> </li> </ul>
  */
 class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>,
+                                                    public ResourceGroupsPaginationBase<ResourceGroupsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

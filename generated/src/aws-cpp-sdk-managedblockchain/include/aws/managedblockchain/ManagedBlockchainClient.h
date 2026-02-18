@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/ManagedBlockchainPaginationBase.h>
 #include <aws/managedblockchain/ManagedBlockchainServiceClientModel.h>
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace ManagedBlockchain {
  * apply only in the context of a particular framework are similarly indicated.</p>
  */
 class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>,
+                                                          public ManagedBlockchainPaginationBase<ManagedBlockchainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

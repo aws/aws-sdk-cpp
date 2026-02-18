@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appconfig/AppConfigPaginationBase.h>
 #include <aws/appconfig/AppConfigServiceClientModel.h>
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -110,7 +111,8 @@ namespace AppConfig {
  * User Guide</a>.</p>
  */
 class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>,
+                                          public AppConfigPaginationBase<AppConfigClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -146,6 +146,12 @@ DBSnapshot& DBSnapshot::operator=(const XmlNode& xmlNode) {
           StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptedNode.GetText()).c_str()).c_str());
       m_encryptedHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
     if (!backupRetentionPeriodNode.IsNull()) {
       m_backupRetentionPeriod = StringUtils::ConvertToInt32(
@@ -362,6 +368,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_backupRetentionPeriodHasBeenSet) {
     oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
@@ -525,6 +536,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_encryptedHasBeenSet) {
     oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_backupRetentionPeriodHasBeenSet) {
     oStream << location << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";

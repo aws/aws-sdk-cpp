@@ -29,6 +29,24 @@ class ListVersionsResult {
 
   ///@{
   /**
+   * <p>The token to use in a subsequent <code>ListVersions</code> operation to
+   * return the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListVersionsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Grafana versions available to create. If a workspace ID is included in
    * the request, the Grafana versions to which this workspace can be upgraded.</p>
    */
@@ -52,24 +70,6 @@ class ListVersionsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The token to use in a subsequent <code>ListVersions</code> operation to
-   * return the next set of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListVersionsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -84,13 +84,13 @@ class ListVersionsResult {
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_grafanaVersions;
-
   Aws::String m_nextToken;
 
+  Aws::Vector<Aws::String> m_grafanaVersions;
+
   Aws::String m_requestId;
-  bool m_grafanaVersionsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_grafanaVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

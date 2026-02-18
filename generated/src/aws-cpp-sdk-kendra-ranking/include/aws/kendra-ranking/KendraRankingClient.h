@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra-ranking/KendraRankingPaginationBase.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace KendraRanking {
  * capabilities to intelligently re-rank a search service's results.</p>
  */
 class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>,
+                                                  public KendraRankingPaginationBase<KendraRankingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

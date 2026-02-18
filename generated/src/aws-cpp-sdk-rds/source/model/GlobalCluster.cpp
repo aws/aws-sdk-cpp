@@ -69,6 +69,12 @@ GlobalCluster& GlobalCluster::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptedNode.GetText()).c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
     if (!deletionProtectionNode.IsNull()) {
       m_deletionProtection = StringUtils::ConvertToBool(
@@ -152,6 +158,11 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
     oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_deletionProtectionHasBeenSet) {
     oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
@@ -213,6 +224,10 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_deletionProtectionHasBeenSet) {
     oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";

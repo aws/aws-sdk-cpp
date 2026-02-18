@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/SWFPaginationBase.h>
 #include <aws/swf/SWFServiceClientModel.h>
 #include <aws/swf/SWF_EXPORTS.h>
 
@@ -28,7 +29,9 @@ namespace SWF {
  * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
  * Developer Guide</a> </i>.</p>
  */
-class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SWFClient> {
+class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>,
+                              public SWFPaginationBase<SWFClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

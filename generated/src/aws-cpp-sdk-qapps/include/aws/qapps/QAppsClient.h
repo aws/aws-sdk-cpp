@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qapps/QAppsPaginationBase.h>
 #include <aws/qapps/QAppsServiceClientModel.h>
 #include <aws/qapps/QApps_EXPORTS.h>
 
@@ -31,7 +32,9 @@ namespace QApps {
  * IAM role for the Amazon Q Business web experience including Amazon Q Apps</a> in
  * the <i>Amazon Q Business User Guide</i>.</p>
  */
-class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient> {
+class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>,
+                                  public QAppsPaginationBase<QAppsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

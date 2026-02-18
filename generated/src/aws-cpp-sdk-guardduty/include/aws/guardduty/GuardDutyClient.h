@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/GuardDutyPaginationBase.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 
@@ -38,7 +39,8 @@ namespace GuardDuty {
  * GuardDuty User Guide</a> </i>. </p>
  */
 class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>,
+                                          public GuardDutyPaginationBase<GuardDutyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

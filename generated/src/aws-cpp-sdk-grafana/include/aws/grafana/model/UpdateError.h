@@ -37,24 +37,6 @@ class UpdateError {
 
   ///@{
   /**
-   * <p>Specifies which permission update caused the error.</p>
-   */
-  inline const UpdateInstruction& GetCausedBy() const { return m_causedBy; }
-  inline bool CausedByHasBeenSet() const { return m_causedByHasBeenSet; }
-  template <typename CausedByT = UpdateInstruction>
-  void SetCausedBy(CausedByT&& value) {
-    m_causedByHasBeenSet = true;
-    m_causedBy = std::forward<CausedByT>(value);
-  }
-  template <typename CausedByT = UpdateInstruction>
-  UpdateError& WithCausedBy(CausedByT&& value) {
-    SetCausedBy(std::forward<CausedByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The error code.</p>
    */
   inline int GetCode() const { return m_code; }
@@ -86,15 +68,33 @@ class UpdateError {
     return *this;
   }
   ///@}
- private:
-  UpdateInstruction m_causedBy;
 
+  ///@{
+  /**
+   * <p>Specifies which permission update caused the error.</p>
+   */
+  inline const UpdateInstruction& GetCausedBy() const { return m_causedBy; }
+  inline bool CausedByHasBeenSet() const { return m_causedByHasBeenSet; }
+  template <typename CausedByT = UpdateInstruction>
+  void SetCausedBy(CausedByT&& value) {
+    m_causedByHasBeenSet = true;
+    m_causedBy = std::forward<CausedByT>(value);
+  }
+  template <typename CausedByT = UpdateInstruction>
+  UpdateError& WithCausedBy(CausedByT&& value) {
+    SetCausedBy(std::forward<CausedByT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   int m_code{0};
 
   Aws::String m_message;
-  bool m_causedByHasBeenSet = false;
+
+  UpdateInstruction m_causedBy;
   bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
+  bool m_causedByHasBeenSet = false;
 };
 
 }  // namespace Model

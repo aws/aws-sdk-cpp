@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex-models/LexModelBuildingServicePaginationBase.h>
 #include <aws/lex-models/LexModelBuildingServiceServiceClientModel.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace LexModelBuildingService {
  */
 class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>,
+      public LexModelBuildingServicePaginationBase<LexModelBuildingServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

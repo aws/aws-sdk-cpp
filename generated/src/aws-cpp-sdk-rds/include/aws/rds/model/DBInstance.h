@@ -29,6 +29,7 @@
 #include <aws/rds/model/PendingModifiedValues.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/ReplicaMode.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Tag.h>
 #include <aws/rds/model/UpgradeRolloutOrder.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -808,6 +809,27 @@ class DBInstance {
   template <typename StorageTypeT = Aws::String>
   DBInstance& WithStorageType(StorageTypeT&& value) {
     SetStorageType(std::forward<StorageTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of encryption used to protect data at rest in the DB instance.
+   * Possible values:</p> <ul> <li> <p> <code>none</code> - The DB instance is not
+   * encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB instance is
+   * encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p>
+   * <code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS
+   * key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline DBInstance& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
     return *this;
   }
   ///@}
@@ -1960,6 +1982,8 @@ class DBInstance {
 
   Aws::String m_storageType;
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   Aws::String m_tdeCredentialArn;
 
   int m_dbInstancePort{0};
@@ -2102,6 +2126,7 @@ class DBInstance {
   bool m_publiclyAccessibleHasBeenSet = false;
   bool m_statusInfosHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_tdeCredentialArnHasBeenSet = false;
   bool m_dbInstancePortHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;

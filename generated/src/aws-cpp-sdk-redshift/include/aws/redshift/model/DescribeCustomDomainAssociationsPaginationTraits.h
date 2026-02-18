@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/redshift/RedshiftServiceClientModel.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/model/DescribeCustomDomainAssociationsRequest.h>
+#include <aws/redshift/model/DescribeCustomDomainAssociationsResult.h>
+
+namespace Aws {
+namespace Redshift {
+namespace Pagination {
+
+template <typename Client = RedshiftClient>
+struct DescribeCustomDomainAssociationsPaginationTraits {
+  using RequestType = Model::DescribeCustomDomainAssociationsRequest;
+  using ResultType = Model::DescribeCustomDomainAssociationsResult;
+  using OutcomeType = Model::DescribeCustomDomainAssociationsOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->DescribeCustomDomainAssociations(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetMarker().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetMarker(result.GetMarker()); }
+};
+
+}  // namespace Pagination
+}  // namespace Redshift
+}  // namespace Aws

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/LookoutEquipmentPaginationBase.h>
 #include <aws/lookoutequipment/LookoutEquipmentServiceClientModel.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
@@ -19,7 +20,8 @@ namespace LookoutEquipment {
  * predictive maintenance. </p>
  */
 class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>,
+                                                        public LookoutEquipmentPaginationBase<LookoutEquipmentClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -19,10 +19,6 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const {
     payload.WithString("accountAccessType", AccountAccessTypeMapper::GetNameForAccountAccessType(m_accountAccessType));
   }
 
-  if (m_networkAccessControlHasBeenSet) {
-    payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
-  }
-
   if (m_organizationRoleNameHasBeenSet) {
     payload.WithString("organizationRoleName", m_organizationRoleName);
   }
@@ -31,20 +27,8 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const {
     payload.WithString("permissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
   }
 
-  if (m_removeNetworkAccessConfigurationHasBeenSet) {
-    payload.WithBool("removeNetworkAccessConfiguration", m_removeNetworkAccessConfiguration);
-  }
-
-  if (m_removeVpcConfigurationHasBeenSet) {
-    payload.WithBool("removeVpcConfiguration", m_removeVpcConfiguration);
-  }
-
   if (m_stackSetNameHasBeenSet) {
     payload.WithString("stackSetName", m_stackSetName);
-  }
-
-  if (m_vpcConfigurationHasBeenSet) {
-    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
   if (m_workspaceDataSourcesHasBeenSet) {
@@ -89,6 +73,22 @@ Aws::String UpdateWorkspaceRequest::SerializePayload() const {
 
   if (m_workspaceRoleArnHasBeenSet) {
     payload.WithString("workspaceRoleArn", m_workspaceRoleArn);
+  }
+
+  if (m_vpcConfigurationHasBeenSet) {
+    payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
+  }
+
+  if (m_removeVpcConfigurationHasBeenSet) {
+    payload.WithBool("removeVpcConfiguration", m_removeVpcConfiguration);
+  }
+
+  if (m_networkAccessControlHasBeenSet) {
+    payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
+  }
+
+  if (m_removeNetworkAccessConfigurationHasBeenSet) {
+    payload.WithBool("removeNetworkAccessConfiguration", m_removeNetworkAccessConfiguration);
   }
 
   return payload.View().WriteReadable();

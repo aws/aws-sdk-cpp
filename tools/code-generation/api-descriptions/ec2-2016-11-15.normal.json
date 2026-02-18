@@ -1237,7 +1237,7 @@
       },
       "input":{"shape":"CreateSecondaryNetworkRequest"},
       "output":{"shape":"CreateSecondaryNetworkResult"},
-      "documentation":"<p>Creates an Amazon secondary network.</p> <p>The allowed size for a secondary network CIDR block is between /28 netmask (16 IP addresses) and /12 netmask (1,048,576 IP addresses).</p>"
+      "documentation":"<p>Creates a secondary network.</p> <p>The allowed size for a secondary network CIDR block is between /28 netmask (16 IP addresses) and /12 netmask (1,048,576 IP addresses).</p>"
     },
     "CreateSecondarySubnet":{
       "name":"CreateSecondarySubnet",
@@ -17675,6 +17675,10 @@
         "LinkedGroupId":{
           "shape":"PlacementGroupId",
           "documentation":"<p>Reserved for future use.</p>"
+        },
+        "Operator":{
+          "shape":"OperatorRequest",
+          "documentation":"<p>Reserved for internal use.</p>"
         },
         "DryRun":{
           "shape":"Boolean",
@@ -59282,6 +59286,11 @@
           "shape":"PlacementGroupId",
           "documentation":"<p>Reserved for future use.</p>",
           "locationName":"linkedGroupId"
+        },
+        "Operator":{
+          "shape":"OperatorResponse",
+          "documentation":"<p>The service provider that manages the Placement Group.</p>",
+          "locationName":"operator"
         }
       },
       "documentation":"<p>Describes a placement group.</p>"

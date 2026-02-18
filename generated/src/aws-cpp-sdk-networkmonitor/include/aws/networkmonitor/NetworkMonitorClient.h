@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmonitor/NetworkMonitorPaginationBase.h>
 #include <aws/networkmonitor/NetworkMonitorServiceClientModel.h>
 #include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 
@@ -33,7 +34,8 @@ namespace NetworkMonitor {
  * Guide</i>.</p>
  */
 class AWS_NETWORKMONITOR_API NetworkMonitorClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<NetworkMonitorClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<NetworkMonitorClient>,
+                                                    public NetworkMonitorPaginationBase<NetworkMonitorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

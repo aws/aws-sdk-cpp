@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/VoiceIDPaginationBase.h>
 #include <aws/voice-id/VoiceIDServiceClientModel.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 
@@ -18,7 +19,9 @@ namespace VoiceID {
  * risk detection, which make voice interactions in contact centers more secure and
  * efficient.</p>
  */
-class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient> {
+class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>,
+                                      public VoiceIDPaginationBase<VoiceIDClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

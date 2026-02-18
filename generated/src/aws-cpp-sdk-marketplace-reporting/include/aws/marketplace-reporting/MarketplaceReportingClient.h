@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-reporting/MarketplaceReportingPaginationBase.h>
 #include <aws/marketplace-reporting/MarketplaceReportingServiceClientModel.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
 
@@ -68,7 +69,8 @@ namespace MarketplaceReporting {
  */
 class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>,
+      public MarketplaceReportingPaginationBase<MarketplaceReportingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

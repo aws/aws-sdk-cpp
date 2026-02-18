@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotthingsgraph/IoTThingsGraphPaginationBase.h>
 #include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace IoTThingsGraph {
  * Guide</a>.</p> <p>The AWS IoT Things Graph service is discontinued.</p>
  */
 class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>,
+                                                    public IoTThingsGraphPaginationBase<IoTThingsGraphClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

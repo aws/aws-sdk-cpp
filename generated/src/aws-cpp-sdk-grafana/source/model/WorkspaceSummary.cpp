@@ -18,10 +18,6 @@ namespace Model {
 WorkspaceSummary::WorkspaceSummary(JsonView jsonValue) { *this = jsonValue; }
 
 WorkspaceSummary& WorkspaceSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("authentication")) {
-    m_authentication = jsonValue.GetObject("authentication");
-    m_authenticationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("created")) {
     m_created = jsonValue.GetDouble("created");
     m_createdHasBeenSet = true;
@@ -34,10 +30,6 @@ WorkspaceSummary& WorkspaceSummary::operator=(JsonView jsonValue) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("grafanaToken")) {
-    m_grafanaToken = jsonValue.GetString("grafanaToken");
-    m_grafanaTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("grafanaVersion")) {
     m_grafanaVersion = jsonValue.GetString("grafanaVersion");
     m_grafanaVersionHasBeenSet = true;
@@ -45,10 +37,6 @@ WorkspaceSummary& WorkspaceSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("licenseType")) {
-    m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
-    m_licenseTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("modified")) {
     m_modified = jsonValue.GetDouble("modified");
@@ -71,6 +59,10 @@ WorkspaceSummary& WorkspaceSummary::operator=(JsonView jsonValue) {
     m_status = WorkspaceStatusMapper::GetWorkspaceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("authentication")) {
+    m_authentication = jsonValue.GetObject("authentication");
+    m_authenticationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -78,15 +70,19 @@ WorkspaceSummary& WorkspaceSummary::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("licenseType")) {
+    m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
+    m_licenseTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("grafanaToken")) {
+    m_grafanaToken = jsonValue.GetString("grafanaToken");
+    m_grafanaTokenHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue WorkspaceSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_authenticationHasBeenSet) {
-    payload.WithObject("authentication", m_authentication.Jsonize());
-  }
 
   if (m_createdHasBeenSet) {
     payload.WithDouble("created", m_created.SecondsWithMSPrecision());
@@ -100,20 +96,12 @@ JsonValue WorkspaceSummary::Jsonize() const {
     payload.WithString("endpoint", m_endpoint);
   }
 
-  if (m_grafanaTokenHasBeenSet) {
-    payload.WithString("grafanaToken", m_grafanaToken);
-  }
-
   if (m_grafanaVersionHasBeenSet) {
     payload.WithString("grafanaVersion", m_grafanaVersion);
   }
 
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
-  }
-
-  if (m_licenseTypeHasBeenSet) {
-    payload.WithString("licenseType", LicenseTypeMapper::GetNameForLicenseType(m_licenseType));
   }
 
   if (m_modifiedHasBeenSet) {
@@ -139,12 +127,24 @@ JsonValue WorkspaceSummary::Jsonize() const {
     payload.WithString("status", WorkspaceStatusMapper::GetNameForWorkspaceStatus(m_status));
   }
 
+  if (m_authenticationHasBeenSet) {
+    payload.WithObject("authentication", m_authentication.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_licenseTypeHasBeenSet) {
+    payload.WithString("licenseType", LicenseTypeMapper::GetNameForLicenseType(m_licenseType));
+  }
+
+  if (m_grafanaTokenHasBeenSet) {
+    payload.WithString("grafanaToken", m_grafanaToken);
   }
 
   return payload;

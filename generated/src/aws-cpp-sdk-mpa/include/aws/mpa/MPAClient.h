@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mpa/MPAPaginationBase.h>
 #include <aws/mpa/MPAServiceClientModel.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 
@@ -29,7 +30,9 @@ namespace MPA {
  * href="https://docs.aws.amazon.com/mpa/latest/userguide/what-is.html">What is
  * Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
  */
-class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MPAClient> {
+class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<MPAClient>,
+                              public MPAPaginationBase<MPAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/FSxPaginationBase.h>
 #include <aws/fsx/FSxServiceClientModel.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 
@@ -17,7 +18,9 @@ namespace FSx {
  * <p>Amazon FSx is a fully managed service that makes it easy for storage and
  * application administrators to launch and use shared file storage.</p>
  */
-class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FSxClient> {
+class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>,
+                              public FSxPaginationBase<FSxClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

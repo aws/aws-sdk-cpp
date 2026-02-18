@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/supplychain/SupplyChainPaginationBase.h>
 #include <aws/supplychain/SupplyChainServiceClientModel.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace SupplyChain {
  * roles to help facilitate access, trust, and permission policies. </p>
  */
 class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>,
+                                              public SupplyChainPaginationBase<SupplyChainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

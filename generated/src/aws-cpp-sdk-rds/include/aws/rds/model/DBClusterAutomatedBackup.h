@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/RestoreWindow.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Tag.h>
 
 #include <utility>
@@ -268,6 +269,27 @@ class DBClusterAutomatedBackup {
   }
   inline DBClusterAutomatedBackup& WithStorageEncrypted(bool value) {
     SetStorageEncrypted(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of encryption used to protect data at rest in the automated backup.
+   * Possible values:</p> <ul> <li> <p> <code>none</code> - The automated backup is
+   * not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The automated backup is
+   * encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p>
+   * <code>sse-kms</code> - The automated backup is encrypted using a customer
+   * managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline DBClusterAutomatedBackup& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
     return *this;
   }
   ///@}
@@ -568,6 +590,8 @@ class DBClusterAutomatedBackup {
 
   bool m_storageEncrypted{false};
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   int m_allocatedStorage{0};
 
   Aws::String m_engineVersion;
@@ -608,6 +632,7 @@ class DBClusterAutomatedBackup {
   bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
   bool m_clusterCreateTimeHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
   bool m_dBClusterArnHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/SESPaginationBase.h>
 #include <aws/email/SESServiceClientModel.h>
 #include <aws/email/SES_EXPORTS.h>
 
@@ -36,7 +37,9 @@ namespace SES {
  * href="https://docs.aws.amazon.com/ses/latest/APIReference/CommonErrors.html">Common
  * Errors</a> </p> </li> </ul>
  */
-class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SESClient> {
+class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SESClient>,
+                              public SESPaginationBase<SESClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

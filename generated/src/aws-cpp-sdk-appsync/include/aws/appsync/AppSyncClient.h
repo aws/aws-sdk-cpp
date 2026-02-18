@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appsync/AppSyncPaginationBase.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -17,7 +18,9 @@ namespace AppSync {
  * <p>AppSync provides API actions for creating and interacting with data sources
  * using GraphQL from your application.</p>
  */
-class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient> {
+class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>,
+                                      public AppSyncPaginationBase<AppSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

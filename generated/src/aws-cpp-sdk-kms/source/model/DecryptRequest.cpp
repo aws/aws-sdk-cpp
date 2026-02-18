@@ -52,6 +52,15 @@ Aws::String DecryptRequest::SerializePayload() const {
     payload.WithBool("DryRun", m_dryRun);
   }
 
+  if (m_dryRunModifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dryRunModifiersJsonList(m_dryRunModifiers.size());
+    for (unsigned dryRunModifiersIndex = 0; dryRunModifiersIndex < dryRunModifiersJsonList.GetLength(); ++dryRunModifiersIndex) {
+      dryRunModifiersJsonList[dryRunModifiersIndex].AsString(
+          DryRunModifierTypeMapper::GetNameForDryRunModifierType(m_dryRunModifiers[dryRunModifiersIndex]));
+    }
+    payload.WithArray("DryRunModifiers", std::move(dryRunModifiersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

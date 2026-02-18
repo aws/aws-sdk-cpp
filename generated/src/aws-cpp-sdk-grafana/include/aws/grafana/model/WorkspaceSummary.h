@@ -41,25 +41,6 @@ class WorkspaceSummary {
 
   ///@{
   /**
-   * <p>A structure containing information about the authentication methods used in
-   * the workspace.</p>
-   */
-  inline const AuthenticationSummary& GetAuthentication() const { return m_authentication; }
-  inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
-  template <typename AuthenticationT = AuthenticationSummary>
-  void SetAuthentication(AuthenticationT&& value) {
-    m_authenticationHasBeenSet = true;
-    m_authentication = std::forward<AuthenticationT>(value);
-  }
-  template <typename AuthenticationT = AuthenticationSummary>
-  WorkspaceSummary& WithAuthentication(AuthenticationT&& value) {
-    SetAuthentication(std::forward<AuthenticationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date that the workspace was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
@@ -114,27 +95,6 @@ class WorkspaceSummary {
 
   ///@{
   /**
-   * <p>The token that ties this workspace to a Grafana Labs account. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
-   * your account with Grafana Labs</a>.</p>
-   */
-  inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
-  inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
-  template <typename GrafanaTokenT = Aws::String>
-  void SetGrafanaToken(GrafanaTokenT&& value) {
-    m_grafanaTokenHasBeenSet = true;
-    m_grafanaToken = std::forward<GrafanaTokenT>(value);
-  }
-  template <typename GrafanaTokenT = Aws::String>
-  WorkspaceSummary& WithGrafanaToken(GrafanaTokenT&& value) {
-    SetGrafanaToken(std::forward<GrafanaTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Grafana version that the workspace is running.</p>
    */
   inline const Aws::String& GetGrafanaVersion() const { return m_grafanaVersion; }
@@ -165,24 +125,6 @@ class WorkspaceSummary {
   template <typename IdT = Aws::String>
   WorkspaceSummary& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
-   *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
-   * free trials.</p>
-   */
-  inline LicenseType GetLicenseType() const { return m_licenseType; }
-  inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-  inline void SetLicenseType(LicenseType value) {
-    m_licenseTypeHasBeenSet = true;
-    m_licenseType = value;
-  }
-  inline WorkspaceSummary& WithLicenseType(LicenseType value) {
-    SetLicenseType(value);
     return *this;
   }
   ///@}
@@ -266,6 +208,25 @@ class WorkspaceSummary {
 
   ///@{
   /**
+   * <p>A structure containing information about the authentication methods used in
+   * the workspace.</p>
+   */
+  inline const AuthenticationSummary& GetAuthentication() const { return m_authentication; }
+  inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
+  template <typename AuthenticationT = AuthenticationSummary>
+  void SetAuthentication(AuthenticationT&& value) {
+    m_authenticationHasBeenSet = true;
+    m_authentication = std::forward<AuthenticationT>(value);
+  }
+  template <typename AuthenticationT = AuthenticationSummary>
+  WorkspaceSummary& WithAuthentication(AuthenticationT&& value) {
+    SetAuthentication(std::forward<AuthenticationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of tags associated with the workspace.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -287,22 +248,55 @@ class WorkspaceSummary {
     return *this;
   }
   ///@}
- private:
-  AuthenticationSummary m_authentication;
 
+  ///@{
+  /**
+   * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+   *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+   * free trials.</p>
+   */
+  inline LicenseType GetLicenseType() const { return m_licenseType; }
+  inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+  inline void SetLicenseType(LicenseType value) {
+    m_licenseTypeHasBeenSet = true;
+    m_licenseType = value;
+  }
+  inline WorkspaceSummary& WithLicenseType(LicenseType value) {
+    SetLicenseType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token that ties this workspace to a Grafana Labs account. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+   * your account with Grafana Labs</a>.</p>
+   */
+  inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
+  inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
+  template <typename GrafanaTokenT = Aws::String>
+  void SetGrafanaToken(GrafanaTokenT&& value) {
+    m_grafanaTokenHasBeenSet = true;
+    m_grafanaToken = std::forward<GrafanaTokenT>(value);
+  }
+  template <typename GrafanaTokenT = Aws::String>
+  WorkspaceSummary& WithGrafanaToken(GrafanaTokenT&& value) {
+    SetGrafanaToken(std::forward<GrafanaTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Utils::DateTime m_created{};
 
   Aws::String m_description;
 
   Aws::String m_endpoint;
 
-  Aws::String m_grafanaToken;
-
   Aws::String m_grafanaVersion;
 
   Aws::String m_id;
-
-  LicenseType m_licenseType{LicenseType::NOT_SET};
 
   Aws::Utils::DateTime m_modified{};
 
@@ -312,20 +306,26 @@ class WorkspaceSummary {
 
   WorkspaceStatus m_status{WorkspaceStatus::NOT_SET};
 
+  AuthenticationSummary m_authentication;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_authenticationHasBeenSet = false;
+
+  LicenseType m_licenseType{LicenseType::NOT_SET};
+
+  Aws::String m_grafanaToken;
   bool m_createdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
-  bool m_grafanaTokenHasBeenSet = false;
   bool m_grafanaVersionHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_licenseTypeHasBeenSet = false;
   bool m_modifiedHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_notificationDestinationsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_grafanaTokenHasBeenSet = false;
 };
 
 }  // namespace Model

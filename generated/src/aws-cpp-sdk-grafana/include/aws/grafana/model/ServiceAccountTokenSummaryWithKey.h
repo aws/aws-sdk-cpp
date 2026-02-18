@@ -55,6 +55,24 @@ class ServiceAccountTokenSummaryWithKey {
 
   ///@{
   /**
+   * <p>The name of the service account token.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ServiceAccountTokenSummaryWithKey& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key for the service account token. Used when making calls to the Grafana
    * HTTP APIs to authenticate and authorize the requests.</p>
    */
@@ -71,33 +89,15 @@ class ServiceAccountTokenSummaryWithKey {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the service account token.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ServiceAccountTokenSummaryWithKey& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_id;
 
-  Aws::String m_key;
-
   Aws::String m_name;
+
+  Aws::String m_key;
   bool m_idHasBeenSet = false;
-  bool m_keyHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
 };
 
 }  // namespace Model

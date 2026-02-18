@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/billing/BillingPaginationBase.h>
 #include <aws/billing/BillingServiceClientModel.h>
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -19,7 +20,9 @@ namespace Billing {
  * billing data. </p> <p>The Billing API provides the following endpoint:</p> <p>
  * <code>https://billing.us-east-1.api.aws</code> </p>
  */
-class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BillingClient> {
+class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<BillingClient>,
+                                      public BillingPaginationBase<BillingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

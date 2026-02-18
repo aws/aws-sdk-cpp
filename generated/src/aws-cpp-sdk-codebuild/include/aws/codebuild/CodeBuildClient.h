@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codebuild/CodeBuildPaginationBase.h>
 #include <aws/codebuild/CodeBuildServiceClientModel.h>
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -27,7 +28,8 @@ namespace CodeBuild {
  * User Guide</a>.</i> </p>
  */
 class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>,
+                                          public CodeBuildPaginationBase<CodeBuildClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

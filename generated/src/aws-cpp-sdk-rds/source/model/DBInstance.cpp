@@ -262,6 +262,12 @@ DBInstance& DBInstance::operator=(const XmlNode& xmlNode) {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode tdeCredentialArnNode = resultNode.FirstChild("TdeCredentialArn");
     if (!tdeCredentialArnNode.IsNull()) {
       m_tdeCredentialArn = Aws::Utils::Xml::DecodeEscapedXmlText(tdeCredentialArnNode.GetText());
@@ -802,6 +808,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
     oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_tdeCredentialArnHasBeenSet) {
     oStream << location << index << locationValue << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
   }
@@ -1236,6 +1247,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if (m_storageTypeHasBeenSet) {
     oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_tdeCredentialArnHasBeenSet) {
     oStream << location << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";

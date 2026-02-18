@@ -18,13 +18,13 @@ namespace Model {
 SamlAuthentication::SamlAuthentication(JsonView jsonValue) { *this = jsonValue; }
 
 SamlAuthentication& SamlAuthentication::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("configuration")) {
-    m_configuration = jsonValue.GetObject("configuration");
-    m_configurationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("status")) {
     m_status = SamlConfigurationStatusMapper::GetSamlConfigurationStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ SamlAuthentication& SamlAuthentication::operator=(JsonView jsonValue) {
 JsonValue SamlAuthentication::Jsonize() const {
   JsonValue payload;
 
-  if (m_configurationHasBeenSet) {
-    payload.WithObject("configuration", m_configuration.Jsonize());
-  }
-
   if (m_statusHasBeenSet) {
     payload.WithString("status", SamlConfigurationStatusMapper::GetNameForSamlConfigurationStatus(m_status));
+  }
+
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload;

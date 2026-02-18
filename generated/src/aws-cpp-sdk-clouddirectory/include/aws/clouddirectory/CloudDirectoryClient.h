@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/clouddirectory/CloudDirectoryPaginationBase.h>
 #include <aws/clouddirectory/CloudDirectoryServiceClientModel.h>
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -26,7 +27,8 @@ namespace CloudDirectory {
  * Cloud Directory Developer Guide</a>.</p>
  */
 class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>,
+                                                    public CloudDirectoryPaginationBase<CloudDirectoryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

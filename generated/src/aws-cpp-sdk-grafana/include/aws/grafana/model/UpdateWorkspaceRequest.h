@@ -58,29 +58,6 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>The configuration settings for network access to your workspace.</p> <p>When
-   * this is configured, only listed IP addresses and VPC endpoints will be able to
-   * access your workspace. Standard Grafana authentication and authorization will
-   * still be required.</p> <p>If this is not configured, or is removed, then all IP
-   * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
-   * authorization will still be required.</p>
-   */
-  inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
-  inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
-  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
-  void SetNetworkAccessControl(NetworkAccessControlT&& value) {
-    m_networkAccessControlHasBeenSet = true;
-    m_networkAccessControl = std::forward<NetworkAccessControlT>(value);
-  }
-  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
-  UpdateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessControlT&& value) {
-    SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of an IAM role that already exists to use to access resources
    * through Organizations. This can only be used with a workspace that has the
    * <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.</p>
@@ -138,45 +115,6 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>Whether to remove the network access configuration from the workspace.</p>
-   * <p>Setting this to <code>true</code> and providing a
-   * <code>networkAccessControl</code> to set will return an error.</p> <p>If you
-   * remove this configuration by setting this to <code>true</code>, then all IP
-   * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
-   * authorization will still be required.</p>
-   */
-  inline bool GetRemoveNetworkAccessConfiguration() const { return m_removeNetworkAccessConfiguration; }
-  inline bool RemoveNetworkAccessConfigurationHasBeenSet() const { return m_removeNetworkAccessConfigurationHasBeenSet; }
-  inline void SetRemoveNetworkAccessConfiguration(bool value) {
-    m_removeNetworkAccessConfigurationHasBeenSet = true;
-    m_removeNetworkAccessConfiguration = value;
-  }
-  inline UpdateWorkspaceRequest& WithRemoveNetworkAccessConfiguration(bool value) {
-    SetRemoveNetworkAccessConfiguration(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
-   * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
-   * will return an error.</p>
-   */
-  inline bool GetRemoveVpcConfiguration() const { return m_removeVpcConfiguration; }
-  inline bool RemoveVpcConfigurationHasBeenSet() const { return m_removeVpcConfigurationHasBeenSet; }
-  inline void SetRemoveVpcConfiguration(bool value) {
-    m_removeVpcConfigurationHasBeenSet = true;
-    m_removeVpcConfiguration = value;
-  }
-  inline UpdateWorkspaceRequest& WithRemoveVpcConfiguration(bool value) {
-    SetRemoveVpcConfiguration(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the CloudFormation stack set to use to generate IAM roles to be
    * used for this workspace.</p>
    */
@@ -190,25 +128,6 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
   template <typename StackSetNameT = Aws::String>
   UpdateWorkspaceRequest& WithStackSetName(StackSetNameT&& value) {
     SetStackSetName(std::forward<StackSetNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The configuration settings for an Amazon VPC that contains data sources for
-   * your Grafana workspace to connect to.</p>
-   */
-  inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
-  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-  template <typename VpcConfigurationT = VpcConfiguration>
-  void SetVpcConfiguration(VpcConfigurationT&& value) {
-    m_vpcConfigurationHasBeenSet = true;
-    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
-  }
-  template <typename VpcConfigurationT = VpcConfiguration>
-  UpdateWorkspaceRequest& WithVpcConfiguration(VpcConfigurationT&& value) {
-    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -365,22 +284,95 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings for an Amazon VPC that contains data sources for
+   * your Grafana workspace to connect to.</p>
+   */
+  inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  void SetVpcConfiguration(VpcConfigurationT&& value) {
+    m_vpcConfigurationHasBeenSet = true;
+    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
+  }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  UpdateWorkspaceRequest& WithVpcConfiguration(VpcConfigurationT&& value) {
+    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether to remove the VPC configuration from the workspace.</p> <p>Setting
+   * this to <code>true</code> and providing a <code>vpcConfiguration</code> to set
+   * will return an error.</p>
+   */
+  inline bool GetRemoveVpcConfiguration() const { return m_removeVpcConfiguration; }
+  inline bool RemoveVpcConfigurationHasBeenSet() const { return m_removeVpcConfigurationHasBeenSet; }
+  inline void SetRemoveVpcConfiguration(bool value) {
+    m_removeVpcConfigurationHasBeenSet = true;
+    m_removeVpcConfiguration = value;
+  }
+  inline UpdateWorkspaceRequest& WithRemoveVpcConfiguration(bool value) {
+    SetRemoveVpcConfiguration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings for network access to your workspace.</p> <p>When
+   * this is configured, only listed IP addresses and VPC endpoints will be able to
+   * access your workspace. Standard Grafana authentication and authorization will
+   * still be required.</p> <p>If this is not configured, or is removed, then all IP
+   * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+   * authorization will still be required.</p>
+   */
+  inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
+  inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
+  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
+  void SetNetworkAccessControl(NetworkAccessControlT&& value) {
+    m_networkAccessControlHasBeenSet = true;
+    m_networkAccessControl = std::forward<NetworkAccessControlT>(value);
+  }
+  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
+  UpdateWorkspaceRequest& WithNetworkAccessControl(NetworkAccessControlT&& value) {
+    SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether to remove the network access configuration from the workspace.</p>
+   * <p>Setting this to <code>true</code> and providing a
+   * <code>networkAccessControl</code> to set will return an error.</p> <p>If you
+   * remove this configuration by setting this to <code>true</code>, then all IP
+   * addresses and VPC endpoints will be allowed. Standard Grafana authentication and
+   * authorization will still be required.</p>
+   */
+  inline bool GetRemoveNetworkAccessConfiguration() const { return m_removeNetworkAccessConfiguration; }
+  inline bool RemoveNetworkAccessConfigurationHasBeenSet() const { return m_removeNetworkAccessConfigurationHasBeenSet; }
+  inline void SetRemoveNetworkAccessConfiguration(bool value) {
+    m_removeNetworkAccessConfigurationHasBeenSet = true;
+    m_removeNetworkAccessConfiguration = value;
+  }
+  inline UpdateWorkspaceRequest& WithRemoveNetworkAccessConfiguration(bool value) {
+    SetRemoveNetworkAccessConfiguration(value);
+    return *this;
+  }
+  ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
-
-  NetworkAccessConfiguration m_networkAccessControl;
 
   Aws::String m_organizationRoleName;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
 
-  bool m_removeNetworkAccessConfiguration{false};
-
-  bool m_removeVpcConfiguration{false};
-
   Aws::String m_stackSetName;
-
-  VpcConfiguration m_vpcConfiguration;
 
   Aws::Vector<DataSourceType> m_workspaceDataSources;
 
@@ -395,14 +387,18 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
   Aws::Vector<Aws::String> m_workspaceOrganizationalUnits;
 
   Aws::String m_workspaceRoleArn;
+
+  VpcConfiguration m_vpcConfiguration;
+
+  bool m_removeVpcConfiguration{false};
+
+  NetworkAccessConfiguration m_networkAccessControl;
+
+  bool m_removeNetworkAccessConfiguration{false};
   bool m_accountAccessTypeHasBeenSet = false;
-  bool m_networkAccessControlHasBeenSet = false;
   bool m_organizationRoleNameHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
-  bool m_removeNetworkAccessConfigurationHasBeenSet = false;
-  bool m_removeVpcConfigurationHasBeenSet = false;
   bool m_stackSetNameHasBeenSet = false;
-  bool m_vpcConfigurationHasBeenSet = false;
   bool m_workspaceDataSourcesHasBeenSet = false;
   bool m_workspaceDescriptionHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
@@ -410,6 +406,10 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
   bool m_workspaceNotificationDestinationsHasBeenSet = false;
   bool m_workspaceOrganizationalUnitsHasBeenSet = false;
   bool m_workspaceRoleArnHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_removeVpcConfigurationHasBeenSet = false;
+  bool m_networkAccessControlHasBeenSet = false;
+  bool m_removeNetworkAccessConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

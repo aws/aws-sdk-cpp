@@ -23,10 +23,6 @@ CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult(const A
 
 CreateWorkspaceServiceAccountResult& CreateWorkspaceServiceAccountResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("grafanaRole")) {
-    m_grafanaRole = RoleMapper::GetRoleForName(jsonValue.GetString("grafanaRole"));
-    m_grafanaRoleHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
@@ -34,6 +30,10 @@ CreateWorkspaceServiceAccountResult& CreateWorkspaceServiceAccountResult::operat
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("grafanaRole")) {
+    m_grafanaRole = RoleMapper::GetRoleForName(jsonValue.GetString("grafanaRole"));
+    m_grafanaRoleHasBeenSet = true;
   }
   if (jsonValue.ValueExists("workspaceId")) {
     m_workspaceId = jsonValue.GetString("workspaceId");

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53profiles/Route53ProfilesPaginationBase.h>
 #include <aws/route53profiles/Route53ProfilesServiceClientModel.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace Route53Profiles {
  * VPCs and AWS accounts </p>
  */
 class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>,
+                                                      public Route53ProfilesPaginationBase<Route53ProfilesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

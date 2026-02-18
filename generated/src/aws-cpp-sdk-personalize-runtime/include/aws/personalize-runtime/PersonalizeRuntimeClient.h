@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize-runtime/PersonalizeRuntimePaginationBase.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeServiceClientModel.h>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace PersonalizeRuntime {
  * <p/>
  */
 class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>,
+                                                            public PersonalizeRuntimePaginationBase<PersonalizeRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

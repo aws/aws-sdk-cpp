@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/acm-pca/ACMPCAPaginationBase.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -37,7 +38,9 @@ namespace ACMPCA {
  * href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
  * console.</p>
  */
-class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient> {
+class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>,
+                                    public ACMPCAPaginationBase<ACMPCAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

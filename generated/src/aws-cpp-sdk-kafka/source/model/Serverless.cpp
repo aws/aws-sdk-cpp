@@ -29,6 +29,10 @@ Serverless& Serverless::operator=(JsonView jsonValue) {
     m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
     m_clientAuthenticationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("connectivityInfo")) {
+    m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
+    m_connectivityInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue Serverless::Jsonize() const {
 
   if (m_clientAuthenticationHasBeenSet) {
     payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
+  }
+
+  if (m_connectivityInfoHasBeenSet) {
+    payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
   }
 
   return payload;

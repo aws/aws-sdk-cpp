@@ -22,10 +22,6 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_accountAccessType = AccountAccessTypeMapper::GetAccountAccessTypeForName(jsonValue.GetString("accountAccessType"));
     m_accountAccessTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("authentication")) {
-    m_authentication = jsonValue.GetObject("authentication");
-    m_authenticationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("created")) {
     m_created = jsonValue.GetDouble("created");
     m_createdHasBeenSet = true;
@@ -45,18 +41,6 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("freeTrialConsumed")) {
-    m_freeTrialConsumed = jsonValue.GetBool("freeTrialConsumed");
-    m_freeTrialConsumedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("freeTrialExpiration")) {
-    m_freeTrialExpiration = jsonValue.GetDouble("freeTrialExpiration");
-    m_freeTrialExpirationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("grafanaToken")) {
-    m_grafanaToken = jsonValue.GetString("grafanaToken");
-    m_grafanaTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("grafanaVersion")) {
     m_grafanaVersion = jsonValue.GetString("grafanaVersion");
     m_grafanaVersionHasBeenSet = true;
@@ -64,14 +48,6 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("licenseExpiration")) {
-    m_licenseExpiration = jsonValue.GetDouble("licenseExpiration");
-    m_licenseExpirationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("licenseType")) {
-    m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
-    m_licenseTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("modified")) {
     m_modified = jsonValue.GetDouble("modified");
@@ -81,9 +57,9 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("networkAccessControl")) {
-    m_networkAccessControl = jsonValue.GetObject("networkAccessControl");
-    m_networkAccessControlHasBeenSet = true;
+  if (jsonValue.ValueExists("organizationRoleName")) {
+    m_organizationRoleName = jsonValue.GetString("organizationRoleName");
+    m_organizationRoleNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("notificationDestinations")) {
     Aws::Utils::Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
@@ -93,10 +69,6 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
           notificationDestinationsJsonList[notificationDestinationsIndex].AsString()));
     }
     m_notificationDestinationsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("organizationRoleName")) {
-    m_organizationRoleName = jsonValue.GetString("organizationRoleName");
-    m_organizationRoleNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("organizationalUnits")) {
     Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("organizationalUnits");
@@ -118,6 +90,30 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_status = WorkspaceStatusMapper::GetWorkspaceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("workspaceRoleArn")) {
+    m_workspaceRoleArn = jsonValue.GetString("workspaceRoleArn");
+    m_workspaceRoleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("licenseType")) {
+    m_licenseType = LicenseTypeMapper::GetLicenseTypeForName(jsonValue.GetString("licenseType"));
+    m_licenseTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("freeTrialConsumed")) {
+    m_freeTrialConsumed = jsonValue.GetBool("freeTrialConsumed");
+    m_freeTrialConsumedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("licenseExpiration")) {
+    m_licenseExpiration = jsonValue.GetDouble("licenseExpiration");
+    m_licenseExpirationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("freeTrialExpiration")) {
+    m_freeTrialExpiration = jsonValue.GetDouble("freeTrialExpiration");
+    m_freeTrialExpirationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("authentication")) {
+    m_authentication = jsonValue.GetObject("authentication");
+    m_authenticationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -129,9 +125,17 @@ WorkspaceDescription& WorkspaceDescription::operator=(JsonView jsonValue) {
     m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
     m_vpcConfigurationHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("workspaceRoleArn")) {
-    m_workspaceRoleArn = jsonValue.GetString("workspaceRoleArn");
-    m_workspaceRoleArnHasBeenSet = true;
+  if (jsonValue.ValueExists("networkAccessControl")) {
+    m_networkAccessControl = jsonValue.GetObject("networkAccessControl");
+    m_networkAccessControlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("grafanaToken")) {
+    m_grafanaToken = jsonValue.GetString("grafanaToken");
+    m_grafanaTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kmsKeyId")) {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+    m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
@@ -141,10 +145,6 @@ JsonValue WorkspaceDescription::Jsonize() const {
 
   if (m_accountAccessTypeHasBeenSet) {
     payload.WithString("accountAccessType", AccountAccessTypeMapper::GetNameForAccountAccessType(m_accountAccessType));
-  }
-
-  if (m_authenticationHasBeenSet) {
-    payload.WithObject("authentication", m_authentication.Jsonize());
   }
 
   if (m_createdHasBeenSet) {
@@ -167,32 +167,12 @@ JsonValue WorkspaceDescription::Jsonize() const {
     payload.WithString("endpoint", m_endpoint);
   }
 
-  if (m_freeTrialConsumedHasBeenSet) {
-    payload.WithBool("freeTrialConsumed", m_freeTrialConsumed);
-  }
-
-  if (m_freeTrialExpirationHasBeenSet) {
-    payload.WithDouble("freeTrialExpiration", m_freeTrialExpiration.SecondsWithMSPrecision());
-  }
-
-  if (m_grafanaTokenHasBeenSet) {
-    payload.WithString("grafanaToken", m_grafanaToken);
-  }
-
   if (m_grafanaVersionHasBeenSet) {
     payload.WithString("grafanaVersion", m_grafanaVersion);
   }
 
   if (m_idHasBeenSet) {
     payload.WithString("id", m_id);
-  }
-
-  if (m_licenseExpirationHasBeenSet) {
-    payload.WithDouble("licenseExpiration", m_licenseExpiration.SecondsWithMSPrecision());
-  }
-
-  if (m_licenseTypeHasBeenSet) {
-    payload.WithString("licenseType", LicenseTypeMapper::GetNameForLicenseType(m_licenseType));
   }
 
   if (m_modifiedHasBeenSet) {
@@ -203,8 +183,8 @@ JsonValue WorkspaceDescription::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
-  if (m_networkAccessControlHasBeenSet) {
-    payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
+  if (m_organizationRoleNameHasBeenSet) {
+    payload.WithString("organizationRoleName", m_organizationRoleName);
   }
 
   if (m_notificationDestinationsHasBeenSet) {
@@ -216,10 +196,6 @@ JsonValue WorkspaceDescription::Jsonize() const {
               m_notificationDestinations[notificationDestinationsIndex]));
     }
     payload.WithArray("notificationDestinations", std::move(notificationDestinationsJsonList));
-  }
-
-  if (m_organizationRoleNameHasBeenSet) {
-    payload.WithString("organizationRoleName", m_organizationRoleName);
   }
 
   if (m_organizationalUnitsHasBeenSet) {
@@ -243,6 +219,30 @@ JsonValue WorkspaceDescription::Jsonize() const {
     payload.WithString("status", WorkspaceStatusMapper::GetNameForWorkspaceStatus(m_status));
   }
 
+  if (m_workspaceRoleArnHasBeenSet) {
+    payload.WithString("workspaceRoleArn", m_workspaceRoleArn);
+  }
+
+  if (m_licenseTypeHasBeenSet) {
+    payload.WithString("licenseType", LicenseTypeMapper::GetNameForLicenseType(m_licenseType));
+  }
+
+  if (m_freeTrialConsumedHasBeenSet) {
+    payload.WithBool("freeTrialConsumed", m_freeTrialConsumed);
+  }
+
+  if (m_licenseExpirationHasBeenSet) {
+    payload.WithDouble("licenseExpiration", m_licenseExpiration.SecondsWithMSPrecision());
+  }
+
+  if (m_freeTrialExpirationHasBeenSet) {
+    payload.WithDouble("freeTrialExpiration", m_freeTrialExpiration.SecondsWithMSPrecision());
+  }
+
+  if (m_authenticationHasBeenSet) {
+    payload.WithObject("authentication", m_authentication.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {
@@ -255,8 +255,16 @@ JsonValue WorkspaceDescription::Jsonize() const {
     payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
-  if (m_workspaceRoleArnHasBeenSet) {
-    payload.WithString("workspaceRoleArn", m_workspaceRoleArn);
+  if (m_networkAccessControlHasBeenSet) {
+    payload.WithObject("networkAccessControl", m_networkAccessControl.Jsonize());
+  }
+
+  if (m_grafanaTokenHasBeenSet) {
+    payload.WithString("grafanaToken", m_grafanaToken);
+  }
+
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload;

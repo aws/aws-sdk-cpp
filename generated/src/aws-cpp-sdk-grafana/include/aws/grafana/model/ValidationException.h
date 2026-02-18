@@ -37,30 +37,6 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>A list of fields that might be associated with the error.</p>
-   */
-  inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const { return m_fieldList; }
-  inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }
-  template <typename FieldListT = Aws::Vector<ValidationExceptionField>>
-  void SetFieldList(FieldListT&& value) {
-    m_fieldListHasBeenSet = true;
-    m_fieldList = std::forward<FieldListT>(value);
-  }
-  template <typename FieldListT = Aws::Vector<ValidationExceptionField>>
-  ValidationException& WithFieldList(FieldListT&& value) {
-    SetFieldList(std::forward<FieldListT>(value));
-    return *this;
-  }
-  template <typename FieldListT = ValidationExceptionField>
-  ValidationException& AddFieldList(FieldListT&& value) {
-    m_fieldListHasBeenSet = true;
-    m_fieldList.emplace_back(std::forward<FieldListT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A description of the error.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
@@ -92,15 +68,39 @@ class ValidationException {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<ValidationExceptionField> m_fieldList;
 
+  ///@{
+  /**
+   * <p>A list of fields that might be associated with the error.</p>
+   */
+  inline const Aws::Vector<ValidationExceptionField>& GetFieldList() const { return m_fieldList; }
+  inline bool FieldListHasBeenSet() const { return m_fieldListHasBeenSet; }
+  template <typename FieldListT = Aws::Vector<ValidationExceptionField>>
+  void SetFieldList(FieldListT&& value) {
+    m_fieldListHasBeenSet = true;
+    m_fieldList = std::forward<FieldListT>(value);
+  }
+  template <typename FieldListT = Aws::Vector<ValidationExceptionField>>
+  ValidationException& WithFieldList(FieldListT&& value) {
+    SetFieldList(std::forward<FieldListT>(value));
+    return *this;
+  }
+  template <typename FieldListT = ValidationExceptionField>
+  ValidationException& AddFieldList(FieldListT&& value) {
+    m_fieldListHasBeenSet = true;
+    m_fieldList.emplace_back(std::forward<FieldListT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_message;
 
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
-  bool m_fieldListHasBeenSet = false;
+
+  Aws::Vector<ValidationExceptionField> m_fieldList;
   bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
+  bool m_fieldListHasBeenSet = false;
 };
 
 }  // namespace Model

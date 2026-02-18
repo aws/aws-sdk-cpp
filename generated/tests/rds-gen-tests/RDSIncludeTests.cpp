@@ -465,6 +465,7 @@
 #include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationResult.h>
 #include <aws/rds/model/StopDBInstanceRequest.h>
 #include <aws/rds/model/StopDBInstanceResult.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Subnet.h>
 #include <aws/rds/model/SupportedEngineLifecycle.h>
 #include <aws/rds/model/SwitchoverBlueGreenDeploymentRequest.h>

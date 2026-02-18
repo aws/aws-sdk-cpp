@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Tag.h>
 
 #include <utility>
@@ -351,6 +352,28 @@ class DBClusterSnapshot {
 
   ///@{
   /**
+   * <p>The type of encryption used to protect data at rest in the DB cluster
+   * snapshot. Possible values:</p> <ul> <li> <p> <code>none</code> - The DB cluster
+   * snapshot is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB
+   * cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p>
+   * </li> <li> <p> <code>sse-kms</code> - The DB cluster snapshot is encrypted using
+   * a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li>
+   * </ul>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline DBClusterSnapshot& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of days for which automatic DB snapshots are retained.</p>
    */
   inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
@@ -592,6 +615,8 @@ class DBClusterSnapshot {
 
   bool m_storageEncrypted{false};
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   int m_backupRetentionPeriod{0};
 
   Aws::String m_preferredBackupWindow;
@@ -630,6 +655,7 @@ class DBClusterSnapshot {
   bool m_snapshotTypeHasBeenSet = false;
   bool m_percentProgressHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_preferredBackupWindowHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;

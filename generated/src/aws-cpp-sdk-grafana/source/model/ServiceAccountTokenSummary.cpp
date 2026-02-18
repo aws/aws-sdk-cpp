@@ -18,6 +18,14 @@ namespace Model {
 ServiceAccountTokenSummary::ServiceAccountTokenSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ServiceAccountTokenSummary& ServiceAccountTokenSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -26,23 +34,23 @@ ServiceAccountTokenSummary& ServiceAccountTokenSummary::operator=(JsonView jsonV
     m_expiresAt = jsonValue.GetDouble("expiresAt");
     m_expiresAtHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lastUsedAt")) {
     m_lastUsedAt = jsonValue.GetDouble("lastUsedAt");
     m_lastUsedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue ServiceAccountTokenSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
 
   if (m_createdAtHasBeenSet) {
     payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
@@ -52,16 +60,8 @@ JsonValue ServiceAccountTokenSummary::Jsonize() const {
     payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
-  if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
-  }
-
   if (m_lastUsedAtHasBeenSet) {
     payload.WithDouble("lastUsedAt", m_lastUsedAt.SecondsWithMSPrecision());
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
   }
 
   return payload;

@@ -35,23 +35,6 @@ class ServiceAccountSummary {
 
   ///@{
   /**
-   * <p>The role of the service account, which sets the permission level used when
-   * calling Grafana APIs.</p>
-   */
-  inline Role GetGrafanaRole() const { return m_grafanaRole; }
-  inline bool GrafanaRoleHasBeenSet() const { return m_grafanaRoleHasBeenSet; }
-  inline void SetGrafanaRole(Role value) {
-    m_grafanaRoleHasBeenSet = true;
-    m_grafanaRole = value;
-  }
-  inline ServiceAccountSummary& WithGrafanaRole(Role value) {
-    SetGrafanaRole(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique ID of the service account.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -64,6 +47,24 @@ class ServiceAccountSummary {
   template <typename IdT = Aws::String>
   ServiceAccountSummary& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the service account.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ServiceAccountSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -89,33 +90,32 @@ class ServiceAccountSummary {
 
   ///@{
   /**
-   * <p>The name of the service account.</p>
+   * <p>The role of the service account, which sets the permission level used when
+   * calling Grafana APIs.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline Role GetGrafanaRole() const { return m_grafanaRole; }
+  inline bool GrafanaRoleHasBeenSet() const { return m_grafanaRoleHasBeenSet; }
+  inline void SetGrafanaRole(Role value) {
+    m_grafanaRoleHasBeenSet = true;
+    m_grafanaRole = value;
   }
-  template <typename NameT = Aws::String>
-  ServiceAccountSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  inline ServiceAccountSummary& WithGrafanaRole(Role value) {
+    SetGrafanaRole(value);
     return *this;
   }
   ///@}
  private:
-  Role m_grafanaRole{Role::NOT_SET};
-
   Aws::String m_id;
+
+  Aws::String m_name;
 
   Aws::String m_isDisabled;
 
-  Aws::String m_name;
-  bool m_grafanaRoleHasBeenSet = false;
+  Role m_grafanaRole{Role::NOT_SET};
   bool m_idHasBeenSet = false;
-  bool m_isDisabledHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_isDisabledHasBeenSet = false;
+  bool m_grafanaRoleHasBeenSet = false;
 };
 
 }  // namespace Model

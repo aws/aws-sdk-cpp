@@ -60,7 +60,8 @@ class BrandingConfigurationCreateInput {
   ///@{
   /**
    * <p>The wallpaper image for the portal. Provide either a binary image file or an
-   * S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
+   * S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not
+   * provided, a default wallpaper will be used as the background image.</p>
    */
   inline const WallpaperImageInput& GetWallpaper() const { return m_wallpaper; }
   inline bool WallpaperHasBeenSet() const { return m_wallpaperHasBeenSet; }

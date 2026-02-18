@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/WellArchitectedPaginationBase.h>
 #include <aws/wellarchitected/WellArchitectedServiceClientModel.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace WellArchitected {
  * Tool User Guide</a>.</p>
  */
 class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>,
+                                                      public WellArchitectedPaginationBase<WellArchitectedClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

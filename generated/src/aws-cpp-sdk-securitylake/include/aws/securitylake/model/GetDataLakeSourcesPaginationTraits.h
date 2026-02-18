@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/securitylake/SecurityLakeServiceClientModel.h>
+#include <aws/securitylake/SecurityLake_EXPORTS.h>
+#include <aws/securitylake/model/GetDataLakeSourcesRequest.h>
+#include <aws/securitylake/model/GetDataLakeSourcesResult.h>
+
+namespace Aws {
+namespace SecurityLake {
+namespace Pagination {
+
+template <typename Client = SecurityLakeClient>
+struct GetDataLakeSourcesPaginationTraits {
+  using RequestType = Model::GetDataLakeSourcesRequest;
+  using ResultType = Model::GetDataLakeSourcesResult;
+  using OutcomeType = Model::GetDataLakeSourcesOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->GetDataLakeSources(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetNextToken(result.GetNextToken()); }
+};
+
+}  // namespace Pagination
+}  // namespace SecurityLake
+}  // namespace Aws

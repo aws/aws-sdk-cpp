@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/QConnectPaginationBase.h>
 #include <aws/qconnect/QConnectServiceClientModel.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 
@@ -41,7 +42,8 @@ namespace QConnect {
  * in the <i>Amazon Connect Administrator Guide</i>.</p>
  */
 class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient>,
+                                        public QConnectPaginationBase<QConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
