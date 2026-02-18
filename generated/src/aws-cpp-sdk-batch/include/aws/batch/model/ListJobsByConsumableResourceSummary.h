@@ -107,7 +107,7 @@ class ListJobsByConsumableResourceSummary {
 
   ///@{
   /**
-   * <p>The fair-share scheduling policy identifier for the job.</p>
+   * <p>The fair-share scheduling identifier for the job.</p>
    */
   inline const Aws::String& GetShareIdentifier() const { return m_shareIdentifier; }
   inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }

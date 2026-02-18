@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterKubernetesConfig.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/ClusterSlurmConfig.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <aws/sagemaker/model/ScheduledUpdateConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
@@ -363,6 +364,24 @@ class ClusterInstanceGroupSpecification {
 
   ///@{
   /**
+   * <p>Specifies the Slurm configuration for the instance group.</p>
+   */
+  inline const ClusterSlurmConfig& GetSlurmConfig() const { return m_slurmConfig; }
+  inline bool SlurmConfigHasBeenSet() const { return m_slurmConfigHasBeenSet; }
+  template <typename SlurmConfigT = ClusterSlurmConfig>
+  void SetSlurmConfig(SlurmConfigT&& value) {
+    m_slurmConfigHasBeenSet = true;
+    m_slurmConfig = std::forward<SlurmConfigT>(value);
+  }
+  template <typename SlurmConfigT = ClusterSlurmConfig>
+  ClusterInstanceGroupSpecification& WithSlurmConfig(SlurmConfigT&& value) {
+    SetSlurmConfig(std::forward<SlurmConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the capacity requirements for the instance group.</p>
    */
   inline const ClusterCapacityRequirements& GetCapacityRequirements() const { return m_capacityRequirements; }
@@ -407,6 +426,8 @@ class ClusterInstanceGroupSpecification {
 
   ClusterKubernetesConfig m_kubernetesConfig;
 
+  ClusterSlurmConfig m_slurmConfig;
+
   ClusterCapacityRequirements m_capacityRequirements;
   bool m_instanceCountHasBeenSet = false;
   bool m_minInstanceCountHasBeenSet = false;
@@ -422,6 +443,7 @@ class ClusterInstanceGroupSpecification {
   bool m_scheduledUpdateConfigHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
   bool m_kubernetesConfigHasBeenSet = false;
+  bool m_slurmConfigHasBeenSet = false;
   bool m_capacityRequirementsHasBeenSet = false;
 };
 

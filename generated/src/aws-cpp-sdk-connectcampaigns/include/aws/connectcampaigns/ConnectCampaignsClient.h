@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connectcampaigns/ConnectCampaignsPaginationBase.h>
 #include <aws/connectcampaigns/ConnectCampaignsServiceClientModel.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -17,7 +18,8 @@ namespace ConnectCampaigns {
  * <p>Provide APIs to create and manage Amazon Connect Campaigns.</p>
  */
 class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient>,
+                                                        public ConnectCampaignsPaginationBase<ConnectCampaignsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -675,8 +677,8 @@ class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsClient : public Aws::Client::AWSJ
     return SubmitAsync(&ConnectCampaignsClient::UpdateCampaignOutboundCallConfig, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ConnectCampaignsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ConnectCampaignsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient>;

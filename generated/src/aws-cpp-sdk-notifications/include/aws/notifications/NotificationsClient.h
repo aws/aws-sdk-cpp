@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/notifications/NotificationsPaginationBase.h>
 #include <aws/notifications/NotificationsServiceClientModel.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace Notifications {
  * Notifications Contacts API Reference Guide</a>.</p>
  */
 class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>,
+                                                  public NotificationsPaginationBase<NotificationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1262,8 +1264,8 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&NotificationsClient::UpdateNotificationConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NotificationsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NotificationsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>;

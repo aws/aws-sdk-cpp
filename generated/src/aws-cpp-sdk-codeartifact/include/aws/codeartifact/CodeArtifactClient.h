@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codeartifact/CodeArtifactPaginationBase.h>
 #include <aws/codeartifact/CodeArtifactServiceClientModel.h>
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -171,7 +172,8 @@ namespace CodeArtifact {
  * the properties of a repository.</p> </li> </ul>
  */
 class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>,
+                                                public CodeArtifactPaginationBase<CodeArtifactClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1731,8 +1733,8 @@ class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CodeArtifactClient::UpdateRepository, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodeArtifactEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodeArtifactEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>;

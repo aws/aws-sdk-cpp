@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AmdSevSnpSpecification.h>
+#include <aws/ec2/model/NestedVirtualizationSpecification.h>
 
 #include <utility>
 
@@ -83,15 +84,34 @@ class LaunchTemplateCpuOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the instance is enabled for nested virtualization. </p>
+   */
+  inline NestedVirtualizationSpecification GetNestedVirtualization() const { return m_nestedVirtualization; }
+  inline bool NestedVirtualizationHasBeenSet() const { return m_nestedVirtualizationHasBeenSet; }
+  inline void SetNestedVirtualization(NestedVirtualizationSpecification value) {
+    m_nestedVirtualizationHasBeenSet = true;
+    m_nestedVirtualization = value;
+  }
+  inline LaunchTemplateCpuOptions& WithNestedVirtualization(NestedVirtualizationSpecification value) {
+    SetNestedVirtualization(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_coreCount{0};
 
   int m_threadsPerCore{0};
 
   AmdSevSnpSpecification m_amdSevSnp{AmdSevSnpSpecification::NOT_SET};
+
+  NestedVirtualizationSpecification m_nestedVirtualization{NestedVirtualizationSpecification::NOT_SET};
   bool m_coreCountHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;
   bool m_amdSevSnpHasBeenSet = false;
+  bool m_nestedVirtualizationHasBeenSet = false;
 };
 
 }  // namespace Model

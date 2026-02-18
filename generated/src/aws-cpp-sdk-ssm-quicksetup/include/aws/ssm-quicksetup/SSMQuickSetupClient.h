@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupPaginationBase.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupServiceClientModel.h>
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
 
@@ -19,7 +20,8 @@ namespace SSMQuickSetup {
  * including Systems Manager, by automating common or recommended tasks.</p>
  */
 class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>,
+                                                  public SSMQuickSetupPaginationBase<SSMQuickSetupClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -466,8 +468,8 @@ class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&SSMQuickSetupClient::UpdateServiceSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SSMQuickSetupEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SSMQuickSetupEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>;

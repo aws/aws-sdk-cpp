@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/polly/PollyPaginationBase.h>
 #include <aws/polly/PollyServiceClientModel.h>
 #include <aws/polly/Polly_EXPORTS.h>
 
@@ -20,7 +21,9 @@ namespace Polly {
  * along with managing pronunciations lexicons that enable you to get the best
  * results for your application domain.</p>
  */
-class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PollyClient> {
+class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>,
+                                  public PollyPaginationBase<PollyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -357,8 +360,8 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&PollyClient::SynthesizeSpeech, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PollyEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PollyEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>;

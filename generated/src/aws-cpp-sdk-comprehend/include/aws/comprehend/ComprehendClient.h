@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/comprehend/ComprehendPaginationBase.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -20,7 +21,8 @@ namespace Comprehend {
  * them, the predominant language used, and more.</p>
  */
 class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>,
+                                            public ComprehendPaginationBase<ComprehendClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2684,8 +2686,8 @@ class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ComprehendClient::UpdateFlywheel, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;

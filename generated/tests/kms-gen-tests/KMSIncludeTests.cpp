@@ -50,6 +50,7 @@
 #include <aws/kms/model/DisableKeyRotationRequest.h>
 #include <aws/kms/model/DisconnectCustomKeyStoreRequest.h>
 #include <aws/kms/model/DisconnectCustomKeyStoreResult.h>
+#include <aws/kms/model/DryRunModifierType.h>
 #include <aws/kms/model/EnableKeyRequest.h>
 #include <aws/kms/model/EnableKeyRotationRequest.h>
 #include <aws/kms/model/EncryptRequest.h>

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/apigateway/APIGatewayPaginationBase.h>
 #include <aws/apigateway/APIGatewayServiceClientModel.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -21,7 +22,8 @@ namespace APIGateway {
  * that are hosted outside of AWS.</p>
  */
 class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>,
+                                            public APIGatewayPaginationBase<APIGatewayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3365,8 +3367,8 @@ class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&APIGatewayClient::UpdateVpcLink, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<APIGatewayEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<APIGatewayEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>;

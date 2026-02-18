@@ -26,6 +26,10 @@ ConnectivityInfo& ConnectivityInfo::operator=(JsonView jsonValue) {
     m_vpcConnectivity = jsonValue.GetObject("vpcConnectivity");
     m_vpcConnectivityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("networkType")) {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ConnectivityInfo::Jsonize() const {
 
   if (m_vpcConnectivityHasBeenSet) {
     payload.WithObject("vpcConnectivity", m_vpcConnectivity.Jsonize());
+  }
+
+  if (m_networkTypeHasBeenSet) {
+    payload.WithString("networkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;

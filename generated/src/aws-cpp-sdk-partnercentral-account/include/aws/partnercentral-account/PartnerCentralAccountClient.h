@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/partnercentral-account/PartnerCentralAccountPaginationBase.h>
 #include <aws/partnercentral-account/PartnerCentralAccountServiceClientModel.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace PartnerCentralAccount {
  */
 class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralAccountClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralAccountClient>,
+      public PartnerCentralAccountPaginationBase<PartnerCentralAccountClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -895,8 +897,8 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
     return SubmitAsync(&PartnerCentralAccountClient::UpdateConnectionPreferences, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PartnerCentralAccountEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PartnerCentralAccountEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralAccountClient>;

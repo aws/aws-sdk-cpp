@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sdb/SimpleDBPaginationBase.h>
 #include <aws/sdb/SimpleDBServiceClientModel.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 
@@ -31,7 +32,8 @@ namespace SimpleDB {
  * more information. </p>
  */
 class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>,
+                                        public SimpleDBPaginationBase<SimpleDBClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -455,8 +457,8 @@ class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&SimpleDBClient::Select, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SimpleDBEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SimpleDBEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>;

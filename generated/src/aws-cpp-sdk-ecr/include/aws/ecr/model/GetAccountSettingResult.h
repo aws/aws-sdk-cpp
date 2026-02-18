@@ -45,10 +45,10 @@ class GetAccountSettingResult {
 
   ///@{
   /**
-   * <p>The setting value for the setting name. The following are valid values for
-   * the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.
-   * The following are valid values for the registry policy scope being used:
-   * <code>V1</code> or <code>V2</code>.</p>
+   * <p>The setting value for the setting name. Valid value for basic scan type:
+   * <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code>
+   * or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or
+   * <code>DISABLED</code>.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   template <typename ValueT = Aws::String>

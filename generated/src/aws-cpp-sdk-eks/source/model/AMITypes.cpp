@@ -31,6 +31,8 @@ static const int WINDOWS_CORE_2019_x86_64_HASH = HashingUtils::HashString("WINDO
 static const int WINDOWS_FULL_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2019_x86_64");
 static const int WINDOWS_CORE_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2022_x86_64");
 static const int WINDOWS_FULL_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2022_x86_64");
+static const int WINDOWS_CORE_2025_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2025_x86_64");
+static const int WINDOWS_FULL_2025_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2025_x86_64");
 static const int AL2023_x86_64_STANDARD_HASH = HashingUtils::HashString("AL2023_x86_64_STANDARD");
 static const int AL2023_ARM_64_STANDARD_HASH = HashingUtils::HashString("AL2023_ARM_64_STANDARD");
 static const int AL2023_x86_64_NEURON_HASH = HashingUtils::HashString("AL2023_x86_64_NEURON");
@@ -71,6 +73,10 @@ AMITypes GetAMITypesForName(const Aws::String& name) {
     return AMITypes::WINDOWS_CORE_2022_x86_64;
   } else if (hashCode == WINDOWS_FULL_2022_x86_64_HASH) {
     return AMITypes::WINDOWS_FULL_2022_x86_64;
+  } else if (hashCode == WINDOWS_CORE_2025_x86_64_HASH) {
+    return AMITypes::WINDOWS_CORE_2025_x86_64;
+  } else if (hashCode == WINDOWS_FULL_2025_x86_64_HASH) {
+    return AMITypes::WINDOWS_FULL_2025_x86_64;
   } else if (hashCode == AL2023_x86_64_STANDARD_HASH) {
     return AMITypes::AL2023_x86_64_STANDARD;
   } else if (hashCode == AL2023_ARM_64_STANDARD_HASH) {
@@ -127,6 +133,10 @@ Aws::String GetNameForAMITypes(AMITypes enumValue) {
       return "WINDOWS_CORE_2022_x86_64";
     case AMITypes::WINDOWS_FULL_2022_x86_64:
       return "WINDOWS_FULL_2022_x86_64";
+    case AMITypes::WINDOWS_CORE_2025_x86_64:
+      return "WINDOWS_CORE_2025_x86_64";
+    case AMITypes::WINDOWS_FULL_2025_x86_64:
+      return "WINDOWS_FULL_2025_x86_64";
     case AMITypes::AL2023_x86_64_STANDARD:
       return "AL2023_x86_64_STANDARD";
     case AMITypes::AL2023_ARM_64_STANDARD:

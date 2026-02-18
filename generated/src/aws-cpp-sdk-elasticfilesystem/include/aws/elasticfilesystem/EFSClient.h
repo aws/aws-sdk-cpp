@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/EFSPaginationBase.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
@@ -25,7 +26,9 @@ namespace EFS {
  * href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic
  * File System User Guide</a>.</p>
  */
-class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EFSClient> {
+class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>,
+                              public EFSPaginationBase<EFSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1200,8 +1203,8 @@ class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&EFSClient::UpdateFileSystemProtection, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EFSEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EFSEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;

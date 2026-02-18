@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/NetworkManagerPaginationBase.h>
 #include <aws/networkmanager/NetworkManagerServiceClientModel.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
@@ -19,7 +20,8 @@ namespace NetworkManager {
  * Services accounts, Regions, and on-premises locations.</p>
  */
 class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>,
+                                                    public NetworkManagerPaginationBase<NetworkManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2762,8 +2764,8 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&NetworkManagerClient::UpdateVpcAttachment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NetworkManagerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NetworkManagerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>;

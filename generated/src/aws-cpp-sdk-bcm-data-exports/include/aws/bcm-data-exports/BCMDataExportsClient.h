@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bcm-data-exports/BCMDataExportsPaginationBase.h>
 #include <aws/bcm-data-exports/BCMDataExportsServiceClientModel.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -21,7 +22,8 @@ namespace BCMDataExports {
  * <p>https://bcm-data-exports.us-east-1.api.aws</p> </li> </ul>
  */
 class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>,
+                                                    public BCMDataExportsPaginationBase<BCMDataExportsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -411,8 +413,8 @@ class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&BCMDataExportsClient::UpdateExport, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BCMDataExportsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BCMDataExportsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>;

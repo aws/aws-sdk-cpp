@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/observabilityadmin/ObservabilityAdminPaginationBase.h>
 #include <aws/observabilityadmin/ObservabilityAdminServiceClientModel.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace ObservabilityAdmin {
  * Guide.</p>
  */
 class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>,
+                                                            public ObservabilityAdminPaginationBase<ObservabilityAdminClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1308,8 +1310,8 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
     return SubmitAsync(&ObservabilityAdminClient::ValidateTelemetryPipelineConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ObservabilityAdminEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ObservabilityAdminEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>;

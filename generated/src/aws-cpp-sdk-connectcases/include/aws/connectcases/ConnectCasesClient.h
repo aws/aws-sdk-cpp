@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connectcases/ConnectCasesPaginationBase.h>
 #include <aws/connectcases/ConnectCasesServiceClientModel.h>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -27,7 +28,8 @@ namespace ConnectCases {
  * Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
  */
 class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>,
+                                                public ConnectCasesPaginationBase<ConnectCasesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1376,8 +1378,8 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ConnectCasesClient::UpdateTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ConnectCasesEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ConnectCasesEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/GroundStationPaginationBase.h>
 #include <aws/groundstation/GroundStationServiceClientModel.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace GroundStation {
  * ground station infrastructure.</p>
  */
 class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>,
+                                                  public GroundStationPaginationBase<GroundStationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1031,8 +1033,8 @@ class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&GroundStationClient::UpdateMissionProfile, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<GroundStationEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<GroundStationEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>;

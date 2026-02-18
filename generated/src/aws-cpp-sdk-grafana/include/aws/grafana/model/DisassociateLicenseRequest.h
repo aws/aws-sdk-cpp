@@ -31,22 +31,6 @@ class DisassociateLicenseRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>The type of license to remove from the workspace.</p>
-   */
-  inline LicenseType GetLicenseType() const { return m_licenseType; }
-  inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-  inline void SetLicenseType(LicenseType value) {
-    m_licenseTypeHasBeenSet = true;
-    m_licenseType = value;
-  }
-  inline DisassociateLicenseRequest& WithLicenseType(LicenseType value) {
-    SetLicenseType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
    */
   inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
@@ -62,12 +46,28 @@ class DisassociateLicenseRequest : public ManagedGrafanaRequest {
     return *this;
   }
   ///@}
- private:
-  LicenseType m_licenseType{LicenseType::NOT_SET};
 
+  ///@{
+  /**
+   * <p>The type of license to remove from the workspace.</p>
+   */
+  inline LicenseType GetLicenseType() const { return m_licenseType; }
+  inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+  inline void SetLicenseType(LicenseType value) {
+    m_licenseTypeHasBeenSet = true;
+    m_licenseType = value;
+  }
+  inline DisassociateLicenseRequest& WithLicenseType(LicenseType value) {
+    SetLicenseType(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_workspaceId;
-  bool m_licenseTypeHasBeenSet = false;
+
+  LicenseType m_licenseType{LicenseType::NOT_SET};
   bool m_workspaceIdHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -67,6 +67,10 @@ Aws::String UpdateClusterRequest::SerializePayload() const {
     payload.WithObject("AutoScaling", m_autoScaling.Jsonize());
   }
 
+  if (m_orchestratorHasBeenSet) {
+    payload.WithObject("Orchestrator", m_orchestrator.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

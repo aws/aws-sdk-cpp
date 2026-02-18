@@ -85,6 +85,28 @@ AvailabilityZone& AvailabilityZone::operator=(const XmlNode& xmlNode) {
       m_groupLongName = Aws::Utils::Xml::DecodeEscapedXmlText(groupLongNameNode.GetText());
       m_groupLongNameHasBeenSet = true;
     }
+    XmlNode geographyNode = resultNode.FirstChild("geographySet");
+    if (!geographyNode.IsNull()) {
+      XmlNode geographyMember = geographyNode.FirstChild("item");
+      m_geographyHasBeenSet = !geographyMember.IsNull();
+      while (!geographyMember.IsNull()) {
+        m_geography.push_back(geographyMember);
+        geographyMember = geographyMember.NextNode("item");
+      }
+
+      m_geographyHasBeenSet = true;
+    }
+    XmlNode subGeographyNode = resultNode.FirstChild("subGeographySet");
+    if (!subGeographyNode.IsNull()) {
+      XmlNode subGeographyMember = subGeographyNode.FirstChild("item");
+      m_subGeographyHasBeenSet = !subGeographyMember.IsNull();
+      while (!subGeographyMember.IsNull()) {
+        m_subGeography.push_back(subGeographyMember);
+        subGeographyMember = subGeographyMember.NextNode("item");
+      }
+
+      m_subGeographyHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("zoneState");
     if (!stateNode.IsNull()) {
       m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(
@@ -147,6 +169,24 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
     oStream << location << index << locationValue << ".GroupLongName=" << StringUtils::URLEncode(m_groupLongName.c_str()) << "&";
   }
 
+  if (m_geographyHasBeenSet) {
+    unsigned geographyIdx = 1;
+    for (auto& item : m_geography) {
+      Aws::StringStream geographySs;
+      geographySs << location << index << locationValue << ".GeographySet." << geographyIdx++;
+      item.OutputToStream(oStream, geographySs.str().c_str());
+    }
+  }
+
+  if (m_subGeographyHasBeenSet) {
+    unsigned subGeographyIdx = 1;
+    for (auto& item : m_subGeography) {
+      Aws::StringStream subGeographySs;
+      subGeographySs << location << index << locationValue << ".SubGeographySet." << subGeographyIdx++;
+      item.OutputToStream(oStream, subGeographySs.str().c_str());
+    }
+  }
+
   if (m_stateHasBeenSet) {
     oStream << location << index << locationValue
             << ".State=" << StringUtils::URLEncode(AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state)) << "&";
@@ -192,6 +232,22 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if (m_groupLongNameHasBeenSet) {
     oStream << location << ".GroupLongName=" << StringUtils::URLEncode(m_groupLongName.c_str()) << "&";
+  }
+  if (m_geographyHasBeenSet) {
+    unsigned geographyIdx = 1;
+    for (auto& item : m_geography) {
+      Aws::StringStream geographySs;
+      geographySs << location << ".GeographySet." << geographyIdx++;
+      item.OutputToStream(oStream, geographySs.str().c_str());
+    }
+  }
+  if (m_subGeographyHasBeenSet) {
+    unsigned subGeographyIdx = 1;
+    for (auto& item : m_subGeography) {
+      Aws::StringStream subGeographySs;
+      subGeographySs << location << ".SubGeographySet." << subGeographyIdx++;
+      item.OutputToStream(oStream, subGeographySs.str().c_str());
+    }
   }
   if (m_stateHasBeenSet) {
     oStream << location << ".State=" << StringUtils::URLEncode(AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state))

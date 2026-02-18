@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomationErrorMarshaller.h>
+#include <aws/bedrock-data-automation/BedrockDataAutomationPaginationBase.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationServiceClientModel.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
       public smithy::client::AwsSmithyClientT<
           Aws::BedrockDataAutomation::SERVICE_NAME, Aws::BedrockDataAutomation::BedrockDataAutomationClientConfiguration,
           smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>, BedrockDataAutomationEndpointProviderBase,
-          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockDataAutomationErrorMarshaller> {
+          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockDataAutomationErrorMarshaller>,
+      public BedrockDataAutomationPaginationBase<BedrockDataAutomationClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -553,8 +555,8 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
     return SubmitAsync(&BedrockDataAutomationClient::UpdateDataAutomationProject, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BedrockDataAutomationEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BedrockDataAutomationEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationClient>;

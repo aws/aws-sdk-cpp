@@ -19,12 +19,6 @@ Aws::String ListPermissionsRequest::SerializePayload() const { return {}; }
 
 void ListPermissionsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_groupIdHasBeenSet) {
-    ss << m_groupId;
-    uri.AddQueryStringParameter("groupId", ss.str());
-    ss.str("");
-  }
-
   if (m_maxResultsHasBeenSet) {
     ss << m_maxResults;
     uri.AddQueryStringParameter("maxResults", ss.str());
@@ -37,15 +31,21 @@ void ListPermissionsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_userTypeHasBeenSet) {
+    ss << UserTypeMapper::GetNameForUserType(m_userType);
+    uri.AddQueryStringParameter("userType", ss.str());
+    ss.str("");
+  }
+
   if (m_userIdHasBeenSet) {
     ss << m_userId;
     uri.AddQueryStringParameter("userId", ss.str());
     ss.str("");
   }
 
-  if (m_userTypeHasBeenSet) {
-    ss << UserTypeMapper::GetNameForUserType(m_userType);
-    uri.AddQueryStringParameter("userType", ss.str());
+  if (m_groupIdHasBeenSet) {
+    ss << m_groupId;
+    uri.AddQueryStringParameter("groupId", ss.str());
     ss.str("");
   }
 }

@@ -229,6 +229,12 @@ DBCluster& DBCluster::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptedNode.GetText()).c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if (!kmsKeyIdNode.IsNull()) {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
@@ -724,6 +730,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
     oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_kmsKeyIdHasBeenSet) {
     oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
@@ -1127,6 +1138,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_kmsKeyIdHasBeenSet) {
     oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";

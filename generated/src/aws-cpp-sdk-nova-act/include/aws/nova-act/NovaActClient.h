@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/nova-act/NovaActPaginationBase.h>
 #include <aws/nova-act/NovaActServiceClientModel.h>
 #include <aws/nova-act/NovaAct_EXPORTS.h>
 
@@ -19,7 +20,9 @@ namespace NovaAct {
  * runs, manage sessions, and orchestrate acts (individual AI tasks) with tool
  * integrations.</p>
  */
-class AWS_NOVAACT_API NovaActClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NovaActClient> {
+class AWS_NOVAACT_API NovaActClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<NovaActClient>,
+                                      public NovaActPaginationBase<NovaActClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -501,8 +504,8 @@ class AWS_NOVAACT_API NovaActClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&NovaActClient::UpdateWorkflowRun, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NovaActEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NovaActEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NovaActClient>;

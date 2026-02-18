@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/invoicing/InvoicingPaginationBase.h>
 #include <aws/invoicing/InvoicingServiceClientModel.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 
@@ -62,7 +63,8 @@ namespace Invoicing {
  * <ul> <li> <p> <code>https://invoicing.us-east-1.api.aws</code> </p> </li> </ul>
  */
 class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>,
+                                          public InvoicingPaginationBase<InvoicingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -600,8 +602,8 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&InvoicingClient::UpdateProcurementPortalPreferenceStatus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<InvoicingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<InvoicingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>;

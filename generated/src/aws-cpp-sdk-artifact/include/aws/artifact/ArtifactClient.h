@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/artifact/ArtifactPaginationBase.h>
 #include <aws/artifact/ArtifactServiceClientModel.h>
 #include <aws/artifact/Artifact_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -18,7 +19,8 @@ namespace Artifact {
  * API.</p>
  */
 class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>,
+                                        public ArtifactPaginationBase<ArtifactClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -285,8 +287,8 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ArtifactClient::PutAccountSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ArtifactEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ArtifactEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>;

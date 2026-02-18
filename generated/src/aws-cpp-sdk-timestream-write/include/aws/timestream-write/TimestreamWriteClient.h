@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/TimestreamWritePaginationBase.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace TimestreamWrite {
  * costs.</p>
  */
 class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>,
+                                                      public TimestreamWritePaginationBase<TimestreamWriteClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -711,8 +713,8 @@ class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJso
     return SubmitAsync(&TimestreamWriteClient::WriteRecords, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/TnbPaginationBase.h>
 #include <aws/tnb/TnbServiceClientModel.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
 
@@ -19,7 +20,9 @@ namespace tnb {
  * with the lifecycle management of your telecommunication network functions
  * throughout planning, deployment, and post-deployment activities.</p>
  */
-class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TnbClient> {
+class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>,
+                              public TnbPaginationBase<TnbClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1134,8 +1137,8 @@ class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&TnbClient::ValidateSolNetworkPackageContent, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TnbEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TnbEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>;

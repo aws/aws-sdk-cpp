@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivschat/IvschatPaginationBase.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 
@@ -87,7 +88,9 @@ namespace ivschat {
  * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
  * Resource Names</a> in the <i>AWS General Reference</i>.</p>
  */
-class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient> {
+class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>,
+                                      public IvschatPaginationBase<IvschatClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -619,8 +622,8 @@ class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&IvschatClient::UpdateRoom, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IvschatEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IvschatEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>;

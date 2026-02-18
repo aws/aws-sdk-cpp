@@ -182,8 +182,12 @@ class CreateClusterRequest : public SageMakerRequest {
   ///@{
   /**
    * <p>The type of orchestrator to use for the SageMaker HyperPod cluster.
-   * Currently, the only supported value is <code>"eks"</code>, which is to use an
-   * Amazon Elastic Kubernetes Service cluster as the orchestrator.</p>
+   * Currently, supported values are <code>"Eks"</code> and <code>"Slurm"</code>,
+   * which is to use an Amazon Elastic Kubernetes Service or Slurm cluster as the
+   * orchestrator.</p>  <p>If you specify the <code>Orchestrator</code> field,
+   * you must provide exactly one orchestrator configuration: either <code>Eks</code>
+   * or <code>Slurm</code>. Specifying both or providing an empty configuration
+   * returns a validation error.</p>
    */
   inline const ClusterOrchestrator& GetOrchestrator() const { return m_orchestrator; }
   inline bool OrchestratorHasBeenSet() const { return m_orchestratorHasBeenSet; }

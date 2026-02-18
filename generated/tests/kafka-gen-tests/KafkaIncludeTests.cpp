@@ -156,6 +156,7 @@
 #include <aws/kafka/model/ListVpcConnectionsResult.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/MutableClusterInfo.h>
+#include <aws/kafka/model/NetworkType.h>
 #include <aws/kafka/model/NodeExporter.h>
 #include <aws/kafka/model/NodeExporterInfo.h>
 #include <aws/kafka/model/NodeInfo.h>
@@ -194,6 +195,7 @@
 #include <aws/kafka/model/Scram.h>
 #include <aws/kafka/model/Serverless.h>
 #include <aws/kafka/model/ServerlessClientAuthentication.h>
+#include <aws/kafka/model/ServerlessConnectivityInfo.h>
 #include <aws/kafka/model/ServerlessRequest.h>
 #include <aws/kafka/model/ServerlessSasl.h>
 #include <aws/kafka/model/ServiceUnavailableException.h>

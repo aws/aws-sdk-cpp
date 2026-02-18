@@ -28,6 +28,23 @@ class CreateWorkspaceApiKeyResult {
 
   ///@{
   /**
+   * <p>The name of the key that was created.</p>
+   */
+  inline const Aws::String& GetKeyName() const { return m_keyName; }
+  template <typename KeyNameT = Aws::String>
+  void SetKeyName(KeyNameT&& value) {
+    m_keyNameHasBeenSet = true;
+    m_keyName = std::forward<KeyNameT>(value);
+  }
+  template <typename KeyNameT = Aws::String>
+  CreateWorkspaceApiKeyResult& WithKeyName(KeyNameT&& value) {
+    SetKeyName(std::forward<KeyNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key token. Use this value as a bearer token to authenticate HTTP requests
    * to the workspace.</p>
    */
@@ -40,23 +57,6 @@ class CreateWorkspaceApiKeyResult {
   template <typename KeyT = Aws::String>
   CreateWorkspaceApiKeyResult& WithKey(KeyT&& value) {
     SetKey(std::forward<KeyT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the key that was created.</p>
-   */
-  inline const Aws::String& GetKeyName() const { return m_keyName; }
-  template <typename KeyNameT = Aws::String>
-  void SetKeyName(KeyNameT&& value) {
-    m_keyNameHasBeenSet = true;
-    m_keyName = std::forward<KeyNameT>(value);
-  }
-  template <typename KeyNameT = Aws::String>
-  CreateWorkspaceApiKeyResult& WithKeyName(KeyNameT&& value) {
-    SetKeyName(std::forward<KeyNameT>(value));
     return *this;
   }
   ///@}
@@ -93,15 +93,15 @@ class CreateWorkspaceApiKeyResult {
   }
   ///@}
  private:
-  Aws::String m_key;
-
   Aws::String m_keyName;
+
+  Aws::String m_key;
 
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
-  bool m_keyHasBeenSet = false;
   bool m_keyNameHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

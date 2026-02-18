@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dsql/DSQLPaginationBase.h>
 #include <aws/dsql/DSQLServiceClientModel.h>
 #include <aws/dsql/DSQL_EXPORTS.h>
 
@@ -23,7 +24,9 @@ namespace DSQL {
  * Services Region are unavailable. lets you focus on using your data to acquire
  * new insights for your business and customers.</p>
  */
-class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient> {
+class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
+                                public Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>,
+                                public DSQLPaginationBase<DSQLClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -458,8 +461,8 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient, public Aws::C
   Aws::Utils::Outcome<String, DSQLError> GenerateDBConnectAdminAuthToken(const Aws::String& hostname, const Aws::String& region,
                                                                          long long expiresIn = 900);
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DSQLEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DSQLEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>;

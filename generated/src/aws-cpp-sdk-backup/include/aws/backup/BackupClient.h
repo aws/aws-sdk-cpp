@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/backup/BackupPaginationBase.h>
 #include <aws/backup/BackupServiceClientModel.h>
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -19,7 +20,9 @@ namespace Backup {
  * simplifies the creation, migration, restoration, and deletion of backups, while
  * also providing reporting and auditing.</p>
  */
-class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupClient> {
+class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>,
+                                    public BackupPaginationBase<BackupClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3266,8 +3269,8 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&BackupClient::UpdateTieringConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BackupEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BackupEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodbstreams/DynamoDBStreamsPaginationBase.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace DynamoDBStreams {
  * Guide.</p>
  */
 class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>,
+                                                      public DynamoDBStreamsPaginationBase<DynamoDBStreamsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -208,8 +210,8 @@ class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJso
     return SubmitAsync(&DynamoDBStreamsClient::ListStreams, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DynamoDBStreamsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DynamoDBStreamsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>;

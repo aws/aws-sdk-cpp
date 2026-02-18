@@ -12,6 +12,7 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}PaginationBase.h>
 
 namespace ${rootNamespace}
 {
@@ -26,7 +27,7 @@ namespace ${serviceNamespace}
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
 #end
-  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>, public ${metadata.classNamePrefix}PaginationBase<${className}>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -45,10 +46,14 @@ namespace ${serviceNamespace}
 
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
+#set($xml_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($xml_virtual = "virtual ")
+#end
 
-        void OverrideEndpoint(const Aws::String& endpoint);
+        ${xml_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+        ${xml_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
   private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;

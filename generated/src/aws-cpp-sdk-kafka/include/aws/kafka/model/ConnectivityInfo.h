@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/NetworkType.h>
 #include <aws/kafka/model/PublicAccess.h>
 #include <aws/kafka/model/VpcConnectivity.h>
 
@@ -74,12 +75,35 @@ class ConnectivityInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   *
+          <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL
+   * network type uses both IPv4 and IPv6 addresses for your cluster and its
+   * resources.</p><p>By default, a cluster uses the IPv4 network type.</p>
+
+   */
+  inline NetworkType GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  inline void SetNetworkType(NetworkType value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = value;
+  }
+  inline ConnectivityInfo& WithNetworkType(NetworkType value) {
+    SetNetworkType(value);
+    return *this;
+  }
+  ///@}
  private:
   PublicAccess m_publicAccess;
 
   VpcConnectivity m_vpcConnectivity;
+
+  NetworkType m_networkType{NetworkType::NOT_SET};
   bool m_publicAccessHasBeenSet = false;
   bool m_vpcConnectivityHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
 };
 
 }  // namespace Model

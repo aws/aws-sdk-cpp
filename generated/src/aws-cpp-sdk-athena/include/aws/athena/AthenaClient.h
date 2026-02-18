@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/athena/AthenaPaginationBase.h>
 #include <aws/athena/AthenaServiceClientModel.h>
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -29,7 +30,9 @@ namespace Athena {
  * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
  * Amazon Athena with JDBC</a>.</p>
  */
-class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient> {
+class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>,
+                                    public AthenaPaginationBase<AthenaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2106,8 +2109,8 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&AthenaClient::UpdateWorkGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AthenaEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AthenaEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>;

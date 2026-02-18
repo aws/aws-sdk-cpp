@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-containers/EMRContainersPaginationBase.h>
 #include <aws/emr-containers/EMRContainersServiceClientModel.h>
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 
@@ -37,7 +38,8 @@ namespace EMRContainers {
  * EMR on EKSService Endpoints</a>.</p> </li> </ul>
  */
 class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>,
+                                                  public EMRContainersPaginationBase<EMRContainersClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -777,8 +779,8 @@ class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&EMRContainersClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EMRContainersEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EMRContainersEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>;

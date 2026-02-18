@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/CostOptimizationHubPaginationBase.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubServiceClientModel.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
@@ -21,9 +22,9 @@ namespace CostOptimizationHub {
  * provides the following endpoint:</p> <ul> <li> <p>
  * https://cost-optimization-hub.us-east-1.amazonaws.com </p> </li> </ul>
  */
-class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient> {
+class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>,
+                                                              public CostOptimizationHubPaginationBase<CostOptimizationHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -326,8 +327,8 @@ class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient
     return SubmitAsync(&CostOptimizationHubClient::UpdatePreferences, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CostOptimizationHubEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CostOptimizationHubEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>;

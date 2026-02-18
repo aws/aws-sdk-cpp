@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2PaginationBase.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace KinesisAnalyticsV2 {
  * real-time metrics.</p>
  */
 class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>,
+                                                            public KinesisAnalyticsV2PaginationBase<KinesisAnalyticsV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1132,8 +1134,8 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
     return SubmitAsync(&KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogPaginationBase.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace MarketplaceCatalog {
  * Catalog API to manage your products on AWS Marketplace.</p>
  */
 class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>,
+                                                            public MarketplaceCatalogPaginationBase<MarketplaceCatalogClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -461,8 +463,8 @@ class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::
     return SubmitAsync(&MarketplaceCatalogClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MarketplaceCatalogEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MarketplaceCatalogEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>;

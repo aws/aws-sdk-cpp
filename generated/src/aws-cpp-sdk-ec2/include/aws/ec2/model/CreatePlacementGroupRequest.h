@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/ec2/model/SpreadLevel.h>
 #include <aws/ec2/model/TagSpecification.h>
@@ -115,6 +116,24 @@ class CreatePlacementGroupRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const OperatorRequest& GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  template <typename OperatorT = OperatorRequest>
+  void SetOperator(OperatorT&& value) {
+    m_operatorHasBeenSet = true;
+    m_operator = std::forward<OperatorT>(value);
+  }
+  template <typename OperatorT = OperatorRequest>
+  CreatePlacementGroupRequest& WithOperator(OperatorT&& value) {
+    SetOperator(std::forward<OperatorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -175,6 +194,8 @@ class CreatePlacementGroupRequest : public EC2Request {
 
   Aws::String m_linkedGroupId;
 
+  OperatorRequest m_operator;
+
   bool m_dryRun{false};
 
   Aws::String m_groupName;
@@ -184,6 +205,7 @@ class CreatePlacementGroupRequest : public EC2Request {
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_spreadLevelHasBeenSet = false;
   bool m_linkedGroupIdHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_strategyHasBeenSet = false;

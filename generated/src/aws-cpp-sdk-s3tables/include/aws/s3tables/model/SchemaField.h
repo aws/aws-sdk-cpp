@@ -33,6 +33,24 @@ class SchemaField {
 
   ///@{
   /**
+   * <p>An optional unique identifier for the schema field. Field IDs are used by
+   * Apache Iceberg to track schema evolution and maintain compatibility across
+   * schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+   */
+  inline int GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  inline void SetId(int value) {
+    m_idHasBeenSet = true;
+    m_id = value;
+  }
+  inline SchemaField& WithId(int value) {
+    SetId(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the field.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -89,11 +107,14 @@ class SchemaField {
   }
   ///@}
  private:
+  int m_id{0};
+
   Aws::String m_name;
 
   Aws::String m_type;
 
   bool m_required{false};
+  bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_requiredHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/controlcatalog/ControlCatalogPaginationBase.h>
 #include <aws/controlcatalog/ControlCatalogServiceClientModel.h>
 #include <aws/controlcatalog/ControlCatalog_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -34,7 +35,8 @@ namespace ControlCatalog {
  * </ul>
  */
 class AWS_CONTROLCATALOG_API ControlCatalogClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient>,
+                                                    public ControlCatalogPaginationBase<ControlCatalogClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -271,8 +273,8 @@ class AWS_CONTROLCATALOG_API ControlCatalogClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&ControlCatalogClient::ListObjectives, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ControlCatalogEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ControlCatalogEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ControlCatalogClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIPaginationBase.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace ResourceGroupsTaggingAPI {
  */
 class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>,
+      public ResourceGroupsTaggingAPIPaginationBase<ResourceGroupsTaggingAPIClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -440,8 +442,8 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
     return SubmitAsync(&ResourceGroupsTaggingAPIClient::UntagResources, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>;

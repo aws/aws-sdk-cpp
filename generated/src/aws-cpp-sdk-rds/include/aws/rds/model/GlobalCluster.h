@@ -10,6 +10,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/FailoverState.h>
 #include <aws/rds/model/GlobalClusterMember.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Tag.h>
 
 #include <utility>
@@ -206,6 +207,28 @@ class GlobalCluster {
 
   ///@{
   /**
+   * <p>The type of encryption used to protect data at rest in the global database
+   * cluster. Possible values:</p> <ul> <li> <p> <code>none</code> - The global
+   * database cluster is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The
+   * global database cluster is encrypted using an Amazon Web Services owned KMS
+   * key.</p> </li> <li> <p> <code>sse-kms</code> - The global database cluster is
+   * encrypted using a customer managed KMS key or Amazon Web Services managed KMS
+   * key.</p> </li> </ul>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline GlobalCluster& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The deletion protection setting for the new global database cluster.</p>
    */
   inline bool GetDeletionProtection() const { return m_deletionProtection; }
@@ -326,6 +349,8 @@ class GlobalCluster {
 
   bool m_storageEncrypted{false};
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   bool m_deletionProtection{false};
 
   Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
@@ -344,6 +369,7 @@ class GlobalCluster {
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
   bool m_globalClusterMembersHasBeenSet = false;
   bool m_endpointHasBeenSet = false;

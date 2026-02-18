@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/comprehendmedical/ComprehendMedicalPaginationBase.h>
 #include <aws/comprehendmedical/ComprehendMedicalServiceClientModel.h>
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -23,7 +24,8 @@ namespace ComprehendMedical {
  * and quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.</p>
  */
 class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>,
+                                                          public ComprehendMedicalPaginationBase<ComprehendMedicalClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -811,8 +813,8 @@ class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AW
     return SubmitAsync(&ComprehendMedicalClient::StopSNOMEDCTInferenceJob, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ComprehendMedicalEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ComprehendMedicalEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>;

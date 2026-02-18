@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/FISPaginationBase.h>
 #include <aws/fis/FISServiceClientModel.h>
 #include <aws/fis/FIS_EXPORTS.h>
 
@@ -20,7 +21,9 @@ namespace FIS {
  * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service
  * User Guide</a>.</p>
  */
-class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FISClient> {
+class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>,
+                              public FISPaginationBase<FISClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -806,8 +809,8 @@ class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&FISClient::UpdateTargetAccountConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FISClient>;

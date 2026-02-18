@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/budgets/BudgetsPaginationBase.h>
 #include <aws/budgets/BudgetsServiceClientModel.h>
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -41,7 +42,9 @@ namespace Budgets {
  * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">Amazon
  * Web Services Cost Management Pricing</a>.</p>
  */
-class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient> {
+class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>,
+                                      public BudgetsPaginationBase<BudgetsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -841,8 +844,8 @@ class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&BudgetsClient::UpdateSubscriber, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BudgetsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BudgetsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>;

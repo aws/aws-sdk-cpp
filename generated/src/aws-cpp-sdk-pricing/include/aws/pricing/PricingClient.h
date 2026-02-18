@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pricing/PricingPaginationBase.h>
 #include <aws/pricing/PricingServiceClientModel.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
 
@@ -35,7 +36,9 @@ namespace Pricing {
  * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Using
  * the Amazon Web Services Price List API</a> in the <i>Billing User Guide</i>.</p>
  */
-class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient> {
+class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>,
+                                      public PricingPaginationBase<PricingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -254,8 +257,8 @@ class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&PricingClient::ListPriceLists, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PricingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PricingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>;

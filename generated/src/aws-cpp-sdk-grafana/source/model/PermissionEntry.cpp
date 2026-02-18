@@ -18,13 +18,13 @@ namespace Model {
 PermissionEntry::PermissionEntry(JsonView jsonValue) { *this = jsonValue; }
 
 PermissionEntry& PermissionEntry::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("role")) {
-    m_role = RoleMapper::GetRoleForName(jsonValue.GetString("role"));
-    m_roleHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("user")) {
     m_user = jsonValue.GetObject("user");
     m_userHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("role")) {
+    m_role = RoleMapper::GetRoleForName(jsonValue.GetString("role"));
+    m_roleHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ PermissionEntry& PermissionEntry::operator=(JsonView jsonValue) {
 JsonValue PermissionEntry::Jsonize() const {
   JsonValue payload;
 
-  if (m_roleHasBeenSet) {
-    payload.WithString("role", RoleMapper::GetNameForRole(m_role));
-  }
-
   if (m_userHasBeenSet) {
     payload.WithObject("user", m_user.Jsonize());
+  }
+
+  if (m_roleHasBeenSet) {
+    payload.WithString("role", RoleMapper::GetNameForRole(m_role));
   }
 
   return payload;

@@ -36,23 +36,6 @@ class PermissionEntry {
 
   ///@{
   /**
-   * <p>Specifies whether the user or group has the <code>Admin</code>,
-   * <code>Editor</code>, or <code>Viewer</code> role.</p>
-   */
-  inline Role GetRole() const { return m_role; }
-  inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-  inline void SetRole(Role value) {
-    m_roleHasBeenSet = true;
-    m_role = value;
-  }
-  inline PermissionEntry& WithRole(Role value) {
-    SetRole(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A structure with the ID of the user or group with this role.</p>
    */
   inline const User& GetUser() const { return m_user; }
@@ -68,12 +51,29 @@ class PermissionEntry {
     return *this;
   }
   ///@}
- private:
-  Role m_role{Role::NOT_SET};
 
+  ///@{
+  /**
+   * <p>Specifies whether the user or group has the <code>Admin</code>,
+   * <code>Editor</code>, or <code>Viewer</code> role.</p>
+   */
+  inline Role GetRole() const { return m_role; }
+  inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+  inline void SetRole(Role value) {
+    m_roleHasBeenSet = true;
+    m_role = value;
+  }
+  inline PermissionEntry& WithRole(Role value) {
+    SetRole(value);
+    return *this;
+  }
+  ///@}
+ private:
   User m_user;
-  bool m_roleHasBeenSet = false;
+
+  Role m_role{Role::NOT_SET};
   bool m_userHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
 };
 
 }  // namespace Model

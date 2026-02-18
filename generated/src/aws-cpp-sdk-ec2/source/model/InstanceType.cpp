@@ -1187,6 +1187,19 @@ static const int g7e_8xlarge_HASH = HashingUtils::HashString("g7e.8xlarge");
 static const int g7e_12xlarge_HASH = HashingUtils::HashString("g7e.12xlarge");
 static const int g7e_24xlarge_HASH = HashingUtils::HashString("g7e.24xlarge");
 static const int g7e_48xlarge_HASH = HashingUtils::HashString("g7e.48xlarge");
+static const int r8id_large_HASH = HashingUtils::HashString("r8id.large");
+static const int r8id_xlarge_HASH = HashingUtils::HashString("r8id.xlarge");
+static const int r8id_2xlarge_HASH = HashingUtils::HashString("r8id.2xlarge");
+static const int r8id_4xlarge_HASH = HashingUtils::HashString("r8id.4xlarge");
+static const int r8id_8xlarge_HASH = HashingUtils::HashString("r8id.8xlarge");
+static const int r8id_12xlarge_HASH = HashingUtils::HashString("r8id.12xlarge");
+static const int r8id_16xlarge_HASH = HashingUtils::HashString("r8id.16xlarge");
+static const int r8id_24xlarge_HASH = HashingUtils::HashString("r8id.24xlarge");
+static const int r8id_32xlarge_HASH = HashingUtils::HashString("r8id.32xlarge");
+static const int r8id_48xlarge_HASH = HashingUtils::HashString("r8id.48xlarge");
+static const int r8id_96xlarge_HASH = HashingUtils::HashString("r8id.96xlarge");
+static const int r8id_metal_48xl_HASH = HashingUtils::HashString("r8id.metal-48xl");
+static const int r8id_metal_96xl_HASH = HashingUtils::HashString("r8id.metal-96xl");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -4745,6 +4758,45 @@ static bool GetEnumForNameHelper9(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == g7e_48xlarge_HASH) {
     enumValue = InstanceType::g7e_48xlarge;
+    return true;
+  } else if (hashCode == r8id_large_HASH) {
+    enumValue = InstanceType::r8id_large;
+    return true;
+  } else if (hashCode == r8id_xlarge_HASH) {
+    enumValue = InstanceType::r8id_xlarge;
+    return true;
+  } else if (hashCode == r8id_2xlarge_HASH) {
+    enumValue = InstanceType::r8id_2xlarge;
+    return true;
+  } else if (hashCode == r8id_4xlarge_HASH) {
+    enumValue = InstanceType::r8id_4xlarge;
+    return true;
+  } else if (hashCode == r8id_8xlarge_HASH) {
+    enumValue = InstanceType::r8id_8xlarge;
+    return true;
+  } else if (hashCode == r8id_12xlarge_HASH) {
+    enumValue = InstanceType::r8id_12xlarge;
+    return true;
+  } else if (hashCode == r8id_16xlarge_HASH) {
+    enumValue = InstanceType::r8id_16xlarge;
+    return true;
+  } else if (hashCode == r8id_24xlarge_HASH) {
+    enumValue = InstanceType::r8id_24xlarge;
+    return true;
+  } else if (hashCode == r8id_32xlarge_HASH) {
+    enumValue = InstanceType::r8id_32xlarge;
+    return true;
+  } else if (hashCode == r8id_48xlarge_HASH) {
+    enumValue = InstanceType::r8id_48xlarge;
+    return true;
+  } else if (hashCode == r8id_96xlarge_HASH) {
+    enumValue = InstanceType::r8id_96xlarge;
+    return true;
+  } else if (hashCode == r8id_metal_48xl_HASH) {
+    enumValue = InstanceType::r8id_metal_48xl;
+    return true;
+  } else if (hashCode == r8id_metal_96xl_HASH) {
+    enumValue = InstanceType::r8id_metal_96xl;
     return true;
   }
   return false;
@@ -8321,6 +8373,45 @@ static bool GetNameForEnumHelper9(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::g7e_48xlarge:
       value = "g7e.48xlarge";
+      return true;
+    case InstanceType::r8id_large:
+      value = "r8id.large";
+      return true;
+    case InstanceType::r8id_xlarge:
+      value = "r8id.xlarge";
+      return true;
+    case InstanceType::r8id_2xlarge:
+      value = "r8id.2xlarge";
+      return true;
+    case InstanceType::r8id_4xlarge:
+      value = "r8id.4xlarge";
+      return true;
+    case InstanceType::r8id_8xlarge:
+      value = "r8id.8xlarge";
+      return true;
+    case InstanceType::r8id_12xlarge:
+      value = "r8id.12xlarge";
+      return true;
+    case InstanceType::r8id_16xlarge:
+      value = "r8id.16xlarge";
+      return true;
+    case InstanceType::r8id_24xlarge:
+      value = "r8id.24xlarge";
+      return true;
+    case InstanceType::r8id_32xlarge:
+      value = "r8id.32xlarge";
+      return true;
+    case InstanceType::r8id_48xlarge:
+      value = "r8id.48xlarge";
+      return true;
+    case InstanceType::r8id_96xlarge:
+      value = "r8id.96xlarge";
+      return true;
+    case InstanceType::r8id_metal_48xl:
+      value = "r8id.metal-48xl";
+      return true;
+    case InstanceType::r8id_metal_96xl:
+      value = "r8id.metal-96xl";
       return true;
     default:
       return false;

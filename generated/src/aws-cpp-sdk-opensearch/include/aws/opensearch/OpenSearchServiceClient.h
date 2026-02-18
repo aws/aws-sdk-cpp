@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/OpenSearchServicePaginationBase.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace OpenSearchService {
  * Web Services service endpoints</a>.</p>
  */
 class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>,
+                                                          public OpenSearchServicePaginationBase<OpenSearchServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2445,8 +2447,8 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
     return SubmitAsync(&OpenSearchServiceClient::UpgradeDomain, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;

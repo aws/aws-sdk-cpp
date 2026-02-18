@@ -17,6 +17,7 @@
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
 
 #include <fstream>
@@ -778,7 +779,7 @@ public:
         Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
         Aws::Environment::UnSetEnv("AWS_REGION");
 
-        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        auto profileDirectory = ProfileCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
     }
 

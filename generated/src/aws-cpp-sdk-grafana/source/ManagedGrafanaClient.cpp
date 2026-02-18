@@ -165,15 +165,15 @@ void ManagedGrafanaClient::OverrideEndpoint(const Aws::String& endpoint) {
 AssociateLicenseOutcome ManagedGrafanaClient::AssociateLicense(const AssociateLicenseRequest& request) const {
   AWS_OPERATION_GUARD(AssociateLicense);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateLicense, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.LicenseTypeHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("AssociateLicense", "Required field: LicenseType, is not set");
-    return AssociateLicenseOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [LicenseType]", false));
-  }
   if (!request.WorkspaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("AssociateLicense", "Required field: WorkspaceId, is not set");
     return AssociateLicenseOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                                "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.LicenseTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("AssociateLicense", "Required field: LicenseType, is not set");
+    return AssociateLicenseOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [LicenseType]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateLicense, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
@@ -482,15 +482,15 @@ DeleteWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::DeleteWorkspaceS
     const DeleteWorkspaceServiceAccountTokenRequest& request) const {
   AWS_OPERATION_GUARD(DeleteWorkspaceServiceAccountToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspaceServiceAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ServiceAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: ServiceAccountId, is not set");
-    return DeleteWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(
-        ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceAccountId]", false));
-  }
   if (!request.TokenIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: TokenId, is not set");
     return DeleteWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(
         ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TokenId]", false));
+  }
+  if (!request.ServiceAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: ServiceAccountId, is not set");
+    return DeleteWorkspaceServiceAccountTokenOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(
+        ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ServiceAccountId]", false));
   }
   if (!request.WorkspaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteWorkspaceServiceAccountToken", "Required field: WorkspaceId, is not set");
@@ -644,15 +644,15 @@ DescribeWorkspaceConfigurationOutcome ManagedGrafanaClient::DescribeWorkspaceCon
 DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const DisassociateLicenseRequest& request) const {
   AWS_OPERATION_GUARD(DisassociateLicense);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLicense, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.LicenseTypeHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DisassociateLicense", "Required field: LicenseType, is not set");
-    return DisassociateLicenseOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(
-        ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LicenseType]", false));
-  }
   if (!request.WorkspaceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DisassociateLicense", "Required field: WorkspaceId, is not set");
     return DisassociateLicenseOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(
         ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.LicenseTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisassociateLicense", "Required field: LicenseType, is not set");
+    return DisassociateLicenseOutcome(Aws::Client::AWSError<ManagedGrafanaErrors>(
+        ManagedGrafanaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LicenseType]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateLicense, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

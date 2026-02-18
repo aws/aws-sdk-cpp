@@ -16,11 +16,14 @@ namespace Model {
 namespace SupportedAdditionalProcessorFeatureMapper {
 
 static const int amd_sev_snp_HASH = HashingUtils::HashString("amd-sev-snp");
+static const int nested_virtualization_HASH = HashingUtils::HashString("nested-virtualization");
 
 SupportedAdditionalProcessorFeature GetSupportedAdditionalProcessorFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == amd_sev_snp_HASH) {
     return SupportedAdditionalProcessorFeature::amd_sev_snp;
+  } else if (hashCode == nested_virtualization_HASH) {
+    return SupportedAdditionalProcessorFeature::nested_virtualization;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForSupportedAdditionalProcessorFeature(SupportedAdditionalPro
       return {};
     case SupportedAdditionalProcessorFeature::amd_sev_snp:
       return "amd-sev-snp";
+    case SupportedAdditionalProcessorFeature::nested_virtualization:
+      return "nested-virtualization";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudtrail/CloudTrailPaginationBase.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -35,7 +36,8 @@ namespace CloudTrail {
  * Web Services API call listed in the log files.</p>
  */
 class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>,
+                                            public CloudTrailPaginationBase<CloudTrailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2066,8 +2068,8 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CloudTrailClient::UpdateTrail, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;

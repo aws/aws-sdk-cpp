@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codestar-notifications/CodeStarNotificationsPaginationBase.h>
 #include <aws/codestar-notifications/CodeStarNotificationsServiceClientModel.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -45,7 +46,8 @@ namespace CodeStarNotifications {
  */
 class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>,
+      public CodeStarNotificationsPaginationBase<CodeStarNotificationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -462,8 +464,8 @@ class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
     return SubmitAsync(&CodeStarNotificationsClient::UpdateNotificationRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodeStarNotificationsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodeStarNotificationsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>;

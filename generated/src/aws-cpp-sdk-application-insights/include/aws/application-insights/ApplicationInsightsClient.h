@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/application-insights/ApplicationInsightsPaginationBase.h>
 #include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -28,9 +29,9 @@ namespace ApplicationInsights {
  * SQL Server database is occurring. It bases this analysis on impactful metrics
  * and log errors. </p>
  */
-class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient> {
+class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>,
+                                                              public ApplicationInsightsPaginationBase<ApplicationInsightsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -995,8 +996,8 @@ class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient
     return SubmitAsync(&ApplicationInsightsClient::UpdateWorkload, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ApplicationInsightsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ApplicationInsightsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>;

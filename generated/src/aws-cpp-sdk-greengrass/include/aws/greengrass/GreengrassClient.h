@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/GreengrassPaginationBase.h>
 #include <aws/greengrass/GreengrassServiceClientModel.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace Greengrass {
  * you to author AWS Lambda functions that execute locally.
  */
 class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>,
+                                            public GreengrassPaginationBase<GreengrassClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2682,8 +2684,8 @@ class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GreengrassClient::UpdateThingRuntimeConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<GreengrassEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<GreengrassEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>;

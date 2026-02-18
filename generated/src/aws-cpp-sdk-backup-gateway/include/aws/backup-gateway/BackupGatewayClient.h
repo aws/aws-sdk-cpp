@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/backup-gateway/BackupGatewayPaginationBase.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -27,7 +28,8 @@ namespace BackupGateway {
  * gateway</b>.</p></p>
  */
 class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>,
+                                                  public BackupGatewayPaginationBase<BackupGatewayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -794,8 +796,8 @@ class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&BackupGatewayClient::UpdateHypervisor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BackupGatewayEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BackupGatewayEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>;

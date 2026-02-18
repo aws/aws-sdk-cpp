@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bcm-pricing-calculator/BCMPricingCalculatorPaginationBase.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorServiceClientModel.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -23,7 +24,8 @@ namespace BCMPricingCalculator {
  */
 class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>,
+      public BCMPricingCalculatorPaginationBase<BCMPricingCalculatorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1164,8 +1166,8 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
     return SubmitAsync(&BCMPricingCalculatorClient::UpdateWorkloadEstimate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BCMPricingCalculatorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BCMPricingCalculatorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>;

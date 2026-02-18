@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/docdb-elastic/DocDBElasticPaginationBase.h>
 #include <aws/docdb-elastic/DocDBElasticServiceClientModel.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
@@ -27,7 +28,8 @@ namespace DocDBElastic {
  * architecture for JSON workloads.</p> </li> </ul></p>
  */
 class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>,
+                                                public DocDBElasticPaginationBase<DocDBElasticClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -598,8 +600,8 @@ class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&DocDBElasticClient::UpdateCluster, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DocDBElasticEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DocDBElasticEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>;

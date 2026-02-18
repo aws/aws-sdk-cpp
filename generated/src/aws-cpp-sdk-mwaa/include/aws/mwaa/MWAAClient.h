@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mwaa/MWAAPaginationBase.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
 
@@ -49,7 +50,9 @@ namespace MWAA {
  * endpoints and quotas</a> in the <i>Amazon Web Services General
  * Reference</i>.</p></p>
  */
-class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient> {
+class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient,
+                                public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>,
+                                public MWAAPaginationBase<MWAAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -402,8 +405,8 @@ class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&MWAAClient::UpdateEnvironment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MWAAEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MWAAEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>;

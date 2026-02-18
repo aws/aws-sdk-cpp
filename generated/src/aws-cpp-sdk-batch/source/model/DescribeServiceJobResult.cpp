@@ -28,6 +28,13 @@ DescribeServiceJobResult& DescribeServiceJobResult::operator=(const Aws::AmazonW
     }
     m_attemptsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capacityUsage")) {
+    Aws::Utils::Array<JsonView> capacityUsageJsonList = jsonValue.GetArray("capacityUsage");
+    for (unsigned capacityUsageIndex = 0; capacityUsageIndex < capacityUsageJsonList.GetLength(); ++capacityUsageIndex) {
+      m_capacityUsage.push_back(capacityUsageJsonList[capacityUsageIndex].AsObject());
+    }
+    m_capacityUsageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetInt64("createdAt");
     m_createdAtHasBeenSet = true;
@@ -59,6 +66,10 @@ DescribeServiceJobResult& DescribeServiceJobResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("retryStrategy")) {
     m_retryStrategy = jsonValue.GetObject("retryStrategy");
     m_retryStrategyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scheduledAt")) {
+    m_scheduledAt = jsonValue.GetInt64("scheduledAt");
+    m_scheduledAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("schedulingPriority")) {
     m_schedulingPriority = jsonValue.GetInteger("schedulingPriority");

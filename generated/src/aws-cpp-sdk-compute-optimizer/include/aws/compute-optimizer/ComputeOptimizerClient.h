@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/compute-optimizer/ComputeOptimizerPaginationBase.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -31,7 +32,8 @@ namespace ComputeOptimizer {
  * Optimizer User Guide</a>.</p>
  */
 class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>,
+                                                        public ComputeOptimizerPaginationBase<ComputeOptimizerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1074,8 +1076,8 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
     return SubmitAsync(&ComputeOptimizerClient::UpdateEnrollmentStatus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ComputeOptimizerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ComputeOptimizerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>;

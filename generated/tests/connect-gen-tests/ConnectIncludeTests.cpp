@@ -148,6 +148,7 @@
 #include <aws/connect/model/CompleteAttachedFileUploadRequest.h>
 #include <aws/connect/model/CompleteAttachedFileUploadResult.h>
 #include <aws/connect/model/Condition.h>
+#include <aws/connect/model/ConfigurableNotificationPriority.h>
 #include <aws/connect/model/ConnectionData.h>
 #include <aws/connect/model/Contact.h>
 #include <aws/connect/model/ContactAnalysis.h>
@@ -224,6 +225,8 @@
 #include <aws/connect/model/CreateInstanceResult.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationResult.h>
+#include <aws/connect/model/CreateNotificationRequest.h>
+#include <aws/connect/model/CreateNotificationResult.h>
 #include <aws/connect/model/CreateParticipantRequest.h>
 #include <aws/connect/model/CreateParticipantResult.h>
 #include <aws/connect/model/CreatePersistentContactAssociationRequest.h>
@@ -326,6 +329,8 @@
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
+#include <aws/connect/model/DeleteNotificationRequest.h>
+#include <aws/connect/model/DeleteNotificationResult.h>
 #include <aws/connect/model/DeletePredefinedAttributeRequest.h>
 #include <aws/connect/model/DeletePromptRequest.h>
 #include <aws/connect/model/DeletePushNotificationRegistrationRequest.h>
@@ -388,6 +393,8 @@
 #include <aws/connect/model/DescribeInstanceResult.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigResult.h>
+#include <aws/connect/model/DescribeNotificationRequest.h>
+#include <aws/connect/model/DescribeNotificationResult.h>
 #include <aws/connect/model/DescribePhoneNumberRequest.h>
 #include <aws/connect/model/DescribePhoneNumberResult.h>
 #include <aws/connect/model/DescribePredefinedAttributeRequest.h>
@@ -742,6 +749,8 @@
 #include <aws/connect/model/ListLambdaFunctionsResult.h>
 #include <aws/connect/model/ListLexBotsRequest.h>
 #include <aws/connect/model/ListLexBotsResult.h>
+#include <aws/connect/model/ListNotificationsRequest.h>
+#include <aws/connect/model/ListNotificationsResult.h>
 #include <aws/connect/model/ListPhoneNumbersRequest.h>
 #include <aws/connect/model/ListPhoneNumbersResult.h>
 #include <aws/connect/model/ListPhoneNumbersSummary.h>
@@ -795,6 +804,8 @@
 #include <aws/connect/model/ListUseCasesResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
+#include <aws/connect/model/ListUserNotificationsRequest.h>
+#include <aws/connect/model/ListUserNotificationsResult.h>
 #include <aws/connect/model/ListUserProficienciesRequest.h>
 #include <aws/connect/model/ListUserProficienciesResult.h>
 #include <aws/connect/model/ListUsersRequest.h>
@@ -809,6 +820,7 @@
 #include <aws/connect/model/ListWorkspacePagesResult.h>
 #include <aws/connect/model/ListWorkspacesRequest.h>
 #include <aws/connect/model/ListWorkspacesResult.h>
+#include <aws/connect/model/LocaleCode.h>
 #include <aws/connect/model/MatchCriteria.h>
 #include <aws/connect/model/MediaConcurrency.h>
 #include <aws/connect/model/MediaItem.h>
@@ -833,9 +845,16 @@
 #include <aws/connect/model/NextContactEntry.h>
 #include <aws/connect/model/NextContactMetadata.h>
 #include <aws/connect/model/NextContactType.h>
+#include <aws/connect/model/Notification.h>
 #include <aws/connect/model/NotificationContentType.h>
 #include <aws/connect/model/NotificationDeliveryType.h>
+#include <aws/connect/model/NotificationPriority.h>
 #include <aws/connect/model/NotificationRecipientType.h>
+#include <aws/connect/model/NotificationSearchCriteria.h>
+#include <aws/connect/model/NotificationSearchFilter.h>
+#include <aws/connect/model/NotificationSearchSummary.h>
+#include <aws/connect/model/NotificationSource.h>
+#include <aws/connect/model/NotificationStatus.h>
 #include <aws/connect/model/NumberComparisonType.h>
 #include <aws/connect/model/NumberCondition.h>
 #include <aws/connect/model/NumberReference.h>
@@ -1030,6 +1049,8 @@
 #include <aws/connect/model/SearchHoursOfOperationOverridesResult.h>
 #include <aws/connect/model/SearchHoursOfOperationsRequest.h>
 #include <aws/connect/model/SearchHoursOfOperationsResult.h>
+#include <aws/connect/model/SearchNotificationsRequest.h>
+#include <aws/connect/model/SearchNotificationsResult.h>
 #include <aws/connect/model/SearchPredefinedAttributesRequest.h>
 #include <aws/connect/model/SearchPredefinedAttributesResult.h>
 #include <aws/connect/model/SearchPromptsRequest.h>
@@ -1230,6 +1251,8 @@
 #include <aws/connect/model/UpdateHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateInstanceAttributeRequest.h>
 #include <aws/connect/model/UpdateInstanceStorageConfigRequest.h>
+#include <aws/connect/model/UpdateNotificationContentRequest.h>
+#include <aws/connect/model/UpdateNotificationContentResult.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationRequest.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigChannelInfo.h>
@@ -1267,6 +1290,8 @@
 #include <aws/connect/model/UpdateUserHierarchyRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyStructureRequest.h>
 #include <aws/connect/model/UpdateUserIdentityInfoRequest.h>
+#include <aws/connect/model/UpdateUserNotificationStatusRequest.h>
+#include <aws/connect/model/UpdateUserNotificationStatusResult.h>
 #include <aws/connect/model/UpdateUserPhoneConfigRequest.h>
 #include <aws/connect/model/UpdateUserProficienciesRequest.h>
 #include <aws/connect/model/UpdateUserRoutingProfileRequest.h>
@@ -1295,6 +1320,7 @@
 #include <aws/connect/model/UserIdentityInfo.h>
 #include <aws/connect/model/UserIdentityInfoLite.h>
 #include <aws/connect/model/UserInfo.h>
+#include <aws/connect/model/UserNotificationSummary.h>
 #include <aws/connect/model/UserPhoneConfig.h>
 #include <aws/connect/model/UserProficiency.h>
 #include <aws/connect/model/UserProficiencyDisassociate.h>

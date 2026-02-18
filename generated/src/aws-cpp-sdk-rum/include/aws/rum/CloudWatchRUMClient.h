@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rum/CloudWatchRUMPaginationBase.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 
@@ -27,7 +28,8 @@ namespace CloudWatchRUM {
  * geolocations, and browsers used.</p>
  */
 class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>,
+                                                  public CloudWatchRUMPaginationBase<CloudWatchRUMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -733,8 +735,8 @@ class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&CloudWatchRUMClient::UpdateRumMetricDefinition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudWatchRUMEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudWatchRUMEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>;

@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalkPaginationBase.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkServiceClientModel.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
@@ -31,7 +32,8 @@ namespace ElasticBeanstalk {
  * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
  */
 class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSXMLClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>,
+                                                        public ElasticBeanstalkPaginationBase<ElasticBeanstalkClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -1552,8 +1554,8 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
     return SubmitAsync(&ElasticBeanstalkClient::ValidateConfigurationSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ElasticBeanstalkEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ElasticBeanstalkEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>;

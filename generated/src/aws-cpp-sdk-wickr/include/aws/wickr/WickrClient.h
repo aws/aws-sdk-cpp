@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wickr/WickrPaginationBase.h>
 #include <aws/wickr/WickrServiceClientModel.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
@@ -57,7 +58,9 @@ namespace Wickr {
  * section that includes a brief discussion about HTTP status codes. We recommend
  * looking there as part of your investigation when you get an error.</p>
  */
-class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WickrClient> {
+class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<WickrClient>,
+                                  public WickrPaginationBase<WickrClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1279,8 +1282,8 @@ class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&WickrClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WickrEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WickrEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WickrClient>;

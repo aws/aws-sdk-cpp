@@ -16,11 +16,17 @@ namespace Model {
 namespace EvaluationStateMapper {
 
 static const int PARTIAL_DATA_HASH = HashingUtils::HashString("PARTIAL_DATA");
+static const int EVALUATION_FAILURE_HASH = HashingUtils::HashString("EVALUATION_FAILURE");
+static const int EVALUATION_ERROR_HASH = HashingUtils::HashString("EVALUATION_ERROR");
 
 EvaluationState GetEvaluationStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == PARTIAL_DATA_HASH) {
     return EvaluationState::PARTIAL_DATA;
+  } else if (hashCode == EVALUATION_FAILURE_HASH) {
+    return EvaluationState::EVALUATION_FAILURE;
+  } else if (hashCode == EVALUATION_ERROR_HASH) {
+    return EvaluationState::EVALUATION_ERROR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForEvaluationState(EvaluationState enumValue) {
       return {};
     case EvaluationState::PARTIAL_DATA:
       return "PARTIAL_DATA";
+    case EvaluationState::EVALUATION_FAILURE:
+      return "EVALUATION_FAILURE";
+    case EvaluationState::EVALUATION_ERROR:
+      return "EVALUATION_ERROR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

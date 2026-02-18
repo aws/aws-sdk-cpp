@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/GeoRoutesPaginationBase.h>
 #include <aws/geo-routes/GeoRoutesServiceClientModel.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
@@ -26,7 +27,8 @@ namespace GeoRoutes {
  * <p>Map-matching to align GPS traces with the road network</p> </li> </ul>
  */
 class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>,
+                                          public GeoRoutesPaginationBase<GeoRoutesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -218,8 +220,8 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&GeoRoutesClient::SnapToRoads, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<GeoRoutesEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<GeoRoutesEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>;

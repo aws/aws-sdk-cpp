@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/payment-cryptography/PaymentCryptographyServiceClientModel.h>
+#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/model/ListKeysRequest.h>
+#include <aws/payment-cryptography/model/ListKeysResult.h>
+
+namespace Aws {
+namespace PaymentCryptography {
+namespace Pagination {
+
+template <typename Client = PaymentCryptographyClient>
+struct ListKeysPaginationTraits {
+  using RequestType = Model::ListKeysRequest;
+  using ResultType = Model::ListKeysResult;
+  using OutcomeType = Model::ListKeysOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListKeys(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetNextToken(result.GetNextToken()); }
+};
+
+}  // namespace Pagination
+}  // namespace PaymentCryptography
+}  // namespace Aws

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector-scan/InspectorscanPaginationBase.h>
 #include <aws/inspector-scan/InspectorscanServiceClientModel.h>
 #include <aws/inspector-scan/Inspectorscan_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace inspectorscan {
  * provided Software Bill of Materials (SBOM) for security vulnerabilities.</p>
  */
 class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<InspectorscanClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<InspectorscanClient>,
+                                                  public InspectorscanPaginationBase<InspectorscanClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -109,8 +111,8 @@ class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&InspectorscanClient::ScanSbom, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<InspectorscanEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<InspectorscanEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorscanClient>;

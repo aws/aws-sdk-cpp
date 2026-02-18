@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/RegionGeography.h>
 
 #include <utility>
 
@@ -55,6 +57,31 @@ class Region {
 
   ///@{
   /**
+   * <p>The geography information for the Region. The geography is returned as a
+   * list.</p>
+   */
+  inline const Aws::Vector<RegionGeography>& GetGeography() const { return m_geography; }
+  inline bool GeographyHasBeenSet() const { return m_geographyHasBeenSet; }
+  template <typename GeographyT = Aws::Vector<RegionGeography>>
+  void SetGeography(GeographyT&& value) {
+    m_geographyHasBeenSet = true;
+    m_geography = std::forward<GeographyT>(value);
+  }
+  template <typename GeographyT = Aws::Vector<RegionGeography>>
+  Region& WithGeography(GeographyT&& value) {
+    SetGeography(std::forward<GeographyT>(value));
+    return *this;
+  }
+  template <typename GeographyT = RegionGeography>
+  Region& AddGeography(GeographyT&& value) {
+    m_geographyHasBeenSet = true;
+    m_geography.emplace_back(std::forward<GeographyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the Region.</p>
    */
   inline const Aws::String& GetRegionName() const { return m_regionName; }
@@ -91,10 +118,13 @@ class Region {
  private:
   Aws::String m_optInStatus;
 
+  Aws::Vector<RegionGeography> m_geography;
+
   Aws::String m_regionName;
 
   Aws::String m_endpoint;
   bool m_optInStatusHasBeenSet = false;
+  bool m_geographyHasBeenSet = false;
   bool m_regionNameHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };

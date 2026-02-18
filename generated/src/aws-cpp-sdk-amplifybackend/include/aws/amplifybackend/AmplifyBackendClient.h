@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/amplifybackend/AmplifyBackendPaginationBase.h>
 #include <aws/amplifybackend/AmplifyBackendServiceClientModel.h>
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -17,7 +18,8 @@ namespace AmplifyBackend {
  * <p>AWS Amplify Admin API</p>
  */
 class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>,
+                                                    public AmplifyBackendPaginationBase<AmplifyBackendClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -886,8 +888,8 @@ class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&AmplifyBackendClient::UpdateBackendStorage, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AmplifyBackendEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AmplifyBackendEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>;

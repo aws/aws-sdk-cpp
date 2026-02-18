@@ -18,10 +18,6 @@ namespace Model {
 AuthenticationDescription::AuthenticationDescription(JsonView jsonValue) { *this = jsonValue; }
 
 AuthenticationDescription& AuthenticationDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("awsSso")) {
-    m_awsSso = jsonValue.GetObject("awsSso");
-    m_awsSsoHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("providers")) {
     Aws::Utils::Array<JsonView> providersJsonList = jsonValue.GetArray("providers");
     for (unsigned providersIndex = 0; providersIndex < providersJsonList.GetLength(); ++providersIndex) {
@@ -34,15 +30,15 @@ AuthenticationDescription& AuthenticationDescription::operator=(JsonView jsonVal
     m_saml = jsonValue.GetObject("saml");
     m_samlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("awsSso")) {
+    m_awsSso = jsonValue.GetObject("awsSso");
+    m_awsSsoHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue AuthenticationDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_awsSsoHasBeenSet) {
-    payload.WithObject("awsSso", m_awsSso.Jsonize());
-  }
 
   if (m_providersHasBeenSet) {
     Aws::Utils::Array<JsonValue> providersJsonList(m_providers.size());
@@ -55,6 +51,10 @@ JsonValue AuthenticationDescription::Jsonize() const {
 
   if (m_samlHasBeenSet) {
     payload.WithObject("saml", m_saml.Jsonize());
+  }
+
+  if (m_awsSsoHasBeenSet) {
+    payload.WithObject("awsSso", m_awsSso.Jsonize());
   }
 
   return payload;

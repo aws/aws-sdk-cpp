@@ -36,24 +36,6 @@ class ListPermissionsRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>(Optional) Limits the results to only the group that matches this ID.</p>
-   */
-  inline const Aws::String& GetGroupId() const { return m_groupId; }
-  inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-  template <typename GroupIdT = Aws::String>
-  void SetGroupId(GroupIdT&& value) {
-    m_groupIdHasBeenSet = true;
-    m_groupId = std::forward<GroupIdT>(value);
-  }
-  template <typename GroupIdT = Aws::String>
-  ListPermissionsRequest& WithGroupId(GroupIdT&& value) {
-    SetGroupId(std::forward<GroupIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The maximum number of results to include in the response.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -89,6 +71,24 @@ class ListPermissionsRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
+   * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
+   * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+   * only the permissions of IAM Identity Center groups are returned.</p>
+   */
+  inline UserType GetUserType() const { return m_userType; }
+  inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
+  inline void SetUserType(UserType value) {
+    m_userTypeHasBeenSet = true;
+    m_userType = value;
+  }
+  inline ListPermissionsRequest& WithUserType(UserType value) {
+    SetUserType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>(Optional) Limits the results to only the user that matches this ID.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
@@ -107,18 +107,18 @@ class ListPermissionsRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-   * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
-   * only the permissions of IAM Identity Center groups are returned.</p>
+   * <p>(Optional) Limits the results to only the group that matches this ID.</p>
    */
-  inline UserType GetUserType() const { return m_userType; }
-  inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
-  inline void SetUserType(UserType value) {
-    m_userTypeHasBeenSet = true;
-    m_userType = value;
+  inline const Aws::String& GetGroupId() const { return m_groupId; }
+  inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+  template <typename GroupIdT = Aws::String>
+  void SetGroupId(GroupIdT&& value) {
+    m_groupIdHasBeenSet = true;
+    m_groupId = std::forward<GroupIdT>(value);
   }
-  inline ListPermissionsRequest& WithUserType(UserType value) {
-    SetUserType(value);
+  template <typename GroupIdT = Aws::String>
+  ListPermissionsRequest& WithGroupId(GroupIdT&& value) {
+    SetGroupId(std::forward<GroupIdT>(value));
     return *this;
   }
   ///@}
@@ -142,22 +142,22 @@ class ListPermissionsRequest : public ManagedGrafanaRequest {
   }
   ///@}
  private:
-  Aws::String m_groupId;
-
   int m_maxResults{0};
 
   Aws::String m_nextToken;
 
-  Aws::String m_userId;
-
   UserType m_userType{UserType::NOT_SET};
 
+  Aws::String m_userId;
+
+  Aws::String m_groupId;
+
   Aws::String m_workspaceId;
-  bool m_groupIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_userIdHasBeenSet = false;
   bool m_userTypeHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

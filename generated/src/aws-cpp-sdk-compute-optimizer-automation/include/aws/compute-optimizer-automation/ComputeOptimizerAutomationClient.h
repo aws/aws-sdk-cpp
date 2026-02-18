@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/compute-optimizer-automation/ComputeOptimizerAutomationPaginationBase.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomationServiceClientModel.h>
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -28,7 +29,8 @@ namespace ComputeOptimizerAutomation {
  */
 class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerAutomationClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerAutomationClient>,
+      public ComputeOptimizerAutomationPaginationBase<ComputeOptimizerAutomationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -753,8 +755,8 @@ class AWS_COMPUTEOPTIMIZERAUTOMATION_API ComputeOptimizerAutomationClient
     return SubmitAsync(&ComputeOptimizerAutomationClient::UpdateEnrollmentConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ComputeOptimizerAutomationEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ComputeOptimizerAutomationEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerAutomationClient>;

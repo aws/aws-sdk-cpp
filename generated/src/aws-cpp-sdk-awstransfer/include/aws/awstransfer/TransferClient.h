@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/awstransfer/TransferPaginationBase.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -28,7 +29,8 @@ namespace Transfer {
  * infrastructure to buy and set up.</p>
  */
 class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>,
+                                        public TransferPaginationBase<TransferClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2190,8 +2192,8 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&TransferClient::UpdateWebAppCustomization, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>;

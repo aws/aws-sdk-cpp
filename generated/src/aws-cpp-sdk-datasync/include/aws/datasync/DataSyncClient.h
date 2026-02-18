@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/DataSyncPaginationBase.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace DataSync {
  * User Guide</a> </i>.</p>
  */
 class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>,
+                                        public DataSyncPaginationBase<DataSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1683,8 +1685,8 @@ class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DataSyncClient::UpdateTaskExecution, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>;

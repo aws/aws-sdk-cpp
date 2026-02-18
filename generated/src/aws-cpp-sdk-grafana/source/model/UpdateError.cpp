@@ -18,10 +18,6 @@ namespace Model {
 UpdateError::UpdateError(JsonView jsonValue) { *this = jsonValue; }
 
 UpdateError& UpdateError::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("causedBy")) {
-    m_causedBy = jsonValue.GetObject("causedBy");
-    m_causedByHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetInteger("code");
     m_codeHasBeenSet = true;
@@ -30,15 +26,15 @@ UpdateError& UpdateError::operator=(JsonView jsonValue) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("causedBy")) {
+    m_causedBy = jsonValue.GetObject("causedBy");
+    m_causedByHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue UpdateError::Jsonize() const {
   JsonValue payload;
-
-  if (m_causedByHasBeenSet) {
-    payload.WithObject("causedBy", m_causedBy.Jsonize());
-  }
 
   if (m_codeHasBeenSet) {
     payload.WithInteger("code", m_code);
@@ -46,6 +42,10 @@ JsonValue UpdateError::Jsonize() const {
 
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
+  }
+
+  if (m_causedByHasBeenSet) {
+    payload.WithObject("causedBy", m_causedBy.Jsonize());
   }
 
   return payload;

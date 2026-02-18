@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/LocationServicePaginationBase.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
 #include <aws/location/LocationService_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace LocationService {
  * Geofencing"</p>
  */
 class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>,
+                                                      public LocationServicePaginationBase<LocationServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2318,8 +2320,8 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
     return SubmitAsync(&LocationServiceClient::VerifyDevicePosition, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>;

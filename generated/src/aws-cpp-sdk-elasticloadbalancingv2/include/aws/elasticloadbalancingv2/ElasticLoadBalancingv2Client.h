@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2PaginationBase.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2ServiceClientModel.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
@@ -40,7 +41,8 @@ namespace ElasticLoadBalancingv2 {
  */
 class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
     : public Aws::Client::AWSXMLClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingv2Client> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingv2Client>,
+      public ElasticLoadBalancingv2PaginationBase<ElasticLoadBalancingv2Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -1676,8 +1678,8 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
     return SubmitAsync(&ElasticLoadBalancingv2Client::SetSubnets, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingv2Client>;

@@ -52,24 +52,6 @@ class ServiceQuotaExceededException {
 
   ///@{
   /**
-   * <p>The ID of the service quota that was exceeded.</p>
-   */
-  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
-  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-  template <typename QuotaCodeT = Aws::String>
-  void SetQuotaCode(QuotaCodeT&& value) {
-    m_quotaCodeHasBeenSet = true;
-    m_quotaCode = std::forward<QuotaCodeT>(value);
-  }
-  template <typename QuotaCodeT = Aws::String>
-  ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
-    SetQuotaCode(std::forward<QuotaCodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the resource that is associated with the error.</p>
    */
   inline const Aws::String& GetResourceId() const { return m_resourceId; }
@@ -121,21 +103,39 @@ class ServiceQuotaExceededException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the service quota that was exceeded.</p>
+   */
+  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
+  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+  template <typename QuotaCodeT = Aws::String>
+  void SetQuotaCode(QuotaCodeT&& value) {
+    m_quotaCodeHasBeenSet = true;
+    m_quotaCode = std::forward<QuotaCodeT>(value);
+  }
+  template <typename QuotaCodeT = Aws::String>
+  ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
+    SetQuotaCode(std::forward<QuotaCodeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_message;
-
-  Aws::String m_quotaCode;
 
   Aws::String m_resourceId;
 
   Aws::String m_resourceType;
 
   Aws::String m_serviceCode;
+
+  Aws::String m_quotaCode;
   bool m_messageHasBeenSet = false;
-  bool m_quotaCodeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
 };
 
 }  // namespace Model

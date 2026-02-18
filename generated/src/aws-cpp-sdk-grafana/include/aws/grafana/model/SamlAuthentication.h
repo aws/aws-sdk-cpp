@@ -35,6 +35,22 @@ class SamlAuthentication {
 
   ///@{
   /**
+   * <p>Specifies whether the workspace's SAML configuration is complete.</p>
+   */
+  inline SamlConfigurationStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(SamlConfigurationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline SamlAuthentication& WithStatus(SamlConfigurationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A structure containing details about how this workspace works with SAML. </p>
    */
   inline const SamlConfiguration& GetConfiguration() const { return m_configuration; }
@@ -50,28 +66,12 @@ class SamlAuthentication {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the workspace's SAML configuration is complete.</p>
-   */
-  inline SamlConfigurationStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(SamlConfigurationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline SamlAuthentication& WithStatus(SamlConfigurationStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
  private:
-  SamlConfiguration m_configuration;
-
   SamlConfigurationStatus m_status{SamlConfigurationStatus::NOT_SET};
-  bool m_configurationHasBeenSet = false;
+
+  SamlConfiguration m_configuration;
   bool m_statusHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
 };
 
 }  // namespace Model

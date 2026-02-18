@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs-realtime/IvsrealtimePaginationBase.h>
 #include <aws/ivs-realtime/IvsrealtimeServiceClientModel.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
@@ -58,7 +59,8 @@ namespace ivsrealtime {
  * applied to a resource.</p>
  */
 class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>,
+                                              public IvsrealtimePaginationBase<IvsrealtimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1212,8 +1214,8 @@ class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&IvsrealtimeClient::UpdateStage, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IvsrealtimeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IvsrealtimeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>;

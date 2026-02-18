@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/arc-region-switch/ARCRegionswitchPaginationBase.h>
 #include <aws/arc-region-switch/ARCRegionswitchServiceClientModel.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -18,8 +19,7 @@ namespace ARCRegionswitch {
  * quickly and reliably shift traffic away from an impaired Amazon Web Services
  * Region to a healthy Region. With Region switch, you can create plans that define
  * the steps to shift traffic for your application from one Amazon Web Services
- * Region to another. You can test your plans in practice mode before using them in
- * a real recovery scenario.</p> <p>Region switch provides a structured approach to
+ * Region to another.</p> <p>Region switch provides a structured approach to
  * multi-Region failover, helping you to meet your recovery time objectives (RTOs)
  * and maintain business continuity during regional disruptions.</p> <p>For more
  * information, see <a
@@ -28,7 +28,8 @@ namespace ARCRegionswitch {
  * Guide</i>.</p>
  */
 class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<ARCRegionswitchClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<ARCRegionswitchClient>,
+                                                      public ARCRegionswitchPaginationBase<ARCRegionswitchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -511,10 +512,9 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJso
 
   /**
    * <p>Starts the execution of a Region switch plan. You can execute a plan in
-   * either PRACTICE or RECOVERY mode.</p> <p>In PRACTICE mode, the execution
-   * simulates the steps without making actual changes to your application's traffic
-   * routing. In RECOVERY mode, the execution performs actual changes to shift
-   * traffic between Regions.</p><p><h3>See Also:</h3>   <a
+   * either <code>graceful</code> or <code>ungraceful</code> mode.</p> <p>Specifing
+   * <code>ungraceful</code> mode either changes the behavior of the execution blocks
+   * in a workflow or skips specific execution blocks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/StartPlanExecution">AWS
    * API Reference</a></p>
    */
@@ -674,8 +674,8 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJso
     return SubmitAsync(&ARCRegionswitchClient::UpdatePlanExecutionStep, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ARCRegionswitchEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ARCRegionswitchEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCRegionswitchClient>;

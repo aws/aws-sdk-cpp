@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControlPaginationBase.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlServiceClientModel.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -20,7 +21,8 @@ namespace BedrockAgentCoreControl {
  */
 class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>,
+      public BedrockAgentCoreControlPaginationBase<BedrockAgentCoreControlClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2495,8 +2497,8 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateWorkloadIdentity, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BedrockAgentCoreControlEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BedrockAgentCoreControlEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>;

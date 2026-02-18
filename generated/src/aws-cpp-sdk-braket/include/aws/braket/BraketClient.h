@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/braket/BraketPaginationBase.h>
 #include <aws/braket/BraketServiceClientModel.h>
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -51,7 +52,9 @@ namespace Braket {
  * href="https://github.com/amazon-braket/amazon-braket-examples">Amazon Braket
  * Examples</a> </p> </li> </ul>
  */
-class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient> {
+class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>,
+                                    public BraketPaginationBase<BraketClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -559,8 +562,8 @@ class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&BraketClient::UpdateSpendingLimit, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>;

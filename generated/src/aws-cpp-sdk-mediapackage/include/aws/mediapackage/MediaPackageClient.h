@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage/MediaPackagePaginationBase.h>
 #include <aws/mediapackage/MediaPackageServiceClientModel.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace MediaPackage {
  * AWS Elemental MediaPackage
  */
 class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>,
+                                                public MediaPackagePaginationBase<MediaPackageClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -536,8 +538,8 @@ class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&MediaPackageClient::UpdateOriginEndpoint, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MediaPackageEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MediaPackageEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>;

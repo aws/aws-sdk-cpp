@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingPaginationBase.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -22,7 +23,8 @@ namespace ChimeSDKMessaging {
  * Chime SDK messaging</a>.</p>
  */
 class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>,
+                                                          public ChimeSDKMessagingPaginationBase<ChimeSDKMessagingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1684,8 +1686,8 @@ class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AW
     return SubmitAsync(&ChimeSDKMessagingClient::UpdateChannelReadMarker, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>;

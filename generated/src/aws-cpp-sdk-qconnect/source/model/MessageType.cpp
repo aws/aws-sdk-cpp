@@ -16,11 +16,14 @@ namespace Model {
 namespace MessageTypeMapper {
 
 static const int TEXT_HASH = HashingUtils::HashString("TEXT");
+static const int TOOL_USE_RESULT_HASH = HashingUtils::HashString("TOOL_USE_RESULT");
 
 MessageType GetMessageTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == TEXT_HASH) {
     return MessageType::TEXT;
+  } else if (hashCode == TOOL_USE_RESULT_HASH) {
+    return MessageType::TOOL_USE_RESULT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForMessageType(MessageType enumValue) {
       return {};
     case MessageType::TEXT:
       return "TEXT";
+    case MessageType::TOOL_USE_RESULT:
+      return "TOOL_USE_RESULT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

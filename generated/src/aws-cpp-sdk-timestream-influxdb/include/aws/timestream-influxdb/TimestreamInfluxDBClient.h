@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBPaginationBase.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace TimestreamInfluxDB {
  * single-digit millisecond query response time.</p>
  */
 class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>,
+                                                            public TimestreamInfluxDBPaginationBase<TimestreamInfluxDBClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -579,8 +581,8 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
     return SubmitAsync(&TimestreamInfluxDBClient::UpdateDbInstance, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TimestreamInfluxDBEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TimestreamInfluxDBEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>;

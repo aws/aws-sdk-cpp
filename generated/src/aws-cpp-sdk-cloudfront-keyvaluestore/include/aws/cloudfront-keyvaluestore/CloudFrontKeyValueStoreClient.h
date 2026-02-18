@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStorePaginationBase.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreServiceClientModel.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -19,7 +20,8 @@ namespace CloudFrontKeyValueStore {
  */
 class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontKeyValueStoreClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontKeyValueStoreClient>,
+      public CloudFrontKeyValueStorePaginationBase<CloudFrontKeyValueStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -232,8 +234,8 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
     return SubmitAsync(&CloudFrontKeyValueStoreClient::UpdateKeys, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontKeyValueStoreClient>;

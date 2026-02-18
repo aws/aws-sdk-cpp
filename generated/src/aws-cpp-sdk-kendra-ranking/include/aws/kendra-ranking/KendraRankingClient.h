@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra-ranking/KendraRankingPaginationBase.h>
 #include <aws/kendra-ranking/KendraRankingServiceClientModel.h>
 #include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace KendraRanking {
  * capabilities to intelligently re-rank a search service's results.</p>
  */
 class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>,
+                                                  public KendraRankingPaginationBase<KendraRankingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -350,8 +352,8 @@ class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&KendraRankingClient::UpdateRescoreExecutionPlan, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KendraRankingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KendraRankingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>;

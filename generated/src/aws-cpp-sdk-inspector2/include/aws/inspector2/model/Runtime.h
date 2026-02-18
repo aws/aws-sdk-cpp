@@ -32,7 +32,9 @@ enum class Runtime {
   DOTNET_6,
   DOTNET_7,
   RUBY_2_7,
-  RUBY_3_2
+  RUBY_3_2,
+  DOTNET_10,
+  NODEJS_24_X
 };
 
 namespace RuntimeMapper {

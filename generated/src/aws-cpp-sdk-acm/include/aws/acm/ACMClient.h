@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/acm/ACMPaginationBase.h>
 #include <aws/acm/ACMServiceClientModel.h>
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -20,7 +21,9 @@ namespace ACM {
  * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
  * User Guide</a>.</p></p>
  */
-class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient> {
+class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>,
+                              public ACMPaginationBase<ACMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -644,8 +647,8 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&ACMClient::UpdateCertificateOptions, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>;

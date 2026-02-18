@@ -25,6 +25,13 @@ Aws::String ModifyInstanceCpuOptionsRequest::SerializePayload() const {
     ss << "ThreadsPerCore=" << m_threadsPerCore << "&";
   }
 
+  if (m_nestedVirtualizationHasBeenSet) {
+    ss << "NestedVirtualization="
+       << StringUtils::URLEncode(
+              NestedVirtualizationSpecificationMapper::GetNameForNestedVirtualizationSpecification(m_nestedVirtualization))
+       << "&";
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

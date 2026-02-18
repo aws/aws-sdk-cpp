@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appintegrations/AppIntegrationsServicePaginationBase.h>
 #include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -31,7 +32,8 @@ namespace AppIntegrationsService {
  */
 class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>,
+      public AppIntegrationsServicePaginationBase<AppIntegrationsServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -752,8 +754,8 @@ class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient
     return SubmitAsync(&AppIntegrationsServiceClient::UpdateEventIntegration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/acm-pca/ACMPCAPaginationBase.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -37,7 +38,9 @@ namespace ACMPCA {
  * href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
  * console.</p>
  */
-class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient> {
+class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>,
+                                    public ACMPCAPaginationBase<ACMPCAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1111,8 +1114,8 @@ class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&ACMPCAClient::UpdateCertificateAuthority, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>;

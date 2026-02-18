@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/AgreementServicePaginationBase.h>
 #include <aws/marketplace-agreement/AgreementServiceServiceClientModel.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace AgreementService {
  * through all their agreements.</p> </li> </ul>
  */
 class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>,
+                                                        public AgreementServicePaginationBase<AgreementServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -238,8 +240,8 @@ class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJ
     return SubmitAsync(&AgreementServiceClient::SearchAgreements, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AgreementServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AgreementServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>;

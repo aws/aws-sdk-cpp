@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/autoscaling/AutoScalingPaginationBase.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
@@ -31,7 +32,8 @@ namespace AutoScaling {
  * EC2 Auto Scaling API Reference</a>.</p>
  */
 class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>,
+                                              public AutoScalingPaginationBase<AutoScalingClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -2525,8 +2527,8 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&AutoScalingClient::UpdateAutoScalingGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AutoScalingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AutoScalingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>;

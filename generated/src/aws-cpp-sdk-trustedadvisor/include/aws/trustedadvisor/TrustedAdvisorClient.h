@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/trustedadvisor/TrustedAdvisorPaginationBase.h>
 #include <aws/trustedadvisor/TrustedAdvisorServiceClientModel.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace TrustedAdvisor {
  * <p>TrustedAdvisor Public API</p>
  */
 class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<TrustedAdvisorClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<TrustedAdvisorClient>,
+                                                    public TrustedAdvisorPaginationBase<TrustedAdvisorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -396,8 +398,8 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&TrustedAdvisorClient::UpdateRecommendationLifecycle, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<TrustedAdvisorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<TrustedAdvisorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TrustedAdvisorClient>;

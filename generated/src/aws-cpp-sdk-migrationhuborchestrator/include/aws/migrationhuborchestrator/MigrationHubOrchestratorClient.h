@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestratorPaginationBase.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorServiceClientModel.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace MigrationHubOrchestrator {
  */
 class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>,
+      public MigrationHubOrchestratorPaginationBase<MigrationHubOrchestratorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -883,8 +885,8 @@ class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient
     return SubmitAsync(&MigrationHubOrchestratorClient::UpdateWorkflowStepGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>;

@@ -66,25 +66,6 @@ class WorkspaceDescription {
 
   ///@{
   /**
-   * <p>A structure that describes whether the workspace uses SAML, IAM Identity
-   * Center, or both methods for user authentication.</p>
-   */
-  inline const AuthenticationSummary& GetAuthentication() const { return m_authentication; }
-  inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
-  template <typename AuthenticationT = AuthenticationSummary>
-  void SetAuthentication(AuthenticationT&& value) {
-    m_authenticationHasBeenSet = true;
-    m_authentication = std::forward<AuthenticationT>(value);
-  }
-  template <typename AuthenticationT = AuthenticationSummary>
-  WorkspaceDescription& WithAuthentication(AuthenticationT&& value) {
-    SetAuthentication(std::forward<AuthenticationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date that the workspace was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
@@ -167,66 +148,6 @@ class WorkspaceDescription {
 
   ///@{
   /**
-   * <p>Specifies whether this workspace has already fully used its free trial for
-   * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
-   * support Grafana Enterprise free trials.</p>
-   */
-  inline bool GetFreeTrialConsumed() const { return m_freeTrialConsumed; }
-  inline bool FreeTrialConsumedHasBeenSet() const { return m_freeTrialConsumedHasBeenSet; }
-  inline void SetFreeTrialConsumed(bool value) {
-    m_freeTrialConsumedHasBeenSet = true;
-    m_freeTrialConsumed = value;
-  }
-  inline WorkspaceDescription& WithFreeTrialConsumed(bool value) {
-    SetFreeTrialConsumed(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>If this workspace is currently in the free trial period for Grafana
-   * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
-   * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
-   *
-   */
-  inline const Aws::Utils::DateTime& GetFreeTrialExpiration() const { return m_freeTrialExpiration; }
-  inline bool FreeTrialExpirationHasBeenSet() const { return m_freeTrialExpirationHasBeenSet; }
-  template <typename FreeTrialExpirationT = Aws::Utils::DateTime>
-  void SetFreeTrialExpiration(FreeTrialExpirationT&& value) {
-    m_freeTrialExpirationHasBeenSet = true;
-    m_freeTrialExpiration = std::forward<FreeTrialExpirationT>(value);
-  }
-  template <typename FreeTrialExpirationT = Aws::Utils::DateTime>
-  WorkspaceDescription& WithFreeTrialExpiration(FreeTrialExpirationT&& value) {
-    SetFreeTrialExpiration(std::forward<FreeTrialExpirationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The token that ties this workspace to a Grafana Labs account. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
-   * your account with Grafana Labs</a>.</p>
-   */
-  inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
-  inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
-  template <typename GrafanaTokenT = Aws::String>
-  void SetGrafanaToken(GrafanaTokenT&& value) {
-    m_grafanaTokenHasBeenSet = true;
-    m_grafanaToken = std::forward<GrafanaTokenT>(value);
-  }
-  template <typename GrafanaTokenT = Aws::String>
-  WorkspaceDescription& WithGrafanaToken(GrafanaTokenT&& value) {
-    SetGrafanaToken(std::forward<GrafanaTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The version of Grafana supported in this workspace.</p>
    */
   inline const Aws::String& GetGrafanaVersion() const { return m_grafanaVersion; }
@@ -257,46 +178,6 @@ class WorkspaceDescription {
   template <typename IdT = Aws::String>
   WorkspaceDescription& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>If this workspace has a full Grafana Enterprise license purchased through
-   * Amazon Web Services Marketplace, this specifies when the license ends and will
-   * need to be renewed. Purchasing the Enterprise plugins option through Amazon
-   * Managed Grafana does not have an expiration. It is valid until the license is
-   * removed.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLicenseExpiration() const { return m_licenseExpiration; }
-  inline bool LicenseExpirationHasBeenSet() const { return m_licenseExpirationHasBeenSet; }
-  template <typename LicenseExpirationT = Aws::Utils::DateTime>
-  void SetLicenseExpiration(LicenseExpirationT&& value) {
-    m_licenseExpirationHasBeenSet = true;
-    m_licenseExpiration = std::forward<LicenseExpirationT>(value);
-  }
-  template <typename LicenseExpirationT = Aws::Utils::DateTime>
-  WorkspaceDescription& WithLicenseExpiration(LicenseExpirationT&& value) {
-    SetLicenseExpiration(std::forward<LicenseExpirationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
-   *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
-   * free trials.</p>
-   */
-  inline LicenseType GetLicenseType() const { return m_licenseType; }
-  inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-  inline void SetLicenseType(LicenseType value) {
-    m_licenseTypeHasBeenSet = true;
-    m_licenseType = value;
-  }
-  inline WorkspaceDescription& WithLicenseType(LicenseType value) {
-    SetLicenseType(value);
     return *this;
   }
   ///@}
@@ -339,18 +220,19 @@ class WorkspaceDescription {
 
   ///@{
   /**
-   * <p>The configuration settings for network access to your workspace.</p>
+   * <p>The name of the IAM role that is used to access resources through
+   * Organizations.</p>
    */
-  inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
-  inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
-  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
-  void SetNetworkAccessControl(NetworkAccessControlT&& value) {
-    m_networkAccessControlHasBeenSet = true;
-    m_networkAccessControl = std::forward<NetworkAccessControlT>(value);
+  inline const Aws::String& GetOrganizationRoleName() const { return m_organizationRoleName; }
+  inline bool OrganizationRoleNameHasBeenSet() const { return m_organizationRoleNameHasBeenSet; }
+  template <typename OrganizationRoleNameT = Aws::String>
+  void SetOrganizationRoleName(OrganizationRoleNameT&& value) {
+    m_organizationRoleNameHasBeenSet = true;
+    m_organizationRoleName = std::forward<OrganizationRoleNameT>(value);
   }
-  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
-  WorkspaceDescription& WithNetworkAccessControl(NetworkAccessControlT&& value) {
-    SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value));
+  template <typename OrganizationRoleNameT = Aws::String>
+  WorkspaceDescription& WithOrganizationRoleName(OrganizationRoleNameT&& value) {
+    SetOrganizationRoleName(std::forward<OrganizationRoleNameT>(value));
     return *this;
   }
   ///@}
@@ -376,25 +258,6 @@ class WorkspaceDescription {
   inline WorkspaceDescription& AddNotificationDestinations(NotificationDestinationType value) {
     m_notificationDestinationsHasBeenSet = true;
     m_notificationDestinations.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the IAM role that is used to access resources through
-   * Organizations.</p>
-   */
-  inline const Aws::String& GetOrganizationRoleName() const { return m_organizationRoleName; }
-  inline bool OrganizationRoleNameHasBeenSet() const { return m_organizationRoleNameHasBeenSet; }
-  template <typename OrganizationRoleNameT = Aws::String>
-  void SetOrganizationRoleName(OrganizationRoleNameT&& value) {
-    m_organizationRoleNameHasBeenSet = true;
-    m_organizationRoleName = std::forward<OrganizationRoleNameT>(value);
-  }
-  template <typename OrganizationRoleNameT = Aws::String>
-  WorkspaceDescription& WithOrganizationRoleName(OrganizationRoleNameT&& value) {
-    SetOrganizationRoleName(std::forward<OrganizationRoleNameT>(value));
     return *this;
   }
   ///@}
@@ -495,6 +358,123 @@ class WorkspaceDescription {
 
   ///@{
   /**
+   * <p>The IAM role that grants permissions to the Amazon Web Services resources
+   * that the workspace will view data from. This role must already exist.</p>
+   */
+  inline const Aws::String& GetWorkspaceRoleArn() const { return m_workspaceRoleArn; }
+  inline bool WorkspaceRoleArnHasBeenSet() const { return m_workspaceRoleArnHasBeenSet; }
+  template <typename WorkspaceRoleArnT = Aws::String>
+  void SetWorkspaceRoleArn(WorkspaceRoleArnT&& value) {
+    m_workspaceRoleArnHasBeenSet = true;
+    m_workspaceRoleArn = std::forward<WorkspaceRoleArnT>(value);
+  }
+  template <typename WorkspaceRoleArnT = Aws::String>
+  WorkspaceDescription& WithWorkspaceRoleArn(WorkspaceRoleArnT&& value) {
+    SetWorkspaceRoleArn(std::forward<WorkspaceRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+   *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+   * free trials.</p>
+   */
+  inline LicenseType GetLicenseType() const { return m_licenseType; }
+  inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+  inline void SetLicenseType(LicenseType value) {
+    m_licenseTypeHasBeenSet = true;
+    m_licenseType = value;
+  }
+  inline WorkspaceDescription& WithLicenseType(LicenseType value) {
+    SetLicenseType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this workspace has already fully used its free trial for
+   * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
+   * support Grafana Enterprise free trials.</p>
+   */
+  inline bool GetFreeTrialConsumed() const { return m_freeTrialConsumed; }
+  inline bool FreeTrialConsumedHasBeenSet() const { return m_freeTrialConsumedHasBeenSet; }
+  inline void SetFreeTrialConsumed(bool value) {
+    m_freeTrialConsumedHasBeenSet = true;
+    m_freeTrialConsumed = value;
+  }
+  inline WorkspaceDescription& WithFreeTrialConsumed(bool value) {
+    SetFreeTrialConsumed(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If this workspace has a full Grafana Enterprise license purchased through
+   * Amazon Web Services Marketplace, this specifies when the license ends and will
+   * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+   * Managed Grafana does not have an expiration. It is valid until the license is
+   * removed.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLicenseExpiration() const { return m_licenseExpiration; }
+  inline bool LicenseExpirationHasBeenSet() const { return m_licenseExpirationHasBeenSet; }
+  template <typename LicenseExpirationT = Aws::Utils::DateTime>
+  void SetLicenseExpiration(LicenseExpirationT&& value) {
+    m_licenseExpirationHasBeenSet = true;
+    m_licenseExpiration = std::forward<LicenseExpirationT>(value);
+  }
+  template <typename LicenseExpirationT = Aws::Utils::DateTime>
+  WorkspaceDescription& WithLicenseExpiration(LicenseExpirationT&& value) {
+    SetLicenseExpiration(std::forward<LicenseExpirationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If this workspace is currently in the free trial period for Grafana
+   * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+   * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+   *
+   */
+  inline const Aws::Utils::DateTime& GetFreeTrialExpiration() const { return m_freeTrialExpiration; }
+  inline bool FreeTrialExpirationHasBeenSet() const { return m_freeTrialExpirationHasBeenSet; }
+  template <typename FreeTrialExpirationT = Aws::Utils::DateTime>
+  void SetFreeTrialExpiration(FreeTrialExpirationT&& value) {
+    m_freeTrialExpirationHasBeenSet = true;
+    m_freeTrialExpiration = std::forward<FreeTrialExpirationT>(value);
+  }
+  template <typename FreeTrialExpirationT = Aws::Utils::DateTime>
+  WorkspaceDescription& WithFreeTrialExpiration(FreeTrialExpirationT&& value) {
+    SetFreeTrialExpiration(std::forward<FreeTrialExpirationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+   * Center, or both methods for user authentication.</p>
+   */
+  inline const AuthenticationSummary& GetAuthentication() const { return m_authentication; }
+  inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
+  template <typename AuthenticationT = AuthenticationSummary>
+  void SetAuthentication(AuthenticationT&& value) {
+    m_authenticationHasBeenSet = true;
+    m_authentication = std::forward<AuthenticationT>(value);
+  }
+  template <typename AuthenticationT = AuthenticationSummary>
+  WorkspaceDescription& WithAuthentication(AuthenticationT&& value) {
+    SetAuthentication(std::forward<AuthenticationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of tags associated with the workspace.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -538,26 +518,63 @@ class WorkspaceDescription {
 
   ///@{
   /**
-   * <p>The IAM role that grants permissions to the Amazon Web Services resources
-   * that the workspace will view data from. This role must already exist.</p>
+   * <p>The configuration settings for network access to your workspace.</p>
    */
-  inline const Aws::String& GetWorkspaceRoleArn() const { return m_workspaceRoleArn; }
-  inline bool WorkspaceRoleArnHasBeenSet() const { return m_workspaceRoleArnHasBeenSet; }
-  template <typename WorkspaceRoleArnT = Aws::String>
-  void SetWorkspaceRoleArn(WorkspaceRoleArnT&& value) {
-    m_workspaceRoleArnHasBeenSet = true;
-    m_workspaceRoleArn = std::forward<WorkspaceRoleArnT>(value);
+  inline const NetworkAccessConfiguration& GetNetworkAccessControl() const { return m_networkAccessControl; }
+  inline bool NetworkAccessControlHasBeenSet() const { return m_networkAccessControlHasBeenSet; }
+  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
+  void SetNetworkAccessControl(NetworkAccessControlT&& value) {
+    m_networkAccessControlHasBeenSet = true;
+    m_networkAccessControl = std::forward<NetworkAccessControlT>(value);
   }
-  template <typename WorkspaceRoleArnT = Aws::String>
-  WorkspaceDescription& WithWorkspaceRoleArn(WorkspaceRoleArnT&& value) {
-    SetWorkspaceRoleArn(std::forward<WorkspaceRoleArnT>(value));
+  template <typename NetworkAccessControlT = NetworkAccessConfiguration>
+  WorkspaceDescription& WithNetworkAccessControl(NetworkAccessControlT&& value) {
+    SetNetworkAccessControl(std::forward<NetworkAccessControlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token that ties this workspace to a Grafana Labs account. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+   * your account with Grafana Labs</a>.</p>
+   */
+  inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
+  inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
+  template <typename GrafanaTokenT = Aws::String>
+  void SetGrafanaToken(GrafanaTokenT&& value) {
+    m_grafanaTokenHasBeenSet = true;
+    m_grafanaToken = std::forward<GrafanaTokenT>(value);
+  }
+  template <typename GrafanaTokenT = Aws::String>
+  WorkspaceDescription& WithGrafanaToken(GrafanaTokenT&& value) {
+    SetGrafanaToken(std::forward<GrafanaTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID or ARN of the Key Management Service key used for encrypting workspace
+   * data.</p>
+   */
+  inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+  inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+  template <typename KmsKeyIdT = Aws::String>
+  void SetKmsKeyId(KmsKeyIdT&& value) {
+    m_kmsKeyIdHasBeenSet = true;
+    m_kmsKeyId = std::forward<KmsKeyIdT>(value);
+  }
+  template <typename KmsKeyIdT = Aws::String>
+  WorkspaceDescription& WithKmsKeyId(KmsKeyIdT&& value) {
+    SetKmsKeyId(std::forward<KmsKeyIdT>(value));
     return *this;
   }
   ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
-
-  AuthenticationSummary m_authentication;
 
   Aws::Utils::DateTime m_created{};
 
@@ -567,29 +584,17 @@ class WorkspaceDescription {
 
   Aws::String m_endpoint;
 
-  bool m_freeTrialConsumed{false};
-
-  Aws::Utils::DateTime m_freeTrialExpiration{};
-
-  Aws::String m_grafanaToken;
-
   Aws::String m_grafanaVersion;
 
   Aws::String m_id;
-
-  Aws::Utils::DateTime m_licenseExpiration{};
-
-  LicenseType m_licenseType{LicenseType::NOT_SET};
 
   Aws::Utils::DateTime m_modified{};
 
   Aws::String m_name;
 
-  NetworkAccessConfiguration m_networkAccessControl;
+  Aws::String m_organizationRoleName;
 
   Aws::Vector<NotificationDestinationType> m_notificationDestinations;
-
-  Aws::String m_organizationRoleName;
 
   Aws::Vector<Aws::String> m_organizationalUnits;
 
@@ -599,36 +604,53 @@ class WorkspaceDescription {
 
   WorkspaceStatus m_status{WorkspaceStatus::NOT_SET};
 
+  Aws::String m_workspaceRoleArn;
+
+  LicenseType m_licenseType{LicenseType::NOT_SET};
+
+  bool m_freeTrialConsumed{false};
+
+  Aws::Utils::DateTime m_licenseExpiration{};
+
+  Aws::Utils::DateTime m_freeTrialExpiration{};
+
+  AuthenticationSummary m_authentication;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   VpcConfiguration m_vpcConfiguration;
 
-  Aws::String m_workspaceRoleArn;
+  NetworkAccessConfiguration m_networkAccessControl;
+
+  Aws::String m_grafanaToken;
+
+  Aws::String m_kmsKeyId;
   bool m_accountAccessTypeHasBeenSet = false;
-  bool m_authenticationHasBeenSet = false;
   bool m_createdHasBeenSet = false;
   bool m_dataSourcesHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
-  bool m_freeTrialConsumedHasBeenSet = false;
-  bool m_freeTrialExpirationHasBeenSet = false;
-  bool m_grafanaTokenHasBeenSet = false;
   bool m_grafanaVersionHasBeenSet = false;
   bool m_idHasBeenSet = false;
-  bool m_licenseExpirationHasBeenSet = false;
-  bool m_licenseTypeHasBeenSet = false;
   bool m_modifiedHasBeenSet = false;
   bool m_nameHasBeenSet = false;
-  bool m_networkAccessControlHasBeenSet = false;
-  bool m_notificationDestinationsHasBeenSet = false;
   bool m_organizationRoleNameHasBeenSet = false;
+  bool m_notificationDestinationsHasBeenSet = false;
   bool m_organizationalUnitsHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
   bool m_stackSetNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_workspaceRoleArnHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_freeTrialConsumedHasBeenSet = false;
+  bool m_licenseExpirationHasBeenSet = false;
+  bool m_freeTrialExpirationHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
-  bool m_workspaceRoleArnHasBeenSet = false;
+  bool m_networkAccessControlHasBeenSet = false;
+  bool m_grafanaTokenHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
 };
 
 }  // namespace Model

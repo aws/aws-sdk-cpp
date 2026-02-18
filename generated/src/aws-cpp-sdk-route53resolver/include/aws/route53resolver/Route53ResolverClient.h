@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53resolver/Route53ResolverPaginationBase.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
@@ -45,7 +46,8 @@ namespace Route53Resolver {
  * your VPCs (inbound queries), or both.</p>
  */
 class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>,
+                                                      public Route53ResolverPaginationBase<Route53ResolverClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2128,8 +2130,8 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
     return SubmitAsync(&Route53ResolverClient::UpdateResolverRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<Route53ResolverEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<Route53ResolverEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>;

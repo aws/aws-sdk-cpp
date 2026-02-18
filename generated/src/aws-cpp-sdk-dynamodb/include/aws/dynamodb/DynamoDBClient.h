@@ -7,6 +7,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>
+#include <aws/dynamodb/DynamoDBPaginationBase.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
@@ -40,7 +41,8 @@ class AWS_DYNAMODB_API DynamoDBClient
       public smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME, Aws::DynamoDB::DynamoDBClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
                                               DynamoDBEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
-                                              smithy::client::JsonOutcome, Aws::Client::DynamoDBErrorMarshaller> {
+                                              smithy::client::JsonOutcome, Aws::Client::DynamoDBErrorMarshaller>,
+      public DynamoDBPaginationBase<DynamoDBClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
@@ -2338,8 +2340,8 @@ class AWS_DYNAMODB_API DynamoDBClient
     return SubmitAsync(&DynamoDBClient::UpdateTimeToLive, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DynamoDBEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DynamoDBEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;

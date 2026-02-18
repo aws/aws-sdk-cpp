@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/identitystore/IdentityStorePaginationBase.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace IdentityStore {
  * consistent to avoid conflicting authorization to the same data.</p>
  */
 class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>,
+                                                  public IdentityStorePaginationBase<IdentityStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -646,8 +648,8 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&IdentityStoreClient::UpdateUser, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IdentityStoreEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IdentityStoreEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>;

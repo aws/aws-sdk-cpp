@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cognito-sync/CognitoSyncPaginationBase.h>
 #include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -36,7 +37,8 @@ namespace CognitoSync {
  * Guide for iOS</a>.</p>
  */
 class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>,
+                                              public CognitoSyncPaginationBase<CognitoSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -608,8 +610,8 @@ class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&CognitoSyncClient::UpdateRecords, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CognitoSyncEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CognitoSyncEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>;

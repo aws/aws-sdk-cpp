@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectPaginationBase.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectServiceClientModel.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
 
@@ -27,7 +28,8 @@ namespace EC2InstanceConnect {
  * EC2 API Reference</a>.</p>
  */
 class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>,
+                                                            public EC2InstanceConnectPaginationBase<EC2InstanceConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -149,8 +151,8 @@ class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::
     return SubmitAsync(&EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codestar-connections/CodeStarconnectionsPaginationBase.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -56,9 +57,9 @@ namespace CodeStarconnections {
  * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
  * Tools User Guide</a>.</p>
  */
-class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient> {
+class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>,
+                                                              public CodeStarconnectionsPaginationBase<CodeStarconnectionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -862,8 +863,8 @@ class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient
     return SubmitAsync(&CodeStarconnectionsClient::UpdateSyncConfiguration, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodeStarconnectionsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodeStarconnectionsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>;

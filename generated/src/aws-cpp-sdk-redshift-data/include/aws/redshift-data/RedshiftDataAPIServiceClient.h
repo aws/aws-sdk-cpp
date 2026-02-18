@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-data/RedshiftDataAPIServicePaginationBase.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace RedshiftDataAPIService {
  */
 class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>,
+      public RedshiftDataAPIServicePaginationBase<RedshiftDataAPIServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -579,8 +581,8 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
     return SubmitAsync(&RedshiftDataAPIServiceClient::ListTables, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>;

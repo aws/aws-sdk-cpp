@@ -24,13 +24,13 @@ CreateWorkspaceServiceAccountTokenResult::CreateWorkspaceServiceAccountTokenResu
 CreateWorkspaceServiceAccountTokenResult& CreateWorkspaceServiceAccountTokenResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("serviceAccountId")) {
-    m_serviceAccountId = jsonValue.GetString("serviceAccountId");
-    m_serviceAccountIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("serviceAccountToken")) {
     m_serviceAccountToken = jsonValue.GetObject("serviceAccountToken");
     m_serviceAccountTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serviceAccountId")) {
+    m_serviceAccountId = jsonValue.GetString("serviceAccountId");
+    m_serviceAccountIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("workspaceId")) {
     m_workspaceId = jsonValue.GetString("workspaceId");

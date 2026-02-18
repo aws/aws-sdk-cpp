@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/payment-cryptography/PaymentCryptographyPaginationBase.h>
 #include <aws/payment-cryptography/PaymentCryptographyServiceClientModel.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
@@ -38,9 +39,9 @@ namespace PaymentCryptography {
  * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">CloudTrail
  * User Guide</a>.</p>
  */
-class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyClient> {
+class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyClient>,
+                                                              public PaymentCryptographyPaginationBase<PaymentCryptographyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1438,8 +1439,8 @@ class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient
     return SubmitAsync(&PaymentCryptographyClient::UpdateAlias, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PaymentCryptographyEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PaymentCryptographyEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyClient>;

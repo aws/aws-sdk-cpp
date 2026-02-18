@@ -40,6 +40,8 @@ protected:
     void SetUp()
     {
         Aws::Client::ClientConfiguration config;
+        config.connectTimeoutMs = 30000;
+        config.requestTimeoutMs = 30000;
         config.region = AWS_TEST_REGION;
         m_client = Aws::MakeShared<BedrockRuntimeClient>(ALLOCATION_TAG, config);
     }

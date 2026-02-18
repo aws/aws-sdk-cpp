@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/LambdaPaginationBase.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 
@@ -67,7 +68,9 @@ namespace Lambda {
  * href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon Web
  * Services Certificate Manager FAQs.</a> </p></p>
  */
-class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient> {
+class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>,
+                                    public LambdaPaginationBase<LambdaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2912,8 +2915,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&LambdaClient::UpdateFunctionUrlConfig, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<LambdaEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<LambdaEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>;

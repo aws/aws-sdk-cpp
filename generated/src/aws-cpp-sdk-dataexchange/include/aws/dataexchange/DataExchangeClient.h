@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/DataExchangePaginationBase.h>
 #include <aws/dataexchange/DataExchangeServiceClientModel.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace DataExchange {
  * asynchronous import or export operations used to create or copy assets.</p>
  */
 class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>,
+                                                public DataExchangePaginationBase<DataExchangeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1050,8 +1052,8 @@ class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&DataExchangeClient::UpdateRevision, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DataExchangeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DataExchangeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>;

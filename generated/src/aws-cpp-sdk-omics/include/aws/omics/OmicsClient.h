@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/OmicsPaginationBase.h>
 #include <aws/omics/OmicsServiceClientModel.h>
 #include <aws/omics/Omics_EXPORTS.h>
 
@@ -23,7 +24,9 @@ namespace Omics {
  * is Amazon Web Services HealthOmics?</a> in the <i>Amazon Web Services
  * HealthOmics User Guide</i>.</p>
  */
-class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient> {
+class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>,
+                                  public OmicsPaginationBase<OmicsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3096,8 +3099,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&OmicsClient::UploadReadSetPart, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OmicsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OmicsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>;

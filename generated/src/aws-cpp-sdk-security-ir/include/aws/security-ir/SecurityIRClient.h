@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/security-ir/SecurityIRPaginationBase.h>
 #include <aws/security-ir/SecurityIRServiceClientModel.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace SecurityIR {
  * service.</p>
  */
 class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>,
+                                            public SecurityIRPaginationBase<SecurityIRClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -720,8 +722,8 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SecurityIRClient::UpdateResolverType, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SecurityIREndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SecurityIREndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsPaginationBase.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsServiceClientModel.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -22,7 +23,8 @@ namespace BCMRecommendedActions {
  */
 class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<BCMRecommendedActionsClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<BCMRecommendedActionsClient>,
+      public BCMRecommendedActionsPaginationBase<BCMRecommendedActionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -108,8 +110,8 @@ class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsClient
     return SubmitAsync(&BCMRecommendedActionsClient::ListRecommendedActions, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BCMRecommendedActionsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BCMRecommendedActionsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMRecommendedActionsClient>;

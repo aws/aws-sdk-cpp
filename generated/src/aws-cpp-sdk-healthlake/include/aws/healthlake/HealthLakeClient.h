@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/healthlake/HealthLakePaginationBase.h>
 #include <aws/healthlake/HealthLakeServiceClientModel.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace HealthLake {
  * is AWS HealthLake?</a> in the <i>AWS HealthLake Developer Guide</i>.</p>
  */
 class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>,
+                                            public HealthLakePaginationBase<HealthLakeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -424,8 +426,8 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&HealthLakeClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<HealthLakeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<HealthLakeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>;

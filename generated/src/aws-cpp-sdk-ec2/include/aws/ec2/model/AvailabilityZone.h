@@ -8,9 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/AvailabilityZoneGeography.h>
 #include <aws/ec2/model/AvailabilityZoneMessage.h>
 #include <aws/ec2/model/AvailabilityZoneOptInStatus.h>
 #include <aws/ec2/model/AvailabilityZoneState.h>
+#include <aws/ec2/model/AvailabilityZoneSubGeography.h>
 
 #include <utility>
 
@@ -252,6 +254,56 @@ class AvailabilityZone {
 
   ///@{
   /**
+   * <p>The geography information for the Availability Zone or Local Zone. The
+   * geography is returned as a list.</p>
+   */
+  inline const Aws::Vector<AvailabilityZoneGeography>& GetGeography() const { return m_geography; }
+  inline bool GeographyHasBeenSet() const { return m_geographyHasBeenSet; }
+  template <typename GeographyT = Aws::Vector<AvailabilityZoneGeography>>
+  void SetGeography(GeographyT&& value) {
+    m_geographyHasBeenSet = true;
+    m_geography = std::forward<GeographyT>(value);
+  }
+  template <typename GeographyT = Aws::Vector<AvailabilityZoneGeography>>
+  AvailabilityZone& WithGeography(GeographyT&& value) {
+    SetGeography(std::forward<GeographyT>(value));
+    return *this;
+  }
+  template <typename GeographyT = AvailabilityZoneGeography>
+  AvailabilityZone& AddGeography(GeographyT&& value) {
+    m_geographyHasBeenSet = true;
+    m_geography.emplace_back(std::forward<GeographyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The sub-geography information for the Availability Zone or Local Zone. The
+   * sub-geography is returned as a list.</p>
+   */
+  inline const Aws::Vector<AvailabilityZoneSubGeography>& GetSubGeography() const { return m_subGeography; }
+  inline bool SubGeographyHasBeenSet() const { return m_subGeographyHasBeenSet; }
+  template <typename SubGeographyT = Aws::Vector<AvailabilityZoneSubGeography>>
+  void SetSubGeography(SubGeographyT&& value) {
+    m_subGeographyHasBeenSet = true;
+    m_subGeography = std::forward<SubGeographyT>(value);
+  }
+  template <typename SubGeographyT = Aws::Vector<AvailabilityZoneSubGeography>>
+  AvailabilityZone& WithSubGeography(SubGeographyT&& value) {
+    SetSubGeography(std::forward<SubGeographyT>(value));
+    return *this;
+  }
+  template <typename SubGeographyT = AvailabilityZoneSubGeography>
+  AvailabilityZone& AddSubGeography(SubGeographyT&& value) {
+    m_subGeographyHasBeenSet = true;
+    m_subGeography.emplace_back(std::forward<SubGeographyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The
    * possible values are <code>available</code>, <code>unavailable</code>, and
    * <code>constrained</code>.</p>
@@ -290,6 +342,10 @@ class AvailabilityZone {
 
   Aws::String m_groupLongName;
 
+  Aws::Vector<AvailabilityZoneGeography> m_geography;
+
+  Aws::Vector<AvailabilityZoneSubGeography> m_subGeography;
+
   AvailabilityZoneState m_state{AvailabilityZoneState::NOT_SET};
   bool m_optInStatusHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
@@ -302,6 +358,8 @@ class AvailabilityZone {
   bool m_parentZoneNameHasBeenSet = false;
   bool m_parentZoneIdHasBeenSet = false;
   bool m_groupLongNameHasBeenSet = false;
+  bool m_geographyHasBeenSet = false;
+  bool m_subGeographyHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

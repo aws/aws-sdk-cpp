@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr-public/ECRPublicPaginationBase.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 
@@ -26,7 +27,8 @@ namespace ECRPublic {
  * Elastic Container Registry API Reference</a>.</p>
  */
 class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>,
+                                          public ECRPublicPaginationBase<ECRPublicClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -755,8 +757,8 @@ class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&ECRPublicClient::UploadLayerPart, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ECRPublicEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ECRPublicEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>;

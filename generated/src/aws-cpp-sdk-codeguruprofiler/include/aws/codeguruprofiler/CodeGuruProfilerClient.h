@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codeguruprofiler/CodeGuruProfilerPaginationBase.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -33,7 +34,8 @@ namespace CodeGuruProfiler {
  * Guide</i>. </p>
  */
 class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>,
+                                                        public CodeGuruProfilerPaginationBase<CodeGuruProfilerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -797,8 +799,8 @@ class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJ
     return SubmitAsync(&CodeGuruProfilerClient::UpdateProfilingGroup, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>;

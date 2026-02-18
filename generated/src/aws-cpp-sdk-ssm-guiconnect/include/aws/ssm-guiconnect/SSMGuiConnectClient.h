@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-guiconnect/SSMGuiConnectPaginationBase.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectServiceClientModel.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace SSMGuiConnect {
  * </ul></p>
  */
 class AWS_SSMGUICONNECT_API SSMGuiConnectClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<SSMGuiConnectClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<SSMGuiConnectClient>,
+                                                  public SSMGuiConnectPaginationBase<SSMGuiConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -183,8 +185,8 @@ class AWS_SSMGUICONNECT_API SSMGuiConnectClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&SSMGuiConnectClient::UpdateConnectionRecordingPreferences, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SSMGuiConnectEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SSMGuiConnectEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMGuiConnectClient>;

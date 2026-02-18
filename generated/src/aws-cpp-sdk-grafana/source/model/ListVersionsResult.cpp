@@ -21,16 +21,16 @@ ListVersionsResult::ListVersionsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListVersionsResult& ListVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("grafanaVersions")) {
     Aws::Utils::Array<JsonView> grafanaVersionsJsonList = jsonValue.GetArray("grafanaVersions");
     for (unsigned grafanaVersionsIndex = 0; grafanaVersionsIndex < grafanaVersionsJsonList.GetLength(); ++grafanaVersionsIndex) {
       m_grafanaVersions.push_back(grafanaVersionsJsonList[grafanaVersionsIndex].AsString());
     }
     m_grafanaVersionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

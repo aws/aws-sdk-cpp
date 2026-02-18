@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/service-quotas/ServiceQuotasPaginationBase.h>
 #include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace ServiceQuotas {
  * domain</code> for Amazon OpenSearch Service.</p>
  */
 class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>,
+                                                  public ServiceQuotasPaginationBase<ServiceQuotasClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -877,8 +879,8 @@ class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ServiceQuotasClient::UpdateAutoManagement, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>;

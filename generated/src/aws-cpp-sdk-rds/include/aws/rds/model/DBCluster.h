@@ -26,6 +26,7 @@
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/ServerlessV2ScalingConfigurationInfo.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Tag.h>
 #include <aws/rds/model/UpgradeRolloutOrder.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -690,6 +691,27 @@ class DBCluster {
   }
   inline DBCluster& WithStorageEncrypted(bool value) {
     SetStorageEncrypted(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of encryption used to protect data at rest in the DB cluster.
+   * Possible values:</p> <ul> <li> <p> <code>none</code> - The DB cluster is not
+   * encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB cluster is encrypted
+   * using an Amazon Web Services owned KMS key.</p> </li> <li> <p>
+   * <code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS
+   * key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline DBCluster& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
     return *this;
   }
   ///@}
@@ -1810,6 +1832,8 @@ class DBCluster {
 
   bool m_storageEncrypted{false};
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   Aws::String m_kmsKeyId;
 
   Aws::String m_dbClusterResourceId;
@@ -1948,6 +1972,7 @@ class DBCluster {
   bool m_vpcSecurityGroupsHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_dbClusterResourceIdHasBeenSet = false;
   bool m_dBClusterArnHasBeenSet = false;

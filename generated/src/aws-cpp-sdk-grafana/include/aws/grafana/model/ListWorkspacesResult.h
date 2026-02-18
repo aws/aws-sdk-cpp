@@ -30,23 +30,6 @@ class ListWorkspacesResult {
 
   ///@{
   /**
-   * <p>The token to use when requesting the next set of workspaces.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListWorkspacesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An array of structures that contain some information about the workspaces in
    * the account.</p>
    */
@@ -70,6 +53,23 @@ class ListWorkspacesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to use when requesting the next set of workspaces.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListWorkspacesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -84,13 +84,13 @@ class ListWorkspacesResult {
   }
   ///@}
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<WorkspaceSummary> m_workspaces;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
   bool m_workspacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

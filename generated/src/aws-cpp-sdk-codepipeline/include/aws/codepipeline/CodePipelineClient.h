@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codepipeline/CodePipelinePaginationBase.h>
 #include <aws/codepipeline/CodePipelineServiceClientModel.h>
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -95,7 +96,8 @@ namespace CodePipeline {
  * success.</p> </li> </ul>
  */
 class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>,
+                                                public CodePipelinePaginationBase<CodePipelineClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1433,8 +1435,8 @@ class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CodePipelineClient::UpdatePipeline, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CodePipelineEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CodePipelineEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>;

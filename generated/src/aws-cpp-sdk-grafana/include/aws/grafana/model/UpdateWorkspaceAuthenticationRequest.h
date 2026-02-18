@@ -33,6 +33,24 @@ class UpdateWorkspaceAuthenticationRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
+   * <p>The ID of the workspace to update the authentication for.</p>
+   */
+  inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+  inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+  template <typename WorkspaceIdT = Aws::String>
+  void SetWorkspaceId(WorkspaceIdT&& value) {
+    m_workspaceIdHasBeenSet = true;
+    m_workspaceId = std::forward<WorkspaceIdT>(value);
+  }
+  template <typename WorkspaceIdT = Aws::String>
+  UpdateWorkspaceAuthenticationRequest& WithWorkspaceId(WorkspaceIdT&& value) {
+    SetWorkspaceId(std::forward<WorkspaceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
    * to authenticate users for using the Grafana console within a workspace. For more
    * information, see <a
@@ -78,33 +96,15 @@ class UpdateWorkspaceAuthenticationRequest : public ManagedGrafanaRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the workspace to update the authentication for.</p>
-   */
-  inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
-  inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-  template <typename WorkspaceIdT = Aws::String>
-  void SetWorkspaceId(WorkspaceIdT&& value) {
-    m_workspaceIdHasBeenSet = true;
-    m_workspaceId = std::forward<WorkspaceIdT>(value);
-  }
-  template <typename WorkspaceIdT = Aws::String>
-  UpdateWorkspaceAuthenticationRequest& WithWorkspaceId(WorkspaceIdT&& value) {
-    SetWorkspaceId(std::forward<WorkspaceIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_workspaceId;
+
   Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
 
   SamlConfiguration m_samlConfiguration;
-
-  Aws::String m_workspaceId;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_authenticationProvidersHasBeenSet = false;
   bool m_samlConfigurationHasBeenSet = false;
-  bool m_workspaceIdHasBeenSet = false;
 };
 
 }  // namespace Model

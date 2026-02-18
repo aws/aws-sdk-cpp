@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize-runtime/PersonalizeRuntimePaginationBase.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeServiceClientModel.h>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace PersonalizeRuntime {
  * <p/>
  */
 class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>,
+                                                            public PersonalizeRuntimePaginationBase<PersonalizeRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -180,8 +182,8 @@ class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::
     return SubmitAsync(&PersonalizeRuntimeClient::GetRecommendations, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PersonalizeRuntimeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PersonalizeRuntimeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>;

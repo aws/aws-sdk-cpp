@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/autoscaling-plans/AutoScalingPlansPaginationBase.h>
 #include <aws/autoscaling-plans/AutoScalingPlansServiceClientModel.h>
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -31,7 +32,8 @@ namespace AutoScalingPlans {
  * Auto Scaling User Guide</a>. </p>
  */
 class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>,
+                                                        public AutoScalingPlansPaginationBase<AutoScalingPlansClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -262,8 +264,8 @@ class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJ
     return SubmitAsync(&AutoScalingPlansClient::UpdateScalingPlan, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AutoScalingPlansEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AutoScalingPlansEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>;

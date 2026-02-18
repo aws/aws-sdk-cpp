@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesPaginationBase.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace MigrationHubRefactorSpaces {
  */
 class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>,
+      public MigrationHubRefactorSpacesPaginationBase<MigrationHubRefactorSpacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -838,8 +840,8 @@ class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
     return SubmitAsync(&MigrationHubRefactorSpacesClient::UpdateRoute, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/DataZonePaginationBase.h>
 #include <aws/datazone/DataZoneServiceClientModel.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace DataZone {
  * Services Glue, and Amazon Web Services Lake Formation.</p>
  */
 class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>,
+                                        public DataZonePaginationBase<DataZoneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -5137,8 +5139,8 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&DataZoneClient::UpdateUserProfile, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<DataZoneEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<DataZoneEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>;

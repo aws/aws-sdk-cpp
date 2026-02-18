@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsPaginationBase.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -22,7 +23,8 @@ namespace ChimeSDKMeetings {
  * Chime SDK meetings</a>.</p>
  */
 class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>,
+                                                        public ChimeSDKMeetingsPaginationBase<ChimeSDKMeetingsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -682,8 +684,8 @@ class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJ
     return SubmitAsync(&ChimeSDKMeetingsClient::UpdateAttendeeCapabilities, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/apprunner/AppRunnerPaginationBase.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -36,7 +37,8 @@ namespace AppRunner {
  * Reference</i>.</p>
  */
 class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>,
+                                          public AppRunnerPaginationBase<AppRunnerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1220,8 +1222,8 @@ class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&AppRunnerClient::UpdateVpcIngressConnection, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;

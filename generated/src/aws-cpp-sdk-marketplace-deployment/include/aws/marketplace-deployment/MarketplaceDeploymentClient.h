@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentPaginationBase.h>
 #include <aws/marketplace-deployment/MarketplaceDeploymentServiceClientModel.h>
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace MarketplaceDeployment {
  */
 class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>,
+      public MarketplaceDeploymentPaginationBase<MarketplaceDeploymentClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -186,8 +188,8 @@ class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient
     return SubmitAsync(&MarketplaceDeploymentClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<MarketplaceDeploymentEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<MarketplaceDeploymentEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>;

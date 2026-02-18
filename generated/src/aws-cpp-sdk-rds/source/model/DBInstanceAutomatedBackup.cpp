@@ -128,6 +128,12 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator=(const XmlNode& x
           StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptedNode.GetText()).c_str()).c_str());
       m_encryptedHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if (!storageTypeNode.IsNull()) {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
@@ -314,6 +320,11 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
     oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_storageTypeHasBeenSet) {
     oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
@@ -457,6 +468,10 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   }
   if (m_encryptedHasBeenSet) {
     oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_storageTypeHasBeenSet) {
     oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";

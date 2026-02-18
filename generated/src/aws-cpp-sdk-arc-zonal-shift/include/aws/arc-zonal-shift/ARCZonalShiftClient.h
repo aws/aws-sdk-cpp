@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/arc-zonal-shift/ARCZonalShiftPaginationBase.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftServiceClientModel.h>
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -32,7 +33,8 @@ namespace ARCZonalShift {
  * Application Recovery Controller Developer Guide</a>.</p>
  */
 class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>,
+                                                  public ARCZonalShiftPaginationBase<ARCZonalShiftClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -597,8 +599,8 @@ class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&ARCZonalShiftClient::UpdateZonalShift, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ARCZonalShiftEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ARCZonalShiftEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>;

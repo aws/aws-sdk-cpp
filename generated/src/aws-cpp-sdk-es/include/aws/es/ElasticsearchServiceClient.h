@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/es/ElasticsearchServicePaginationBase.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace ElasticsearchService {
  */
 class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>,
+      public ElasticsearchServicePaginationBase<ElasticsearchServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1570,8 +1572,8 @@ class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient
     return SubmitAsync(&ElasticsearchServiceClient::UpgradeElasticsearchDomain, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ElasticsearchServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ElasticsearchServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>;

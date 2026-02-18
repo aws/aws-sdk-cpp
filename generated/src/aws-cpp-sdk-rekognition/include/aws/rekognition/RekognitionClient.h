@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/RekognitionPaginationBase.h>
 #include <aws/rekognition/RekognitionServiceClientModel.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
@@ -170,7 +171,8 @@ namespace Rekognition {
  * </p> </li> </ul>
  */
 class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>,
+                                              public RekognitionPaginationBase<RekognitionClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -3310,8 +3312,8 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&RekognitionClient::UpdateStreamProcessor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RekognitionEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RekognitionEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>;

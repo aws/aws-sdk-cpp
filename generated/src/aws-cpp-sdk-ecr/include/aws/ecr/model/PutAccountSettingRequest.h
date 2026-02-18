@@ -32,8 +32,9 @@ class PutAccountSettingRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code>
-   * or <code>REGISTRY_POLICY_SCOPE</code>. </p>
+   * <p>The name of the account setting, such as
+   * <code>BASIC_SCAN_TYPE_VERSION</code>, <code>REGISTRY_POLICY_SCOPE</code>, or
+   * <code>BLOB_MOUNTING</code>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -51,10 +52,10 @@ class PutAccountSettingRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>Setting value that is specified. The following are valid values for the basic
-   * scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The
-   * following are valid values for the registry policy scope being used:
-   * <code>V1</code> or <code>V2</code>.</p>
+   * <p>Setting value that is specified. Valid value for basic scan type:
+   * <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code>
+   * or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or
+   * <code>DISABLED</code>.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

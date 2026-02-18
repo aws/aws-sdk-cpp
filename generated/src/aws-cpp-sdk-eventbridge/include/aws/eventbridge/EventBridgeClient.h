@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/EventBridgePaginationBase.h>
 #include <aws/eventbridge/EventBridgeServiceClientModel.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace EventBridge {
  * EventBridge User Guide</a>.</p>
  */
 class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>,
+                                              public EventBridgePaginationBase<EventBridgeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1925,8 +1927,8 @@ class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&EventBridgeClient::UpdateEventBus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<EventBridgeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<EventBridgeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/FMSPaginationBase.h>
 #include <aws/fms/FMSServiceClientModel.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
@@ -24,7 +25,9 @@ namespace FMS {
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
  * roles for Firewall Manager</a>. </p>
  */
-class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient> {
+class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>,
+                              public FMSPaginationBase<FMSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1310,8 +1313,8 @@ class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient, public Aws::Cli
     return SubmitAsync(&FMSClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<FMSEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<FMSEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>;

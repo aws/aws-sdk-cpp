@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/KendraPaginationBase.h>
 #include <aws/kendra/KendraServiceClientModel.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 
@@ -16,7 +17,9 @@ namespace kendra {
 /**
  * <p>Amazon Kendra is a service for indexing large document sets.</p>
  */
-class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KendraClient> {
+class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>,
+                                    public KendraPaginationBase<KendraClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2202,8 +2205,8 @@ class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&KendraClient::UpdateThesaurus, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<KendraEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<KendraEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>;

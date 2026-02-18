@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/neptune/NeptunePaginationBase.h>
 #include <aws/neptune/NeptuneServiceClientModel.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 
@@ -34,7 +35,9 @@ namespace Neptune {
  * maintenance window. The reference structure is as follows, and we list following
  * some related topics from the user guide.</p>
  */
-class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient> {
+class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>,
+                                      public NeptunePaginationBase<NeptuneClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -2301,8 +2304,8 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient, public A
     return SubmitAsync(&NeptuneClient::SwitchoverGlobalCluster, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NeptuneEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NeptuneEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>;

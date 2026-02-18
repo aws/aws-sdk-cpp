@@ -121,6 +121,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptedNode.GetText()).c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
+    XmlNode storageEncryptionTypeNode = resultNode.FirstChild("StorageEncryptionType");
+    if (!storageEncryptionTypeNode.IsNull()) {
+      m_storageEncryptionType = StorageEncryptionTypeMapper::GetStorageEncryptionTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptionTypeNode.GetText()).c_str()));
+      m_storageEncryptionTypeHasBeenSet = true;
+    }
     XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
     if (!backupRetentionPeriodNode.IsNull()) {
       m_backupRetentionPeriod = StringUtils::ConvertToInt32(
@@ -269,6 +275,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
     oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
+  }
+
   if (m_backupRetentionPeriodHasBeenSet) {
     oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
@@ -383,6 +394,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
+  }
+  if (m_storageEncryptionTypeHasBeenSet) {
+    oStream << location << ".StorageEncryptionType="
+            << StringUtils::URLEncode(StorageEncryptionTypeMapper::GetNameForStorageEncryptionType(m_storageEncryptionType)) << "&";
   }
   if (m_backupRetentionPeriodHasBeenSet) {
     oStream << location << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";

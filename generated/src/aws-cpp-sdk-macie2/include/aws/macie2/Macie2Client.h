@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/Macie2PaginationBase.h>
 #include <aws/macie2/Macie2ServiceClientModel.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
 
@@ -16,7 +17,9 @@ namespace Macie2 {
 /**
  * <p>Amazon Macie</p>
  */
-class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client> {
+class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>,
+                                    public Macie2PaginationBase<Macie2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2353,8 +2356,8 @@ class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient, public Aw
     return SubmitAsync(&Macie2Client::UpdateSensitivityInspectionTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<Macie2EndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<Macie2EndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>;

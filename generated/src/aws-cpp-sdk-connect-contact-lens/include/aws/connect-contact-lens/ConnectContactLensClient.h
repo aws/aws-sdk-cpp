@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connect-contact-lens/ConnectContactLensPaginationBase.h>
 #include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -30,7 +31,8 @@ namespace ConnectContactLens {
  * Guide</i>. </p>
  */
 class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>,
+                                                            public ConnectContactLensPaginationBase<ConnectContactLensClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -118,8 +120,8 @@ class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::
     return SubmitAsync(&ConnectContactLensClient::ListRealtimeContactAnalysisSegments, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ConnectContactLensEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ConnectContactLensEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>;

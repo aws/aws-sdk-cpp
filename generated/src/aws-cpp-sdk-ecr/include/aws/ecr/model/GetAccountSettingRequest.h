@@ -32,8 +32,9 @@ class GetAccountSettingRequest : public ECRRequest {
 
   ///@{
   /**
-   * <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code>
-   * or <code>REGISTRY_POLICY_SCOPE</code>. </p>
+   * <p>The name of the account setting, such as
+   * <code>BASIC_SCAN_TYPE_VERSION</code>, <code>REGISTRY_POLICY_SCOPE</code>, or
+   * <code>BLOB_MOUNTING</code>.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -7,7 +7,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
+#include <aws/s3tables/model/IcebergPartitionSpec.h>
 #include <aws/s3tables/model/IcebergSchema.h>
+#include <aws/s3tables/model/IcebergSortOrder.h>
 
 #include <utility>
 
@@ -54,7 +56,49 @@ class IcebergMetadata {
 
   ///@{
   /**
-   * <p>Contains configuration properties for an Iceberg table.</p>
+   * <p>The partition specification for the Iceberg table. Partitioning organizes
+   * data into separate files based on the values of one or more fields, which can
+   * improve query performance by reducing the amount of data scanned. Each partition
+   * field applies a transform (such as identity, year, month, or bucket) to a single
+   * field.</p>
+   */
+  inline const IcebergPartitionSpec& GetPartitionSpec() const { return m_partitionSpec; }
+  inline bool PartitionSpecHasBeenSet() const { return m_partitionSpecHasBeenSet; }
+  template <typename PartitionSpecT = IcebergPartitionSpec>
+  void SetPartitionSpec(PartitionSpecT&& value) {
+    m_partitionSpecHasBeenSet = true;
+    m_partitionSpec = std::forward<PartitionSpecT>(value);
+  }
+  template <typename PartitionSpecT = IcebergPartitionSpec>
+  IcebergMetadata& WithPartitionSpec(PartitionSpecT&& value) {
+    SetPartitionSpec(std::forward<PartitionSpecT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The sort order for the Iceberg table. Sort order defines how data is sorted
+   * within data files, which can improve query performance by enabling more
+   * efficient data skipping and filtering.</p>
+   */
+  inline const IcebergSortOrder& GetWriteOrder() const { return m_writeOrder; }
+  inline bool WriteOrderHasBeenSet() const { return m_writeOrderHasBeenSet; }
+  template <typename WriteOrderT = IcebergSortOrder>
+  void SetWriteOrder(WriteOrderT&& value) {
+    m_writeOrderHasBeenSet = true;
+    m_writeOrder = std::forward<WriteOrderT>(value);
+  }
+  template <typename WriteOrderT = IcebergSortOrder>
+  IcebergMetadata& WithWriteOrder(WriteOrderT&& value) {
+    SetWriteOrder(std::forward<WriteOrderT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of custom configuration properties for the Iceberg table.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const { return m_properties; }
   inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
@@ -78,8 +122,14 @@ class IcebergMetadata {
  private:
   IcebergSchema m_schema;
 
+  IcebergPartitionSpec m_partitionSpec;
+
+  IcebergSortOrder m_writeOrder;
+
   Aws::Map<Aws::String, Aws::String> m_properties;
   bool m_schemaHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
+  bool m_writeOrderHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

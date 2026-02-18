@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorPaginationBase.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorServiceClientModel.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
@@ -32,7 +33,8 @@ namespace NetworkFlowMonitor {
  * Flow Monitor User Guide</a> in the Amazon CloudWatch User Guide.</p>
  */
 class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::AWSJsonClient,
-                                                            public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient> {
+                                                            public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>,
+                                                            public NetworkFlowMonitorPaginationBase<NetworkFlowMonitorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -929,8 +931,8 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
     return SubmitAsync(&NetworkFlowMonitorClient::UpdateScope, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<NetworkFlowMonitorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<NetworkFlowMonitorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>;

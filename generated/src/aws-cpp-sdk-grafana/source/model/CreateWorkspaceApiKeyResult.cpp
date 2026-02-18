@@ -21,13 +21,13 @@ CreateWorkspaceApiKeyResult::CreateWorkspaceApiKeyResult(const Aws::AmazonWebSer
 
 CreateWorkspaceApiKeyResult& CreateWorkspaceApiKeyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("key")) {
-    m_key = jsonValue.GetString("key");
-    m_keyHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("keyName")) {
     m_keyName = jsonValue.GetString("keyName");
     m_keyNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("key")) {
+    m_key = jsonValue.GetString("key");
+    m_keyHasBeenSet = true;
   }
   if (jsonValue.ValueExists("workspaceId")) {
     m_workspaceId = jsonValue.GetString("workspaceId");

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cleanroomsml/CleanRoomsMLPaginationBase.h>
 #include <aws/cleanroomsml/CleanRoomsMLServiceClientModel.h>
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -30,7 +31,8 @@ namespace CleanRoomsML {
  * Rooms SQL Reference</a>.</p> <p/>
  */
 class AWS_CLEANROOMSML_API CleanRoomsMLClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsMLClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsMLClient>,
+                                                public CleanRoomsMLPaginationBase<CleanRoomsMLClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1792,8 +1794,8 @@ class AWS_CLEANROOMSML_API CleanRoomsMLClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&CleanRoomsMLClient::UpdateConfiguredAudienceModel, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CleanRoomsMLEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CleanRoomsMLEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsMLClient>;

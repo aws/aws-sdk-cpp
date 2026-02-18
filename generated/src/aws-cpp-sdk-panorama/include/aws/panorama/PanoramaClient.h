@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/panorama/PanoramaPaginationBase.h>
 #include <aws/panorama/PanoramaServiceClientModel.h>
 #include <aws/panorama/Panorama_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace Panorama {
  * is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.</p></p>
  */
 class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>,
+                                        public PanoramaPaginationBase<PanoramaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -997,8 +999,8 @@ class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&PanoramaClient::UpdateDeviceMetadata, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PanoramaEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PanoramaEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>;

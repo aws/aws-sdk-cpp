@@ -33,21 +33,18 @@ class AssociateLicenseRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>A token from Grafana Labs that ties your Amazon Web Services account with a
-   * Grafana Labs account. For more information, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
-   * your account with Grafana Labs</a>.</p>
+   * <p>The ID of the workspace to associate the license with.</p>
    */
-  inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
-  inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
-  template <typename GrafanaTokenT = Aws::String>
-  void SetGrafanaToken(GrafanaTokenT&& value) {
-    m_grafanaTokenHasBeenSet = true;
-    m_grafanaToken = std::forward<GrafanaTokenT>(value);
+  inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+  inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+  template <typename WorkspaceIdT = Aws::String>
+  void SetWorkspaceId(WorkspaceIdT&& value) {
+    m_workspaceIdHasBeenSet = true;
+    m_workspaceId = std::forward<WorkspaceIdT>(value);
   }
-  template <typename GrafanaTokenT = Aws::String>
-  AssociateLicenseRequest& WithGrafanaToken(GrafanaTokenT&& value) {
-    SetGrafanaToken(std::forward<GrafanaTokenT>(value));
+  template <typename WorkspaceIdT = Aws::String>
+  AssociateLicenseRequest& WithWorkspaceId(WorkspaceIdT&& value) {
+    SetWorkspaceId(std::forward<WorkspaceIdT>(value));
     return *this;
   }
   ///@}
@@ -72,30 +69,33 @@ class AssociateLicenseRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>The ID of the workspace to associate the license with.</p>
+   * <p>A token from Grafana Labs that ties your Amazon Web Services account with a
+   * Grafana Labs account. For more information, see <a
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
+   * your account with Grafana Labs</a>.</p>
    */
-  inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
-  inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-  template <typename WorkspaceIdT = Aws::String>
-  void SetWorkspaceId(WorkspaceIdT&& value) {
-    m_workspaceIdHasBeenSet = true;
-    m_workspaceId = std::forward<WorkspaceIdT>(value);
+  inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
+  inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
+  template <typename GrafanaTokenT = Aws::String>
+  void SetGrafanaToken(GrafanaTokenT&& value) {
+    m_grafanaTokenHasBeenSet = true;
+    m_grafanaToken = std::forward<GrafanaTokenT>(value);
   }
-  template <typename WorkspaceIdT = Aws::String>
-  AssociateLicenseRequest& WithWorkspaceId(WorkspaceIdT&& value) {
-    SetWorkspaceId(std::forward<WorkspaceIdT>(value));
+  template <typename GrafanaTokenT = Aws::String>
+  AssociateLicenseRequest& WithGrafanaToken(GrafanaTokenT&& value) {
+    SetGrafanaToken(std::forward<GrafanaTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_grafanaToken;
+  Aws::String m_workspaceId;
 
   LicenseType m_licenseType{LicenseType::NOT_SET};
 
-  Aws::String m_workspaceId;
-  bool m_grafanaTokenHasBeenSet = false;
-  bool m_licenseTypeHasBeenSet = false;
+  Aws::String m_grafanaToken;
   bool m_workspaceIdHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_grafanaTokenHasBeenSet = false;
 };
 
 }  // namespace Model

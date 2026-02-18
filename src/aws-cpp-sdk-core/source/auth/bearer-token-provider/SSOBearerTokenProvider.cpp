@@ -6,6 +6,7 @@
 
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/platform/Environment.h>
@@ -147,7 +148,7 @@ SSOBearerTokenProvider::CachedSsoToken SSOBearerTokenProvider::LoadAccessTokenFi
     }
 
     Aws::String hashedStartUrl = Aws::Utils::HashingUtils::HexEncode(Aws::Utils::HashingUtils::CalculateSHA1(profile.GetSsoSession().GetName()));
-    Aws::String profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    Aws::String profileDirectory = ProfileCredentialsProvider::GetProfileDirectory();
     Aws::StringStream ssToken;
     ssToken << profileDirectory;
     ssToken << Aws::FileSystem::PATH_DELIM << "sso"  << Aws::FileSystem::PATH_DELIM << "cache" << Aws::FileSystem::PATH_DELIM << hashedStartUrl << ".json";
@@ -195,7 +196,7 @@ bool SSOBearerTokenProvider::WriteAccessTokenFile(const CachedSsoToken& token) c
     }
 
     Aws::String hashedStartUrl = Aws::Utils::HashingUtils::HexEncode(Aws::Utils::HashingUtils::CalculateSHA1(profile.GetSsoSession().GetName()));
-    Aws::String profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+    Aws::String profileDirectory = ProfileCredentialsProvider::GetProfileDirectory();
     Aws::StringStream ssToken;
     ssToken << profileDirectory;
     ssToken << Aws::FileSystem::PATH_DELIM << "sso"  << Aws::FileSystem::PATH_DELIM << "cache" << Aws::FileSystem::PATH_DELIM << hashedStartUrl << ".json";

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-jobs-data/IoTJobsDataPlanePaginationBase.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
@@ -35,7 +36,8 @@ namespace IoTJobsDataPlane {
  * all the targets of the job</p>
  */
 class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>,
+                                                        public IoTJobsDataPlanePaginationBase<IoTJobsDataPlaneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -239,8 +241,8 @@ class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJ
     return SubmitAsync(&IoTJobsDataPlaneClient::UpdateJobExecution, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;

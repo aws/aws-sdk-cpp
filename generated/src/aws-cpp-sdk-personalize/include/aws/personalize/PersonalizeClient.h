@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/PersonalizePaginationBase.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace Personalize {
  * individualized recommendations to customers.</p>
  */
 class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>,
+                                              public PersonalizePaginationBase<PersonalizeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2514,8 +2516,8 @@ class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&PersonalizeClient::UpdateSolution, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/backupsearch/BackupSearchPaginationBase.h>
 #include <aws/backupsearch/BackupSearchServiceClientModel.h>
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -23,7 +24,8 @@ namespace BackupSearch {
  * Developer Guide</a> </p> </li> </ul></p>
  */
 class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>,
+                                                public BackupSearchPaginationBase<BackupSearchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -417,8 +419,8 @@ class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&BackupSearchClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BackupSearchEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BackupSearchEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>;

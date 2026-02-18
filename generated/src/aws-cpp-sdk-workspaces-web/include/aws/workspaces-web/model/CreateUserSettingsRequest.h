@@ -310,8 +310,8 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
   ///@{
   /**
    * <p>The branding configuration input that customizes the appearance of the web
-   * portal for end users. This includes a custom logo, favicon, wallpaper, localized
-   * strings, color theme, and an optional terms of service.</p>
+   * portal for end users. This includes a custom logo, favicon, localized strings,
+   * color theme, and optionally a wallpaper and terms of service.</p>
    */
   inline const BrandingConfigurationCreateInput& GetBrandingConfigurationInput() const { return m_brandingConfigurationInput; }
   inline bool BrandingConfigurationInputHasBeenSet() const { return m_brandingConfigurationInputHasBeenSet; }

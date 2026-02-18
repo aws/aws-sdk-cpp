@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/billingconductor/BillingConductorPaginationBase.h>
 #include <aws/billingconductor/BillingConductorServiceClientModel.h>
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -35,7 +36,8 @@ namespace BillingConductor {
  * Billing Conductor User Guide</a>.</p>
  */
 class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>,
+                                                        public BillingConductorPaginationBase<BillingConductorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -995,8 +997,8 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJ
     return SubmitAsync(&BillingConductorClient::UpdatePricingRule, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BillingConductorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BillingConductorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>;

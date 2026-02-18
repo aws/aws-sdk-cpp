@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime/ChimePaginationBase.h>
 #include <aws/chime/ChimeServiceClientModel.h>
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -57,7 +58,9 @@ namespace Chime {
  * and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration
  * Guide</i>.</p>
  */
-class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient> {
+class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>,
+                                  public ChimePaginationBase<ChimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1910,8 +1913,8 @@ class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&ChimeClient::UpdateUserSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ChimeEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ChimeEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>;

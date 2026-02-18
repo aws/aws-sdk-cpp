@@ -16,7 +16,6 @@ import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
 
-from codegen.format_util import format_directories
 from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ServiceModel
 
@@ -83,6 +82,7 @@ class LegacyC2jCppGen(object):
 
         self.raw_generator_arguments = args["raw_generator_arguments"]
         self.output_location = args["output_location"]
+        self.disable_virtual_operations = args.get("disable_virtual_operations", False)
 
     def generate(self, executor: ProcessPoolExecutor, max_workers: int, args: dict) -> int:
         """
@@ -149,12 +149,6 @@ class LegacyC2jCppGen(object):
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
         
-        # Format generated client code
-        generated_clients = [service for service in self.c2j_models.keys()]
-        if generated_clients:
-            client_dirs = [f"{self.output_location}/src/aws-cpp-sdk-{client}" for client in generated_clients]
-            format_directories(client_dirs)
-        
         return 0
 
     def _init_common_java_cli(self,
@@ -167,7 +161,7 @@ class LegacyC2jCppGen(object):
         # raw arguments to be passed from Py wrapper to the actual generator
         if not kwargs.get("language-binding"):
             kwargs["language-binding"] = "cpp"  # Always cpp by default in the current code gen
-        if not kwargs.get("enable-virtual-operations"):
+        if not self.disable_virtual_operations:
             kwargs["enable-virtual-operations"] = ""  # Historically always set by default in this project
 
         if tmp_dir:

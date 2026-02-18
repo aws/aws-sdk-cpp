@@ -30,24 +30,6 @@ class DeleteWorkspaceServiceAccountTokenRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>The ID of the service account from which to delete the token.</p>
-   */
-  inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
-  inline bool ServiceAccountIdHasBeenSet() const { return m_serviceAccountIdHasBeenSet; }
-  template <typename ServiceAccountIdT = Aws::String>
-  void SetServiceAccountId(ServiceAccountIdT&& value) {
-    m_serviceAccountIdHasBeenSet = true;
-    m_serviceAccountId = std::forward<ServiceAccountIdT>(value);
-  }
-  template <typename ServiceAccountIdT = Aws::String>
-  DeleteWorkspaceServiceAccountTokenRequest& WithServiceAccountId(ServiceAccountIdT&& value) {
-    SetServiceAccountId(std::forward<ServiceAccountIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the token to delete.</p>
    */
   inline const Aws::String& GetTokenId() const { return m_tokenId; }
@@ -60,6 +42,24 @@ class DeleteWorkspaceServiceAccountTokenRequest : public ManagedGrafanaRequest {
   template <typename TokenIdT = Aws::String>
   DeleteWorkspaceServiceAccountTokenRequest& WithTokenId(TokenIdT&& value) {
     SetTokenId(std::forward<TokenIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the service account from which to delete the token.</p>
+   */
+  inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
+  inline bool ServiceAccountIdHasBeenSet() const { return m_serviceAccountIdHasBeenSet; }
+  template <typename ServiceAccountIdT = Aws::String>
+  void SetServiceAccountId(ServiceAccountIdT&& value) {
+    m_serviceAccountIdHasBeenSet = true;
+    m_serviceAccountId = std::forward<ServiceAccountIdT>(value);
+  }
+  template <typename ServiceAccountIdT = Aws::String>
+  DeleteWorkspaceServiceAccountTokenRequest& WithServiceAccountId(ServiceAccountIdT&& value) {
+    SetServiceAccountId(std::forward<ServiceAccountIdT>(value));
     return *this;
   }
   ///@}
@@ -82,13 +82,13 @@ class DeleteWorkspaceServiceAccountTokenRequest : public ManagedGrafanaRequest {
   }
   ///@}
  private:
-  Aws::String m_serviceAccountId;
-
   Aws::String m_tokenId;
 
+  Aws::String m_serviceAccountId;
+
   Aws::String m_workspaceId;
-  bool m_serviceAccountIdHasBeenSet = false;
   bool m_tokenIdHasBeenSet = false;
+  bool m_serviceAccountIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

@@ -30,21 +30,6 @@ class CreateWorkspaceServiceAccountResult {
 
   ///@{
   /**
-   * <p>The permission level given to the service account.</p>
-   */
-  inline Role GetGrafanaRole() const { return m_grafanaRole; }
-  inline void SetGrafanaRole(Role value) {
-    m_grafanaRoleHasBeenSet = true;
-    m_grafanaRole = value;
-  }
-  inline CreateWorkspaceServiceAccountResult& WithGrafanaRole(Role value) {
-    SetGrafanaRole(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the service account.</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -73,6 +58,21 @@ class CreateWorkspaceServiceAccountResult {
   template <typename NameT = Aws::String>
   CreateWorkspaceServiceAccountResult& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The permission level given to the service account.</p>
+   */
+  inline Role GetGrafanaRole() const { return m_grafanaRole; }
+  inline void SetGrafanaRole(Role value) {
+    m_grafanaRoleHasBeenSet = true;
+    m_grafanaRole = value;
+  }
+  inline CreateWorkspaceServiceAccountResult& WithGrafanaRole(Role value) {
+    SetGrafanaRole(value);
     return *this;
   }
   ///@}
@@ -109,18 +109,18 @@ class CreateWorkspaceServiceAccountResult {
   }
   ///@}
  private:
-  Role m_grafanaRole{Role::NOT_SET};
-
   Aws::String m_id;
 
   Aws::String m_name;
 
+  Role m_grafanaRole{Role::NOT_SET};
+
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
-  bool m_grafanaRoleHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_grafanaRoleHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

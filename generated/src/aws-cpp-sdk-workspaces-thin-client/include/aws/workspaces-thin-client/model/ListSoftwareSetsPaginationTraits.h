@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/workspaces-thin-client/WorkSpacesThinClientServiceClientModel.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
+#include <aws/workspaces-thin-client/model/ListSoftwareSetsRequest.h>
+#include <aws/workspaces-thin-client/model/ListSoftwareSetsResult.h>
+
+namespace Aws {
+namespace WorkSpacesThinClient {
+namespace Pagination {
+
+template <typename Client = WorkSpacesThinClientClient>
+struct ListSoftwareSetsPaginationTraits {
+  using RequestType = Model::ListSoftwareSetsRequest;
+  using ResultType = Model::ListSoftwareSetsResult;
+  using OutcomeType = Model::ListSoftwareSetsOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListSoftwareSets(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetNextToken(result.GetNextToken()); }
+};
+
+}  // namespace Pagination
+}  // namespace WorkSpacesThinClient
+}  // namespace Aws

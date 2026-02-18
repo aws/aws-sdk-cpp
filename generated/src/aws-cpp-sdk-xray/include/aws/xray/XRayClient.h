@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/XRayPaginationBase.h>
 #include <aws/xray/XRayServiceClientModel.h>
 #include <aws/xray/XRay_EXPORTS.h>
 
@@ -17,7 +18,9 @@ namespace XRay {
  * <p>Amazon Web Services X-Ray provides APIs for managing debug traces and
  * retrieving service maps and other data created by processing those traces.</p>
  */
-class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<XRayClient> {
+class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient,
+                                public Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>,
+                                public XRayPaginationBase<XRayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1237,8 +1240,8 @@ class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient, public Aws::C
     return SubmitAsync(&XRayClient::UpdateTraceSegmentDestination, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>;

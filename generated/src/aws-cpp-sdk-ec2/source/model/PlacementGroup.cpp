@@ -78,6 +78,11 @@ PlacementGroup& PlacementGroup::operator=(const XmlNode& xmlNode) {
       m_linkedGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(linkedGroupIdNode.GetText());
       m_linkedGroupIdHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if (!operatorNode.IsNull()) {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -127,6 +132,12 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
   if (m_linkedGroupIdHasBeenSet) {
     oStream << location << index << locationValue << ".LinkedGroupId=" << StringUtils::URLEncode(m_linkedGroupId.c_str()) << "&";
   }
+
+  if (m_operatorHasBeenSet) {
+    Aws::StringStream operatorLocationAndMemberSs;
+    operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
 }
 
 void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -161,6 +172,11 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_linkedGroupIdHasBeenSet) {
     oStream << location << ".LinkedGroupId=" << StringUtils::URLEncode(m_linkedGroupId.c_str()) << "&";
+  }
+  if (m_operatorHasBeenSet) {
+    Aws::String operatorLocationAndMember(location);
+    operatorLocationAndMember += ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/controltower/ControlTowerPaginationBase.h>
 #include <aws/controltower/ControlTowerServiceClientModel.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -211,7 +212,8 @@ namespace ControlTower {
  * the Amazon Web Services CloudTrail User Guide.</p>
  */
 class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>,
+                                                public ControlTowerPaginationBase<ControlTowerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1103,8 +1105,8 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&ControlTowerClient::UpdateLandingZone, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ControlTowerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ControlTowerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>;

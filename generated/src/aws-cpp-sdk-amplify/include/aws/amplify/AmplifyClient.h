@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/amplify/AmplifyPaginationBase.h>
 #include <aws/amplify/AmplifyServiceClientModel.h>
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -23,7 +24,9 @@ namespace Amplify {
  * information, see the <a href="https://docs.amplify.aws/">Amplify Framework.</a>
  * </p>
  */
-class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient> {
+class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>,
+                                      public AmplifyPaginationBase<AmplifyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1071,8 +1074,8 @@ class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&AmplifyClient::UpdateWebhook, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AmplifyEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AmplifyEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>;

@@ -35,6 +35,44 @@ class AssertionAttributes {
 
   ///@{
   /**
+   * <p>The name of the attribute within the SAML assertion to use as the user full
+   * "friendly" names for SAML users.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  AssertionAttributes& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the attribute within the SAML assertion to use as the login names
+   * for SAML users.</p>
+   */
+  inline const Aws::String& GetLogin() const { return m_login; }
+  inline bool LoginHasBeenSet() const { return m_loginHasBeenSet; }
+  template <typename LoginT = Aws::String>
+  void SetLogin(LoginT&& value) {
+    m_loginHasBeenSet = true;
+    m_login = std::forward<LoginT>(value);
+  }
+  template <typename LoginT = Aws::String>
+  AssertionAttributes& WithLogin(LoginT&& value) {
+    SetLogin(std::forward<LoginT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the attribute within the SAML assertion to use as the email names
    * for SAML users.</p>
    */
@@ -73,38 +111,19 @@ class AssertionAttributes {
 
   ///@{
   /**
-   * <p>The name of the attribute within the SAML assertion to use as the login names
-   * for SAML users.</p>
+   * <p>The name of the attribute within the SAML assertion to use as the user
+   * roles.</p>
    */
-  inline const Aws::String& GetLogin() const { return m_login; }
-  inline bool LoginHasBeenSet() const { return m_loginHasBeenSet; }
-  template <typename LoginT = Aws::String>
-  void SetLogin(LoginT&& value) {
-    m_loginHasBeenSet = true;
-    m_login = std::forward<LoginT>(value);
+  inline const Aws::String& GetRole() const { return m_role; }
+  inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+  template <typename RoleT = Aws::String>
+  void SetRole(RoleT&& value) {
+    m_roleHasBeenSet = true;
+    m_role = std::forward<RoleT>(value);
   }
-  template <typename LoginT = Aws::String>
-  AssertionAttributes& WithLogin(LoginT&& value) {
-    SetLogin(std::forward<LoginT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the attribute within the SAML assertion to use as the user full
-   * "friendly" names for SAML users.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AssertionAttributes& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename RoleT = Aws::String>
+  AssertionAttributes& WithRole(RoleT&& value) {
+    SetRole(std::forward<RoleT>(value));
     return *this;
   }
   ///@}
@@ -127,43 +146,24 @@ class AssertionAttributes {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the attribute within the SAML assertion to use as the user
-   * roles.</p>
-   */
-  inline const Aws::String& GetRole() const { return m_role; }
-  inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-  template <typename RoleT = Aws::String>
-  void SetRole(RoleT&& value) {
-    m_roleHasBeenSet = true;
-    m_role = std::forward<RoleT>(value);
-  }
-  template <typename RoleT = Aws::String>
-  AssertionAttributes& WithRole(RoleT&& value) {
-    SetRole(std::forward<RoleT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_name;
+
+  Aws::String m_login;
+
   Aws::String m_email;
 
   Aws::String m_groups;
 
-  Aws::String m_login;
-
-  Aws::String m_name;
+  Aws::String m_role;
 
   Aws::String m_org;
-
-  Aws::String m_role;
+  bool m_nameHasBeenSet = false;
+  bool m_loginHasBeenSet = false;
   bool m_emailHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
-  bool m_loginHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_orgHasBeenSet = false;
   bool m_roleHasBeenSet = false;
+  bool m_orgHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -21,16 +21,16 @@ ListWorkspacesResult::ListWorkspacesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListWorkspacesResult& ListWorkspacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("workspaces")) {
     Aws::Utils::Array<JsonView> workspacesJsonList = jsonValue.GetArray("workspaces");
     for (unsigned workspacesIndex = 0; workspacesIndex < workspacesJsonList.GetLength(); ++workspacesIndex) {
       m_workspaces.push_back(workspacesJsonList[workspacesIndex].AsObject());
     }
     m_workspacesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

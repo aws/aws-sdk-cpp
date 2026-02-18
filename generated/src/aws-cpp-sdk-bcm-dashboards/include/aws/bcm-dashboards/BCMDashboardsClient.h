@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bcm-dashboards/BCMDashboardsPaginationBase.h>
 #include <aws/bcm-dashboards/BCMDashboardsServiceClientModel.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -26,7 +27,8 @@ namespace BCMDashboards {
  * across accounts in your organization.</p>
  */
 class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>,
+                                                  public BCMDashboardsPaginationBase<BCMDashboardsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -322,8 +324,8 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&BCMDashboardsClient::UpdateDashboard, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BCMDashboardsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BCMDashboardsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>;

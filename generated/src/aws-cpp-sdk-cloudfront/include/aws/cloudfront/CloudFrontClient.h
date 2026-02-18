@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudfront/CloudFrontPaginationBase.h>
 #include <aws/cloudfront/CloudFrontServiceClientModel.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
@@ -23,7 +24,8 @@ namespace CloudFront {
  * CloudFront Developer Guide</a>.</p></p>
  */
 class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>,
+                                            public CloudFrontPaginationBase<CloudFrontClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
@@ -5583,8 +5585,8 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&CloudFrontClient::VerifyDnsConfiguration2020_05_31, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<CloudFrontEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<CloudFrontEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>;

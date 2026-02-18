@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/WorkSpacesWebPaginationBase.h>
 #include <aws/workspaces-web/WorkSpacesWebServiceClientModel.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
@@ -24,7 +25,8 @@ namespace WorkSpacesWeb {
  * images.</p>
  */
 class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>,
+                                                  public WorkSpacesWebPaginationBase<WorkSpacesWebClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2134,8 +2136,8 @@ class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&WorkSpacesWebClient::UpdateUserSettings, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WorkSpacesWebEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WorkSpacesWebEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>;

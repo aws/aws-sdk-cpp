@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/kms/KMS_EXPORTS.h>
+#include <aws/kms/model/DryRunModifierType.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/RecipientInfo.h>
 
@@ -37,7 +38,9 @@ class DecryptRequest : public KMSRequest {
 
   ///@{
   /**
-   * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
+   * <p>Ciphertext to be decrypted. The blob includes metadata.</p> <p>This parameter
+   * is required in all cases except when <code>DryRun</code> is <code>true</code>
+   * and <code>DryRunModifiers</code> is set to <code>IGNORE_CIPHERTEXT</code>.</p>
    */
   inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const { return m_ciphertextBlob; }
   inline bool CiphertextBlobHasBeenSet() const { return m_ciphertextBlobHasBeenSet; }
@@ -126,14 +129,16 @@ class DecryptRequest : public KMSRequest {
    * key ID of the KMS key that was used to encrypt the ciphertext. If you identify a
    * different KMS key, the <code>Decrypt</code> operation throws an
    * <code>IncorrectKeyException</code>.</p> <p>This parameter is required only when
-   * the ciphertext was encrypted under an asymmetric KMS key. If you used a
-   * symmetric encryption KMS key, KMS can get the KMS key from metadata that it adds
-   * to the symmetric ciphertext blob. However, it is always recommended as a best
-   * practice. This practice ensures that you use the KMS key that you intend.</p>
-   * <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When
-   * using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key
-   * in a different Amazon Web Services account, you must use the key ARN or alias
-   * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+   * the ciphertext was encrypted under an asymmetric KMS key or when
+   * <code>DryRun</code> is <code>true</code> and <code>DryRunModifiers</code> is set
+   * to <code>IGNORE_CIPHERTEXT</code>. If you used a symmetric encryption KMS key,
+   * KMS can get the KMS key from metadata that it adds to the symmetric ciphertext
+   * blob. However, it is always recommended as a best practice. This practice
+   * ensures that you use the KMS key that you intend.</p> <p>To specify a KMS key,
+   * use its key ID, key ARN, alias name, or alias ARN. When using an alias name,
+   * prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon
+   * Web Services account, you must use the key ARN or alias ARN.</p> <p>For
+   * example:</p> <ul> <li> <p>Key ID:
    * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
    * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
    * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -233,6 +238,37 @@ class DecryptRequest : public KMSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the modifiers to apply to the dry run operation.
+   * <code>DryRunModifiers</code> is an optional parameter that only applies when
+   * <code>DryRun</code> is set to <code>true</code>.</p> <p>When set to
+   * <code>IGNORE_CIPHERTEXT</code>, KMS performs only authorization validation
+   * without ciphertext validation. This allows you to test permissions without
+   * requiring a valid ciphertext blob.</p> <p>To learn more about how to use this
+   * parameter, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+   * your permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   */
+  inline const Aws::Vector<DryRunModifierType>& GetDryRunModifiers() const { return m_dryRunModifiers; }
+  inline bool DryRunModifiersHasBeenSet() const { return m_dryRunModifiersHasBeenSet; }
+  template <typename DryRunModifiersT = Aws::Vector<DryRunModifierType>>
+  void SetDryRunModifiers(DryRunModifiersT&& value) {
+    m_dryRunModifiersHasBeenSet = true;
+    m_dryRunModifiers = std::forward<DryRunModifiersT>(value);
+  }
+  template <typename DryRunModifiersT = Aws::Vector<DryRunModifierType>>
+  DecryptRequest& WithDryRunModifiers(DryRunModifiersT&& value) {
+    SetDryRunModifiers(std::forward<DryRunModifiersT>(value));
+    return *this;
+  }
+  inline DecryptRequest& AddDryRunModifiers(DryRunModifierType value) {
+    m_dryRunModifiersHasBeenSet = true;
+    m_dryRunModifiers.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
 
@@ -247,6 +283,8 @@ class DecryptRequest : public KMSRequest {
   RecipientInfo m_recipient;
 
   bool m_dryRun{false};
+
+  Aws::Vector<DryRunModifierType> m_dryRunModifiers;
   bool m_ciphertextBlobHasBeenSet = false;
   bool m_encryptionContextHasBeenSet = false;
   bool m_grantTokensHasBeenSet = false;
@@ -254,6 +292,7 @@ class DecryptRequest : public KMSRequest {
   bool m_encryptionAlgorithmHasBeenSet = false;
   bool m_recipientHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_dryRunModifiersHasBeenSet = false;
 };
 
 }  // namespace Model

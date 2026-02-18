@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/application-autoscaling/ApplicationAutoScalingPaginationBase.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -50,7 +51,8 @@ namespace ApplicationAutoScaling {
  */
 class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>,
+      public ApplicationAutoScalingPaginationBase<ApplicationAutoScalingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -629,8 +631,8 @@ class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
     return SubmitAsync(&ApplicationAutoScalingClient::UntagResource, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<ApplicationAutoScalingEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<ApplicationAutoScalingEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>;

@@ -11,6 +11,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/ProcessorFeature.h>
+#include <aws/rds/model/StorageEncryptionType.h>
 #include <aws/rds/model/Tag.h>
 
 #include <utility>
@@ -454,6 +455,27 @@ class DBSnapshot {
 
   ///@{
   /**
+   * <p>The type of encryption used to protect data at rest in the DB snapshot.
+   * Possible values:</p> <ul> <li> <p> <code>none</code> - The DB snapshot is not
+   * encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB snapshot is
+   * encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p>
+   * <code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS
+   * key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   */
+  inline StorageEncryptionType GetStorageEncryptionType() const { return m_storageEncryptionType; }
+  inline bool StorageEncryptionTypeHasBeenSet() const { return m_storageEncryptionTypeHasBeenSet; }
+  inline void SetStorageEncryptionType(StorageEncryptionType value) {
+    m_storageEncryptionTypeHasBeenSet = true;
+    m_storageEncryptionType = value;
+  }
+  inline DBSnapshot& WithStorageEncryptionType(StorageEncryptionType value) {
+    SetStorageEncryptionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of days for which automatic DB snapshots are retained.</p>
    */
   inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
@@ -838,6 +860,8 @@ class DBSnapshot {
 
   bool m_encrypted{false};
 
+  StorageEncryptionType m_storageEncryptionType{StorageEncryptionType::NOT_SET};
+
   int m_backupRetentionPeriod{0};
 
   Aws::String m_preferredBackupWindow;
@@ -894,6 +918,7 @@ class DBSnapshot {
   bool m_storageTypeHasBeenSet = false;
   bool m_tdeCredentialArnHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;
+  bool m_storageEncryptionTypeHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_preferredBackupWindowHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;

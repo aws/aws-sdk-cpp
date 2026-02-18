@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/support/SupportPaginationBase.h>
 #include <aws/support/SupportServiceClientModel.h>
 #include <aws/support/Support_EXPORTS.h>
 
@@ -54,7 +55,9 @@ namespace Support {
  * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
  * User Guide</i>.</p>
  */
-class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupportClient> {
+class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>,
+                                      public SupportPaginationBase<SupportClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -802,8 +805,8 @@ class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&SupportClient::ResolveCase, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SupportEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SupportEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>;

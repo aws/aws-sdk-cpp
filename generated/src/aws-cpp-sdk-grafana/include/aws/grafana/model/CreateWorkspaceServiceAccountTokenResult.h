@@ -30,23 +30,6 @@ class CreateWorkspaceServiceAccountTokenResult {
 
   ///@{
   /**
-   * <p>The ID of the service account where the token was created.</p>
-   */
-  inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
-  template <typename ServiceAccountIdT = Aws::String>
-  void SetServiceAccountId(ServiceAccountIdT&& value) {
-    m_serviceAccountIdHasBeenSet = true;
-    m_serviceAccountId = std::forward<ServiceAccountIdT>(value);
-  }
-  template <typename ServiceAccountIdT = Aws::String>
-  CreateWorkspaceServiceAccountTokenResult& WithServiceAccountId(ServiceAccountIdT&& value) {
-    SetServiceAccountId(std::forward<ServiceAccountIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Information about the created token, including the key. Be sure to store the
    * key securely.</p>
    */
@@ -59,6 +42,23 @@ class CreateWorkspaceServiceAccountTokenResult {
   template <typename ServiceAccountTokenT = ServiceAccountTokenSummaryWithKey>
   CreateWorkspaceServiceAccountTokenResult& WithServiceAccountToken(ServiceAccountTokenT&& value) {
     SetServiceAccountToken(std::forward<ServiceAccountTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the service account where the token was created.</p>
+   */
+  inline const Aws::String& GetServiceAccountId() const { return m_serviceAccountId; }
+  template <typename ServiceAccountIdT = Aws::String>
+  void SetServiceAccountId(ServiceAccountIdT&& value) {
+    m_serviceAccountIdHasBeenSet = true;
+    m_serviceAccountId = std::forward<ServiceAccountIdT>(value);
+  }
+  template <typename ServiceAccountIdT = Aws::String>
+  CreateWorkspaceServiceAccountTokenResult& WithServiceAccountId(ServiceAccountIdT&& value) {
+    SetServiceAccountId(std::forward<ServiceAccountIdT>(value));
     return *this;
   }
   ///@}
@@ -95,15 +95,15 @@ class CreateWorkspaceServiceAccountTokenResult {
   }
   ///@}
  private:
-  Aws::String m_serviceAccountId;
-
   ServiceAccountTokenSummaryWithKey m_serviceAccountToken;
+
+  Aws::String m_serviceAccountId;
 
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
-  bool m_serviceAccountIdHasBeenSet = false;
   bool m_serviceAccountTokenHasBeenSet = false;
+  bool m_serviceAccountIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

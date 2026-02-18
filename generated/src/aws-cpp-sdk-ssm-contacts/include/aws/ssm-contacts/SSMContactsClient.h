@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-contacts/SSMContactsPaginationBase.h>
 #include <aws/ssm-contacts/SSMContactsServiceClientModel.h>
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace SSMContacts {
  * responder team escalation.</p>
  */
 class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>,
+                                              public SSMContactsPaginationBase<SSMContactsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1144,8 +1146,8 @@ class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&SSMContactsClient::UpdateRotation, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SSMContactsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SSMContactsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>;

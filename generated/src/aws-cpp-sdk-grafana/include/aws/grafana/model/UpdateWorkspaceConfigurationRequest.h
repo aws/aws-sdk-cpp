@@ -51,6 +51,24 @@ class UpdateWorkspaceConfigurationRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
+   * <p>The ID of the workspace to update.</p>
+   */
+  inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+  inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+  template <typename WorkspaceIdT = Aws::String>
+  void SetWorkspaceId(WorkspaceIdT&& value) {
+    m_workspaceIdHasBeenSet = true;
+    m_workspaceId = std::forward<WorkspaceIdT>(value);
+  }
+  template <typename WorkspaceIdT = Aws::String>
+  UpdateWorkspaceConfigurationRequest& WithWorkspaceId(WorkspaceIdT&& value) {
+    SetWorkspaceId(std::forward<WorkspaceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the version of Grafana to support in the workspace. If not
    * specified, keeps the current version of the workspace.</p> <p>Can only be used
    * to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4
@@ -72,33 +90,15 @@ class UpdateWorkspaceConfigurationRequest : public ManagedGrafanaRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the workspace to update.</p>
-   */
-  inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
-  inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-  template <typename WorkspaceIdT = Aws::String>
-  void SetWorkspaceId(WorkspaceIdT&& value) {
-    m_workspaceIdHasBeenSet = true;
-    m_workspaceId = std::forward<WorkspaceIdT>(value);
-  }
-  template <typename WorkspaceIdT = Aws::String>
-  UpdateWorkspaceConfigurationRequest& WithWorkspaceId(WorkspaceIdT&& value) {
-    SetWorkspaceId(std::forward<WorkspaceIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_configuration;
 
-  Aws::String m_grafanaVersion;
-
   Aws::String m_workspaceId;
+
+  Aws::String m_grafanaVersion;
   bool m_configurationHasBeenSet = false;
-  bool m_grafanaVersionHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
+  bool m_grafanaVersionHasBeenSet = false;
 };
 
 }  // namespace Model

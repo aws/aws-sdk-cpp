@@ -175,9 +175,11 @@
 #include <aws/ec2/model/AvailabilityMode.h>
 #include <aws/ec2/model/AvailabilityZone.h>
 #include <aws/ec2/model/AvailabilityZoneAddress.h>
+#include <aws/ec2/model/AvailabilityZoneGeography.h>
 #include <aws/ec2/model/AvailabilityZoneMessage.h>
 #include <aws/ec2/model/AvailabilityZoneOptInStatus.h>
 #include <aws/ec2/model/AvailabilityZoneState.h>
+#include <aws/ec2/model/AvailabilityZoneSubGeography.h>
 #include <aws/ec2/model/AvailableCapacity.h>
 #include <aws/ec2/model/BandwidthWeightingType.h>
 #include <aws/ec2/model/BareMetal.h>
@@ -2122,6 +2124,7 @@
 #include <aws/ec2/model/NatGatewayAttachedAppliance.h>
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/NativeApplicationOidcOptions.h>
+#include <aws/ec2/model/NestedVirtualizationSpecification.h>
 #include <aws/ec2/model/NetworkAcl.h>
 #include <aws/ec2/model/NetworkAclAssociation.h>
 #include <aws/ec2/model/NetworkAclEntry.h>
@@ -2265,6 +2268,7 @@
 #include <aws/ec2/model/RecurringChargeFrequency.h>
 #include <aws/ec2/model/ReferencedSecurityGroup.h>
 #include <aws/ec2/model/Region.h>
+#include <aws/ec2/model/RegionGeography.h>
 #include <aws/ec2/model/RegionalSummary.h>
 #include <aws/ec2/model/RegisterImageRequest.h>
 #include <aws/ec2/model/RegisterImageResponse.h>

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-oidc/SSOOIDCPaginationBase.h>
 #include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
@@ -48,7 +49,9 @@ namespace SSOOIDC {
  * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">What
  * is IAM Identity Center?</a> in the <i>IAM Identity Center User Guide</i>.</p>
  */
-class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient> {
+class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>,
+                                      public SSOOIDCPaginationBase<SSOOIDCClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -223,8 +226,8 @@ class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient, public 
     return SubmitAsync(&SSOOIDCClient::StartDeviceAuthorization, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<SSOOIDCEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<SSOOIDCEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>;

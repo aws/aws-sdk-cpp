@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/WorkSpacesPaginationBase.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
@@ -39,7 +40,8 @@ namespace WorkSpaces {
  * section of the CLI Reference</a>.</p>
  */
 class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>,
+                                            public WorkSpacesPaginationBase<WorkSpacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2913,8 +2915,8 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&WorkSpacesClient::UpdateWorkspacesPool, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<WorkSpacesEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<WorkSpacesEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>;

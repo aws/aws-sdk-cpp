@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rds-data/RDSDataServicePaginationBase.h>
 #include <aws/rds-data/RDSDataServiceServiceClientModel.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace RDSDataService {
  * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
  */
 class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>,
+                                                    public RDSDataServicePaginationBase<RDSDataServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -240,8 +242,8 @@ class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&RDSDataServiceClient::RollbackTransaction, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RDSDataServiceEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RDSDataServiceEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>;

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rolesanywhere/RolesAnywherePaginationBase.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 
@@ -32,7 +33,8 @@ namespace RolesAnywhere {
  * Roles Anywhere User Guide</a>.</p>
  */
 class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>,
+                                                  public RolesAnywherePaginationBase<RolesAnywhereClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -934,8 +936,8 @@ class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&RolesAnywhereClient::UpdateTrustAnchor, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RolesAnywhereEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RolesAnywhereEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>;

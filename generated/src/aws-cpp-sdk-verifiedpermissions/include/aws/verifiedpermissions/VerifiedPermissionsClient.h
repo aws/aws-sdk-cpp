@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsPaginationBase.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 
@@ -63,9 +64,9 @@ namespace VerifiedPermissions {
  * use neither suffix are used in the mutating (create and update) operations.</p>
  * </li> </ul>
  */
-class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient> {
+class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>,
+                                                              public VerifiedPermissionsPaginationBase<VerifiedPermissionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1107,8 +1108,8 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient
     return SubmitAsync(&VerifiedPermissionsClient::UpdatePolicyTemplate, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<VerifiedPermissionsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<VerifiedPermissionsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>;

@@ -51,7 +51,13 @@ class ListServiceJobsRequest : public BatchRequest {
 
   ///@{
   /**
-   * <p>The job status with which to filter service jobs. </p>
+   * <p>The job status used to filter service jobs in the specified queue. If the
+   * <code>filters</code> parameter is specified, the <code>jobStatus</code>
+   * parameter is ignored and jobs with any status are returned. The exception is the
+   * <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used
+   * together. If you don't specify a status, only <code>RUNNING</code> jobs are
+   * returned.</p>  <p>The <code>SHARE_IDENTIFIER</code> filter and the
+   * <code>jobStatus</code> field can be used together to filter results.</p>
    */
   inline ServiceJobStatus GetJobStatus() const { return m_jobStatus; }
   inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -115,8 +121,11 @@ class ListServiceJobsRequest : public BatchRequest {
   ///@{
   /**
    * <p>The filter to apply to the query. Only one filter can be used at a time. When
-   * the filter is used, <code>jobStatus</code> is ignored. The results are sorted by
-   * the <code>createdAt</code> field, with the most recent jobs being first.</p>
+   * the filter is used, <code>jobStatus</code> is ignored with the exception that
+   * <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together.
+   * The results are sorted by the <code>createdAt</code> field, with the most recent
+   * jobs being first.</p>  <p>The <code>SHARE_IDENTIFIER</code> filter and the
+   * <code>jobStatus</code> field can be used together to filter results.</p>
    * <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a case-insensitive
    * match for the job name. If the value ends with an asterisk (*), the filter
    * matches any job name that begins with the string before the '*'. This
@@ -131,7 +140,9 @@ class ListServiceJobsRequest : public BatchRequest {
    * <dt>AFTER_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
    * after the job was created. This corresponds to the <code>createdAt</code> value.
    * The value is a string representation of the number of milliseconds since
-   * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> </dl>
+   * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>SHARE_IDENTIFIER</dt>
+   * <dd> <p>The value for the filter is the fairshare scheduling share
+   * identifier.</p> </dd> </dl>
    */
   inline const Aws::Vector<KeyValuesPair>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

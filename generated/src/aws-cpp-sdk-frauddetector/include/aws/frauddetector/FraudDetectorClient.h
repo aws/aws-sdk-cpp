@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/FraudDetectorPaginationBase.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace FraudDetector {
  * section. </p>
  */
 class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>,
+                                                  public FraudDetectorPaginationBase<FraudDetectorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -2174,8 +2176,8 @@ class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&FraudDetectorClient::UpdateVariable, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<FraudDetectorEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<FraudDetectorEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>;

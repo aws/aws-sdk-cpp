@@ -47,6 +47,12 @@ ModifyInstanceCpuOptionsResponse& ModifyInstanceCpuOptionsResponse::operator=(co
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(threadsPerCoreNode.GetText()).c_str()).c_str());
       m_threadsPerCoreHasBeenSet = true;
     }
+    XmlNode nestedVirtualizationNode = resultNode.FirstChild("nestedVirtualization");
+    if (!nestedVirtualizationNode.IsNull()) {
+      m_nestedVirtualization = NestedVirtualizationSpecificationMapper::GetNestedVirtualizationSpecificationForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nestedVirtualizationNode.GetText()).c_str()));
+      m_nestedVirtualizationHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

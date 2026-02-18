@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/batch/BatchPaginationBase.h>
 #include <aws/batch/BatchServiceClientModel.h>
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -29,7 +30,9 @@ namespace Batch {
  * install or manage batch computing software. This means that you can focus on
  * analyzing results and solving your specific problems instead.</p>
  */
-class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient> {
+class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>,
+                                  public BatchPaginationBase<BatchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -701,7 +704,9 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws:
 
   /**
    * <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a
-   * single job queue.</p><p><h3>See Also:</h3>   <a
+   * single job queue and includes capacity utilization, including total usage and
+   * breakdown by share for fairshare scheduling job queues. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">AWS
    * API Reference</a></p>
    */
@@ -758,9 +763,7 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws:
    * following items:</p> <ul> <li> <p>A job queue ID to return a list of jobs in
    * that job queue</p> </li> <li> <p>A multi-node parallel job ID to return a list
    * of nodes for that job</p> </li> <li> <p>An array job ID to return a list of the
-   * children for that job</p> </li> </ul> <p>You can filter the results by job
-   * status with the <code>jobStatus</code> parameter. If you don't specify a status,
-   * only <code>RUNNING</code> jobs are returned.</p><p><h3>See Also:</h3>   <a
+   * children for that job</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">AWS API
    * Reference</a></p>
    */
@@ -1235,8 +1238,8 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws:
     return SubmitAsync(&BatchClient::UpdateServiceEnvironment, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>;

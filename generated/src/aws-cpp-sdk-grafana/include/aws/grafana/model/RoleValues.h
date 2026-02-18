@@ -39,31 +39,6 @@ class RoleValues {
   ///@{
   /**
    * <p>A list of groups from the SAML assertion attribute to grant the Grafana
-   * <code>Admin</code> role to.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetAdmin() const { return m_admin; }
-  inline bool AdminHasBeenSet() const { return m_adminHasBeenSet; }
-  template <typename AdminT = Aws::Vector<Aws::String>>
-  void SetAdmin(AdminT&& value) {
-    m_adminHasBeenSet = true;
-    m_admin = std::forward<AdminT>(value);
-  }
-  template <typename AdminT = Aws::Vector<Aws::String>>
-  RoleValues& WithAdmin(AdminT&& value) {
-    SetAdmin(std::forward<AdminT>(value));
-    return *this;
-  }
-  template <typename AdminT = Aws::String>
-  RoleValues& AddAdmin(AdminT&& value) {
-    m_adminHasBeenSet = true;
-    m_admin.emplace_back(std::forward<AdminT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A list of groups from the SAML assertion attribute to grant the Grafana
    * <code>Editor</code> role to.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEditor() const { return m_editor; }
@@ -85,12 +60,37 @@ class RoleValues {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<Aws::String> m_admin;
 
+  ///@{
+  /**
+   * <p>A list of groups from the SAML assertion attribute to grant the Grafana
+   * <code>Admin</code> role to.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAdmin() const { return m_admin; }
+  inline bool AdminHasBeenSet() const { return m_adminHasBeenSet; }
+  template <typename AdminT = Aws::Vector<Aws::String>>
+  void SetAdmin(AdminT&& value) {
+    m_adminHasBeenSet = true;
+    m_admin = std::forward<AdminT>(value);
+  }
+  template <typename AdminT = Aws::Vector<Aws::String>>
+  RoleValues& WithAdmin(AdminT&& value) {
+    SetAdmin(std::forward<AdminT>(value));
+    return *this;
+  }
+  template <typename AdminT = Aws::String>
+  RoleValues& AddAdmin(AdminT&& value) {
+    m_adminHasBeenSet = true;
+    m_admin.emplace_back(std::forward<AdminT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<Aws::String> m_editor;
-  bool m_adminHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_admin;
   bool m_editorHasBeenSet = false;
+  bool m_adminHasBeenSet = false;
 };
 
 }  // namespace Model

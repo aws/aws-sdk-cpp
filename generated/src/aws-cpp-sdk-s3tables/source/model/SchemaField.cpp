@@ -18,6 +18,10 @@ namespace Model {
 SchemaField::SchemaField(JsonView jsonValue) { *this = jsonValue; }
 
 SchemaField& SchemaField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetInteger("id");
+    m_idHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -35,6 +39,10 @@ SchemaField& SchemaField::operator=(JsonView jsonValue) {
 
 JsonValue SchemaField::Jsonize() const {
   JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithInteger("id", m_id);
+  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);

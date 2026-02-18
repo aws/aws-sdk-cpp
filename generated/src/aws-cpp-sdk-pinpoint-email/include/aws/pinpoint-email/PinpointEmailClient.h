@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/PinpointEmailPaginationBase.h>
 #include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 
@@ -50,7 +51,8 @@ namespace PinpointEmail {
  * Infrastructure</a>.</p>
  */
 class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>,
+                                                  public PinpointEmailPaginationBase<PinpointEmailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1428,8 +1430,8 @@ class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&PinpointEmailClient::UpdateConfigurationSetEventDestination, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<PinpointEmailEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<PinpointEmailEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>;

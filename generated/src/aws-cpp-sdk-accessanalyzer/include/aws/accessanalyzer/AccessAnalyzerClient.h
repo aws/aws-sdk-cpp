@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/accessanalyzer/AccessAnalyzerPaginationBase.h>
 #include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -47,7 +48,8 @@ namespace AccessAnalyzer {
  * Guide</b>.</p>
  */
 class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>,
+                                                    public AccessAnalyzerPaginationBase<AccessAnalyzerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1137,8 +1139,8 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
     return SubmitAsync(&AccessAnalyzerClient::ValidatePolicy, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<AccessAnalyzerEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<AccessAnalyzerEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>;

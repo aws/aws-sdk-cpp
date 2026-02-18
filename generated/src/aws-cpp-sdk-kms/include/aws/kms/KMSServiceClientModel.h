@@ -26,6 +26,7 @@
 #include <aws/kms/model/CreateGrantResult.h>
 #include <aws/kms/model/CreateKeyRequest.h>
 #include <aws/kms/model/CreateKeyResult.h>
+#include <aws/kms/model/DecryptRequest.h>
 #include <aws/kms/model/DecryptResult.h>
 #include <aws/kms/model/DeleteCustomKeyStoreResult.h>
 #include <aws/kms/model/DeleteImportedKeyMaterialResult.h>

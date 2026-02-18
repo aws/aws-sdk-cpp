@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/outposts/OutpostsPaginationBase.h>
 #include <aws/outposts/OutpostsServiceClientModel.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace Outposts {
  * needs.</p>
  */
 class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>,
+                                        public OutpostsPaginationBase<OutpostsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
@@ -1048,8 +1050,8 @@ class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&OutpostsClient::UpdateSiteRackPhysicalProperties, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<OutpostsEndpointProviderBase>& accessEndpointProvider();
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<OutpostsEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>;
