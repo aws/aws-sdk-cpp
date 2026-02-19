@@ -11,6 +11,7 @@ import software.amazon.smithy.model.traits.PaginatedTrait;
 import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.aws.traits.ServiceTrait;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.OperationData;
 import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
@@ -41,16 +42,18 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
         }
         
         for (ServiceShape service : model.getServiceShapes()) {
+            // Process service shape for S3-CRT projection
+            final ServiceShape processedService = ServiceNameUtil.processS3CrtProjection(service, context.getProjectionName());
             // Find paginated operations using TopDownIndex, excluding deprecated operations
-            List<OperationData<PaginatedTrait>> paginatedOps = TopDownIndex.of(model).getContainedOperations(service).stream()
+            List<OperationData<PaginatedTrait>> paginatedOps = TopDownIndex.of(model).getContainedOperations(processedService).stream()
                 .filter(op -> op.hasTrait(PaginatedTrait.class))
                 .filter(op -> !op.hasTrait(DeprecatedTrait.class))
-                .map(op -> new OperationData<>(op, op.expectTrait(PaginatedTrait.class), service))
+                .map(op -> new OperationData<>(op, op.expectTrait(PaginatedTrait.class), processedService))
                 .collect(Collectors.toList());
             
             // Always generate base class, even if empty
             // Required because legacy C2J generator always includes PaginationBase inheritance in client headers
-            FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, service, paginatedOps, "Pagination");
+            FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, processedService, paginatedOps, "Pagination");
             parser.run(featureParser -> {
                 String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
                 
@@ -80,7 +83,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
             
             if (!paginatedOps.isEmpty()) {
                 // Generate compilation test
-                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, service, paginatedOps, parser.getServiceMap());
+                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, processedService, paginatedOps, parser.getServiceMap());
                 testGenerator.run();
             }
         }
