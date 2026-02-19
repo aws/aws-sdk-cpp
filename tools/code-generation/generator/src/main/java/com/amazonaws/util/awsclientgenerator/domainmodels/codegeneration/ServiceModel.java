@@ -31,6 +31,7 @@ public class ServiceModel {
     Map<String, Shape> shapes;
     Map<String, Operation> operations;
     boolean enableVirtualOperations;
+    boolean disableSmithyGeneration;
     Collection<Error> serviceErrors;
     Collection<CustomPresignedUtility> presigners;
     Map<String, String> queryCompatibleErrorMappings;

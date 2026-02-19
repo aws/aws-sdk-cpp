@@ -17,7 +17,9 @@
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+#if(!$serviceModel.disableSmithyGeneration)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}PaginationBase.h>
+#end
 \#include <smithy/client/AwsSmithyClient.h>
 #if($serviceModel.hasBearerAuth())
 \#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
@@ -49,6 +51,7 @@ namespace ${serviceNamespace}
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
 #end
+#if(!$serviceModel.disableSmithyGeneration)
   class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
     public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
       ${serviceConfiguration},
@@ -59,6 +62,17 @@ namespace ${serviceNamespace}
       smithy::client::$serializerOutcome,
       Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
     public ${metadata.classNamePrefix}PaginationBase<${className}>
+#else
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
+    public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+      ${serviceConfiguration},
+      smithy::AuthSchemeResolverBase<>,
+      ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
+      ${metadata.classNamePrefix}EndpointProviderBase,
+      smithy::client::$serializer,
+      smithy::client::$serializerOutcome,
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>
+#end
   {
     public:
       static const char* GetServiceName();
