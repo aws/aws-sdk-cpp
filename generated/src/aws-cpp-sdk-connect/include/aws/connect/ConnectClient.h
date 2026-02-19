@@ -1582,7 +1582,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a new notification to be delivered to specified recipients.
-   * Notifications can include localized content with embedded links, and an optional
+   * Notifications can include localized content with links, and an optional
    * expiration time. Recipients can be specified as individual user ARNs or instance
    * ARNs to target all users in an instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">AWS
