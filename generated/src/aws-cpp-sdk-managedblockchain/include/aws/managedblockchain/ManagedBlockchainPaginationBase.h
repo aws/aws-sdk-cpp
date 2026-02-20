@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/managedblockchain/model/ListAccessorsPaginationTraits.h>
 #include <aws/managedblockchain/model/ListInvitationsPaginationTraits.h>
@@ -29,6 +30,7 @@ class ManagedBlockchainPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessorsRequest, Pagination::ListAccessorsPaginationTraits<DerivedClient>>
   ListAccessorsPaginator(const Model::ListAccessorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessorsRequest,
                                              Pagination::ListAccessorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -40,6 +42,7 @@ class ManagedBlockchainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvitationsRequest,
                                     Pagination::ListInvitationsPaginationTraits<DerivedClient>>
   ListInvitationsPaginator(const Model::ListInvitationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvitationsRequest,
                                              Pagination::ListInvitationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -50,6 +53,7 @@ class ManagedBlockchainPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest, Pagination::ListMembersPaginationTraits<DerivedClient>>
   ListMembersPaginator(const Model::ListMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest,
                                              Pagination::ListMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -60,6 +64,7 @@ class ManagedBlockchainPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworksRequest, Pagination::ListNetworksPaginationTraits<DerivedClient>>
   ListNetworksPaginator(const Model::ListNetworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworksRequest,
                                              Pagination::ListNetworksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -70,6 +75,7 @@ class ManagedBlockchainPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodesRequest, Pagination::ListNodesPaginationTraits<DerivedClient>>
   ListNodesPaginator(const Model::ListNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodesRequest, Pagination::ListNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -79,6 +85,7 @@ class ManagedBlockchainPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProposalsRequest, Pagination::ListProposalsPaginationTraits<DerivedClient>>
   ListProposalsPaginator(const Model::ListProposalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProposalsRequest,
                                              Pagination::ListProposalsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -90,6 +97,7 @@ class ManagedBlockchainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProposalVotesRequest,
                                     Pagination::ListProposalVotesPaginationTraits<DerivedClient>>
   ListProposalVotesPaginator(const Model::ListProposalVotesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProposalVotesRequest,
                                              Pagination::ListProposalVotesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

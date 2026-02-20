@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/partnercentral-benefits/model/ListBenefitAllocationsPaginationTraits.h>
 #include <aws/partnercentral-benefits/model/ListBenefitApplicationsPaginationTraits.h>
@@ -26,6 +27,7 @@ class PartnerCentralBenefitsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBenefitAllocationsRequest,
                                     Pagination::ListBenefitAllocationsPaginationTraits<DerivedClient>>
   ListBenefitAllocationsPaginator(const Model::ListBenefitAllocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBenefitAllocationsRequest,
                                              Pagination::ListBenefitAllocationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class PartnerCentralBenefitsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBenefitApplicationsRequest,
                                     Pagination::ListBenefitApplicationsPaginationTraits<DerivedClient>>
   ListBenefitApplicationsPaginator(const Model::ListBenefitApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBenefitApplicationsRequest,
                                              Pagination::ListBenefitApplicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class PartnerCentralBenefitsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBenefitsRequest, Pagination::ListBenefitsPaginationTraits<DerivedClient>>
   ListBenefitsPaginator(const Model::ListBenefitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBenefitsRequest,
                                              Pagination::ListBenefitsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

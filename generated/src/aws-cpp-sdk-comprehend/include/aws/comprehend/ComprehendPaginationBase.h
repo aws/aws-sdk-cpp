@@ -22,6 +22,7 @@
 #include <aws/comprehend/model/ListSentimentDetectionJobsPaginationTraits.h>
 #include <aws/comprehend/model/ListTargetedSentimentDetectionJobsPaginationTraits.h>
 #include <aws/comprehend/model/ListTopicsDetectionJobsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -39,6 +40,7 @@ class ComprehendPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest, Pagination::ListDatasetsPaginationTraits<DerivedClient>>
   ListDatasetsPaginator(const Model::ListDatasetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest,
                                              Pagination::ListDatasetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -50,6 +52,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDocumentClassificationJobsRequest,
                                     Pagination::ListDocumentClassificationJobsPaginationTraits<DerivedClient>>
   ListDocumentClassificationJobsPaginator(const Model::ListDocumentClassificationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDocumentClassificationJobsRequest,
                                              Pagination::ListDocumentClassificationJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +64,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDocumentClassifiersRequest,
                                     Pagination::ListDocumentClassifiersPaginationTraits<DerivedClient>>
   ListDocumentClassifiersPaginator(const Model::ListDocumentClassifiersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDocumentClassifiersRequest,
                                              Pagination::ListDocumentClassifiersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +76,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDocumentClassifierSummariesRequest,
                                     Pagination::ListDocumentClassifierSummariesPaginationTraits<DerivedClient>>
   ListDocumentClassifierSummariesPaginator(const Model::ListDocumentClassifierSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDocumentClassifierSummariesRequest,
                                              Pagination::ListDocumentClassifierSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +88,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDominantLanguageDetectionJobsRequest,
                                     Pagination::ListDominantLanguageDetectionJobsPaginationTraits<DerivedClient>>
   ListDominantLanguageDetectionJobsPaginator(const Model::ListDominantLanguageDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDominantLanguageDetectionJobsRequest,
                                              Pagination::ListDominantLanguageDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -93,6 +99,7 @@ class ComprehendPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointsRequest, Pagination::ListEndpointsPaginationTraits<DerivedClient>>
   ListEndpointsPaginator(const Model::ListEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointsRequest,
                                              Pagination::ListEndpointsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -104,6 +111,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitiesDetectionJobsRequest,
                                     Pagination::ListEntitiesDetectionJobsPaginationTraits<DerivedClient>>
   ListEntitiesDetectionJobsPaginator(const Model::ListEntitiesDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitiesDetectionJobsRequest,
                                              Pagination::ListEntitiesDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -115,6 +123,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityRecognizersRequest,
                                     Pagination::ListEntityRecognizersPaginationTraits<DerivedClient>>
   ListEntityRecognizersPaginator(const Model::ListEntityRecognizersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityRecognizersRequest,
                                              Pagination::ListEntityRecognizersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -126,6 +135,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityRecognizerSummariesRequest,
                                     Pagination::ListEntityRecognizerSummariesPaginationTraits<DerivedClient>>
   ListEntityRecognizerSummariesPaginator(const Model::ListEntityRecognizerSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityRecognizerSummariesRequest,
                                              Pagination::ListEntityRecognizerSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -137,6 +147,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventsDetectionJobsRequest,
                                     Pagination::ListEventsDetectionJobsPaginationTraits<DerivedClient>>
   ListEventsDetectionJobsPaginator(const Model::ListEventsDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventsDetectionJobsRequest,
                                              Pagination::ListEventsDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -148,6 +159,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlywheelIterationHistoryRequest,
                                     Pagination::ListFlywheelIterationHistoryPaginationTraits<DerivedClient>>
   ListFlywheelIterationHistoryPaginator(const Model::ListFlywheelIterationHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlywheelIterationHistoryRequest,
                                              Pagination::ListFlywheelIterationHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -158,6 +170,7 @@ class ComprehendPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlywheelsRequest, Pagination::ListFlywheelsPaginationTraits<DerivedClient>>
   ListFlywheelsPaginator(const Model::ListFlywheelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlywheelsRequest,
                                              Pagination::ListFlywheelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -169,6 +182,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyPhrasesDetectionJobsRequest,
                                     Pagination::ListKeyPhrasesDetectionJobsPaginationTraits<DerivedClient>>
   ListKeyPhrasesDetectionJobsPaginator(const Model::ListKeyPhrasesDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyPhrasesDetectionJobsRequest,
                                              Pagination::ListKeyPhrasesDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -180,6 +194,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPiiEntitiesDetectionJobsRequest,
                                     Pagination::ListPiiEntitiesDetectionJobsPaginationTraits<DerivedClient>>
   ListPiiEntitiesDetectionJobsPaginator(const Model::ListPiiEntitiesDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPiiEntitiesDetectionJobsRequest,
                                              Pagination::ListPiiEntitiesDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -191,6 +206,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSentimentDetectionJobsRequest,
                                     Pagination::ListSentimentDetectionJobsPaginationTraits<DerivedClient>>
   ListSentimentDetectionJobsPaginator(const Model::ListSentimentDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSentimentDetectionJobsRequest,
                                              Pagination::ListSentimentDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -202,6 +218,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTargetedSentimentDetectionJobsRequest,
                                     Pagination::ListTargetedSentimentDetectionJobsPaginationTraits<DerivedClient>>
   ListTargetedSentimentDetectionJobsPaginator(const Model::ListTargetedSentimentDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTargetedSentimentDetectionJobsRequest,
                                              Pagination::ListTargetedSentimentDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -213,6 +230,7 @@ class ComprehendPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsDetectionJobsRequest,
                                     Pagination::ListTopicsDetectionJobsPaginationTraits<DerivedClient>>
   ListTopicsDetectionJobsPaginator(const Model::ListTopicsDetectionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsDetectionJobsRequest,
                                              Pagination::ListTopicsDetectionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

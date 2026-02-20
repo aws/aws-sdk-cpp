@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/managedblockchain-query/model/ListAssetContractsPaginationTraits.h>
 #include <aws/managedblockchain-query/model/ListFilteredTransactionEventsPaginationTraits.h>
@@ -28,6 +29,7 @@ class ManagedBlockchainQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetContractsRequest,
                                     Pagination::ListAssetContractsPaginationTraits<DerivedClient>>
   ListAssetContractsPaginator(const Model::ListAssetContractsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetContractsRequest,
                                              Pagination::ListAssetContractsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class ManagedBlockchainQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFilteredTransactionEventsRequest,
                                     Pagination::ListFilteredTransactionEventsPaginationTraits<DerivedClient>>
   ListFilteredTransactionEventsPaginator(const Model::ListFilteredTransactionEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFilteredTransactionEventsRequest,
                                              Pagination::ListFilteredTransactionEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class ManagedBlockchainQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTokenBalancesRequest,
                                     Pagination::ListTokenBalancesPaginationTraits<DerivedClient>>
   ListTokenBalancesPaginator(const Model::ListTokenBalancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTokenBalancesRequest,
                                              Pagination::ListTokenBalancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class ManagedBlockchainQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransactionEventsRequest,
                                     Pagination::ListTransactionEventsPaginationTraits<DerivedClient>>
   ListTransactionEventsPaginator(const Model::ListTransactionEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransactionEventsRequest,
                                              Pagination::ListTransactionEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class ManagedBlockchainQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransactionsRequest,
                                     Pagination::ListTransactionsPaginationTraits<DerivedClient>>
   ListTransactionsPaginator(const Model::ListTransactionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransactionsRequest,
                                              Pagination::ListTransactionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

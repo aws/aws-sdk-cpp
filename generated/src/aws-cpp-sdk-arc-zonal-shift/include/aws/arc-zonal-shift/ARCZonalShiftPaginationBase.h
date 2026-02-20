@@ -8,6 +8,7 @@
 #include <aws/arc-zonal-shift/model/ListAutoshiftsPaginationTraits.h>
 #include <aws/arc-zonal-shift/model/ListManagedResourcesPaginationTraits.h>
 #include <aws/arc-zonal-shift/model/ListZonalShiftsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class ARCZonalShiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutoshiftsRequest, Pagination::ListAutoshiftsPaginationTraits<DerivedClient>>
   ListAutoshiftsPaginator(const Model::ListAutoshiftsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutoshiftsRequest,
                                              Pagination::ListAutoshiftsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -36,6 +38,7 @@ class ARCZonalShiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedResourcesRequest,
                                     Pagination::ListManagedResourcesPaginationTraits<DerivedClient>>
   ListManagedResourcesPaginator(const Model::ListManagedResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedResourcesRequest,
                                              Pagination::ListManagedResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class ARCZonalShiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListZonalShiftsRequest,
                                     Pagination::ListZonalShiftsPaginationTraits<DerivedClient>>
   ListZonalShiftsPaginator(const Model::ListZonalShiftsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListZonalShiftsRequest,
                                              Pagination::ListZonalShiftsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

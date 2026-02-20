@@ -14,6 +14,7 @@
 #include <aws/chatbot/model/ListMicrosoftTeamsChannelConfigurationsPaginationTraits.h>
 #include <aws/chatbot/model/ListMicrosoftTeamsConfiguredTeamsPaginationTraits.h>
 #include <aws/chatbot/model/ListMicrosoftTeamsUserIdentitiesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -32,6 +33,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeChimeWebhookConfigurationsRequest,
                                     Pagination::DescribeChimeWebhookConfigurationsPaginationTraits<DerivedClient>>
   DescribeChimeWebhookConfigurationsPaginator(const Model::DescribeChimeWebhookConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeChimeWebhookConfigurationsRequest,
                                              Pagination::DescribeChimeWebhookConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -43,6 +45,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSlackChannelConfigurationsRequest,
                                     Pagination::DescribeSlackChannelConfigurationsPaginationTraits<DerivedClient>>
   DescribeSlackChannelConfigurationsPaginator(const Model::DescribeSlackChannelConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSlackChannelConfigurationsRequest,
                                              Pagination::DescribeSlackChannelConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSlackUserIdentitiesRequest,
                                     Pagination::DescribeSlackUserIdentitiesPaginationTraits<DerivedClient>>
   DescribeSlackUserIdentitiesPaginator(const Model::DescribeSlackUserIdentitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSlackUserIdentitiesRequest,
                                              Pagination::DescribeSlackUserIdentitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +69,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSlackWorkspacesRequest,
                                     Pagination::DescribeSlackWorkspacesPaginationTraits<DerivedClient>>
   DescribeSlackWorkspacesPaginator(const Model::DescribeSlackWorkspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSlackWorkspacesRequest,
                                              Pagination::DescribeSlackWorkspacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssociationsRequest,
                                     Pagination::ListAssociationsPaginationTraits<DerivedClient>>
   ListAssociationsPaginator(const Model::ListAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssociationsRequest,
                                              Pagination::ListAssociationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -87,6 +93,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomActionsRequest,
                                     Pagination::ListCustomActionsPaginationTraits<DerivedClient>>
   ListCustomActionsPaginator(const Model::ListCustomActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomActionsRequest,
                                              Pagination::ListCustomActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMicrosoftTeamsChannelConfigurationsRequest,
                                     Pagination::ListMicrosoftTeamsChannelConfigurationsPaginationTraits<DerivedClient>>
   ListMicrosoftTeamsChannelConfigurationsPaginator(const Model::ListMicrosoftTeamsChannelConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMicrosoftTeamsChannelConfigurationsRequest,
                                              Pagination::ListMicrosoftTeamsChannelConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMicrosoftTeamsConfiguredTeamsRequest,
                                     Pagination::ListMicrosoftTeamsConfiguredTeamsPaginationTraits<DerivedClient>>
   ListMicrosoftTeamsConfiguredTeamsPaginator(const Model::ListMicrosoftTeamsConfiguredTeamsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMicrosoftTeamsConfiguredTeamsRequest,
                                              Pagination::ListMicrosoftTeamsConfiguredTeamsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -120,6 +129,7 @@ class ChatbotPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMicrosoftTeamsUserIdentitiesRequest,
                                     Pagination::ListMicrosoftTeamsUserIdentitiesPaginationTraits<DerivedClient>>
   ListMicrosoftTeamsUserIdentitiesPaginator(const Model::ListMicrosoftTeamsUserIdentitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMicrosoftTeamsUserIdentitiesRequest,
                                              Pagination::ListMicrosoftTeamsUserIdentitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

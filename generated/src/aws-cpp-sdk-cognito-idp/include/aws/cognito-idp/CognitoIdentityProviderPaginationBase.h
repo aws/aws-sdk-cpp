@@ -14,6 +14,7 @@
 #include <aws/cognito-idp/model/ListUserPoolsPaginationTraits.h>
 #include <aws/cognito-idp/model/ListUsersInGroupPaginationTraits.h>
 #include <aws/cognito-idp/model/ListUsersPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -32,6 +33,7 @@ class CognitoIdentityProviderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::AdminListGroupsForUserRequest,
                                     Pagination::AdminListGroupsForUserPaginationTraits<DerivedClient>>
   AdminListGroupsForUserPaginator(const Model::AdminListGroupsForUserRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::AdminListGroupsForUserRequest,
                                              Pagination::AdminListGroupsForUserPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -43,6 +45,7 @@ class CognitoIdentityProviderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::AdminListUserAuthEventsRequest,
                                     Pagination::AdminListUserAuthEventsPaginationTraits<DerivedClient>>
   AdminListUserAuthEventsPaginator(const Model::AdminListUserAuthEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::AdminListUserAuthEventsRequest,
                                              Pagination::AdminListUserAuthEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -53,6 +56,7 @@ class CognitoIdentityProviderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest, Pagination::ListGroupsPaginationTraits<DerivedClient>>
   ListGroupsPaginator(const Model::ListGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest,
                                              Pagination::ListGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -64,6 +68,7 @@ class CognitoIdentityProviderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentityProvidersRequest,
                                     Pagination::ListIdentityProvidersPaginationTraits<DerivedClient>>
   ListIdentityProvidersPaginator(const Model::ListIdentityProvidersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentityProvidersRequest,
                                              Pagination::ListIdentityProvidersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +80,7 @@ class CognitoIdentityProviderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceServersRequest,
                                     Pagination::ListResourceServersPaginationTraits<DerivedClient>>
   ListResourceServersPaginator(const Model::ListResourceServersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceServersRequest,
                                              Pagination::ListResourceServersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +92,7 @@ class CognitoIdentityProviderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserPoolClientsRequest,
                                     Pagination::ListUserPoolClientsPaginationTraits<DerivedClient>>
   ListUserPoolClientsPaginator(const Model::ListUserPoolClientsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserPoolClientsRequest,
                                              Pagination::ListUserPoolClientsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +103,7 @@ class CognitoIdentityProviderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserPoolsRequest, Pagination::ListUserPoolsPaginationTraits<DerivedClient>>
   ListUserPoolsPaginator(const Model::ListUserPoolsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserPoolsRequest,
                                              Pagination::ListUserPoolsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -106,6 +114,7 @@ class CognitoIdentityProviderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -116,6 +125,7 @@ class CognitoIdentityProviderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersInGroupRequest,
                                     Pagination::ListUsersInGroupPaginationTraits<DerivedClient>>
   ListUsersInGroupPaginator(const Model::ListUsersInGroupRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersInGroupRequest,
                                              Pagination::ListUsersInGroupPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

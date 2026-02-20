@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/migrationhubstrategy/model/GetServerDetailsPaginationTraits.h>
 #include <aws/migrationhubstrategy/model/ListAnalyzableServersPaginationTraits.h>
@@ -29,6 +30,7 @@ class MigrationHubStrategyRecommendationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetServerDetailsRequest,
                                     Pagination::GetServerDetailsPaginationTraits<DerivedClient>>
   GetServerDetailsPaginator(const Model::GetServerDetailsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetServerDetailsRequest,
                                              Pagination::GetServerDetailsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -40,6 +42,7 @@ class MigrationHubStrategyRecommendationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalyzableServersRequest,
                                     Pagination::ListAnalyzableServersPaginationTraits<DerivedClient>>
   ListAnalyzableServersPaginator(const Model::ListAnalyzableServersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalyzableServersRequest,
                                              Pagination::ListAnalyzableServersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +54,7 @@ class MigrationHubStrategyRecommendationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationComponentsRequest,
                                     Pagination::ListApplicationComponentsPaginationTraits<DerivedClient>>
   ListApplicationComponentsPaginator(const Model::ListApplicationComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationComponentsRequest,
                                              Pagination::ListApplicationComponentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class MigrationHubStrategyRecommendationsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollectorsRequest, Pagination::ListCollectorsPaginationTraits<DerivedClient>>
   ListCollectorsPaginator(const Model::ListCollectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollectorsRequest,
                                              Pagination::ListCollectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -72,6 +77,7 @@ class MigrationHubStrategyRecommendationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportFileTaskRequest,
                                     Pagination::ListImportFileTaskPaginationTraits<DerivedClient>>
   ListImportFileTaskPaginator(const Model::ListImportFileTaskRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportFileTaskRequest,
                                              Pagination::ListImportFileTaskPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -82,6 +88,7 @@ class MigrationHubStrategyRecommendationsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServersRequest, Pagination::ListServersPaginationTraits<DerivedClient>>
   ListServersPaginator(const Model::ListServersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServersRequest,
                                              Pagination::ListServersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

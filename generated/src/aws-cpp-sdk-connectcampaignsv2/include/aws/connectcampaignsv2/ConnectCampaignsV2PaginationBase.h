@@ -7,6 +7,7 @@
 
 #include <aws/connectcampaignsv2/model/ListCampaignsPaginationTraits.h>
 #include <aws/connectcampaignsv2/model/ListConnectInstanceIntegrationsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class ConnectCampaignsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCampaignsRequest, Pagination::ListCampaignsPaginationTraits<DerivedClient>>
   ListCampaignsPaginator(const Model::ListCampaignsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCampaignsRequest,
                                              Pagination::ListCampaignsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -35,6 +37,7 @@ class ConnectCampaignsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectInstanceIntegrationsRequest,
                                     Pagination::ListConnectInstanceIntegrationsPaginationTraits<DerivedClient>>
   ListConnectInstanceIntegrationsPaginator(const Model::ListConnectInstanceIntegrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectInstanceIntegrationsRequest,
                                              Pagination::ListConnectInstanceIntegrationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker-geospatial/model/ListEarthObservationJobsPaginationTraits.h>
 #include <aws/sagemaker-geospatial/model/ListRasterDataCollectionsPaginationTraits.h>
@@ -27,6 +28,7 @@ class SageMakerGeospatialPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEarthObservationJobsRequest,
                                     Pagination::ListEarthObservationJobsPaginationTraits<DerivedClient>>
   ListEarthObservationJobsPaginator(const Model::ListEarthObservationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEarthObservationJobsRequest,
                                              Pagination::ListEarthObservationJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class SageMakerGeospatialPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRasterDataCollectionsRequest,
                                     Pagination::ListRasterDataCollectionsPaginationTraits<DerivedClient>>
   ListRasterDataCollectionsPaginator(const Model::ListRasterDataCollectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRasterDataCollectionsRequest,
                                              Pagination::ListRasterDataCollectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class SageMakerGeospatialPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorEnrichmentJobsRequest,
                                     Pagination::ListVectorEnrichmentJobsPaginationTraits<DerivedClient>>
   ListVectorEnrichmentJobsPaginator(const Model::ListVectorEnrichmentJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorEnrichmentJobsRequest,
                                              Pagination::ListVectorEnrichmentJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class SageMakerGeospatialPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRasterDataCollectionRequest,
                                     Pagination::SearchRasterDataCollectionPaginationTraits<DerivedClient>>
   SearchRasterDataCollectionPaginator(const Model::SearchRasterDataCollectionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRasterDataCollectionRequest,
                                              Pagination::SearchRasterDataCollectionPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

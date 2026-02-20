@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathPaginationTraits.h>
 #include <aws/lakeformation/model/GetTableObjectsPaginationTraits.h>
@@ -36,6 +37,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEffectivePermissionsForPathRequest,
                                     Pagination::GetEffectivePermissionsForPathPaginationTraits<DerivedClient>>
   GetEffectivePermissionsForPathPaginator(const Model::GetEffectivePermissionsForPathRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEffectivePermissionsForPathRequest,
                                              Pagination::GetEffectivePermissionsForPathPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +49,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTableObjectsRequest,
                                     Pagination::GetTableObjectsPaginationTraits<DerivedClient>>
   GetTableObjectsPaginator(const Model::GetTableObjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTableObjectsRequest,
                                              Pagination::GetTableObjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -57,6 +60,7 @@ class LakeFormationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetWorkUnitsRequest, Pagination::GetWorkUnitsPaginationTraits<DerivedClient>>
   GetWorkUnitsPaginator(const Model::GetWorkUnitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetWorkUnitsRequest,
                                              Pagination::GetWorkUnitsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -68,6 +72,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataCellsFilterRequest,
                                     Pagination::ListDataCellsFilterPaginationTraits<DerivedClient>>
   ListDataCellsFilterPaginator(const Model::ListDataCellsFilterRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataCellsFilterRequest,
                                              Pagination::ListDataCellsFilterPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -79,6 +84,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLakeFormationOptInsRequest,
                                     Pagination::ListLakeFormationOptInsPaginationTraits<DerivedClient>>
   ListLakeFormationOptInsPaginator(const Model::ListLakeFormationOptInsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLakeFormationOptInsRequest,
                                              Pagination::ListLakeFormationOptInsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -90,6 +96,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLFTagExpressionsRequest,
                                     Pagination::ListLFTagExpressionsPaginationTraits<DerivedClient>>
   ListLFTagExpressionsPaginator(const Model::ListLFTagExpressionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLFTagExpressionsRequest,
                                              Pagination::ListLFTagExpressionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -100,6 +107,7 @@ class LakeFormationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLFTagsRequest, Pagination::ListLFTagsPaginationTraits<DerivedClient>>
   ListLFTagsPaginator(const Model::ListLFTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLFTagsRequest,
                                              Pagination::ListLFTagsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -111,6 +119,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionsRequest,
                                     Pagination::ListPermissionsPaginationTraits<DerivedClient>>
   ListPermissionsPaginator(const Model::ListPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionsRequest,
                                              Pagination::ListPermissionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -121,6 +130,7 @@ class LakeFormationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest, Pagination::ListResourcesPaginationTraits<DerivedClient>>
   ListResourcesPaginator(const Model::ListResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest,
                                              Pagination::ListResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -132,6 +142,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableStorageOptimizersRequest,
                                     Pagination::ListTableStorageOptimizersPaginationTraits<DerivedClient>>
   ListTableStorageOptimizersPaginator(const Model::ListTableStorageOptimizersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableStorageOptimizersRequest,
                                              Pagination::ListTableStorageOptimizersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -143,6 +154,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransactionsRequest,
                                     Pagination::ListTransactionsPaginationTraits<DerivedClient>>
   ListTransactionsPaginator(const Model::ListTransactionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransactionsRequest,
                                              Pagination::ListTransactionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -154,6 +166,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDatabasesByLFTagsRequest,
                                     Pagination::SearchDatabasesByLFTagsPaginationTraits<DerivedClient>>
   SearchDatabasesByLFTagsPaginator(const Model::SearchDatabasesByLFTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDatabasesByLFTagsRequest,
                                              Pagination::SearchDatabasesByLFTagsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -165,6 +178,7 @@ class LakeFormationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTablesByLFTagsRequest,
                                     Pagination::SearchTablesByLFTagsPaginationTraits<DerivedClient>>
   SearchTablesByLFTagsPaginator(const Model::SearchTablesByLFTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTablesByLFTagsRequest,
                                              Pagination::SearchTablesByLFTagsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

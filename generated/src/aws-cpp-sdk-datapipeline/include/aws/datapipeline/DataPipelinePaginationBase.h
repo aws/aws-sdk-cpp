@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/datapipeline/model/DescribeObjectsPaginationTraits.h>
 #include <aws/datapipeline/model/ListPipelinesPaginationTraits.h>
@@ -26,6 +27,7 @@ class DataPipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeObjectsRequest,
                                     Pagination::DescribeObjectsPaginationTraits<DerivedClient>>
   DescribeObjectsPaginator(const Model::DescribeObjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeObjectsRequest,
                                              Pagination::DescribeObjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -36,6 +38,7 @@ class DataPipelinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest, Pagination::ListPipelinesPaginationTraits<DerivedClient>>
   ListPipelinesPaginator(const Model::ListPipelinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest,
                                              Pagination::ListPipelinesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -46,6 +49,7 @@ class DataPipelinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryObjectsRequest, Pagination::QueryObjectsPaginationTraits<DerivedClient>>
   QueryObjectsPaginator(const Model::QueryObjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryObjectsRequest,
                                              Pagination::QueryObjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

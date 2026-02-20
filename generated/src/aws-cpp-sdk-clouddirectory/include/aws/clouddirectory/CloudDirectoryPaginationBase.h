@@ -24,6 +24,7 @@
 #include <aws/clouddirectory/model/ListTypedLinkFacetAttributesPaginationTraits.h>
 #include <aws/clouddirectory/model/ListTypedLinkFacetNamesPaginationTraits.h>
 #include <aws/clouddirectory/model/LookupPolicyPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -42,6 +43,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppliedSchemaArnsRequest,
                                     Pagination::ListAppliedSchemaArnsPaginationTraits<DerivedClient>>
   ListAppliedSchemaArnsPaginator(const Model::ListAppliedSchemaArnsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppliedSchemaArnsRequest,
                                              Pagination::ListAppliedSchemaArnsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -53,6 +55,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachedIndicesRequest,
                                     Pagination::ListAttachedIndicesPaginationTraits<DerivedClient>>
   ListAttachedIndicesPaginator(const Model::ListAttachedIndicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachedIndicesRequest,
                                              Pagination::ListAttachedIndicesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +67,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevelopmentSchemaArnsRequest,
                                     Pagination::ListDevelopmentSchemaArnsPaginationTraits<DerivedClient>>
   ListDevelopmentSchemaArnsPaginator(const Model::ListDevelopmentSchemaArnsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevelopmentSchemaArnsRequest,
                                              Pagination::ListDevelopmentSchemaArnsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +79,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoriesRequest,
                                     Pagination::ListDirectoriesPaginationTraits<DerivedClient>>
   ListDirectoriesPaginator(const Model::ListDirectoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoriesRequest,
                                              Pagination::ListDirectoriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -86,6 +91,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFacetAttributesRequest,
                                     Pagination::ListFacetAttributesPaginationTraits<DerivedClient>>
   ListFacetAttributesPaginator(const Model::ListFacetAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFacetAttributesRequest,
                                              Pagination::ListFacetAttributesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +102,7 @@ class CloudDirectoryPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFacetNamesRequest, Pagination::ListFacetNamesPaginationTraits<DerivedClient>>
   ListFacetNamesPaginator(const Model::ListFacetNamesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFacetNamesRequest,
                                              Pagination::ListFacetNamesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -106,6 +113,7 @@ class CloudDirectoryPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexRequest, Pagination::ListIndexPaginationTraits<DerivedClient>>
   ListIndexPaginator(const Model::ListIndexRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexRequest, Pagination::ListIndexPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -116,6 +124,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedSchemaArnsRequest,
                                     Pagination::ListManagedSchemaArnsPaginationTraits<DerivedClient>>
   ListManagedSchemaArnsPaginator(const Model::ListManagedSchemaArnsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedSchemaArnsRequest,
                                              Pagination::ListManagedSchemaArnsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -127,6 +136,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectAttributesRequest,
                                     Pagination::ListObjectAttributesPaginationTraits<DerivedClient>>
   ListObjectAttributesPaginator(const Model::ListObjectAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectAttributesRequest,
                                              Pagination::ListObjectAttributesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -138,6 +148,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectChildrenRequest,
                                     Pagination::ListObjectChildrenPaginationTraits<DerivedClient>>
   ListObjectChildrenPaginator(const Model::ListObjectChildrenRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectChildrenRequest,
                                              Pagination::ListObjectChildrenPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -149,6 +160,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectParentPathsRequest,
                                     Pagination::ListObjectParentPathsPaginationTraits<DerivedClient>>
   ListObjectParentPathsPaginator(const Model::ListObjectParentPathsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectParentPathsRequest,
                                              Pagination::ListObjectParentPathsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -160,6 +172,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectParentsRequest,
                                     Pagination::ListObjectParentsPaginationTraits<DerivedClient>>
   ListObjectParentsPaginator(const Model::ListObjectParentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectParentsRequest,
                                              Pagination::ListObjectParentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -171,6 +184,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectPoliciesRequest,
                                     Pagination::ListObjectPoliciesPaginationTraits<DerivedClient>>
   ListObjectPoliciesPaginator(const Model::ListObjectPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectPoliciesRequest,
                                              Pagination::ListObjectPoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -182,6 +196,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyAttachmentsRequest,
                                     Pagination::ListPolicyAttachmentsPaginationTraits<DerivedClient>>
   ListPolicyAttachmentsPaginator(const Model::ListPolicyAttachmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyAttachmentsRequest,
                                              Pagination::ListPolicyAttachmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -193,6 +208,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublishedSchemaArnsRequest,
                                     Pagination::ListPublishedSchemaArnsPaginationTraits<DerivedClient>>
   ListPublishedSchemaArnsPaginator(const Model::ListPublishedSchemaArnsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublishedSchemaArnsRequest,
                                              Pagination::ListPublishedSchemaArnsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -204,6 +220,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -215,6 +232,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTypedLinkFacetAttributesRequest,
                                     Pagination::ListTypedLinkFacetAttributesPaginationTraits<DerivedClient>>
   ListTypedLinkFacetAttributesPaginator(const Model::ListTypedLinkFacetAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTypedLinkFacetAttributesRequest,
                                              Pagination::ListTypedLinkFacetAttributesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -226,6 +244,7 @@ class CloudDirectoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTypedLinkFacetNamesRequest,
                                     Pagination::ListTypedLinkFacetNamesPaginationTraits<DerivedClient>>
   ListTypedLinkFacetNamesPaginator(const Model::ListTypedLinkFacetNamesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTypedLinkFacetNamesRequest,
                                              Pagination::ListTypedLinkFacetNamesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -236,6 +255,7 @@ class CloudDirectoryPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::LookupPolicyRequest, Pagination::LookupPolicyPaginationTraits<DerivedClient>>
   LookupPolicyPaginator(const Model::LookupPolicyRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::LookupPolicyRequest,
                                              Pagination::LookupPolicyPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/serverlessrepo/model/ListApplicationDependenciesPaginationTraits.h>
 #include <aws/serverlessrepo/model/ListApplicationVersionsPaginationTraits.h>
@@ -26,6 +27,7 @@ class ServerlessApplicationRepositoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationDependenciesRequest,
                                     Pagination::ListApplicationDependenciesPaginationTraits<DerivedClient>>
   ListApplicationDependenciesPaginator(const Model::ListApplicationDependenciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationDependenciesRequest,
                                              Pagination::ListApplicationDependenciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class ServerlessApplicationRepositoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                     Pagination::ListApplicationsPaginationTraits<DerivedClient>>
   ListApplicationsPaginator(const Model::ListApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                              Pagination::ListApplicationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class ServerlessApplicationRepositoryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationVersionsRequest,
                                     Pagination::ListApplicationVersionsPaginationTraits<DerivedClient>>
   ListApplicationVersionsPaginator(const Model::ListApplicationVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationVersionsRequest,
                                              Pagination::ListApplicationVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kms/model/DescribeCustomKeyStoresPaginationTraits.h>
 #include <aws/kms/model/ListAliasesPaginationTraits.h>
@@ -31,6 +32,7 @@ class KMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCustomKeyStoresRequest,
                                     Pagination::DescribeCustomKeyStoresPaginationTraits<DerivedClient>>
   DescribeCustomKeyStoresPaginator(const Model::DescribeCustomKeyStoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCustomKeyStoresRequest,
                                              Pagination::DescribeCustomKeyStoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class KMSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAliasesRequest, Pagination::ListAliasesPaginationTraits<DerivedClient>>
   ListAliasesPaginator(const Model::ListAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAliasesRequest,
                                              Pagination::ListAliasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -51,6 +54,7 @@ class KMSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGrantsRequest, Pagination::ListGrantsPaginationTraits<DerivedClient>>
   ListGrantsPaginator(const Model::ListGrantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGrantsRequest,
                                              Pagination::ListGrantsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -62,6 +66,7 @@ class KMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyPoliciesRequest,
                                     Pagination::ListKeyPoliciesPaginationTraits<DerivedClient>>
   ListKeyPoliciesPaginator(const Model::ListKeyPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyPoliciesRequest,
                                              Pagination::ListKeyPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -73,6 +78,7 @@ class KMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyRotationsRequest,
                                     Pagination::ListKeyRotationsPaginationTraits<DerivedClient>>
   ListKeyRotationsPaginator(const Model::ListKeyRotationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyRotationsRequest,
                                              Pagination::ListKeyRotationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -83,6 +89,7 @@ class KMSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeysRequest, Pagination::ListKeysPaginationTraits<DerivedClient>>
   ListKeysPaginator(const Model::ListKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeysRequest, Pagination::ListKeysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -93,6 +100,7 @@ class KMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceTagsRequest,
                                     Pagination::ListResourceTagsPaginationTraits<DerivedClient>>
   ListResourceTagsPaginator(const Model::ListResourceTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceTagsRequest,
                                              Pagination::ListResourceTagsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -104,6 +112,7 @@ class KMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetirableGrantsRequest,
                                     Pagination::ListRetirableGrantsPaginationTraits<DerivedClient>>
   ListRetirableGrantsPaginator(const Model::ListRetirableGrantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetirableGrantsRequest,
                                              Pagination::ListRetirableGrantsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/workspaces/model/DescribeApplicationAssociationsPaginationTraits.h>
 #include <aws/workspaces/model/DescribeApplicationsPaginationTraits.h>
@@ -29,6 +30,7 @@ class WorkSpacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeApplicationAssociationsRequest,
                                     Pagination::DescribeApplicationAssociationsPaginationTraits<DerivedClient>>
   DescribeApplicationAssociationsPaginator(const Model::DescribeApplicationAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeApplicationAssociationsRequest,
                                              Pagination::DescribeApplicationAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -40,6 +42,7 @@ class WorkSpacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeApplicationsRequest,
                                     Pagination::DescribeApplicationsPaginationTraits<DerivedClient>>
   DescribeApplicationsPaginator(const Model::DescribeApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeApplicationsRequest,
                                              Pagination::DescribeApplicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +54,7 @@ class WorkSpacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWorkspaceBundlesRequest,
                                     Pagination::DescribeWorkspaceBundlesPaginationTraits<DerivedClient>>
   DescribeWorkspaceBundlesPaginator(const Model::DescribeWorkspaceBundlesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWorkspaceBundlesRequest,
                                              Pagination::DescribeWorkspaceBundlesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +66,7 @@ class WorkSpacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWorkspaceDirectoriesRequest,
                                     Pagination::DescribeWorkspaceDirectoriesPaginationTraits<DerivedClient>>
   DescribeWorkspaceDirectoriesPaginator(const Model::DescribeWorkspaceDirectoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWorkspaceDirectoriesRequest,
                                              Pagination::DescribeWorkspaceDirectoriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class WorkSpacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWorkspacesRequest,
                                     Pagination::DescribeWorkspacesPaginationTraits<DerivedClient>>
   DescribeWorkspacesPaginator(const Model::DescribeWorkspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWorkspacesRequest,
                                              Pagination::DescribeWorkspacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class WorkSpacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountLinksRequest,
                                     Pagination::ListAccountLinksPaginationTraits<DerivedClient>>
   ListAccountLinksPaginator(const Model::ListAccountLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountLinksRequest,
                                              Pagination::ListAccountLinksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

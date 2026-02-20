@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/pi/model/DescribeDimensionKeysPaginationTraits.h>
 #include <aws/pi/model/GetResourceMetricsPaginationTraits.h>
@@ -28,6 +29,7 @@ class PIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDimensionKeysRequest,
                                     Pagination::DescribeDimensionKeysPaginationTraits<DerivedClient>>
   DescribeDimensionKeysPaginator(const Model::DescribeDimensionKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDimensionKeysRequest,
                                              Pagination::DescribeDimensionKeysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class PIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceMetricsRequest,
                                     Pagination::GetResourceMetricsPaginationTraits<DerivedClient>>
   GetResourceMetricsPaginator(const Model::GetResourceMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceMetricsRequest,
                                              Pagination::GetResourceMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class PIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableResourceDimensionsRequest,
                                     Pagination::ListAvailableResourceDimensionsPaginationTraits<DerivedClient>>
   ListAvailableResourceDimensionsPaginator(const Model::ListAvailableResourceDimensionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableResourceDimensionsRequest,
                                              Pagination::ListAvailableResourceDimensionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class PIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableResourceMetricsRequest,
                                     Pagination::ListAvailableResourceMetricsPaginationTraits<DerivedClient>>
   ListAvailableResourceMetricsPaginator(const Model::ListAvailableResourceMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableResourceMetricsRequest,
                                              Pagination::ListAvailableResourceMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class PIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPerformanceAnalysisReportsRequest,
                                     Pagination::ListPerformanceAnalysisReportsPaginationTraits<DerivedClient>>
   ListPerformanceAnalysisReportsPaginator(const Model::ListPerformanceAnalysisReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPerformanceAnalysisReportsRequest,
                                              Pagination::ListPerformanceAnalysisReportsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/qapps/model/ListLibraryItemsPaginationTraits.h>
 #include <aws/qapps/model/ListQAppsPaginationTraits.h>
@@ -25,6 +26,7 @@ class QAppsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLibraryItemsRequest,
                                     Pagination::ListLibraryItemsPaginationTraits<DerivedClient>>
   ListLibraryItemsPaginator(const Model::ListLibraryItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLibraryItemsRequest,
                                              Pagination::ListLibraryItemsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -35,6 +37,7 @@ class QAppsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQAppsRequest, Pagination::ListQAppsPaginationTraits<DerivedClient>>
   ListQAppsPaginator(const Model::ListQAppsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQAppsRequest, Pagination::ListQAppsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

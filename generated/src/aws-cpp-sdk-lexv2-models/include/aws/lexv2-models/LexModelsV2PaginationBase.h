@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/lexv2-models/model/ListAggregatedUtterancesPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotAliasReplicasPaginationTraits.h>
@@ -51,6 +52,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAggregatedUtterancesRequest,
                                     Pagination::ListAggregatedUtterancesPaginationTraits<DerivedClient>>
   ListAggregatedUtterancesPaginator(const Model::ListAggregatedUtterancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAggregatedUtterancesRequest,
                                              Pagination::ListAggregatedUtterancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +63,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAliasesRequest, Pagination::ListBotAliasesPaginationTraits<DerivedClient>>
   ListBotAliasesPaginator(const Model::ListBotAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAliasesRequest,
                                              Pagination::ListBotAliasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -72,6 +75,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAliasReplicasRequest,
                                     Pagination::ListBotAliasReplicasPaginationTraits<DerivedClient>>
   ListBotAliasReplicasPaginator(const Model::ListBotAliasReplicasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotAliasReplicasRequest,
                                              Pagination::ListBotAliasReplicasPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -82,6 +86,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotLocalesRequest, Pagination::ListBotLocalesPaginationTraits<DerivedClient>>
   ListBotLocalesPaginator(const Model::ListBotLocalesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotLocalesRequest,
                                              Pagination::ListBotLocalesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -93,6 +98,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotRecommendationsRequest,
                                     Pagination::ListBotRecommendationsPaginationTraits<DerivedClient>>
   ListBotRecommendationsPaginator(const Model::ListBotRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotRecommendationsRequest,
                                              Pagination::ListBotRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -104,6 +110,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotResourceGenerationsRequest,
                                     Pagination::ListBotResourceGenerationsPaginationTraits<DerivedClient>>
   ListBotResourceGenerationsPaginator(const Model::ListBotResourceGenerationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotResourceGenerationsRequest,
                                              Pagination::ListBotResourceGenerationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -114,6 +121,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotsRequest, Pagination::ListBotsPaginationTraits<DerivedClient>>
   ListBotsPaginator(const Model::ListBotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotsRequest, Pagination::ListBotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -124,6 +132,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotVersionReplicasRequest,
                                     Pagination::ListBotVersionReplicasPaginationTraits<DerivedClient>>
   ListBotVersionReplicasPaginator(const Model::ListBotVersionReplicasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotVersionReplicasRequest,
                                              Pagination::ListBotVersionReplicasPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -135,6 +144,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotVersionsRequest,
                                     Pagination::ListBotVersionsPaginationTraits<DerivedClient>>
   ListBotVersionsPaginator(const Model::ListBotVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotVersionsRequest,
                                              Pagination::ListBotVersionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -146,6 +156,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuiltInIntentsRequest,
                                     Pagination::ListBuiltInIntentsPaginationTraits<DerivedClient>>
   ListBuiltInIntentsPaginator(const Model::ListBuiltInIntentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuiltInIntentsRequest,
                                              Pagination::ListBuiltInIntentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -157,6 +168,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuiltInSlotTypesRequest,
                                     Pagination::ListBuiltInSlotTypesPaginationTraits<DerivedClient>>
   ListBuiltInSlotTypesPaginator(const Model::ListBuiltInSlotTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuiltInSlotTypesRequest,
                                              Pagination::ListBuiltInSlotTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -168,6 +180,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomVocabularyItemsRequest,
                                     Pagination::ListCustomVocabularyItemsPaginationTraits<DerivedClient>>
   ListCustomVocabularyItemsPaginator(const Model::ListCustomVocabularyItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomVocabularyItemsRequest,
                                              Pagination::ListCustomVocabularyItemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -178,6 +191,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportsRequest, Pagination::ListExportsPaginationTraits<DerivedClient>>
   ListExportsPaginator(const Model::ListExportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportsRequest,
                                              Pagination::ListExportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -188,6 +202,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportsRequest, Pagination::ListImportsPaginationTraits<DerivedClient>>
   ListImportsPaginator(const Model::ListImportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportsRequest,
                                              Pagination::ListImportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -199,6 +214,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntentMetricsRequest,
                                     Pagination::ListIntentMetricsPaginationTraits<DerivedClient>>
   ListIntentMetricsPaginator(const Model::ListIntentMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntentMetricsRequest,
                                              Pagination::ListIntentMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -209,6 +225,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntentsRequest, Pagination::ListIntentsPaginationTraits<DerivedClient>>
   ListIntentsPaginator(const Model::ListIntentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntentsRequest,
                                              Pagination::ListIntentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -220,6 +237,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntentStageMetricsRequest,
                                     Pagination::ListIntentStageMetricsPaginationTraits<DerivedClient>>
   ListIntentStageMetricsPaginator(const Model::ListIntentStageMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIntentStageMetricsRequest,
                                              Pagination::ListIntentStageMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -231,6 +249,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedIntentsRequest,
                                     Pagination::ListRecommendedIntentsPaginationTraits<DerivedClient>>
   ListRecommendedIntentsPaginator(const Model::ListRecommendedIntentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedIntentsRequest,
                                              Pagination::ListRecommendedIntentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -242,6 +261,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionAnalyticsDataRequest,
                                     Pagination::ListSessionAnalyticsDataPaginationTraits<DerivedClient>>
   ListSessionAnalyticsDataPaginator(const Model::ListSessionAnalyticsDataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionAnalyticsDataRequest,
                                              Pagination::ListSessionAnalyticsDataPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -253,6 +273,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionMetricsRequest,
                                     Pagination::ListSessionMetricsPaginationTraits<DerivedClient>>
   ListSessionMetricsPaginator(const Model::ListSessionMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionMetricsRequest,
                                              Pagination::ListSessionMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -263,6 +284,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlotsRequest, Pagination::ListSlotsPaginationTraits<DerivedClient>>
   ListSlotsPaginator(const Model::ListSlotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlotsRequest, Pagination::ListSlotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -272,6 +294,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlotTypesRequest, Pagination::ListSlotTypesPaginationTraits<DerivedClient>>
   ListSlotTypesPaginator(const Model::ListSlotTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlotTypesRequest,
                                              Pagination::ListSlotTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -283,6 +306,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestExecutionResultItemsRequest,
                                     Pagination::ListTestExecutionResultItemsPaginationTraits<DerivedClient>>
   ListTestExecutionResultItemsPaginator(const Model::ListTestExecutionResultItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestExecutionResultItemsRequest,
                                              Pagination::ListTestExecutionResultItemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -294,6 +318,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestExecutionsRequest,
                                     Pagination::ListTestExecutionsPaginationTraits<DerivedClient>>
   ListTestExecutionsPaginator(const Model::ListTestExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestExecutionsRequest,
                                              Pagination::ListTestExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -305,6 +330,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestSetRecordsRequest,
                                     Pagination::ListTestSetRecordsPaginationTraits<DerivedClient>>
   ListTestSetRecordsPaginator(const Model::ListTestSetRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestSetRecordsRequest,
                                              Pagination::ListTestSetRecordsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -315,6 +341,7 @@ class LexModelsV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestSetsRequest, Pagination::ListTestSetsPaginationTraits<DerivedClient>>
   ListTestSetsPaginator(const Model::ListTestSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestSetsRequest,
                                              Pagination::ListTestSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -326,6 +353,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUtteranceAnalyticsDataRequest,
                                     Pagination::ListUtteranceAnalyticsDataPaginationTraits<DerivedClient>>
   ListUtteranceAnalyticsDataPaginator(const Model::ListUtteranceAnalyticsDataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUtteranceAnalyticsDataRequest,
                                              Pagination::ListUtteranceAnalyticsDataPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -337,6 +365,7 @@ class LexModelsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUtteranceMetricsRequest,
                                     Pagination::ListUtteranceMetricsPaginationTraits<DerivedClient>>
   ListUtteranceMetricsPaginator(const Model::ListUtteranceMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUtteranceMetricsRequest,
                                              Pagination::ListUtteranceMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kinesis-video-archived-media/model/GetImagesPaginationTraits.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsPaginationTraits.h>
@@ -24,6 +25,7 @@ class KinesisVideoArchivedMediaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetImagesRequest, Pagination::GetImagesPaginationTraits<DerivedClient>>
   GetImagesPaginator(const Model::GetImagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetImagesRequest, Pagination::GetImagesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -33,6 +35,7 @@ class KinesisVideoArchivedMediaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFragmentsRequest, Pagination::ListFragmentsPaginationTraits<DerivedClient>>
   ListFragmentsPaginator(const Model::ListFragmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFragmentsRequest,
                                              Pagination::ListFragmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

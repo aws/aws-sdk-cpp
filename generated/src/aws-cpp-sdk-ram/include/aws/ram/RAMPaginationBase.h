@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ram/model/GetResourcePoliciesPaginationTraits.h>
 #include <aws/ram/model/GetResourceShareAssociationsPaginationTraits.h>
@@ -37,6 +38,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcePoliciesRequest,
                                     Pagination::GetResourcePoliciesPaginationTraits<DerivedClient>>
   GetResourcePoliciesPaginator(const Model::GetResourcePoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcePoliciesRequest,
                                              Pagination::GetResourcePoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +50,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceShareAssociationsRequest,
                                     Pagination::GetResourceShareAssociationsPaginationTraits<DerivedClient>>
   GetResourceShareAssociationsPaginator(const Model::GetResourceShareAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceShareAssociationsRequest,
                                              Pagination::GetResourceShareAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +62,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceShareInvitationsRequest,
                                     Pagination::GetResourceShareInvitationsPaginationTraits<DerivedClient>>
   GetResourceShareInvitationsPaginator(const Model::GetResourceShareInvitationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceShareInvitationsRequest,
                                              Pagination::GetResourceShareInvitationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +74,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceSharesRequest,
                                     Pagination::GetResourceSharesPaginationTraits<DerivedClient>>
   GetResourceSharesPaginator(const Model::GetResourceSharesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceSharesRequest,
                                              Pagination::GetResourceSharesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -81,6 +86,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPendingInvitationResourcesRequest,
                                     Pagination::ListPendingInvitationResourcesPaginationTraits<DerivedClient>>
   ListPendingInvitationResourcesPaginator(const Model::ListPendingInvitationResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPendingInvitationResourcesRequest,
                                              Pagination::ListPendingInvitationResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -92,6 +98,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionAssociationsRequest,
                                     Pagination::ListPermissionAssociationsPaginationTraits<DerivedClient>>
   ListPermissionAssociationsPaginator(const Model::ListPermissionAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionAssociationsRequest,
                                              Pagination::ListPermissionAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -103,6 +110,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionsRequest,
                                     Pagination::ListPermissionsPaginationTraits<DerivedClient>>
   ListPermissionsPaginator(const Model::ListPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionsRequest,
                                              Pagination::ListPermissionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -114,6 +122,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionVersionsRequest,
                                     Pagination::ListPermissionVersionsPaginationTraits<DerivedClient>>
   ListPermissionVersionsPaginator(const Model::ListPermissionVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionVersionsRequest,
                                              Pagination::ListPermissionVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -124,6 +133,7 @@ class RAMPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrincipalsRequest, Pagination::ListPrincipalsPaginationTraits<DerivedClient>>
   ListPrincipalsPaginator(const Model::ListPrincipalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrincipalsRequest,
                                              Pagination::ListPrincipalsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -135,6 +145,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplacePermissionAssociationsWorkRequest,
                                     Pagination::ListReplacePermissionAssociationsWorkPaginationTraits<DerivedClient>>
   ListReplacePermissionAssociationsWorkPaginator(const Model::ListReplacePermissionAssociationsWorkRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplacePermissionAssociationsWorkRequest,
                                              Pagination::ListReplacePermissionAssociationsWorkPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -145,6 +156,7 @@ class RAMPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest, Pagination::ListResourcesPaginationTraits<DerivedClient>>
   ListResourcesPaginator(const Model::ListResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest,
                                              Pagination::ListResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -156,6 +168,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceSharePermissionsRequest,
                                     Pagination::ListResourceSharePermissionsPaginationTraits<DerivedClient>>
   ListResourceSharePermissionsPaginator(const Model::ListResourceSharePermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceSharePermissionsRequest,
                                              Pagination::ListResourceSharePermissionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -167,6 +180,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceTypesRequest,
                                     Pagination::ListResourceTypesPaginationTraits<DerivedClient>>
   ListResourceTypesPaginator(const Model::ListResourceTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceTypesRequest,
                                              Pagination::ListResourceTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -178,6 +192,7 @@ class RAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceAssociationsRequest,
                                     Pagination::ListSourceAssociationsPaginationTraits<DerivedClient>>
   ListSourceAssociationsPaginator(const Model::ListSourceAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceAssociationsRequest,
                                              Pagination::ListSourceAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/resourcegroupstaggingapi/model/GetComplianceSummaryPaginationTraits.h>
 #include <aws/resourcegroupstaggingapi/model/GetResourcesPaginationTraits.h>
@@ -28,6 +29,7 @@ class ResourceGroupsTaggingAPIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetComplianceSummaryRequest,
                                     Pagination::GetComplianceSummaryPaginationTraits<DerivedClient>>
   GetComplianceSummaryPaginator(const Model::GetComplianceSummaryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetComplianceSummaryRequest,
                                              Pagination::GetComplianceSummaryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class ResourceGroupsTaggingAPIPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcesRequest, Pagination::GetResourcesPaginationTraits<DerivedClient>>
   GetResourcesPaginator(const Model::GetResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcesRequest,
                                              Pagination::GetResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -48,6 +51,7 @@ class ResourceGroupsTaggingAPIPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTagKeysRequest, Pagination::GetTagKeysPaginationTraits<DerivedClient>>
   GetTagKeysPaginator(const Model::GetTagKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTagKeysRequest,
                                              Pagination::GetTagKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -58,6 +62,7 @@ class ResourceGroupsTaggingAPIPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTagValuesRequest, Pagination::GetTagValuesPaginationTraits<DerivedClient>>
   GetTagValuesPaginator(const Model::GetTagValuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTagValuesRequest,
                                              Pagination::GetTagValuesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -69,6 +74,7 @@ class ResourceGroupsTaggingAPIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRequiredTagsRequest,
                                     Pagination::ListRequiredTagsPaginationTraits<DerivedClient>>
   ListRequiredTagsPaginator(const Model::ListRequiredTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRequiredTagsRequest,
                                              Pagination::ListRequiredTagsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

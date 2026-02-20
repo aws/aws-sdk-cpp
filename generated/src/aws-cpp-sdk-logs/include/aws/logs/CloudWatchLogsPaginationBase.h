@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/logs/model/DescribeConfigurationTemplatesPaginationTraits.h>
 #include <aws/logs/model/DescribeDeliveriesPaginationTraits.h>
@@ -41,6 +42,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeConfigurationTemplatesRequest,
                                     Pagination::DescribeConfigurationTemplatesPaginationTraits<DerivedClient>>
   DescribeConfigurationTemplatesPaginator(const Model::DescribeConfigurationTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeConfigurationTemplatesRequest,
                                              Pagination::DescribeConfigurationTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -52,6 +54,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDeliveriesRequest,
                                     Pagination::DescribeDeliveriesPaginationTraits<DerivedClient>>
   DescribeDeliveriesPaginator(const Model::DescribeDeliveriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDeliveriesRequest,
                                              Pagination::DescribeDeliveriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -63,6 +66,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDeliveryDestinationsRequest,
                                     Pagination::DescribeDeliveryDestinationsPaginationTraits<DerivedClient>>
   DescribeDeliveryDestinationsPaginator(const Model::DescribeDeliveryDestinationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDeliveryDestinationsRequest,
                                              Pagination::DescribeDeliveryDestinationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -74,6 +78,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDeliverySourcesRequest,
                                     Pagination::DescribeDeliverySourcesPaginationTraits<DerivedClient>>
   DescribeDeliverySourcesPaginator(const Model::DescribeDeliverySourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDeliverySourcesRequest,
                                              Pagination::DescribeDeliverySourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -85,6 +90,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDestinationsRequest,
                                     Pagination::DescribeDestinationsPaginationTraits<DerivedClient>>
   DescribeDestinationsPaginator(const Model::DescribeDestinationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDestinationsRequest,
                                              Pagination::DescribeDestinationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +102,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLogGroupsRequest,
                                     Pagination::DescribeLogGroupsPaginationTraits<DerivedClient>>
   DescribeLogGroupsPaginator(const Model::DescribeLogGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLogGroupsRequest,
                                              Pagination::DescribeLogGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -107,6 +114,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLogStreamsRequest,
                                     Pagination::DescribeLogStreamsPaginationTraits<DerivedClient>>
   DescribeLogStreamsPaginator(const Model::DescribeLogStreamsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLogStreamsRequest,
                                              Pagination::DescribeLogStreamsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -118,6 +126,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMetricFiltersRequest,
                                     Pagination::DescribeMetricFiltersPaginationTraits<DerivedClient>>
   DescribeMetricFiltersPaginator(const Model::DescribeMetricFiltersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMetricFiltersRequest,
                                              Pagination::DescribeMetricFiltersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -129,6 +138,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubscriptionFiltersRequest,
                                     Pagination::DescribeSubscriptionFiltersPaginationTraits<DerivedClient>>
   DescribeSubscriptionFiltersPaginator(const Model::DescribeSubscriptionFiltersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubscriptionFiltersRequest,
                                              Pagination::DescribeSubscriptionFiltersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -140,6 +150,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::FilterLogEventsRequest,
                                     Pagination::FilterLogEventsPaginationTraits<DerivedClient>>
   FilterLogEventsPaginator(const Model::FilterLogEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::FilterLogEventsRequest,
                                              Pagination::FilterLogEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -150,6 +161,7 @@ class CloudWatchLogsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLogEventsRequest, Pagination::GetLogEventsPaginationTraits<DerivedClient>>
   GetLogEventsPaginator(const Model::GetLogEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLogEventsRequest,
                                              Pagination::GetLogEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -161,6 +173,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetScheduledQueryHistoryRequest,
                                     Pagination::GetScheduledQueryHistoryPaginationTraits<DerivedClient>>
   GetScheduledQueryHistoryPaginator(const Model::GetScheduledQueryHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetScheduledQueryHistoryRequest,
                                              Pagination::GetScheduledQueryHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -172,6 +185,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAggregateLogGroupSummariesRequest,
                                     Pagination::ListAggregateLogGroupSummariesPaginationTraits<DerivedClient>>
   ListAggregateLogGroupSummariesPaginator(const Model::ListAggregateLogGroupSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAggregateLogGroupSummariesRequest,
                                              Pagination::ListAggregateLogGroupSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -182,6 +196,7 @@ class CloudWatchLogsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnomaliesRequest, Pagination::ListAnomaliesPaginationTraits<DerivedClient>>
   ListAnomaliesPaginator(const Model::ListAnomaliesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnomaliesRequest,
                                              Pagination::ListAnomaliesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -193,6 +208,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLogAnomalyDetectorsRequest,
                                     Pagination::ListLogAnomalyDetectorsPaginationTraits<DerivedClient>>
   ListLogAnomalyDetectorsPaginator(const Model::ListLogAnomalyDetectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLogAnomalyDetectorsRequest,
                                              Pagination::ListLogAnomalyDetectorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -204,6 +220,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLogGroupsForQueryRequest,
                                     Pagination::ListLogGroupsForQueryPaginationTraits<DerivedClient>>
   ListLogGroupsForQueryPaginator(const Model::ListLogGroupsForQueryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLogGroupsForQueryRequest,
                                              Pagination::ListLogGroupsForQueryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -215,6 +232,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduledQueriesRequest,
                                     Pagination::ListScheduledQueriesPaginationTraits<DerivedClient>>
   ListScheduledQueriesPaginator(const Model::ListScheduledQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduledQueriesRequest,
                                              Pagination::ListScheduledQueriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -226,6 +244,7 @@ class CloudWatchLogsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourcesForS3TableIntegrationRequest,
                                     Pagination::ListSourcesForS3TableIntegrationPaginationTraits<DerivedClient>>
   ListSourcesForS3TableIntegrationPaginator(const Model::ListSourcesForS3TableIntegrationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourcesForS3TableIntegrationRequest,
                                              Pagination::ListSourcesForS3TableIntegrationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -10,6 +10,7 @@
 #include <aws/controlcatalog/model/ListControlsPaginationTraits.h>
 #include <aws/controlcatalog/model/ListDomainsPaginationTraits.h>
 #include <aws/controlcatalog/model/ListObjectivesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -28,6 +29,7 @@ class ControlCatalogPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommonControlsRequest,
                                     Pagination::ListCommonControlsPaginationTraits<DerivedClient>>
   ListCommonControlsPaginator(const Model::ListCommonControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommonControlsRequest,
                                              Pagination::ListCommonControlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class ControlCatalogPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlMappingsRequest,
                                     Pagination::ListControlMappingsPaginationTraits<DerivedClient>>
   ListControlMappingsPaginator(const Model::ListControlMappingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlMappingsRequest,
                                              Pagination::ListControlMappingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class ControlCatalogPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlsRequest, Pagination::ListControlsPaginationTraits<DerivedClient>>
   ListControlsPaginator(const Model::ListControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlsRequest,
                                              Pagination::ListControlsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -59,6 +63,7 @@ class ControlCatalogPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest, Pagination::ListDomainsPaginationTraits<DerivedClient>>
   ListDomainsPaginator(const Model::ListDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest,
                                              Pagination::ListDomainsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -69,6 +74,7 @@ class ControlCatalogPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectivesRequest, Pagination::ListObjectivesPaginationTraits<DerivedClient>>
   ListObjectivesPaginator(const Model::ListObjectivesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectivesRequest,
                                              Pagination::ListObjectivesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

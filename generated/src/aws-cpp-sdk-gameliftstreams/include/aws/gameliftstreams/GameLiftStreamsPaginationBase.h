@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/gameliftstreams/model/ListApplicationsPaginationTraits.h>
 #include <aws/gameliftstreams/model/ListStreamGroupsPaginationTraits.h>
@@ -27,6 +28,7 @@ class GameLiftStreamsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                     Pagination::ListApplicationsPaginationTraits<DerivedClient>>
   ListApplicationsPaginator(const Model::ListApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                              Pagination::ListApplicationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -38,6 +40,7 @@ class GameLiftStreamsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamGroupsRequest,
                                     Pagination::ListStreamGroupsPaginationTraits<DerivedClient>>
   ListStreamGroupsPaginator(const Model::ListStreamGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamGroupsRequest,
                                              Pagination::ListStreamGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -49,6 +52,7 @@ class GameLiftStreamsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamSessionsRequest,
                                     Pagination::ListStreamSessionsPaginationTraits<DerivedClient>>
   ListStreamSessionsPaginator(const Model::ListStreamSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamSessionsRequest,
                                              Pagination::ListStreamSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class GameLiftStreamsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamSessionsByAccountRequest,
                                     Pagination::ListStreamSessionsByAccountPaginationTraits<DerivedClient>>
   ListStreamSessionsByAccountPaginator(const Model::ListStreamSessionsByAccountRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamSessionsByAccountRequest,
                                              Pagination::ListStreamSessionsByAccountPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

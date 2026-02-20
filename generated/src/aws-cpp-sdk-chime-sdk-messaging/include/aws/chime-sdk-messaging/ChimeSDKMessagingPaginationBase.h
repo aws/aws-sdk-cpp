@@ -16,6 +16,7 @@
 #include <aws/chime-sdk-messaging/model/ListChannelsPaginationTraits.h>
 #include <aws/chime-sdk-messaging/model/ListSubChannelsPaginationTraits.h>
 #include <aws/chime-sdk-messaging/model/SearchChannelsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -34,6 +35,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelBansRequest,
                                     Pagination::ListChannelBansPaginationTraits<DerivedClient>>
   ListChannelBansPaginator(const Model::ListChannelBansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelBansRequest,
                                              Pagination::ListChannelBansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -45,6 +47,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelFlowsRequest,
                                     Pagination::ListChannelFlowsPaginationTraits<DerivedClient>>
   ListChannelFlowsPaginator(const Model::ListChannelFlowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelFlowsRequest,
                                              Pagination::ListChannelFlowsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -56,6 +59,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelMembershipsRequest,
                                     Pagination::ListChannelMembershipsPaginationTraits<DerivedClient>>
   ListChannelMembershipsPaginator(const Model::ListChannelMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelMembershipsRequest,
                                              Pagination::ListChannelMembershipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelMembershipsForAppInstanceUserRequest,
                                     Pagination::ListChannelMembershipsForAppInstanceUserPaginationTraits<DerivedClient>>
   ListChannelMembershipsForAppInstanceUserPaginator(const Model::ListChannelMembershipsForAppInstanceUserRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelMembershipsForAppInstanceUserRequest,
                                              Pagination::ListChannelMembershipsForAppInstanceUserPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -78,6 +83,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelMessagesRequest,
                                     Pagination::ListChannelMessagesPaginationTraits<DerivedClient>>
   ListChannelMessagesPaginator(const Model::ListChannelMessagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelMessagesRequest,
                                              Pagination::ListChannelMessagesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -89,6 +95,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelModeratorsRequest,
                                     Pagination::ListChannelModeratorsPaginationTraits<DerivedClient>>
   ListChannelModeratorsPaginator(const Model::ListChannelModeratorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelModeratorsRequest,
                                              Pagination::ListChannelModeratorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -99,6 +106,7 @@ class ChimeSDKMessagingPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<DerivedClient>>
   ListChannelsPaginator(const Model::ListChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -110,6 +118,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsAssociatedWithChannelFlowRequest,
                                     Pagination::ListChannelsAssociatedWithChannelFlowPaginationTraits<DerivedClient>>
   ListChannelsAssociatedWithChannelFlowPaginator(const Model::ListChannelsAssociatedWithChannelFlowRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsAssociatedWithChannelFlowRequest,
                                              Pagination::ListChannelsAssociatedWithChannelFlowPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -121,6 +130,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsModeratedByAppInstanceUserRequest,
                                     Pagination::ListChannelsModeratedByAppInstanceUserPaginationTraits<DerivedClient>>
   ListChannelsModeratedByAppInstanceUserPaginator(const Model::ListChannelsModeratedByAppInstanceUserRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsModeratedByAppInstanceUserRequest,
                                              Pagination::ListChannelsModeratedByAppInstanceUserPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -132,6 +142,7 @@ class ChimeSDKMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubChannelsRequest,
                                     Pagination::ListSubChannelsPaginationTraits<DerivedClient>>
   ListSubChannelsPaginator(const Model::ListSubChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubChannelsRequest,
                                              Pagination::ListSubChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -142,6 +153,7 @@ class ChimeSDKMessagingPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchChannelsRequest, Pagination::SearchChannelsPaginationTraits<DerivedClient>>
   SearchChannelsPaginator(const Model::SearchChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchChannelsRequest,
                                              Pagination::SearchChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

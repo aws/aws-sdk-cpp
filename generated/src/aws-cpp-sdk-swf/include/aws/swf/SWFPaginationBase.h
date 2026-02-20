@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/swf/model/GetWorkflowExecutionHistoryPaginationTraits.h>
 #include <aws/swf/model/ListActivityTypesPaginationTraits.h>
@@ -30,6 +31,7 @@ class SWFPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetWorkflowExecutionHistoryRequest,
                                     Pagination::GetWorkflowExecutionHistoryPaginationTraits<DerivedClient>>
   GetWorkflowExecutionHistoryPaginator(const Model::GetWorkflowExecutionHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetWorkflowExecutionHistoryRequest,
                                              Pagination::GetWorkflowExecutionHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class SWFPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActivityTypesRequest,
                                     Pagination::ListActivityTypesPaginationTraits<DerivedClient>>
   ListActivityTypesPaginator(const Model::ListActivityTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActivityTypesRequest,
                                              Pagination::ListActivityTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -52,6 +55,7 @@ class SWFPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClosedWorkflowExecutionsRequest,
                                     Pagination::ListClosedWorkflowExecutionsPaginationTraits<DerivedClient>>
   ListClosedWorkflowExecutionsPaginator(const Model::ListClosedWorkflowExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClosedWorkflowExecutionsRequest,
                                              Pagination::ListClosedWorkflowExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +66,7 @@ class SWFPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest, Pagination::ListDomainsPaginationTraits<DerivedClient>>
   ListDomainsPaginator(const Model::ListDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest,
                                              Pagination::ListDomainsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -73,6 +78,7 @@ class SWFPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpenWorkflowExecutionsRequest,
                                     Pagination::ListOpenWorkflowExecutionsPaginationTraits<DerivedClient>>
   ListOpenWorkflowExecutionsPaginator(const Model::ListOpenWorkflowExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpenWorkflowExecutionsRequest,
                                              Pagination::ListOpenWorkflowExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class SWFPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowTypesRequest,
                                     Pagination::ListWorkflowTypesPaginationTraits<DerivedClient>>
   ListWorkflowTypesPaginator(const Model::ListWorkflowTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowTypesRequest,
                                              Pagination::ListWorkflowTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +102,7 @@ class SWFPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::PollForDecisionTaskRequest,
                                     Pagination::PollForDecisionTaskPaginationTraits<DerivedClient>>
   PollForDecisionTaskPaginator(const Model::PollForDecisionTaskRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::PollForDecisionTaskRequest,
                                              Pagination::PollForDecisionTaskPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

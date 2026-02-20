@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kafkaconnect/model/ListConnectorOperationsPaginationTraits.h>
 #include <aws/kafkaconnect/model/ListConnectorsPaginationTraits.h>
@@ -27,6 +28,7 @@ class KafkaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorOperationsRequest,
                                     Pagination::ListConnectorOperationsPaginationTraits<DerivedClient>>
   ListConnectorOperationsPaginator(const Model::ListConnectorOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorOperationsRequest,
                                              Pagination::ListConnectorOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class KafkaConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest, Pagination::ListConnectorsPaginationTraits<DerivedClient>>
   ListConnectorsPaginator(const Model::ListConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest,
                                              Pagination::ListConnectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -48,6 +51,7 @@ class KafkaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomPluginsRequest,
                                     Pagination::ListCustomPluginsPaginationTraits<DerivedClient>>
   ListCustomPluginsPaginator(const Model::ListCustomPluginsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomPluginsRequest,
                                              Pagination::ListCustomPluginsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class KafkaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkerConfigurationsRequest,
                                     Pagination::ListWorkerConfigurationsPaginationTraits<DerivedClient>>
   ListWorkerConfigurationsPaginator(const Model::ListWorkerConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkerConfigurationsRequest,
                                              Pagination::ListWorkerConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

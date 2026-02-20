@@ -21,6 +21,7 @@
 #include <aws/auditmanager/model/ListControlsPaginationTraits.h>
 #include <aws/auditmanager/model/ListKeywordsForDataSourcePaginationTraits.h>
 #include <aws/auditmanager/model/ListNotificationsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -38,6 +39,7 @@ class AuditManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetChangeLogsRequest, Pagination::GetChangeLogsPaginationTraits<DerivedClient>>
   GetChangeLogsPaginator(const Model::GetChangeLogsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetChangeLogsRequest,
                                              Pagination::GetChangeLogsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -48,6 +50,7 @@ class AuditManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDelegationsRequest, Pagination::GetDelegationsPaginationTraits<DerivedClient>>
   GetDelegationsPaginator(const Model::GetDelegationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDelegationsRequest,
                                              Pagination::GetDelegationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -59,6 +62,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEvidenceByEvidenceFolderRequest,
                                     Pagination::GetEvidenceByEvidenceFolderPaginationTraits<DerivedClient>>
   GetEvidenceByEvidenceFolderPaginator(const Model::GetEvidenceByEvidenceFolderRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEvidenceByEvidenceFolderRequest,
                                              Pagination::GetEvidenceByEvidenceFolderPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +74,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEvidenceFoldersByAssessmentRequest,
                                     Pagination::GetEvidenceFoldersByAssessmentPaginationTraits<DerivedClient>>
   GetEvidenceFoldersByAssessmentPaginator(const Model::GetEvidenceFoldersByAssessmentRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEvidenceFoldersByAssessmentRequest,
                                              Pagination::GetEvidenceFoldersByAssessmentPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -81,6 +86,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEvidenceFoldersByAssessmentControlRequest,
                                     Pagination::GetEvidenceFoldersByAssessmentControlPaginationTraits<DerivedClient>>
   GetEvidenceFoldersByAssessmentControlPaginator(const Model::GetEvidenceFoldersByAssessmentControlRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEvidenceFoldersByAssessmentControlRequest,
                                              Pagination::GetEvidenceFoldersByAssessmentControlPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -92,6 +98,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentControlInsightsByControlDomainRequest,
                                     Pagination::ListAssessmentControlInsightsByControlDomainPaginationTraits<DerivedClient>>
   ListAssessmentControlInsightsByControlDomainPaginator(const Model::ListAssessmentControlInsightsByControlDomainRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentControlInsightsByControlDomainRequest,
                                              Pagination::ListAssessmentControlInsightsByControlDomainPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -103,6 +110,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentFrameworksRequest,
                                     Pagination::ListAssessmentFrameworksPaginationTraits<DerivedClient>>
   ListAssessmentFrameworksPaginator(const Model::ListAssessmentFrameworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentFrameworksRequest,
                                              Pagination::ListAssessmentFrameworksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -114,6 +122,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentFrameworkShareRequestsRequest,
                                     Pagination::ListAssessmentFrameworkShareRequestsPaginationTraits<DerivedClient>>
   ListAssessmentFrameworkShareRequestsPaginator(const Model::ListAssessmentFrameworkShareRequestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentFrameworkShareRequestsRequest,
                                              Pagination::ListAssessmentFrameworkShareRequestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -125,6 +134,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentReportsRequest,
                                     Pagination::ListAssessmentReportsPaginationTraits<DerivedClient>>
   ListAssessmentReportsPaginator(const Model::ListAssessmentReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentReportsRequest,
                                              Pagination::ListAssessmentReportsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -136,6 +146,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentsRequest,
                                     Pagination::ListAssessmentsPaginationTraits<DerivedClient>>
   ListAssessmentsPaginator(const Model::ListAssessmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssessmentsRequest,
                                              Pagination::ListAssessmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -147,6 +158,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlDomainInsightsRequest,
                                     Pagination::ListControlDomainInsightsPaginationTraits<DerivedClient>>
   ListControlDomainInsightsPaginator(const Model::ListControlDomainInsightsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlDomainInsightsRequest,
                                              Pagination::ListControlDomainInsightsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -158,6 +170,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlDomainInsightsByAssessmentRequest,
                                     Pagination::ListControlDomainInsightsByAssessmentPaginationTraits<DerivedClient>>
   ListControlDomainInsightsByAssessmentPaginator(const Model::ListControlDomainInsightsByAssessmentRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlDomainInsightsByAssessmentRequest,
                                              Pagination::ListControlDomainInsightsByAssessmentPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -169,6 +182,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlInsightsByControlDomainRequest,
                                     Pagination::ListControlInsightsByControlDomainPaginationTraits<DerivedClient>>
   ListControlInsightsByControlDomainPaginator(const Model::ListControlInsightsByControlDomainRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlInsightsByControlDomainRequest,
                                              Pagination::ListControlInsightsByControlDomainPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -179,6 +193,7 @@ class AuditManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlsRequest, Pagination::ListControlsPaginationTraits<DerivedClient>>
   ListControlsPaginator(const Model::ListControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlsRequest,
                                              Pagination::ListControlsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -190,6 +205,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeywordsForDataSourceRequest,
                                     Pagination::ListKeywordsForDataSourcePaginationTraits<DerivedClient>>
   ListKeywordsForDataSourcePaginator(const Model::ListKeywordsForDataSourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeywordsForDataSourceRequest,
                                              Pagination::ListKeywordsForDataSourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -201,6 +217,7 @@ class AuditManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationsRequest,
                                     Pagination::ListNotificationsPaginationTraits<DerivedClient>>
   ListNotificationsPaginator(const Model::ListNotificationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationsRequest,
                                              Pagination::ListNotificationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

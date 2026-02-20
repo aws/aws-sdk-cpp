@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ecr/model/DescribeImageScanFindingsPaginationTraits.h>
 #include <aws/ecr/model/DescribeImagesPaginationTraits.h>
@@ -29,6 +30,7 @@ class ECRPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImagesRequest, Pagination::DescribeImagesPaginationTraits<DerivedClient>>
   DescribeImagesPaginator(const Model::DescribeImagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImagesRequest,
                                              Pagination::DescribeImagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -40,6 +42,7 @@ class ECRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageScanFindingsRequest,
                                     Pagination::DescribeImageScanFindingsPaginationTraits<DerivedClient>>
   DescribeImageScanFindingsPaginator(const Model::DescribeImageScanFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeImageScanFindingsRequest,
                                              Pagination::DescribeImageScanFindingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +54,7 @@ class ECRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePullThroughCacheRulesRequest,
                                     Pagination::DescribePullThroughCacheRulesPaginationTraits<DerivedClient>>
   DescribePullThroughCacheRulesPaginator(const Model::DescribePullThroughCacheRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePullThroughCacheRulesRequest,
                                              Pagination::DescribePullThroughCacheRulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +66,7 @@ class ECRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRepositoriesRequest,
                                     Pagination::DescribeRepositoriesPaginationTraits<DerivedClient>>
   DescribeRepositoriesPaginator(const Model::DescribeRepositoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRepositoriesRequest,
                                              Pagination::DescribeRepositoriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class ECRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRepositoryCreationTemplatesRequest,
                                     Pagination::DescribeRepositoryCreationTemplatesPaginationTraits<DerivedClient>>
   DescribeRepositoryCreationTemplatesPaginator(const Model::DescribeRepositoryCreationTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRepositoryCreationTemplatesRequest,
                                              Pagination::DescribeRepositoryCreationTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class ECRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLifecyclePolicyPreviewRequest,
                                     Pagination::GetLifecyclePolicyPreviewPaginationTraits<DerivedClient>>
   GetLifecyclePolicyPreviewPaginator(const Model::GetLifecyclePolicyPreviewRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLifecyclePolicyPreviewRequest,
                                              Pagination::GetLifecyclePolicyPreviewPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -94,6 +101,7 @@ class ECRPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImagesRequest, Pagination::ListImagesPaginationTraits<DerivedClient>>
   ListImagesPaginator(const Model::ListImagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImagesRequest,
                                              Pagination::ListImagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

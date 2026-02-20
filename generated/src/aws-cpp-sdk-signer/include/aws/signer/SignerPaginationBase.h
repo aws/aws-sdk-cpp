@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/signer/model/ListSigningJobsPaginationTraits.h>
 #include <aws/signer/model/ListSigningPlatformsPaginationTraits.h>
@@ -26,6 +27,7 @@ class SignerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSigningJobsRequest,
                                     Pagination::ListSigningJobsPaginationTraits<DerivedClient>>
   ListSigningJobsPaginator(const Model::ListSigningJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSigningJobsRequest,
                                              Pagination::ListSigningJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -37,6 +39,7 @@ class SignerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSigningPlatformsRequest,
                                     Pagination::ListSigningPlatformsPaginationTraits<DerivedClient>>
   ListSigningPlatformsPaginator(const Model::ListSigningPlatformsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSigningPlatformsRequest,
                                              Pagination::ListSigningPlatformsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class SignerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSigningProfilesRequest,
                                     Pagination::ListSigningProfilesPaginationTraits<DerivedClient>>
   ListSigningProfilesPaginator(const Model::ListSigningProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSigningProfilesRequest,
                                              Pagination::ListSigningProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

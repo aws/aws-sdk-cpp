@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/timestream-influxdb/model/ListDbClustersPaginationTraits.h>
 #include <aws/timestream-influxdb/model/ListDbInstancesForClusterPaginationTraits.h>
@@ -26,6 +27,7 @@ class TimestreamInfluxDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbClustersRequest, Pagination::ListDbClustersPaginationTraits<DerivedClient>>
   ListDbClustersPaginator(const Model::ListDbClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbClustersRequest,
                                              Pagination::ListDbClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -37,6 +39,7 @@ class TimestreamInfluxDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbInstancesRequest,
                                     Pagination::ListDbInstancesPaginationTraits<DerivedClient>>
   ListDbInstancesPaginator(const Model::ListDbInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbInstancesRequest,
                                              Pagination::ListDbInstancesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -48,6 +51,7 @@ class TimestreamInfluxDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbInstancesForClusterRequest,
                                     Pagination::ListDbInstancesForClusterPaginationTraits<DerivedClient>>
   ListDbInstancesForClusterPaginator(const Model::ListDbInstancesForClusterRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbInstancesForClusterRequest,
                                              Pagination::ListDbInstancesForClusterPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class TimestreamInfluxDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbParameterGroupsRequest,
                                     Pagination::ListDbParameterGroupsPaginationTraits<DerivedClient>>
   ListDbParameterGroupsPaginator(const Model::ListDbParameterGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbParameterGroupsRequest,
                                              Pagination::ListDbParameterGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

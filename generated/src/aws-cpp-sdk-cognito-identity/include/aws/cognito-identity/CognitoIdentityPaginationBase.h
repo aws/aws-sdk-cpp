@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/cognito-identity/model/ListIdentityPoolsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class CognitoIdentityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentityPoolsRequest,
                                     Pagination::ListIdentityPoolsPaginationTraits<DerivedClient>>
   ListIdentityPoolsPaginator(const Model::ListIdentityPoolsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentityPoolsRequest,
                                              Pagination::ListIdentityPoolsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

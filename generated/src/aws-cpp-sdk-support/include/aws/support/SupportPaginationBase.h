@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/support/model/DescribeCasesPaginationTraits.h>
 #include <aws/support/model/DescribeCommunicationsPaginationTraits.h>
@@ -24,6 +25,7 @@ class SupportPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCasesRequest, Pagination::DescribeCasesPaginationTraits<DerivedClient>>
   DescribeCasesPaginator(const Model::DescribeCasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCasesRequest,
                                              Pagination::DescribeCasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -35,6 +37,7 @@ class SupportPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCommunicationsRequest,
                                     Pagination::DescribeCommunicationsPaginationTraits<DerivedClient>>
   DescribeCommunicationsPaginator(const Model::DescribeCommunicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCommunicationsRequest,
                                              Pagination::DescribeCommunicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/translate/model/ListLanguagesPaginationTraits.h>
 #include <aws/translate/model/ListParallelDataPaginationTraits.h>
@@ -26,6 +27,7 @@ class TranslatePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLanguagesRequest, Pagination::ListLanguagesPaginationTraits<DerivedClient>>
   ListLanguagesPaginator(const Model::ListLanguagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLanguagesRequest,
                                              Pagination::ListLanguagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -37,6 +39,7 @@ class TranslatePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParallelDataRequest,
                                     Pagination::ListParallelDataPaginationTraits<DerivedClient>>
   ListParallelDataPaginator(const Model::ListParallelDataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParallelDataRequest,
                                              Pagination::ListParallelDataPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class TranslatePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTerminologiesRequest,
                                     Pagination::ListTerminologiesPaginationTraits<DerivedClient>>
   ListTerminologiesPaginator(const Model::ListTerminologiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTerminologiesRequest,
                                              Pagination::ListTerminologiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class TranslatePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTextTranslationJobsRequest,
                                     Pagination::ListTextTranslationJobsPaginationTraits<DerivedClient>>
   ListTextTranslationJobsPaginator(const Model::ListTextTranslationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTextTranslationJobsRequest,
                                              Pagination::ListTextTranslationJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

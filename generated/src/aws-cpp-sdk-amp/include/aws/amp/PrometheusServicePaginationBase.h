@@ -9,6 +9,7 @@
 #include <aws/amp/model/ListRuleGroupsNamespacesPaginationTraits.h>
 #include <aws/amp/model/ListScrapersPaginationTraits.h>
 #include <aws/amp/model/ListWorkspacesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class PrometheusServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnomalyDetectorsRequest,
                                     Pagination::ListAnomalyDetectorsPaginationTraits<DerivedClient>>
   ListAnomalyDetectorsPaginator(const Model::ListAnomalyDetectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnomalyDetectorsRequest,
                                              Pagination::ListAnomalyDetectorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class PrometheusServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRuleGroupsNamespacesRequest,
                                     Pagination::ListRuleGroupsNamespacesPaginationTraits<DerivedClient>>
   ListRuleGroupsNamespacesPaginator(const Model::ListRuleGroupsNamespacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRuleGroupsNamespacesRequest,
                                              Pagination::ListRuleGroupsNamespacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class PrometheusServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScrapersRequest, Pagination::ListScrapersPaginationTraits<DerivedClient>>
   ListScrapersPaginator(const Model::ListScrapersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScrapersRequest,
                                              Pagination::ListScrapersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -58,6 +62,7 @@ class PrometheusServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest, Pagination::ListWorkspacesPaginationTraits<DerivedClient>>
   ListWorkspacesPaginator(const Model::ListWorkspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest,
                                              Pagination::ListWorkspacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
