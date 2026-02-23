@@ -61,13 +61,13 @@ class ExportAutomatedReasoningPolicyVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AutomatedReasoningPolicyDefinition m_policyDefinition;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

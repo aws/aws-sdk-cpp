@@ -231,7 +231,7 @@ class DescribeModelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_modelName;
@@ -255,7 +255,7 @@ class DescribeModelResult {
   DeploymentRecommendation m_deploymentRecommendation;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelNameHasBeenSet = false;
   bool m_primaryContainerHasBeenSet = false;
   bool m_containersHasBeenSet = false;

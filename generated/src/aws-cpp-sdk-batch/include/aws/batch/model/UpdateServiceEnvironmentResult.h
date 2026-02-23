@@ -76,7 +76,7 @@ class UpdateServiceEnvironmentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_serviceEnvironmentName;
@@ -84,7 +84,7 @@ class UpdateServiceEnvironmentResult {
   Aws::String m_serviceEnvironmentArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceEnvironmentNameHasBeenSet = false;
   bool m_serviceEnvironmentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

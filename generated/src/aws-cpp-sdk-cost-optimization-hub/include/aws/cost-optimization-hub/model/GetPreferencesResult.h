@@ -94,7 +94,7 @@ class GetPreferencesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
@@ -104,7 +104,7 @@ class GetPreferencesResult {
   PreferredCommitment m_preferredCommitment;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_savingsEstimationModeHasBeenSet = false;
   bool m_memberAccountDiscountVisibilityHasBeenSet = false;
   bool m_preferredCommitmentHasBeenSet = false;

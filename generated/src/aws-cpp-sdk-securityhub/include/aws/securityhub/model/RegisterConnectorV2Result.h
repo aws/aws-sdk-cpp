@@ -75,7 +75,7 @@ class RegisterConnectorV2Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_connectorArn;
@@ -83,7 +83,7 @@ class RegisterConnectorV2Result {
   Aws::String m_connectorId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

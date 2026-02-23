@@ -93,7 +93,7 @@ class DescribeServiceDeploymentsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ServiceDeployment> m_serviceDeployments;
@@ -101,7 +101,7 @@ class DescribeServiceDeploymentsResult {
   Aws::Vector<Failure> m_failures;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceDeploymentsHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

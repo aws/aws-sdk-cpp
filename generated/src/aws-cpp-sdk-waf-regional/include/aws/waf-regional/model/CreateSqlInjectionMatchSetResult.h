@@ -85,7 +85,7 @@ class CreateSqlInjectionMatchSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SqlInjectionMatchSet m_sqlInjectionMatchSet;
@@ -93,7 +93,7 @@ class CreateSqlInjectionMatchSetResult {
   Aws::String m_changeToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sqlInjectionMatchSetHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -60,13 +60,13 @@ class GetManagedScalingPolicyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ManagedScalingPolicy m_managedScalingPolicy;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managedScalingPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

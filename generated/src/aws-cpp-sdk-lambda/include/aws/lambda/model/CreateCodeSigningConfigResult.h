@@ -59,13 +59,13 @@ class CreateCodeSigningConfigResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CodeSigningConfig m_codeSigningConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeSigningConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

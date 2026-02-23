@@ -24,7 +24,7 @@ GetSavingsPlanPurchaseRecommendationDetailsResult::GetSavingsPlanPurchaseRecomme
 
 GetSavingsPlanPurchaseRecommendationDetailsResult& GetSavingsPlanPurchaseRecommendationDetailsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecommendationDetailId")) {
     m_recommendationDetailId = jsonValue.GetString("RecommendationDetailId");

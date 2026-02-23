@@ -235,7 +235,7 @@ class UpdateConnectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_connectionId;
@@ -261,7 +261,7 @@ class UpdateConnectionResult {
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;

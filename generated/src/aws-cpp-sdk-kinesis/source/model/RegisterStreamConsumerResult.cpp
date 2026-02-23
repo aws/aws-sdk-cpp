@@ -20,7 +20,7 @@ using namespace Aws;
 RegisterStreamConsumerResult::RegisterStreamConsumerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterStreamConsumerResult& RegisterStreamConsumerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Consumer")) {
     m_consumer = jsonValue.GetObject("Consumer");

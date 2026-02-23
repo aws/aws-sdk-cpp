@@ -20,7 +20,7 @@ using namespace Aws;
 GetConnectAttachmentResult::GetConnectAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetConnectAttachmentResult& GetConnectAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectAttachment")) {
     m_connectAttachment = jsonValue.GetObject("ConnectAttachment");

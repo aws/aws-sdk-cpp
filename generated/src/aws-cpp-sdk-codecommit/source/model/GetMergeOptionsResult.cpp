@@ -20,7 +20,7 @@ using namespace Aws;
 GetMergeOptionsResult::GetMergeOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMergeOptionsResult& GetMergeOptionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mergeOptions")) {
     Aws::Utils::Array<JsonView> mergeOptionsJsonList = jsonValue.GetArray("mergeOptions");

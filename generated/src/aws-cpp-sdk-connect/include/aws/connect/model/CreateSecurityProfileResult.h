@@ -75,7 +75,7 @@ class CreateSecurityProfileResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_securityProfileId;
@@ -83,7 +83,7 @@ class CreateSecurityProfileResult {
   Aws::String m_securityProfileArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_securityProfileIdHasBeenSet = false;
   bool m_securityProfileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

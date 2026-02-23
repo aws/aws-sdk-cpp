@@ -92,7 +92,7 @@ class RejectPredictionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_domainId;
@@ -102,7 +102,7 @@ class RejectPredictionsResult {
   Aws::String m_assetRevision;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainIdHasBeenSet = false;
   bool m_assetIdHasBeenSet = false;
   bool m_assetRevisionHasBeenSet = false;

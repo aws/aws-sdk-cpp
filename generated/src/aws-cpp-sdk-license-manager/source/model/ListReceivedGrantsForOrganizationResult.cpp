@@ -23,7 +23,7 @@ ListReceivedGrantsForOrganizationResult::ListReceivedGrantsForOrganizationResult
 
 ListReceivedGrantsForOrganizationResult& ListReceivedGrantsForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Grants")) {
     Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("Grants");

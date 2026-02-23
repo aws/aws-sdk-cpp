@@ -22,7 +22,7 @@ ListCustomRoutingPortMappingsResult::ListCustomRoutingPortMappingsResult(const A
 }
 
 ListCustomRoutingPortMappingsResult& ListCustomRoutingPortMappingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PortMappings")) {
     Aws::Utils::Array<JsonView> portMappingsJsonList = jsonValue.GetArray("PortMappings");

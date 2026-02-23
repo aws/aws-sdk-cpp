@@ -141,7 +141,7 @@ class AssumeRoleForPodIdentityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Subject m_subject;
@@ -155,7 +155,7 @@ class AssumeRoleForPodIdentityResult {
   Credentials m_credentials;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_subjectHasBeenSet = false;
   bool m_audienceHasBeenSet = false;
   bool m_podIdentityAssociationHasBeenSet = false;

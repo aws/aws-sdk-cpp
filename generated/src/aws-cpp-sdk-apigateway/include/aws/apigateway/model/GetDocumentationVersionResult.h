@@ -98,7 +98,7 @@ class GetDocumentationVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_version;
@@ -108,7 +108,7 @@ class GetDocumentationVersionResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_versionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -171,7 +171,7 @@ class ImportResourcesToDraftAppVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_appArn;
@@ -187,7 +187,7 @@ class ImportResourcesToDraftAppVersionResult {
   Aws::Vector<TerraformSource> m_terraformSources;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;
   bool m_eksSourcesHasBeenSet = false;

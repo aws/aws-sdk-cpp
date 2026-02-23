@@ -108,7 +108,7 @@ class ListAccessPointsForDirectoryBucketsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<AccessPoint> m_accessPointList;
@@ -118,7 +118,7 @@ class ListAccessPointsForDirectoryBucketsResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessPointListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

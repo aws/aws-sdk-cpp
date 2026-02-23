@@ -73,7 +73,7 @@ class CheckSchemaVersionValidityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_valid{false};
@@ -81,7 +81,7 @@ class CheckSchemaVersionValidityResult {
   Aws::String m_error;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_validHasBeenSet = false;
   bool m_errorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

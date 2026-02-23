@@ -23,7 +23,7 @@ DeleteAssetModelCompositeModelResult::DeleteAssetModelCompositeModelResult(const
 
 DeleteAssetModelCompositeModelResult& DeleteAssetModelCompositeModelResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assetModelStatus")) {
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");

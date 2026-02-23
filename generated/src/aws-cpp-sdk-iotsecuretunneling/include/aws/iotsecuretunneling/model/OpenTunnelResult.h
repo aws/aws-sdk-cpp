@@ -111,7 +111,7 @@ class OpenTunnelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_tunnelId;
@@ -123,7 +123,7 @@ class OpenTunnelResult {
   Aws::String m_destinationAccessToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tunnelIdHasBeenSet = false;
   bool m_tunnelArnHasBeenSet = false;
   bool m_sourceAccessTokenHasBeenSet = false;

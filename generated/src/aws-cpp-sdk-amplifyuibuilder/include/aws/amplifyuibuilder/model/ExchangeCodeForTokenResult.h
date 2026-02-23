@@ -91,7 +91,7 @@ class ExchangeCodeForTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_accessToken;
@@ -101,7 +101,7 @@ class ExchangeCodeForTokenResult {
   Aws::String m_refreshToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessTokenHasBeenSet = false;
   bool m_expiresInHasBeenSet = false;
   bool m_refreshTokenHasBeenSet = false;

@@ -103,7 +103,7 @@ class ListServerNeighborsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<NeighborConnectionDetail> m_neighbors;
@@ -113,7 +113,7 @@ class ListServerNeighborsResult {
   long long m_knownDependencyCount{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_neighborsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_knownDependencyCountHasBeenSet = false;

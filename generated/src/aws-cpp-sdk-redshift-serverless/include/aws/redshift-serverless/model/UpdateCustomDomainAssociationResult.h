@@ -111,7 +111,7 @@ class UpdateCustomDomainAssociationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_customDomainCertificateArn;
@@ -123,7 +123,7 @@ class UpdateCustomDomainAssociationResult {
   Aws::String m_workgroupName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customDomainCertificateArnHasBeenSet = false;
   bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
   bool m_customDomainNameHasBeenSet = false;

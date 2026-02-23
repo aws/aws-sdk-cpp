@@ -130,7 +130,7 @@ class CreateFleetAdvisorCollectorResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_collectorReferencedId;
@@ -144,7 +144,7 @@ class CreateFleetAdvisorCollectorResult {
   Aws::String m_s3BucketName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_collectorReferencedIdHasBeenSet = false;
   bool m_collectorNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

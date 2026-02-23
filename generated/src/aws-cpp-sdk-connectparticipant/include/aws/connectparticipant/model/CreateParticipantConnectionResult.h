@@ -98,7 +98,7 @@ class CreateParticipantConnectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Websocket m_websocket;
@@ -108,7 +108,7 @@ class CreateParticipantConnectionResult {
   WebRTCConnection m_webRTCConnection;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_websocketHasBeenSet = false;
   bool m_connectionCredentialsHasBeenSet = false;
   bool m_webRTCConnectionHasBeenSet = false;

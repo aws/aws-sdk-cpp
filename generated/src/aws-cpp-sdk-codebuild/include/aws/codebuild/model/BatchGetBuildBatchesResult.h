@@ -91,7 +91,7 @@ class BatchGetBuildBatchesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BuildBatch> m_buildBatches;
@@ -99,7 +99,7 @@ class BatchGetBuildBatchesResult {
   Aws::Vector<Aws::String> m_buildBatchesNotFound;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_buildBatchesHasBeenSet = false;
   bool m_buildBatchesNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

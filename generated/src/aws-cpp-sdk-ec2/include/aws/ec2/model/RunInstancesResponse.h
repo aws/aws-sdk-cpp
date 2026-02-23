@@ -150,7 +150,7 @@ class RunInstancesResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_reservationId;
@@ -164,7 +164,7 @@ class RunInstancesResponse {
   Aws::Vector<Instance> m_instances;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reservationIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
   bool m_requesterIdHasBeenSet = false;

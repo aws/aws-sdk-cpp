@@ -20,7 +20,7 @@ using namespace Aws;
 GetCloudVmClusterResult::GetCloudVmClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetCloudVmClusterResult& GetCloudVmClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cloudVmCluster")) {
     m_cloudVmCluster = jsonValue.GetObject("cloudVmCluster");

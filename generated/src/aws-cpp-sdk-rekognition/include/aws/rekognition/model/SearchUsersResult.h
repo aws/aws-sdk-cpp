@@ -123,7 +123,7 @@ class SearchUsersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<UserMatch> m_userMatches;
@@ -135,7 +135,7 @@ class SearchUsersResult {
   SearchedUser m_searchedUser;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userMatchesHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;
   bool m_searchedFaceHasBeenSet = false;

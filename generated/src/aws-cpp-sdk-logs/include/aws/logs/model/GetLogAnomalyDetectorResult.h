@@ -201,7 +201,7 @@ class GetLogAnomalyDetectorResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_detectorName;
@@ -223,7 +223,7 @@ class GetLogAnomalyDetectorResult {
   long long m_anomalyVisibilityTime{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_detectorNameHasBeenSet = false;
   bool m_logGroupArnListHasBeenSet = false;
   bool m_evaluationFrequencyHasBeenSet = false;

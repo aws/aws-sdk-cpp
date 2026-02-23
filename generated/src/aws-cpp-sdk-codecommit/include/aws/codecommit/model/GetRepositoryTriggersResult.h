@@ -89,7 +89,7 @@ class GetRepositoryTriggersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_configurationId;
@@ -97,7 +97,7 @@ class GetRepositoryTriggersResult {
   Aws::Vector<RepositoryTrigger> m_triggers;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationIdHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

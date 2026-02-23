@@ -399,7 +399,7 @@ class DescribeJobRunResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_attempt{0};
@@ -441,7 +441,7 @@ class DescribeJobRunResult {
   JobSample m_jobSample;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_attemptHasBeenSet = false;
   bool m_completedOnHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;

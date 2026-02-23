@@ -78,7 +78,7 @@ class GetObjectTypeAttributeStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   GetObjectTypeAttributeStatisticsStats m_statistics;
@@ -86,7 +86,7 @@ class GetObjectTypeAttributeStatisticsResult {
   Aws::Utils::DateTime m_calculatedAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statisticsHasBeenSet = false;
   bool m_calculatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

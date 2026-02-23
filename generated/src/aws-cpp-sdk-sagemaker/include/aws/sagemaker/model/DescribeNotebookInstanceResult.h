@@ -487,7 +487,7 @@ class DescribeNotebookInstanceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_notebookInstanceArn;
@@ -537,7 +537,7 @@ class DescribeNotebookInstanceResult {
   InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_notebookInstanceArnHasBeenSet = false;
   bool m_notebookInstanceNameHasBeenSet = false;
   bool m_notebookInstanceStatusHasBeenSet = false;

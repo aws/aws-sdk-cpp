@@ -210,7 +210,7 @@ class GetKxDatabaseResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_databaseName;
@@ -234,7 +234,7 @@ class GetKxDatabaseResult {
   int m_numFiles{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_databaseNameHasBeenSet = false;
   bool m_databaseArnHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;

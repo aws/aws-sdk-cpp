@@ -108,7 +108,7 @@ class GetResourcesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<FolderMetadata> m_folders;
@@ -118,7 +118,7 @@ class GetResourcesResult {
   Aws::String m_marker;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_foldersHasBeenSet = false;
   bool m_documentsHasBeenSet = false;
   bool m_markerHasBeenSet = false;

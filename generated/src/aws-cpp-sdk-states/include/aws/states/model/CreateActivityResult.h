@@ -76,7 +76,7 @@ class CreateActivityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_activityArn;
@@ -84,7 +84,7 @@ class CreateActivityResult {
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_activityArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

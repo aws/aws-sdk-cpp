@@ -162,7 +162,7 @@ class ListEntitiesForPolicyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<PolicyGroup> m_policyGroups;
@@ -176,7 +176,7 @@ class ListEntitiesForPolicyResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyGroupsHasBeenSet = false;
   bool m_policyUsersHasBeenSet = false;
   bool m_policyRolesHasBeenSet = false;

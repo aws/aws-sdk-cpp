@@ -93,7 +93,7 @@ class CreateWhatsAppMessageTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_metaTemplateId;
@@ -103,7 +103,7 @@ class CreateWhatsAppMessageTemplateResult {
   Aws::String m_category;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metaTemplateIdHasBeenSet = false;
   bool m_templateStatusHasBeenSet = false;
   bool m_categoryHasBeenSet = false;

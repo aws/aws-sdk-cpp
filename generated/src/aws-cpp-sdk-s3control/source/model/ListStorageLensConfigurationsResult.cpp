@@ -22,7 +22,7 @@ ListStorageLensConfigurationsResult::ListStorageLensConfigurationsResult(const A
 
 ListStorageLensConfigurationsResult& ListStorageLensConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

@@ -20,7 +20,7 @@ using namespace Aws;
 ListQueueLimitAssociationsResult::ListQueueLimitAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListQueueLimitAssociationsResult& ListQueueLimitAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queueLimitAssociations")) {
     Aws::Utils::Array<JsonView> queueLimitAssociationsJsonList = jsonValue.GetArray("queueLimitAssociations");

@@ -23,7 +23,7 @@ SetMediaMessageSpendLimitOverrideResult::SetMediaMessageSpendLimitOverrideResult
 
 SetMediaMessageSpendLimitOverrideResult& SetMediaMessageSpendLimitOverrideResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MonthlyLimit")) {
     m_monthlyLimit = jsonValue.GetInt64("MonthlyLimit");

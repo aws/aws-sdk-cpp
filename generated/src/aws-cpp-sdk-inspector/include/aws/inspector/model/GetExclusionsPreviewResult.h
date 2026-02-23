@@ -102,7 +102,7 @@ class GetExclusionsPreviewResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   PreviewStatus m_previewStatus{PreviewStatus::NOT_SET};
@@ -112,7 +112,7 @@ class GetExclusionsPreviewResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_previewStatusHasBeenSet = false;
   bool m_exclusionPreviewsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

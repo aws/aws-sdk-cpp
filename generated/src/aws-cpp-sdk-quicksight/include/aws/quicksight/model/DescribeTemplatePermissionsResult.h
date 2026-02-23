@@ -115,7 +115,7 @@ class DescribeTemplatePermissionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_templateId;
@@ -127,7 +127,7 @@ class DescribeTemplatePermissionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

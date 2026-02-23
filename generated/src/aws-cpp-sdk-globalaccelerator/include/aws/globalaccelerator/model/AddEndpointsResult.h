@@ -83,7 +83,7 @@ class AddEndpointsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<EndpointDescription> m_endpointDescriptions;
@@ -91,7 +91,7 @@ class AddEndpointsResult {
   Aws::String m_endpointGroupArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_endpointDescriptionsHasBeenSet = false;
   bool m_endpointGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

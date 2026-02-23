@@ -23,7 +23,7 @@ CreateDataRepositoryAssociationResult::CreateDataRepositoryAssociationResult(con
 
 CreateDataRepositoryAssociationResult& CreateDataRepositoryAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Association")) {
     m_association = jsonValue.GetObject("Association");

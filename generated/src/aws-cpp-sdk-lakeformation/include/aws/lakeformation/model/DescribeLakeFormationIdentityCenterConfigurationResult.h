@@ -189,7 +189,7 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_catalogId;
@@ -207,7 +207,7 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
   Aws::String m_resourceShare;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_catalogIdHasBeenSet = false;
   bool m_instanceArnHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;

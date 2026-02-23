@@ -22,7 +22,7 @@ DescribeSlackUserIdentitiesResult::DescribeSlackUserIdentitiesResult(const Aws::
 }
 
 DescribeSlackUserIdentitiesResult& DescribeSlackUserIdentitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SlackUserIdentities")) {
     Aws::Utils::Array<JsonView> slackUserIdentitiesJsonList = jsonValue.GetArray("SlackUserIdentities");

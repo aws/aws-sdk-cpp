@@ -20,7 +20,7 @@ using namespace Aws;
 ListSpansResult::ListSpansResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSpansResult& ListSpansResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("spans")) {
     Aws::Utils::Array<JsonView> spansJsonList = jsonValue.GetArray("spans");

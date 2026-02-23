@@ -77,7 +77,7 @@ class GetAccountSettingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AccountLimit m_accountLimit;
@@ -85,7 +85,7 @@ class GetAccountSettingsResult {
   AccountUsage m_accountUsage;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountLimitHasBeenSet = false;
   bool m_accountUsageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

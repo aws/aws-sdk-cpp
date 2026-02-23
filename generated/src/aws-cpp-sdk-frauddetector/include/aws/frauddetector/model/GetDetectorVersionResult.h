@@ -253,7 +253,7 @@ class GetDetectorVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_detectorId;
@@ -279,7 +279,7 @@ class GetDetectorVersionResult {
   Aws::String m_arn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_detectorIdHasBeenSet = false;
   bool m_detectorVersionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

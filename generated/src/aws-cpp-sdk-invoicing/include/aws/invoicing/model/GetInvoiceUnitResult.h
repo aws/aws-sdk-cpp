@@ -163,7 +163,7 @@ class GetInvoiceUnitResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_invoiceUnitArn;
@@ -181,7 +181,7 @@ class GetInvoiceUnitResult {
   Aws::Utils::DateTime m_lastModified{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invoiceUnitArnHasBeenSet = false;
   bool m_invoiceReceiverHasBeenSet = false;
   bool m_nameHasBeenSet = false;

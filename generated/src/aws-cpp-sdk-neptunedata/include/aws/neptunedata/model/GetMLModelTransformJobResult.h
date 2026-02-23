@@ -135,7 +135,7 @@ class GetMLModelTransformJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_status;
@@ -149,7 +149,7 @@ class GetMLModelTransformJobResult {
   Aws::Vector<MlConfigDefinition> m_models;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_baseProcessingJobHasBeenSet = false;

@@ -164,7 +164,7 @@ class GetCapacityManagerAttributesResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CapacityManagerStatus m_capacityManagerStatus{CapacityManagerStatus::NOT_SET};
@@ -182,7 +182,7 @@ class GetCapacityManagerAttributesResponse {
   Aws::Utils::DateTime m_latestDatapointTimestamp{};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capacityManagerStatusHasBeenSet = false;
   bool m_organizationsAccessHasBeenSet = false;
   bool m_dataExportCountHasBeenSet = false;

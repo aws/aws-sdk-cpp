@@ -91,7 +91,7 @@ class ListDomainsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<DomainSummary> m_domains;
@@ -99,7 +99,7 @@ class ListDomainsResult {
   Aws::String m_nextPageMarker;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainsHasBeenSet = false;
   bool m_nextPageMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

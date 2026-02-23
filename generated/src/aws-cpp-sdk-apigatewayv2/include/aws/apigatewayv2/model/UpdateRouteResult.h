@@ -295,7 +295,7 @@ class UpdateRouteResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_apiGatewayManaged{false};
@@ -325,7 +325,7 @@ class UpdateRouteResult {
   Aws::String m_target;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_apiKeyRequiredHasBeenSet = false;
   bool m_authorizationScopesHasBeenSet = false;

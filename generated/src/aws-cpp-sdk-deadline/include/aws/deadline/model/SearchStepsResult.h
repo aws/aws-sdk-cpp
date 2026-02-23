@@ -96,7 +96,7 @@ class SearchStepsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<StepSearchSummary> m_steps;
@@ -106,7 +106,7 @@ class SearchStepsResult {
   int m_totalResults{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stepsHasBeenSet = false;
   bool m_nextItemOffsetHasBeenSet = false;
   bool m_totalResultsHasBeenSet = false;

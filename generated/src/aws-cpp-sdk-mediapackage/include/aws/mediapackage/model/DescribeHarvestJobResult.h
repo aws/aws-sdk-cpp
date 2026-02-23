@@ -208,7 +208,7 @@ include an explanation of why the HarvestJob failed.
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_arn;
@@ -230,7 +230,7 @@ include an explanation of why the HarvestJob failed.
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

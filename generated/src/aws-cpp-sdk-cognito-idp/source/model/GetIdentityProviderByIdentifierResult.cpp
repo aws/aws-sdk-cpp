@@ -23,7 +23,7 @@ GetIdentityProviderByIdentifierResult::GetIdentityProviderByIdentifierResult(con
 
 GetIdentityProviderByIdentifierResult& GetIdentityProviderByIdentifierResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IdentityProvider")) {
     m_identityProvider = jsonValue.GetObject("IdentityProvider");

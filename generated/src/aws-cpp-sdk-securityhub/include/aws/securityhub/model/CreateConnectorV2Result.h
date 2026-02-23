@@ -108,7 +108,7 @@ class CreateConnectorV2Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_connectorArn;
@@ -120,7 +120,7 @@ class CreateConnectorV2Result {
   ConnectorStatus m_connectorStatus{ConnectorStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorIdHasBeenSet = false;
   bool m_authUrlHasBeenSet = false;

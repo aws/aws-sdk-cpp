@@ -120,7 +120,7 @@ class GetParametersForImportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_keyId;
@@ -132,7 +132,7 @@ class GetParametersForImportResult {
   Aws::Utils::DateTime m_parametersValidTo{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_importTokenHasBeenSet = false;
   bool m_publicKeyHasBeenSet = false;

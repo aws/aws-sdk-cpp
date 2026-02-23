@@ -23,7 +23,7 @@ DescribeDataRepositoryAssociationsResult::DescribeDataRepositoryAssociationsResu
 
 DescribeDataRepositoryAssociationsResult& DescribeDataRepositoryAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Associations")) {
     Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");

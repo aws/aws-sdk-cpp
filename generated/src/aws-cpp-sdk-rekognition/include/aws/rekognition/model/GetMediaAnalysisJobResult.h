@@ -253,7 +253,7 @@ class GetMediaAnalysisJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobId;
@@ -281,7 +281,7 @@ class GetMediaAnalysisJobResult {
   MediaAnalysisManifestSummary m_manifestSummary;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_operationsConfigHasBeenSet = false;

@@ -60,13 +60,13 @@ class CreateLocalGatewayVirtualInterfaceResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   LocalGatewayVirtualInterface m_localGatewayVirtualInterface;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_localGatewayVirtualInterfaceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

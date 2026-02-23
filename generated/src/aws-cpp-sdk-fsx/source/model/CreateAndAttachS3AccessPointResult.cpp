@@ -22,7 +22,7 @@ CreateAndAttachS3AccessPointResult::CreateAndAttachS3AccessPointResult(const Aws
 }
 
 CreateAndAttachS3AccessPointResult& CreateAndAttachS3AccessPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("S3AccessPointAttachment")) {
     m_s3AccessPointAttachment = jsonValue.GetObject("S3AccessPointAttachment");

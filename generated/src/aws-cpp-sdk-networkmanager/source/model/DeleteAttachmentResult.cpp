@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteAttachmentResult::DeleteAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteAttachmentResult& DeleteAttachmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Attachment")) {
     m_attachment = jsonValue.GetObject("Attachment");

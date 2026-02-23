@@ -24,7 +24,7 @@ DescribeInboundCrossClusterSearchConnectionsResult::DescribeInboundCrossClusterS
 
 DescribeInboundCrossClusterSearchConnectionsResult& DescribeInboundCrossClusterSearchConnectionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CrossClusterSearchConnections")) {
     Aws::Utils::Array<JsonView> crossClusterSearchConnectionsJsonList = jsonValue.GetArray("CrossClusterSearchConnections");

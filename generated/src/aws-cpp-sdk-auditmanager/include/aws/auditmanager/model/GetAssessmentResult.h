@@ -73,7 +73,7 @@ class GetAssessmentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Assessment m_assessment;
@@ -81,7 +81,7 @@ class GetAssessmentResult {
   Role m_userRole;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assessmentHasBeenSet = false;
   bool m_userRoleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

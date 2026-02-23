@@ -137,7 +137,7 @@ class StartContinuousExportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_exportId;
@@ -151,7 +151,7 @@ class StartContinuousExportResult {
   Aws::Map<Aws::String, Aws::String> m_schemaStorageConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exportIdHasBeenSet = false;
   bool m_s3BucketHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;

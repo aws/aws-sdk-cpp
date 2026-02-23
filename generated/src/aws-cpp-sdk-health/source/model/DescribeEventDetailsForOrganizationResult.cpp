@@ -23,7 +23,7 @@ DescribeEventDetailsForOrganizationResult::DescribeEventDetailsForOrganizationRe
 
 DescribeEventDetailsForOrganizationResult& DescribeEventDetailsForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successfulSet")) {
     Aws::Utils::Array<JsonView> successfulSetJsonList = jsonValue.GetArray("successfulSet");

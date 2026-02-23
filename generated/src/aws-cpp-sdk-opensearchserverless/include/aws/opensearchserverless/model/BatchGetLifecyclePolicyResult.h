@@ -93,7 +93,7 @@ class BatchGetLifecyclePolicyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<LifecyclePolicyDetail> m_lifecyclePolicyDetails;
@@ -101,7 +101,7 @@ class BatchGetLifecyclePolicyResult {
   Aws::Vector<LifecyclePolicyErrorDetail> m_lifecyclePolicyErrorDetails;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecyclePolicyDetailsHasBeenSet = false;
   bool m_lifecyclePolicyErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

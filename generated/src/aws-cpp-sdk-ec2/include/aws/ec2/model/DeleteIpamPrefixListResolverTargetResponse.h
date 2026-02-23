@@ -60,13 +60,13 @@ class DeleteIpamPrefixListResolverTargetResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   IpamPrefixListResolverTarget m_ipamPrefixListResolverTarget;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamPrefixListResolverTargetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -159,7 +159,7 @@ class DescribeScheduledAuditResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AuditFrequency m_frequency{AuditFrequency::NOT_SET};
@@ -175,7 +175,7 @@ class DescribeScheduledAuditResult {
   Aws::String m_scheduledAuditArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_frequencyHasBeenSet = false;
   bool m_dayOfMonthHasBeenSet = false;
   bool m_dayOfWeekHasBeenSet = false;

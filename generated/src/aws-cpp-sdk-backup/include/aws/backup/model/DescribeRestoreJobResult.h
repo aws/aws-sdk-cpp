@@ -443,7 +443,7 @@ class DescribeRestoreJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_accountId;
@@ -493,7 +493,7 @@ class DescribeRestoreJobResult {
   Aws::String m_parentJobId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_restoreJobIdHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;

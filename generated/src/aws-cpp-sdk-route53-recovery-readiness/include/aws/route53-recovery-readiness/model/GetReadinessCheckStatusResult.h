@@ -124,7 +124,7 @@ class GetReadinessCheckStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Message> m_messages;
@@ -136,7 +136,7 @@ class GetReadinessCheckStatusResult {
   Aws::Vector<ResourceResult> m_resources;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messagesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_readinessHasBeenSet = false;

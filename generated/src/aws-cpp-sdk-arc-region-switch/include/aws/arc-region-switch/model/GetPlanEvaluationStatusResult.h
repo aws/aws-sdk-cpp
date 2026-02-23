@@ -173,7 +173,7 @@ class GetPlanEvaluationStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_planArn;
@@ -191,7 +191,7 @@ class GetPlanEvaluationStatusResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_planArnHasBeenSet = false;
   bool m_lastEvaluationTimeHasBeenSet = false;
   bool m_lastEvaluatedVersionHasBeenSet = false;

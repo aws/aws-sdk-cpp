@@ -20,7 +20,7 @@ using namespace Aws;
 ListCoverageStatisticsResult::ListCoverageStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCoverageStatisticsResult& ListCoverageStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("countsByGroup")) {
     Aws::Utils::Array<JsonView> countsByGroupJsonList = jsonValue.GetArray("countsByGroup");

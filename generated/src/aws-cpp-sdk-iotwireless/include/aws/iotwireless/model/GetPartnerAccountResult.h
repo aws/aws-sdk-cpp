@@ -74,7 +74,7 @@ class GetPartnerAccountResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SidewalkAccountInfoWithFingerprint m_sidewalk;
@@ -82,7 +82,7 @@ class GetPartnerAccountResult {
   bool m_accountLinked{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sidewalkHasBeenSet = false;
   bool m_accountLinkedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

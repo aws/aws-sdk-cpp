@@ -23,7 +23,7 @@ CompleteMultipartReadSetUploadResult::CompleteMultipartReadSetUploadResult(const
 
 CompleteMultipartReadSetUploadResult& CompleteMultipartReadSetUploadResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("readSetId")) {
     m_readSetId = jsonValue.GetString("readSetId");

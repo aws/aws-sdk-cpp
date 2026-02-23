@@ -181,7 +181,7 @@ class DescribeDeviceFleetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_deviceFleetName;
@@ -201,7 +201,7 @@ class DescribeDeviceFleetResult {
   Aws::String m_iotRoleAlias;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceFleetNameHasBeenSet = false;
   bool m_deviceFleetArnHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;

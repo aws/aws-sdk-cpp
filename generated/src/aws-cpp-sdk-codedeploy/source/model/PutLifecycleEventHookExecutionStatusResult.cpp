@@ -24,7 +24,7 @@ PutLifecycleEventHookExecutionStatusResult::PutLifecycleEventHookExecutionStatus
 
 PutLifecycleEventHookExecutionStatusResult& PutLifecycleEventHookExecutionStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("lifecycleEventHookExecutionId")) {
     m_lifecycleEventHookExecutionId = jsonValue.GetString("lifecycleEventHookExecutionId");

@@ -59,13 +59,13 @@ class DecreaseNodeGroupsInGlobalReplicationGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   GlobalReplicationGroup m_globalReplicationGroup;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_globalReplicationGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

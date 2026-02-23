@@ -110,7 +110,7 @@ class UpdateGuardrailResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_guardrailId;
@@ -122,7 +122,7 @@ class UpdateGuardrailResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_guardrailIdHasBeenSet = false;
   bool m_guardrailArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;

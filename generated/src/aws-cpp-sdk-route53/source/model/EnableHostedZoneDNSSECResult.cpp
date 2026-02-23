@@ -19,7 +19,7 @@ using namespace Aws;
 EnableHostedZoneDNSSECResult::EnableHostedZoneDNSSECResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 EnableHostedZoneDNSSECResult& EnableHostedZoneDNSSECResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

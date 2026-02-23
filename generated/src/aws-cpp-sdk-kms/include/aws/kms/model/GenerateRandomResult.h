@@ -88,7 +88,7 @@ class GenerateRandomResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::CryptoBuffer m_plaintext{};
@@ -96,7 +96,7 @@ class GenerateRandomResult {
   Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_plaintextHasBeenSet = false;
   bool m_ciphertextForRecipientHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

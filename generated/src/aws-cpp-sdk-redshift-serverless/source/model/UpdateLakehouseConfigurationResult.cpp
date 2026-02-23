@@ -22,7 +22,7 @@ UpdateLakehouseConfigurationResult::UpdateLakehouseConfigurationResult(const Aws
 }
 
 UpdateLakehouseConfigurationResult& UpdateLakehouseConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("catalogArn")) {
     m_catalogArn = jsonValue.GetString("catalogArn");

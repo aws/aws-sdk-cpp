@@ -22,7 +22,7 @@ CreateDataAutomationProjectResult::CreateDataAutomationProjectResult(const Aws::
 }
 
 CreateDataAutomationProjectResult& CreateDataAutomationProjectResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("projectArn")) {
     m_projectArn = jsonValue.GetString("projectArn");

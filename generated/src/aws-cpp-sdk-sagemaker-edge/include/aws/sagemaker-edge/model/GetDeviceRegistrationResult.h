@@ -78,7 +78,7 @@ class GetDeviceRegistrationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_deviceRegistration;
@@ -86,7 +86,7 @@ class GetDeviceRegistrationResult {
   Aws::String m_cacheTTL;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceRegistrationHasBeenSet = false;
   bool m_cacheTTLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

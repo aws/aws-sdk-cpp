@@ -101,7 +101,7 @@ class GetAssociatedResourceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Resource m_resource;
@@ -111,7 +111,7 @@ class GetAssociatedResourceResult {
   ApplicationTagResult m_applicationTagResult;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
   bool m_applicationTagResultHasBeenSet = false;

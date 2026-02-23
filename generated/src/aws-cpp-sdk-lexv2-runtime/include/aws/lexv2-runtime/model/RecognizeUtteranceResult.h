@@ -243,7 +243,7 @@ class RecognizeUtteranceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_inputMode;
@@ -267,7 +267,7 @@ class RecognizeUtteranceResult {
   Aws::String m_recognizedBotMember;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inputModeHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_messagesHasBeenSet = false;

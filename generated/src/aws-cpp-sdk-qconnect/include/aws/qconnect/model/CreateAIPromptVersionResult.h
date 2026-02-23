@@ -74,7 +74,7 @@ class CreateAIPromptVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AIPromptData m_aiPrompt;
@@ -82,7 +82,7 @@ class CreateAIPromptVersionResult {
   long long m_versionNumber{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aiPromptHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

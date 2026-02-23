@@ -20,7 +20,7 @@ using namespace Aws;
 AddProfilePermissionResult::AddProfilePermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AddProfilePermissionResult& AddProfilePermissionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("revisionId")) {
     m_revisionId = jsonValue.GetString("revisionId");

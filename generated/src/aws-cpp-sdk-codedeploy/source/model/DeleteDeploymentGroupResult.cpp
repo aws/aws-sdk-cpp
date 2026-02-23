@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteDeploymentGroupResult::DeleteDeploymentGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteDeploymentGroupResult& DeleteDeploymentGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("hooksNotCleanedUp")) {
     Aws::Utils::Array<JsonView> hooksNotCleanedUpJsonList = jsonValue.GetArray("hooksNotCleanedUp");

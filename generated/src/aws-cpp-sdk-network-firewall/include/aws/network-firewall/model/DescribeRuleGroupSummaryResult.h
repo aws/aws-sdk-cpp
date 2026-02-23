@@ -100,7 +100,7 @@ class DescribeRuleGroupSummaryResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_ruleGroupName;
@@ -110,7 +110,7 @@ class DescribeRuleGroupSummaryResult {
   Summary m_summary;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ruleGroupNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_summaryHasBeenSet = false;

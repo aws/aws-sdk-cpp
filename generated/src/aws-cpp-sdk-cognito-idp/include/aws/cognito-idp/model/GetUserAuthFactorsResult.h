@@ -129,7 +129,7 @@ class GetUserAuthFactorsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_username;
@@ -141,7 +141,7 @@ class GetUserAuthFactorsResult {
   Aws::Vector<AuthFactorType> m_configuredUserAuthFactors;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_usernameHasBeenSet = false;
   bool m_preferredMfaSettingHasBeenSet = false;
   bool m_userMFASettingListHasBeenSet = false;

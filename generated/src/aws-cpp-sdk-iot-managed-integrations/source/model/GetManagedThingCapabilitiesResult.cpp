@@ -22,7 +22,7 @@ GetManagedThingCapabilitiesResult::GetManagedThingCapabilitiesResult(const Aws::
 }
 
 GetManagedThingCapabilitiesResult& GetManagedThingCapabilitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ManagedThingId")) {
     m_managedThingId = jsonValue.GetString("ManagedThingId");

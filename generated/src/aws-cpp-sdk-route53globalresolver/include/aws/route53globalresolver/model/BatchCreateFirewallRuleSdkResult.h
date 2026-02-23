@@ -91,7 +91,7 @@ class BatchCreateFirewallRuleSdkResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BatchCreateFirewallRuleOutputItem> m_failures;
@@ -99,7 +99,7 @@ class BatchCreateFirewallRuleSdkResult {
   Aws::Vector<BatchCreateFirewallRuleOutputItem> m_successes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failuresHasBeenSet = false;
   bool m_successesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

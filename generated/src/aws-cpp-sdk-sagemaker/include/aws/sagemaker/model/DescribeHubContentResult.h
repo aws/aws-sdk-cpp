@@ -396,7 +396,7 @@ class DescribeHubContentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_hubContentName;
@@ -440,7 +440,7 @@ class DescribeHubContentResult {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubContentNameHasBeenSet = false;
   bool m_hubContentArnHasBeenSet = false;
   bool m_hubContentVersionHasBeenSet = false;

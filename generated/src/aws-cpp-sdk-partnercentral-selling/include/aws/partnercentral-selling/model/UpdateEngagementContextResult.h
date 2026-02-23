@@ -111,7 +111,7 @@ class UpdateEngagementContextResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_engagementId;
@@ -123,7 +123,7 @@ class UpdateEngagementContextResult {
   Aws::String m_contextId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_engagementIdHasBeenSet = false;
   bool m_engagementArnHasBeenSet = false;
   bool m_engagementLastModifiedAtHasBeenSet = false;

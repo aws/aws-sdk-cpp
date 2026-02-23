@@ -90,7 +90,7 @@ class DescribeEventDetailsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<EventDetails> m_successfulSet;
@@ -98,7 +98,7 @@ class DescribeEventDetailsResult {
   Aws::Vector<EventDetailsErrorItem> m_failedSet;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulSetHasBeenSet = false;
   bool m_failedSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

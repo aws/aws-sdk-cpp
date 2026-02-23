@@ -192,7 +192,7 @@ class DescribeDeviceJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_createdTime{};
@@ -214,7 +214,7 @@ class DescribeDeviceJobResult {
   UpdateProgress m_status{UpdateProgress::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdTimeHasBeenSet = false;
   bool m_deviceArnHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;

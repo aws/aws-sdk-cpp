@@ -20,7 +20,7 @@ using namespace Aws;
 CreateApiResult::CreateApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateApiResult& CreateApiResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("api")) {
     m_api = jsonValue.GetObject("api");

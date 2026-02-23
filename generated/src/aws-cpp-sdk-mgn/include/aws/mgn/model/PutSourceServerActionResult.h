@@ -252,7 +252,7 @@ class PutSourceServerActionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_actionID;
@@ -280,7 +280,7 @@ class PutSourceServerActionResult {
   ActionCategory m_category{ActionCategory::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionIDHasBeenSet = false;
   bool m_actionNameHasBeenSet = false;
   bool m_documentIdentifierHasBeenSet = false;

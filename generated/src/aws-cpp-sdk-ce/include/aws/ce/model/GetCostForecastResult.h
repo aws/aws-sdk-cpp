@@ -87,7 +87,7 @@ class GetCostForecastResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   MetricValue m_total;
@@ -95,7 +95,7 @@ class GetCostForecastResult {
   Aws::Vector<ForecastResult> m_forecastResultsByTime;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_totalHasBeenSet = false;
   bool m_forecastResultsByTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

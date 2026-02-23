@@ -19,7 +19,7 @@ using namespace Aws;
 GetSpritesResult::GetSpritesResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetSpritesResult& GetSpritesResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   m_blob = result.TakeOwnershipOfPayload();
   m_blobHasBeenSet = true;
 

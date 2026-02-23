@@ -95,7 +95,7 @@ class GenerateMacResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::ByteBuffer m_mac{};
@@ -105,7 +105,7 @@ class GenerateMacResult {
   Aws::String m_keyId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_macHasBeenSet = false;
   bool m_macAlgorithmHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;

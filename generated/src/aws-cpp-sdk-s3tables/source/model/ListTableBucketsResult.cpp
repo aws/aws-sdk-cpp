@@ -20,7 +20,7 @@ using namespace Aws;
 ListTableBucketsResult::ListTableBucketsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTableBucketsResult& ListTableBucketsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tableBuckets")) {
     Aws::Utils::Array<JsonView> tableBucketsJsonList = jsonValue.GetArray("tableBuckets");

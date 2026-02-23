@@ -20,7 +20,7 @@ using namespace Aws;
 GetObjectInformationResult::GetObjectInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetObjectInformationResult& GetObjectInformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SchemaFacets")) {
     Aws::Utils::Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");

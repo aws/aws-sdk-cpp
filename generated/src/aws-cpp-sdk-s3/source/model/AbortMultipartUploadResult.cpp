@@ -19,7 +19,7 @@ using namespace Aws;
 AbortMultipartUploadResult::AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 AbortMultipartUploadResult& AbortMultipartUploadResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

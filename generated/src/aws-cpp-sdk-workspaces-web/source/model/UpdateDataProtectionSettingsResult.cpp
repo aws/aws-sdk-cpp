@@ -22,7 +22,7 @@ UpdateDataProtectionSettingsResult::UpdateDataProtectionSettingsResult(const Aws
 }
 
 UpdateDataProtectionSettingsResult& UpdateDataProtectionSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("dataProtectionSettings")) {
     m_dataProtectionSettings = jsonValue.GetObject("dataProtectionSettings");

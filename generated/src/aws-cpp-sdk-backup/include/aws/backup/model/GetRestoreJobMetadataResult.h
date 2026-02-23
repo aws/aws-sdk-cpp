@@ -82,7 +82,7 @@ class GetRestoreJobMetadataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_restoreJobId;
@@ -90,7 +90,7 @@ class GetRestoreJobMetadataResult {
   Aws::Map<Aws::String, Aws::String> m_metadata;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_restoreJobIdHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

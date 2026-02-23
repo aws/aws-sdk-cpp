@@ -260,7 +260,7 @@ class CreateRuleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_identifier;
@@ -286,7 +286,7 @@ class CreateRuleResult {
   Aws::Vector<ResourceTag> m_excludeResourceTags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identifierHasBeenSet = false;
   bool m_retentionPeriodHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -192,7 +192,7 @@ class DescribeMapResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_mapName;
@@ -212,7 +212,7 @@ class DescribeMapResult {
   Aws::Utils::DateTime m_updateTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mapNameHasBeenSet = false;
   bool m_mapArnHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;

@@ -99,7 +99,7 @@ class ListSelfUpgradesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<SelfUpgradeRequestDetail> m_selfUpgradeRequestDetails;
@@ -109,7 +109,7 @@ class ListSelfUpgradesResult {
   Aws::String m_requestId;
 
   int m_status{0};
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_selfUpgradeRequestDetailsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

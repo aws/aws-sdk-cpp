@@ -65,13 +65,13 @@ class DeleteReplicationInstanceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ReplicationInstance m_replicationInstance;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicationInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

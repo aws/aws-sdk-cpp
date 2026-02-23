@@ -99,7 +99,7 @@ class GetMetricStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_label;
@@ -109,7 +109,7 @@ class GetMetricStatisticsResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_labelHasBeenSet = false;
   bool m_datapointsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

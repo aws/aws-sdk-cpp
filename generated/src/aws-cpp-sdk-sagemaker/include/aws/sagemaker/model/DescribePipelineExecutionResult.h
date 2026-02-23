@@ -293,7 +293,7 @@ class DescribePipelineExecutionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_pipelineArn;
@@ -327,7 +327,7 @@ class DescribePipelineExecutionResult {
   MLflowConfiguration m_mLflowConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineExecutionArnHasBeenSet = false;
   bool m_pipelineExecutionDisplayNameHasBeenSet = false;

@@ -193,7 +193,7 @@ class GetNetworkResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_networkId;
@@ -215,7 +215,7 @@ class GetNetworkResult {
   Aws::String m_encryptionKeyArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkIdHasBeenSet = false;
   bool m_networkNameHasBeenSet = false;
   bool m_accessLevelHasBeenSet = false;

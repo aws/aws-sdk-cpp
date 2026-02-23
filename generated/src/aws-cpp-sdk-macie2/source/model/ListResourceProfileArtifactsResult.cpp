@@ -22,7 +22,7 @@ ListResourceProfileArtifactsResult::ListResourceProfileArtifactsResult(const Aws
 }
 
 ListResourceProfileArtifactsResult& ListResourceProfileArtifactsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("artifacts")) {
     Aws::Utils::Array<JsonView> artifactsJsonList = jsonValue.GetArray("artifacts");

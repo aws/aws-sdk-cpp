@@ -23,7 +23,7 @@ CreateMessageTemplateAttachmentResult::CreateMessageTemplateAttachmentResult(con
 
 CreateMessageTemplateAttachmentResult& CreateMessageTemplateAttachmentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("attachment")) {
     m_attachment = jsonValue.GetObject("attachment");

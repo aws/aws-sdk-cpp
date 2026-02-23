@@ -20,7 +20,7 @@ using namespace Aws;
 ListConnectorsResult::ListConnectorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConnectorsResult& ListConnectorsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Connectors")) {
     Aws::Utils::Array<JsonView> connectorsJsonList = jsonValue.GetArray("Connectors");

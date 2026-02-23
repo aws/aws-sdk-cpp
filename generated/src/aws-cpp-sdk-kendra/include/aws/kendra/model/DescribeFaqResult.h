@@ -250,7 +250,7 @@ class DescribeFaqResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_id;
@@ -278,7 +278,7 @@ class DescribeFaqResult {
   Aws::String m_languageCode;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_indexIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;

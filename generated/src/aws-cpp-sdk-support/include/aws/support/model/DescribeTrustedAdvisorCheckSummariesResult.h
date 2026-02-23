@@ -74,13 +74,13 @@ class DescribeTrustedAdvisorCheckSummariesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<TrustedAdvisorCheckSummary> m_summaries;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_summariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

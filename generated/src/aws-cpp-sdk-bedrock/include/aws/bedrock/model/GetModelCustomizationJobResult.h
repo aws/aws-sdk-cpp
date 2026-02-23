@@ -461,7 +461,7 @@ class GetModelCustomizationJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobArn;
@@ -511,7 +511,7 @@ class GetModelCustomizationJobResult {
   CustomizationConfig m_customizationConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobArnHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_outputModelNameHasBeenSet = false;

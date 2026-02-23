@@ -59,13 +59,13 @@ class GetAccountPreferencesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AccountPreferences m_accountPreferences;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountPreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

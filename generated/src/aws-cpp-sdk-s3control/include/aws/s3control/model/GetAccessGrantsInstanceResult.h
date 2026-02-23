@@ -157,7 +157,7 @@ class GetAccessGrantsInstanceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_accessGrantsInstanceArn;
@@ -173,7 +173,7 @@ class GetAccessGrantsInstanceResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessGrantsInstanceArnHasBeenSet = false;
   bool m_accessGrantsInstanceIdHasBeenSet = false;
   bool m_identityCenterInstanceArnHasBeenSet = false;

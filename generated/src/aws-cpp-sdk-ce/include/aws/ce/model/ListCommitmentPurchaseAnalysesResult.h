@@ -84,7 +84,7 @@ class ListCommitmentPurchaseAnalysesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<AnalysisSummary> m_analysisSummaryList;
@@ -92,7 +92,7 @@ class ListCommitmentPurchaseAnalysesResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_analysisSummaryListHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

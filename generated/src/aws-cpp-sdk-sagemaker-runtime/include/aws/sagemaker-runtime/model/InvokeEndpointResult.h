@@ -163,7 +163,7 @@ class InvokeEndpointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
@@ -179,7 +179,7 @@ class InvokeEndpointResult {
   Aws::String m_closedSessionId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bodyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_invokedProductionVariantHasBeenSet = false;

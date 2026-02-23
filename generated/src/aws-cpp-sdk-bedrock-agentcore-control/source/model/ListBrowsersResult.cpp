@@ -20,7 +20,7 @@ using namespace Aws;
 ListBrowsersResult::ListBrowsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBrowsersResult& ListBrowsersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("browserSummaries")) {
     Aws::Utils::Array<JsonView> browserSummariesJsonList = jsonValue.GetArray("browserSummaries");

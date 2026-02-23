@@ -196,7 +196,7 @@ class DescribeThingResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_defaultClientId;
@@ -216,7 +216,7 @@ class DescribeThingResult {
   Aws::String m_billingGroupName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_defaultClientIdHasBeenSet = false;
   bool m_thingNameHasBeenSet = false;
   bool m_thingIdHasBeenSet = false;

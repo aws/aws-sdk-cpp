@@ -23,7 +23,7 @@ ListProvisionedConcurrencyConfigsResult::ListProvisionedConcurrencyConfigsResult
 
 ListProvisionedConcurrencyConfigsResult& ListProvisionedConcurrencyConfigsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProvisionedConcurrencyConfigs")) {
     Aws::Utils::Array<JsonView> provisionedConcurrencyConfigsJsonList = jsonValue.GetArray("ProvisionedConcurrencyConfigs");

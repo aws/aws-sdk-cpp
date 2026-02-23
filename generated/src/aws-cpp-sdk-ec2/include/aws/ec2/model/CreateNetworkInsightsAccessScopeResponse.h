@@ -79,7 +79,7 @@ class CreateNetworkInsightsAccessScopeResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   NetworkInsightsAccessScope m_networkInsightsAccessScope;
@@ -87,7 +87,7 @@ class CreateNetworkInsightsAccessScopeResponse {
   NetworkInsightsAccessScopeContent m_networkInsightsAccessScopeContent;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkInsightsAccessScopeHasBeenSet = false;
   bool m_networkInsightsAccessScopeContentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -22,7 +22,7 @@ DescribeAccountConfigurationResult::DescribeAccountConfigurationResult(const Aws
 }
 
 DescribeAccountConfigurationResult& DescribeAccountConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("accountConfiguration")) {
     m_accountConfiguration = jsonValue.GetObject("accountConfiguration");

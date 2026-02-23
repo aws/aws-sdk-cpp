@@ -94,7 +94,7 @@ class InvokeEndpointAsyncResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_inferenceId;
@@ -104,7 +104,7 @@ class InvokeEndpointAsyncResult {
   Aws::String m_failureLocation;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inferenceIdHasBeenSet = false;
   bool m_outputLocationHasBeenSet = false;
   bool m_failureLocationHasBeenSet = false;

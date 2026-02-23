@@ -123,7 +123,7 @@ class RetrieveAndGenerateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Citation> m_citations;
@@ -135,7 +135,7 @@ class RetrieveAndGenerateResult {
   Aws::String m_sessionId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_citationsHasBeenSet = false;
   bool m_guardrailActionHasBeenSet = false;
   bool m_outputHasBeenSet = false;

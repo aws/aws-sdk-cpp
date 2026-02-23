@@ -79,7 +79,7 @@ class CreateServiceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Service m_service;
@@ -87,7 +87,7 @@ class CreateServiceResult {
   Aws::String m_operationId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

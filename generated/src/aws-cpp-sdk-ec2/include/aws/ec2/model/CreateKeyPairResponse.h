@@ -143,7 +143,7 @@ class CreateKeyPairResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_keyPairId;
@@ -157,7 +157,7 @@ class CreateKeyPairResponse {
   Aws::String m_keyMaterial;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyPairIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_keyNameHasBeenSet = false;

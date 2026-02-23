@@ -84,7 +84,7 @@ class GetTableReplicationStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_sourceTableArn;
@@ -92,7 +92,7 @@ class GetTableReplicationStatusResult {
   Aws::Vector<ReplicationDestinationStatusModel> m_destinations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceTableArnHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -191,7 +191,7 @@ class DescribeClusterSdkResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_arn;
@@ -211,7 +211,7 @@ class DescribeClusterSdkResult {
   ClusterState m_state{ClusterState::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelIdsHasBeenSet = false;
   bool m_clusterTypeHasBeenSet = false;

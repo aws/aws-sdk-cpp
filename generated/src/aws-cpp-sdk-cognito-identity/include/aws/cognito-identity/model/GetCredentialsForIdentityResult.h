@@ -83,7 +83,7 @@ class GetCredentialsForIdentityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_identityId;
@@ -91,7 +91,7 @@ class GetCredentialsForIdentityResult {
   Credentials m_credentials;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityIdHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

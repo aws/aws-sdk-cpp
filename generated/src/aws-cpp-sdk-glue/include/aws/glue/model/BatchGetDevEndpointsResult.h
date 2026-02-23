@@ -89,7 +89,7 @@ class BatchGetDevEndpointsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<DevEndpoint> m_devEndpoints;
@@ -97,7 +97,7 @@ class BatchGetDevEndpointsResult {
   Aws::Vector<Aws::String> m_devEndpointsNotFound;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_devEndpointsHasBeenSet = false;
   bool m_devEndpointsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -22,7 +22,7 @@ ListApplicationAssociationsResult::ListApplicationAssociationsResult(const Aws::
 }
 
 ListApplicationAssociationsResult& ListApplicationAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationAssociations")) {
     Aws::Utils::Array<JsonView> applicationAssociationsJsonList = jsonValue.GetArray("ApplicationAssociations");

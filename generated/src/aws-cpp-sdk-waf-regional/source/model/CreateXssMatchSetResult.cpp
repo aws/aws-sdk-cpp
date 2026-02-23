@@ -20,7 +20,7 @@ using namespace Aws;
 CreateXssMatchSetResult::CreateXssMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateXssMatchSetResult& CreateXssMatchSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("XssMatchSet")) {
     m_xssMatchSet = jsonValue.GetObject("XssMatchSet");

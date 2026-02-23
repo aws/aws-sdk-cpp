@@ -252,7 +252,7 @@ class DescribeExecutionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_executionId;
@@ -278,7 +278,7 @@ class DescribeExecutionResult {
   Aws::String m_executionEntityVersion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionIdHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;
   bool m_targetResourceHasBeenSet = false;

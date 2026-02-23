@@ -23,7 +23,7 @@ ListManagedPoliciesInPermissionSetResult::ListManagedPoliciesInPermissionSetResu
 
 ListManagedPoliciesInPermissionSetResult& ListManagedPoliciesInPermissionSetResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AttachedManagedPolicies")) {
     Aws::Utils::Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");

@@ -142,7 +142,7 @@ class ConfigureLogsForPlaybackConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_percentEnabled{0};
@@ -156,7 +156,7 @@ class ConfigureLogsForPlaybackConfigurationResult {
   ManifestServiceInteractionLog m_manifestServiceInteractionLog;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_percentEnabledHasBeenSet = false;
   bool m_playbackConfigurationNameHasBeenSet = false;
   bool m_enabledLoggingStrategiesHasBeenSet = false;

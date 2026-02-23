@@ -23,7 +23,7 @@ DescribeFraudsterRegistrationJobResult::DescribeFraudsterRegistrationJobResult(c
 
 DescribeFraudsterRegistrationJobResult& DescribeFraudsterRegistrationJobResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Job")) {
     m_job = jsonValue.GetObject("Job");

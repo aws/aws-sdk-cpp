@@ -183,7 +183,7 @@ class PostCommentForPullRequestResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_repositoryName;
@@ -203,7 +203,7 @@ class PostCommentForPullRequestResult {
   Comment m_comment;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_repositoryNameHasBeenSet = false;
   bool m_pullRequestIdHasBeenSet = false;
   bool m_beforeCommitIdHasBeenSet = false;

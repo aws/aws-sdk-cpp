@@ -92,7 +92,7 @@ class CreateThingGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_thingGroupName;
@@ -102,7 +102,7 @@ class CreateThingGroupResult {
   Aws::String m_thingGroupId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingGroupNameHasBeenSet = false;
   bool m_thingGroupArnHasBeenSet = false;
   bool m_thingGroupIdHasBeenSet = false;

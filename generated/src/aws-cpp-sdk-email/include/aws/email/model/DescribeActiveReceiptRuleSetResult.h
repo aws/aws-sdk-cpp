@@ -91,7 +91,7 @@ class DescribeActiveReceiptRuleSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ReceiptRuleSetMetadata m_metadata;
@@ -99,7 +99,7 @@ class DescribeActiveReceiptRuleSetResult {
   Aws::Vector<ReceiptRule> m_rules;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metadataHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -20,7 +20,7 @@ using namespace Aws;
 DescribeLogPatternResult::DescribeLogPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeLogPatternResult& DescribeLogPatternResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceGroupName")) {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");

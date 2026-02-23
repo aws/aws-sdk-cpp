@@ -201,7 +201,7 @@ class GetConfigurationManagerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ConfigurationDefinition> m_configurationDefinitions;
@@ -221,7 +221,7 @@ class GetConfigurationManagerResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationDefinitionsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

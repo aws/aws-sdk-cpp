@@ -20,7 +20,7 @@ using namespace Aws;
 CreateVirtualGatewayResult::CreateVirtualGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateVirtualGatewayResult& CreateVirtualGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_virtualGateway = jsonValue;
   m_virtualGatewayHasBeenSet = true;

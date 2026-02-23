@@ -76,7 +76,7 @@ class DescribeJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_documentSource;
@@ -84,7 +84,7 @@ class DescribeJobResult {
   Job m_job;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_documentSourceHasBeenSet = false;
   bool m_jobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -91,7 +91,7 @@ class BatchGetGraphMemberDatasourcesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<MembershipDatasources> m_memberDatasources;
@@ -99,7 +99,7 @@ class BatchGetGraphMemberDatasourcesResult {
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_memberDatasourcesHasBeenSet = false;
   bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

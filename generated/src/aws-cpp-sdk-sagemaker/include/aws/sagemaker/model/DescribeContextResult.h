@@ -234,7 +234,7 @@ class DescribeContextResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_contextName;
@@ -260,7 +260,7 @@ class DescribeContextResult {
   Aws::String m_lineageGroupArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contextNameHasBeenSet = false;
   bool m_contextArnHasBeenSet = false;
   bool m_sourceHasBeenSet = false;

@@ -24,7 +24,7 @@ DescribeAccountAssignmentDeletionStatusResult::DescribeAccountAssignmentDeletion
 
 DescribeAccountAssignmentDeletionStatusResult& DescribeAccountAssignmentDeletionStatusResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccountAssignmentDeletionStatus")) {
     m_accountAssignmentDeletionStatus = jsonValue.GetObject("AccountAssignmentDeletionStatus");

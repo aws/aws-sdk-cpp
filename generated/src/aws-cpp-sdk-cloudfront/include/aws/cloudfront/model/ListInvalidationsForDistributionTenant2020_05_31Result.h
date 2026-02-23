@@ -59,13 +59,13 @@ class ListInvalidationsForDistributionTenant2020_05_31Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   InvalidationList m_invalidationList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invalidationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

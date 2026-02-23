@@ -76,7 +76,7 @@ class GetAIGuardrailResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AIGuardrailData m_aiGuardrail;
@@ -84,7 +84,7 @@ class GetAIGuardrailResult {
   long long m_versionNumber{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aiGuardrailHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

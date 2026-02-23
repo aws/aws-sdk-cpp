@@ -102,7 +102,7 @@ class GetQueryResultsWorkloadInsightsTopContributorsDataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   MetricUnit m_unit{MetricUnit::NOT_SET};
@@ -112,7 +112,7 @@ class GetQueryResultsWorkloadInsightsTopContributorsDataResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_unitHasBeenSet = false;
   bool m_datapointsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

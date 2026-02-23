@@ -23,7 +23,7 @@ DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult(const
 
 DescribeConfigurationRecordersResult& DescribeConfigurationRecordersResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationRecorders")) {
     Aws::Utils::Array<JsonView> configurationRecordersJsonList = jsonValue.GetArray("ConfigurationRecorders");

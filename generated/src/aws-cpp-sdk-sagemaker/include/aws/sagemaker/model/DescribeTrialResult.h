@@ -215,7 +215,7 @@ class DescribeTrialResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_trialName;
@@ -239,7 +239,7 @@ class DescribeTrialResult {
   MetadataProperties m_metadataProperties;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trialNameHasBeenSet = false;
   bool m_trialArnHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

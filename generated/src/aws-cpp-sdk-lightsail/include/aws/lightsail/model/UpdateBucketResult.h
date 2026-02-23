@@ -86,7 +86,7 @@ class UpdateBucketResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Bucket m_bucket;
@@ -94,7 +94,7 @@ class UpdateBucketResult {
   Aws::Vector<Operation> m_operations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketHasBeenSet = false;
   bool m_operationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

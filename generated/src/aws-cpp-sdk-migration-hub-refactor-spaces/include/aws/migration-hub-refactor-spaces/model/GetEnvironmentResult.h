@@ -254,7 +254,7 @@ class GetEnvironmentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_arn;
@@ -282,7 +282,7 @@ class GetEnvironmentResult {
   Aws::String m_transitGatewayId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

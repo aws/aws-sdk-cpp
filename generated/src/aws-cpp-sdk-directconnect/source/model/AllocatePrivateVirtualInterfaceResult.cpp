@@ -23,7 +23,7 @@ AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult(con
 
 AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ownerAccount")) {
     m_ownerAccount = jsonValue.GetString("ownerAccount");

@@ -22,7 +22,7 @@ GetPredictiveScalingForecastResult::GetPredictiveScalingForecastResult(const Aws
 }
 
 GetPredictiveScalingForecastResult& GetPredictiveScalingForecastResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LoadForecast")) {
     Aws::Utils::Array<JsonView> loadForecastJsonList = jsonValue.GetArray("LoadForecast");

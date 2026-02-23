@@ -281,7 +281,7 @@ class GetMissionProfileResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_missionProfileId;
@@ -311,7 +311,7 @@ class GetMissionProfileResult {
   Aws::String m_streamsKmsRole;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_missionProfileIdHasBeenSet = false;
   bool m_missionProfileArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

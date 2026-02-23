@@ -109,7 +109,7 @@ class GetPreferencesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<RateType> m_managementAccountRateTypeSelections;
@@ -119,7 +119,7 @@ class GetPreferencesResult {
   Aws::Vector<RateType> m_standaloneAccountRateTypeSelections;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managementAccountRateTypeSelectionsHasBeenSet = false;
   bool m_memberAccountRateTypeSelectionsHasBeenSet = false;
   bool m_standaloneAccountRateTypeSelectionsHasBeenSet = false;

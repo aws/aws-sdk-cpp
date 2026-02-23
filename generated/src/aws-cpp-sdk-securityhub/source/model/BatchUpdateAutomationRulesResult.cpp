@@ -20,7 +20,7 @@ using namespace Aws;
 BatchUpdateAutomationRulesResult::BatchUpdateAutomationRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchUpdateAutomationRulesResult& BatchUpdateAutomationRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProcessedAutomationRules")) {
     Aws::Utils::Array<JsonView> processedAutomationRulesJsonList = jsonValue.GetArray("ProcessedAutomationRules");

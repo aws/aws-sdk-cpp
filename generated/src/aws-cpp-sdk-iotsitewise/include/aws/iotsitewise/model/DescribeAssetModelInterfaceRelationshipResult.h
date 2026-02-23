@@ -127,7 +127,7 @@ class DescribeAssetModelInterfaceRelationshipResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_assetModelId;
@@ -139,7 +139,7 @@ class DescribeAssetModelInterfaceRelationshipResult {
   Aws::Vector<HierarchyMapping> m_hierarchyMappings;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_interfaceAssetModelIdHasBeenSet = false;
   bool m_propertyMappingsHasBeenSet = false;

@@ -22,7 +22,7 @@ ListChannelPlacementGroupsSdkResult::ListChannelPlacementGroupsSdkResult(const A
 }
 
 ListChannelPlacementGroupsSdkResult& ListChannelPlacementGroupsSdkResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("channelPlacementGroups")) {
     Aws::Utils::Array<JsonView> channelPlacementGroupsJsonList = jsonValue.GetArray("channelPlacementGroups");

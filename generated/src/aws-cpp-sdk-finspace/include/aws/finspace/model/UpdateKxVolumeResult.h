@@ -292,7 +292,7 @@ class UpdateKxVolumeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_environmentId;
@@ -322,7 +322,7 @@ class UpdateKxVolumeResult {
   Aws::Vector<KxAttachedCluster> m_attachedClusters;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_environmentIdHasBeenSet = false;
   bool m_volumeNameHasBeenSet = false;
   bool m_volumeTypeHasBeenSet = false;

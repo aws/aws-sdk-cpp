@@ -250,7 +250,7 @@ class DescribeMapRunResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_mapRunArn;
@@ -278,7 +278,7 @@ class DescribeMapRunResult {
   Aws::Utils::DateTime m_redriveDate{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mapRunArnHasBeenSet = false;
   bool m_executionArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -23,7 +23,7 @@ ListPendingInvitationResourcesResult::ListPendingInvitationResourcesResult(const
 
 ListPendingInvitationResourcesResult& ListPendingInvitationResourcesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("resources")) {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");

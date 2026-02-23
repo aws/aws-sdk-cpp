@@ -22,7 +22,7 @@ UpdateContainerInstancesStateResult::UpdateContainerInstancesStateResult(const A
 }
 
 UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("containerInstances")) {
     Aws::Utils::Array<JsonView> containerInstancesJsonList = jsonValue.GetArray("containerInstances");

@@ -109,7 +109,7 @@ class DeleteSessionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_botName;
@@ -121,7 +121,7 @@ class DeleteSessionResult {
   Aws::String m_sessionId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botNameHasBeenSet = false;
   bool m_botAliasHasBeenSet = false;
   bool m_userIdHasBeenSet = false;

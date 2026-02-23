@@ -23,7 +23,7 @@ SendPipelineExecutionStepFailureResult::SendPipelineExecutionStepFailureResult(c
 
 SendPipelineExecutionStepFailureResult& SendPipelineExecutionStepFailureResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PipelineExecutionArn")) {
     m_pipelineExecutionArn = jsonValue.GetString("PipelineExecutionArn");

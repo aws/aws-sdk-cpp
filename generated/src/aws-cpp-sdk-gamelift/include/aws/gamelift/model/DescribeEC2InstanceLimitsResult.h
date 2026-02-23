@@ -66,13 +66,13 @@ class DescribeEC2InstanceLimitsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<EC2InstanceLimit> m_eC2InstanceLimits;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eC2InstanceLimitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

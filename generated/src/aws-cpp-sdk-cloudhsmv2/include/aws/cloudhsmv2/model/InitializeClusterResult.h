@@ -74,7 +74,7 @@ class InitializeClusterResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ClusterState m_state{ClusterState::NOT_SET};
@@ -82,7 +82,7 @@ class InitializeClusterResult {
   Aws::String m_stateMessage;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stateHasBeenSet = false;
   bool m_stateMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

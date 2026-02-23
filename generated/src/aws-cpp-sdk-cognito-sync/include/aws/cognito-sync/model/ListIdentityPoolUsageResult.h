@@ -119,7 +119,7 @@ class ListIdentityPoolUsageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<IdentityPoolUsage> m_identityPoolUsages;
@@ -131,7 +131,7 @@ class ListIdentityPoolUsageResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolUsagesHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_countHasBeenSet = false;

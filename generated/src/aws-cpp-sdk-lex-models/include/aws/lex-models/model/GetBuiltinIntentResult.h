@@ -107,7 +107,7 @@ class GetBuiltinIntentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_signature;
@@ -117,7 +117,7 @@ class GetBuiltinIntentResult {
   Aws::Vector<BuiltinIntentSlot> m_slots;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_signatureHasBeenSet = false;
   bool m_supportedLocalesHasBeenSet = false;
   bool m_slotsHasBeenSet = false;

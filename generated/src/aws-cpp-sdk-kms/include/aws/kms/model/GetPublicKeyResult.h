@@ -196,7 +196,7 @@ class GetPublicKeyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_keyId;
@@ -214,7 +214,7 @@ class GetPublicKeyResult {
   Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_publicKeyHasBeenSet = false;
   bool m_keySpecHasBeenSet = false;

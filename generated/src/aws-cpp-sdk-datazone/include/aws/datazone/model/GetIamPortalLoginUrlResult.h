@@ -75,7 +75,7 @@ class GetIamPortalLoginUrlResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_authCodeUrl;
@@ -83,7 +83,7 @@ class GetIamPortalLoginUrlResult {
   Aws::String m_userProfileId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authCodeUrlHasBeenSet = false;
   bool m_userProfileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

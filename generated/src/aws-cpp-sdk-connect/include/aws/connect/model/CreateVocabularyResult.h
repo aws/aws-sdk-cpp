@@ -91,7 +91,7 @@ class CreateVocabularyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_vocabularyArn;
@@ -101,7 +101,7 @@ class CreateVocabularyResult {
   VocabularyState m_state{VocabularyState::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vocabularyArnHasBeenSet = false;
   bool m_vocabularyIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;

@@ -123,7 +123,7 @@ class CreateThemeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_arn;
@@ -137,7 +137,7 @@ class CreateThemeResult {
   int m_status{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_versionArnHasBeenSet = false;
   bool m_themeIdHasBeenSet = false;

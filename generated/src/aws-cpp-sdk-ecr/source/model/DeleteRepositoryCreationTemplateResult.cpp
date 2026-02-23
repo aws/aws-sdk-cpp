@@ -23,7 +23,7 @@ DeleteRepositoryCreationTemplateResult::DeleteRepositoryCreationTemplateResult(c
 
 DeleteRepositoryCreationTemplateResult& DeleteRepositoryCreationTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryId")) {
     m_registryId = jsonValue.GetString("registryId");

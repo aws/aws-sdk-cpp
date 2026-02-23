@@ -324,7 +324,7 @@ class CreateFirewallRuleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   FirewallRuleAction m_action{FirewallRuleAction::NOT_SET};
@@ -362,7 +362,7 @@ class CreateFirewallRuleResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionHasBeenSet = false;
   bool m_blockOverrideDnsTypeHasBeenSet = false;
   bool m_blockOverrideDomainHasBeenSet = false;

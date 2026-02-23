@@ -20,7 +20,7 @@ using namespace Aws;
 CreateCustomActionTypeResult::CreateCustomActionTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCustomActionTypeResult& CreateCustomActionTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionType")) {
     m_actionType = jsonValue.GetObject("actionType");

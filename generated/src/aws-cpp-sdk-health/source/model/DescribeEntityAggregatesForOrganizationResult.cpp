@@ -24,7 +24,7 @@ DescribeEntityAggregatesForOrganizationResult::DescribeEntityAggregatesForOrgani
 
 DescribeEntityAggregatesForOrganizationResult& DescribeEntityAggregatesForOrganizationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("organizationEntityAggregates")) {
     Aws::Utils::Array<JsonView> organizationEntityAggregatesJsonList = jsonValue.GetArray("organizationEntityAggregates");

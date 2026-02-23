@@ -160,7 +160,7 @@ class StartParticipantReplicationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_accessControlAllowOrigin;
@@ -178,7 +178,7 @@ class StartParticipantReplicationResult {
   Aws::String m_xFrameOptions;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessControlAllowOriginHasBeenSet = false;
   bool m_accessControlExposeHeadersHasBeenSet = false;
   bool m_cacheControlHasBeenSet = false;

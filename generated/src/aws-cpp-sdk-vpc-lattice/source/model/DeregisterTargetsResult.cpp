@@ -20,7 +20,7 @@ using namespace Aws;
 DeregisterTargetsResult::DeregisterTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeregisterTargetsResult& DeregisterTargetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("successful")) {
     Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("successful");

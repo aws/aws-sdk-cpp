@@ -187,7 +187,7 @@ class GetFindingsFilterResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   FindingsFilterAction m_action{FindingsFilterAction::NOT_SET};
@@ -207,7 +207,7 @@ class GetFindingsFilterResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

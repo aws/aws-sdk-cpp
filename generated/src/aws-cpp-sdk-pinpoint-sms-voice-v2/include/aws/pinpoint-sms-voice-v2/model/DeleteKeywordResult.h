@@ -125,7 +125,7 @@ class DeleteKeywordResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_originationIdentityArn;
@@ -139,7 +139,7 @@ class DeleteKeywordResult {
   KeywordAction m_keywordAction{KeywordAction::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_originationIdentityArnHasBeenSet = false;
   bool m_originationIdentityHasBeenSet = false;
   bool m_keywordHasBeenSet = false;

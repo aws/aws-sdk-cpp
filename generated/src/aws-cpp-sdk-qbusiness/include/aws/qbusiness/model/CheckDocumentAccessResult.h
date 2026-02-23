@@ -128,7 +128,7 @@ class CheckDocumentAccessResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<AssociatedGroup> m_userGroups;
@@ -140,7 +140,7 @@ class CheckDocumentAccessResult {
   DocumentAcl m_documentAcl;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userGroupsHasBeenSet = false;
   bool m_userAliasesHasBeenSet = false;
   bool m_hasAccessHasBeenSet = false;

@@ -21,7 +21,7 @@ ExecuteOpenCypherExplainQueryResult::ExecuteOpenCypherExplainQueryResult(Aws::Am
 }
 
 ExecuteOpenCypherExplainQueryResult& ExecuteOpenCypherExplainQueryResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   m_results = result.TakeOwnershipOfPayload();
   m_resultsHasBeenSet = true;
 

@@ -22,7 +22,7 @@ RegisterSubscriptionProviderResult::RegisterSubscriptionProviderResult(const Aws
 }
 
 RegisterSubscriptionProviderResult& RegisterSubscriptionProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SubscriptionProviderArn")) {
     m_subscriptionProviderArn = jsonValue.GetString("SubscriptionProviderArn");

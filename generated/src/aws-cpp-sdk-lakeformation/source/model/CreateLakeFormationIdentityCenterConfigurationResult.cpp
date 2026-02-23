@@ -24,7 +24,7 @@ CreateLakeFormationIdentityCenterConfigurationResult::CreateLakeFormationIdentit
 
 CreateLakeFormationIdentityCenterConfigurationResult& CreateLakeFormationIdentityCenterConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationArn")) {
     m_applicationArn = jsonValue.GetString("ApplicationArn");

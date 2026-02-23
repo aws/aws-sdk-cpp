@@ -20,7 +20,7 @@ using namespace Aws;
 GetSiteAddressResult::GetSiteAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSiteAddressResult& GetSiteAddressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SiteId")) {
     m_siteId = jsonValue.GetString("SiteId");

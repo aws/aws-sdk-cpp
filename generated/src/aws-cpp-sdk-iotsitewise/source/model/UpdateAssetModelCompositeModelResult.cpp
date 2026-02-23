@@ -23,7 +23,7 @@ UpdateAssetModelCompositeModelResult::UpdateAssetModelCompositeModelResult(const
 
 UpdateAssetModelCompositeModelResult& UpdateAssetModelCompositeModelResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assetModelCompositeModelPath")) {
     Aws::Utils::Array<JsonView> assetModelCompositeModelPathJsonList = jsonValue.GetArray("assetModelCompositeModelPath");

@@ -76,7 +76,7 @@ class UpdateLogPatternResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_resourceGroupName;
@@ -84,7 +84,7 @@ class UpdateLogPatternResult {
   LogPattern m_logPattern;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceGroupNameHasBeenSet = false;
   bool m_logPatternHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

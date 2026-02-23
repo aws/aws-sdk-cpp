@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateAgentAliasResult::UpdateAgentAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateAgentAliasResult& UpdateAgentAliasResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentAlias")) {
     m_agentAlias = jsonValue.GetObject("agentAlias");

@@ -84,7 +84,7 @@ class CancelDataRepositoryTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DataRepositoryTaskLifecycle m_lifecycle{DataRepositoryTaskLifecycle::NOT_SET};
@@ -92,7 +92,7 @@ class CancelDataRepositoryTaskResult {
   Aws::String m_taskId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecycleHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

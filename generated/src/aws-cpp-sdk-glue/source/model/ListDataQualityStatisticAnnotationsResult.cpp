@@ -23,7 +23,7 @@ ListDataQualityStatisticAnnotationsResult::ListDataQualityStatisticAnnotationsRe
 
 ListDataQualityStatisticAnnotationsResult& ListDataQualityStatisticAnnotationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Annotations")) {
     Aws::Utils::Array<JsonView> annotationsJsonList = jsonValue.GetArray("Annotations");

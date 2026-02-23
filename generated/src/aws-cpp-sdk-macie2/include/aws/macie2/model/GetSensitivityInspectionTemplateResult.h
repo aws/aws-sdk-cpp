@@ -131,7 +131,7 @@ class GetSensitivityInspectionTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_description;
@@ -145,7 +145,7 @@ class GetSensitivityInspectionTemplateResult {
   Aws::String m_sensitivityInspectionTemplateId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_excludesHasBeenSet = false;
   bool m_includesHasBeenSet = false;

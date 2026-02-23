@@ -129,7 +129,7 @@ class LaunchInstancesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_autoScalingGroupName;
@@ -141,7 +141,7 @@ class LaunchInstancesResult {
   Aws::Vector<LaunchInstancesError> m_errors;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_instancesHasBeenSet = false;

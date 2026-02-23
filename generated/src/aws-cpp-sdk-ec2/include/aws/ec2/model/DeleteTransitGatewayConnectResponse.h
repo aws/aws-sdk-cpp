@@ -59,13 +59,13 @@ class DeleteTransitGatewayConnectResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   TransitGatewayConnect m_transitGatewayConnect;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transitGatewayConnectHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

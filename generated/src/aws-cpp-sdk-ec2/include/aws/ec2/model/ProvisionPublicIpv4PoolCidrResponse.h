@@ -77,7 +77,7 @@ class ProvisionPublicIpv4PoolCidrResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_poolId;
@@ -85,7 +85,7 @@ class ProvisionPublicIpv4PoolCidrResponse {
   PublicIpv4PoolRange m_poolAddressRange;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_poolIdHasBeenSet = false;
   bool m_poolAddressRangeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

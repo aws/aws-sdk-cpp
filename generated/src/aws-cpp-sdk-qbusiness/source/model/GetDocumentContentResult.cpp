@@ -20,7 +20,7 @@ using namespace Aws;
 GetDocumentContentResult::GetDocumentContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDocumentContentResult& GetDocumentContentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("presignedUrl")) {
     m_presignedUrl = jsonValue.GetString("presignedUrl");

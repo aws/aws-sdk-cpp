@@ -22,7 +22,7 @@ BatchGetOnPremisesInstancesResult::BatchGetOnPremisesInstancesResult(const Aws::
 }
 
 BatchGetOnPremisesInstancesResult& BatchGetOnPremisesInstancesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("instanceInfos")) {
     Aws::Utils::Array<JsonView> instanceInfosJsonList = jsonValue.GetArray("instanceInfos");

@@ -60,13 +60,13 @@ class GetStudioSessionMappingResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SessionMappingDetail m_sessionMapping;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionMappingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

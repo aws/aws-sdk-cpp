@@ -560,7 +560,7 @@ class CreatePublicVirtualInterfaceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_ownerAccount;
@@ -618,7 +618,7 @@ class CreatePublicVirtualInterfaceResult {
   bool m_siteLinkEnabled{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ownerAccountHasBeenSet = false;
   bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_locationHasBeenSet = false;

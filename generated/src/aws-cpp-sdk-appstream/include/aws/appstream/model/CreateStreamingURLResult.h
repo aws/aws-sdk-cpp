@@ -76,7 +76,7 @@ class CreateStreamingURLResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_streamingURL;
@@ -84,7 +84,7 @@ class CreateStreamingURLResult {
   Aws::Utils::DateTime m_expires{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamingURLHasBeenSet = false;
   bool m_expiresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

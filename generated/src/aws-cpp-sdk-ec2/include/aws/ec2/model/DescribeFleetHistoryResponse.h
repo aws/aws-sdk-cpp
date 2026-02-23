@@ -141,7 +141,7 @@ class DescribeFleetHistoryResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<HistoryRecordEntry> m_historyRecords;
@@ -155,7 +155,7 @@ class DescribeFleetHistoryResponse {
   Aws::Utils::DateTime m_startTime{};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_historyRecordsHasBeenSet = false;
   bool m_lastEvaluatedTimeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

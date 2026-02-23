@@ -90,7 +90,7 @@ class NotifyRecommendationsReceivedResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<NotifyRecommendationsReceivedError> m_errors;
@@ -98,7 +98,7 @@ class NotifyRecommendationsReceivedResult {
   Aws::Vector<Aws::String> m_recommendationIds;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorsHasBeenSet = false;
   bool m_recommendationIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

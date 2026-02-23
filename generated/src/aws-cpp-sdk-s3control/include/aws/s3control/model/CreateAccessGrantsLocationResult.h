@@ -157,7 +157,7 @@ class CreateAccessGrantsLocationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_createdAt{};
@@ -173,7 +173,7 @@ class CreateAccessGrantsLocationResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdAtHasBeenSet = false;
   bool m_accessGrantsLocationIdHasBeenSet = false;
   bool m_accessGrantsLocationArnHasBeenSet = false;

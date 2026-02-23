@@ -221,7 +221,7 @@ class GetTagSyncTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_groupArn;
@@ -245,7 +245,7 @@ class GetTagSyncTaskResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupArnHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;

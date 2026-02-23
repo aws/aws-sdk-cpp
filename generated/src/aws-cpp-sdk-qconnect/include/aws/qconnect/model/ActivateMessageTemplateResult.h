@@ -90,7 +90,7 @@ class ActivateMessageTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_messageTemplateArn;
@@ -100,7 +100,7 @@ class ActivateMessageTemplateResult {
   long long m_versionNumber{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messageTemplateArnHasBeenSet = false;
   bool m_messageTemplateIdHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;

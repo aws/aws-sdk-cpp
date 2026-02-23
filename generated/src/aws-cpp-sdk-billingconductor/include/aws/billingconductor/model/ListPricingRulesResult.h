@@ -102,7 +102,7 @@ class ListPricingRulesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_billingPeriod;
@@ -112,7 +112,7 @@ class ListPricingRulesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_billingPeriodHasBeenSet = false;
   bool m_pricingRulesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

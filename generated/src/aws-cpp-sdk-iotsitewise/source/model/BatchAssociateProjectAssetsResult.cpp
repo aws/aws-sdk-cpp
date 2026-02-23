@@ -22,7 +22,7 @@ BatchAssociateProjectAssetsResult::BatchAssociateProjectAssetsResult(const Aws::
 }
 
 BatchAssociateProjectAssetsResult& BatchAssociateProjectAssetsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("errors")) {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");

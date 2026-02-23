@@ -231,7 +231,7 @@ class DescribeOrganizationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_organizationId;
@@ -257,7 +257,7 @@ class DescribeOrganizationResult {
   bool m_interoperabilityEnabled{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_organizationIdHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
   bool m_stateHasBeenSet = false;

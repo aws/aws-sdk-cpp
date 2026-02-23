@@ -22,7 +22,7 @@ ListOrganizationAdminAccountsResult::ListOrganizationAdminAccountsResult(const A
 }
 
 ListOrganizationAdminAccountsResult& ListOrganizationAdminAccountsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Administrators")) {
     Aws::Utils::Array<JsonView> administratorsJsonList = jsonValue.GetArray("Administrators");

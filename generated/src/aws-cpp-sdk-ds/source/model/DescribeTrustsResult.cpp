@@ -20,7 +20,7 @@ using namespace Aws;
 DescribeTrustsResult::DescribeTrustsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeTrustsResult& DescribeTrustsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Trusts")) {
     Aws::Utils::Array<JsonView> trustsJsonList = jsonValue.GetArray("Trusts");

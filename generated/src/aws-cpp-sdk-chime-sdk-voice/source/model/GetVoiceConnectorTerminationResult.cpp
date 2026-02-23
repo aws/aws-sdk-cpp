@@ -22,7 +22,7 @@ GetVoiceConnectorTerminationResult::GetVoiceConnectorTerminationResult(const Aws
 }
 
 GetVoiceConnectorTerminationResult& GetVoiceConnectorTerminationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Termination")) {
     m_termination = jsonValue.GetObject("Termination");

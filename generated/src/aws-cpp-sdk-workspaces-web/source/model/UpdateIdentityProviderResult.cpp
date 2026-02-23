@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateIdentityProviderResult::UpdateIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateIdentityProviderResult& UpdateIdentityProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("identityProvider")) {
     m_identityProvider = jsonValue.GetObject("identityProvider");

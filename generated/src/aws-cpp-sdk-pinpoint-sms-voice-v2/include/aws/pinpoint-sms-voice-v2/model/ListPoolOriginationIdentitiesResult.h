@@ -119,7 +119,7 @@ class ListPoolOriginationIdentitiesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_poolArn;
@@ -131,7 +131,7 @@ class ListPoolOriginationIdentitiesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_poolArnHasBeenSet = false;
   bool m_poolIdHasBeenSet = false;
   bool m_originationIdentitiesHasBeenSet = false;

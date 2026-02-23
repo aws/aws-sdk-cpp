@@ -103,7 +103,7 @@ class CheckAccessNotGrantedSdkResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CheckAccessNotGrantedResult m_result{CheckAccessNotGrantedResult::NOT_SET};
@@ -113,7 +113,7 @@ class CheckAccessNotGrantedSdkResult {
   Aws::Vector<ReasonSummary> m_reasons;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;

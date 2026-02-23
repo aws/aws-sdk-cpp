@@ -79,7 +79,7 @@ class UpdateConnectionRecordingPreferencesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_clientToken;
@@ -87,7 +87,7 @@ class UpdateConnectionRecordingPreferencesResult {
   ConnectionRecordingPreferences m_connectionRecordingPreferences;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_connectionRecordingPreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -108,7 +108,7 @@ class GetInstanceTpmEkPubResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_instanceId;
@@ -120,7 +120,7 @@ class GetInstanceTpmEkPubResponse {
   Aws::String m_keyValue;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_keyTypeHasBeenSet = false;
   bool m_keyFormatHasBeenSet = false;

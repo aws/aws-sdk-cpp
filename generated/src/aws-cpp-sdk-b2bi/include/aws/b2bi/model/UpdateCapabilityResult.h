@@ -190,7 +190,7 @@ class UpdateCapabilityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_capabilityId;
@@ -210,7 +210,7 @@ class UpdateCapabilityResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capabilityIdHasBeenSet = false;
   bool m_capabilityArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

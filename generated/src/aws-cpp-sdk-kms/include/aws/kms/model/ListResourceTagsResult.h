@@ -107,7 +107,7 @@ class ListResourceTagsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Tag> m_tags;
@@ -117,7 +117,7 @@ class ListResourceTagsResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tagsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

@@ -148,7 +148,7 @@ class DescribeAccessControlConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_name;
@@ -162,7 +162,7 @@ class DescribeAccessControlConfigurationResult {
   Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

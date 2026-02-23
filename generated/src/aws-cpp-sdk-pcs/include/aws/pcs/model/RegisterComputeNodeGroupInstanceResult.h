@@ -101,7 +101,7 @@ class RegisterComputeNodeGroupInstanceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nodeID;
@@ -111,7 +111,7 @@ class RegisterComputeNodeGroupInstanceResult {
   Aws::Vector<Endpoint> m_endpoints;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nodeIDHasBeenSet = false;
   bool m_sharedSecretHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;

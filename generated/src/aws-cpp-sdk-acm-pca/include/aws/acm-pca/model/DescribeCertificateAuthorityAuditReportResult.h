@@ -111,7 +111,7 @@ class DescribeCertificateAuthorityAuditReportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AuditReportStatus m_auditReportStatus{AuditReportStatus::NOT_SET};
@@ -123,7 +123,7 @@ class DescribeCertificateAuthorityAuditReportResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_auditReportStatusHasBeenSet = false;
   bool m_s3BucketNameHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;

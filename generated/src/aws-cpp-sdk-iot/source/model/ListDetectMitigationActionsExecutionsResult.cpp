@@ -24,7 +24,7 @@ ListDetectMitigationActionsExecutionsResult::ListDetectMitigationActionsExecutio
 
 ListDetectMitigationActionsExecutionsResult& ListDetectMitigationActionsExecutionsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionsExecutions")) {
     Aws::Utils::Array<JsonView> actionsExecutionsJsonList = jsonValue.GetArray("actionsExecutions");

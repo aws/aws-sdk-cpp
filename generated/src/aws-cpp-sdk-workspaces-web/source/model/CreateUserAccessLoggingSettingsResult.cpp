@@ -23,7 +23,7 @@ CreateUserAccessLoggingSettingsResult::CreateUserAccessLoggingSettingsResult(con
 
 CreateUserAccessLoggingSettingsResult& CreateUserAccessLoggingSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("userAccessLoggingSettingsArn")) {
     m_userAccessLoggingSettingsArn = jsonValue.GetString("userAccessLoggingSettingsArn");

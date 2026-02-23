@@ -24,7 +24,7 @@ ListAttachmentRoutingPolicyAssociationsResult::ListAttachmentRoutingPolicyAssoci
 
 ListAttachmentRoutingPolicyAssociationsResult& ListAttachmentRoutingPolicyAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AttachmentRoutingPolicyAssociations")) {
     Aws::Utils::Array<JsonView> attachmentRoutingPolicyAssociationsJsonList = jsonValue.GetArray("AttachmentRoutingPolicyAssociations");

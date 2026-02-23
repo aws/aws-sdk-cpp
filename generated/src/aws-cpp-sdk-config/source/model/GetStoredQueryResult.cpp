@@ -20,7 +20,7 @@ using namespace Aws;
 GetStoredQueryResult::GetStoredQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStoredQueryResult& GetStoredQueryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StoredQuery")) {
     m_storedQuery = jsonValue.GetObject("StoredQuery");

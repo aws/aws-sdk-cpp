@@ -119,7 +119,7 @@ class ListHoursOfOperationOverridesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -131,7 +131,7 @@ class ListHoursOfOperationOverridesResult {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_hoursOfOperationOverrideListHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;

@@ -104,7 +104,7 @@ class DescribeFirewallPolicyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_updateToken;
@@ -114,7 +114,7 @@ class DescribeFirewallPolicyResult {
   FirewallPolicy m_firewallPolicy;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_updateTokenHasBeenSet = false;
   bool m_firewallPolicyResponseHasBeenSet = false;
   bool m_firewallPolicyHasBeenSet = false;

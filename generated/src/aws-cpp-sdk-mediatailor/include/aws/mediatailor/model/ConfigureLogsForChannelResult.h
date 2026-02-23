@@ -82,7 +82,7 @@ class ConfigureLogsForChannelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_channelName;
@@ -90,7 +90,7 @@ class ConfigureLogsForChannelResult {
   Aws::Vector<LogType> m_logTypes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelNameHasBeenSet = false;
   bool m_logTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

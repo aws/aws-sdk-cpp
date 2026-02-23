@@ -23,7 +23,7 @@ CreateMarketplaceModelEndpointResult::CreateMarketplaceModelEndpointResult(const
 
 CreateMarketplaceModelEndpointResult& CreateMarketplaceModelEndpointResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("marketplaceModelEndpoint")) {
     m_marketplaceModelEndpoint = jsonValue.GetObject("marketplaceModelEndpoint");

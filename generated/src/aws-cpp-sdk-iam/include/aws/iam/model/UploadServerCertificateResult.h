@@ -96,7 +96,7 @@ class UploadServerCertificateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ServerCertificateMetadata m_serverCertificateMetadata;
@@ -104,7 +104,7 @@ class UploadServerCertificateResult {
   Aws::Vector<Tag> m_tags;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serverCertificateMetadataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

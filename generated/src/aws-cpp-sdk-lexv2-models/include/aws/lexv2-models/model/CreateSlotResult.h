@@ -270,7 +270,7 @@ class CreateSlotResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_slotId;
@@ -300,7 +300,7 @@ class CreateSlotResult {
   SubSlotSetting m_subSlotSetting;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_slotIdHasBeenSet = false;
   bool m_slotNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

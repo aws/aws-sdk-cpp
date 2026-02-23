@@ -111,7 +111,7 @@ class CreateMeetingWithAttendeesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Meeting m_meeting;
@@ -121,7 +121,7 @@ class CreateMeetingWithAttendeesResult {
   Aws::Vector<CreateAttendeeError> m_errors;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_meetingHasBeenSet = false;
   bool m_attendeesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

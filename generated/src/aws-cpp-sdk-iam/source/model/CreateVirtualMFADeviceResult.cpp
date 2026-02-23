@@ -20,7 +20,7 @@ using namespace Aws;
 CreateVirtualMFADeviceResult::CreateVirtualMFADeviceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 CreateVirtualMFADeviceResult& CreateVirtualMFADeviceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

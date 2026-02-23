@@ -22,7 +22,7 @@ ListRepositorySyncDefinitionsResult::ListRepositorySyncDefinitionsResult(const A
 }
 
 ListRepositorySyncDefinitionsResult& ListRepositorySyncDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RepositorySyncDefinitions")) {
     Aws::Utils::Array<JsonView> repositorySyncDefinitionsJsonList = jsonValue.GetArray("RepositorySyncDefinitions");

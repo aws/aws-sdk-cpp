@@ -146,7 +146,7 @@ class DescribeCustomDomainsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dNSTarget;
@@ -160,7 +160,7 @@ class DescribeCustomDomainsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dNSTargetHasBeenSet = false;
   bool m_serviceArnHasBeenSet = false;
   bool m_customDomainsHasBeenSet = false;

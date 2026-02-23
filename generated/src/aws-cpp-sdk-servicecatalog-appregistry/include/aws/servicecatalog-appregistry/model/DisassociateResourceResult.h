@@ -75,7 +75,7 @@ class DisassociateResourceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_applicationArn;
@@ -83,7 +83,7 @@ class DisassociateResourceResult {
   Aws::String m_resourceArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

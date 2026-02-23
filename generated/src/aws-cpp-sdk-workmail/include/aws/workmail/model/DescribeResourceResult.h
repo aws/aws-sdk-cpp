@@ -212,7 +212,7 @@ class DescribeResourceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_resourceId;
@@ -236,7 +236,7 @@ class DescribeResourceResult {
   bool m_hiddenFromGlobalAddressList{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceIdHasBeenSet = false;
   bool m_emailHasBeenSet = false;
   bool m_nameHasBeenSet = false;

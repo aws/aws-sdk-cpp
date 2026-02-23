@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateConfiguredTableResult::UpdateConfiguredTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateConfiguredTableResult& UpdateConfiguredTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configuredTable")) {
     m_configuredTable = jsonValue.GetObject("configuredTable");

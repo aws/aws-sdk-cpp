@@ -114,7 +114,7 @@ class PutPipelineDefinitionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ValidationError> m_validationErrors;
@@ -124,7 +124,7 @@ class PutPipelineDefinitionResult {
   bool m_errored{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_validationErrorsHasBeenSet = false;
   bool m_validationWarningsHasBeenSet = false;
   bool m_erroredHasBeenSet = false;

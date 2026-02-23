@@ -106,7 +106,7 @@ class UnassignIpv6AddressesResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_networkInterfaceId;
@@ -116,7 +116,7 @@ class UnassignIpv6AddressesResponse {
   Aws::Vector<Aws::String> m_unassignedIpv6Prefixes;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkInterfaceIdHasBeenSet = false;
   bool m_unassignedIpv6AddressesHasBeenSet = false;
   bool m_unassignedIpv6PrefixesHasBeenSet = false;

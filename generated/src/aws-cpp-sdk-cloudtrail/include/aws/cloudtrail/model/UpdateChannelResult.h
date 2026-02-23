@@ -117,7 +117,7 @@ class UpdateChannelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_channelArn;
@@ -129,7 +129,7 @@ class UpdateChannelResult {
   Aws::Vector<Destination> m_destinations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;

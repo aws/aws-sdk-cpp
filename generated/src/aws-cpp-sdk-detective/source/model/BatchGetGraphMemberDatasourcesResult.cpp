@@ -23,7 +23,7 @@ BatchGetGraphMemberDatasourcesResult::BatchGetGraphMemberDatasourcesResult(const
 
 BatchGetGraphMemberDatasourcesResult& BatchGetGraphMemberDatasourcesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MemberDatasources")) {
     Aws::Utils::Array<JsonView> memberDatasourcesJsonList = jsonValue.GetArray("MemberDatasources");

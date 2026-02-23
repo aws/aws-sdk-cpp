@@ -23,7 +23,7 @@ CreateCalculatedAttributeDefinitionResult::CreateCalculatedAttributeDefinitionRe
 
 CreateCalculatedAttributeDefinitionResult& CreateCalculatedAttributeDefinitionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CalculatedAttributeName")) {
     m_calculatedAttributeName = jsonValue.GetString("CalculatedAttributeName");

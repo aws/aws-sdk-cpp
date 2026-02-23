@@ -77,7 +77,7 @@ class GetAuthorizationTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_authorizationToken;
@@ -85,7 +85,7 @@ class GetAuthorizationTokenResult {
   Aws::Utils::DateTime m_expiration{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authorizationTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

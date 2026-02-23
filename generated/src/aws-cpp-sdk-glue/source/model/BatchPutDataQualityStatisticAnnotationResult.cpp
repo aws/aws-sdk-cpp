@@ -24,7 +24,7 @@ BatchPutDataQualityStatisticAnnotationResult::BatchPutDataQualityStatisticAnnota
 
 BatchPutDataQualityStatisticAnnotationResult& BatchPutDataQualityStatisticAnnotationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FailedInclusionAnnotations")) {
     Aws::Utils::Array<JsonView> failedInclusionAnnotationsJsonList = jsonValue.GetArray("FailedInclusionAnnotations");

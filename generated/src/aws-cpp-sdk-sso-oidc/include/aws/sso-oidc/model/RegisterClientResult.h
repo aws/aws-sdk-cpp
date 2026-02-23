@@ -143,7 +143,7 @@ class RegisterClientResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_clientId;
@@ -159,7 +159,7 @@ class RegisterClientResult {
   Aws::String m_tokenEndpoint;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
   bool m_clientIdIssuedAtHasBeenSet = false;

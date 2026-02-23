@@ -100,7 +100,7 @@ class SearchFoldersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_status{0};
@@ -110,7 +110,7 @@ class SearchFoldersResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_folderSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

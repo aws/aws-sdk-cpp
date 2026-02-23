@@ -133,7 +133,7 @@ class UpdateTableMetadataLocationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_name;
@@ -147,7 +147,7 @@ class UpdateTableMetadataLocationResult {
   Aws::String m_metadataLocation;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_tableARNHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;

@@ -95,7 +95,7 @@ class RotateTunnelAccessTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_tunnelArn;
@@ -105,7 +105,7 @@ class RotateTunnelAccessTokenResult {
   Aws::String m_destinationAccessToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tunnelArnHasBeenSet = false;
   bool m_sourceAccessTokenHasBeenSet = false;
   bool m_destinationAccessTokenHasBeenSet = false;

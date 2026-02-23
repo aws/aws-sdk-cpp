@@ -20,7 +20,7 @@ using namespace Aws;
 TranslateKeyMaterialResult::TranslateKeyMaterialResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TranslateKeyMaterialResult& TranslateKeyMaterialResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WrappedKey")) {
     m_wrappedKey = jsonValue.GetObject("WrappedKey");

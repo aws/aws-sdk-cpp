@@ -22,7 +22,7 @@ DescribeLoggingConfigurationResult::DescribeLoggingConfigurationResult(const Aws
 }
 
 DescribeLoggingConfigurationResult& DescribeLoggingConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("loggingConfiguration")) {
     m_loggingConfiguration = jsonValue.GetObject("loggingConfiguration");

@@ -85,7 +85,7 @@ class ListPhoneNumbersV2Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -93,7 +93,7 @@ class ListPhoneNumbersV2Result {
   Aws::Vector<ListPhoneNumbersSummary> m_listPhoneNumbersSummaryList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_listPhoneNumbersSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

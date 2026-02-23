@@ -20,7 +20,7 @@ using namespace Aws;
 ListPublicKeysResult::ListPublicKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPublicKeysResult& ListPublicKeysResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("publicKeys")) {
     Aws::Utils::Array<JsonView> publicKeysJsonList = jsonValue.GetArray("publicKeys");

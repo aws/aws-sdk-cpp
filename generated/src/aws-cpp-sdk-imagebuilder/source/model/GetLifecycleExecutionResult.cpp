@@ -20,7 +20,7 @@ using namespace Aws;
 GetLifecycleExecutionResult::GetLifecycleExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLifecycleExecutionResult& GetLifecycleExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("lifecycleExecution")) {
     m_lifecycleExecution = jsonValue.GetObject("lifecycleExecution");

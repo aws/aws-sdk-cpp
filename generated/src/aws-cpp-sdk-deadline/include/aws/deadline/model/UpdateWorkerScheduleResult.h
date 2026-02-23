@@ -121,7 +121,7 @@ class UpdateWorkerScheduleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, AssignedSession> m_assignedSessions;
@@ -133,7 +133,7 @@ class UpdateWorkerScheduleResult {
   int m_updateIntervalSeconds{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assignedSessionsHasBeenSet = false;
   bool m_cancelSessionActionsHasBeenSet = false;
   bool m_desiredWorkerStatusHasBeenSet = false;

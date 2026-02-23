@@ -19,7 +19,7 @@ using namespace Aws;
 GetVpcOrigin2020_05_31Result::GetVpcOrigin2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 GetVpcOrigin2020_05_31Result& GetVpcOrigin2020_05_31Result::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

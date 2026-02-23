@@ -24,7 +24,7 @@ ExportAutomatedReasoningPolicyVersionResult::ExportAutomatedReasoningPolicyVersi
 
 ExportAutomatedReasoningPolicyVersionResult& ExportAutomatedReasoningPolicyVersionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_policyDefinition = jsonValue;
   m_policyDefinitionHasBeenSet = true;

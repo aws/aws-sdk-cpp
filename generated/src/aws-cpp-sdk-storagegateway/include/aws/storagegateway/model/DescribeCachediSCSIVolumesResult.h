@@ -73,13 +73,13 @@ class DescribeCachediSCSIVolumesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<CachediSCSIVolume> m_cachediSCSIVolumes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cachediSCSIVolumesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

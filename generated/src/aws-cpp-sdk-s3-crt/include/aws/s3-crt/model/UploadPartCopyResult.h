@@ -185,7 +185,7 @@ class UploadPartCopyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_copySourceVersionId;
@@ -205,7 +205,7 @@ class UploadPartCopyResult {
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_copySourceVersionIdHasBeenSet = false;
   bool m_copyPartResultHasBeenSet = false;
   bool m_serverSideEncryptionHasBeenSet = false;

@@ -24,7 +24,7 @@ ListAutomatedReasoningPolicyBuildWorkflowsResult::ListAutomatedReasoningPolicyBu
 
 ListAutomatedReasoningPolicyBuildWorkflowsResult& ListAutomatedReasoningPolicyBuildWorkflowsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("automatedReasoningPolicyBuildWorkflowSummaries")) {
     Aws::Utils::Array<JsonView> automatedReasoningPolicyBuildWorkflowSummariesJsonList =

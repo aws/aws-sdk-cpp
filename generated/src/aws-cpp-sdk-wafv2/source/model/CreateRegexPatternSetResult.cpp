@@ -20,7 +20,7 @@ using namespace Aws;
 CreateRegexPatternSetResult::CreateRegexPatternSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateRegexPatternSetResult& CreateRegexPatternSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Summary")) {
     m_summary = jsonValue.GetObject("Summary");

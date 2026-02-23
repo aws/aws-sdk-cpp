@@ -75,7 +75,7 @@ class UpdateMonitoringAlertResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_monitoringScheduleArn;
@@ -83,7 +83,7 @@ class UpdateMonitoringAlertResult {
   Aws::String m_monitoringAlertName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_monitoringScheduleArnHasBeenSet = false;
   bool m_monitoringAlertNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

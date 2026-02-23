@@ -22,7 +22,7 @@ NotifyRecommendationsReceivedResult::NotifyRecommendationsReceivedResult(const A
 }
 
 NotifyRecommendationsReceivedResult& NotifyRecommendationsReceivedResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recommendationIds")) {
     Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");

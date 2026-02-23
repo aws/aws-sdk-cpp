@@ -20,7 +20,7 @@ using namespace Aws;
 ListBrokersResult::ListBrokersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListBrokersResult& ListBrokersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("brokerSummaries")) {
     Aws::Utils::Array<JsonView> brokerSummariesJsonList = jsonValue.GetArray("brokerSummaries");

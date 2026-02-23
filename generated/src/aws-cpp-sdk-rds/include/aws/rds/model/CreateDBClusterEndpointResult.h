@@ -249,7 +249,7 @@ class CreateDBClusterEndpointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dBClusterEndpointIdentifier;
@@ -273,7 +273,7 @@ class CreateDBClusterEndpointResult {
   Aws::String m_dBClusterEndpointArn;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterEndpointIdentifierHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;

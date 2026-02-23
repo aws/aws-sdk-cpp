@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteGcmChannelResult::DeleteGcmChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteGcmChannelResult& DeleteGcmChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_gCMChannelResponse = jsonValue;
   m_gCMChannelResponseHasBeenSet = true;

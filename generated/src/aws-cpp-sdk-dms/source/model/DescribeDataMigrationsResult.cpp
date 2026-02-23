@@ -20,7 +20,7 @@ using namespace Aws;
 DescribeDataMigrationsResult::DescribeDataMigrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeDataMigrationsResult& DescribeDataMigrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataMigrations")) {
     Aws::Utils::Array<JsonView> dataMigrationsJsonList = jsonValue.GetArray("DataMigrations");

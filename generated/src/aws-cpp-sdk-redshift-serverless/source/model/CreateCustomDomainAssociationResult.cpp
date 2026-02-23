@@ -22,7 +22,7 @@ CreateCustomDomainAssociationResult::CreateCustomDomainAssociationResult(const A
 }
 
 CreateCustomDomainAssociationResult& CreateCustomDomainAssociationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("customDomainCertificateArn")) {
     m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");

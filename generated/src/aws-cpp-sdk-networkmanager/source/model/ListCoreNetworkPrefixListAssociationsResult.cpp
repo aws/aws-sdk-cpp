@@ -24,7 +24,7 @@ ListCoreNetworkPrefixListAssociationsResult::ListCoreNetworkPrefixListAssociatio
 
 ListCoreNetworkPrefixListAssociationsResult& ListCoreNetworkPrefixListAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PrefixListAssociations")) {
     Aws::Utils::Array<JsonView> prefixListAssociationsJsonList = jsonValue.GetArray("PrefixListAssociations");

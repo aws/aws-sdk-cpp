@@ -101,7 +101,7 @@ class ListChannelModeratorsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_channelArn;
@@ -111,7 +111,7 @@ class ListChannelModeratorsResult {
   Aws::Vector<ChannelModeratorSummary> m_channelModerators;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_channelModeratorsHasBeenSet = false;

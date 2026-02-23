@@ -23,7 +23,7 @@ ListStreamingDistributions2020_05_31Result::ListStreamingDistributions2020_05_31
 
 ListStreamingDistributions2020_05_31Result& ListStreamingDistributions2020_05_31Result::operator=(
     const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

@@ -129,7 +129,7 @@ class DescribePortfolioShareStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_portfolioShareToken;
@@ -143,7 +143,7 @@ class DescribePortfolioShareStatusResult {
   ShareDetails m_shareDetails;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_portfolioShareTokenHasBeenSet = false;
   bool m_portfolioIdHasBeenSet = false;
   bool m_organizationNodeValueHasBeenSet = false;

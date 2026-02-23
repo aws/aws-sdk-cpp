@@ -109,7 +109,7 @@ class GetBucketsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Bucket> m_buckets;
@@ -119,7 +119,7 @@ class GetBucketsResult {
   AccountLevelBpaSync m_accountLevelBpaSync;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_accountLevelBpaSyncHasBeenSet = false;

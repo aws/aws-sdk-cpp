@@ -108,7 +108,7 @@ class CreateInboundExternalLinkResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_gatewayId;
@@ -120,7 +120,7 @@ class CreateInboundExternalLinkResult {
   Aws::String m_domainName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

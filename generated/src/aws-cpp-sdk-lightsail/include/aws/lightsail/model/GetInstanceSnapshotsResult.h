@@ -88,7 +88,7 @@ class GetInstanceSnapshotsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<InstanceSnapshot> m_instanceSnapshots;
@@ -96,7 +96,7 @@ class GetInstanceSnapshotsResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceSnapshotsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

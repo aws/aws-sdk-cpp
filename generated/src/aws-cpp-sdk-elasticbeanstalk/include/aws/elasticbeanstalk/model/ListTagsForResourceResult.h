@@ -85,7 +85,7 @@ class ListTagsForResourceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_resourceArn;
@@ -93,7 +93,7 @@ class ListTagsForResourceResult {
   Aws::Vector<Tag> m_resourceTags;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -92,7 +92,7 @@ class BatchGetAccountStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<AccountState> m_accounts;
@@ -100,7 +100,7 @@ class BatchGetAccountStatusResult {
   Aws::Vector<FailedAccount> m_failedAccounts;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountsHasBeenSet = false;
   bool m_failedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

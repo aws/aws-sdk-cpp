@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateWaveResult::UpdateWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateWaveResult& UpdateWaveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("waveID")) {
     m_waveID = jsonValue.GetString("waveID");

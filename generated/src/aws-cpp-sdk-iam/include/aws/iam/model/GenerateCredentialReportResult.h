@@ -82,7 +82,7 @@ class GenerateCredentialReportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ReportStateType m_state{ReportStateType::NOT_SET};
@@ -90,7 +90,7 @@ class GenerateCredentialReportResult {
   Aws::String m_description;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

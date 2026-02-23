@@ -232,7 +232,7 @@ class DescribeWhatIfForecastExportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_whatIfForecastExportArn;
@@ -256,7 +256,7 @@ class DescribeWhatIfForecastExportResult {
   Aws::String m_format;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_whatIfForecastExportArnHasBeenSet = false;
   bool m_whatIfForecastExportNameHasBeenSet = false;
   bool m_whatIfForecastArnsHasBeenSet = false;

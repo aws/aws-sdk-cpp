@@ -386,7 +386,7 @@ class DescribeLabelingJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   LabelingJobStatus m_labelingJobStatus{LabelingJobStatus::NOT_SET};
@@ -426,7 +426,7 @@ class DescribeLabelingJobResult {
   LabelingJobOutput m_labelingJobOutput;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_labelingJobStatusHasBeenSet = false;
   bool m_labelCountersHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;

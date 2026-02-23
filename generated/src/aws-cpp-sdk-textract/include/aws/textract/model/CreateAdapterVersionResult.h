@@ -76,7 +76,7 @@ class CreateAdapterVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_adapterId;
@@ -84,7 +84,7 @@ class CreateAdapterVersionResult {
   Aws::String m_adapterVersion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adapterIdHasBeenSet = false;
   bool m_adapterVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -237,7 +237,7 @@ class CreateConfigurationTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_solutionStackName;
@@ -261,7 +261,7 @@ class CreateConfigurationTemplateResult {
   Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_solutionStackNameHasBeenSet = false;
   bool m_platformArnHasBeenSet = false;
   bool m_applicationNameHasBeenSet = false;

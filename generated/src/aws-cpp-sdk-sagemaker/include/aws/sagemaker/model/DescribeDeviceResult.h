@@ -237,7 +237,7 @@ class DescribeDeviceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_deviceArn;
@@ -263,7 +263,7 @@ class DescribeDeviceResult {
   Aws::String m_agentVersion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceArnHasBeenSet = false;
   bool m_deviceNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

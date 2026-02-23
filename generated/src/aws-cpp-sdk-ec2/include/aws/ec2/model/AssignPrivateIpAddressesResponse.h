@@ -108,7 +108,7 @@ class AssignPrivateIpAddressesResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_networkInterfaceId;
@@ -118,7 +118,7 @@ class AssignPrivateIpAddressesResponse {
   Aws::Vector<Ipv4PrefixSpecification> m_assignedIpv4Prefixes;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkInterfaceIdHasBeenSet = false;
   bool m_assignedPrivateIpAddressesHasBeenSet = false;
   bool m_assignedIpv4PrefixesHasBeenSet = false;

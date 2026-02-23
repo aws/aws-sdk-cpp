@@ -251,7 +251,7 @@ class GetUnfilteredTableMetadataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Table m_table;
@@ -277,7 +277,7 @@ class GetUnfilteredTableMetadataResult {
   Aws::String m_rowFilter;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableHasBeenSet = false;
   bool m_authorizedColumnsHasBeenSet = false;
   bool m_isRegisteredWithLakeFormationHasBeenSet = false;

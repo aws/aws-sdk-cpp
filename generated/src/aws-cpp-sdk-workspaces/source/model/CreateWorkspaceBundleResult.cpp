@@ -20,7 +20,7 @@ using namespace Aws;
 CreateWorkspaceBundleResult::CreateWorkspaceBundleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateWorkspaceBundleResult& CreateWorkspaceBundleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WorkspaceBundle")) {
     m_workspaceBundle = jsonValue.GetObject("WorkspaceBundle");

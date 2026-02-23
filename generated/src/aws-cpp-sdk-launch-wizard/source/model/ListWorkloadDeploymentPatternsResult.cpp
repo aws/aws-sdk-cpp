@@ -23,7 +23,7 @@ ListWorkloadDeploymentPatternsResult::ListWorkloadDeploymentPatternsResult(const
 
 ListWorkloadDeploymentPatternsResult& ListWorkloadDeploymentPatternsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("workloadDeploymentPatterns")) {
     Aws::Utils::Array<JsonView> workloadDeploymentPatternsJsonList = jsonValue.GetArray("workloadDeploymentPatterns");

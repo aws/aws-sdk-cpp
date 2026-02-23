@@ -20,7 +20,7 @@ using namespace Aws;
 DescribeAccountPreferencesResult::DescribeAccountPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeAccountPreferencesResult& DescribeAccountPreferencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceIdPreference")) {
     m_resourceIdPreference = jsonValue.GetObject("ResourceIdPreference");

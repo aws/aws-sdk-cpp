@@ -253,7 +253,7 @@ class DescribeIdentityPoolResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_identityPoolId;
@@ -277,7 +277,7 @@ class DescribeIdentityPoolResult {
   Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_identityPoolNameHasBeenSet = false;
   bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;

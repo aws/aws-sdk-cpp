@@ -20,7 +20,7 @@ using namespace Aws;
 DeactivatePipelineResult::DeactivatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeactivatePipelineResult& DeactivatePipelineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

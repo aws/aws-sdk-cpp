@@ -59,13 +59,13 @@ class GetBrowserSettingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   BrowserSettings m_browserSettings;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_browserSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

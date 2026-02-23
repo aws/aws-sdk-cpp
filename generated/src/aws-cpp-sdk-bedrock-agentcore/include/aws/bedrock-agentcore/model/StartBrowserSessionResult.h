@@ -112,7 +112,7 @@ class StartBrowserSessionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_browserIdentifier;
@@ -124,7 +124,7 @@ class StartBrowserSessionResult {
   BrowserSessionStream m_streams;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_browserIdentifierHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

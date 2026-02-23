@@ -23,7 +23,7 @@ DescribePackagingConfigurationResult::DescribePackagingConfigurationResult(const
 
 DescribePackagingConfigurationResult& DescribePackagingConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");

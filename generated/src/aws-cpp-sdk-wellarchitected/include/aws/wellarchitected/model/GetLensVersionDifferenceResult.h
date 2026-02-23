@@ -140,7 +140,7 @@ class GetLensVersionDifferenceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_lensAlias;
@@ -156,7 +156,7 @@ class GetLensVersionDifferenceResult {
   VersionDifferences m_versionDifferences;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lensAliasHasBeenSet = false;
   bool m_lensArnHasBeenSet = false;
   bool m_baseLensVersionHasBeenSet = false;

@@ -140,7 +140,7 @@ class GetDirectQueryDataSourceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dataSourceName;
@@ -154,7 +154,7 @@ class GetDirectQueryDataSourceResult {
   Aws::String m_dataSourceArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataSourceNameHasBeenSet = false;
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

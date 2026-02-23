@@ -229,7 +229,7 @@ class PutLaunchActionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_actionCode;
@@ -257,7 +257,7 @@ class PutLaunchActionResult {
   LaunchActionType m_type{LaunchActionType::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionCodeHasBeenSet = false;
   bool m_actionIdHasBeenSet = false;
   bool m_actionVersionHasBeenSet = false;

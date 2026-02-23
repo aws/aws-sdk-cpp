@@ -22,7 +22,7 @@ StartNextPendingJobExecutionResult::StartNextPendingJobExecutionResult(const Aws
 }
 
 StartNextPendingJobExecutionResult& StartNextPendingJobExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("execution")) {
     m_execution = jsonValue.GetObject("execution");

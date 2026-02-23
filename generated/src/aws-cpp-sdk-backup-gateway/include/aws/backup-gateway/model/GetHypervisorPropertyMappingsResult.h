@@ -102,7 +102,7 @@ class GetHypervisorPropertyMappingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_hypervisorArn;
@@ -112,7 +112,7 @@ class GetHypervisorPropertyMappingsResult {
   Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hypervisorArnHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
   bool m_vmwareToAwsTagMappingsHasBeenSet = false;

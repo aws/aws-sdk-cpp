@@ -111,7 +111,7 @@ class DescribeRouterConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_customerRouterConfig;
@@ -123,7 +123,7 @@ class DescribeRouterConfigurationResult {
   Aws::String m_virtualInterfaceName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customerRouterConfigHasBeenSet = false;
   bool m_routerHasBeenSet = false;
   bool m_virtualInterfaceIdHasBeenSet = false;

@@ -23,7 +23,7 @@ ListFunctionEventInvokeConfigsResult::ListFunctionEventInvokeConfigsResult(const
 
 ListFunctionEventInvokeConfigsResult& ListFunctionEventInvokeConfigsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FunctionEventInvokeConfigs")) {
     Aws::Utils::Array<JsonView> functionEventInvokeConfigsJsonList = jsonValue.GetArray("FunctionEventInvokeConfigs");

@@ -101,7 +101,7 @@ class SearchCasesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -111,7 +111,7 @@ class SearchCasesResult {
   long long m_totalCount{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_casesHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;

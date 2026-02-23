@@ -79,7 +79,7 @@ class DeleteExportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_exportId;
@@ -87,7 +87,7 @@ class DeleteExportResult {
   ExportStatus m_exportStatus{ExportStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exportIdHasBeenSet = false;
   bool m_exportStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

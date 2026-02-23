@@ -118,7 +118,7 @@ class GetMergeOptionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<MergeOptionTypeEnum> m_mergeOptions;
@@ -130,7 +130,7 @@ class GetMergeOptionsResult {
   Aws::String m_baseCommitId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mergeOptionsHasBeenSet = false;
   bool m_sourceCommitIdHasBeenSet = false;
   bool m_destinationCommitIdHasBeenSet = false;

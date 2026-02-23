@@ -22,7 +22,7 @@ SubmitAttachmentStateChangesResult::SubmitAttachmentStateChangesResult(const Aws
 }
 
 SubmitAttachmentStateChangesResult& SubmitAttachmentStateChangesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("acknowledgment")) {
     m_acknowledgment = jsonValue.GetString("acknowledgment");

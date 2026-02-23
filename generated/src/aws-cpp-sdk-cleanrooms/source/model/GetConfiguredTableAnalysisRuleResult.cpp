@@ -23,7 +23,7 @@ GetConfiguredTableAnalysisRuleResult::GetConfiguredTableAnalysisRuleResult(const
 
 GetConfiguredTableAnalysisRuleResult& GetConfiguredTableAnalysisRuleResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("analysisRule")) {
     m_analysisRule = jsonValue.GetObject("analysisRule");

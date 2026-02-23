@@ -20,7 +20,7 @@ using namespace Aws;
 DisablePolicyTypeResult::DisablePolicyTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisablePolicyTypeResult& DisablePolicyTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Root")) {
     m_root = jsonValue.GetObject("Root");

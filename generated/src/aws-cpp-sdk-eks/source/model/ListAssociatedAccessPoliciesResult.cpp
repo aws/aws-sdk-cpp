@@ -22,7 +22,7 @@ ListAssociatedAccessPoliciesResult::ListAssociatedAccessPoliciesResult(const Aws
 }
 
 ListAssociatedAccessPoliciesResult& ListAssociatedAccessPoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");

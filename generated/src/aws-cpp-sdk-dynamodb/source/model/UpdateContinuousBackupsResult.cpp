@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateContinuousBackupsResult::UpdateContinuousBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateContinuousBackupsResult& UpdateContinuousBackupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContinuousBackupsDescription")) {
     m_continuousBackupsDescription = jsonValue.GetObject("ContinuousBackupsDescription");

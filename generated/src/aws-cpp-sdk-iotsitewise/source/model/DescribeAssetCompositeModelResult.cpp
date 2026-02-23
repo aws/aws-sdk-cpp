@@ -22,7 +22,7 @@ DescribeAssetCompositeModelResult::DescribeAssetCompositeModelResult(const Aws::
 }
 
 DescribeAssetCompositeModelResult& DescribeAssetCompositeModelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("assetId")) {
     m_assetId = jsonValue.GetString("assetId");

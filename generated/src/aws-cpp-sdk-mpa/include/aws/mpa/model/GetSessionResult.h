@@ -479,7 +479,7 @@ class GetSessionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_sessionArn;
@@ -531,7 +531,7 @@ class GetSessionResult {
   Aws::Vector<AdditionalSecurityRequirement> m_additionalSecurityRequirements;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionArnHasBeenSet = false;
   bool m_approvalTeamArnHasBeenSet = false;
   bool m_approvalTeamNameHasBeenSet = false;

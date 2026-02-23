@@ -91,7 +91,7 @@ class ReleaseHostsResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Aws::String> m_successful;
@@ -99,7 +99,7 @@ class ReleaseHostsResponse {
   Aws::Vector<UnsuccessfulItem> m_unsuccessful;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulHasBeenSet = false;
   bool m_unsuccessfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -233,7 +233,7 @@ class GetMigrationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_migrationId;
@@ -257,7 +257,7 @@ class GetMigrationResult {
   Aws::Vector<MigrationAlert> m_alerts;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_migrationIdHasBeenSet = false;
   bool m_v1BotNameHasBeenSet = false;
   bool m_v1BotVersionHasBeenSet = false;

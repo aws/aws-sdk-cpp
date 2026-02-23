@@ -82,7 +82,7 @@ class ListJobsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Job> m_jobs;
@@ -90,7 +90,7 @@ class ListJobsResult {
   bool m_isTruncated{false};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobsHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

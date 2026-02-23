@@ -58,13 +58,13 @@ class AuthorizeClusterSecurityGroupIngressResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ClusterSecurityGroup m_clusterSecurityGroup;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

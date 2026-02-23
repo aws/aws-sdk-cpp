@@ -24,7 +24,7 @@ UpdateDirectConnectGatewayAssociationResult::UpdateDirectConnectGatewayAssociati
 
 UpdateDirectConnectGatewayAssociationResult& UpdateDirectConnectGatewayAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("directConnectGatewayAssociation")) {
     m_directConnectGatewayAssociation = jsonValue.GetObject("directConnectGatewayAssociation");

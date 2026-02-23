@@ -76,7 +76,7 @@ class GetMediaResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::ByteBuffer m_mediaBytes{};
@@ -84,7 +84,7 @@ class GetMediaResult {
   Aws::String m_mediaMimeType;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mediaBytesHasBeenSet = false;
   bool m_mediaMimeTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

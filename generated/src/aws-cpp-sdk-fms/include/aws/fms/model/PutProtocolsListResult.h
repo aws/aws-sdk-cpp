@@ -76,7 +76,7 @@ class PutProtocolsListResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ProtocolsListData m_protocolsList;
@@ -84,7 +84,7 @@ class PutProtocolsListResult {
   Aws::String m_protocolsListArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_protocolsListHasBeenSet = false;
   bool m_protocolsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

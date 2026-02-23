@@ -23,7 +23,7 @@ GetAppInstanceRetentionSettingsResult::GetAppInstanceRetentionSettingsResult(con
 
 GetAppInstanceRetentionSettingsResult& GetAppInstanceRetentionSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppInstanceRetentionSettings")) {
     m_appInstanceRetentionSettings = jsonValue.GetObject("AppInstanceRetentionSettings");

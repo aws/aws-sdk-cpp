@@ -85,7 +85,7 @@ class DescribePublicIpv4PoolsResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<PublicIpv4Pool> m_publicIpv4Pools;
@@ -93,7 +93,7 @@ class DescribePublicIpv4PoolsResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_publicIpv4PoolsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

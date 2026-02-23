@@ -22,7 +22,7 @@ DescribeElasticsearchDomainResult::DescribeElasticsearchDomainResult(const Aws::
 }
 
 DescribeElasticsearchDomainResult& DescribeElasticsearchDomainResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DomainStatus")) {
     m_domainStatus = jsonValue.GetObject("DomainStatus");

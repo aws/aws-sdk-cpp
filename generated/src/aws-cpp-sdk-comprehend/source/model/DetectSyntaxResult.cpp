@@ -20,7 +20,7 @@ using namespace Aws;
 DetectSyntaxResult::DetectSyntaxResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DetectSyntaxResult& DetectSyntaxResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SyntaxTokens")) {
     Aws::Utils::Array<JsonView> syntaxTokensJsonList = jsonValue.GetArray("SyntaxTokens");

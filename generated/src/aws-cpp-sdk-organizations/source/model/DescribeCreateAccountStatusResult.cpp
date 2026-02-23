@@ -22,7 +22,7 @@ DescribeCreateAccountStatusResult::DescribeCreateAccountStatusResult(const Aws::
 }
 
 DescribeCreateAccountStatusResult& DescribeCreateAccountStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CreateAccountStatus")) {
     m_createAccountStatus = jsonValue.GetObject("CreateAccountStatus");

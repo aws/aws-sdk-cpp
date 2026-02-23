@@ -112,7 +112,7 @@ class BatchGetServiceLevelObjectiveBudgetReportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_timestamp{};
@@ -122,7 +122,7 @@ class BatchGetServiceLevelObjectiveBudgetReportResult {
   Aws::Vector<ServiceLevelObjectiveBudgetReportError> m_errors;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_timestampHasBeenSet = false;
   bool m_reportsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

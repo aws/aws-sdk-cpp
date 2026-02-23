@@ -97,7 +97,7 @@ class GetBlockPublicAccessConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   BlockPublicAccessConfiguration m_blockPublicAccessConfiguration;
@@ -105,7 +105,7 @@ class GetBlockPublicAccessConfigurationResult {
   BlockPublicAccessConfigurationMetadata m_blockPublicAccessConfigurationMetadata;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_blockPublicAccessConfigurationHasBeenSet = false;
   bool m_blockPublicAccessConfigurationMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -90,7 +90,7 @@ class BatchGetStreamKeyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BatchError> m_errors;
@@ -98,7 +98,7 @@ class BatchGetStreamKeyResult {
   Aws::Vector<StreamKey> m_streamKeys;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorsHasBeenSet = false;
   bool m_streamKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -219,7 +219,7 @@ class StartOpportunityFromEngagementTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_taskId;
@@ -243,7 +243,7 @@ class StartOpportunityFromEngagementTaskResult {
   Aws::String m_contextId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskIdHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;

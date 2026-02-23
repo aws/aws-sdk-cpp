@@ -76,7 +76,7 @@ class CreateReusableDelegationSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DelegationSet m_delegationSet;
@@ -84,7 +84,7 @@ class CreateReusableDelegationSetResult {
   Aws::String m_location;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_delegationSetHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

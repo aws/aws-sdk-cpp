@@ -153,7 +153,7 @@ class DescribeVaultResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_vaultARN;
@@ -169,7 +169,7 @@ class DescribeVaultResult {
   long long m_sizeInBytes{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vaultARNHasBeenSet = false;
   bool m_vaultNameHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

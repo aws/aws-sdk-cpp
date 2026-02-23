@@ -20,7 +20,7 @@ using namespace Aws;
 ListAlarmRecommendationsResult::ListAlarmRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListAlarmRecommendationsResult& ListAlarmRecommendationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("alarmRecommendations")) {
     Aws::Utils::Array<JsonView> alarmRecommendationsJsonList = jsonValue.GetArray("alarmRecommendations");

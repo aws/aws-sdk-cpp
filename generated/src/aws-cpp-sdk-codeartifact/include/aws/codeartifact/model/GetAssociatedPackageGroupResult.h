@@ -77,7 +77,7 @@ class GetAssociatedPackageGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   PackageGroupDescription m_packageGroup;
@@ -85,7 +85,7 @@ class GetAssociatedPackageGroupResult {
   PackageGroupAssociationType m_associationType{PackageGroupAssociationType::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packageGroupHasBeenSet = false;
   bool m_associationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

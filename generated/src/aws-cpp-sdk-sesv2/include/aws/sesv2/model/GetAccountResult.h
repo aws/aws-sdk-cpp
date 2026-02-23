@@ -200,7 +200,7 @@ class GetAccountResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_dedicatedIpAutoWarmupEnabled{false};
@@ -220,7 +220,7 @@ class GetAccountResult {
   VdmAttributes m_vdmAttributes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
   bool m_enforcementStatusHasBeenSet = false;
   bool m_productionAccessEnabledHasBeenSet = false;

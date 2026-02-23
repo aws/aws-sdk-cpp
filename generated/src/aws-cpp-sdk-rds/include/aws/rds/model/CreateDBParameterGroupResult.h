@@ -57,13 +57,13 @@ class CreateDBParameterGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DBParameterGroup m_dBParameterGroup;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -22,7 +22,7 @@ DetachAndDeleteS3AccessPointResult::DetachAndDeleteS3AccessPointResult(const Aws
 }
 
 DetachAndDeleteS3AccessPointResult& DetachAndDeleteS3AccessPointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Lifecycle")) {
     m_lifecycle = S3AccessPointAttachmentLifecycleMapper::GetS3AccessPointAttachmentLifecycleForName(jsonValue.GetString("Lifecycle"));

@@ -22,7 +22,7 @@ GetRightsizingRecommendationResult::GetRightsizingRecommendationResult(const Aws
 }
 
 GetRightsizingRecommendationResult& GetRightsizingRecommendationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetObject("Metadata");

@@ -90,7 +90,7 @@ class BatchUpdateClusterResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Cluster> m_processedClusters;
@@ -98,7 +98,7 @@ class BatchUpdateClusterResult {
   Aws::Vector<UnprocessedCluster> m_unprocessedClusters;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_processedClustersHasBeenSet = false;
   bool m_unprocessedClustersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,7 +23,7 @@ ListDataIntegrationAssociationsResult::ListDataIntegrationAssociationsResult(con
 
 ListDataIntegrationAssociationsResult& ListDataIntegrationAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataIntegrationAssociations")) {
     Aws::Utils::Array<JsonView> dataIntegrationAssociationsJsonList = jsonValue.GetArray("DataIntegrationAssociations");

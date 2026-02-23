@@ -316,7 +316,7 @@ class ListObjectVersionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_isTruncated{false};
@@ -348,7 +348,7 @@ class ListObjectVersionsResult {
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isTruncatedHasBeenSet = false;
   bool m_keyMarkerHasBeenSet = false;
   bool m_versionIdMarkerHasBeenSet = false;

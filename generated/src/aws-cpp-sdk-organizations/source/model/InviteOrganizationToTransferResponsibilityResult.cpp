@@ -24,7 +24,7 @@ InviteOrganizationToTransferResponsibilityResult::InviteOrganizationToTransferRe
 
 InviteOrganizationToTransferResponsibilityResult& InviteOrganizationToTransferResponsibilityResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Handshake")) {
     m_handshake = jsonValue.GetObject("Handshake");

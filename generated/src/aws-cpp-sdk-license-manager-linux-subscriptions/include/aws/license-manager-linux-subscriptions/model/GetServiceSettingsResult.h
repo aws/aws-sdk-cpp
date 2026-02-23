@@ -146,7 +146,7 @@ class GetServiceSettingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Aws::String> m_homeRegions;
@@ -160,7 +160,7 @@ class GetServiceSettingsResult {
   Aws::Map<Aws::String, Aws::String> m_statusMessage;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_homeRegionsHasBeenSet = false;
   bool m_linuxSubscriptionsDiscoveryHasBeenSet = false;
   bool m_linuxSubscriptionsDiscoverySettingsHasBeenSet = false;

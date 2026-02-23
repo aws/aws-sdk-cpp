@@ -414,7 +414,7 @@ class GetCollaborationTrainedModelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_membershipIdentifier;
@@ -460,7 +460,7 @@ class GetCollaborationTrainedModelResult {
   Aws::String m_creatorAccountId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_trainedModelArnHasBeenSet = false;

@@ -75,7 +75,7 @@ class RemoveFlowMediaStreamResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_flowArn;
@@ -83,7 +83,7 @@ class RemoveFlowMediaStreamResult {
   Aws::String m_mediaStreamName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_mediaStreamNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

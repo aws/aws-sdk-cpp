@@ -103,7 +103,7 @@ class GetSnapshotBlockResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_dataLength{0};
@@ -115,7 +115,7 @@ class GetSnapshotBlockResult {
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataLengthHasBeenSet = false;
   bool m_blockDataHasBeenSet = false;
   bool m_checksumHasBeenSet = false;

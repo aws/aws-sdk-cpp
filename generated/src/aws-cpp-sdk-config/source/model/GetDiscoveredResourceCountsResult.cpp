@@ -22,7 +22,7 @@ GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult(const Aws::
 }
 
 GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("totalDiscoveredResources")) {
     m_totalDiscoveredResources = jsonValue.GetInt64("totalDiscoveredResources");

@@ -24,7 +24,7 @@ ListPricingPlansAssociatedWithPricingRuleResult::ListPricingPlansAssociatedWithP
 
 ListPricingPlansAssociatedWithPricingRuleResult& ListPricingPlansAssociatedWithPricingRuleResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BillingPeriod")) {
     m_billingPeriod = jsonValue.GetString("BillingPeriod");

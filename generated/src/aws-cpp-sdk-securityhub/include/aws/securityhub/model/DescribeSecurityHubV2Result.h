@@ -75,7 +75,7 @@ class DescribeSecurityHubV2Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_hubV2Arn;
@@ -83,7 +83,7 @@ class DescribeSecurityHubV2Result {
   Aws::String m_subscribedAt;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubV2ArnHasBeenSet = false;
   bool m_subscribedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -105,7 +105,7 @@ class DescribeWarmPoolResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   WarmPoolConfiguration m_warmPoolConfiguration;
@@ -115,7 +115,7 @@ class DescribeWarmPoolResult {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_warmPoolConfigurationHasBeenSet = false;
   bool m_instancesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

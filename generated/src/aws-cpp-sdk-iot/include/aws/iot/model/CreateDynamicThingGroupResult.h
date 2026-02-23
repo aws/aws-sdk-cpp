@@ -143,7 +143,7 @@ class CreateDynamicThingGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_thingGroupName;
@@ -159,7 +159,7 @@ class CreateDynamicThingGroupResult {
   Aws::String m_queryVersion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingGroupNameHasBeenSet = false;
   bool m_thingGroupArnHasBeenSet = false;
   bool m_thingGroupIdHasBeenSet = false;

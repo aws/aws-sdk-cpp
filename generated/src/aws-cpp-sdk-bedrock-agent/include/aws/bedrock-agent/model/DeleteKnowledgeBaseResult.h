@@ -75,7 +75,7 @@ class DeleteKnowledgeBaseResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_knowledgeBaseId;
@@ -83,7 +83,7 @@ class DeleteKnowledgeBaseResult {
   KnowledgeBaseStatus m_status{KnowledgeBaseStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

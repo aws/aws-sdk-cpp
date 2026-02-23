@@ -91,7 +91,7 @@ class GetImageSetMetadataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::Stream::ResponseStream m_imageSetMetadataBlob{};
@@ -101,7 +101,7 @@ class GetImageSetMetadataResult {
   Aws::String m_contentEncoding;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageSetMetadataBlobHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_contentEncodingHasBeenSet = false;

@@ -80,7 +80,7 @@ class UpdateResourceShareResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ResourceShare m_resourceShare;
@@ -88,7 +88,7 @@ class UpdateResourceShareResult {
   Aws::String m_clientToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceShareHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

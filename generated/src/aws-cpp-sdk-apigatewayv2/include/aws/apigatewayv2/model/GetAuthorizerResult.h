@@ -279,7 +279,7 @@ class GetAuthorizerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_authorizerCredentialsArn;
@@ -305,7 +305,7 @@ class GetAuthorizerResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authorizerCredentialsArnHasBeenSet = false;
   bool m_authorizerIdHasBeenSet = false;
   bool m_authorizerPayloadFormatVersionHasBeenSet = false;

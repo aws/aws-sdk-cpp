@@ -22,7 +22,7 @@ DeleteApnsVoipSandboxChannelResult::DeleteApnsVoipSandboxChannelResult(const Aws
 }
 
 DeleteApnsVoipSandboxChannelResult& DeleteApnsVoipSandboxChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_aPNSVoipSandboxChannelResponse = jsonValue;
   m_aPNSVoipSandboxChannelResponseHasBeenSet = true;

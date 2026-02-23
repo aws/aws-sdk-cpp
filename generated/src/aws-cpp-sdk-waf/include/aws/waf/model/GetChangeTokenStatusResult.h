@@ -57,13 +57,13 @@ class GetChangeTokenStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ChangeTokenStatus m_changeTokenStatus{ChangeTokenStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeTokenStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

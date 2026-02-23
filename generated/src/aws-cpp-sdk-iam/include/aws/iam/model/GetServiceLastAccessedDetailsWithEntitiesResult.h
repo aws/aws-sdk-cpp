@@ -183,7 +183,7 @@ class GetServiceLastAccessedDetailsWithEntitiesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   JobStatusType m_jobStatus{JobStatusType::NOT_SET};
@@ -201,7 +201,7 @@ class GetServiceLastAccessedDetailsWithEntitiesResult {
   ErrorDetails m_error;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_jobCreationDateHasBeenSet = false;
   bool m_jobCompletionDateHasBeenSet = false;

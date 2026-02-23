@@ -100,7 +100,7 @@ class StartDataSourceIntrospectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_introspectionId;
@@ -110,7 +110,7 @@ class StartDataSourceIntrospectionResult {
   Aws::String m_introspectionStatusDetail;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_introspectionIdHasBeenSet = false;
   bool m_introspectionStatusHasBeenSet = false;
   bool m_introspectionStatusDetailHasBeenSet = false;

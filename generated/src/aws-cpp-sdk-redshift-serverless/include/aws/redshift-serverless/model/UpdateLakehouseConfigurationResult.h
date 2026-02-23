@@ -115,7 +115,7 @@ class UpdateLakehouseConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_catalogArn;
@@ -127,7 +127,7 @@ class UpdateLakehouseConfigurationResult {
   Aws::String m_namespaceName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_catalogArnHasBeenSet = false;
   bool m_lakehouseIdcApplicationArnHasBeenSet = false;
   bool m_lakehouseRegistrationStatusHasBeenSet = false;

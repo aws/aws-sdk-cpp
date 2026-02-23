@@ -195,7 +195,7 @@ class GetAsyncInvokeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_invocationArn;
@@ -217,7 +217,7 @@ class GetAsyncInvokeResult {
   AsyncInvokeOutputDataConfig m_outputDataConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invocationArnHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;

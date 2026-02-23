@@ -20,7 +20,7 @@ using namespace Aws;
 PutResolverRulePolicyResult::PutResolverRulePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutResolverRulePolicyResult& PutResolverRulePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReturnValue")) {
     m_returnValue = jsonValue.GetBool("ReturnValue");

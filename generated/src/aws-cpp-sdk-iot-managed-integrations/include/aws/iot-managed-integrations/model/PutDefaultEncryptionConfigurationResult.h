@@ -96,7 +96,7 @@ class PutDefaultEncryptionConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ConfigurationStatus m_configurationStatus;
@@ -106,7 +106,7 @@ class PutDefaultEncryptionConfigurationResult {
   Aws::String m_kmsKeyArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationStatusHasBeenSet = false;
   bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;

@@ -126,7 +126,7 @@ class GetSensitiveDataOccurrencesAvailabilityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AvailabilityCode m_code{AvailabilityCode::NOT_SET};
@@ -134,7 +134,7 @@ class GetSensitiveDataOccurrencesAvailabilityResult {
   Aws::Vector<UnavailabilityReasonCode> m_reasons;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

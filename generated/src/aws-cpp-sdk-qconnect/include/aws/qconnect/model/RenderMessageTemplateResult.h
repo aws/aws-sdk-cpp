@@ -125,7 +125,7 @@ class RenderMessageTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   MessageTemplateContentProvider m_content;
@@ -137,7 +137,7 @@ class RenderMessageTemplateResult {
   Aws::Vector<MessageTemplateAttachment> m_attachments;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_sourceConfigurationSummaryHasBeenSet = false;
   bool m_attributesNotInterpolatedHasBeenSet = false;

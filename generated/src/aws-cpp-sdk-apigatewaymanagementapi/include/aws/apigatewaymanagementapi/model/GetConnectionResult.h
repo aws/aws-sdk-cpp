@@ -92,7 +92,7 @@ class GetConnectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_connectedAt{};
@@ -102,7 +102,7 @@ class GetConnectionResult {
   Aws::Utils::DateTime m_lastActiveAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectedAtHasBeenSet = false;
   bool m_identityHasBeenSet = false;
   bool m_lastActiveAtHasBeenSet = false;

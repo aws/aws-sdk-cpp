@@ -75,7 +75,7 @@ class CreateBrokerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_brokerArn;
@@ -83,7 +83,7 @@ class CreateBrokerResult {
   Aws::String m_brokerId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_brokerArnHasBeenSet = false;
   bool m_brokerIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

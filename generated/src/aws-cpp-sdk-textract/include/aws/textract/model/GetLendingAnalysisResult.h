@@ -177,7 +177,7 @@ class GetLendingAnalysisResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DocumentMetadata m_documentMetadata;
@@ -195,7 +195,7 @@ class GetLendingAnalysisResult {
   Aws::String m_analyzeLendingModelVersion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_documentMetadataHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

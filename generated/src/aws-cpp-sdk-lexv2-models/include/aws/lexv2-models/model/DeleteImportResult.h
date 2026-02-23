@@ -79,7 +79,7 @@ class DeleteImportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_importId;
@@ -87,7 +87,7 @@ class DeleteImportResult {
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_importIdHasBeenSet = false;
   bool m_importStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

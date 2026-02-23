@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateResolverDnssecConfigResult::UpdateResolverDnssecConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateResolverDnssecConfigResult& UpdateResolverDnssecConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverDNSSECConfig")) {
     m_resolverDNSSECConfig = jsonValue.GetObject("ResolverDNSSECConfig");

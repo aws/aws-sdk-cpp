@@ -75,7 +75,7 @@ class CreateRepositoryResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Repository m_repository;
@@ -83,7 +83,7 @@ class CreateRepositoryResult {
   RepositoryCatalogData m_catalogData;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_repositoryHasBeenSet = false;
   bool m_catalogDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

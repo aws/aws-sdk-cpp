@@ -59,13 +59,13 @@ class DeleteRouteServerPeerResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   RouteServerPeer m_routeServerPeer;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_routeServerPeerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -90,7 +90,7 @@ class DeregisterTargetsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Target> m_successful;
@@ -98,7 +98,7 @@ class DeregisterTargetsResult {
   Aws::Vector<TargetFailure> m_unsuccessful;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulHasBeenSet = false;
   bool m_unsuccessfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

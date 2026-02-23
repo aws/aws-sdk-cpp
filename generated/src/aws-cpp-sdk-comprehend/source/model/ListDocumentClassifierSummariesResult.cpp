@@ -23,7 +23,7 @@ ListDocumentClassifierSummariesResult::ListDocumentClassifierSummariesResult(con
 
 ListDocumentClassifierSummariesResult& ListDocumentClassifierSummariesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DocumentClassifierSummariesList")) {
     Aws::Utils::Array<JsonView> documentClassifierSummariesListJsonList = jsonValue.GetArray("DocumentClassifierSummariesList");

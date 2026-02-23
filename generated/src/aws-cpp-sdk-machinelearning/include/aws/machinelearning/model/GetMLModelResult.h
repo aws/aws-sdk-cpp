@@ -472,7 +472,7 @@ class GetMLModelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_mLModelId;
@@ -518,7 +518,7 @@ class GetMLModelResult {
   Aws::String m_schema;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mLModelIdHasBeenSet = false;
   bool m_trainingDataSourceIdHasBeenSet = false;
   bool m_createdByIamUserHasBeenSet = false;

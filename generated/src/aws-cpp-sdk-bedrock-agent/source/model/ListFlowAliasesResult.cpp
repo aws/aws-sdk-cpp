@@ -20,7 +20,7 @@ using namespace Aws;
 ListFlowAliasesResult::ListFlowAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFlowAliasesResult& ListFlowAliasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("flowAliasSummaries")) {
     Aws::Utils::Array<JsonView> flowAliasSummariesJsonList = jsonValue.GetArray("flowAliasSummaries");

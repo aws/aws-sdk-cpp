@@ -64,13 +64,13 @@ class AttachVpnGatewayResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   VpcAttachment m_vpcAttachment;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcAttachmentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -77,7 +77,7 @@ class GetGlobalSettingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   BusinessCallingSettings m_businessCalling;
@@ -85,7 +85,7 @@ class GetGlobalSettingsResult {
   VoiceConnectorSettings m_voiceConnector;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_businessCallingHasBeenSet = false;
   bool m_voiceConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

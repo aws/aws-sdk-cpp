@@ -164,7 +164,7 @@ class CreateAnnotationStoreVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_id;
@@ -182,7 +182,7 @@ class CreateAnnotationStoreVersionResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
   bool m_storeIdHasBeenSet = false;

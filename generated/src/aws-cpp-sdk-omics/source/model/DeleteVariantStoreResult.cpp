@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteVariantStoreResult::DeleteVariantStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteVariantStoreResult& DeleteVariantStoreResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));

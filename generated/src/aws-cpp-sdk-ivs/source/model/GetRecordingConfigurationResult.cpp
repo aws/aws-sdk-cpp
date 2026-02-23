@@ -20,7 +20,7 @@ using namespace Aws;
 GetRecordingConfigurationResult::GetRecordingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRecordingConfigurationResult& GetRecordingConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("recordingConfiguration")) {
     m_recordingConfiguration = jsonValue.GetObject("recordingConfiguration");

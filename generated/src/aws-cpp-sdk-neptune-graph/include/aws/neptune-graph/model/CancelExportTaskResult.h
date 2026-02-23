@@ -194,7 +194,7 @@ class CancelExportTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_graphId;
@@ -216,7 +216,7 @@ class CancelExportTaskResult {
   Aws::String m_statusReason;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_graphIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;

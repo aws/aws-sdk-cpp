@@ -23,7 +23,7 @@ EvaluatePullRequestApprovalRulesResult::EvaluatePullRequestApprovalRulesResult(c
 
 EvaluatePullRequestApprovalRulesResult& EvaluatePullRequestApprovalRulesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("evaluation")) {
     m_evaluation = jsonValue.GetObject("evaluation");

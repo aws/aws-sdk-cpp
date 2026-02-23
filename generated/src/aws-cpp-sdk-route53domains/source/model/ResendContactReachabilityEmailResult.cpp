@@ -23,7 +23,7 @@ ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult(const
 
 ResendContactReachabilityEmailResult& ResendContactReachabilityEmailResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");

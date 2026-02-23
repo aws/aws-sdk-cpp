@@ -89,7 +89,7 @@ class PutScalingPolicyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_policyARN;
@@ -97,7 +97,7 @@ class PutScalingPolicyResult {
   Aws::Vector<Alarm> m_alarms;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyARNHasBeenSet = false;
   bool m_alarmsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -254,7 +254,7 @@ class DescribeLocationObjectStorageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_locationArn;
@@ -280,7 +280,7 @@ class DescribeLocationObjectStorageResult {
   CustomSecretConfig m_customSecretConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_accessKeyHasBeenSet = false;

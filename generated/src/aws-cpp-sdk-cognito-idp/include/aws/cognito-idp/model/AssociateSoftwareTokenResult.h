@@ -78,7 +78,7 @@ class AssociateSoftwareTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_secretCode;
@@ -86,7 +86,7 @@ class AssociateSoftwareTokenResult {
   Aws::String m_session;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_secretCodeHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

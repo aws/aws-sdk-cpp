@@ -117,7 +117,7 @@ class GetMatchesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -129,7 +129,7 @@ class GetMatchesResult {
   Aws::Vector<MatchItem> m_matches;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_matchGenerationDateHasBeenSet = false;
   bool m_potentialMatchesHasBeenSet = false;

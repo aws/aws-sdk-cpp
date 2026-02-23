@@ -19,7 +19,7 @@ using namespace Aws;
 PutSessionResult::PutSessionResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 PutSessionResult& PutSessionResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   m_audioStream = result.TakeOwnershipOfPayload();
   m_audioStreamHasBeenSet = true;
 

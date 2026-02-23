@@ -304,7 +304,7 @@ class CreateMultipartUploadResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_abortDate{};
@@ -336,7 +336,7 @@ class CreateMultipartUploadResult {
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_abortDateHasBeenSet = false;
   bool m_abortRuleIdHasBeenSet = false;
   bool m_bucketHasBeenSet = false;

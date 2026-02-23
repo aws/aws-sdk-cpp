@@ -211,7 +211,7 @@ class UpdateProfileResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_profileId;
@@ -235,7 +235,7 @@ class UpdateProfileResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

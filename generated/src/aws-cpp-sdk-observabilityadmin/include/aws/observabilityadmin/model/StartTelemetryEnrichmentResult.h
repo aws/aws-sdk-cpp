@@ -78,7 +78,7 @@ class StartTelemetryEnrichmentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   TelemetryEnrichmentStatus m_status{TelemetryEnrichmentStatus::NOT_SET};
@@ -86,7 +86,7 @@ class StartTelemetryEnrichmentResult {
   Aws::String m_awsResourceExplorerManagedViewArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_awsResourceExplorerManagedViewArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

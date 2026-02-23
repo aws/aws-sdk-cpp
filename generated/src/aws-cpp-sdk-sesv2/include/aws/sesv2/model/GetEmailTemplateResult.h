@@ -109,7 +109,7 @@ class GetEmailTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_templateName;
@@ -119,7 +119,7 @@ class GetEmailTemplateResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateNameHasBeenSet = false;
   bool m_templateContentHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

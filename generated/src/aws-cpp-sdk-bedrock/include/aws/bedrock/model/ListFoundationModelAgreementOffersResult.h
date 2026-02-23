@@ -84,7 +84,7 @@ class ListFoundationModelAgreementOffersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_modelId;
@@ -92,7 +92,7 @@ class ListFoundationModelAgreementOffersResult {
   Aws::Vector<Offer> m_offers;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelIdHasBeenSet = false;
   bool m_offersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -101,7 +101,7 @@ class GetUpgradeStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   UpgradeStep m_upgradeStep{UpgradeStep::NOT_SET};
@@ -111,7 +111,7 @@ class GetUpgradeStatusResult {
   Aws::String m_upgradeName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_upgradeStepHasBeenSet = false;
   bool m_stepStatusHasBeenSet = false;
   bool m_upgradeNameHasBeenSet = false;

@@ -62,13 +62,13 @@ class DescribeImageGenerationConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ImageGenerationConfiguration m_imageGenerationConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageGenerationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -227,7 +227,7 @@ class DescribeQuerySuggestionsConfigResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Mode m_mode{Mode::NOT_SET};
@@ -251,7 +251,7 @@ class DescribeQuerySuggestionsConfigResult {
   AttributeSuggestionsDescribeConfig m_attributeSuggestionsConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_queryLogLookBackWindowInDaysHasBeenSet = false;

@@ -75,7 +75,7 @@ class GetSchemaCreationStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SchemaStatus m_status{SchemaStatus::NOT_SET};
@@ -83,7 +83,7 @@ class GetSchemaCreationStatusResult {
   Aws::String m_details;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

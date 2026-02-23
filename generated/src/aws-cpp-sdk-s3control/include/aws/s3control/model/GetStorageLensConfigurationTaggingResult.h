@@ -86,7 +86,7 @@ class GetStorageLensConfigurationTaggingResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<StorageLensTag> m_tags;
@@ -94,7 +94,7 @@ class GetStorageLensConfigurationTaggingResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;

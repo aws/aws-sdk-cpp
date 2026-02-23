@@ -20,7 +20,7 @@ using namespace Aws;
 GetNetworkResourceCountsResult::GetNetworkResourceCountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetNetworkResourceCountsResult& GetNetworkResourceCountsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NetworkResourceCounts")) {
     Aws::Utils::Array<JsonView> networkResourceCountsJsonList = jsonValue.GetArray("NetworkResourceCounts");

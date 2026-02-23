@@ -124,7 +124,7 @@ class GetAccountResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_cloudwatchRoleArn;
@@ -136,7 +136,7 @@ class GetAccountResult {
   Aws::String m_apiKeyVersion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cloudwatchRoleArnHasBeenSet = false;
   bool m_throttleSettingsHasBeenSet = false;
   bool m_featuresHasBeenSet = false;

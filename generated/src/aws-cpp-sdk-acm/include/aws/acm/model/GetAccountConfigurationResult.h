@@ -60,13 +60,13 @@ class GetAccountConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ExpiryEventsConfiguration m_expiryEvents;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_expiryEventsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

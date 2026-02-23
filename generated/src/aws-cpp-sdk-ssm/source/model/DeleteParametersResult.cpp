@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteParametersResult::DeleteParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteParametersResult& DeleteParametersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeletedParameters")) {
     Aws::Utils::Array<JsonView> deletedParametersJsonList = jsonValue.GetArray("DeletedParameters");

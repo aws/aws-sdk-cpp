@@ -84,7 +84,7 @@ class ListSdiSourcesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -92,7 +92,7 @@ class ListSdiSourcesResult {
   Aws::Vector<SdiSourceSummary> m_sdiSources;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_sdiSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

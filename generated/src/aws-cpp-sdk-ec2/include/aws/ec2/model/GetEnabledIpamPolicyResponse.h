@@ -90,7 +90,7 @@ class GetEnabledIpamPolicyResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_ipamPolicyEnabled{false};
@@ -100,7 +100,7 @@ class GetEnabledIpamPolicyResponse {
   IpamPolicyManagedBy m_managedBy{IpamPolicyManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamPolicyEnabledHasBeenSet = false;
   bool m_ipamPolicyIdHasBeenSet = false;
   bool m_managedByHasBeenSet = false;

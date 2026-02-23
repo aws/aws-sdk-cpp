@@ -97,7 +97,7 @@ class ListOpenCypherQueriesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_acceptedQueryCount{0};
@@ -107,7 +107,7 @@ class ListOpenCypherQueriesResult {
   Aws::Vector<GremlinQueryStatus> m_queries;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_acceptedQueryCountHasBeenSet = false;
   bool m_runningQueryCountHasBeenSet = false;
   bool m_queriesHasBeenSet = false;

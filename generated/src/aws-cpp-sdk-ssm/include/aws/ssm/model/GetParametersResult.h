@@ -90,7 +90,7 @@ class GetParametersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Parameter> m_parameters;
@@ -98,7 +98,7 @@ class GetParametersResult {
   Aws::Vector<Aws::String> m_invalidParameters;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_parametersHasBeenSet = false;
   bool m_invalidParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

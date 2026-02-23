@@ -88,7 +88,7 @@ class ListRegexPatternSetsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextMarker;
@@ -96,7 +96,7 @@ class ListRegexPatternSetsResult {
   Aws::Vector<RegexPatternSetSummary> m_regexPatternSets;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_regexPatternSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

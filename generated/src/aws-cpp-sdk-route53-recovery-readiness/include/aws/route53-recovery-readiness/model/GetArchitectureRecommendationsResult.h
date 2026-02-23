@@ -104,7 +104,7 @@ class GetArchitectureRecommendationsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_lastAuditTimestamp{};
@@ -114,7 +114,7 @@ class GetArchitectureRecommendationsResult {
   Aws::Vector<Recommendation> m_recommendations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lastAuditTimestampHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_recommendationsHasBeenSet = false;

@@ -83,7 +83,7 @@ class ModifyVpcEndpointServicePermissionsResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<AddedPrincipal> m_addedPrincipals;
@@ -91,7 +91,7 @@ class ModifyVpcEndpointServicePermissionsResponse {
   bool m_returnValue{false};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_addedPrincipalsHasBeenSet = false;
   bool m_returnValueHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

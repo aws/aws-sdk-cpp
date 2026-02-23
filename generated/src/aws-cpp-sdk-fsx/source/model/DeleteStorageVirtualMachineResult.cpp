@@ -22,7 +22,7 @@ DeleteStorageVirtualMachineResult::DeleteStorageVirtualMachineResult(const Aws::
 }
 
 DeleteStorageVirtualMachineResult& DeleteStorageVirtualMachineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StorageVirtualMachineId")) {
     m_storageVirtualMachineId = jsonValue.GetString("StorageVirtualMachineId");

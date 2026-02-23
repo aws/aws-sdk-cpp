@@ -148,7 +148,7 @@ class DescribeConfigurationSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ConfigurationSet m_configurationSet;
@@ -162,7 +162,7 @@ class DescribeConfigurationSetResult {
   ReputationOptions m_reputationOptions;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationSetHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
   bool m_trackingOptionsHasBeenSet = false;

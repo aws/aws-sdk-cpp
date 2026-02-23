@@ -23,7 +23,7 @@ GetUnfilteredPartitionsMetadataResult::GetUnfilteredPartitionsMetadataResult(con
 
 GetUnfilteredPartitionsMetadataResult& GetUnfilteredPartitionsMetadataResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UnfilteredPartitions")) {
     Aws::Utils::Array<JsonView> unfilteredPartitionsJsonList = jsonValue.GetArray("UnfilteredPartitions");

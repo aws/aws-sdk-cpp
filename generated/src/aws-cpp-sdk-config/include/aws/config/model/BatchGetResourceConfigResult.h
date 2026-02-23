@@ -94,7 +94,7 @@ class BatchGetResourceConfigResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;
@@ -102,7 +102,7 @@ class BatchGetResourceConfigResult {
   Aws::Vector<ResourceKey> m_unprocessedResourceKeys;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_baseConfigurationItemsHasBeenSet = false;
   bool m_unprocessedResourceKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

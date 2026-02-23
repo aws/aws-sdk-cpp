@@ -116,7 +116,7 @@ class ExportSchemaResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_content;
@@ -130,7 +130,7 @@ class ExportSchemaResult {
   Aws::String m_type;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_schemaArnHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;

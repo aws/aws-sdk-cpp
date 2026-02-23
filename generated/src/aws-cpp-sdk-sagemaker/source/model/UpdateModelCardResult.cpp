@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateModelCardResult::UpdateModelCardResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateModelCardResult& UpdateModelCardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ModelCardArn")) {
     m_modelCardArn = jsonValue.GetString("ModelCardArn");

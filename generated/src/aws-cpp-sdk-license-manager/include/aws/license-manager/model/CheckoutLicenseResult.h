@@ -184,7 +184,7 @@ class CheckoutLicenseResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CheckoutType m_checkoutType{CheckoutType::NOT_SET};
@@ -204,7 +204,7 @@ class CheckoutLicenseResult {
   Aws::String m_licenseArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_checkoutTypeHasBeenSet = false;
   bool m_licenseConsumptionTokenHasBeenSet = false;
   bool m_entitlementsAllowedHasBeenSet = false;

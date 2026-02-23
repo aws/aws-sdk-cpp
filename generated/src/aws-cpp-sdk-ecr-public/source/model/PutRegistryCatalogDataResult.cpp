@@ -20,7 +20,7 @@ using namespace Aws;
 PutRegistryCatalogDataResult::PutRegistryCatalogDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutRegistryCatalogDataResult& PutRegistryCatalogDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("registryCatalogData")) {
     m_registryCatalogData = jsonValue.GetObject("registryCatalogData");

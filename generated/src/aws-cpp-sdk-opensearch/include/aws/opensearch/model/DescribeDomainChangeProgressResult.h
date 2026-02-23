@@ -68,13 +68,13 @@ class DescribeDomainChangeProgressResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ChangeProgressStatusDetails m_changeProgressStatus;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeProgressStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

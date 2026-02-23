@@ -184,7 +184,7 @@ class GetTrafficPolicyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_trafficPolicyName;
@@ -204,7 +204,7 @@ class GetTrafficPolicyResult {
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trafficPolicyNameHasBeenSet = false;
   bool m_trafficPolicyIdHasBeenSet = false;
   bool m_trafficPolicyArnHasBeenSet = false;

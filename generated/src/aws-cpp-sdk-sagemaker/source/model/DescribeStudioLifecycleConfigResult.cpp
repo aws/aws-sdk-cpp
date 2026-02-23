@@ -22,7 +22,7 @@ DescribeStudioLifecycleConfigResult::DescribeStudioLifecycleConfigResult(const A
 }
 
 DescribeStudioLifecycleConfigResult& DescribeStudioLifecycleConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StudioLifecycleConfigArn")) {
     m_studioLifecycleConfigArn = jsonValue.GetString("StudioLifecycleConfigArn");

@@ -84,7 +84,7 @@ class ListResourcesForTagOptionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ResourceDetail> m_resourceDetails;
@@ -92,7 +92,7 @@ class ListResourcesForTagOptionResult {
   Aws::String m_pageToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceDetailsHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

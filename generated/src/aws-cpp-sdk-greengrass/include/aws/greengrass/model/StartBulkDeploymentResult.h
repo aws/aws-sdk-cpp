@@ -75,7 +75,7 @@ class StartBulkDeploymentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_bulkDeploymentArn;
@@ -83,7 +83,7 @@ class StartBulkDeploymentResult {
   Aws::String m_bulkDeploymentId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bulkDeploymentArnHasBeenSet = false;
   bool m_bulkDeploymentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

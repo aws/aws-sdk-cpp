@@ -23,7 +23,7 @@ GetAutomatedDiscoveryConfigurationResult::GetAutomatedDiscoveryConfigurationResu
 
 GetAutomatedDiscoveryConfigurationResult& GetAutomatedDiscoveryConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("autoEnableOrganizationMembers")) {
     m_autoEnableOrganizationMembers = AutoEnableModeMapper::GetAutoEnableModeForName(jsonValue.GetString("autoEnableOrganizationMembers"));

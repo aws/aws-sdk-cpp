@@ -435,7 +435,7 @@ class DescribeDomainResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_domainArn;
@@ -483,7 +483,7 @@ class DescribeDomainResult {
   DefaultSpaceSettings m_defaultSpaceSettings;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainArnHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;

@@ -82,7 +82,7 @@ class UpdateStackResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_stackId;
@@ -90,7 +90,7 @@ class UpdateStackResult {
   Aws::String m_operationId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stackIdHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

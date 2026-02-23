@@ -453,7 +453,7 @@ class DescribeTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_taskArn;
@@ -497,7 +497,7 @@ class DescribeTaskResult {
   TaskMode m_taskMode{TaskMode::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_nameHasBeenSet = false;

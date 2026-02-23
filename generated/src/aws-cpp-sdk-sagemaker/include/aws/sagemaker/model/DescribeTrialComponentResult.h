@@ -389,7 +389,7 @@ class DescribeTrialComponentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_trialComponentName;
@@ -429,7 +429,7 @@ class DescribeTrialComponentResult {
   Aws::Vector<TrialComponentSource> m_sources;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trialComponentNameHasBeenSet = false;
   bool m_trialComponentArnHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

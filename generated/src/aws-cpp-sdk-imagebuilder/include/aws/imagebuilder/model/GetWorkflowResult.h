@@ -78,7 +78,7 @@ class GetWorkflowResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Workflow m_workflow;
@@ -86,7 +86,7 @@ class GetWorkflowResult {
   LatestVersionReferences m_latestVersionReferences;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workflowHasBeenSet = false;
   bool m_latestVersionReferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

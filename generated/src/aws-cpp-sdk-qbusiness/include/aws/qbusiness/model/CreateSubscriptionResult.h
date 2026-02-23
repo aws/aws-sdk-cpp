@@ -111,7 +111,7 @@ class CreateSubscriptionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_subscriptionId;
@@ -123,7 +123,7 @@ class CreateSubscriptionResult {
   SubscriptionDetails m_nextSubscription;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_subscriptionIdHasBeenSet = false;
   bool m_subscriptionArnHasBeenSet = false;
   bool m_currentSubscriptionHasBeenSet = false;

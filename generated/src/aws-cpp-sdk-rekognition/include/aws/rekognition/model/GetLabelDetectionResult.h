@@ -232,7 +232,7 @@ class GetLabelDetectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   VideoJobStatus m_jobStatus{VideoJobStatus::NOT_SET};
@@ -256,7 +256,7 @@ class GetLabelDetectionResult {
   GetLabelDetectionRequestMetadata m_getRequestMetadata;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
   bool m_videoMetadataHasBeenSet = false;

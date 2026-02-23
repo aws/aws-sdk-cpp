@@ -20,7 +20,7 @@ using namespace Aws;
 GetLinkAssociationsResult::GetLinkAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLinkAssociationsResult& GetLinkAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LinkAssociations")) {
     Aws::Utils::Array<JsonView> linkAssociationsJsonList = jsonValue.GetArray("LinkAssociations");

@@ -79,7 +79,7 @@ class GetConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   EcrConfigurationState m_ecrConfiguration;
@@ -87,7 +87,7 @@ class GetConfigurationResult {
   Ec2ConfigurationState m_ec2Configuration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

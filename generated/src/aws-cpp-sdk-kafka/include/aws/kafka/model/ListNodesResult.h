@@ -91,7 +91,7 @@ class ListNodesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -99,7 +99,7 @@ class ListNodesResult {
   Aws::Vector<NodeInfo> m_nodeInfoList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_nodeInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

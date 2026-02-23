@@ -20,7 +20,7 @@ using namespace Aws;
 CreateProxySessionResult::CreateProxySessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProxySessionResult& CreateProxySessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProxySession")) {
     m_proxySession = jsonValue.GetObject("ProxySession");

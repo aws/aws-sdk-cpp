@@ -77,7 +77,7 @@ class RestoreFromRecoveryPointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Namespace m_namespace;
@@ -85,7 +85,7 @@ class RestoreFromRecoveryPointResult {
   Aws::String m_recoveryPointId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_namespaceHasBeenSet = false;
   bool m_recoveryPointIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -73,7 +73,7 @@ class DescribeQuickSightQSearchConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   QSearchStatus m_qSearchStatus{QSearchStatus::NOT_SET};
@@ -81,7 +81,7 @@ class DescribeQuickSightQSearchConfigurationResult {
   Aws::String m_requestId;
 
   int m_status{0};
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_qSearchStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -22,7 +22,7 @@ ListMedicalTranscriptionJobsResult::ListMedicalTranscriptionJobsResult(const Aws
 }
 
 ListMedicalTranscriptionJobsResult& ListMedicalTranscriptionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = TranscriptionJobStatusMapper::GetTranscriptionJobStatusForName(jsonValue.GetString("Status"));

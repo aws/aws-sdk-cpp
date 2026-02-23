@@ -133,7 +133,7 @@ class UpdateFunctionEventInvokeConfigResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_lastModified{};
@@ -147,7 +147,7 @@ class UpdateFunctionEventInvokeConfigResult {
   DestinationConfig m_destinationConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lastModifiedHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_maximumRetryAttemptsHasBeenSet = false;

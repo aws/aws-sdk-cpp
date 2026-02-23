@@ -334,7 +334,7 @@ class GetDataQualityResultResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_resultId;
@@ -368,7 +368,7 @@ class GetDataQualityResultResult {
   DataQualityAggregatedMetrics m_aggregatedMetrics;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultIdHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_scoreHasBeenSet = false;

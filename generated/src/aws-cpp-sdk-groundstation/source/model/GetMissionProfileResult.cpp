@@ -20,7 +20,7 @@ using namespace Aws;
 GetMissionProfileResult::GetMissionProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMissionProfileResult& GetMissionProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("missionProfileId")) {
     m_missionProfileId = jsonValue.GetString("missionProfileId");

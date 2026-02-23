@@ -89,7 +89,7 @@ class BatchGetCrawlersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Crawler> m_crawlers;
@@ -97,7 +97,7 @@ class BatchGetCrawlersResult {
   Aws::Vector<Aws::String> m_crawlersNotFound;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_crawlersHasBeenSet = false;
   bool m_crawlersNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -60,13 +60,13 @@ class DescribeChannelMembershipResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ChannelMembership m_channelMembership;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelMembershipHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

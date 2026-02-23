@@ -90,7 +90,7 @@ class BatchStopUpdateActionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ProcessedUpdateAction> m_processedUpdateActions;
@@ -98,7 +98,7 @@ class BatchStopUpdateActionResult {
   Aws::Vector<UnprocessedUpdateAction> m_unprocessedUpdateActions;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_processedUpdateActionsHasBeenSet = false;
   bool m_unprocessedUpdateActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

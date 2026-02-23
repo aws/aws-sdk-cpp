@@ -165,7 +165,7 @@ class GetConfigurationSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_configurationSetName;
@@ -181,7 +181,7 @@ class GetConfigurationSetResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationSetNameHasBeenSet = false;
   bool m_trackingOptionsHasBeenSet = false;
   bool m_deliveryOptionsHasBeenSet = false;

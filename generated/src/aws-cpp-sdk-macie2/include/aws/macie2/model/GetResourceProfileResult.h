@@ -117,7 +117,7 @@ class GetResourceProfileResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_profileUpdatedAt{};
@@ -129,7 +129,7 @@ class GetResourceProfileResult {
   ResourceStatistics m_statistics;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileUpdatedAtHasBeenSet = false;
   bool m_sensitivityScoreHasBeenSet = false;
   bool m_sensitivityScoreOverriddenHasBeenSet = false;

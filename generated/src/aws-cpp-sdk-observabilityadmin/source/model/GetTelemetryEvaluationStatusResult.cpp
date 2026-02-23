@@ -22,7 +22,7 @@ GetTelemetryEvaluationStatusResult::GetTelemetryEvaluationStatusResult(const Aws
 }
 
 GetTelemetryEvaluationStatusResult& GetTelemetryEvaluationStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));

@@ -22,7 +22,7 @@ StartMedicalTranscriptionJobResult::StartMedicalTranscriptionJobResult(const Aws
 }
 
 StartMedicalTranscriptionJobResult& StartMedicalTranscriptionJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MedicalTranscriptionJob")) {
     m_medicalTranscriptionJob = jsonValue.GetObject("MedicalTranscriptionJob");

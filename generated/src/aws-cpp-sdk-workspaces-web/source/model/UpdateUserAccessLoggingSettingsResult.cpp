@@ -23,7 +23,7 @@ UpdateUserAccessLoggingSettingsResult::UpdateUserAccessLoggingSettingsResult(con
 
 UpdateUserAccessLoggingSettingsResult& UpdateUserAccessLoggingSettingsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("userAccessLoggingSettings")) {
     m_userAccessLoggingSettings = jsonValue.GetObject("userAccessLoggingSettings");

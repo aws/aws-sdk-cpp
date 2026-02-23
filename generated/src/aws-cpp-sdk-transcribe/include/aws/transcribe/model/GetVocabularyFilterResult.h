@@ -114,7 +114,7 @@ class GetVocabularyFilterResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_vocabularyFilterName;
@@ -126,7 +126,7 @@ class GetVocabularyFilterResult {
   Aws::String m_downloadUri;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vocabularyFilterNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

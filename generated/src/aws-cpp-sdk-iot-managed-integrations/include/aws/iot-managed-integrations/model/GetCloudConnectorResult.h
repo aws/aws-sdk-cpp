@@ -144,7 +144,7 @@ class GetCloudConnectorResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_name;
@@ -160,7 +160,7 @@ class GetCloudConnectorResult {
   CloudConnectorType m_type{CloudConnectorType::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_endpointConfigHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

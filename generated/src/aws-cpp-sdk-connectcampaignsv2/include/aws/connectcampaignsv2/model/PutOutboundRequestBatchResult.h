@@ -92,7 +92,7 @@ class PutOutboundRequestBatchResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<SuccessfulRequest> m_successfulRequests;
@@ -100,7 +100,7 @@ class PutOutboundRequestBatchResult {
   Aws::Vector<FailedRequest> m_failedRequests;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulRequestsHasBeenSet = false;
   bool m_failedRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

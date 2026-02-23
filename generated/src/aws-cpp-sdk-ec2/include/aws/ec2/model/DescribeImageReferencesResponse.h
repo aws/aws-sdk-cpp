@@ -85,7 +85,7 @@ class DescribeImageReferencesResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -93,7 +93,7 @@ class DescribeImageReferencesResponse {
   Aws::Vector<ImageReference> m_imageReferences;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_imageReferencesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -92,7 +92,7 @@ class DisassociateWorkspaceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<SuccessfulBatchAssociationSummary> m_successfulList;
@@ -100,7 +100,7 @@ class DisassociateWorkspaceResult {
   Aws::Vector<FailedBatchAssociationSummary> m_failedList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulListHasBeenSet = false;
   bool m_failedListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

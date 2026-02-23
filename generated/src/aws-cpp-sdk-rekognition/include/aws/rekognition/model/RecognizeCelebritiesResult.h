@@ -126,7 +126,7 @@ class RecognizeCelebritiesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Celebrity> m_celebrityFaces;
@@ -136,7 +136,7 @@ class RecognizeCelebritiesResult {
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_celebrityFacesHasBeenSet = false;
   bool m_unrecognizedFacesHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;

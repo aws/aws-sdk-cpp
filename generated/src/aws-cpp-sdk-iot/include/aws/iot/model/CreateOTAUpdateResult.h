@@ -125,7 +125,7 @@ class CreateOTAUpdateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_otaUpdateId;
@@ -139,7 +139,7 @@ class CreateOTAUpdateResult {
   OTAUpdateStatus m_otaUpdateStatus{OTAUpdateStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_otaUpdateIdHasBeenSet = false;
   bool m_awsIotJobIdHasBeenSet = false;
   bool m_otaUpdateArnHasBeenSet = false;

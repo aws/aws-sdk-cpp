@@ -74,7 +74,7 @@ class GetVerifiedAccessEndpointPolicyResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_policyEnabled{false};
@@ -82,7 +82,7 @@ class GetVerifiedAccessEndpointPolicyResponse {
   Aws::String m_policyDocument;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyEnabledHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

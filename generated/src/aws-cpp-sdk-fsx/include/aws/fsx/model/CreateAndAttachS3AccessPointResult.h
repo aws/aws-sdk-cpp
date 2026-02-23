@@ -59,13 +59,13 @@ class CreateAndAttachS3AccessPointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   S3AccessPointAttachment m_s3AccessPointAttachment;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_s3AccessPointAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -77,7 +77,7 @@ class DetectSentimentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SentimentType m_sentiment{SentimentType::NOT_SET};
@@ -85,7 +85,7 @@ class DetectSentimentResult {
   SentimentScore m_sentimentScore;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sentimentHasBeenSet = false;
   bool m_sentimentScoreHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

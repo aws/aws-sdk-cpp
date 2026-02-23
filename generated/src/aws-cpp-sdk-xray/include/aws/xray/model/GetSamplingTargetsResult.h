@@ -139,7 +139,7 @@ class GetSamplingTargetsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<SamplingTargetDocument> m_samplingTargetDocuments;
@@ -151,7 +151,7 @@ class GetSamplingTargetsResult {
   Aws::Vector<UnprocessedStatistics> m_unprocessedBoostStatistics;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_samplingTargetDocumentsHasBeenSet = false;
   bool m_lastRuleModificationHasBeenSet = false;
   bool m_unprocessedStatisticsHasBeenSet = false;

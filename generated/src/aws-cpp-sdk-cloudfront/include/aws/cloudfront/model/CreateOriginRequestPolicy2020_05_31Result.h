@@ -94,7 +94,7 @@ class CreateOriginRequestPolicy2020_05_31Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   OriginRequestPolicy m_originRequestPolicy;
@@ -104,7 +104,7 @@ class CreateOriginRequestPolicy2020_05_31Result {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_originRequestPolicyHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_eTagHasBeenSet = false;

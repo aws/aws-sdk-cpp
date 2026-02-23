@@ -24,7 +24,7 @@ CreateModelExplainabilityJobDefinitionResult::CreateModelExplainabilityJobDefini
 
 CreateModelExplainabilityJobDefinitionResult& CreateModelExplainabilityJobDefinitionResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("JobDefinitionArn")) {
     m_jobDefinitionArn = jsonValue.GetString("JobDefinitionArn");

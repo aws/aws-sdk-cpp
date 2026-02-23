@@ -84,7 +84,7 @@ class DescribeDomainResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DomainInfo m_domainInfo;
@@ -92,7 +92,7 @@ class DescribeDomainResult {
   DomainConfiguration m_configuration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainInfoHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

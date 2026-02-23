@@ -24,7 +24,7 @@ ListApplicationAssignmentsForPrincipalResult::ListApplicationAssignmentsForPrinc
 
 ListApplicationAssignmentsForPrincipalResult& ListApplicationAssignmentsForPrincipalResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationAssignments")) {
     Aws::Utils::Array<JsonView> applicationAssignmentsJsonList = jsonValue.GetArray("ApplicationAssignments");

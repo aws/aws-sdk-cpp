@@ -76,7 +76,7 @@ class CreateCidrCollectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CidrCollection m_collection;
@@ -84,7 +84,7 @@ class CreateCidrCollectionResult {
   Aws::String m_location;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_collectionHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

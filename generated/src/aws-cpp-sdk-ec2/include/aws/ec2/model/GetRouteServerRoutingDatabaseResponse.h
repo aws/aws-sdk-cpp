@@ -100,7 +100,7 @@ class GetRouteServerRoutingDatabaseResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_areRoutesPersisted{false};
@@ -110,7 +110,7 @@ class GetRouteServerRoutingDatabaseResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_areRoutesPersistedHasBeenSet = false;
   bool m_routesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

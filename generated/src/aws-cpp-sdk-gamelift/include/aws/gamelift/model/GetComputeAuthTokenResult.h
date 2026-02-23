@@ -153,7 +153,7 @@ class GetComputeAuthTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_fleetId;
@@ -169,7 +169,7 @@ class GetComputeAuthTokenResult {
   Aws::Utils::DateTime m_expirationTimestamp{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_computeNameHasBeenSet = false;

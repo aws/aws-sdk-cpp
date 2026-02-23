@@ -23,7 +23,7 @@ StartMisconfiguredStateRecoveryResult::StartMisconfiguredStateRecoveryResult(con
 
 StartMisconfiguredStateRecoveryResult& StartMisconfiguredStateRecoveryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileSystem")) {
     m_fileSystem = jsonValue.GetObject("FileSystem");

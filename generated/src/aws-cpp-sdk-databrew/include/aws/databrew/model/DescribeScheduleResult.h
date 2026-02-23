@@ -212,7 +212,7 @@ class DescribeScheduleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_createDate{};
@@ -234,7 +234,7 @@ class DescribeScheduleResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createDateHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_jobNamesHasBeenSet = false;

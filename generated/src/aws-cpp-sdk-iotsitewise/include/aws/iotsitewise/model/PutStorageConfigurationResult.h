@@ -192,7 +192,7 @@ class PutStorageConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   StorageType m_storageType{StorageType::NOT_SET};
@@ -212,7 +212,7 @@ class PutStorageConfigurationResult {
   bool m_disallowIngestNullNaN{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_storageTypeHasBeenSet = false;
   bool m_multiLayerStorageHasBeenSet = false;
   bool m_disassociatedDataStorageHasBeenSet = false;

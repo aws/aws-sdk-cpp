@@ -84,7 +84,7 @@ class GetDNSSECResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DNSSECStatus m_status;
@@ -92,7 +92,7 @@ class GetDNSSECResult {
   Aws::Vector<KeySigningKey> m_keySigningKeys;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_keySigningKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

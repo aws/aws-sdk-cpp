@@ -349,7 +349,7 @@ class GetQuantumTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_quantumTaskArn;
@@ -387,7 +387,7 @@ class GetQuantumTaskResult {
   ExperimentalCapabilities m_experimentalCapabilities;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_quantumTaskArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;

@@ -97,7 +97,7 @@ class TranslatePinDataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_pinBlock;
@@ -107,7 +107,7 @@ class TranslatePinDataResult {
   Aws::String m_keyCheckValue;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pinBlockHasBeenSet = false;
   bool m_keyArnHasBeenSet = false;
   bool m_keyCheckValueHasBeenSet = false;

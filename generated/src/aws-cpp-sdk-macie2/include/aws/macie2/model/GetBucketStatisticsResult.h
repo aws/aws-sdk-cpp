@@ -303,7 +303,7 @@ class GetBucketStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   long long m_bucketCount{0};
@@ -335,7 +335,7 @@ class GetBucketStatisticsResult {
   ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketCountHasBeenSet = false;
   bool m_bucketCountByEffectivePermissionHasBeenSet = false;
   bool m_bucketCountByEncryptionTypeHasBeenSet = false;

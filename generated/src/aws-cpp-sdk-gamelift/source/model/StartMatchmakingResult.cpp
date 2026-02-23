@@ -20,7 +20,7 @@ using namespace Aws;
 StartMatchmakingResult::StartMatchmakingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartMatchmakingResult& StartMatchmakingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MatchmakingTicket")) {
     m_matchmakingTicket = jsonValue.GetObject("MatchmakingTicket");

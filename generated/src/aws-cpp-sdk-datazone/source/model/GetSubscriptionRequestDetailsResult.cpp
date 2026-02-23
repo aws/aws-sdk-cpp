@@ -22,7 +22,7 @@ GetSubscriptionRequestDetailsResult::GetSubscriptionRequestDetailsResult(const A
 }
 
 GetSubscriptionRequestDetailsResult& GetSubscriptionRequestDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");

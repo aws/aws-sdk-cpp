@@ -74,7 +74,7 @@ class PutRecordResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_recordId;
@@ -82,7 +82,7 @@ class PutRecordResult {
   bool m_encrypted{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordIdHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

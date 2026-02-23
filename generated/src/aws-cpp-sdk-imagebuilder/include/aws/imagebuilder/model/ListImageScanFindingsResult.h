@@ -88,7 +88,7 @@ class ListImageScanFindingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_requestId;
@@ -96,7 +96,7 @@ class ListImageScanFindingsResult {
   Aws::Vector<ImageScanFinding> m_findings;
 
   Aws::String m_nextToken;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_findingsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

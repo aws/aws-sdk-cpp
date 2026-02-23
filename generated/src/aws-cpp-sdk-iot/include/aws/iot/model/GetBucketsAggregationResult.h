@@ -84,7 +84,7 @@ class GetBucketsAggregationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_totalCount{0};
@@ -92,7 +92,7 @@ class GetBucketsAggregationResult {
   Aws::Vector<Bucket> m_buckets;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_totalCountHasBeenSet = false;
   bool m_bucketsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -23,7 +23,7 @@ ListIntegrationResourcePropertiesResult::ListIntegrationResourcePropertiesResult
 
 ListIntegrationResourcePropertiesResult& ListIntegrationResourcePropertiesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("IntegrationResourcePropertyList")) {
     Aws::Utils::Array<JsonView> integrationResourcePropertyListJsonList = jsonValue.GetArray("IntegrationResourcePropertyList");

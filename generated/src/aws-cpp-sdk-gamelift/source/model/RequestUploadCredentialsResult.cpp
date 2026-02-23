@@ -20,7 +20,7 @@ using namespace Aws;
 RequestUploadCredentialsResult::RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RequestUploadCredentialsResult& RequestUploadCredentialsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UploadCredentials")) {
     m_uploadCredentials = jsonValue.GetObject("UploadCredentials");

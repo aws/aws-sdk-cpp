@@ -616,7 +616,7 @@ class DescribeModelPackageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_modelPackageName;
@@ -682,7 +682,7 @@ class DescribeModelPackageResult {
   ModelLifeCycle m_modelLifeCycle;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelPackageNameHasBeenSet = false;
   bool m_modelPackageGroupNameHasBeenSet = false;
   bool m_modelPackageVersionHasBeenSet = false;

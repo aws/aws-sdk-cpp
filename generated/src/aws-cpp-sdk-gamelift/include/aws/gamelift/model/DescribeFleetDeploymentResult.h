@@ -85,7 +85,7 @@ class DescribeFleetDeploymentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   FleetDeployment m_fleetDeployment;
@@ -93,7 +93,7 @@ class DescribeFleetDeploymentResult {
   Aws::Map<Aws::String, LocationalDeployment> m_locationalDeployments;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetDeploymentHasBeenSet = false;
   bool m_locationalDeploymentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

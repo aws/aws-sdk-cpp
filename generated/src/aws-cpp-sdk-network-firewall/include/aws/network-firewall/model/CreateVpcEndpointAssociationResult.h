@@ -83,7 +83,7 @@ class CreateVpcEndpointAssociationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   VpcEndpointAssociation m_vpcEndpointAssociation;
@@ -91,7 +91,7 @@ class CreateVpcEndpointAssociationResult {
   VpcEndpointAssociationStatus m_vpcEndpointAssociationStatus;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcEndpointAssociationHasBeenSet = false;
   bool m_vpcEndpointAssociationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

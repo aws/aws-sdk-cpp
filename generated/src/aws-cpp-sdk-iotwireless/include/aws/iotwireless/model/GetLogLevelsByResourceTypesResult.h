@@ -122,7 +122,7 @@ class GetLogLevelsByResourceTypesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   LogLevel m_defaultLogLevel{LogLevel::NOT_SET};
@@ -134,7 +134,7 @@ class GetLogLevelsByResourceTypesResult {
   Aws::Vector<FuotaTaskLogOption> m_fuotaTaskLogOptions;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_defaultLogLevelHasBeenSet = false;
   bool m_wirelessGatewayLogOptionsHasBeenSet = false;
   bool m_wirelessDeviceLogOptionsHasBeenSet = false;

@@ -208,7 +208,7 @@ class CreateMonitorResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_monitorArn;
@@ -228,7 +228,7 @@ class CreateMonitorResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_monitorArnHasBeenSet = false;
   bool m_monitorNameHasBeenSet = false;
   bool m_monitorStatusHasBeenSet = false;

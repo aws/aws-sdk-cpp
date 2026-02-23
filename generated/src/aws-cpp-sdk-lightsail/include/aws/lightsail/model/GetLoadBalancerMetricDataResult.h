@@ -82,7 +82,7 @@ class GetLoadBalancerMetricDataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   LoadBalancerMetricName m_metricName{LoadBalancerMetricName::NOT_SET};
@@ -90,7 +90,7 @@ class GetLoadBalancerMetricDataResult {
   Aws::Vector<MetricDatapoint> m_metricData;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_metricDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

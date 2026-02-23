@@ -90,7 +90,7 @@ class CreateApplicationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_applicationArn;
@@ -100,7 +100,7 @@ class CreateApplicationResult {
   int m_applicationVersion{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
   bool m_applicationVersionHasBeenSet = false;

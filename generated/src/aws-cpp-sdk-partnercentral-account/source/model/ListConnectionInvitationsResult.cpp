@@ -20,7 +20,7 @@ using namespace Aws;
 ListConnectionInvitationsResult::ListConnectionInvitationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConnectionInvitationsResult& ListConnectionInvitationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConnectionInvitationSummaries")) {
     Aws::Utils::Array<JsonView> connectionInvitationSummariesJsonList = jsonValue.GetArray("ConnectionInvitationSummaries");

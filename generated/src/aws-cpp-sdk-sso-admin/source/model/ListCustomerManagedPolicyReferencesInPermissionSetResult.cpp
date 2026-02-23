@@ -24,7 +24,7 @@ ListCustomerManagedPolicyReferencesInPermissionSetResult::ListCustomerManagedPol
 
 ListCustomerManagedPolicyReferencesInPermissionSetResult& ListCustomerManagedPolicyReferencesInPermissionSetResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomerManagedPolicyReferences")) {
     Aws::Utils::Array<JsonView> customerManagedPolicyReferencesJsonList = jsonValue.GetArray("CustomerManagedPolicyReferences");

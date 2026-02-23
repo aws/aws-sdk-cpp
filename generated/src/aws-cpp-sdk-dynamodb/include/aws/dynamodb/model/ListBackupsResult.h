@@ -92,7 +92,7 @@ class ListBackupsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BackupSummary> m_backupSummaries;
@@ -100,7 +100,7 @@ class ListBackupsResult {
   Aws::String m_lastEvaluatedBackupArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupSummariesHasBeenSet = false;
   bool m_lastEvaluatedBackupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

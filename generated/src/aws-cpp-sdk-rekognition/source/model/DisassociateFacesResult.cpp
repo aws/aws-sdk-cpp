@@ -20,7 +20,7 @@ using namespace Aws;
 DisassociateFacesResult::DisassociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisassociateFacesResult& DisassociateFacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DisassociatedFaces")) {
     Aws::Utils::Array<JsonView> disassociatedFacesJsonList = jsonValue.GetArray("DisassociatedFaces");

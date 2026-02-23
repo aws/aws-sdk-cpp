@@ -20,7 +20,7 @@ using namespace Aws;
 GetAppMonitorDataResult::GetAppMonitorDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAppMonitorDataResult& GetAppMonitorDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Events")) {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");

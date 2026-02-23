@@ -238,7 +238,7 @@ class AdminInitiateAuthResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ChallengeNameType m_challengeName{ChallengeNameType::NOT_SET};
@@ -252,7 +252,7 @@ class AdminInitiateAuthResult {
   Aws::Vector<ChallengeNameType> m_availableChallenges;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_challengeNameHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
   bool m_challengeParametersHasBeenSet = false;

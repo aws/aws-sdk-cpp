@@ -24,7 +24,7 @@ GetDataLakeOrganizationConfigurationResult::GetDataLakeOrganizationConfiguration
 
 GetDataLakeOrganizationConfigurationResult& GetDataLakeOrganizationConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("autoEnableNewAccount")) {
     Aws::Utils::Array<JsonView> autoEnableNewAccountJsonList = jsonValue.GetArray("autoEnableNewAccount");

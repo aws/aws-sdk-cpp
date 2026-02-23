@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteRuleGroupResult::DeleteRuleGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteRuleGroupResult& DeleteRuleGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RuleGroupResponse")) {
     m_ruleGroupResponse = jsonValue.GetObject("RuleGroupResponse");

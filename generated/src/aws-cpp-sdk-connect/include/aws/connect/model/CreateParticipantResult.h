@@ -79,7 +79,7 @@ class CreateParticipantResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ParticipantTokenCredentials m_participantCredentials;
@@ -87,7 +87,7 @@ class CreateParticipantResult {
   Aws::String m_participantId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_participantCredentialsHasBeenSet = false;
   bool m_participantIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

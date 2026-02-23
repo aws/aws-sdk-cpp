@@ -20,7 +20,7 @@ using namespace Aws;
 ListResourceInventoryResult::ListResourceInventoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListResourceInventoryResult& ListResourceInventoryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResourceInventoryList")) {
     Aws::Utils::Array<JsonView> resourceInventoryListJsonList = jsonValue.GetArray("ResourceInventoryList");

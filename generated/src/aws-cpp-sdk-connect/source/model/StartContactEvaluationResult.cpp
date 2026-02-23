@@ -20,7 +20,7 @@ using namespace Aws;
 StartContactEvaluationResult::StartContactEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartContactEvaluationResult& StartContactEvaluationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationId")) {
     m_evaluationId = jsonValue.GetString("EvaluationId");

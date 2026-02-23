@@ -108,7 +108,7 @@ class GetFederationTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Credentials m_credentials;
@@ -118,7 +118,7 @@ class GetFederationTokenResult {
   int m_packedPolicySize{0};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_federatedUserHasBeenSet = false;
   bool m_packedPolicySizeHasBeenSet = false;

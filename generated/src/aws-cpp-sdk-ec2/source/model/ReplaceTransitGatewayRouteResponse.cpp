@@ -22,7 +22,7 @@ ReplaceTransitGatewayRouteResponse::ReplaceTransitGatewayRouteResponse(const Aws
 }
 
 ReplaceTransitGatewayRouteResponse& ReplaceTransitGatewayRouteResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

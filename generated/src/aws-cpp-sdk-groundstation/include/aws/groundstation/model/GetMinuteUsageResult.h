@@ -126,7 +126,7 @@ class GetMinuteUsageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_isReservedMinutesCustomer{false};
@@ -140,7 +140,7 @@ class GetMinuteUsageResult {
   int m_estimatedMinutesRemaining{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isReservedMinutesCustomerHasBeenSet = false;
   bool m_totalReservedMinuteAllocationHasBeenSet = false;
   bool m_upcomingMinutesScheduledHasBeenSet = false;

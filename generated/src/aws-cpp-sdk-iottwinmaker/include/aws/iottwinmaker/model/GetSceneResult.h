@@ -251,7 +251,7 @@ class GetSceneResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_workspaceId;
@@ -277,7 +277,7 @@ class GetSceneResult {
   SceneError m_error;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_sceneIdHasBeenSet = false;
   bool m_contentLocationHasBeenSet = false;

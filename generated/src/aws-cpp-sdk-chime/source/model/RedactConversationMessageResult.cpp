@@ -20,7 +20,7 @@ using namespace Aws;
 RedactConversationMessageResult::RedactConversationMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RedactConversationMessageResult& RedactConversationMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -152,7 +152,7 @@ class GetRuleSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_ruleSetId;
@@ -168,7 +168,7 @@ class GetRuleSetResult {
   Aws::Vector<Rule> m_rules;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ruleSetIdHasBeenSet = false;
   bool m_ruleSetArnHasBeenSet = false;
   bool m_ruleSetNameHasBeenSet = false;

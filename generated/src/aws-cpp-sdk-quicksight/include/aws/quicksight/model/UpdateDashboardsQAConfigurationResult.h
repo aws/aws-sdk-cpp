@@ -74,7 +74,7 @@ class UpdateDashboardsQAConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DashboardsQAStatus m_dashboardsQAStatus{DashboardsQAStatus::NOT_SET};
@@ -82,7 +82,7 @@ class UpdateDashboardsQAConfigurationResult {
   Aws::String m_requestId;
 
   int m_status{0};
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dashboardsQAStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -126,7 +126,7 @@ class StartPlanExecutionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_executionId;
@@ -140,7 +140,7 @@ class StartPlanExecutionResult {
   Aws::String m_deactivateRegion;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionIdHasBeenSet = false;
   bool m_planHasBeenSet = false;
   bool m_planVersionHasBeenSet = false;

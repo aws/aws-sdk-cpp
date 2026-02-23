@@ -501,7 +501,7 @@ class UpdateIntegrationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_apiGatewayManaged{false};
@@ -545,7 +545,7 @@ class UpdateIntegrationResult {
   TlsConfig m_tlsConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;

@@ -21,7 +21,7 @@ UpdateAccessGrantsLocationResult::UpdateAccessGrantsLocationResult(const Aws::Am
 }
 
 UpdateAccessGrantsLocationResult& UpdateAccessGrantsLocationResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

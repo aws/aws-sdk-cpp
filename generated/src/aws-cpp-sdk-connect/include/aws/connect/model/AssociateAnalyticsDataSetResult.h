@@ -109,7 +109,7 @@ class AssociateAnalyticsDataSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dataSetId;
@@ -121,7 +121,7 @@ class AssociateAnalyticsDataSetResult {
   Aws::String m_resourceShareArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataSetIdHasBeenSet = false;
   bool m_targetAccountIdHasBeenSet = false;
   bool m_resourceShareIdHasBeenSet = false;

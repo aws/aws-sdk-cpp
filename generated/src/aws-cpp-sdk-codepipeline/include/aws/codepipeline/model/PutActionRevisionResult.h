@@ -80,7 +80,7 @@ class PutActionRevisionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_newRevision{false};
@@ -88,7 +88,7 @@ class PutActionRevisionResult {
   Aws::String m_pipelineExecutionId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_newRevisionHasBeenSet = false;
   bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

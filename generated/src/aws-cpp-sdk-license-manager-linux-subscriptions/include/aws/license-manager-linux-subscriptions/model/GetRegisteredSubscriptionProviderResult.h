@@ -148,7 +148,7 @@ class GetRegisteredSubscriptionProviderResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_lastSuccessfulDataRetrievalTime;
@@ -164,7 +164,7 @@ class GetRegisteredSubscriptionProviderResult {
   Aws::String m_subscriptionProviderStatusMessage;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lastSuccessfulDataRetrievalTimeHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
   bool m_subscriptionProviderArnHasBeenSet = false;

@@ -86,7 +86,7 @@ class DescribeDBEngineVersionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_marker;
@@ -94,7 +94,7 @@ class DescribeDBEngineVersionsResult {
   Aws::Vector<DBEngineVersion> m_dBEngineVersions;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_dBEngineVersionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

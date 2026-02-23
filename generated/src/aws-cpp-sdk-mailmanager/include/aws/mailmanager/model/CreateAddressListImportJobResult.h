@@ -75,7 +75,7 @@ class CreateAddressListImportJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobId;
@@ -83,7 +83,7 @@ class CreateAddressListImportJobResult {
   Aws::String m_preSignedUrl;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_preSignedUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

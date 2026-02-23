@@ -20,7 +20,7 @@ using namespace Aws;
 CreateProductResult::CreateProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateProductResult& CreateProductResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProductViewDetail")) {
     m_productViewDetail = jsonValue.GetObject("ProductViewDetail");

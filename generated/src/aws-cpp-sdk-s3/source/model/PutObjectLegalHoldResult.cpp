@@ -19,7 +19,7 @@ using namespace Aws;
 PutObjectLegalHoldResult::PutObjectLegalHoldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 PutObjectLegalHoldResult& PutObjectLegalHoldResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 

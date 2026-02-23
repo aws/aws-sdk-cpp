@@ -471,7 +471,7 @@ class CreateSnapshotResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_ownerAlias;
@@ -521,7 +521,7 @@ class CreateSnapshotResponse {
   Aws::String m_dataEncryptionKeyId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ownerAliasHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

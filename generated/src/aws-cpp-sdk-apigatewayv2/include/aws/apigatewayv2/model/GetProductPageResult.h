@@ -111,7 +111,7 @@ class GetProductPageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DisplayContent m_displayContent;
@@ -123,7 +123,7 @@ class GetProductPageResult {
   Aws::String m_productPageId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_displayContentHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_productPageArnHasBeenSet = false;

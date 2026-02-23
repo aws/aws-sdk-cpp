@@ -70,7 +70,7 @@ class GetSolFunctionPackageDescriptorResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DescriptorContentType m_contentType{DescriptorContentType::NOT_SET};
@@ -78,7 +78,7 @@ class GetSolFunctionPackageDescriptorResult {
   Aws::Utils::Stream::ResponseStream m_vnfd{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_vnfdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

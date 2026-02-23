@@ -22,7 +22,7 @@ ListRouterNetworkInterfacesResult::ListRouterNetworkInterfacesResult(const Aws::
 }
 
 ListRouterNetworkInterfacesResult& ListRouterNetworkInterfacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("routerNetworkInterfaces")) {
     Aws::Utils::Array<JsonView> routerNetworkInterfacesJsonList = jsonValue.GetArray("routerNetworkInterfaces");

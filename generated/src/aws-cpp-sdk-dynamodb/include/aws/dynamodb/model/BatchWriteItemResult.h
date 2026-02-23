@@ -163,7 +163,7 @@ class BatchWriteItemResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_unprocessedItems;
@@ -173,7 +173,7 @@ class BatchWriteItemResult {
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_unprocessedItemsHasBeenSet = false;
   bool m_itemCollectionMetricsHasBeenSet = false;
   bool m_consumedCapacityHasBeenSet = false;

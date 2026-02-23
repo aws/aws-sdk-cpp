@@ -161,7 +161,7 @@ class GetUserResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_username;
@@ -175,7 +175,7 @@ class GetUserResult {
   Aws::Vector<Aws::String> m_userMFASettingList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_usernameHasBeenSet = false;
   bool m_userAttributesHasBeenSet = false;
   bool m_mFAOptionsHasBeenSet = false;

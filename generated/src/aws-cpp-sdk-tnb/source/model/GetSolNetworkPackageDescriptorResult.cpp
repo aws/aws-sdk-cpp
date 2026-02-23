@@ -22,7 +22,7 @@ GetSolNetworkPackageDescriptorResult::GetSolNetworkPackageDescriptorResult(Aws::
 
 GetSolNetworkPackageDescriptorResult& GetSolNetworkPackageDescriptorResult::operator=(
     Aws::AmazonWebServiceResult<ResponseStream>&& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   m_nsd = result.TakeOwnershipOfPayload();
   m_nsdHasBeenSet = true;
 

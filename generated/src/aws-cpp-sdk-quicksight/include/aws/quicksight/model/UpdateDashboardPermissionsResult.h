@@ -133,7 +133,7 @@ class UpdateDashboardPermissionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dashboardArn;
@@ -147,7 +147,7 @@ class UpdateDashboardPermissionsResult {
   int m_status{0};
 
   LinkSharingConfiguration m_linkSharingConfiguration;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dashboardArnHasBeenSet = false;
   bool m_dashboardIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

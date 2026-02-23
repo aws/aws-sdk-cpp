@@ -60,13 +60,13 @@ class ModifyAquaConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AquaConfiguration m_aquaConfiguration;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aquaConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

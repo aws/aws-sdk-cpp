@@ -20,7 +20,7 @@ using namespace Aws;
 CreateHITTypeResult::CreateHITTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateHITTypeResult& CreateHITTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("HITTypeId")) {
     m_hITTypeId = jsonValue.GetString("HITTypeId");

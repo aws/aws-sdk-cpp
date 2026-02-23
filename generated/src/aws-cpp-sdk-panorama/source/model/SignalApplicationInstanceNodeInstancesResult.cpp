@@ -24,7 +24,7 @@ SignalApplicationInstanceNodeInstancesResult::SignalApplicationInstanceNodeInsta
 
 SignalApplicationInstanceNodeInstancesResult& SignalApplicationInstanceNodeInstancesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationInstanceId")) {
     m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");

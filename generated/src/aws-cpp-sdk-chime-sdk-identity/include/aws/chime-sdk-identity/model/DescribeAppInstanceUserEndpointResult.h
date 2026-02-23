@@ -63,13 +63,13 @@ class DescribeAppInstanceUserEndpointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AppInstanceUserEndpoint m_appInstanceUserEndpoint;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appInstanceUserEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

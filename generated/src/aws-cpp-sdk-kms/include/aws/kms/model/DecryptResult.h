@@ -144,7 +144,7 @@ class DecryptResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_keyId;
@@ -158,7 +158,7 @@ class DecryptResult {
   Aws::String m_keyMaterialId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_plaintextHasBeenSet = false;
   bool m_encryptionAlgorithmHasBeenSet = false;

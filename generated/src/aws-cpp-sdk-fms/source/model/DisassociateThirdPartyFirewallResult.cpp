@@ -23,7 +23,7 @@ DisassociateThirdPartyFirewallResult::DisassociateThirdPartyFirewallResult(const
 
 DisassociateThirdPartyFirewallResult& DisassociateThirdPartyFirewallResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ThirdPartyFirewallStatus")) {
     m_thirdPartyFirewallStatus = ThirdPartyFirewallAssociationStatusMapper::GetThirdPartyFirewallAssociationStatusForName(

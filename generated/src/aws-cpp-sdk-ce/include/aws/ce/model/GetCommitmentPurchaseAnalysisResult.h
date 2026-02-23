@@ -180,7 +180,7 @@ class GetCommitmentPurchaseAnalysisResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_estimatedCompletionTime;
@@ -200,7 +200,7 @@ class GetCommitmentPurchaseAnalysisResult {
   CommitmentPurchaseAnalysisConfiguration m_commitmentPurchaseAnalysisConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_estimatedCompletionTimeHasBeenSet = false;
   bool m_analysisCompletionTimeHasBeenSet = false;
   bool m_analysisStartedTimeHasBeenSet = false;

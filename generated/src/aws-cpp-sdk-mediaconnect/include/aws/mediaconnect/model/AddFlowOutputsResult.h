@@ -83,7 +83,7 @@ class AddFlowOutputsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_flowArn;
@@ -91,7 +91,7 @@ class AddFlowOutputsResult {
   Aws::Vector<Output> m_outputs;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

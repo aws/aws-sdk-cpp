@@ -22,7 +22,7 @@ DescribePredefinedAttributeResult::DescribePredefinedAttributeResult(const Aws::
 }
 
 DescribePredefinedAttributeResult& DescribePredefinedAttributeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PredefinedAttribute")) {
     m_predefinedAttribute = jsonValue.GetObject("PredefinedAttribute");

@@ -405,7 +405,7 @@ class PutObjectResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_expiration;
@@ -443,7 +443,7 @@ class PutObjectResult {
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_expirationHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_checksumCRC32HasBeenSet = false;

@@ -96,7 +96,7 @@ class EncryptDataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_keyArn;
@@ -106,7 +106,7 @@ class EncryptDataResult {
   Aws::String m_cipherText;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyArnHasBeenSet = false;
   bool m_keyCheckValueHasBeenSet = false;
   bool m_cipherTextHasBeenSet = false;

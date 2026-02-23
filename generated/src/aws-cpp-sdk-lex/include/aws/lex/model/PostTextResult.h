@@ -384,7 +384,7 @@ class PostTextResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_intentName;
@@ -416,7 +416,7 @@ class PostTextResult {
   Aws::Vector<ActiveContext> m_activeContexts;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_intentNameHasBeenSet = false;
   bool m_nluIntentConfidenceHasBeenSet = false;
   bool m_alternativeIntentsHasBeenSet = false;

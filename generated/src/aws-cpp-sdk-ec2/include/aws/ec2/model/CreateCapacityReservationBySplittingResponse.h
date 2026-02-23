@@ -93,7 +93,7 @@ class CreateCapacityReservationBySplittingResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CapacityReservation m_sourceCapacityReservation;
@@ -103,7 +103,7 @@ class CreateCapacityReservationBySplittingResponse {
   int m_instanceCount{0};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceCapacityReservationHasBeenSet = false;
   bool m_destinationCapacityReservationHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;

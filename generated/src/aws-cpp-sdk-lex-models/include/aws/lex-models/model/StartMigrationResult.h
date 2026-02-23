@@ -177,7 +177,7 @@ class StartMigrationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_v1BotName;
@@ -197,7 +197,7 @@ class StartMigrationResult {
   Aws::Utils::DateTime m_migrationTimestamp{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_v1BotNameHasBeenSet = false;
   bool m_v1BotVersionHasBeenSet = false;
   bool m_v1BotLocaleHasBeenSet = false;

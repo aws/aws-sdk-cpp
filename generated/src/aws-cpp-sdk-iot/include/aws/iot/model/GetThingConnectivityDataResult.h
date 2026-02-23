@@ -107,7 +107,7 @@ class GetThingConnectivityDataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_thingName;
@@ -119,7 +119,7 @@ class GetThingConnectivityDataResult {
   DisconnectReasonValue m_disconnectReason{DisconnectReasonValue::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingNameHasBeenSet = false;
   bool m_connectedHasBeenSet = false;
   bool m_timestampHasBeenSet = false;

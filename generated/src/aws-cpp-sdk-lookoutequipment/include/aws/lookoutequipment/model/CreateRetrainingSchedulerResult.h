@@ -92,7 +92,7 @@ class CreateRetrainingSchedulerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_modelName;
@@ -102,7 +102,7 @@ class CreateRetrainingSchedulerResult {
   RetrainingSchedulerStatus m_status{RetrainingSchedulerStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

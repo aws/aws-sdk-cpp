@@ -103,7 +103,7 @@ class GetReservationUtilizationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<UtilizationByTime> m_utilizationsByTime;
@@ -113,7 +113,7 @@ class GetReservationUtilizationResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_utilizationsByTimeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

@@ -367,7 +367,7 @@ class DescribeInstanceAttributeResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
@@ -405,7 +405,7 @@ class DescribeInstanceAttributeResponse {
   Aws::Vector<GroupIdentifier> m_groups;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_blockDeviceMappingsHasBeenSet = false;
   bool m_disableApiTerminationHasBeenSet = false;
   bool m_enaSupportHasBeenSet = false;

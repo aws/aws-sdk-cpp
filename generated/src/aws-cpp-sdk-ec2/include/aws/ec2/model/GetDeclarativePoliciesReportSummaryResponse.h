@@ -206,7 +206,7 @@ class GetDeclarativePoliciesReportSummaryResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_reportId;
@@ -228,7 +228,7 @@ class GetDeclarativePoliciesReportSummaryResponse {
   Aws::Vector<AttributeSummary> m_attributeSummaries;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_s3BucketHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;

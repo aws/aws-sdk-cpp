@@ -97,7 +97,7 @@ class ResetDistributionCacheResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_status;
@@ -107,7 +107,7 @@ class ResetDistributionCacheResult {
   Operation m_operation;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_operationHasBeenSet = false;

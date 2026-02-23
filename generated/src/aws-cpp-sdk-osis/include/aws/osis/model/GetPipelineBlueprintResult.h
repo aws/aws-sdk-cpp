@@ -76,7 +76,7 @@ class GetPipelineBlueprintResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   PipelineBlueprint m_blueprint;
@@ -84,7 +84,7 @@ class GetPipelineBlueprintResult {
   Aws::String m_format;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_blueprintHasBeenSet = false;
   bool m_formatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

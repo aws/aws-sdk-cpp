@@ -111,7 +111,7 @@ class CreateProvisioningClaimResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_certificateId;
@@ -123,7 +123,7 @@ class CreateProvisioningClaimResult {
   Aws::Utils::DateTime m_expiration{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateIdHasBeenSet = false;
   bool m_certificatePemHasBeenSet = false;
   bool m_keyPairHasBeenSet = false;

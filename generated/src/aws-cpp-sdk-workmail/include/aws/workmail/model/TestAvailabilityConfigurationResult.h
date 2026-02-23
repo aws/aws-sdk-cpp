@@ -74,7 +74,7 @@ class TestAvailabilityConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_testPassed{false};
@@ -82,7 +82,7 @@ class TestAvailabilityConfigurationResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_testPassedHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

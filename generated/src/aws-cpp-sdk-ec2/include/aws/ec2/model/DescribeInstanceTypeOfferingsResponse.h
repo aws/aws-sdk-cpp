@@ -85,7 +85,7 @@ class DescribeInstanceTypeOfferingsResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<InstanceTypeOffering> m_instanceTypeOfferings;
@@ -93,7 +93,7 @@ class DescribeInstanceTypeOfferingsResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceTypeOfferingsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

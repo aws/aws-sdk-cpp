@@ -112,7 +112,7 @@ class CreateWebLoginTokenResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_webToken;
@@ -124,7 +124,7 @@ class CreateWebLoginTokenResult {
   Aws::String m_airflowIdentity;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_webTokenHasBeenSet = false;
   bool m_webServerHostnameHasBeenSet = false;
   bool m_iamIdentityHasBeenSet = false;

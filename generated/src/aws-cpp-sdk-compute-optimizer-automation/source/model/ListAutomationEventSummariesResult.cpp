@@ -22,7 +22,7 @@ ListAutomationEventSummariesResult::ListAutomationEventSummariesResult(const Aws
 }
 
 ListAutomationEventSummariesResult& ListAutomationEventSummariesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("automationEventSummaries")) {
     Aws::Utils::Array<JsonView> automationEventSummariesJsonList = jsonValue.GetArray("automationEventSummaries");

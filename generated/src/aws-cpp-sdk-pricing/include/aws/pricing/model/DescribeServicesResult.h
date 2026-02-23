@@ -100,7 +100,7 @@ class DescribeServicesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Service> m_services;
@@ -110,7 +110,7 @@ class DescribeServicesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_servicesHasBeenSet = false;
   bool m_formatVersionHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

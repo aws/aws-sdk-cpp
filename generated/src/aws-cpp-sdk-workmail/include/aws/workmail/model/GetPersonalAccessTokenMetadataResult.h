@@ -168,7 +168,7 @@ class GetPersonalAccessTokenMetadataResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_personalAccessTokenId;
@@ -186,7 +186,7 @@ class GetPersonalAccessTokenMetadataResult {
   Aws::Vector<Aws::String> m_scopes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_personalAccessTokenIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;

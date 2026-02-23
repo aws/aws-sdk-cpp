@@ -92,7 +92,7 @@ class GetReservedNodeExchangeConfigurationOptionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_marker;
@@ -100,7 +100,7 @@ class GetReservedNodeExchangeConfigurationOptionsResult {
   Aws::Vector<ReservedNodeConfigurationOption> m_reservedNodeConfigurationOptionList;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_reservedNodeConfigurationOptionListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

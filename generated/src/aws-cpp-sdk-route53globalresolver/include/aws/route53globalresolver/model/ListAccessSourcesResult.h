@@ -86,7 +86,7 @@ class ListAccessSourcesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -94,7 +94,7 @@ class ListAccessSourcesResult {
   Aws::Vector<AccessSourcesItem> m_accessSources;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_accessSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -171,7 +171,7 @@ class ListGeoLocationsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<GeoLocationDetails> m_geoLocationDetailsList;
@@ -187,7 +187,7 @@ class ListGeoLocationsResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_geoLocationDetailsListHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_nextContinentCodeHasBeenSet = false;

@@ -20,7 +20,7 @@ using namespace Aws;
 GetExclusionsPreviewResult::GetExclusionsPreviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetExclusionsPreviewResult& GetExclusionsPreviewResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("previewStatus")) {
     m_previewStatus = PreviewStatusMapper::GetPreviewStatusForName(jsonValue.GetString("previewStatus"));

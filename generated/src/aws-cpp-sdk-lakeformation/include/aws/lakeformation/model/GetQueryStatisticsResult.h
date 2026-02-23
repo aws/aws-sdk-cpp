@@ -97,7 +97,7 @@ class GetQueryStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ExecutionStatistics m_executionStatistics;
@@ -107,7 +107,7 @@ class GetQueryStatisticsResult {
   Aws::Utils::DateTime m_querySubmissionTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionStatisticsHasBeenSet = false;
   bool m_planningStatisticsHasBeenSet = false;
   bool m_querySubmissionTimeHasBeenSet = false;

@@ -83,7 +83,7 @@ class ReplicateSecretToRegionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_aRN;
@@ -91,7 +91,7 @@ class ReplicateSecretToRegionsResult {
   Aws::Vector<ReplicationStatusType> m_replicationStatus;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aRNHasBeenSet = false;
   bool m_replicationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

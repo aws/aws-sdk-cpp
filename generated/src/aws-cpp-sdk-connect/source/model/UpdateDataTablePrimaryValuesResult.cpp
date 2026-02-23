@@ -22,7 +22,7 @@ UpdateDataTablePrimaryValuesResult::UpdateDataTablePrimaryValuesResult(const Aws
 }
 
 UpdateDataTablePrimaryValuesResult& UpdateDataTablePrimaryValuesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LockVersion")) {
     m_lockVersion = jsonValue.GetObject("LockVersion");

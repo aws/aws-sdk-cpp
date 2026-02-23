@@ -129,7 +129,7 @@ class DisableEnhancedMonitoringResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_streamName;
@@ -141,7 +141,7 @@ class DisableEnhancedMonitoringResult {
   Aws::String m_streamARN;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamNameHasBeenSet = false;
   bool m_currentShardLevelMetricsHasBeenSet = false;
   bool m_desiredShardLevelMetricsHasBeenSet = false;

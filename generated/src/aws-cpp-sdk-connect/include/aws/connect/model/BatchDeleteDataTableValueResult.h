@@ -92,7 +92,7 @@ class BatchDeleteDataTableValueResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BatchDeleteDataTableValueSuccessResult> m_successful;
@@ -100,7 +100,7 @@ class BatchDeleteDataTableValueResult {
   Aws::Vector<BatchDeleteDataTableValueFailureResult> m_failed;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

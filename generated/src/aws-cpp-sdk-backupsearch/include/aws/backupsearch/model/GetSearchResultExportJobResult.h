@@ -188,7 +188,7 @@ class GetSearchResultExportJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_exportJobIdentifier;
@@ -208,7 +208,7 @@ class GetSearchResultExportJobResult {
   Aws::String m_searchJobArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exportJobIdentifierHasBeenSet = false;
   bool m_exportJobArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

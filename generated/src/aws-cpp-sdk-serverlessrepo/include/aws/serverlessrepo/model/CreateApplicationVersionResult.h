@@ -271,7 +271,7 @@ in which it is being retrieved.</p>
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_applicationId;
@@ -293,7 +293,7 @@ in which it is being retrieved.</p>
   Aws::String m_templateUrl;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_parameterDefinitionsHasBeenSet = false;

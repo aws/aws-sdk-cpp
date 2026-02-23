@@ -22,7 +22,7 @@ DeletePropertygraphStatisticsResult::DeletePropertygraphStatisticsResult(const A
 }
 
 DeletePropertygraphStatisticsResult& DeletePropertygraphStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetString("status");

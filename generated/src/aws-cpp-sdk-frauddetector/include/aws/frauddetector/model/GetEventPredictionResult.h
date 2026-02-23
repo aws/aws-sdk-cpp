@@ -118,7 +118,7 @@ class GetEventPredictionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ModelScores> m_modelScores;
@@ -128,7 +128,7 @@ class GetEventPredictionResult {
   Aws::Vector<ExternalModelOutputs> m_externalModelOutputs;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelScoresHasBeenSet = false;
   bool m_ruleResultsHasBeenSet = false;
   bool m_externalModelOutputsHasBeenSet = false;

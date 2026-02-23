@@ -128,7 +128,7 @@ class ListStreamsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Aws::String> m_streamNames;
@@ -140,7 +140,7 @@ class ListStreamsResult {
   Aws::Vector<StreamSummary> m_streamSummaries;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamNamesHasBeenSet = false;
   bool m_hasMoreStreamsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

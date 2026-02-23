@@ -23,7 +23,7 @@ ListLifecycleExecutionResourcesResult::ListLifecycleExecutionResourcesResult(con
 
 ListLifecycleExecutionResourcesResult& ListLifecycleExecutionResourcesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("lifecycleExecutionId")) {
     m_lifecycleExecutionId = jsonValue.GetString("lifecycleExecutionId");

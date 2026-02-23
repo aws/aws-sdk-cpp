@@ -231,7 +231,7 @@ class DescribeAgreementResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_agreementId;
@@ -255,7 +255,7 @@ class DescribeAgreementResult {
   AgreementStatus m_status{AgreementStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agreementIdHasBeenSet = false;
   bool m_acceptorHasBeenSet = false;
   bool m_proposerHasBeenSet = false;

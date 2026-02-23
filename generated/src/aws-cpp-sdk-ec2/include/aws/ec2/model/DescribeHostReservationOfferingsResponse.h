@@ -85,7 +85,7 @@ class DescribeHostReservationOfferingsResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -93,7 +93,7 @@ class DescribeHostReservationOfferingsResponse {
   Aws::Vector<HostOffering> m_offeringSet;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_offeringSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

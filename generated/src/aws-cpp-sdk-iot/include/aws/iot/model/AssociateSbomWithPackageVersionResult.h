@@ -109,7 +109,7 @@ class AssociateSbomWithPackageVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_packageName;
@@ -121,7 +121,7 @@ class AssociateSbomWithPackageVersionResult {
   SbomValidationStatus m_sbomValidationStatus{SbomValidationStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packageNameHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
   bool m_sbomHasBeenSet = false;

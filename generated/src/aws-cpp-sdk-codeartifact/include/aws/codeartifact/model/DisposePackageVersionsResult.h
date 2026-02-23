@@ -96,7 +96,7 @@ class DisposePackageVersionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, SuccessfulPackageVersionInfo> m_successfulVersions;
@@ -104,7 +104,7 @@ class DisposePackageVersionsResult {
   Aws::Map<Aws::String, PackageVersionError> m_failedVersions;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulVersionsHasBeenSet = false;
   bool m_failedVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

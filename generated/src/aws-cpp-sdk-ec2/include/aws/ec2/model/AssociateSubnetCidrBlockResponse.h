@@ -77,7 +77,7 @@ class AssociateSubnetCidrBlockResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
@@ -85,7 +85,7 @@ class AssociateSubnetCidrBlockResponse {
   Aws::String m_subnetId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipv6CidrBlockAssociationHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

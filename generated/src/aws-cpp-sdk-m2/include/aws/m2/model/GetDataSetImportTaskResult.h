@@ -93,7 +93,7 @@ class GetDataSetImportTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DataSetTaskLifecycle m_status{DataSetTaskLifecycle::NOT_SET};
@@ -103,7 +103,7 @@ class GetDataSetImportTaskResult {
   Aws::String m_taskId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;

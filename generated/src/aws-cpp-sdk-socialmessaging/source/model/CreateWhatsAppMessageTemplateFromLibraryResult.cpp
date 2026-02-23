@@ -24,7 +24,7 @@ CreateWhatsAppMessageTemplateFromLibraryResult::CreateWhatsAppMessageTemplateFro
 
 CreateWhatsAppMessageTemplateFromLibraryResult& CreateWhatsAppMessageTemplateFromLibraryResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("metaTemplateId")) {
     m_metaTemplateId = jsonValue.GetString("metaTemplateId");

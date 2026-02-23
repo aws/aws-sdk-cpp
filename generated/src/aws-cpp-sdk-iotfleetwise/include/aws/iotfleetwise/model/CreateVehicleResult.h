@@ -92,7 +92,7 @@ class CreateVehicleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_vehicleName;
@@ -102,7 +102,7 @@ class CreateVehicleResult {
   Aws::String m_thingArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vehicleNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_thingArnHasBeenSet = false;

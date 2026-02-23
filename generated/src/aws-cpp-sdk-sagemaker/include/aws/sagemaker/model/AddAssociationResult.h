@@ -75,7 +75,7 @@ class AddAssociationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_sourceArn;
@@ -83,7 +83,7 @@ class AddAssociationResult {
   Aws::String m_destinationArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceArnHasBeenSet = false;
   bool m_destinationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

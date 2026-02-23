@@ -85,7 +85,7 @@ class DisableOrganizationsRootCredentialsManagementResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_organizationId;
@@ -93,7 +93,7 @@ class DisableOrganizationsRootCredentialsManagementResult {
   Aws::Vector<FeatureType> m_enabledFeatures;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_organizationIdHasBeenSet = false;
   bool m_enabledFeaturesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

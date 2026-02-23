@@ -75,7 +75,7 @@ class CreateIndexResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_indexId;
@@ -83,7 +83,7 @@ class CreateIndexResult {
   Aws::String m_indexArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_indexIdHasBeenSet = false;
   bool m_indexArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

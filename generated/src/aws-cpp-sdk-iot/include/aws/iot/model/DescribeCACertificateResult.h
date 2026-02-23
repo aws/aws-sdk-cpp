@@ -83,7 +83,7 @@ class DescribeCACertificateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   CACertificateDescription m_certificateDescription;
@@ -91,7 +91,7 @@ class DescribeCACertificateResult {
   RegistrationConfig m_registrationConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateDescriptionHasBeenSet = false;
   bool m_registrationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -24,7 +24,7 @@ ListCollaborationTrainedModelExportJobsResult::ListCollaborationTrainedModelExpo
 
 ListCollaborationTrainedModelExportJobsResult& ListCollaborationTrainedModelExportJobsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");

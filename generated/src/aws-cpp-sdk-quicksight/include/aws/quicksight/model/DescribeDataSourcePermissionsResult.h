@@ -116,7 +116,7 @@ class DescribeDataSourcePermissionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dataSourceArn;
@@ -128,7 +128,7 @@ class DescribeDataSourcePermissionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataSourceArnHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

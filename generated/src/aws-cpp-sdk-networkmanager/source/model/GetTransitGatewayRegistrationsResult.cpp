@@ -23,7 +23,7 @@ GetTransitGatewayRegistrationsResult::GetTransitGatewayRegistrationsResult(const
 
 GetTransitGatewayRegistrationsResult& GetTransitGatewayRegistrationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransitGatewayRegistrations")) {
     Aws::Utils::Array<JsonView> transitGatewayRegistrationsJsonList = jsonValue.GetArray("TransitGatewayRegistrations");

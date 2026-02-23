@@ -92,7 +92,7 @@ class AddInstanceFleetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_clusterId;
@@ -102,7 +102,7 @@ class AddInstanceFleetResult {
   Aws::String m_clusterArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterIdHasBeenSet = false;
   bool m_instanceFleetIdHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;

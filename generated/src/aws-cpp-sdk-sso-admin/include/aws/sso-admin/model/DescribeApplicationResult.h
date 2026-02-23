@@ -218,7 +218,7 @@ class DescribeApplicationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_applicationArn;
@@ -242,7 +242,7 @@ class DescribeApplicationResult {
   Aws::String m_createdFrom;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_applicationProviderArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

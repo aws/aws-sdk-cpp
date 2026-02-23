@@ -103,7 +103,7 @@ class DescribeAccountLimitsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_maxNumberOfAutoScalingGroups{0};
@@ -115,7 +115,7 @@ class DescribeAccountLimitsResult {
   int m_numberOfLaunchConfigurations{0};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_maxNumberOfAutoScalingGroupsHasBeenSet = false;
   bool m_maxNumberOfLaunchConfigurationsHasBeenSet = false;
   bool m_numberOfAutoScalingGroupsHasBeenSet = false;

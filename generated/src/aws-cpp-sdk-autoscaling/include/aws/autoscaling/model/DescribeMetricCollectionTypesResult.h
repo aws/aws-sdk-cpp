@@ -91,7 +91,7 @@ class DescribeMetricCollectionTypesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<MetricCollectionType> m_metrics;
@@ -99,7 +99,7 @@ class DescribeMetricCollectionTypesResult {
   Aws::Vector<MetricGranularityType> m_granularities;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricsHasBeenSet = false;
   bool m_granularitiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

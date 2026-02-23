@@ -115,7 +115,7 @@ class UpdateThemePermissionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_themeId;
@@ -127,7 +127,7 @@ class UpdateThemePermissionsResult {
   Aws::String m_requestId;
 
   int m_status{0};
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_themeIdHasBeenSet = false;
   bool m_themeArnHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

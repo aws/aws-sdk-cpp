@@ -84,7 +84,7 @@ class DescribeProductViewResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ProductViewSummary m_productViewSummary;
@@ -92,7 +92,7 @@ class DescribeProductViewResult {
   Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_productViewSummaryHasBeenSet = false;
   bool m_provisioningArtifactsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

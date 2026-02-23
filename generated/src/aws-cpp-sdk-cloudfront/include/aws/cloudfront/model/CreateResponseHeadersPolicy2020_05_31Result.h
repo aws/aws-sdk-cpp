@@ -95,7 +95,7 @@ class CreateResponseHeadersPolicy2020_05_31Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ResponseHeadersPolicy m_responseHeadersPolicy;
@@ -105,7 +105,7 @@ class CreateResponseHeadersPolicy2020_05_31Result {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responseHeadersPolicyHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_eTagHasBeenSet = false;

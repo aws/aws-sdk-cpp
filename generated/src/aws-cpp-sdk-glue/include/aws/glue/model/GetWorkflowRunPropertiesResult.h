@@ -65,13 +65,13 @@ class GetWorkflowRunPropertiesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, Aws::String> m_runProperties;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

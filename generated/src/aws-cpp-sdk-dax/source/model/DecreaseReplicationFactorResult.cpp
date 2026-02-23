@@ -20,7 +20,7 @@ using namespace Aws;
 DecreaseReplicationFactorResult::DecreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DecreaseReplicationFactorResult& DecreaseReplicationFactorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Cluster")) {
     m_cluster = jsonValue.GetObject("Cluster");

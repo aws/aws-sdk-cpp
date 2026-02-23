@@ -20,7 +20,7 @@ using namespace Aws;
 ListOpenCypherQueriesResult::ListOpenCypherQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListOpenCypherQueriesResult& ListOpenCypherQueriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("acceptedQueryCount")) {
     m_acceptedQueryCount = jsonValue.GetInteger("acceptedQueryCount");

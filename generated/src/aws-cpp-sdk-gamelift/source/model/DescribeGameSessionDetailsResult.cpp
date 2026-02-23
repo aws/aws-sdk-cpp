@@ -20,7 +20,7 @@ using namespace Aws;
 DescribeGameSessionDetailsResult::DescribeGameSessionDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeGameSessionDetailsResult& DescribeGameSessionDetailsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GameSessionDetails")) {
     Aws::Utils::Array<JsonView> gameSessionDetailsJsonList = jsonValue.GetArray("GameSessionDetails");

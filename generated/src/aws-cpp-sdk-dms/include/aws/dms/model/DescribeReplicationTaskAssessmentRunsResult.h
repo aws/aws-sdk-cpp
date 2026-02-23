@@ -96,7 +96,7 @@ class DescribeReplicationTaskAssessmentRunsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_marker;
@@ -104,7 +104,7 @@ class DescribeReplicationTaskAssessmentRunsResult {
   Aws::Vector<ReplicationTaskAssessmentRun> m_replicationTaskAssessmentRuns;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_replicationTaskAssessmentRunsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

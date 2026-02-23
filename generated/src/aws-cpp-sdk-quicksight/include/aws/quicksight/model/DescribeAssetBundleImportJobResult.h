@@ -340,7 +340,7 @@ class DescribeAssetBundleImportJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AssetBundleImportJobStatus m_jobStatus{AssetBundleImportJobStatus::NOT_SET};
@@ -374,7 +374,7 @@ class DescribeAssetBundleImportJobResult {
   AssetBundleImportJobOverrideValidationStrategy m_overrideValidationStrategy;
 
   Aws::Vector<AssetBundleImportJobWarning> m_warnings;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_rollbackErrorsHasBeenSet = false;

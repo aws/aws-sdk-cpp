@@ -113,7 +113,7 @@ class GetOfferingStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, OfferingStatus> m_current;
@@ -123,7 +123,7 @@ class GetOfferingStatusResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_currentHasBeenSet = false;
   bool m_nextPeriodHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

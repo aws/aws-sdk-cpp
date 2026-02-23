@@ -24,7 +24,7 @@ DisassociateSourceFromS3TableIntegrationResult::DisassociateSourceFromS3TableInt
 
 DisassociateSourceFromS3TableIntegrationResult& DisassociateSourceFromS3TableIntegrationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetString("identifier");

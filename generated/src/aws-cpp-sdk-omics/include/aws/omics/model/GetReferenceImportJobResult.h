@@ -185,7 +185,7 @@ class GetReferenceImportJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_id;
@@ -205,7 +205,7 @@ class GetReferenceImportJobResult {
   Aws::Vector<ImportReferenceSourceItem> m_sources;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_referenceStoreIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;

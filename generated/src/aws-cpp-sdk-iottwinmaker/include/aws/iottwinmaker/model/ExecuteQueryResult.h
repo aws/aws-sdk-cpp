@@ -107,7 +107,7 @@ class ExecuteQueryResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ColumnDescription> m_columnDescriptions;
@@ -117,7 +117,7 @@ class ExecuteQueryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_columnDescriptionsHasBeenSet = false;
   bool m_rowsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

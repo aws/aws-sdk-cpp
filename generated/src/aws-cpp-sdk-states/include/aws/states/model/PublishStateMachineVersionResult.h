@@ -77,7 +77,7 @@ class PublishStateMachineVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_creationDate{};
@@ -85,7 +85,7 @@ class PublishStateMachineVersionResult {
   Aws::String m_stateMachineVersionArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationDateHasBeenSet = false;
   bool m_stateMachineVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

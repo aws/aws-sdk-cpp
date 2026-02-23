@@ -57,13 +57,13 @@ class GetInAppTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   InAppTemplateResponse m_inAppTemplateResponse;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inAppTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

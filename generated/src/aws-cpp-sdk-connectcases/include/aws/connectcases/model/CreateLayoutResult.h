@@ -75,7 +75,7 @@ class CreateLayoutResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_layoutId;
@@ -83,7 +83,7 @@ class CreateLayoutResult {
   Aws::String m_layoutArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_layoutIdHasBeenSet = false;
   bool m_layoutArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

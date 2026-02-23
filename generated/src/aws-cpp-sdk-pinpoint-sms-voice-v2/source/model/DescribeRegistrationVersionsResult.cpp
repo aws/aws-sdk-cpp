@@ -22,7 +22,7 @@ DescribeRegistrationVersionsResult::DescribeRegistrationVersionsResult(const Aws
 }
 
 DescribeRegistrationVersionsResult& DescribeRegistrationVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RegistrationArn")) {
     m_registrationArn = jsonValue.GetString("RegistrationArn");

@@ -106,7 +106,7 @@ class CancelDomainConfigChangeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Aws::String> m_cancelledChangeIds;
@@ -116,7 +116,7 @@ class CancelDomainConfigChangeResult {
   bool m_dryRun{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cancelledChangeIdsHasBeenSet = false;
   bool m_cancelledChangePropertiesHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;

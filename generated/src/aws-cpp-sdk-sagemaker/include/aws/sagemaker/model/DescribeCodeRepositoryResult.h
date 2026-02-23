@@ -131,7 +131,7 @@ class DescribeCodeRepositoryResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_codeRepositoryName;
@@ -145,7 +145,7 @@ class DescribeCodeRepositoryResult {
   GitConfig m_gitConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeRepositoryNameHasBeenSet = false;
   bool m_codeRepositoryArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

@@ -23,7 +23,7 @@ DescribeComplianceByConfigRuleResult::DescribeComplianceByConfigRuleResult(const
 
 DescribeComplianceByConfigRuleResult& DescribeComplianceByConfigRuleResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComplianceByConfigRules")) {
     Aws::Utils::Array<JsonView> complianceByConfigRulesJsonList = jsonValue.GetArray("ComplianceByConfigRules");

@@ -57,13 +57,13 @@ class SetIpAddressTypeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

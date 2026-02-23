@@ -57,13 +57,13 @@ class UpdateSolFunctionPackageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   OperationalState m_operationalState{OperationalState::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_operationalStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -271,7 +271,7 @@ class GetEntityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_entityId;
@@ -301,7 +301,7 @@ class GetEntityResult {
   bool m_areAllComponentsReturned{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entityIdHasBeenSet = false;
   bool m_entityNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;

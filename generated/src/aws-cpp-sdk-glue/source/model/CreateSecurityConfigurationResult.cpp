@@ -22,7 +22,7 @@ CreateSecurityConfigurationResult::CreateSecurityConfigurationResult(const Aws::
 }
 
 CreateSecurityConfigurationResult& CreateSecurityConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");

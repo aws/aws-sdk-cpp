@@ -23,7 +23,7 @@ GetComplianceDetailsByResourceResult::GetComplianceDetailsByResourceResult(const
 
 GetComplianceDetailsByResourceResult& GetComplianceDetailsByResourceResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EvaluationResults")) {
     Aws::Utils::Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");

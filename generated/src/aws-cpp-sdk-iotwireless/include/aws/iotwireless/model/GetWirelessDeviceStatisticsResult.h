@@ -112,7 +112,7 @@ class GetWirelessDeviceStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_wirelessDeviceId;
@@ -124,7 +124,7 @@ class GetWirelessDeviceStatisticsResult {
   SidewalkDeviceMetadata m_sidewalk;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_wirelessDeviceIdHasBeenSet = false;
   bool m_lastUplinkReceivedAtHasBeenSet = false;
   bool m_loRaWANHasBeenSet = false;

@@ -22,7 +22,7 @@ GetProvisionedProductOutputsResult::GetProvisionedProductOutputsResult(const Aws
 }
 
 GetProvisionedProductOutputsResult& GetProvisionedProductOutputsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Outputs")) {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");

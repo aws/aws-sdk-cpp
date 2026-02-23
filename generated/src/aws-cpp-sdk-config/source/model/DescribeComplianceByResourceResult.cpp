@@ -22,7 +22,7 @@ DescribeComplianceByResourceResult::DescribeComplianceByResourceResult(const Aws
 }
 
 DescribeComplianceByResourceResult& DescribeComplianceByResourceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ComplianceByResources")) {
     Aws::Utils::Array<JsonView> complianceByResourcesJsonList = jsonValue.GetArray("ComplianceByResources");

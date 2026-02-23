@@ -23,7 +23,7 @@ CreateNodeRegistrationScriptSdkResult::CreateNodeRegistrationScriptSdkResult(con
 
 CreateNodeRegistrationScriptSdkResult& CreateNodeRegistrationScriptSdkResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nodeRegistrationScript")) {
     m_nodeRegistrationScript = jsonValue.GetString("nodeRegistrationScript");

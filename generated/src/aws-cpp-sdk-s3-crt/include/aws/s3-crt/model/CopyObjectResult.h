@@ -242,7 +242,7 @@ class CopyObjectResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_expiration;
@@ -268,7 +268,7 @@ class CopyObjectResult {
   CopyObjectResultDetails m_copyObjectResultDetails;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_expirationHasBeenSet = false;
   bool m_copySourceVersionIdHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

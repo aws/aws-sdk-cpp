@@ -20,7 +20,7 @@ using namespace Aws;
 ListSuiteDefinitionsResult::ListSuiteDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListSuiteDefinitionsResult& ListSuiteDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("suiteDefinitionInformationList")) {
     Aws::Utils::Array<JsonView> suiteDefinitionInformationListJsonList = jsonValue.GetArray("suiteDefinitionInformationList");

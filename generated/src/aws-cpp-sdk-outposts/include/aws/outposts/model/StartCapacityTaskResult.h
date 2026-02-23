@@ -277,7 +277,7 @@ class StartCapacityTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_capacityTaskId;
@@ -307,7 +307,7 @@ class StartCapacityTaskResult {
   TaskActionOnBlockingInstances m_taskActionOnBlockingInstances{TaskActionOnBlockingInstances::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capacityTaskIdHasBeenSet = false;
   bool m_outpostIdHasBeenSet = false;
   bool m_orderIdHasBeenSet = false;

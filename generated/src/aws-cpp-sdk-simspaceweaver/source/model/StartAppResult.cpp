@@ -20,7 +20,7 @@ using namespace Aws;
 StartAppResult::StartAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartAppResult& StartAppResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Domain")) {
     m_domain = jsonValue.GetString("Domain");

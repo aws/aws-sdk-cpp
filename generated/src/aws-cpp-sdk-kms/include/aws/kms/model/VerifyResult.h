@@ -96,7 +96,7 @@ class VerifyResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_keyId;
@@ -106,7 +106,7 @@ class VerifyResult {
   SigningAlgorithmSpec m_signingAlgorithm{SigningAlgorithmSpec::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_signatureValidHasBeenSet = false;
   bool m_signingAlgorithmHasBeenSet = false;

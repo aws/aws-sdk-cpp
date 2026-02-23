@@ -163,7 +163,7 @@ class DescribeCustomPluginResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_creationTime{};
@@ -181,7 +181,7 @@ class DescribeCustomPluginResult {
   StateDescription m_stateDescription;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_customPluginArnHasBeenSet = false;
   bool m_customPluginStateHasBeenSet = false;

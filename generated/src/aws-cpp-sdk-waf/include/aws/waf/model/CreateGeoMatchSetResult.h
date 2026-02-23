@@ -81,7 +81,7 @@ class CreateGeoMatchSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   GeoMatchSet m_geoMatchSet;
@@ -89,7 +89,7 @@ class CreateGeoMatchSetResult {
   Aws::String m_changeToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_geoMatchSetHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

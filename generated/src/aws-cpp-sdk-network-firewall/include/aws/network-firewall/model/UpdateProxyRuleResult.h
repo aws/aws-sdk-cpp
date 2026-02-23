@@ -110,7 +110,7 @@ class UpdateProxyRuleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ProxyRule m_proxyRule;
@@ -120,7 +120,7 @@ class UpdateProxyRuleResult {
   Aws::String m_updateToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_proxyRuleHasBeenSet = false;
   bool m_removedConditionsHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;

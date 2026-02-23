@@ -188,7 +188,7 @@ class DescribeOrganizationResourceCollectionHealthResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<CloudFormationHealth> m_cloudFormation;
@@ -202,7 +202,7 @@ class DescribeOrganizationResourceCollectionHealthResult {
   Aws::Vector<TagHealth> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cloudFormationHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
   bool m_accountHasBeenSet = false;

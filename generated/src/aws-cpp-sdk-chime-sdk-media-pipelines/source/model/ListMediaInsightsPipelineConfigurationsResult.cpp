@@ -24,7 +24,7 @@ ListMediaInsightsPipelineConfigurationsResult::ListMediaInsightsPipelineConfigur
 
 ListMediaInsightsPipelineConfigurationsResult& ListMediaInsightsPipelineConfigurationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MediaInsightsPipelineConfigurations")) {
     Aws::Utils::Array<JsonView> mediaInsightsPipelineConfigurationsJsonList = jsonValue.GetArray("MediaInsightsPipelineConfigurations");

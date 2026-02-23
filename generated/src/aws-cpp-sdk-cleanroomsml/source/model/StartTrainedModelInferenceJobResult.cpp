@@ -22,7 +22,7 @@ StartTrainedModelInferenceJobResult::StartTrainedModelInferenceJobResult(const A
 }
 
 StartTrainedModelInferenceJobResult& StartTrainedModelInferenceJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("trainedModelInferenceJobArn")) {
     m_trainedModelInferenceJobArn = jsonValue.GetString("trainedModelInferenceJobArn");

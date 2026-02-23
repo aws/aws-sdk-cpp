@@ -20,7 +20,7 @@ using namespace Aws;
 ListImportsResult::ListImportsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
 ListImportsResult& ListImportsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;

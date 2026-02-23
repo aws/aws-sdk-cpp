@@ -296,7 +296,7 @@ class GetTemplateResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_templateId;
@@ -326,7 +326,7 @@ class GetTemplateResult {
   Aws::Vector<TagPropagationConfiguration> m_tagPropagationConfigurations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

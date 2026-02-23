@@ -23,7 +23,7 @@ DescribeMaintenanceWindowsForTargetResult::DescribeMaintenanceWindowsForTargetRe
 
 DescribeMaintenanceWindowsForTargetResult& DescribeMaintenanceWindowsForTargetResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WindowIdentities")) {
     Aws::Utils::Array<JsonView> windowIdentitiesJsonList = jsonValue.GetArray("WindowIdentities");

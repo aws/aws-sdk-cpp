@@ -101,7 +101,7 @@ class GetAutoSnapshotsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_resourceName;
@@ -111,7 +111,7 @@ class GetAutoSnapshotsResult {
   Aws::Vector<AutoSnapshotDetails> m_autoSnapshots;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceNameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_autoSnapshotsHasBeenSet = false;

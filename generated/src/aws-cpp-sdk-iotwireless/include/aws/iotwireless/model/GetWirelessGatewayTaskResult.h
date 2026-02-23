@@ -126,7 +126,7 @@ class GetWirelessGatewayTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_wirelessGatewayId;
@@ -140,7 +140,7 @@ class GetWirelessGatewayTaskResult {
   WirelessGatewayTaskStatus m_status{WirelessGatewayTaskStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_wirelessGatewayIdHasBeenSet = false;
   bool m_wirelessGatewayTaskDefinitionIdHasBeenSet = false;
   bool m_lastUplinkReceivedAtHasBeenSet = false;

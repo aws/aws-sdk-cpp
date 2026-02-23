@@ -153,7 +153,7 @@ class PollForActivityTaskResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_taskToken;
@@ -169,7 +169,7 @@ class PollForActivityTaskResult {
   Aws::String m_input;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskTokenHasBeenSet = false;
   bool m_activityIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;

@@ -24,7 +24,7 @@ DescribeReservedElasticsearchInstancesResult::DescribeReservedElasticsearchInsta
 
 DescribeReservedElasticsearchInstancesResult& DescribeReservedElasticsearchInstancesResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");

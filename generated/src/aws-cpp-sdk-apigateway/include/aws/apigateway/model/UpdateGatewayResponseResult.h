@@ -147,7 +147,7 @@ class UpdateGatewayResponseResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
@@ -161,7 +161,7 @@ class UpdateGatewayResponseResult {
   bool m_defaultResponse{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responseTypeHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_responseParametersHasBeenSet = false;

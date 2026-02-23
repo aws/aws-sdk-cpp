@@ -75,7 +75,7 @@ class StartSigningJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobId;
@@ -83,7 +83,7 @@ class StartSigningJobResult {
   Aws::String m_jobOwner;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobOwnerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

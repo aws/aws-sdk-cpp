@@ -98,7 +98,7 @@ class DeleteDataLakeDatasetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_instanceId;
@@ -108,7 +108,7 @@ class DeleteDataLakeDatasetResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_nameHasBeenSet = false;

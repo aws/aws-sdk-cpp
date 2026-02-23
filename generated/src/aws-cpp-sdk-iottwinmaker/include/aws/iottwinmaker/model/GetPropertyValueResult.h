@@ -111,7 +111,7 @@ class GetPropertyValueResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, PropertyLatestValue> m_propertyValues;
@@ -121,7 +121,7 @@ class GetPropertyValueResult {
   Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>> m_tabularPropertyValues;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_propertyValuesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_tabularPropertyValuesHasBeenSet = false;

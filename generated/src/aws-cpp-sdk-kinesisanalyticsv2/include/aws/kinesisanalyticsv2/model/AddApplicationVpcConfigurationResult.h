@@ -110,7 +110,7 @@ class AddApplicationVpcConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_applicationARN;
@@ -122,7 +122,7 @@ class AddApplicationVpcConfigurationResult {
   Aws::String m_operationId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationARNHasBeenSet = false;
   bool m_applicationVersionIdHasBeenSet = false;
   bool m_vpcConfigurationDescriptionHasBeenSet = false;

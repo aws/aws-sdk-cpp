@@ -147,7 +147,7 @@ class UpdateCustomMetricResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_metricName;
@@ -163,7 +163,7 @@ class UpdateCustomMetricResult {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_metricArnHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;

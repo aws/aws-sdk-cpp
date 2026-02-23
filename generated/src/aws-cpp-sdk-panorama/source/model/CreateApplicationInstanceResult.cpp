@@ -20,7 +20,7 @@ using namespace Aws;
 CreateApplicationInstanceResult::CreateApplicationInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateApplicationInstanceResult& CreateApplicationInstanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ApplicationInstanceId")) {
     m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");

@@ -20,7 +20,7 @@ using namespace Aws;
 ListFeatureGroupsResult::ListFeatureGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListFeatureGroupsResult& ListFeatureGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FeatureGroupSummaries")) {
     Aws::Utils::Array<JsonView> featureGroupSummariesJsonList = jsonValue.GetArray("FeatureGroupSummaries");

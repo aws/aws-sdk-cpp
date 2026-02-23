@@ -462,7 +462,7 @@ class DescribeIntentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_intentId;
@@ -510,7 +510,7 @@ class DescribeIntentResult {
   QInConnectIntentConfiguration m_qInConnectIntentConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_intentIdHasBeenSet = false;
   bool m_intentNameHasBeenSet = false;
   bool m_intentDisplayNameHasBeenSet = false;

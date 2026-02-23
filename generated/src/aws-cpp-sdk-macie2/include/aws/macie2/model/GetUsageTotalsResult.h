@@ -85,7 +85,7 @@ class GetUsageTotalsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   TimeRange m_timeRange{TimeRange::NOT_SET};
@@ -93,7 +93,7 @@ class GetUsageTotalsResult {
   Aws::Vector<UsageTotal> m_usageTotals;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_timeRangeHasBeenSet = false;
   bool m_usageTotalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

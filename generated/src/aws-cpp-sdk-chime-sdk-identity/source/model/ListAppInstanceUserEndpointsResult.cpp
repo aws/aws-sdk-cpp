@@ -22,7 +22,7 @@ ListAppInstanceUserEndpointsResult::ListAppInstanceUserEndpointsResult(const Aws
 }
 
 ListAppInstanceUserEndpointsResult& ListAppInstanceUserEndpointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AppInstanceUserEndpoints")) {
     Aws::Utils::Array<JsonView> appInstanceUserEndpointsJsonList = jsonValue.GetArray("AppInstanceUserEndpoints");

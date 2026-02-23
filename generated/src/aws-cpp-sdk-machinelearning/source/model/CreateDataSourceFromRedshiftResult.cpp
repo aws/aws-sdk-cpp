@@ -22,7 +22,7 @@ CreateDataSourceFromRedshiftResult::CreateDataSourceFromRedshiftResult(const Aws
 }
 
 CreateDataSourceFromRedshiftResult& CreateDataSourceFromRedshiftResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataSourceId")) {
     m_dataSourceId = jsonValue.GetString("DataSourceId");

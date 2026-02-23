@@ -79,7 +79,7 @@ class DescribeInsightResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ProactiveInsight m_proactiveInsight;
@@ -87,7 +87,7 @@ class DescribeInsightResult {
   ReactiveInsight m_reactiveInsight;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_proactiveInsightHasBeenSet = false;
   bool m_reactiveInsightHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

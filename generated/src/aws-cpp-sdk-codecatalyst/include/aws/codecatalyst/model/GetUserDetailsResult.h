@@ -127,7 +127,7 @@ class GetUserDetailsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_userId;
@@ -141,7 +141,7 @@ class GetUserDetailsResult {
   Aws::String m_version;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

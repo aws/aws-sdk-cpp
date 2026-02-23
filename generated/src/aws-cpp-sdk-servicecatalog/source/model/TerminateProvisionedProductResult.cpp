@@ -22,7 +22,7 @@ TerminateProvisionedProductResult::TerminateProvisionedProductResult(const Aws::
 }
 
 TerminateProvisionedProductResult& TerminateProvisionedProductResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RecordDetail")) {
     m_recordDetail = jsonValue.GetObject("RecordDetail");

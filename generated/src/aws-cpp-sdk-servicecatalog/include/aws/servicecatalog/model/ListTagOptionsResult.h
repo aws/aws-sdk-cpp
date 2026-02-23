@@ -84,7 +84,7 @@ class ListTagOptionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<TagOptionDetail> m_tagOptionDetails;
@@ -92,7 +92,7 @@ class ListTagOptionsResult {
   Aws::String m_pageToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tagOptionDetailsHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

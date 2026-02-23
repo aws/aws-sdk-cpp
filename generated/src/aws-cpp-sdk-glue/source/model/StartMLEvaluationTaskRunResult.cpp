@@ -20,7 +20,7 @@ using namespace Aws;
 StartMLEvaluationTaskRunResult::StartMLEvaluationTaskRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartMLEvaluationTaskRunResult& StartMLEvaluationTaskRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskRunId")) {
     m_taskRunId = jsonValue.GetString("TaskRunId");

@@ -59,13 +59,13 @@ class DeleteGatewayRouteResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   GatewayRouteData m_gatewayRoute;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayRouteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

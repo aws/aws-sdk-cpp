@@ -22,7 +22,7 @@ ListCuratedEnvironmentImagesResult::ListCuratedEnvironmentImagesResult(const Aws
 }
 
 ListCuratedEnvironmentImagesResult& ListCuratedEnvironmentImagesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("platforms")) {
     Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");

@@ -177,7 +177,7 @@ class GetFunctionUrlConfigResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_functionUrl;
@@ -195,7 +195,7 @@ class GetFunctionUrlConfigResult {
   InvokeMode m_invokeMode{InvokeMode::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_functionUrlHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;

@@ -23,7 +23,7 @@ ListOpportunityFromEngagementTasksResult::ListOpportunityFromEngagementTasksResu
 
 ListOpportunityFromEngagementTasksResult& ListOpportunityFromEngagementTasksResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TaskSummaries")) {
     Aws::Utils::Array<JsonView> taskSummariesJsonList = jsonValue.GetArray("TaskSummaries");

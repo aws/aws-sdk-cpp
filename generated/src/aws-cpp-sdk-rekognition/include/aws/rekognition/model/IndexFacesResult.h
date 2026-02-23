@@ -148,7 +148,7 @@ class IndexFacesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<FaceRecord> m_faceRecords;
@@ -160,7 +160,7 @@ class IndexFacesResult {
   Aws::Vector<UnindexedFace> m_unindexedFaces;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_faceRecordsHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;

@@ -20,7 +20,7 @@ using namespace Aws;
 AssociateAnalyticsDataSetResult::AssociateAnalyticsDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateAnalyticsDataSetResult& AssociateAnalyticsDataSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DataSetId")) {
     m_dataSetId = jsonValue.GetString("DataSetId");

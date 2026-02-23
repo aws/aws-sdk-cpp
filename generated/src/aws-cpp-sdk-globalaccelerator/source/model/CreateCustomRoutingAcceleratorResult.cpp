@@ -23,7 +23,7 @@ CreateCustomRoutingAcceleratorResult::CreateCustomRoutingAcceleratorResult(const
 
 CreateCustomRoutingAcceleratorResult& CreateCustomRoutingAcceleratorResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Accelerator")) {
     m_accelerator = jsonValue.GetObject("Accelerator");

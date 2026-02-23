@@ -22,7 +22,7 @@ CreateStarterMappingTemplateResult::CreateStarterMappingTemplateResult(const Aws
 }
 
 CreateStarterMappingTemplateResult& CreateStarterMappingTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("mappingTemplate")) {
     m_mappingTemplate = jsonValue.GetString("mappingTemplate");

@@ -22,7 +22,7 @@ ListContactFlowModuleVersionsResult::ListContactFlowModuleVersionsResult(const A
 }
 
 ListContactFlowModuleVersionsResult& ListContactFlowModuleVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ContactFlowModuleVersionSummaryList")) {
     Aws::Utils::Array<JsonView> contactFlowModuleVersionSummaryListJsonList = jsonValue.GetArray("ContactFlowModuleVersionSummaryList");

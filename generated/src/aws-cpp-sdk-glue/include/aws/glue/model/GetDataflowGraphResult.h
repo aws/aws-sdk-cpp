@@ -90,7 +90,7 @@ class GetDataflowGraphResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<CodeGenNode> m_dagNodes;
@@ -98,7 +98,7 @@ class GetDataflowGraphResult {
   Aws::Vector<CodeGenEdge> m_dagEdges;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dagNodesHasBeenSet = false;
   bool m_dagEdgesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

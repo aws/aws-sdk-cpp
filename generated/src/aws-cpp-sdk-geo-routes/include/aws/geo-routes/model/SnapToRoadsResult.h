@@ -142,7 +142,7 @@ class SnapToRoadsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<RoadSnapNotice> m_notices;
@@ -156,7 +156,7 @@ class SnapToRoadsResult {
   Aws::Vector<RoadSnapSnappedTracePoint> m_snappedTracePoints;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_noticesHasBeenSet = false;
   bool m_pricingBucketHasBeenSet = false;
   bool m_snappedGeometryHasBeenSet = false;

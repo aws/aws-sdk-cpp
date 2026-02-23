@@ -164,7 +164,7 @@ class DescribeAppImageConfigResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_appImageConfigArn;
@@ -182,7 +182,7 @@ class DescribeAppImageConfigResult {
   CodeEditorAppImageConfig m_codeEditorAppImageConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appImageConfigArnHasBeenSet = false;
   bool m_appImageConfigNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

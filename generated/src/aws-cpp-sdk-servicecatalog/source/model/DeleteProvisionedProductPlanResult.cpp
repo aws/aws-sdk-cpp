@@ -22,7 +22,7 @@ DeleteProvisionedProductPlanResult::DeleteProvisionedProductPlanResult(const Aws
 }
 
 DeleteProvisionedProductPlanResult& DeleteProvisionedProductPlanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateFileSystemProtectionResult::UpdateFileSystemProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFileSystemProtectionResult& UpdateFileSystemProtectionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ReplicationOverwriteProtection")) {
     m_replicationOverwriteProtection = ReplicationOverwriteProtectionMapper::GetReplicationOverwriteProtectionForName(

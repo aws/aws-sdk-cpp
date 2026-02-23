@@ -135,7 +135,7 @@ class HeadBucketResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_bucketArn;
@@ -149,7 +149,7 @@ class HeadBucketResult {
   bool m_accessPointAlias{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketArnHasBeenSet = false;
   bool m_bucketLocationTypeHasBeenSet = false;
   bool m_bucketLocationNameHasBeenSet = false;

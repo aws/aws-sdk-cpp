@@ -20,7 +20,7 @@ using namespace Aws;
 ListPhoneNumberOrdersResult::ListPhoneNumberOrdersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListPhoneNumberOrdersResult& ListPhoneNumberOrdersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PhoneNumberOrders")) {
     Aws::Utils::Array<JsonView> phoneNumberOrdersJsonList = jsonValue.GetArray("PhoneNumberOrders");

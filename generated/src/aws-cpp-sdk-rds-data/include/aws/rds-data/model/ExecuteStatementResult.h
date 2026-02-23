@@ -163,7 +163,7 @@ class ExecuteStatementResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Aws::Vector<Field>> m_records;
@@ -177,7 +177,7 @@ class ExecuteStatementResult {
   Aws::String m_formattedRecords;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordsHasBeenSet = false;
   bool m_columnMetadataHasBeenSet = false;
   bool m_numberOfRecordsUpdatedHasBeenSet = false;

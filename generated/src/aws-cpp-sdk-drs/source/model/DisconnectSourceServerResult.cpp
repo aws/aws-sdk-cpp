@@ -20,7 +20,7 @@ using namespace Aws;
 DisconnectSourceServerResult::DisconnectSourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DisconnectSourceServerResult& DisconnectSourceServerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentVersion")) {
     m_agentVersion = jsonValue.GetString("agentVersion");

@@ -102,7 +102,7 @@ class GetComponentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   RecipeOutputFormat m_recipeOutputFormat{RecipeOutputFormat::NOT_SET};
@@ -112,7 +112,7 @@ class GetComponentResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recipeOutputFormatHasBeenSet = false;
   bool m_recipeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

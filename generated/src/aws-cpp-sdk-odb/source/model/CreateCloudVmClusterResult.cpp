@@ -20,7 +20,7 @@ using namespace Aws;
 CreateCloudVmClusterResult::CreateCloudVmClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateCloudVmClusterResult& CreateCloudVmClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("displayName")) {
     m_displayName = jsonValue.GetString("displayName");

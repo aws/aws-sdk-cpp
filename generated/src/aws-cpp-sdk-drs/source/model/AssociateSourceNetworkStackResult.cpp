@@ -22,7 +22,7 @@ AssociateSourceNetworkStackResult::AssociateSourceNetworkStackResult(const Aws::
 }
 
 AssociateSourceNetworkStackResult& AssociateSourceNetworkStackResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("job")) {
     m_job = jsonValue.GetObject("job");

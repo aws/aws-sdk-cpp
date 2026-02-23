@@ -22,7 +22,7 @@ DeleteResolverQueryLogConfigResult::DeleteResolverQueryLogConfigResult(const Aws
 }
 
 DeleteResolverQueryLogConfigResult& DeleteResolverQueryLogConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResolverQueryLogConfig")) {
     m_resolverQueryLogConfig = jsonValue.GetObject("ResolverQueryLogConfig");

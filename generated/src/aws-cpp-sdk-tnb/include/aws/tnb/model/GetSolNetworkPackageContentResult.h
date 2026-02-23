@@ -70,7 +70,7 @@ class GetSolNetworkPackageContentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   PackageContentType m_contentType{PackageContentType::NOT_SET};
@@ -78,7 +78,7 @@ class GetSolNetworkPackageContentResult {
   Aws::Utils::Stream::ResponseStream m_nsdContent{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_nsdContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

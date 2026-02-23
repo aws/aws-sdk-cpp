@@ -22,7 +22,7 @@ CreateCustomModelDeploymentResult::CreateCustomModelDeploymentResult(const Aws::
 }
 
 CreateCustomModelDeploymentResult& CreateCustomModelDeploymentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("customModelDeploymentArn")) {
     m_customModelDeploymentArn = jsonValue.GetString("customModelDeploymentArn");

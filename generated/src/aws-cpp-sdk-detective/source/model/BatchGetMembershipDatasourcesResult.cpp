@@ -22,7 +22,7 @@ BatchGetMembershipDatasourcesResult::BatchGetMembershipDatasourcesResult(const A
 }
 
 BatchGetMembershipDatasourcesResult& BatchGetMembershipDatasourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MembershipDatasources")) {
     Aws::Utils::Array<JsonView> membershipDatasourcesJsonList = jsonValue.GetArray("MembershipDatasources");

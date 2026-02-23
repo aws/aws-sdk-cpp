@@ -623,7 +623,7 @@ class DescribeRecoveryPointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_recoveryPointArn;
@@ -685,7 +685,7 @@ class DescribeRecoveryPointResult {
   Aws::Vector<ScanResult> m_scanResults;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;

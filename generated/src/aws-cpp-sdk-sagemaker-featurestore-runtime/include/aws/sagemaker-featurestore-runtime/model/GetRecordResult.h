@@ -83,7 +83,7 @@ class GetRecordResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<FeatureValue> m_record;
@@ -91,7 +91,7 @@ class GetRecordResult {
   Aws::String m_expiresAt;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

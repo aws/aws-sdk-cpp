@@ -201,7 +201,7 @@ class DescribeEnvironmentHealthResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_environmentName;
@@ -221,7 +221,7 @@ class DescribeEnvironmentHealthResult {
   Aws::Utils::DateTime m_refreshedAt{};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_environmentNameHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
   bool m_statusHasBeenSet = false;

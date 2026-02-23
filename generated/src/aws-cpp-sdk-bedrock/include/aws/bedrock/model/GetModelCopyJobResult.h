@@ -238,7 +238,7 @@ class GetModelCopyJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobArn;
@@ -264,7 +264,7 @@ class GetModelCopyJobResult {
   Aws::String m_sourceModelName;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

@@ -307,7 +307,7 @@ class GetTaskInstanceResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_workflowArn;
@@ -341,7 +341,7 @@ class GetTaskInstanceResult {
   Aws::Map<Aws::String, Aws::String> m_xcom;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workflowArnHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
   bool m_taskInstanceIdHasBeenSet = false;

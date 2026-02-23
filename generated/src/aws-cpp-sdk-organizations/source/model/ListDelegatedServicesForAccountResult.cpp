@@ -23,7 +23,7 @@ ListDelegatedServicesForAccountResult::ListDelegatedServicesForAccountResult(con
 
 ListDelegatedServicesForAccountResult& ListDelegatedServicesForAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DelegatedServices")) {
     Aws::Utils::Array<JsonView> delegatedServicesJsonList = jsonValue.GetArray("DelegatedServices");

@@ -145,7 +145,7 @@ class ImportClientBrandingResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DefaultClientBrandingAttributes m_deviceTypeWindows;
@@ -161,7 +161,7 @@ class ImportClientBrandingResult {
   DefaultClientBrandingAttributes m_deviceTypeWeb;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceTypeWindowsHasBeenSet = false;
   bool m_deviceTypeOsxHasBeenSet = false;
   bool m_deviceTypeAndroidHasBeenSet = false;

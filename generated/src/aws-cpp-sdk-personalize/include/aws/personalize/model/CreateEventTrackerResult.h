@@ -77,7 +77,7 @@ class CreateEventTrackerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_eventTrackerArn;
@@ -85,7 +85,7 @@ class CreateEventTrackerResult {
   Aws::String m_trackingId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventTrackerArnHasBeenSet = false;
   bool m_trackingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -223,7 +223,7 @@ class CreatePartnershipResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_profileId;
@@ -247,7 +247,7 @@ class CreatePartnershipResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_partnershipIdHasBeenSet = false;
   bool m_partnershipArnHasBeenSet = false;

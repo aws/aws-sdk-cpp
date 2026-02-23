@@ -119,7 +119,7 @@ class GetStorageProfileForQueueResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_storageProfileId;
@@ -131,7 +131,7 @@ class GetStorageProfileForQueueResult {
   Aws::Vector<FileSystemLocation> m_fileSystemLocations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_storageProfileIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_osFamilyHasBeenSet = false;

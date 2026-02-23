@@ -151,7 +151,7 @@ class StartAttachedFileUploadResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_fileArn;
@@ -167,7 +167,7 @@ class StartAttachedFileUploadResult {
   UploadUrlMetadata m_uploadUrlMetadata;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fileArnHasBeenSet = false;
   bool m_fileIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

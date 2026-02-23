@@ -24,7 +24,7 @@ UpdateQuickSightQSearchConfigurationResult::UpdateQuickSightQSearchConfiguration
 
 UpdateQuickSightQSearchConfigurationResult& UpdateQuickSightQSearchConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QSearchStatus")) {
     m_qSearchStatus = QSearchStatusMapper::GetQSearchStatusForName(jsonValue.GetString("QSearchStatus"));

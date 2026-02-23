@@ -22,7 +22,7 @@ DescribePullThroughCacheRulesResult::DescribePullThroughCacheRulesResult(const A
 }
 
 DescribePullThroughCacheRulesResult& DescribePullThroughCacheRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullThroughCacheRules")) {
     Aws::Utils::Array<JsonView> pullThroughCacheRulesJsonList = jsonValue.GetArray("pullThroughCacheRules");

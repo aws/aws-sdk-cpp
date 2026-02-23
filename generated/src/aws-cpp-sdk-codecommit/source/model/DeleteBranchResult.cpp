@@ -20,7 +20,7 @@ using namespace Aws;
 DeleteBranchResult::DeleteBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteBranchResult& DeleteBranchResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deletedBranch")) {
     m_deletedBranch = jsonValue.GetObject("deletedBranch");

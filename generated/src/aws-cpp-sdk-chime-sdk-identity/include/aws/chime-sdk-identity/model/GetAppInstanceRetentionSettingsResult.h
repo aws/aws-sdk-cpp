@@ -79,7 +79,7 @@ class GetAppInstanceRetentionSettingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AppInstanceRetentionSettings m_appInstanceRetentionSettings;
@@ -87,7 +87,7 @@ class GetAppInstanceRetentionSettingsResult {
   Aws::Utils::DateTime m_initiateDeletionTimestamp{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appInstanceRetentionSettingsHasBeenSet = false;
   bool m_initiateDeletionTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

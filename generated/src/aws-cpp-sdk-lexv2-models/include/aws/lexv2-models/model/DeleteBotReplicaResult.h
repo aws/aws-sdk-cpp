@@ -91,7 +91,7 @@ class DeleteBotReplicaResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_botId;
@@ -101,7 +101,7 @@ class DeleteBotReplicaResult {
   BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
   bool m_replicaRegionHasBeenSet = false;
   bool m_botReplicaStatusHasBeenSet = false;

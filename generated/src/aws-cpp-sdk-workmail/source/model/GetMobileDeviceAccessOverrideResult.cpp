@@ -22,7 +22,7 @@ GetMobileDeviceAccessOverrideResult::GetMobileDeviceAccessOverrideResult(const A
 }
 
 GetMobileDeviceAccessOverrideResult& GetMobileDeviceAccessOverrideResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");

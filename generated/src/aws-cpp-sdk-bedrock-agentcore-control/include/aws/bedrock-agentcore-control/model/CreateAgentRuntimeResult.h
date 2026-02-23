@@ -145,7 +145,7 @@ class CreateAgentRuntimeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_agentRuntimeArn;
@@ -161,7 +161,7 @@ class CreateAgentRuntimeResult {
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
   bool m_workloadIdentityDetailsHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;

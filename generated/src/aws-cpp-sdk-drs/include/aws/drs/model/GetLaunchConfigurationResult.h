@@ -210,7 +210,7 @@ class GetLaunchConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_copyPrivateIp{false};
@@ -234,7 +234,7 @@ class GetLaunchConfigurationResult {
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_copyPrivateIpHasBeenSet = false;
   bool m_copyTagsHasBeenSet = false;
   bool m_ec2LaunchTemplateIDHasBeenSet = false;

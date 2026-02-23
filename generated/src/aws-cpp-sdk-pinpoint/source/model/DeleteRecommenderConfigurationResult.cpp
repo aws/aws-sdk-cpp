@@ -23,7 +23,7 @@ DeleteRecommenderConfigurationResult::DeleteRecommenderConfigurationResult(const
 
 DeleteRecommenderConfigurationResult& DeleteRecommenderConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_recommenderConfigurationResponse = jsonValue;
   m_recommenderConfigurationResponseHasBeenSet = true;

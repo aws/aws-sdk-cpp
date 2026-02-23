@@ -100,7 +100,7 @@ class GetTimeSeriesServiceStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<TimeSeriesServiceStatistics> m_timeSeriesServiceStatistics;
@@ -110,7 +110,7 @@ class GetTimeSeriesServiceStatisticsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_timeSeriesServiceStatisticsHasBeenSet = false;
   bool m_containsOldGroupVersionsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

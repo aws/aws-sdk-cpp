@@ -19,7 +19,7 @@ using namespace Aws;
 PostContentResult::PostContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 PostContentResult& PostContentResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   m_audioStream = result.TakeOwnershipOfPayload();
   m_audioStreamHasBeenSet = true;
 

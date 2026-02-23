@@ -96,7 +96,7 @@ class BatchGetStandardsControlAssociationsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<StandardsControlAssociationDetail> m_standardsControlAssociationDetails;
@@ -104,7 +104,7 @@ class BatchGetStandardsControlAssociationsResult {
   Aws::Vector<UnprocessedStandardsControlAssociation> m_unprocessedAssociations;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_standardsControlAssociationDetailsHasBeenSet = false;
   bool m_unprocessedAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

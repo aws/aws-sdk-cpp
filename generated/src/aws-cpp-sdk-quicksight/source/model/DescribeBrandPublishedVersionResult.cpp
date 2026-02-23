@@ -22,7 +22,7 @@ DescribeBrandPublishedVersionResult::DescribeBrandPublishedVersionResult(const A
 }
 
 DescribeBrandPublishedVersionResult& DescribeBrandPublishedVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BrandDetail")) {
     m_brandDetail = jsonValue.GetObject("BrandDetail");

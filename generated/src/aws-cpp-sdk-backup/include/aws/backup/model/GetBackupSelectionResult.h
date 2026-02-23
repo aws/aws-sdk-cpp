@@ -134,7 +134,7 @@ class GetBackupSelectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   BackupSelection m_backupSelection;
@@ -148,7 +148,7 @@ class GetBackupSelectionResult {
   Aws::String m_creatorRequestId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupSelectionHasBeenSet = false;
   bool m_selectionIdHasBeenSet = false;
   bool m_backupPlanIdHasBeenSet = false;

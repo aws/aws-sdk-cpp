@@ -112,7 +112,7 @@ class CreateKxUserResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_userName;
@@ -124,7 +124,7 @@ class CreateKxUserResult {
   Aws::String m_iamRole;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userNameHasBeenSet = false;
   bool m_userArnHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;

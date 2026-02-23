@@ -20,7 +20,7 @@ using namespace Aws;
 ListMonitoredResourcesResult::ListMonitoredResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMonitoredResourcesResult& ListMonitoredResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MonitoredResourceIdentifiers")) {
     Aws::Utils::Array<JsonView> monitoredResourceIdentifiersJsonList = jsonValue.GetArray("MonitoredResourceIdentifiers");

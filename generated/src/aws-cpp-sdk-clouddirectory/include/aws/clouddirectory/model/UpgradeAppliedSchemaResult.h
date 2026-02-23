@@ -75,7 +75,7 @@ class UpgradeAppliedSchemaResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_upgradedSchemaArn;
@@ -83,7 +83,7 @@ class UpgradeAppliedSchemaResult {
   Aws::String m_directoryArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_upgradedSchemaArnHasBeenSet = false;
   bool m_directoryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

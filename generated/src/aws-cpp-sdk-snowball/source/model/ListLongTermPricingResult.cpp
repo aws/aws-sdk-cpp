@@ -20,7 +20,7 @@ using namespace Aws;
 ListLongTermPricingResult::ListLongTermPricingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListLongTermPricingResult& ListLongTermPricingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("LongTermPricingEntries")) {
     Aws::Utils::Array<JsonView> longTermPricingEntriesJsonList = jsonValue.GetArray("LongTermPricingEntries");

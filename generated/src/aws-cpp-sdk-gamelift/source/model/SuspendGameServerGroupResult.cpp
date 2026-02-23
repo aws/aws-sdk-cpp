@@ -20,7 +20,7 @@ using namespace Aws;
 SuspendGameServerGroupResult::SuspendGameServerGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 SuspendGameServerGroupResult& SuspendGameServerGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("GameServerGroup")) {
     m_gameServerGroup = jsonValue.GetObject("GameServerGroup");

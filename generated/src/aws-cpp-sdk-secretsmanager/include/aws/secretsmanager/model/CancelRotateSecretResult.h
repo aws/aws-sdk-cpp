@@ -97,7 +97,7 @@ class CancelRotateSecretResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_aRN;
@@ -107,7 +107,7 @@ class CancelRotateSecretResult {
   Aws::String m_versionId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aRNHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

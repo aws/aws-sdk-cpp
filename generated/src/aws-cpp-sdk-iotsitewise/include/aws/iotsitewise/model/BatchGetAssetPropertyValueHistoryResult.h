@@ -138,7 +138,7 @@ class BatchGetAssetPropertyValueHistoryResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BatchGetAssetPropertyValueHistoryErrorEntry> m_errorEntries;
@@ -150,7 +150,7 @@ class BatchGetAssetPropertyValueHistoryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorEntriesHasBeenSet = false;
   bool m_successEntriesHasBeenSet = false;
   bool m_skippedEntriesHasBeenSet = false;

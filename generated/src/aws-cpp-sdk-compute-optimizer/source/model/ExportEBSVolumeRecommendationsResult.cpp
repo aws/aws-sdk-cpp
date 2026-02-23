@@ -23,7 +23,7 @@ ExportEBSVolumeRecommendationsResult::ExportEBSVolumeRecommendationsResult(const
 
 ExportEBSVolumeRecommendationsResult& ExportEBSVolumeRecommendationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobId")) {
     m_jobId = jsonValue.GetString("jobId");

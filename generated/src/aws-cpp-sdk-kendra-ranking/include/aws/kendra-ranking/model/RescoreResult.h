@@ -86,7 +86,7 @@ class RescoreResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_rescoreId;
@@ -94,7 +94,7 @@ class RescoreResult {
   Aws::Vector<RescoreResultItem> m_resultItems;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_rescoreIdHasBeenSet = false;
   bool m_resultItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

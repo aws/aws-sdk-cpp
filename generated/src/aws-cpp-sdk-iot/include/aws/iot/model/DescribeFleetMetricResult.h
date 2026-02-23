@@ -263,7 +263,7 @@ class DescribeFleetMetricResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_metricName;
@@ -293,7 +293,7 @@ class DescribeFleetMetricResult {
   Aws::String m_metricArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
   bool m_aggregationTypeHasBeenSet = false;

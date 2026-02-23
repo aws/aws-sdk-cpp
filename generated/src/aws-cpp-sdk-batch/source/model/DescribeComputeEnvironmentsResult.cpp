@@ -22,7 +22,7 @@ DescribeComputeEnvironmentsResult::DescribeComputeEnvironmentsResult(const Aws::
 }
 
 DescribeComputeEnvironmentsResult& DescribeComputeEnvironmentsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("computeEnvironments")) {
     Aws::Utils::Array<JsonView> computeEnvironmentsJsonList = jsonValue.GetArray("computeEnvironments");

@@ -92,7 +92,7 @@ class BatchDeleteMemoryRecordsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<MemoryRecordOutput> m_successfulRecords;
@@ -100,7 +100,7 @@ class BatchDeleteMemoryRecordsResult {
   Aws::Vector<MemoryRecordOutput> m_failedRecords;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulRecordsHasBeenSet = false;
   bool m_failedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

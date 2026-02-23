@@ -22,7 +22,7 @@ ListApiKeyCredentialProvidersResult::ListApiKeyCredentialProvidersResult(const A
 }
 
 ListApiKeyCredentialProvidersResult& ListApiKeyCredentialProvidersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("credentialProviders")) {
     Aws::Utils::Array<JsonView> credentialProvidersJsonList = jsonValue.GetArray("credentialProviders");

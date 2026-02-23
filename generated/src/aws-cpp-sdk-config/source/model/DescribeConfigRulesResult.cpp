@@ -20,7 +20,7 @@ using namespace Aws;
 DescribeConfigRulesResult::DescribeConfigRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeConfigRulesResult& DescribeConfigRulesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigRules")) {
     Aws::Utils::Array<JsonView> configRulesJsonList = jsonValue.GetArray("ConfigRules");

@@ -114,7 +114,7 @@ class ListReviewTemplateAnswersResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_templateArn;
@@ -126,7 +126,7 @@ class ListReviewTemplateAnswersResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateArnHasBeenSet = false;
   bool m_lensAliasHasBeenSet = false;
   bool m_answerSummariesHasBeenSet = false;

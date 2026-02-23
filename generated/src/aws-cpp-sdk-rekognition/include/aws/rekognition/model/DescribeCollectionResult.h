@@ -128,7 +128,7 @@ class DescribeCollectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   long long m_faceCount{0};
@@ -142,7 +142,7 @@ class DescribeCollectionResult {
   long long m_userCount{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_faceCountHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;
   bool m_collectionARNHasBeenSet = false;

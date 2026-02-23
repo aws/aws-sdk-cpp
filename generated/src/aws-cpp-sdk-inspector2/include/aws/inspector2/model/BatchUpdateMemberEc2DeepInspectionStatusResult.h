@@ -93,7 +93,7 @@ class BatchUpdateMemberEc2DeepInspectionStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<MemberAccountEc2DeepInspectionStatusState> m_accountIds;
@@ -101,7 +101,7 @@ class BatchUpdateMemberEc2DeepInspectionStatusResult {
   Aws::Vector<FailedMemberAccountEc2DeepInspectionStatusState> m_failedAccountIds;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdsHasBeenSet = false;
   bool m_failedAccountIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

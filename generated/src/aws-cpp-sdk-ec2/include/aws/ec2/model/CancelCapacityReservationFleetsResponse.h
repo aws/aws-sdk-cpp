@@ -96,7 +96,7 @@ class CancelCapacityReservationFleetsResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<CapacityReservationFleetCancellationState> m_successfulFleetCancellations;
@@ -104,7 +104,7 @@ class CancelCapacityReservationFleetsResponse {
   Aws::Vector<FailedCapacityReservationFleetCancellationResponse> m_failedFleetCancellations;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulFleetCancellationsHasBeenSet = false;
   bool m_failedFleetCancellationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

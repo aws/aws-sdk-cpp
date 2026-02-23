@@ -79,7 +79,7 @@ class CountClosedWorkflowExecutionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_count{0};
@@ -87,7 +87,7 @@ class CountClosedWorkflowExecutionsResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_countHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

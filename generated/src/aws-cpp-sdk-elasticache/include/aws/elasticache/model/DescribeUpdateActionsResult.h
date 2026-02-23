@@ -87,7 +87,7 @@ class DescribeUpdateActionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_marker;
@@ -95,7 +95,7 @@ class DescribeUpdateActionsResult {
   Aws::Vector<UpdateAction> m_updateActions;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_updateActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

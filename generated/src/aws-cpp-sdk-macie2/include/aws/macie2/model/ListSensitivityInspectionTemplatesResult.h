@@ -88,7 +88,7 @@ class ListSensitivityInspectionTemplatesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextToken;
@@ -96,7 +96,7 @@ class ListSensitivityInspectionTemplatesResult {
   Aws::Vector<SensitivityInspectionTemplatesEntry> m_sensitivityInspectionTemplates;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_sensitivityInspectionTemplatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

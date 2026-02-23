@@ -62,13 +62,13 @@ class ListFieldLevelEncryptionConfigs2020_05_31Result {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   FieldLevelEncryptionList m_fieldLevelEncryptionList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fieldLevelEncryptionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

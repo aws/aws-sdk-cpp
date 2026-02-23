@@ -90,7 +90,7 @@ class BatchGetCollectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<CollectionDetail> m_collectionDetails;
@@ -98,7 +98,7 @@ class BatchGetCollectionResult {
   Aws::Vector<CollectionErrorDetail> m_collectionErrorDetails;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_collectionDetailsHasBeenSet = false;
   bool m_collectionErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

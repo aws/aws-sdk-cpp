@@ -93,7 +93,7 @@ class DownloadDefaultKeyPairResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_publicKeyBase64;
@@ -103,7 +103,7 @@ class DownloadDefaultKeyPairResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_publicKeyBase64HasBeenSet = false;
   bool m_privateKeyBase64HasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

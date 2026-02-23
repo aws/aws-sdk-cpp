@@ -293,7 +293,7 @@ class DescribeDomainHealthResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DomainState m_domainState{DomainState::NOT_SET};
@@ -323,7 +323,7 @@ class DescribeDomainHealthResult {
   Aws::Vector<EnvironmentInfo> m_environmentInformation;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainStateHasBeenSet = false;
   bool m_availabilityZoneCountHasBeenSet = false;
   bool m_activeAvailabilityZoneCountHasBeenSet = false;

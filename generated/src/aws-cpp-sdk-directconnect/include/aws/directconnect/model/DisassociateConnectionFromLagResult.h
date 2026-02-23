@@ -469,7 +469,7 @@ class DisassociateConnectionFromLagResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_ownerAccount;
@@ -519,7 +519,7 @@ class DisassociateConnectionFromLagResult {
   bool m_partnerInterconnectMacSecCapable{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ownerAccountHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_connectionNameHasBeenSet = false;

@@ -115,7 +115,7 @@ class StartBackupJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_backupJobId;
@@ -127,7 +127,7 @@ class StartBackupJobResult {
   bool m_isParent{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupJobIdHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

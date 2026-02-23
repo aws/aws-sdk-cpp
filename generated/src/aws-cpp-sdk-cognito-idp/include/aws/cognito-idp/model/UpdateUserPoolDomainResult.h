@@ -88,7 +88,7 @@ class UpdateUserPoolDomainResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_managedLoginVersion{0};
@@ -96,7 +96,7 @@ class UpdateUserPoolDomainResult {
   Aws::String m_cloudFrontDomain;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managedLoginVersionHasBeenSet = false;
   bool m_cloudFrontDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

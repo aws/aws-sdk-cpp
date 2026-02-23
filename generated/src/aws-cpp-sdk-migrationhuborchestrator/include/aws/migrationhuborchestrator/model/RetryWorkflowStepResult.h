@@ -109,7 +109,7 @@ class RetryWorkflowStepResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_stepGroupId;
@@ -121,7 +121,7 @@ class RetryWorkflowStepResult {
   StepStatus m_status{StepStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stepGroupIdHasBeenSet = false;
   bool m_workflowIdHasBeenSet = false;
   bool m_idHasBeenSet = false;

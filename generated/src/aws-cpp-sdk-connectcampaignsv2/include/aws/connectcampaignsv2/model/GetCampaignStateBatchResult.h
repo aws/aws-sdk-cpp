@@ -91,7 +91,7 @@ class GetCampaignStateBatchResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<SuccessfulCampaignStateResponse> m_successfulRequests;
@@ -99,7 +99,7 @@ class GetCampaignStateBatchResult {
   Aws::Vector<FailedCampaignStateResponse> m_failedRequests;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulRequestsHasBeenSet = false;
   bool m_failedRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

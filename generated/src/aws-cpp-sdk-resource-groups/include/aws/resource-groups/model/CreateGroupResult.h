@@ -125,7 +125,7 @@ class CreateGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Group m_group;
@@ -137,7 +137,7 @@ class CreateGroupResult {
   GroupConfiguration m_groupConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupHasBeenSet = false;
   bool m_resourceQueryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

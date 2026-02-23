@@ -99,7 +99,7 @@ class CreateAssetModelResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_assetModelId;
@@ -109,7 +109,7 @@ class CreateAssetModelResult {
   AssetModelStatus m_assetModelStatus;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_assetModelArnHasBeenSet = false;
   bool m_assetModelStatusHasBeenSet = false;

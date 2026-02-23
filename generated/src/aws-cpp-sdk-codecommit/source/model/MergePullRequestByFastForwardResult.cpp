@@ -22,7 +22,7 @@ MergePullRequestByFastForwardResult::MergePullRequestByFastForwardResult(const A
 }
 
 MergePullRequestByFastForwardResult& MergePullRequestByFastForwardResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("pullRequest")) {
     m_pullRequest = jsonValue.GetObject("pullRequest");

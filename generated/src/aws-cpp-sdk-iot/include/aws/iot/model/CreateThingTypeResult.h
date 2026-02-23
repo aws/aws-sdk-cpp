@@ -97,7 +97,7 @@ class CreateThingTypeResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_thingTypeName;
@@ -107,7 +107,7 @@ class CreateThingTypeResult {
   Aws::String m_thingTypeId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingTypeNameHasBeenSet = false;
   bool m_thingTypeArnHasBeenSet = false;
   bool m_thingTypeIdHasBeenSet = false;

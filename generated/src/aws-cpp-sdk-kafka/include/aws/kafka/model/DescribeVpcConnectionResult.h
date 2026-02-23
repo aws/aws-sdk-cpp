@@ -234,7 +234,7 @@ class DescribeVpcConnectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_vpcConnectionArn;
@@ -256,7 +256,7 @@ class DescribeVpcConnectionResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcConnectionArnHasBeenSet = false;
   bool m_targetClusterArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;

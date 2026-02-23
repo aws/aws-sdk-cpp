@@ -295,7 +295,7 @@ class GetAutomationEventResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_eventId;
@@ -329,7 +329,7 @@ class GetAutomationEventResult {
   EstimatedMonthlySavings m_estimatedMonthlySavings;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventIdHasBeenSet = false;
   bool m_eventDescriptionHasBeenSet = false;
   bool m_eventTypeHasBeenSet = false;

@@ -345,7 +345,7 @@ class UpdateSubscriptionTargetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_id;
@@ -381,7 +381,7 @@ class UpdateSubscriptionTargetResult {
   SubscriptionGrantCreationMode m_subscriptionGrantCreationMode{SubscriptionGrantCreationMode::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_authorizedPrincipalsHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;

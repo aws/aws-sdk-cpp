@@ -83,7 +83,7 @@ class GrantFlowEntitlementsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Entitlement> m_entitlements;
@@ -91,7 +91,7 @@ class GrantFlowEntitlementsResult {
   Aws::String m_flowArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entitlementsHasBeenSet = false;
   bool m_flowArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

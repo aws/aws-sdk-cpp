@@ -143,7 +143,7 @@ class DescribeBillingGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_billingGroupName;
@@ -159,7 +159,7 @@ class DescribeBillingGroupResult {
   BillingGroupMetadata m_billingGroupMetadata;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_billingGroupNameHasBeenSet = false;
   bool m_billingGroupIdHasBeenSet = false;
   bool m_billingGroupArnHasBeenSet = false;

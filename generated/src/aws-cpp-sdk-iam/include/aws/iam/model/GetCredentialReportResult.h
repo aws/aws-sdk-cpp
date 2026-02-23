@@ -101,7 +101,7 @@ class GetCredentialReportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::ByteBuffer m_content{};
@@ -111,7 +111,7 @@ class GetCredentialReportResult {
   Aws::Utils::DateTime m_generatedTime{};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_reportFormatHasBeenSet = false;
   bool m_generatedTimeHasBeenSet = false;

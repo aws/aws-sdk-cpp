@@ -128,7 +128,7 @@ class TestInvokeAuthorizerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_isAuthenticated{false};
@@ -142,7 +142,7 @@ class TestInvokeAuthorizerResult {
   int m_disconnectAfterInSeconds{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isAuthenticatedHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
   bool m_policyDocumentsHasBeenSet = false;

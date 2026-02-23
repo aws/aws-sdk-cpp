@@ -88,7 +88,7 @@ class BatchDisassociateScramSecretResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_clusterArn;
@@ -96,7 +96,7 @@ class BatchDisassociateScramSecretResult {
   Aws::Vector<UnprocessedScramSecret> m_unprocessedScramSecrets;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterArnHasBeenSet = false;
   bool m_unprocessedScramSecretsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

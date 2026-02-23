@@ -75,7 +75,7 @@ class GetServiceLinkedRoleDeletionStatusResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DeletionTaskStatusType m_status{DeletionTaskStatusType::NOT_SET};
@@ -83,7 +83,7 @@ class GetServiceLinkedRoleDeletionStatusResult {
   DeletionTaskFailureReasonType m_reason;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

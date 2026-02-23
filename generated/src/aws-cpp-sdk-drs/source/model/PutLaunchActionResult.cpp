@@ -20,7 +20,7 @@ using namespace Aws;
 PutLaunchActionResult::PutLaunchActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutLaunchActionResult& PutLaunchActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionCode")) {
     m_actionCode = jsonValue.GetString("actionCode");

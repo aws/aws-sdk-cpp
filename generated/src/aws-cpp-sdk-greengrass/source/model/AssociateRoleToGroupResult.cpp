@@ -20,7 +20,7 @@ using namespace Aws;
 AssociateRoleToGroupResult::AssociateRoleToGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 AssociateRoleToGroupResult& AssociateRoleToGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssociatedAt")) {
     m_associatedAt = jsonValue.GetString("AssociatedAt");

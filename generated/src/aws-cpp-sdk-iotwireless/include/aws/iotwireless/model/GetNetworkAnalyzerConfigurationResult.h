@@ -178,7 +178,7 @@ class GetNetworkAnalyzerConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   TraceContent m_traceContent;
@@ -196,7 +196,7 @@ class GetNetworkAnalyzerConfigurationResult {
   Aws::Vector<Aws::String> m_multicastGroups;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_traceContentHasBeenSet = false;
   bool m_wirelessDevicesHasBeenSet = false;
   bool m_wirelessGatewaysHasBeenSet = false;

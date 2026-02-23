@@ -96,7 +96,7 @@ class StartFlowFlushResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_firewallArn;
@@ -106,7 +106,7 @@ class StartFlowFlushResult {
   FlowOperationStatus m_flowOperationStatus{FlowOperationStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_flowOperationIdHasBeenSet = false;
   bool m_flowOperationStatusHasBeenSet = false;

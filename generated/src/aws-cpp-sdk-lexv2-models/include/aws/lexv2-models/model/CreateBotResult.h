@@ -287,7 +287,7 @@ class CreateBotResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_botId;
@@ -317,7 +317,7 @@ class CreateBotResult {
   ErrorLogSettings m_errorLogSettings;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
   bool m_botNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

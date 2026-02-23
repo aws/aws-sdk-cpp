@@ -102,7 +102,7 @@ class DescribeVolumeAttributeResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AttributeBooleanValue m_autoEnableIO;
@@ -112,7 +112,7 @@ class DescribeVolumeAttributeResponse {
   Aws::String m_volumeId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoEnableIOHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;

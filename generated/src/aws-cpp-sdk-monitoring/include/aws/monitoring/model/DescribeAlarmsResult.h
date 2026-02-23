@@ -123,7 +123,7 @@ class DescribeAlarmsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<CompositeAlarm> m_compositeAlarms;
@@ -135,7 +135,7 @@ class DescribeAlarmsResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_compositeAlarmsHasBeenSet = false;
   bool m_metricAlarmsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

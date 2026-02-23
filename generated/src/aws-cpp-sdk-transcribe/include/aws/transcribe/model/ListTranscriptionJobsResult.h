@@ -104,7 +104,7 @@ class ListTranscriptionJobsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   TranscriptionJobStatus m_status{TranscriptionJobStatus::NOT_SET};
@@ -114,7 +114,7 @@ class ListTranscriptionJobsResult {
   Aws::Vector<TranscriptionJobSummary> m_transcriptionJobSummaries;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_transcriptionJobSummariesHasBeenSet = false;

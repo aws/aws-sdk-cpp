@@ -90,7 +90,7 @@ class CreateStandbyWorkspacesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<FailedCreateStandbyWorkspacesRequest> m_failedStandbyRequests;
@@ -98,7 +98,7 @@ class CreateStandbyWorkspacesResult {
   Aws::Vector<PendingCreateStandbyWorkspacesRequest> m_pendingStandbyRequests;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedStandbyRequestsHasBeenSet = false;
   bool m_pendingStandbyRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

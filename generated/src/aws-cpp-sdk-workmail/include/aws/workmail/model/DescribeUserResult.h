@@ -475,7 +475,7 @@ class DescribeUserResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_userId;
@@ -529,7 +529,7 @@ class DescribeUserResult {
   Aws::String m_identityProviderIdentityStoreId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_emailHasBeenSet = false;

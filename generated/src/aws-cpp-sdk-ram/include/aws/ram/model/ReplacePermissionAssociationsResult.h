@@ -85,7 +85,7 @@ class ReplacePermissionAssociationsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ReplacePermissionAssociationsWork m_replacePermissionAssociationsWork;
@@ -93,7 +93,7 @@ class ReplacePermissionAssociationsResult {
   Aws::String m_clientToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replacePermissionAssociationsWorkHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

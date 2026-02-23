@@ -20,7 +20,7 @@ using namespace Aws;
 ReverseGeocodeResult::ReverseGeocodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ReverseGeocodeResult& ReverseGeocodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ResultItems")) {
     Aws::Utils::Array<JsonView> resultItemsJsonList = jsonValue.GetArray("ResultItems");

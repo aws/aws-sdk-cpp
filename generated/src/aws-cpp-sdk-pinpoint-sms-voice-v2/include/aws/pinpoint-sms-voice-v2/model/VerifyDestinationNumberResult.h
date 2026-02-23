@@ -128,7 +128,7 @@ class VerifyDestinationNumberResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_verifiedDestinationNumberArn;
@@ -142,7 +142,7 @@ class VerifyDestinationNumberResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_verifiedDestinationNumberArnHasBeenSet = false;
   bool m_verifiedDestinationNumberIdHasBeenSet = false;
   bool m_destinationPhoneNumberHasBeenSet = false;

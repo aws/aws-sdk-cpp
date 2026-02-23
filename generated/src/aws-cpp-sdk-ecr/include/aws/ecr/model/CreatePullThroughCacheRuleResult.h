@@ -182,7 +182,7 @@ class CreatePullThroughCacheRuleResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_ecrRepositoryPrefix;
@@ -202,7 +202,7 @@ class CreatePullThroughCacheRuleResult {
   Aws::String m_upstreamRepositoryPrefix;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ecrRepositoryPrefixHasBeenSet = false;
   bool m_upstreamRegistryUrlHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

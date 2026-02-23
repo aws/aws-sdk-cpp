@@ -155,7 +155,7 @@ class EvaluateSessionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AuthenticationResult m_authenticationResult;
@@ -171,7 +171,7 @@ class EvaluateSessionResult {
   StreamingStatus m_streamingStatus{StreamingStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationResultHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_fraudDetectionResultHasBeenSet = false;

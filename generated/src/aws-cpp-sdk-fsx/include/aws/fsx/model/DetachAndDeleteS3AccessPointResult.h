@@ -74,7 +74,7 @@ class DetachAndDeleteS3AccessPointResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   S3AccessPointAttachmentLifecycle m_lifecycle{S3AccessPointAttachmentLifecycle::NOT_SET};
@@ -82,7 +82,7 @@ class DetachAndDeleteS3AccessPointResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecycleHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

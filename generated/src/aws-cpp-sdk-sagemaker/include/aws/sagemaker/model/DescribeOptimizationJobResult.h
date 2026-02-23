@@ -365,7 +365,7 @@ class DescribeOptimizationJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_optimizationJobArn;
@@ -405,7 +405,7 @@ class DescribeOptimizationJobResult {
   OptimizationVpcConfig m_vpcConfig;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_optimizationJobArnHasBeenSet = false;
   bool m_optimizationJobStatusHasBeenSet = false;
   bool m_optimizationStartTimeHasBeenSet = false;

@@ -20,7 +20,7 @@ using namespace Aws;
 UngroupResourcesResult::UngroupResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UngroupResourcesResult& UngroupResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Succeeded")) {
     Aws::Utils::Array<JsonView> succeededJsonList = jsonValue.GetArray("Succeeded");

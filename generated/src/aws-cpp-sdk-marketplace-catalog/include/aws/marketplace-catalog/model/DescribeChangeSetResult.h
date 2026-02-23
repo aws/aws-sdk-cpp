@@ -228,7 +228,7 @@ class DescribeChangeSetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_changeSetId;
@@ -252,7 +252,7 @@ class DescribeChangeSetResult {
   Aws::Vector<ChangeSummary> m_changeSet;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeSetIdHasBeenSet = false;
   bool m_changeSetArnHasBeenSet = false;
   bool m_changeSetNameHasBeenSet = false;

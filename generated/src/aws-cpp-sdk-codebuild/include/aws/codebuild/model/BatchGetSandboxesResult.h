@@ -89,7 +89,7 @@ class BatchGetSandboxesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Sandbox> m_sandboxes;
@@ -97,7 +97,7 @@ class BatchGetSandboxesResult {
   Aws::Vector<Aws::String> m_sandboxesNotFound;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sandboxesHasBeenSet = false;
   bool m_sandboxesNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

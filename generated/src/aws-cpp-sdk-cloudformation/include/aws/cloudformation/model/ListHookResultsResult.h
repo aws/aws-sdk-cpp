@@ -118,7 +118,7 @@ class ListHookResultsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ListHookResultsTargetType m_targetType{ListHookResultsTargetType::NOT_SET};
@@ -130,7 +130,7 @@ class ListHookResultsResult {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_targetTypeHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_hookResultsHasBeenSet = false;

@@ -77,7 +77,7 @@ class DescribeBrandResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_requestId;
@@ -85,7 +85,7 @@ class DescribeBrandResult {
   BrandDetail m_brandDetail;
 
   BrandDefinition m_brandDefinition;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_brandDetailHasBeenSet = false;
   bool m_brandDefinitionHasBeenSet = false;

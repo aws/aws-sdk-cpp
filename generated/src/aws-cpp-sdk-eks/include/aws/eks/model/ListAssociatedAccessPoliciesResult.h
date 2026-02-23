@@ -123,7 +123,7 @@ class ListAssociatedAccessPoliciesResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_clusterName;
@@ -135,7 +135,7 @@ class ListAssociatedAccessPoliciesResult {
   Aws::Vector<AssociatedAccessPolicy> m_associatedAccessPolicies;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterNameHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

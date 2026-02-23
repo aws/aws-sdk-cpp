@@ -22,7 +22,7 @@ ListCostCategoryDefinitionsResult::ListCostCategoryDefinitionsResult(const Aws::
 }
 
 ListCostCategoryDefinitionsResult& ListCostCategoryDefinitionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CostCategoryReferences")) {
     Aws::Utils::Array<JsonView> costCategoryReferencesJsonList = jsonValue.GetArray("CostCategoryReferences");

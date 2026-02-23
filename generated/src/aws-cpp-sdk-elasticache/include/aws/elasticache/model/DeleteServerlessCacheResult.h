@@ -60,13 +60,13 @@ class DeleteServerlessCacheResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ServerlessCache m_serverlessCache;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serverlessCacheHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

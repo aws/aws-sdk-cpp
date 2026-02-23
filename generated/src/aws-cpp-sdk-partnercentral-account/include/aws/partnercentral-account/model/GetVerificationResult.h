@@ -148,7 +148,7 @@ class GetVerificationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   VerificationType m_verificationType{VerificationType::NOT_SET};
@@ -164,7 +164,7 @@ class GetVerificationResult {
   Aws::Utils::DateTime m_completedAt{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_verificationTypeHasBeenSet = false;
   bool m_verificationStatusHasBeenSet = false;
   bool m_verificationStatusReasonHasBeenSet = false;

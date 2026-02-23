@@ -99,7 +99,7 @@ class UpdateDatasetResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_datasetId;
@@ -109,7 +109,7 @@ class UpdateDatasetResult {
   DatasetStatus m_datasetStatus;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
   bool m_datasetStatusHasBeenSet = false;

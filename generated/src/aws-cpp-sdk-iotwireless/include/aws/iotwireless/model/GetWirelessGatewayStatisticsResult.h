@@ -92,7 +92,7 @@ class GetWirelessGatewayStatisticsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_wirelessGatewayId;
@@ -102,7 +102,7 @@ class GetWirelessGatewayStatisticsResult {
   ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_wirelessGatewayIdHasBeenSet = false;
   bool m_lastUplinkReceivedAtHasBeenSet = false;
   bool m_connectionStatusHasBeenSet = false;

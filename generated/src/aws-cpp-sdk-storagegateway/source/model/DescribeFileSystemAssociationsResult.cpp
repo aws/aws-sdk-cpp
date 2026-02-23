@@ -23,7 +23,7 @@ DescribeFileSystemAssociationsResult::DescribeFileSystemAssociationsResult(const
 
 DescribeFileSystemAssociationsResult& DescribeFileSystemAssociationsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("FileSystemAssociationInfoList")) {
     Aws::Utils::Array<JsonView> fileSystemAssociationInfoListJsonList = jsonValue.GetArray("FileSystemAssociationInfoList");

@@ -90,7 +90,7 @@ class BatchDeleteRumMetricDefinitionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<BatchDeleteRumMetricDefinitionsError> m_errors;
@@ -98,7 +98,7 @@ class BatchDeleteRumMetricDefinitionsResult {
   Aws::Vector<Aws::String> m_metricDefinitionIds;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorsHasBeenSet = false;
   bool m_metricDefinitionIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

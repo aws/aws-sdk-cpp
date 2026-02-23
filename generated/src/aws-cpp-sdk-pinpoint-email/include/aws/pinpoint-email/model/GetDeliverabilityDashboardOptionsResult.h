@@ -159,7 +159,7 @@ class GetDeliverabilityDashboardOptionsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   bool m_dashboardEnabled{false};
@@ -173,7 +173,7 @@ class GetDeliverabilityDashboardOptionsResult {
   Aws::Vector<DomainDeliverabilityTrackingOption> m_pendingExpirationSubscribedDomains;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dashboardEnabledHasBeenSet = false;
   bool m_subscriptionExpiryDateHasBeenSet = false;
   bool m_accountStatusHasBeenSet = false;

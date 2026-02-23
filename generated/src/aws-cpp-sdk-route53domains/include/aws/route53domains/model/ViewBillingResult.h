@@ -91,7 +91,7 @@ class ViewBillingResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_nextPageMarker;
@@ -99,7 +99,7 @@ class ViewBillingResult {
   Aws::Vector<BillingRecord> m_billingRecords;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextPageMarkerHasBeenSet = false;
   bool m_billingRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

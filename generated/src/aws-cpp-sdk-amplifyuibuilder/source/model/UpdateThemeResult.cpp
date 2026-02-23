@@ -20,7 +20,7 @@ using namespace Aws;
 UpdateThemeResult::UpdateThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateThemeResult& UpdateThemeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   m_entity = jsonValue;
   m_entityHasBeenSet = true;

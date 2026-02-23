@@ -19,7 +19,7 @@ using namespace Aws;
 GetImageSetMetadataResult::GetImageSetMetadataResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 GetImageSetMetadataResult& GetImageSetMetadataResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   m_imageSetMetadataBlob = result.TakeOwnershipOfPayload();
   m_imageSetMetadataBlobHasBeenSet = true;
 

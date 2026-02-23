@@ -115,7 +115,7 @@ class StartWebRTCContactResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ConnectionData m_connectionData;
@@ -127,7 +127,7 @@ class StartWebRTCContactResult {
   Aws::String m_participantToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionDataHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
   bool m_participantIdHasBeenSet = false;

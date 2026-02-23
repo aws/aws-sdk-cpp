@@ -24,7 +24,7 @@ DescribeBudgetNotificationsForAccountResult::DescribeBudgetNotificationsForAccou
 
 DescribeBudgetNotificationsForAccountResult& DescribeBudgetNotificationsForAccountResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("BudgetNotificationsForAccount")) {
     Aws::Utils::Array<JsonView> budgetNotificationsForAccountJsonList = jsonValue.GetArray("BudgetNotificationsForAccount");

@@ -101,7 +101,7 @@ class CreateRouteCalculatorResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_calculatorName;
@@ -111,7 +111,7 @@ class CreateRouteCalculatorResult {
   Aws::Utils::DateTime m_createTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_calculatorNameHasBeenSet = false;
   bool m_calculatorArnHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;

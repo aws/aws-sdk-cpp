@@ -22,7 +22,7 @@ GetLogLevelsByResourceTypesResult::GetLogLevelsByResourceTypesResult(const Aws::
 }
 
 GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DefaultLogLevel")) {
     m_defaultLogLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("DefaultLogLevel"));

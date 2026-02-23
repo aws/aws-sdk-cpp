@@ -90,7 +90,7 @@ class RegisterJobDefinitionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobDefinitionName;
@@ -100,7 +100,7 @@ class RegisterJobDefinitionResult {
   int m_revision{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobDefinitionNameHasBeenSet = false;
   bool m_jobDefinitionArnHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

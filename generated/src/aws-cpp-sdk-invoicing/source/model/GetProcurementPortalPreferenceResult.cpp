@@ -23,7 +23,7 @@ GetProcurementPortalPreferenceResult::GetProcurementPortalPreferenceResult(const
 
 GetProcurementPortalPreferenceResult& GetProcurementPortalPreferenceResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ProcurementPortalPreference")) {
     m_procurementPortalPreference = jsonValue.GetObject("ProcurementPortalPreference");

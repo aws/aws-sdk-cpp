@@ -24,7 +24,7 @@ ListCisScanResultsAggregatedByChecksResult::ListCisScanResultsAggregatedByChecks
 
 ListCisScanResultsAggregatedByChecksResult& ListCisScanResultsAggregatedByChecksResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("checkAggregations")) {
     Aws::Utils::Array<JsonView> checkAggregationsJsonList = jsonValue.GetArray("checkAggregations");

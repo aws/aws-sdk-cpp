@@ -381,7 +381,7 @@ class DescribeSigningJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_jobId;
@@ -423,7 +423,7 @@ class DescribeSigningJobResult {
   Aws::String m_jobInvoker;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
   bool m_signingMaterialHasBeenSet = false;

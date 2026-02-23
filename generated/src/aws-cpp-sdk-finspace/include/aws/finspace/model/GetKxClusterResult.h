@@ -513,7 +513,7 @@ class GetKxClusterResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   KxClusterStatus m_status{KxClusterStatus::NOT_SET};
@@ -563,7 +563,7 @@ class GetKxClusterResult {
   KxScalingGroupConfiguration m_scalingGroupConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;

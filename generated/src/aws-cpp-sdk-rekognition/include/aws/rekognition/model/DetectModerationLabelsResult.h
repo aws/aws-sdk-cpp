@@ -147,7 +147,7 @@ class DetectModerationLabelsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ModerationLabel> m_moderationLabels;
@@ -161,7 +161,7 @@ class DetectModerationLabelsResult {
   Aws::Vector<ContentType> m_contentTypes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_moderationLabelsHasBeenSet = false;
   bool m_moderationModelVersionHasBeenSet = false;
   bool m_humanLoopActivationOutputHasBeenSet = false;

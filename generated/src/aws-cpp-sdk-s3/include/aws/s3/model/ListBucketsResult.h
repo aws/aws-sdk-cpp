@@ -124,7 +124,7 @@ class ListBucketsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<Bucket> m_buckets;
@@ -136,7 +136,7 @@ class ListBucketsResult {
   Aws::String m_prefix;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;

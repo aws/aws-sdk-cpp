@@ -208,7 +208,7 @@ class DescribeGroupResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_groupId;
@@ -230,7 +230,7 @@ class DescribeGroupResult {
   Aws::String m_identityStoreId;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_externalIdsHasBeenSet = false;

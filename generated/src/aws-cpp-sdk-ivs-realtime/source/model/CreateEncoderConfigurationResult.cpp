@@ -20,7 +20,7 @@ using namespace Aws;
 CreateEncoderConfigurationResult::CreateEncoderConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateEncoderConfigurationResult& CreateEncoderConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("encoderConfiguration")) {
     m_encoderConfiguration = jsonValue.GetObject("encoderConfiguration");

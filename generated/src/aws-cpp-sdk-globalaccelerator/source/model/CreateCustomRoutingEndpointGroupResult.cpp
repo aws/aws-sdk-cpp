@@ -23,7 +23,7 @@ CreateCustomRoutingEndpointGroupResult::CreateCustomRoutingEndpointGroupResult(c
 
 CreateCustomRoutingEndpointGroupResult& CreateCustomRoutingEndpointGroupResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EndpointGroup")) {
     m_endpointGroup = jsonValue.GetObject("EndpointGroup");

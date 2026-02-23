@@ -82,7 +82,7 @@ class StartOutpostDecommissionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   DecommissionRequestStatus m_status{DecommissionRequestStatus::NOT_SET};
@@ -90,7 +90,7 @@ class StartOutpostDecommissionResult {
   Aws::Vector<BlockingResourceType> m_blockingResourceTypes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_blockingResourceTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

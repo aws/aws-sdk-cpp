@@ -75,7 +75,7 @@ class UpdateSiteAddressResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AddressType m_addressType{AddressType::NOT_SET};
@@ -83,7 +83,7 @@ class UpdateSiteAddressResult {
   Address m_address;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_addressTypeHasBeenSet = false;
   bool m_addressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

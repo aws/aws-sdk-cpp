@@ -128,7 +128,7 @@ class GetMethodResponseResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_statusCode;
@@ -138,7 +138,7 @@ class GetMethodResponseResult {
   Aws::Map<Aws::String, Aws::String> m_responseModels;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_responseParametersHasBeenSet = false;
   bool m_responseModelsHasBeenSet = false;

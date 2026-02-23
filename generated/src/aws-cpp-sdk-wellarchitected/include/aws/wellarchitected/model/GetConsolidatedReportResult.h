@@ -97,7 +97,7 @@ class GetConsolidatedReportResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ConsolidatedReportMetric> m_metrics;
@@ -107,7 +107,7 @@ class GetConsolidatedReportResult {
   Aws::String m_base64String;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_base64StringHasBeenSet = false;

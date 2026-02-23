@@ -128,7 +128,7 @@ class UpdateRestoreTestingSelectionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_creationTime{};
@@ -142,7 +142,7 @@ class UpdateRestoreTestingSelectionResult {
   Aws::Utils::DateTime m_updateTime{};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_restoreTestingPlanArnHasBeenSet = false;
   bool m_restoreTestingPlanNameHasBeenSet = false;

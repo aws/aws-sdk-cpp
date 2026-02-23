@@ -77,7 +77,7 @@ class CreateDataIntegrationAssociationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_dataIntegrationAssociationId;
@@ -85,7 +85,7 @@ class CreateDataIntegrationAssociationResult {
   Aws::String m_dataIntegrationArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataIntegrationAssociationIdHasBeenSet = false;
   bool m_dataIntegrationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

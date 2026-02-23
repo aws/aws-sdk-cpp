@@ -78,7 +78,7 @@ class GetAutomatedReasoningPolicyNextScenarioResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_policyArn;
@@ -86,7 +86,7 @@ class GetAutomatedReasoningPolicyNextScenarioResult {
   AutomatedReasoningPolicyScenario m_scenario;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_scenarioHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

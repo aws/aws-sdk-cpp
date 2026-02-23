@@ -216,7 +216,7 @@ class PublishLayerVersionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   LayerVersionContentOutput m_content;
@@ -238,7 +238,7 @@ class PublishLayerVersionResult {
   Aws::Vector<Architecture> m_compatibleArchitectures;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_layerArnHasBeenSet = false;
   bool m_layerVersionArnHasBeenSet = false;

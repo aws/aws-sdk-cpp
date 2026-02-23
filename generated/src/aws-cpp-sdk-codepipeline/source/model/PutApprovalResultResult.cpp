@@ -20,7 +20,7 @@ using namespace Aws;
 PutApprovalResultResult::PutApprovalResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutApprovalResultResult& PutApprovalResultResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("approvedAt")) {
     m_approvedAt = jsonValue.GetDouble("approvedAt");

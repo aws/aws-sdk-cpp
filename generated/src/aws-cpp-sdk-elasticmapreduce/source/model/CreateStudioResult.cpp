@@ -20,7 +20,7 @@ using namespace Aws;
 CreateStudioResult::CreateStudioResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateStudioResult& CreateStudioResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("StudioId")) {
     m_studioId = jsonValue.GetString("StudioId");

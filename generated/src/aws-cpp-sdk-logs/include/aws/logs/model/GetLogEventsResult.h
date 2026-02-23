@@ -104,7 +104,7 @@ class GetLogEventsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<OutputLogEvent> m_events;
@@ -114,7 +114,7 @@ class GetLogEventsResult {
   Aws::String m_nextBackwardToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventsHasBeenSet = false;
   bool m_nextForwardTokenHasBeenSet = false;
   bool m_nextBackwardTokenHasBeenSet = false;

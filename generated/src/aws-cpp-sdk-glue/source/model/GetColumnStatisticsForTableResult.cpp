@@ -22,7 +22,7 @@ GetColumnStatisticsForTableResult::GetColumnStatisticsForTableResult(const Aws::
 }
 
 GetColumnStatisticsForTableResult& GetColumnStatisticsForTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ColumnStatisticsList")) {
     Aws::Utils::Array<JsonView> columnStatisticsListJsonList = jsonValue.GetArray("ColumnStatisticsList");

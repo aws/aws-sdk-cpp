@@ -77,7 +77,7 @@ class CreateCostCategoryDefinitionResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_costCategoryArn;
@@ -85,7 +85,7 @@ class CreateCostCategoryDefinitionResult {
   Aws::String m_effectiveStart;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_costCategoryArnHasBeenSet = false;
   bool m_effectiveStartHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

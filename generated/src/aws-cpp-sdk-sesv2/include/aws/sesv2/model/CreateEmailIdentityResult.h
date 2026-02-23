@@ -103,7 +103,7 @@ class CreateEmailIdentityResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
@@ -113,7 +113,7 @@ class CreateEmailIdentityResult {
   DkimAttributes m_dkimAttributes;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityTypeHasBeenSet = false;
   bool m_verifiedForSendingStatusHasBeenSet = false;
   bool m_dkimAttributesHasBeenSet = false;

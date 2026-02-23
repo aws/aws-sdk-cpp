@@ -20,7 +20,7 @@ using namespace Aws;
 GetLandingZoneOperationResult::GetLandingZoneOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLandingZoneOperationResult& GetLandingZoneOperationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("operationDetails")) {
     m_operationDetails = jsonValue.GetObject("operationDetails");

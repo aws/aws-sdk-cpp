@@ -107,7 +107,7 @@ class GetFailbackReplicationConfigurationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   long long m_bandwidthThrottling{0};
@@ -119,7 +119,7 @@ class GetFailbackReplicationConfigurationResult {
   bool m_usePrivateIP{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bandwidthThrottlingHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_recoveryInstanceIDHasBeenSet = false;

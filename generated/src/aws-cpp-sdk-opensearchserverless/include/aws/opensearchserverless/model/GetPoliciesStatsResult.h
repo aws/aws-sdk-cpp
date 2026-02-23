@@ -129,7 +129,7 @@ class GetPoliciesStatsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   AccessPolicyStats m_accessPolicyStats;
@@ -143,7 +143,7 @@ class GetPoliciesStatsResult {
   long long m_totalPolicyCount{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessPolicyStatsHasBeenSet = false;
   bool m_securityPolicyStatsHasBeenSet = false;
   bool m_securityConfigStatsHasBeenSet = false;

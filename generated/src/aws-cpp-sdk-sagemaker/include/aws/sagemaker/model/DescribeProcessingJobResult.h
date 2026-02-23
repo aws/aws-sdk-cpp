@@ -426,7 +426,7 @@ class DescribeProcessingJobResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Vector<ProcessingInput> m_processingInputs;
@@ -472,7 +472,7 @@ class DescribeProcessingJobResult {
   Aws::String m_trainingJobArn;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_processingInputsHasBeenSet = false;
   bool m_processingOutputConfigHasBeenSet = false;
   bool m_processingJobNameHasBeenSet = false;

@@ -153,7 +153,7 @@ class DescribeDimensionKeysResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Utils::DateTime m_alignedStartTime{};
@@ -167,7 +167,7 @@ class DescribeDimensionKeysResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_alignedStartTimeHasBeenSet = false;
   bool m_alignedEndTimeHasBeenSet = false;
   bool m_partitionKeysHasBeenSet = false;

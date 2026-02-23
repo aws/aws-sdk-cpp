@@ -83,7 +83,7 @@ class GetImageBlockPublicAccessStateResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_imageBlockPublicAccessState;
@@ -91,7 +91,7 @@ class GetImageBlockPublicAccessStateResponse {
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageBlockPublicAccessStateHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

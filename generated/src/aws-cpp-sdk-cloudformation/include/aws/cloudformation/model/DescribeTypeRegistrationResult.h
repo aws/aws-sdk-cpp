@@ -114,7 +114,7 @@ class DescribeTypeRegistrationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   RegistrationStatus m_progressStatus{RegistrationStatus::NOT_SET};
@@ -126,7 +126,7 @@ class DescribeTypeRegistrationResult {
   Aws::String m_typeVersionArn;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_progressStatusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_typeArnHasBeenSet = false;

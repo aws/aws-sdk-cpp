@@ -20,7 +20,7 @@ using namespace Aws;
 ListCollectionGroupsResult::ListCollectionGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListCollectionGroupsResult& ListCollectionGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collectionGroupSummaries")) {
     Aws::Utils::Array<JsonView> collectionGroupSummariesJsonList = jsonValue.GetArray("collectionGroupSummaries");

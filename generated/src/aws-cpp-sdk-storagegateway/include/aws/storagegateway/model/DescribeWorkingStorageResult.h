@@ -120,7 +120,7 @@ class DescribeWorkingStorageResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_gatewayARN;
@@ -132,7 +132,7 @@ class DescribeWorkingStorageResult {
   long long m_workingStorageAllocatedInBytes{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayARNHasBeenSet = false;
   bool m_diskIdsHasBeenSet = false;
   bool m_workingStorageUsedInBytesHasBeenSet = false;

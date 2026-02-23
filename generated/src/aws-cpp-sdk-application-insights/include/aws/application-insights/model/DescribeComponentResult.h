@@ -81,7 +81,7 @@ class DescribeComponentResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   ApplicationComponent m_applicationComponent;
@@ -89,7 +89,7 @@ class DescribeComponentResult {
   Aws::Vector<Aws::String> m_resourceList;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationComponentHasBeenSet = false;
   bool m_resourceListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

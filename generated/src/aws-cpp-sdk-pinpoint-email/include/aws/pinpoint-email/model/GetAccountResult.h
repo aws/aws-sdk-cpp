@@ -147,7 +147,7 @@ class GetAccountResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   SendQuota m_sendQuota;
@@ -161,7 +161,7 @@ class GetAccountResult {
   bool m_productionAccessEnabled{false};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sendQuotaHasBeenSet = false;
   bool m_sendingEnabledHasBeenSet = false;
   bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;

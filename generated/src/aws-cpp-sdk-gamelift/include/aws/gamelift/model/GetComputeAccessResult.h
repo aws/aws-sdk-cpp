@@ -181,7 +181,7 @@ class GetComputeAccessResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_fleetId;
@@ -199,7 +199,7 @@ class GetComputeAccessResult {
   Aws::Vector<ContainerIdentifier> m_containerIdentifiers;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_computeNameHasBeenSet = false;

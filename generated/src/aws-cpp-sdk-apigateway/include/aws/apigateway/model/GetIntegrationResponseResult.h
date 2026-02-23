@@ -170,7 +170,7 @@ class GetIntegrationResponseResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_statusCode;
@@ -184,7 +184,7 @@ class GetIntegrationResponseResult {
   ContentHandlingStrategy m_contentHandling{ContentHandlingStrategy::NOT_SET};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_selectionPatternHasBeenSet = false;
   bool m_responseParametersHasBeenSet = false;

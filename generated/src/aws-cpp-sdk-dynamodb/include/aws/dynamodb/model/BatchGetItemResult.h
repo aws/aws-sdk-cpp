@@ -141,7 +141,7 @@ class BatchGetItemResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>> m_responses;
@@ -151,7 +151,7 @@ class BatchGetItemResult {
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responsesHasBeenSet = false;
   bool m_unprocessedKeysHasBeenSet = false;
   bool m_consumedCapacityHasBeenSet = false;

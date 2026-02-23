@@ -77,7 +77,7 @@ class CreateActivationResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_activationId;
@@ -85,7 +85,7 @@ class CreateActivationResult {
   Aws::String m_activationCode;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_activationIdHasBeenSet = false;
   bool m_activationCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

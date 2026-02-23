@@ -215,7 +215,7 @@ class GetEventTriggerResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_eventTriggerName;
@@ -237,7 +237,7 @@ class GetEventTriggerResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventTriggerNameHasBeenSet = false;
   bool m_objectTypeNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

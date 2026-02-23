@@ -105,7 +105,7 @@ class DescribeOrganizationHealthResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   int m_openReactiveInsights{0};
@@ -117,7 +117,7 @@ class DescribeOrganizationHealthResult {
   long long m_resourceHours{0};
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_openReactiveInsightsHasBeenSet = false;
   bool m_openProactiveInsightsHasBeenSet = false;
   bool m_metricsAnalyzedHasBeenSet = false;

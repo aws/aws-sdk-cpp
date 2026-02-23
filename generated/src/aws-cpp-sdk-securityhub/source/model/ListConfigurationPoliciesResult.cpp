@@ -20,7 +20,7 @@ using namespace Aws;
 ListConfigurationPoliciesResult::ListConfigurationPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConfigurationPoliciesResult& ListConfigurationPoliciesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ConfigurationPolicySummaries")) {
     Aws::Utils::Array<JsonView> configurationPolicySummariesJsonList = jsonValue.GetArray("ConfigurationPolicySummaries");

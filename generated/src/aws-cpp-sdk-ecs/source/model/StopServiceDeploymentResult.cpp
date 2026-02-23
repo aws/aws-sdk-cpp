@@ -20,7 +20,7 @@ using namespace Aws;
 StopServiceDeploymentResult::StopServiceDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StopServiceDeploymentResult& StopServiceDeploymentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
-  m_responseCode = result.GetResponseCode();
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("serviceDeploymentArn")) {
     m_serviceDeploymentArn = jsonValue.GetString("serviceDeploymentArn");

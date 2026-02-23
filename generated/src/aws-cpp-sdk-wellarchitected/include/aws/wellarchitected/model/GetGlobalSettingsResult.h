@@ -91,7 +91,7 @@ class GetGlobalSettingsResult {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   OrganizationSharingStatus m_organizationSharingStatus{OrganizationSharingStatus::NOT_SET};
@@ -101,7 +101,7 @@ class GetGlobalSettingsResult {
   AccountJiraConfigurationOutput m_jiraConfiguration;
 
   Aws::String m_requestId;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_organizationSharingStatusHasBeenSet = false;
   bool m_discoveryIntegrationStatusHasBeenSet = false;
   bool m_jiraConfigurationHasBeenSet = false;

@@ -415,7 +415,7 @@ class CreateVolumeResponse {
     return *this;
   }
   ///@}
-  inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
   Aws::String m_availabilityZoneId;
@@ -461,7 +461,7 @@ class CreateVolumeResponse {
   Aws::String m_kmsKeyId;
 
   ResponseMetadata m_responseMetadata;
-  Aws::Http::HttpResponseCode m_responseCode;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_availabilityZoneIdHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
   bool m_sourceVolumeIdHasBeenSet = false;
