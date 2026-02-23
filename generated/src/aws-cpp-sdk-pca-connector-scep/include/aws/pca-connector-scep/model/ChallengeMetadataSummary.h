@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>Details about the specified challenge, returned by the <a
- * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html">GetChallengeMetadata</a>
+ * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html">GetChallengeMetadata</a>
  * action.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ChallengeMetadataSummary">AWS
  * API Reference</a></p>

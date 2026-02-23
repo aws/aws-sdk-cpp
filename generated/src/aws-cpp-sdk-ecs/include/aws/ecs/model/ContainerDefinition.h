@@ -396,13 +396,13 @@ class ContainerDefinition {
 
   ///@{
   /**
-   *  <p>Early versions of the Amazon ECS container agent don't properly
-   * handle <code>entryPoint</code> parameters. If you have problems using
+   * <p> <p>Early versions of the Amazon ECS container agent don't
+   * properly handle <code>entryPoint</code> parameters. If you have problems using
    * <code>entryPoint</code>, update your container agent or enter your commands and
    * arguments as <code>command</code> array items instead.</p>  <p>The
    * entry point that's passed to the container. This parameter maps to
    * <code>Entrypoint</code> in the docker container create command and the
-   * <code>--entrypoint</code> option to docker run.</p>
+   * <code>--entrypoint</code> option to docker run.</p></p>
    */
   inline const Aws::Vector<Aws::String>& GetEntryPoint() const { return m_entryPoint; }
   inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }

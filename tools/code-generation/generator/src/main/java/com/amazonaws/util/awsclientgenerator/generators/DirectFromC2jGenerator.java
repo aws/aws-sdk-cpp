@@ -44,7 +44,7 @@ public class DirectFromC2jGenerator {
     public ByteArrayOutputStream generateServiceSourceFromJson(String rawJson, String endpointRuleSet, String endpointRulesTests,
                                                                String languageBinding, String serviceName, String namespace,
                                                                String licenseText, boolean generateStandalonePackage,
-                                                               boolean enableVirtualOperations, boolean useSmithyClient) throws Exception {
+                                                               boolean enableVirtualOperations, boolean disableSmithyGeneration, boolean useSmithyClient) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(EndpointTests.EndpointTestParams.class, new EndpointTestParamsDeserializer());
         gsonBuilder.registerTypeAdapter(EndpointParameterValue.class, new EndpointParameterValueDeserializer());
@@ -61,7 +61,7 @@ public class DirectFromC2jGenerator {
             c2jServiceModel.setEndpointTests(endpointTestsModel);
         }
         return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding, namespace,
-                licenseText, generateStandalonePackage, enableVirtualOperations, useSmithyClient);
+                licenseText, generateStandalonePackage, enableVirtualOperations, disableSmithyGeneration, useSmithyClient);
     }
 
     /**
@@ -79,7 +79,7 @@ public class DirectFromC2jGenerator {
      */
     public ByteArrayOutputStream generatePartitionsSourceFromJson(String rawJson, String languageBinding, String serviceName,
                                                                  String namespace, String licenseText,
-                                                                 boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+                                                                 boolean generateStandalonePackage, boolean enableVirtualOperations, boolean disableSmithyGeneration) throws Exception {
         PartitionsModel partitionsBom = parsePartitions(rawJson);
         partitionsBom.setPartitionsBlob(rawJson);
 
@@ -101,7 +101,7 @@ public class DirectFromC2jGenerator {
      */
     public ByteArrayOutputStream generateDefaultsSourceFromJson(String rawJson, String languageBinding, String serviceName,
                                                                 String namespace, String licenseText,
-                                                                boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+                                                                boolean generateStandalonePackage, boolean enableVirtualOperations, boolean disableSmithyGeneration) throws Exception {
         DefaultClientConfigs clientConfigBom = parseRawJson(rawJson);
 
         return mainClientGenerator.generateDefaultsSourceFromModel(clientConfigBom, languageBinding, namespace, licenseText);

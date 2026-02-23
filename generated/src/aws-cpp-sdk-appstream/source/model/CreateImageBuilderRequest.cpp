@@ -97,6 +97,10 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const {
     payload.WithArray("SoftwaresToUninstall", std::move(softwaresToUninstallJsonList));
   }
 
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
+  }
+
   return payload.View().WriteReadable();
 }
 

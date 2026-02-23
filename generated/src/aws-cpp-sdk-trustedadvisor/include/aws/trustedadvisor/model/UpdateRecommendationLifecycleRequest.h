@@ -48,25 +48,6 @@ class UpdateRecommendationLifecycleRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The Recommendation identifier for AWS Trusted Advisor Priority
-   * recommendations</p>
-   */
-  inline const Aws::String& GetRecommendationIdentifier() const { return m_recommendationIdentifier; }
-  inline bool RecommendationIdentifierHasBeenSet() const { return m_recommendationIdentifierHasBeenSet; }
-  template <typename RecommendationIdentifierT = Aws::String>
-  void SetRecommendationIdentifier(RecommendationIdentifierT&& value) {
-    m_recommendationIdentifierHasBeenSet = true;
-    m_recommendationIdentifier = std::forward<RecommendationIdentifierT>(value);
-  }
-  template <typename RecommendationIdentifierT = Aws::String>
-  UpdateRecommendationLifecycleRequest& WithRecommendationIdentifier(RecommendationIdentifierT&& value) {
-    SetRecommendationIdentifier(std::forward<RecommendationIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Reason for the lifecycle stage change</p>
    */
   inline const Aws::String& GetUpdateReason() const { return m_updateReason; }
@@ -98,18 +79,37 @@ class UpdateRecommendationLifecycleRequest : public TrustedAdvisorRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Recommendation identifier for AWS Trusted Advisor Priority
+   * recommendations</p>
+   */
+  inline const Aws::String& GetRecommendationIdentifier() const { return m_recommendationIdentifier; }
+  inline bool RecommendationIdentifierHasBeenSet() const { return m_recommendationIdentifierHasBeenSet; }
+  template <typename RecommendationIdentifierT = Aws::String>
+  void SetRecommendationIdentifier(RecommendationIdentifierT&& value) {
+    m_recommendationIdentifierHasBeenSet = true;
+    m_recommendationIdentifier = std::forward<RecommendationIdentifierT>(value);
+  }
+  template <typename RecommendationIdentifierT = Aws::String>
+  UpdateRecommendationLifecycleRequest& WithRecommendationIdentifier(RecommendationIdentifierT&& value) {
+    SetRecommendationIdentifier(std::forward<RecommendationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateRecommendationLifecycleStage m_lifecycleStage{UpdateRecommendationLifecycleStage::NOT_SET};
-
-  Aws::String m_recommendationIdentifier;
 
   Aws::String m_updateReason;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
+
+  Aws::String m_recommendationIdentifier;
   bool m_lifecycleStageHasBeenSet = false;
-  bool m_recommendationIdentifierHasBeenSet = false;
   bool m_updateReasonHasBeenSet = false;
   bool m_updateReasonCodeHasBeenSet = false;
+  bool m_recommendationIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

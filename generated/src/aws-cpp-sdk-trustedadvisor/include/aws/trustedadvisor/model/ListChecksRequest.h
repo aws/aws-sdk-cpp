@@ -38,35 +38,19 @@ class ListChecksRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The aws service associated with the check</p>
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
    */
-  inline const Aws::String& GetAwsService() const { return m_awsService; }
-  inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
-  template <typename AwsServiceT = Aws::String>
-  void SetAwsService(AwsServiceT&& value) {
-    m_awsServiceHasBeenSet = true;
-    m_awsService = std::forward<AwsServiceT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename AwsServiceT = Aws::String>
-  ListChecksRequest& WithAwsService(AwsServiceT&& value) {
-    SetAwsService(std::forward<AwsServiceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ISO 639-1 code for the language that you want your checks to appear
-   * in.</p>
-   */
-  inline RecommendationLanguage GetLanguage() const { return m_language; }
-  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-  inline void SetLanguage(RecommendationLanguage value) {
-    m_languageHasBeenSet = true;
-    m_language = value;
-  }
-  inline ListChecksRequest& WithLanguage(RecommendationLanguage value) {
-    SetLanguage(value);
+  template <typename NextTokenT = Aws::String>
+  ListChecksRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -89,25 +73,6 @@ class ListChecksRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListChecksRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The pillar of the check</p>
    */
   inline RecommendationPillar GetPillar() const { return m_pillar; }
@@ -118,6 +83,24 @@ class ListChecksRequest : public TrustedAdvisorRequest {
   }
   inline ListChecksRequest& WithPillar(RecommendationPillar value) {
     SetPillar(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The aws service associated with the check</p>
+   */
+  inline const Aws::String& GetAwsService() const { return m_awsService; }
+  inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
+  template <typename AwsServiceT = Aws::String>
+  void SetAwsService(AwsServiceT&& value) {
+    m_awsServiceHasBeenSet = true;
+    m_awsService = std::forward<AwsServiceT>(value);
+  }
+  template <typename AwsServiceT = Aws::String>
+  ListChecksRequest& WithAwsService(AwsServiceT&& value) {
+    SetAwsService(std::forward<AwsServiceT>(value));
     return *this;
   }
   ///@}
@@ -137,24 +120,41 @@ class ListChecksRequest : public TrustedAdvisorRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_awsService;
 
-  RecommendationLanguage m_language{RecommendationLanguage::NOT_SET};
+  ///@{
+  /**
+   * <p>The ISO 639-1 code for the language that you want your checks to appear
+   * in.</p>
+   */
+  inline RecommendationLanguage GetLanguage() const { return m_language; }
+  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+  inline void SetLanguage(RecommendationLanguage value) {
+    m_languageHasBeenSet = true;
+    m_language = value;
+  }
+  inline ListChecksRequest& WithLanguage(RecommendationLanguage value) {
+    SetLanguage(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
-
   RecommendationPillar m_pillar{RecommendationPillar::NOT_SET};
 
+  Aws::String m_awsService;
+
   RecommendationSource m_source{RecommendationSource::NOT_SET};
-  bool m_awsServiceHasBeenSet = false;
-  bool m_languageHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+
+  RecommendationLanguage m_language{RecommendationLanguage::NOT_SET};
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_pillarHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
 };
 
 }  // namespace Model

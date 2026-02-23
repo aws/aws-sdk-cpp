@@ -35,18 +35,19 @@ class ListOrganizationRecommendationAccountsRequest : public TrustedAdvisorReque
 
   ///@{
   /**
-   * <p>An account affected by this organization recommendation</p>
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
    */
-  inline const Aws::String& GetAffectedAccountId() const { return m_affectedAccountId; }
-  inline bool AffectedAccountIdHasBeenSet() const { return m_affectedAccountIdHasBeenSet; }
-  template <typename AffectedAccountIdT = Aws::String>
-  void SetAffectedAccountId(AffectedAccountIdT&& value) {
-    m_affectedAccountIdHasBeenSet = true;
-    m_affectedAccountId = std::forward<AffectedAccountIdT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename AffectedAccountIdT = Aws::String>
-  ListOrganizationRecommendationAccountsRequest& WithAffectedAccountId(AffectedAccountIdT&& value) {
-    SetAffectedAccountId(std::forward<AffectedAccountIdT>(value));
+  template <typename NextTokenT = Aws::String>
+  ListOrganizationRecommendationAccountsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -69,25 +70,6 @@ class ListOrganizationRecommendationAccountsRequest : public TrustedAdvisorReque
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListOrganizationRecommendationAccountsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Recommendation identifier</p>
    */
   inline const Aws::String& GetOrganizationRecommendationIdentifier() const { return m_organizationRecommendationIdentifier; }
@@ -103,18 +85,36 @@ class ListOrganizationRecommendationAccountsRequest : public TrustedAdvisorReque
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An account affected by this organization recommendation</p>
+   */
+  inline const Aws::String& GetAffectedAccountId() const { return m_affectedAccountId; }
+  inline bool AffectedAccountIdHasBeenSet() const { return m_affectedAccountIdHasBeenSet; }
+  template <typename AffectedAccountIdT = Aws::String>
+  void SetAffectedAccountId(AffectedAccountIdT&& value) {
+    m_affectedAccountIdHasBeenSet = true;
+    m_affectedAccountId = std::forward<AffectedAccountIdT>(value);
+  }
+  template <typename AffectedAccountIdT = Aws::String>
+  ListOrganizationRecommendationAccountsRequest& WithAffectedAccountId(AffectedAccountIdT&& value) {
+    SetAffectedAccountId(std::forward<AffectedAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_affectedAccountId;
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
-
   Aws::String m_organizationRecommendationIdentifier;
-  bool m_affectedAccountIdHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+
+  Aws::String m_affectedAccountId;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_organizationRecommendationIdentifierHasBeenSet = false;
+  bool m_affectedAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

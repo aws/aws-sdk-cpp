@@ -24,7 +24,8 @@ enum class RecommendationSource {
   security_hub,
   stir,
   ta_check,
-  well_architected
+  well_architected,
+  cost_optimization_hub
 };
 
 namespace RecommendationSourceMapper {

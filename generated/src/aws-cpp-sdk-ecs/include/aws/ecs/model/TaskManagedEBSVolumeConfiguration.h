@@ -318,9 +318,9 @@ class TaskManagedEBSVolumeConfiguration {
    * <p>The Linux filesystem type for the volume. For volumes created from a
    * snapshot, you must specify the same filesystem type that the volume was using
    * when the snapshot was created. If there is a filesystem type mismatch, the task
-   * will fail to start.</p> <p>The available filesystem types are&#x2028;
-   * <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is
-   * specified, the <code>xfs</code> filesystem type is used by default.</p>
+   * will fail to start.</p> <p>The available filesystem types are <code>ext3</code>,
+   * <code>ext4</code>, and <code>xfs</code>. If no value is specified, the
+   * <code>xfs</code> filesystem type is used by default.</p>
    */
   inline TaskFilesystemType GetFilesystemType() const { return m_filesystemType; }
   inline bool FilesystemTypeHasBeenSet() const { return m_filesystemTypeHasBeenSet; }

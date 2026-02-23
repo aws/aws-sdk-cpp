@@ -81,6 +81,10 @@ AppBlockBuilder& AppBlockBuilder::operator=(JsonView jsonValue) {
     }
     m_accessEndpointsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DisableIMDSV1")) {
+    m_disableIMDSV1 = jsonValue.GetBool("DisableIMDSV1");
+    m_disableIMDSV1HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +154,10 @@ JsonValue AppBlockBuilder::Jsonize() const {
       accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
     }
     payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
+  }
+
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
   }
 
   return payload;

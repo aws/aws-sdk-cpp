@@ -37,34 +37,19 @@ class ListOrganizationRecommendationResourcesRequest : public TrustedAdvisorRequ
 
   ///@{
   /**
-   * <p>An account affected by this organization recommendation</p>
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
    */
-  inline const Aws::String& GetAffectedAccountId() const { return m_affectedAccountId; }
-  inline bool AffectedAccountIdHasBeenSet() const { return m_affectedAccountIdHasBeenSet; }
-  template <typename AffectedAccountIdT = Aws::String>
-  void SetAffectedAccountId(AffectedAccountIdT&& value) {
-    m_affectedAccountIdHasBeenSet = true;
-    m_affectedAccountId = std::forward<AffectedAccountIdT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename AffectedAccountIdT = Aws::String>
-  ListOrganizationRecommendationResourcesRequest& WithAffectedAccountId(AffectedAccountIdT&& value) {
-    SetAffectedAccountId(std::forward<AffectedAccountIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The exclusion status of the resource</p>
-   */
-  inline ExclusionStatus GetExclusionStatus() const { return m_exclusionStatus; }
-  inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
-  inline void SetExclusionStatus(ExclusionStatus value) {
-    m_exclusionStatusHasBeenSet = true;
-    m_exclusionStatus = value;
-  }
-  inline ListOrganizationRecommendationResourcesRequest& WithExclusionStatus(ExclusionStatus value) {
-    SetExclusionStatus(value);
+  template <typename NextTokenT = Aws::String>
+  ListOrganizationRecommendationResourcesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -87,37 +72,32 @@ class ListOrganizationRecommendationResourcesRequest : public TrustedAdvisorRequ
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
+   * <p>The status of the resource</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline ResourceStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ResourceStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename NextTokenT = Aws::String>
-  ListOrganizationRecommendationResourcesRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  inline ListOrganizationRecommendationResourcesRequest& WithStatus(ResourceStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The AWS Organization organization's Recommendation identifier</p>
+   * <p>The exclusion status of the resource</p>
    */
-  inline const Aws::String& GetOrganizationRecommendationIdentifier() const { return m_organizationRecommendationIdentifier; }
-  inline bool OrganizationRecommendationIdentifierHasBeenSet() const { return m_organizationRecommendationIdentifierHasBeenSet; }
-  template <typename OrganizationRecommendationIdentifierT = Aws::String>
-  void SetOrganizationRecommendationIdentifier(OrganizationRecommendationIdentifierT&& value) {
-    m_organizationRecommendationIdentifierHasBeenSet = true;
-    m_organizationRecommendationIdentifier = std::forward<OrganizationRecommendationIdentifierT>(value);
+  inline ExclusionStatus GetExclusionStatus() const { return m_exclusionStatus; }
+  inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
+  inline void SetExclusionStatus(ExclusionStatus value) {
+    m_exclusionStatusHasBeenSet = true;
+    m_exclusionStatus = value;
   }
-  template <typename OrganizationRecommendationIdentifierT = Aws::String>
-  ListOrganizationRecommendationResourcesRequest& WithOrganizationRecommendationIdentifier(OrganizationRecommendationIdentifierT&& value) {
-    SetOrganizationRecommendationIdentifier(std::forward<OrganizationRecommendationIdentifierT>(value));
+  inline ListOrganizationRecommendationResourcesRequest& WithExclusionStatus(ExclusionStatus value) {
+    SetExclusionStatus(value);
     return *this;
   }
   ///@}
@@ -142,40 +122,60 @@ class ListOrganizationRecommendationResourcesRequest : public TrustedAdvisorRequ
 
   ///@{
   /**
-   * <p>The status of the resource</p>
+   * <p>The AWS Organization organization's Recommendation identifier</p>
    */
-  inline ResourceStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(ResourceStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetOrganizationRecommendationIdentifier() const { return m_organizationRecommendationIdentifier; }
+  inline bool OrganizationRecommendationIdentifierHasBeenSet() const { return m_organizationRecommendationIdentifierHasBeenSet; }
+  template <typename OrganizationRecommendationIdentifierT = Aws::String>
+  void SetOrganizationRecommendationIdentifier(OrganizationRecommendationIdentifierT&& value) {
+    m_organizationRecommendationIdentifierHasBeenSet = true;
+    m_organizationRecommendationIdentifier = std::forward<OrganizationRecommendationIdentifierT>(value);
   }
-  inline ListOrganizationRecommendationResourcesRequest& WithStatus(ResourceStatus value) {
-    SetStatus(value);
+  template <typename OrganizationRecommendationIdentifierT = Aws::String>
+  ListOrganizationRecommendationResourcesRequest& WithOrganizationRecommendationIdentifier(OrganizationRecommendationIdentifierT&& value) {
+    SetOrganizationRecommendationIdentifier(std::forward<OrganizationRecommendationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An account affected by this organization recommendation</p>
+   */
+  inline const Aws::String& GetAffectedAccountId() const { return m_affectedAccountId; }
+  inline bool AffectedAccountIdHasBeenSet() const { return m_affectedAccountIdHasBeenSet; }
+  template <typename AffectedAccountIdT = Aws::String>
+  void SetAffectedAccountId(AffectedAccountIdT&& value) {
+    m_affectedAccountIdHasBeenSet = true;
+    m_affectedAccountId = std::forward<AffectedAccountIdT>(value);
+  }
+  template <typename AffectedAccountIdT = Aws::String>
+  ListOrganizationRecommendationResourcesRequest& WithAffectedAccountId(AffectedAccountIdT&& value) {
+    SetAffectedAccountId(std::forward<AffectedAccountIdT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_affectedAccountId;
-
-  ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
+  ResourceStatus m_status{ResourceStatus::NOT_SET};
 
-  Aws::String m_organizationRecommendationIdentifier;
+  ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
 
   Aws::String m_regionCode;
 
-  ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_affectedAccountIdHasBeenSet = false;
-  bool m_exclusionStatusHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+  Aws::String m_organizationRecommendationIdentifier;
+
+  Aws::String m_affectedAccountId;
   bool m_nextTokenHasBeenSet = false;
-  bool m_organizationRecommendationIdentifierHasBeenSet = false;
-  bool m_regionCodeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_exclusionStatusHasBeenSet = false;
+  bool m_regionCodeHasBeenSet = false;
+  bool m_organizationRecommendationIdentifierHasBeenSet = false;
+  bool m_affectedAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

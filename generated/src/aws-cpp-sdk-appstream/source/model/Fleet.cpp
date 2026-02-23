@@ -129,6 +129,10 @@ Fleet& Fleet::operator=(JsonView jsonValue) {
     m_rootVolumeConfig = jsonValue.GetObject("RootVolumeConfig");
     m_rootVolumeConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DisableIMDSV1")) {
+    m_disableIMDSV1 = jsonValue.GetBool("DisableIMDSV1");
+    m_disableIMDSV1HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -246,6 +250,10 @@ JsonValue Fleet::Jsonize() const {
 
   if (m_rootVolumeConfigHasBeenSet) {
     payload.WithObject("RootVolumeConfig", m_rootVolumeConfig.Jsonize());
+  }
+
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
   }
 
   return payload;

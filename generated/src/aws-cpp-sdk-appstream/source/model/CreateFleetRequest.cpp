@@ -116,6 +116,10 @@ Aws::String CreateFleetRequest::SerializePayload() const {
     payload.WithObject("RootVolumeConfig", m_rootVolumeConfig.Jsonize());
   }
 
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
+  }
+
   return payload.View().WriteReadable();
 }
 

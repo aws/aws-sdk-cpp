@@ -172,6 +172,10 @@ AssociationDescription& AssociationDescription::operator=(JsonView jsonValue) {
     }
     m_triggeredAlarmsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AssociationDispatchAssumeRole")) {
+    m_associationDispatchAssumeRole = jsonValue.GetString("AssociationDispatchAssumeRole");
+    m_associationDispatchAssumeRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -331,6 +335,10 @@ JsonValue AssociationDescription::Jsonize() const {
       triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());
     }
     payload.WithArray("TriggeredAlarms", std::move(triggeredAlarmsJsonList));
+  }
+
+  if (m_associationDispatchAssumeRoleHasBeenSet) {
+    payload.WithString("AssociationDispatchAssumeRole", m_associationDispatchAssumeRole);
   }
 
   return payload;

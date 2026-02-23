@@ -23,6 +23,10 @@ Aws::String CreateAssociationBatchRequest::SerializePayload() const {
     payload.WithArray("Entries", std::move(entriesJsonList));
   }
 
+  if (m_associationDispatchAssumeRoleHasBeenSet) {
+    payload.WithString("AssociationDispatchAssumeRole", m_associationDispatchAssumeRole);
+  }
+
   return payload.View().WriteReadable();
 }
 

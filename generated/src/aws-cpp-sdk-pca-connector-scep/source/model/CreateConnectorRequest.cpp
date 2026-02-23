@@ -23,6 +23,10 @@ Aws::String CreateConnectorRequest::SerializePayload() const {
     payload.WithObject("MobileDeviceManagement", m_mobileDeviceManagement.Jsonize());
   }
 
+  if (m_vpcEndpointIdHasBeenSet) {
+    payload.WithString("VpcEndpointId", m_vpcEndpointId);
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
   }

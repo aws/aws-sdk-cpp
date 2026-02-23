@@ -48,26 +48,6 @@ class UpdateOrganizationRecommendationLifecycleRequest : public TrustedAdvisorRe
 
   ///@{
   /**
-   * <p>The Recommendation identifier for AWS Trusted Advisor Priority
-   * recommendations</p>
-   */
-  inline const Aws::String& GetOrganizationRecommendationIdentifier() const { return m_organizationRecommendationIdentifier; }
-  inline bool OrganizationRecommendationIdentifierHasBeenSet() const { return m_organizationRecommendationIdentifierHasBeenSet; }
-  template <typename OrganizationRecommendationIdentifierT = Aws::String>
-  void SetOrganizationRecommendationIdentifier(OrganizationRecommendationIdentifierT&& value) {
-    m_organizationRecommendationIdentifierHasBeenSet = true;
-    m_organizationRecommendationIdentifier = std::forward<OrganizationRecommendationIdentifierT>(value);
-  }
-  template <typename OrganizationRecommendationIdentifierT = Aws::String>
-  UpdateOrganizationRecommendationLifecycleRequest& WithOrganizationRecommendationIdentifier(
-      OrganizationRecommendationIdentifierT&& value) {
-    SetOrganizationRecommendationIdentifier(std::forward<OrganizationRecommendationIdentifierT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Reason for the lifecycle stage change</p>
    */
   inline const Aws::String& GetUpdateReason() const { return m_updateReason; }
@@ -99,18 +79,38 @@ class UpdateOrganizationRecommendationLifecycleRequest : public TrustedAdvisorRe
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Recommendation identifier for AWS Trusted Advisor Priority
+   * recommendations</p>
+   */
+  inline const Aws::String& GetOrganizationRecommendationIdentifier() const { return m_organizationRecommendationIdentifier; }
+  inline bool OrganizationRecommendationIdentifierHasBeenSet() const { return m_organizationRecommendationIdentifierHasBeenSet; }
+  template <typename OrganizationRecommendationIdentifierT = Aws::String>
+  void SetOrganizationRecommendationIdentifier(OrganizationRecommendationIdentifierT&& value) {
+    m_organizationRecommendationIdentifierHasBeenSet = true;
+    m_organizationRecommendationIdentifier = std::forward<OrganizationRecommendationIdentifierT>(value);
+  }
+  template <typename OrganizationRecommendationIdentifierT = Aws::String>
+  UpdateOrganizationRecommendationLifecycleRequest& WithOrganizationRecommendationIdentifier(
+      OrganizationRecommendationIdentifierT&& value) {
+    SetOrganizationRecommendationIdentifier(std::forward<OrganizationRecommendationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateRecommendationLifecycleStage m_lifecycleStage{UpdateRecommendationLifecycleStage::NOT_SET};
-
-  Aws::String m_organizationRecommendationIdentifier;
 
   Aws::String m_updateReason;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
+
+  Aws::String m_organizationRecommendationIdentifier;
   bool m_lifecycleStageHasBeenSet = false;
-  bool m_organizationRecommendationIdentifierHasBeenSet = false;
   bool m_updateReasonHasBeenSet = false;
   bool m_updateReasonCodeHasBeenSet = false;
+  bool m_organizationRecommendationIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -29,6 +29,9 @@ namespace ECS {
 namespace Model {
 
 /**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServiceRequest">AWS
+ * API Reference</a></p>
  */
 class UpdateServiceRequest : public ECSRequest {
  public:
@@ -428,11 +431,11 @@ class UpdateServiceRequest : public ECSRequest {
 
   ///@{
   /**
-   *  <p>You must have a service-linked role when you update this property</p>
-   *  <p>A list of Elastic Load Balancing load balancer objects. It contains
-   * the load balancer name, the container name, and the container port to access
-   * from the load balancer. The container name is as it appears in a container
-   * definition.</p> <p>When you add, update, or remove a load balancer
+   * <p> <p>You must have a service-linked role when you update this
+   * property</p>  <p>A list of Elastic Load Balancing load balancer objects.
+   * It contains the load balancer name, the container name, and the container port
+   * to access from the load balancer. The container name is as it appears in a
+   * container definition.</p> <p>When you add, update, or remove a load balancer
    * configuration, Amazon ECS starts new tasks with the updated Elastic Load
    * Balancing configuration, and then stops the old tasks when the new tasks are
    * running.</p> <p>For services that use rolling updates, you can add, update, or
@@ -454,7 +457,7 @@ class UpdateServiceRequest : public ECSRequest {
    * multiple target groups with a service</a> in the <i>Amazon Elastic Container
    * Service Developer Guide</i>. </p> <p>You can remove existing
    * <code>loadBalancers</code> by passing an empty list.</p> <p>This parameter
-   * triggers a new service deployment.</p>
+   * triggers a new service deployment.</p></p>
    */
   inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const { return m_loadBalancers; }
   inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
@@ -499,9 +502,9 @@ class UpdateServiceRequest : public ECSRequest {
 
   ///@{
   /**
-   *  <p>You must have a service-linked role when you update this property.</p>
-   * <p>For more information about the role see the <code>CreateService</code>
-   * request parameter <a
+   * <p> <p>You must have a service-linked role when you update this
+   * property.</p> <p>For more information about the role see the
+   * <code>CreateService</code> request parameter <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
    * <code>role</code> </a>. </p>  <p>The details for the service discovery
    * registries to assign to this service. For more information, see <a
@@ -510,7 +513,7 @@ class UpdateServiceRequest : public ECSRequest {
    * configuration, Amazon ECS starts new tasks with the updated service registries
    * configuration, and then stops the old tasks when the new tasks are running.</p>
    * <p>You can remove existing <code>serviceRegistries</code> by passing an empty
-   * list.</p> <p>This parameter triggers a new service deployment.</p>
+   * list.</p> <p>This parameter triggers a new service deployment.</p></p>
    */
   inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const { return m_serviceRegistries; }
   inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }

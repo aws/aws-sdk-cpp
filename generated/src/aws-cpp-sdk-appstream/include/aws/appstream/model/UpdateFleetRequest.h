@@ -518,6 +518,26 @@ class UpdateFleetRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and
+   * enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   * <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are
+   * running the agent version or managed image update released on or after January
+   * 16, 2024 to support IMDSv2 enforcement.</p>
+   */
+  inline bool GetDisableIMDSV1() const { return m_disableIMDSV1; }
+  inline bool DisableIMDSV1HasBeenSet() const { return m_disableIMDSV1HasBeenSet; }
+  inline void SetDisableIMDSV1(bool value) {
+    m_disableIMDSV1HasBeenSet = true;
+    m_disableIMDSV1 = value;
+  }
+  inline UpdateFleetRequest& WithDisableIMDSV1(bool value) {
+    SetDisableIMDSV1(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_imageName;
 
@@ -562,6 +582,8 @@ class UpdateFleetRequest : public AppStreamRequest {
   int m_maxSessionsPerInstance{0};
 
   VolumeConfig m_rootVolumeConfig;
+
+  bool m_disableIMDSV1{false};
   bool m_imageNameHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -584,6 +606,7 @@ class UpdateFleetRequest : public AppStreamRequest {
   bool m_sessionScriptS3LocationHasBeenSet = false;
   bool m_maxSessionsPerInstanceHasBeenSet = false;
   bool m_rootVolumeConfigHasBeenSet = false;
+  bool m_disableIMDSV1HasBeenSet = false;
 };
 
 }  // namespace Model

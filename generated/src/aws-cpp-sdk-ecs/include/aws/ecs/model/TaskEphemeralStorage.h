@@ -36,7 +36,7 @@ class TaskEphemeralStorage {
   /**
    * <p>The total amount, in GiB, of the ephemeral storage to set for the task. The
    * minimum supported value is <code>20</code> GiB and the maximum supported value
-   * is&#x2028; <code>200</code> GiB.</p>
+   * is <code>200</code> GiB.</p>
    */
   inline int GetSizeInGiB() const { return m_sizeInGiB; }
   inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }

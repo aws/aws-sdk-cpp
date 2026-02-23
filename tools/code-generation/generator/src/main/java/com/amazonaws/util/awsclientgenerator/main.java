@@ -44,6 +44,7 @@ public class main {
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
     static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
+    static final String DISABLE_SMITHY_GENERATION = "disable-smithy-generation";
     static final String USE_SMITHY_CLIENT = "use-smithy-client";
 
     public static void main(String[] args) throws IOException {
@@ -86,6 +87,7 @@ public class main {
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
             boolean enableVirtualOperations = argPairs.containsKey(ENABLE_VIRTUAL_OPERATIONS);
+            boolean disableSmithyGeneration = argPairs.containsKey(DISABLE_SMITHY_GENERATION);
 
             String arbitraryJson = readFile(argPairs.getOrDefault(INPUT_FILE_NAME, ""));
             String endpointRules = null;
@@ -124,7 +126,7 @@ public class main {
                     if (serviceName != null && !serviceName.isEmpty()) {
                         if (!generateTests) {
                             generated = generateService(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations, useSmithyClient);
+                                    licenseText, generateStandalonePackage, enableVirtualOperations, disableSmithyGeneration, useSmithyClient);
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
                         } else if (argPairs.containsKey(ENDPOINT_TESTS)) {
@@ -150,10 +152,10 @@ public class main {
 
                         if (selectedOption.equalsIgnoreCase(DEFAULTS_OPTION)) {
                             generated = generateDefaults(arbitraryJson, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations);
+                                    licenseText, generateStandalonePackage, enableVirtualOperations, disableSmithyGeneration);
                         } else if (selectedOption.equalsIgnoreCase(PARTITIONS_OPTION)) {
                             generated = generatePartitions(arbitraryJson, languageBinding, serviceName, namespace,
-                                    licenseText, generateStandalonePackage, enableVirtualOperations);
+                                    licenseText, generateStandalonePackage, enableVirtualOperations, disableSmithyGeneration);
                         } else {
                             System.err.println(String.format("Unsupported core component %s requested for generation", selectedOption));
                             System.exit(-1);
@@ -205,6 +207,7 @@ public class main {
                                                          String licenseText,
                                                          boolean generateStandalonePackage,
                                                          boolean enableVirtualOperations,
+                                                         boolean disableSmithyGeneration,
                                                          boolean useSmithyClient) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
@@ -219,6 +222,7 @@ public class main {
                 licenseText,
                 generateStandalonePackage,
                 enableVirtualOperations,
+                disableSmithyGeneration,
                 useSmithyClient);
         return outputStream;
     }
@@ -263,7 +267,7 @@ public class main {
 
     private static ByteArrayOutputStream generateDefaults(String arbitraryJson, String languageBinding, String serviceName,
                                          String namespace, String licenseText,
-                                         boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+                                         boolean generateStandalonePackage, boolean enableVirtualOperations, boolean disableSmithyGeneration) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
 
@@ -273,13 +277,14 @@ public class main {
                 namespace,
                 licenseText,
                 generateStandalonePackage,
-                enableVirtualOperations);
+                enableVirtualOperations,
+                disableSmithyGeneration);
         return outputStream;
     }
 
     private static ByteArrayOutputStream generatePartitions(String arbitraryJson, String languageBinding, String serviceName,
                                                            String namespace, String licenseText,
-                                                           boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+                                                           boolean generateStandalonePackage, boolean enableVirtualOperations, boolean disableSmithyGeneration) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
 
@@ -289,7 +294,8 @@ public class main {
                 namespace,
                 licenseText,
                 generateStandalonePackage,
-                enableVirtualOperations);
+                enableVirtualOperations,
+                disableSmithyGeneration);
         return outputStream;
     }
 
@@ -330,6 +336,7 @@ public class main {
 
         System.out.println("\t\t--inputfile Reads the c2j model from the file.");
         System.out.println("\t\t--outputfile Writes the generated zip archive to the file.");
+        System.out.println("\t\t--disable-smithy-generation Disable smithy-based generation (default: enabled)");
 
     }
 

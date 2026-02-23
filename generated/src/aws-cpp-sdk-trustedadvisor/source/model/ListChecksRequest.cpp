@@ -19,15 +19,9 @@ Aws::String ListChecksRequest::SerializePayload() const { return {}; }
 
 void ListChecksRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_awsServiceHasBeenSet) {
-    ss << m_awsService;
-    uri.AddQueryStringParameter("awsService", ss.str());
-    ss.str("");
-  }
-
-  if (m_languageHasBeenSet) {
-    ss << RecommendationLanguageMapper::GetNameForRecommendationLanguage(m_language);
-    uri.AddQueryStringParameter("language", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -37,21 +31,27 @@ void ListChecksRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
   if (m_pillarHasBeenSet) {
     ss << RecommendationPillarMapper::GetNameForRecommendationPillar(m_pillar);
     uri.AddQueryStringParameter("pillar", ss.str());
     ss.str("");
   }
 
+  if (m_awsServiceHasBeenSet) {
+    ss << m_awsService;
+    uri.AddQueryStringParameter("awsService", ss.str());
+    ss.str("");
+  }
+
   if (m_sourceHasBeenSet) {
     ss << RecommendationSourceMapper::GetNameForRecommendationSource(m_source);
     uri.AddQueryStringParameter("source", ss.str());
+    ss.str("");
+  }
+
+  if (m_languageHasBeenSet) {
+    ss << RecommendationLanguageMapper::GetNameForRecommendationLanguage(m_language);
+    uri.AddQueryStringParameter("language", ss.str());
     ss.str("");
   }
 }

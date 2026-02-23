@@ -19,15 +19,9 @@ Aws::String ListOrganizationRecommendationResourcesRequest::SerializePayload() c
 
 void ListOrganizationRecommendationResourcesRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_affectedAccountIdHasBeenSet) {
-    ss << m_affectedAccountId;
-    uri.AddQueryStringParameter("affectedAccountId", ss.str());
-    ss.str("");
-  }
-
-  if (m_exclusionStatusHasBeenSet) {
-    ss << ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus);
-    uri.AddQueryStringParameter("exclusionStatus", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -37,9 +31,15 @@ void ListOrganizationRecommendationResourcesRequest::AddQueryStringParameters(UR
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_statusHasBeenSet) {
+    ss << ResourceStatusMapper::GetNameForResourceStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
+    ss.str("");
+  }
+
+  if (m_exclusionStatusHasBeenSet) {
+    ss << ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus);
+    uri.AddQueryStringParameter("exclusionStatus", ss.str());
     ss.str("");
   }
 
@@ -49,9 +49,9 @@ void ListOrganizationRecommendationResourcesRequest::AddQueryStringParameters(UR
     ss.str("");
   }
 
-  if (m_statusHasBeenSet) {
-    ss << ResourceStatusMapper::GetNameForResourceStatus(m_status);
-    uri.AddQueryStringParameter("status", ss.str());
+  if (m_affectedAccountIdHasBeenSet) {
+    ss << m_affectedAccountId;
+    uri.AddQueryStringParameter("affectedAccountId", ss.str());
     ss.str("");
   }
 }

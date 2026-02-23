@@ -37,6 +37,24 @@ class CheckSummary {
 
   ///@{
   /**
+   * <p>The unique identifier of the AWS Trusted Advisor Check</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CheckSummary& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ARN of the AWS Trusted Advisor Check</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -49,6 +67,65 @@ class CheckSummary {
   template <typename ArnT = Aws::String>
   CheckSummary& WithArn(ArnT&& value) {
     SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the AWS Trusted Advisor Check</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CheckSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A description of what the AWS Trusted Advisor Check is monitoring</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CheckSummary& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
+   */
+  inline const Aws::Vector<RecommendationPillar>& GetPillars() const { return m_pillars; }
+  inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }
+  template <typename PillarsT = Aws::Vector<RecommendationPillar>>
+  void SetPillars(PillarsT&& value) {
+    m_pillarsHasBeenSet = true;
+    m_pillars = std::forward<PillarsT>(value);
+  }
+  template <typename PillarsT = Aws::Vector<RecommendationPillar>>
+  CheckSummary& WithPillars(PillarsT&& value) {
+    SetPillars(std::forward<PillarsT>(value));
+    return *this;
+  }
+  inline CheckSummary& AddPillars(RecommendationPillar value) {
+    m_pillarsHasBeenSet = true;
+    m_pillars.push_back(value);
     return *this;
   }
   ///@}
@@ -79,36 +156,16 @@ class CheckSummary {
 
   ///@{
   /**
-   * <p>A description of what the AWS Trusted Advisor Check is monitoring</p>
+   * <p>The source of the Recommendation</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
+  inline RecommendationSource GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  inline void SetSource(RecommendationSource value) {
+    m_sourceHasBeenSet = true;
+    m_source = value;
   }
-  template <typename DescriptionT = Aws::String>
-  CheckSummary& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the AWS Trusted Advisor Check</p>
-   */
-  inline const Aws::String& GetId() const { return m_id; }
-  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-  template <typename IdT = Aws::String>
-  void SetId(IdT&& value) {
-    m_idHasBeenSet = true;
-    m_id = std::forward<IdT>(value);
-  }
-  template <typename IdT = Aws::String>
-  CheckSummary& WithId(IdT&& value) {
-    SetId(std::forward<IdT>(value));
+  inline CheckSummary& WithSource(RecommendationSource value) {
+    SetSource(value);
     return *this;
   }
   ///@}
@@ -136,87 +193,30 @@ class CheckSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the AWS Trusted Advisor Check</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CheckSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Recommendation pillars that the AWS Trusted Advisor Check falls under</p>
-   */
-  inline const Aws::Vector<RecommendationPillar>& GetPillars() const { return m_pillars; }
-  inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }
-  template <typename PillarsT = Aws::Vector<RecommendationPillar>>
-  void SetPillars(PillarsT&& value) {
-    m_pillarsHasBeenSet = true;
-    m_pillars = std::forward<PillarsT>(value);
-  }
-  template <typename PillarsT = Aws::Vector<RecommendationPillar>>
-  CheckSummary& WithPillars(PillarsT&& value) {
-    SetPillars(std::forward<PillarsT>(value));
-    return *this;
-  }
-  inline CheckSummary& AddPillars(RecommendationPillar value) {
-    m_pillarsHasBeenSet = true;
-    m_pillars.push_back(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The source of the Recommendation</p>
-   */
-  inline RecommendationSource GetSource() const { return m_source; }
-  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-  inline void SetSource(RecommendationSource value) {
-    m_sourceHasBeenSet = true;
-    m_source = value;
-  }
-  inline CheckSummary& WithSource(RecommendationSource value) {
-    SetSource(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_arn;
-
-  Aws::Vector<Aws::String> m_awsServices;
-
-  Aws::String m_description;
-
   Aws::String m_id;
 
-  Aws::Map<Aws::String, Aws::String> m_metadata;
+  Aws::String m_arn;
 
   Aws::String m_name;
 
+  Aws::String m_description;
+
   Aws::Vector<RecommendationPillar> m_pillars;
 
+  Aws::Vector<Aws::String> m_awsServices;
+
   RecommendationSource m_source{RecommendationSource::NOT_SET};
-  bool m_arnHasBeenSet = false;
-  bool m_awsServicesHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
   bool m_idHasBeenSet = false;
-  bool m_metadataHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_pillarsHasBeenSet = false;
+  bool m_awsServicesHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
 };
 
 }  // namespace Model

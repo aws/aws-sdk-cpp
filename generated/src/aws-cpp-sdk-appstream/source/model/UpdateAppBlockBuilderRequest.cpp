@@ -65,6 +65,10 @@ Aws::String UpdateAppBlockBuilderRequest::SerializePayload() const {
     payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
   }
 
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
+  }
+
   return payload.View().WriteReadable();
 }
 
