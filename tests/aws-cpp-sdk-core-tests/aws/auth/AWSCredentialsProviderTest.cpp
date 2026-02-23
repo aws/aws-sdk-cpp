@@ -1397,7 +1397,7 @@ TEST_F(EnvironmentModifyingTest, TestChainFallsToProcessWhenProfileEmpty)
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
 
-TEST_F(EnvironmentModifyingTest, DISABLED_TestChainOrderProfileProcess)
+TEST_F(EnvironmentModifyingTest, TestChainOrderProfileProcess)
 {
     // Create profile with static credentials
     Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
