@@ -78,8 +78,13 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   virtual ~TrustedAdvisorClient();
 
   /**
-   * <p>Update one or more exclusion status for a list of recommendation
-   * resources</p><p><h3>See Also:</h3>   <a
+   * <p>Update one or more exclusion statuses for a list of recommendation resources.
+   * This API supports up to 25 unique recommendation resource ARNs per request. This
+   * API currently doesn't support prioritized recommendation resources. This API
+   * updates global recommendations, eliminating the need to call the API in each AWS
+   * Region. After submitting an exclusion update, note that it might take a few
+   * minutes for the changes to be reflected in the system.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">AWS
    * API Reference</a></p>
    */
@@ -110,7 +115,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Get a specific recommendation within an AWS Organizations organization. This
-   * API supports only prioritized recommendations. </p><p><h3>See Also:</h3>   <a
+   * API supports only prioritized recommendations and provides global priority
+   * recommendations, eliminating the need to call the API in each AWS Region.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetOrganizationRecommendation">AWS
    * API Reference</a></p>
    */
@@ -139,7 +146,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Get a specific Recommendation</p><p><h3>See Also:</h3>   <a
+   * <p>Get a specific Recommendation. This API provides global recommendations,
+   * eliminating the need to call the API in each AWS Region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetRecommendation">AWS
    * API Reference</a></p>
    */
@@ -165,7 +174,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>List a filterable set of Checks</p><p><h3>See Also:</h3>   <a
+   * <p>List a filterable set of Checks. This API provides global recommendations,
+   * eliminating the need to call the API in each AWS Region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListChecks">AWS
    * API Reference</a></p>
    */
@@ -192,8 +203,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Lists the accounts that own the resources for an organization aggregate
-   * recommendation. This API only supports prioritized recommendations.
-   * </p><p><h3>See Also:</h3>   <a
+   * recommendation. This API only supports prioritized recommendations and provides
+   * global priority recommendations, eliminating the need to call the API in each
+   * AWS Region. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationAccounts">AWS
    * API Reference</a></p>
    */
@@ -223,7 +235,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>List Resources of a Recommendation within an Organization. This API only
-   * supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
+   * supports prioritized recommendations and provides global priority
+   * recommendations, eliminating the need to call the API in each AWS Region.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationResources">AWS
    * API Reference</a></p>
    */
@@ -253,7 +267,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>List a filterable set of Recommendations within an Organization. This API
-   * only supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
+   * only supports prioritized recommendations and provides global priority
+   * recommendations, eliminating the need to call the API in each AWS Region.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendations">AWS
    * API Reference</a></p>
    */
@@ -282,7 +298,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>List Resources of a Recommendation</p><p><h3>See Also:</h3>   <a
+   * <p>List Resources of a Recommendation. This API provides global recommendations,
+   * eliminating the need to call the API in each AWS Region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationResources">AWS
    * API Reference</a></p>
    */
@@ -311,7 +329,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>List a filterable set of Recommendations</p><p><h3>See Also:</h3>   <a
+   * <p>List a filterable set of Recommendations. This API provides global
+   * recommendations, eliminating the need to call the API in each AWS
+   * Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendations">AWS
    * API Reference</a></p>
    */
@@ -339,7 +359,9 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Update the lifecycle of a Recommendation within an Organization. This API
-   * only supports prioritized recommendations. </p><p><h3>See Also:</h3>   <a
+   * only supports prioritized recommendations and updates global priority
+   * recommendations, eliminating the need to call the API in each AWS Region.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateOrganizationRecommendationLifecycle">AWS
    * API Reference</a></p>
    */
@@ -370,7 +392,8 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
 
   /**
    * <p>Update the lifecyle of a Recommendation. This API only supports prioritized
-   * recommendations.</p><p><h3>See Also:</h3>   <a
+   * recommendations and updates global priority recommendations, eliminating the
+   * need to call the API in each AWS Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateRecommendationLifecycle">AWS
    * API Reference</a></p>
    */

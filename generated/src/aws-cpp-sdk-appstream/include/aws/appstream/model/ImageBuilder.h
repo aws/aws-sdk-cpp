@@ -452,6 +452,23 @@ class ImageBuilder {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled
+   * for the image builder.</p>
+   */
+  inline bool GetDisableIMDSV1() const { return m_disableIMDSV1; }
+  inline bool DisableIMDSV1HasBeenSet() const { return m_disableIMDSV1HasBeenSet; }
+  inline void SetDisableIMDSV1(bool value) {
+    m_disableIMDSV1HasBeenSet = true;
+    m_disableIMDSV1 = value;
+  }
+  inline ImageBuilder& WithDisableIMDSV1(bool value) {
+    SetDisableIMDSV1(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -492,6 +509,8 @@ class ImageBuilder {
   VolumeConfig m_rootVolumeConfig;
 
   LatestAppstreamAgentVersion m_latestAppstreamAgentVersion{LatestAppstreamAgentVersion::NOT_SET};
+
+  bool m_disableIMDSV1{false};
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
@@ -512,6 +531,7 @@ class ImageBuilder {
   bool m_accessEndpointsHasBeenSet = false;
   bool m_rootVolumeConfigHasBeenSet = false;
   bool m_latestAppstreamAgentVersionHasBeenSet = false;
+  bool m_disableIMDSV1HasBeenSet = false;
 };
 
 }  // namespace Model

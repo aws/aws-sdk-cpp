@@ -3183,10 +3183,9 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>Amazon Web Services Systems Manager Change Manager will no longer
-   * be open to new customers starting November 7, 2025. If you would like to use
-   * Change Manager, sign up prior to that date. Existing customers can continue to
-   * use the service as normal. For more information, see <a
+   *  <p>Amazon Web Services Systems Manager Change Manager is no longer
+   * open to new customers. Existing customers can continue to use the service as
+   * normal. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
    * Web Services Systems Manager Change Manager availability change</a>.</p>
    *  <p>Information about approval reviews for a version of a change
@@ -4088,10 +4087,9 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>Amazon Web Services Systems Manager Change Manager will no longer
-   * be open to new customers starting November 7, 2025. If you would like to use
-   * Change Manager, sign up prior to that date. Existing customers can continue to
-   * use the service as normal. For more information, see <a
+   *  <p>Amazon Web Services Systems Manager Change Manager is no longer
+   * open to new customers. Existing customers can continue to use the service as
+   * normal. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
    * Web Services Systems Manager Change Manager availability change</a>.</p>
    *  <p>Creates a change request for Change Manager. The Automation
@@ -4410,10 +4408,9 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>Amazon Web Services Systems Manager Change Manager will no longer
-   * be open to new customers starting November 7, 2025. If you would like to use
-   * Change Manager, sign up prior to that date. Existing customers can continue to
-   * use the service as normal. For more information, see <a
+   *  <p>Amazon Web Services Systems Manager Change Manager is no longer
+   * open to new customers. Existing customers can continue to use the service as
+   * normal. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
    * Web Services Systems Manager Change Manager availability change</a>.</p>
    *  <p>Updates information related to approval reviews for a specific

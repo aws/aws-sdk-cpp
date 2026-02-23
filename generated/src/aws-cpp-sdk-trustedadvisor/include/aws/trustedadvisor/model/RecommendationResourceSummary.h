@@ -37,58 +37,6 @@ class RecommendationResourceSummary {
 
   ///@{
   /**
-   * <p>The ARN of the Recommendation Resource</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  RecommendationResourceSummary& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The AWS resource identifier</p>
-   */
-  inline const Aws::String& GetAwsResourceId() const { return m_awsResourceId; }
-  inline bool AwsResourceIdHasBeenSet() const { return m_awsResourceIdHasBeenSet; }
-  template <typename AwsResourceIdT = Aws::String>
-  void SetAwsResourceId(AwsResourceIdT&& value) {
-    m_awsResourceIdHasBeenSet = true;
-    m_awsResourceId = std::forward<AwsResourceIdT>(value);
-  }
-  template <typename AwsResourceIdT = Aws::String>
-  RecommendationResourceSummary& WithAwsResourceId(AwsResourceIdT&& value) {
-    SetAwsResourceId(std::forward<AwsResourceIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The exclusion status of the Recommendation Resource</p>
-   */
-  inline ExclusionStatus GetExclusionStatus() const { return m_exclusionStatus; }
-  inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
-  inline void SetExclusionStatus(ExclusionStatus value) {
-    m_exclusionStatusHasBeenSet = true;
-    m_exclusionStatus = value;
-  }
-  inline RecommendationResourceSummary& WithExclusionStatus(ExclusionStatus value) {
-    SetExclusionStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ID of the Recommendation Resource</p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -107,60 +55,37 @@ class RecommendationResourceSummary {
 
   ///@{
   /**
-   * <p>When the Recommendation Resource was last updated</p>
+   * <p>The ARN of the Recommendation Resource</p>
    */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
   }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  RecommendationResourceSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+  template <typename ArnT = Aws::String>
+  RecommendationResourceSummary& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Metadata associated with the Recommendation Resource</p>
+   * <p>The AWS resource identifier. There are certain checks that generate
+   * recommendation resources without an awsResourceId.</p>
    */
-  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
-  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
-  void SetMetadata(MetadataT&& value) {
-    m_metadataHasBeenSet = true;
-    m_metadata = std::forward<MetadataT>(value);
+  inline const Aws::String& GetAwsResourceId() const { return m_awsResourceId; }
+  inline bool AwsResourceIdHasBeenSet() const { return m_awsResourceIdHasBeenSet; }
+  template <typename AwsResourceIdT = Aws::String>
+  void SetAwsResourceId(AwsResourceIdT&& value) {
+    m_awsResourceIdHasBeenSet = true;
+    m_awsResourceId = std::forward<AwsResourceIdT>(value);
   }
-  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
-  RecommendationResourceSummary& WithMetadata(MetadataT&& value) {
-    SetMetadata(std::forward<MetadataT>(value));
-    return *this;
-  }
-  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
-  RecommendationResourceSummary& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
-    m_metadataHasBeenSet = true;
-    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Recommendation ARN</p>
-   */
-  inline const Aws::String& GetRecommendationArn() const { return m_recommendationArn; }
-  inline bool RecommendationArnHasBeenSet() const { return m_recommendationArnHasBeenSet; }
-  template <typename RecommendationArnT = Aws::String>
-  void SetRecommendationArn(RecommendationArnT&& value) {
-    m_recommendationArnHasBeenSet = true;
-    m_recommendationArn = std::forward<RecommendationArnT>(value);
-  }
-  template <typename RecommendationArnT = Aws::String>
-  RecommendationResourceSummary& WithRecommendationArn(RecommendationArnT&& value) {
-    SetRecommendationArn(std::forward<RecommendationArnT>(value));
+  template <typename AwsResourceIdT = Aws::String>
+  RecommendationResourceSummary& WithAwsResourceId(AwsResourceIdT&& value) {
+    SetAwsResourceId(std::forward<AwsResourceIdT>(value));
     return *this;
   }
   ///@}
@@ -198,33 +123,109 @@ class RecommendationResourceSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Metadata associated with the Recommendation Resource</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+  RecommendationResourceSummary& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  template <typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+  RecommendationResourceSummary& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>When the Recommendation Resource was last updated</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  RecommendationResourceSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The exclusion status of the Recommendation Resource</p>
+   */
+  inline ExclusionStatus GetExclusionStatus() const { return m_exclusionStatus; }
+  inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
+  inline void SetExclusionStatus(ExclusionStatus value) {
+    m_exclusionStatusHasBeenSet = true;
+    m_exclusionStatus = value;
+  }
+  inline RecommendationResourceSummary& WithExclusionStatus(ExclusionStatus value) {
+    SetExclusionStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Recommendation ARN</p>
+   */
+  inline const Aws::String& GetRecommendationArn() const { return m_recommendationArn; }
+  inline bool RecommendationArnHasBeenSet() const { return m_recommendationArnHasBeenSet; }
+  template <typename RecommendationArnT = Aws::String>
+  void SetRecommendationArn(RecommendationArnT&& value) {
+    m_recommendationArnHasBeenSet = true;
+    m_recommendationArn = std::forward<RecommendationArnT>(value);
+  }
+  template <typename RecommendationArnT = Aws::String>
+  RecommendationResourceSummary& WithRecommendationArn(RecommendationArnT&& value) {
+    SetRecommendationArn(std::forward<RecommendationArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_id;
+
   Aws::String m_arn;
 
   Aws::String m_awsResourceId;
 
-  ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
-
-  Aws::String m_id;
-
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
-  Aws::Map<Aws::String, Aws::String> m_metadata;
-
-  Aws::String m_recommendationArn;
-
   Aws::String m_regionCode;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
+
+  Aws::Map<Aws::String, Aws::String> m_metadata;
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
+
+  Aws::String m_recommendationArn;
+  bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_awsResourceIdHasBeenSet = false;
-  bool m_exclusionStatusHasBeenSet = false;
-  bool m_idHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
-  bool m_metadataHasBeenSet = false;
-  bool m_recommendationArnHasBeenSet = false;
   bool m_regionCodeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_exclusionStatusHasBeenSet = false;
+  bool m_recommendationArnHasBeenSet = false;
 };
 
 }  // namespace Model

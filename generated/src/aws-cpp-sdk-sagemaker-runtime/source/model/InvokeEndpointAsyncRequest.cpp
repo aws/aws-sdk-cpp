@@ -48,6 +48,18 @@ Aws::Http::HeaderValueCollection InvokeEndpointAsyncRequest::GetRequestSpecificH
     ss.str("");
   }
 
+  if (m_s3OutputPathExtensionHasBeenSet) {
+    ss << m_s3OutputPathExtension;
+    headers.emplace("x-amzn-sagemaker-s3outputpathextension", ss.str());
+    ss.str("");
+  }
+
+  if (m_filenameHasBeenSet) {
+    ss << m_filename;
+    headers.emplace("x-amzn-sagemaker-filename", ss.str());
+    ss.str("");
+  }
+
   if (m_requestTTLSecondsHasBeenSet) {
     ss << m_requestTTLSeconds;
     headers.emplace("x-amzn-sagemaker-requestttlseconds", ss.str());

@@ -223,3 +223,212 @@ TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldFailForNonNumericCompos
     const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
     EXPECT_FALSE(responseOutcome.IsSuccess());
 }
+
+/*
+ * Sha 512 tests
+ */
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddTrailingSha512ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "sha512", true};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("sha512", outcome.GetResult()->GetRequestHash().first);
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddHeaderSha512ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "sha512", false};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("", outcome.GetResult()->GetRequestHash().first);
+  EXPECT_EQ(nullptr, outcome.GetResult()->GetRequestHash().second);
+  EXPECT_EQ(2ul, outcome.GetResult()->GetHeaders().size());
+  EXPECT_EQ("aws.tartarus.com", outcome.GetResult()->GetHeaderValue("host"));
+  EXPECT_EQ("b3tSwOm8ciYgInIl7qsmQMTRTg6bftRpEBagE0ZWONKrb19uOBf1HZX++/ttF/2n/6MFWBq3O4Msl2oP/XC+pQ==",
+            outcome.GetResult()->GetHeaderValue("x-amz-checksum-sha512"));
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldValidateCorrectResponseSha512Checksum) {
+  Aws::Vector<Aws::String> responseValidationChecksumsToValidate{"sha512"};
+  MockChecksumRequest modeledRequest{"Memento Mori", "sha512", true, true, responseValidationChecksumsToValidate};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto requestOutcome = m_interceptor.ModifyBeforeSigning(context);
+  auto responseHashes = request->GetResponseValidationHashes();
+  EXPECT_EQ(1ul, responseHashes.size());
+  EXPECT_EQ("sha512", responseHashes[0].first);
+  EXPECT_NE(nullptr, responseHashes[0].second);
+  auto bodyStr = Crt::ByteBufFromCString("Memento Mori");
+  responseHashes[0].second->Update(bodyStr.buffer, bodyStr.len);
+  EXPECT_TRUE(requestOutcome.IsSuccess());
+  std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOC_TAG, request);
+  response->AddHeader("x-amz-checksum-sha512", "b3tSwOm8ciYgInIl7qsmQMTRTg6bftRpEBagE0ZWONKrb19uOBf1HZX++/ttF/2n/6MFWBq3O4Msl2oP/XC+pQ==");
+  context.SetTransmitResponse(response);
+  const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
+  EXPECT_TRUE(responseOutcome.IsSuccess());
+}
+
+/*
+ * XXHash64 tests
+ */
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddTrailingXXHash64ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash64", true};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("xxhash64", outcome.GetResult()->GetRequestHash().first);
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddHeaderXXHash64ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash64", false};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("", outcome.GetResult()->GetRequestHash().first);
+  EXPECT_EQ(nullptr, outcome.GetResult()->GetRequestHash().second);
+  EXPECT_EQ(2ul, outcome.GetResult()->GetHeaders().size());
+  EXPECT_EQ("aws.tartarus.com", outcome.GetResult()->GetHeaderValue("host"));
+  EXPECT_EQ("gpWjYMLp9XA=", outcome.GetResult()->GetHeaderValue("x-amz-checksum-xxhash64"));
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldValidateCorrectResponseXXHash64Checksum) {
+  Aws::Vector<Aws::String> responseValidationChecksumsToValidate{"xxhash64"};
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash64", true, true, responseValidationChecksumsToValidate};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto requestOutcome = m_interceptor.ModifyBeforeSigning(context);
+  auto responseHashes = request->GetResponseValidationHashes();
+  EXPECT_EQ(1ul, responseHashes.size());
+  EXPECT_EQ("xxhash64", responseHashes[0].first);
+  EXPECT_NE(nullptr, responseHashes[0].second);
+  auto bodyStr = Crt::ByteBufFromCString("Memento Mori");
+  responseHashes[0].second->Update(bodyStr.buffer, bodyStr.len);
+  EXPECT_TRUE(requestOutcome.IsSuccess());
+  std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOC_TAG, request);
+  response->AddHeader("x-amz-checksum-xxhash64", "gpWjYMLp9XA=");
+  context.SetTransmitResponse(response);
+  const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
+  EXPECT_TRUE(responseOutcome.IsSuccess());
+}
+
+/*
+ * XXHash3 tests
+ */
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddTrailingXXHash3ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"TMemento Mori", "xxhash3", true};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("xxhash3", outcome.GetResult()->GetRequestHash().first);
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddHeaderXXHash3ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash3", false};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("", outcome.GetResult()->GetRequestHash().first);
+  EXPECT_EQ(nullptr, outcome.GetResult()->GetRequestHash().second);
+  EXPECT_EQ(2ul, outcome.GetResult()->GetHeaders().size());
+  EXPECT_EQ("aws.tartarus.com", outcome.GetResult()->GetHeaderValue("host"));
+  EXPECT_EQ("9RrF7krhuOI=", outcome.GetResult()->GetHeaderValue("x-amz-checksum-xxhash3"));
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldValidateCorrectResponseXXHash3Checksum) {
+  Aws::Vector<Aws::String> responseValidationChecksumsToValidate{"xxhash3"};
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash3", true, true, responseValidationChecksumsToValidate};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto requestOutcome = m_interceptor.ModifyBeforeSigning(context);
+  auto responseHashes = request->GetResponseValidationHashes();
+  EXPECT_EQ(1ul, responseHashes.size());
+  EXPECT_EQ("xxhash3", responseHashes[0].first);
+  EXPECT_NE(nullptr, responseHashes[0].second);
+  auto bodyStr = Crt::ByteBufFromCString("Memento Mori");
+  responseHashes[0].second->Update(bodyStr.buffer, bodyStr.len);
+  EXPECT_TRUE(requestOutcome.IsSuccess());
+  std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOC_TAG, request);
+  response->AddHeader("x-amz-checksum-xxhash3", "9RrF7krhuOI=");
+  context.SetTransmitResponse(response);
+  const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
+  EXPECT_TRUE(responseOutcome.IsSuccess());
+}
+
+/*
+ * XXHash128 tests
+ */
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddTrailingXXHash128ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash128", true};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("xxhash128", outcome.GetResult()->GetRequestHash().first);
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldAddHeaderXXHash128ChecksumToRequest) {
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash128", false};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto outcome = m_interceptor.ModifyBeforeSigning(context);
+  EXPECT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ("", outcome.GetResult()->GetRequestHash().first);
+  EXPECT_EQ(nullptr, outcome.GetResult()->GetRequestHash().second);
+  EXPECT_EQ(2ul, outcome.GetResult()->GetHeaders().size());
+  EXPECT_EQ("aws.tartarus.com", outcome.GetResult()->GetHeaderValue("host"));
+  EXPECT_EQ("AW5DBY+18wW7VuSsFyNFAg==", outcome.GetResult()->GetHeaderValue("x-amz-checksum-xxhash128"));
+}
+
+TEST_F(ChecksumInterceptorTest, ChecksumInterceptorShouldValidateCorrectResponseXXHash128Checksum) {
+  Aws::Vector<Aws::String> responseValidationChecksumsToValidate{"xxhash128"};
+  MockChecksumRequest modeledRequest{"Memento Mori", "xxhash128", true, true, responseValidationChecksumsToValidate};
+  InterceptorContext context{modeledRequest};
+  URI uri{"https://aws.tartarus.com/makoto"};
+  std::shared_ptr<HttpRequest> request(CreateHttpRequest(uri, HttpMethod::HTTP_GET, Utils::Stream::DefaultResponseStreamFactoryMethod));
+  context.SetTransmitRequest(request);
+  const auto requestOutcome = m_interceptor.ModifyBeforeSigning(context);
+  auto responseHashes = request->GetResponseValidationHashes();
+  EXPECT_EQ(1ul, responseHashes.size());
+  EXPECT_EQ("xxhash128", responseHashes[0].first);
+  EXPECT_NE(nullptr, responseHashes[0].second);
+  auto bodyStr = Crt::ByteBufFromCString("Memento Mori");
+  responseHashes[0].second->Update(bodyStr.buffer, bodyStr.len);
+  EXPECT_TRUE(requestOutcome.IsSuccess());
+  std::shared_ptr<HttpResponse> response = Aws::MakeShared<StandardHttpResponse>(ALLOC_TAG, request);
+  response->AddHeader("x-amz-checksum-xxhash128", "AW5DBY+18wW7VuSsFyNFAg==");
+  context.SetTransmitResponse(response);
+  const auto responseOutcome = m_interceptor.ModifyBeforeDeserialization(context);
+  EXPECT_TRUE(responseOutcome.IsSuccess());
+}

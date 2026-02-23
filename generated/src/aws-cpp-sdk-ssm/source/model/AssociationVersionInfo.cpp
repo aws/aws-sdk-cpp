@@ -133,6 +133,10 @@ AssociationVersionInfo& AssociationVersionInfo::operator=(JsonView jsonValue) {
     }
     m_targetMapsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AssociationDispatchAssumeRole")) {
+    m_associationDispatchAssumeRole = jsonValue.GetString("AssociationDispatchAssumeRole");
+    m_associationDispatchAssumeRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -252,6 +256,10 @@ JsonValue AssociationVersionInfo::Jsonize() const {
       targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
     }
     payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
+  }
+
+  if (m_associationDispatchAssumeRoleHasBeenSet) {
+    payload.WithString("AssociationDispatchAssumeRole", m_associationDispatchAssumeRole);
   }
 
   return payload;

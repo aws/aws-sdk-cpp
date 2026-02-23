@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("codegen") {
             // Smithy dependencies
-            version("smithy", "1.62.0")  // Centralize the version for Smithy-related dependencies
+            version("smithy", "1.67.0")  // Centralize the version for Smithy-related dependencies
             library("model", "software.amazon.smithy", "smithy-model").versionRef("smithy")
             library("aws-traits", "software.amazon.smithy", "smithy-aws-traits").versionRef("smithy")
             library("codegen-core", "software.amazon.smithy", "smithy-codegen-core").versionRef("smithy")

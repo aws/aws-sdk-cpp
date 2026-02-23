@@ -158,6 +158,45 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
 
   ///@{
   /**
+   * <p>The path extension that is appended to the Amazon S3 output path where the
+   * inference response payload is stored.</p>
+   */
+  inline const Aws::String& GetS3OutputPathExtension() const { return m_s3OutputPathExtension; }
+  inline bool S3OutputPathExtensionHasBeenSet() const { return m_s3OutputPathExtensionHasBeenSet; }
+  template <typename S3OutputPathExtensionT = Aws::String>
+  void SetS3OutputPathExtension(S3OutputPathExtensionT&& value) {
+    m_s3OutputPathExtensionHasBeenSet = true;
+    m_s3OutputPathExtension = std::forward<S3OutputPathExtensionT>(value);
+  }
+  template <typename S3OutputPathExtensionT = Aws::String>
+  InvokeEndpointAsyncRequest& WithS3OutputPathExtension(S3OutputPathExtensionT&& value) {
+    SetS3OutputPathExtension(std::forward<S3OutputPathExtensionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The filename for the inference response payload stored in Amazon S3. If not
+   * specified, Amazon SageMaker AI generates a filename based on the inference
+   * ID.</p>
+   */
+  inline const Aws::String& GetFilename() const { return m_filename; }
+  inline bool FilenameHasBeenSet() const { return m_filenameHasBeenSet; }
+  template <typename FilenameT = Aws::String>
+  void SetFilename(FilenameT&& value) {
+    m_filenameHasBeenSet = true;
+    m_filename = std::forward<FilenameT>(value);
+  }
+  template <typename FilenameT = Aws::String>
+  InvokeEndpointAsyncRequest& WithFilename(FilenameT&& value) {
+    SetFilename(std::forward<FilenameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Maximum age in seconds a request can be in the queue before it is marked as
    * expired. The default is 6 hours, or 21,600 seconds.</p>
    */
@@ -202,6 +241,10 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
 
   Aws::String m_inputLocation;
 
+  Aws::String m_s3OutputPathExtension;
+
+  Aws::String m_filename;
+
   int m_requestTTLSeconds{0};
 
   int m_invocationTimeoutSeconds{0};
@@ -211,6 +254,8 @@ class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest {
   bool m_customAttributesHasBeenSet = false;
   bool m_inferenceIdHasBeenSet = false;
   bool m_inputLocationHasBeenSet = false;
+  bool m_s3OutputPathExtensionHasBeenSet = false;
+  bool m_filenameHasBeenSet = false;
   bool m_requestTTLSecondsHasBeenSet = false;
   bool m_invocationTimeoutSecondsHasBeenSet = false;
 };

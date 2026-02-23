@@ -19,21 +19,21 @@ repositories {
 
 buildscript {
     dependencies {
-        classpath("software.amazon.smithy:smithy-model:1.62.0")
-        classpath("software.amazon.smithy:smithy-aws-traits:1.62.0")
-        classpath("software.amazon.smithy:smithy-rules-engine:1.62.0")
+        classpath("software.amazon.smithy:smithy-model:1.67.0")
+        classpath("software.amazon.smithy:smithy-aws-traits:1.67.0")
+        classpath("software.amazon.smithy:smithy-rules-engine:1.67.0")
     }
 }
 
 dependencies {
     implementation(project(":smithy-cpp-codegen"))
-    implementation("software.amazon.smithy:smithy-aws-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-endpoints:1.62.0")
-    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.62.0")
-    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.62.0")
-    implementation("software.amazon.smithy:smithy-waiters:1.62.0")
+    implementation("software.amazon.smithy:smithy-aws-traits:1.67.0")
+    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.67.0")
+    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.67.0")
+    implementation("software.amazon.smithy:smithy-aws-endpoints:1.67.0")
+    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.67.0")
+    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.67.0")
+    implementation("software.amazon.smithy:smithy-waiters:1.67.0")
 }
 
 tasks.register("generate-smithy-build") {
@@ -69,7 +69,7 @@ tasks.register("generate-smithy-build") {
         }
         
         // Legacy services without full Smithy models - generate mock projections for base classes
-        val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB", "s3-crt" to "S3Crt")
+        val legacyServices = mapOf("importexport" to "ImportExport", "sdb" to "SimpleDB")
         legacyServices.forEach { (c2jName, serviceName) ->
             if (filteredServiceList.isEmpty() || c2jName in filteredServiceList) {
                 val mockProjectionContents = Node.objectNodeBuilder()
@@ -79,6 +79,20 @@ tasks.register("generate-smithy-build") {
                             .build()))
                     .build()
                 projectionsBuilder.withMember("$c2jName.mock", mockProjectionContents)
+            }
+        }
+        
+        // S3-CRT: Uses S3 model but generates with S3Crt namespace
+        if (filteredServiceList.isEmpty() || "s3-crt" in filteredServiceList) {
+            fileTree(models).filter { it.isFile && it.name == "s3.json" }.files.firstOrNull()?.let { s3ModelFile ->
+                val s3CrtProjectionContents = Node.objectNodeBuilder()
+                    .withMember("imports", Node.fromStrings(s3ModelFile.absolutePath))
+                    .withMember("plugins", Node.objectNode()
+                        .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
+                            .withMember("c2jMap", Node.from(c2jMapStr))
+                            .build()))
+                    .build()
+                projectionsBuilder.withMember("s3-crt.2006-03-01", s3CrtProjectionContents)
             }
         }
         

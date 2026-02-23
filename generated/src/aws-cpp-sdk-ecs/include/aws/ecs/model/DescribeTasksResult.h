@@ -23,6 +23,11 @@ class JsonValue;
 }  // namespace Utils
 namespace ECS {
 namespace Model {
+/**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasksResponse">AWS
+ * API Reference</a></p>
+ */
 class DescribeTasksResult {
  public:
   AWS_ECS_API DescribeTasksResult() = default;

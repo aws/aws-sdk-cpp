@@ -32,6 +32,24 @@ class ListOrganizationRecommendationAccountsResult {
 
   ///@{
   /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListOrganizationRecommendationAccountsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The account recommendations lifecycles that are applicable to the
    * Recommendation</p>
    */
@@ -59,24 +77,6 @@ class ListOrganizationRecommendationAccountsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListOrganizationRecommendationAccountsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -91,13 +91,13 @@ class ListOrganizationRecommendationAccountsResult {
   }
   ///@}
  private:
-  Aws::Vector<AccountRecommendationLifecycleSummary> m_accountRecommendationLifecycleSummaries;
-
   Aws::String m_nextToken;
 
+  Aws::Vector<AccountRecommendationLifecycleSummary> m_accountRecommendationLifecycleSummaries;
+
   Aws::String m_requestId;
-  bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

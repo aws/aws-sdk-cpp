@@ -542,6 +542,33 @@ class UpdateAssociationRequest : public SSMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A role used by association to take actions on your behalf. State Manager will
+   * assume this role and call required APIs when dispatching configurations to
+   * nodes. If not specified, <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+   * service-linked role for Systems Manager</a> will be used by default. </p>
+   * <p>It is recommended that you define a custom IAM role so that you have full
+   * control of the permissions that State Manager has when taking actions on your
+   * behalf.</p> <p>Service-linked role support in State Manager is being phased out.
+   * Associations relying on service-linked role may require updates in the future to
+   * continue functioning properly.</p>
+   */
+  inline const Aws::String& GetAssociationDispatchAssumeRole() const { return m_associationDispatchAssumeRole; }
+  inline bool AssociationDispatchAssumeRoleHasBeenSet() const { return m_associationDispatchAssumeRoleHasBeenSet; }
+  template <typename AssociationDispatchAssumeRoleT = Aws::String>
+  void SetAssociationDispatchAssumeRole(AssociationDispatchAssumeRoleT&& value) {
+    m_associationDispatchAssumeRoleHasBeenSet = true;
+    m_associationDispatchAssumeRole = std::forward<AssociationDispatchAssumeRoleT>(value);
+  }
+  template <typename AssociationDispatchAssumeRoleT = Aws::String>
+  UpdateAssociationRequest& WithAssociationDispatchAssumeRole(AssociationDispatchAssumeRoleT&& value) {
+    SetAssociationDispatchAssumeRole(std::forward<AssociationDispatchAssumeRoleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_associationId;
 
@@ -584,6 +611,8 @@ class UpdateAssociationRequest : public SSMRequest {
   Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
 
   AlarmConfiguration m_alarmConfiguration;
+
+  Aws::String m_associationDispatchAssumeRole;
   bool m_associationIdHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
   bool m_documentVersionHasBeenSet = false;
@@ -605,6 +634,7 @@ class UpdateAssociationRequest : public SSMRequest {
   bool m_durationHasBeenSet = false;
   bool m_targetMapsHasBeenSet = false;
   bool m_alarmConfigurationHasBeenSet = false;
+  bool m_associationDispatchAssumeRoleHasBeenSet = false;
 };
 
 }  // namespace Model

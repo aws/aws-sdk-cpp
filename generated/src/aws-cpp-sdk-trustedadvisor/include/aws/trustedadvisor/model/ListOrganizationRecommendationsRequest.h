@@ -40,18 +40,83 @@ class ListOrganizationRecommendationsRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>After the last update of the Recommendation</p>
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
    */
-  inline const Aws::Utils::DateTime& GetAfterLastUpdatedAt() const { return m_afterLastUpdatedAt; }
-  inline bool AfterLastUpdatedAtHasBeenSet() const { return m_afterLastUpdatedAtHasBeenSet; }
-  template <typename AfterLastUpdatedAtT = Aws::Utils::DateTime>
-  void SetAfterLastUpdatedAt(AfterLastUpdatedAtT&& value) {
-    m_afterLastUpdatedAtHasBeenSet = true;
-    m_afterLastUpdatedAt = std::forward<AfterLastUpdatedAtT>(value);
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  template <typename AfterLastUpdatedAtT = Aws::Utils::DateTime>
-  ListOrganizationRecommendationsRequest& WithAfterLastUpdatedAt(AfterLastUpdatedAtT&& value) {
-    SetAfterLastUpdatedAt(std::forward<AfterLastUpdatedAtT>(value));
+  template <typename NextTokenT = Aws::String>
+  ListOrganizationRecommendationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of results to return per page.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListOrganizationRecommendationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the Recommendation</p>
+   */
+  inline RecommendationType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(RecommendationType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline ListOrganizationRecommendationsRequest& WithType(RecommendationType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the Recommendation</p>
+   */
+  inline RecommendationStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(RecommendationStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ListOrganizationRecommendationsRequest& WithStatus(RecommendationStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The pillar of the Recommendation</p>
+   */
+  inline RecommendationPillar GetPillar() const { return m_pillar; }
+  inline bool PillarHasBeenSet() const { return m_pillarHasBeenSet; }
+  inline void SetPillar(RecommendationPillar value) {
+    m_pillarHasBeenSet = true;
+    m_pillar = value;
+  }
+  inline ListOrganizationRecommendationsRequest& WithPillar(RecommendationPillar value) {
+    SetPillar(value);
     return *this;
   }
   ///@}
@@ -76,18 +141,16 @@ class ListOrganizationRecommendationsRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>Before the last update of the Recommendation</p>
+   * <p>The source of the Recommendation</p>
    */
-  inline const Aws::Utils::DateTime& GetBeforeLastUpdatedAt() const { return m_beforeLastUpdatedAt; }
-  inline bool BeforeLastUpdatedAtHasBeenSet() const { return m_beforeLastUpdatedAtHasBeenSet; }
-  template <typename BeforeLastUpdatedAtT = Aws::Utils::DateTime>
-  void SetBeforeLastUpdatedAt(BeforeLastUpdatedAtT&& value) {
-    m_beforeLastUpdatedAtHasBeenSet = true;
-    m_beforeLastUpdatedAt = std::forward<BeforeLastUpdatedAtT>(value);
+  inline RecommendationSource GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  inline void SetSource(RecommendationSource value) {
+    m_sourceHasBeenSet = true;
+    m_source = value;
   }
-  template <typename BeforeLastUpdatedAtT = Aws::Utils::DateTime>
-  ListOrganizationRecommendationsRequest& WithBeforeLastUpdatedAt(BeforeLastUpdatedAtT&& value) {
-    SetBeforeLastUpdatedAt(std::forward<BeforeLastUpdatedAtT>(value));
+  inline ListOrganizationRecommendationsRequest& WithSource(RecommendationSource value) {
+    SetSource(value);
     return *this;
   }
   ///@}
@@ -112,132 +175,69 @@ class ListOrganizationRecommendationsRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results to return per page.</p>
+   * <p>After the last update of the Recommendation</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::Utils::DateTime& GetAfterLastUpdatedAt() const { return m_afterLastUpdatedAt; }
+  inline bool AfterLastUpdatedAtHasBeenSet() const { return m_afterLastUpdatedAtHasBeenSet; }
+  template <typename AfterLastUpdatedAtT = Aws::Utils::DateTime>
+  void SetAfterLastUpdatedAt(AfterLastUpdatedAtT&& value) {
+    m_afterLastUpdatedAtHasBeenSet = true;
+    m_afterLastUpdatedAt = std::forward<AfterLastUpdatedAtT>(value);
   }
-  inline ListOrganizationRecommendationsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename AfterLastUpdatedAtT = Aws::Utils::DateTime>
+  ListOrganizationRecommendationsRequest& WithAfterLastUpdatedAt(AfterLastUpdatedAtT&& value) {
+    SetAfterLastUpdatedAt(std::forward<AfterLastUpdatedAtT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
+   * <p>Before the last update of the Recommendation</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline const Aws::Utils::DateTime& GetBeforeLastUpdatedAt() const { return m_beforeLastUpdatedAt; }
+  inline bool BeforeLastUpdatedAtHasBeenSet() const { return m_beforeLastUpdatedAtHasBeenSet; }
+  template <typename BeforeLastUpdatedAtT = Aws::Utils::DateTime>
+  void SetBeforeLastUpdatedAt(BeforeLastUpdatedAtT&& value) {
+    m_beforeLastUpdatedAtHasBeenSet = true;
+    m_beforeLastUpdatedAt = std::forward<BeforeLastUpdatedAtT>(value);
   }
-  template <typename NextTokenT = Aws::String>
-  ListOrganizationRecommendationsRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The pillar of the Recommendation</p>
-   */
-  inline RecommendationPillar GetPillar() const { return m_pillar; }
-  inline bool PillarHasBeenSet() const { return m_pillarHasBeenSet; }
-  inline void SetPillar(RecommendationPillar value) {
-    m_pillarHasBeenSet = true;
-    m_pillar = value;
-  }
-  inline ListOrganizationRecommendationsRequest& WithPillar(RecommendationPillar value) {
-    SetPillar(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The source of the Recommendation</p>
-   */
-  inline RecommendationSource GetSource() const { return m_source; }
-  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-  inline void SetSource(RecommendationSource value) {
-    m_sourceHasBeenSet = true;
-    m_source = value;
-  }
-  inline ListOrganizationRecommendationsRequest& WithSource(RecommendationSource value) {
-    SetSource(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The status of the Recommendation</p>
-   */
-  inline RecommendationStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(RecommendationStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ListOrganizationRecommendationsRequest& WithStatus(RecommendationStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The type of the Recommendation</p>
-   */
-  inline RecommendationType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(RecommendationType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline ListOrganizationRecommendationsRequest& WithType(RecommendationType value) {
-    SetType(value);
+  template <typename BeforeLastUpdatedAtT = Aws::Utils::DateTime>
+  ListOrganizationRecommendationsRequest& WithBeforeLastUpdatedAt(BeforeLastUpdatedAtT&& value) {
+    SetBeforeLastUpdatedAt(std::forward<BeforeLastUpdatedAtT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Utils::DateTime m_afterLastUpdatedAt{};
-
-  Aws::String m_awsService;
-
-  Aws::Utils::DateTime m_beforeLastUpdatedAt{};
-
-  Aws::String m_checkIdentifier;
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
-
-  RecommendationPillar m_pillar{RecommendationPillar::NOT_SET};
-
-  RecommendationSource m_source{RecommendationSource::NOT_SET};
+  RecommendationType m_type{RecommendationType::NOT_SET};
 
   RecommendationStatus m_status{RecommendationStatus::NOT_SET};
 
-  RecommendationType m_type{RecommendationType::NOT_SET};
-  bool m_afterLastUpdatedAtHasBeenSet = false;
-  bool m_awsServiceHasBeenSet = false;
-  bool m_beforeLastUpdatedAtHasBeenSet = false;
-  bool m_checkIdentifierHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+  RecommendationPillar m_pillar{RecommendationPillar::NOT_SET};
+
+  Aws::String m_awsService;
+
+  RecommendationSource m_source{RecommendationSource::NOT_SET};
+
+  Aws::String m_checkIdentifier;
+
+  Aws::Utils::DateTime m_afterLastUpdatedAt{};
+
+  Aws::Utils::DateTime m_beforeLastUpdatedAt{};
   bool m_nextTokenHasBeenSet = false;
-  bool m_pillarHasBeenSet = false;
-  bool m_sourceHasBeenSet = false;
-  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_pillarHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_checkIdentifierHasBeenSet = false;
+  bool m_afterLastUpdatedAtHasBeenSet = false;
+  bool m_beforeLastUpdatedAtHasBeenSet = false;
 };
 
 }  // namespace Model

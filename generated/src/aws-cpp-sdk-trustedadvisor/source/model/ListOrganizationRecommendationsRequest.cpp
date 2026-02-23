@@ -19,27 +19,9 @@ Aws::String ListOrganizationRecommendationsRequest::SerializePayload() const { r
 
 void ListOrganizationRecommendationsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_afterLastUpdatedAtHasBeenSet) {
-    ss << m_afterLastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    uri.AddQueryStringParameter("afterLastUpdatedAt", ss.str());
-    ss.str("");
-  }
-
-  if (m_awsServiceHasBeenSet) {
-    ss << m_awsService;
-    uri.AddQueryStringParameter("awsService", ss.str());
-    ss.str("");
-  }
-
-  if (m_beforeLastUpdatedAtHasBeenSet) {
-    ss << m_beforeLastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    uri.AddQueryStringParameter("beforeLastUpdatedAt", ss.str());
-    ss.str("");
-  }
-
-  if (m_checkIdentifierHasBeenSet) {
-    ss << m_checkIdentifier;
-    uri.AddQueryStringParameter("checkIdentifier", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -49,21 +31,9 @@ void ListOrganizationRecommendationsRequest::AddQueryStringParameters(URI& uri) 
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
-    ss.str("");
-  }
-
-  if (m_pillarHasBeenSet) {
-    ss << RecommendationPillarMapper::GetNameForRecommendationPillar(m_pillar);
-    uri.AddQueryStringParameter("pillar", ss.str());
-    ss.str("");
-  }
-
-  if (m_sourceHasBeenSet) {
-    ss << RecommendationSourceMapper::GetNameForRecommendationSource(m_source);
-    uri.AddQueryStringParameter("source", ss.str());
+  if (m_typeHasBeenSet) {
+    ss << RecommendationTypeMapper::GetNameForRecommendationType(m_type);
+    uri.AddQueryStringParameter("type", ss.str());
     ss.str("");
   }
 
@@ -73,9 +43,39 @@ void ListOrganizationRecommendationsRequest::AddQueryStringParameters(URI& uri) 
     ss.str("");
   }
 
-  if (m_typeHasBeenSet) {
-    ss << RecommendationTypeMapper::GetNameForRecommendationType(m_type);
-    uri.AddQueryStringParameter("type", ss.str());
+  if (m_pillarHasBeenSet) {
+    ss << RecommendationPillarMapper::GetNameForRecommendationPillar(m_pillar);
+    uri.AddQueryStringParameter("pillar", ss.str());
+    ss.str("");
+  }
+
+  if (m_awsServiceHasBeenSet) {
+    ss << m_awsService;
+    uri.AddQueryStringParameter("awsService", ss.str());
+    ss.str("");
+  }
+
+  if (m_sourceHasBeenSet) {
+    ss << RecommendationSourceMapper::GetNameForRecommendationSource(m_source);
+    uri.AddQueryStringParameter("source", ss.str());
+    ss.str("");
+  }
+
+  if (m_checkIdentifierHasBeenSet) {
+    ss << m_checkIdentifier;
+    uri.AddQueryStringParameter("checkIdentifier", ss.str());
+    ss.str("");
+  }
+
+  if (m_afterLastUpdatedAtHasBeenSet) {
+    ss << m_afterLastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("afterLastUpdatedAt", ss.str());
+    ss.str("");
+  }
+
+  if (m_beforeLastUpdatedAtHasBeenSet) {
+    ss << m_beforeLastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("beforeLastUpdatedAt", ss.str());
     ss.str("");
   }
 }

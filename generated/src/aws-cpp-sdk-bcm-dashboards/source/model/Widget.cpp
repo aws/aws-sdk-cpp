@@ -18,6 +18,10 @@ namespace Model {
 Widget::Widget(JsonView jsonValue) { *this = jsonValue; }
 
 Widget& Widget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("title")) {
     m_title = jsonValue.GetString("title");
     m_titleHasBeenSet = true;
@@ -50,6 +54,10 @@ Widget& Widget::operator=(JsonView jsonValue) {
 
 JsonValue Widget::Jsonize() const {
   JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
+  }
 
   if (m_titleHasBeenSet) {
     payload.WithString("title", m_title);

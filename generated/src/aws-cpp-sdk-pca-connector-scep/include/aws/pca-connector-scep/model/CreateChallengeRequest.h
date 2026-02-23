@@ -52,7 +52,7 @@ class CreateChallengeRequest : public PcaConnectorScepRequest {
   ///@{
   /**
    * <p>Custom string that can be used to distinguish between calls to the <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
    * action. Client tokens for <code>CreateChallenge</code> time out after five
    * minutes. Therefore, if you call <code>CreateChallenge</code> multiple times with
    * the same client token within five minutes, Connector for SCEP recognizes that

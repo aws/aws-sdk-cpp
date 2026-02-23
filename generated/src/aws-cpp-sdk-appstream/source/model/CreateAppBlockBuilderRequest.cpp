@@ -63,6 +63,10 @@ Aws::String CreateAppBlockBuilderRequest::SerializePayload() const {
     payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
   }
 
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
+  }
+
   return payload.View().WriteReadable();
 }
 

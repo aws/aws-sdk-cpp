@@ -41,8 +41,8 @@ class DeploymentConfiguration {
 
   ///@{
   /**
-   *  <p>The deployment circuit breaker can only be used for services using the
-   * rolling update (<code>ECS</code>) deployment type.</p>  <p>The
+   * <p> <p>The deployment circuit breaker can only be used for services using
+   * the rolling update (<code>ECS</code>) deployment type.</p>  <p>The
    * <b>deployment circuit breaker</b> determines whether a service deployment will
    * fail if the service can't reach a steady state. If you use the deployment
    * circuit breaker, a service deployment will transition to a failed state and stop
@@ -50,7 +50,8 @@ class DeploymentConfiguration {
    * fails, the service is rolled back to the last deployment that completed
    * successfully. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
-   * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
+   * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
+   * </p></p>
    */
   inline const DeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const { return m_deploymentCircuitBreaker; }
   inline bool DeploymentCircuitBreakerHasBeenSet() const { return m_deploymentCircuitBreakerHasBeenSet; }

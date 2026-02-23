@@ -300,6 +300,23 @@ class AppBlockBuilder {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled
+   * for the app block builder.</p>
+   */
+  inline bool GetDisableIMDSV1() const { return m_disableIMDSV1; }
+  inline bool DisableIMDSV1HasBeenSet() const { return m_disableIMDSV1HasBeenSet; }
+  inline void SetDisableIMDSV1(bool value) {
+    m_disableIMDSV1HasBeenSet = true;
+    m_disableIMDSV1 = value;
+  }
+  inline AppBlockBuilder& WithDisableIMDSV1(bool value) {
+    SetDisableIMDSV1(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -328,6 +345,8 @@ class AppBlockBuilder {
   AppBlockBuilderStateChangeReason m_stateChangeReason;
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
+
+  bool m_disableIMDSV1{false};
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
@@ -342,6 +361,7 @@ class AppBlockBuilder {
   bool m_appBlockBuilderErrorsHasBeenSet = false;
   bool m_stateChangeReasonHasBeenSet = false;
   bool m_accessEndpointsHasBeenSet = false;
+  bool m_disableIMDSV1HasBeenSet = false;
 };
 
 }  // namespace Model

@@ -67,6 +67,10 @@ namespace Aws
              * Create a Sha256 HMACHash provider
              */
             AWS_CORE_API std::shared_ptr<HMAC> CreateSha256HMACImplementation();
+            /**
+             * Create a Sha512 Hash provider
+             */
+            AWS_CORE_API std::shared_ptr<Hash> CreateSha512Implementation();
 
             /**
              * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV

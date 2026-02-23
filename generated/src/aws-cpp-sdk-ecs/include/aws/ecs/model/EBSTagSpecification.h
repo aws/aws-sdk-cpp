@@ -77,10 +77,10 @@ class EBSTagSpecification {
 
   ///@{
   /**
-   * <p>Determines whether to propagate the tags from the task definition to
-   * &#x2028;the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code>
-   * specified in &#x2028;<code>ServiceVolumeConfiguration</code>. If no value is
-   * specified, the tags aren't &#x2028;propagated.</p>
+   * <p>Determines whether to propagate the tags from the task definition to the
+   * Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified
+   * in <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags
+   * aren't propagated.</p>
    */
   inline PropagateTags GetPropagateTags() const { return m_propagateTags; }
   inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
