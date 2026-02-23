@@ -2,7 +2,11 @@
 #set($template.currentShape = $currentShape)
 #set($template.jsonValue = $jsonValue)
 #set($template.memberKey = $memberKey)
+#if($recursionDepth > 1)
+#set($template.lowerCaseVarName = $CppViewHelper.computeVariableName($template.memberKey) + $recursionDepth)
+#else
 #set($template.lowerCaseVarName = $CppViewHelper.computeVariableName($template.memberKey))
+#end
 #set($template.containerVar = $containerVar)
 #set($template.recursionDepth = $recursionDepth)
 #set($template.atBottom = false)
@@ -44,9 +48,17 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelInternalMapOrListJsonDeserializer.vm")
 #end
 #if($template.currentShape.mapValue.shape.map)
+#if($template.recursionDepth > 0)
+#set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.mapValue.shape.name) + ($template.recursionDepth + 1) + "Map")
+#else
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.mapValue.shape.name) + "Map")
+#end
 #elseif($template.currentShape.mapValue.shape.list)
+#if($template.recursionDepth > 0)
+#set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.mapValue.shape.name) + ($template.recursionDepth + 1) + "List")
+#else
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.mapValue.shape.name) + "List")
+#end
 #end
 #if(!$template.atBottom)
 #if($template.currentShape.mapKey.shape.enum)
@@ -92,9 +104,17 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelInternalMapOrListJsonDeserializer.vm")
 #end
 #if($template.currentShape.listMember.shape.map)
+#if($template.recursionDepth > 0)
+#set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + ($template.recursionDepth + 1) + "Map")
+#else
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "Map")
+#end
 #elseif($template.currentShape.mapValue.shape.list || $template.currentShape.listMember.shape.list)
+#if($template.recursionDepth > 0)
+#set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + ($template.recursionDepth + 1) + "List")
+#else
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "List")
+#end
 #end
 #if(!$template.atBottom)
   ${template.currentSpaces}  ${template.containerVar}.push_back(std::move(${template.internalCollectionName}));
