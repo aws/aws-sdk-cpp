@@ -100,9 +100,25 @@ private:
   PathMatcher<OutcomeT> m_pathMatcher;
   /**
    * Returns the HTTP status code from the result or error.
-   * Fails at compile time if GetResponseCode() is not available.
+   * Result objects use GetHttpResponseCode(), errors use GetResponseCode().
    */
-  inline int GetStatusCode(OutcomeT outcome) const { return outcome.IsSuccess() ? GetStatusCodeFrom(outcome.GetResult()) : GetStatusCodeFrom(outcome.GetError()); }
+  inline int GetStatusCode(OutcomeT outcome) const { 
+    return outcome.IsSuccess() 
+      ? GetStatusCodeFromResult(outcome.GetResult()) 
+      : GetStatusCodeFromError(outcome.GetError()); 
+  }
+
+  template<typename T>
+  struct has_get_http_response_code
+  {
+      template<typename U>
+      static auto test(int) -> decltype(std::declval<U>().GetHttpResponseCode(), std::true_type());
+
+      template<typename>
+      static std::false_type test(...);
+
+      static constexpr bool value = decltype(test<T>(0))::value;
+  };
 
   template<typename T>
   struct has_get_response_code
@@ -117,10 +133,17 @@ private:
   };
 
   template<typename T>
-  static int GetStatusCodeFrom(const T& obj)
+  static int GetStatusCodeFromResult(const T& result)
   {
-      static_assert(has_get_response_code<T>::value, "Type must have GetResponseCode() method");
-      return static_cast<int>(obj.GetResponseCode());
+      static_assert(has_get_http_response_code<T>::value, "Result type must have GetHttpResponseCode() method");
+      return static_cast<int>(result.GetHttpResponseCode());
+  }
+
+  template<typename T>
+  static int GetStatusCodeFromError(const T& error)
+  {
+      static_assert(has_get_response_code<T>::value, "Error type must have GetResponseCode() method");
+      return static_cast<int>(error.GetResponseCode());
   }
 
 };
