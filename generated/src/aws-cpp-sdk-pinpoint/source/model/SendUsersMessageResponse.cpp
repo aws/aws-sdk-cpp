@@ -29,12 +29,12 @@ SendUsersMessageResponse& SendUsersMessageResponse::operator=(JsonView jsonValue
   if (jsonValue.ValueExists("Result")) {
     Aws::Map<Aws::String, JsonView> resultJsonMap = jsonValue.GetObject("Result").GetAllObjects();
     for (auto& resultItem : resultJsonMap) {
-      Aws::Map<Aws::String, JsonView> mapOfEndpointMessageResultJsonMap = resultItem.second.GetAllObjects();
-      Aws::Map<Aws::String, EndpointMessageResult> mapOfEndpointMessageResultMap;
-      for (auto& mapOfEndpointMessageResultItem : mapOfEndpointMessageResultJsonMap) {
-        mapOfEndpointMessageResultMap[mapOfEndpointMessageResultItem.first] = mapOfEndpointMessageResultItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> mapOfEndpointMessageResult2JsonMap = resultItem.second.GetAllObjects();
+      Aws::Map<Aws::String, EndpointMessageResult> mapOfEndpointMessageResult2Map;
+      for (auto& mapOfEndpointMessageResult2Item : mapOfEndpointMessageResult2JsonMap) {
+        mapOfEndpointMessageResult2Map[mapOfEndpointMessageResult2Item.first] = mapOfEndpointMessageResult2Item.second.AsObject();
       }
-      m_result[resultItem.first] = std::move(mapOfEndpointMessageResultMap);
+      m_result[resultItem.first] = std::move(mapOfEndpointMessageResult2Map);
     }
     m_resultHasBeenSet = true;
   }

@@ -25,12 +25,12 @@ ErrorDetail& ErrorDetail::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("ErrorData")) {
     Aws::Utils::Array<JsonView> errorDataJsonList = jsonValue.GetArray("ErrorData");
     for (unsigned errorDataIndex = 0; errorDataIndex < errorDataJsonList.GetLength(); ++errorDataIndex) {
-      Aws::Map<Aws::String, JsonView> stringMapJsonMap = errorDataJsonList[errorDataIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> stringMapMap;
-      for (auto& stringMapItem : stringMapJsonMap) {
-        stringMapMap[stringMapItem.first] = stringMapItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> stringMap2JsonMap = errorDataJsonList[errorDataIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> stringMap2Map;
+      for (auto& stringMap2Item : stringMap2JsonMap) {
+        stringMap2Map[stringMap2Item.first] = stringMap2Item.second.AsString();
       }
-      m_errorData.push_back(std::move(stringMapMap));
+      m_errorData.push_back(std::move(stringMap2Map));
     }
     m_errorDataHasBeenSet = true;
   }

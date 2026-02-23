@@ -24,13 +24,13 @@ GetBlacklistReportsResult& GetBlacklistReportsResult::operator=(const Aws::Amazo
   if (jsonValue.ValueExists("BlacklistReport")) {
     Aws::Map<Aws::String, JsonView> blacklistReportJsonMap = jsonValue.GetObject("BlacklistReport").GetAllObjects();
     for (auto& blacklistReportItem : blacklistReportJsonMap) {
-      Aws::Utils::Array<JsonView> blacklistEntriesJsonList = blacklistReportItem.second.AsArray();
-      Aws::Vector<BlacklistEntry> blacklistEntriesList;
-      blacklistEntriesList.reserve((size_t)blacklistEntriesJsonList.GetLength());
-      for (unsigned blacklistEntriesIndex = 0; blacklistEntriesIndex < blacklistEntriesJsonList.GetLength(); ++blacklistEntriesIndex) {
-        blacklistEntriesList.push_back(blacklistEntriesJsonList[blacklistEntriesIndex].AsObject());
+      Aws::Utils::Array<JsonView> blacklistEntries2JsonList = blacklistReportItem.second.AsArray();
+      Aws::Vector<BlacklistEntry> blacklistEntries2List;
+      blacklistEntries2List.reserve((size_t)blacklistEntries2JsonList.GetLength());
+      for (unsigned blacklistEntries2Index = 0; blacklistEntries2Index < blacklistEntries2JsonList.GetLength(); ++blacklistEntries2Index) {
+        blacklistEntries2List.push_back(blacklistEntries2JsonList[blacklistEntries2Index].AsObject());
       }
-      m_blacklistReport[blacklistReportItem.first] = std::move(blacklistEntriesList);
+      m_blacklistReport[blacklistReportItem.first] = std::move(blacklistEntries2List);
     }
     m_blacklistReportHasBeenSet = true;
   }

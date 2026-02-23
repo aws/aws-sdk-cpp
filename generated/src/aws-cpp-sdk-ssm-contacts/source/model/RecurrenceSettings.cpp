@@ -46,13 +46,13 @@ RecurrenceSettings& RecurrenceSettings::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("ShiftCoverages")) {
     Aws::Map<Aws::String, JsonView> shiftCoveragesJsonMap = jsonValue.GetObject("ShiftCoverages").GetAllObjects();
     for (auto& shiftCoveragesItem : shiftCoveragesJsonMap) {
-      Aws::Utils::Array<JsonView> coverageTimesJsonList = shiftCoveragesItem.second.AsArray();
-      Aws::Vector<CoverageTime> coverageTimesList;
-      coverageTimesList.reserve((size_t)coverageTimesJsonList.GetLength());
-      for (unsigned coverageTimesIndex = 0; coverageTimesIndex < coverageTimesJsonList.GetLength(); ++coverageTimesIndex) {
-        coverageTimesList.push_back(coverageTimesJsonList[coverageTimesIndex].AsObject());
+      Aws::Utils::Array<JsonView> coverageTimes2JsonList = shiftCoveragesItem.second.AsArray();
+      Aws::Vector<CoverageTime> coverageTimes2List;
+      coverageTimes2List.reserve((size_t)coverageTimes2JsonList.GetLength());
+      for (unsigned coverageTimes2Index = 0; coverageTimes2Index < coverageTimes2JsonList.GetLength(); ++coverageTimes2Index) {
+        coverageTimes2List.push_back(coverageTimes2JsonList[coverageTimes2Index].AsObject());
       }
-      m_shiftCoverages[DayOfWeekMapper::GetDayOfWeekForName(shiftCoveragesItem.first)] = std::move(coverageTimesList);
+      m_shiftCoverages[DayOfWeekMapper::GetDayOfWeekForName(shiftCoveragesItem.first)] = std::move(coverageTimes2List);
     }
     m_shiftCoveragesHasBeenSet = true;
   }

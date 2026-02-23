@@ -32,14 +32,14 @@ DropFields& DropFields::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Paths")) {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
     for (unsigned pathsIndex = 0; pathsIndex < pathsJsonList.GetLength(); ++pathsIndex) {
-      Aws::Utils::Array<JsonView> enclosedInStringPropertiesJsonList = pathsJsonList[pathsIndex].AsArray();
-      Aws::Vector<Aws::String> enclosedInStringPropertiesList;
-      enclosedInStringPropertiesList.reserve((size_t)enclosedInStringPropertiesJsonList.GetLength());
-      for (unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength();
-           ++enclosedInStringPropertiesIndex) {
-        enclosedInStringPropertiesList.push_back(enclosedInStringPropertiesJsonList[enclosedInStringPropertiesIndex].AsString());
+      Aws::Utils::Array<JsonView> enclosedInStringProperties2JsonList = pathsJsonList[pathsIndex].AsArray();
+      Aws::Vector<Aws::String> enclosedInStringProperties2List;
+      enclosedInStringProperties2List.reserve((size_t)enclosedInStringProperties2JsonList.GetLength());
+      for (unsigned enclosedInStringProperties2Index = 0;
+           enclosedInStringProperties2Index < enclosedInStringProperties2JsonList.GetLength(); ++enclosedInStringProperties2Index) {
+        enclosedInStringProperties2List.push_back(enclosedInStringProperties2JsonList[enclosedInStringProperties2Index].AsString());
       }
-      m_paths.push_back(std::move(enclosedInStringPropertiesList));
+      m_paths.push_back(std::move(enclosedInStringProperties2List));
     }
     m_pathsHasBeenSet = true;
   }

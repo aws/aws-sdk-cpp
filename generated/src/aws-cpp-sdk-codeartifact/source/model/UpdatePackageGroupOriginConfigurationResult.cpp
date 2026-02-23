@@ -32,22 +32,22 @@ UpdatePackageGroupOriginConfigurationResult& UpdatePackageGroupOriginConfigurati
   if (jsonValue.ValueExists("allowedRepositoryUpdates")) {
     Aws::Map<Aws::String, JsonView> allowedRepositoryUpdatesJsonMap = jsonValue.GetObject("allowedRepositoryUpdates").GetAllObjects();
     for (auto& allowedRepositoryUpdatesItem : allowedRepositoryUpdatesJsonMap) {
-      Aws::Map<Aws::String, JsonView> packageGroupAllowedRepositoryUpdateJsonMap = allowedRepositoryUpdatesItem.second.GetAllObjects();
-      Aws::Map<PackageGroupAllowedRepositoryUpdateType, Aws::Vector<Aws::String>> packageGroupAllowedRepositoryUpdateMap;
-      for (auto& packageGroupAllowedRepositoryUpdateItem : packageGroupAllowedRepositoryUpdateJsonMap) {
-        Aws::Utils::Array<JsonView> repositoryNameListJsonList = packageGroupAllowedRepositoryUpdateItem.second.AsArray();
-        Aws::Vector<Aws::String> repositoryNameListList;
-        repositoryNameListList.reserve((size_t)repositoryNameListJsonList.GetLength());
-        for (unsigned repositoryNameListIndex = 0; repositoryNameListIndex < repositoryNameListJsonList.GetLength();
-             ++repositoryNameListIndex) {
-          repositoryNameListList.push_back(repositoryNameListJsonList[repositoryNameListIndex].AsString());
+      Aws::Map<Aws::String, JsonView> packageGroupAllowedRepositoryUpdate2JsonMap = allowedRepositoryUpdatesItem.second.GetAllObjects();
+      Aws::Map<PackageGroupAllowedRepositoryUpdateType, Aws::Vector<Aws::String>> packageGroupAllowedRepositoryUpdate2Map;
+      for (auto& packageGroupAllowedRepositoryUpdate2Item : packageGroupAllowedRepositoryUpdate2JsonMap) {
+        Aws::Utils::Array<JsonView> repositoryNameList3JsonList = packageGroupAllowedRepositoryUpdate2Item.second.AsArray();
+        Aws::Vector<Aws::String> repositoryNameList3List;
+        repositoryNameList3List.reserve((size_t)repositoryNameList3JsonList.GetLength());
+        for (unsigned repositoryNameList3Index = 0; repositoryNameList3Index < repositoryNameList3JsonList.GetLength();
+             ++repositoryNameList3Index) {
+          repositoryNameList3List.push_back(repositoryNameList3JsonList[repositoryNameList3Index].AsString());
         }
-        packageGroupAllowedRepositoryUpdateMap
+        packageGroupAllowedRepositoryUpdate2Map
             [PackageGroupAllowedRepositoryUpdateTypeMapper::GetPackageGroupAllowedRepositoryUpdateTypeForName(
-                packageGroupAllowedRepositoryUpdateItem.first)] = std::move(repositoryNameListList);
+                packageGroupAllowedRepositoryUpdate2Item.first)] = std::move(repositoryNameList3List);
       }
       m_allowedRepositoryUpdates[PackageGroupOriginRestrictionTypeMapper::GetPackageGroupOriginRestrictionTypeForName(
-          allowedRepositoryUpdatesItem.first)] = std::move(packageGroupAllowedRepositoryUpdateMap);
+          allowedRepositoryUpdatesItem.first)] = std::move(packageGroupAllowedRepositoryUpdate2Map);
     }
     m_allowedRepositoryUpdatesHasBeenSet = true;
   }

@@ -38,6 +38,18 @@ AutomatedReasoningPolicyBuildResultAssets& AutomatedReasoningPolicyBuildResultAs
     m_policyScenarios = jsonValue.GetObject("policyScenarios");
     m_policyScenariosHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("assetManifest")) {
+    m_assetManifest = jsonValue.GetObject("assetManifest");
+    m_assetManifestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("document")) {
+    m_document = jsonValue.GetObject("document");
+    m_documentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fidelityReport")) {
+    m_fidelityReport = jsonValue.GetObject("fidelityReport");
+    m_fidelityReportHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +74,18 @@ JsonValue AutomatedReasoningPolicyBuildResultAssets::Jsonize() const {
 
   if (m_policyScenariosHasBeenSet) {
     payload.WithObject("policyScenarios", m_policyScenarios.Jsonize());
+  }
+
+  if (m_assetManifestHasBeenSet) {
+    payload.WithObject("assetManifest", m_assetManifest.Jsonize());
+  }
+
+  if (m_documentHasBeenSet) {
+    payload.WithObject("document", m_document.Jsonize());
+  }
+
+  if (m_fidelityReportHasBeenSet) {
+    payload.WithObject("fidelityReport", m_fidelityReport.Jsonize());
   }
 
   return payload;

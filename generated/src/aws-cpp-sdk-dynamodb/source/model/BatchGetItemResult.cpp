@@ -24,18 +24,18 @@ BatchGetItemResult& BatchGetItemResult::operator=(const Aws::AmazonWebServiceRes
   if (jsonValue.ValueExists("Responses")) {
     Aws::Map<Aws::String, JsonView> responsesJsonMap = jsonValue.GetObject("Responses").GetAllObjects();
     for (auto& responsesItem : responsesJsonMap) {
-      Aws::Utils::Array<JsonView> itemListJsonList = responsesItem.second.AsArray();
-      Aws::Vector<Aws::Map<Aws::String, AttributeValue>> itemListList;
-      itemListList.reserve((size_t)itemListJsonList.GetLength());
-      for (unsigned itemListIndex = 0; itemListIndex < itemListJsonList.GetLength(); ++itemListIndex) {
-        Aws::Map<Aws::String, JsonView> attributeMapJsonMap = itemListJsonList[itemListIndex].GetAllObjects();
-        Aws::Map<Aws::String, AttributeValue> attributeMapMap;
-        for (auto& attributeMapItem : attributeMapJsonMap) {
-          attributeMapMap[attributeMapItem.first] = attributeMapItem.second.AsObject();
+      Aws::Utils::Array<JsonView> itemList2JsonList = responsesItem.second.AsArray();
+      Aws::Vector<Aws::Map<Aws::String, AttributeValue>> itemList2List;
+      itemList2List.reserve((size_t)itemList2JsonList.GetLength());
+      for (unsigned itemList2Index = 0; itemList2Index < itemList2JsonList.GetLength(); ++itemList2Index) {
+        Aws::Map<Aws::String, JsonView> attributeMap3JsonMap = itemList2JsonList[itemList2Index].GetAllObjects();
+        Aws::Map<Aws::String, AttributeValue> attributeMap3Map;
+        for (auto& attributeMap3Item : attributeMap3JsonMap) {
+          attributeMap3Map[attributeMap3Item.first] = attributeMap3Item.second.AsObject();
         }
-        itemListList.push_back(std::move(attributeMapMap));
+        itemList2List.push_back(std::move(attributeMap3Map));
       }
-      m_responses[responsesItem.first] = std::move(itemListList);
+      m_responses[responsesItem.first] = std::move(itemList2List);
     }
     m_responsesHasBeenSet = true;
   }

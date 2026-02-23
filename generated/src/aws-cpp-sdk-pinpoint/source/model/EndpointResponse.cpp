@@ -29,13 +29,13 @@ EndpointResponse& EndpointResponse::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for (auto& attributesItem : attributesJsonMap) {
-      Aws::Utils::Array<JsonView> listOf__stringJsonList = attributesItem.second.AsArray();
-      Aws::Vector<Aws::String> listOf__stringList;
-      listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
-      for (unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex) {
-        listOf__stringList.push_back(listOf__stringJsonList[listOf__stringIndex].AsString());
+      Aws::Utils::Array<JsonView> listOf__string2JsonList = attributesItem.second.AsArray();
+      Aws::Vector<Aws::String> listOf__string2List;
+      listOf__string2List.reserve((size_t)listOf__string2JsonList.GetLength());
+      for (unsigned listOf__string2Index = 0; listOf__string2Index < listOf__string2JsonList.GetLength(); ++listOf__string2Index) {
+        listOf__string2List.push_back(listOf__string2JsonList[listOf__string2Index].AsString());
       }
-      m_attributes[attributesItem.first] = std::move(listOf__stringList);
+      m_attributes[attributesItem.first] = std::move(listOf__string2List);
     }
     m_attributesHasBeenSet = true;
   }

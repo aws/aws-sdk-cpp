@@ -85,15 +85,35 @@ class NetworkSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for OpenTDF integration at the network level, enforcing ABAC
+   * decision making when operating in TDF enabled rooms.</p>
+   */
+  inline bool GetEnableTrustedDataFormat() const { return m_enableTrustedDataFormat; }
+  inline bool EnableTrustedDataFormatHasBeenSet() const { return m_enableTrustedDataFormatHasBeenSet; }
+  inline void SetEnableTrustedDataFormat(bool value) {
+    m_enableTrustedDataFormatHasBeenSet = true;
+    m_enableTrustedDataFormat = value;
+  }
+  inline NetworkSettings& WithEnableTrustedDataFormat(bool value) {
+    SetEnableTrustedDataFormat(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_enableClientMetrics{false};
 
   ReadReceiptConfig m_readReceiptConfig;
 
   bool m_dataRetention{false};
+
+  bool m_enableTrustedDataFormat{false};
   bool m_enableClientMetricsHasBeenSet = false;
   bool m_readReceiptConfigHasBeenSet = false;
   bool m_dataRetentionHasBeenSet = false;
+  bool m_enableTrustedDataFormatHasBeenSet = false;
 };
 
 }  // namespace Model

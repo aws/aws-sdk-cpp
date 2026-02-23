@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Bedrock {
 namespace Model {
-enum class AutomatedReasoningPolicyBuildWorkflowType { NOT_SET, INGEST_CONTENT, REFINE_POLICY, IMPORT_POLICY };
+enum class AutomatedReasoningPolicyBuildWorkflowType { NOT_SET, INGEST_CONTENT, REFINE_POLICY, IMPORT_POLICY, GENERATE_FIDELITY_REPORT };
 
 namespace AutomatedReasoningPolicyBuildWorkflowTypeMapper {
 AWS_BEDROCK_API AutomatedReasoningPolicyBuildWorkflowType GetAutomatedReasoningPolicyBuildWorkflowTypeForName(const Aws::String& name);

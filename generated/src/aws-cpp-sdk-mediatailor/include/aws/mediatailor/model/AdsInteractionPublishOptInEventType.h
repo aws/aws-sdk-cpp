@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaTailor {
 namespace Model {
-enum class AdsInteractionPublishOptInEventType { NOT_SET, RAW_ADS_RESPONSE };
+enum class AdsInteractionPublishOptInEventType { NOT_SET, RAW_ADS_RESPONSE, RAW_ADS_REQUEST };
 
 namespace AdsInteractionPublishOptInEventTypeMapper {
 AWS_MEDIATAILOR_API AdsInteractionPublishOptInEventType GetAdsInteractionPublishOptInEventTypeForName(const Aws::String& name);

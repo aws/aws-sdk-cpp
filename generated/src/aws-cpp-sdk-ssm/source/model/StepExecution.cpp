@@ -64,14 +64,14 @@ StepExecution& StepExecution::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Outputs")) {
     Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
     for (auto& outputsItem : outputsJsonMap) {
-      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = outputsItem.second.AsArray();
-      Aws::Vector<Aws::String> automationParameterValueListList;
-      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
-      for (unsigned automationParameterValueListIndex = 0;
-           automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex) {
-        automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());
+      Aws::Utils::Array<JsonView> automationParameterValueList2JsonList = outputsItem.second.AsArray();
+      Aws::Vector<Aws::String> automationParameterValueList2List;
+      automationParameterValueList2List.reserve((size_t)automationParameterValueList2JsonList.GetLength());
+      for (unsigned automationParameterValueList2Index = 0;
+           automationParameterValueList2Index < automationParameterValueList2JsonList.GetLength(); ++automationParameterValueList2Index) {
+        automationParameterValueList2List.push_back(automationParameterValueList2JsonList[automationParameterValueList2Index].AsString());
       }
-      m_outputs[outputsItem.first] = std::move(automationParameterValueListList);
+      m_outputs[outputsItem.first] = std::move(automationParameterValueList2List);
     }
     m_outputsHasBeenSet = true;
   }
@@ -94,14 +94,14 @@ StepExecution& StepExecution::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("OverriddenParameters")) {
     Aws::Map<Aws::String, JsonView> overriddenParametersJsonMap = jsonValue.GetObject("OverriddenParameters").GetAllObjects();
     for (auto& overriddenParametersItem : overriddenParametersJsonMap) {
-      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = overriddenParametersItem.second.AsArray();
-      Aws::Vector<Aws::String> automationParameterValueListList;
-      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
-      for (unsigned automationParameterValueListIndex = 0;
-           automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex) {
-        automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());
+      Aws::Utils::Array<JsonView> automationParameterValueList2JsonList = overriddenParametersItem.second.AsArray();
+      Aws::Vector<Aws::String> automationParameterValueList2List;
+      automationParameterValueList2List.reserve((size_t)automationParameterValueList2JsonList.GetLength());
+      for (unsigned automationParameterValueList2Index = 0;
+           automationParameterValueList2Index < automationParameterValueList2JsonList.GetLength(); ++automationParameterValueList2Index) {
+        automationParameterValueList2List.push_back(automationParameterValueList2JsonList[automationParameterValueList2Index].AsString());
       }
-      m_overriddenParameters[overriddenParametersItem.first] = std::move(automationParameterValueListList);
+      m_overriddenParameters[overriddenParametersItem.first] = std::move(automationParameterValueList2List);
     }
     m_overriddenParametersHasBeenSet = true;
   }

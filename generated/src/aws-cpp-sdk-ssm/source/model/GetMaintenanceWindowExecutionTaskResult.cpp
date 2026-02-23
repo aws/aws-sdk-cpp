@@ -47,13 +47,13 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
   if (jsonValue.ValueExists("TaskParameters")) {
     Aws::Utils::Array<JsonView> taskParametersJsonList = jsonValue.GetArray("TaskParameters");
     for (unsigned taskParametersIndex = 0; taskParametersIndex < taskParametersJsonList.GetLength(); ++taskParametersIndex) {
-      Aws::Map<Aws::String, JsonView> maintenanceWindowTaskParametersJsonMap = taskParametersJsonList[taskParametersIndex].GetAllObjects();
-      Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> maintenanceWindowTaskParametersMap;
-      for (auto& maintenanceWindowTaskParametersItem : maintenanceWindowTaskParametersJsonMap) {
-        maintenanceWindowTaskParametersMap[maintenanceWindowTaskParametersItem.first] =
-            maintenanceWindowTaskParametersItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> maintenanceWindowTaskParameters2JsonMap = taskParametersJsonList[taskParametersIndex].GetAllObjects();
+      Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> maintenanceWindowTaskParameters2Map;
+      for (auto& maintenanceWindowTaskParameters2Item : maintenanceWindowTaskParameters2JsonMap) {
+        maintenanceWindowTaskParameters2Map[maintenanceWindowTaskParameters2Item.first] =
+            maintenanceWindowTaskParameters2Item.second.AsObject();
       }
-      m_taskParameters.push_back(std::move(maintenanceWindowTaskParametersMap));
+      m_taskParameters.push_back(std::move(maintenanceWindowTaskParameters2Map));
     }
     m_taskParametersHasBeenSet = true;
   }

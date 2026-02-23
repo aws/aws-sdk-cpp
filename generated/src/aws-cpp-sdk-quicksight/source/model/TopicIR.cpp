@@ -35,14 +35,14 @@ TopicIR& TopicIR::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Filters")) {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
     for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
-      Aws::Utils::Array<JsonView> topicIRFilterEntryJsonList = filtersJsonList[filtersIndex].AsArray();
-      Aws::Vector<TopicIRFilterOption> topicIRFilterEntryList;
-      topicIRFilterEntryList.reserve((size_t)topicIRFilterEntryJsonList.GetLength());
-      for (unsigned topicIRFilterEntryIndex = 0; topicIRFilterEntryIndex < topicIRFilterEntryJsonList.GetLength();
-           ++topicIRFilterEntryIndex) {
-        topicIRFilterEntryList.push_back(topicIRFilterEntryJsonList[topicIRFilterEntryIndex].AsObject());
+      Aws::Utils::Array<JsonView> topicIRFilterEntry2JsonList = filtersJsonList[filtersIndex].AsArray();
+      Aws::Vector<TopicIRFilterOption> topicIRFilterEntry2List;
+      topicIRFilterEntry2List.reserve((size_t)topicIRFilterEntry2JsonList.GetLength());
+      for (unsigned topicIRFilterEntry2Index = 0; topicIRFilterEntry2Index < topicIRFilterEntry2JsonList.GetLength();
+           ++topicIRFilterEntry2Index) {
+        topicIRFilterEntry2List.push_back(topicIRFilterEntry2JsonList[topicIRFilterEntry2Index].AsObject());
       }
-      m_filters.push_back(std::move(topicIRFilterEntryList));
+      m_filters.push_back(std::move(topicIRFilterEntry2List));
     }
     m_filtersHasBeenSet = true;
   }

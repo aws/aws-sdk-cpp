@@ -59,24 +59,24 @@ PropertygraphSummary& PropertygraphSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("nodeProperties")) {
     Aws::Utils::Array<JsonView> nodePropertiesJsonList = jsonValue.GetArray("nodeProperties");
     for (unsigned nodePropertiesIndex = 0; nodePropertiesIndex < nodePropertiesJsonList.GetLength(); ++nodePropertiesIndex) {
-      Aws::Map<Aws::String, JsonView> longValuedMapJsonMap = nodePropertiesJsonList[nodePropertiesIndex].GetAllObjects();
-      Aws::Map<Aws::String, long long> longValuedMapMap;
-      for (auto& longValuedMapItem : longValuedMapJsonMap) {
-        longValuedMapMap[longValuedMapItem.first] = longValuedMapItem.second.AsInt64();
+      Aws::Map<Aws::String, JsonView> longValuedMap2JsonMap = nodePropertiesJsonList[nodePropertiesIndex].GetAllObjects();
+      Aws::Map<Aws::String, long long> longValuedMap2Map;
+      for (auto& longValuedMap2Item : longValuedMap2JsonMap) {
+        longValuedMap2Map[longValuedMap2Item.first] = longValuedMap2Item.second.AsInt64();
       }
-      m_nodeProperties.push_back(std::move(longValuedMapMap));
+      m_nodeProperties.push_back(std::move(longValuedMap2Map));
     }
     m_nodePropertiesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("edgeProperties")) {
     Aws::Utils::Array<JsonView> edgePropertiesJsonList = jsonValue.GetArray("edgeProperties");
     for (unsigned edgePropertiesIndex = 0; edgePropertiesIndex < edgePropertiesJsonList.GetLength(); ++edgePropertiesIndex) {
-      Aws::Map<Aws::String, JsonView> longValuedMapJsonMap = edgePropertiesJsonList[edgePropertiesIndex].GetAllObjects();
-      Aws::Map<Aws::String, long long> longValuedMapMap;
-      for (auto& longValuedMapItem : longValuedMapJsonMap) {
-        longValuedMapMap[longValuedMapItem.first] = longValuedMapItem.second.AsInt64();
+      Aws::Map<Aws::String, JsonView> longValuedMap2JsonMap = edgePropertiesJsonList[edgePropertiesIndex].GetAllObjects();
+      Aws::Map<Aws::String, long long> longValuedMap2Map;
+      for (auto& longValuedMap2Item : longValuedMap2JsonMap) {
+        longValuedMap2Map[longValuedMap2Item.first] = longValuedMap2Item.second.AsInt64();
       }
-      m_edgeProperties.push_back(std::move(longValuedMapMap));
+      m_edgeProperties.push_back(std::move(longValuedMap2Map));
     }
     m_edgePropertiesHasBeenSet = true;
   }

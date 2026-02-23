@@ -29,6 +29,10 @@ AutomatedReasoningPolicyWorkflowTypeContent& AutomatedReasoningPolicyWorkflowTyp
     m_policyRepairAssets = jsonValue.GetObject("policyRepairAssets");
     m_policyRepairAssetsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generateFidelityReportContent")) {
+    m_generateFidelityReportContent = jsonValue.GetObject("generateFidelityReportContent");
+    m_generateFidelityReportContentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue AutomatedReasoningPolicyWorkflowTypeContent::Jsonize() const {
 
   if (m_policyRepairAssetsHasBeenSet) {
     payload.WithObject("policyRepairAssets", m_policyRepairAssets.Jsonize());
+  }
+
+  if (m_generateFidelityReportContentHasBeenSet) {
+    payload.WithObject("generateFidelityReportContent", m_generateFidelityReportContent.Jsonize());
   }
 
   return payload;

@@ -43,13 +43,13 @@ GetAutoManagementConfigurationResult& GetAutoManagementConfigurationResult::oper
   if (jsonValue.ValueExists("ExclusionList")) {
     Aws::Map<Aws::String, JsonView> exclusionListJsonMap = jsonValue.GetObject("ExclusionList").GetAllObjects();
     for (auto& exclusionListItem : exclusionListJsonMap) {
-      Aws::Utils::Array<JsonView> quotaInfoListJsonList = exclusionListItem.second.AsArray();
-      Aws::Vector<QuotaInfo> quotaInfoListList;
-      quotaInfoListList.reserve((size_t)quotaInfoListJsonList.GetLength());
-      for (unsigned quotaInfoListIndex = 0; quotaInfoListIndex < quotaInfoListJsonList.GetLength(); ++quotaInfoListIndex) {
-        quotaInfoListList.push_back(quotaInfoListJsonList[quotaInfoListIndex].AsObject());
+      Aws::Utils::Array<JsonView> quotaInfoList2JsonList = exclusionListItem.second.AsArray();
+      Aws::Vector<QuotaInfo> quotaInfoList2List;
+      quotaInfoList2List.reserve((size_t)quotaInfoList2JsonList.GetLength());
+      for (unsigned quotaInfoList2Index = 0; quotaInfoList2Index < quotaInfoList2JsonList.GetLength(); ++quotaInfoList2Index) {
+        quotaInfoList2List.push_back(quotaInfoList2JsonList[quotaInfoList2Index].AsObject());
       }
-      m_exclusionList[exclusionListItem.first] = std::move(quotaInfoListList);
+      m_exclusionList[exclusionListItem.first] = std::move(quotaInfoList2List);
     }
     m_exclusionListHasBeenSet = true;
   }

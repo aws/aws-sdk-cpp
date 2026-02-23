@@ -32,13 +32,14 @@ DropDuplicates& DropDuplicates::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Columns")) {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for (unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex) {
-      Aws::Utils::Array<JsonView> limitedStringListJsonList = columnsJsonList[columnsIndex].AsArray();
-      Aws::Vector<Aws::String> limitedStringListList;
-      limitedStringListList.reserve((size_t)limitedStringListJsonList.GetLength());
-      for (unsigned limitedStringListIndex = 0; limitedStringListIndex < limitedStringListJsonList.GetLength(); ++limitedStringListIndex) {
-        limitedStringListList.push_back(limitedStringListJsonList[limitedStringListIndex].AsString());
+      Aws::Utils::Array<JsonView> limitedStringList2JsonList = columnsJsonList[columnsIndex].AsArray();
+      Aws::Vector<Aws::String> limitedStringList2List;
+      limitedStringList2List.reserve((size_t)limitedStringList2JsonList.GetLength());
+      for (unsigned limitedStringList2Index = 0; limitedStringList2Index < limitedStringList2JsonList.GetLength();
+           ++limitedStringList2Index) {
+        limitedStringList2List.push_back(limitedStringList2JsonList[limitedStringList2Index].AsString());
       }
-      m_columns.push_back(std::move(limitedStringListList));
+      m_columns.push_back(std::move(limitedStringList2List));
     }
     m_columnsHasBeenSet = true;
   }

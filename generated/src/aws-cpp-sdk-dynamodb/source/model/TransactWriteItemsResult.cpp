@@ -31,14 +31,16 @@ TransactWriteItemsResult& TransactWriteItemsResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("ItemCollectionMetrics")) {
     Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
     for (auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap) {
-      Aws::Utils::Array<JsonView> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
-      Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultipleList;
-      itemCollectionMetricsMultipleList.reserve((size_t)itemCollectionMetricsMultipleJsonList.GetLength());
-      for (unsigned itemCollectionMetricsMultipleIndex = 0;
-           itemCollectionMetricsMultipleIndex < itemCollectionMetricsMultipleJsonList.GetLength(); ++itemCollectionMetricsMultipleIndex) {
-        itemCollectionMetricsMultipleList.push_back(itemCollectionMetricsMultipleJsonList[itemCollectionMetricsMultipleIndex].AsObject());
+      Aws::Utils::Array<JsonView> itemCollectionMetricsMultiple2JsonList = itemCollectionMetricsItem.second.AsArray();
+      Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultiple2List;
+      itemCollectionMetricsMultiple2List.reserve((size_t)itemCollectionMetricsMultiple2JsonList.GetLength());
+      for (unsigned itemCollectionMetricsMultiple2Index = 0;
+           itemCollectionMetricsMultiple2Index < itemCollectionMetricsMultiple2JsonList.GetLength();
+           ++itemCollectionMetricsMultiple2Index) {
+        itemCollectionMetricsMultiple2List.push_back(
+            itemCollectionMetricsMultiple2JsonList[itemCollectionMetricsMultiple2Index].AsObject());
       }
-      m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultipleList);
+      m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultiple2List);
     }
     m_itemCollectionMetricsHasBeenSet = true;
   }

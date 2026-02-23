@@ -37,13 +37,13 @@ CloudWatchLogConfiguration& CloudWatchLogConfiguration::operator=(JsonView jsonV
   if (jsonValue.ValueExists("LogTypes")) {
     Aws::Map<Aws::String, JsonView> logTypesJsonMap = jsonValue.GetObject("LogTypes").GetAllObjects();
     for (auto& logTypesItem : logTypesJsonMap) {
-      Aws::Utils::Array<JsonView> xmlStringListJsonList = logTypesItem.second.AsArray();
-      Aws::Vector<Aws::String> xmlStringListList;
-      xmlStringListList.reserve((size_t)xmlStringListJsonList.GetLength());
-      for (unsigned xmlStringListIndex = 0; xmlStringListIndex < xmlStringListJsonList.GetLength(); ++xmlStringListIndex) {
-        xmlStringListList.push_back(xmlStringListJsonList[xmlStringListIndex].AsString());
+      Aws::Utils::Array<JsonView> xmlStringList2JsonList = logTypesItem.second.AsArray();
+      Aws::Vector<Aws::String> xmlStringList2List;
+      xmlStringList2List.reserve((size_t)xmlStringList2JsonList.GetLength());
+      for (unsigned xmlStringList2Index = 0; xmlStringList2Index < xmlStringList2JsonList.GetLength(); ++xmlStringList2Index) {
+        xmlStringList2List.push_back(xmlStringList2JsonList[xmlStringList2Index].AsString());
       }
-      m_logTypes[logTypesItem.first] = std::move(xmlStringListList);
+      m_logTypes[logTypesItem.first] = std::move(xmlStringList2List);
     }
     m_logTypesHasBeenSet = true;
   }

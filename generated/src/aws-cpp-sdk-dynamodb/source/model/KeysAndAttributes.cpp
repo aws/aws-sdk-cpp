@@ -21,12 +21,12 @@ KeysAndAttributes& KeysAndAttributes::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Keys")) {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for (unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex) {
-      Aws::Map<Aws::String, JsonView> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
-      Aws::Map<Aws::String, AttributeValue> keyMap;
-      for (auto& keyItem : keyJsonMap) {
-        keyMap[keyItem.first] = keyItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> key2JsonMap = keysJsonList[keysIndex].GetAllObjects();
+      Aws::Map<Aws::String, AttributeValue> key2Map;
+      for (auto& key2Item : key2JsonMap) {
+        key2Map[key2Item.first] = key2Item.second.AsObject();
       }
-      m_keys.push_back(std::move(keyMap));
+      m_keys.push_back(std::move(key2Map));
     }
     m_keysHasBeenSet = true;
   }

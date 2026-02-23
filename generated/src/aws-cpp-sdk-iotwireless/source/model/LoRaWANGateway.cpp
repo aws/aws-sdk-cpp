@@ -29,13 +29,13 @@ LoRaWANGateway& LoRaWANGateway::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("JoinEuiFilters")) {
     Aws::Utils::Array<JsonView> joinEuiFiltersJsonList = jsonValue.GetArray("JoinEuiFilters");
     for (unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex) {
-      Aws::Utils::Array<JsonView> joinEuiRangeJsonList = joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray();
-      Aws::Vector<Aws::String> joinEuiRangeList;
-      joinEuiRangeList.reserve((size_t)joinEuiRangeJsonList.GetLength());
-      for (unsigned joinEuiRangeIndex = 0; joinEuiRangeIndex < joinEuiRangeJsonList.GetLength(); ++joinEuiRangeIndex) {
-        joinEuiRangeList.push_back(joinEuiRangeJsonList[joinEuiRangeIndex].AsString());
+      Aws::Utils::Array<JsonView> joinEuiRange2JsonList = joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray();
+      Aws::Vector<Aws::String> joinEuiRange2List;
+      joinEuiRange2List.reserve((size_t)joinEuiRange2JsonList.GetLength());
+      for (unsigned joinEuiRange2Index = 0; joinEuiRange2Index < joinEuiRange2JsonList.GetLength(); ++joinEuiRange2Index) {
+        joinEuiRange2List.push_back(joinEuiRange2JsonList[joinEuiRange2Index].AsString());
       }
-      m_joinEuiFilters.push_back(std::move(joinEuiRangeList));
+      m_joinEuiFilters.push_back(std::move(joinEuiRange2List));
     }
     m_joinEuiFiltersHasBeenSet = true;
   }
