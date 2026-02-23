@@ -139,7 +139,7 @@
 #end##if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
 #end##foreach($member in $shape.members.entrySet())
 #if ($shape.result)
-    inline Aws::Http::HttpResponseCode GetResponseCode() const { return m_responseCode; }
+    inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 #end
 #if($shape.members.size() > 0 || $operation.result.shape.hasEventStreamMembers() || $shape.result)##next contains private only
   private:
@@ -158,7 +158,7 @@
 
 #end
 #if ($shape.result)
-    Aws::Http::HttpResponseCode m_responseCode;
+    Aws::Http::HttpResponseCode m_HttpResponseCode;
 #end
 #end##if($shape.members.size() > 0)
 #foreach($member in $shape.members.entrySet())
