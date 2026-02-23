@@ -94,11 +94,13 @@ class ListOrganizationRecommendationAccountsResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_nextToken;
+
   Aws::Vector<AccountRecommendationLifecycleSummary> m_accountRecommendationLifecycleSummaries;
 
-  Aws::String m_nextToken;
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nextTokenHasBeenSet = false;
   bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

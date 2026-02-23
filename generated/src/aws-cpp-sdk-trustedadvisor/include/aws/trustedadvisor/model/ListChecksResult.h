@@ -93,8 +93,8 @@ class ListChecksResult {
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_checkSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_checkSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 
