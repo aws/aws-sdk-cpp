@@ -12,6 +12,7 @@
 #include <aws/monitoring/model/DescribeAnomalyDetectorsPaginationTraits.h>
 #include <aws/monitoring/model/DescribeInsightRulesPaginationTraits.h>
 #include <aws/monitoring/model/GetMetricDataPaginationTraits.h>
+#include <aws/monitoring/model/ListAlarmMuteRulesPaginationTraits.h>
 #include <aws/monitoring/model/ListDashboardsPaginationTraits.h>
 #include <aws/monitoring/model/ListManagedInsightRulesPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricStreamsPaginationTraits.h>
@@ -83,6 +84,18 @@ class CloudWatchPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetMetricDataRequest,
                                              Pagination::GetMetricDataPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListAlarmMuteRules operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAlarmMuteRulesRequest,
+                                    Pagination::ListAlarmMuteRulesPaginationTraits<DerivedClient>>
+  ListAlarmMuteRulesPaginator(const Model::ListAlarmMuteRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAlarmMuteRulesRequest,
+                                             Pagination::ListAlarmMuteRulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/es/model/DescribeDomainAutoTunesRequest.h>
 
 #include <utility>
@@ -11,17 +13,21 @@
 using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
-Aws::String DescribeDomainAutoTunesRequest::SerializePayload() const {
-  JsonValue payload;
+Aws::String DescribeDomainAutoTunesRequest::SerializePayload() const { return {}; }
 
+void DescribeDomainAutoTunesRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
   }
-
-  return payload.View().WriteReadable();
 }

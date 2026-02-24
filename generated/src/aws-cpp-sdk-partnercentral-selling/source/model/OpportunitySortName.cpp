@@ -19,6 +19,7 @@ static const int LastModifiedDate_HASH = HashingUtils::HashString("LastModifiedD
 static const int Identifier_HASH = HashingUtils::HashString("Identifier");
 static const int CustomerCompanyName_HASH = HashingUtils::HashString("CustomerCompanyName");
 static const int CreatedDate_HASH = HashingUtils::HashString("CreatedDate");
+static const int TargetCloseDate_HASH = HashingUtils::HashString("TargetCloseDate");
 
 OpportunitySortName GetOpportunitySortNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ OpportunitySortName GetOpportunitySortNameForName(const Aws::String& name) {
     return OpportunitySortName::CustomerCompanyName;
   } else if (hashCode == CreatedDate_HASH) {
     return OpportunitySortName::CreatedDate;
+  } else if (hashCode == TargetCloseDate_HASH) {
+    return OpportunitySortName::TargetCloseDate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForOpportunitySortName(OpportunitySortName enumValue) {
       return "CustomerCompanyName";
     case OpportunitySortName::CreatedDate:
       return "CreatedDate";
+    case OpportunitySortName::TargetCloseDate:
+      return "TargetCloseDate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

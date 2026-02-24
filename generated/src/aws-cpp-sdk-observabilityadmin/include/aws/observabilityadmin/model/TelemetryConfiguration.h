@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/ResourceType.h>
+#include <aws/observabilityadmin/model/TelemetrySourceType.h>
 #include <aws/observabilityadmin/model/TelemetryState.h>
 #include <aws/observabilityadmin/model/TelemetryType.h>
 
@@ -158,6 +159,20 @@ class TelemetryConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline TelemetrySourceType GetTelemetrySourceType() const { return m_telemetrySourceType; }
+  inline bool TelemetrySourceTypeHasBeenSet() const { return m_telemetrySourceTypeHasBeenSet; }
+  inline void SetTelemetrySourceType(TelemetrySourceType value) {
+    m_telemetrySourceTypeHasBeenSet = true;
+    m_telemetrySourceType = value;
+  }
+  inline TelemetryConfiguration& WithTelemetrySourceType(TelemetrySourceType value) {
+    SetTelemetrySourceType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountIdentifier;
 
@@ -170,12 +185,15 @@ class TelemetryConfiguration {
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
 
   long long m_lastUpdateTimeStamp{0};
+
+  TelemetrySourceType m_telemetrySourceType{TelemetrySourceType::NOT_SET};
   bool m_accountIdentifierHasBeenSet = false;
   bool m_telemetryConfigurationStateHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
   bool m_lastUpdateTimeStampHasBeenSet = false;
+  bool m_telemetrySourceTypeHasBeenSet = false;
 };
 
 }  // namespace Model

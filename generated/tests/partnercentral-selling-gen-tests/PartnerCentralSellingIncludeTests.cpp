@@ -205,6 +205,7 @@
 #include <aws/partnercentral-selling/model/Tag.h>
 #include <aws/partnercentral-selling/model/TagResourceRequest.h>
 #include <aws/partnercentral-selling/model/TagResourceResult.h>
+#include <aws/partnercentral-selling/model/TargetCloseDateFilter.h>
 #include <aws/partnercentral-selling/model/TaskStatus.h>
 #include <aws/partnercentral-selling/model/UntagResourceRequest.h>
 #include <aws/partnercentral-selling/model/UntagResourceResult.h>
