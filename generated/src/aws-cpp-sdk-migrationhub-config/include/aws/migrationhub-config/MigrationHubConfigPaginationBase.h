@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/migrationhub-config/model/DescribeHomeRegionControlsPaginationTraits.h>
 
@@ -24,6 +25,7 @@ class MigrationHubConfigPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHomeRegionControlsRequest,
                                     Pagination::DescribeHomeRegionControlsPaginationTraits<DerivedClient>>
   DescribeHomeRegionControlsPaginator(const Model::DescribeHomeRegionControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeHomeRegionControlsRequest,
                                              Pagination::DescribeHomeRegionControlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

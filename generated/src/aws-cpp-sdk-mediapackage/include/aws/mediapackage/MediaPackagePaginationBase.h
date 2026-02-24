@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediapackage/model/ListChannelsPaginationTraits.h>
 #include <aws/mediapackage/model/ListHarvestJobsPaginationTraits.h>
@@ -25,6 +26,7 @@ class MediaPackagePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<DerivedClient>>
   ListChannelsPaginator(const Model::ListChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -36,6 +38,7 @@ class MediaPackagePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarvestJobsRequest,
                                     Pagination::ListHarvestJobsPaginationTraits<DerivedClient>>
   ListHarvestJobsPaginator(const Model::ListHarvestJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarvestJobsRequest,
                                              Pagination::ListHarvestJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -47,6 +50,7 @@ class MediaPackagePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginEndpointsRequest,
                                     Pagination::ListOriginEndpointsPaginationTraits<DerivedClient>>
   ListOriginEndpointsPaginator(const Model::ListOriginEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginEndpointsRequest,
                                              Pagination::ListOriginEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

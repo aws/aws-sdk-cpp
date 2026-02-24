@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/account/model/ListRegionsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -23,6 +24,7 @@ class AccountPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegionsRequest, Pagination::ListRegionsPaginationTraits<DerivedClient>>
   ListRegionsPaginator(const Model::ListRegionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegionsRequest,
                                              Pagination::ListRegionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/globalaccelerator/model/ListAcceleratorsPaginationTraits.h>
 #include <aws/globalaccelerator/model/ListByoipCidrsPaginationTraits.h>
@@ -34,6 +35,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAcceleratorsRequest,
                                     Pagination::ListAcceleratorsPaginationTraits<DerivedClient>>
   ListAcceleratorsPaginator(const Model::ListAcceleratorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAcceleratorsRequest,
                                              Pagination::ListAcceleratorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -44,6 +46,7 @@ class GlobalAcceleratorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListByoipCidrsRequest, Pagination::ListByoipCidrsPaginationTraits<DerivedClient>>
   ListByoipCidrsPaginator(const Model::ListByoipCidrsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListByoipCidrsRequest,
                                              Pagination::ListByoipCidrsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -55,6 +58,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCrossAccountAttachmentsRequest,
                                     Pagination::ListCrossAccountAttachmentsPaginationTraits<DerivedClient>>
   ListCrossAccountAttachmentsPaginator(const Model::ListCrossAccountAttachmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCrossAccountAttachmentsRequest,
                                              Pagination::ListCrossAccountAttachmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCrossAccountResourcesRequest,
                                     Pagination::ListCrossAccountResourcesPaginationTraits<DerivedClient>>
   ListCrossAccountResourcesPaginator(const Model::ListCrossAccountResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCrossAccountResourcesRequest,
                                              Pagination::ListCrossAccountResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +82,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingAcceleratorsRequest,
                                     Pagination::ListCustomRoutingAcceleratorsPaginationTraits<DerivedClient>>
   ListCustomRoutingAcceleratorsPaginator(const Model::ListCustomRoutingAcceleratorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingAcceleratorsRequest,
                                              Pagination::ListCustomRoutingAcceleratorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -88,6 +94,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingEndpointGroupsRequest,
                                     Pagination::ListCustomRoutingEndpointGroupsPaginationTraits<DerivedClient>>
   ListCustomRoutingEndpointGroupsPaginator(const Model::ListCustomRoutingEndpointGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingEndpointGroupsRequest,
                                              Pagination::ListCustomRoutingEndpointGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -99,6 +106,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingListenersRequest,
                                     Pagination::ListCustomRoutingListenersPaginationTraits<DerivedClient>>
   ListCustomRoutingListenersPaginator(const Model::ListCustomRoutingListenersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingListenersRequest,
                                              Pagination::ListCustomRoutingListenersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -110,6 +118,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingPortMappingsRequest,
                                     Pagination::ListCustomRoutingPortMappingsPaginationTraits<DerivedClient>>
   ListCustomRoutingPortMappingsPaginator(const Model::ListCustomRoutingPortMappingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingPortMappingsRequest,
                                              Pagination::ListCustomRoutingPortMappingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -121,6 +130,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingPortMappingsByDestinationRequest,
                                     Pagination::ListCustomRoutingPortMappingsByDestinationPaginationTraits<DerivedClient>>
   ListCustomRoutingPortMappingsByDestinationPaginator(const Model::ListCustomRoutingPortMappingsByDestinationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomRoutingPortMappingsByDestinationRequest,
                                              Pagination::ListCustomRoutingPortMappingsByDestinationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -132,6 +142,7 @@ class GlobalAcceleratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointGroupsRequest,
                                     Pagination::ListEndpointGroupsPaginationTraits<DerivedClient>>
   ListEndpointGroupsPaginator(const Model::ListEndpointGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointGroupsRequest,
                                              Pagination::ListEndpointGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -142,6 +153,7 @@ class GlobalAcceleratorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListListenersRequest, Pagination::ListListenersPaginationTraits<DerivedClient>>
   ListListenersPaginator(const Model::ListListenersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListListenersRequest,
                                              Pagination::ListListenersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

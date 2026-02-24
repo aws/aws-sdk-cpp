@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/guardduty/model/DescribeMalwareScansPaginationTraits.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationPaginationTraits.h>
@@ -39,6 +40,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMalwareScansRequest,
                                     Pagination::DescribeMalwareScansPaginationTraits<DerivedClient>>
   DescribeMalwareScansPaginator(const Model::DescribeMalwareScansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMalwareScansRequest,
                                              Pagination::DescribeMalwareScansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +52,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeOrganizationConfigurationRequest,
                                     Pagination::DescribeOrganizationConfigurationPaginationTraits<DerivedClient>>
   DescribeOrganizationConfigurationPaginator(const Model::DescribeOrganizationConfigurationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeOrganizationConfigurationRequest,
                                              Pagination::DescribeOrganizationConfigurationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +64,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsageStatisticsRequest,
                                     Pagination::GetUsageStatisticsPaginationTraits<DerivedClient>>
   GetUsageStatisticsPaginator(const Model::GetUsageStatisticsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsageStatisticsRequest,
                                              Pagination::GetUsageStatisticsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +75,7 @@ class GuardDutyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoverageRequest, Pagination::ListCoveragePaginationTraits<DerivedClient>>
   ListCoveragePaginator(const Model::ListCoverageRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoverageRequest,
                                              Pagination::ListCoveragePaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -81,6 +86,7 @@ class GuardDutyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDetectorsRequest, Pagination::ListDetectorsPaginationTraits<DerivedClient>>
   ListDetectorsPaginator(const Model::ListDetectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDetectorsRequest,
                                              Pagination::ListDetectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -91,6 +97,7 @@ class GuardDutyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFiltersRequest, Pagination::ListFiltersPaginationTraits<DerivedClient>>
   ListFiltersPaginator(const Model::ListFiltersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFiltersRequest,
                                              Pagination::ListFiltersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -101,6 +108,7 @@ class GuardDutyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsRequest, Pagination::ListFindingsPaginationTraits<DerivedClient>>
   ListFindingsPaginator(const Model::ListFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsRequest,
                                              Pagination::ListFindingsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -112,6 +120,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvitationsRequest,
                                     Pagination::ListInvitationsPaginationTraits<DerivedClient>>
   ListInvitationsPaginator(const Model::ListInvitationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvitationsRequest,
                                              Pagination::ListInvitationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -122,6 +131,7 @@ class GuardDutyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIPSetsRequest, Pagination::ListIPSetsPaginationTraits<DerivedClient>>
   ListIPSetsPaginator(const Model::ListIPSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIPSetsRequest,
                                              Pagination::ListIPSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -133,6 +143,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMalwareScansRequest,
                                     Pagination::ListMalwareScansPaginationTraits<DerivedClient>>
   ListMalwareScansPaginator(const Model::ListMalwareScansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMalwareScansRequest,
                                              Pagination::ListMalwareScansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -143,6 +154,7 @@ class GuardDutyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest, Pagination::ListMembersPaginationTraits<DerivedClient>>
   ListMembersPaginator(const Model::ListMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest,
                                              Pagination::ListMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -154,6 +166,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationAdminAccountsRequest,
                                     Pagination::ListOrganizationAdminAccountsPaginationTraits<DerivedClient>>
   ListOrganizationAdminAccountsPaginator(const Model::ListOrganizationAdminAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationAdminAccountsRequest,
                                              Pagination::ListOrganizationAdminAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -165,6 +178,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublishingDestinationsRequest,
                                     Pagination::ListPublishingDestinationsPaginationTraits<DerivedClient>>
   ListPublishingDestinationsPaginator(const Model::ListPublishingDestinationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublishingDestinationsRequest,
                                              Pagination::ListPublishingDestinationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -176,6 +190,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatEntitySetsRequest,
                                     Pagination::ListThreatEntitySetsPaginationTraits<DerivedClient>>
   ListThreatEntitySetsPaginator(const Model::ListThreatEntitySetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatEntitySetsRequest,
                                              Pagination::ListThreatEntitySetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -187,6 +202,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatIntelSetsRequest,
                                     Pagination::ListThreatIntelSetsPaginationTraits<DerivedClient>>
   ListThreatIntelSetsPaginator(const Model::ListThreatIntelSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThreatIntelSetsRequest,
                                              Pagination::ListThreatIntelSetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -198,6 +214,7 @@ class GuardDutyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustedEntitySetsRequest,
                                     Pagination::ListTrustedEntitySetsPaginationTraits<DerivedClient>>
   ListTrustedEntitySetsPaginator(const Model::ListTrustedEntitySetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustedEntitySetsRequest,
                                              Pagination::ListTrustedEntitySetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

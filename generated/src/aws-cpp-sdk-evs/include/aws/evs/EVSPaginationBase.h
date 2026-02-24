@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/evs/model/ListEnvironmentHostsPaginationTraits.h>
 #include <aws/evs/model/ListEnvironmentVlansPaginationTraits.h>
@@ -26,6 +27,7 @@ class EVSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentHostsRequest,
                                     Pagination::ListEnvironmentHostsPaginationTraits<DerivedClient>>
   ListEnvironmentHostsPaginator(const Model::ListEnvironmentHostsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentHostsRequest,
                                              Pagination::ListEnvironmentHostsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class EVSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                     Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>
   ListEnvironmentsPaginator(const Model::ListEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                              Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class EVSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentVlansRequest,
                                     Pagination::ListEnvironmentVlansPaginationTraits<DerivedClient>>
   ListEnvironmentVlansPaginator(const Model::ListEnvironmentVlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentVlansRequest,
                                              Pagination::ListEnvironmentVlansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

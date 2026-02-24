@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/neptune-graph/model/ListExportTasksPaginationTraits.h>
 #include <aws/neptune-graph/model/ListGraphSnapshotsPaginationTraits.h>
@@ -28,6 +29,7 @@ class NeptuneGraphPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportTasksRequest,
                                     Pagination::ListExportTasksPaginationTraits<DerivedClient>>
   ListExportTasksPaginator(const Model::ListExportTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportTasksRequest,
                                              Pagination::ListExportTasksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -38,6 +40,7 @@ class NeptuneGraphPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGraphsRequest, Pagination::ListGraphsPaginationTraits<DerivedClient>>
   ListGraphsPaginator(const Model::ListGraphsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGraphsRequest,
                                              Pagination::ListGraphsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -49,6 +52,7 @@ class NeptuneGraphPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGraphSnapshotsRequest,
                                     Pagination::ListGraphSnapshotsPaginationTraits<DerivedClient>>
   ListGraphSnapshotsPaginator(const Model::ListGraphSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGraphSnapshotsRequest,
                                              Pagination::ListGraphSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class NeptuneGraphPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportTasksRequest,
                                     Pagination::ListImportTasksPaginationTraits<DerivedClient>>
   ListImportTasksPaginator(const Model::ListImportTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportTasksRequest,
                                              Pagination::ListImportTasksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -71,6 +76,7 @@ class NeptuneGraphPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivateGraphEndpointsRequest,
                                     Pagination::ListPrivateGraphEndpointsPaginationTraits<DerivedClient>>
   ListPrivateGraphEndpointsPaginator(const Model::ListPrivateGraphEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivateGraphEndpointsRequest,
                                              Pagination::ListPrivateGraphEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

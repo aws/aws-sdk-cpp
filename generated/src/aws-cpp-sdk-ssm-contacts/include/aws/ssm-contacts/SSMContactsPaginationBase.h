@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ssm-contacts/model/ListContactChannelsPaginationTraits.h>
 #include <aws/ssm-contacts/model/ListContactsPaginationTraits.h>
@@ -34,6 +35,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactChannelsRequest,
                                     Pagination::ListContactChannelsPaginationTraits<DerivedClient>>
   ListContactChannelsPaginator(const Model::ListContactChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactChannelsRequest,
                                              Pagination::ListContactChannelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -44,6 +46,7 @@ class SSMContactsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactsRequest, Pagination::ListContactsPaginationTraits<DerivedClient>>
   ListContactsPaginator(const Model::ListContactsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactsRequest,
                                              Pagination::ListContactsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -55,6 +58,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementsRequest,
                                     Pagination::ListEngagementsPaginationTraits<DerivedClient>>
   ListEngagementsPaginator(const Model::ListEngagementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementsRequest,
                                              Pagination::ListEngagementsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -66,6 +70,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPageReceiptsRequest,
                                     Pagination::ListPageReceiptsPaginationTraits<DerivedClient>>
   ListPageReceiptsPaginator(const Model::ListPageReceiptsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPageReceiptsRequest,
                                              Pagination::ListPageReceiptsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -77,6 +82,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPageResolutionsRequest,
                                     Pagination::ListPageResolutionsPaginationTraits<DerivedClient>>
   ListPageResolutionsPaginator(const Model::ListPageResolutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPageResolutionsRequest,
                                              Pagination::ListPageResolutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -88,6 +94,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPagesByContactRequest,
                                     Pagination::ListPagesByContactPaginationTraits<DerivedClient>>
   ListPagesByContactPaginator(const Model::ListPagesByContactRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPagesByContactRequest,
                                              Pagination::ListPagesByContactPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -99,6 +106,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPagesByEngagementRequest,
                                     Pagination::ListPagesByEngagementPaginationTraits<DerivedClient>>
   ListPagesByEngagementPaginator(const Model::ListPagesByEngagementRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPagesByEngagementRequest,
                                              Pagination::ListPagesByEngagementPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -110,6 +118,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPreviewRotationShiftsRequest,
                                     Pagination::ListPreviewRotationShiftsPaginationTraits<DerivedClient>>
   ListPreviewRotationShiftsPaginator(const Model::ListPreviewRotationShiftsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPreviewRotationShiftsRequest,
                                              Pagination::ListPreviewRotationShiftsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -121,6 +130,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRotationOverridesRequest,
                                     Pagination::ListRotationOverridesPaginationTraits<DerivedClient>>
   ListRotationOverridesPaginator(const Model::ListRotationOverridesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRotationOverridesRequest,
                                              Pagination::ListRotationOverridesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -131,6 +141,7 @@ class SSMContactsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRotationsRequest, Pagination::ListRotationsPaginationTraits<DerivedClient>>
   ListRotationsPaginator(const Model::ListRotationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRotationsRequest,
                                              Pagination::ListRotationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -142,6 +153,7 @@ class SSMContactsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRotationShiftsRequest,
                                     Pagination::ListRotationShiftsPaginationTraits<DerivedClient>>
   ListRotationShiftsPaginator(const Model::ListRotationShiftsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRotationShiftsRequest,
                                              Pagination::ListRotationShiftsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

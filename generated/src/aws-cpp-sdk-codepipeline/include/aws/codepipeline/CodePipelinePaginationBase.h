@@ -13,6 +13,7 @@
 #include <aws/codepipeline/model/ListRuleExecutionsPaginationTraits.h>
 #include <aws/codepipeline/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/codepipeline/model/ListWebhooksPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -31,6 +32,7 @@ class CodePipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionExecutionsRequest,
                                     Pagination::ListActionExecutionsPaginationTraits<DerivedClient>>
   ListActionExecutionsPaginator(const Model::ListActionExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionExecutionsRequest,
                                              Pagination::ListActionExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -42,6 +44,7 @@ class CodePipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionTypesRequest,
                                     Pagination::ListActionTypesPaginationTraits<DerivedClient>>
   ListActionTypesPaginator(const Model::ListActionTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionTypesRequest,
                                              Pagination::ListActionTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -53,6 +56,7 @@ class CodePipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeployActionExecutionTargetsRequest,
                                     Pagination::ListDeployActionExecutionTargetsPaginationTraits<DerivedClient>>
   ListDeployActionExecutionTargetsPaginator(const Model::ListDeployActionExecutionTargetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeployActionExecutionTargetsRequest,
                                              Pagination::ListDeployActionExecutionTargetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +68,7 @@ class CodePipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineExecutionsRequest,
                                     Pagination::ListPipelineExecutionsPaginationTraits<DerivedClient>>
   ListPipelineExecutionsPaginator(const Model::ListPipelineExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineExecutionsRequest,
                                              Pagination::ListPipelineExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -74,6 +79,7 @@ class CodePipelinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest, Pagination::ListPipelinesPaginationTraits<DerivedClient>>
   ListPipelinesPaginator(const Model::ListPipelinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest,
                                              Pagination::ListPipelinesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -85,6 +91,7 @@ class CodePipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRuleExecutionsRequest,
                                     Pagination::ListRuleExecutionsPaginationTraits<DerivedClient>>
   ListRuleExecutionsPaginator(const Model::ListRuleExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRuleExecutionsRequest,
                                              Pagination::ListRuleExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +103,7 @@ class CodePipelinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -106,6 +114,7 @@ class CodePipelinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWebhooksRequest, Pagination::ListWebhooksPaginationTraits<DerivedClient>>
   ListWebhooksPaginator(const Model::ListWebhooksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWebhooksRequest,
                                              Pagination::ListWebhooksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

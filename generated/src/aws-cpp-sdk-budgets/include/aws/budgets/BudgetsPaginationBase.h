@@ -13,6 +13,7 @@
 #include <aws/budgets/model/DescribeBudgetsPaginationTraits.h>
 #include <aws/budgets/model/DescribeNotificationsForBudgetPaginationTraits.h>
 #include <aws/budgets/model/DescribeSubscribersForNotificationPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -31,6 +32,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetActionHistoriesRequest,
                                     Pagination::DescribeBudgetActionHistoriesPaginationTraits<DerivedClient>>
   DescribeBudgetActionHistoriesPaginator(const Model::DescribeBudgetActionHistoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetActionHistoriesRequest,
                                              Pagination::DescribeBudgetActionHistoriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -42,6 +44,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetActionsForAccountRequest,
                                     Pagination::DescribeBudgetActionsForAccountPaginationTraits<DerivedClient>>
   DescribeBudgetActionsForAccountPaginator(const Model::DescribeBudgetActionsForAccountRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetActionsForAccountRequest,
                                              Pagination::DescribeBudgetActionsForAccountPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -53,6 +56,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetActionsForBudgetRequest,
                                     Pagination::DescribeBudgetActionsForBudgetPaginationTraits<DerivedClient>>
   DescribeBudgetActionsForBudgetPaginator(const Model::DescribeBudgetActionsForBudgetRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetActionsForBudgetRequest,
                                              Pagination::DescribeBudgetActionsForBudgetPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +68,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetNotificationsForAccountRequest,
                                     Pagination::DescribeBudgetNotificationsForAccountPaginationTraits<DerivedClient>>
   DescribeBudgetNotificationsForAccountPaginator(const Model::DescribeBudgetNotificationsForAccountRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetNotificationsForAccountRequest,
                                              Pagination::DescribeBudgetNotificationsForAccountPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +80,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetPerformanceHistoryRequest,
                                     Pagination::DescribeBudgetPerformanceHistoryPaginationTraits<DerivedClient>>
   DescribeBudgetPerformanceHistoryPaginator(const Model::DescribeBudgetPerformanceHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetPerformanceHistoryRequest,
                                              Pagination::DescribeBudgetPerformanceHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +92,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetsRequest,
                                     Pagination::DescribeBudgetsPaginationTraits<DerivedClient>>
   DescribeBudgetsPaginator(const Model::DescribeBudgetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBudgetsRequest,
                                              Pagination::DescribeBudgetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -97,6 +104,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotificationsForBudgetRequest,
                                     Pagination::DescribeNotificationsForBudgetPaginationTraits<DerivedClient>>
   DescribeNotificationsForBudgetPaginator(const Model::DescribeNotificationsForBudgetRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotificationsForBudgetRequest,
                                              Pagination::DescribeNotificationsForBudgetPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +116,7 @@ class BudgetsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubscribersForNotificationRequest,
                                     Pagination::DescribeSubscribersForNotificationPaginationTraits<DerivedClient>>
   DescribeSubscribersForNotificationPaginator(const Model::DescribeSubscribersForNotificationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubscribersForNotificationRequest,
                                              Pagination::DescribeSubscribersForNotificationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

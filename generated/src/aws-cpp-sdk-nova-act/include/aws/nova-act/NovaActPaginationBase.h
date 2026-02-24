@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/nova-act/model/ListActsPaginationTraits.h>
 #include <aws/nova-act/model/ListSessionsPaginationTraits.h>
@@ -26,6 +27,7 @@ class NovaActPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActsRequest, Pagination::ListActsPaginationTraits<DerivedClient>>
   ListActsPaginator(const Model::ListActsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActsRequest, Pagination::ListActsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -35,6 +37,7 @@ class NovaActPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
   ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
                                              Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -46,6 +49,7 @@ class NovaActPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowDefinitionsRequest,
                                     Pagination::ListWorkflowDefinitionsPaginationTraits<DerivedClient>>
   ListWorkflowDefinitionsPaginator(const Model::ListWorkflowDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowDefinitionsRequest,
                                              Pagination::ListWorkflowDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -57,6 +61,7 @@ class NovaActPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowRunsRequest,
                                     Pagination::ListWorkflowRunsPaginationTraits<DerivedClient>>
   ListWorkflowRunsPaginator(const Model::ListWorkflowRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowRunsRequest,
                                              Pagination::ListWorkflowRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

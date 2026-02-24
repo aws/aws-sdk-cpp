@@ -17,6 +17,7 @@
 #include <aws/cloudtrail/model/ListTagsPaginationTraits.h>
 #include <aws/cloudtrail/model/ListTrailsPaginationTraits.h>
 #include <aws/cloudtrail/model/LookupEventsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -35,6 +36,7 @@ class CloudTrailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
                                     Pagination::GetQueryResultsPaginationTraits<DerivedClient>>
   GetQueryResultsPaginator(const Model::GetQueryResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
                                              Pagination::GetQueryResultsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -45,6 +47,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<DerivedClient>>
   ListChannelsPaginator(const Model::ListChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -56,6 +59,7 @@ class CloudTrailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventDataStoresRequest,
                                     Pagination::ListEventDataStoresPaginationTraits<DerivedClient>>
   ListEventDataStoresPaginator(const Model::ListEventDataStoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventDataStoresRequest,
                                              Pagination::ListEventDataStoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class CloudTrailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportFailuresRequest,
                                     Pagination::ListImportFailuresPaginationTraits<DerivedClient>>
   ListImportFailuresPaginator(const Model::ListImportFailuresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportFailuresRequest,
                                              Pagination::ListImportFailuresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +82,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportsRequest, Pagination::ListImportsPaginationTraits<DerivedClient>>
   ListImportsPaginator(const Model::ListImportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportsRequest,
                                              Pagination::ListImportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -88,6 +94,7 @@ class CloudTrailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInsightsDataRequest,
                                     Pagination::ListInsightsDataPaginationTraits<DerivedClient>>
   ListInsightsDataPaginator(const Model::ListInsightsDataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInsightsDataRequest,
                                              Pagination::ListInsightsDataPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -99,6 +106,7 @@ class CloudTrailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInsightsMetricDataRequest,
                                     Pagination::ListInsightsMetricDataPaginationTraits<DerivedClient>>
   ListInsightsMetricDataPaginator(const Model::ListInsightsMetricDataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInsightsMetricDataRequest,
                                              Pagination::ListInsightsMetricDataPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublicKeysRequest, Pagination::ListPublicKeysPaginationTraits<DerivedClient>>
   ListPublicKeysPaginator(const Model::ListPublicKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublicKeysRequest,
                                              Pagination::ListPublicKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -119,6 +128,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueriesRequest, Pagination::ListQueriesPaginationTraits<DerivedClient>>
   ListQueriesPaginator(const Model::ListQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueriesRequest,
                                              Pagination::ListQueriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -129,6 +139,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsRequest, Pagination::ListTagsPaginationTraits<DerivedClient>>
   ListTagsPaginator(const Model::ListTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsRequest, Pagination::ListTagsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -138,6 +149,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrailsRequest, Pagination::ListTrailsPaginationTraits<DerivedClient>>
   ListTrailsPaginator(const Model::ListTrailsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrailsRequest,
                                              Pagination::ListTrailsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -148,6 +160,7 @@ class CloudTrailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::LookupEventsRequest, Pagination::LookupEventsPaginationTraits<DerivedClient>>
   LookupEventsPaginator(const Model::LookupEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::LookupEventsRequest,
                                              Pagination::LookupEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/quicksight/model/DescribeFolderPermissionsPaginationTraits.h>
 #include <aws/quicksight/model/DescribeFolderResolvedPermissionsPaginationTraits.h>
@@ -64,6 +65,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFolderPermissionsRequest,
                                     Pagination::DescribeFolderPermissionsPaginationTraits<DerivedClient>>
   DescribeFolderPermissionsPaginator(const Model::DescribeFolderPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFolderPermissionsRequest,
                                              Pagination::DescribeFolderPermissionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +77,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFolderResolvedPermissionsRequest,
                                     Pagination::DescribeFolderResolvedPermissionsPaginationTraits<DerivedClient>>
   DescribeFolderResolvedPermissionsPaginator(const Model::DescribeFolderResolvedPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFolderResolvedPermissionsRequest,
                                              Pagination::DescribeFolderResolvedPermissionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +89,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionConnectorsRequest,
                                     Pagination::ListActionConnectorsPaginationTraits<DerivedClient>>
   ListActionConnectorsPaginator(const Model::ListActionConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActionConnectorsRequest,
                                              Pagination::ListActionConnectorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +100,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalysesRequest, Pagination::ListAnalysesPaginationTraits<DerivedClient>>
   ListAnalysesPaginator(const Model::ListAnalysesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalysesRequest,
                                              Pagination::ListAnalysesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -107,6 +112,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetBundleExportJobsRequest,
                                     Pagination::ListAssetBundleExportJobsPaginationTraits<DerivedClient>>
   ListAssetBundleExportJobsPaginator(const Model::ListAssetBundleExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetBundleExportJobsRequest,
                                              Pagination::ListAssetBundleExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -118,6 +124,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetBundleImportJobsRequest,
                                     Pagination::ListAssetBundleImportJobsPaginationTraits<DerivedClient>>
   ListAssetBundleImportJobsPaginator(const Model::ListAssetBundleImportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetBundleImportJobsRequest,
                                              Pagination::ListAssetBundleImportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -128,6 +135,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrandsRequest, Pagination::ListBrandsPaginationTraits<DerivedClient>>
   ListBrandsPaginator(const Model::ListBrandsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrandsRequest,
                                              Pagination::ListBrandsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -139,6 +147,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomPermissionsRequest,
                                     Pagination::ListCustomPermissionsPaginationTraits<DerivedClient>>
   ListCustomPermissionsPaginator(const Model::ListCustomPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomPermissionsRequest,
                                              Pagination::ListCustomPermissionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -149,6 +158,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDashboardsRequest, Pagination::ListDashboardsPaginationTraits<DerivedClient>>
   ListDashboardsPaginator(const Model::ListDashboardsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDashboardsRequest,
                                              Pagination::ListDashboardsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -160,6 +170,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDashboardVersionsRequest,
                                     Pagination::ListDashboardVersionsPaginationTraits<DerivedClient>>
   ListDashboardVersionsPaginator(const Model::ListDashboardVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDashboardVersionsRequest,
                                              Pagination::ListDashboardVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -170,6 +181,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSetsRequest, Pagination::ListDataSetsPaginationTraits<DerivedClient>>
   ListDataSetsPaginator(const Model::ListDataSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSetsRequest,
                                              Pagination::ListDataSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -181,6 +193,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourcesRequest,
                                     Pagination::ListDataSourcesPaginationTraits<DerivedClient>>
   ListDataSourcesPaginator(const Model::ListDataSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourcesRequest,
                                              Pagination::ListDataSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -191,6 +204,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<DerivedClient>>
   ListFlowsPaginator(const Model::ListFlowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -201,6 +215,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFolderMembersRequest,
                                     Pagination::ListFolderMembersPaginationTraits<DerivedClient>>
   ListFolderMembersPaginator(const Model::ListFolderMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFolderMembersRequest,
                                              Pagination::ListFolderMembersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -211,6 +226,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFoldersRequest, Pagination::ListFoldersPaginationTraits<DerivedClient>>
   ListFoldersPaginator(const Model::ListFoldersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFoldersRequest,
                                              Pagination::ListFoldersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -222,6 +238,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFoldersForResourceRequest,
                                     Pagination::ListFoldersForResourcePaginationTraits<DerivedClient>>
   ListFoldersForResourcePaginator(const Model::ListFoldersForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFoldersForResourceRequest,
                                              Pagination::ListFoldersForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -233,6 +250,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembershipsRequest,
                                     Pagination::ListGroupMembershipsPaginationTraits<DerivedClient>>
   ListGroupMembershipsPaginator(const Model::ListGroupMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembershipsRequest,
                                              Pagination::ListGroupMembershipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -243,6 +261,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest, Pagination::ListGroupsPaginationTraits<DerivedClient>>
   ListGroupsPaginator(const Model::ListGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest,
                                              Pagination::ListGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -254,6 +273,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIAMPolicyAssignmentsRequest,
                                     Pagination::ListIAMPolicyAssignmentsPaginationTraits<DerivedClient>>
   ListIAMPolicyAssignmentsPaginator(const Model::ListIAMPolicyAssignmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIAMPolicyAssignmentsRequest,
                                              Pagination::ListIAMPolicyAssignmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -265,6 +285,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIAMPolicyAssignmentsForUserRequest,
                                     Pagination::ListIAMPolicyAssignmentsForUserPaginationTraits<DerivedClient>>
   ListIAMPolicyAssignmentsForUserPaginator(const Model::ListIAMPolicyAssignmentsForUserRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIAMPolicyAssignmentsForUserRequest,
                                              Pagination::ListIAMPolicyAssignmentsForUserPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -275,6 +296,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionsRequest, Pagination::ListIngestionsPaginationTraits<DerivedClient>>
   ListIngestionsPaginator(const Model::ListIngestionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionsRequest,
                                              Pagination::ListIngestionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -285,6 +307,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest, Pagination::ListNamespacesPaginationTraits<DerivedClient>>
   ListNamespacesPaginator(const Model::ListNamespacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest,
                                              Pagination::ListNamespacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -296,6 +319,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoleMembershipsRequest,
                                     Pagination::ListRoleMembershipsPaginationTraits<DerivedClient>>
   ListRoleMembershipsPaginator(const Model::ListRoleMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoleMembershipsRequest,
                                              Pagination::ListRoleMembershipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -307,6 +331,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateAliasesRequest,
                                     Pagination::ListTemplateAliasesPaginationTraits<DerivedClient>>
   ListTemplateAliasesPaginator(const Model::ListTemplateAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateAliasesRequest,
                                              Pagination::ListTemplateAliasesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -317,6 +342,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplatesRequest, Pagination::ListTemplatesPaginationTraits<DerivedClient>>
   ListTemplatesPaginator(const Model::ListTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplatesRequest,
                                              Pagination::ListTemplatesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -328,6 +354,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateVersionsRequest,
                                     Pagination::ListTemplateVersionsPaginationTraits<DerivedClient>>
   ListTemplateVersionsPaginator(const Model::ListTemplateVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateVersionsRequest,
                                              Pagination::ListTemplateVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -338,6 +365,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThemesRequest, Pagination::ListThemesPaginationTraits<DerivedClient>>
   ListThemesPaginator(const Model::ListThemesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThemesRequest,
                                              Pagination::ListThemesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -349,6 +377,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThemeVersionsRequest,
                                     Pagination::ListThemeVersionsPaginationTraits<DerivedClient>>
   ListThemeVersionsPaginator(const Model::ListThemeVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThemeVersionsRequest,
                                              Pagination::ListThemeVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -359,6 +388,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsRequest, Pagination::ListTopicsPaginationTraits<DerivedClient>>
   ListTopicsPaginator(const Model::ListTopicsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsRequest,
                                              Pagination::ListTopicsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -369,6 +399,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserGroupsRequest, Pagination::ListUserGroupsPaginationTraits<DerivedClient>>
   ListUserGroupsPaginator(const Model::ListUserGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserGroupsRequest,
                                              Pagination::ListUserGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -379,6 +410,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -389,6 +421,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVPCConnectionsRequest,
                                     Pagination::ListVPCConnectionsPaginationTraits<DerivedClient>>
   ListVPCConnectionsPaginator(const Model::ListVPCConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVPCConnectionsRequest,
                                              Pagination::ListVPCConnectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -400,6 +433,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchActionConnectorsRequest,
                                     Pagination::SearchActionConnectorsPaginationTraits<DerivedClient>>
   SearchActionConnectorsPaginator(const Model::SearchActionConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchActionConnectorsRequest,
                                              Pagination::SearchActionConnectorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -410,6 +444,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAnalysesRequest, Pagination::SearchAnalysesPaginationTraits<DerivedClient>>
   SearchAnalysesPaginator(const Model::SearchAnalysesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAnalysesRequest,
                                              Pagination::SearchAnalysesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -421,6 +456,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDashboardsRequest,
                                     Pagination::SearchDashboardsPaginationTraits<DerivedClient>>
   SearchDashboardsPaginator(const Model::SearchDashboardsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDashboardsRequest,
                                              Pagination::SearchDashboardsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -431,6 +467,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDataSetsRequest, Pagination::SearchDataSetsPaginationTraits<DerivedClient>>
   SearchDataSetsPaginator(const Model::SearchDataSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDataSetsRequest,
                                              Pagination::SearchDataSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -442,6 +479,7 @@ class QuickSightPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDataSourcesRequest,
                                     Pagination::SearchDataSourcesPaginationTraits<DerivedClient>>
   SearchDataSourcesPaginator(const Model::SearchDataSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDataSourcesRequest,
                                              Pagination::SearchDataSourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -452,6 +490,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchFlowsRequest, Pagination::SearchFlowsPaginationTraits<DerivedClient>>
   SearchFlowsPaginator(const Model::SearchFlowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchFlowsRequest,
                                              Pagination::SearchFlowsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -462,6 +501,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchFoldersRequest, Pagination::SearchFoldersPaginationTraits<DerivedClient>>
   SearchFoldersPaginator(const Model::SearchFoldersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchFoldersRequest,
                                              Pagination::SearchFoldersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -472,6 +512,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGroupsRequest, Pagination::SearchGroupsPaginationTraits<DerivedClient>>
   SearchGroupsPaginator(const Model::SearchGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGroupsRequest,
                                              Pagination::SearchGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -482,6 +523,7 @@ class QuickSightPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTopicsRequest, Pagination::SearchTopicsPaginationTraits<DerivedClient>>
   SearchTopicsPaginator(const Model::SearchTopicsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchTopicsRequest,
                                              Pagination::SearchTopicsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

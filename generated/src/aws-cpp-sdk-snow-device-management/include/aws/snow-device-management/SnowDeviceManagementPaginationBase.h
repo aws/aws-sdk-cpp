@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/snow-device-management/model/ListDeviceResourcesPaginationTraits.h>
 #include <aws/snow-device-management/model/ListDevicesPaginationTraits.h>
@@ -27,6 +28,7 @@ class SnowDeviceManagementPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeviceResourcesRequest,
                                     Pagination::ListDeviceResourcesPaginationTraits<DerivedClient>>
   ListDeviceResourcesPaginator(const Model::ListDeviceResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeviceResourcesRequest,
                                              Pagination::ListDeviceResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class SnowDeviceManagementPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest, Pagination::ListDevicesPaginationTraits<DerivedClient>>
   ListDevicesPaginator(const Model::ListDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest,
                                              Pagination::ListDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -47,6 +50,7 @@ class SnowDeviceManagementPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExecutionsRequest, Pagination::ListExecutionsPaginationTraits<DerivedClient>>
   ListExecutionsPaginator(const Model::ListExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExecutionsRequest,
                                              Pagination::ListExecutionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -57,6 +61,7 @@ class SnowDeviceManagementPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>
   ListTasksPaginator(const Model::ListTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

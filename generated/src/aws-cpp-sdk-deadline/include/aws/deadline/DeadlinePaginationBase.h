@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/deadline/model/GetSessionsStatisticsAggregationPaginationTraits.h>
 #include <aws/deadline/model/ListAvailableMeteredProductsPaginationTraits.h>
@@ -52,6 +53,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSessionsStatisticsAggregationRequest,
                                     Pagination::GetSessionsStatisticsAggregationPaginationTraits<DerivedClient>>
   GetSessionsStatisticsAggregationPaginator(const Model::GetSessionsStatisticsAggregationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSessionsStatisticsAggregationRequest,
                                              Pagination::GetSessionsStatisticsAggregationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -63,6 +65,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableMeteredProductsRequest,
                                     Pagination::ListAvailableMeteredProductsPaginationTraits<DerivedClient>>
   ListAvailableMeteredProductsPaginator(const Model::ListAvailableMeteredProductsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailableMeteredProductsRequest,
                                              Pagination::ListAvailableMeteredProductsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +76,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBudgetsRequest, Pagination::ListBudgetsPaginationTraits<DerivedClient>>
   ListBudgetsPaginator(const Model::ListBudgetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBudgetsRequest,
                                              Pagination::ListBudgetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -84,6 +88,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFarmMembersRequest,
                                     Pagination::ListFarmMembersPaginationTraits<DerivedClient>>
   ListFarmMembersPaginator(const Model::ListFarmMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFarmMembersRequest,
                                              Pagination::ListFarmMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -94,6 +99,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFarmsRequest, Pagination::ListFarmsPaginationTraits<DerivedClient>>
   ListFarmsPaginator(const Model::ListFarmsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFarmsRequest, Pagination::ListFarmsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -104,6 +110,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetMembersRequest,
                                     Pagination::ListFleetMembersPaginationTraits<DerivedClient>>
   ListFleetMembersPaginator(const Model::ListFleetMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetMembersRequest,
                                              Pagination::ListFleetMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -114,6 +121,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest, Pagination::ListFleetsPaginationTraits<DerivedClient>>
   ListFleetsPaginator(const Model::ListFleetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest,
                                              Pagination::ListFleetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -124,6 +132,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobMembersRequest, Pagination::ListJobMembersPaginationTraits<DerivedClient>>
   ListJobMembersPaginator(const Model::ListJobMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobMembersRequest,
                                              Pagination::ListJobMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -135,6 +144,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobParameterDefinitionsRequest,
                                     Pagination::ListJobParameterDefinitionsPaginationTraits<DerivedClient>>
   ListJobParameterDefinitionsPaginator(const Model::ListJobParameterDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobParameterDefinitionsRequest,
                                              Pagination::ListJobParameterDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -145,6 +155,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -155,6 +166,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLicenseEndpointsRequest,
                                     Pagination::ListLicenseEndpointsPaginationTraits<DerivedClient>>
   ListLicenseEndpointsPaginator(const Model::ListLicenseEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLicenseEndpointsRequest,
                                              Pagination::ListLicenseEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -165,6 +177,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLimitsRequest, Pagination::ListLimitsPaginationTraits<DerivedClient>>
   ListLimitsPaginator(const Model::ListLimitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLimitsRequest,
                                              Pagination::ListLimitsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -176,6 +189,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMeteredProductsRequest,
                                     Pagination::ListMeteredProductsPaginationTraits<DerivedClient>>
   ListMeteredProductsPaginator(const Model::ListMeteredProductsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMeteredProductsRequest,
                                              Pagination::ListMeteredProductsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -186,6 +200,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorsRequest, Pagination::ListMonitorsPaginationTraits<DerivedClient>>
   ListMonitorsPaginator(const Model::ListMonitorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorsRequest,
                                              Pagination::ListMonitorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -197,6 +212,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueEnvironmentsRequest,
                                     Pagination::ListQueueEnvironmentsPaginationTraits<DerivedClient>>
   ListQueueEnvironmentsPaginator(const Model::ListQueueEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueEnvironmentsRequest,
                                              Pagination::ListQueueEnvironmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -208,6 +224,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueFleetAssociationsRequest,
                                     Pagination::ListQueueFleetAssociationsPaginationTraits<DerivedClient>>
   ListQueueFleetAssociationsPaginator(const Model::ListQueueFleetAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueFleetAssociationsRequest,
                                              Pagination::ListQueueFleetAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -219,6 +236,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueLimitAssociationsRequest,
                                     Pagination::ListQueueLimitAssociationsPaginationTraits<DerivedClient>>
   ListQueueLimitAssociationsPaginator(const Model::ListQueueLimitAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueLimitAssociationsRequest,
                                              Pagination::ListQueueLimitAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -230,6 +248,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueMembersRequest,
                                     Pagination::ListQueueMembersPaginationTraits<DerivedClient>>
   ListQueueMembersPaginator(const Model::ListQueueMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueueMembersRequest,
                                              Pagination::ListQueueMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -240,6 +259,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest, Pagination::ListQueuesPaginationTraits<DerivedClient>>
   ListQueuesPaginator(const Model::ListQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest,
                                              Pagination::ListQueuesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -251,6 +271,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionActionsRequest,
                                     Pagination::ListSessionActionsPaginationTraits<DerivedClient>>
   ListSessionActionsPaginator(const Model::ListSessionActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionActionsRequest,
                                              Pagination::ListSessionActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -261,6 +282,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
   ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
                                              Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -272,6 +294,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsForWorkerRequest,
                                     Pagination::ListSessionsForWorkerPaginationTraits<DerivedClient>>
   ListSessionsForWorkerPaginator(const Model::ListSessionsForWorkerRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsForWorkerRequest,
                                              Pagination::ListSessionsForWorkerPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -283,6 +306,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStepConsumersRequest,
                                     Pagination::ListStepConsumersPaginationTraits<DerivedClient>>
   ListStepConsumersPaginator(const Model::ListStepConsumersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStepConsumersRequest,
                                              Pagination::ListStepConsumersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -294,6 +318,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStepDependenciesRequest,
                                     Pagination::ListStepDependenciesPaginationTraits<DerivedClient>>
   ListStepDependenciesPaginator(const Model::ListStepDependenciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStepDependenciesRequest,
                                              Pagination::ListStepDependenciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -304,6 +329,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStepsRequest, Pagination::ListStepsPaginationTraits<DerivedClient>>
   ListStepsPaginator(const Model::ListStepsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStepsRequest, Pagination::ListStepsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -314,6 +340,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageProfilesRequest,
                                     Pagination::ListStorageProfilesPaginationTraits<DerivedClient>>
   ListStorageProfilesPaginator(const Model::ListStorageProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageProfilesRequest,
                                              Pagination::ListStorageProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -325,6 +352,7 @@ class DeadlinePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageProfilesForQueueRequest,
                                     Pagination::ListStorageProfilesForQueuePaginationTraits<DerivedClient>>
   ListStorageProfilesForQueuePaginator(const Model::ListStorageProfilesForQueueRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageProfilesForQueueRequest,
                                              Pagination::ListStorageProfilesForQueuePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -335,6 +363,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>
   ListTasksPaginator(const Model::ListTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -344,6 +373,7 @@ class DeadlinePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkersRequest, Pagination::ListWorkersPaginationTraits<DerivedClient>>
   ListWorkersPaginator(const Model::ListWorkersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkersRequest,
                                              Pagination::ListWorkersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

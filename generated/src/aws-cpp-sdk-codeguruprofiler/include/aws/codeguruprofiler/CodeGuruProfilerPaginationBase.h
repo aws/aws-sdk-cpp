@@ -9,6 +9,7 @@
 #include <aws/codeguruprofiler/model/ListFindingsReportsPaginationTraits.h>
 #include <aws/codeguruprofiler/model/ListProfileTimesPaginationTraits.h>
 #include <aws/codeguruprofiler/model/ListProfilingGroupsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class CodeGuruProfilerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFindingsReportAccountSummaryRequest,
                                     Pagination::GetFindingsReportAccountSummaryPaginationTraits<DerivedClient>>
   GetFindingsReportAccountSummaryPaginator(const Model::GetFindingsReportAccountSummaryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFindingsReportAccountSummaryRequest,
                                              Pagination::GetFindingsReportAccountSummaryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class CodeGuruProfilerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsReportsRequest,
                                     Pagination::ListFindingsReportsPaginationTraits<DerivedClient>>
   ListFindingsReportsPaginator(const Model::ListFindingsReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsReportsRequest,
                                              Pagination::ListFindingsReportsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class CodeGuruProfilerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfileTimesRequest,
                                     Pagination::ListProfileTimesPaginationTraits<DerivedClient>>
   ListProfileTimesPaginator(const Model::ListProfileTimesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfileTimesRequest,
                                              Pagination::ListProfileTimesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -60,6 +64,7 @@ class CodeGuruProfilerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfilingGroupsRequest,
                                     Pagination::ListProfilingGroupsPaginationTraits<DerivedClient>>
   ListProfilingGroupsPaginator(const Model::ListProfilingGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfilingGroupsRequest,
                                              Pagination::ListProfilingGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

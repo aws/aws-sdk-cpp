@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/iottwinmaker/model/ExecuteQueryPaginationTraits.h>
 #include <aws/iottwinmaker/model/GetPropertyValueHistoryPaginationTraits.h>
@@ -34,6 +35,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExecuteQueryRequest, Pagination::ExecuteQueryPaginationTraits<DerivedClient>>
   ExecuteQueryPaginator(const Model::ExecuteQueryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExecuteQueryRequest,
                                              Pagination::ExecuteQueryPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -45,6 +47,7 @@ class IoTTwinMakerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetPropertyValueRequest,
                                     Pagination::GetPropertyValuePaginationTraits<DerivedClient>>
   GetPropertyValuePaginator(const Model::GetPropertyValueRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetPropertyValueRequest,
                                              Pagination::GetPropertyValuePaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -56,6 +59,7 @@ class IoTTwinMakerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetPropertyValueHistoryRequest,
                                     Pagination::GetPropertyValueHistoryPaginationTraits<DerivedClient>>
   GetPropertyValueHistoryPaginator(const Model::GetPropertyValueHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetPropertyValueHistoryRequest,
                                              Pagination::GetPropertyValueHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest, Pagination::ListComponentsPaginationTraits<DerivedClient>>
   ListComponentsPaginator(const Model::ListComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest,
                                              Pagination::ListComponentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -77,6 +82,7 @@ class IoTTwinMakerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentTypesRequest,
                                     Pagination::ListComponentTypesPaginationTraits<DerivedClient>>
   ListComponentTypesPaginator(const Model::ListComponentTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentTypesRequest,
                                              Pagination::ListComponentTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -87,6 +93,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitiesRequest, Pagination::ListEntitiesPaginationTraits<DerivedClient>>
   ListEntitiesPaginator(const Model::ListEntitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitiesRequest,
                                              Pagination::ListEntitiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -98,6 +105,7 @@ class IoTTwinMakerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMetadataTransferJobsRequest,
                                     Pagination::ListMetadataTransferJobsPaginationTraits<DerivedClient>>
   ListMetadataTransferJobsPaginator(const Model::ListMetadataTransferJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMetadataTransferJobsRequest,
                                              Pagination::ListMetadataTransferJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +116,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPropertiesRequest, Pagination::ListPropertiesPaginationTraits<DerivedClient>>
   ListPropertiesPaginator(const Model::ListPropertiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPropertiesRequest,
                                              Pagination::ListPropertiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -118,6 +127,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScenesRequest, Pagination::ListScenesPaginationTraits<DerivedClient>>
   ListScenesPaginator(const Model::ListScenesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScenesRequest,
                                              Pagination::ListScenesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -128,6 +138,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSyncJobsRequest, Pagination::ListSyncJobsPaginationTraits<DerivedClient>>
   ListSyncJobsPaginator(const Model::ListSyncJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSyncJobsRequest,
                                              Pagination::ListSyncJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -139,6 +150,7 @@ class IoTTwinMakerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSyncResourcesRequest,
                                     Pagination::ListSyncResourcesPaginationTraits<DerivedClient>>
   ListSyncResourcesPaginator(const Model::ListSyncResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSyncResourcesRequest,
                                              Pagination::ListSyncResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -149,6 +161,7 @@ class IoTTwinMakerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest, Pagination::ListWorkspacesPaginationTraits<DerivedClient>>
   ListWorkspacesPaginator(const Model::ListWorkspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest,
                                              Pagination::ListWorkspacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

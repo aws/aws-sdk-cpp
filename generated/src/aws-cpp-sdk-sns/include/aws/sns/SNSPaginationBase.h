@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sns/model/ListEndpointsByPlatformApplicationPaginationTraits.h>
 #include <aws/sns/model/ListOriginationNumbersPaginationTraits.h>
@@ -31,6 +32,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointsByPlatformApplicationRequest,
                                     Pagination::ListEndpointsByPlatformApplicationPaginationTraits<DerivedClient>>
   ListEndpointsByPlatformApplicationPaginator(const Model::ListEndpointsByPlatformApplicationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointsByPlatformApplicationRequest,
                                              Pagination::ListEndpointsByPlatformApplicationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -42,6 +44,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginationNumbersRequest,
                                     Pagination::ListOriginationNumbersPaginationTraits<DerivedClient>>
   ListOriginationNumbersPaginator(const Model::ListOriginationNumbersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginationNumbersRequest,
                                              Pagination::ListOriginationNumbersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -53,6 +56,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumbersOptedOutRequest,
                                     Pagination::ListPhoneNumbersOptedOutPaginationTraits<DerivedClient>>
   ListPhoneNumbersOptedOutPaginator(const Model::ListPhoneNumbersOptedOutRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumbersOptedOutRequest,
                                              Pagination::ListPhoneNumbersOptedOutPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +68,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlatformApplicationsRequest,
                                     Pagination::ListPlatformApplicationsPaginationTraits<DerivedClient>>
   ListPlatformApplicationsPaginator(const Model::ListPlatformApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlatformApplicationsRequest,
                                              Pagination::ListPlatformApplicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +80,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSMSSandboxPhoneNumbersRequest,
                                     Pagination::ListSMSSandboxPhoneNumbersPaginationTraits<DerivedClient>>
   ListSMSSandboxPhoneNumbersPaginator(const Model::ListSMSSandboxPhoneNumbersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSMSSandboxPhoneNumbersRequest,
                                              Pagination::ListSMSSandboxPhoneNumbersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +92,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubscriptionsRequest,
                                     Pagination::ListSubscriptionsPaginationTraits<DerivedClient>>
   ListSubscriptionsPaginator(const Model::ListSubscriptionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubscriptionsRequest,
                                              Pagination::ListSubscriptionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -97,6 +104,7 @@ class SNSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubscriptionsByTopicRequest,
                                     Pagination::ListSubscriptionsByTopicPaginationTraits<DerivedClient>>
   ListSubscriptionsByTopicPaginator(const Model::ListSubscriptionsByTopicRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubscriptionsByTopicRequest,
                                              Pagination::ListSubscriptionsByTopicPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -107,6 +115,7 @@ class SNSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsRequest, Pagination::ListTopicsPaginationTraits<DerivedClient>>
   ListTopicsPaginator(const Model::ListTopicsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsRequest,
                                              Pagination::ListTopicsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

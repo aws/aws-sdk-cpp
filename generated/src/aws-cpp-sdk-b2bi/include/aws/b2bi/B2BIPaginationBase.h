@@ -9,6 +9,7 @@
 #include <aws/b2bi/model/ListPartnershipsPaginationTraits.h>
 #include <aws/b2bi/model/ListProfilesPaginationTraits.h>
 #include <aws/b2bi/model/ListTransformersPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class B2BIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapabilitiesRequest,
                                     Pagination::ListCapabilitiesPaginationTraits<DerivedClient>>
   ListCapabilitiesPaginator(const Model::ListCapabilitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapabilitiesRequest,
                                              Pagination::ListCapabilitiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -38,6 +40,7 @@ class B2BIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPartnershipsRequest,
                                     Pagination::ListPartnershipsPaginationTraits<DerivedClient>>
   ListPartnershipsPaginator(const Model::ListPartnershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPartnershipsRequest,
                                              Pagination::ListPartnershipsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class B2BIPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfilesRequest, Pagination::ListProfilesPaginationTraits<DerivedClient>>
   ListProfilesPaginator(const Model::ListProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfilesRequest,
                                              Pagination::ListProfilesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -59,6 +63,7 @@ class B2BIPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransformersRequest,
                                     Pagination::ListTransformersPaginationTraits<DerivedClient>>
   ListTransformersPaginator(const Model::ListTransformersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTransformersRequest,
                                              Pagination::ListTransformersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

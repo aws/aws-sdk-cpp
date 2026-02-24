@@ -8,6 +8,7 @@
 #include <aws/codestar-notifications/model/ListEventTypesPaginationTraits.h>
 #include <aws/codestar-notifications/model/ListNotificationRulesPaginationTraits.h>
 #include <aws/codestar-notifications/model/ListTargetsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class CodeStarNotificationsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventTypesRequest, Pagination::ListEventTypesPaginationTraits<DerivedClient>>
   ListEventTypesPaginator(const Model::ListEventTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventTypesRequest,
                                              Pagination::ListEventTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -36,6 +38,7 @@ class CodeStarNotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationRulesRequest,
                                     Pagination::ListNotificationRulesPaginationTraits<DerivedClient>>
   ListNotificationRulesPaginator(const Model::ListNotificationRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationRulesRequest,
                                              Pagination::ListNotificationRulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -46,6 +49,7 @@ class CodeStarNotificationsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTargetsRequest, Pagination::ListTargetsPaginationTraits<DerivedClient>>
   ListTargetsPaginator(const Model::ListTargetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTargetsRequest,
                                              Pagination::ListTargetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

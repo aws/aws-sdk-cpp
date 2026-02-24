@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/groundstation/model/ListConfigsPaginationTraits.h>
 #include <aws/groundstation/model/ListContactsPaginationTraits.h>
@@ -29,6 +30,7 @@ class GroundStationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigsRequest, Pagination::ListConfigsPaginationTraits<DerivedClient>>
   ListConfigsPaginator(const Model::ListConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigsRequest,
                                              Pagination::ListConfigsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -39,6 +41,7 @@ class GroundStationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactsRequest, Pagination::ListContactsPaginationTraits<DerivedClient>>
   ListContactsPaginator(const Model::ListContactsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactsRequest,
                                              Pagination::ListContactsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -50,6 +53,7 @@ class GroundStationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataflowEndpointGroupsRequest,
                                     Pagination::ListDataflowEndpointGroupsPaginationTraits<DerivedClient>>
   ListDataflowEndpointGroupsPaginator(const Model::ListDataflowEndpointGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataflowEndpointGroupsRequest,
                                              Pagination::ListDataflowEndpointGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class GroundStationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEphemeridesRequest,
                                     Pagination::ListEphemeridesPaginationTraits<DerivedClient>>
   ListEphemeridesPaginator(const Model::ListEphemeridesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEphemeridesRequest,
                                              Pagination::ListEphemeridesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -72,6 +77,7 @@ class GroundStationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroundStationsRequest,
                                     Pagination::ListGroundStationsPaginationTraits<DerivedClient>>
   ListGroundStationsPaginator(const Model::ListGroundStationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroundStationsRequest,
                                              Pagination::ListGroundStationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +89,7 @@ class GroundStationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMissionProfilesRequest,
                                     Pagination::ListMissionProfilesPaginationTraits<DerivedClient>>
   ListMissionProfilesPaginator(const Model::ListMissionProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMissionProfilesRequest,
                                              Pagination::ListMissionProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -93,6 +100,7 @@ class GroundStationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSatellitesRequest, Pagination::ListSatellitesPaginationTraits<DerivedClient>>
   ListSatellitesPaginator(const Model::ListSatellitesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSatellitesRequest,
                                              Pagination::ListSatellitesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

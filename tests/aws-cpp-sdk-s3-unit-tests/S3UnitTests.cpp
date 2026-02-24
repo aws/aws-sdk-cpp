@@ -15,6 +15,7 @@
 #include <memory>
 #include <aws/s3/S3ErrorMarshaller.h>
 #include <aws/s3/model/HeadBucketRequest.h>
+#include <aws/s3/model/ListObjectsV2Request.h>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -671,4 +672,36 @@ TEST_F(S3UnitTest, PartiallyConsumedStreamChecksumReuse) {
   EXPECT_TRUE(seenChecksum.IsSuccess());
   const auto seenChecksumBase64 = base64.Encode(seenChecksum.GetResult());
   EXPECT_EQ(seenChecksumBase64, expectedChecksumBase64);
+}
+
+TEST_F(S3UnitTest, ListObjectsV2PaginatorShouldHaveCMetric) {
+  auto request = ListObjectsV2Request().WithBucket("test-bucket");
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "test-bucket.s3.amazonaws.com/", HttpMethod::HTTP_GET);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+  mockResponse->GetResponseBody() <<
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    "<ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">"
+    "<Name>test-bucket</Name><KeyCount>0</KeyCount><MaxKeys>1000</MaxKeys><IsTruncated>false</IsTruncated>"
+    "</ListBucketResult>";
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  auto paginator = _s3Client->ListObjectsV2Paginator(request);
+  for (const auto& outcome : paginator) {
+    AWS_ASSERT_SUCCESS(outcome);
+  }
+
+  const auto requestSeen = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_FALSE(userAgent.empty());
+  const auto userAgentParsed = Utils::StringUtils::Split(userAgent, ' ');
+
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(),
+    [](const Aws::String& value) { return value.find("m/") != Aws::String::npos && value.find("C") != Aws::String::npos; });
+  EXPECT_TRUE(businessMetrics != userAgentParsed.end());
 }

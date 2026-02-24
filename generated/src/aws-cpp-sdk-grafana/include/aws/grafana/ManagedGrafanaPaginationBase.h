@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/grafana/model/ListPermissionsPaginationTraits.h>
 #include <aws/grafana/model/ListVersionsPaginationTraits.h>
@@ -28,6 +29,7 @@ class ManagedGrafanaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionsRequest,
                                     Pagination::ListPermissionsPaginationTraits<DerivedClient>>
   ListPermissionsPaginator(const Model::ListPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPermissionsRequest,
                                              Pagination::ListPermissionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -38,6 +40,7 @@ class ManagedGrafanaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVersionsRequest, Pagination::ListVersionsPaginationTraits<DerivedClient>>
   ListVersionsPaginator(const Model::ListVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVersionsRequest,
                                              Pagination::ListVersionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -48,6 +51,7 @@ class ManagedGrafanaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest, Pagination::ListWorkspacesPaginationTraits<DerivedClient>>
   ListWorkspacesPaginator(const Model::ListWorkspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspacesRequest,
                                              Pagination::ListWorkspacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -59,6 +63,7 @@ class ManagedGrafanaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspaceServiceAccountsRequest,
                                     Pagination::ListWorkspaceServiceAccountsPaginationTraits<DerivedClient>>
   ListWorkspaceServiceAccountsPaginator(const Model::ListWorkspaceServiceAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspaceServiceAccountsRequest,
                                              Pagination::ListWorkspaceServiceAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +75,7 @@ class ManagedGrafanaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspaceServiceAccountTokensRequest,
                                     Pagination::ListWorkspaceServiceAccountTokensPaginationTraits<DerivedClient>>
   ListWorkspaceServiceAccountTokensPaginator(const Model::ListWorkspaceServiceAccountTokensRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkspaceServiceAccountTokensRequest,
                                              Pagination::ListWorkspaceServiceAccountTokensPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

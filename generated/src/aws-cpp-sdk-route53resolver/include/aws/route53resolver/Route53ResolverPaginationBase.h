@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/route53resolver/model/ListFirewallConfigsPaginationTraits.h>
 #include <aws/route53resolver/model/ListFirewallDomainListsPaginationTraits.h>
@@ -39,6 +40,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallConfigsRequest,
                                     Pagination::ListFirewallConfigsPaginationTraits<DerivedClient>>
   ListFirewallConfigsPaginator(const Model::ListFirewallConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallConfigsRequest,
                                              Pagination::ListFirewallConfigsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +52,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallDomainListsRequest,
                                     Pagination::ListFirewallDomainListsPaginationTraits<DerivedClient>>
   ListFirewallDomainListsPaginator(const Model::ListFirewallDomainListsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallDomainListsRequest,
                                              Pagination::ListFirewallDomainListsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +64,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallDomainsRequest,
                                     Pagination::ListFirewallDomainsPaginationTraits<DerivedClient>>
   ListFirewallDomainsPaginator(const Model::ListFirewallDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallDomainsRequest,
                                              Pagination::ListFirewallDomainsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +76,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallRuleGroupAssociationsRequest,
                                     Pagination::ListFirewallRuleGroupAssociationsPaginationTraits<DerivedClient>>
   ListFirewallRuleGroupAssociationsPaginator(const Model::ListFirewallRuleGroupAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallRuleGroupAssociationsRequest,
                                              Pagination::ListFirewallRuleGroupAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +88,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallRuleGroupsRequest,
                                     Pagination::ListFirewallRuleGroupsPaginationTraits<DerivedClient>>
   ListFirewallRuleGroupsPaginator(const Model::ListFirewallRuleGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallRuleGroupsRequest,
                                              Pagination::ListFirewallRuleGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -94,6 +100,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallRulesRequest,
                                     Pagination::ListFirewallRulesPaginationTraits<DerivedClient>>
   ListFirewallRulesPaginator(const Model::ListFirewallRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallRulesRequest,
                                              Pagination::ListFirewallRulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -105,6 +112,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOutpostResolversRequest,
                                     Pagination::ListOutpostResolversPaginationTraits<DerivedClient>>
   ListOutpostResolversPaginator(const Model::ListOutpostResolversRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOutpostResolversRequest,
                                              Pagination::ListOutpostResolversPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -116,6 +124,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverConfigsRequest,
                                     Pagination::ListResolverConfigsPaginationTraits<DerivedClient>>
   ListResolverConfigsPaginator(const Model::ListResolverConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverConfigsRequest,
                                              Pagination::ListResolverConfigsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -127,6 +136,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverDnssecConfigsRequest,
                                     Pagination::ListResolverDnssecConfigsPaginationTraits<DerivedClient>>
   ListResolverDnssecConfigsPaginator(const Model::ListResolverDnssecConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverDnssecConfigsRequest,
                                              Pagination::ListResolverDnssecConfigsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -138,6 +148,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverEndpointIpAddressesRequest,
                                     Pagination::ListResolverEndpointIpAddressesPaginationTraits<DerivedClient>>
   ListResolverEndpointIpAddressesPaginator(const Model::ListResolverEndpointIpAddressesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverEndpointIpAddressesRequest,
                                              Pagination::ListResolverEndpointIpAddressesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -149,6 +160,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverEndpointsRequest,
                                     Pagination::ListResolverEndpointsPaginationTraits<DerivedClient>>
   ListResolverEndpointsPaginator(const Model::ListResolverEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverEndpointsRequest,
                                              Pagination::ListResolverEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -160,6 +172,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverQueryLogConfigAssociationsRequest,
                                     Pagination::ListResolverQueryLogConfigAssociationsPaginationTraits<DerivedClient>>
   ListResolverQueryLogConfigAssociationsPaginator(const Model::ListResolverQueryLogConfigAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverQueryLogConfigAssociationsRequest,
                                              Pagination::ListResolverQueryLogConfigAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -171,6 +184,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverQueryLogConfigsRequest,
                                     Pagination::ListResolverQueryLogConfigsPaginationTraits<DerivedClient>>
   ListResolverQueryLogConfigsPaginator(const Model::ListResolverQueryLogConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverQueryLogConfigsRequest,
                                              Pagination::ListResolverQueryLogConfigsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -182,6 +196,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverRuleAssociationsRequest,
                                     Pagination::ListResolverRuleAssociationsPaginationTraits<DerivedClient>>
   ListResolverRuleAssociationsPaginator(const Model::ListResolverRuleAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverRuleAssociationsRequest,
                                              Pagination::ListResolverRuleAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -193,6 +208,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverRulesRequest,
                                     Pagination::ListResolverRulesPaginationTraits<DerivedClient>>
   ListResolverRulesPaginator(const Model::ListResolverRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResolverRulesRequest,
                                              Pagination::ListResolverRulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -204,6 +220,7 @@ class Route53ResolverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

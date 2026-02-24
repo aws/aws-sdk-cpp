@@ -9,6 +9,7 @@
 #include <aws/braket/model/SearchJobsPaginationTraits.h>
 #include <aws/braket/model/SearchQuantumTasksPaginationTraits.h>
 #include <aws/braket/model/SearchSpendingLimitsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -26,6 +27,7 @@ class BraketPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDevicesRequest, Pagination::SearchDevicesPaginationTraits<DerivedClient>>
   SearchDevicesPaginator(const Model::SearchDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchDevicesRequest,
                                              Pagination::SearchDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -36,6 +38,7 @@ class BraketPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchJobsRequest, Pagination::SearchJobsPaginationTraits<DerivedClient>>
   SearchJobsPaginator(const Model::SearchJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchJobsRequest,
                                              Pagination::SearchJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -47,6 +50,7 @@ class BraketPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchQuantumTasksRequest,
                                     Pagination::SearchQuantumTasksPaginationTraits<DerivedClient>>
   SearchQuantumTasksPaginator(const Model::SearchQuantumTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchQuantumTasksRequest,
                                              Pagination::SearchQuantumTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -58,6 +62,7 @@ class BraketPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchSpendingLimitsRequest,
                                     Pagination::SearchSpendingLimitsPaginationTraits<DerivedClient>>
   SearchSpendingLimitsPaginator(const Model::SearchSpendingLimitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchSpendingLimitsRequest,
                                              Pagination::SearchSpendingLimitsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

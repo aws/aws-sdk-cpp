@@ -10,6 +10,7 @@
 #include <aws/appflow/model/DescribeFlowExecutionRecordsPaginationTraits.h>
 #include <aws/appflow/model/ListConnectorsPaginationTraits.h>
 #include <aws/appflow/model/ListFlowsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -28,6 +29,7 @@ class AppflowPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeConnectorProfilesRequest,
                                     Pagination::DescribeConnectorProfilesPaginationTraits<DerivedClient>>
   DescribeConnectorProfilesPaginator(const Model::DescribeConnectorProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeConnectorProfilesRequest,
                                              Pagination::DescribeConnectorProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class AppflowPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeConnectorsRequest,
                                     Pagination::DescribeConnectorsPaginationTraits<DerivedClient>>
   DescribeConnectorsPaginator(const Model::DescribeConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeConnectorsRequest,
                                              Pagination::DescribeConnectorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class AppflowPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFlowExecutionRecordsRequest,
                                     Pagination::DescribeFlowExecutionRecordsPaginationTraits<DerivedClient>>
   DescribeFlowExecutionRecordsPaginator(const Model::DescribeFlowExecutionRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFlowExecutionRecordsRequest,
                                              Pagination::DescribeFlowExecutionRecordsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class AppflowPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest, Pagination::ListConnectorsPaginationTraits<DerivedClient>>
   ListConnectorsPaginator(const Model::ListConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest,
                                              Pagination::ListConnectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -70,6 +75,7 @@ class AppflowPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<DerivedClient>>
   ListFlowsPaginator(const Model::ListFlowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

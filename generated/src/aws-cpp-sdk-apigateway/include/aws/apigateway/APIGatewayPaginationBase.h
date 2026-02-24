@@ -17,6 +17,7 @@
 #include <aws/apigateway/model/GetUsagePlanKeysPaginationTraits.h>
 #include <aws/apigateway/model/GetUsagePlansPaginationTraits.h>
 #include <aws/apigateway/model/GetVpcLinksPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -34,6 +35,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetApiKeysRequest, Pagination::GetApiKeysPaginationTraits<DerivedClient>>
   GetApiKeysPaginator(const Model::GetApiKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetApiKeysRequest,
                                              Pagination::GetApiKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -45,6 +47,7 @@ class APIGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBasePathMappingsRequest,
                                     Pagination::GetBasePathMappingsPaginationTraits<DerivedClient>>
   GetBasePathMappingsPaginator(const Model::GetBasePathMappingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBasePathMappingsRequest,
                                              Pagination::GetBasePathMappingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class APIGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetClientCertificatesRequest,
                                     Pagination::GetClientCertificatesPaginationTraits<DerivedClient>>
   GetClientCertificatesPaginator(const Model::GetClientCertificatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetClientCertificatesRequest,
                                              Pagination::GetClientCertificatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDeploymentsRequest, Pagination::GetDeploymentsPaginationTraits<DerivedClient>>
   GetDeploymentsPaginator(const Model::GetDeploymentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDeploymentsRequest,
                                              Pagination::GetDeploymentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -76,6 +81,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDomainNamesRequest, Pagination::GetDomainNamesPaginationTraits<DerivedClient>>
   GetDomainNamesPaginator(const Model::GetDomainNamesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDomainNamesRequest,
                                              Pagination::GetDomainNamesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -86,6 +92,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetModelsRequest, Pagination::GetModelsPaginationTraits<DerivedClient>>
   GetModelsPaginator(const Model::GetModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetModelsRequest, Pagination::GetModelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -95,6 +102,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcesRequest, Pagination::GetResourcesPaginationTraits<DerivedClient>>
   GetResourcesPaginator(const Model::GetResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcesRequest,
                                              Pagination::GetResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -105,6 +113,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRestApisRequest, Pagination::GetRestApisPaginationTraits<DerivedClient>>
   GetRestApisPaginator(const Model::GetRestApisRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRestApisRequest,
                                              Pagination::GetRestApisPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -115,6 +124,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsageRequest, Pagination::GetUsagePaginationTraits<DerivedClient>>
   GetUsagePaginator(const Model::GetUsageRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsageRequest, Pagination::GetUsagePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -125,6 +135,7 @@ class APIGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsagePlanKeysRequest,
                                     Pagination::GetUsagePlanKeysPaginationTraits<DerivedClient>>
   GetUsagePlanKeysPaginator(const Model::GetUsagePlanKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsagePlanKeysRequest,
                                              Pagination::GetUsagePlanKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -135,6 +146,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsagePlansRequest, Pagination::GetUsagePlansPaginationTraits<DerivedClient>>
   GetUsagePlansPaginator(const Model::GetUsagePlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetUsagePlansRequest,
                                              Pagination::GetUsagePlansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -145,6 +157,7 @@ class APIGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVpcLinksRequest, Pagination::GetVpcLinksPaginationTraits<DerivedClient>>
   GetVpcLinksPaginator(const Model::GetVpcLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVpcLinksRequest,
                                              Pagination::GetVpcLinksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

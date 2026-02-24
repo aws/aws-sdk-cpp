@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kendra/model/GetSnapshotsPaginationTraits.h>
 #include <aws/kendra/model/ListAccessControlConfigurationsPaginationTraits.h>
@@ -34,6 +35,7 @@ class KendraPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSnapshotsRequest, Pagination::GetSnapshotsPaginationTraits<DerivedClient>>
   GetSnapshotsPaginator(const Model::GetSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSnapshotsRequest,
                                              Pagination::GetSnapshotsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -45,6 +47,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessControlConfigurationsRequest,
                                     Pagination::ListAccessControlConfigurationsPaginationTraits<DerivedClient>>
   ListAccessControlConfigurationsPaginator(const Model::ListAccessControlConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessControlConfigurationsRequest,
                                              Pagination::ListAccessControlConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourcesRequest,
                                     Pagination::ListDataSourcesPaginationTraits<DerivedClient>>
   ListDataSourcesPaginator(const Model::ListDataSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourcesRequest,
                                              Pagination::ListDataSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -67,6 +71,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourceSyncJobsRequest,
                                     Pagination::ListDataSourceSyncJobsPaginationTraits<DerivedClient>>
   ListDataSourceSyncJobsPaginator(const Model::ListDataSourceSyncJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourceSyncJobsRequest,
                                              Pagination::ListDataSourceSyncJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -78,6 +83,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityPersonasRequest,
                                     Pagination::ListEntityPersonasPaginationTraits<DerivedClient>>
   ListEntityPersonasPaginator(const Model::ListEntityPersonasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntityPersonasRequest,
                                              Pagination::ListEntityPersonasPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -89,6 +95,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperienceEntitiesRequest,
                                     Pagination::ListExperienceEntitiesPaginationTraits<DerivedClient>>
   ListExperienceEntitiesPaginator(const Model::ListExperienceEntitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperienceEntitiesRequest,
                                              Pagination::ListExperienceEntitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -100,6 +107,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperiencesRequest,
                                     Pagination::ListExperiencesPaginationTraits<DerivedClient>>
   ListExperiencesPaginator(const Model::ListExperiencesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExperiencesRequest,
                                              Pagination::ListExperiencesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -110,6 +118,7 @@ class KendraPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFaqsRequest, Pagination::ListFaqsPaginationTraits<DerivedClient>>
   ListFaqsPaginator(const Model::ListFaqsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFaqsRequest, Pagination::ListFaqsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -120,6 +129,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsOlderThanOrderingIdRequest,
                                     Pagination::ListGroupsOlderThanOrderingIdPaginationTraits<DerivedClient>>
   ListGroupsOlderThanOrderingIdPaginator(const Model::ListGroupsOlderThanOrderingIdRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsOlderThanOrderingIdRequest,
                                              Pagination::ListGroupsOlderThanOrderingIdPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -130,6 +140,7 @@ class KendraPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndicesRequest, Pagination::ListIndicesPaginationTraits<DerivedClient>>
   ListIndicesPaginator(const Model::ListIndicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndicesRequest,
                                              Pagination::ListIndicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -141,6 +152,7 @@ class KendraPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuerySuggestionsBlockListsRequest,
                                     Pagination::ListQuerySuggestionsBlockListsPaginationTraits<DerivedClient>>
   ListQuerySuggestionsBlockListsPaginator(const Model::ListQuerySuggestionsBlockListsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuerySuggestionsBlockListsRequest,
                                              Pagination::ListQuerySuggestionsBlockListsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -151,6 +163,7 @@ class KendraPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThesauriRequest, Pagination::ListThesauriPaginationTraits<DerivedClient>>
   ListThesauriPaginator(const Model::ListThesauriRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThesauriRequest,
                                              Pagination::ListThesauriPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

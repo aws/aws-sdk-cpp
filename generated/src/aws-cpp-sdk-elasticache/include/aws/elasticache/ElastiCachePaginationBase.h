@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/elasticache/model/DescribeCacheClustersPaginationTraits.h>
 #include <aws/elasticache/model/DescribeCacheEngineVersionsPaginationTraits.h>
@@ -42,6 +43,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheClustersRequest,
                                     Pagination::DescribeCacheClustersPaginationTraits<DerivedClient>>
   DescribeCacheClustersPaginator(const Model::DescribeCacheClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheClustersRequest,
                                              Pagination::DescribeCacheClustersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -53,6 +55,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheEngineVersionsRequest,
                                     Pagination::DescribeCacheEngineVersionsPaginationTraits<DerivedClient>>
   DescribeCacheEngineVersionsPaginator(const Model::DescribeCacheEngineVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheEngineVersionsRequest,
                                              Pagination::DescribeCacheEngineVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +67,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheParameterGroupsRequest,
                                     Pagination::DescribeCacheParameterGroupsPaginationTraits<DerivedClient>>
   DescribeCacheParameterGroupsPaginator(const Model::DescribeCacheParameterGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheParameterGroupsRequest,
                                              Pagination::DescribeCacheParameterGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +79,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheParametersRequest,
                                     Pagination::DescribeCacheParametersPaginationTraits<DerivedClient>>
   DescribeCacheParametersPaginator(const Model::DescribeCacheParametersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheParametersRequest,
                                              Pagination::DescribeCacheParametersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +91,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheSecurityGroupsRequest,
                                     Pagination::DescribeCacheSecurityGroupsPaginationTraits<DerivedClient>>
   DescribeCacheSecurityGroupsPaginator(const Model::DescribeCacheSecurityGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheSecurityGroupsRequest,
                                              Pagination::DescribeCacheSecurityGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -97,6 +103,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheSubnetGroupsRequest,
                                     Pagination::DescribeCacheSubnetGroupsPaginationTraits<DerivedClient>>
   DescribeCacheSubnetGroupsPaginator(const Model::DescribeCacheSubnetGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCacheSubnetGroupsRequest,
                                              Pagination::DescribeCacheSubnetGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +115,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEngineDefaultParametersRequest,
                                     Pagination::DescribeEngineDefaultParametersPaginationTraits<DerivedClient>>
   DescribeEngineDefaultParametersPaginator(const Model::DescribeEngineDefaultParametersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEngineDefaultParametersRequest,
                                              Pagination::DescribeEngineDefaultParametersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -118,6 +126,7 @@ class ElastiCachePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest, Pagination::DescribeEventsPaginationTraits<DerivedClient>>
   DescribeEventsPaginator(const Model::DescribeEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest,
                                              Pagination::DescribeEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -129,6 +138,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGlobalReplicationGroupsRequest,
                                     Pagination::DescribeGlobalReplicationGroupsPaginationTraits<DerivedClient>>
   DescribeGlobalReplicationGroupsPaginator(const Model::DescribeGlobalReplicationGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGlobalReplicationGroupsRequest,
                                              Pagination::DescribeGlobalReplicationGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -140,6 +150,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplicationGroupsRequest,
                                     Pagination::DescribeReplicationGroupsPaginationTraits<DerivedClient>>
   DescribeReplicationGroupsPaginator(const Model::DescribeReplicationGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplicationGroupsRequest,
                                              Pagination::DescribeReplicationGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -151,6 +162,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedCacheNodesRequest,
                                     Pagination::DescribeReservedCacheNodesPaginationTraits<DerivedClient>>
   DescribeReservedCacheNodesPaginator(const Model::DescribeReservedCacheNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedCacheNodesRequest,
                                              Pagination::DescribeReservedCacheNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -162,6 +174,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedCacheNodesOfferingsRequest,
                                     Pagination::DescribeReservedCacheNodesOfferingsPaginationTraits<DerivedClient>>
   DescribeReservedCacheNodesOfferingsPaginator(const Model::DescribeReservedCacheNodesOfferingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedCacheNodesOfferingsRequest,
                                              Pagination::DescribeReservedCacheNodesOfferingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -173,6 +186,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessCachesRequest,
                                     Pagination::DescribeServerlessCachesPaginationTraits<DerivedClient>>
   DescribeServerlessCachesPaginator(const Model::DescribeServerlessCachesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessCachesRequest,
                                              Pagination::DescribeServerlessCachesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -184,6 +198,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessCacheSnapshotsRequest,
                                     Pagination::DescribeServerlessCacheSnapshotsPaginationTraits<DerivedClient>>
   DescribeServerlessCacheSnapshotsPaginator(const Model::DescribeServerlessCacheSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServerlessCacheSnapshotsRequest,
                                              Pagination::DescribeServerlessCacheSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -195,6 +210,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceUpdatesRequest,
                                     Pagination::DescribeServiceUpdatesPaginationTraits<DerivedClient>>
   DescribeServiceUpdatesPaginator(const Model::DescribeServiceUpdatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceUpdatesRequest,
                                              Pagination::DescribeServiceUpdatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -206,6 +222,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                     Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>
   DescribeSnapshotsPaginator(const Model::DescribeSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                              Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -217,6 +234,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUpdateActionsRequest,
                                     Pagination::DescribeUpdateActionsPaginationTraits<DerivedClient>>
   DescribeUpdateActionsPaginator(const Model::DescribeUpdateActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUpdateActionsRequest,
                                              Pagination::DescribeUpdateActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -228,6 +246,7 @@ class ElastiCachePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUserGroupsRequest,
                                     Pagination::DescribeUserGroupsPaginationTraits<DerivedClient>>
   DescribeUserGroupsPaginator(const Model::DescribeUserGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUserGroupsRequest,
                                              Pagination::DescribeUserGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -238,6 +257,7 @@ class ElastiCachePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUsersRequest, Pagination::DescribeUsersPaginationTraits<DerivedClient>>
   DescribeUsersPaginator(const Model::DescribeUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUsersRequest,
                                              Pagination::DescribeUsersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

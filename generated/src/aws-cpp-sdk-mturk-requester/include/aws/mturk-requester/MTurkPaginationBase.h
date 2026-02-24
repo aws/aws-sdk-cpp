@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mturk-requester/model/ListAssignmentsForHITPaginationTraits.h>
 #include <aws/mturk-requester/model/ListBonusPaymentsPaginationTraits.h>
@@ -33,6 +34,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssignmentsForHITRequest,
                                     Pagination::ListAssignmentsForHITPaginationTraits<DerivedClient>>
   ListAssignmentsForHITPaginator(const Model::ListAssignmentsForHITRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssignmentsForHITRequest,
                                              Pagination::ListAssignmentsForHITPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -44,6 +46,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBonusPaymentsRequest,
                                     Pagination::ListBonusPaymentsPaginationTraits<DerivedClient>>
   ListBonusPaymentsPaginator(const Model::ListBonusPaymentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBonusPaymentsRequest,
                                              Pagination::ListBonusPaymentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class MTurkPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHITsRequest, Pagination::ListHITsPaginationTraits<DerivedClient>>
   ListHITsPaginator(const Model::ListHITsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHITsRequest, Pagination::ListHITsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -64,6 +68,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHITsForQualificationTypeRequest,
                                     Pagination::ListHITsForQualificationTypePaginationTraits<DerivedClient>>
   ListHITsForQualificationTypePaginator(const Model::ListHITsForQualificationTypeRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHITsForQualificationTypeRequest,
                                              Pagination::ListHITsForQualificationTypePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +80,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQualificationRequestsRequest,
                                     Pagination::ListQualificationRequestsPaginationTraits<DerivedClient>>
   ListQualificationRequestsPaginator(const Model::ListQualificationRequestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQualificationRequestsRequest,
                                              Pagination::ListQualificationRequestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +92,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQualificationTypesRequest,
                                     Pagination::ListQualificationTypesPaginationTraits<DerivedClient>>
   ListQualificationTypesPaginator(const Model::ListQualificationTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQualificationTypesRequest,
                                              Pagination::ListQualificationTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -97,6 +104,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReviewableHITsRequest,
                                     Pagination::ListReviewableHITsPaginationTraits<DerivedClient>>
   ListReviewableHITsPaginator(const Model::ListReviewableHITsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReviewableHITsRequest,
                                              Pagination::ListReviewableHITsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +116,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReviewPolicyResultsForHITRequest,
                                     Pagination::ListReviewPolicyResultsForHITPaginationTraits<DerivedClient>>
   ListReviewPolicyResultsForHITPaginator(const Model::ListReviewPolicyResultsForHITRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReviewPolicyResultsForHITRequest,
                                              Pagination::ListReviewPolicyResultsForHITPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -119,6 +128,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkerBlocksRequest,
                                     Pagination::ListWorkerBlocksPaginationTraits<DerivedClient>>
   ListWorkerBlocksPaginator(const Model::ListWorkerBlocksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkerBlocksRequest,
                                              Pagination::ListWorkerBlocksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -130,6 +140,7 @@ class MTurkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkersWithQualificationTypeRequest,
                                     Pagination::ListWorkersWithQualificationTypePaginationTraits<DerivedClient>>
   ListWorkersWithQualificationTypePaginator(const Model::ListWorkersWithQualificationTypeRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkersWithQualificationTypeRequest,
                                              Pagination::ListWorkersWithQualificationTypePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

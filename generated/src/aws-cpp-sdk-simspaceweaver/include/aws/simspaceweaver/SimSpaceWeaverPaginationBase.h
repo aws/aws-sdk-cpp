@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/simspaceweaver/model/ListAppsPaginationTraits.h>
 #include <aws/simspaceweaver/model/ListSimulationsPaginationTraits.h>
@@ -24,6 +25,7 @@ class SimSpaceWeaverPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsRequest, Pagination::ListAppsPaginationTraits<DerivedClient>>
   ListAppsPaginator(const Model::ListAppsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsRequest, Pagination::ListAppsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -34,6 +36,7 @@ class SimSpaceWeaverPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSimulationsRequest,
                                     Pagination::ListSimulationsPaginationTraits<DerivedClient>>
   ListSimulationsPaginator(const Model::ListSimulationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSimulationsRequest,
                                              Pagination::ListSimulationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

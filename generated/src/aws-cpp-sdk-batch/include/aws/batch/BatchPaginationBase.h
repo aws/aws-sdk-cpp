@@ -14,6 +14,7 @@
 #include <aws/batch/model/ListJobsPaginationTraits.h>
 #include <aws/batch/model/ListSchedulingPoliciesPaginationTraits.h>
 #include <aws/batch/model/ListServiceJobsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -32,6 +33,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeComputeEnvironmentsRequest,
                                     Pagination::DescribeComputeEnvironmentsPaginationTraits<DerivedClient>>
   DescribeComputeEnvironmentsPaginator(const Model::DescribeComputeEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeComputeEnvironmentsRequest,
                                              Pagination::DescribeComputeEnvironmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -43,6 +45,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeJobDefinitionsRequest,
                                     Pagination::DescribeJobDefinitionsPaginationTraits<DerivedClient>>
   DescribeJobDefinitionsPaginator(const Model::DescribeJobDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeJobDefinitionsRequest,
                                              Pagination::DescribeJobDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeJobQueuesRequest,
                                     Pagination::DescribeJobQueuesPaginationTraits<DerivedClient>>
   DescribeJobQueuesPaginator(const Model::DescribeJobQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeJobQueuesRequest,
                                              Pagination::DescribeJobQueuesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +69,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceEnvironmentsRequest,
                                     Pagination::DescribeServiceEnvironmentsPaginationTraits<DerivedClient>>
   DescribeServiceEnvironmentsPaginator(const Model::DescribeServiceEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceEnvironmentsRequest,
                                              Pagination::DescribeServiceEnvironmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConsumableResourcesRequest,
                                     Pagination::ListConsumableResourcesPaginationTraits<DerivedClient>>
   ListConsumableResourcesPaginator(const Model::ListConsumableResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConsumableResourcesRequest,
                                              Pagination::ListConsumableResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +92,7 @@ class BatchPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -96,6 +103,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsByConsumableResourceRequest,
                                     Pagination::ListJobsByConsumableResourcePaginationTraits<DerivedClient>>
   ListJobsByConsumableResourcePaginator(const Model::ListJobsByConsumableResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsByConsumableResourceRequest,
                                              Pagination::ListJobsByConsumableResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -107,6 +115,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchedulingPoliciesRequest,
                                     Pagination::ListSchedulingPoliciesPaginationTraits<DerivedClient>>
   ListSchedulingPoliciesPaginator(const Model::ListSchedulingPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchedulingPoliciesRequest,
                                              Pagination::ListSchedulingPoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -118,6 +127,7 @@ class BatchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceJobsRequest,
                                     Pagination::ListServiceJobsPaginationTraits<DerivedClient>>
   ListServiceJobsPaginator(const Model::ListServiceJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceJobsRequest,
                                              Pagination::ListServiceJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

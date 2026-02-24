@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/resource-explorer-2/model/GetResourceExplorerSetupPaginationTraits.h>
 #include <aws/resource-explorer-2/model/ListIndexesForMembersPaginationTraits.h>
@@ -34,6 +35,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceExplorerSetupRequest,
                                     Pagination::GetResourceExplorerSetupPaginationTraits<DerivedClient>>
   GetResourceExplorerSetupPaginator(const Model::GetResourceExplorerSetupRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourceExplorerSetupRequest,
                                              Pagination::GetResourceExplorerSetupPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -44,6 +46,7 @@ class ResourceExplorer2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexesRequest, Pagination::ListIndexesPaginationTraits<DerivedClient>>
   ListIndexesPaginator(const Model::ListIndexesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexesRequest,
                                              Pagination::ListIndexesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -55,6 +58,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexesForMembersRequest,
                                     Pagination::ListIndexesForMembersPaginationTraits<DerivedClient>>
   ListIndexesForMembersPaginator(const Model::ListIndexesForMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexesForMembersRequest,
                                              Pagination::ListIndexesForMembersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedViewsRequest,
                                     Pagination::ListManagedViewsPaginationTraits<DerivedClient>>
   ListManagedViewsPaginator(const Model::ListManagedViewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedViewsRequest,
                                              Pagination::ListManagedViewsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -76,6 +81,7 @@ class ResourceExplorer2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest, Pagination::ListResourcesPaginationTraits<DerivedClient>>
   ListResourcesPaginator(const Model::ListResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest,
                                              Pagination::ListResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -87,6 +93,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceIndexesRequest,
                                     Pagination::ListServiceIndexesPaginationTraits<DerivedClient>>
   ListServiceIndexesPaginator(const Model::ListServiceIndexesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceIndexesRequest,
                                              Pagination::ListServiceIndexesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceViewsRequest,
                                     Pagination::ListServiceViewsPaginationTraits<DerivedClient>>
   ListServiceViewsPaginator(const Model::ListServiceViewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceViewsRequest,
                                              Pagination::ListServiceViewsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -109,6 +117,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamingAccessForServicesRequest,
                                     Pagination::ListStreamingAccessForServicesPaginationTraits<DerivedClient>>
   ListStreamingAccessForServicesPaginator(const Model::ListStreamingAccessForServicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamingAccessForServicesRequest,
                                              Pagination::ListStreamingAccessForServicesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -120,6 +129,7 @@ class ResourceExplorer2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSupportedResourceTypesRequest,
                                     Pagination::ListSupportedResourceTypesPaginationTraits<DerivedClient>>
   ListSupportedResourceTypesPaginator(const Model::ListSupportedResourceTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSupportedResourceTypesRequest,
                                              Pagination::ListSupportedResourceTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -130,6 +140,7 @@ class ResourceExplorer2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListViewsRequest, Pagination::ListViewsPaginationTraits<DerivedClient>>
   ListViewsPaginator(const Model::ListViewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListViewsRequest, Pagination::ListViewsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -139,6 +150,7 @@ class ResourceExplorer2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DerivedClient>> SearchPaginator(
       const Model::SearchRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

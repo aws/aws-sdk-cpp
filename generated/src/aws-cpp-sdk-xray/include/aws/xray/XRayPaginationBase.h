@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/xray/model/BatchGetTracesPaginationTraits.h>
 #include <aws/xray/model/GetGroupsPaginationTraits.h>
@@ -34,6 +35,7 @@ class XRayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetTracesRequest, Pagination::BatchGetTracesPaginationTraits<DerivedClient>>
   BatchGetTracesPaginator(const Model::BatchGetTracesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetTracesRequest,
                                              Pagination::BatchGetTracesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -44,6 +46,7 @@ class XRayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetGroupsRequest, Pagination::GetGroupsPaginationTraits<DerivedClient>>
   GetGroupsPaginator(const Model::GetGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetGroupsRequest, Pagination::GetGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -54,6 +57,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInsightEventsRequest,
                                     Pagination::GetInsightEventsPaginationTraits<DerivedClient>>
   GetInsightEventsPaginator(const Model::GetInsightEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInsightEventsRequest,
                                              Pagination::GetInsightEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -65,6 +69,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInsightSummariesRequest,
                                     Pagination::GetInsightSummariesPaginationTraits<DerivedClient>>
   GetInsightSummariesPaginator(const Model::GetInsightSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetInsightSummariesRequest,
                                              Pagination::GetInsightSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSamplingRulesRequest,
                                     Pagination::GetSamplingRulesPaginationTraits<DerivedClient>>
   GetSamplingRulesPaginator(const Model::GetSamplingRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSamplingRulesRequest,
                                              Pagination::GetSamplingRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -87,6 +93,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSamplingStatisticSummariesRequest,
                                     Pagination::GetSamplingStatisticSummariesPaginationTraits<DerivedClient>>
   GetSamplingStatisticSummariesPaginator(const Model::GetSamplingStatisticSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSamplingStatisticSummariesRequest,
                                              Pagination::GetSamplingStatisticSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetServiceGraphRequest,
                                     Pagination::GetServiceGraphPaginationTraits<DerivedClient>>
   GetServiceGraphPaginator(const Model::GetServiceGraphRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetServiceGraphRequest,
                                              Pagination::GetServiceGraphPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -109,6 +117,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTimeSeriesServiceStatisticsRequest,
                                     Pagination::GetTimeSeriesServiceStatisticsPaginationTraits<DerivedClient>>
   GetTimeSeriesServiceStatisticsPaginator(const Model::GetTimeSeriesServiceStatisticsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTimeSeriesServiceStatisticsRequest,
                                              Pagination::GetTimeSeriesServiceStatisticsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -119,6 +128,7 @@ class XRayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTraceGraphRequest, Pagination::GetTraceGraphPaginationTraits<DerivedClient>>
   GetTraceGraphPaginator(const Model::GetTraceGraphRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTraceGraphRequest,
                                              Pagination::GetTraceGraphPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -130,6 +140,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTraceSummariesRequest,
                                     Pagination::GetTraceSummariesPaginationTraits<DerivedClient>>
   GetTraceSummariesPaginator(const Model::GetTraceSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTraceSummariesRequest,
                                              Pagination::GetTraceSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -141,6 +152,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePoliciesRequest,
                                     Pagination::ListResourcePoliciesPaginationTraits<DerivedClient>>
   ListResourcePoliciesPaginator(const Model::ListResourcePoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePoliciesRequest,
                                              Pagination::ListResourcePoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -152,6 +164,7 @@ class XRayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

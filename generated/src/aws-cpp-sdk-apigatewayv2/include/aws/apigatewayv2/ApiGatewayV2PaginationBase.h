@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/apigatewayv2/model/ListRoutingRulesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class ApiGatewayV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutingRulesRequest,
                                     Pagination::ListRoutingRulesPaginationTraits<DerivedClient>>
   ListRoutingRulesPaginator(const Model::ListRoutingRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutingRulesRequest,
                                              Pagination::ListRoutingRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

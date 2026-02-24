@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/security-ir/model/ListCaseEditsPaginationTraits.h>
 #include <aws/security-ir/model/ListCasesPaginationTraits.h>
@@ -27,6 +28,7 @@ class SecurityIRPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCaseEditsRequest, Pagination::ListCaseEditsPaginationTraits<DerivedClient>>
   ListCaseEditsPaginator(const Model::ListCaseEditsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCaseEditsRequest,
                                              Pagination::ListCaseEditsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -37,6 +39,7 @@ class SecurityIRPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCasesRequest, Pagination::ListCasesPaginationTraits<DerivedClient>>
   ListCasesPaginator(const Model::ListCasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCasesRequest, Pagination::ListCasesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -46,6 +49,7 @@ class SecurityIRPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommentsRequest, Pagination::ListCommentsPaginationTraits<DerivedClient>>
   ListCommentsPaginator(const Model::ListCommentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommentsRequest,
                                              Pagination::ListCommentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -57,6 +61,7 @@ class SecurityIRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvestigationsRequest,
                                     Pagination::ListInvestigationsPaginationTraits<DerivedClient>>
   ListInvestigationsPaginator(const Model::ListInvestigationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvestigationsRequest,
                                              Pagination::ListInvestigationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -68,6 +73,7 @@ class SecurityIRPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembershipsRequest,
                                     Pagination::ListMembershipsPaginationTraits<DerivedClient>>
   ListMembershipsPaginator(const Model::ListMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembershipsRequest,
                                              Pagination::ListMembershipsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/emr-containers/model/ListJobRunsPaginationTraits.h>
 #include <aws/emr-containers/model/ListJobTemplatesPaginationTraits.h>
@@ -27,6 +28,7 @@ class EMRContainersPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobRunsRequest, Pagination::ListJobRunsPaginationTraits<DerivedClient>>
   ListJobRunsPaginator(const Model::ListJobRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobRunsRequest,
                                              Pagination::ListJobRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -38,6 +40,7 @@ class EMRContainersPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobTemplatesRequest,
                                     Pagination::ListJobTemplatesPaginationTraits<DerivedClient>>
   ListJobTemplatesPaginator(const Model::ListJobTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobTemplatesRequest,
                                              Pagination::ListJobTemplatesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -49,6 +52,7 @@ class EMRContainersPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedEndpointsRequest,
                                     Pagination::ListManagedEndpointsPaginationTraits<DerivedClient>>
   ListManagedEndpointsPaginator(const Model::ListManagedEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedEndpointsRequest,
                                              Pagination::ListManagedEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class EMRContainersPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityConfigurationsRequest,
                                     Pagination::ListSecurityConfigurationsPaginationTraits<DerivedClient>>
   ListSecurityConfigurationsPaginator(const Model::ListSecurityConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityConfigurationsRequest,
                                              Pagination::ListSecurityConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +76,7 @@ class EMRContainersPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualClustersRequest,
                                     Pagination::ListVirtualClustersPaginationTraits<DerivedClient>>
   ListVirtualClustersPaginator(const Model::ListVirtualClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualClustersRequest,
                                              Pagination::ListVirtualClustersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

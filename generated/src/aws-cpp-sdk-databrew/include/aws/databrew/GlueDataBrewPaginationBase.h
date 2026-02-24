@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/databrew/model/ListDatasetsPaginationTraits.h>
 #include <aws/databrew/model/ListJobRunsPaginationTraits.h>
@@ -30,6 +31,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest, Pagination::ListDatasetsPaginationTraits<DerivedClient>>
   ListDatasetsPaginator(const Model::ListDatasetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest,
                                              Pagination::ListDatasetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -40,6 +42,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobRunsRequest, Pagination::ListJobRunsPaginationTraits<DerivedClient>>
   ListJobRunsPaginator(const Model::ListJobRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobRunsRequest,
                                              Pagination::ListJobRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -50,6 +53,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -59,6 +63,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<DerivedClient>>
   ListProjectsPaginator(const Model::ListProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest,
                                              Pagination::ListProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -69,6 +74,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecipesRequest, Pagination::ListRecipesPaginationTraits<DerivedClient>>
   ListRecipesPaginator(const Model::ListRecipesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecipesRequest,
                                              Pagination::ListRecipesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -80,6 +86,7 @@ class GlueDataBrewPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecipeVersionsRequest,
                                     Pagination::ListRecipeVersionsPaginationTraits<DerivedClient>>
   ListRecipeVersionsPaginator(const Model::ListRecipeVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecipeVersionsRequest,
                                              Pagination::ListRecipeVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -90,6 +97,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRulesetsRequest, Pagination::ListRulesetsPaginationTraits<DerivedClient>>
   ListRulesetsPaginator(const Model::ListRulesetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRulesetsRequest,
                                              Pagination::ListRulesetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -100,6 +108,7 @@ class GlueDataBrewPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchedulesRequest, Pagination::ListSchedulesPaginationTraits<DerivedClient>>
   ListSchedulesPaginator(const Model::ListSchedulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchedulesRequest,
                                              Pagination::ListSchedulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/health/model/DescribeAffectedAccountsForOrganizationPaginationTraits.h>
 #include <aws/health/model/DescribeAffectedEntitiesForOrganizationPaginationTraits.h>
@@ -30,6 +31,7 @@ class HealthPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAffectedAccountsForOrganizationRequest,
                                     Pagination::DescribeAffectedAccountsForOrganizationPaginationTraits<DerivedClient>>
   DescribeAffectedAccountsForOrganizationPaginator(const Model::DescribeAffectedAccountsForOrganizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAffectedAccountsForOrganizationRequest,
                                              Pagination::DescribeAffectedAccountsForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class HealthPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAffectedEntitiesRequest,
                                     Pagination::DescribeAffectedEntitiesPaginationTraits<DerivedClient>>
   DescribeAffectedEntitiesPaginator(const Model::DescribeAffectedEntitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAffectedEntitiesRequest,
                                              Pagination::DescribeAffectedEntitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -52,6 +55,7 @@ class HealthPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAffectedEntitiesForOrganizationRequest,
                                     Pagination::DescribeAffectedEntitiesForOrganizationPaginationTraits<DerivedClient>>
   DescribeAffectedEntitiesForOrganizationPaginator(const Model::DescribeAffectedEntitiesForOrganizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAffectedEntitiesForOrganizationRequest,
                                              Pagination::DescribeAffectedEntitiesForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -63,6 +67,7 @@ class HealthPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventAggregatesRequest,
                                     Pagination::DescribeEventAggregatesPaginationTraits<DerivedClient>>
   DescribeEventAggregatesPaginator(const Model::DescribeEventAggregatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventAggregatesRequest,
                                              Pagination::DescribeEventAggregatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class HealthPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest, Pagination::DescribeEventsPaginationTraits<DerivedClient>>
   DescribeEventsPaginator(const Model::DescribeEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest,
                                              Pagination::DescribeEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -84,6 +90,7 @@ class HealthPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsForOrganizationRequest,
                                     Pagination::DescribeEventsForOrganizationPaginationTraits<DerivedClient>>
   DescribeEventsForOrganizationPaginator(const Model::DescribeEventsForOrganizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsForOrganizationRequest,
                                              Pagination::DescribeEventsForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +102,7 @@ class HealthPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventTypesRequest,
                                     Pagination::DescribeEventTypesPaginationTraits<DerivedClient>>
   DescribeEventTypesPaginator(const Model::DescribeEventTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventTypesRequest,
                                              Pagination::DescribeEventTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

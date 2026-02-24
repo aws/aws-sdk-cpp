@@ -58,7 +58,8 @@ const std::pair<UserAgentFeature, const char*> BUSINESS_METRIC_MAPPING[] = {
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA512, "AE"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH64, "AG"},
     {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH3, "AF"},
-    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH128, "AH"}
+    {UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_XXHASH128, "AH"},
+    {UserAgentFeature::PAGINATOR, "C"},
 };
 
 const std::pair<const char*, UserAgentFeature> RETRY_FEATURE_MAPPING[] = {
