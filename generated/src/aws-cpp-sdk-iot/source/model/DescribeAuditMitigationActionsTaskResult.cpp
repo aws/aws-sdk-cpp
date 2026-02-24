@@ -50,14 +50,14 @@ DescribeAuditMitigationActionsTaskResult& DescribeAuditMitigationActionsTaskResu
   if (jsonValue.ValueExists("auditCheckToActionsMapping")) {
     Aws::Map<Aws::String, JsonView> auditCheckToActionsMappingJsonMap = jsonValue.GetObject("auditCheckToActionsMapping").GetAllObjects();
     for (auto& auditCheckToActionsMappingItem : auditCheckToActionsMappingJsonMap) {
-      Aws::Utils::Array<JsonView> mitigationActionNameListJsonList = auditCheckToActionsMappingItem.second.AsArray();
-      Aws::Vector<Aws::String> mitigationActionNameListList;
-      mitigationActionNameListList.reserve((size_t)mitigationActionNameListJsonList.GetLength());
-      for (unsigned mitigationActionNameListIndex = 0; mitigationActionNameListIndex < mitigationActionNameListJsonList.GetLength();
-           ++mitigationActionNameListIndex) {
-        mitigationActionNameListList.push_back(mitigationActionNameListJsonList[mitigationActionNameListIndex].AsString());
+      Aws::Utils::Array<JsonView> mitigationActionNameList2JsonList = auditCheckToActionsMappingItem.second.AsArray();
+      Aws::Vector<Aws::String> mitigationActionNameList2List;
+      mitigationActionNameList2List.reserve((size_t)mitigationActionNameList2JsonList.GetLength());
+      for (unsigned mitigationActionNameList2Index = 0; mitigationActionNameList2Index < mitigationActionNameList2JsonList.GetLength();
+           ++mitigationActionNameList2Index) {
+        mitigationActionNameList2List.push_back(mitigationActionNameList2JsonList[mitigationActionNameList2Index].AsString());
       }
-      m_auditCheckToActionsMapping[auditCheckToActionsMappingItem.first] = std::move(mitigationActionNameListList);
+      m_auditCheckToActionsMapping[auditCheckToActionsMappingItem.first] = std::move(mitigationActionNameList2List);
     }
     m_auditCheckToActionsMappingHasBeenSet = true;
   }

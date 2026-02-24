@@ -21,13 +21,13 @@ SelfManagedEventSource& SelfManagedEventSource::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Endpoints")) {
     Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
     for (auto& endpointsItem : endpointsJsonMap) {
-      Aws::Utils::Array<JsonView> endpointListsJsonList = endpointsItem.second.AsArray();
-      Aws::Vector<Aws::String> endpointListsList;
-      endpointListsList.reserve((size_t)endpointListsJsonList.GetLength());
-      for (unsigned endpointListsIndex = 0; endpointListsIndex < endpointListsJsonList.GetLength(); ++endpointListsIndex) {
-        endpointListsList.push_back(endpointListsJsonList[endpointListsIndex].AsString());
+      Aws::Utils::Array<JsonView> endpointLists2JsonList = endpointsItem.second.AsArray();
+      Aws::Vector<Aws::String> endpointLists2List;
+      endpointLists2List.reserve((size_t)endpointLists2JsonList.GetLength());
+      for (unsigned endpointLists2Index = 0; endpointLists2Index < endpointLists2JsonList.GetLength(); ++endpointLists2Index) {
+        endpointLists2List.push_back(endpointLists2JsonList[endpointLists2Index].AsString());
       }
-      m_endpoints[EndPointTypeMapper::GetEndPointTypeForName(endpointsItem.first)] = std::move(endpointListsList);
+      m_endpoints[EndPointTypeMapper::GetEndPointTypeForName(endpointsItem.first)] = std::move(endpointLists2List);
     }
     m_endpointsHasBeenSet = true;
   }

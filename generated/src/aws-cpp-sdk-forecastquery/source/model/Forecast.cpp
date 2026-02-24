@@ -21,13 +21,13 @@ Forecast& Forecast::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Predictions")) {
     Aws::Map<Aws::String, JsonView> predictionsJsonMap = jsonValue.GetObject("Predictions").GetAllObjects();
     for (auto& predictionsItem : predictionsJsonMap) {
-      Aws::Utils::Array<JsonView> timeSeriesJsonList = predictionsItem.second.AsArray();
-      Aws::Vector<DataPoint> timeSeriesList;
-      timeSeriesList.reserve((size_t)timeSeriesJsonList.GetLength());
-      for (unsigned timeSeriesIndex = 0; timeSeriesIndex < timeSeriesJsonList.GetLength(); ++timeSeriesIndex) {
-        timeSeriesList.push_back(timeSeriesJsonList[timeSeriesIndex].AsObject());
+      Aws::Utils::Array<JsonView> timeSeries2JsonList = predictionsItem.second.AsArray();
+      Aws::Vector<DataPoint> timeSeries2List;
+      timeSeries2List.reserve((size_t)timeSeries2JsonList.GetLength());
+      for (unsigned timeSeries2Index = 0; timeSeries2Index < timeSeries2JsonList.GetLength(); ++timeSeries2Index) {
+        timeSeries2List.push_back(timeSeries2JsonList[timeSeries2Index].AsObject());
       }
-      m_predictions[predictionsItem.first] = std::move(timeSeriesList);
+      m_predictions[predictionsItem.first] = std::move(timeSeries2List);
     }
     m_predictionsHasBeenSet = true;
   }

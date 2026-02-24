@@ -37,13 +37,13 @@ Webhook& Webhook::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("filterGroups")) {
     Aws::Utils::Array<JsonView> filterGroupsJsonList = jsonValue.GetArray("filterGroups");
     for (unsigned filterGroupsIndex = 0; filterGroupsIndex < filterGroupsJsonList.GetLength(); ++filterGroupsIndex) {
-      Aws::Utils::Array<JsonView> filterGroupJsonList = filterGroupsJsonList[filterGroupsIndex].AsArray();
-      Aws::Vector<WebhookFilter> filterGroupList;
-      filterGroupList.reserve((size_t)filterGroupJsonList.GetLength());
-      for (unsigned filterGroupIndex = 0; filterGroupIndex < filterGroupJsonList.GetLength(); ++filterGroupIndex) {
-        filterGroupList.push_back(filterGroupJsonList[filterGroupIndex].AsObject());
+      Aws::Utils::Array<JsonView> filterGroup2JsonList = filterGroupsJsonList[filterGroupsIndex].AsArray();
+      Aws::Vector<WebhookFilter> filterGroup2List;
+      filterGroup2List.reserve((size_t)filterGroup2JsonList.GetLength());
+      for (unsigned filterGroup2Index = 0; filterGroup2Index < filterGroup2JsonList.GetLength(); ++filterGroup2Index) {
+        filterGroup2List.push_back(filterGroup2JsonList[filterGroup2Index].AsObject());
       }
-      m_filterGroups.push_back(std::move(filterGroupList));
+      m_filterGroups.push_back(std::move(filterGroup2List));
     }
     m_filterGroupsHasBeenSet = true;
   }

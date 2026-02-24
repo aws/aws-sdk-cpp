@@ -49,12 +49,12 @@ EntityFilter& EntityFilter::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      Aws::Map<Aws::String, JsonView> tagSetJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> tagSetMap;
-      for (auto& tagSetItem : tagSetJsonMap) {
-        tagSetMap[tagSetItem.first] = tagSetItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> tagSet2JsonMap = tagsJsonList[tagsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> tagSet2Map;
+      for (auto& tagSet2Item : tagSet2JsonMap) {
+        tagSet2Map[tagSet2Item.first] = tagSet2Item.second.AsString();
       }
-      m_tags.push_back(std::move(tagSetMap));
+      m_tags.push_back(std::move(tagSet2Map));
     }
     m_tagsHasBeenSet = true;
   }

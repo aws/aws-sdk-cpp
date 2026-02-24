@@ -21,13 +21,14 @@ SageMakerRunConfigurationInput& SageMakerRunConfigurationInput::operator=(JsonVi
   if (jsonValue.ValueExists("trackingAssets")) {
     Aws::Map<Aws::String, JsonView> trackingAssetsJsonMap = jsonValue.GetObject("trackingAssets").GetAllObjects();
     for (auto& trackingAssetsItem : trackingAssetsJsonMap) {
-      Aws::Utils::Array<JsonView> trackingAssetArnsJsonList = trackingAssetsItem.second.AsArray();
-      Aws::Vector<Aws::String> trackingAssetArnsList;
-      trackingAssetArnsList.reserve((size_t)trackingAssetArnsJsonList.GetLength());
-      for (unsigned trackingAssetArnsIndex = 0; trackingAssetArnsIndex < trackingAssetArnsJsonList.GetLength(); ++trackingAssetArnsIndex) {
-        trackingAssetArnsList.push_back(trackingAssetArnsJsonList[trackingAssetArnsIndex].AsString());
+      Aws::Utils::Array<JsonView> trackingAssetArns2JsonList = trackingAssetsItem.second.AsArray();
+      Aws::Vector<Aws::String> trackingAssetArns2List;
+      trackingAssetArns2List.reserve((size_t)trackingAssetArns2JsonList.GetLength());
+      for (unsigned trackingAssetArns2Index = 0; trackingAssetArns2Index < trackingAssetArns2JsonList.GetLength();
+           ++trackingAssetArns2Index) {
+        trackingAssetArns2List.push_back(trackingAssetArns2JsonList[trackingAssetArns2Index].AsString());
       }
-      m_trackingAssets[trackingAssetsItem.first] = std::move(trackingAssetArnsList);
+      m_trackingAssets[trackingAssetsItem.first] = std::move(trackingAssetArns2List);
     }
     m_trackingAssetsHasBeenSet = true;
   }

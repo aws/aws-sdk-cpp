@@ -1362,8 +1362,8 @@ class AWS_DYNAMODB_API DynamoDBClient
   }
 
   /**
-   * <p>Lists completed exports within the past 90 days.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Lists completed exports within the past 90 days, in reverse alphanumeric
+   * order of <code>ExportArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">AWS
    * API Reference</a></p>
    */
@@ -1530,7 +1530,11 @@ class AWS_DYNAMODB_API DynamoDBClient
    * function with the name of the attribute being used as the partition key for the
    * table. Since every record must contain that attribute, the
    * <code>attribute_not_exists</code> function will only succeed if no matching item
-   * exists.</p>  <p>For more information about <code>PutItem</code>, see <a
+   * exists.</p>   <p>To determine whether <code>PutItem</code>
+   * overwrote an existing item, use <code>ReturnValues</code> set to
+   * <code>ALL_OLD</code>. If the response includes the <code>Attributes</code>
+   * element, an existing item was overwritten.</p>  <p>For more information
+   * about <code>PutItem</code>, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
    * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a

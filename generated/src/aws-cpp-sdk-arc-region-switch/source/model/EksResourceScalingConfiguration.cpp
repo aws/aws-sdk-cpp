@@ -29,17 +29,18 @@ EksResourceScalingConfiguration& EksResourceScalingConfiguration::operator=(Json
   if (jsonValue.ValueExists("scalingResources")) {
     Aws::Utils::Array<JsonView> scalingResourcesJsonList = jsonValue.GetArray("scalingResources");
     for (unsigned scalingResourcesIndex = 0; scalingResourcesIndex < scalingResourcesJsonList.GetLength(); ++scalingResourcesIndex) {
-      Aws::Map<Aws::String, JsonView> kubernetesScalingApplicationJsonMap = scalingResourcesJsonList[scalingResourcesIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::Map<Aws::String, KubernetesScalingResource>> kubernetesScalingApplicationMap;
-      for (auto& kubernetesScalingApplicationItem : kubernetesScalingApplicationJsonMap) {
-        Aws::Map<Aws::String, JsonView> regionalScalingResourceJsonMap = kubernetesScalingApplicationItem.second.GetAllObjects();
-        Aws::Map<Aws::String, KubernetesScalingResource> regionalScalingResourceMap;
-        for (auto& regionalScalingResourceItem : regionalScalingResourceJsonMap) {
-          regionalScalingResourceMap[regionalScalingResourceItem.first] = regionalScalingResourceItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> kubernetesScalingApplication2JsonMap =
+          scalingResourcesJsonList[scalingResourcesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::Map<Aws::String, KubernetesScalingResource>> kubernetesScalingApplication2Map;
+      for (auto& kubernetesScalingApplication2Item : kubernetesScalingApplication2JsonMap) {
+        Aws::Map<Aws::String, JsonView> regionalScalingResource3JsonMap = kubernetesScalingApplication2Item.second.GetAllObjects();
+        Aws::Map<Aws::String, KubernetesScalingResource> regionalScalingResource3Map;
+        for (auto& regionalScalingResource3Item : regionalScalingResource3JsonMap) {
+          regionalScalingResource3Map[regionalScalingResource3Item.first] = regionalScalingResource3Item.second.AsObject();
         }
-        kubernetesScalingApplicationMap[kubernetesScalingApplicationItem.first] = std::move(regionalScalingResourceMap);
+        kubernetesScalingApplication2Map[kubernetesScalingApplication2Item.first] = std::move(regionalScalingResource3Map);
       }
-      m_scalingResources.push_back(std::move(kubernetesScalingApplicationMap));
+      m_scalingResources.push_back(std::move(kubernetesScalingApplication2Map));
     }
     m_scalingResourcesHasBeenSet = true;
   }

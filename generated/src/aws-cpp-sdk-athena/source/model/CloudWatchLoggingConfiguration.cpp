@@ -33,13 +33,14 @@ CloudWatchLoggingConfiguration& CloudWatchLoggingConfiguration::operator=(JsonVi
   if (jsonValue.ValueExists("LogTypes")) {
     Aws::Map<Aws::String, JsonView> logTypesJsonMap = jsonValue.GetObject("LogTypes").GetAllObjects();
     for (auto& logTypesItem : logTypesJsonMap) {
-      Aws::Utils::Array<JsonView> logTypeValuesListJsonList = logTypesItem.second.AsArray();
-      Aws::Vector<Aws::String> logTypeValuesListList;
-      logTypeValuesListList.reserve((size_t)logTypeValuesListJsonList.GetLength());
-      for (unsigned logTypeValuesListIndex = 0; logTypeValuesListIndex < logTypeValuesListJsonList.GetLength(); ++logTypeValuesListIndex) {
-        logTypeValuesListList.push_back(logTypeValuesListJsonList[logTypeValuesListIndex].AsString());
+      Aws::Utils::Array<JsonView> logTypeValuesList2JsonList = logTypesItem.second.AsArray();
+      Aws::Vector<Aws::String> logTypeValuesList2List;
+      logTypeValuesList2List.reserve((size_t)logTypeValuesList2JsonList.GetLength());
+      for (unsigned logTypeValuesList2Index = 0; logTypeValuesList2Index < logTypeValuesList2JsonList.GetLength();
+           ++logTypeValuesList2Index) {
+        logTypeValuesList2List.push_back(logTypeValuesList2JsonList[logTypeValuesList2Index].AsString());
       }
-      m_logTypes[logTypesItem.first] = std::move(logTypeValuesListList);
+      m_logTypes[logTypesItem.first] = std::move(logTypeValuesList2List);
     }
     m_logTypesHasBeenSet = true;
   }

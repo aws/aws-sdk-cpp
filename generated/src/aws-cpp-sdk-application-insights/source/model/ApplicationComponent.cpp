@@ -45,12 +45,12 @@ ApplicationComponent& ApplicationComponent::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("DetectedWorkload")) {
     Aws::Map<Aws::String, JsonView> detectedWorkloadJsonMap = jsonValue.GetObject("DetectedWorkload").GetAllObjects();
     for (auto& detectedWorkloadItem : detectedWorkloadJsonMap) {
-      Aws::Map<Aws::String, JsonView> workloadMetaDataJsonMap = detectedWorkloadItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> workloadMetaDataMap;
-      for (auto& workloadMetaDataItem : workloadMetaDataJsonMap) {
-        workloadMetaDataMap[workloadMetaDataItem.first] = workloadMetaDataItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> workloadMetaData2JsonMap = detectedWorkloadItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> workloadMetaData2Map;
+      for (auto& workloadMetaData2Item : workloadMetaData2JsonMap) {
+        workloadMetaData2Map[workloadMetaData2Item.first] = workloadMetaData2Item.second.AsString();
       }
-      m_detectedWorkload[TierMapper::GetTierForName(detectedWorkloadItem.first)] = std::move(workloadMetaDataMap);
+      m_detectedWorkload[TierMapper::GetTierForName(detectedWorkloadItem.first)] = std::move(workloadMetaData2Map);
     }
     m_detectedWorkloadHasBeenSet = true;
   }

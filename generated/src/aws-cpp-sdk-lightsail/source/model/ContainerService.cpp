@@ -88,16 +88,16 @@ ContainerService& ContainerService::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("publicDomainNames")) {
     Aws::Map<Aws::String, JsonView> publicDomainNamesJsonMap = jsonValue.GetObject("publicDomainNames").GetAllObjects();
     for (auto& publicDomainNamesItem : publicDomainNamesJsonMap) {
-      Aws::Utils::Array<JsonView> containerServicePublicDomainsListJsonList = publicDomainNamesItem.second.AsArray();
-      Aws::Vector<Aws::String> containerServicePublicDomainsListList;
-      containerServicePublicDomainsListList.reserve((size_t)containerServicePublicDomainsListJsonList.GetLength());
-      for (unsigned containerServicePublicDomainsListIndex = 0;
-           containerServicePublicDomainsListIndex < containerServicePublicDomainsListJsonList.GetLength();
-           ++containerServicePublicDomainsListIndex) {
-        containerServicePublicDomainsListList.push_back(
-            containerServicePublicDomainsListJsonList[containerServicePublicDomainsListIndex].AsString());
+      Aws::Utils::Array<JsonView> containerServicePublicDomainsList2JsonList = publicDomainNamesItem.second.AsArray();
+      Aws::Vector<Aws::String> containerServicePublicDomainsList2List;
+      containerServicePublicDomainsList2List.reserve((size_t)containerServicePublicDomainsList2JsonList.GetLength());
+      for (unsigned containerServicePublicDomainsList2Index = 0;
+           containerServicePublicDomainsList2Index < containerServicePublicDomainsList2JsonList.GetLength();
+           ++containerServicePublicDomainsList2Index) {
+        containerServicePublicDomainsList2List.push_back(
+            containerServicePublicDomainsList2JsonList[containerServicePublicDomainsList2Index].AsString());
       }
-      m_publicDomainNames[publicDomainNamesItem.first] = std::move(containerServicePublicDomainsListList);
+      m_publicDomainNames[publicDomainNamesItem.first] = std::move(containerServicePublicDomainsList2List);
     }
     m_publicDomainNamesHasBeenSet = true;
   }

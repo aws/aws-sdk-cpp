@@ -21,14 +21,14 @@ MetricsDataSource& MetricsDataSource::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Dimensions")) {
     Aws::Map<Aws::String, JsonView> dimensionsJsonMap = jsonValue.GetObject("Dimensions").GetAllObjects();
     for (auto& dimensionsItem : dimensionsJsonMap) {
-      Aws::Utils::Array<JsonView> exportDimensionValueJsonList = dimensionsItem.second.AsArray();
-      Aws::Vector<Aws::String> exportDimensionValueList;
-      exportDimensionValueList.reserve((size_t)exportDimensionValueJsonList.GetLength());
-      for (unsigned exportDimensionValueIndex = 0; exportDimensionValueIndex < exportDimensionValueJsonList.GetLength();
-           ++exportDimensionValueIndex) {
-        exportDimensionValueList.push_back(exportDimensionValueJsonList[exportDimensionValueIndex].AsString());
+      Aws::Utils::Array<JsonView> exportDimensionValue2JsonList = dimensionsItem.second.AsArray();
+      Aws::Vector<Aws::String> exportDimensionValue2List;
+      exportDimensionValue2List.reserve((size_t)exportDimensionValue2JsonList.GetLength());
+      for (unsigned exportDimensionValue2Index = 0; exportDimensionValue2Index < exportDimensionValue2JsonList.GetLength();
+           ++exportDimensionValue2Index) {
+        exportDimensionValue2List.push_back(exportDimensionValue2JsonList[exportDimensionValue2Index].AsString());
       }
-      m_dimensions[MetricDimensionNameMapper::GetMetricDimensionNameForName(dimensionsItem.first)] = std::move(exportDimensionValueList);
+      m_dimensions[MetricDimensionNameMapper::GetMetricDimensionNameForName(dimensionsItem.first)] = std::move(exportDimensionValue2List);
     }
     m_dimensionsHasBeenSet = true;
   }

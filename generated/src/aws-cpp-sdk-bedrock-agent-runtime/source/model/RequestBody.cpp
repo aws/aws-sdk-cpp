@@ -21,13 +21,13 @@ RequestBody& RequestBody::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("content")) {
     Aws::Map<Aws::String, JsonView> contentJsonMap = jsonValue.GetObject("content").GetAllObjects();
     for (auto& contentItem : contentJsonMap) {
-      Aws::Utils::Array<JsonView> parametersJsonList = contentItem.second.AsArray();
-      Aws::Vector<Parameter> parametersList;
-      parametersList.reserve((size_t)parametersJsonList.GetLength());
-      for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
-        parametersList.push_back(parametersJsonList[parametersIndex].AsObject());
+      Aws::Utils::Array<JsonView> parameters2JsonList = contentItem.second.AsArray();
+      Aws::Vector<Parameter> parameters2List;
+      parameters2List.reserve((size_t)parameters2JsonList.GetLength());
+      for (unsigned parameters2Index = 0; parameters2Index < parameters2JsonList.GetLength(); ++parameters2Index) {
+        parameters2List.push_back(parameters2JsonList[parameters2Index].AsObject());
       }
-      m_content[contentItem.first] = std::move(parametersList);
+      m_content[contentItem.first] = std::move(parameters2List);
     }
     m_contentHasBeenSet = true;
   }

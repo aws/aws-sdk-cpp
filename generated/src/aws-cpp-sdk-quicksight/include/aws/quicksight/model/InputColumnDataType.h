@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QuickSight {
 namespace Model {
-enum class InputColumnDataType { NOT_SET, STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON };
+enum class InputColumnDataType { NOT_SET, STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON, SEMISTRUCT };
 
 namespace InputColumnDataTypeMapper {
 AWS_QUICKSIGHT_API InputColumnDataType GetInputColumnDataTypeForName(const Aws::String& name);

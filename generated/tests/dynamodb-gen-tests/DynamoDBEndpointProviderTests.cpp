@@ -3267,6 +3267,12 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 363*/
+  {"{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.eu-west-1.api.aws"), EpParam("Region", "eu-west-1")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
+  },
+  /*TEST CASE 364*/
   {"{Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}", // documentation
     {EpParam("Endpoint", "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -3275,21 +3281,18 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 364*/
-  {"{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.eu-west-1.api.aws"), EpParam("Region", "eu-west-1")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
-  },
   /*TEST CASE 365*/
-  {"{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-west-2.api.aws"), EpParam("Region", "us-west-2")}, // params
+  {"{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}", // documentation
+    {EpParam("Endpoint", "https://111111111111.ddb.us-east-1.api.aws"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 366*/
-  {"{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn"), EpParam("Region", "cn-north-1")}, // params
+  {"{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
@@ -3300,19 +3303,16 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 368*/
-  {"{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws"), EpParam("Region", "us-east-1")}, // params
+  {"{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn"), EpParam("Region", "cn-north-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 369*/
-  {"{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}", // documentation
-    {EpParam("Endpoint", "https://111111111111.ddb.us-east-1.api.aws"), EpParam("Region", "us-east-1")}, // params
+  {"{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-west-2.api.aws"), EpParam("Region", "us-west-2")}, // params
     {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   }
   };
   return test_cases;

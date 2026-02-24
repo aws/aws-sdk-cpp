@@ -44,13 +44,13 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("authorization")) {
     Aws::Map<Aws::String, JsonView> authorizationJsonMap = jsonValue.GetObject("authorization").GetAllObjects();
     for (auto& authorizationItem : authorizationJsonMap) {
-      Aws::Utils::Array<JsonView> listOfStringJsonList = authorizationItem.second.AsArray();
-      Aws::Vector<Aws::String> listOfStringList;
-      listOfStringList.reserve((size_t)listOfStringJsonList.GetLength());
-      for (unsigned listOfStringIndex = 0; listOfStringIndex < listOfStringJsonList.GetLength(); ++listOfStringIndex) {
-        listOfStringList.push_back(listOfStringJsonList[listOfStringIndex].AsString());
+      Aws::Utils::Array<JsonView> listOfString2JsonList = authorizationItem.second.AsArray();
+      Aws::Vector<Aws::String> listOfString2List;
+      listOfString2List.reserve((size_t)listOfString2JsonList.GetLength());
+      for (unsigned listOfString2Index = 0; listOfString2Index < listOfString2JsonList.GetLength(); ++listOfString2Index) {
+        listOfString2List.push_back(listOfString2JsonList[listOfString2Index].AsString());
       }
-      m_authorization[authorizationItem.first] = std::move(listOfStringList);
+      m_authorization[authorizationItem.first] = std::move(listOfString2List);
     }
     m_authorizationHasBeenSet = true;
   }

@@ -24,12 +24,12 @@ GetContainerAPIMetadataResult& GetContainerAPIMetadataResult::operator=(const Aw
   if (jsonValue.ValueExists("metadata")) {
     Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
     for (unsigned metadataIndex = 0; metadataIndex < metadataJsonList.GetLength(); ++metadataIndex) {
-      Aws::Map<Aws::String, JsonView> containerServiceMetadataEntryJsonMap = metadataJsonList[metadataIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> containerServiceMetadataEntryMap;
-      for (auto& containerServiceMetadataEntryItem : containerServiceMetadataEntryJsonMap) {
-        containerServiceMetadataEntryMap[containerServiceMetadataEntryItem.first] = containerServiceMetadataEntryItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> containerServiceMetadataEntry2JsonMap = metadataJsonList[metadataIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> containerServiceMetadataEntry2Map;
+      for (auto& containerServiceMetadataEntry2Item : containerServiceMetadataEntry2JsonMap) {
+        containerServiceMetadataEntry2Map[containerServiceMetadataEntry2Item.first] = containerServiceMetadataEntry2Item.second.AsString();
       }
-      m_metadata.push_back(std::move(containerServiceMetadataEntryMap));
+      m_metadata.push_back(std::move(containerServiceMetadataEntry2Map));
     }
     m_metadataHasBeenSet = true;
   }
