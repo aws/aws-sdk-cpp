@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
@@ -269,6 +270,8 @@ class CreateSlotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_slotId;
 
@@ -297,6 +300,7 @@ class CreateSlotResult {
   SubSlotSetting m_subSlotSetting;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_slotIdHasBeenSet = false;
   bool m_slotNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

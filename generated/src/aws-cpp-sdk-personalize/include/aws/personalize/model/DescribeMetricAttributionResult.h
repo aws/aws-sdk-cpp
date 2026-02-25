@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/MetricAttribution.h>
@@ -58,10 +59,13 @@ class DescribeMetricAttributionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MetricAttribution m_metricAttribution;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricAttributionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

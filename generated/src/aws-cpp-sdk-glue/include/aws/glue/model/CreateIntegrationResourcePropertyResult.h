@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/SourceProcessingProperties.h>
@@ -112,6 +113,8 @@ class CreateIntegrationResourcePropertyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -122,6 +125,7 @@ class CreateIntegrationResourcePropertyResult {
   TargetProcessingProperties m_targetProcessingProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_resourcePropertyArnHasBeenSet = false;
   bool m_sourceProcessingPropertiesHasBeenSet = false;

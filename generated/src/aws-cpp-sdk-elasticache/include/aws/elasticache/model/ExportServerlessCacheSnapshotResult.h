@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/elasticache/model/ServerlessCacheSnapshot.h>
@@ -60,10 +61,13 @@ class ExportServerlessCacheSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ServerlessCacheSnapshot m_serverlessCacheSnapshot;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serverlessCacheSnapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

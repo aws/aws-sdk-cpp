@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
@@ -335,6 +336,8 @@ class GetFirewallRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FirewallRuleAction m_action{FirewallRuleAction::NOT_SET};
 
@@ -371,6 +374,7 @@ class GetFirewallRuleResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionHasBeenSet = false;
   bool m_blockOverrideDnsTypeHasBeenSet = false;
   bool m_blockOverrideDomainHasBeenSet = false;

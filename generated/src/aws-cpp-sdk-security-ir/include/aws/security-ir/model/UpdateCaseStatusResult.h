@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/security-ir/model/SelfManagedCaseStatus.h>
@@ -57,10 +58,13 @@ class UpdateCaseStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SelfManagedCaseStatus m_caseStatus{SelfManagedCaseStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_caseStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

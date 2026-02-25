@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/support/Support_EXPORTS.h>
 
@@ -83,12 +84,15 @@ class AddAttachmentsToSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_attachmentSetId;
 
   Aws::String m_expiryTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_attachmentSetIdHasBeenSet = false;
   bool m_expiryTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

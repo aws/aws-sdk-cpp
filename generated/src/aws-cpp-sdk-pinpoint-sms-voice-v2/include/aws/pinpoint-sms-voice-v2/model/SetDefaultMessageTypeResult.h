@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/MessageType.h>
@@ -90,6 +91,8 @@ class SetDefaultMessageTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configurationSetArn;
 
@@ -98,6 +101,7 @@ class SetDefaultMessageTypeResult {
   MessageType m_messageType{MessageType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationSetArnHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
   bool m_messageTypeHasBeenSet = false;

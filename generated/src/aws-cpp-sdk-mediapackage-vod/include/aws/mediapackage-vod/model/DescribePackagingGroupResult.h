@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
@@ -177,6 +178,8 @@ class DescribePackagingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_approximateAssetCount{0};
 
@@ -195,6 +198,7 @@ class DescribePackagingGroupResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_approximateAssetCountHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_authorizationHasBeenSet = false;

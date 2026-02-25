@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/evs/EVS_EXPORTS.h>
@@ -90,12 +91,15 @@ class GetVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<VcfVersionInfo> m_vcfVersions;
 
   Aws::Vector<InstanceTypeEsxVersionsInfo> m_instanceTypeEsxVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vcfVersionsHasBeenSet = false;
   bool m_instanceTypeEsxVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

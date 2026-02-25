@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/DBClusterSnapshot.h>
 #include <aws/docdb/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CreateDBClusterSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBClusterSnapshot m_dBClusterSnapshot;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterSnapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

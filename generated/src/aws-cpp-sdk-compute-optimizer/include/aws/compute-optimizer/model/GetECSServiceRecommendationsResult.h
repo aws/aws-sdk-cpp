@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendation.h>
 #include <aws/compute-optimizer/model/GetRecommendationError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -109,6 +110,8 @@ class GetECSServiceRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -117,6 +120,7 @@ class GetECSServiceRecommendationsResult {
   Aws::Vector<GetRecommendationError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_ecsServiceRecommendationsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

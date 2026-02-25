@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -91,6 +92,8 @@ class MoveCapacityReservationInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CapacityReservation m_sourceCapacityReservation;
 
@@ -99,6 +102,7 @@ class MoveCapacityReservationInstancesResponse {
   int m_instanceCount{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceCapacityReservationHasBeenSet = false;
   bool m_destinationCapacityReservationHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;

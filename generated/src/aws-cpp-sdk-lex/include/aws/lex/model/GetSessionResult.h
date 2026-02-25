@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -159,6 +160,8 @@ class GetSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<IntentSummary> m_recentIntentSummaryView;
 
@@ -171,6 +174,7 @@ class GetSessionResult {
   Aws::Vector<ActiveContext> m_activeContexts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recentIntentSummaryViewHasBeenSet = false;
   bool m_sessionAttributesHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;

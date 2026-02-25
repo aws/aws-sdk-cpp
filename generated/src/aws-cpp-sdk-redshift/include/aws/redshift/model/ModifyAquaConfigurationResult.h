@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/AquaConfiguration.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -59,10 +60,13 @@ class ModifyAquaConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AquaConfiguration m_aquaConfiguration;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aquaConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -7,6 +7,7 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/ServiceLevelObjectiveBudgetReport.h>
 #include <aws/application-signals/model/ServiceLevelObjectiveBudgetReportError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -111,6 +112,8 @@ class BatchGetServiceLevelObjectiveBudgetReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_timestamp{};
 
@@ -119,6 +122,7 @@ class BatchGetServiceLevelObjectiveBudgetReportResult {
   Aws::Vector<ServiceLevelObjectiveBudgetReportError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_timestampHasBeenSet = false;
   bool m_reportsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

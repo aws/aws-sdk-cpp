@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -76,12 +77,15 @@ class AssociateSubnetCidrBlockResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SubnetIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
 
   Aws::String m_subnetId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipv6CidrBlockAssociationHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

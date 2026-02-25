@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/IpamPools.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class ModifyIpPoolsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IpamPools m_ipamPools;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamPoolsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

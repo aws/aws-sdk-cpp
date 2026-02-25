@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -360,6 +361,8 @@ class DescribeTrainingPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_trainingPlanArn;
 
@@ -398,6 +401,7 @@ class DescribeTrainingPlanResult {
   Aws::Vector<ReservedCapacitySummary> m_reservedCapacitySummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trainingPlanArnHasBeenSet = false;
   bool m_trainingPlanNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 
@@ -77,12 +78,15 @@ class CreateLicenseServerEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityProviderArn;
 
   Aws::String m_licenseServerEndpointArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityProviderArnHasBeenSet = false;
   bool m_licenseServerEndpointArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

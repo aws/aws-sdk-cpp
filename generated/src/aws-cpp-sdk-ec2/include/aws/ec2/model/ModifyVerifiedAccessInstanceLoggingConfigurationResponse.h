@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VerifiedAccessInstanceLoggingConfiguration.h>
@@ -60,10 +61,13 @@ class ModifyVerifiedAccessInstanceLoggingConfigurationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VerifiedAccessInstanceLoggingConfiguration m_loggingConfiguration;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loggingConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

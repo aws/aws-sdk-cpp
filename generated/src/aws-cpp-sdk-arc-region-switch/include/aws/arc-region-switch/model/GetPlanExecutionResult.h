@@ -11,6 +11,7 @@
 #include <aws/arc-region-switch/model/GeneratedReport.h>
 #include <aws/arc-region-switch/model/Plan.h>
 #include <aws/arc-region-switch/model/StepState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -338,6 +339,8 @@ class GetPlanExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_planArn;
 
@@ -372,6 +375,7 @@ class GetPlanExecutionResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_planArnHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;
   bool m_versionHasBeenSet = false;

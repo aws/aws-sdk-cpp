@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
@@ -186,6 +187,8 @@ class GetFindingsFilterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FindingsFilterAction m_action{FindingsFilterAction::NOT_SET};
 
@@ -204,6 +207,7 @@ class GetFindingsFilterResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
@@ -104,6 +105,8 @@ class GetServerDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AssociatedApplication> m_associatedApplications;
 
@@ -112,6 +115,7 @@ class GetServerDetailsResult {
   ServerDetail m_serverDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_associatedApplicationsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_serverDetailHasBeenSet = false;

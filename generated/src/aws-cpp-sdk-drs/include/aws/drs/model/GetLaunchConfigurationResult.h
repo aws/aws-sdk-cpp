@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/drs/model/LaunchDisposition.h>
@@ -209,6 +210,8 @@ class GetLaunchConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_copyPrivateIp{false};
 
@@ -231,6 +234,7 @@ class GetLaunchConfigurationResult {
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_copyPrivateIpHasBeenSet = false;
   bool m_copyTagsHasBeenSet = false;
   bool m_ec2LaunchTemplateIDHasBeenSet = false;

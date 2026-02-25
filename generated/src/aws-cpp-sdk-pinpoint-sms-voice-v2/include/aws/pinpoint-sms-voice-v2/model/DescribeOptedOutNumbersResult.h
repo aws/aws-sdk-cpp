@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
@@ -119,6 +120,8 @@ class DescribeOptedOutNumbersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_optOutListArn;
 
@@ -129,6 +132,7 @@ class DescribeOptedOutNumbersResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_optOutListArnHasBeenSet = false;
   bool m_optOutListNameHasBeenSet = false;
   bool m_optedOutNumbersHasBeenSet = false;

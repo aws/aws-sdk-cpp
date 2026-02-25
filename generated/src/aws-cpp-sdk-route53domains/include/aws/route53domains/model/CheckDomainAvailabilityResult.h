@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/model/DomainAvailability.h>
@@ -80,10 +81,13 @@ class CheckDomainAvailabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainAvailability m_availability{DomainAvailability::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_availabilityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

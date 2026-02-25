@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/model/ActiveDirectoryStatus.h>
@@ -189,6 +190,8 @@ class DescribeSMBSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayARN;
 
@@ -205,6 +208,7 @@ class DescribeSMBSettingsResult {
   SMBLocalGroups m_sMBLocalGroups;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayARNHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_activeDirectoryStatusHasBeenSet = false;

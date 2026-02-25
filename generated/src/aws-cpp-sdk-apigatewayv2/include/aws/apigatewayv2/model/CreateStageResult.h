@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/AccessLogSettings.h>
 #include <aws/apigatewayv2/model/RouteSettings.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -305,6 +306,8 @@ class CreateStageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AccessLogSettings m_accessLogSettings;
 
@@ -335,6 +338,7 @@ class CreateStageResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessLogSettingsHasBeenSet = false;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_autoDeployHasBeenSet = false;

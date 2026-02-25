@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
@@ -220,6 +221,8 @@ class GetTagSyncTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_groupArn;
 
@@ -242,6 +245,7 @@ class GetTagSyncTaskResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupArnHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
@@ -93,12 +94,15 @@ class BatchDisassociateCodeSecurityScanConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<FailedAssociationResult> m_failedAssociations;
 
   Aws::Vector<SuccessfulAssociationResult> m_successfulAssociations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedAssociationsHasBeenSet = false;
   bool m_successfulAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

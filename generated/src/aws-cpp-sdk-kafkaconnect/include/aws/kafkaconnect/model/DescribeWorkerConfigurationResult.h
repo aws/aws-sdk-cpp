@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
@@ -143,6 +144,8 @@ class DescribeWorkerConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -157,6 +160,7 @@ class DescribeWorkerConfigurationResult {
   WorkerConfigurationState m_workerConfigurationState{WorkerConfigurationState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_latestRevisionHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/model/ReportStatus.h>
@@ -74,12 +75,15 @@ class GetAssessmentReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReportStatus m_status{ReportStatus::NOT_SET};
 
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

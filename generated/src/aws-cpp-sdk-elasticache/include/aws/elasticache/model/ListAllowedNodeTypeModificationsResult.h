@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -103,12 +104,15 @@ class ListAllowedNodeTypeModificationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_scaleUpModifications;
 
   Aws::Vector<Aws::String> m_scaleDownModifications;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_scaleUpModificationsHasBeenSet = false;
   bool m_scaleDownModificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

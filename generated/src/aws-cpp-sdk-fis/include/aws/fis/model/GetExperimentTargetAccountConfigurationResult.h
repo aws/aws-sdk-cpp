@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/fis/model/ExperimentTargetAccountConfiguration.h>
@@ -59,10 +60,13 @@ class GetExperimentTargetAccountConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ExperimentTargetAccountConfiguration m_targetAccountConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_targetAccountConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/sdb/model/ResponseMetadata.h>
 
@@ -145,6 +146,8 @@ class DomainMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_itemCount{0};
 
@@ -161,6 +164,7 @@ class DomainMetadataResult {
   int m_timestamp{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_itemCountHasBeenSet = false;
   bool m_itemNamesSizeBytesHasBeenSet = false;
   bool m_attributeNameCountHasBeenSet = false;

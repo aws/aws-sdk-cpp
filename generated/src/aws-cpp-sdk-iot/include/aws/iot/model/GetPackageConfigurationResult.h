@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/VersionUpdateByJobsConfig.h>
@@ -58,10 +59,13 @@ class GetPackageConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VersionUpdateByJobsConfig m_versionUpdateByJobsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_versionUpdateByJobsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
@@ -152,6 +153,8 @@ class DescribeEntityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_entityType;
 
@@ -166,6 +169,7 @@ class DescribeEntityResult {
   Aws::Utils::Document m_detailsDocument;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entityTypeHasBeenSet = false;
   bool m_entityIdentifierHasBeenSet = false;
   bool m_entityArnHasBeenSet = false;

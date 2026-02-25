@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
@@ -99,6 +100,8 @@ class SearchRasterDataCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_approximateResultCount{0};
 
@@ -107,6 +110,7 @@ class SearchRasterDataCollectionResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_approximateResultCountHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/TLSInspectionConfigurationResponse.h>
@@ -90,12 +91,15 @@ class UpdateTLSInspectionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_updateToken;
 
   TLSInspectionConfigurationResponse m_tLSInspectionConfigurationResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_updateTokenHasBeenSet = false;
   bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

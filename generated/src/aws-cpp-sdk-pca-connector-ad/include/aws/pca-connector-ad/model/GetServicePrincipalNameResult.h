@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/pca-connector-ad/model/ServicePrincipalName.h>
@@ -59,10 +60,13 @@ class GetServicePrincipalNameResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ServicePrincipalName m_servicePrincipalName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_servicePrincipalNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

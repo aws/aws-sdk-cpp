@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/drs/Drs_EXPORTS.h>
 
@@ -106,6 +107,8 @@ class GetFailbackReplicationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_bandwidthThrottling{0};
 
@@ -116,6 +119,7 @@ class GetFailbackReplicationConfigurationResult {
   bool m_usePrivateIP{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bandwidthThrottlingHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_recoveryInstanceIDHasBeenSet = false;

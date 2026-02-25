@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/chatbot/model/ChimeWebhookConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class CreateChimeWebhookConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ChimeWebhookConfiguration m_webhookConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_webhookConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

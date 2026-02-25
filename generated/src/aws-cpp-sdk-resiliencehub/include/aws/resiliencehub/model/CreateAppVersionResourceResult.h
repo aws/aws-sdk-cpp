@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/resiliencehub/model/PhysicalResource.h>
@@ -100,6 +101,8 @@ class CreateAppVersionResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -108,6 +111,7 @@ class CreateAppVersionResourceResult {
   PhysicalResource m_physicalResource;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;
   bool m_physicalResourceHasBeenSet = false;

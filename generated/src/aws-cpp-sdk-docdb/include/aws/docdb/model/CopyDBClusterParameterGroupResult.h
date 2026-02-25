@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/DBClusterParameterGroup.h>
 #include <aws/docdb/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CopyDBClusterParameterGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBClusterParameterGroup m_dBClusterParameterGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/BatchDetectSyntaxItemResult.h>
 #include <aws/comprehend/model/BatchItemError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -95,12 +96,15 @@ class BatchDetectSyntaxResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchDetectSyntaxItemResult> m_resultList;
 
   Aws::Vector<BatchItemError> m_errorList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultListHasBeenSet = false;
   bool m_errorListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

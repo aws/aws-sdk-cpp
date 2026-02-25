@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -139,6 +140,8 @@ class GetDirectQueryDataSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataSourceName;
 
@@ -151,6 +154,7 @@ class GetDirectQueryDataSourceResult {
   Aws::String m_dataSourceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataSourceNameHasBeenSet = false;
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

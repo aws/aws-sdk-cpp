@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
@@ -81,12 +82,15 @@ class ConfigureLogsForChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_channelName;
 
   Aws::Vector<LogType> m_logTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelNameHasBeenSet = false;
   bool m_logTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

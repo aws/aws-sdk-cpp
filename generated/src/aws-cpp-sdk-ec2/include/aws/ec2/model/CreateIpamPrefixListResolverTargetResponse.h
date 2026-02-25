@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/IpamPrefixListResolverTarget.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -59,10 +60,13 @@ class CreateIpamPrefixListResolverTargetResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IpamPrefixListResolverTarget m_ipamPrefixListResolverTarget;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamPrefixListResolverTargetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

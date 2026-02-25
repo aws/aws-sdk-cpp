@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
@@ -93,12 +94,15 @@ class GetDomainStatisticsReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   OverallVolume m_overallVolume;
 
   Aws::Vector<DailyVolume> m_dailyVolumes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_overallVolumeHasBeenSet = false;
   bool m_dailyVolumesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

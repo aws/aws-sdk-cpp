@@ -7,6 +7,7 @@
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/aiops/model/CrossAccountConfiguration.h>
 #include <aws/aiops/model/EncryptionConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -296,6 +297,8 @@ class GetInvestigationGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_createdBy;
 
@@ -324,6 +327,7 @@ class GetInvestigationGroupResult {
   Aws::Vector<CrossAccountConfiguration> m_crossAccountConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdByHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;

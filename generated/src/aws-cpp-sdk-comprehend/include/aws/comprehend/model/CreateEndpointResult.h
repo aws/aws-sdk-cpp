@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -75,12 +76,15 @@ class CreateEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_endpointArn;
 
   Aws::String m_modelArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_endpointArnHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

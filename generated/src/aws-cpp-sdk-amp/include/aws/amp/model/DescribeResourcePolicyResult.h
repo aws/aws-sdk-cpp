@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/amp/model/WorkspacePolicyStatusCode.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -91,6 +92,8 @@ class DescribeResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyDocument;
 
@@ -99,6 +102,7 @@ class DescribeResourcePolicyResult {
   Aws::String m_revisionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyDocumentHasBeenSet = false;
   bool m_policyStatusHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;

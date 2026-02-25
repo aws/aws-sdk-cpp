@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
@@ -76,12 +77,15 @@ class DescribeConversionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_migrationProjectIdentifier;
 
   Aws::String m_conversionConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_migrationProjectIdentifierHasBeenSet = false;
   bool m_conversionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

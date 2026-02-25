@@ -8,6 +8,7 @@
 #include <aws/connect/model/CreatedByInfo.h>
 #include <aws/connect/model/FileStatusType.h>
 #include <aws/connect/model/UploadUrlMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -150,6 +151,8 @@ class StartAttachedFileUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_fileArn;
 
@@ -164,6 +167,7 @@ class StartAttachedFileUploadResult {
   UploadUrlMetadata m_uploadUrlMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fileArnHasBeenSet = false;
   bool m_fileIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

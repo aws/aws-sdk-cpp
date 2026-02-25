@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ProcessedUpdateAction.h>
@@ -89,12 +90,15 @@ class BatchStopUpdateActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ProcessedUpdateAction> m_processedUpdateActions;
 
   Aws::Vector<UnprocessedUpdateAction> m_unprocessedUpdateActions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_processedUpdateActionsHasBeenSet = false;
   bool m_unprocessedUpdateActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

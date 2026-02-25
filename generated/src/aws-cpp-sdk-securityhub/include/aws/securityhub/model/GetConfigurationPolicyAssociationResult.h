@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -166,6 +167,8 @@ class GetConfigurationPolicyAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configurationPolicyId;
 
@@ -182,6 +185,7 @@ class GetConfigurationPolicyAssociationResult {
   Aws::String m_associationStatusMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationPolicyIdHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;

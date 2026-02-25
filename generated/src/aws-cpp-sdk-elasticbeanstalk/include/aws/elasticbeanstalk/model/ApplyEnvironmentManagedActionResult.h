@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ActionType.h>
@@ -115,6 +116,8 @@ class ApplyEnvironmentManagedActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_actionId;
 
@@ -125,6 +128,7 @@ class ApplyEnvironmentManagedActionResult {
   Aws::String m_status;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionIdHasBeenSet = false;
   bool m_actionDescriptionHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
@@ -150,6 +151,8 @@ class CreateConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_connectorID;
 
@@ -164,6 +167,7 @@ class CreateConnectorResult {
   ConnectorSsmCommandConfig m_ssmCommandConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ssmInstanceIDHasBeenSet = false;

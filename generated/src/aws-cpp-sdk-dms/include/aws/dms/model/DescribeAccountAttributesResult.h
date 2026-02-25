@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -98,12 +99,15 @@ class DescribeAccountAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AccountQuota> m_accountQuotas;
 
   Aws::String m_uniqueAccountIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountQuotasHasBeenSet = false;
   bool m_uniqueAccountIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
@@ -89,6 +90,8 @@ class CreateProvisioningTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_templateArn;
 
@@ -97,6 +100,7 @@ class CreateProvisioningTemplateResult {
   int m_defaultVersionId{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateArnHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
   bool m_defaultVersionIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/ActivityType.h>
@@ -152,6 +153,8 @@ class PollForActivityTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_taskToken;
 
@@ -166,6 +169,7 @@ class PollForActivityTaskResult {
   Aws::String m_input;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskTokenHasBeenSet = false;
   bool m_activityIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;

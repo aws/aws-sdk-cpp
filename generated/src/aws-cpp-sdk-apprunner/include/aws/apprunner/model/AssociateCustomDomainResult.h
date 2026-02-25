@@ -7,6 +7,7 @@
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/CustomDomain.h>
 #include <aws/apprunner/model/VpcDNSTarget.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -119,6 +120,8 @@ class AssociateCustomDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dNSTarget;
 
@@ -129,6 +132,7 @@ class AssociateCustomDomainResult {
   Aws::Vector<VpcDNSTarget> m_vpcDNSTargets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dNSTargetHasBeenSet = false;
   bool m_serviceArnHasBeenSet = false;
   bool m_customDomainHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/translate/Translate_EXPORTS.h>
@@ -99,6 +100,8 @@ class ListLanguagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Language> m_languages;
 
@@ -107,6 +110,7 @@ class ListLanguagesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_languagesHasBeenSet = false;
   bool m_displayLanguageCodeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/mpa/model/PolicyType.h>
@@ -124,6 +125,8 @@ class GetResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -136,6 +139,7 @@ class GetResourcePolicyResult {
   Aws::String m_policyDocument;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_policyVersionArnHasBeenSet = false;

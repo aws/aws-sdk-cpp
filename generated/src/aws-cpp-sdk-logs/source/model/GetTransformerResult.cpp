@@ -20,6 +20,7 @@ using namespace Aws;
 GetTransformerResult::GetTransformerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetTransformerResult& GetTransformerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logGroupIdentifier")) {
     m_logGroupIdentifier = jsonValue.GetString("logGroupIdentifier");

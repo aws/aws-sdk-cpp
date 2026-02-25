@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
@@ -230,6 +231,8 @@ class DescribeAgreementResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_agreementId;
 
@@ -252,6 +255,7 @@ class DescribeAgreementResult {
   AgreementStatus m_status{AgreementStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agreementIdHasBeenSet = false;
   bool m_acceptorHasBeenSet = false;
   bool m_proposerHasBeenSet = false;

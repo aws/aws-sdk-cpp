@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/neptunedata/model/PropertygraphSummaryValueMap.h>
@@ -74,12 +75,15 @@ class GetPropertygraphSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_statusCode{0};
 
   PropertygraphSummaryValueMap m_payload;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/workspaces-web/model/UserAccessLoggingSettings.h>
@@ -59,10 +60,13 @@ class GetUserAccessLoggingSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   UserAccessLoggingSettings m_userAccessLoggingSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userAccessLoggingSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

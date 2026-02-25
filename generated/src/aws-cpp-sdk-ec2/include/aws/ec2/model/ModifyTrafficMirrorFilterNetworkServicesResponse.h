@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/TrafficMirrorFilter.h>
@@ -59,10 +60,13 @@ class ModifyTrafficMirrorFilterNetworkServicesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TrafficMirrorFilter m_trafficMirrorFilter;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trafficMirrorFilterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

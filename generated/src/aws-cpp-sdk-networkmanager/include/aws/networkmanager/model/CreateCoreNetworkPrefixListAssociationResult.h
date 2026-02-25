@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
@@ -93,6 +94,8 @@ class CreateCoreNetworkPrefixListAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_coreNetworkId;
 
@@ -101,6 +104,7 @@ class CreateCoreNetworkPrefixListAssociationResult {
   Aws::String m_prefixListAlias;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_coreNetworkIdHasBeenSet = false;
   bool m_prefixListArnHasBeenSet = false;
   bool m_prefixListAliasHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -102,6 +103,8 @@ class DescribeFleetInstancesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ActiveInstance> m_activeInstances;
 
@@ -110,6 +113,7 @@ class DescribeFleetInstancesResponse {
   Aws::String m_fleetId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_activeInstancesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;

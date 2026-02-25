@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/eks/model/AssociatedAccessPolicy.h>
@@ -93,6 +94,8 @@ class AssociateAccessPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterName;
 
@@ -101,6 +104,7 @@ class AssociateAccessPolicyResult {
   AssociatedAccessPolicy m_associatedAccessPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterNameHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
   bool m_associatedAccessPolicyHasBeenSet = false;

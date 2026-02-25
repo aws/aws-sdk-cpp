@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/VpcPeeringAuthorization.h>
@@ -58,10 +59,13 @@ class CreateVpcPeeringAuthorizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VpcPeeringAuthorization m_vpcPeeringAuthorization;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcPeeringAuthorizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

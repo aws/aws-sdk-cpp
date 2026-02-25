@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -94,12 +95,15 @@ class DescribeRegionSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
 
   Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceTypeOptInPreferenceHasBeenSet = false;
   bool m_resourceTypeManagementPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

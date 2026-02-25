@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mpa/MPA_EXPORTS.h>
@@ -92,6 +93,8 @@ class CreateIdentitySourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IdentitySourceType m_identitySourceType{IdentitySourceType::NOT_SET};
 
@@ -100,6 +103,7 @@ class CreateIdentitySourceResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identitySourceTypeHasBeenSet = false;
   bool m_identitySourceArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ConnectionData.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -114,6 +115,8 @@ class StartWebRTCContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ConnectionData m_connectionData;
 
@@ -124,6 +127,7 @@ class StartWebRTCContactResult {
   Aws::String m_participantToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionDataHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
   bool m_participantIdHasBeenSet = false;

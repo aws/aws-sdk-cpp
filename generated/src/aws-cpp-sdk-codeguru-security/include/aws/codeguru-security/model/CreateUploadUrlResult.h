@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -101,6 +102,8 @@ class CreateUploadUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_s3Url;
 
@@ -109,6 +112,7 @@ class CreateUploadUrlResult {
   Aws::String m_codeArtifactId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_s3UrlHasBeenSet = false;
   bool m_requestHeadersHasBeenSet = false;
   bool m_codeArtifactIdHasBeenSet = false;

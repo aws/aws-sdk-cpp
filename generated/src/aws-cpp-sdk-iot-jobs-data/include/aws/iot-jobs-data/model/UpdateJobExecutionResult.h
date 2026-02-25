@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 #include <aws/iot-jobs-data/model/JobExecutionState.h>
@@ -75,12 +76,15 @@ class UpdateJobExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobExecutionState m_executionState;
 
   Aws::String m_jobDocument;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionStateHasBeenSet = false;
   bool m_jobDocumentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

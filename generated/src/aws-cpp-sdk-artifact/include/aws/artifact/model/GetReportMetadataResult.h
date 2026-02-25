@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/artifact/Artifact_EXPORTS.h>
 #include <aws/artifact/model/ReportDetail.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class GetReportMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReportDetail m_reportDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reportDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

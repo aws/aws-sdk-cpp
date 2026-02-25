@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -89,12 +90,15 @@ class DescribeVpcEndpointsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<VpcEndpoint> m_vpcEndpoints;
 
   Aws::Vector<VpcEndpointError> m_vpcEndpointErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcEndpointsHasBeenSet = false;
   bool m_vpcEndpointErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

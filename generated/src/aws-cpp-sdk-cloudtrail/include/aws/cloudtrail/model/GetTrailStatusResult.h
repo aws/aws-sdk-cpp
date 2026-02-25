@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -361,6 +362,8 @@ class GetTrailStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isLogging{false};
 
@@ -397,6 +400,7 @@ class GetTrailStatusResult {
   Aws::String m_timeLoggingStopped;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isLoggingHasBeenSet = false;
   bool m_latestDeliveryErrorHasBeenSet = false;
   bool m_latestNotificationErrorHasBeenSet = false;

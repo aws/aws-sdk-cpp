@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 #include <aws/partnercentral-channel/model/CreateProgramManagementAccountDetail.h>
@@ -60,10 +61,13 @@ class CreateProgramManagementAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CreateProgramManagementAccountDetail m_programManagementAccountDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_programManagementAccountDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

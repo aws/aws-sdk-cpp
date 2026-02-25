@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobError.h>
 #include <aws/bedrock/model/BatchDeleteEvaluationJobItem.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -90,12 +91,15 @@ class BatchDeleteEvaluationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchDeleteEvaluationJobError> m_errors;
 
   Aws::Vector<BatchDeleteEvaluationJobItem> m_evaluationJobs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorsHasBeenSet = false;
   bool m_evaluationJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

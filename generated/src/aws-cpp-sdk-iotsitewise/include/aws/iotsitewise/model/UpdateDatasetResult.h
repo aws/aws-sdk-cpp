@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/DatasetStatus.h>
@@ -98,6 +99,8 @@ class UpdateDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datasetId;
 
@@ -106,6 +109,7 @@ class UpdateDatasetResult {
   DatasetStatus m_datasetStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
   bool m_datasetStatusHasBeenSet = false;

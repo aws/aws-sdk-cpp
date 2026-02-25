@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/MetricCollectionType.h>
 #include <aws/autoscaling/model/MetricGranularityType.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -90,12 +91,15 @@ class DescribeMetricCollectionTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<MetricCollectionType> m_metrics;
 
   Aws::Vector<MetricGranularityType> m_granularities;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricsHasBeenSet = false;
   bool m_granularitiesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

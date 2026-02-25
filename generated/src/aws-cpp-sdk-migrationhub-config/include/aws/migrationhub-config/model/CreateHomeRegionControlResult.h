@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 #include <aws/migrationhub-config/model/HomeRegionControl.h>
@@ -60,10 +61,13 @@ class CreateHomeRegionControlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   HomeRegionControl m_homeRegionControl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_homeRegionControlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

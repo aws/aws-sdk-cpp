@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/CapacityForecast.h>
 #include <aws/autoscaling/model/LoadForecast.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -102,6 +103,8 @@ class GetPredictiveScalingForecastResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<LoadForecast> m_loadForecast;
 
@@ -110,6 +113,7 @@ class GetPredictiveScalingForecastResult {
   Aws::Utils::DateTime m_updateTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loadForecastHasBeenSet = false;
   bool m_capacityForecastHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/SWF_EXPORTS.h>
@@ -141,6 +142,8 @@ class DescribeWorkflowExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WorkflowExecutionInfo m_executionInfo;
 
@@ -153,6 +156,7 @@ class DescribeWorkflowExecutionResult {
   Aws::String m_latestExecutionContext;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionInfoHasBeenSet = false;
   bool m_executionConfigurationHasBeenSet = false;
   bool m_openCountsHasBeenSet = false;

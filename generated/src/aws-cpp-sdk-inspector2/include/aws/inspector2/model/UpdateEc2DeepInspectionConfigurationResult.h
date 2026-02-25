@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
@@ -124,6 +125,8 @@ class UpdateEc2DeepInspectionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_packagePaths;
 
@@ -134,6 +137,7 @@ class UpdateEc2DeepInspectionConfigurationResult {
   Aws::String m_errorMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packagePathsHasBeenSet = false;
   bool m_orgPackagePathsHasBeenSet = false;
   bool m_statusHasBeenSet = false;

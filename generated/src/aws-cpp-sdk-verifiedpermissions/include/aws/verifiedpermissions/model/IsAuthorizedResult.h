@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
@@ -113,6 +114,8 @@ class IsAuthorizedResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Decision m_decision{Decision::NOT_SET};
 
@@ -121,6 +124,7 @@ class IsAuthorizedResult {
   Aws::Vector<EvaluationErrorItem> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_decisionHasBeenSet = false;
   bool m_determiningPoliciesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

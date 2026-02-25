@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/DelegationRequest.h>
 #include <aws/iam/model/PermissionCheckResultType.h>
@@ -106,6 +107,8 @@ class GetDelegationRequestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DelegationRequest m_delegationRequest;
 
@@ -114,6 +117,7 @@ class GetDelegationRequestResult {
   PermissionCheckResultType m_permissionCheckResult{PermissionCheckResultType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_delegationRequestHasBeenSet = false;
   bool m_permissionCheckStatusHasBeenSet = false;
   bool m_permissionCheckResultHasBeenSet = false;

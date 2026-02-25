@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackRefactorExecutionStatus.h>
 #include <aws/cloudformation/model/StackRefactorStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -170,6 +171,8 @@ class DescribeStackRefactorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_description;
 
@@ -186,6 +189,7 @@ class DescribeStackRefactorResult {
   Aws::String m_statusReason;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_stackRefactorIdHasBeenSet = false;
   bool m_stackIdsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -125,6 +126,8 @@ class GetSnapshotsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TimeRange m_snapShotTimeFilter;
 
@@ -135,6 +138,7 @@ class GetSnapshotsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snapShotTimeFilterHasBeenSet = false;
   bool m_snapshotsDataHeaderHasBeenSet = false;
   bool m_snapshotsDataHasBeenSet = false;

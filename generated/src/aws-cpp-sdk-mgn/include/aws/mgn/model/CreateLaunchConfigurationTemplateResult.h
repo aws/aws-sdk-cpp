@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
@@ -358,6 +359,8 @@ class CreateLaunchConfigurationTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_launchConfigurationTemplateID;
 
@@ -398,6 +401,7 @@ class CreateLaunchConfigurationTemplateResult {
   Aws::String m_parametersEncryptionKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_launchConfigurationTemplateIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_postLaunchActionsHasBeenSet = false;

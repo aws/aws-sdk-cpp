@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
@@ -250,6 +251,8 @@ class RebootDBShardGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dBShardGroupResourceId;
 
@@ -274,6 +277,7 @@ class RebootDBShardGroupResult {
   Aws::Vector<Tag> m_tagList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBShardGroupResourceIdHasBeenSet = false;
   bool m_dBShardGroupIdentifierHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;

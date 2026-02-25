@@ -25,6 +25,7 @@ DescribeInsightRulesResult::DescribeInsightRulesResult(const Aws::AmazonWebServi
 }
 
 DescribeInsightRulesResult& DescribeInsightRulesResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   const auto& cborValue = result.GetPayload();
   const auto decoder = cborValue.GetDecoder();
 

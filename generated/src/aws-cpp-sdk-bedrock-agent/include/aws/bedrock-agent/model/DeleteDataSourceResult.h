@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/DataSourceStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -91,6 +92,8 @@ class DeleteDataSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_knowledgeBaseId;
 
@@ -99,6 +102,7 @@ class DeleteDataSourceResult {
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/applicationcostprofiler/model/Format.h>
 #include <aws/applicationcostprofiler/model/ReportFrequency.h>
 #include <aws/applicationcostprofiler/model/S3Location.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -161,6 +162,8 @@ class GetReportDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_reportId;
 
@@ -177,6 +180,7 @@ class GetReportDefinitionResult {
   Aws::Utils::DateTime m_lastUpdated{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_reportDescriptionHasBeenSet = false;
   bool m_reportFrequencyHasBeenSet = false;

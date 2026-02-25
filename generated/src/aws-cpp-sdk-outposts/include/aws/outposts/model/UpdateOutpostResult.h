@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/Outpost.h>
@@ -56,10 +57,13 @@ class UpdateOutpostResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Outpost m_outpost;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_outpostHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

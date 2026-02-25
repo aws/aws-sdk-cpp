@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/ResponseMetadata.h>
@@ -105,6 +106,8 @@ class GetCallerIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_userId;
 
@@ -113,6 +116,7 @@ class GetCallerIdentityResult {
   Aws::String m_arn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userIdHasBeenSet = false;
   bool m_accountHasBeenSet = false;
   bool m_arnHasBeenSet = false;

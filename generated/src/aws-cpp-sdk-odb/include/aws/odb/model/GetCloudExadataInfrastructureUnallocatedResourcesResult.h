@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/CloudExadataInfrastructureUnallocatedResources.h>
@@ -64,10 +65,13 @@ class GetCloudExadataInfrastructureUnallocatedResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CloudExadataInfrastructureUnallocatedResources m_cloudExadataInfrastructureUnallocatedResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cloudExadataInfrastructureUnallocatedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
@@ -100,6 +101,8 @@ class DescribeLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_shardLimit{0};
 
@@ -110,6 +113,7 @@ class DescribeLimitsResult {
   int m_onDemandStreamCountLimit{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_shardLimitHasBeenSet = false;
   bool m_openShardCountHasBeenSet = false;
   bool m_onDemandStreamCountHasBeenSet = false;

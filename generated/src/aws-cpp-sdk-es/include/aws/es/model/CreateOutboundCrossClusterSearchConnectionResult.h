@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/DomainInformation.h>
@@ -142,6 +143,8 @@ class CreateOutboundCrossClusterSearchConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainInformation m_sourceDomainInfo;
 
@@ -154,6 +157,7 @@ class CreateOutboundCrossClusterSearchConnectionResult {
   Aws::String m_crossClusterSearchConnectionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceDomainInfoHasBeenSet = false;
   bool m_destinationDomainInfoHasBeenSet = false;
   bool m_connectionAliasHasBeenSet = false;

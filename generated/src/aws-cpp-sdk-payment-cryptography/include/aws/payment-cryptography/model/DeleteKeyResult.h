@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/payment-cryptography/model/Key.h>
@@ -58,10 +59,13 @@ class DeleteKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Key m_key;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

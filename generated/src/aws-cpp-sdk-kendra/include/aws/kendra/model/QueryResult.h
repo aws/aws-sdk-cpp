@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -208,6 +209,8 @@ class QueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_queryId;
 
@@ -224,6 +227,7 @@ class QueryResult {
   Aws::Vector<FeaturedResultsItem> m_featuredResultsItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_queryIdHasBeenSet = false;
   bool m_resultItemsHasBeenSet = false;
   bool m_facetResultsHasBeenSet = false;

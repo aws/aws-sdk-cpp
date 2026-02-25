@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -390,6 +391,8 @@ class GetApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_displayName;
 
@@ -430,6 +433,7 @@ class GetApplicationResult {
   QuickSightConfiguration m_quickSightConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_displayNameHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;

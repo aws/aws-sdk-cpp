@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -206,6 +207,8 @@ class AuthorizeEndpointAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_grantor;
 
@@ -226,6 +229,7 @@ class AuthorizeEndpointAccessResult {
   int m_endpointCount{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_grantorHasBeenSet = false;
   bool m_granteeHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/TransitGatewayMulticastRegisteredGroupMembers.h>
@@ -61,10 +62,13 @@ class RegisterTransitGatewayMulticastGroupMembersResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TransitGatewayMulticastRegisteredGroupMembers m_registeredMulticastGroupMembers;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registeredMulticastGroupMembersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

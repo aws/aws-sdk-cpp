@@ -7,6 +7,7 @@
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/connectcampaigns/model/FailedCampaignStateResponse.h>
 #include <aws/connectcampaigns/model/SuccessfulCampaignStateResponse.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -90,12 +91,15 @@ class GetCampaignStateBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SuccessfulCampaignStateResponse> m_successfulRequests;
 
   Aws::Vector<FailedCampaignStateResponse> m_failedRequests;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulRequestsHasBeenSet = false;
   bool m_failedRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

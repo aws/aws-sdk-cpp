@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
 
@@ -111,6 +112,8 @@ class GetKxUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_userName;
 
@@ -121,6 +124,7 @@ class GetKxUserResult {
   Aws::String m_iamRole;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userNameHasBeenSet = false;
   bool m_userArnHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;

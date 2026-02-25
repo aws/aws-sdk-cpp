@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/importexport/model/Job.h>
@@ -81,12 +82,15 @@ class ListJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Job> m_jobs;
 
   bool m_isTruncated{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobsHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

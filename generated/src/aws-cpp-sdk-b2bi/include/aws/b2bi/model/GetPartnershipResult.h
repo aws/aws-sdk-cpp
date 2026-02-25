@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/CapabilityOptions.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -237,6 +238,8 @@ class GetPartnershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_profileId;
 
@@ -261,6 +264,7 @@ class GetPartnershipResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_partnershipIdHasBeenSet = false;
   bool m_partnershipArnHasBeenSet = false;

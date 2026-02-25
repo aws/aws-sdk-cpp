@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/osis/OSIS_EXPORTS.h>
 #include <aws/osis/model/PipelineBlueprint.h>
@@ -75,12 +76,15 @@ class GetPipelineBlueprintResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PipelineBlueprint m_blueprint;
 
   Aws::String m_format;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_blueprintHasBeenSet = false;
   bool m_formatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

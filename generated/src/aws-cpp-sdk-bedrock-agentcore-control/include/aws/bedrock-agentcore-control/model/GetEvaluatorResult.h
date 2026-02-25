@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/EvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorLevel.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -211,6 +212,8 @@ class GetEvaluatorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_evaluatorArn;
 
@@ -233,6 +236,7 @@ class GetEvaluatorResult {
   bool m_lockedForModification{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_evaluatorArnHasBeenSet = false;
   bool m_evaluatorIdHasBeenSet = false;
   bool m_evaluatorNameHasBeenSet = false;

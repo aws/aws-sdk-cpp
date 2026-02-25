@@ -22,6 +22,7 @@ UpdateMaintenanceWindowTargetResult::UpdateMaintenanceWindowTargetResult(const A
 }
 
 UpdateMaintenanceWindowTargetResult& UpdateMaintenanceWindowTargetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("WindowId")) {
     m_windowId = jsonValue.GetString("WindowId");

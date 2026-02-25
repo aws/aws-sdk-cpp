@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/S3_EXPORTS.h>
@@ -124,6 +125,8 @@ class ListBucketIntelligentTieringConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isTruncated{false};
 
@@ -134,6 +137,7 @@ class ListBucketIntelligentTieringConfigurationsResult {
   Aws::Vector<IntelligentTieringConfiguration> m_intelligentTieringConfigurationList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isTruncatedHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;
   bool m_nextContinuationTokenHasBeenSet = false;

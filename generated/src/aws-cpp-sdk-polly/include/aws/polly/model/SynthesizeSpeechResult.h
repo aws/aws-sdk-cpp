@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -95,6 +96,8 @@ class SynthesizeSpeechResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_audioStream{};
 
@@ -103,6 +106,7 @@ class SynthesizeSpeechResult {
   int m_requestCharacters{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_audioStreamHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_requestCharactersHasBeenSet = false;

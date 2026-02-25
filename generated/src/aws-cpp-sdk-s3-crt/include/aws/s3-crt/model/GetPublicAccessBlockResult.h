@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/model/PublicAccessBlockConfiguration.h>
@@ -59,10 +60,13 @@ class GetPublicAccessBlockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_publicAccessBlockConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

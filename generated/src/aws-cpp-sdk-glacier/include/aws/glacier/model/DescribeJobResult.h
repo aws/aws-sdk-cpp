@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/model/ActionCode.h>
@@ -428,6 +429,8 @@ class DescribeJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -472,6 +475,7 @@ class DescribeJobResult {
   OutputLocation m_outputLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobDescriptionHasBeenSet = false;
   bool m_actionHasBeenSet = false;

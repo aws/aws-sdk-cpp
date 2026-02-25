@@ -13,6 +13,7 @@
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -359,6 +360,8 @@ class GetAgentRuntimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_agentRuntimeArn;
 
@@ -397,6 +400,7 @@ class GetAgentRuntimeResult {
   RequestHeaderConfiguration m_requestHeaderConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
   bool m_agentRuntimeNameHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;

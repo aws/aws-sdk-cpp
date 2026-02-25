@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
@@ -90,6 +91,8 @@ class DescribeAccountOverviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_reactiveInsights{0};
 
@@ -98,6 +101,7 @@ class DescribeAccountOverviewResult {
   long long m_meanTimeToRecoverInMilliseconds{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reactiveInsightsHasBeenSet = false;
   bool m_proactiveInsightsHasBeenSet = false;
   bool m_meanTimeToRecoverInMillisecondsHasBeenSet = false;

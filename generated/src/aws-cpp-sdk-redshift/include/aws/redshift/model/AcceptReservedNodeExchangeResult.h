@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ReservedNode.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class AcceptReservedNodeExchangeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReservedNode m_exchangedReservedNode;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exchangedReservedNodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

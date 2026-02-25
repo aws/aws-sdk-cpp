@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 #include <aws/ecr-public/model/Image.h>
@@ -58,10 +59,13 @@ class PutImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Image m_image;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

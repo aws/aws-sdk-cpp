@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 #include <aws/managedblockchain-query/model/Transaction.h>
@@ -58,10 +59,13 @@ class GetTransactionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Transaction m_transaction;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transactionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -8,6 +8,7 @@
 #include <aws/bcm-pricing-calculator/model/BillInterval.h>
 #include <aws/bcm-pricing-calculator/model/BillScenarioStatus.h>
 #include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -195,6 +196,8 @@ class CreateBillScenarioResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -215,6 +218,7 @@ class CreateBillScenarioResult {
   Aws::String m_costCategoryGroupSharingPreferenceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_billIntervalHasBeenSet = false;

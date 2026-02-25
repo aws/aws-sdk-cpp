@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
@@ -72,12 +73,15 @@ class GetPersistentAppUIPresignedURLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_presignedURLReady{false};
 
   Aws::String m_presignedURL;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_presignedURLReadyHasBeenSet = false;
   bool m_presignedURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

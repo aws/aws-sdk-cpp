@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -100,6 +101,8 @@ class CreateSecurityGroupResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_groupId;
 
@@ -108,6 +111,7 @@ class CreateSecurityGroupResponse {
   Aws::String m_securityGroupArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_securityGroupArnHasBeenSet = false;

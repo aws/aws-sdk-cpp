@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -86,6 +87,8 @@ class SetSecurityGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
 
@@ -93,6 +96,7 @@ class SetSecurityGroupsResult {
       EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_securityGroupIdsHasBeenSet = false;
   bool m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

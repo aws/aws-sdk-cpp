@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -129,6 +130,8 @@ class DescribeReleaseLabelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_releaseLabel;
 
@@ -139,6 +142,7 @@ class DescribeReleaseLabelResult {
   Aws::Vector<OSRelease> m_availableOSReleases;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_releaseLabelHasBeenSet = false;
   bool m_applicationsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 
@@ -92,6 +93,8 @@ class GetDataLakeExceptionSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_exceptionTimeToLive{0};
 
@@ -100,6 +103,7 @@ class GetDataLakeExceptionSubscriptionResult {
   Aws::String m_subscriptionProtocol;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exceptionTimeToLiveHasBeenSet = false;
   bool m_notificationEndpointHasBeenSet = false;
   bool m_subscriptionProtocolHasBeenSet = false;

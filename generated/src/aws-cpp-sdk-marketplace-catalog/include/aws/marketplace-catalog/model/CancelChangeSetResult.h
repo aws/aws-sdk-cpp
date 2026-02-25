@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class CancelChangeSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_changeSetId;
 
   Aws::String m_changeSetArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeSetIdHasBeenSet = false;
   bool m_changeSetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

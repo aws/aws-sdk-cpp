@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -779,6 +780,8 @@ class ModifyCustomDBEngineVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_engine;
 
@@ -855,6 +858,7 @@ class ModifyCustomDBEngineVersionResult {
   ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_engineHasBeenSet = false;
   bool m_majorEngineVersionHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;

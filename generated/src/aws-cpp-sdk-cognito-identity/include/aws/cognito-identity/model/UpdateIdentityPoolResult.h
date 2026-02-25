@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/cognito-identity/model/CognitoIdentityProvider.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -252,6 +253,8 @@ class UpdateIdentityPoolResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityPoolId;
 
@@ -274,6 +277,7 @@ class UpdateIdentityPoolResult {
   Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_identityPoolNameHasBeenSet = false;
   bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;

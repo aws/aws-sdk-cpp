@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -92,6 +93,8 @@ class CancelImportTaskResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_importTaskId;
 
@@ -100,6 +103,7 @@ class CancelImportTaskResponse {
   Aws::String m_state;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_importTaskIdHasBeenSet = false;
   bool m_previousStateHasBeenSet = false;
   bool m_stateHasBeenSet = false;

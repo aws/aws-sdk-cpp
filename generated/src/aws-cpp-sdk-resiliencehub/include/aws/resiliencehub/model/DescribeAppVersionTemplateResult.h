@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
@@ -182,6 +183,8 @@ class DescribeAppVersionTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -190,6 +193,7 @@ class DescribeAppVersionTemplateResult {
   Aws::String m_appVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appTemplateBodyHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;

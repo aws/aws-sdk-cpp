@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
@@ -107,6 +108,8 @@ class GetResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<FolderMetadata> m_folders;
 
@@ -115,6 +118,7 @@ class GetResourcesResult {
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_foldersHasBeenSet = false;
   bool m_documentsHasBeenSet = false;
   bool m_markerHasBeenSet = false;

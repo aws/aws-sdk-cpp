@@ -20,6 +20,7 @@ using namespace Aws;
 StartIncidentResult::StartIncidentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartIncidentResult& StartIncidentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("incidentRecordArn")) {
     m_incidentRecordArn = jsonValue.GetString("incidentRecordArn");

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ChangeProgressDetails.h>
@@ -111,6 +112,8 @@ class UpgradeElasticsearchDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -121,6 +124,7 @@ class UpgradeElasticsearchDomainResult {
   ChangeProgressDetails m_changeProgressDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_targetVersionHasBeenSet = false;
   bool m_performCheckOnlyHasBeenSet = false;

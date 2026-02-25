@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/MacModificationTask.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -60,10 +61,13 @@ class CreateMacSystemIntegrityProtectionModificationTaskResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MacModificationTask m_macModificationTask;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_macModificationTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

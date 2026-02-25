@@ -9,6 +9,7 @@
 #include <aws/accessanalyzer/model/FindingStatus.h>
 #include <aws/accessanalyzer/model/FindingType.h>
 #include <aws/accessanalyzer/model/ResourceType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -256,6 +257,8 @@ class GetFindingV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_analyzedAt{};
 
@@ -282,6 +285,7 @@ class GetFindingV2Result {
   FindingType m_findingType{FindingType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_analyzedAtHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_errorHasBeenSet = false;

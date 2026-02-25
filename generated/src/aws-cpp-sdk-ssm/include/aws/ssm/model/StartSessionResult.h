@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
@@ -104,6 +105,8 @@ class StartSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -112,6 +115,7 @@ class StartSessionResult {
   Aws::String m_streamUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_tokenValueHasBeenSet = false;
   bool m_streamUrlHasBeenSet = false;

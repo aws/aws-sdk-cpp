@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 
@@ -76,12 +77,15 @@ class GetServiceRoleForAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_associatedAt;
 
   Aws::String m_roleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_associatedAtHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

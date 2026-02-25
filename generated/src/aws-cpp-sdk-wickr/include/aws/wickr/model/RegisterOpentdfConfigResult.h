@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
@@ -108,6 +109,8 @@ class RegisterOpentdfConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clientId;
 
@@ -118,6 +121,7 @@ class RegisterOpentdfConfigResult {
   Aws::String m_provider;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientIdHasBeenSet = false;
   bool m_domainHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
@@ -221,6 +222,8 @@ class GetAccountAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accountAssociationId;
 
@@ -243,6 +246,7 @@ class GetAccountAssociationResult {
   GeneralAuthorizationName m_generalAuthorization;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountAssociationIdHasBeenSet = false;
   bool m_associationStateHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

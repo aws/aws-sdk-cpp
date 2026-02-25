@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -95,6 +96,8 @@ class GetProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contentEncoding;
 
@@ -103,6 +106,7 @@ class GetProfileResult {
   Aws::Utils::Stream::ResponseStream m_profile{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentEncodingHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_profileHasBeenSet = false;

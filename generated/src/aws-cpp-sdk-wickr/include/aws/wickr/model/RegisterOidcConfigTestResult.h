@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
@@ -268,6 +269,8 @@ class RegisterOidcConfigTestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tokenEndpoint;
 
@@ -294,6 +297,7 @@ class RegisterOidcConfigTestResult {
   bool m_microsoftMultiRefreshToken{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tokenEndpointHasBeenSet = false;
   bool m_userinfoEndpointHasBeenSet = false;
   bool m_responseTypesSupportedHasBeenSet = false;

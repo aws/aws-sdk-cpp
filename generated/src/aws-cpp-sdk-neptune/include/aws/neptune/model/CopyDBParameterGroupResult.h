@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/DBParameterGroup.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CopyDBParameterGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBParameterGroup m_dBParameterGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

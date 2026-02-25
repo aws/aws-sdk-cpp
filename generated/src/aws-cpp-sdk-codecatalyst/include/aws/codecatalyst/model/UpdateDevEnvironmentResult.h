@@ -7,6 +7,7 @@
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/codecatalyst/model/IdeConfiguration.h>
 #include <aws/codecatalyst/model/InstanceType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -186,6 +187,8 @@ class UpdateDevEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -204,6 +207,7 @@ class UpdateDevEnvironmentResult {
   Aws::String m_clientToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_spaceNameHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
@@ -108,6 +109,8 @@ class BatchReinviteUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_message;
 
@@ -116,6 +119,7 @@ class BatchReinviteUserResult {
   Aws::Vector<BatchUserErrorResponseItem> m_failed;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messageHasBeenSet = false;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;

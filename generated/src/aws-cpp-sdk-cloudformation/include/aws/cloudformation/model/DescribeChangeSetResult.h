@@ -16,6 +16,7 @@
 #include <aws/cloudformation/model/RollbackConfiguration.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/cloudformation/model/Tag.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -512,6 +513,8 @@ class DescribeChangeSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_changeSetName;
 
@@ -560,6 +563,7 @@ class DescribeChangeSetResult {
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeSetNameHasBeenSet = false;
   bool m_changeSetIdHasBeenSet = false;
   bool m_stackIdHasBeenSet = false;

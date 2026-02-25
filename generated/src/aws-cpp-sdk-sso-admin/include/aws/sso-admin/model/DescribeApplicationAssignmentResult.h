@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/PrincipalType.h>
@@ -97,6 +98,8 @@ class DescribeApplicationAssignmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PrincipalType m_principalType{PrincipalType::NOT_SET};
 
@@ -105,6 +108,7 @@ class DescribeApplicationAssignmentResult {
   Aws::String m_applicationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_principalTypeHasBeenSet = false;
   bool m_principalIdHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;

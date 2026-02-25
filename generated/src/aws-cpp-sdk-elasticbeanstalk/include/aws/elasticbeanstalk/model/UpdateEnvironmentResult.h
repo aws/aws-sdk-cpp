@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -440,6 +441,8 @@ class UpdateEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_environmentName;
 
@@ -484,6 +487,7 @@ class UpdateEnvironmentResult {
   Aws::String m_operationsRole;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_environmentNameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_applicationNameHasBeenSet = false;

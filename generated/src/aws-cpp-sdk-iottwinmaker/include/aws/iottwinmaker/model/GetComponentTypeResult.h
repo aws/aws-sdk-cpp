@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -370,6 +371,8 @@ class GetComponentTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -406,6 +409,7 @@ class GetComponentTypeResult {
   Aws::Map<Aws::String, CompositeComponentTypeResponse> m_compositeComponentTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_isSingletonHasBeenSet = false;
   bool m_componentTypeIdHasBeenSet = false;

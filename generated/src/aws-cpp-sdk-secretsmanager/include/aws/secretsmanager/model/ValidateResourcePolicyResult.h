@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -80,12 +81,15 @@ class ValidateResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_policyValidationPassed{false};
 
   Aws::Vector<ValidationErrorsEntry> m_validationErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyValidationPassedHasBeenSet = false;
   bool m_validationErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

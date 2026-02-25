@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
@@ -152,6 +153,8 @@ class DescribeVaultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_vaultARN;
 
@@ -166,6 +169,7 @@ class DescribeVaultResult {
   long long m_sizeInBytes{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vaultARNHasBeenSet = false;
   bool m_vaultNameHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

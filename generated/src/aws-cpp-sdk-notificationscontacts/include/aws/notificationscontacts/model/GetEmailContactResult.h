@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/notificationscontacts/NotificationsContacts_EXPORTS.h>
 #include <aws/notificationscontacts/model/EmailContact.h>
@@ -58,10 +59,13 @@ class GetEmailContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EmailContact m_emailContact;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_emailContactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

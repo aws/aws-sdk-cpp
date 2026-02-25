@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
@@ -126,6 +127,8 @@ class DeleteOptedOutNumberResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_optOutListArn;
 
@@ -138,6 +141,7 @@ class DeleteOptedOutNumberResult {
   bool m_endUserOptedOut{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_optOutListArnHasBeenSet = false;
   bool m_optOutListNameHasBeenSet = false;
   bool m_optedOutNumberHasBeenSet = false;

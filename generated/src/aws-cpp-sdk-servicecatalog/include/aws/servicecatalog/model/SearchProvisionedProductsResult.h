@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -98,6 +99,8 @@ class SearchProvisionedProductsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ProvisionedProductAttribute> m_provisionedProducts;
 
@@ -106,6 +109,7 @@ class SearchProvisionedProductsResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_provisionedProductsHasBeenSet = false;
   bool m_totalResultsCountHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

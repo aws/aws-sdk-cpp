@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Evaluation.h>
 #include <aws/connect/model/EvaluationFormContent.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -76,12 +77,15 @@ class DescribeContactEvaluationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Evaluation m_evaluation;
 
   EvaluationFormContent m_evaluationForm;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_evaluationHasBeenSet = false;
   bool m_evaluationFormHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

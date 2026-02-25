@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -98,6 +99,8 @@ class CreateTieringConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tieringConfigurationArn;
 
@@ -106,6 +109,7 @@ class CreateTieringConfigurationResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tieringConfigurationArnHasBeenSet = false;
   bool m_tieringConfigurationNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

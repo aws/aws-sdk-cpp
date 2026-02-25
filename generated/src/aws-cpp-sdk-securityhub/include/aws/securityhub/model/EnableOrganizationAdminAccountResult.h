@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/SecurityHubFeature.h>
@@ -76,12 +77,15 @@ class EnableOrganizationAdminAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_adminAccountId;
 
   SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adminAccountIdHasBeenSet = false;
   bool m_featureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -198,6 +199,8 @@ class GetServiceLastAccessedDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobStatusType m_jobStatus{JobStatusType::NOT_SET};
 
@@ -216,6 +219,7 @@ class GetServiceLastAccessedDetailsResult {
   ErrorDetails m_error;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
   bool m_jobCreationDateHasBeenSet = false;

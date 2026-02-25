@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/AwsCredentials.h>
@@ -101,6 +102,8 @@ class CreateBuildResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Build m_build;
 
@@ -109,6 +112,7 @@ class CreateBuildResult {
   S3Location m_storageLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_buildHasBeenSet = false;
   bool m_uploadCredentialsHasBeenSet = false;
   bool m_storageLocationHasBeenSet = false;

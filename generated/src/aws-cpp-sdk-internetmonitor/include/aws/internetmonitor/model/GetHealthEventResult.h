@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -237,6 +238,8 @@ class GetHealthEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventArn;
 
@@ -261,6 +264,7 @@ class GetHealthEventResult {
   double m_healthScoreThreshold{0.0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventArnHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;

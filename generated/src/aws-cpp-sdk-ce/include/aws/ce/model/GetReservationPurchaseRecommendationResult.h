@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/ReservationPurchaseRecommendation.h>
 #include <aws/ce/model/ReservationPurchaseRecommendationMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -102,6 +103,8 @@ class GetReservationPurchaseRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReservationPurchaseRecommendationMetadata m_metadata;
 
@@ -110,6 +113,7 @@ class GetReservationPurchaseRecommendationResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metadataHasBeenSet = false;
   bool m_recommendationsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

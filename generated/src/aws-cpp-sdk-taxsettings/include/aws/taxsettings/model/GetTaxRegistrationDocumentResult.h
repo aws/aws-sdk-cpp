@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
@@ -75,12 +76,15 @@ class GetTaxRegistrationDocumentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_destinationFilePath;
 
   Aws::String m_presignedS3Url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_destinationFilePathHasBeenSet = false;
   bool m_presignedS3UrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

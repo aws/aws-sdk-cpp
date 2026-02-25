@@ -8,6 +8,7 @@
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
 #include <aws/connectparticipant/model/WebRTCConnection.h>
 #include <aws/connectparticipant/model/Websocket.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -97,6 +98,8 @@ class CreateParticipantConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Websocket m_websocket;
 
@@ -105,6 +108,7 @@ class CreateParticipantConnectionResult {
   WebRTCConnection m_webRTCConnection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_websocketHasBeenSet = false;
   bool m_connectionCredentialsHasBeenSet = false;
   bool m_webRTCConnectionHasBeenSet = false;

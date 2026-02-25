@@ -10,6 +10,7 @@
 #include <aws/connectcases/model/TagPropagationConfiguration.h>
 #include <aws/connectcases/model/TemplateRule.h>
 #include <aws/connectcases/model/TemplateStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -295,6 +296,8 @@ class GetTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_templateId;
 
@@ -323,6 +326,7 @@ class GetTemplateResult {
   Aws::Vector<TagPropagationConfiguration> m_tagPropagationConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateIdHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

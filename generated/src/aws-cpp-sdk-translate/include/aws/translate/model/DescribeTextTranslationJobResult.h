@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/TextTranslationJobProperties.h>
@@ -59,10 +60,13 @@ class DescribeTextTranslationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TextTranslationJobProperties m_textTranslationJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_textTranslationJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

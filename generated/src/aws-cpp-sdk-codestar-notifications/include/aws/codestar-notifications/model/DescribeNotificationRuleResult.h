@@ -9,6 +9,7 @@
 #include <aws/codestar-notifications/model/EventTypeSummary.h>
 #include <aws/codestar-notifications/model/NotificationRuleStatus.h>
 #include <aws/codestar-notifications/model/TargetSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -258,6 +259,8 @@ class DescribeNotificationRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -282,6 +285,7 @@ class DescribeNotificationRuleResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_eventTypesHasBeenSet = false;

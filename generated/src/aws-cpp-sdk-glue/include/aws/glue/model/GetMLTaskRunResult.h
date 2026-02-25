@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
@@ -209,6 +210,8 @@ class GetMLTaskRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_transformId;
 
@@ -231,6 +234,7 @@ class GetMLTaskRunResult {
   int m_executionTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transformIdHasBeenSet = false;
   bool m_taskRunIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

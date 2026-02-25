@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/SourceTableConfig.h>
@@ -115,6 +116,8 @@ class GetIntegrationTablePropertiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -125,6 +128,7 @@ class GetIntegrationTablePropertiesResult {
   TargetTableConfig m_targetTableConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_sourceTableConfigHasBeenSet = false;

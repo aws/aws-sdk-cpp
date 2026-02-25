@@ -7,6 +7,7 @@
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/codeguru-security/model/BatchGetFindingsError.h>
 #include <aws/codeguru-security/model/Finding.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -92,12 +93,15 @@ class BatchGetFindingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Finding> m_findings;
 
   Aws::Vector<BatchGetFindingsError> m_failedFindings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_findingsHasBeenSet = false;
   bool m_failedFindingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

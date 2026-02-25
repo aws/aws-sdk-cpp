@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -94,6 +95,8 @@ class PutKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_itemCount{0};
 
@@ -102,6 +105,7 @@ class PutKeyResult {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_itemCountHasBeenSet = false;
   bool m_totalSizeInBytesHasBeenSet = false;
   bool m_eTagHasBeenSet = false;

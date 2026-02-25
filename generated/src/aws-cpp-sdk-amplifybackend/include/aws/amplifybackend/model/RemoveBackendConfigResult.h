@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -57,10 +58,13 @@ class RemoveBackendConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_error;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

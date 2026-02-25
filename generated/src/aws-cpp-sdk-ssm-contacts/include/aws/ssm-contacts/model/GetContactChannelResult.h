@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/ssm-contacts/model/ActivationStatus.h>
@@ -144,6 +145,8 @@ class GetContactChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contactArn;
 
@@ -158,6 +161,7 @@ class GetContactChannelResult {
   ActivationStatus m_activationStatus{ActivationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contactArnHasBeenSet = false;
   bool m_contactChannelArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

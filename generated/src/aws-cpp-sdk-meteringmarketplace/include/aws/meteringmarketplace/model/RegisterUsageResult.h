@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
@@ -75,12 +76,15 @@ class RegisterUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_publicKeyRotationTimestamp{};
 
   Aws::String m_signature;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_publicKeyRotationTimestampHasBeenSet = false;
   bool m_signatureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

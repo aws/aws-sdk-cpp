@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/resource-groups/model/AccountSettings.h>
@@ -59,10 +60,13 @@ class UpdateAccountSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AccountSettings m_accountSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

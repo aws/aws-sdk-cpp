@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -221,6 +222,8 @@ class DescribeDashboardSnapshotJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_awsAccountId;
 
@@ -243,6 +246,7 @@ class DescribeDashboardSnapshotJobResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_dashboardIdHasBeenSet = false;
   bool m_snapshotJobIdHasBeenSet = false;

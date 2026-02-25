@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
@@ -126,6 +127,8 @@ class CreateProvisionedProductPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_planName;
 
@@ -138,6 +141,7 @@ class CreateProvisionedProductPlanResult {
   Aws::String m_provisioningArtifactId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_planNameHasBeenSet = false;
   bool m_planIdHasBeenSet = false;
   bool m_provisionProductIdHasBeenSet = false;

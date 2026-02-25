@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/Record.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -204,6 +205,8 @@ class ListRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Record> m_records;
 
@@ -224,6 +227,7 @@ class ListRecordsResult {
   Aws::String m_syncSessionToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_countHasBeenSet = false;

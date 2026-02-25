@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
@@ -84,12 +85,15 @@ class CreateStageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Stage m_stage;
 
   Aws::Vector<ParticipantToken> m_participantTokens;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stageHasBeenSet = false;
   bool m_participantTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

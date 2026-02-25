@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/model/SynthesisTask.h>
@@ -59,10 +60,13 @@ class StartSpeechSynthesisTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SynthesisTask m_synthesisTask;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_synthesisTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

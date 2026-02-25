@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/ResponseMetadata.h>
@@ -71,10 +72,13 @@ class ListTagsForResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Tag> m_tagList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tagListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

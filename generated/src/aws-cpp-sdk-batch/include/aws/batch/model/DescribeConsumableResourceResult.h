@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -182,6 +183,8 @@ class DescribeConsumableResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_consumableResourceName;
 
@@ -200,6 +203,7 @@ class DescribeConsumableResourceResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_consumableResourceNameHasBeenSet = false;
   bool m_consumableResourceArnHasBeenSet = false;
   bool m_totalQuantityHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -364,6 +365,8 @@ class DescribeOptimizationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_optimizationJobArn;
 
@@ -402,6 +405,7 @@ class DescribeOptimizationJobResult {
   OptimizationVpcConfig m_vpcConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_optimizationJobArnHasBeenSet = false;
   bool m_optimizationJobStatusHasBeenSet = false;
   bool m_optimizationStartTimeHasBeenSet = false;

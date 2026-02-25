@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -356,6 +357,8 @@ class DescribeDatasetImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datasetImportJobName;
 
@@ -392,6 +395,7 @@ class DescribeDatasetImportJobResult {
   ImportMode m_importMode{ImportMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetImportJobNameHasBeenSet = false;
   bool m_datasetImportJobArnHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;

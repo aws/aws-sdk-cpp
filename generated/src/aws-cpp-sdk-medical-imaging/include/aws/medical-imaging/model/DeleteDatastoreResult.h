@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 #include <aws/medical-imaging/model/DatastoreStatus.h>
@@ -73,12 +74,15 @@ class DeleteDatastoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datastoreId;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

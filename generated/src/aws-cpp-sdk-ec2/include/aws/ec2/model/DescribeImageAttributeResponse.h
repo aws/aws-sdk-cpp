@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -328,6 +329,8 @@ class DescribeImageAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AttributeValue m_description;
 
@@ -358,6 +361,7 @@ class DescribeImageAttributeResponse {
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_kernelIdHasBeenSet = false;
   bool m_ramdiskIdHasBeenSet = false;

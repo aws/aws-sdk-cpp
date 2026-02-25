@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
@@ -135,6 +136,8 @@ class GetTableAutoScalingSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyspaceName;
 
@@ -147,6 +150,7 @@ class GetTableAutoScalingSettingsResult {
   Aws::Vector<ReplicaAutoScalingSpecification> m_replicaSpecifications;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;

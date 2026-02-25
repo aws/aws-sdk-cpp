@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/DeleteVolumeOntapResponse.h>
@@ -94,6 +95,8 @@ class DeleteVolumeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_volumeId;
 
@@ -102,6 +105,7 @@ class DeleteVolumeResult {
   DeleteVolumeOntapResponse m_ontapResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_volumeIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_ontapResponseHasBeenSet = false;

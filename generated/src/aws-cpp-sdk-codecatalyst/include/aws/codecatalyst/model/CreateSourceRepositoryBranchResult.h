@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -112,6 +113,8 @@ class CreateSourceRepositoryBranchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_ref;
 
@@ -122,6 +125,7 @@ class CreateSourceRepositoryBranchResult {
   Aws::String m_headCommitId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_refHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;

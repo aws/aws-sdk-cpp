@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
@@ -81,12 +82,15 @@ class UpdateChapCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_targetARN;
 
   Aws::String m_initiatorName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_targetARNHasBeenSet = false;
   bool m_initiatorNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

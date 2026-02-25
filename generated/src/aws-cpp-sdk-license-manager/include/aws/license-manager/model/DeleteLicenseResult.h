@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/LicenseDeletionStatus.h>
@@ -73,12 +74,15 @@ class DeleteLicenseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LicenseDeletionStatus m_status{LicenseDeletionStatus::NOT_SET};
 
   Aws::String m_deletionDate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_deletionDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

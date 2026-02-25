@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -119,6 +120,8 @@ class ListPricingRulesAssociatedToPricingPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_billingPeriod;
 
@@ -129,6 +132,7 @@ class ListPricingRulesAssociatedToPricingPlanResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_billingPeriodHasBeenSet = false;
   bool m_pricingPlanArnHasBeenSet = false;
   bool m_pricingRuleArnsHasBeenSet = false;

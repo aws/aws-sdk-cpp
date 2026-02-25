@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -162,6 +163,8 @@ class CompareFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ComparedSourceImageFace m_sourceImageFace;
 
@@ -174,6 +177,7 @@ class CompareFacesResult {
   OrientationCorrection m_targetImageOrientationCorrection{OrientationCorrection::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceImageFaceHasBeenSet = false;
   bool m_faceMatchesHasBeenSet = false;
   bool m_unmatchedFacesHasBeenSet = false;

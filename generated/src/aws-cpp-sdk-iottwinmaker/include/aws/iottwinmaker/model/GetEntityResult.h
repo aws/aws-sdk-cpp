@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -270,6 +271,8 @@ class GetEntityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_entityId;
 
@@ -298,6 +301,7 @@ class GetEntityResult {
   bool m_areAllComponentsReturned{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entityIdHasBeenSet = false;
   bool m_entityNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;

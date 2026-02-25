@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -91,6 +92,8 @@ class DeleteSourceRepositoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_spaceName;
 
@@ -99,6 +102,7 @@ class DeleteSourceRepositoryResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_spaceNameHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;

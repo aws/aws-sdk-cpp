@@ -9,6 +9,7 @@
 #include <aws/cloudsearchdomain/model/FieldStats.h>
 #include <aws/cloudsearchdomain/model/Hits.h>
 #include <aws/cloudsearchdomain/model/SearchStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -132,6 +133,8 @@ class SearchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SearchStatus m_status;
 
@@ -142,6 +145,7 @@ class SearchResult {
   Aws::Map<Aws::String, FieldStats> m_stats;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_hitsHasBeenSet = false;
   bool m_facetsHasBeenSet = false;

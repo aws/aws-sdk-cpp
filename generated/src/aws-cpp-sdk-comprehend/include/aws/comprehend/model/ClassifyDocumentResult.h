@@ -11,6 +11,7 @@
 #include <aws/comprehend/model/DocumentTypeListItem.h>
 #include <aws/comprehend/model/ErrorsListItem.h>
 #include <aws/comprehend/model/WarningsListItem.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -197,6 +198,8 @@ class ClassifyDocumentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DocumentClass> m_classes;
 
@@ -211,6 +214,7 @@ class ClassifyDocumentResult {
   Aws::Vector<WarningsListItem> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_classesHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
   bool m_documentMetadataHasBeenSet = false;

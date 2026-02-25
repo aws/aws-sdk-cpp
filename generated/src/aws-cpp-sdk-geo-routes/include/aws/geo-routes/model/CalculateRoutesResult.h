@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
@@ -123,6 +124,8 @@ class CalculateRoutesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GeometryFormat m_legGeometryFormat{GeometryFormat::NOT_SET};
 
@@ -133,6 +136,7 @@ class CalculateRoutesResult {
   Aws::Vector<Route> m_routes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_legGeometryFormatHasBeenSet = false;
   bool m_noticesHasBeenSet = false;
   bool m_pricingBucketHasBeenSet = false;

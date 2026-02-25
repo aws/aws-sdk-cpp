@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/Address.h>
@@ -89,6 +90,8 @@ class GetSiteAddressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_siteId;
 
@@ -97,6 +100,7 @@ class GetSiteAddressResult {
   Address m_address;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_siteIdHasBeenSet = false;
   bool m_addressTypeHasBeenSet = false;
   bool m_addressHasBeenSet = false;

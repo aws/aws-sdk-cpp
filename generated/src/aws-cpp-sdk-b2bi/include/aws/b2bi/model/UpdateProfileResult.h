@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/Logging.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -210,6 +211,8 @@ class UpdateProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_profileId;
 
@@ -232,6 +235,7 @@ class UpdateProfileResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

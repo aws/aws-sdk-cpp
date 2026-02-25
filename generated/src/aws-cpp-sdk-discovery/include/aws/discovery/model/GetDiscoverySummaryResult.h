@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/discovery/model/CustomerAgentInfo.h>
@@ -175,6 +176,8 @@ class GetDiscoverySummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_servers{0};
 
@@ -193,6 +196,7 @@ class GetDiscoverySummaryResult {
   CustomerAgentlessCollectorInfo m_agentlessCollectorSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serversHasBeenSet = false;
   bool m_applicationsHasBeenSet = false;
   bool m_serversMappedToApplicationsHasBeenSet = false;

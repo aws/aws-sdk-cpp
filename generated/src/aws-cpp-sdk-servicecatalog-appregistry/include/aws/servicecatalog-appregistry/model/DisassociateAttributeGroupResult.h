@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class DisassociateAttributeGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationArn;
 
   Aws::String m_attributeGroupArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_attributeGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

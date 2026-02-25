@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/AccessAssociationSourceType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -142,6 +143,8 @@ class CreateDomainNameAccessAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_domainNameAccessAssociationArn;
 
@@ -154,6 +157,7 @@ class CreateDomainNameAccessAssociationResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainNameAccessAssociationArnHasBeenSet = false;
   bool m_domainNameArnHasBeenSet = false;
   bool m_accessAssociationSourceTypeHasBeenSet = false;

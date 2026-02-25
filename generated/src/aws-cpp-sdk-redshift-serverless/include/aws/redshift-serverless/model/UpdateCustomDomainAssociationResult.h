@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
@@ -110,6 +111,8 @@ class UpdateCustomDomainAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customDomainCertificateArn;
 
@@ -120,6 +123,7 @@ class UpdateCustomDomainAssociationResult {
   Aws::String m_workgroupName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customDomainCertificateArnHasBeenSet = false;
   bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
   bool m_customDomainNameHasBeenSet = false;

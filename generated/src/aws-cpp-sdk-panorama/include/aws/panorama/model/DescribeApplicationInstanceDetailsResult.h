@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/Panorama_EXPORTS.h>
@@ -180,6 +181,8 @@ class DescribeApplicationInstanceDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationInstanceId;
 
@@ -198,6 +201,7 @@ class DescribeApplicationInstanceDetailsResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationInstanceIdHasBeenSet = false;
   bool m_applicationInstanceIdToReplaceHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/Omics_EXPORTS.h>
@@ -125,6 +126,8 @@ class GetS3AccessPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_s3AccessPointArn;
 
@@ -137,6 +140,7 @@ class GetS3AccessPolicyResult {
   Aws::String m_s3AccessPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_s3AccessPointArnHasBeenSet = false;
   bool m_storeIdHasBeenSet = false;
   bool m_storeTypeHasBeenSet = false;

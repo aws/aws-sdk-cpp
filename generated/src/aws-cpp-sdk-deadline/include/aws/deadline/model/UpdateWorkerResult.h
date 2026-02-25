@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/HostConfiguration.h>
@@ -77,12 +78,15 @@ class UpdateWorkerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LogConfiguration m_log;
 
   HostConfiguration m_hostConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_logHasBeenSet = false;
   bool m_hostConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

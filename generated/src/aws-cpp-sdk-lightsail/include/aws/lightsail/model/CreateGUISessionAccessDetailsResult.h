@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -130,6 +131,8 @@ class CreateGUISessionAccessDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceName;
 
@@ -142,6 +145,7 @@ class CreateGUISessionAccessDetailsResult {
   Aws::Vector<Session> m_sessions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_percentageCompleteHasBeenSet = false;

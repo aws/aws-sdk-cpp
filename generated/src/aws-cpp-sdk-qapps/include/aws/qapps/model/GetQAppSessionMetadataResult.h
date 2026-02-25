@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/qapps/model/SessionSharingConfiguration.h>
@@ -124,6 +125,8 @@ class GetQAppSessionMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -136,6 +139,7 @@ class GetQAppSessionMetadataResult {
   bool m_sessionOwner{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;
   bool m_sessionNameHasBeenSet = false;

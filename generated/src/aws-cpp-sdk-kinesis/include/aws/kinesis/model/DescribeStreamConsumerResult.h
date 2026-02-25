@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/model/ConsumerDescription.h>
@@ -58,10 +59,13 @@ class DescribeStreamConsumerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ConsumerDescription m_consumerDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_consumerDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

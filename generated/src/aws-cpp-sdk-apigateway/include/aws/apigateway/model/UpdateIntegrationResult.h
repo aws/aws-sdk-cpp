@@ -11,6 +11,7 @@
 #include <aws/apigateway/model/IntegrationType.h>
 #include <aws/apigateway/model/ResponseTransferMode.h>
 #include <aws/apigateway/model/TlsConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -434,6 +435,8 @@ class UpdateIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IntegrationType m_type{IntegrationType::NOT_SET};
 
@@ -470,6 +473,7 @@ class UpdateIntegrationResult {
   Aws::String m_integrationTarget;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_typeHasBeenSet = false;
   bool m_httpMethodHasBeenSet = false;
   bool m_uriHasBeenSet = false;

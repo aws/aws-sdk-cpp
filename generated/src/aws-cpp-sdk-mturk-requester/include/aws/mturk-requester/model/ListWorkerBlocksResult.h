@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
@@ -97,6 +98,8 @@ class ListWorkerBlocksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -105,6 +108,7 @@ class ListWorkerBlocksResult {
   Aws::Vector<WorkerBlock> m_workerBlocks;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_numResultsHasBeenSet = false;
   bool m_workerBlocksHasBeenSet = false;

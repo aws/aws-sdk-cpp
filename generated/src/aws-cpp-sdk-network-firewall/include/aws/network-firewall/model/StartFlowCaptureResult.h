@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/FlowOperationStatus.h>
@@ -95,6 +96,8 @@ class StartFlowCaptureResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_firewallArn;
 
@@ -103,6 +106,7 @@ class StartFlowCaptureResult {
   FlowOperationStatus m_flowOperationStatus{FlowOperationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_flowOperationIdHasBeenSet = false;
   bool m_flowOperationStatusHasBeenSet = false;

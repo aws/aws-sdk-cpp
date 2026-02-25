@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
@@ -90,12 +91,15 @@ class ListOperationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<OperationSummary> m_operations;
 
   Aws::String m_nextPageMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_operationsHasBeenSet = false;
   bool m_nextPageMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -22,6 +22,7 @@ SendCustomVerificationEmailResult::SendCustomVerificationEmailResult(const Aws::
 }
 
 SendCustomVerificationEmailResult& SendCustomVerificationEmailResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("MessageId")) {
     m_messageId = jsonValue.GetString("MessageId");

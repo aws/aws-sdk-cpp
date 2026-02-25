@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -178,6 +179,8 @@ class GenerateDataKeyPairResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_privateKeyCiphertextBlob{};
 
@@ -194,6 +197,7 @@ class GenerateDataKeyPairResult {
   Aws::String m_keyMaterialId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_privateKeyCiphertextBlobHasBeenSet = false;
   bool m_privateKeyPlaintextHasBeenSet = false;
   bool m_publicKeyHasBeenSet = false;

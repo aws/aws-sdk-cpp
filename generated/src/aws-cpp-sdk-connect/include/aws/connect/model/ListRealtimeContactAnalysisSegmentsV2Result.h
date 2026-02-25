@@ -8,6 +8,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisStatus.h>
 #include <aws/connect/model/RealTimeContactAnalysisSupportedChannel.h>
 #include <aws/connect/model/RealtimeContactAnalysisSegment.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -119,6 +120,8 @@ class ListRealtimeContactAnalysisSegmentsV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RealTimeContactAnalysisSupportedChannel m_channel{RealTimeContactAnalysisSupportedChannel::NOT_SET};
 
@@ -129,6 +132,7 @@ class ListRealtimeContactAnalysisSegmentsV2Result {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_segmentsHasBeenSet = false;

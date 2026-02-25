@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -115,6 +116,8 @@ class UpdateFlowPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_status{0};
 
@@ -125,6 +128,7 @@ class UpdateFlowPermissionsResult {
   Aws::String m_requestId;
 
   Aws::String m_flowId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -92,6 +93,8 @@ class UpdateRepositoryEncryptionKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_repositoryId;
 
@@ -100,6 +103,7 @@ class UpdateRepositoryEncryptionKeyResult {
   Aws::String m_originalKmsKeyId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_repositoryIdHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_originalKmsKeyIdHasBeenSet = false;

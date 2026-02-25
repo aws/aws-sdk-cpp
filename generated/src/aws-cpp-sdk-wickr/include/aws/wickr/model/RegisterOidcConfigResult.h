@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
@@ -274,6 +275,8 @@ class RegisterOidcConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationName;
 
@@ -304,6 +307,7 @@ class RegisterOidcConfigResult {
   Aws::String m_extraAuthParams;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationNameHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
   bool m_companyIdHasBeenSet = false;

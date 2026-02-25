@@ -22,6 +22,7 @@ DescribeDomainChangeProgressResult::DescribeDomainChangeProgressResult(const Aws
 }
 
 DescribeDomainChangeProgressResult& DescribeDomainChangeProgressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ChangeProgressStatus")) {
     m_changeProgressStatus = jsonValue.GetObject("ChangeProgressStatus");

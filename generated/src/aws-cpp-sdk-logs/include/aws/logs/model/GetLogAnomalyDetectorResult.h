@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -200,6 +201,8 @@ class GetLogAnomalyDetectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_detectorName;
 
@@ -220,6 +223,7 @@ class GetLogAnomalyDetectorResult {
   long long m_anomalyVisibilityTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_detectorNameHasBeenSet = false;
   bool m_logGroupArnListHasBeenSet = false;
   bool m_evaluationFrequencyHasBeenSet = false;

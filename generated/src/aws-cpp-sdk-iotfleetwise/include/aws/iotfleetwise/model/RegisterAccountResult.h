@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
@@ -129,6 +130,8 @@ class RegisterAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RegistrationStatus m_registerAccountStatus{RegistrationStatus::NOT_SET};
 
@@ -141,6 +144,7 @@ class RegisterAccountResult {
   Aws::Utils::DateTime m_lastModificationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registerAccountStatusHasBeenSet = false;
   bool m_timestreamResourcesHasBeenSet = false;
   bool m_iamResourcesHasBeenSet = false;

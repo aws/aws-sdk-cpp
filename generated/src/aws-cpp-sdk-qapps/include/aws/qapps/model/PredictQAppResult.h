@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/qapps/model/PredictAppDefinition.h>
@@ -75,12 +76,15 @@ class PredictQAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PredictAppDefinition m_app;
 
   Aws::String m_problemStatement;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appHasBeenSet = false;
   bool m_problemStatementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
@@ -91,12 +92,15 @@ class GetRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Record> m_records;
 
   Aws::String m_nextShardIterator;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordsHasBeenSet = false;
   bool m_nextShardIteratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -103,6 +104,8 @@ class GetArchitectureRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_lastAuditTimestamp{};
 
@@ -111,6 +114,7 @@ class GetArchitectureRecommendationsResult {
   Aws::Vector<Recommendation> m_recommendations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lastAuditTimestampHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_recommendationsHasBeenSet = false;

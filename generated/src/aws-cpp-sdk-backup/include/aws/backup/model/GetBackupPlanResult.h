@@ -8,6 +8,7 @@
 #include <aws/backup/model/AdvancedBackupSetting.h>
 #include <aws/backup/model/BackupPlan.h>
 #include <aws/backup/model/ScheduledPlanExecutionMember.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -245,6 +246,8 @@ class GetBackupPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BackupPlan m_backupPlan;
 
@@ -267,6 +270,7 @@ class GetBackupPlanResult {
   Aws::Vector<ScheduledPlanExecutionMember> m_scheduledRunsPreview;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupPlanHasBeenSet = false;
   bool m_backupPlanIdHasBeenSet = false;
   bool m_backupPlanArnHasBeenSet = false;

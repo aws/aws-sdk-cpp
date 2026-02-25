@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/InstanceAccessControlAttributeConfiguration.h>
@@ -98,6 +99,8 @@ class DescribeInstanceAccessControlAttributeConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   InstanceAccessControlAttributeConfigurationStatus m_status{InstanceAccessControlAttributeConfigurationStatus::NOT_SET};
 
@@ -106,6 +109,7 @@ class DescribeInstanceAccessControlAttributeConfigurationResult {
   InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;

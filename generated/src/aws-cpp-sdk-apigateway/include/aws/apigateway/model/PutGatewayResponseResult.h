@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/GatewayResponseType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -146,6 +147,8 @@ class PutGatewayResponseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
 
@@ -158,6 +161,7 @@ class PutGatewayResponseResult {
   bool m_defaultResponse{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responseTypeHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_responseParametersHasBeenSet = false;

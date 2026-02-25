@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -281,6 +282,8 @@ class CreateKxDataviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataviewName;
 
@@ -309,6 +312,7 @@ class CreateKxDataviewResult {
   KxDataviewStatus m_status{KxDataviewStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataviewNameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;

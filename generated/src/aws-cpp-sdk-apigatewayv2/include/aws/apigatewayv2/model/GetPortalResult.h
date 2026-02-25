@@ -11,6 +11,7 @@
 #include <aws/apigatewayv2/model/Preview.h>
 #include <aws/apigatewayv2/model/PublishStatus.h>
 #include <aws/apigatewayv2/model/StatusException.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -300,6 +301,8 @@ class GetPortalResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Authorization m_authorization;
 
@@ -330,6 +333,7 @@ class GetPortalResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authorizationHasBeenSet = false;
   bool m_endpointConfigurationHasBeenSet = false;
   bool m_includedPortalProductArnsHasBeenSet = false;

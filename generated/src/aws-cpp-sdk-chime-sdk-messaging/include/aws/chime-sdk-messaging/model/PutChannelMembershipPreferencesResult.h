@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/chime-sdk-messaging/model/ChannelMembershipPreferences.h>
 #include <aws/chime-sdk-messaging/model/Identity.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -94,6 +95,8 @@ class PutChannelMembershipPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_channelArn;
 
@@ -102,6 +105,7 @@ class PutChannelMembershipPreferencesResult {
   ChannelMembershipPreferences m_preferences;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelArnHasBeenSet = false;
   bool m_memberHasBeenSet = false;
   bool m_preferencesHasBeenSet = false;

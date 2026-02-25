@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
@@ -93,12 +94,15 @@ class CreateWorkspacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<FailedCreateWorkspaceRequest> m_failedRequests;
 
   Aws::Vector<Workspace> m_pendingRequests;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedRequestsHasBeenSet = false;
   bool m_pendingRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
@@ -167,6 +168,8 @@ class ReleaseSenderIdResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_senderIdArn;
 
@@ -183,6 +186,7 @@ class ReleaseSenderIdResult {
   Aws::String m_registrationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_senderIdArnHasBeenSet = false;
   bool m_senderIdHasBeenSet = false;
   bool m_isoCountryCodeHasBeenSet = false;

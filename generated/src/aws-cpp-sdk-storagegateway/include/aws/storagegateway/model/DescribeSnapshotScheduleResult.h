@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
@@ -152,6 +153,8 @@ class DescribeSnapshotScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_volumeARN;
 
@@ -166,6 +169,7 @@ class DescribeSnapshotScheduleResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_volumeARNHasBeenSet = false;
   bool m_startAtHasBeenSet = false;
   bool m_recurrenceInHoursHasBeenSet = false;

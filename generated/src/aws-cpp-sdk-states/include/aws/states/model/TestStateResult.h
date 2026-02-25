@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/model/InspectionData.h>
@@ -149,6 +150,8 @@ class TestStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_output;
 
@@ -163,6 +166,7 @@ class TestStateResult {
   TestExecutionStatus m_status{TestExecutionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_outputHasBeenSet = false;
   bool m_errorHasBeenSet = false;
   bool m_causeHasBeenSet = false;

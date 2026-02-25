@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/model/SendQuota.h>
@@ -146,6 +147,8 @@ class GetAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SendQuota m_sendQuota;
 
@@ -158,6 +161,7 @@ class GetAccountResult {
   bool m_productionAccessEnabled{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sendQuotaHasBeenSet = false;
   bool m_sendingEnabledHasBeenSet = false;
   bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;

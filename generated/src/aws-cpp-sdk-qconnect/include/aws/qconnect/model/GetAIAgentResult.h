@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIAgentData.h>
@@ -75,12 +76,15 @@ class GetAIAgentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AIAgentData m_aiAgent;
 
   long long m_versionNumber{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aiAgentHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

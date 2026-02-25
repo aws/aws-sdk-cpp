@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/model/PackageVersionError.h>
 #include <aws/codeartifact/model/SuccessfulPackageVersionInfo.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -95,12 +96,15 @@ class DisposePackageVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, SuccessfulPackageVersionInfo> m_successfulVersions;
 
   Aws::Map<Aws::String, PackageVersionError> m_failedVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulVersionsHasBeenSet = false;
   bool m_failedVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

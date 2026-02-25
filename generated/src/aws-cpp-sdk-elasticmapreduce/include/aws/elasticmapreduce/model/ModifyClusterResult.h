@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
@@ -70,12 +71,15 @@ class ModifyClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_stepConcurrencyLevel{0};
 
   bool m_extendedSupport{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stepConcurrencyLevelHasBeenSet = false;
   bool m_extendedSupportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

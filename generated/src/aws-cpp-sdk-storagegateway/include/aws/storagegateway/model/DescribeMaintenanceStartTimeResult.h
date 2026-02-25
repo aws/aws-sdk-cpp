@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/model/SoftwareUpdatePreferences.h>
@@ -181,6 +182,8 @@ class DescribeMaintenanceStartTimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayARN;
 
@@ -197,6 +200,7 @@ class DescribeMaintenanceStartTimeResult {
   SoftwareUpdatePreferences m_softwareUpdatePreferences;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayARNHasBeenSet = false;
   bool m_hourOfDayHasBeenSet = false;
   bool m_minuteOfHourHasBeenSet = false;

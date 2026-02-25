@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/SFN_EXPORTS.h>
@@ -76,12 +77,15 @@ class CreateStateMachineAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_stateMachineAliasArn;
 
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stateMachineAliasArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

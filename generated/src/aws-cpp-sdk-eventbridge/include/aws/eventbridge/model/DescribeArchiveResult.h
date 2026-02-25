@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -242,6 +243,8 @@ class DescribeArchiveResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_archiveArn;
 
@@ -268,6 +271,7 @@ class DescribeArchiveResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_archiveArnHasBeenSet = false;
   bool m_archiveNameHasBeenSet = false;
   bool m_eventSourceArnHasBeenSet = false;
