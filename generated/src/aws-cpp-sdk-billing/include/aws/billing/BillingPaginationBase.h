@@ -7,6 +7,7 @@
 
 #include <aws/billing/model/ListBillingViewsPaginationTraits.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class BillingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingViewsRequest,
                                     Pagination::ListBillingViewsPaginationTraits<DerivedClient>>
   ListBillingViewsPaginator(const Model::ListBillingViewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingViewsRequest,
                                              Pagination::ListBillingViewsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -36,6 +38,7 @@ class BillingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceViewsForBillingViewRequest,
                                     Pagination::ListSourceViewsForBillingViewPaginationTraits<DerivedClient>>
   ListSourceViewsForBillingViewPaginator(const Model::ListSourceViewsForBillingViewRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceViewsForBillingViewRequest,
                                              Pagination::ListSourceViewsForBillingViewPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

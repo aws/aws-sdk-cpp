@@ -75,7 +75,8 @@ class GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest : public Bedro
   ///@{
   /**
    * <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT,
-   * POLICY_DEFINITION).</p>
+   * POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT,
+   * ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
    */
   inline AutomatedReasoningPolicyBuildResultAssetType GetAssetType() const { return m_assetType; }
   inline bool AssetTypeHasBeenSet() const { return m_assetTypeHasBeenSet; }
@@ -88,15 +89,39 @@ class GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest : public Bedro
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the specific asset to retrieve when multiple assets
+   * of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets,
+   * as multiple source documents may have been used in the workflow. The asset ID
+   * can be obtained from the asset manifest.</p>
+   */
+  inline const Aws::String& GetAssetId() const { return m_assetId; }
+  inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
+  template <typename AssetIdT = Aws::String>
+  void SetAssetId(AssetIdT&& value) {
+    m_assetIdHasBeenSet = true;
+    m_assetId = std::forward<AssetIdT>(value);
+  }
+  template <typename AssetIdT = Aws::String>
+  GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest& WithAssetId(AssetIdT&& value) {
+    SetAssetId(std::forward<AssetIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyArn;
 
   Aws::String m_buildWorkflowId;
 
   AutomatedReasoningPolicyBuildResultAssetType m_assetType{AutomatedReasoningPolicyBuildResultAssetType::NOT_SET};
+
+  Aws::String m_assetId;
   bool m_policyArnHasBeenSet = false;
   bool m_buildWorkflowIdHasBeenSet = false;
   bool m_assetTypeHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
 };
 
 }  // namespace Model

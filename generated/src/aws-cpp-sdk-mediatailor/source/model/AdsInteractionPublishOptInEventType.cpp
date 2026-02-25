@@ -16,11 +16,14 @@ namespace Model {
 namespace AdsInteractionPublishOptInEventTypeMapper {
 
 static const int RAW_ADS_RESPONSE_HASH = HashingUtils::HashString("RAW_ADS_RESPONSE");
+static const int RAW_ADS_REQUEST_HASH = HashingUtils::HashString("RAW_ADS_REQUEST");
 
 AdsInteractionPublishOptInEventType GetAdsInteractionPublishOptInEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == RAW_ADS_RESPONSE_HASH) {
     return AdsInteractionPublishOptInEventType::RAW_ADS_RESPONSE;
+  } else if (hashCode == RAW_ADS_REQUEST_HASH) {
+    return AdsInteractionPublishOptInEventType::RAW_ADS_REQUEST;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForAdsInteractionPublishOptInEventType(AdsInteractionPublishO
       return {};
     case AdsInteractionPublishOptInEventType::RAW_ADS_RESPONSE:
       return "RAW_ADS_RESPONSE";
+    case AdsInteractionPublishOptInEventType::RAW_ADS_REQUEST:
+      return "RAW_ADS_REQUEST";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

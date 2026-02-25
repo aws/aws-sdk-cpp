@@ -572,6 +572,7 @@
 #include <aws/ec2/model/DataResponse.h>
 #include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <aws/ec2/model/DeclarativePoliciesReport.h>
+#include <aws/ec2/model/DefaultHttpTokensEnforcedState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataEndpointState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataTagsState.h>
 #include <aws/ec2/model/DefaultRouteTableAssociationValue.h>
@@ -1581,6 +1582,7 @@
 #include <aws/ec2/model/HostReservation.h>
 #include <aws/ec2/model/HostTenancy.h>
 #include <aws/ec2/model/HostnameType.h>
+#include <aws/ec2/model/HttpTokensEnforcedState.h>
 #include <aws/ec2/model/HttpTokensState.h>
 #include <aws/ec2/model/HypervisorType.h>
 #include <aws/ec2/model/IKEVersionsListValue.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/timestream-query/model/ListScheduledQueriesPaginationTraits.h>
 #include <aws/timestream-query/model/ListTagsForResourcePaginationTraits.h>
@@ -26,6 +27,7 @@ class TimestreamQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduledQueriesRequest,
                                     Pagination::ListScheduledQueriesPaginationTraits<DerivedClient>>
   ListScheduledQueriesPaginator(const Model::ListScheduledQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduledQueriesRequest,
                                              Pagination::ListScheduledQueriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class TimestreamQueryPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class TimestreamQueryPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DerivedClient>> QueryPaginator(
       const Model::QueryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

@@ -15,6 +15,8 @@
 #include <aws/datazone/model/S3PropertiesInput.h>
 #include <aws/datazone/model/SparkEmrPropertiesInput.h>
 #include <aws/datazone/model/SparkGluePropertiesInput.h>
+#include <aws/datazone/model/WorkflowsMwaaPropertiesInput.h>
+#include <aws/datazone/model/WorkflowsServerlessPropertiesInput.h>
 
 #include <utility>
 
@@ -219,6 +221,42 @@ class ConnectionPropertiesInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon MWAA properties of a connection.</p>
+   */
+  inline const WorkflowsMwaaPropertiesInput& GetWorkflowsMwaaProperties() const { return m_workflowsMwaaProperties; }
+  inline bool WorkflowsMwaaPropertiesHasBeenSet() const { return m_workflowsMwaaPropertiesHasBeenSet; }
+  template <typename WorkflowsMwaaPropertiesT = WorkflowsMwaaPropertiesInput>
+  void SetWorkflowsMwaaProperties(WorkflowsMwaaPropertiesT&& value) {
+    m_workflowsMwaaPropertiesHasBeenSet = true;
+    m_workflowsMwaaProperties = std::forward<WorkflowsMwaaPropertiesT>(value);
+  }
+  template <typename WorkflowsMwaaPropertiesT = WorkflowsMwaaPropertiesInput>
+  ConnectionPropertiesInput& WithWorkflowsMwaaProperties(WorkflowsMwaaPropertiesT&& value) {
+    SetWorkflowsMwaaProperties(std::forward<WorkflowsMwaaPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The MWAA serverless properties of a connection.</p>
+   */
+  inline const WorkflowsServerlessPropertiesInput& GetWorkflowsServerlessProperties() const { return m_workflowsServerlessProperties; }
+  inline bool WorkflowsServerlessPropertiesHasBeenSet() const { return m_workflowsServerlessPropertiesHasBeenSet; }
+  template <typename WorkflowsServerlessPropertiesT = WorkflowsServerlessPropertiesInput>
+  void SetWorkflowsServerlessProperties(WorkflowsServerlessPropertiesT&& value) {
+    m_workflowsServerlessPropertiesHasBeenSet = true;
+    m_workflowsServerlessProperties = std::forward<WorkflowsServerlessPropertiesT>(value);
+  }
+  template <typename WorkflowsServerlessPropertiesT = WorkflowsServerlessPropertiesInput>
+  ConnectionPropertiesInput& WithWorkflowsServerlessProperties(WorkflowsServerlessPropertiesT&& value) {
+    SetWorkflowsServerlessProperties(std::forward<WorkflowsServerlessPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesInput m_athenaProperties;
 
@@ -239,6 +277,10 @@ class ConnectionPropertiesInput {
   AmazonQPropertiesInput m_amazonQProperties;
 
   MlflowPropertiesInput m_mlflowProperties;
+
+  WorkflowsMwaaPropertiesInput m_workflowsMwaaProperties;
+
+  WorkflowsServerlessPropertiesInput m_workflowsServerlessProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_hyperPodPropertiesHasBeenSet = false;
@@ -249,6 +291,8 @@ class ConnectionPropertiesInput {
   bool m_s3PropertiesHasBeenSet = false;
   bool m_amazonQPropertiesHasBeenSet = false;
   bool m_mlflowPropertiesHasBeenSet = false;
+  bool m_workflowsMwaaPropertiesHasBeenSet = false;
+  bool m_workflowsServerlessPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

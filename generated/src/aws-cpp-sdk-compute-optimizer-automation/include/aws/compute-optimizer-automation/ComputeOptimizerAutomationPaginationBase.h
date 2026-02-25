@@ -14,6 +14,7 @@
 #include <aws/compute-optimizer-automation/model/ListAutomationRulesPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionSummariesPaginationTraits.h>
 #include <aws/compute-optimizer-automation/model/ListRecommendedActionsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -31,6 +32,7 @@ class ComputeOptimizerAutomationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountsRequest, Pagination::ListAccountsPaginationTraits<DerivedClient>>
   ListAccountsPaginator(const Model::ListAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountsRequest,
                                              Pagination::ListAccountsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -42,6 +44,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationEventsRequest,
                                     Pagination::ListAutomationEventsPaginationTraits<DerivedClient>>
   ListAutomationEventsPaginator(const Model::ListAutomationEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationEventsRequest,
                                              Pagination::ListAutomationEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -53,6 +56,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationEventStepsRequest,
                                     Pagination::ListAutomationEventStepsPaginationTraits<DerivedClient>>
   ListAutomationEventStepsPaginator(const Model::ListAutomationEventStepsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationEventStepsRequest,
                                              Pagination::ListAutomationEventStepsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +68,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationEventSummariesRequest,
                                     Pagination::ListAutomationEventSummariesPaginationTraits<DerivedClient>>
   ListAutomationEventSummariesPaginator(const Model::ListAutomationEventSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationEventSummariesRequest,
                                              Pagination::ListAutomationEventSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +80,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulePreviewRequest,
                                     Pagination::ListAutomationRulePreviewPaginationTraits<DerivedClient>>
   ListAutomationRulePreviewPaginator(const Model::ListAutomationRulePreviewRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulePreviewRequest,
                                              Pagination::ListAutomationRulePreviewPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +92,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulePreviewSummariesRequest,
                                     Pagination::ListAutomationRulePreviewSummariesPaginationTraits<DerivedClient>>
   ListAutomationRulePreviewSummariesPaginator(const Model::ListAutomationRulePreviewSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulePreviewSummariesRequest,
                                              Pagination::ListAutomationRulePreviewSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -97,6 +104,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulesRequest,
                                     Pagination::ListAutomationRulesPaginationTraits<DerivedClient>>
   ListAutomationRulesPaginator(const Model::ListAutomationRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutomationRulesRequest,
                                              Pagination::ListAutomationRulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +116,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedActionsRequest,
                                     Pagination::ListRecommendedActionsPaginationTraits<DerivedClient>>
   ListRecommendedActionsPaginator(const Model::ListRecommendedActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedActionsRequest,
                                              Pagination::ListRecommendedActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -119,6 +128,7 @@ class ComputeOptimizerAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedActionSummariesRequest,
                                     Pagination::ListRecommendedActionSummariesPaginationTraits<DerivedClient>>
   ListRecommendedActionSummariesPaginator(const Model::ListRecommendedActionSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedActionSummariesRequest,
                                              Pagination::ListRecommendedActionSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

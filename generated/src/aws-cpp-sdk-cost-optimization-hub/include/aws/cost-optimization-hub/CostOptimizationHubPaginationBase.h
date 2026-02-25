@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/cost-optimization-hub/model/ListEfficiencyMetricsPaginationTraits.h>
 #include <aws/cost-optimization-hub/model/ListEnrollmentStatusesPaginationTraits.h>
@@ -27,6 +28,7 @@ class CostOptimizationHubPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEfficiencyMetricsRequest,
                                     Pagination::ListEfficiencyMetricsPaginationTraits<DerivedClient>>
   ListEfficiencyMetricsPaginator(const Model::ListEfficiencyMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEfficiencyMetricsRequest,
                                              Pagination::ListEfficiencyMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class CostOptimizationHubPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnrollmentStatusesRequest,
                                     Pagination::ListEnrollmentStatusesPaginationTraits<DerivedClient>>
   ListEnrollmentStatusesPaginator(const Model::ListEnrollmentStatusesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnrollmentStatusesRequest,
                                              Pagination::ListEnrollmentStatusesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class CostOptimizationHubPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                     Pagination::ListRecommendationsPaginationTraits<DerivedClient>>
   ListRecommendationsPaginator(const Model::ListRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                              Pagination::ListRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class CostOptimizationHubPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationSummariesRequest,
                                     Pagination::ListRecommendationSummariesPaginationTraits<DerivedClient>>
   ListRecommendationSummariesPaginator(const Model::ListRecommendationSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationSummariesRequest,
                                              Pagination::ListRecommendationSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

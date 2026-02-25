@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/applicationcostprofiler/model/ListReportDefinitionsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class ApplicationCostProfilerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportDefinitionsRequest,
                                     Pagination::ListReportDefinitionsPaginationTraits<DerivedClient>>
   ListReportDefinitionsPaginator(const Model::ListReportDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportDefinitionsRequest,
                                              Pagination::ListReportDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -42,6 +42,7 @@
 #include <aws/wickr/model/GetNetworkRequest.h>
 #include <aws/wickr/model/GetNetworkSettingsRequest.h>
 #include <aws/wickr/model/GetOidcInfoRequest.h>
+#include <aws/wickr/model/GetOpentdfConfigRequest.h>
 #include <aws/wickr/model/GetSecurityGroupRequest.h>
 #include <aws/wickr/model/GetUserRequest.h>
 #include <aws/wickr/model/GetUsersCountRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/wickr/model/ListUsersRequest.h>
 #include <aws/wickr/model/RegisterOidcConfigRequest.h>
 #include <aws/wickr/model/RegisterOidcConfigTestRequest.h>
+#include <aws/wickr/model/RegisterOpentdfConfigRequest.h>
 #include <aws/wickr/model/UpdateBotRequest.h>
 #include <aws/wickr/model/UpdateDataRetentionRequest.h>
 #include <aws/wickr/model/UpdateGuestUserRequest.h>
@@ -1014,6 +1016,43 @@ GetOidcInfoOutcome WickrClient::GetOidcInfo(const GetOidcInfoRequest& request) c
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetOpentdfConfigOutcome WickrClient::GetOpentdfConfig(const GetOpentdfConfigRequest& request) const {
+  AWS_OPERATION_GUARD(GetOpentdfConfig);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetOpentdfConfig", "Required field: NetworkId, is not set");
+    return GetOpentdfConfigOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                      "Missing required field [NetworkId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOpentdfConfig",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetOpentdfConfigOutcome>(
+      [&]() -> GetOpentdfConfigOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
+        return GetOpentdfConfigOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetSecurityGroupOutcome WickrClient::GetSecurityGroup(const GetSecurityGroupRequest& request) const {
   AWS_OPERATION_GUARD(GetSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1507,6 +1546,43 @@ RegisterOidcConfigTestOutcome WickrClient::RegisterOidcConfigTest(const Register
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/test");
         return RegisterOidcConfigTestOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+RegisterOpentdfConfigOutcome WickrClient::RegisterOpentdfConfig(const RegisterOpentdfConfigRequest& request) const {
+  AWS_OPERATION_GUARD(RegisterOpentdfConfig);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.NetworkIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RegisterOpentdfConfig", "Required field: NetworkId, is not set");
+    return RegisterOpentdfConfigOutcome(Aws::Client::AWSError<WickrErrors>(WickrErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [NetworkId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RegisterOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, RegisterOpentdfConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RegisterOpentdfConfig",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<RegisterOpentdfConfigOutcome>(
+      [&]() -> RegisterOpentdfConfigOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOpentdfConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/networks/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
+        return RegisterOpentdfConfigOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

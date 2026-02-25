@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsPaginationTraits.h>
 #include <aws/marketplace-catalog/model/ListEntitiesPaginationTraits.h>
@@ -24,6 +25,7 @@ class MarketplaceCatalogPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChangeSetsRequest, Pagination::ListChangeSetsPaginationTraits<DerivedClient>>
   ListChangeSetsPaginator(const Model::ListChangeSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChangeSetsRequest,
                                              Pagination::ListChangeSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -34,6 +36,7 @@ class MarketplaceCatalogPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitiesRequest, Pagination::ListEntitiesPaginationTraits<DerivedClient>>
   ListEntitiesPaginator(const Model::ListEntitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitiesRequest,
                                              Pagination::ListEntitiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/iotfleetwise/model/GetVehicleStatusPaginationTraits.h>
 #include <aws/iotfleetwise/model/ListCampaignsPaginationTraits.h>
@@ -37,6 +38,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVehicleStatusRequest,
                                     Pagination::GetVehicleStatusPaginationTraits<DerivedClient>>
   GetVehicleStatusPaginator(const Model::GetVehicleStatusRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVehicleStatusRequest,
                                              Pagination::GetVehicleStatusPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -47,6 +49,7 @@ class IoTFleetWisePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCampaignsRequest, Pagination::ListCampaignsPaginationTraits<DerivedClient>>
   ListCampaignsPaginator(const Model::ListCampaignsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCampaignsRequest,
                                              Pagination::ListCampaignsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -58,6 +61,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDecoderManifestNetworkInterfacesRequest,
                                     Pagination::ListDecoderManifestNetworkInterfacesPaginationTraits<DerivedClient>>
   ListDecoderManifestNetworkInterfacesPaginator(const Model::ListDecoderManifestNetworkInterfacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDecoderManifestNetworkInterfacesRequest,
                                              Pagination::ListDecoderManifestNetworkInterfacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -69,6 +73,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDecoderManifestsRequest,
                                     Pagination::ListDecoderManifestsPaginationTraits<DerivedClient>>
   ListDecoderManifestsPaginator(const Model::ListDecoderManifestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDecoderManifestsRequest,
                                              Pagination::ListDecoderManifestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -80,6 +85,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDecoderManifestSignalsRequest,
                                     Pagination::ListDecoderManifestSignalsPaginationTraits<DerivedClient>>
   ListDecoderManifestSignalsPaginator(const Model::ListDecoderManifestSignalsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDecoderManifestSignalsRequest,
                                              Pagination::ListDecoderManifestSignalsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -90,6 +96,7 @@ class IoTFleetWisePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest, Pagination::ListFleetsPaginationTraits<DerivedClient>>
   ListFleetsPaginator(const Model::ListFleetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest,
                                              Pagination::ListFleetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -101,6 +108,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsForVehicleRequest,
                                     Pagination::ListFleetsForVehiclePaginationTraits<DerivedClient>>
   ListFleetsForVehiclePaginator(const Model::ListFleetsForVehicleRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsForVehicleRequest,
                                              Pagination::ListFleetsForVehiclePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -112,6 +120,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelManifestNodesRequest,
                                     Pagination::ListModelManifestNodesPaginationTraits<DerivedClient>>
   ListModelManifestNodesPaginator(const Model::ListModelManifestNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelManifestNodesRequest,
                                              Pagination::ListModelManifestNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -123,6 +132,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelManifestsRequest,
                                     Pagination::ListModelManifestsPaginationTraits<DerivedClient>>
   ListModelManifestsPaginator(const Model::ListModelManifestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelManifestsRequest,
                                              Pagination::ListModelManifestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -134,6 +144,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSignalCatalogNodesRequest,
                                     Pagination::ListSignalCatalogNodesPaginationTraits<DerivedClient>>
   ListSignalCatalogNodesPaginator(const Model::ListSignalCatalogNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSignalCatalogNodesRequest,
                                              Pagination::ListSignalCatalogNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -145,6 +156,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSignalCatalogsRequest,
                                     Pagination::ListSignalCatalogsPaginationTraits<DerivedClient>>
   ListSignalCatalogsPaginator(const Model::ListSignalCatalogsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSignalCatalogsRequest,
                                              Pagination::ListSignalCatalogsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -156,6 +168,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStateTemplatesRequest,
                                     Pagination::ListStateTemplatesPaginationTraits<DerivedClient>>
   ListStateTemplatesPaginator(const Model::ListStateTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStateTemplatesRequest,
                                              Pagination::ListStateTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -166,6 +179,7 @@ class IoTFleetWisePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVehiclesRequest, Pagination::ListVehiclesPaginationTraits<DerivedClient>>
   ListVehiclesPaginator(const Model::ListVehiclesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVehiclesRequest,
                                              Pagination::ListVehiclesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -177,6 +191,7 @@ class IoTFleetWisePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVehiclesInFleetRequest,
                                     Pagination::ListVehiclesInFleetPaginationTraits<DerivedClient>>
   ListVehiclesInFleetPaginator(const Model::ListVehiclesInFleetRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVehiclesInFleetRequest,
                                              Pagination::ListVehiclesInFleetPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

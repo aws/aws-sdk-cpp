@@ -11,6 +11,7 @@
 #include <aws/appintegrations/model/ListDataIntegrationsPaginationTraits.h>
 #include <aws/appintegrations/model/ListEventIntegrationAssociationsPaginationTraits.h>
 #include <aws/appintegrations/model/ListEventIntegrationsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -29,6 +30,7 @@ class AppIntegrationsServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationAssociationsRequest,
                                     Pagination::ListApplicationAssociationsPaginationTraits<DerivedClient>>
   ListApplicationAssociationsPaginator(const Model::ListApplicationAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationAssociationsRequest,
                                              Pagination::ListApplicationAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -40,6 +42,7 @@ class AppIntegrationsServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                     Pagination::ListApplicationsPaginationTraits<DerivedClient>>
   ListApplicationsPaginator(const Model::ListApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                              Pagination::ListApplicationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -51,6 +54,7 @@ class AppIntegrationsServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationAssociationsRequest,
                                     Pagination::ListDataIntegrationAssociationsPaginationTraits<DerivedClient>>
   ListDataIntegrationAssociationsPaginator(const Model::ListDataIntegrationAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationAssociationsRequest,
                                              Pagination::ListDataIntegrationAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +66,7 @@ class AppIntegrationsServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationsRequest,
                                     Pagination::ListDataIntegrationsPaginationTraits<DerivedClient>>
   ListDataIntegrationsPaginator(const Model::ListDataIntegrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationsRequest,
                                              Pagination::ListDataIntegrationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class AppIntegrationsServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventIntegrationAssociationsRequest,
                                     Pagination::ListEventIntegrationAssociationsPaginationTraits<DerivedClient>>
   ListEventIntegrationAssociationsPaginator(const Model::ListEventIntegrationAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventIntegrationAssociationsRequest,
                                              Pagination::ListEventIntegrationAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class AppIntegrationsServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventIntegrationsRequest,
                                     Pagination::ListEventIntegrationsPaginationTraits<DerivedClient>>
   ListEventIntegrationsPaginator(const Model::ListEventIntegrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventIntegrationsRequest,
                                              Pagination::ListEventIntegrationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

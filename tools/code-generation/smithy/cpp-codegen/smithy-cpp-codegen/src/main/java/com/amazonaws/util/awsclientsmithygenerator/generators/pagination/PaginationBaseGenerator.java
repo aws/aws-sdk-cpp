@@ -24,6 +24,7 @@ public class PaginationBaseGenerator extends BaseHeaderGenerator<OperationData<P
     protected void writeSpecificIncludes(CppWriter writer, String serviceName, String smithyServiceName) {
         writer.write("");
         writer.writeInclude("aws/core/utils/pagination/Paginator.h");
+        writer.writeInclude("aws/core/client/UserAgent.h");
         
         // Include paginator headers
         for (OperationData<PaginatedTrait> data : operations) {
@@ -65,7 +66,8 @@ public class PaginationBaseGenerator extends BaseHeaderGenerator<OperationData<P
                           .write(opName + "Paginator(const Model::" + methodName + "Request& request)");
                     
                     writer.openBlock("{", "}", () -> {
-                    writer.write("return Aws::Utils::Pagination::Paginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits<DerivedClient>>{")
+                    writer.write("request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);")
+                          .write("return Aws::Utils::Pagination::Paginator<DerivedClient, Model::" + methodName + "Request, Pagination::" + opName + "PaginationTraits<DerivedClient>>{")
                           .write("    static_cast<DerivedClient*>(this), request};");
                     });
                 }

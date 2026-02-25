@@ -72,7 +72,9 @@ class InputColumn {
 
   ///@{
   /**
-   * <p>The data type of the column.</p>
+   * <p>The data type of the column.</p> <p> <b>Note:</b> <code>SEMISTRUCT</code>
+   * represents Athena's map, row, and struct data types. It is supported when using
+   * the new data preparation experience.</p>
    */
   inline InputColumnDataType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

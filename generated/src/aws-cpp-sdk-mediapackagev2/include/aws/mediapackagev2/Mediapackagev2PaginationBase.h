@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediapackagev2/model/ListChannelGroupsPaginationTraits.h>
 #include <aws/mediapackagev2/model/ListChannelsPaginationTraits.h>
@@ -27,6 +28,7 @@ class Mediapackagev2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelGroupsRequest,
                                     Pagination::ListChannelGroupsPaginationTraits<DerivedClient>>
   ListChannelGroupsPaginator(const Model::ListChannelGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelGroupsRequest,
                                              Pagination::ListChannelGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class Mediapackagev2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<DerivedClient>>
   ListChannelsPaginator(const Model::ListChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -48,6 +51,7 @@ class Mediapackagev2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarvestJobsRequest,
                                     Pagination::ListHarvestJobsPaginationTraits<DerivedClient>>
   ListHarvestJobsPaginator(const Model::ListHarvestJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarvestJobsRequest,
                                              Pagination::ListHarvestJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -59,6 +63,7 @@ class Mediapackagev2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginEndpointsRequest,
                                     Pagination::ListOriginEndpointsPaginationTraits<DerivedClient>>
   ListOriginEndpointsPaginator(const Model::ListOriginEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginEndpointsRequest,
                                              Pagination::ListOriginEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -25,13 +25,13 @@ AdditionalDataset& AdditionalDataset::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Configuration")) {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("Configuration").GetAllObjects();
     for (auto& configurationItem : configurationJsonMap) {
-      Aws::Utils::Array<JsonView> valuesJsonList = configurationItem.second.AsArray();
-      Aws::Vector<Aws::String> valuesList;
-      valuesList.reserve((size_t)valuesJsonList.GetLength());
-      for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
-        valuesList.push_back(valuesJsonList[valuesIndex].AsString());
+      Aws::Utils::Array<JsonView> values2JsonList = configurationItem.second.AsArray();
+      Aws::Vector<Aws::String> values2List;
+      values2List.reserve((size_t)values2JsonList.GetLength());
+      for (unsigned values2Index = 0; values2Index < values2JsonList.GetLength(); ++values2Index) {
+        values2List.push_back(values2JsonList[values2Index].AsString());
       }
-      m_configuration[configurationItem.first] = std::move(valuesList);
+      m_configuration[configurationItem.first] = std::move(values2List);
     }
     m_configurationHasBeenSet = true;
   }

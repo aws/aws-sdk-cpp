@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/notifications/model/ListChannelsPaginationTraits.h>
 #include <aws/notifications/model/ListEventRulesPaginationTraits.h>
@@ -33,6 +34,7 @@ class NotificationsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<DerivedClient>>
   ListChannelsPaginator(const Model::ListChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -43,6 +45,7 @@ class NotificationsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventRulesRequest, Pagination::ListEventRulesPaginationTraits<DerivedClient>>
   ListEventRulesPaginator(const Model::ListEventRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventRulesRequest,
                                              Pagination::ListEventRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -54,6 +57,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationChannelAssociationsRequest,
                                     Pagination::ListManagedNotificationChannelAssociationsPaginationTraits<DerivedClient>>
   ListManagedNotificationChannelAssociationsPaginator(const Model::ListManagedNotificationChannelAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationChannelAssociationsRequest,
                                              Pagination::ListManagedNotificationChannelAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +69,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationChildEventsRequest,
                                     Pagination::ListManagedNotificationChildEventsPaginationTraits<DerivedClient>>
   ListManagedNotificationChildEventsPaginator(const Model::ListManagedNotificationChildEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationChildEventsRequest,
                                              Pagination::ListManagedNotificationChildEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationConfigurationsRequest,
                                     Pagination::ListManagedNotificationConfigurationsPaginationTraits<DerivedClient>>
   ListManagedNotificationConfigurationsPaginator(const Model::ListManagedNotificationConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationConfigurationsRequest,
                                              Pagination::ListManagedNotificationConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -87,6 +93,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationEventsRequest,
                                     Pagination::ListManagedNotificationEventsPaginationTraits<DerivedClient>>
   ListManagedNotificationEventsPaginator(const Model::ListManagedNotificationEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedNotificationEventsRequest,
                                              Pagination::ListManagedNotificationEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemberAccountsRequest,
                                     Pagination::ListMemberAccountsPaginationTraits<DerivedClient>>
   ListMemberAccountsPaginator(const Model::ListMemberAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemberAccountsRequest,
                                              Pagination::ListMemberAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationConfigurationsRequest,
                                     Pagination::ListNotificationConfigurationsPaginationTraits<DerivedClient>>
   ListNotificationConfigurationsPaginator(const Model::ListNotificationConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationConfigurationsRequest,
                                              Pagination::ListNotificationConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -120,6 +129,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationEventsRequest,
                                     Pagination::ListNotificationEventsPaginationTraits<DerivedClient>>
   ListNotificationEventsPaginator(const Model::ListNotificationEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationEventsRequest,
                                              Pagination::ListNotificationEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -131,6 +141,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationHubsRequest,
                                     Pagination::ListNotificationHubsPaginationTraits<DerivedClient>>
   ListNotificationHubsPaginator(const Model::ListNotificationHubsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNotificationHubsRequest,
                                              Pagination::ListNotificationHubsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -142,6 +153,7 @@ class NotificationsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationalUnitsRequest,
                                     Pagination::ListOrganizationalUnitsPaginationTraits<DerivedClient>>
   ListOrganizationalUnitsPaginator(const Model::ListOrganizationalUnitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationalUnitsRequest,
                                              Pagination::ListOrganizationalUnitsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

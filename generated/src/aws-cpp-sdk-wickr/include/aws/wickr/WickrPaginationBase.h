@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/wickr/model/ListBlockedGuestUsersPaginationTraits.h>
 #include <aws/wickr/model/ListBotsPaginationTraits.h>
@@ -31,6 +32,7 @@ class WickrPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlockedGuestUsersRequest,
                                     Pagination::ListBlockedGuestUsersPaginationTraits<DerivedClient>>
   ListBlockedGuestUsersPaginator(const Model::ListBlockedGuestUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlockedGuestUsersRequest,
                                              Pagination::ListBlockedGuestUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class WickrPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotsRequest, Pagination::ListBotsPaginationTraits<DerivedClient>>
   ListBotsPaginator(const Model::ListBotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBotsRequest, Pagination::ListBotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -51,6 +54,7 @@ class WickrPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesForUserRequest,
                                     Pagination::ListDevicesForUserPaginationTraits<DerivedClient>>
   ListDevicesForUserPaginator(const Model::ListDevicesForUserRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesForUserRequest,
                                              Pagination::ListDevicesForUserPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class WickrPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGuestUsersRequest, Pagination::ListGuestUsersPaginationTraits<DerivedClient>>
   ListGuestUsersPaginator(const Model::ListGuestUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGuestUsersRequest,
                                              Pagination::ListGuestUsersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -71,6 +76,7 @@ class WickrPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworksRequest, Pagination::ListNetworksPaginationTraits<DerivedClient>>
   ListNetworksPaginator(const Model::ListNetworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworksRequest,
                                              Pagination::ListNetworksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -82,6 +88,7 @@ class WickrPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityGroupsRequest,
                                     Pagination::ListSecurityGroupsPaginationTraits<DerivedClient>>
   ListSecurityGroupsPaginator(const Model::ListSecurityGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityGroupsRequest,
                                              Pagination::ListSecurityGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -93,6 +100,7 @@ class WickrPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityGroupUsersRequest,
                                     Pagination::ListSecurityGroupUsersPaginationTraits<DerivedClient>>
   ListSecurityGroupUsersPaginator(const Model::ListSecurityGroupUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecurityGroupUsersRequest,
                                              Pagination::ListSecurityGroupUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -103,6 +111,7 @@ class WickrPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

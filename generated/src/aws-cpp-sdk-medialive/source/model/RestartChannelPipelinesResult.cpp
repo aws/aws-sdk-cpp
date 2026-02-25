@@ -132,6 +132,10 @@ RestartChannelPipelinesResult& RestartChannelPipelinesResult::operator=(const Aw
     }
     m_channelSecurityGroupsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("inferenceSettings")) {
+    m_inferenceSettings = jsonValue.GetObject("inferenceSettings");
+    m_inferenceSettingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

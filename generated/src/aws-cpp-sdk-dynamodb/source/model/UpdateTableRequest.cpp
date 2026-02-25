@@ -92,6 +92,12 @@ Aws::String UpdateTableRequest::SerializePayload() const {
     payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
   }
 
+  if (m_globalTableSettingsReplicationModeHasBeenSet) {
+    payload.WithString(
+        "GlobalTableSettingsReplicationMode",
+        GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

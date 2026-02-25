@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3outposts/model/ListEndpointsPaginationTraits.h>
 #include <aws/s3outposts/model/ListOutpostsWithS3PaginationTraits.h>
@@ -25,6 +26,7 @@ class S3OutpostsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointsRequest, Pagination::ListEndpointsPaginationTraits<DerivedClient>>
   ListEndpointsPaginator(const Model::ListEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointsRequest,
                                              Pagination::ListEndpointsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -36,6 +38,7 @@ class S3OutpostsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOutpostsWithS3Request,
                                     Pagination::ListOutpostsWithS3PaginationTraits<DerivedClient>>
   ListOutpostsWithS3Paginator(const Model::ListOutpostsWithS3Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOutpostsWithS3Request,
                                              Pagination::ListOutpostsWithS3PaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class S3OutpostsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedEndpointsRequest,
                                     Pagination::ListSharedEndpointsPaginationTraits<DerivedClient>>
   ListSharedEndpointsPaginator(const Model::ListSharedEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedEndpointsRequest,
                                              Pagination::ListSharedEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -48,13 +48,13 @@ ProtocolsListData& ProtocolsListData::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("PreviousProtocolsList")) {
     Aws::Map<Aws::String, JsonView> previousProtocolsListJsonMap = jsonValue.GetObject("PreviousProtocolsList").GetAllObjects();
     for (auto& previousProtocolsListItem : previousProtocolsListJsonMap) {
-      Aws::Utils::Array<JsonView> protocolsListJsonList = previousProtocolsListItem.second.AsArray();
-      Aws::Vector<Aws::String> protocolsListList;
-      protocolsListList.reserve((size_t)protocolsListJsonList.GetLength());
-      for (unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex) {
-        protocolsListList.push_back(protocolsListJsonList[protocolsListIndex].AsString());
+      Aws::Utils::Array<JsonView> protocolsList2JsonList = previousProtocolsListItem.second.AsArray();
+      Aws::Vector<Aws::String> protocolsList2List;
+      protocolsList2List.reserve((size_t)protocolsList2JsonList.GetLength());
+      for (unsigned protocolsList2Index = 0; protocolsList2Index < protocolsList2JsonList.GetLength(); ++protocolsList2Index) {
+        protocolsList2List.push_back(protocolsList2JsonList[protocolsList2Index].AsString());
       }
-      m_previousProtocolsList[previousProtocolsListItem.first] = std::move(protocolsListList);
+      m_previousProtocolsList[previousProtocolsListItem.first] = std::move(protocolsList2List);
     }
     m_previousProtocolsListHasBeenSet = true;
   }

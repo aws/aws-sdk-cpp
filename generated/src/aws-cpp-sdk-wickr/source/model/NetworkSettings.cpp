@@ -30,6 +30,10 @@ NetworkSettings& NetworkSettings::operator=(JsonView jsonValue) {
     m_dataRetention = jsonValue.GetBool("dataRetention");
     m_dataRetentionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enableTrustedDataFormat")) {
+    m_enableTrustedDataFormat = jsonValue.GetBool("enableTrustedDataFormat");
+    m_enableTrustedDataFormatHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue NetworkSettings::Jsonize() const {
 
   if (m_dataRetentionHasBeenSet) {
     payload.WithBool("dataRetention", m_dataRetention);
+  }
+
+  if (m_enableTrustedDataFormatHasBeenSet) {
+    payload.WithBool("enableTrustedDataFormat", m_enableTrustedDataFormat);
   }
 
   return payload;

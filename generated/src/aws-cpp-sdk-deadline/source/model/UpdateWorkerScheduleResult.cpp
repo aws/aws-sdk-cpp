@@ -31,14 +31,14 @@ UpdateWorkerScheduleResult& UpdateWorkerScheduleResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("cancelSessionActions")) {
     Aws::Map<Aws::String, JsonView> cancelSessionActionsJsonMap = jsonValue.GetObject("cancelSessionActions").GetAllObjects();
     for (auto& cancelSessionActionsItem : cancelSessionActionsJsonMap) {
-      Aws::Utils::Array<JsonView> sessionActionIdListJsonList = cancelSessionActionsItem.second.AsArray();
-      Aws::Vector<Aws::String> sessionActionIdListList;
-      sessionActionIdListList.reserve((size_t)sessionActionIdListJsonList.GetLength());
-      for (unsigned sessionActionIdListIndex = 0; sessionActionIdListIndex < sessionActionIdListJsonList.GetLength();
-           ++sessionActionIdListIndex) {
-        sessionActionIdListList.push_back(sessionActionIdListJsonList[sessionActionIdListIndex].AsString());
+      Aws::Utils::Array<JsonView> sessionActionIdList2JsonList = cancelSessionActionsItem.second.AsArray();
+      Aws::Vector<Aws::String> sessionActionIdList2List;
+      sessionActionIdList2List.reserve((size_t)sessionActionIdList2JsonList.GetLength());
+      for (unsigned sessionActionIdList2Index = 0; sessionActionIdList2Index < sessionActionIdList2JsonList.GetLength();
+           ++sessionActionIdList2Index) {
+        sessionActionIdList2List.push_back(sessionActionIdList2JsonList[sessionActionIdList2Index].AsString());
       }
-      m_cancelSessionActions[cancelSessionActionsItem.first] = std::move(sessionActionIdListList);
+      m_cancelSessionActions[cancelSessionActionsItem.first] = std::move(sessionActionIdList2List);
     }
     m_cancelSessionActionsHasBeenSet = true;
   }

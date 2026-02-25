@@ -37,12 +37,12 @@ InventoryItem& InventoryItem::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Content")) {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
     for (unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex) {
-      Aws::Map<Aws::String, JsonView> inventoryItemEntryJsonMap = contentJsonList[contentIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> inventoryItemEntryMap;
-      for (auto& inventoryItemEntryItem : inventoryItemEntryJsonMap) {
-        inventoryItemEntryMap[inventoryItemEntryItem.first] = inventoryItemEntryItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> inventoryItemEntry2JsonMap = contentJsonList[contentIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> inventoryItemEntry2Map;
+      for (auto& inventoryItemEntry2Item : inventoryItemEntry2JsonMap) {
+        inventoryItemEntry2Map[inventoryItemEntry2Item.first] = inventoryItemEntry2Item.second.AsString();
       }
-      m_content.push_back(std::move(inventoryItemEntryMap));
+      m_content.push_back(std::move(inventoryItemEntry2Map));
     }
     m_contentHasBeenSet = true;
   }

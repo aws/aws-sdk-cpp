@@ -104,5 +104,9 @@ Aws::String CreateChannelRequest::SerializePayload() const {
     payload.WithArray("channelSecurityGroups", std::move(channelSecurityGroupsJsonList));
   }
 
+  if (m_inferenceSettingsHasBeenSet) {
+    payload.WithObject("inferenceSettings", m_inferenceSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

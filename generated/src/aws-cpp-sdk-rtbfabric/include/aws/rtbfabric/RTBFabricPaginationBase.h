@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/rtbfabric/model/ListLinksPaginationTraits.h>
 #include <aws/rtbfabric/model/ListRequesterGatewaysPaginationTraits.h>
@@ -25,6 +26,7 @@ class RTBFabricPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinksRequest, Pagination::ListLinksPaginationTraits<DerivedClient>>
   ListLinksPaginator(const Model::ListLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinksRequest, Pagination::ListLinksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -35,6 +37,7 @@ class RTBFabricPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRequesterGatewaysRequest,
                                     Pagination::ListRequesterGatewaysPaginationTraits<DerivedClient>>
   ListRequesterGatewaysPaginator(const Model::ListRequesterGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRequesterGatewaysRequest,
                                              Pagination::ListRequesterGatewaysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -46,6 +49,7 @@ class RTBFabricPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResponderGatewaysRequest,
                                     Pagination::ListResponderGatewaysPaginationTraits<DerivedClient>>
   ListResponderGatewaysPaginator(const Model::ListResponderGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResponderGatewaysRequest,
                                              Pagination::ListResponderGatewaysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/shield/model/ListAttacksPaginationTraits.h>
 #include <aws/shield/model/ListProtectionGroupsPaginationTraits.h>
@@ -26,6 +27,7 @@ class ShieldPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttacksRequest, Pagination::ListAttacksPaginationTraits<DerivedClient>>
   ListAttacksPaginator(const Model::ListAttacksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttacksRequest,
                                              Pagination::ListAttacksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -37,6 +39,7 @@ class ShieldPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectionGroupsRequest,
                                     Pagination::ListProtectionGroupsPaginationTraits<DerivedClient>>
   ListProtectionGroupsPaginator(const Model::ListProtectionGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectionGroupsRequest,
                                              Pagination::ListProtectionGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class ShieldPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectionsRequest,
                                     Pagination::ListProtectionsPaginationTraits<DerivedClient>>
   ListProtectionsPaginator(const Model::ListProtectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectionsRequest,
                                              Pagination::ListProtectionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -59,6 +63,7 @@ class ShieldPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesInProtectionGroupRequest,
                                     Pagination::ListResourcesInProtectionGroupPaginationTraits<DerivedClient>>
   ListResourcesInProtectionGroupPaginator(const Model::ListResourcesInProtectionGroupRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesInProtectionGroupRequest,
                                              Pagination::ListResourcesInProtectionGroupPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDevicePaginationTraits.h>
 #include <aws/greengrassv2/model/ListComponentVersionsPaginationTraits.h>
@@ -30,6 +31,7 @@ class GreengrassV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClientDevicesAssociatedWithCoreDeviceRequest,
                                     Pagination::ListClientDevicesAssociatedWithCoreDevicePaginationTraits<DerivedClient>>
   ListClientDevicesAssociatedWithCoreDevicePaginator(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClientDevicesAssociatedWithCoreDeviceRequest,
                                              Pagination::ListClientDevicesAssociatedWithCoreDevicePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -40,6 +42,7 @@ class GreengrassV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest, Pagination::ListComponentsPaginationTraits<DerivedClient>>
   ListComponentsPaginator(const Model::ListComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest,
                                              Pagination::ListComponentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -51,6 +54,7 @@ class GreengrassV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentVersionsRequest,
                                     Pagination::ListComponentVersionsPaginationTraits<DerivedClient>>
   ListComponentVersionsPaginator(const Model::ListComponentVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentVersionsRequest,
                                              Pagination::ListComponentVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +66,7 @@ class GreengrassV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreDevicesRequest,
                                     Pagination::ListCoreDevicesPaginationTraits<DerivedClient>>
   ListCoreDevicesPaginator(const Model::ListCoreDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreDevicesRequest,
                                              Pagination::ListCoreDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -73,6 +78,7 @@ class GreengrassV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentsRequest,
                                     Pagination::ListDeploymentsPaginationTraits<DerivedClient>>
   ListDeploymentsPaginator(const Model::ListDeploymentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentsRequest,
                                              Pagination::ListDeploymentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -84,6 +90,7 @@ class GreengrassV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEffectiveDeploymentsRequest,
                                     Pagination::ListEffectiveDeploymentsPaginationTraits<DerivedClient>>
   ListEffectiveDeploymentsPaginator(const Model::ListEffectiveDeploymentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEffectiveDeploymentsRequest,
                                              Pagination::ListEffectiveDeploymentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +102,7 @@ class GreengrassV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstalledComponentsRequest,
                                     Pagination::ListInstalledComponentsPaginationTraits<DerivedClient>>
   ListInstalledComponentsPaginator(const Model::ListInstalledComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstalledComponentsRequest,
                                              Pagination::ListInstalledComponentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

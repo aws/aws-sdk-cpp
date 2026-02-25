@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -28,6 +29,7 @@ class BedrockAgentCorePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActorsRequest, Pagination::ListActorsPaginationTraits<DerivedClient>>
   ListActorsPaginator(const Model::ListActorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActorsRequest,
                                              Pagination::ListActorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -38,6 +40,7 @@ class BedrockAgentCorePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventsRequest, Pagination::ListEventsPaginationTraits<DerivedClient>>
   ListEventsPaginator(const Model::ListEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventsRequest,
                                              Pagination::ListEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -49,6 +52,7 @@ class BedrockAgentCorePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoryExtractionJobsRequest,
                                     Pagination::ListMemoryExtractionJobsPaginationTraits<DerivedClient>>
   ListMemoryExtractionJobsPaginator(const Model::ListMemoryExtractionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoryExtractionJobsRequest,
                                              Pagination::ListMemoryExtractionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class BedrockAgentCorePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoryRecordsRequest,
                                     Pagination::ListMemoryRecordsPaginationTraits<DerivedClient>>
   ListMemoryRecordsPaginator(const Model::ListMemoryRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoryRecordsRequest,
                                              Pagination::ListMemoryRecordsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +75,7 @@ class BedrockAgentCorePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
   ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
                                              Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -81,6 +87,7 @@ class BedrockAgentCorePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::RetrieveMemoryRecordsRequest,
                                     Pagination::RetrieveMemoryRecordsPaginationTraits<DerivedClient>>
   RetrieveMemoryRecordsPaginator(const Model::RetrieveMemoryRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::RetrieveMemoryRecordsRequest,
                                              Pagination::RetrieveMemoryRecordsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

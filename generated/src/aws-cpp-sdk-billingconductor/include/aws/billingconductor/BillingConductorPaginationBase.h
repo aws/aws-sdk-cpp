@@ -16,6 +16,7 @@
 #include <aws/billingconductor/model/ListPricingRulesAssociatedToPricingPlanPaginationTraits.h>
 #include <aws/billingconductor/model/ListPricingRulesPaginationTraits.h>
 #include <aws/billingconductor/model/ListResourcesAssociatedToCustomLineItemPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -34,6 +35,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBillingGroupCostReportRequest,
                                     Pagination::GetBillingGroupCostReportPaginationTraits<DerivedClient>>
   GetBillingGroupCostReportPaginator(const Model::GetBillingGroupCostReportRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBillingGroupCostReportRequest,
                                              Pagination::GetBillingGroupCostReportPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -45,6 +47,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountAssociationsRequest,
                                     Pagination::ListAccountAssociationsPaginationTraits<DerivedClient>>
   ListAccountAssociationsPaginator(const Model::ListAccountAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountAssociationsRequest,
                                              Pagination::ListAccountAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingGroupCostReportsRequest,
                                     Pagination::ListBillingGroupCostReportsPaginationTraits<DerivedClient>>
   ListBillingGroupCostReportsPaginator(const Model::ListBillingGroupCostReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingGroupCostReportsRequest,
                                              Pagination::ListBillingGroupCostReportsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingGroupsRequest,
                                     Pagination::ListBillingGroupsPaginationTraits<DerivedClient>>
   ListBillingGroupsPaginator(const Model::ListBillingGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillingGroupsRequest,
                                              Pagination::ListBillingGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -78,6 +83,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomLineItemsRequest,
                                     Pagination::ListCustomLineItemsPaginationTraits<DerivedClient>>
   ListCustomLineItemsPaginator(const Model::ListCustomLineItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomLineItemsRequest,
                                              Pagination::ListCustomLineItemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -89,6 +95,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomLineItemVersionsRequest,
                                     Pagination::ListCustomLineItemVersionsPaginationTraits<DerivedClient>>
   ListCustomLineItemVersionsPaginator(const Model::ListCustomLineItemVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomLineItemVersionsRequest,
                                              Pagination::ListCustomLineItemVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -100,6 +107,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingPlansRequest,
                                     Pagination::ListPricingPlansPaginationTraits<DerivedClient>>
   ListPricingPlansPaginator(const Model::ListPricingPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingPlansRequest,
                                              Pagination::ListPricingPlansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -111,6 +119,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingPlansAssociatedWithPricingRuleRequest,
                                     Pagination::ListPricingPlansAssociatedWithPricingRulePaginationTraits<DerivedClient>>
   ListPricingPlansAssociatedWithPricingRulePaginator(const Model::ListPricingPlansAssociatedWithPricingRuleRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingPlansAssociatedWithPricingRuleRequest,
                                              Pagination::ListPricingPlansAssociatedWithPricingRulePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -122,6 +131,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingRulesRequest,
                                     Pagination::ListPricingRulesPaginationTraits<DerivedClient>>
   ListPricingRulesPaginator(const Model::ListPricingRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingRulesRequest,
                                              Pagination::ListPricingRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -133,6 +143,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingRulesAssociatedToPricingPlanRequest,
                                     Pagination::ListPricingRulesAssociatedToPricingPlanPaginationTraits<DerivedClient>>
   ListPricingRulesAssociatedToPricingPlanPaginator(const Model::ListPricingRulesAssociatedToPricingPlanRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricingRulesAssociatedToPricingPlanRequest,
                                              Pagination::ListPricingRulesAssociatedToPricingPlanPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -144,6 +155,7 @@ class BillingConductorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesAssociatedToCustomLineItemRequest,
                                     Pagination::ListResourcesAssociatedToCustomLineItemPaginationTraits<DerivedClient>>
   ListResourcesAssociatedToCustomLineItemPaginator(const Model::ListResourcesAssociatedToCustomLineItemRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesAssociatedToCustomLineItemRequest,
                                              Pagination::ListResourcesAssociatedToCustomLineItemPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

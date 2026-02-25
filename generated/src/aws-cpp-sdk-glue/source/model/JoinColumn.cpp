@@ -25,14 +25,14 @@ JoinColumn& JoinColumn::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Keys")) {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for (unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex) {
-      Aws::Utils::Array<JsonView> enclosedInStringPropertiesJsonList = keysJsonList[keysIndex].AsArray();
-      Aws::Vector<Aws::String> enclosedInStringPropertiesList;
-      enclosedInStringPropertiesList.reserve((size_t)enclosedInStringPropertiesJsonList.GetLength());
-      for (unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength();
-           ++enclosedInStringPropertiesIndex) {
-        enclosedInStringPropertiesList.push_back(enclosedInStringPropertiesJsonList[enclosedInStringPropertiesIndex].AsString());
+      Aws::Utils::Array<JsonView> enclosedInStringProperties2JsonList = keysJsonList[keysIndex].AsArray();
+      Aws::Vector<Aws::String> enclosedInStringProperties2List;
+      enclosedInStringProperties2List.reserve((size_t)enclosedInStringProperties2JsonList.GetLength());
+      for (unsigned enclosedInStringProperties2Index = 0;
+           enclosedInStringProperties2Index < enclosedInStringProperties2JsonList.GetLength(); ++enclosedInStringProperties2Index) {
+        enclosedInStringProperties2List.push_back(enclosedInStringProperties2JsonList[enclosedInStringProperties2Index].AsString());
       }
-      m_keys.push_back(std::move(enclosedInStringPropertiesList));
+      m_keys.push_back(std::move(enclosedInStringProperties2List));
     }
     m_keysHasBeenSet = true;
   }

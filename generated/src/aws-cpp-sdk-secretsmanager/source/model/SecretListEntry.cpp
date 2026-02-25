@@ -92,14 +92,14 @@ SecretListEntry& SecretListEntry::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("SecretVersionsToStages")) {
     Aws::Map<Aws::String, JsonView> secretVersionsToStagesJsonMap = jsonValue.GetObject("SecretVersionsToStages").GetAllObjects();
     for (auto& secretVersionsToStagesItem : secretVersionsToStagesJsonMap) {
-      Aws::Utils::Array<JsonView> secretVersionStagesTypeJsonList = secretVersionsToStagesItem.second.AsArray();
-      Aws::Vector<Aws::String> secretVersionStagesTypeList;
-      secretVersionStagesTypeList.reserve((size_t)secretVersionStagesTypeJsonList.GetLength());
-      for (unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength();
-           ++secretVersionStagesTypeIndex) {
-        secretVersionStagesTypeList.push_back(secretVersionStagesTypeJsonList[secretVersionStagesTypeIndex].AsString());
+      Aws::Utils::Array<JsonView> secretVersionStagesType2JsonList = secretVersionsToStagesItem.second.AsArray();
+      Aws::Vector<Aws::String> secretVersionStagesType2List;
+      secretVersionStagesType2List.reserve((size_t)secretVersionStagesType2JsonList.GetLength());
+      for (unsigned secretVersionStagesType2Index = 0; secretVersionStagesType2Index < secretVersionStagesType2JsonList.GetLength();
+           ++secretVersionStagesType2Index) {
+        secretVersionStagesType2List.push_back(secretVersionStagesType2JsonList[secretVersionStagesType2Index].AsString());
       }
-      m_secretVersionsToStages[secretVersionsToStagesItem.first] = std::move(secretVersionStagesTypeList);
+      m_secretVersionsToStages[secretVersionsToStagesItem.first] = std::move(secretVersionStagesType2List);
     }
     m_secretVersionsToStagesHasBeenSet = true;
   }

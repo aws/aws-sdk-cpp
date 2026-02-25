@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/identitystore/model/ListGroupMembershipsForMemberPaginationTraits.h>
 #include <aws/identitystore/model/ListGroupMembershipsPaginationTraits.h>
@@ -27,6 +28,7 @@ class IdentityStorePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembershipsRequest,
                                     Pagination::ListGroupMembershipsPaginationTraits<DerivedClient>>
   ListGroupMembershipsPaginator(const Model::ListGroupMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembershipsRequest,
                                              Pagination::ListGroupMembershipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class IdentityStorePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembershipsForMemberRequest,
                                     Pagination::ListGroupMembershipsForMemberPaginationTraits<DerivedClient>>
   ListGroupMembershipsForMemberPaginator(const Model::ListGroupMembershipsForMemberRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembershipsForMemberRequest,
                                              Pagination::ListGroupMembershipsForMemberPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class IdentityStorePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest, Pagination::ListGroupsPaginationTraits<DerivedClient>>
   ListGroupsPaginator(const Model::ListGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest,
                                              Pagination::ListGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -58,6 +62,7 @@ class IdentityStorePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

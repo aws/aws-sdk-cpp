@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/migrationhuborchestrator/model/ListPluginsPaginationTraits.h>
 #include <aws/migrationhuborchestrator/model/ListTemplateStepGroupsPaginationTraits.h>
@@ -29,6 +30,7 @@ class MigrationHubOrchestratorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPluginsRequest, Pagination::ListPluginsPaginationTraits<DerivedClient>>
   ListPluginsPaginator(const Model::ListPluginsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPluginsRequest,
                                              Pagination::ListPluginsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -39,6 +41,7 @@ class MigrationHubOrchestratorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplatesRequest, Pagination::ListTemplatesPaginationTraits<DerivedClient>>
   ListTemplatesPaginator(const Model::ListTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplatesRequest,
                                              Pagination::ListTemplatesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -50,6 +53,7 @@ class MigrationHubOrchestratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateStepGroupsRequest,
                                     Pagination::ListTemplateStepGroupsPaginationTraits<DerivedClient>>
   ListTemplateStepGroupsPaginator(const Model::ListTemplateStepGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateStepGroupsRequest,
                                              Pagination::ListTemplateStepGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class MigrationHubOrchestratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateStepsRequest,
                                     Pagination::ListTemplateStepsPaginationTraits<DerivedClient>>
   ListTemplateStepsPaginator(const Model::ListTemplateStepsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateStepsRequest,
                                              Pagination::ListTemplateStepsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +76,7 @@ class MigrationHubOrchestratorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest, Pagination::ListWorkflowsPaginationTraits<DerivedClient>>
   ListWorkflowsPaginator(const Model::ListWorkflowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest,
                                              Pagination::ListWorkflowsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -82,6 +88,7 @@ class MigrationHubOrchestratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowStepGroupsRequest,
                                     Pagination::ListWorkflowStepGroupsPaginationTraits<DerivedClient>>
   ListWorkflowStepGroupsPaginator(const Model::ListWorkflowStepGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowStepGroupsRequest,
                                              Pagination::ListWorkflowStepGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -93,6 +100,7 @@ class MigrationHubOrchestratorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowStepsRequest,
                                     Pagination::ListWorkflowStepsPaginationTraits<DerivedClient>>
   ListWorkflowStepsPaginator(const Model::ListWorkflowStepsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowStepsRequest,
                                              Pagination::ListWorkflowStepsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

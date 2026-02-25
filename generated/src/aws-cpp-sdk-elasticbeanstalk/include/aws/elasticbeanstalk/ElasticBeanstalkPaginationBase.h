@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryPaginationTraits.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsPaginationTraits.h>
@@ -27,6 +28,7 @@ class ElasticBeanstalkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEnvironmentManagedActionHistoryRequest,
                                     Pagination::DescribeEnvironmentManagedActionHistoryPaginationTraits<DerivedClient>>
   DescribeEnvironmentManagedActionHistoryPaginator(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEnvironmentManagedActionHistoryRequest,
                                              Pagination::DescribeEnvironmentManagedActionHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class ElasticBeanstalkPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest, Pagination::DescribeEventsPaginationTraits<DerivedClient>>
   DescribeEventsPaginator(const Model::DescribeEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest,
                                              Pagination::DescribeEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -48,6 +51,7 @@ class ElasticBeanstalkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlatformBranchesRequest,
                                     Pagination::ListPlatformBranchesPaginationTraits<DerivedClient>>
   ListPlatformBranchesPaginator(const Model::ListPlatformBranchesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlatformBranchesRequest,
                                              Pagination::ListPlatformBranchesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class ElasticBeanstalkPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlatformVersionsRequest,
                                     Pagination::ListPlatformVersionsPaginationTraits<DerivedClient>>
   ListPlatformVersionsPaginator(const Model::ListPlatformVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlatformVersionsRequest,
                                              Pagination::ListPlatformVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

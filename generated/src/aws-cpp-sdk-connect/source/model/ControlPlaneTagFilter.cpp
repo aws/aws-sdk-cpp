@@ -21,14 +21,14 @@ ControlPlaneTagFilter& ControlPlaneTagFilter::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("OrConditions")) {
     Aws::Utils::Array<JsonView> orConditionsJsonList = jsonValue.GetArray("OrConditions");
     for (unsigned orConditionsIndex = 0; orConditionsIndex < orConditionsJsonList.GetLength(); ++orConditionsIndex) {
-      Aws::Utils::Array<JsonView> tagAndConditionListJsonList = orConditionsJsonList[orConditionsIndex].AsArray();
-      Aws::Vector<TagCondition> tagAndConditionListList;
-      tagAndConditionListList.reserve((size_t)tagAndConditionListJsonList.GetLength());
-      for (unsigned tagAndConditionListIndex = 0; tagAndConditionListIndex < tagAndConditionListJsonList.GetLength();
-           ++tagAndConditionListIndex) {
-        tagAndConditionListList.push_back(tagAndConditionListJsonList[tagAndConditionListIndex].AsObject());
+      Aws::Utils::Array<JsonView> tagAndConditionList2JsonList = orConditionsJsonList[orConditionsIndex].AsArray();
+      Aws::Vector<TagCondition> tagAndConditionList2List;
+      tagAndConditionList2List.reserve((size_t)tagAndConditionList2JsonList.GetLength());
+      for (unsigned tagAndConditionList2Index = 0; tagAndConditionList2Index < tagAndConditionList2JsonList.GetLength();
+           ++tagAndConditionList2Index) {
+        tagAndConditionList2List.push_back(tagAndConditionList2JsonList[tagAndConditionList2Index].AsObject());
       }
-      m_orConditions.push_back(std::move(tagAndConditionListList));
+      m_orConditions.push_back(std::move(tagAndConditionList2List));
     }
     m_orConditionsHasBeenSet = true;
   }

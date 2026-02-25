@@ -7,6 +7,7 @@
 
 #include <aws/bedrock-data-automation/model/ListBlueprintsPaginationTraits.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class BedrockDataAutomationPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlueprintsRequest, Pagination::ListBlueprintsPaginationTraits<DerivedClient>>
   ListBlueprintsPaginator(const Model::ListBlueprintsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBlueprintsRequest,
                                              Pagination::ListBlueprintsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -35,6 +37,7 @@ class BedrockDataAutomationPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationProjectsRequest,
                                     Pagination::ListDataAutomationProjectsPaginationTraits<DerivedClient>>
   ListDataAutomationProjectsPaginator(const Model::ListDataAutomationProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataAutomationProjectsRequest,
                                              Pagination::ListDataAutomationProjectsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

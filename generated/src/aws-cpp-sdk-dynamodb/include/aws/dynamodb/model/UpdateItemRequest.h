@@ -277,19 +277,17 @@ class UpdateItemRequest : public DynamoDBRequest {
    * not match the existing set type. </p> <p>Both sets must have the same primitive
    * data type. For example, if the existing data type is a set of strings, the
    * <code>Value</code> must also be a set of strings.</p> </li> </ul>
-   * <p>The <code>ADD</code> action only supports Number and set data types. In
-   * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-   * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
-   * element from a set.</p> <p>If a set of values is specified, then those values
-   * are subtracted from the old set. For example, if the attribute value was the set
+   * <p>The <code>ADD</code> action only supports Number and set data types.</p>
+   *  </li> <li> <p> <code>DELETE</code> - Deletes an element from a
+   * set.</p> <p>If a set of values is specified, then those values are subtracted
+   * from the old set. For example, if the attribute value was the set
    * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
    * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
    * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
-   * action only supports set data types. In addition, <code>DELETE</code> can only
-   * be used on top-level attributes, not nested attributes.</p>  </li>
-   * </ul> <p>You can have many actions in a single expression, such as the
-   * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
-   * :value5</code> </p> <p>For more information on update expressions, see <a
+   * action only supports set data types.</p>  </li> </ul> <p>You can
+   * have many actions in a single expression, such as the following: <code>SET
+   * a=:value1, b=:value2 DELETE :value3, :value4, :value5</code> </p> <p>For more
+   * information on update expressions, see <a
    * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
    * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
    */

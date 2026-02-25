@@ -28,13 +28,13 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("RouteMatrix")) {
     Aws::Utils::Array<JsonView> routeMatrixJsonList = jsonValue.GetArray("RouteMatrix");
     for (unsigned routeMatrixIndex = 0; routeMatrixIndex < routeMatrixJsonList.GetLength(); ++routeMatrixIndex) {
-      Aws::Utils::Array<JsonView> routeMatrixRowJsonList = routeMatrixJsonList[routeMatrixIndex].AsArray();
-      Aws::Vector<RouteMatrixEntry> routeMatrixRowList;
-      routeMatrixRowList.reserve((size_t)routeMatrixRowJsonList.GetLength());
-      for (unsigned routeMatrixRowIndex = 0; routeMatrixRowIndex < routeMatrixRowJsonList.GetLength(); ++routeMatrixRowIndex) {
-        routeMatrixRowList.push_back(routeMatrixRowJsonList[routeMatrixRowIndex].AsObject());
+      Aws::Utils::Array<JsonView> routeMatrixRow2JsonList = routeMatrixJsonList[routeMatrixIndex].AsArray();
+      Aws::Vector<RouteMatrixEntry> routeMatrixRow2List;
+      routeMatrixRow2List.reserve((size_t)routeMatrixRow2JsonList.GetLength());
+      for (unsigned routeMatrixRow2Index = 0; routeMatrixRow2Index < routeMatrixRow2JsonList.GetLength(); ++routeMatrixRow2Index) {
+        routeMatrixRow2List.push_back(routeMatrixRow2JsonList[routeMatrixRow2Index].AsObject());
       }
-      m_routeMatrix.push_back(std::move(routeMatrixRowList));
+      m_routeMatrix.push_back(std::move(routeMatrixRow2List));
     }
     m_routeMatrixHasBeenSet = true;
   }

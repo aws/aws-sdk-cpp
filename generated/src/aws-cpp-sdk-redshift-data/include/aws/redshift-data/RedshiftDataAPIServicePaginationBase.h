@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/redshift-data/model/DescribeTablePaginationTraits.h>
 #include <aws/redshift-data/model/GetStatementResultPaginationTraits.h>
@@ -29,6 +30,7 @@ class RedshiftDataAPIServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTableRequest, Pagination::DescribeTablePaginationTraits<DerivedClient>>
   DescribeTablePaginator(const Model::DescribeTableRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTableRequest,
                                              Pagination::DescribeTablePaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -40,6 +42,7 @@ class RedshiftDataAPIServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetStatementResultRequest,
                                     Pagination::GetStatementResultPaginationTraits<DerivedClient>>
   GetStatementResultPaginator(const Model::GetStatementResultRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetStatementResultRequest,
                                              Pagination::GetStatementResultPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +54,7 @@ class RedshiftDataAPIServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetStatementResultV2Request,
                                     Pagination::GetStatementResultV2PaginationTraits<DerivedClient>>
   GetStatementResultV2Paginator(const Model::GetStatementResultV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetStatementResultV2Request,
                                              Pagination::GetStatementResultV2PaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class RedshiftDataAPIServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest, Pagination::ListDatabasesPaginationTraits<DerivedClient>>
   ListDatabasesPaginator(const Model::ListDatabasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest,
                                              Pagination::ListDatabasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -71,6 +76,7 @@ class RedshiftDataAPIServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest, Pagination::ListSchemasPaginationTraits<DerivedClient>>
   ListSchemasPaginator(const Model::ListSchemasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest,
                                              Pagination::ListSchemasPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -81,6 +87,7 @@ class RedshiftDataAPIServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStatementsRequest, Pagination::ListStatementsPaginationTraits<DerivedClient>>
   ListStatementsPaginator(const Model::ListStatementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStatementsRequest,
                                              Pagination::ListStatementsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -91,6 +98,7 @@ class RedshiftDataAPIServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DerivedClient>>
   ListTablesPaginator(const Model::ListTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest,
                                              Pagination::ListTablesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

@@ -21,13 +21,13 @@ OpenHours& OpenHours::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("dailyHours")) {
     Aws::Map<Aws::String, JsonView> dailyHoursJsonMap = jsonValue.GetObject("dailyHours").GetAllObjects();
     for (auto& dailyHoursItem : dailyHoursJsonMap) {
-      Aws::Utils::Array<JsonView> timeRangeListJsonList = dailyHoursItem.second.AsArray();
-      Aws::Vector<TimeRange> timeRangeListList;
-      timeRangeListList.reserve((size_t)timeRangeListJsonList.GetLength());
-      for (unsigned timeRangeListIndex = 0; timeRangeListIndex < timeRangeListJsonList.GetLength(); ++timeRangeListIndex) {
-        timeRangeListList.push_back(timeRangeListJsonList[timeRangeListIndex].AsObject());
+      Aws::Utils::Array<JsonView> timeRangeList2JsonList = dailyHoursItem.second.AsArray();
+      Aws::Vector<TimeRange> timeRangeList2List;
+      timeRangeList2List.reserve((size_t)timeRangeList2JsonList.GetLength());
+      for (unsigned timeRangeList2Index = 0; timeRangeList2Index < timeRangeList2JsonList.GetLength(); ++timeRangeList2Index) {
+        timeRangeList2List.push_back(timeRangeList2JsonList[timeRangeList2Index].AsObject());
       }
-      m_dailyHours[DayOfWeekMapper::GetDayOfWeekForName(dailyHoursItem.first)] = std::move(timeRangeListList);
+      m_dailyHours[DayOfWeekMapper::GetDayOfWeekForName(dailyHoursItem.first)] = std::move(timeRangeList2List);
     }
     m_dailyHoursHasBeenSet = true;
   }

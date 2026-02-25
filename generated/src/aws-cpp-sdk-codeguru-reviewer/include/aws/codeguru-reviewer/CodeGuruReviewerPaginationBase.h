@@ -9,6 +9,7 @@
 #include <aws/codeguru-reviewer/model/ListRecommendationFeedbackPaginationTraits.h>
 #include <aws/codeguru-reviewer/model/ListRecommendationsPaginationTraits.h>
 #include <aws/codeguru-reviewer/model/ListRepositoryAssociationsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class CodeGuruReviewerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewsRequest,
                                     Pagination::ListCodeReviewsPaginationTraits<DerivedClient>>
   ListCodeReviewsPaginator(const Model::ListCodeReviewsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeReviewsRequest,
                                              Pagination::ListCodeReviewsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -38,6 +40,7 @@ class CodeGuruReviewerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationFeedbackRequest,
                                     Pagination::ListRecommendationFeedbackPaginationTraits<DerivedClient>>
   ListRecommendationFeedbackPaginator(const Model::ListRecommendationFeedbackRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationFeedbackRequest,
                                              Pagination::ListRecommendationFeedbackPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class CodeGuruReviewerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                     Pagination::ListRecommendationsPaginationTraits<DerivedClient>>
   ListRecommendationsPaginator(const Model::ListRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                              Pagination::ListRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class CodeGuruReviewerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRepositoryAssociationsRequest,
                                     Pagination::ListRepositoryAssociationsPaginationTraits<DerivedClient>>
   ListRepositoryAssociationsPaginator(const Model::ListRepositoryAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRepositoryAssociationsRequest,
                                              Pagination::ListRepositoryAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

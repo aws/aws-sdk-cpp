@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaLive {
 namespace Model {
-enum class VideoDescriptionScalingBehavior { NOT_SET, DEFAULT, STRETCH_TO_OUTPUT };
+enum class VideoDescriptionScalingBehavior { NOT_SET, DEFAULT, STRETCH_TO_OUTPUT, SMART_CROP };
 
 namespace VideoDescriptionScalingBehaviorMapper {
 AWS_MEDIALIVE_API VideoDescriptionScalingBehavior GetVideoDescriptionScalingBehaviorForName(const Aws::String& name);

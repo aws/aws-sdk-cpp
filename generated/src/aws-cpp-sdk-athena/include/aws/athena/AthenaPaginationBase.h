@@ -20,6 +20,7 @@
 #include <aws/athena/model/ListTableMetadataPaginationTraits.h>
 #include <aws/athena/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/athena/model/ListWorkGroupsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -38,6 +39,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
                                     Pagination::GetQueryResultsPaginationTraits<DerivedClient>>
   GetQueryResultsPaginator(const Model::GetQueryResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
                                              Pagination::GetQueryResultsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -49,6 +51,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationDPUSizesRequest,
                                     Pagination::ListApplicationDPUSizesPaginationTraits<DerivedClient>>
   ListApplicationDPUSizesPaginator(const Model::ListApplicationDPUSizesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationDPUSizesRequest,
                                              Pagination::ListApplicationDPUSizesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +63,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCalculationExecutionsRequest,
                                     Pagination::ListCalculationExecutionsPaginationTraits<DerivedClient>>
   ListCalculationExecutionsPaginator(const Model::ListCalculationExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCalculationExecutionsRequest,
                                              Pagination::ListCalculationExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +75,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapacityReservationsRequest,
                                     Pagination::ListCapacityReservationsPaginationTraits<DerivedClient>>
   ListCapacityReservationsPaginator(const Model::ListCapacityReservationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCapacityReservationsRequest,
                                              Pagination::ListCapacityReservationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -81,6 +86,7 @@ class AthenaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest, Pagination::ListDatabasesPaginationTraits<DerivedClient>>
   ListDatabasesPaginator(const Model::ListDatabasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest,
                                              Pagination::ListDatabasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -92,6 +98,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataCatalogsRequest,
                                     Pagination::ListDataCatalogsPaginationTraits<DerivedClient>>
   ListDataCatalogsPaginator(const Model::ListDataCatalogsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataCatalogsRequest,
                                              Pagination::ListDataCatalogsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -103,6 +110,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngineVersionsRequest,
                                     Pagination::ListEngineVersionsPaginationTraits<DerivedClient>>
   ListEngineVersionsPaginator(const Model::ListEngineVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngineVersionsRequest,
                                              Pagination::ListEngineVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -113,6 +121,7 @@ class AthenaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExecutorsRequest, Pagination::ListExecutorsPaginationTraits<DerivedClient>>
   ListExecutorsPaginator(const Model::ListExecutorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExecutorsRequest,
                                              Pagination::ListExecutorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -124,6 +133,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamedQueriesRequest,
                                     Pagination::ListNamedQueriesPaginationTraits<DerivedClient>>
   ListNamedQueriesPaginator(const Model::ListNamedQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamedQueriesRequest,
                                              Pagination::ListNamedQueriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -135,6 +145,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPreparedStatementsRequest,
                                     Pagination::ListPreparedStatementsPaginationTraits<DerivedClient>>
   ListPreparedStatementsPaginator(const Model::ListPreparedStatementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPreparedStatementsRequest,
                                              Pagination::ListPreparedStatementsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -146,6 +157,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueryExecutionsRequest,
                                     Pagination::ListQueryExecutionsPaginationTraits<DerivedClient>>
   ListQueryExecutionsPaginator(const Model::ListQueryExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueryExecutionsRequest,
                                              Pagination::ListQueryExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -156,6 +168,7 @@ class AthenaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
   ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
                                              Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -167,6 +180,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableMetadataRequest,
                                     Pagination::ListTableMetadataPaginationTraits<DerivedClient>>
   ListTableMetadataPaginator(const Model::ListTableMetadataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableMetadataRequest,
                                              Pagination::ListTableMetadataPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -178,6 +192,7 @@ class AthenaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -188,6 +203,7 @@ class AthenaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkGroupsRequest, Pagination::ListWorkGroupsPaginationTraits<DerivedClient>>
   ListWorkGroupsPaginator(const Model::ListWorkGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkGroupsRequest,
                                              Pagination::ListWorkGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

@@ -22,6 +22,7 @@ static const int DATETIME_HASH = HashingUtils::HashString("DATETIME");
 static const int BIT_HASH = HashingUtils::HashString("BIT");
 static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
 static const int JSON_HASH = HashingUtils::HashString("JSON");
+static const int SEMISTRUCT_HASH = HashingUtils::HashString("SEMISTRUCT");
 
 InputColumnDataType GetInputColumnDataTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ InputColumnDataType GetInputColumnDataTypeForName(const Aws::String& name) {
     return InputColumnDataType::BOOLEAN;
   } else if (hashCode == JSON_HASH) {
     return InputColumnDataType::JSON;
+  } else if (hashCode == SEMISTRUCT_HASH) {
+    return InputColumnDataType::SEMISTRUCT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForInputColumnDataType(InputColumnDataType enumValue) {
       return "BOOLEAN";
     case InputColumnDataType::JSON:
       return "JSON";
+    case InputColumnDataType::SEMISTRUCT:
+      return "SEMISTRUCT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

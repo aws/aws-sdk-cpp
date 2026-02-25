@@ -9,6 +9,7 @@
 #include <aws/codeconnections/model/ListHostsPaginationTraits.h>
 #include <aws/codeconnections/model/ListRepositoryLinksPaginationTraits.h>
 #include <aws/codeconnections/model/ListSyncConfigurationsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class CodeConnectionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectionsRequest,
                                     Pagination::ListConnectionsPaginationTraits<DerivedClient>>
   ListConnectionsPaginator(const Model::ListConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectionsRequest,
                                              Pagination::ListConnectionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -37,6 +39,7 @@ class CodeConnectionsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHostsRequest, Pagination::ListHostsPaginationTraits<DerivedClient>>
   ListHostsPaginator(const Model::ListHostsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHostsRequest, Pagination::ListHostsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -47,6 +50,7 @@ class CodeConnectionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRepositoryLinksRequest,
                                     Pagination::ListRepositoryLinksPaginationTraits<DerivedClient>>
   ListRepositoryLinksPaginator(const Model::ListRepositoryLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRepositoryLinksRequest,
                                              Pagination::ListRepositoryLinksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -58,6 +62,7 @@ class CodeConnectionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSyncConfigurationsRequest,
                                     Pagination::ListSyncConfigurationsPaginationTraits<DerivedClient>>
   ListSyncConfigurationsPaginator(const Model::ListSyncConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSyncConfigurationsRequest,
                                              Pagination::ListSyncConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

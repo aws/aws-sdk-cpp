@@ -31,13 +31,13 @@ GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("Data")) {
     Aws::Utils::Array<JsonView> dataJsonList = jsonValue.GetArray("Data");
     for (unsigned dataIndex = 0; dataIndex < dataJsonList.GetLength(); ++dataIndex) {
-      Aws::Utils::Array<JsonView> queryRowJsonList = dataJsonList[dataIndex].AsArray();
-      Aws::Vector<Aws::String> queryRowList;
-      queryRowList.reserve((size_t)queryRowJsonList.GetLength());
-      for (unsigned queryRowIndex = 0; queryRowIndex < queryRowJsonList.GetLength(); ++queryRowIndex) {
-        queryRowList.push_back(queryRowJsonList[queryRowIndex].AsString());
+      Aws::Utils::Array<JsonView> queryRow2JsonList = dataJsonList[dataIndex].AsArray();
+      Aws::Vector<Aws::String> queryRow2List;
+      queryRow2List.reserve((size_t)queryRow2JsonList.GetLength());
+      for (unsigned queryRow2Index = 0; queryRow2Index < queryRow2JsonList.GetLength(); ++queryRow2Index) {
+        queryRow2List.push_back(queryRow2JsonList[queryRow2Index].AsString());
       }
-      m_data.push_back(std::move(queryRowList));
+      m_data.push_back(std::move(queryRow2List));
     }
     m_dataHasBeenSet = true;
   }

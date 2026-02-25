@@ -21,13 +21,13 @@ RouteLegGeometry& RouteLegGeometry::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("LineString")) {
     Aws::Utils::Array<JsonView> lineStringJsonList = jsonValue.GetArray("LineString");
     for (unsigned lineStringIndex = 0; lineStringIndex < lineStringJsonList.GetLength(); ++lineStringIndex) {
-      Aws::Utils::Array<JsonView> positionJsonList = lineStringJsonList[lineStringIndex].AsArray();
-      Aws::Vector<double> positionList;
-      positionList.reserve((size_t)positionJsonList.GetLength());
-      for (unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex) {
-        positionList.push_back(positionJsonList[positionIndex].AsDouble());
+      Aws::Utils::Array<JsonView> position2JsonList = lineStringJsonList[lineStringIndex].AsArray();
+      Aws::Vector<double> position2List;
+      position2List.reserve((size_t)position2JsonList.GetLength());
+      for (unsigned position2Index = 0; position2Index < position2JsonList.GetLength(); ++position2Index) {
+        position2List.push_back(position2JsonList[position2Index].AsDouble());
       }
-      m_lineString.push_back(std::move(positionList));
+      m_lineString.push_back(std::move(position2List));
     }
     m_lineStringHasBeenSet = true;
   }

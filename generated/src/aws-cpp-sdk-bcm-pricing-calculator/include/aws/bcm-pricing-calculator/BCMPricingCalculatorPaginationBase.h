@@ -15,6 +15,7 @@
 #include <aws/bcm-pricing-calculator/model/ListBillScenariosPaginationTraits.h>
 #include <aws/bcm-pricing-calculator/model/ListWorkloadEstimateUsagePaginationTraits.h>
 #include <aws/bcm-pricing-calculator/model/ListWorkloadEstimatesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -33,6 +34,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateCommitmentsRequest,
                                     Pagination::ListBillEstimateCommitmentsPaginationTraits<DerivedClient>>
   ListBillEstimateCommitmentsPaginator(const Model::ListBillEstimateCommitmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateCommitmentsRequest,
                                              Pagination::ListBillEstimateCommitmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -44,6 +46,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateInputCommitmentModificationsRequest,
                                     Pagination::ListBillEstimateInputCommitmentModificationsPaginationTraits<DerivedClient>>
   ListBillEstimateInputCommitmentModificationsPaginator(const Model::ListBillEstimateInputCommitmentModificationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateInputCommitmentModificationsRequest,
                                              Pagination::ListBillEstimateInputCommitmentModificationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -55,6 +58,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateInputUsageModificationsRequest,
                                     Pagination::ListBillEstimateInputUsageModificationsPaginationTraits<DerivedClient>>
   ListBillEstimateInputUsageModificationsPaginator(const Model::ListBillEstimateInputUsageModificationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateInputUsageModificationsRequest,
                                              Pagination::ListBillEstimateInputUsageModificationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateLineItemsRequest,
                                     Pagination::ListBillEstimateLineItemsPaginationTraits<DerivedClient>>
   ListBillEstimateLineItemsPaginator(const Model::ListBillEstimateLineItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimateLineItemsRequest,
                                              Pagination::ListBillEstimateLineItemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +82,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimatesRequest,
                                     Pagination::ListBillEstimatesPaginationTraits<DerivedClient>>
   ListBillEstimatesPaginator(const Model::ListBillEstimatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillEstimatesRequest,
                                              Pagination::ListBillEstimatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -88,6 +94,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillScenarioCommitmentModificationsRequest,
                                     Pagination::ListBillScenarioCommitmentModificationsPaginationTraits<DerivedClient>>
   ListBillScenarioCommitmentModificationsPaginator(const Model::ListBillScenarioCommitmentModificationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillScenarioCommitmentModificationsRequest,
                                              Pagination::ListBillScenarioCommitmentModificationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -99,6 +106,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillScenariosRequest,
                                     Pagination::ListBillScenariosPaginationTraits<DerivedClient>>
   ListBillScenariosPaginator(const Model::ListBillScenariosRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillScenariosRequest,
                                              Pagination::ListBillScenariosPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -110,6 +118,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillScenarioUsageModificationsRequest,
                                     Pagination::ListBillScenarioUsageModificationsPaginationTraits<DerivedClient>>
   ListBillScenarioUsageModificationsPaginator(const Model::ListBillScenarioUsageModificationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBillScenarioUsageModificationsRequest,
                                              Pagination::ListBillScenarioUsageModificationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -121,6 +130,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadEstimatesRequest,
                                     Pagination::ListWorkloadEstimatesPaginationTraits<DerivedClient>>
   ListWorkloadEstimatesPaginator(const Model::ListWorkloadEstimatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadEstimatesRequest,
                                              Pagination::ListWorkloadEstimatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -132,6 +142,7 @@ class BCMPricingCalculatorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadEstimateUsageRequest,
                                     Pagination::ListWorkloadEstimateUsagePaginationTraits<DerivedClient>>
   ListWorkloadEstimateUsagePaginator(const Model::ListWorkloadEstimateUsageRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadEstimateUsageRequest,
                                              Pagination::ListWorkloadEstimateUsagePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

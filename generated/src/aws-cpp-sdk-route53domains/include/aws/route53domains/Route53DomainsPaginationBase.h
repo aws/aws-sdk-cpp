@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/route53domains/model/ListDomainsPaginationTraits.h>
 #include <aws/route53domains/model/ListOperationsPaginationTraits.h>
@@ -26,6 +27,7 @@ class Route53DomainsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest, Pagination::ListDomainsPaginationTraits<DerivedClient>>
   ListDomainsPaginator(const Model::ListDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest,
                                              Pagination::ListDomainsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -36,6 +38,7 @@ class Route53DomainsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOperationsRequest, Pagination::ListOperationsPaginationTraits<DerivedClient>>
   ListOperationsPaginator(const Model::ListOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOperationsRequest,
                                              Pagination::ListOperationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -46,6 +49,7 @@ class Route53DomainsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricesRequest, Pagination::ListPricesPaginationTraits<DerivedClient>>
   ListPricesPaginator(const Model::ListPricesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPricesRequest,
                                              Pagination::ListPricesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -56,6 +60,7 @@ class Route53DomainsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ViewBillingRequest, Pagination::ViewBillingPaginationTraits<DerivedClient>>
   ViewBillingPaginator(const Model::ViewBillingRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ViewBillingRequest,
                                              Pagination::ViewBillingPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

@@ -44,12 +44,12 @@ RDFGraphSummary& RDFGraphSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("predicates")) {
     Aws::Utils::Array<JsonView> predicatesJsonList = jsonValue.GetArray("predicates");
     for (unsigned predicatesIndex = 0; predicatesIndex < predicatesJsonList.GetLength(); ++predicatesIndex) {
-      Aws::Map<Aws::String, JsonView> longValuedMapJsonMap = predicatesJsonList[predicatesIndex].GetAllObjects();
-      Aws::Map<Aws::String, long long> longValuedMapMap;
-      for (auto& longValuedMapItem : longValuedMapJsonMap) {
-        longValuedMapMap[longValuedMapItem.first] = longValuedMapItem.second.AsInt64();
+      Aws::Map<Aws::String, JsonView> longValuedMap2JsonMap = predicatesJsonList[predicatesIndex].GetAllObjects();
+      Aws::Map<Aws::String, long long> longValuedMap2Map;
+      for (auto& longValuedMap2Item : longValuedMap2JsonMap) {
+        longValuedMap2Map[longValuedMap2Item.first] = longValuedMap2Item.second.AsInt64();
       }
-      m_predicates.push_back(std::move(longValuedMapMap));
+      m_predicates.push_back(std::move(longValuedMap2Map));
     }
     m_predicatesHasBeenSet = true;
   }

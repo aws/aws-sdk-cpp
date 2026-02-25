@@ -76,12 +76,12 @@ EcsParameters& EcsParameters::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      Aws::Map<Aws::String, JsonView> tagMapJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> tagMapMap;
-      for (auto& tagMapItem : tagMapJsonMap) {
-        tagMapMap[tagMapItem.first] = tagMapItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> tagMap2JsonMap = tagsJsonList[tagsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> tagMap2Map;
+      for (auto& tagMap2Item : tagMap2JsonMap) {
+        tagMap2Map[tagMap2Item.first] = tagMap2Item.second.AsString();
       }
-      m_tags.push_back(std::move(tagMapMap));
+      m_tags.push_back(std::move(tagMap2Map));
     }
     m_tagsHasBeenSet = true;
   }

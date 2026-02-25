@@ -21,12 +21,12 @@ RuntimeHints& RuntimeHints::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("slotHints")) {
     Aws::Map<Aws::String, JsonView> slotHintsJsonMap = jsonValue.GetObject("slotHints").GetAllObjects();
     for (auto& slotHintsItem : slotHintsJsonMap) {
-      Aws::Map<Aws::String, JsonView> slotHintsSlotMapJsonMap = slotHintsItem.second.GetAllObjects();
-      Aws::Map<Aws::String, RuntimeHintDetails> slotHintsSlotMapMap;
-      for (auto& slotHintsSlotMapItem : slotHintsSlotMapJsonMap) {
-        slotHintsSlotMapMap[slotHintsSlotMapItem.first] = slotHintsSlotMapItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> slotHintsSlotMap2JsonMap = slotHintsItem.second.GetAllObjects();
+      Aws::Map<Aws::String, RuntimeHintDetails> slotHintsSlotMap2Map;
+      for (auto& slotHintsSlotMap2Item : slotHintsSlotMap2JsonMap) {
+        slotHintsSlotMap2Map[slotHintsSlotMap2Item.first] = slotHintsSlotMap2Item.second.AsObject();
       }
-      m_slotHints[slotHintsItem.first] = std::move(slotHintsSlotMapMap);
+      m_slotHints[slotHintsItem.first] = std::move(slotHintsSlotMap2Map);
     }
     m_slotHintsHasBeenSet = true;
   }

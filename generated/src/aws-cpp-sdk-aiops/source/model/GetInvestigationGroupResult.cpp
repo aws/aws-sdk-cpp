@@ -60,14 +60,14 @@ GetInvestigationGroupResult& GetInvestigationGroupResult::operator=(const Aws::A
   if (jsonValue.ValueExists("chatbotNotificationChannel")) {
     Aws::Map<Aws::String, JsonView> chatbotNotificationChannelJsonMap = jsonValue.GetObject("chatbotNotificationChannel").GetAllObjects();
     for (auto& chatbotNotificationChannelItem : chatbotNotificationChannelJsonMap) {
-      Aws::Utils::Array<JsonView> chatConfigurationArnsJsonList = chatbotNotificationChannelItem.second.AsArray();
-      Aws::Vector<Aws::String> chatConfigurationArnsList;
-      chatConfigurationArnsList.reserve((size_t)chatConfigurationArnsJsonList.GetLength());
-      for (unsigned chatConfigurationArnsIndex = 0; chatConfigurationArnsIndex < chatConfigurationArnsJsonList.GetLength();
-           ++chatConfigurationArnsIndex) {
-        chatConfigurationArnsList.push_back(chatConfigurationArnsJsonList[chatConfigurationArnsIndex].AsString());
+      Aws::Utils::Array<JsonView> chatConfigurationArns2JsonList = chatbotNotificationChannelItem.second.AsArray();
+      Aws::Vector<Aws::String> chatConfigurationArns2List;
+      chatConfigurationArns2List.reserve((size_t)chatConfigurationArns2JsonList.GetLength());
+      for (unsigned chatConfigurationArns2Index = 0; chatConfigurationArns2Index < chatConfigurationArns2JsonList.GetLength();
+           ++chatConfigurationArns2Index) {
+        chatConfigurationArns2List.push_back(chatConfigurationArns2JsonList[chatConfigurationArns2Index].AsString());
       }
-      m_chatbotNotificationChannel[chatbotNotificationChannelItem.first] = std::move(chatConfigurationArnsList);
+      m_chatbotNotificationChannel[chatbotNotificationChannelItem.first] = std::move(chatConfigurationArns2List);
     }
     m_chatbotNotificationChannelHasBeenSet = true;
   }

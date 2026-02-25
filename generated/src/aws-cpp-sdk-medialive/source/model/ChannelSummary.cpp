@@ -122,6 +122,10 @@ ChannelSummary& ChannelSummary::operator=(JsonView jsonValue) {
     }
     m_channelSecurityGroupsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("inferenceSettings")) {
+    m_inferenceSettings = jsonValue.GetObject("inferenceSettings");
+    m_inferenceSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -237,6 +241,10 @@ JsonValue ChannelSummary::Jsonize() const {
       channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString(m_channelSecurityGroups[channelSecurityGroupsIndex]);
     }
     payload.WithArray("channelSecurityGroups", std::move(channelSecurityGroupsJsonList));
+  }
+
+  if (m_inferenceSettingsHasBeenSet) {
+    payload.WithObject("inferenceSettings", m_inferenceSettings.Jsonize());
   }
 
   return payload;

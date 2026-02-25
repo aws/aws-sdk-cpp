@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/networkmanager/model/DescribeGlobalNetworksPaginationTraits.h>
 #include <aws/networkmanager/model/GetConnectPeerAssociationsPaginationTraits.h>
@@ -47,6 +48,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGlobalNetworksRequest,
                                     Pagination::DescribeGlobalNetworksPaginationTraits<DerivedClient>>
   DescribeGlobalNetworksPaginator(const Model::DescribeGlobalNetworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGlobalNetworksRequest,
                                              Pagination::DescribeGlobalNetworksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -57,6 +59,7 @@ class NetworkManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetConnectionsRequest, Pagination::GetConnectionsPaginationTraits<DerivedClient>>
   GetConnectionsPaginator(const Model::GetConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetConnectionsRequest,
                                              Pagination::GetConnectionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -68,6 +71,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetConnectPeerAssociationsRequest,
                                     Pagination::GetConnectPeerAssociationsPaginationTraits<DerivedClient>>
   GetConnectPeerAssociationsPaginator(const Model::GetConnectPeerAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetConnectPeerAssociationsRequest,
                                              Pagination::GetConnectPeerAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -79,6 +83,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCoreNetworkChangeEventsRequest,
                                     Pagination::GetCoreNetworkChangeEventsPaginationTraits<DerivedClient>>
   GetCoreNetworkChangeEventsPaginator(const Model::GetCoreNetworkChangeEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCoreNetworkChangeEventsRequest,
                                              Pagination::GetCoreNetworkChangeEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -90,6 +95,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCoreNetworkChangeSetRequest,
                                     Pagination::GetCoreNetworkChangeSetPaginationTraits<DerivedClient>>
   GetCoreNetworkChangeSetPaginator(const Model::GetCoreNetworkChangeSetRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCoreNetworkChangeSetRequest,
                                              Pagination::GetCoreNetworkChangeSetPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -101,6 +107,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCustomerGatewayAssociationsRequest,
                                     Pagination::GetCustomerGatewayAssociationsPaginationTraits<DerivedClient>>
   GetCustomerGatewayAssociationsPaginator(const Model::GetCustomerGatewayAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCustomerGatewayAssociationsRequest,
                                              Pagination::GetCustomerGatewayAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -111,6 +118,7 @@ class NetworkManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDevicesRequest, Pagination::GetDevicesPaginationTraits<DerivedClient>>
   GetDevicesPaginator(const Model::GetDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDevicesRequest,
                                              Pagination::GetDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -122,6 +130,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLinkAssociationsRequest,
                                     Pagination::GetLinkAssociationsPaginationTraits<DerivedClient>>
   GetLinkAssociationsPaginator(const Model::GetLinkAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLinkAssociationsRequest,
                                              Pagination::GetLinkAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -132,6 +141,7 @@ class NetworkManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLinksRequest, Pagination::GetLinksPaginationTraits<DerivedClient>>
   GetLinksPaginator(const Model::GetLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLinksRequest, Pagination::GetLinksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -142,6 +152,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkResourceCountsRequest,
                                     Pagination::GetNetworkResourceCountsPaginationTraits<DerivedClient>>
   GetNetworkResourceCountsPaginator(const Model::GetNetworkResourceCountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkResourceCountsRequest,
                                              Pagination::GetNetworkResourceCountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -153,6 +164,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkResourceRelationshipsRequest,
                                     Pagination::GetNetworkResourceRelationshipsPaginationTraits<DerivedClient>>
   GetNetworkResourceRelationshipsPaginator(const Model::GetNetworkResourceRelationshipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkResourceRelationshipsRequest,
                                              Pagination::GetNetworkResourceRelationshipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -164,6 +176,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkResourcesRequest,
                                     Pagination::GetNetworkResourcesPaginationTraits<DerivedClient>>
   GetNetworkResourcesPaginator(const Model::GetNetworkResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkResourcesRequest,
                                              Pagination::GetNetworkResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -175,6 +188,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkTelemetryRequest,
                                     Pagination::GetNetworkTelemetryPaginationTraits<DerivedClient>>
   GetNetworkTelemetryPaginator(const Model::GetNetworkTelemetryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkTelemetryRequest,
                                              Pagination::GetNetworkTelemetryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -185,6 +199,7 @@ class NetworkManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSitesRequest, Pagination::GetSitesPaginationTraits<DerivedClient>>
   GetSitesPaginator(const Model::GetSitesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSitesRequest, Pagination::GetSitesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -195,6 +210,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayConnectPeerAssociationsRequest,
                                     Pagination::GetTransitGatewayConnectPeerAssociationsPaginationTraits<DerivedClient>>
   GetTransitGatewayConnectPeerAssociationsPaginator(const Model::GetTransitGatewayConnectPeerAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayConnectPeerAssociationsRequest,
                                              Pagination::GetTransitGatewayConnectPeerAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -206,6 +222,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRegistrationsRequest,
                                     Pagination::GetTransitGatewayRegistrationsPaginationTraits<DerivedClient>>
   GetTransitGatewayRegistrationsPaginator(const Model::GetTransitGatewayRegistrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRegistrationsRequest,
                                              Pagination::GetTransitGatewayRegistrationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -217,6 +234,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachmentRoutingPolicyAssociationsRequest,
                                     Pagination::ListAttachmentRoutingPolicyAssociationsPaginationTraits<DerivedClient>>
   ListAttachmentRoutingPolicyAssociationsPaginator(const Model::ListAttachmentRoutingPolicyAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachmentRoutingPolicyAssociationsRequest,
                                              Pagination::ListAttachmentRoutingPolicyAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -228,6 +246,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachmentsRequest,
                                     Pagination::ListAttachmentsPaginationTraits<DerivedClient>>
   ListAttachmentsPaginator(const Model::ListAttachmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachmentsRequest,
                                              Pagination::ListAttachmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -239,6 +258,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectPeersRequest,
                                     Pagination::ListConnectPeersPaginationTraits<DerivedClient>>
   ListConnectPeersPaginator(const Model::ListConnectPeersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectPeersRequest,
                                              Pagination::ListConnectPeersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -250,6 +270,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkPolicyVersionsRequest,
                                     Pagination::ListCoreNetworkPolicyVersionsPaginationTraits<DerivedClient>>
   ListCoreNetworkPolicyVersionsPaginator(const Model::ListCoreNetworkPolicyVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkPolicyVersionsRequest,
                                              Pagination::ListCoreNetworkPolicyVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -261,6 +282,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkPrefixListAssociationsRequest,
                                     Pagination::ListCoreNetworkPrefixListAssociationsPaginationTraits<DerivedClient>>
   ListCoreNetworkPrefixListAssociationsPaginator(const Model::ListCoreNetworkPrefixListAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkPrefixListAssociationsRequest,
                                              Pagination::ListCoreNetworkPrefixListAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -272,6 +294,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkRoutingInformationRequest,
                                     Pagination::ListCoreNetworkRoutingInformationPaginationTraits<DerivedClient>>
   ListCoreNetworkRoutingInformationPaginator(const Model::ListCoreNetworkRoutingInformationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworkRoutingInformationRequest,
                                              Pagination::ListCoreNetworkRoutingInformationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -283,6 +306,7 @@ class NetworkManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworksRequest,
                                     Pagination::ListCoreNetworksPaginationTraits<DerivedClient>>
   ListCoreNetworksPaginator(const Model::ListCoreNetworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCoreNetworksRequest,
                                              Pagination::ListCoreNetworksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -293,6 +317,7 @@ class NetworkManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPeeringsRequest, Pagination::ListPeeringsPaginationTraits<DerivedClient>>
   ListPeeringsPaginator(const Model::ListPeeringsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPeeringsRequest,
                                              Pagination::ListPeeringsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

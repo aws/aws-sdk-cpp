@@ -8,6 +8,7 @@
 #include <aws/cloudhsmv2/model/DescribeBackupsPaginationTraits.h>
 #include <aws/cloudhsmv2/model/DescribeClustersPaginationTraits.h>
 #include <aws/cloudhsmv2/model/ListTagsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -26,6 +27,7 @@ class CloudHSMV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBackupsRequest,
                                     Pagination::DescribeBackupsPaginationTraits<DerivedClient>>
   DescribeBackupsPaginator(const Model::DescribeBackupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBackupsRequest,
                                              Pagination::DescribeBackupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -37,6 +39,7 @@ class CloudHSMV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClustersRequest,
                                     Pagination::DescribeClustersPaginationTraits<DerivedClient>>
   DescribeClustersPaginator(const Model::DescribeClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClustersRequest,
                                              Pagination::DescribeClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -47,6 +50,7 @@ class CloudHSMV2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsRequest, Pagination::ListTagsPaginationTraits<DerivedClient>>
   ListTagsPaginator(const Model::ListTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsRequest, Pagination::ListTagsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

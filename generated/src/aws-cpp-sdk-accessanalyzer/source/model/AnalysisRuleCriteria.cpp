@@ -28,12 +28,12 @@ AnalysisRuleCriteria& AnalysisRuleCriteria::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("resourceTags")) {
     Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
     for (unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex) {
-      Aws::Map<Aws::String, JsonView> tagsMapJsonMap = resourceTagsJsonList[resourceTagsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> tagsMapMap;
-      for (auto& tagsMapItem : tagsMapJsonMap) {
-        tagsMapMap[tagsMapItem.first] = tagsMapItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> tagsMap2JsonMap = resourceTagsJsonList[resourceTagsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> tagsMap2Map;
+      for (auto& tagsMap2Item : tagsMap2JsonMap) {
+        tagsMap2Map[tagsMap2Item.first] = tagsMap2Item.second.AsString();
       }
-      m_resourceTags.push_back(std::move(tagsMapMap));
+      m_resourceTags.push_back(std::move(tagsMap2Map));
     }
     m_resourceTagsHasBeenSet = true;
   }

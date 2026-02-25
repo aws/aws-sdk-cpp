@@ -15,6 +15,7 @@
 #include <aws/monitoring/model/DescribeAnomalyDetectorsPaginationTraits.h>
 #include <aws/monitoring/model/GetMetricDataPaginationTraits.h>
 #include <aws/monitoring/model/DescribeAlarmsPaginationTraits.h>
+#include <aws/monitoring/model/ListAlarmMuteRulesPaginationTraits.h>
 #include <aws/monitoring/model/DescribeInsightRulesPaginationTraits.h>
 #include <aws/monitoring/model/ListDashboardsPaginationTraits.h>
 

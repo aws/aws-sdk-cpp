@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/dynamodb/model/ListContributorInsightsPaginationTraits.h>
 #include <aws/dynamodb/model/ListExportsPaginationTraits.h>
@@ -29,6 +30,7 @@ class DynamoDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContributorInsightsRequest,
                                     Pagination::ListContributorInsightsPaginationTraits<DerivedClient>>
   ListContributorInsightsPaginator(const Model::ListContributorInsightsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContributorInsightsRequest,
                                              Pagination::ListContributorInsightsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class DynamoDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportsRequest, Pagination::ListExportsPaginationTraits<DerivedClient>>
   ListExportsPaginator(const Model::ListExportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportsRequest,
                                              Pagination::ListExportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -49,6 +52,7 @@ class DynamoDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportsRequest, Pagination::ListImportsPaginationTraits<DerivedClient>>
   ListImportsPaginator(const Model::ListImportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportsRequest,
                                              Pagination::ListImportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -59,6 +63,7 @@ class DynamoDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DerivedClient>>
   ListTablesPaginator(const Model::ListTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest,
                                              Pagination::ListTablesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -69,6 +74,7 @@ class DynamoDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DerivedClient>> QueryPaginator(
       const Model::QueryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryRequest, Pagination::QueryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -78,6 +84,7 @@ class DynamoDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ScanRequest, Pagination::ScanPaginationTraits<DerivedClient>> ScanPaginator(
       const Model::ScanRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ScanRequest, Pagination::ScanPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

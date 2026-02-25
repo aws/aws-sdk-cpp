@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/invoicing/model/ListInvoiceSummariesPaginationTraits.h>
 #include <aws/invoicing/model/ListInvoiceUnitsPaginationTraits.h>
@@ -26,6 +27,7 @@ class InvoicingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvoiceSummariesRequest,
                                     Pagination::ListInvoiceSummariesPaginationTraits<DerivedClient>>
   ListInvoiceSummariesPaginator(const Model::ListInvoiceSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvoiceSummariesRequest,
                                              Pagination::ListInvoiceSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class InvoicingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvoiceUnitsRequest,
                                     Pagination::ListInvoiceUnitsPaginationTraits<DerivedClient>>
   ListInvoiceUnitsPaginator(const Model::ListInvoiceUnitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvoiceUnitsRequest,
                                              Pagination::ListInvoiceUnitsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class InvoicingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalPreferencesRequest,
                                     Pagination::ListProcurementPortalPreferencesPaginationTraits<DerivedClient>>
   ListProcurementPortalPreferencesPaginator(const Model::ListProcurementPortalPreferencesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProcurementPortalPreferencesRequest,
                                              Pagination::ListProcurementPortalPreferencesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

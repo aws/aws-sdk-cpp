@@ -22,13 +22,13 @@ OnPremisesTagSet& OnPremisesTagSet::operator=(JsonView jsonValue) {
     Aws::Utils::Array<JsonView> onPremisesTagSetListJsonList = jsonValue.GetArray("onPremisesTagSetList");
     for (unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength();
          ++onPremisesTagSetListIndex) {
-      Aws::Utils::Array<JsonView> tagFilterListJsonList = onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray();
-      Aws::Vector<TagFilter> tagFilterListList;
-      tagFilterListList.reserve((size_t)tagFilterListJsonList.GetLength());
-      for (unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex) {
-        tagFilterListList.push_back(tagFilterListJsonList[tagFilterListIndex].AsObject());
+      Aws::Utils::Array<JsonView> tagFilterList2JsonList = onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray();
+      Aws::Vector<TagFilter> tagFilterList2List;
+      tagFilterList2List.reserve((size_t)tagFilterList2JsonList.GetLength());
+      for (unsigned tagFilterList2Index = 0; tagFilterList2Index < tagFilterList2JsonList.GetLength(); ++tagFilterList2Index) {
+        tagFilterList2List.push_back(tagFilterList2JsonList[tagFilterList2Index].AsObject());
       }
-      m_onPremisesTagSetList.push_back(std::move(tagFilterListList));
+      m_onPremisesTagSetList.push_back(std::move(tagFilterList2List));
     }
     m_onPremisesTagSetListHasBeenSet = true;
   }

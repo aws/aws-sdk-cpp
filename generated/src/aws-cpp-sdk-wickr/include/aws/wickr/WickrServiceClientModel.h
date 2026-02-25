@@ -41,6 +41,7 @@
 #include <aws/wickr/model/GetNetworkResult.h>
 #include <aws/wickr/model/GetNetworkSettingsResult.h>
 #include <aws/wickr/model/GetOidcInfoResult.h>
+#include <aws/wickr/model/GetOpentdfConfigResult.h>
 #include <aws/wickr/model/GetSecurityGroupResult.h>
 #include <aws/wickr/model/GetUserResult.h>
 #include <aws/wickr/model/GetUsersCountResult.h>
@@ -55,6 +56,7 @@
 #include <aws/wickr/model/ListUsersResult.h>
 #include <aws/wickr/model/RegisterOidcConfigResult.h>
 #include <aws/wickr/model/RegisterOidcConfigTestResult.h>
+#include <aws/wickr/model/RegisterOpentdfConfigResult.h>
 #include <aws/wickr/model/UpdateBotResult.h>
 #include <aws/wickr/model/UpdateDataRetentionResult.h>
 #include <aws/wickr/model/UpdateGuestUserResult.h>
@@ -117,6 +119,7 @@ class GetGuestUserHistoryCountRequest;
 class GetNetworkRequest;
 class GetNetworkSettingsRequest;
 class GetOidcInfoRequest;
+class GetOpentdfConfigRequest;
 class GetSecurityGroupRequest;
 class GetUserRequest;
 class GetUsersCountRequest;
@@ -130,6 +133,7 @@ class ListSecurityGroupsRequest;
 class ListUsersRequest;
 class RegisterOidcConfigRequest;
 class RegisterOidcConfigTestRequest;
+class RegisterOpentdfConfigRequest;
 class UpdateBotRequest;
 class UpdateDataRetentionRequest;
 class UpdateGuestUserRequest;
@@ -162,6 +166,7 @@ typedef Aws::Utils::Outcome<GetGuestUserHistoryCountResult, WickrError> GetGuest
 typedef Aws::Utils::Outcome<GetNetworkResult, WickrError> GetNetworkOutcome;
 typedef Aws::Utils::Outcome<GetNetworkSettingsResult, WickrError> GetNetworkSettingsOutcome;
 typedef Aws::Utils::Outcome<GetOidcInfoResult, WickrError> GetOidcInfoOutcome;
+typedef Aws::Utils::Outcome<GetOpentdfConfigResult, WickrError> GetOpentdfConfigOutcome;
 typedef Aws::Utils::Outcome<GetSecurityGroupResult, WickrError> GetSecurityGroupOutcome;
 typedef Aws::Utils::Outcome<GetUserResult, WickrError> GetUserOutcome;
 typedef Aws::Utils::Outcome<GetUsersCountResult, WickrError> GetUsersCountOutcome;
@@ -175,6 +180,7 @@ typedef Aws::Utils::Outcome<ListSecurityGroupsResult, WickrError> ListSecurityGr
 typedef Aws::Utils::Outcome<ListUsersResult, WickrError> ListUsersOutcome;
 typedef Aws::Utils::Outcome<RegisterOidcConfigResult, WickrError> RegisterOidcConfigOutcome;
 typedef Aws::Utils::Outcome<RegisterOidcConfigTestResult, WickrError> RegisterOidcConfigTestOutcome;
+typedef Aws::Utils::Outcome<RegisterOpentdfConfigResult, WickrError> RegisterOpentdfConfigOutcome;
 typedef Aws::Utils::Outcome<UpdateBotResult, WickrError> UpdateBotOutcome;
 typedef Aws::Utils::Outcome<UpdateDataRetentionResult, WickrError> UpdateDataRetentionOutcome;
 typedef Aws::Utils::Outcome<UpdateGuestUserResult, WickrError> UpdateGuestUserOutcome;
@@ -207,6 +213,7 @@ typedef std::future<GetGuestUserHistoryCountOutcome> GetGuestUserHistoryCountOut
 typedef std::future<GetNetworkOutcome> GetNetworkOutcomeCallable;
 typedef std::future<GetNetworkSettingsOutcome> GetNetworkSettingsOutcomeCallable;
 typedef std::future<GetOidcInfoOutcome> GetOidcInfoOutcomeCallable;
+typedef std::future<GetOpentdfConfigOutcome> GetOpentdfConfigOutcomeCallable;
 typedef std::future<GetSecurityGroupOutcome> GetSecurityGroupOutcomeCallable;
 typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 typedef std::future<GetUsersCountOutcome> GetUsersCountOutcomeCallable;
@@ -220,6 +227,7 @@ typedef std::future<ListSecurityGroupsOutcome> ListSecurityGroupsOutcomeCallable
 typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 typedef std::future<RegisterOidcConfigOutcome> RegisterOidcConfigOutcomeCallable;
 typedef std::future<RegisterOidcConfigTestOutcome> RegisterOidcConfigTestOutcomeCallable;
+typedef std::future<RegisterOpentdfConfigOutcome> RegisterOpentdfConfigOutcomeCallable;
 typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
 typedef std::future<UpdateDataRetentionOutcome> UpdateDataRetentionOutcomeCallable;
 typedef std::future<UpdateGuestUserOutcome> UpdateGuestUserOutcomeCallable;
@@ -301,6 +309,9 @@ typedef std::function<void(const WickrClient*, const Model::GetNetworkSettingsRe
 typedef std::function<void(const WickrClient*, const Model::GetOidcInfoRequest&, const Model::GetOidcInfoOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOidcInfoResponseReceivedHandler;
+typedef std::function<void(const WickrClient*, const Model::GetOpentdfConfigRequest&, const Model::GetOpentdfConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetOpentdfConfigResponseReceivedHandler;
 typedef std::function<void(const WickrClient*, const Model::GetSecurityGroupRequest&, const Model::GetSecurityGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSecurityGroupResponseReceivedHandler;
@@ -340,6 +351,9 @@ typedef std::function<void(const WickrClient*, const Model::RegisterOidcConfigRe
 typedef std::function<void(const WickrClient*, const Model::RegisterOidcConfigTestRequest&, const Model::RegisterOidcConfigTestOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RegisterOidcConfigTestResponseReceivedHandler;
+typedef std::function<void(const WickrClient*, const Model::RegisterOpentdfConfigRequest&, const Model::RegisterOpentdfConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterOpentdfConfigResponseReceivedHandler;
 typedef std::function<void(const WickrClient*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateBotResponseReceivedHandler;

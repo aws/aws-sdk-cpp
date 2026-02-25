@@ -32,14 +32,14 @@ SearchProductsResult& SearchProductsResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("ProductViewAggregations")) {
     Aws::Map<Aws::String, JsonView> productViewAggregationsJsonMap = jsonValue.GetObject("ProductViewAggregations").GetAllObjects();
     for (auto& productViewAggregationsItem : productViewAggregationsJsonMap) {
-      Aws::Utils::Array<JsonView> productViewAggregationValuesJsonList = productViewAggregationsItem.second.AsArray();
-      Aws::Vector<ProductViewAggregationValue> productViewAggregationValuesList;
-      productViewAggregationValuesList.reserve((size_t)productViewAggregationValuesJsonList.GetLength());
-      for (unsigned productViewAggregationValuesIndex = 0;
-           productViewAggregationValuesIndex < productViewAggregationValuesJsonList.GetLength(); ++productViewAggregationValuesIndex) {
-        productViewAggregationValuesList.push_back(productViewAggregationValuesJsonList[productViewAggregationValuesIndex].AsObject());
+      Aws::Utils::Array<JsonView> productViewAggregationValues2JsonList = productViewAggregationsItem.second.AsArray();
+      Aws::Vector<ProductViewAggregationValue> productViewAggregationValues2List;
+      productViewAggregationValues2List.reserve((size_t)productViewAggregationValues2JsonList.GetLength());
+      for (unsigned productViewAggregationValues2Index = 0;
+           productViewAggregationValues2Index < productViewAggregationValues2JsonList.GetLength(); ++productViewAggregationValues2Index) {
+        productViewAggregationValues2List.push_back(productViewAggregationValues2JsonList[productViewAggregationValues2Index].AsObject());
       }
-      m_productViewAggregations[productViewAggregationsItem.first] = std::move(productViewAggregationValuesList);
+      m_productViewAggregations[productViewAggregationsItem.first] = std::move(productViewAggregationValues2List);
     }
     m_productViewAggregationsHasBeenSet = true;
   }

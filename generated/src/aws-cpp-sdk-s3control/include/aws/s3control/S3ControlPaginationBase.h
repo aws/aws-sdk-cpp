@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3control/model/ListAccessGrantsInstancesPaginationTraits.h>
 #include <aws/s3control/model/ListAccessGrantsLocationsPaginationTraits.h>
@@ -35,6 +36,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessGrantsRequest,
                                     Pagination::ListAccessGrantsPaginationTraits<DerivedClient>>
   ListAccessGrantsPaginator(const Model::ListAccessGrantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessGrantsRequest,
                                              Pagination::ListAccessGrantsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -46,6 +48,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessGrantsInstancesRequest,
                                     Pagination::ListAccessGrantsInstancesPaginationTraits<DerivedClient>>
   ListAccessGrantsInstancesPaginator(const Model::ListAccessGrantsInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessGrantsInstancesRequest,
                                              Pagination::ListAccessGrantsInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -57,6 +60,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessGrantsLocationsRequest,
                                     Pagination::ListAccessGrantsLocationsPaginationTraits<DerivedClient>>
   ListAccessGrantsLocationsPaginator(const Model::ListAccessGrantsLocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessGrantsLocationsRequest,
                                              Pagination::ListAccessGrantsLocationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -68,6 +72,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPointsRequest,
                                     Pagination::ListAccessPointsPaginationTraits<DerivedClient>>
   ListAccessPointsPaginator(const Model::ListAccessPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPointsRequest,
                                              Pagination::ListAccessPointsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -79,6 +84,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPointsForDirectoryBucketsRequest,
                                     Pagination::ListAccessPointsForDirectoryBucketsPaginationTraits<DerivedClient>>
   ListAccessPointsForDirectoryBucketsPaginator(const Model::ListAccessPointsForDirectoryBucketsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPointsForDirectoryBucketsRequest,
                                              Pagination::ListAccessPointsForDirectoryBucketsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -90,6 +96,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPointsForObjectLambdaRequest,
                                     Pagination::ListAccessPointsForObjectLambdaPaginationTraits<DerivedClient>>
   ListAccessPointsForObjectLambdaPaginator(const Model::ListAccessPointsForObjectLambdaRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessPointsForObjectLambdaRequest,
                                              Pagination::ListAccessPointsForObjectLambdaPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -101,6 +108,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCallerAccessGrantsRequest,
                                     Pagination::ListCallerAccessGrantsPaginationTraits<DerivedClient>>
   ListCallerAccessGrantsPaginator(const Model::ListCallerAccessGrantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCallerAccessGrantsRequest,
                                              Pagination::ListCallerAccessGrantsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -111,6 +119,7 @@ class S3ControlPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -121,6 +130,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMultiRegionAccessPointsRequest,
                                     Pagination::ListMultiRegionAccessPointsPaginationTraits<DerivedClient>>
   ListMultiRegionAccessPointsPaginator(const Model::ListMultiRegionAccessPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMultiRegionAccessPointsRequest,
                                              Pagination::ListMultiRegionAccessPointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -132,6 +142,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegionalBucketsRequest,
                                     Pagination::ListRegionalBucketsPaginationTraits<DerivedClient>>
   ListRegionalBucketsPaginator(const Model::ListRegionalBucketsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegionalBucketsRequest,
                                              Pagination::ListRegionalBucketsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -143,6 +154,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageLensConfigurationsRequest,
                                     Pagination::ListStorageLensConfigurationsPaginationTraits<DerivedClient>>
   ListStorageLensConfigurationsPaginator(const Model::ListStorageLensConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageLensConfigurationsRequest,
                                              Pagination::ListStorageLensConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -154,6 +166,7 @@ class S3ControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageLensGroupsRequest,
                                     Pagination::ListStorageLensGroupsPaginationTraits<DerivedClient>>
   ListStorageLensGroupsPaginator(const Model::ListStorageLensGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageLensGroupsRequest,
                                              Pagination::ListStorageLensGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

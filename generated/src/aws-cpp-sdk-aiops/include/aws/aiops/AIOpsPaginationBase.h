@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/aiops/model/ListInvestigationGroupsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class AIOpsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvestigationGroupsRequest,
                                     Pagination::ListInvestigationGroupsPaginationTraits<DerivedClient>>
   ListInvestigationGroupsPaginator(const Model::ListInvestigationGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvestigationGroupsRequest,
                                              Pagination::ListInvestigationGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

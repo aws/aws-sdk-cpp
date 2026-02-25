@@ -72,6 +72,8 @@
 #include <aws/wickr/model/GetNetworkSettingsResult.h>
 #include <aws/wickr/model/GetOidcInfoRequest.h>
 #include <aws/wickr/model/GetOidcInfoResult.h>
+#include <aws/wickr/model/GetOpentdfConfigRequest.h>
+#include <aws/wickr/model/GetOpentdfConfigResult.h>
 #include <aws/wickr/model/GetSecurityGroupRequest.h>
 #include <aws/wickr/model/GetSecurityGroupResult.h>
 #include <aws/wickr/model/GetUserRequest.h>
@@ -107,6 +109,8 @@
 #include <aws/wickr/model/RegisterOidcConfigResult.h>
 #include <aws/wickr/model/RegisterOidcConfigTestRequest.h>
 #include <aws/wickr/model/RegisterOidcConfigTestResult.h>
+#include <aws/wickr/model/RegisterOpentdfConfigRequest.h>
+#include <aws/wickr/model/RegisterOpentdfConfigResult.h>
 #include <aws/wickr/model/SecurityGroup.h>
 #include <aws/wickr/model/SecurityGroupSettings.h>
 #include <aws/wickr/model/SecurityGroupSettingsRequest.h>

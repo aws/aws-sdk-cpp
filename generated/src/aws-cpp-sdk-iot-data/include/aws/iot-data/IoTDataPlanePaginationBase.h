@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/iot-data/model/ListRetainedMessagesPaginationTraits.h>
 
@@ -24,6 +25,7 @@ class IoTDataPlanePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetainedMessagesRequest,
                                     Pagination::ListRetainedMessagesPaginationTraits<DerivedClient>>
   ListRetainedMessagesPaginator(const Model::ListRetainedMessagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetainedMessagesRequest,
                                              Pagination::ListRetainedMessagesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

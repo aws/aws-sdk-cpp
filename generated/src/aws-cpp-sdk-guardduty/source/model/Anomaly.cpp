@@ -21,19 +21,19 @@ Anomaly& Anomaly::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("profiles")) {
     Aws::Map<Aws::String, JsonView> profilesJsonMap = jsonValue.GetObject("profiles").GetAllObjects();
     for (auto& profilesItem : profilesJsonMap) {
-      Aws::Map<Aws::String, JsonView> anomalyProfileFeaturesJsonMap = profilesItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::Vector<AnomalyObject>> anomalyProfileFeaturesMap;
-      for (auto& anomalyProfileFeaturesItem : anomalyProfileFeaturesJsonMap) {
-        Aws::Utils::Array<JsonView> anomalyProfileFeatureObjectsJsonList = anomalyProfileFeaturesItem.second.AsArray();
-        Aws::Vector<AnomalyObject> anomalyProfileFeatureObjectsList;
-        anomalyProfileFeatureObjectsList.reserve((size_t)anomalyProfileFeatureObjectsJsonList.GetLength());
-        for (unsigned anomalyProfileFeatureObjectsIndex = 0;
-             anomalyProfileFeatureObjectsIndex < anomalyProfileFeatureObjectsJsonList.GetLength(); ++anomalyProfileFeatureObjectsIndex) {
-          anomalyProfileFeatureObjectsList.push_back(anomalyProfileFeatureObjectsJsonList[anomalyProfileFeatureObjectsIndex].AsObject());
+      Aws::Map<Aws::String, JsonView> anomalyProfileFeatures2JsonMap = profilesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::Vector<AnomalyObject>> anomalyProfileFeatures2Map;
+      for (auto& anomalyProfileFeatures2Item : anomalyProfileFeatures2JsonMap) {
+        Aws::Utils::Array<JsonView> anomalyProfileFeatureObjects3JsonList = anomalyProfileFeatures2Item.second.AsArray();
+        Aws::Vector<AnomalyObject> anomalyProfileFeatureObjects3List;
+        anomalyProfileFeatureObjects3List.reserve((size_t)anomalyProfileFeatureObjects3JsonList.GetLength());
+        for (unsigned anomalyProfileFeatureObjects3Index = 0;
+             anomalyProfileFeatureObjects3Index < anomalyProfileFeatureObjects3JsonList.GetLength(); ++anomalyProfileFeatureObjects3Index) {
+          anomalyProfileFeatureObjects3List.push_back(anomalyProfileFeatureObjects3JsonList[anomalyProfileFeatureObjects3Index].AsObject());
         }
-        anomalyProfileFeaturesMap[anomalyProfileFeaturesItem.first] = std::move(anomalyProfileFeatureObjectsList);
+        anomalyProfileFeatures2Map[anomalyProfileFeatures2Item.first] = std::move(anomalyProfileFeatureObjects3List);
       }
-      m_profiles[profilesItem.first] = std::move(anomalyProfileFeaturesMap);
+      m_profiles[profilesItem.first] = std::move(anomalyProfileFeatures2Map);
     }
     m_profilesHasBeenSet = true;
   }

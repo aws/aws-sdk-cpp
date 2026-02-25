@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/route53-recovery-control-config/model/ListAssociatedRoute53HealthChecksPaginationTraits.h>
 #include <aws/route53-recovery-control-config/model/ListClustersPaginationTraits.h>
@@ -28,6 +29,7 @@ class Route53RecoveryControlConfigPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssociatedRoute53HealthChecksRequest,
                                     Pagination::ListAssociatedRoute53HealthChecksPaginationTraits<DerivedClient>>
   ListAssociatedRoute53HealthChecksPaginator(const Model::ListAssociatedRoute53HealthChecksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssociatedRoute53HealthChecksRequest,
                                              Pagination::ListAssociatedRoute53HealthChecksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class Route53RecoveryControlConfigPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<DerivedClient>>
   ListClustersPaginator(const Model::ListClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest,
                                              Pagination::ListClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -49,6 +52,7 @@ class Route53RecoveryControlConfigPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlPanelsRequest,
                                     Pagination::ListControlPanelsPaginationTraits<DerivedClient>>
   ListControlPanelsPaginator(const Model::ListControlPanelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlPanelsRequest,
                                              Pagination::ListControlPanelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class Route53RecoveryControlConfigPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutingControlsRequest,
                                     Pagination::ListRoutingControlsPaginationTraits<DerivedClient>>
   ListRoutingControlsPaginator(const Model::ListRoutingControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutingControlsRequest,
                                              Pagination::ListRoutingControlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +76,7 @@ class Route53RecoveryControlConfigPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSafetyRulesRequest,
                                     Pagination::ListSafetyRulesPaginationTraits<DerivedClient>>
   ListSafetyRulesPaginator(const Model::ListSafetyRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSafetyRulesRequest,
                                              Pagination::ListSafetyRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

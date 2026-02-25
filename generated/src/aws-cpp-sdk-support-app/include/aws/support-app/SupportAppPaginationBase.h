@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/support-app/model/ListSlackChannelConfigurationsPaginationTraits.h>
 #include <aws/support-app/model/ListSlackWorkspaceConfigurationsPaginationTraits.h>
@@ -25,6 +26,7 @@ class SupportAppPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlackChannelConfigurationsRequest,
                                     Pagination::ListSlackChannelConfigurationsPaginationTraits<DerivedClient>>
   ListSlackChannelConfigurationsPaginator(const Model::ListSlackChannelConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlackChannelConfigurationsRequest,
                                              Pagination::ListSlackChannelConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class SupportAppPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlackWorkspaceConfigurationsRequest,
                                     Pagination::ListSlackWorkspaceConfigurationsPaginationTraits<DerivedClient>>
   ListSlackWorkspaceConfigurationsPaginator(const Model::ListSlackWorkspaceConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSlackWorkspaceConfigurationsRequest,
                                              Pagination::ListSlackWorkspaceConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -509,10 +509,10 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a field from a cases template. You can delete up to 100 fields per
-   * domain.</p> <p>After a field is deleted:</p> <ul> <li> <p>You can still retrieve
-   * the field by calling <code>BatchGetField</code>.</p> </li> <li> <p>You cannot
-   * update a deleted field by calling <code>UpdateField</code>; it throws a
+   * <p>Deletes a field from a cases template.</p> <p>After a field is deleted:</p>
+   * <ul> <li> <p>You can still retrieve the field by calling
+   * <code>BatchGetField</code>.</p> </li> <li> <p>You cannot update a deleted field
+   * by calling <code>UpdateField</code>; it throws a
    * <code>ValidationException</code>.</p> </li> <li> <p>Deleted fields are not
    * included in the <code>ListFields</code> response.</p> </li> <li> <p>Calling
    * <code>CreateCase</code> with a deleted field throws a
