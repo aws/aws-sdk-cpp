@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AutoEnableStandards.h>
@@ -125,6 +126,8 @@ class DescribeOrganizationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_autoEnable{false};
 
@@ -135,6 +138,7 @@ class DescribeOrganizationConfigurationResult {
   OrganizationConfiguration m_organizationConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoEnableHasBeenSet = false;
   bool m_memberAccountLimitReachedHasBeenSet = false;
   bool m_autoEnableStandardsHasBeenSet = false;

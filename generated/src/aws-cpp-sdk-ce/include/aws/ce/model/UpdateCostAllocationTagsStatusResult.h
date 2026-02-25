@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/UpdateCostAllocationTagsStatusError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -68,10 +69,13 @@ class UpdateCostAllocationTagsStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<UpdateCostAllocationTagsStatusError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

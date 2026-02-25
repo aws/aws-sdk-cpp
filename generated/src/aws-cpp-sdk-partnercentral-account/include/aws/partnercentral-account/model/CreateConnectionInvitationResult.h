@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
@@ -280,6 +281,8 @@ class CreateConnectionInvitationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_catalog;
 
@@ -310,6 +313,7 @@ class CreateConnectionInvitationResult {
   Aws::String m_inviterName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_catalogHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;

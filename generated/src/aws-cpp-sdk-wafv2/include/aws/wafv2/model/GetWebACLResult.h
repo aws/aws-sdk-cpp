@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/WebACL.h>
@@ -108,6 +109,8 @@ class GetWebACLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WebACL m_webACL;
 
@@ -116,6 +119,7 @@ class GetWebACLResult {
   Aws::String m_applicationIntegrationURL;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_webACLHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
   bool m_applicationIntegrationURLHasBeenSet = false;

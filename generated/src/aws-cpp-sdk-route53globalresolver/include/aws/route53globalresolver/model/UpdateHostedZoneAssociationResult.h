@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
@@ -177,6 +178,8 @@ class UpdateHostedZoneAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -195,6 +198,7 @@ class UpdateHostedZoneAssociationResult {
   HostedZoneAssociationStatus m_status{HostedZoneAssociationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;

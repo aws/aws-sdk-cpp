@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
@@ -82,12 +83,15 @@ class CreateNamespaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tableBucketARN;
 
   Aws::Vector<Aws::String> m_namespace;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableBucketARNHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

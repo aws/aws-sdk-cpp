@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/AutoScalingPolicyDescription.h>
@@ -111,6 +112,8 @@ class PutAutoScalingPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterId;
 
@@ -121,6 +124,7 @@ class PutAutoScalingPolicyResult {
   Aws::String m_clusterArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterIdHasBeenSet = false;
   bool m_instanceGroupIdHasBeenSet = false;
   bool m_autoScalingPolicyHasBeenSet = false;

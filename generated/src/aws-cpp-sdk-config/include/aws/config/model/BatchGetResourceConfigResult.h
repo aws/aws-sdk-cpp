@@ -7,6 +7,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/BaseConfigurationItem.h>
 #include <aws/config/model/ResourceKey.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -93,12 +94,15 @@ class BatchGetResourceConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;
 
   Aws::Vector<ResourceKey> m_unprocessedResourceKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_baseConfigurationItemsHasBeenSet = false;
   bool m_unprocessedResourceKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

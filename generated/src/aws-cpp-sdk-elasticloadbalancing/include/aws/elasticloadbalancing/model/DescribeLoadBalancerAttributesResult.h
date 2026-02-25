@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 #include <aws/elasticloadbalancing/model/LoadBalancerAttributes.h>
 #include <aws/elasticloadbalancing/model/ResponseMetadata.h>
@@ -66,10 +67,13 @@ class DescribeLoadBalancerAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LoadBalancerAttributes m_loadBalancerAttributes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loadBalancerAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

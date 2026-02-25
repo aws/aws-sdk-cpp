@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/LegalHoldStatus.h>
 #include <aws/backup/model/RecoveryPointSelection.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -161,6 +162,8 @@ class CreateLegalHoldResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_title;
 
@@ -177,6 +180,7 @@ class CreateLegalHoldResult {
   RecoveryPointSelection m_recoveryPointSelection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_titleHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

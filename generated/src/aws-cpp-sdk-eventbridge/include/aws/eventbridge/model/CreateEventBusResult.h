@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
@@ -132,6 +133,8 @@ class CreateEventBusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventBusArn;
 
@@ -144,6 +147,7 @@ class CreateEventBusResult {
   LogConfig m_logConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventBusArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;

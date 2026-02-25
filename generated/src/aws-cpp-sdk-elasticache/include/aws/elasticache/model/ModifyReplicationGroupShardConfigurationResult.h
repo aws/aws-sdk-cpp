@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ReplicationGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class ModifyReplicationGroupShardConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReplicationGroup m_replicationGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicationGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
@@ -143,6 +144,8 @@ class GetDataExportConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isExportEnabled{false};
 
@@ -157,6 +160,7 @@ class GetDataExportConfigurationResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isExportEnabledHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;

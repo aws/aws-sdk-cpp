@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/application-autoscaling/model/Alarm.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -82,12 +83,15 @@ class PutScalingPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyARN;
 
   Aws::Vector<Alarm> m_alarms;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyARNHasBeenSet = false;
   bool m_alarmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/VocabularyState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -90,6 +91,8 @@ class CreateVocabularyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_vocabularyArn;
 
@@ -98,6 +101,7 @@ class CreateVocabularyResult {
   VocabularyState m_state{VocabularyState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vocabularyArnHasBeenSet = false;
   bool m_vocabularyIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;

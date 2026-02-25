@@ -8,6 +8,7 @@
 #include <aws/cloudtrail/model/AggregationConfiguration.h>
 #include <aws/cloudtrail/model/ContextKeySelector.h>
 #include <aws/cloudtrail/model/MaxEventSize.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -142,6 +143,8 @@ class PutEventConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_trailARN;
 
@@ -154,6 +157,7 @@ class PutEventConfigurationResult {
   Aws::Vector<AggregationConfiguration> m_aggregationConfigurations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trailARNHasBeenSet = false;
   bool m_eventDataStoreArnHasBeenSet = false;
   bool m_maxEventSizeHasBeenSet = false;

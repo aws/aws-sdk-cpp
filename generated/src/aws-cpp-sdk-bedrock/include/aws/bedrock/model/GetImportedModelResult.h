@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/CustomModelUnits.h>
 #include <aws/bedrock/model/ModelDataSource.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -212,6 +213,8 @@ class GetImportedModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelArn;
 
@@ -234,6 +237,7 @@ class GetImportedModelResult {
   CustomModelUnits m_customModelUnits;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelArnHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/IPSet.h>
@@ -82,12 +83,15 @@ class GetIPSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IPSet m_iPSet;
 
   Aws::String m_lockToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_iPSetHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

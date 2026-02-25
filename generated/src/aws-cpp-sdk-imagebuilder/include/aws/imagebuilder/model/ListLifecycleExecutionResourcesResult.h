@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -121,6 +122,8 @@ class ListLifecycleExecutionResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_lifecycleExecutionId;
 
@@ -131,6 +134,7 @@ class ListLifecycleExecutionResourcesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecycleExecutionIdHasBeenSet = false;
   bool m_lifecycleExecutionStateHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;

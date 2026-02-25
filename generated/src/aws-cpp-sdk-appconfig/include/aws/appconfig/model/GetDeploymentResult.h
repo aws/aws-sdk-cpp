@@ -9,6 +9,7 @@
 #include <aws/appconfig/model/DeploymentEvent.h>
 #include <aws/appconfig/model/DeploymentState.h>
 #include <aws/appconfig/model/GrowthType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -429,6 +430,8 @@ class GetDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -475,6 +478,7 @@ class GetDeploymentResult {
   Aws::String m_versionLabel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_deploymentStrategyIdHasBeenSet = false;

@@ -10,6 +10,7 @@
 #include <aws/codecatalyst/model/Ide.h>
 #include <aws/codecatalyst/model/InstanceType.h>
 #include <aws/codecatalyst/model/PersistentStorage.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -299,6 +300,8 @@ class GetDevEnvironmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_spaceName;
 
@@ -329,6 +332,7 @@ class GetDevEnvironmentResult {
   Aws::String m_vpcConnectionName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_spaceNameHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;
   bool m_idHasBeenSet = false;

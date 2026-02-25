@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseLaunchTemplateData.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class GetLaunchTemplateDataResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResponseLaunchTemplateData m_launchTemplateData;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_launchTemplateDataHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

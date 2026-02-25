@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class UpdateConnectivityInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_version;
 
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_versionHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

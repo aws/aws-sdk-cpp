@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
@@ -203,6 +204,8 @@ class DescribeRetrainingSchedulerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelName;
 
@@ -223,6 +226,7 @@ class DescribeRetrainingSchedulerResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_retrainingStartDateHasBeenSet = false;

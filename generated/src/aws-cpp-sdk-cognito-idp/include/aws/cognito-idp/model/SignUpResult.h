@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/CodeDeliveryDetailsType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -122,6 +123,8 @@ class SignUpResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_userConfirmed{false};
 
@@ -132,6 +135,7 @@ class SignUpResult {
   Aws::String m_session;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userConfirmedHasBeenSet = false;
   bool m_codeDeliveryDetailsHasBeenSet = false;
   bool m_userSubHasBeenSet = false;

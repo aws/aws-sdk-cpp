@@ -22,6 +22,7 @@ DescribeSavingsPlansOfferingsResult::DescribeSavingsPlansOfferingsResult(const A
 }
 
 DescribeSavingsPlansOfferingsResult& DescribeSavingsPlansOfferingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("searchResults")) {
     Aws::Utils::Array<JsonView> searchResultsJsonList = jsonValue.GetArray("searchResults");

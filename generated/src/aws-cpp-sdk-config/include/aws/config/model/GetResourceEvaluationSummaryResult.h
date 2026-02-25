@@ -10,6 +10,7 @@
 #include <aws/config/model/EvaluationMode.h>
 #include <aws/config/model/EvaluationStatus.h>
 #include <aws/config/model/ResourceDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -165,6 +166,8 @@ class GetResourceEvaluationSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceEvaluationId;
 
@@ -181,6 +184,7 @@ class GetResourceEvaluationSummaryResult {
   ResourceDetails m_resourceDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceEvaluationIdHasBeenSet = false;
   bool m_evaluationModeHasBeenSet = false;
   bool m_evaluationStatusHasBeenSet = false;

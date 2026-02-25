@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
@@ -172,6 +173,8 @@ class ListTrafficPolicyInstancesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TrafficPolicyInstance> m_trafficPolicyInstances;
 
@@ -186,6 +189,7 @@ class ListTrafficPolicyInstancesResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trafficPolicyInstancesHasBeenSet = false;
   bool m_hostedZoneIdMarkerHasBeenSet = false;
   bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
@@ -169,6 +170,8 @@ class GetEmailIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
 
@@ -183,6 +186,7 @@ class GetEmailIdentityResult {
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityTypeHasBeenSet = false;
   bool m_feedbackForwardingStatusHasBeenSet = false;
   bool m_verifiedForSendingStatusHasBeenSet = false;

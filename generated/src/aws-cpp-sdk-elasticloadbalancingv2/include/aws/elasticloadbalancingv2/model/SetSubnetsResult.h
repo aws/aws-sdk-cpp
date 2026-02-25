@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/AvailabilityZone.h>
@@ -98,6 +99,8 @@ class SetSubnetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AvailabilityZone> m_availabilityZones;
 
@@ -106,6 +109,7 @@ class SetSubnetsResult {
   EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat{EnablePrefixForIpv6SourceNatEnum::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;

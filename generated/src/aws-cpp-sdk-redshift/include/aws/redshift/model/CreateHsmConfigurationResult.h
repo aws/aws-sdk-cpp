@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/HsmConfiguration.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CreateHsmConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   HsmConfiguration m_hsmConfiguration;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hsmConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/iot-managed-integrations/model/LogLevel.h>
@@ -108,6 +109,8 @@ class GetEventLogConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -118,6 +121,7 @@ class GetEventLogConfigurationResult {
   LogLevel m_eventLogLevel{LogLevel::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;

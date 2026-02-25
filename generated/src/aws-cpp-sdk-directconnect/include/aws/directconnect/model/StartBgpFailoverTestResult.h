@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/VirtualInterfaceTestHistory.h>
@@ -58,10 +59,13 @@ class StartBgpFailoverTestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VirtualInterfaceTestHistory m_virtualInterfaceTest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_virtualInterfaceTestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iam/IAM_EXPORTS.h>
@@ -100,6 +101,8 @@ class GetCredentialReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_content{};
 
@@ -108,6 +111,7 @@ class GetCredentialReportResult {
   Aws::Utils::DateTime m_generatedTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_reportFormatHasBeenSet = false;
   bool m_generatedTimeHasBeenSet = false;

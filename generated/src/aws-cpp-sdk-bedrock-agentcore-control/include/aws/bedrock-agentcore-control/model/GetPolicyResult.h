@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/PolicyDefinition.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -227,6 +228,8 @@ class GetPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyId;
 
@@ -249,6 +252,7 @@ class GetPolicyResult {
   Aws::Vector<Aws::String> m_statusReasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_policyEngineIdHasBeenSet = false;

@@ -23,6 +23,7 @@ DeleteWorkspaceServiceAccountTokenResult::DeleteWorkspaceServiceAccountTokenResu
 
 DeleteWorkspaceServiceAccountTokenResult& DeleteWorkspaceServiceAccountTokenResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("tokenId")) {
     m_tokenId = jsonValue.GetString("tokenId");

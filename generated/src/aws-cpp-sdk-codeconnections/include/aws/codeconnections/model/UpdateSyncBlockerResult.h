@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/codeconnections/model/SyncBlocker.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -92,6 +93,8 @@ class UpdateSyncBlockerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceName;
 
@@ -100,6 +103,7 @@ class UpdateSyncBlockerResult {
   SyncBlocker m_syncBlocker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceNameHasBeenSet = false;
   bool m_parentResourceNameHasBeenSet = false;
   bool m_syncBlockerHasBeenSet = false;

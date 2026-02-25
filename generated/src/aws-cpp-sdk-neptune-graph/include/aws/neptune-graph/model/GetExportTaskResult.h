@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/neptune-graph/model/ExportFilter.h>
@@ -227,6 +228,8 @@ class GetExportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_graphId;
 
@@ -251,6 +254,7 @@ class GetExportTaskResult {
   ExportFilter m_exportFilter;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_graphIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;

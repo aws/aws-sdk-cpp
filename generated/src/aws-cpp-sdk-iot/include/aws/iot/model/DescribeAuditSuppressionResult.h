@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
@@ -121,6 +122,8 @@ class DescribeAuditSuppressionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_checkName;
 
@@ -133,6 +136,7 @@ class DescribeAuditSuppressionResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_checkNameHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;

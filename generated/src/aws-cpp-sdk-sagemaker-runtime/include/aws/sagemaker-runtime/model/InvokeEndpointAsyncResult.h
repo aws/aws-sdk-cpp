@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 
@@ -93,6 +94,8 @@ class InvokeEndpointAsyncResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_inferenceId;
 
@@ -101,6 +104,7 @@ class InvokeEndpointAsyncResult {
   Aws::String m_failureLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inferenceIdHasBeenSet = false;
   bool m_outputLocationHasBeenSet = false;
   bool m_failureLocationHasBeenSet = false;

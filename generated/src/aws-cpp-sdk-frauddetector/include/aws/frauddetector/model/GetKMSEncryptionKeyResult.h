@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/model/KMSKey.h>
@@ -58,10 +59,13 @@ class GetKMSEncryptionKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   KMSKey m_kmsKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_kmsKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

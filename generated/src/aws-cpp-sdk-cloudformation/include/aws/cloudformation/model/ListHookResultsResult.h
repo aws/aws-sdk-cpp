@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/HookResultSummary.h>
 #include <aws/cloudformation/model/ListHookResultsTargetType.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -117,6 +118,8 @@ class ListHookResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ListHookResultsTargetType m_targetType{ListHookResultsTargetType::NOT_SET};
 
@@ -127,6 +130,7 @@ class ListHookResultsResult {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_targetTypeHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_hookResultsHasBeenSet = false;

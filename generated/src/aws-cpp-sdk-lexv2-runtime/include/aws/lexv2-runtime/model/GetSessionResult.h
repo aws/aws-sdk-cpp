@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
@@ -132,6 +133,8 @@ class GetSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sessionId;
 
@@ -142,6 +145,7 @@ class GetSessionResult {
   SessionState m_sessionState;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionIdHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_interpretationsHasBeenSet = false;

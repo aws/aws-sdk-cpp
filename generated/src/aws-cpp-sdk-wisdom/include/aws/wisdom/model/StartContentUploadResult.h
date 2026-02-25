@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -116,6 +117,8 @@ class StartContentUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_headersToInclude;
 
@@ -126,6 +129,7 @@ class StartContentUploadResult {
   Aws::Utils::DateTime m_urlExpiry{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_headersToIncludeHasBeenSet = false;
   bool m_uploadIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;

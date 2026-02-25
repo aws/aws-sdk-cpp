@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/CalendarState.h>
@@ -97,6 +98,8 @@ class GetCalendarStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CalendarState m_state{CalendarState::NOT_SET};
 
@@ -105,6 +108,7 @@ class GetCalendarStateResult {
   Aws::String m_nextTransitionTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stateHasBeenSet = false;
   bool m_atTimeHasBeenSet = false;
   bool m_nextTransitionTimeHasBeenSet = false;

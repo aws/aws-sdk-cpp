@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
@@ -130,6 +131,8 @@ class DeleteRegistrationAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_registrationAttachmentArn;
 
@@ -142,6 +145,7 @@ class DeleteRegistrationAttachmentResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registrationAttachmentArnHasBeenSet = false;
   bool m_registrationAttachmentIdHasBeenSet = false;
   bool m_attachmentStatusHasBeenSet = false;

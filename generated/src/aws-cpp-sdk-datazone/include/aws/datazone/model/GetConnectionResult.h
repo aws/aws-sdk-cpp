@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
@@ -269,6 +270,8 @@ class GetConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ConnectionCredentials m_connectionCredentials;
 
@@ -297,6 +300,7 @@ class GetConnectionResult {
   ConnectionScope m_scope{ConnectionScope::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionCredentialsHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

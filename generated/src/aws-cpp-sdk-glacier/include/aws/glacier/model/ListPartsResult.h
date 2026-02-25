@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
@@ -178,6 +179,8 @@ class ListPartsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_multipartUploadId;
 
@@ -194,6 +197,7 @@ class ListPartsResult {
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_multipartUploadIdHasBeenSet = false;
   bool m_vaultARNHasBeenSet = false;
   bool m_archiveDescriptionHasBeenSet = false;

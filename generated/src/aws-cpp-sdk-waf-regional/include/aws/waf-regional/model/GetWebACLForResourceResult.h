@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/waf-regional/model/WebACLSummary.h>
@@ -60,10 +61,13 @@ class GetWebACLForResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WebACLSummary m_webACLSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_webACLSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

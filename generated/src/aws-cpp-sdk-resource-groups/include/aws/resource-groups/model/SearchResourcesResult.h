@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
@@ -116,6 +117,8 @@ class SearchResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
 
@@ -124,6 +127,7 @@ class SearchResourcesResult {
   Aws::Vector<QueryError> m_queryErrors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceIdentifiersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_queryErrorsHasBeenSet = false;

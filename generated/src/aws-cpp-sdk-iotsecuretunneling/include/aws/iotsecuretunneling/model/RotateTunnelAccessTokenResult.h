@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
@@ -94,6 +95,8 @@ class RotateTunnelAccessTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tunnelArn;
 
@@ -102,6 +105,7 @@ class RotateTunnelAccessTokenResult {
   Aws::String m_destinationAccessToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tunnelArnHasBeenSet = false;
   bool m_sourceAccessTokenHasBeenSet = false;
   bool m_destinationAccessTokenHasBeenSet = false;

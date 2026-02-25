@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/FrameworkControl.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -204,6 +205,8 @@ class DescribeFrameworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_frameworkName;
 
@@ -222,6 +225,7 @@ class DescribeFrameworkResult {
   Aws::String m_idempotencyToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_frameworkNameHasBeenSet = false;
   bool m_frameworkArnHasBeenSet = false;
   bool m_frameworkDescriptionHasBeenSet = false;

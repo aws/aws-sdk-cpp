@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class CreateVehicleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_vehicleName;
 
@@ -99,6 +102,7 @@ class CreateVehicleResult {
   Aws::String m_thingArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vehicleNameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_thingArnHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
@@ -227,6 +228,8 @@ class GetImportFileTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_completionTime{};
 
@@ -251,6 +254,7 @@ class GetImportFileTaskResult {
   Aws::String m_statusReportS3Key;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_completionTimeHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_importNameHasBeenSet = false;

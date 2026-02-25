@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ResponseMetadata.h>
 #include <aws/iam/model/SigningCertificate.h>
@@ -65,10 +66,13 @@ class UploadSigningCertificateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SigningCertificate m_certificate;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

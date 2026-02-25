@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -105,6 +106,8 @@ class DescribeComputationModelExecutionSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_computationModelId;
 
@@ -113,6 +116,7 @@ class DescribeComputationModelExecutionSummaryResult {
   Aws::Map<Aws::String, Aws::String> m_computationModelExecutionSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_computationModelIdHasBeenSet = false;
   bool m_resolveToHasBeenSet = false;
   bool m_computationModelExecutionSummaryHasBeenSet = false;

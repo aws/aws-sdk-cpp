@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/GlobalCluster.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class SwitchoverGlobalClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GlobalCluster m_globalCluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_globalClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

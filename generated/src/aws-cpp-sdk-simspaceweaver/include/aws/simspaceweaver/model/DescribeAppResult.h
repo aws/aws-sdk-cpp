@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 #include <aws/simspaceweaver/model/LaunchOverrides.h>
@@ -175,6 +176,8 @@ class DescribeAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_description;
 
@@ -193,6 +196,7 @@ class DescribeAppResult {
   SimulationAppTargetStatus m_targetStatus{SimulationAppTargetStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_domainHasBeenSet = false;
   bool m_endpointInfoHasBeenSet = false;

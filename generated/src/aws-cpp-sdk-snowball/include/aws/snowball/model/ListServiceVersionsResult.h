@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -124,6 +125,8 @@ class ListServiceVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ServiceVersion> m_serviceVersions;
 
@@ -134,6 +137,7 @@ class ListServiceVersionsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceVersionsHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
   bool m_dependentServicesHasBeenSet = false;

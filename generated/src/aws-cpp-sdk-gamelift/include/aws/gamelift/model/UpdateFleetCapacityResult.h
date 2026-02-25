@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/ManagedCapacityConfiguration.h>
@@ -116,6 +117,8 @@ class UpdateFleetCapacityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_fleetId;
 
@@ -126,6 +129,7 @@ class UpdateFleetCapacityResult {
   ManagedCapacityConfiguration m_managedCapacityConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_locationHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ReplaceRootVolumeTask.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class CreateReplaceRootVolumeTaskResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReplaceRootVolumeTask m_replaceRootVolumeTask;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replaceRootVolumeTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

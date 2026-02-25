@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/model/SensitivityInspectionTemplateExcludes.h>
@@ -130,6 +131,8 @@ class GetSensitivityInspectionTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_description;
 
@@ -142,6 +145,7 @@ class GetSensitivityInspectionTemplateResult {
   Aws::String m_sensitivityInspectionTemplateId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_excludesHasBeenSet = false;
   bool m_includesHasBeenSet = false;

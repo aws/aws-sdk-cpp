@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/EventSubscription.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -57,10 +58,13 @@ class AddSourceIdentifierToSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EventSubscription m_eventSubscription;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventSubscriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

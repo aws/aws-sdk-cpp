@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/WirelessGatewayServiceType.h>
@@ -90,6 +91,8 @@ class GetServiceEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WirelessGatewayServiceType m_serviceType{WirelessGatewayServiceType::NOT_SET};
 
@@ -98,6 +101,7 @@ class GetServiceEndpointResult {
   Aws::String m_serverTrust;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceTypeHasBeenSet = false;
   bool m_serviceEndpointHasBeenSet = false;
   bool m_serverTrustHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/SidewalkAccountInfoWithFingerprint.h>
@@ -73,12 +74,15 @@ class GetPartnerAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SidewalkAccountInfoWithFingerprint m_sidewalk;
 
   bool m_accountLinked{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sidewalkHasBeenSet = false;
   bool m_accountLinkedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

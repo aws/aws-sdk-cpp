@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackDriftDetectionStatus.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -183,6 +184,8 @@ class DescribeStackDriftDetectionStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_stackId;
 
@@ -199,6 +202,7 @@ class DescribeStackDriftDetectionStatusResult {
   Aws::Utils::DateTime m_timestamp{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stackIdHasBeenSet = false;
   bool m_stackDriftDetectionIdHasBeenSet = false;
   bool m_stackDriftStatusHasBeenSet = false;

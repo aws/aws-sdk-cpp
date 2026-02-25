@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/PartnerIntegrationInfo.h>
@@ -65,10 +66,13 @@ class DescribePartnersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<PartnerIntegrationInfo> m_partnerIntegrationInfoList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_partnerIntegrationInfoListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

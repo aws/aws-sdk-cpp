@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
@@ -262,6 +263,8 @@ class DescribeFleetMetricResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_metricName;
 
@@ -290,6 +293,7 @@ class DescribeFleetMetricResult {
   Aws::String m_metricArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
   bool m_aggregationTypeHasBeenSet = false;

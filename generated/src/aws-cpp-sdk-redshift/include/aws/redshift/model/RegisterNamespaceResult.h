@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/NamespaceRegistrationStatus.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class RegisterNamespaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   NamespaceRegistrationStatus m_status{NamespaceRegistrationStatus::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

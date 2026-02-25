@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
@@ -82,12 +83,15 @@ class GetRateBasedRuleManagedKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_managedKeys;
 
   Aws::String m_nextMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managedKeysHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -244,6 +245,8 @@ class GetBrowserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_browserId;
 
@@ -270,6 +273,7 @@ class GetBrowserResult {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_browserIdHasBeenSet = false;
   bool m_browserArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

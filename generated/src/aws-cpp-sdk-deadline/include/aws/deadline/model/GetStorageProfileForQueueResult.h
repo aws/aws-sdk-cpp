@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
@@ -118,6 +119,8 @@ class GetStorageProfileForQueueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_storageProfileId;
 
@@ -128,6 +131,7 @@ class GetStorageProfileForQueueResult {
   Aws::Vector<FileSystemLocation> m_fileSystemLocations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_storageProfileIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_osFamilyHasBeenSet = false;

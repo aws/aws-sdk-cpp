@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -425,6 +426,8 @@ class DescribeAutoMLJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_autoMLJobName;
 
@@ -469,6 +472,7 @@ class DescribeAutoMLJobResult {
   ModelDeployResult m_modelDeployResult;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoMLJobNameHasBeenSet = false;
   bool m_autoMLJobArnHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;

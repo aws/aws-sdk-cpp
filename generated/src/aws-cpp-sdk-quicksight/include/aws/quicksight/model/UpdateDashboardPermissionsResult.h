@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -132,6 +133,8 @@ class UpdateDashboardPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dashboardArn;
 
@@ -144,6 +147,7 @@ class UpdateDashboardPermissionsResult {
   int m_status{0};
 
   LinkSharingConfiguration m_linkSharingConfiguration;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dashboardArnHasBeenSet = false;
   bool m_dashboardIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

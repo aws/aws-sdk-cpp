@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ControlFindingGenerator.h>
@@ -125,6 +126,8 @@ class DescribeHubResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hubArn;
 
@@ -135,6 +138,7 @@ class DescribeHubResult {
   ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubArnHasBeenSet = false;
   bool m_subscribedAtHasBeenSet = false;
   bool m_autoEnableControlsHasBeenSet = false;

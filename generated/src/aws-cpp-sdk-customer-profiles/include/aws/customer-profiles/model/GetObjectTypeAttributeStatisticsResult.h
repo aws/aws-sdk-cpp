@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
@@ -77,12 +78,15 @@ class GetObjectTypeAttributeStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GetObjectTypeAttributeStatisticsStats m_statistics;
 
   Aws::Utils::DateTime m_calculatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statisticsHasBeenSet = false;
   bool m_calculatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

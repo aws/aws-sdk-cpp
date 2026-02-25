@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/ImportStatistics.h>
@@ -123,6 +124,8 @@ class CancelImportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_importId;
 
@@ -135,6 +138,7 @@ class CancelImportTaskResult {
   long long m_lastUpdatedTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_importIdHasBeenSet = false;
   bool m_importStatisticsHasBeenSet = false;
   bool m_importStatusHasBeenSet = false;

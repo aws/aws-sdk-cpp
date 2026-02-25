@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 #include <aws/managedblockchain-query/model/ContractIdentifier.h>
@@ -108,6 +109,8 @@ class GetAssetContractResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ContractIdentifier m_contractIdentifier;
 
@@ -118,6 +121,7 @@ class GetAssetContractResult {
   ContractMetadata m_metadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contractIdentifierHasBeenSet = false;
   bool m_tokenStandardHasBeenSet = false;
   bool m_deployerAddressHasBeenSet = false;

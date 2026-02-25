@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -115,6 +116,8 @@ class DeleteGatewayTargetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayArn;
 
@@ -125,6 +128,7 @@ class DeleteGatewayTargetResult {
   Aws::Vector<Aws::String> m_statusReasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

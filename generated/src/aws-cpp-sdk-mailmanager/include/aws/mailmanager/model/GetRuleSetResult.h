@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -151,6 +152,8 @@ class GetRuleSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_ruleSetId;
 
@@ -165,6 +168,7 @@ class GetRuleSetResult {
   Aws::Vector<Rule> m_rules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ruleSetIdHasBeenSet = false;
   bool m_ruleSetArnHasBeenSet = false;
   bool m_ruleSetNameHasBeenSet = false;

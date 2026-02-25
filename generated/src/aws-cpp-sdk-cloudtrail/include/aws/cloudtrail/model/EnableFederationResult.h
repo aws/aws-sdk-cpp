@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/model/FederationStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -91,6 +92,8 @@ class EnableFederationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventDataStoreArn;
 
@@ -99,6 +102,7 @@ class EnableFederationResult {
   Aws::String m_federationRoleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventDataStoreArnHasBeenSet = false;
   bool m_federationStatusHasBeenSet = false;
   bool m_federationRoleArnHasBeenSet = false;

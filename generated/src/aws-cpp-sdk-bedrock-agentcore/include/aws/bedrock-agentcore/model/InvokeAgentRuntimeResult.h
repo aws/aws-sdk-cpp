@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -208,6 +209,8 @@ class InvokeAgentRuntimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_runtimeSessionId;
 
@@ -230,6 +233,7 @@ class InvokeAgentRuntimeResult {
   int m_statusCode{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runtimeSessionIdHasBeenSet = false;
   bool m_mcpSessionIdHasBeenSet = false;
   bool m_mcpProtocolVersionHasBeenSet = false;

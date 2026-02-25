@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ConfiguredAudienceModelAssociation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -61,10 +62,13 @@ class UpdateConfiguredAudienceModelAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ConfiguredAudienceModelAssociation m_configuredAudienceModelAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configuredAudienceModelAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

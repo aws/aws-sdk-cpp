@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
@@ -166,6 +167,8 @@ class GetNextMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MessageType m_type{MessageType::NOT_SET};
 
@@ -182,6 +185,7 @@ class GetNextMessageResult {
   bool m_chunkedResponseTerminated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_typeHasBeenSet = false;
   bool m_responseHasBeenSet = false;
   bool m_requestMessageIdHasBeenSet = false;

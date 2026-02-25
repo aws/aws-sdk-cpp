@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/FileMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -147,6 +148,8 @@ class CreateCommitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_commitId;
 
@@ -159,6 +162,7 @@ class CreateCommitResult {
   Aws::Vector<FileMetadata> m_filesDeleted;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_commitIdHasBeenSet = false;
   bool m_treeIdHasBeenSet = false;
   bool m_filesAddedHasBeenSet = false;

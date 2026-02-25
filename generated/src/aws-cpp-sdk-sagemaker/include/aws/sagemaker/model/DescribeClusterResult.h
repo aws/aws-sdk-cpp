@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -299,6 +300,8 @@ class DescribeClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterArn;
 
@@ -329,6 +332,7 @@ class DescribeClusterResult {
   ClusterAutoScalingConfigOutput m_autoScaling;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
   bool m_clusterStatusHasBeenSet = false;

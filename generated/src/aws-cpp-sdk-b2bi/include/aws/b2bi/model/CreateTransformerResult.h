@@ -10,6 +10,7 @@
 #include <aws/b2bi/model/OutputConversion.h>
 #include <aws/b2bi/model/SampleDocuments.h>
 #include <aws/b2bi/model/TransformerStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -204,6 +205,8 @@ class CreateTransformerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_transformerId;
 
@@ -224,6 +227,7 @@ class CreateTransformerResult {
   SampleDocuments m_sampleDocuments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transformerIdHasBeenSet = false;
   bool m_transformerArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

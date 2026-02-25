@@ -24,6 +24,7 @@ StartQueryWorkloadInsightsTopContributorsDataResult::StartQueryWorkloadInsightsT
 
 StartQueryWorkloadInsightsTopContributorsDataResult& StartQueryWorkloadInsightsTopContributorsDataResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queryId")) {
     m_queryId = jsonValue.GetString("queryId");

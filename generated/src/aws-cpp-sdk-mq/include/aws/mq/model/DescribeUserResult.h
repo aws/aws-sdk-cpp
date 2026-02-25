@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/MQ_EXPORTS.h>
@@ -150,6 +151,8 @@ class DescribeUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_brokerId;
 
@@ -164,6 +167,7 @@ class DescribeUserResult {
   bool m_replicationUser{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_brokerIdHasBeenSet = false;
   bool m_consoleAccessHasBeenSet = false;
   bool m_groupsHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/KeyValueStore.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -93,6 +94,8 @@ class CreateKeyValueStore2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   KeyValueStore m_keyValueStore;
 
@@ -101,6 +104,7 @@ class CreateKeyValueStore2020_05_31Result {
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyValueStoreHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_locationHasBeenSet = false;

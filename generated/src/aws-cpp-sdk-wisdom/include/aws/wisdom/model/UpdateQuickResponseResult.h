@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/wisdom/model/QuickResponseData.h>
@@ -58,10 +59,13 @@ class UpdateQuickResponseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   QuickResponseData m_quickResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_quickResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

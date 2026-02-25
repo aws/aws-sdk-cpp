@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
@@ -94,12 +95,15 @@ class GetDevicePoolCompatibilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DevicePoolCompatibilityResult> m_compatibleDevices;
 
   Aws::Vector<DevicePoolCompatibilityResult> m_incompatibleDevices;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_compatibleDevicesHasBeenSet = false;
   bool m_incompatibleDevicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

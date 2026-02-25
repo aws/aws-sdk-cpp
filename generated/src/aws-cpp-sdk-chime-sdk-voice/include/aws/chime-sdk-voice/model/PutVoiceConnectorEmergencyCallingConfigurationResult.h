@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/chime-sdk-voice/model/EmergencyCallingConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -60,10 +61,13 @@ class PutVoiceConnectorEmergencyCallingConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EmergencyCallingConfiguration m_emergencyCallingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_emergencyCallingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

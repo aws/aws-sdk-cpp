@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
@@ -287,6 +288,8 @@ class RestoreGraphFromSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -319,6 +322,7 @@ class RestoreGraphFromSnapshotResult {
   Aws::String m_buildNumber;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;

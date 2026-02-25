@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -74,12 +75,15 @@ class DisableHttpEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceArn;
 
   bool m_httpEndpointEnabled{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_httpEndpointEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

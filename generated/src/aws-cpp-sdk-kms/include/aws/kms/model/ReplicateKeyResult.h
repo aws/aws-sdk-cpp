@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -108,6 +109,8 @@ class ReplicateKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   KeyMetadata m_replicaKeyMetadata;
 
@@ -116,6 +119,7 @@ class ReplicateKeyResult {
   Aws::Vector<Tag> m_replicaTags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicaKeyMetadataHasBeenSet = false;
   bool m_replicaPolicyHasBeenSet = false;
   bool m_replicaTagsHasBeenSet = false;

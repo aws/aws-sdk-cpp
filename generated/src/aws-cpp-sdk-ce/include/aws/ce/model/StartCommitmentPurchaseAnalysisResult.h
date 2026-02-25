@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -92,6 +93,8 @@ class StartCommitmentPurchaseAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_analysisId;
 
@@ -100,6 +103,7 @@ class StartCommitmentPurchaseAnalysisResult {
   Aws::String m_estimatedCompletionTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_analysisIdHasBeenSet = false;
   bool m_analysisStartedTimeHasBeenSet = false;
   bool m_estimatedCompletionTimeHasBeenSet = false;

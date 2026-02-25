@@ -24,6 +24,7 @@ PutEnvironmentBlueprintConfigurationResult::PutEnvironmentBlueprintConfiguration
 
 PutEnvironmentBlueprintConfigurationResult& PutEnvironmentBlueprintConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");

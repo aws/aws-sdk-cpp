@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/lex-models/model/ExportStatus.h>
@@ -163,6 +164,8 @@ class GetExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_name;
 
@@ -179,6 +182,7 @@ class GetExportResult {
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;

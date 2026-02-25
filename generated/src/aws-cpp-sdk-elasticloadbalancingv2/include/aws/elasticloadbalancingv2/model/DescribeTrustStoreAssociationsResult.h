@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -86,12 +87,15 @@ class DescribeTrustStoreAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TrustStoreAssociation> m_trustStoreAssociations;
 
   Aws::String m_nextMarker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trustStoreAssociationsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

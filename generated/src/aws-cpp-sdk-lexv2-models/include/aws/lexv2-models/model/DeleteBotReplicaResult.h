@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/BotReplicaStatus.h>
@@ -90,6 +91,8 @@ class DeleteBotReplicaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -98,6 +101,7 @@ class DeleteBotReplicaResult {
   BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
   bool m_replicaRegionHasBeenSet = false;
   bool m_botReplicaStatusHasBeenSet = false;

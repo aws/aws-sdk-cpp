@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/RoutingRuleAction.h>
 #include <aws/apigatewayv2/model/RoutingRuleCondition.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -138,6 +139,8 @@ class PutRoutingRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<RoutingRuleAction> m_actions;
 
@@ -150,6 +153,7 @@ class PutRoutingRuleResult {
   Aws::String m_routingRuleId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionsHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
   bool m_priorityHasBeenSet = false;

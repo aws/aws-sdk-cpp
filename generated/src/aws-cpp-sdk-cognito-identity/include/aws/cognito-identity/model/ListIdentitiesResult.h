@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/cognito-identity/model/IdentityDescription.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -104,6 +105,8 @@ class ListIdentitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityPoolId;
 
@@ -112,6 +115,7 @@ class ListIdentitiesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_identitiesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

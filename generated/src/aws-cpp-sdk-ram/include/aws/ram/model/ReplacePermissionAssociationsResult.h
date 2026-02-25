@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/ReplacePermissionAssociationsWork.h>
@@ -84,12 +85,15 @@ class ReplacePermissionAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReplacePermissionAssociationsWork m_replacePermissionAssociationsWork;
 
   Aws::String m_clientToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replacePermissionAssociationsWorkHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

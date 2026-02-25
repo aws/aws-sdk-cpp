@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
 #include <aws/route53-recovery-control-config/model/ControlPanel.h>
@@ -59,10 +60,13 @@ class DescribeControlPanelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ControlPanel m_controlPanel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_controlPanelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

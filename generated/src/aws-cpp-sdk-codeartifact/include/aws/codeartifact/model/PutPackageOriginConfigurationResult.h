@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/model/PackageOriginConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -65,10 +66,13 @@ class PutPackageOriginConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PackageOriginConfiguration m_originConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_originConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

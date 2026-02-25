@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/backup-gateway/model/VmwareToAwsTagMapping.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -101,6 +102,8 @@ class GetHypervisorPropertyMappingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hypervisorArn;
 
@@ -109,6 +112,7 @@ class GetHypervisorPropertyMappingsResult {
   Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hypervisorArnHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
   bool m_vmwareToAwsTagMappingsHasBeenSet = false;

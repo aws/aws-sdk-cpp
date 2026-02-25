@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/CaseRuleError.h>
 #include <aws/connectcases/model/GetCaseRuleResponse.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -112,6 +113,8 @@ class BatchGetCaseRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<GetCaseRuleResponse> m_caseRules;
 
@@ -120,6 +123,7 @@ class BatchGetCaseRuleResult {
   Aws::Vector<Aws::String> m_unprocessedCaseRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_caseRulesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_unprocessedCaseRulesHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/model/DataSourceIntrospectionStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -99,6 +100,8 @@ class StartDataSourceIntrospectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_introspectionId;
 
@@ -107,6 +110,7 @@ class StartDataSourceIntrospectionResult {
   Aws::String m_introspectionStatusDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_introspectionIdHasBeenSet = false;
   bool m_introspectionStatusHasBeenSet = false;
   bool m_introspectionStatusDetailHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/redshift-serverless/model/Namespace.h>
@@ -90,6 +91,8 @@ class RestoreFromSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Namespace m_namespace;
 
@@ -98,6 +101,7 @@ class RestoreFromSnapshotResult {
   Aws::String m_snapshotName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_namespaceHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
   bool m_snapshotNameHasBeenSet = false;

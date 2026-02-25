@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/Snapshot.h>
@@ -56,10 +57,13 @@ class CopyClusterSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Snapshot m_snapshot;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

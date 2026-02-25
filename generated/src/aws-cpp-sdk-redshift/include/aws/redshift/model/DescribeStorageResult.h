@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 
@@ -70,12 +71,15 @@ class DescribeStorageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   double m_totalBackupSizeInMegaBytes{0.0};
 
   double m_totalProvisionedStorageInMegaBytes{0.0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
   bool m_totalProvisionedStorageInMegaBytesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

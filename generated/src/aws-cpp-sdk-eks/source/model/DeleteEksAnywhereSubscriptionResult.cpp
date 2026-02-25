@@ -22,6 +22,7 @@ DeleteEksAnywhereSubscriptionResult::DeleteEksAnywhereSubscriptionResult(const A
 }
 
 DeleteEksAnywhereSubscriptionResult& DeleteEksAnywhereSubscriptionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("subscription")) {
     m_subscription = jsonValue.GetObject("subscription");

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -116,6 +117,8 @@ class UpdateAggregatorV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_aggregatorV2Arn;
 
@@ -126,6 +129,7 @@ class UpdateAggregatorV2Result {
   Aws::Vector<Aws::String> m_linkedRegions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aggregatorV2ArnHasBeenSet = false;
   bool m_aggregationRegionHasBeenSet = false;
   bool m_regionLinkingModeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/health/Health_EXPORTS.h>
@@ -89,12 +90,15 @@ class DescribeEventDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<EventDetails> m_successfulSet;
 
   Aws::Vector<EventDetailsErrorItem> m_failedSet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulSetHasBeenSet = false;
   bool m_failedSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

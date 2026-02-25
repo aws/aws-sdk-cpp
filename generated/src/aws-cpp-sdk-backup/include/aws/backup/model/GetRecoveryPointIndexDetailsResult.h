@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/IndexStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -210,6 +211,8 @@ class GetRecoveryPointIndexDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_recoveryPointArn;
 
@@ -230,6 +233,7 @@ class GetRecoveryPointIndexDetailsResult {
   long long m_totalItemsIndexed{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_sourceResourceArnHasBeenSet = false;

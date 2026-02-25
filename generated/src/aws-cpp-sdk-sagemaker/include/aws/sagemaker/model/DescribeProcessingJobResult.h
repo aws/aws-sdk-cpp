@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -425,6 +426,8 @@ class DescribeProcessingJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ProcessingInput> m_processingInputs;
 
@@ -469,6 +472,7 @@ class DescribeProcessingJobResult {
   Aws::String m_trainingJobArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_processingInputsHasBeenSet = false;
   bool m_processingOutputConfigHasBeenSet = false;
   bool m_processingJobNameHasBeenSet = false;

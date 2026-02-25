@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/notifications/model/NotificationHubStatusSummary.h>
@@ -75,12 +76,15 @@ class DeregisterNotificationHubResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_notificationHubRegion;
 
   NotificationHubStatusSummary m_statusSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_notificationHubRegionHasBeenSet = false;
   bool m_statusSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

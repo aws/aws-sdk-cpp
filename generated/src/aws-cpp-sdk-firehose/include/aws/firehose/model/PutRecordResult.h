@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
 
@@ -73,12 +74,15 @@ class PutRecordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_recordId;
 
   bool m_encrypted{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordIdHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/IdentityPoolUsage.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -118,6 +119,8 @@ class ListIdentityPoolUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<IdentityPoolUsage> m_identityPoolUsages;
 
@@ -128,6 +131,7 @@ class ListIdentityPoolUsageResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolUsagesHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_countHasBeenSet = false;

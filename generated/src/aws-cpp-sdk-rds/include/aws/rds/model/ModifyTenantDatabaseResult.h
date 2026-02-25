@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/TenantDatabase.h>
@@ -56,10 +57,13 @@ class ModifyTenantDatabaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TenantDatabase m_tenantDatabase;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tenantDatabaseHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
@@ -115,6 +116,8 @@ class ListQueuesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -125,6 +128,7 @@ class ListQueuesResult {
   int m_unallocatedConcurrentJobs{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_queuesHasBeenSet = false;
   bool m_totalConcurrentJobsHasBeenSet = false;

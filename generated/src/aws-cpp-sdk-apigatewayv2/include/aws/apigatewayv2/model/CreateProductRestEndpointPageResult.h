@@ -10,6 +10,7 @@
 #include <aws/apigatewayv2/model/Status.h>
 #include <aws/apigatewayv2/model/StatusException.h>
 #include <aws/apigatewayv2/model/TryItState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -179,6 +180,8 @@ class CreateProductRestEndpointPageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EndpointDisplayContentResponse m_displayContent;
 
@@ -197,6 +200,7 @@ class CreateProductRestEndpointPageResult {
   TryItState m_tryItState{TryItState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_displayContentHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_productRestEndpointPageArnHasBeenSet = false;

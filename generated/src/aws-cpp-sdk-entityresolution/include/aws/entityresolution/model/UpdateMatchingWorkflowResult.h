@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
@@ -182,6 +183,8 @@ class UpdateMatchingWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_workflowName;
 
@@ -198,6 +201,7 @@ class UpdateMatchingWorkflowResult {
   Aws::String m_roleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workflowNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_inputSourceConfigHasBeenSet = false;

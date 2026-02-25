@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -300,6 +301,8 @@ class DescribeStreamProcessorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_name;
 
@@ -330,6 +333,7 @@ class DescribeStreamProcessorResult {
   StreamProcessorDataSharingPreference m_dataSharingPreference;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_streamProcessorArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

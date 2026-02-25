@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -146,6 +147,8 @@ class DescribeActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_actionId;
 
@@ -160,6 +163,7 @@ class DescribeActionResult {
   ResolveTo m_resolveTo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionIdHasBeenSet = false;
   bool m_targetResourceHasBeenSet = false;
   bool m_actionDefinitionIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
@@ -215,6 +216,8 @@ class DescribeEngagementResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contactArn;
 
@@ -237,6 +240,7 @@ class DescribeEngagementResult {
   Aws::Utils::DateTime m_stopTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contactArnHasBeenSet = false;
   bool m_engagementArnHasBeenSet = false;
   bool m_senderHasBeenSet = false;

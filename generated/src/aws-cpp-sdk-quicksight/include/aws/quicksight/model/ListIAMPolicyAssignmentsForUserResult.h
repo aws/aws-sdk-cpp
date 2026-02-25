@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -99,6 +100,8 @@ class ListIAMPolicyAssignmentsForUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ActiveIAMPolicyAssignment> m_activeAssignments;
 
@@ -107,6 +110,7 @@ class ListIAMPolicyAssignmentsForUserResult {
   Aws::String m_nextToken;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_activeAssignmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

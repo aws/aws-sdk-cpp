@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackResourceDrift.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -60,10 +61,13 @@ class DetectStackResourceDriftResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   StackResourceDrift m_stackResourceDrift;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stackResourceDriftHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

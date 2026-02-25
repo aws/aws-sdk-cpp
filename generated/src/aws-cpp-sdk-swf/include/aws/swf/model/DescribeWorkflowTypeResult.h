@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowTypeConfiguration.h>
@@ -89,12 +90,15 @@ class DescribeWorkflowTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WorkflowTypeInfo m_typeInfo;
 
   WorkflowTypeConfiguration m_configuration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_typeInfoHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

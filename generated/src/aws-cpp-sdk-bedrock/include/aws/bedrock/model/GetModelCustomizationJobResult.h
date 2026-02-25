@@ -15,6 +15,7 @@
 #include <aws/bedrock/model/ValidationDataConfig.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -460,6 +461,8 @@ class GetModelCustomizationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobArn;
 
@@ -508,6 +511,7 @@ class GetModelCustomizationJobResult {
   CustomizationConfig m_customizationConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobArnHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_outputModelNameHasBeenSet = false;

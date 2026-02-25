@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/CheckNoNewAccessResult.h>
 #include <aws/accessanalyzer/model/ReasonSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -100,6 +101,8 @@ class CheckNoNewAccessSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CheckNoNewAccessResult m_result{CheckNoNewAccessResult::NOT_SET};
 
@@ -108,6 +111,7 @@ class CheckNoNewAccessSdkResult {
   Aws::Vector<ReasonSummary> m_reasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;

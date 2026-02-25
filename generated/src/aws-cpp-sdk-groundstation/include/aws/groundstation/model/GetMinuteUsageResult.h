@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
@@ -125,6 +126,8 @@ class GetMinuteUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isReservedMinutesCustomer{false};
 
@@ -137,6 +140,7 @@ class GetMinuteUsageResult {
   int m_estimatedMinutesRemaining{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isReservedMinutesCustomerHasBeenSet = false;
   bool m_totalReservedMinuteAllocationHasBeenSet = false;
   bool m_upcomingMinutesScheduledHasBeenSet = false;

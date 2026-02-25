@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qapps/QApps_EXPORTS.h>
@@ -101,6 +102,8 @@ class DescribeQAppPermissionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceArn;
 
@@ -109,6 +112,7 @@ class DescribeQAppPermissionsResult {
   Aws::Vector<PermissionOutput> m_permissions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceArnHasBeenSet = false;
   bool m_appIdHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;

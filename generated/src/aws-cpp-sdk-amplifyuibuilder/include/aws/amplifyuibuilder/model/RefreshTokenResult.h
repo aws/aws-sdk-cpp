@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -72,12 +73,15 @@ class RefreshTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accessToken;
 
   int m_expiresIn{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessTokenHasBeenSet = false;
   bool m_expiresInHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

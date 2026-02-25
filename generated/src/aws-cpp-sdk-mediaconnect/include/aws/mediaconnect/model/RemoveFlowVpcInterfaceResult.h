@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
@@ -100,6 +101,8 @@ class RemoveFlowVpcInterfaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_flowArn;
 
@@ -108,6 +111,7 @@ class RemoveFlowVpcInterfaceResult {
   Aws::String m_vpcInterfaceName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_nonDeletedNetworkInterfaceIdsHasBeenSet = false;
   bool m_vpcInterfaceNameHasBeenSet = false;

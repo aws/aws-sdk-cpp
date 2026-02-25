@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/RedshiftIdcApplication.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class ModifyRedshiftIdcApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RedshiftIdcApplication m_redshiftIdcApplication;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_redshiftIdcApplicationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

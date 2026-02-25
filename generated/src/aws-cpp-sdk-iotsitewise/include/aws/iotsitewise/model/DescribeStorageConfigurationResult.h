@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -212,6 +213,8 @@ class DescribeStorageConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   StorageType m_storageType{StorageType::NOT_SET};
 
@@ -232,6 +235,7 @@ class DescribeStorageConfigurationResult {
   bool m_disallowIngestNullNaN{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_storageTypeHasBeenSet = false;
   bool m_multiLayerStorageHasBeenSet = false;
   bool m_disassociatedDataStorageHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -121,6 +122,8 @@ class ImportKeyPairResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyFingerprint;
 
@@ -131,6 +134,7 @@ class ImportKeyPairResponse {
   Aws::Vector<Tag> m_tags;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyFingerprintHasBeenSet = false;
   bool m_keyNameHasBeenSet = false;
   bool m_keyPairIdHasBeenSet = false;

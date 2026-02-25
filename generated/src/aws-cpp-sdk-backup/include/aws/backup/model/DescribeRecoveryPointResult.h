@@ -14,6 +14,7 @@
 #include <aws/backup/model/ScanResult.h>
 #include <aws/backup/model/StorageClass.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -622,6 +623,8 @@ class DescribeRecoveryPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_recoveryPointArn;
 
@@ -682,6 +685,7 @@ class DescribeRecoveryPointResult {
   Aws::Vector<ScanResult> m_scanResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;

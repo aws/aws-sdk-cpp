@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -127,6 +128,8 @@ class UpdateRestoreTestingSelectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -139,6 +142,7 @@ class UpdateRestoreTestingSelectionResult {
   Aws::Utils::DateTime m_updateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_restoreTestingPlanArnHasBeenSet = false;
   bool m_restoreTestingPlanNameHasBeenSet = false;

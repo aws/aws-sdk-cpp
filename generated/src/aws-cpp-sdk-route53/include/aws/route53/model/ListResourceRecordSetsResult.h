@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
@@ -162,6 +163,8 @@ class ListResourceRecordSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ResourceRecordSet> m_resourceRecordSets;
 
@@ -176,6 +179,7 @@ class ListResourceRecordSetsResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceRecordSetsHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;
   bool m_nextRecordNameHasBeenSet = false;

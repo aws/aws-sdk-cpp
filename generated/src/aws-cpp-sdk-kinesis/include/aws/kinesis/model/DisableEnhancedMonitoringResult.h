@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -128,6 +129,8 @@ class DisableEnhancedMonitoringResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_streamName;
 
@@ -138,6 +141,7 @@ class DisableEnhancedMonitoringResult {
   Aws::String m_streamARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamNameHasBeenSet = false;
   bool m_currentShardLevelMetricsHasBeenSet = false;
   bool m_desiredShardLevelMetricsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/ConnectionStatusResourceTypeEventConfiguration.h>
@@ -135,6 +136,8 @@ class GetEventConfigurationByResourceTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
 
@@ -147,6 +150,7 @@ class GetEventConfigurationByResourceTypesResult {
   MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceRegistrationStateHasBeenSet = false;
   bool m_proximityHasBeenSet = false;
   bool m_joinHasBeenSet = false;

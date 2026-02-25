@@ -8,6 +8,7 @@
 #include <aws/appconfig/model/Action.h>
 #include <aws/appconfig/model/ActionPoint.h>
 #include <aws/appconfig/model/Parameter.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -176,6 +177,8 @@ class UpdateExtensionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -192,6 +195,7 @@ class UpdateExtensionResult {
   Aws::Map<Aws::String, Parameter> m_parameters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;

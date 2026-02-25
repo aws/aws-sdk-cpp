@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/networkmanager/model/CustomerGatewayAssociation.h>
@@ -58,10 +59,13 @@ class AssociateCustomerGatewayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CustomerGatewayAssociation m_customerGatewayAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customerGatewayAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

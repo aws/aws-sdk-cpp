@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/VpcEndpoint.h>
@@ -65,10 +66,13 @@ class CreateVpcEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VpcEndpoint m_vpcEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

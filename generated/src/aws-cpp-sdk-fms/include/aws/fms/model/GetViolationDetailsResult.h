@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/ViolationDetail.h>
@@ -58,10 +59,13 @@ class GetViolationDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ViolationDetail m_violationDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_violationDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
@@ -111,6 +112,8 @@ class UpdateKxDatabaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_databaseName;
 
@@ -121,6 +124,7 @@ class UpdateKxDatabaseResult {
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_databaseNameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

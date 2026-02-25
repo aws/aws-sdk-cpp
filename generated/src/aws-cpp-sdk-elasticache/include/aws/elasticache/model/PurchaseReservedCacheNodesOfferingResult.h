@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ReservedCacheNode.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -57,10 +58,13 @@ class PurchaseReservedCacheNodesOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReservedCacheNode m_reservedCacheNode;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reservedCacheNodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

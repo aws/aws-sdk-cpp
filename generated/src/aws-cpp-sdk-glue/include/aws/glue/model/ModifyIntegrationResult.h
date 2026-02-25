@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -295,6 +296,8 @@ class ModifyIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sourceArn;
 
@@ -323,6 +326,7 @@ class ModifyIntegrationResult {
   IntegrationConfig m_integrationConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceArnHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;
   bool m_integrationNameHasBeenSet = false;

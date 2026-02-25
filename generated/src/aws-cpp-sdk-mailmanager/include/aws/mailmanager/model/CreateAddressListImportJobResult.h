@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class CreateAddressListImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobId;
 
   Aws::String m_preSignedUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_preSignedUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

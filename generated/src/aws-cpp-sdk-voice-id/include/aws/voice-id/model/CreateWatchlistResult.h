@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/Watchlist.h>
@@ -58,10 +59,13 @@ class CreateWatchlistResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Watchlist m_watchlist;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_watchlistHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

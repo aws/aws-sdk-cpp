@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/model/ReviewPolicy.h>
@@ -145,6 +146,8 @@ class ListReviewPolicyResultsForHITResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hITId;
 
@@ -159,6 +162,7 @@ class ListReviewPolicyResultsForHITResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hITIdHasBeenSet = false;
   bool m_assignmentReviewPolicyHasBeenSet = false;
   bool m_hITReviewPolicyHasBeenSet = false;

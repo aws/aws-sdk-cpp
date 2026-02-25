@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/ConfigCapabilityType.h>
@@ -95,6 +96,8 @@ class DeleteConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configId;
 
@@ -103,6 +106,7 @@ class DeleteConfigResult {
   Aws::String m_configArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configIdHasBeenSet = false;
   bool m_configTypeHasBeenSet = false;
   bool m_configArnHasBeenSet = false;

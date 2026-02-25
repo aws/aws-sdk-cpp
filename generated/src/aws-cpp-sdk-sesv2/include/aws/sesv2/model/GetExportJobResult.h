@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -202,6 +203,8 @@ class GetExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -222,6 +225,7 @@ class GetExportJobResult {
   ExportStatistics m_statistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_exportSourceTypeHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;

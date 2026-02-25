@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/OTAUpdateStatus.h>
@@ -124,6 +125,8 @@ class CreateOTAUpdateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_otaUpdateId;
 
@@ -136,6 +139,7 @@ class CreateOTAUpdateResult {
   OTAUpdateStatus m_otaUpdateStatus{OTAUpdateStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_otaUpdateIdHasBeenSet = false;
   bool m_awsIotJobIdHasBeenSet = false;
   bool m_otaUpdateArnHasBeenSet = false;

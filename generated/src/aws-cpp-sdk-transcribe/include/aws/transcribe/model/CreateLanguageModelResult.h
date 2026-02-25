@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/BaseModelName.h>
@@ -127,6 +128,8 @@ class CreateLanguageModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
 
@@ -139,6 +142,7 @@ class CreateLanguageModelResult {
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_languageCodeHasBeenSet = false;
   bool m_baseModelNameHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;

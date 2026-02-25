@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/VpcEndpointAssociation.h>
@@ -82,12 +83,15 @@ class DeleteVpcEndpointAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VpcEndpointAssociation m_vpcEndpointAssociation;
 
   VpcEndpointAssociationStatus m_vpcEndpointAssociationStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcEndpointAssociationHasBeenSet = false;
   bool m_vpcEndpointAssociationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

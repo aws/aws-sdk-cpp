@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -140,6 +141,8 @@ class DescribeFleetHistoryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<HistoryRecordEntry> m_historyRecords;
 
@@ -152,6 +155,7 @@ class DescribeFleetHistoryResponse {
   Aws::Utils::DateTime m_startTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_historyRecordsHasBeenSet = false;
   bool m_lastEvaluatedTimeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/EKS_EXPORTS.h>
@@ -122,6 +123,8 @@ class ListAssociatedAccessPoliciesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterName;
 
@@ -132,6 +135,7 @@ class ListAssociatedAccessPoliciesResult {
   Aws::Vector<AssociatedAccessPolicy> m_associatedAccessPolicies;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterNameHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

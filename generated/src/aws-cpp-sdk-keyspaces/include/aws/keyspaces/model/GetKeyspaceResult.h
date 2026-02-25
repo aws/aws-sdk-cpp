@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
@@ -141,6 +142,8 @@ class GetKeyspaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyspaceName;
 
@@ -153,6 +156,7 @@ class GetKeyspaceResult {
   Aws::Vector<ReplicationGroupStatus> m_replicationGroupStatuses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyspaceNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_replicationStrategyHasBeenSet = false;

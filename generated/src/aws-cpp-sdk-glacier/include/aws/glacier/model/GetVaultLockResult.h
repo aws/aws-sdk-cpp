@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
@@ -118,6 +119,8 @@ class GetVaultLockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policy;
 
@@ -128,6 +131,7 @@ class GetVaultLockResult {
   Aws::String m_creationDate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;

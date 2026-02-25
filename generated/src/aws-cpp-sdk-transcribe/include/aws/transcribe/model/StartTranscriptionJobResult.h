@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/TranscriptionJob.h>
@@ -59,10 +60,13 @@ class StartTranscriptionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TranscriptionJob m_transcriptionJob;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transcriptionJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

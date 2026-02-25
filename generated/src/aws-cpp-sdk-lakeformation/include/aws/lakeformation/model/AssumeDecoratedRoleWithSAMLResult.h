@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -112,6 +113,8 @@ class AssumeDecoratedRoleWithSAMLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accessKeyId;
 
@@ -122,6 +125,7 @@ class AssumeDecoratedRoleWithSAMLResult {
   Aws::Utils::DateTime m_expiration{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessKeyIdHasBeenSet = false;
   bool m_secretAccessKeyHasBeenSet = false;
   bool m_sessionTokenHasBeenSet = false;

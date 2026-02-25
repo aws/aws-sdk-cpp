@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/InterruptibleCapacityReservationAllocationStatus.h>
@@ -144,6 +145,8 @@ class UpdateInterruptibleCapacityReservationAllocationResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_interruptibleCapacityReservationId;
 
@@ -158,6 +161,7 @@ class UpdateInterruptibleCapacityReservationAllocationResponse {
   InterruptionType m_interruptionType{InterruptionType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_interruptibleCapacityReservationIdHasBeenSet = false;
   bool m_sourceCapacityReservationIdHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;

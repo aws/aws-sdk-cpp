@@ -9,6 +9,7 @@
 #include <aws/cleanroomsml/model/AudienceGenerationJobStatus.h>
 #include <aws/cleanroomsml/model/AudienceQualityMetrics.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -314,6 +315,8 @@ class GetAudienceGenerationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createTime{};
 
@@ -346,6 +349,7 @@ class GetAudienceGenerationJobResult {
   Aws::String m_protectedQueryIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_audienceGenerationJobArnHasBeenSet = false;

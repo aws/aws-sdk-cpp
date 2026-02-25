@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
@@ -108,6 +109,8 @@ class PutCodeBindingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_creationDate{};
 
@@ -118,6 +121,7 @@ class PutCodeBindingResult {
   CodeGenerationStatus m_status{CodeGenerationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_schemaVersionHasBeenSet = false;

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -107,6 +108,8 @@ class GetAccountInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_accountCreatedDate{};
 
@@ -115,6 +118,7 @@ class GetAccountInformationResult {
   Aws::String m_accountName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountCreatedDateHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_accountNameHasBeenSet = false;

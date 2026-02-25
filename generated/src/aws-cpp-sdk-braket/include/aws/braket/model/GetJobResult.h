@@ -16,6 +16,7 @@
 #include <aws/braket/model/JobOutputDataConfig.h>
 #include <aws/braket/model/JobPrimaryStatus.h>
 #include <aws/braket/model/JobStoppingCondition.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -454,6 +455,8 @@ class GetJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobPrimaryStatus m_status{JobPrimaryStatus::NOT_SET};
 
@@ -498,6 +501,7 @@ class GetJobResult {
   Aws::Vector<Association> m_associations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_jobArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;

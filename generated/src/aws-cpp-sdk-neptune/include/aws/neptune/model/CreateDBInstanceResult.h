@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/DBInstance.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CreateDBInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBInstance m_dBInstance;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

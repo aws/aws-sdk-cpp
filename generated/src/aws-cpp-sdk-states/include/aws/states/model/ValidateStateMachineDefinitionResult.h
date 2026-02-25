@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/states/SFN_EXPORTS.h>
@@ -102,6 +103,8 @@ class ValidateStateMachineDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ValidateStateMachineDefinitionResultCode m_result{ValidateStateMachineDefinitionResultCode::NOT_SET};
 
@@ -110,6 +113,7 @@ class ValidateStateMachineDefinitionResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultHasBeenSet = false;
   bool m_diagnosticsHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

@@ -10,6 +10,7 @@
 #include <aws/cleanroomsml/model/PrivacyBudgets.h>
 #include <aws/cleanroomsml/model/StatusDetails.h>
 #include <aws/cleanroomsml/model/SyntheticDataConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -413,6 +414,8 @@ class GetMLInputChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_membershipIdentifier;
 
@@ -455,6 +458,7 @@ class GetMLInputChannelResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_membershipIdentifierHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_mlInputChannelArnHasBeenSet = false;

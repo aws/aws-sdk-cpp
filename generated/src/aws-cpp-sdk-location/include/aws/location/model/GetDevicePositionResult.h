@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -161,6 +162,8 @@ class GetDevicePositionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_deviceId;
 
@@ -175,6 +178,7 @@ class GetDevicePositionResult {
   Aws::Map<Aws::String, Aws::String> m_positionProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceIdHasBeenSet = false;
   bool m_sampleTimeHasBeenSet = false;
   bool m_receivedTimeHasBeenSet = false;

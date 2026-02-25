@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/Status.h>
@@ -78,12 +79,15 @@ class GetTelemetryEvaluationStatusForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Status m_status{Status::NOT_SET};
 
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

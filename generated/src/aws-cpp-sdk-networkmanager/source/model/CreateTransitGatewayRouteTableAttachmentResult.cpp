@@ -24,6 +24,7 @@ CreateTransitGatewayRouteTableAttachmentResult::CreateTransitGatewayRouteTableAt
 
 CreateTransitGatewayRouteTableAttachmentResult& CreateTransitGatewayRouteTableAttachmentResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TransitGatewayRouteTableAttachment")) {
     m_transitGatewayRouteTableAttachment = jsonValue.GetObject("TransitGatewayRouteTableAttachment");

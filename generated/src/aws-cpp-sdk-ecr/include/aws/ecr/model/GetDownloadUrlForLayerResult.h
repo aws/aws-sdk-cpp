@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class GetDownloadUrlForLayerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_downloadUrl;
 
   Aws::String m_layerDigest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_downloadUrlHasBeenSet = false;
   bool m_layerDigestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

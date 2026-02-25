@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/UpgradeStatus.h>
@@ -100,6 +101,8 @@ class GetUpgradeStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   UpgradeStep m_upgradeStep{UpgradeStep::NOT_SET};
 
@@ -108,6 +111,7 @@ class GetUpgradeStatusResult {
   Aws::String m_upgradeName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_upgradeStepHasBeenSet = false;
   bool m_stepStatusHasBeenSet = false;
   bool m_upgradeNameHasBeenSet = false;

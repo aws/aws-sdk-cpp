@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -118,6 +119,8 @@ class PutImageTagMutabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_registryId;
 
@@ -128,6 +131,7 @@ class PutImageTagMutabilityResult {
   Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
   bool m_imageTagMutabilityHasBeenSet = false;

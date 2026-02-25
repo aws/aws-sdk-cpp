@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/PrefetchConsumption.h>
@@ -193,6 +194,8 @@ class CreatePrefetchScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -211,6 +214,7 @@ class CreatePrefetchScheduleResult {
   Aws::String m_streamId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_consumptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;

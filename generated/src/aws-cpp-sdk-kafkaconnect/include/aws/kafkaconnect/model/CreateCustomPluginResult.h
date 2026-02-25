@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 #include <aws/kafkaconnect/model/CustomPluginState.h>
@@ -105,6 +106,8 @@ class CreateCustomPluginResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customPluginArn;
 
@@ -115,6 +118,7 @@ class CreateCustomPluginResult {
   long long m_revision{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customPluginArnHasBeenSet = false;
   bool m_customPluginStateHasBeenSet = false;
   bool m_nameHasBeenSet = false;

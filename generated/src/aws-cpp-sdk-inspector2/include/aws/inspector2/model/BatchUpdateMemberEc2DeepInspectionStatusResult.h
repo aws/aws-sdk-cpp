@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
@@ -92,12 +93,15 @@ class BatchUpdateMemberEc2DeepInspectionStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<MemberAccountEc2DeepInspectionStatusState> m_accountIds;
 
   Aws::Vector<FailedMemberAccountEc2DeepInspectionStatusState> m_failedAccountIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdsHasBeenSet = false;
   bool m_failedAccountIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

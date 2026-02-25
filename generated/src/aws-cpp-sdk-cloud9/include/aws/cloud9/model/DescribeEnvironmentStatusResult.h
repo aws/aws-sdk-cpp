@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/cloud9/model/EnvironmentStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -80,12 +81,15 @@ class DescribeEnvironmentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
 
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

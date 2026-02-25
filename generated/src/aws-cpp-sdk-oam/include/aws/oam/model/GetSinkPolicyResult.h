@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/oam/OAM_EXPORTS.h>
 
@@ -92,6 +93,8 @@ class GetSinkPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policy;
 
@@ -100,6 +103,7 @@ class GetSinkPolicyResult {
   Aws::String m_sinkId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyHasBeenSet = false;
   bool m_sinkArnHasBeenSet = false;
   bool m_sinkIdHasBeenSet = false;

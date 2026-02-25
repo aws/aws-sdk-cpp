@@ -12,6 +12,7 @@
 #include <aws/batch/model/ServiceJobStatus.h>
 #include <aws/batch/model/ServiceJobTimeout.h>
 #include <aws/batch/model/ServiceJobType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -423,6 +424,8 @@ class DescribeServiceJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ServiceJobAttemptDetail> m_attempts;
 
@@ -467,6 +470,7 @@ class DescribeServiceJobResult {
   ServiceJobTimeout m_timeoutConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_attemptsHasBeenSet = false;
   bool m_capacityUsageHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/User.h>
@@ -91,6 +92,8 @@ class RegisterUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   User m_user;
 
@@ -99,6 +102,7 @@ class RegisterUserResult {
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userHasBeenSet = false;
   bool m_userInvitationUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

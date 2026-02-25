@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/AuthenticationProfile.h>
@@ -65,10 +66,13 @@ class DescribeAuthenticationProfilesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AuthenticationProfile> m_authenticationProfiles;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationProfilesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

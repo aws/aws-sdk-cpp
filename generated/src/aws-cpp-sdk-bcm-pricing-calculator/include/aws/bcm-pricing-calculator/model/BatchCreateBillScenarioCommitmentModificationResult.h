@@ -7,6 +7,7 @@
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/bcm-pricing-calculator/model/BatchCreateBillScenarioCommitmentModificationError.h>
 #include <aws/bcm-pricing-calculator/model/BatchCreateBillScenarioCommitmentModificationItem.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -93,12 +94,15 @@ class BatchCreateBillScenarioCommitmentModificationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchCreateBillScenarioCommitmentModificationItem> m_items;
 
   Aws::Vector<BatchCreateBillScenarioCommitmentModificationError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_itemsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

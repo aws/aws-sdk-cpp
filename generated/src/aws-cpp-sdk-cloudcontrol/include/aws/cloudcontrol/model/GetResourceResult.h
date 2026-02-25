@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/cloudcontrol/model/ResourceDescription.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -73,12 +74,15 @@ class GetResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_typeName;
 
   ResourceDescription m_resourceDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_typeNameHasBeenSet = false;
   bool m_resourceDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

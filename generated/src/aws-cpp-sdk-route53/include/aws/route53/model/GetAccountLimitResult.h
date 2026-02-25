@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/AccountLimit.h>
@@ -86,12 +87,15 @@ class GetAccountLimitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AccountLimit m_limit;
 
   long long m_count{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_limitHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

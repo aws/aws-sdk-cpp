@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -112,6 +113,8 @@ class CreateAccessTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_secret;
 
@@ -122,6 +125,7 @@ class CreateAccessTokenResult {
   Aws::String m_accessTokenId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_secretHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_expiresTimeHasBeenSet = false;

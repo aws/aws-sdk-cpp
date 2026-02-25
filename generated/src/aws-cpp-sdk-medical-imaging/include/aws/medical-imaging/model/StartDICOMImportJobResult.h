@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
@@ -108,6 +109,8 @@ class StartDICOMImportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datastoreId;
 
@@ -118,6 +121,7 @@ class StartDICOMImportJobResult {
   Aws::Utils::DateTime m_submittedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class RetryImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clientToken;
 
   Aws::String m_imageBuildVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_imageBuildVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

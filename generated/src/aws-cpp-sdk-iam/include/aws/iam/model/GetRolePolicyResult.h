@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ResponseMetadata.h>
@@ -102,6 +103,8 @@ class GetRolePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_roleName;
 
@@ -110,6 +113,7 @@ class GetRolePolicyResult {
   Aws::String m_policyDocument;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_roleNameHasBeenSet = false;
   bool m_policyNameHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;

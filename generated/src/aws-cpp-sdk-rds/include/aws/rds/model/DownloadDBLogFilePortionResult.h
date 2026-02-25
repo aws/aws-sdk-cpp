@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -98,6 +99,8 @@ class DownloadDBLogFilePortionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_logFileData;
 
@@ -106,6 +109,7 @@ class DownloadDBLogFilePortionResult {
   bool m_additionalDataPending{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_logFileDataHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_additionalDataPendingHasBeenSet = false;

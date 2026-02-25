@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/route53resolver/model/FirewallRuleGroupAssociation.h>
@@ -59,10 +60,13 @@ class GetFirewallRuleGroupAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FirewallRuleGroupAssociation m_firewallRuleGroupAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_firewallRuleGroupAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

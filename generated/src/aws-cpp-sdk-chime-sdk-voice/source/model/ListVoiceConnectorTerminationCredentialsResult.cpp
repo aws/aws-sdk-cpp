@@ -24,6 +24,7 @@ ListVoiceConnectorTerminationCredentialsResult::ListVoiceConnectorTerminationCre
 
 ListVoiceConnectorTerminationCredentialsResult& ListVoiceConnectorTerminationCredentialsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Usernames")) {
     Aws::Utils::Array<JsonView> usernamesJsonList = jsonValue.GetArray("Usernames");

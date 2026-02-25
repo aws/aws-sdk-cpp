@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
@@ -119,6 +120,8 @@ class CreateSchemaMappingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_schemaName;
 
@@ -129,6 +132,7 @@ class CreateSchemaMappingResult {
   Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_schemaNameHasBeenSet = false;
   bool m_schemaArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

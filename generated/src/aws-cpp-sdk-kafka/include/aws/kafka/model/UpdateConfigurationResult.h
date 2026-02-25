@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/ConfigurationRevision.h>
@@ -80,12 +81,15 @@ class UpdateConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
   ConfigurationRevision m_latestRevision;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_latestRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

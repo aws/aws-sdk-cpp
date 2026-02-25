@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -105,6 +106,8 @@ class ListAPIKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextMarker;
 
@@ -113,6 +116,7 @@ class ListAPIKeysResult {
   Aws::String m_applicationIntegrationURL;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_aPIKeySummariesHasBeenSet = false;
   bool m_applicationIntegrationURLHasBeenSet = false;

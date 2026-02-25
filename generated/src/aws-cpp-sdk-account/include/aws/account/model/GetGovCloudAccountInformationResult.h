@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/account/model/AwsAccountState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -73,12 +74,15 @@ class GetGovCloudAccountInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AwsAccountState m_accountState{AwsAccountState::NOT_SET};
 
   Aws::String m_govCloudAccountId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountStateHasBeenSet = false;
   bool m_govCloudAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

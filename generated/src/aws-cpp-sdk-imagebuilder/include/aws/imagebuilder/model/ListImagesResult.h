@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -92,12 +93,15 @@ class ListImagesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_requestId;
 
   Aws::Vector<ImageVersion> m_imageVersionList;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_imageVersionListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

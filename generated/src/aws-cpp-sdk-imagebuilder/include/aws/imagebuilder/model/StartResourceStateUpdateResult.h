@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
@@ -76,12 +77,15 @@ class StartResourceStateUpdateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_lifecycleExecutionId;
 
   Aws::String m_resourceArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecycleExecutionIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

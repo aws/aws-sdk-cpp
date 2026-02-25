@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
@@ -184,6 +185,8 @@ class GetChatControlsConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResponseScope m_responseScope{ResponseScope::NOT_SET};
 
@@ -200,6 +203,7 @@ class GetChatControlsConfigurationResult {
   HallucinationReductionConfiguration m_hallucinationReductionConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responseScopeHasBeenSet = false;
   bool m_orchestrationConfigurationHasBeenSet = false;
   bool m_blockedPhrasesHasBeenSet = false;

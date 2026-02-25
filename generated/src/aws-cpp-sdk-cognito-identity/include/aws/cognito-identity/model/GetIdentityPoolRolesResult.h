@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/cognito-identity/model/RoleMapping.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -115,6 +116,8 @@ class GetIdentityPoolRolesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityPoolId;
 
@@ -123,6 +126,7 @@ class GetIdentityPoolRolesResult {
   Aws::Map<Aws::String, RoleMapping> m_roleMappings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_rolesHasBeenSet = false;
   bool m_roleMappingsHasBeenSet = false;

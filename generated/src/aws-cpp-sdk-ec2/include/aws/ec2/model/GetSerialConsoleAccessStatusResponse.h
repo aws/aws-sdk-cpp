@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ManagedBy.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -76,12 +77,15 @@ class GetSerialConsoleAccessStatusResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_serialConsoleAccessEnabled{false};
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serialConsoleAccessEnabledHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/GrantStatus.h>
@@ -90,6 +91,8 @@ class AcceptGrantResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_grantArn;
 
@@ -98,6 +101,7 @@ class AcceptGrantResult {
   Aws::String m_version;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_grantArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_versionHasBeenSet = false;

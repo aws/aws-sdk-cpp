@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
@@ -72,12 +73,15 @@ class AssumeImpersonationRoleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_token;
 
   long long m_expiresIn{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tokenHasBeenSet = false;
   bool m_expiresInHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

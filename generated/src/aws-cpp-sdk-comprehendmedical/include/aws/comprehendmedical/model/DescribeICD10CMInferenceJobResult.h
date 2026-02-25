@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/comprehendmedical/model/ComprehendMedicalAsyncJobProperties.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -61,10 +62,13 @@ class DescribeICD10CMInferenceJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ComprehendMedicalAsyncJobProperties m_comprehendMedicalAsyncJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_comprehendMedicalAsyncJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

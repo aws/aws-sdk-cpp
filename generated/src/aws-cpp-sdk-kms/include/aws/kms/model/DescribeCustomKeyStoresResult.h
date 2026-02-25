@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -101,6 +102,8 @@ class DescribeCustomKeyStoresResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<CustomKeyStoresListEntry> m_customKeyStores;
 
@@ -109,6 +112,7 @@ class DescribeCustomKeyStoresResult {
   bool m_truncated{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customKeyStoresHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;

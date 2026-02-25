@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -219,6 +220,8 @@ class DescribeMonitoringScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_monitoringScheduleArn;
 
@@ -241,6 +244,7 @@ class DescribeMonitoringScheduleResult {
   MonitoringExecutionSummary m_lastMonitoringExecutionSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_monitoringScheduleArnHasBeenSet = false;
   bool m_monitoringScheduleNameHasBeenSet = false;
   bool m_monitoringScheduleStatusHasBeenSet = false;

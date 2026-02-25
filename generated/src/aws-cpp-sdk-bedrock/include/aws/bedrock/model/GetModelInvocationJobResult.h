@@ -9,6 +9,7 @@
 #include <aws/bedrock/model/ModelInvocationJobOutputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobStatus.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -335,6 +336,8 @@ class GetModelInvocationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobArn;
 
@@ -367,6 +370,7 @@ class GetModelInvocationJobResult {
   Aws::Utils::DateTime m_jobExpirationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobArnHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;

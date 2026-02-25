@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/DomainNameAccessAssociation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -81,12 +82,15 @@ class GetDomainNameAccessAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_position;
 
   Aws::Vector<DomainNameAccessAssociation> m_items;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_positionHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

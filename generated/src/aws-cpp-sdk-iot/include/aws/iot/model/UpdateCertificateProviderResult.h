@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class UpdateCertificateProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_certificateProviderName;
 
   Aws::String m_certificateProviderArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateProviderNameHasBeenSet = false;
   bool m_certificateProviderArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
@@ -82,12 +83,15 @@ class DescribeActivitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Activity> m_userActivities;
 
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userActivitiesHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

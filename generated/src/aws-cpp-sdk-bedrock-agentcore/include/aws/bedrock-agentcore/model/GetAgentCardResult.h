@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -91,6 +92,8 @@ class GetAgentCardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_runtimeSessionId;
 
@@ -99,6 +102,7 @@ class GetAgentCardResult {
   int m_statusCode{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runtimeSessionIdHasBeenSet = false;
   bool m_agentCardHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;

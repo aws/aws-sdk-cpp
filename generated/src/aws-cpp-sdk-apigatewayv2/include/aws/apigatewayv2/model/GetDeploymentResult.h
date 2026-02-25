@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/DeploymentStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -140,6 +141,8 @@ class GetDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_autoDeployed{false};
 
@@ -154,6 +157,7 @@ class GetDeploymentResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoDeployedHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_deploymentIdHasBeenSet = false;

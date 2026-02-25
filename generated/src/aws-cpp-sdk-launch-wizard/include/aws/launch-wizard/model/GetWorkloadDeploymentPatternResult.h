@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 #include <aws/launch-wizard/model/WorkloadDeploymentPatternData.h>
@@ -59,10 +60,13 @@ class GetWorkloadDeploymentPatternResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WorkloadDeploymentPatternData m_workloadDeploymentPattern;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workloadDeploymentPatternHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -216,6 +217,8 @@ class DescribeModelCardExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelCardExportJobName;
 
@@ -238,6 +241,7 @@ class DescribeModelCardExportJobResult {
   ModelCardExportArtifacts m_exportArtifacts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelCardExportJobNameHasBeenSet = false;
   bool m_modelCardExportJobArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

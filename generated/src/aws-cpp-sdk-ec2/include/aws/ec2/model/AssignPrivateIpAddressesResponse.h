@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -107,6 +108,8 @@ class AssignPrivateIpAddressesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_networkInterfaceId;
 
@@ -115,6 +118,7 @@ class AssignPrivateIpAddressesResponse {
   Aws::Vector<Ipv4PrefixSpecification> m_assignedIpv4Prefixes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkInterfaceIdHasBeenSet = false;
   bool m_assignedPrivateIpAddressesHasBeenSet = false;
   bool m_assignedIpv4PrefixesHasBeenSet = false;

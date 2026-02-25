@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
@@ -250,6 +251,8 @@ class GetUnfilteredTableMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Table m_table;
 
@@ -274,6 +277,7 @@ class GetUnfilteredTableMetadataResult {
   Aws::String m_rowFilter;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableHasBeenSet = false;
   bool m_authorizedColumnsHasBeenSet = false;
   bool m_isRegisteredWithLakeFormationHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/cloud9/model/EnvironmentMember.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class CreateEnvironmentMembershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EnvironmentMember m_membership;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_membershipHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

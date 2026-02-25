@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/S3_EXPORTS.h>
@@ -141,6 +142,8 @@ class GetBucketNotificationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TopicConfiguration> m_topicConfigurations;
 
@@ -151,6 +154,7 @@ class GetBucketNotificationConfigurationResult {
   EventBridgeConfiguration m_eventBridgeConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_topicConfigurationsHasBeenSet = false;
   bool m_queueConfigurationsHasBeenSet = false;
   bool m_lambdaFunctionConfigurationsHasBeenSet = false;

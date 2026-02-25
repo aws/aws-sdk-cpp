@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/model/ResponseMetadata.h>
 
@@ -56,10 +57,13 @@ class GetSMSSandboxAccountStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isInSandbox{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isInSandboxHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

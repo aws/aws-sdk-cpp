@@ -7,6 +7,7 @@
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/cloudcontrol/model/HookProgressEvent.h>
 #include <aws/cloudcontrol/model/ProgressEvent.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -84,12 +85,15 @@ class GetResourceRequestStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProgressEvent m_progressEvent;
 
   Aws::Vector<HookProgressEvent> m_hooksProgressEvent;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_progressEventHasBeenSet = false;
   bool m_hooksProgressEventHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

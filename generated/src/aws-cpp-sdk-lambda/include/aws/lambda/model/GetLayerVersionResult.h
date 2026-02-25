@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -215,6 +216,8 @@ class GetLayerVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LayerVersionContentOutput m_content;
 
@@ -235,6 +238,7 @@ class GetLayerVersionResult {
   Aws::Vector<Architecture> m_compatibleArchitectures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_layerArnHasBeenSet = false;
   bool m_layerVersionArnHasBeenSet = false;

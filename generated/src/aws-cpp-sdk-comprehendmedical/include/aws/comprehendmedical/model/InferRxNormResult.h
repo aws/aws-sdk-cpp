@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/comprehendmedical/model/RxNormEntity.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -105,6 +106,8 @@ class InferRxNormResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<RxNormEntity> m_entities;
 
@@ -113,6 +116,7 @@ class InferRxNormResult {
   Aws::String m_modelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;

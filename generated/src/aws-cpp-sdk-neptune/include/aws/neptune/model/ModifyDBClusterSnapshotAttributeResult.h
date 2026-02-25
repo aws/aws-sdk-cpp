@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/DBClusterSnapshotAttributesResult.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -59,10 +60,13 @@ class ModifyDBClusterSnapshotAttributeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBClusterSnapshotAttributesResult m_dBClusterSnapshotAttributesResult;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterSnapshotAttributesResultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

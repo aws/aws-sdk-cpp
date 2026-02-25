@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/SessionStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -90,6 +91,8 @@ class EndSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sessionArn;
 
@@ -98,6 +101,7 @@ class EndSessionResult {
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionArnHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_sessionStatusHasBeenSet = false;

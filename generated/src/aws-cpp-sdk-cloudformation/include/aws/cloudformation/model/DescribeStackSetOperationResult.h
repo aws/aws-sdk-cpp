@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackSetOperation.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -59,10 +60,13 @@ class DescribeStackSetOperationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   StackSetOperation m_stackSetOperation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stackSetOperationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

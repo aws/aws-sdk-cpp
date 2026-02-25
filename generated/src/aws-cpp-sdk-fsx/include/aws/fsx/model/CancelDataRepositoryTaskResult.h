@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/DataRepositoryTaskLifecycle.h>
@@ -83,12 +84,15 @@ class CancelDataRepositoryTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DataRepositoryTaskLifecycle m_lifecycle{DataRepositoryTaskLifecycle::NOT_SET};
 
   Aws::String m_taskId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecycleHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

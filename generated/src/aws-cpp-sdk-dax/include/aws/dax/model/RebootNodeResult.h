@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dax/DAX_EXPORTS.h>
 #include <aws/dax/model/Cluster.h>
@@ -58,10 +59,13 @@ class RebootNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Cluster m_cluster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

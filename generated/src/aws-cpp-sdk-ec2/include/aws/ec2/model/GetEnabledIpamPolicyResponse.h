@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/IpamPolicyManagedBy.h>
@@ -89,6 +90,8 @@ class GetEnabledIpamPolicyResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_ipamPolicyEnabled{false};
 
@@ -97,6 +100,7 @@ class GetEnabledIpamPolicyResponse {
   IpamPolicyManagedBy m_managedBy{IpamPolicyManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamPolicyEnabledHasBeenSet = false;
   bool m_ipamPolicyIdHasBeenSet = false;
   bool m_managedByHasBeenSet = false;

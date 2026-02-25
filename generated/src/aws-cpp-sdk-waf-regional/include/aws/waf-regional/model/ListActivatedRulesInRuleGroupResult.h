@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
@@ -88,12 +89,15 @@ class ListActivatedRulesInRuleGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextMarker;
 
   Aws::Vector<ActivatedRule> m_activatedRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_activatedRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

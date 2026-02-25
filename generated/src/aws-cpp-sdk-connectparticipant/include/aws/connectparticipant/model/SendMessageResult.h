@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/connectparticipant/model/MessageProcessingMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -93,6 +94,8 @@ class SendMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -101,6 +104,7 @@ class SendMessageResult {
   MessageProcessingMetadata m_messageMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_absoluteTimeHasBeenSet = false;
   bool m_messageMetadataHasBeenSet = false;

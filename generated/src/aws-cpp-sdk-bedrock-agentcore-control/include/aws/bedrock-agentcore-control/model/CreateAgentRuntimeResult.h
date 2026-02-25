@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -144,6 +145,8 @@ class CreateAgentRuntimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_agentRuntimeArn;
 
@@ -158,6 +161,7 @@ class CreateAgentRuntimeResult {
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
   bool m_workloadIdentityDetailsHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;

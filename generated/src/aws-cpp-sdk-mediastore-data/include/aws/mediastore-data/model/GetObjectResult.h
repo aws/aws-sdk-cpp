@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -175,6 +176,8 @@ class GetObjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -193,6 +196,7 @@ class GetObjectResult {
   int m_statusCode{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bodyHasBeenSet = false;
   bool m_cacheControlHasBeenSet = false;
   bool m_contentRangeHasBeenSet = false;

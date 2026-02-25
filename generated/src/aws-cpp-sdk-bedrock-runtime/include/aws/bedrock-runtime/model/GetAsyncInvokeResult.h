@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/AsyncInvokeOutputDataConfig.h>
 #include <aws/bedrock-runtime/model/AsyncInvokeStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -194,6 +195,8 @@ class GetAsyncInvokeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_invocationArn;
 
@@ -214,6 +217,7 @@ class GetAsyncInvokeResult {
   AsyncInvokeOutputDataConfig m_outputDataConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invocationArnHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
@@ -170,6 +171,8 @@ class ImportResourcesToDraftAppVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -184,6 +187,7 @@ class ImportResourcesToDraftAppVersionResult {
   Aws::Vector<TerraformSource> m_terraformSources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;
   bool m_eksSourcesHasBeenSet = false;

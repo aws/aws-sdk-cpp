@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -108,6 +109,8 @@ class StartReplayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_replayArn;
 
@@ -118,6 +121,7 @@ class StartReplayResult {
   Aws::Utils::DateTime m_replayStartTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replayArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_stateReasonHasBeenSet = false;

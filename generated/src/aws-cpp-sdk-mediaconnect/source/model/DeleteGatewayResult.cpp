@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteGatewayResult::DeleteGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteGatewayResult& DeleteGatewayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("gatewayArn")) {
     m_gatewayArn = jsonValue.GetString("gatewayArn");

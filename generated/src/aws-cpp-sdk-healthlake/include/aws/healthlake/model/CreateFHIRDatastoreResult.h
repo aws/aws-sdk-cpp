@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/model/DatastoreStatus.h>
@@ -107,6 +108,8 @@ class CreateFHIRDatastoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datastoreId;
 
@@ -117,6 +120,7 @@ class CreateFHIRDatastoreResult {
   Aws::String m_datastoreEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datastoreIdHasBeenSet = false;
   bool m_datastoreArnHasBeenSet = false;
   bool m_datastoreStatusHasBeenSet = false;

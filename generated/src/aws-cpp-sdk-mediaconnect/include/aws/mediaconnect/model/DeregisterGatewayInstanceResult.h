@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/InstanceState.h>
@@ -73,12 +74,15 @@ class DeregisterGatewayInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayInstanceArn;
 
   InstanceState m_instanceState{InstanceState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayInstanceArnHasBeenSet = false;
   bool m_instanceStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

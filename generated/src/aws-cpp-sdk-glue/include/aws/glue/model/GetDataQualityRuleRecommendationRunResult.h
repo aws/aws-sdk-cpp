@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
@@ -286,6 +287,8 @@ class GetDataQualityRuleRecommendationRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_runId;
 
@@ -316,6 +319,7 @@ class GetDataQualityRuleRecommendationRunResult {
   Aws::String m_dataQualitySecurityConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runIdHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
   bool m_roleHasBeenSet = false;

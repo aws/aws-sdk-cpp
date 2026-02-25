@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -101,6 +102,8 @@ class GetComponentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RecipeOutputFormat m_recipeOutputFormat{RecipeOutputFormat::NOT_SET};
 
@@ -109,6 +112,7 @@ class GetComponentResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recipeOutputFormatHasBeenSet = false;
   bool m_recipeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

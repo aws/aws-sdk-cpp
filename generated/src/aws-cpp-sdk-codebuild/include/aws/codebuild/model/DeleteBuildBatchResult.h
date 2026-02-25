@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/BuildNotDeleted.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -107,6 +108,8 @@ class DeleteBuildBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_statusCode;
 
@@ -115,6 +118,7 @@ class DeleteBuildBatchResult {
   Aws::Vector<BuildNotDeleted> m_buildsNotDeleted;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_buildsDeletedHasBeenSet = false;
   bool m_buildsNotDeletedHasBeenSet = false;

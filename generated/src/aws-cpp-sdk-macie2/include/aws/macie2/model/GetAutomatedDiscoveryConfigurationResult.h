@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
@@ -176,6 +177,8 @@ class GetAutomatedDiscoveryConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AutoEnableMode m_autoEnableOrganizationMembers{AutoEnableMode::NOT_SET};
 
@@ -192,6 +195,7 @@ class GetAutomatedDiscoveryConfigurationResult {
   AutomatedDiscoveryStatus m_status{AutomatedDiscoveryStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoEnableOrganizationMembersHasBeenSet = false;
   bool m_classificationScopeIdHasBeenSet = false;
   bool m_disabledAtHasBeenSet = false;

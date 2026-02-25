@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/ProactiveAnomaly.h>
@@ -78,12 +79,15 @@ class DescribeAnomalyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProactiveAnomaly m_proactiveAnomaly;
 
   ReactiveAnomaly m_reactiveAnomaly;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_proactiveAnomalyHasBeenSet = false;
   bool m_reactiveAnomalyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

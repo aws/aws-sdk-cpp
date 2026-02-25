@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
@@ -142,6 +143,8 @@ class RegisterClientResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clientId;
 
@@ -156,6 +159,7 @@ class RegisterClientResult {
   Aws::String m_tokenEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
   bool m_clientIdIssuedAtHasBeenSet = false;

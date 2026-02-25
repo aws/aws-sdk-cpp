@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/tnb/model/OperationalState.h>
@@ -56,10 +57,13 @@ class UpdateSolFunctionPackageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   OperationalState m_operationalState{OperationalState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_operationalStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

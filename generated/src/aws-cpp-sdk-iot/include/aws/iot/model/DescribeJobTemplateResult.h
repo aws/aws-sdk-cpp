@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -281,6 +282,8 @@ class DescribeJobTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobTemplateArn;
 
@@ -309,6 +312,7 @@ class DescribeJobTemplateResult {
   Aws::Vector<Aws::String> m_destinationPackageVersions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobTemplateArnHasBeenSet = false;
   bool m_jobTemplateIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

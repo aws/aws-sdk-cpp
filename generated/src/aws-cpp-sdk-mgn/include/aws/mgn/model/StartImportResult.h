@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/ImportTask.h>
@@ -63,10 +64,13 @@ class StartImportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ImportTask m_importTask;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_importTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

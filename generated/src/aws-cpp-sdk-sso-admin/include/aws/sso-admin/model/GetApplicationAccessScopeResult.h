@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
@@ -82,12 +83,15 @@ class GetApplicationAccessScopeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_scope;
 
   Aws::Vector<Aws::String> m_authorizedTargets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_scopeHasBeenSet = false;
   bool m_authorizedTargetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

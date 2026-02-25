@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 #include <aws/managedblockchain-query/model/BlockchainInstant.h>
@@ -120,6 +121,8 @@ class GetTokenBalanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   OwnerIdentifier m_ownerIdentifier;
 
@@ -132,6 +135,7 @@ class GetTokenBalanceResult {
   BlockchainInstant m_lastUpdatedTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ownerIdentifierHasBeenSet = false;
   bool m_tokenIdentifierHasBeenSet = false;
   bool m_balanceHasBeenSet = false;

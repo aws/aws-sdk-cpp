@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/FileCacheLifecycle.h>
@@ -75,12 +76,15 @@ class DeleteFileCacheResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_fileCacheId;
 
   FileCacheLifecycle m_lifecycle{FileCacheLifecycle::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fileCacheIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

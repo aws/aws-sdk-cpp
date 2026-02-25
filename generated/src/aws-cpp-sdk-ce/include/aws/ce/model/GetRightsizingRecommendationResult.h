@@ -9,6 +9,7 @@
 #include <aws/ce/model/RightsizingRecommendationConfiguration.h>
 #include <aws/ce/model/RightsizingRecommendationMetadata.h>
 #include <aws/ce/model/RightsizingRecommendationSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -141,6 +142,8 @@ class GetRightsizingRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RightsizingRecommendationMetadata m_metadata;
 
@@ -153,6 +156,7 @@ class GetRightsizingRecommendationResult {
   RightsizingRecommendationConfiguration m_configuration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metadataHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
   bool m_rightsizingRecommendationsHasBeenSet = false;

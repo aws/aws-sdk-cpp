@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/AccessPolicyStats.h>
@@ -128,6 +129,8 @@ class GetPoliciesStatsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AccessPolicyStats m_accessPolicyStats;
 
@@ -140,6 +143,7 @@ class GetPoliciesStatsResult {
   long long m_totalPolicyCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessPolicyStatsHasBeenSet = false;
   bool m_securityPolicyStatsHasBeenSet = false;
   bool m_securityConfigStatsHasBeenSet = false;

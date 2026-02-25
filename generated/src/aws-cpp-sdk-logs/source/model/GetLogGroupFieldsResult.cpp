@@ -20,6 +20,7 @@ using namespace Aws;
 GetLogGroupFieldsResult::GetLogGroupFieldsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetLogGroupFieldsResult& GetLogGroupFieldsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("logGroupFields")) {
     Aws::Utils::Array<JsonView> logGroupFieldsJsonList = jsonValue.GetArray("logGroupFields");

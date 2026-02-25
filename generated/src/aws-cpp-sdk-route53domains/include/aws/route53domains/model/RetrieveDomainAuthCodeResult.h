@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 
@@ -63,10 +64,13 @@ class RetrieveDomainAuthCodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_authCode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

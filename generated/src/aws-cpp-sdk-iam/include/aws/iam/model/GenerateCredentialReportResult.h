@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ReportStateType.h>
@@ -81,12 +82,15 @@ class GenerateCredentialReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReportStateType m_state{ReportStateType::NOT_SET};
 
   Aws::String m_description;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

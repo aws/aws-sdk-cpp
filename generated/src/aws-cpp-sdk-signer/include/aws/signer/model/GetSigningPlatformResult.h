@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/signer/model/Category.h>
@@ -192,6 +193,8 @@ class GetSigningPlatformResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_platformId;
 
@@ -212,6 +215,7 @@ class GetSigningPlatformResult {
   bool m_revocationSupported{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_platformIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_partnerHasBeenSet = false;

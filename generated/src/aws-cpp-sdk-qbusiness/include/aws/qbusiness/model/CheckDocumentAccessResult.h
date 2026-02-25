@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
@@ -127,6 +128,8 @@ class CheckDocumentAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AssociatedGroup> m_userGroups;
 
@@ -137,6 +140,7 @@ class CheckDocumentAccessResult {
   DocumentAcl m_documentAcl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userGroupsHasBeenSet = false;
   bool m_userAliasesHasBeenSet = false;
   bool m_hasAccessHasBeenSet = false;

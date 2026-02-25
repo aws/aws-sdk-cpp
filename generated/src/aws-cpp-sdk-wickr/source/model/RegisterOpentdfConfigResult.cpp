@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterOpentdfConfigResult::RegisterOpentdfConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterOpentdfConfigResult& RegisterOpentdfConfigResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");

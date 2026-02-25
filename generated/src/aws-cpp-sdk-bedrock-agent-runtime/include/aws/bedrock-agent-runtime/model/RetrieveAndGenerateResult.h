@@ -8,6 +8,7 @@
 #include <aws/bedrock-agent-runtime/model/Citation.h>
 #include <aws/bedrock-agent-runtime/model/GuadrailAction.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveAndGenerateOutput.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -122,6 +123,8 @@ class RetrieveAndGenerateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Citation> m_citations;
 
@@ -132,6 +135,7 @@ class RetrieveAndGenerateResult {
   Aws::String m_sessionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_citationsHasBeenSet = false;
   bool m_guardrailActionHasBeenSet = false;
   bool m_outputHasBeenSet = false;

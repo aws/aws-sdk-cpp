@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -127,6 +128,8 @@ class DescribeProvisioningArtifactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProvisioningArtifactDetail m_provisioningArtifactDetail;
 
@@ -137,6 +140,7 @@ class DescribeProvisioningArtifactResult {
   Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_provisioningArtifactDetailHasBeenSet = false;
   bool m_infoHasBeenSet = false;
   bool m_statusHasBeenSet = false;

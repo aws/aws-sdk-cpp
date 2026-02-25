@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -292,6 +293,8 @@ class GetStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -326,6 +329,7 @@ class GetStatusResult {
   Aws::Vector<Artifact> m_artifactList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
   bool m_locationCodeHasBeenSet = false;

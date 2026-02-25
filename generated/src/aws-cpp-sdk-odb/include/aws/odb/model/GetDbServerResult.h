@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/DbServer.h>
@@ -58,10 +59,13 @@ class GetDbServerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DbServer m_dbServer;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dbServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

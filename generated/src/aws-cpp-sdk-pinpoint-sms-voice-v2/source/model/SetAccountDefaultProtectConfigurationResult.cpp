@@ -24,6 +24,7 @@ SetAccountDefaultProtectConfigurationResult::SetAccountDefaultProtectConfigurati
 
 SetAccountDefaultProtectConfigurationResult& SetAccountDefaultProtectConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DefaultProtectConfigurationArn")) {
     m_defaultProtectConfigurationArn = jsonValue.GetString("DefaultProtectConfigurationArn");

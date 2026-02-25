@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 
@@ -80,12 +81,15 @@ class UpdateRebalancingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterArn;
 
   Aws::String m_clusterOperationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterOperationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

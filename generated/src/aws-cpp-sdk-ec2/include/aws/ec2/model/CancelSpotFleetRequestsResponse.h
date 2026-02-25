@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsErrorItem.h>
@@ -95,12 +96,15 @@ class CancelSpotFleetRequestsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<CancelSpotFleetRequestsSuccessItem> m_successfulFleetRequests;
 
   Aws::Vector<CancelSpotFleetRequestsErrorItem> m_unsuccessfulFleetRequests;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulFleetRequestsHasBeenSet = false;
   bool m_unsuccessfulFleetRequestsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

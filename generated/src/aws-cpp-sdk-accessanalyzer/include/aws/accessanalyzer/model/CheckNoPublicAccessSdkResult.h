@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/CheckNoPublicAccessResult.h>
 #include <aws/accessanalyzer/model/ReasonSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -103,6 +104,8 @@ class CheckNoPublicAccessSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CheckNoPublicAccessResult m_result{CheckNoPublicAccessResult::NOT_SET};
 
@@ -111,6 +114,7 @@ class CheckNoPublicAccessSdkResult {
   Aws::Vector<ReasonSummary> m_reasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;

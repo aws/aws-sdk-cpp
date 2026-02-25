@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/LocationService_EXPORTS.h>
@@ -98,6 +99,8 @@ class CreateGeofenceCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_collectionName;
 
@@ -106,6 +109,7 @@ class CreateGeofenceCollectionResult {
   Aws::Utils::DateTime m_createTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_collectionNameHasBeenSet = false;
   bool m_collectionArnHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
@@ -173,6 +174,8 @@ class CreateKxScalingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_environmentId;
 
@@ -189,6 +192,7 @@ class CreateKxScalingGroupResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_environmentIdHasBeenSet = false;
   bool m_scalingGroupNameHasBeenSet = false;
   bool m_hostTypeHasBeenSet = false;

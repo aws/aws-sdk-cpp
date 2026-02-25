@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
@@ -131,6 +132,8 @@ class DescribeLocationNfsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_locationArn;
 
@@ -143,6 +146,7 @@ class DescribeLocationNfsResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_onPremConfigHasBeenSet = false;

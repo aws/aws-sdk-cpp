@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
@@ -81,12 +82,15 @@ class RegisterThingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_certificatePem;
 
   Aws::Map<Aws::String, Aws::String> m_resourceArns;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificatePemHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadiness_EXPORTS.h>
@@ -99,6 +100,8 @@ class GetCellReadinessSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -107,6 +110,7 @@ class GetCellReadinessSummaryResult {
   Aws::Vector<ReadinessCheckSummary> m_readinessChecks;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_readinessHasBeenSet = false;
   bool m_readinessChecksHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -158,6 +159,8 @@ class GetDeliverabilityDashboardOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_dashboardEnabled{false};
 
@@ -170,6 +173,7 @@ class GetDeliverabilityDashboardOptionsResult {
   Aws::Vector<DomainDeliverabilityTrackingOption> m_pendingExpirationSubscribedDomains;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dashboardEnabledHasBeenSet = false;
   bool m_subscriptionExpiryDateHasBeenSet = false;
   bool m_accountStatusHasBeenSet = false;

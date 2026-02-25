@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 #include <aws/partnercentral-channel/model/CreateRelationshipDetail.h>
@@ -58,10 +59,13 @@ class CreateRelationshipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CreateRelationshipDetail m_relationshipDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_relationshipDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

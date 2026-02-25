@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/EffectiveHoursOfOperations.h>
 #include <aws/connect/model/EffectiveOverrideHours.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -110,6 +111,8 @@ class GetEffectiveHoursOfOperationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<EffectiveHoursOfOperations> m_effectiveHoursOfOperationList;
 
@@ -118,6 +121,7 @@ class GetEffectiveHoursOfOperationsResult {
   Aws::String m_timeZone;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_effectiveHoursOfOperationListHasBeenSet = false;
   bool m_effectiveOverrideHoursListHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;

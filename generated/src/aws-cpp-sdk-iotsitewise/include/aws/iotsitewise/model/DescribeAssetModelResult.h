@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -377,6 +378,8 @@ class DescribeAssetModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_assetModelId;
 
@@ -411,6 +414,7 @@ class DescribeAssetModelResult {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_assetModelExternalIdHasBeenSet = false;
   bool m_assetModelArnHasBeenSet = false;

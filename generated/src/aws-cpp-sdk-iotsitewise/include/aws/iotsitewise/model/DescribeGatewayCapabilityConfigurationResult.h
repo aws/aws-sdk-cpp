@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/CapabilitySyncStatus.h>
@@ -120,6 +121,8 @@ class DescribeGatewayCapabilityConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayId;
 
@@ -130,6 +133,7 @@ class DescribeGatewayCapabilityConfigurationResult {
   CapabilitySyncStatus m_capabilitySyncStatus{CapabilitySyncStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_capabilityNamespaceHasBeenSet = false;
   bool m_capabilityConfigurationHasBeenSet = false;

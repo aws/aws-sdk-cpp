@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ResourcePolicy.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class PutResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourcePolicy m_resourcePolicy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourcePolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -153,6 +154,8 @@ class DescribeCertificateProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_certificateProviderName;
 
@@ -167,6 +170,7 @@ class DescribeCertificateProviderResult {
   Aws::Utils::DateTime m_lastModifiedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateProviderNameHasBeenSet = false;
   bool m_certificateProviderArnHasBeenSet = false;
   bool m_lambdaFunctionArnHasBeenSet = false;

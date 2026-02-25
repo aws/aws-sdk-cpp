@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -82,12 +83,15 @@ class ListVersionsByFunctionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextMarker;
 
   Aws::Vector<FunctionConfiguration> m_versions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextMarkerHasBeenSet = false;
   bool m_versionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

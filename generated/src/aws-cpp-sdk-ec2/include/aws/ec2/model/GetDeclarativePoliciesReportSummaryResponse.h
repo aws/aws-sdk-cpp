@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -205,6 +206,8 @@ class GetDeclarativePoliciesReportSummaryResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_reportId;
 
@@ -225,6 +228,7 @@ class GetDeclarativePoliciesReportSummaryResponse {
   Aws::Vector<AttributeSummary> m_attributeSummaries;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_s3BucketHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class CreateDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_deploymentArn;
 
   Aws::String m_deploymentId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deploymentArnHasBeenSet = false;
   bool m_deploymentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/cloud9/model/Environment.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -65,10 +66,13 @@ class DescribeEnvironmentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Environment> m_environments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_environmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

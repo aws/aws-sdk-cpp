@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -119,6 +120,8 @@ class GetHostReservationPurchasePreviewResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
 
@@ -129,6 +132,7 @@ class GetHostReservationPurchasePreviewResponse {
   Aws::String m_totalUpfrontPrice;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_currencyCodeHasBeenSet = false;
   bool m_purchaseHasBeenSet = false;
   bool m_totalHourlyPriceHasBeenSet = false;

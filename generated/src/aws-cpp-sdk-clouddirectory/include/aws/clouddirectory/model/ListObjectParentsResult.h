@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/ObjectIdentifierAndLinkNameTuple.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -107,6 +108,8 @@ class ListObjectParentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_parents;
 
@@ -115,6 +118,7 @@ class ListObjectParentsResult {
   Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_parentsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_parentLinksHasBeenSet = false;

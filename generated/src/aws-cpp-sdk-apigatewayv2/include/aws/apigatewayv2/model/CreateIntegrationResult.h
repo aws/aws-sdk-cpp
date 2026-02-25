@@ -10,6 +10,7 @@
 #include <aws/apigatewayv2/model/IntegrationType.h>
 #include <aws/apigatewayv2/model/PassthroughBehavior.h>
 #include <aws/apigatewayv2/model/TlsConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -500,6 +501,8 @@ class CreateIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_apiGatewayManaged{false};
 
@@ -542,6 +545,7 @@ class CreateIntegrationResult {
   TlsConfig m_tlsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_connectionIdHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;

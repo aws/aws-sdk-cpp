@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pcs/PCS_EXPORTS.h>
@@ -100,6 +101,8 @@ class RegisterComputeNodeGroupInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nodeID;
 
@@ -108,6 +111,7 @@ class RegisterComputeNodeGroupInstanceResult {
   Aws::Vector<Endpoint> m_endpoints;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nodeIDHasBeenSet = false;
   bool m_sharedSecretHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;

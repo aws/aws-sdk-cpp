@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/model/InsightSelector.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -122,6 +123,8 @@ class GetInsightSelectorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_trailARN;
 
@@ -132,6 +135,7 @@ class GetInsightSelectorsResult {
   Aws::String m_insightsDestination;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trailARNHasBeenSet = false;
   bool m_insightSelectorsHasBeenSet = false;
   bool m_eventDataStoreArnHasBeenSet = false;

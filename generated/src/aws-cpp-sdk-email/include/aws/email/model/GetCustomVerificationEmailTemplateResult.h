@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ResponseMetadata.h>
@@ -151,6 +152,8 @@ class GetCustomVerificationEmailTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_templateName;
 
@@ -165,6 +168,7 @@ class GetCustomVerificationEmailTemplateResult {
   Aws::String m_failureRedirectionURL;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateNameHasBeenSet = false;
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_templateSubjectHasBeenSet = false;

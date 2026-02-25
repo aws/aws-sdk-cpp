@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -103,6 +104,8 @@ class GetLogEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<OutputLogEvent> m_events;
 
@@ -111,6 +114,7 @@ class GetLogEventsResult {
   Aws::String m_nextBackwardToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventsHasBeenSet = false;
   bool m_nextForwardTokenHasBeenSet = false;
   bool m_nextBackwardTokenHasBeenSet = false;

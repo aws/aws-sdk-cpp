@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -108,6 +109,8 @@ class AssociateAnalyticsDataSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataSetId;
 
@@ -118,6 +121,7 @@ class AssociateAnalyticsDataSetResult {
   Aws::String m_resourceShareArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataSetIdHasBeenSet = false;
   bool m_targetAccountIdHasBeenSet = false;
   bool m_resourceShareIdHasBeenSet = false;

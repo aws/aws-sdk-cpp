@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/Service.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -78,12 +79,15 @@ class CreateServiceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Service m_service;
 
   Aws::String m_operationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

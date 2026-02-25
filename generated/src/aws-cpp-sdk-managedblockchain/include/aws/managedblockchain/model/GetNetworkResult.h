@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/managedblockchain/model/Network.h>
@@ -58,10 +59,13 @@ class GetNetworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Network m_network;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

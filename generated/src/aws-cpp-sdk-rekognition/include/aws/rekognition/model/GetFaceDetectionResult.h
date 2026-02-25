@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -193,6 +194,8 @@ class GetFaceDetectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VideoJobStatus m_jobStatus{VideoJobStatus::NOT_SET};
 
@@ -211,6 +214,7 @@ class GetFaceDetectionResult {
   Aws::String m_jobTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobStatusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
   bool m_videoMetadataHasBeenSet = false;

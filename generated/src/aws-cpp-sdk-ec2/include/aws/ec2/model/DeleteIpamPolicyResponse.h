@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/IpamPolicy.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -65,10 +66,13 @@ class DeleteIpamPolicyResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IpamPolicy m_ipamPolicy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

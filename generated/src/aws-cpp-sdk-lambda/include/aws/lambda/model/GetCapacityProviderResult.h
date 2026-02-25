@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/CapacityProvider.h>
@@ -59,10 +60,13 @@ class GetCapacityProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CapacityProvider m_capacityProvider;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capacityProviderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

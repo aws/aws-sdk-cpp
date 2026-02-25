@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -139,6 +140,8 @@ class GetCostCategoriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextPageToken;
 
@@ -151,6 +154,7 @@ class GetCostCategoriesResult {
   int m_totalSize{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_costCategoryNamesHasBeenSet = false;
   bool m_costCategoryValuesHasBeenSet = false;

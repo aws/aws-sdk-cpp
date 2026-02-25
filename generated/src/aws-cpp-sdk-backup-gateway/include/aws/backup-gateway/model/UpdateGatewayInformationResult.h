@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -57,10 +58,13 @@ class UpdateGatewayInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

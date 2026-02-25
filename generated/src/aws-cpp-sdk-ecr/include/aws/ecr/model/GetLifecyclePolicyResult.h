@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/ECR_EXPORTS.h>
@@ -109,6 +110,8 @@ class GetLifecyclePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_registryId;
 
@@ -119,6 +122,7 @@ class GetLifecyclePolicyResult {
   Aws::Utils::DateTime m_lastEvaluatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
   bool m_lifecyclePolicyTextHasBeenSet = false;

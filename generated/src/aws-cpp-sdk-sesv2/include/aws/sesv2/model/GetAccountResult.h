@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/AccountDetails.h>
@@ -199,6 +200,8 @@ class GetAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_dedicatedIpAutoWarmupEnabled{false};
 
@@ -217,6 +220,7 @@ class GetAccountResult {
   VdmAttributes m_vdmAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
   bool m_enforcementStatusHasBeenSet = false;
   bool m_productionAccessEnabledHasBeenSet = false;

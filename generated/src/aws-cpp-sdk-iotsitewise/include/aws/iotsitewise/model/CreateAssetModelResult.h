@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/AssetModelStatus.h>
@@ -98,6 +99,8 @@ class CreateAssetModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_assetModelId;
 
@@ -106,6 +109,7 @@ class CreateAssetModelResult {
   AssetModelStatus m_assetModelStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_assetModelArnHasBeenSet = false;
   bool m_assetModelStatusHasBeenSet = false;
