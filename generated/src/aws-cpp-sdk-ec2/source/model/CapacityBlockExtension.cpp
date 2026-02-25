@@ -97,6 +97,11 @@ CapacityBlockExtension& CapacityBlockExtension::operator=(const XmlNode& xmlNode
       m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
     }
+    XmlNode zoneTypeNode = resultNode.FirstChild("zoneType");
+    if (!zoneTypeNode.IsNull()) {
+      m_zoneType = Aws::Utils::Xml::DecodeEscapedXmlText(zoneTypeNode.GetText());
+      m_zoneTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -163,6 +168,10 @@ void CapacityBlockExtension::OutputToStream(Aws::OStream& oStream, const char* l
   if (m_currencyCodeHasBeenSet) {
     oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
   }
+
+  if (m_zoneTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
+  }
 }
 
 void CapacityBlockExtension::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -211,6 +220,9 @@ void CapacityBlockExtension::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if (m_currencyCodeHasBeenSet) {
     oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
+  }
+  if (m_zoneTypeHasBeenSet) {
+    oStream << location << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
   }
 }
 

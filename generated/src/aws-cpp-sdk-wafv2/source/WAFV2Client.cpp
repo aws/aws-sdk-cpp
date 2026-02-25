@@ -50,6 +50,7 @@
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
 #include <aws/wafv2/model/GetRuleGroupRequest.h>
 #include <aws/wafv2/model/GetSampledRequestsRequest.h>
+#include <aws/wafv2/model/GetTopPathStatisticsByTrafficRequest.h>
 #include <aws/wafv2/model/GetWebACLForResourceRequest.h>
 #include <aws/wafv2/model/GetWebACLRequest.h>
 #include <aws/wafv2/model/ListAPIKeysRequest.h>
@@ -1056,6 +1057,35 @@ GetSampledRequestsOutcome WAFV2Client::GetSampledRequests(const GetSampledReques
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSampledRequests, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return GetSampledRequestsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetTopPathStatisticsByTrafficOutcome WAFV2Client::GetTopPathStatisticsByTraffic(const GetTopPathStatisticsByTrafficRequest& request) const {
+  AWS_OPERATION_GUARD(GetTopPathStatisticsByTraffic);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTopPathStatisticsByTraffic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTopPathStatisticsByTraffic, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTopPathStatisticsByTraffic, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTopPathStatisticsByTraffic",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTopPathStatisticsByTrafficOutcome>(
+      [&]() -> GetTopPathStatisticsByTrafficOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTopPathStatisticsByTraffic, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return GetTopPathStatisticsByTrafficOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

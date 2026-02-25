@@ -10,6 +10,7 @@
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/FailoverState.h>
 #include <aws/neptune/model/GlobalClusterMember.h>
+#include <aws/neptune/model/Tag.h>
 
 #include <utility>
 
@@ -154,6 +155,24 @@ class GlobalCluster {
 
   ///@{
   /**
+   * <p>The default database name within the new global database cluster.</p>
+   */
+  inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
+  inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+  template <typename DatabaseNameT = Aws::String>
+  void SetDatabaseName(DatabaseNameT&& value) {
+    m_databaseNameHasBeenSet = true;
+    m_databaseName = std::forward<DatabaseNameT>(value);
+  }
+  template <typename DatabaseNameT = Aws::String>
+  GlobalCluster& WithDatabaseName(DatabaseNameT&& value) {
+    SetDatabaseName(std::forward<DatabaseNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The storage encryption setting for the global database.</p>
    */
   inline bool GetStorageEncrypted() const { return m_storageEncrypted; }
@@ -230,6 +249,30 @@ class GlobalCluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of global cluster tags.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+  inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+  template <typename TagListT = Aws::Vector<Tag>>
+  void SetTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList = std::forward<TagListT>(value);
+  }
+  template <typename TagListT = Aws::Vector<Tag>>
+  GlobalCluster& WithTagList(TagListT&& value) {
+    SetTagList(std::forward<TagListT>(value));
+    return *this;
+  }
+  template <typename TagListT = Tag>
+  GlobalCluster& AddTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList.emplace_back(std::forward<TagListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_globalClusterIdentifier;
 
@@ -243,6 +286,8 @@ class GlobalCluster {
 
   Aws::String m_engineVersion;
 
+  Aws::String m_databaseName;
+
   bool m_storageEncrypted{false};
 
   bool m_deletionProtection{false};
@@ -250,16 +295,20 @@ class GlobalCluster {
   Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
 
   FailoverState m_failoverState;
+
+  Aws::Vector<Tag> m_tagList;
   bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_globalClusterResourceIdHasBeenSet = false;
   bool m_globalClusterArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_engineHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
   bool m_globalClusterMembersHasBeenSet = false;
   bool m_failoverStateHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
 };
 
 }  // namespace Model

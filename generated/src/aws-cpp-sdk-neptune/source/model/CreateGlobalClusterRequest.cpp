@@ -33,6 +33,22 @@ Aws::String CreateGlobalClusterRequest::SerializePayload() const {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
+  if (m_databaseNameHasBeenSet) {
+    ss << "DatabaseName=" << StringUtils::URLEncode(m_databaseName.c_str()) << "&";
+  }
+
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
+      ss << "Tags=&";
+    } else {
+      unsigned tagsCount = 1;
+      for (auto& item : m_tags) {
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
+        tagsCount++;
+      }
+    }
+  }
+
   if (m_storageEncryptedHasBeenSet) {
     ss << "StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }

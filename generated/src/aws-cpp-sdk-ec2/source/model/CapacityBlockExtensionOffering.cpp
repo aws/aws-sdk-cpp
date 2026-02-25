@@ -91,6 +91,11 @@ CapacityBlockExtensionOffering& CapacityBlockExtensionOffering::operator=(const 
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
+    XmlNode zoneTypeNode = resultNode.FirstChild("zoneType");
+    if (!zoneTypeNode.IsNull()) {
+      m_zoneType = Aws::Utils::Xml::DecodeEscapedXmlText(zoneTypeNode.GetText());
+      m_zoneTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -152,6 +157,10 @@ void CapacityBlockExtensionOffering::OutputToStream(Aws::OStream& oStream, const
             << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy))
             << "&";
   }
+
+  if (m_zoneTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
+  }
 }
 
 void CapacityBlockExtensionOffering::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -196,6 +205,9 @@ void CapacityBlockExtensionOffering::OutputToStream(Aws::OStream& oStream, const
     oStream << location
             << ".Tenancy=" << StringUtils::URLEncode(CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy))
             << "&";
+  }
+  if (m_zoneTypeHasBeenSet) {
+    oStream << location << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
   }
 }
 

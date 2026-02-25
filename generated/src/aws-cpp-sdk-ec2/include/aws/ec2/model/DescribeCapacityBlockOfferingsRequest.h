@@ -213,6 +213,25 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Include all Availability Zones and Local Zones, regardless of your opt-in
+   * status. If you do not use this parameter, the results include available
+   * offerings from all Availability Zones in the Amazon Web Services Region and
+   * Local Zones you are opted into. </p>
+   */
+  inline bool GetAllAvailabilityZones() const { return m_allAvailabilityZones; }
+  inline bool AllAvailabilityZonesHasBeenSet() const { return m_allAvailabilityZonesHasBeenSet; }
+  inline void SetAllAvailabilityZones(bool value) {
+    m_allAvailabilityZonesHasBeenSet = true;
+    m_allAvailabilityZones = value;
+  }
+  inline DescribeCapacityBlockOfferingsRequest& WithAllAvailabilityZones(bool value) {
+    SetAllAvailabilityZones(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -233,6 +252,8 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
   Aws::String m_ultraserverType;
 
   int m_ultraserverCount{0};
+
+  bool m_allAvailabilityZones{false};
   bool m_dryRunHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
@@ -243,6 +264,7 @@ class DescribeCapacityBlockOfferingsRequest : public EC2Request {
   bool m_maxResultsHasBeenSet = false;
   bool m_ultraserverTypeHasBeenSet = false;
   bool m_ultraserverCountHasBeenSet = false;
+  bool m_allAvailabilityZonesHasBeenSet = false;
 };
 
 }  // namespace Model
