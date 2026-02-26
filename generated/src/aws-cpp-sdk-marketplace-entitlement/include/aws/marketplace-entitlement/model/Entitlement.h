@@ -97,7 +97,7 @@ class Entitlement {
 
   ///@{
   /**
-   * <p> The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID
+   * <p> The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID
    * of the buyer. </p>
    */
   inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
@@ -154,6 +154,25 @@ class Entitlement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The <code>LicenseArn</code> is a unique identifier for a specific granted
+   * license. These are used for software purchased through AWS Marketplace.</p>
+   */
+  inline const Aws::String& GetLicenseArn() const { return m_licenseArn; }
+  inline bool LicenseArnHasBeenSet() const { return m_licenseArnHasBeenSet; }
+  template <typename LicenseArnT = Aws::String>
+  void SetLicenseArn(LicenseArnT&& value) {
+    m_licenseArnHasBeenSet = true;
+    m_licenseArn = std::forward<LicenseArnT>(value);
+  }
+  template <typename LicenseArnT = Aws::String>
+  Entitlement& WithLicenseArn(LicenseArnT&& value) {
+    SetLicenseArn(std::forward<LicenseArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_productCode;
 
@@ -166,12 +185,15 @@ class Entitlement {
   EntitlementValue m_value;
 
   Aws::Utils::DateTime m_expirationDate{};
+
+  Aws::String m_licenseArn;
   bool m_productCodeHasBeenSet = false;
   bool m_dimensionHasBeenSet = false;
   bool m_customerIdentifierHasBeenSet = false;
   bool m_customerAWSAccountIdHasBeenSet = false;
   bool m_valueHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -133,12 +133,12 @@ class Product {
   /**
    * <p>The types of integration that the product supports. Available values are the
    * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
-   * integration sends findings to Security Hub.</p> </li> <li> <p>
+   * integration sends findings to Security Hub CSPM.</p> </li> <li> <p>
    * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
-   * findings from Security Hub.</p> </li> <li> <p>
+   * findings from Security Hub CSPM.</p> </li> <li> <p>
    * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
-   * findings to Security Hub, but does make updates to the findings that it receives
-   * from Security Hub.</p> </li> </ul>
+   * findings to Security Hub CSPM, but does make updates to the findings that it
+   * receives from Security Hub CSPM.</p> </li> </ul>
    */
   inline const Aws::Vector<IntegrationType>& GetIntegrationTypes() const { return m_integrationTypes; }
   inline bool IntegrationTypesHasBeenSet() const { return m_integrationTypesHasBeenSet; }
@@ -183,7 +183,7 @@ class Product {
   ///@{
   /**
    * <p>The URL to the service or product documentation about the integration with
-   * Security Hub, including how to activate the integration.</p>
+   * Security Hub CSPM, including how to activate the integration.</p>
    */
   inline const Aws::String& GetActivationUrl() const { return m_activationUrl; }
   inline bool ActivationUrlHasBeenSet() const { return m_activationUrlHasBeenSet; }

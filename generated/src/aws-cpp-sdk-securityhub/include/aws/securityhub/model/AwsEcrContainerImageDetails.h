@@ -135,7 +135,7 @@ class AwsEcrContainerImageDetails {
   /**
    * <p>The date and time when the image was pushed to the repository.</p> <p>For
    * more information about the validation and formatting of timestamp fields in
-   * Security Hub, see <a
+   * Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetImagePublishedAt() const { return m_imagePublishedAt; }

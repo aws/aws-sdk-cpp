@@ -73,25 +73,6 @@ class VirtualMachineDetails {
 
   ///@{
   /**
-   * <p>The most recent date a virtual machine was backed up, in Unix format and UTC
-   * time.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastBackupDate() const { return m_lastBackupDate; }
-  inline bool LastBackupDateHasBeenSet() const { return m_lastBackupDateHasBeenSet; }
-  template <typename LastBackupDateT = Aws::Utils::DateTime>
-  void SetLastBackupDate(LastBackupDateT&& value) {
-    m_lastBackupDateHasBeenSet = true;
-    m_lastBackupDate = std::forward<LastBackupDateT>(value);
-  }
-  template <typename LastBackupDateT = Aws::Utils::DateTime>
-  VirtualMachineDetails& WithLastBackupDate(LastBackupDateT&& value) {
-    SetLastBackupDate(std::forward<LastBackupDateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the virtual machine.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -147,6 +128,25 @@ class VirtualMachineDetails {
 
   ///@{
   /**
+   * <p>The most recent date a virtual machine was backed up, in Unix format and UTC
+   * time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastBackupDate() const { return m_lastBackupDate; }
+  inline bool LastBackupDateHasBeenSet() const { return m_lastBackupDateHasBeenSet; }
+  template <typename LastBackupDateT = Aws::Utils::DateTime>
+  void SetLastBackupDate(LastBackupDateT&& value) {
+    m_lastBackupDateHasBeenSet = true;
+    m_lastBackupDate = std::forward<LastBackupDateT>(value);
+  }
+  template <typename LastBackupDateT = Aws::Utils::DateTime>
+  VirtualMachineDetails& WithLastBackupDate(LastBackupDateT&& value) {
+    SetLastBackupDate(std::forward<LastBackupDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>These are the details of the VMware tags associated with the specified
    * virtual machine.</p>
    */
@@ -174,21 +174,21 @@ class VirtualMachineDetails {
 
   Aws::String m_hypervisorId;
 
-  Aws::Utils::DateTime m_lastBackupDate{};
-
   Aws::String m_name;
 
   Aws::String m_path;
 
   Aws::String m_resourceArn;
 
+  Aws::Utils::DateTime m_lastBackupDate{};
+
   Aws::Vector<VmwareTag> m_vmwareTags;
   bool m_hostNameHasBeenSet = false;
   bool m_hypervisorIdHasBeenSet = false;
-  bool m_lastBackupDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_pathHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
+  bool m_lastBackupDateHasBeenSet = false;
   bool m_vmwareTagsHasBeenSet = false;
 };
 

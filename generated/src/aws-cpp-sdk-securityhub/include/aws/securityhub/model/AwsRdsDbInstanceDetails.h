@@ -297,7 +297,7 @@ class AwsRdsDbInstanceDetails {
   ///@{
   /**
    * <p>Indicates when the DB instance was created.</p> <p>For more information about
-   * the validation and formatting of timestamp fields in Security Hub, see <a
+   * the validation and formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetInstanceCreateTime() const { return m_instanceCreateTime; }
@@ -664,7 +664,7 @@ class AwsRdsDbInstanceDetails {
   /**
    * <p>Specifies the latest time to which a database can be restored with
    * point-in-time restore.</p> <p>For more information about the validation and
-   * formatting of timestamp fields in Security Hub, see <a
+   * formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetLatestRestorableTime() const { return m_latestRestorableTime; }

@@ -158,7 +158,7 @@ class AwsApiCallAction {
   /**
    * <p>A timestamp that indicates when the API call was first observed.</p> <p>For
    * more information about the validation and formatting of timestamp fields in
-   * Security Hub, see <a
+   * Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetFirstSeen() const { return m_firstSeen; }
@@ -179,7 +179,7 @@ class AwsApiCallAction {
   /**
    * <p>A timestamp that indicates when the API call was most recently observed.</p>
    * <p>For more information about the validation and formatting of timestamp fields
-   * in Security Hub, see <a
+   * in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetLastSeen() const { return m_lastSeen; }

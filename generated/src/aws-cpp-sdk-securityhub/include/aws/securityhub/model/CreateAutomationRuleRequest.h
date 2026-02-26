@@ -60,9 +60,9 @@ class CreateAutomationRuleRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p> Whether the rule is active after it is created. If this parameter is equal
-   * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
-   * finding updates after the rule is created. To change the value of this parameter
-   * after creating a rule, use <a
+   * to <code>ENABLED</code>, Security Hub CSPM starts applying the rule to findings
+   * and finding updates after the rule is created. To change the value of this
+   * parameter after creating a rule, use <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
    * <code>BatchUpdateAutomationRules</code> </a>. </p>
    */
@@ -81,8 +81,8 @@ class CreateAutomationRuleRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p>An integer ranging from 1 to 1000 that represents the order in which the rule
-   * action is applied to findings. Security Hub applies rules with lower values for
-   * this parameter first. </p>
+   * action is applied to findings. Security Hub CSPM applies rules with lower values
+   * for this parameter first. </p>
    */
   inline int GetRuleOrder() const { return m_ruleOrder; }
   inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
@@ -137,9 +137,9 @@ class CreateAutomationRuleRequest : public SecurityHubRequest {
    * <p>Specifies whether a rule is the last to be applied with respect to a finding
    * that matches the rule criteria. This is useful when a finding matches the
    * criteria for multiple rules, and each rule has different actions. If a rule is
-   * terminal, Security Hub applies the rule action to a finding that matches the
-   * rule criteria and doesn't evaluate other rules for the finding. By default, a
-   * rule isn't terminal. </p>
+   * terminal, Security Hub CSPM applies the rule action to a finding that matches
+   * the rule criteria and doesn't evaluate other rules for the finding. By default,
+   * a rule isn't terminal. </p>
    */
   inline bool GetIsTerminal() const { return m_isTerminal; }
   inline bool IsTerminalHasBeenSet() const { return m_isTerminalHasBeenSet; }
@@ -156,9 +156,9 @@ class CreateAutomationRuleRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p> A set of ASFF finding field attributes and corresponding expected values
-   * that Security Hub uses to filter findings. If a rule is enabled and a finding
-   * matches the conditions specified in this parameter, Security Hub applies the
-   * rule action to the finding. </p>
+   * that Security Hub CSPM uses to filter findings. If a rule is enabled and a
+   * finding matches the conditions specified in this parameter, Security Hub CSPM
+   * applies the rule action to the finding. </p>
    */
   inline const AutomationRulesFindingFilters& GetCriteria() const { return m_criteria; }
   inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }

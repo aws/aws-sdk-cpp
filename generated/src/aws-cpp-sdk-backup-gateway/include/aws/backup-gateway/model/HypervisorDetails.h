@@ -93,53 +93,18 @@ class HypervisorDetails {
 
   ///@{
   /**
-   * <p>This is the time when the most recent successful sync of metadata
-   * occurred.</p>
+   * <p>This is the name of the specified hypervisor.</p>
    */
-  inline const Aws::Utils::DateTime& GetLastSuccessfulMetadataSyncTime() const { return m_lastSuccessfulMetadataSyncTime; }
-  inline bool LastSuccessfulMetadataSyncTimeHasBeenSet() const { return m_lastSuccessfulMetadataSyncTimeHasBeenSet; }
-  template <typename LastSuccessfulMetadataSyncTimeT = Aws::Utils::DateTime>
-  void SetLastSuccessfulMetadataSyncTime(LastSuccessfulMetadataSyncTimeT&& value) {
-    m_lastSuccessfulMetadataSyncTimeHasBeenSet = true;
-    m_lastSuccessfulMetadataSyncTime = std::forward<LastSuccessfulMetadataSyncTimeT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename LastSuccessfulMetadataSyncTimeT = Aws::Utils::DateTime>
-  HypervisorDetails& WithLastSuccessfulMetadataSyncTime(LastSuccessfulMetadataSyncTimeT&& value) {
-    SetLastSuccessfulMetadataSyncTime(std::forward<LastSuccessfulMetadataSyncTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>This is the most recent status for the indicated metadata sync.</p>
-   */
-  inline SyncMetadataStatus GetLatestMetadataSyncStatus() const { return m_latestMetadataSyncStatus; }
-  inline bool LatestMetadataSyncStatusHasBeenSet() const { return m_latestMetadataSyncStatusHasBeenSet; }
-  inline void SetLatestMetadataSyncStatus(SyncMetadataStatus value) {
-    m_latestMetadataSyncStatusHasBeenSet = true;
-    m_latestMetadataSyncStatus = value;
-  }
-  inline HypervisorDetails& WithLatestMetadataSyncStatus(SyncMetadataStatus value) {
-    SetLatestMetadataSyncStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>This is the most recent status for the indicated metadata sync.</p>
-   */
-  inline const Aws::String& GetLatestMetadataSyncStatusMessage() const { return m_latestMetadataSyncStatusMessage; }
-  inline bool LatestMetadataSyncStatusMessageHasBeenSet() const { return m_latestMetadataSyncStatusMessageHasBeenSet; }
-  template <typename LatestMetadataSyncStatusMessageT = Aws::String>
-  void SetLatestMetadataSyncStatusMessage(LatestMetadataSyncStatusMessageT&& value) {
-    m_latestMetadataSyncStatusMessageHasBeenSet = true;
-    m_latestMetadataSyncStatusMessage = std::forward<LatestMetadataSyncStatusMessageT>(value);
-  }
-  template <typename LatestMetadataSyncStatusMessageT = Aws::String>
-  HypervisorDetails& WithLatestMetadataSyncStatusMessage(LatestMetadataSyncStatusMessageT&& value) {
-    SetLatestMetadataSyncStatusMessage(std::forward<LatestMetadataSyncStatusMessageT>(value));
+  template <typename NameT = Aws::String>
+  HypervisorDetails& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -165,24 +130,6 @@ class HypervisorDetails {
 
   ///@{
   /**
-   * <p>This is the name of the specified hypervisor.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  HypervisorDetails& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>This is the current state of the specified hypervisor.</p> <p>The possible
    * states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or
    * <code>ERROR</code>.</p>
@@ -198,6 +145,59 @@ class HypervisorDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This is the time when the most recent successful sync of metadata
+   * occurred.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastSuccessfulMetadataSyncTime() const { return m_lastSuccessfulMetadataSyncTime; }
+  inline bool LastSuccessfulMetadataSyncTimeHasBeenSet() const { return m_lastSuccessfulMetadataSyncTimeHasBeenSet; }
+  template <typename LastSuccessfulMetadataSyncTimeT = Aws::Utils::DateTime>
+  void SetLastSuccessfulMetadataSyncTime(LastSuccessfulMetadataSyncTimeT&& value) {
+    m_lastSuccessfulMetadataSyncTimeHasBeenSet = true;
+    m_lastSuccessfulMetadataSyncTime = std::forward<LastSuccessfulMetadataSyncTimeT>(value);
+  }
+  template <typename LastSuccessfulMetadataSyncTimeT = Aws::Utils::DateTime>
+  HypervisorDetails& WithLastSuccessfulMetadataSyncTime(LastSuccessfulMetadataSyncTimeT&& value) {
+    SetLastSuccessfulMetadataSyncTime(std::forward<LastSuccessfulMetadataSyncTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This is the most recent status for the indicated metadata sync.</p>
+   */
+  inline const Aws::String& GetLatestMetadataSyncStatusMessage() const { return m_latestMetadataSyncStatusMessage; }
+  inline bool LatestMetadataSyncStatusMessageHasBeenSet() const { return m_latestMetadataSyncStatusMessageHasBeenSet; }
+  template <typename LatestMetadataSyncStatusMessageT = Aws::String>
+  void SetLatestMetadataSyncStatusMessage(LatestMetadataSyncStatusMessageT&& value) {
+    m_latestMetadataSyncStatusMessageHasBeenSet = true;
+    m_latestMetadataSyncStatusMessage = std::forward<LatestMetadataSyncStatusMessageT>(value);
+  }
+  template <typename LatestMetadataSyncStatusMessageT = Aws::String>
+  HypervisorDetails& WithLatestMetadataSyncStatusMessage(LatestMetadataSyncStatusMessageT&& value) {
+    SetLatestMetadataSyncStatusMessage(std::forward<LatestMetadataSyncStatusMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This is the most recent status for the indicated metadata sync.</p>
+   */
+  inline SyncMetadataStatus GetLatestMetadataSyncStatus() const { return m_latestMetadataSyncStatus; }
+  inline bool LatestMetadataSyncStatusHasBeenSet() const { return m_latestMetadataSyncStatusHasBeenSet; }
+  inline void SetLatestMetadataSyncStatus(SyncMetadataStatus value) {
+    m_latestMetadataSyncStatusHasBeenSet = true;
+    m_latestMetadataSyncStatus = value;
+  }
+  inline HypervisorDetails& WithLatestMetadataSyncStatus(SyncMetadataStatus value) {
+    SetLatestMetadataSyncStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_host;
 
@@ -205,26 +205,26 @@ class HypervisorDetails {
 
   Aws::String m_kmsKeyArn;
 
-  Aws::Utils::DateTime m_lastSuccessfulMetadataSyncTime{};
-
-  SyncMetadataStatus m_latestMetadataSyncStatus{SyncMetadataStatus::NOT_SET};
-
-  Aws::String m_latestMetadataSyncStatusMessage;
+  Aws::String m_name;
 
   Aws::String m_logGroupArn;
 
-  Aws::String m_name;
-
   HypervisorState m_state{HypervisorState::NOT_SET};
+
+  Aws::Utils::DateTime m_lastSuccessfulMetadataSyncTime{};
+
+  Aws::String m_latestMetadataSyncStatusMessage;
+
+  SyncMetadataStatus m_latestMetadataSyncStatus{SyncMetadataStatus::NOT_SET};
   bool m_hostHasBeenSet = false;
   bool m_hypervisorArnHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
-  bool m_lastSuccessfulMetadataSyncTimeHasBeenSet = false;
-  bool m_latestMetadataSyncStatusHasBeenSet = false;
-  bool m_latestMetadataSyncStatusMessageHasBeenSet = false;
-  bool m_logGroupArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_lastSuccessfulMetadataSyncTimeHasBeenSet = false;
+  bool m_latestMetadataSyncStatusMessageHasBeenSet = false;
+  bool m_latestMetadataSyncStatusHasBeenSet = false;
 };
 
 }  // namespace Model

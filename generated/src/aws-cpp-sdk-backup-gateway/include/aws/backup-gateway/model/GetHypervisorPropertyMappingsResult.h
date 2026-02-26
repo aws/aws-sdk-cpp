@@ -49,25 +49,8 @@ class GetHypervisorPropertyMappingsResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-   */
-  inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
-  template <typename IamRoleArnT = Aws::String>
-  void SetIamRoleArn(IamRoleArnT&& value) {
-    m_iamRoleArnHasBeenSet = true;
-    m_iamRoleArn = std::forward<IamRoleArnT>(value);
-  }
-  template <typename IamRoleArnT = Aws::String>
-  GetHypervisorPropertyMappingsResult& WithIamRoleArn(IamRoleArnT&& value) {
-    SetIamRoleArn(std::forward<IamRoleArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>This is a display of the mappings of on-premises VMware tags to the Amazon
-   * Web Services tags.</p>
+   * <p>This is a display of the mappings of VMware tags to the Amazon Web Services
+   * tags.</p>
    */
   inline const Aws::Vector<VmwareToAwsTagMapping>& GetVmwareToAwsTagMappings() const { return m_vmwareToAwsTagMappings; }
   template <typename VmwareToAwsTagMappingsT = Aws::Vector<VmwareToAwsTagMapping>>
@@ -84,6 +67,23 @@ class GetHypervisorPropertyMappingsResult {
   GetHypervisorPropertyMappingsResult& AddVmwareToAwsTagMappings(VmwareToAwsTagMappingsT&& value) {
     m_vmwareToAwsTagMappingsHasBeenSet = true;
     m_vmwareToAwsTagMappings.emplace_back(std::forward<VmwareToAwsTagMappingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+   */
+  inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
+  template <typename IamRoleArnT = Aws::String>
+  void SetIamRoleArn(IamRoleArnT&& value) {
+    m_iamRoleArnHasBeenSet = true;
+    m_iamRoleArn = std::forward<IamRoleArnT>(value);
+  }
+  template <typename IamRoleArnT = Aws::String>
+  GetHypervisorPropertyMappingsResult& WithIamRoleArn(IamRoleArnT&& value) {
+    SetIamRoleArn(std::forward<IamRoleArnT>(value));
     return *this;
   }
   ///@}
@@ -107,15 +107,15 @@ class GetHypervisorPropertyMappingsResult {
  private:
   Aws::String m_hypervisorArn;
 
-  Aws::String m_iamRoleArn;
-
   Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
+
+  Aws::String m_iamRoleArn;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hypervisorArnHasBeenSet = false;
-  bool m_iamRoleArnHasBeenSet = false;
   bool m_vmwareToAwsTagMappingsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

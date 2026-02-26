@@ -32,39 +32,6 @@ class PutMaintenanceStartTimeRequest : public BackupGatewayRequest {
 
   ///@{
   /**
-   * <p>The day of the month start maintenance on a gateway.</p> <p>Valid values
-   * range from <code>Sunday</code> to <code>Saturday</code>.</p>
-   */
-  inline int GetDayOfMonth() const { return m_dayOfMonth; }
-  inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-  inline void SetDayOfMonth(int value) {
-    m_dayOfMonthHasBeenSet = true;
-    m_dayOfMonth = value;
-  }
-  inline PutMaintenanceStartTimeRequest& WithDayOfMonth(int value) {
-    SetDayOfMonth(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The day of the week to start maintenance on a gateway.</p>
-   */
-  inline int GetDayOfWeek() const { return m_dayOfWeek; }
-  inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-  inline void SetDayOfWeek(int value) {
-    m_dayOfWeekHasBeenSet = true;
-    m_dayOfWeek = value;
-  }
-  inline PutMaintenanceStartTimeRequest& WithDayOfWeek(int value) {
-    SetDayOfWeek(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) for the gateway, used to specify its
    * maintenance start time.</p>
    */
@@ -113,21 +80,54 @@ class PutMaintenanceStartTimeRequest : public BackupGatewayRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The day of the week to start maintenance on a gateway.</p>
+   */
+  inline int GetDayOfWeek() const { return m_dayOfWeek; }
+  inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
+  inline void SetDayOfWeek(int value) {
+    m_dayOfWeekHasBeenSet = true;
+    m_dayOfWeek = value;
+  }
+  inline PutMaintenanceStartTimeRequest& WithDayOfWeek(int value) {
+    SetDayOfWeek(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The day of the month start maintenance on a gateway.</p> <p>Valid values
+   * range from <code>Sunday</code> to <code>Saturday</code>.</p>
+   */
+  inline int GetDayOfMonth() const { return m_dayOfMonth; }
+  inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
+  inline void SetDayOfMonth(int value) {
+    m_dayOfMonthHasBeenSet = true;
+    m_dayOfMonth = value;
+  }
+  inline PutMaintenanceStartTimeRequest& WithDayOfMonth(int value) {
+    SetDayOfMonth(value);
+    return *this;
+  }
+  ///@}
  private:
-  int m_dayOfMonth{0};
-
-  int m_dayOfWeek{0};
-
   Aws::String m_gatewayArn;
 
   int m_hourOfDay{0};
 
   int m_minuteOfHour{0};
-  bool m_dayOfMonthHasBeenSet = false;
-  bool m_dayOfWeekHasBeenSet = false;
+
+  int m_dayOfWeek{0};
+
+  int m_dayOfMonth{0};
   bool m_gatewayArnHasBeenSet = false;
   bool m_hourOfDayHasBeenSet = false;
   bool m_minuteOfHourHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_dayOfMonthHasBeenSet = false;
 };
 
 }  // namespace Model

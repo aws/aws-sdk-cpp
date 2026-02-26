@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p> Provides information about the way an organization is configured in Security
- * Hub. </p><p><h3>See Also:</h3>   <a
+ * Hub CSPM. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/OrganizationConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,19 +37,19 @@ class OrganizationConfiguration {
   ///@{
   /**
    * <p> Indicates whether the organization uses local or central configuration. </p>
-   * <p>If you use local configuration, the Security Hub delegated administrator can
-   * set <code>AutoEnable</code> to <code>true</code> and
+   * <p>If you use local configuration, the Security Hub CSPM delegated administrator
+   * can set <code>AutoEnable</code> to <code>true</code> and
    * <code>AutoEnableStandards</code> to <code>DEFAULT</code>. This automatically
-   * enables Security Hub and default security standards in new organization
+   * enables Security Hub CSPM and default security standards in new organization
    * accounts. These new account settings must be set separately in each Amazon Web
    * Services Region, and settings may be different in each Region. </p> <p> If you
    * use central configuration, the delegated administrator can create configuration
-   * policies. Configuration policies can be used to configure Security Hub, security
-   * standards, and security controls in multiple accounts and Regions. If you want
-   * new organization accounts to use a specific configuration, you can create a
-   * configuration policy and associate it with the root or specific organizational
-   * units (OUs). New accounts will inherit the policy from the root or their
-   * assigned OU. </p>
+   * policies. Configuration policies can be used to configure Security Hub CSPM,
+   * security standards, and security controls in multiple accounts and Regions. If
+   * you want new organization accounts to use a specific configuration, you can
+   * create a configuration policy and associate it with the root or specific
+   * organizational units (OUs). New accounts will inherit the policy from the root
+   * or their assigned OU. </p>
    */
   inline OrganizationConfigurationConfigurationType GetConfigurationType() const { return m_configurationType; }
   inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }

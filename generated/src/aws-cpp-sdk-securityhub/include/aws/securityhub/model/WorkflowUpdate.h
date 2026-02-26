@@ -39,8 +39,8 @@ class WorkflowUpdate {
    * findings. For example, setting the workflow status to <code>SUPPRESSED</code> or
    * <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
    * <p>The allowed values are the following.</p> <ul> <li> <p> <code>NEW</code> -
-   * The initial state of a finding, before it is reviewed.</p> <p>Security Hub also
-   * resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or
+   * The initial state of a finding, before it is reviewed.</p> <p>Security Hub CSPM
+   * also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or
    * <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p> <ul> <li>
    * <p>The record state changes from <code>ARCHIVED</code> to
    * <code>ACTIVE</code>.</p> </li> <li> <p>The compliance status changes from

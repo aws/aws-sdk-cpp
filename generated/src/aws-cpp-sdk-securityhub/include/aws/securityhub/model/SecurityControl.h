@@ -25,7 +25,7 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p> A security control in Security Hub describes a security best practice
+ * <p> A security control in Security Hub CSPM describes a security best practice
  * related to a specific resource. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SecurityControl">AWS
  * API Reference</a></p>
@@ -99,8 +99,8 @@ class SecurityControl {
   ///@{
   /**
    * <p> The description of a security control across standards. This typically
-   * summarizes how Security Hub evaluates the control and the conditions under which
-   * it produces a failed finding. This parameter doesn't reference a specific
+   * summarizes how Security Hub CSPM evaluates the control and the conditions under
+   * which it produces a failed finding. This parameter doesn't reference a specific
    * standard. </p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -119,8 +119,8 @@ class SecurityControl {
 
   ///@{
   /**
-   * <p> A link to Security Hub documentation that explains how to remediate a failed
-   * finding for a security control. </p>
+   * <p> A link to Security Hub CSPM documentation that explains how to remediate a
+   * failed finding for a security control. </p>
    */
   inline const Aws::String& GetRemediationUrl() const { return m_remediationUrl; }
   inline bool RemediationUrlHasBeenSet() const { return m_remediationUrlHasBeenSet; }
@@ -139,9 +139,10 @@ class SecurityControl {
   ///@{
   /**
    * <p> The severity of a security control. For more information about how Security
-   * Hub determines control severity, see <a
+   * Hub CSPM determines control severity, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning
-   * severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
+   * severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.
+   * </p>
    */
   inline SeverityRating GetSeverityRating() const { return m_severityRating; }
   inline bool SeverityRatingHasBeenSet() const { return m_severityRatingHasBeenSet; }
@@ -174,10 +175,11 @@ class SecurityControl {
   ///@{
   /**
    * <p> Identifies whether customizable properties of a security control are
-   * reflected in Security Hub findings. A status of <code>READY</code> indicates
-   * that Security Hub uses the current control parameter values when running
-   * security checks of the control. A status of <code>UPDATING</code> indicates that
-   * all security checks might not use the current parameter values. </p>
+   * reflected in Security Hub CSPM findings. A status of <code>READY</code>
+   * indicates that Security Hub CSPM uses the current control parameter values when
+   * running security checks of the control. A status of <code>UPDATING</code>
+   * indicates that all security checks might not use the current parameter values.
+   * </p>
    */
   inline UpdateStatus GetUpdateStatus() const { return m_updateStatus; }
   inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }

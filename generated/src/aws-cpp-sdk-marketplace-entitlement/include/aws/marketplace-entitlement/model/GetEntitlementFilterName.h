@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MarketplaceEntitlementService {
 namespace Model {
-enum class GetEntitlementFilterName { NOT_SET, CUSTOMER_IDENTIFIER, DIMENSION, CUSTOMER_AWS_ACCOUNT_ID };
+enum class GetEntitlementFilterName { NOT_SET, CUSTOMER_IDENTIFIER, DIMENSION, CUSTOMER_AWS_ACCOUNT_ID, LICENSE_ARN };
 
 namespace GetEntitlementFilterNameMapper {
 AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementFilterName GetGetEntitlementFilterNameForName(const Aws::String& name);

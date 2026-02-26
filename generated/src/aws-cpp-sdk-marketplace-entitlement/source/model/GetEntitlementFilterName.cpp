@@ -18,6 +18,7 @@ namespace GetEntitlementFilterNameMapper {
 static const int CUSTOMER_IDENTIFIER_HASH = HashingUtils::HashString("CUSTOMER_IDENTIFIER");
 static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
 static const int CUSTOMER_AWS_ACCOUNT_ID_HASH = HashingUtils::HashString("CUSTOMER_AWS_ACCOUNT_ID");
+static const int LICENSE_ARN_HASH = HashingUtils::HashString("LICENSE_ARN");
 
 GetEntitlementFilterName GetGetEntitlementFilterNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ GetEntitlementFilterName GetGetEntitlementFilterNameForName(const Aws::String& n
     return GetEntitlementFilterName::DIMENSION;
   } else if (hashCode == CUSTOMER_AWS_ACCOUNT_ID_HASH) {
     return GetEntitlementFilterName::CUSTOMER_AWS_ACCOUNT_ID;
+  } else if (hashCode == LICENSE_ARN_HASH) {
+    return GetEntitlementFilterName::LICENSE_ARN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForGetEntitlementFilterName(GetEntitlementFilterName enumValu
       return "DIMENSION";
     case GetEntitlementFilterName::CUSTOMER_AWS_ACCOUNT_ID:
       return "CUSTOMER_AWS_ACCOUNT_ID";
+    case GetEntitlementFilterName::LICENSE_ARN:
+      return "LICENSE_ARN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

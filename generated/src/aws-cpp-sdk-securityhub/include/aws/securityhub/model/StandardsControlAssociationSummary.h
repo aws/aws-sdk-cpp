@@ -193,7 +193,7 @@ class StandardsControlAssociationSummary {
   ///@{
   /**
    * <p> The description of a control. This typically summarizes how Security Hub
-   * evaluates the control and the conditions under which it produces a failed
+   * CSPM evaluates the control and the conditions under which it produces a failed
    * finding. The parameter may reference a specific standard. </p>
    */
   inline const Aws::String& GetStandardsControlDescription() const { return m_standardsControlDescription; }

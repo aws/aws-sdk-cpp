@@ -32,7 +32,7 @@ class BooleanConfigurationOptions {
 
   ///@{
   /**
-   * <p> The Security Hub default value for a boolean parameter. </p>
+   * <p> The Security Hub CSPM default value for a boolean parameter. </p>
    */
   inline bool GetDefaultValue() const { return m_defaultValue; }
   inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }

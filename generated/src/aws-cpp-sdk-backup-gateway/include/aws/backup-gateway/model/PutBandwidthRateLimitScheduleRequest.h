@@ -34,6 +34,27 @@ class PutBandwidthRateLimitScheduleRequest : public BackupGatewayRequest {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
+   * <code>ListGateways</code> </a> operation to return a list of gateways for your
+   * account and Amazon Web Services Region.</p>
+   */
+  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
+  inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
+  template <typename GatewayArnT = Aws::String>
+  void SetGatewayArn(GatewayArnT&& value) {
+    m_gatewayArnHasBeenSet = true;
+    m_gatewayArn = std::forward<GatewayArnT>(value);
+  }
+  template <typename GatewayArnT = Aws::String>
+  PutBandwidthRateLimitScheduleRequest& WithGatewayArn(GatewayArnT&& value) {
+    SetGatewayArn(std::forward<GatewayArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array containing bandwidth rate limit schedule intervals for a gateway.
    * When no bandwidth rate limit intervals have been scheduled, the array is
    * empty.</p>
@@ -57,33 +78,12 @@ class PutBandwidthRateLimitScheduleRequest : public BackupGatewayRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-   * <code>ListGateways</code> </a> operation to return a list of gateways for your
-   * account and Amazon Web Services Region.</p>
-   */
-  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
-  inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-  template <typename GatewayArnT = Aws::String>
-  void SetGatewayArn(GatewayArnT&& value) {
-    m_gatewayArnHasBeenSet = true;
-    m_gatewayArn = std::forward<GatewayArnT>(value);
-  }
-  template <typename GatewayArnT = Aws::String>
-  PutBandwidthRateLimitScheduleRequest& WithGatewayArn(GatewayArnT&& value) {
-    SetGatewayArn(std::forward<GatewayArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
-
   Aws::String m_gatewayArn;
-  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
+
+  Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
   bool m_gatewayArnHasBeenSet = false;
+  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
 };
 
 }  // namespace Model

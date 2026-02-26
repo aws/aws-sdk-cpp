@@ -29,8 +29,8 @@ class GetInvitationsCountResult {
 
   ///@{
   /**
-   * <p>The number of all membership invitations sent to this Security Hub member
-   * account, not including the currently accepted invitation.</p>
+   * <p>The number of all membership invitations sent to this Security Hub CSPM
+   * member account, not including the currently accepted invitation.</p>
    */
   inline int GetInvitationsCount() const { return m_invitationsCount; }
   inline void SetInvitationsCount(int value) {

@@ -55,7 +55,7 @@ class AwsDynamoDbTableBillingModeSummary {
   /**
    * <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the
    * billing mode was set to that value.</p> <p>For more information about the
-   * validation and formatting of timestamp fields in Security Hub, see <a
+   * validation and formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetLastUpdateToPayPerRequestDateTime() const { return m_lastUpdateToPayPerRequestDateTime; }

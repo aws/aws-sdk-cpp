@@ -21,7 +21,7 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p> One or more actions that Security Hub takes when a finding matches the
+ * <p> One or more actions that Security Hub CSPM takes when a finding matches the
  * defined criteria of a rule. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AutomationRulesAction">AWS
  * API Reference</a></p>
@@ -35,8 +35,8 @@ class AutomationRulesAction {
 
   ///@{
   /**
-   * <p> Specifies the type of action that Security Hub takes when a finding matches
-   * the defined criteria of a rule. </p>
+   * <p> Specifies the type of action that Security Hub CSPM takes when a finding
+   * matches the defined criteria of a rule. </p>
    */
   inline AutomationRulesActionType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

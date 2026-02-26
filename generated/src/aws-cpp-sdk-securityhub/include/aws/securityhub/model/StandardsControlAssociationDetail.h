@@ -194,7 +194,7 @@ class StandardsControlAssociationDetail {
   ///@{
   /**
    * <p> The description of a control. This typically summarizes how Security Hub
-   * evaluates the control and the conditions under which it produces a failed
+   * CSPM evaluates the control and the conditions under which it produces a failed
    * finding. This parameter may reference a specific standard. </p>
    */
   inline const Aws::String& GetStandardsControlDescription() const { return m_standardsControlDescription; }
@@ -213,7 +213,7 @@ class StandardsControlAssociationDetail {
 
   ///@{
   /**
-   * <p> Provides the input parameter that Security Hub uses to call the <a
+   * <p> Provides the input parameter that Security Hub CSPM uses to call the <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a>
    * API. This API can be used to enable or disable a control in a specified
    * standard. </p>

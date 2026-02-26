@@ -22,16 +22,16 @@ ListVirtualMachinesResult::ListVirtualMachinesResult(const Aws::AmazonWebService
 ListVirtualMachinesResult& ListVirtualMachinesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("NextToken")) {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("VirtualMachines")) {
     Aws::Utils::Array<JsonView> virtualMachinesJsonList = jsonValue.GetArray("VirtualMachines");
     for (unsigned virtualMachinesIndex = 0; virtualMachinesIndex < virtualMachinesJsonList.GetLength(); ++virtualMachinesIndex) {
       m_virtualMachines.push_back(virtualMachinesJsonList[virtualMachinesIndex].AsObject());
     }
     m_virtualMachinesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

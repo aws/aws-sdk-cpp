@@ -32,6 +32,24 @@ class UpdateHypervisorRequest : public BackupGatewayRequest {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+   */
+  inline const Aws::String& GetHypervisorArn() const { return m_hypervisorArn; }
+  inline bool HypervisorArnHasBeenSet() const { return m_hypervisorArnHasBeenSet; }
+  template <typename HypervisorArnT = Aws::String>
+  void SetHypervisorArn(HypervisorArnT&& value) {
+    m_hypervisorArnHasBeenSet = true;
+    m_hypervisorArn = std::forward<HypervisorArnT>(value);
+  }
+  template <typename HypervisorArnT = Aws::String>
+  UpdateHypervisorRequest& WithHypervisorArn(HypervisorArnT&& value) {
+    SetHypervisorArn(std::forward<HypervisorArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated host of the hypervisor. This can be either an IP address or a
    * fully-qualified domain name (FQDN).</p>
    */
@@ -51,55 +69,18 @@ class UpdateHypervisorRequest : public BackupGatewayRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+   * <p>The updated username for the hypervisor.</p>
    */
-  inline const Aws::String& GetHypervisorArn() const { return m_hypervisorArn; }
-  inline bool HypervisorArnHasBeenSet() const { return m_hypervisorArnHasBeenSet; }
-  template <typename HypervisorArnT = Aws::String>
-  void SetHypervisorArn(HypervisorArnT&& value) {
-    m_hypervisorArnHasBeenSet = true;
-    m_hypervisorArn = std::forward<HypervisorArnT>(value);
+  inline const Aws::String& GetUsername() const { return m_username; }
+  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+  template <typename UsernameT = Aws::String>
+  void SetUsername(UsernameT&& value) {
+    m_usernameHasBeenSet = true;
+    m_username = std::forward<UsernameT>(value);
   }
-  template <typename HypervisorArnT = Aws::String>
-  UpdateHypervisorRequest& WithHypervisorArn(HypervisorArnT&& value) {
-    SetHypervisorArn(std::forward<HypervisorArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
-   * log.</p>
-   */
-  inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
-  inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-  template <typename LogGroupArnT = Aws::String>
-  void SetLogGroupArn(LogGroupArnT&& value) {
-    m_logGroupArnHasBeenSet = true;
-    m_logGroupArn = std::forward<LogGroupArnT>(value);
-  }
-  template <typename LogGroupArnT = Aws::String>
-  UpdateHypervisorRequest& WithLogGroupArn(LogGroupArnT&& value) {
-    SetLogGroupArn(std::forward<LogGroupArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The updated name for the hypervisor</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  UpdateHypervisorRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename UsernameT = Aws::String>
+  UpdateHypervisorRequest& WithUsername(UsernameT&& value) {
+    SetUsername(std::forward<UsernameT>(value));
     return *this;
   }
   ///@}
@@ -124,39 +105,58 @@ class UpdateHypervisorRequest : public BackupGatewayRequest {
 
   ///@{
   /**
-   * <p>The updated username for the hypervisor.</p>
+   * <p>The updated name for the hypervisor</p>
    */
-  inline const Aws::String& GetUsername() const { return m_username; }
-  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-  template <typename UsernameT = Aws::String>
-  void SetUsername(UsernameT&& value) {
-    m_usernameHasBeenSet = true;
-    m_username = std::forward<UsernameT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename UsernameT = Aws::String>
-  UpdateHypervisorRequest& WithUsername(UsernameT&& value) {
-    SetUsername(std::forward<UsernameT>(value));
+  template <typename NameT = Aws::String>
+  UpdateHypervisorRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+   * log.</p>
+   */
+  inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
+  inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
+  template <typename LogGroupArnT = Aws::String>
+  void SetLogGroupArn(LogGroupArnT&& value) {
+    m_logGroupArnHasBeenSet = true;
+    m_logGroupArn = std::forward<LogGroupArnT>(value);
+  }
+  template <typename LogGroupArnT = Aws::String>
+  UpdateHypervisorRequest& WithLogGroupArn(LogGroupArnT&& value) {
+    SetLogGroupArn(std::forward<LogGroupArnT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_host;
-
   Aws::String m_hypervisorArn;
 
-  Aws::String m_logGroupArn;
+  Aws::String m_host;
 
-  Aws::String m_name;
+  Aws::String m_username;
 
   Aws::String m_password;
 
-  Aws::String m_username;
-  bool m_hostHasBeenSet = false;
+  Aws::String m_name;
+
+  Aws::String m_logGroupArn;
   bool m_hypervisorArnHasBeenSet = false;
-  bool m_logGroupArnHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_passwordHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -126,7 +126,7 @@ class AwsAutoScalingLaunchConfigurationDetails {
   /**
    * <p>The creation date and time for the launch configuration.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetCreatedTime() const { return m_createdTime; }
@@ -327,8 +327,7 @@ class AwsAutoScalingLaunchConfigurationDetails {
 
   ///@{
   /**
-   * <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling
-   * group.</p>
+   * <p>The security groups to assign to the instances in the Auto Scaling group.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
   inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }

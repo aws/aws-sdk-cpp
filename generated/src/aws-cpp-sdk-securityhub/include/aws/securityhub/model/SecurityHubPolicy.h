@@ -22,15 +22,15 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p> An object that defines how Security Hub is configured. The configuration
- * policy includes whether Security Hub is enabled or disabled, a list of enabled
- * security standards, a list of enabled or disabled security controls, and a list
- * of custom parameter values for specified controls. If you provide a list of
- * security controls that are enabled in the configuration policy, Security Hub
- * disables all other controls (including newly released controls). If you provide
- * a list of security controls that are disabled in the configuration policy,
- * Security Hub enables all other controls (including newly released controls).
- * </p><p><h3>See Also:</h3>   <a
+ * <p> An object that defines how Security Hub CSPM is configured. The
+ * configuration policy includes whether Security Hub CSPM is enabled or disabled,
+ * a list of enabled security standards, a list of enabled or disabled security
+ * controls, and a list of custom parameter values for specified controls. If you
+ * provide a list of security controls that are enabled in the configuration
+ * policy, Security Hub CSPM disables all other controls (including newly released
+ * controls). If you provide a list of security controls that are disabled in the
+ * configuration policy, Security Hub CSPM enables all other controls (including
+ * newly released controls). </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SecurityHubPolicy">AWS
  * API Reference</a></p>
  */
@@ -43,7 +43,7 @@ class SecurityHubPolicy {
 
   ///@{
   /**
-   * <p> Indicates whether Security Hub is enabled in the policy. </p>
+   * <p> Indicates whether Security Hub CSPM is enabled in the policy. </p>
    */
   inline bool GetServiceEnabled() const { return m_serviceEnabled; }
   inline bool ServiceEnabledHasBeenSet() const { return m_serviceEnabledHasBeenSet; }

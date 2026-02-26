@@ -34,8 +34,8 @@ class Invitation {
 
   ///@{
   /**
-   * <p>The account ID of the Security Hub administrator account that the invitation
-   * was sent from.</p>
+   * <p>The account ID of the Security Hub CSPM administrator account that the
+   * invitation was sent from.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

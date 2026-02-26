@@ -18,6 +18,7 @@ namespace IntegrationV2TypeMapper {
 static const int SEND_FINDINGS_TO_SECURITY_HUB_HASH = HashingUtils::HashString("SEND_FINDINGS_TO_SECURITY_HUB");
 static const int RECEIVE_FINDINGS_FROM_SECURITY_HUB_HASH = HashingUtils::HashString("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
 static const int UPDATE_FINDINGS_IN_SECURITY_HUB_HASH = HashingUtils::HashString("UPDATE_FINDINGS_IN_SECURITY_HUB");
+static const int EXTENDED_PLAN_HASH = HashingUtils::HashString("EXTENDED_PLAN");
 
 IntegrationV2Type GetIntegrationV2TypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ IntegrationV2Type GetIntegrationV2TypeForName(const Aws::String& name) {
     return IntegrationV2Type::RECEIVE_FINDINGS_FROM_SECURITY_HUB;
   } else if (hashCode == UPDATE_FINDINGS_IN_SECURITY_HUB_HASH) {
     return IntegrationV2Type::UPDATE_FINDINGS_IN_SECURITY_HUB;
+  } else if (hashCode == EXTENDED_PLAN_HASH) {
+    return IntegrationV2Type::EXTENDED_PLAN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForIntegrationV2Type(IntegrationV2Type enumValue) {
       return "RECEIVE_FINDINGS_FROM_SECURITY_HUB";
     case IntegrationV2Type::UPDATE_FINDINGS_IN_SECURITY_HUB:
       return "UPDATE_FINDINGS_IN_SECURITY_HUB";
+    case IntegrationV2Type::EXTENDED_PLAN:
+      return "EXTENDED_PLAN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

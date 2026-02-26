@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p> The target account, organizational unit, or the root that is associated with
- * an Security Hub configuration. The configuration can be a configuration policy
- * or self-managed behavior. </p><p><h3>See Also:</h3>   <a
+ * an Security Hub CSPM configuration. The configuration can be a configuration
+ * policy or self-managed behavior. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Target">AWS
  * API Reference</a></p>
  */
