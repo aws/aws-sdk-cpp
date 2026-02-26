@@ -24,6 +24,10 @@ GetBandwidthRateLimitScheduleResult::GetBandwidthRateLimitScheduleResult(const A
 GetBandwidthRateLimitScheduleResult& GetBandwidthRateLimitScheduleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("GatewayArn")) {
+    m_gatewayArn = jsonValue.GetString("GatewayArn");
+    m_gatewayArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("BandwidthRateLimitIntervals")) {
     Aws::Utils::Array<JsonView> bandwidthRateLimitIntervalsJsonList = jsonValue.GetArray("BandwidthRateLimitIntervals");
     for (unsigned bandwidthRateLimitIntervalsIndex = 0; bandwidthRateLimitIntervalsIndex < bandwidthRateLimitIntervalsJsonList.GetLength();
@@ -31,10 +35,6 @@ GetBandwidthRateLimitScheduleResult& GetBandwidthRateLimitScheduleResult::operat
       m_bandwidthRateLimitIntervals.push_back(bandwidthRateLimitIntervalsJsonList[bandwidthRateLimitIntervalsIndex].AsObject());
     }
     m_bandwidthRateLimitIntervalsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("GatewayArn")) {
-    m_gatewayArn = jsonValue.GetString("GatewayArn");
-    m_gatewayArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

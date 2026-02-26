@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECS {
 namespace Model {
-enum class CapacityOptionType { NOT_SET, ON_DEMAND, SPOT };
+enum class CapacityOptionType { NOT_SET, ON_DEMAND, SPOT, RESERVED };
 
 namespace CapacityOptionTypeMapper {
 AWS_ECS_API CapacityOptionType GetCapacityOptionTypeForName(const Aws::String& name);

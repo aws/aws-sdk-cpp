@@ -22,28 +22,28 @@ BandwidthRateLimitInterval& BandwidthRateLimitInterval::operator=(JsonView jsonV
     m_averageUploadRateLimitInBitsPerSec = jsonValue.GetInt64("AverageUploadRateLimitInBitsPerSec");
     m_averageUploadRateLimitInBitsPerSecHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StartHourOfDay")) {
+    m_startHourOfDay = jsonValue.GetInteger("StartHourOfDay");
+    m_startHourOfDayHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndHourOfDay")) {
+    m_endHourOfDay = jsonValue.GetInteger("EndHourOfDay");
+    m_endHourOfDayHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StartMinuteOfHour")) {
+    m_startMinuteOfHour = jsonValue.GetInteger("StartMinuteOfHour");
+    m_startMinuteOfHourHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndMinuteOfHour")) {
+    m_endMinuteOfHour = jsonValue.GetInteger("EndMinuteOfHour");
+    m_endMinuteOfHourHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DaysOfWeek")) {
     Aws::Utils::Array<JsonView> daysOfWeekJsonList = jsonValue.GetArray("DaysOfWeek");
     for (unsigned daysOfWeekIndex = 0; daysOfWeekIndex < daysOfWeekJsonList.GetLength(); ++daysOfWeekIndex) {
       m_daysOfWeek.push_back(daysOfWeekJsonList[daysOfWeekIndex].AsInteger());
     }
     m_daysOfWeekHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EndHourOfDay")) {
-    m_endHourOfDay = jsonValue.GetInteger("EndHourOfDay");
-    m_endHourOfDayHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EndMinuteOfHour")) {
-    m_endMinuteOfHour = jsonValue.GetInteger("EndMinuteOfHour");
-    m_endMinuteOfHourHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StartHourOfDay")) {
-    m_startHourOfDay = jsonValue.GetInteger("StartHourOfDay");
-    m_startHourOfDayHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StartMinuteOfHour")) {
-    m_startMinuteOfHour = jsonValue.GetInteger("StartMinuteOfHour");
-    m_startMinuteOfHourHasBeenSet = true;
   }
   return *this;
 }
@@ -55,28 +55,28 @@ JsonValue BandwidthRateLimitInterval::Jsonize() const {
     payload.WithInt64("AverageUploadRateLimitInBitsPerSec", m_averageUploadRateLimitInBitsPerSec);
   }
 
-  if (m_daysOfWeekHasBeenSet) {
-    Aws::Utils::Array<JsonValue> daysOfWeekJsonList(m_daysOfWeek.size());
-    for (unsigned daysOfWeekIndex = 0; daysOfWeekIndex < daysOfWeekJsonList.GetLength(); ++daysOfWeekIndex) {
-      daysOfWeekJsonList[daysOfWeekIndex].AsInteger(m_daysOfWeek[daysOfWeekIndex]);
-    }
-    payload.WithArray("DaysOfWeek", std::move(daysOfWeekJsonList));
+  if (m_startHourOfDayHasBeenSet) {
+    payload.WithInteger("StartHourOfDay", m_startHourOfDay);
   }
 
   if (m_endHourOfDayHasBeenSet) {
     payload.WithInteger("EndHourOfDay", m_endHourOfDay);
   }
 
+  if (m_startMinuteOfHourHasBeenSet) {
+    payload.WithInteger("StartMinuteOfHour", m_startMinuteOfHour);
+  }
+
   if (m_endMinuteOfHourHasBeenSet) {
     payload.WithInteger("EndMinuteOfHour", m_endMinuteOfHour);
   }
 
-  if (m_startHourOfDayHasBeenSet) {
-    payload.WithInteger("StartHourOfDay", m_startHourOfDay);
-  }
-
-  if (m_startMinuteOfHourHasBeenSet) {
-    payload.WithInteger("StartMinuteOfHour", m_startMinuteOfHour);
+  if (m_daysOfWeekHasBeenSet) {
+    Aws::Utils::Array<JsonValue> daysOfWeekJsonList(m_daysOfWeek.size());
+    for (unsigned daysOfWeekIndex = 0; daysOfWeekIndex < daysOfWeekJsonList.GetLength(); ++daysOfWeekIndex) {
+      daysOfWeekJsonList[daysOfWeekIndex].AsInteger(m_daysOfWeek[daysOfWeekIndex]);
+    }
+    payload.WithArray("DaysOfWeek", std::move(daysOfWeekJsonList));
   }
 
   return payload;

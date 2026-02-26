@@ -32,6 +32,26 @@ class GetBandwidthRateLimitScheduleResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
+   * <code>ListGateways</code> </a> operation to return a list of gateways for your
+   * account and Amazon Web Services Region.</p>
+   */
+  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
+  template <typename GatewayArnT = Aws::String>
+  void SetGatewayArn(GatewayArnT&& value) {
+    m_gatewayArnHasBeenSet = true;
+    m_gatewayArn = std::forward<GatewayArnT>(value);
+  }
+  template <typename GatewayArnT = Aws::String>
+  GetBandwidthRateLimitScheduleResult& WithGatewayArn(GatewayArnT&& value) {
+    SetGatewayArn(std::forward<GatewayArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An array containing bandwidth rate limit schedule intervals for a gateway.
    * When no bandwidth rate limit intervals have been scheduled, the array is
    * empty.</p>
@@ -56,26 +76,6 @@ class GetBandwidthRateLimitScheduleResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-   * <code>ListGateways</code> </a> operation to return a list of gateways for your
-   * account and Amazon Web Services Region.</p>
-   */
-  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
-  template <typename GatewayArnT = Aws::String>
-  void SetGatewayArn(GatewayArnT&& value) {
-    m_gatewayArnHasBeenSet = true;
-    m_gatewayArn = std::forward<GatewayArnT>(value);
-  }
-  template <typename GatewayArnT = Aws::String>
-  GetBandwidthRateLimitScheduleResult& WithGatewayArn(GatewayArnT&& value) {
-    SetGatewayArn(std::forward<GatewayArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -92,14 +92,14 @@ class GetBandwidthRateLimitScheduleResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
-
   Aws::String m_gatewayArn;
+
+  Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   bool m_gatewayArnHasBeenSet = false;
+  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

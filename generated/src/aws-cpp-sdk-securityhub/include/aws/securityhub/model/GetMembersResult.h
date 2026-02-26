@@ -32,7 +32,7 @@ class GetMembersResult {
 
   ///@{
   /**
-   * <p>The list of details about the Security Hub member accounts.</p>
+   * <p>The list of details about the Security Hub CSPM member accounts.</p>
    */
   inline const Aws::Vector<Member>& GetMembers() const { return m_members; }
   template <typename MembersT = Aws::Vector<Member>>

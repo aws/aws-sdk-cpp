@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/CapacityReservationRequest.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
@@ -146,6 +147,26 @@ class InstanceLaunchTemplateUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated capacity reservations specifications for Amazon ECS Managed
+   * Instances. Changes to capacity reservations settings apply to new instances
+   * launched after the update.</p>
+   */
+  inline const CapacityReservationRequest& GetCapacityReservations() const { return m_capacityReservations; }
+  inline bool CapacityReservationsHasBeenSet() const { return m_capacityReservationsHasBeenSet; }
+  template <typename CapacityReservationsT = CapacityReservationRequest>
+  void SetCapacityReservations(CapacityReservationsT&& value) {
+    m_capacityReservationsHasBeenSet = true;
+    m_capacityReservations = std::forward<CapacityReservationsT>(value);
+  }
+  template <typename CapacityReservationsT = CapacityReservationRequest>
+  InstanceLaunchTemplateUpdate& WithCapacityReservations(CapacityReservationsT&& value) {
+    SetCapacityReservations(std::forward<CapacityReservationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ec2InstanceProfileArn;
 
@@ -156,11 +177,14 @@ class InstanceLaunchTemplateUpdate {
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
 
   InstanceRequirementsRequest m_instanceRequirements;
+
+  CapacityReservationRequest m_capacityReservations;
   bool m_ec2InstanceProfileArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
+  bool m_capacityReservationsHasBeenSet = false;
 };
 
 }  // namespace Model

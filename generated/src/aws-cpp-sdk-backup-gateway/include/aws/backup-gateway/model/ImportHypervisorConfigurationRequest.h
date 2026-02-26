@@ -34,6 +34,24 @@ class ImportHypervisorConfigurationRequest : public BackupGatewayRequest {
 
   ///@{
   /**
+   * <p>The name of the hypervisor.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ImportHypervisorConfigurationRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The server host of the hypervisor. This can be either an IP address or a
    * fully-qualified domain name (FQDN).</p>
    */
@@ -53,36 +71,18 @@ class ImportHypervisorConfigurationRequest : public BackupGatewayRequest {
 
   ///@{
   /**
-   * <p>The Key Management Service for the hypervisor.</p>
+   * <p>The username for the hypervisor.</p>
    */
-  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-  template <typename KmsKeyArnT = Aws::String>
-  void SetKmsKeyArn(KmsKeyArnT&& value) {
-    m_kmsKeyArnHasBeenSet = true;
-    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  inline const Aws::String& GetUsername() const { return m_username; }
+  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+  template <typename UsernameT = Aws::String>
+  void SetUsername(UsernameT&& value) {
+    m_usernameHasBeenSet = true;
+    m_username = std::forward<UsernameT>(value);
   }
-  template <typename KmsKeyArnT = Aws::String>
-  ImportHypervisorConfigurationRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
-    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the hypervisor.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ImportHypervisorConfigurationRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename UsernameT = Aws::String>
+  ImportHypervisorConfigurationRequest& WithUsername(UsernameT&& value) {
+    SetUsername(std::forward<UsernameT>(value));
     return *this;
   }
   ///@}
@@ -101,6 +101,24 @@ class ImportHypervisorConfigurationRequest : public BackupGatewayRequest {
   template <typename PasswordT = Aws::String>
   ImportHypervisorConfigurationRequest& WithPassword(PasswordT&& value) {
     SetPassword(std::forward<PasswordT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Key Management Service for the hypervisor.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  ImportHypervisorConfigurationRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
     return *this;
   }
   ///@}
@@ -128,42 +146,24 @@ class ImportHypervisorConfigurationRequest : public BackupGatewayRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The username for the hypervisor.</p>
-   */
-  inline const Aws::String& GetUsername() const { return m_username; }
-  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-  template <typename UsernameT = Aws::String>
-  void SetUsername(UsernameT&& value) {
-    m_usernameHasBeenSet = true;
-    m_username = std::forward<UsernameT>(value);
-  }
-  template <typename UsernameT = Aws::String>
-  ImportHypervisorConfigurationRequest& WithUsername(UsernameT&& value) {
-    SetUsername(std::forward<UsernameT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_name;
+
   Aws::String m_host;
 
-  Aws::String m_kmsKeyArn;
-
-  Aws::String m_name;
+  Aws::String m_username;
 
   Aws::String m_password;
 
-  Aws::Vector<Tag> m_tags;
+  Aws::String m_kmsKeyArn;
 
-  Aws::String m_username;
-  bool m_hostHasBeenSet = false;
-  bool m_kmsKeyArnHasBeenSet = false;
+  Aws::Vector<Tag> m_tags;
   bool m_nameHasBeenSet = false;
-  bool m_passwordHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

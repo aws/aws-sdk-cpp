@@ -33,7 +33,7 @@ class ListOrganizationAdminAccountsResult {
 
   ///@{
   /**
-   * <p>The list of Security Hub administrator accounts.</p>
+   * <p>The list of Security Hub CSPM administrator accounts.</p>
    */
   inline const Aws::Vector<AdminAccount>& GetAdminAccounts() const { return m_adminAccounts; }
   template <typename AdminAccountsT = Aws::Vector<AdminAccount>>
@@ -74,7 +74,7 @@ class ListOrganizationAdminAccountsResult {
   ///@{
   /**
    * <p>The feature where the delegated administrator account is listed. Defaults to
-   * Security Hub CSPM if not specified.</p>
+   * Security Hub CSPM CSPM if not specified.</p>
    */
   inline SecurityHubFeature GetFeature() const { return m_feature; }
   inline void SetFeature(SecurityHubFeature value) {

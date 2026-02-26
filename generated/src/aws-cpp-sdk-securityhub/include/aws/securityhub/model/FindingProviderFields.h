@@ -32,21 +32,22 @@ namespace Model {
  * </li> <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p>
  * </li> </ul> <p>The preceding fields are nested under the
  * <code>FindingProviderFields</code> object, but also have analogues of the same
- * name as top-level ASFF fields. When a new finding is sent to Security Hub by a
- * finding provider, Security Hub populates the <code>FindingProviderFields</code>
- * object automatically, if it is empty, based on the corresponding top-level
- * fields.</p> <p>Finding providers can update <code>FindingProviderFields</code>
- * only by using the <code>BatchImportFindings</code> operation. Finding providers
- * can't update this object with the <a
+ * name as top-level ASFF fields. When a new finding is sent to Security Hub CSPM
+ * by a finding provider, Security Hub CSPM populates the
+ * <code>FindingProviderFields</code> object automatically, if it is empty, based
+ * on the corresponding top-level fields.</p> <p>Finding providers can update
+ * <code>FindingProviderFields</code> only by using the
+ * <code>BatchImportFindings</code> operation. Finding providers can't update this
+ * object with the <a
  * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
  * <code>BatchUpdateFindings</code> </a> operation. Customers can update the
  * top-level fields by using the <code>BatchUpdateFindings</code> operation.
  * Customers can't update <code>FindingProviderFields</code>.</p> <p>For
- * information about how Security Hub handles updates from
+ * information about how Security Hub CSPM handles updates from
  * <code>BatchImportFindings</code> to <code>FindingProviderFields</code> and to
  * the corresponding top-level attributes, see <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchimportfindings.html#batchimportfindings-findingproviderfields">Using
- * <code>FindingProviderFields</code> </a> in the <i>Security Hub User
+ * <code>FindingProviderFields</code> </a> in the <i>Security Hub CSPM User
  * Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingProviderFields">AWS
  * API Reference</a></p>

@@ -21,8 +21,8 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p>A map filter for filtering Security Hub findings. Each map filter provides
- * the field to check for, the value to check for, and the comparison
+ * <p>A map filter for filtering Security Hub CSPM findings. Each map filter
+ * provides the field to check for, the value to check for, and the comparison
  * operator.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/MapFilter">AWS
  * API Reference</a></p>
@@ -77,27 +77,27 @@ class MapFilter {
 
   ///@{
   /**
-   * <p>The condition to apply to the key value when filtering Security Hub findings
-   * with a map filter.</p> <p>To search for values that have the filter value, use
+   * <p>The condition to apply to the key value when filtering Security Hub CSPM
+   * findings with a map filter.</p> <p>To search for values that have the filter
+   * value, use one of the following comparison operators:</p> <ul> <li> <p>To search
+   * for values that include the filter value, use <code>CONTAINS</code>. For
+   * example, for the <code>ResourceTags</code> field, the filter <code>Department
+   * CONTAINS Security</code> matches findings that include the value
+   * <code>Security</code> for the <code>Department</code> tag. In the same example,
+   * a finding with a value of <code>Security team</code> for the
+   * <code>Department</code> tag is a match.</p> </li> <li> <p>To search for values
+   * that exactly match the filter value, use <code>EQUALS</code>. For example, for
+   * the <code>ResourceTags</code> field, the filter <code>Department EQUALS
+   * Security</code> matches findings that have the value <code>Security</code> for
+   * the <code>Department</code> tag.</p> </li> </ul> <p> <code>CONTAINS</code> and
+   * <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A
+   * finding matches if it matches any one of those filters. For example, the filters
+   * <code>Department CONTAINS Security OR Department CONTAINS Finance</code> match a
+   * finding that includes either <code>Security</code>, <code>Finance</code>, or
+   * both values.</p> <p>To search for values that don't have the filter value, use
    * one of the following comparison operators:</p> <ul> <li> <p>To search for values
-   * that include the filter value, use <code>CONTAINS</code>. For example, for the
-   * <code>ResourceTags</code> field, the filter <code>Department CONTAINS
-   * Security</code> matches findings that include the value <code>Security</code>
-   * for the <code>Department</code> tag. In the same example, a finding with a value
-   * of <code>Security team</code> for the <code>Department</code> tag is a
-   * match.</p> </li> <li> <p>To search for values that exactly match the filter
-   * value, use <code>EQUALS</code>. For example, for the <code>ResourceTags</code>
-   * field, the filter <code>Department EQUALS Security</code> matches findings that
-   * have the value <code>Security</code> for the <code>Department</code> tag.</p>
-   * </li> </ul> <p> <code>CONTAINS</code> and <code>EQUALS</code> filters on the
-   * same field are joined by <code>OR</code>. A finding matches if it matches any
-   * one of those filters. For example, the filters <code>Department CONTAINS
-   * Security OR Department CONTAINS Finance</code> match a finding that includes
-   * either <code>Security</code>, <code>Finance</code>, or both values.</p> <p>To
-   * search for values that don't have the filter value, use one of the following
-   * comparison operators:</p> <ul> <li> <p>To search for values that exclude the
-   * filter value, use <code>NOT_CONTAINS</code>. For example, for the
-   * <code>ResourceTags</code> field, the filter <code>Department NOT_CONTAINS
+   * that exclude the filter value, use <code>NOT_CONTAINS</code>. For example, for
+   * the <code>ResourceTags</code> field, the filter <code>Department NOT_CONTAINS
    * Finance</code> matches findings that exclude the value <code>Finance</code> for
    * the <code>Department</code> tag.</p> </li> <li> <p>To search for values other
    * than the filter value, use <code>NOT_EQUALS</code>. For example, for the
@@ -118,7 +118,7 @@ class MapFilter {
    * returns an error. </p> <p> <code>CONTAINS</code> and <code>NOT_CONTAINS</code>
    * operators can be used only with automation rules. For more information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
-   * rules</a> in the <i>Security Hub User Guide</i>.</p>
+   * rules</a> in the <i>Security Hub CSPM User Guide</i>.</p>
    */
   inline MapFilterComparison GetComparison() const { return m_comparison; }
   inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }

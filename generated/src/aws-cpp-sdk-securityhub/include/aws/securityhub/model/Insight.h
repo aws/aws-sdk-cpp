@@ -21,8 +21,8 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p>Contains information about a Security Hub insight.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Contains information about a Security Hub CSPM insight.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Insight">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class Insight {
 
   ///@{
   /**
-   * <p>The ARN of a Security Hub insight.</p>
+   * <p>The ARN of a Security Hub CSPM insight.</p>
    */
   inline const Aws::String& GetInsightArn() const { return m_insightArn; }
   inline bool InsightArnHasBeenSet() const { return m_insightArnHasBeenSet; }
@@ -53,7 +53,7 @@ class Insight {
 
   ///@{
   /**
-   * <p>The name of a Security Hub insight.</p>
+   * <p>The name of a Security Hub CSPM insight.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

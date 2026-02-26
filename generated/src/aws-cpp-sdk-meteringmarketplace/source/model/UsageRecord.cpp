@@ -45,6 +45,10 @@ UsageRecord& UsageRecord::operator=(JsonView jsonValue) {
     m_customerAWSAccountId = jsonValue.GetString("CustomerAWSAccountId");
     m_customerAWSAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LicenseArn")) {
+    m_licenseArn = jsonValue.GetString("LicenseArn");
+    m_licenseArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +81,10 @@ JsonValue UsageRecord::Jsonize() const {
 
   if (m_customerAWSAccountIdHasBeenSet) {
     payload.WithString("CustomerAWSAccountId", m_customerAWSAccountId);
+  }
+
+  if (m_licenseArnHasBeenSet) {
+    payload.WithString("LicenseArn", m_licenseArn);
   }
 
   return payload;

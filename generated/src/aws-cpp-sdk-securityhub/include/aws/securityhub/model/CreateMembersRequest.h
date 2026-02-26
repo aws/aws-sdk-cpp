@@ -31,7 +31,7 @@ class CreateMembersRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The list of accounts to associate with the Security Hub administrator
+   * <p>The list of accounts to associate with the Security Hub CSPM administrator
    * account. For each account, the list includes the account ID and optionally the
    * email address.</p>
    */

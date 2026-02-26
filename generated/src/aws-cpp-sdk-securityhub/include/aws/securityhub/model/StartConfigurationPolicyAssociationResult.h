@@ -86,8 +86,8 @@ class StartConfigurationPolicyAssociationResult {
   ///@{
   /**
    * <p> Indicates whether the association between the specified target and the
-   * configuration was directly applied by the Security Hub delegated administrator
-   * or inherited from a parent. </p>
+   * configuration was directly applied by the Security Hub CSPM delegated
+   * administrator or inherited from a parent. </p>
    */
   inline AssociationType GetAssociationType() const { return m_associationType; }
   inline void SetAssociationType(AssociationType value) {

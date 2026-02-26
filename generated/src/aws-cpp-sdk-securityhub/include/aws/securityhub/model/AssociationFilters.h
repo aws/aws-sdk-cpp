@@ -57,8 +57,8 @@ class AssociationFilters {
   ///@{
   /**
    * <p> Indicates whether the association between a target and a configuration was
-   * directly applied by the Security Hub delegated administrator or inherited from a
-   * parent. </p>
+   * directly applied by the Security Hub CSPM delegated administrator or inherited
+   * from a parent. </p>
    */
   inline AssociationType GetAssociationType() const { return m_associationType; }
   inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }

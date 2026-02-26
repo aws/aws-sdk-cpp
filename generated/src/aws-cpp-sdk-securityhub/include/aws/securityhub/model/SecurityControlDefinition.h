@@ -85,8 +85,8 @@ class SecurityControlDefinition {
   ///@{
   /**
    * <p> The description of a security control across standards. This typically
-   * summarizes how Security Hub evaluates the control and the conditions under which
-   * it produces a failed finding. This parameter doesn't reference a specific
+   * summarizes how Security Hub CSPM evaluates the control and the conditions under
+   * which it produces a failed finding. This parameter doesn't reference a specific
    * standard. </p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -105,8 +105,8 @@ class SecurityControlDefinition {
 
   ///@{
   /**
-   * <p> A link to Security Hub documentation that explains how to remediate a failed
-   * finding for a security control. </p>
+   * <p> A link to Security Hub CSPM documentation that explains how to remediate a
+   * failed finding for a security control. </p>
    */
   inline const Aws::String& GetRemediationUrl() const { return m_remediationUrl; }
   inline bool RemediationUrlHasBeenSet() const { return m_remediationUrlHasBeenSet; }
@@ -125,9 +125,10 @@ class SecurityControlDefinition {
   ///@{
   /**
    * <p> The severity of a security control. For more information about how Security
-   * Hub determines control severity, see <a
+   * Hub CSPM determines control severity, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning
-   * severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
+   * severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.
+   * </p>
    */
   inline SeverityRating GetSeverityRating() const { return m_severityRating; }
   inline bool SeverityRatingHasBeenSet() const { return m_severityRatingHasBeenSet; }

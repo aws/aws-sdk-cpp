@@ -142,8 +142,12 @@ class UsageRecord {
 
   ///@{
   /**
-   * <p> The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID
-   * of the buyer. </p>
+   * <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID
+   * of the buyer.</p>  <p>For existing integrations, to access your
+   * <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping,
+   * see <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account
+   * Feeds</a>.</p>
    */
   inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
   inline bool CustomerAWSAccountIdHasBeenSet() const { return m_customerAWSAccountIdHasBeenSet; }
@@ -155,6 +159,29 @@ class UsageRecord {
   template <typename CustomerAWSAccountIdT = Aws::String>
   UsageRecord& WithCustomerAWSAccountId(CustomerAWSAccountIdT&& value) {
     SetCustomerAWSAccountId(std::forward<CustomerAWSAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>LicenseArn</code> is a unique identifier for a specific granted
+   * license. These are used for software purchased through Amazon Web Services
+   * Marketplace.</p>  <p>To access your <code>CustomerAWSAccountId</code> and
+   * <code>LicenseArn</code> mapping, visit <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements
+   * Feeds</a>.</p>
+   */
+  inline const Aws::String& GetLicenseArn() const { return m_licenseArn; }
+  inline bool LicenseArnHasBeenSet() const { return m_licenseArnHasBeenSet; }
+  template <typename LicenseArnT = Aws::String>
+  void SetLicenseArn(LicenseArnT&& value) {
+    m_licenseArnHasBeenSet = true;
+    m_licenseArn = std::forward<LicenseArnT>(value);
+  }
+  template <typename LicenseArnT = Aws::String>
+  UsageRecord& WithLicenseArn(LicenseArnT&& value) {
+    SetLicenseArn(std::forward<LicenseArnT>(value));
     return *this;
   }
   ///@}
@@ -170,12 +197,15 @@ class UsageRecord {
   Aws::Vector<UsageAllocation> m_usageAllocations;
 
   Aws::String m_customerAWSAccountId;
+
+  Aws::String m_licenseArn;
   bool m_timestampHasBeenSet = false;
   bool m_customerIdentifierHasBeenSet = false;
   bool m_dimensionHasBeenSet = false;
   bool m_quantityHasBeenSet = false;
   bool m_usageAllocationsHasBeenSet = false;
   bool m_customerAWSAccountIdHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -55,24 +55,6 @@ class VmwareTag {
 
   ///@{
   /**
-   * <p>This is a user-defined description of a VMware tag.</p>
-   */
-  inline const Aws::String& GetVmwareTagDescription() const { return m_vmwareTagDescription; }
-  inline bool VmwareTagDescriptionHasBeenSet() const { return m_vmwareTagDescriptionHasBeenSet; }
-  template <typename VmwareTagDescriptionT = Aws::String>
-  void SetVmwareTagDescription(VmwareTagDescriptionT&& value) {
-    m_vmwareTagDescriptionHasBeenSet = true;
-    m_vmwareTagDescription = std::forward<VmwareTagDescriptionT>(value);
-  }
-  template <typename VmwareTagDescriptionT = Aws::String>
-  VmwareTag& WithVmwareTagDescription(VmwareTagDescriptionT&& value) {
-    SetVmwareTagDescription(std::forward<VmwareTagDescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>This is the user-defined name of a VMware tag.</p>
    */
   inline const Aws::String& GetVmwareTagName() const { return m_vmwareTagName; }
@@ -88,15 +70,33 @@ class VmwareTag {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This is a user-defined description of a VMware tag.</p>
+   */
+  inline const Aws::String& GetVmwareTagDescription() const { return m_vmwareTagDescription; }
+  inline bool VmwareTagDescriptionHasBeenSet() const { return m_vmwareTagDescriptionHasBeenSet; }
+  template <typename VmwareTagDescriptionT = Aws::String>
+  void SetVmwareTagDescription(VmwareTagDescriptionT&& value) {
+    m_vmwareTagDescriptionHasBeenSet = true;
+    m_vmwareTagDescription = std::forward<VmwareTagDescriptionT>(value);
+  }
+  template <typename VmwareTagDescriptionT = Aws::String>
+  VmwareTag& WithVmwareTagDescription(VmwareTagDescriptionT&& value) {
+    SetVmwareTagDescription(std::forward<VmwareTagDescriptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_vmwareCategory;
 
-  Aws::String m_vmwareTagDescription;
-
   Aws::String m_vmwareTagName;
+
+  Aws::String m_vmwareTagDescription;
   bool m_vmwareCategoryHasBeenSet = false;
-  bool m_vmwareTagDescriptionHasBeenSet = false;
   bool m_vmwareTagNameHasBeenSet = false;
+  bool m_vmwareTagDescriptionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -135,14 +135,14 @@ class GetConfigurationPolicyResult {
 
   ///@{
   /**
-   * <p> An object that defines how Security Hub is configured. It includes whether
-   * Security Hub is enabled or disabled, a list of enabled security standards, a
-   * list of enabled or disabled security controls, and a list of custom parameter
-   * values for specified controls. If the policy includes a list of security
-   * controls that are enabled, Security Hub disables all other controls (including
-   * newly released controls). If the policy includes a list of security controls
-   * that are disabled, Security Hub enables all other controls (including newly
-   * released controls). </p>
+   * <p> An object that defines how Security Hub CSPM is configured. It includes
+   * whether Security Hub CSPM is enabled or disabled, a list of enabled security
+   * standards, a list of enabled or disabled security controls, and a list of custom
+   * parameter values for specified controls. If the policy includes a list of
+   * security controls that are enabled, Security Hub CSPM disables all other
+   * controls (including newly released controls). If the policy includes a list of
+   * security controls that are disabled, Security Hub CSPM enables all other
+   * controls (including newly released controls). </p>
    */
   inline const Policy& GetConfigurationPolicy() const { return m_configurationPolicy; }
   template <typename ConfigurationPolicyT = Policy>

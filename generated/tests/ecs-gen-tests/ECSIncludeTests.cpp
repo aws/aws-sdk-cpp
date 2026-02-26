@@ -43,6 +43,8 @@
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/CapacityProviderType.h>
 #include <aws/ecs/model/CapacityProviderUpdateStatus.h>
+#include <aws/ecs/model/CapacityReservationPreference.h>
+#include <aws/ecs/model/CapacityReservationRequest.h>
 #include <aws/ecs/model/Cluster.h>
 #include <aws/ecs/model/ClusterConfiguration.h>
 #include <aws/ecs/model/ClusterField.h>

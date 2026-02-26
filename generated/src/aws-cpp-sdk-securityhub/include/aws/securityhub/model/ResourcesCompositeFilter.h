@@ -26,7 +26,7 @@ namespace Model {
 
 /**
  * <p>Enables the creation of criteria for Amazon Web Services resources in
- * Security Hub.</p><p><h3>See Also:</h3>   <a
+ * Security Hub CSPM.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourcesCompositeFilter">AWS
  * API Reference</a></p>
  */

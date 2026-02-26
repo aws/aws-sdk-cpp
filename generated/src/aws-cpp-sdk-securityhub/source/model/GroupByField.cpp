@@ -38,6 +38,7 @@ static const int finding_info_analytic_name_HASH = HashingUtils::HashString("fin
 static const int compliance_standards_HASH = HashingUtils::HashString("compliance.standards");
 static const int cloud_account_name_HASH = HashingUtils::HashString("cloud.account.name");
 static const int vendor_attributes_severity_HASH = HashingUtils::HashString("vendor_attributes.severity");
+static const int metadata_product_vendor_name_HASH = HashingUtils::HashString("metadata.product.vendor_name");
 
 GroupByField GetGroupByFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -87,6 +88,8 @@ GroupByField GetGroupByFieldForName(const Aws::String& name) {
     return GroupByField::cloud_account_name;
   } else if (hashCode == vendor_attributes_severity_HASH) {
     return GroupByField::vendor_attributes_severity;
+  } else if (hashCode == metadata_product_vendor_name_HASH) {
+    return GroupByField::metadata_product_vendor_name;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -147,6 +150,8 @@ Aws::String GetNameForGroupByField(GroupByField enumValue) {
       return "cloud.account.name";
     case GroupByField::vendor_attributes_severity:
       return "vendor_attributes.severity";
+    case GroupByField::metadata_product_vendor_name:
+      return "metadata.product.vendor_name";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

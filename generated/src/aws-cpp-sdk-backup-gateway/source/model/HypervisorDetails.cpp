@@ -30,29 +30,29 @@ HypervisorDetails& HypervisorDetails::operator=(JsonView jsonValue) {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("LastSuccessfulMetadataSyncTime")) {
-    m_lastSuccessfulMetadataSyncTime = jsonValue.GetDouble("LastSuccessfulMetadataSyncTime");
-    m_lastSuccessfulMetadataSyncTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LatestMetadataSyncStatus")) {
-    m_latestMetadataSyncStatus = SyncMetadataStatusMapper::GetSyncMetadataStatusForName(jsonValue.GetString("LatestMetadataSyncStatus"));
-    m_latestMetadataSyncStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LatestMetadataSyncStatusMessage")) {
-    m_latestMetadataSyncStatusMessage = jsonValue.GetString("LatestMetadataSyncStatusMessage");
-    m_latestMetadataSyncStatusMessageHasBeenSet = true;
+  if (jsonValue.ValueExists("Name")) {
+    m_name = jsonValue.GetString("Name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("LogGroupArn")) {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
     m_logGroupArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Name")) {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("State")) {
     m_state = HypervisorStateMapper::GetHypervisorStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastSuccessfulMetadataSyncTime")) {
+    m_lastSuccessfulMetadataSyncTime = jsonValue.GetDouble("LastSuccessfulMetadataSyncTime");
+    m_lastSuccessfulMetadataSyncTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LatestMetadataSyncStatusMessage")) {
+    m_latestMetadataSyncStatusMessage = jsonValue.GetString("LatestMetadataSyncStatusMessage");
+    m_latestMetadataSyncStatusMessageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LatestMetadataSyncStatus")) {
+    m_latestMetadataSyncStatus = SyncMetadataStatusMapper::GetSyncMetadataStatusForName(jsonValue.GetString("LatestMetadataSyncStatus"));
+    m_latestMetadataSyncStatusHasBeenSet = true;
   }
   return *this;
 }
@@ -72,28 +72,28 @@ JsonValue HypervisorDetails::Jsonize() const {
     payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
-  if (m_lastSuccessfulMetadataSyncTimeHasBeenSet) {
-    payload.WithDouble("LastSuccessfulMetadataSyncTime", m_lastSuccessfulMetadataSyncTime.SecondsWithMSPrecision());
-  }
-
-  if (m_latestMetadataSyncStatusHasBeenSet) {
-    payload.WithString("LatestMetadataSyncStatus", SyncMetadataStatusMapper::GetNameForSyncMetadataStatus(m_latestMetadataSyncStatus));
-  }
-
-  if (m_latestMetadataSyncStatusMessageHasBeenSet) {
-    payload.WithString("LatestMetadataSyncStatusMessage", m_latestMetadataSyncStatusMessage);
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   if (m_logGroupArnHasBeenSet) {
     payload.WithString("LogGroupArn", m_logGroupArn);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
   if (m_stateHasBeenSet) {
     payload.WithString("State", HypervisorStateMapper::GetNameForHypervisorState(m_state));
+  }
+
+  if (m_lastSuccessfulMetadataSyncTimeHasBeenSet) {
+    payload.WithDouble("LastSuccessfulMetadataSyncTime", m_lastSuccessfulMetadataSyncTime.SecondsWithMSPrecision());
+  }
+
+  if (m_latestMetadataSyncStatusMessageHasBeenSet) {
+    payload.WithString("LatestMetadataSyncStatusMessage", m_latestMetadataSyncStatusMessage);
+  }
+
+  if (m_latestMetadataSyncStatusHasBeenSet) {
+    payload.WithString("LatestMetadataSyncStatus", SyncMetadataStatusMapper::GetNameForSyncMetadataStatus(m_latestMetadataSyncStatus));
   }
 
   return payload;

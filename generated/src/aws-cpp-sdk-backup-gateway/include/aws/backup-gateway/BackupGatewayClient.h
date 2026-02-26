@@ -314,8 +314,8 @@ class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonCli
   /**
    * <p>This action retrieves the property mappings for the specified hypervisor. A
    * hypervisor property mapping displays the relationship of entity properties
-   * available from the on-premises hypervisor to the properties available in Amazon
-   * Web Services.</p><p><h3>See Also:</h3>   <a
+   * available from the hypervisor to the properties available in Amazon Web
+   * Services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">AWS
    * API Reference</a></p>
    */
@@ -543,8 +543,8 @@ class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonCli
   /**
    * <p>This action sets the property mappings for the specified hypervisor. A
    * hypervisor property mapping displays the relationship of entity properties
-   * available from the on-premises hypervisor to the properties available in Amazon
-   * Web Services.</p><p><h3>See Also:</h3>   <a
+   * available from the hypervisor to the properties available in Amazon Web
+   * Services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">AWS
    * API Reference</a></p>
    */

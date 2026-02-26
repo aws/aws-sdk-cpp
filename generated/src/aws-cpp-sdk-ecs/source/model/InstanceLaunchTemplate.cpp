@@ -46,6 +46,10 @@ InstanceLaunchTemplate& InstanceLaunchTemplate::operator=(JsonView jsonValue) {
     m_fipsEnabled = jsonValue.GetBool("fipsEnabled");
     m_fipsEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capacityReservations")) {
+    m_capacityReservations = jsonValue.GetObject("capacityReservations");
+    m_capacityReservationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -78,6 +82,10 @@ JsonValue InstanceLaunchTemplate::Jsonize() const {
 
   if (m_fipsEnabledHasBeenSet) {
     payload.WithBool("fipsEnabled", m_fipsEnabled);
+  }
+
+  if (m_capacityReservationsHasBeenSet) {
+    payload.WithObject("capacityReservations", m_capacityReservations.Jsonize());
   }
 
   return payload;

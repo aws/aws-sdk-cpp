@@ -33,7 +33,7 @@ class DescribeActionTargetsResult {
   /**
    * <p>A list of <code>ActionTarget</code> objects. Each object includes the
    * <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of
-   * a custom action target available in Security Hub.</p>
+   * a custom action target available in Security Hub CSPM.</p>
    */
   inline const Aws::Vector<ActionTarget>& GetActionTargets() const { return m_actionTargets; }
   template <typename ActionTargetsT = Aws::Vector<ActionTarget>>

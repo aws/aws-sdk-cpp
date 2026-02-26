@@ -75,7 +75,7 @@ class ListOrganizationAdminAccountsRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p>The feature where the delegated administrator account is listed. Defaults to
-   * Security Hub if not specified.</p>
+   * Security Hub CSPM if not specified.</p>
    */
   inline SecurityHubFeature GetFeature() const { return m_feature; }
   inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }

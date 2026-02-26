@@ -25,6 +25,7 @@ static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagExceptio
 static const int DISABLED_API_HASH = HashingUtils::HashString("DisabledApiException");
 static const int INVALID_ENDPOINT_REGION_HASH = HashingUtils::HashString("InvalidEndpointRegionException");
 static const int PLATFORM_NOT_SUPPORTED_HASH = HashingUtils::HashString("PlatformNotSupportedException");
+static const int INVALID_LICENSE_HASH = HashingUtils::HashString("InvalidLicenseException");
 static const int INVALID_PRODUCT_CODE_HASH = HashingUtils::HashString("InvalidProductCodeException");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequestException");
 static const int CUSTOMER_NOT_ENTITLED_HASH = HashingUtils::HashString("CustomerNotEntitledException");
@@ -58,6 +59,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_ENDPOINT_REGION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == PLATFORM_NOT_SUPPORTED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::PLATFORM_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_LICENSE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_LICENSE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PRODUCT_CODE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceMeteringErrors::INVALID_PRODUCT_CODE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DUPLICATE_REQUEST_HASH) {

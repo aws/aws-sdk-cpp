@@ -28,10 +28,6 @@ GetHypervisorPropertyMappingsResult& GetHypervisorPropertyMappingsResult::operat
     m_hypervisorArn = jsonValue.GetString("HypervisorArn");
     m_hypervisorArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IamRoleArn")) {
-    m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-    m_iamRoleArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("VmwareToAwsTagMappings")) {
     Aws::Utils::Array<JsonView> vmwareToAwsTagMappingsJsonList = jsonValue.GetArray("VmwareToAwsTagMappings");
     for (unsigned vmwareToAwsTagMappingsIndex = 0; vmwareToAwsTagMappingsIndex < vmwareToAwsTagMappingsJsonList.GetLength();
@@ -39,6 +35,10 @@ GetHypervisorPropertyMappingsResult& GetHypervisorPropertyMappingsResult::operat
       m_vmwareToAwsTagMappings.push_back(vmwareToAwsTagMappingsJsonList[vmwareToAwsTagMappingsIndex].AsObject());
     }
     m_vmwareToAwsTagMappingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IamRoleArn")) {
+    m_iamRoleArn = jsonValue.GetString("IamRoleArn");
+    m_iamRoleArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

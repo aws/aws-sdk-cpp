@@ -181,6 +181,43 @@ class GatewayDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Date after which this gateway will not receive software updates for new
+   * features and bug fixes.</p>
+   */
+  inline const Aws::Utils::DateTime& GetDeprecationDate() const { return m_deprecationDate; }
+  inline bool DeprecationDateHasBeenSet() const { return m_deprecationDateHasBeenSet; }
+  template <typename DeprecationDateT = Aws::Utils::DateTime>
+  void SetDeprecationDate(DeprecationDateT&& value) {
+    m_deprecationDateHasBeenSet = true;
+    m_deprecationDate = std::forward<DeprecationDateT>(value);
+  }
+  template <typename DeprecationDateT = Aws::Utils::DateTime>
+  GatewayDetails& WithDeprecationDate(DeprecationDateT&& value) {
+    SetDeprecationDate(std::forward<DeprecationDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the software running on the gateway appliance.</p>
+   */
+  inline const Aws::String& GetSoftwareVersion() const { return m_softwareVersion; }
+  inline bool SoftwareVersionHasBeenSet() const { return m_softwareVersionHasBeenSet; }
+  template <typename SoftwareVersionT = Aws::String>
+  void SetSoftwareVersion(SoftwareVersionT&& value) {
+    m_softwareVersionHasBeenSet = true;
+    m_softwareVersion = std::forward<SoftwareVersionT>(value);
+  }
+  template <typename SoftwareVersionT = Aws::String>
+  GatewayDetails& WithSoftwareVersion(SoftwareVersionT&& value) {
+    SetSoftwareVersion(std::forward<SoftwareVersionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
@@ -197,6 +234,10 @@ class GatewayDetails {
   Aws::Utils::DateTime m_nextUpdateAvailabilityTime{};
 
   Aws::String m_vpcEndpoint;
+
+  Aws::Utils::DateTime m_deprecationDate{};
+
+  Aws::String m_softwareVersion;
   bool m_gatewayArnHasBeenSet = false;
   bool m_gatewayDisplayNameHasBeenSet = false;
   bool m_gatewayTypeHasBeenSet = false;
@@ -205,6 +246,8 @@ class GatewayDetails {
   bool m_maintenanceStartTimeHasBeenSet = false;
   bool m_nextUpdateAvailabilityTimeHasBeenSet = false;
   bool m_vpcEndpointHasBeenSet = false;
+  bool m_deprecationDateHasBeenSet = false;
+  bool m_softwareVersionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -32,7 +32,7 @@ class EnableOrganizationAdminAccountResult {
   ///@{
   /**
    * <p>The Amazon Web Services account identifier of the account to designate as the
-   * Security Hub administrator account.</p>
+   * Security Hub CSPM administrator account.</p>
    */
   inline const Aws::String& GetAdminAccountId() const { return m_adminAccountId; }
   template <typename AdminAccountIdT = Aws::String>
@@ -50,7 +50,8 @@ class EnableOrganizationAdminAccountResult {
   ///@{
   /**
    * <p>The feature where the delegated administrator is enabled. The default is
-   * Security Hub CSPM if no delegated administrator is specified in the request.</p>
+   * Security Hub CSPM CSPM if no delegated administrator is specified in the
+   * request.</p>
    */
   inline SecurityHubFeature GetFeature() const { return m_feature; }
   inline void SetFeature(SecurityHubFeature value) {
