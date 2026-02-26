@@ -35,7 +35,7 @@ class ServiceJobCapacityUsageSummary {
   ///@{
   /**
    * <p>The unit of measure for the service job capacity usage. For service jobs,
-   * this is <code>NUM_INSTANCES</code>.</p>
+   * this is the instance type.</p>
    */
   inline const Aws::String& GetCapacityUnit() const { return m_capacityUnit; }
   inline bool CapacityUnitHasBeenSet() const { return m_capacityUnitHasBeenSet; }

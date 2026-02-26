@@ -20,6 +20,7 @@ using namespace Aws;
 CreateFeedResult::CreateFeedResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateFeedResult& CreateFeedResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");

@@ -36,6 +36,7 @@
 #include <aws/wafv2/model/BlockAction.h>
 #include <aws/wafv2/model/Body.h>
 #include <aws/wafv2/model/BodyParsingFallbackBehavior.h>
+#include <aws/wafv2/model/BotStatistics.h>
 #include <aws/wafv2/model/ByteMatchStatement.h>
 #include <aws/wafv2/model/CaptchaAction.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
@@ -106,6 +107,7 @@
 #include <aws/wafv2/model/Filter.h>
 #include <aws/wafv2/model/FilterBehavior.h>
 #include <aws/wafv2/model/FilterRequirement.h>
+#include <aws/wafv2/model/FilterSource.h>
 #include <aws/wafv2/model/FirewallManagerRuleGroup.h>
 #include <aws/wafv2/model/FirewallManagerStatement.h>
 #include <aws/wafv2/model/ForwardedIPConfig.h>
@@ -133,6 +135,8 @@
 #include <aws/wafv2/model/GetRuleGroupResult.h>
 #include <aws/wafv2/model/GetSampledRequestsRequest.h>
 #include <aws/wafv2/model/GetSampledRequestsResult.h>
+#include <aws/wafv2/model/GetTopPathStatisticsByTrafficRequest.h>
+#include <aws/wafv2/model/GetTopPathStatisticsByTrafficResult.h>
 #include <aws/wafv2/model/GetWebACLForResourceRequest.h>
 #include <aws/wafv2/model/GetWebACLForResourceResult.h>
 #include <aws/wafv2/model/GetWebACLRequest.h>
@@ -207,6 +211,7 @@
 #include <aws/wafv2/model/OversizeHandling.h>
 #include <aws/wafv2/model/ParameterExceptionField.h>
 #include <aws/wafv2/model/PasswordField.h>
+#include <aws/wafv2/model/PathStatistics.h>
 #include <aws/wafv2/model/PayloadType.h>
 #include <aws/wafv2/model/PhoneNumberField.h>
 #include <aws/wafv2/model/Platform.h>
