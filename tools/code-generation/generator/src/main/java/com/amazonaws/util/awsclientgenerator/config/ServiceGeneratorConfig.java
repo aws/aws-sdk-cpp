@@ -26,6 +26,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.monitoring.Cloudwatc
 import com.amazonaws.util.awsclientgenerator.generators.cpp.monitoring.CloudwatchMonitoringJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.neptune.NeptuneCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppCborClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3control.S3ControlRestXmlCppClientGenerator;
@@ -70,6 +71,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning-json", new MachineLearningJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-polly-rest-json", new PollyCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-rds-query", new RDSCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-rds-smithy-rpc-v2-cbor", new RDSCppCborClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-docdb-query", new DocDBCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-neptune-query", new NeptuneCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-eventbridge-json", new EventBridgeCppClientGenerator());

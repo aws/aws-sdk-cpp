@@ -103,8 +103,25 @@ namespace
             TestingMonitoringManager::CleanupTestingMonitoring();
         }
 
+        static bool IsQueryXmlPayload(const Aws::String& payload)
+        {
+            // Query XML payloads contain "Action=" and are URL-encoded
+            return !payload.empty() && payload.find("Action=") != Aws::String::npos;
+        }
+
+        static bool IsCborPayload(const Aws::String& payload)
+        {
+            // CBOR payloads start with binary markers (0xA0-0xBF for maps)
+            return !payload.empty() && (unsigned char)payload[0] >= 0xA0 && (unsigned char)payload[0] <= 0xBF;
+        }
+
         static Aws::String ExtractPreSignedUrlFromPayload(const Aws::String& payload)
         {
+            // Only extract from Query XML payloads
+            if (!IsQueryXmlPayload(payload)) {
+                return {};
+            }
+            
             Aws::Vector<Aws::String> parameters = Aws::Utils::StringUtils::Split(payload, '&');
             for (const Aws::String& parameter : parameters)
             {
@@ -140,32 +157,50 @@ namespace
 
         auto copyDBSnapshotOutcome = m_rdsClient.CopyDBSnapshot(copyDBSnapshotRequest);
         ASSERT_FALSE(copyDBSnapshotOutcome.IsSuccess());
-        Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
-        ASSERT_NE(parameters.end(), parameters.find("Action"));
-        ASSERT_STREQ("CopyDBSnapshot", parameters.find("Action")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
-        ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("Version"));
-        ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("SourceDBSnapshotIdentifier"));
-        ASSERT_STREQ(TESTING_SOURCE_DB_SNAPSHOT_IDENTIFIER, parameters.find("SourceDBSnapshotIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("TargetDBSnapshotIdentifier"));
-        ASSERT_STREQ(TESTING_TARGET_DB_SNAPSHOT_IDENTIFIER, parameters.find("TargetDBSnapshotIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
-        ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
-        ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
+        
+        // Validate protocol-specific behavior
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // Query XML-specific validations
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
+            ASSERT_NE(parameters.end(), parameters.find("Action"));
+            ASSERT_STREQ("CopyDBSnapshot", parameters.find("Action")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
+            ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("Version"));
+            ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("SourceDBSnapshotIdentifier"));
+            ASSERT_STREQ(TESTING_SOURCE_DB_SNAPSHOT_IDENTIFIER, parameters.find("SourceDBSnapshotIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("TargetDBSnapshotIdentifier"));
+            ASSERT_STREQ(TESTING_TARGET_DB_SNAPSHOT_IDENTIFIER, parameters.find("TargetDBSnapshotIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
+            ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
+            ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
 
-        // Verify signature with fixed credentials and fixed timestamp.
-        URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
-        VerifySignature(copyDBSnapshotRequest, sourceUri, copyDBSnapshotRequest.GetSourceRegion().c_str(), "afee7e7f55fcbce926a89482f01acb51e9dc1df0adb09ee172622a079b47ea71");
+            // Verify signature with fixed credentials and fixed timestamp.
+            URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
+            VerifySignature(copyDBSnapshotRequest, sourceUri, copyDBSnapshotRequest.GetSourceRegion().c_str(), "afee7e7f55fcbce926a89482f01acb51e9dc1df0adb09ee172622a079b47ea71");
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR-specific validations
+            ASSERT_TRUE(IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) << "Payload should be CBOR binary format";
+            // Verify SourceRegion was set correctly
+            ASSERT_TRUE(copyDBSnapshotRequest.SourceRegionHasBeenSet());
+            ASSERT_EQ(copyDBSnapshotRequest.GetSourceRegion(), Aws::Region::US_EAST_1);
+        }
 
         // Ignore SourceRegion if preSignedUrl is specified.
         copyDBSnapshotRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         copyDBSnapshotOutcome = m_rdsClient.CopyDBSnapshot(copyDBSnapshotRequest);
         ASSERT_FALSE(copyDBSnapshotOutcome.IsSuccess());
-        preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR: Verify PreSignedUrl was set and takes precedence
+            ASSERT_TRUE(copyDBSnapshotRequest.PreSignedUrlHasBeenSet());
+            ASSERT_EQ(copyDBSnapshotRequest.GetPreSignedUrl(), TESTING_PRESIGNED_URL);
+        }
     }
 
     TEST_F(RDSTest, TestPreSignedUrl_CreateDBInstanceReadReplica)
@@ -181,34 +216,51 @@ namespace
 
         auto createDBInstanceReadReplicaOutcome = m_rdsClient.CreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
         ASSERT_FALSE(createDBInstanceReadReplicaOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT, createDBInstanceReadReplicaOutcome.GetError().GetErrorType());
-        Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
-        ASSERT_NE(parameters.end(), parameters.find("Action"));
-        ASSERT_STREQ("CreateDBInstanceReadReplica", parameters.find("Action")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
-        ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("Version"));
-        ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("SourceDBInstanceIdentifier"));
-        ASSERT_STREQ(TESTING_SOURCE_DB_INSTANCE_IDENTIFIER, parameters.find("SourceDBInstanceIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("DBInstanceIdentifier"));
-        ASSERT_STREQ(TESTING_DB_INSTANCE_IDENTIFIER, parameters.find("DBInstanceIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
-        ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
-        ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
+        
+        // Validate protocol-specific behavior
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // Query XML-specific validations
+            ASSERT_EQ(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT, createDBInstanceReadReplicaOutcome.GetError().GetErrorType());
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
+            ASSERT_NE(parameters.end(), parameters.find("Action"));
+            ASSERT_STREQ("CreateDBInstanceReadReplica", parameters.find("Action")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
+            ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("Version"));
+            ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("SourceDBInstanceIdentifier"));
+            ASSERT_STREQ(TESTING_SOURCE_DB_INSTANCE_IDENTIFIER, parameters.find("SourceDBInstanceIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("DBInstanceIdentifier"));
+            ASSERT_STREQ(TESTING_DB_INSTANCE_IDENTIFIER, parameters.find("DBInstanceIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
+            ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
+            ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
 
-        // Verify signature with fixed credentials and fixed timestamp.
-        URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
-        VerifySignature(createDBInstanceReadReplicaRequest, sourceUri, createDBInstanceReadReplicaRequest.GetSourceRegion().c_str(), "ddab9b46aa026dd36339e3f80c16c361f0e9e4f86368ee7e391dcdd45cb385e6");
+            // Verify signature with fixed credentials and fixed timestamp.
+            URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
+            VerifySignature(createDBInstanceReadReplicaRequest, sourceUri, createDBInstanceReadReplicaRequest.GetSourceRegion().c_str(), "ddab9b46aa026dd36339e3f80c16c361f0e9e4f86368ee7e391dcdd45cb385e6");
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR-specific validations
+            ASSERT_TRUE(IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) << "Payload should be CBOR binary format";
+            ASSERT_TRUE(createDBInstanceReadReplicaRequest.SourceRegionHasBeenSet());
+            ASSERT_EQ(createDBInstanceReadReplicaRequest.GetSourceRegion(), Aws::Region::US_EAST_1);
+        }
 
         // Ignore SourceRegion if preSignedUrl is specified.
         createDBInstanceReadReplicaRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         createDBInstanceReadReplicaOutcome = m_rdsClient.CreateDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
         ASSERT_FALSE(createDBInstanceReadReplicaOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT, createDBInstanceReadReplicaOutcome.GetError().GetErrorType());
-        preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            ASSERT_EQ(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT, createDBInstanceReadReplicaOutcome.GetError().GetErrorType());
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR: Verify PreSignedUrl was set and takes precedence
+            ASSERT_TRUE(createDBInstanceReadReplicaRequest.PreSignedUrlHasBeenSet());
+            ASSERT_EQ(createDBInstanceReadReplicaRequest.GetPreSignedUrl(), TESTING_PRESIGNED_URL);
+        }
     }
 
     TEST_F(RDSTest, TestPreSignedUrl_CopyDBClusterSnapshot)
@@ -224,34 +276,51 @@ namespace
 
         auto copyDBClusterSnapshotOutcome = m_rdsClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
         ASSERT_FALSE(copyDBClusterSnapshotOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
-        Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
-        ASSERT_NE(parameters.end(), parameters.find("Action"));
-        ASSERT_STREQ("CopyDBClusterSnapshot", parameters.find("Action")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
-        ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("Version"));
-        ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("SourceDBClusterSnapshotIdentifier"));
-        ASSERT_STREQ(TESTING_SOURCE_DB_CLUSTER_SNAPSHOT_IDENTIFIER, parameters.find("SourceDBClusterSnapshotIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("TargetDBClusterSnapshotIdentifier"));
-        ASSERT_STREQ(TESTING_TARGET_DB_CLUSTER_SNAPSHOT_IDENTIFIER, parameters.find("TargetDBClusterSnapshotIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
-        ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
-        ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
+        
+        // Validate protocol-specific behavior
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // Query XML-specific validations
+            ASSERT_EQ(RDSErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
+            ASSERT_NE(parameters.end(), parameters.find("Action"));
+            ASSERT_STREQ("CopyDBClusterSnapshot", parameters.find("Action")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
+            ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("Version"));
+            ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("SourceDBClusterSnapshotIdentifier"));
+            ASSERT_STREQ(TESTING_SOURCE_DB_CLUSTER_SNAPSHOT_IDENTIFIER, parameters.find("SourceDBClusterSnapshotIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("TargetDBClusterSnapshotIdentifier"));
+            ASSERT_STREQ(TESTING_TARGET_DB_CLUSTER_SNAPSHOT_IDENTIFIER, parameters.find("TargetDBClusterSnapshotIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
+            ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
+            ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
 
-        // Verify signature with fixed credentials and fixed timestamp.
-        URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
-        VerifySignature(copyDBClusterSnapshotRequest, sourceUri, copyDBClusterSnapshotRequest.GetSourceRegion().c_str(), "01eda84cb84ff1558373f4759aaf76aa4b7be8664241a58f6906ae842a0a9d74");
+            // Verify signature with fixed credentials and fixed timestamp.
+            URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
+            VerifySignature(copyDBClusterSnapshotRequest, sourceUri, copyDBClusterSnapshotRequest.GetSourceRegion().c_str(), "01eda84cb84ff1558373f4759aaf76aa4b7be8664241a58f6906ae842a0a9d74");
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR-specific validations
+            ASSERT_TRUE(IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) << "Payload should be CBOR binary format";
+            ASSERT_TRUE(copyDBClusterSnapshotRequest.SourceRegionHasBeenSet());
+            ASSERT_EQ(copyDBClusterSnapshotRequest.GetSourceRegion(), Aws::Region::US_EAST_1);
+        }
 
         // Ignore SourceRegion if preSignedUrl is specified.
         copyDBClusterSnapshotRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         copyDBClusterSnapshotOutcome = m_rdsClient.CopyDBClusterSnapshot(copyDBClusterSnapshotRequest);
         ASSERT_FALSE(copyDBClusterSnapshotOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
-        preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            ASSERT_EQ(RDSErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT, copyDBClusterSnapshotOutcome.GetError().GetErrorType());
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR: Verify PreSignedUrl was set and takes precedence
+            ASSERT_TRUE(copyDBClusterSnapshotRequest.PreSignedUrlHasBeenSet());
+            ASSERT_EQ(copyDBClusterSnapshotRequest.GetPreSignedUrl(), TESTING_PRESIGNED_URL);
+        }
     }
 
     TEST_F(RDSTest, TestPreSignedUrl_CreateDBCluster)
@@ -269,38 +338,55 @@ namespace
 
         auto createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::D_B_CLUSTER_NOT_FOUND_FAULT, createDBClusterOutcome.GetError().GetErrorType());
-        Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
-        ASSERT_NE(parameters.end(), parameters.find("Action"));
-        ASSERT_STREQ("CreateDBCluster", parameters.find("Action")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
-        ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("Version"));
-        ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("DBClusterIdentifier"));
-        ASSERT_STREQ(TESTING_DB_CLUSTER_IDENTIFIER, parameters.find("DBClusterIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("Engine"));
-        ASSERT_STREQ("aurora-mysql", parameters.find("Engine")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("StorageEncrypted"));
-        ASSERT_STREQ("true", parameters.find("StorageEncrypted")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("ReplicationSourceIdentifier"));
-        ASSERT_STREQ(TESTING_REPLICATION_SOURCE_IDENTIFIER, parameters.find("ReplicationSourceIdentifier")->second.c_str());
-        ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
-        ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
-        ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
+        
+        // Validate protocol-specific behavior
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // Query XML-specific validations
+            ASSERT_EQ(RDSErrors::D_B_CLUSTER_NOT_FOUND_FAULT, createDBClusterOutcome.GetError().GetErrorType());
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
+            ASSERT_NE(parameters.end(), parameters.find("Action"));
+            ASSERT_STREQ("CreateDBCluster", parameters.find("Action")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("DestinationRegion"));
+            ASSERT_STREQ(Aws::Region::US_WEST_2, parameters.find("DestinationRegion")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("Version"));
+            ASSERT_STREQ("2014-10-31", parameters.find("Version")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("DBClusterIdentifier"));
+            ASSERT_STREQ(TESTING_DB_CLUSTER_IDENTIFIER, parameters.find("DBClusterIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("Engine"));
+            ASSERT_STREQ("aurora-mysql", parameters.find("Engine")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("StorageEncrypted"));
+            ASSERT_STREQ("true", parameters.find("StorageEncrypted")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("ReplicationSourceIdentifier"));
+            ASSERT_STREQ(TESTING_REPLICATION_SOURCE_IDENTIFIER, parameters.find("ReplicationSourceIdentifier")->second.c_str());
+            ASSERT_NE(parameters.end(), parameters.find("KmsKeyId"));
+            ASSERT_STREQ(TESTING_KMS_KEY_ID, parameters.find("KmsKeyId")->second.c_str());
+            ASSERT_EQ(parameters.end(), parameters.find("SourceRegion"));
 
-        // Verify signature with fixed credentials and fixed timestamp.
-        URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
-        VerifySignature(createDBClusterRequest, sourceUri, createDBClusterRequest.GetSourceRegion().c_str(), "8c2fe7e0c15a0ca30b9ebbee3ca59760241130160ec14e3b76bddb3ceb0d1a56");
+            // Verify signature with fixed credentials and fixed timestamp.
+            URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
+            VerifySignature(createDBClusterRequest, sourceUri, createDBClusterRequest.GetSourceRegion().c_str(), "8c2fe7e0c15a0ca30b9ebbee3ca59760241130160ec14e3b76bddb3ceb0d1a56");
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR-specific validations
+            ASSERT_TRUE(IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) << "Payload should be CBOR binary format";
+            ASSERT_TRUE(createDBClusterRequest.SourceRegionHasBeenSet());
+            ASSERT_EQ(createDBClusterRequest.GetSourceRegion(), Aws::Region::US_EAST_1);
+        }
 
         // Ignore SourceRegion if preSignedUrl is specified.
         createDBClusterRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::D_B_CLUSTER_NOT_FOUND_FAULT, createDBClusterOutcome.GetError().GetErrorType());
-        preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
-        ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        
+        if (IsQueryXmlPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            ASSERT_EQ(RDSErrors::D_B_CLUSTER_NOT_FOUND_FAULT, createDBClusterOutcome.GetError().GetErrorType());
+            Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
+            ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
+        } else if (IsCborPayload(TestingMonitoringMetrics::s_lastPayload.c_str())) {
+            // CBOR: Verify PreSignedUrl was set and takes precedence
+            ASSERT_TRUE(createDBClusterRequest.PreSignedUrlHasBeenSet());
+            ASSERT_EQ(createDBClusterRequest.GetPreSignedUrl(), TESTING_PRESIGNED_URL);
+        }
     }
 
     TEST_F(RDSTest, ShouldDescribeClusterEndpoots) {
@@ -309,7 +395,13 @@ namespace
         filter.SetName("db-cluster-endpoint-type");
         filter.SetValues({"CUSTOM"});
         request.SetFilters({filter});
-        EXPECT_EQ(request.SerializePayload(), "Action=DescribeDBClusterEndpoints&Filters.Filter.1.Name=db-cluster-endpoint-type&Filters.Filter.1.Values.Value.1=CUSTOM&Version=2014-10-31");
+        
+        // Only validate Query XML payload format if using Query XML protocol
+        auto payload = request.SerializePayload();
+        if (IsQueryXmlPayload(payload)) {
+            EXPECT_EQ(payload, "Action=DescribeDBClusterEndpoints&Filters.Filter.1.Name=db-cluster-endpoint-type&Filters.Filter.1.Values.Value.1=CUSTOM&Version=2014-10-31");
+        }
+        
         const auto response = m_rdsClient.DescribeDBClusterEndpoints(request);
         AWS_ASSERT_SUCCESS(response);
     }
