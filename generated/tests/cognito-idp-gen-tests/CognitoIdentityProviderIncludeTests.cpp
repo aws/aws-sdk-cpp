@@ -21,6 +21,8 @@
 #include <aws/cognito-idp/model/AccountTakeoverRiskConfigurationType.h>
 #include <aws/cognito-idp/model/AddCustomAttributesRequest.h>
 #include <aws/cognito-idp/model/AddCustomAttributesResult.h>
+#include <aws/cognito-idp/model/AddUserPoolClientSecretRequest.h>
+#include <aws/cognito-idp/model/AddUserPoolClientSecretResult.h>
 #include <aws/cognito-idp/model/AdminAddUserToGroupRequest.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpResult.h>
@@ -93,6 +95,7 @@
 #include <aws/cognito-idp/model/ChallengeResponseType.h>
 #include <aws/cognito-idp/model/ChangePasswordRequest.h>
 #include <aws/cognito-idp/model/ChangePasswordResult.h>
+#include <aws/cognito-idp/model/ClientSecretDescriptorType.h>
 #include <aws/cognito-idp/model/CloudWatchLogsConfigurationType.h>
 #include <aws/cognito-idp/model/CodeDeliveryDetailsType.h>
 #include <aws/cognito-idp/model/ColorSchemeModeType.h>
@@ -140,6 +143,8 @@
 #include <aws/cognito-idp/model/DeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
+#include <aws/cognito-idp/model/DeleteUserPoolClientSecretRequest.h>
+#include <aws/cognito-idp/model/DeleteUserPoolClientSecretResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
@@ -242,6 +247,8 @@
 #include <aws/cognito-idp/model/ListTermsResult.h>
 #include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
 #include <aws/cognito-idp/model/ListUserImportJobsResult.h>
+#include <aws/cognito-idp/model/ListUserPoolClientSecretsRequest.h>
+#include <aws/cognito-idp/model/ListUserPoolClientSecretsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>

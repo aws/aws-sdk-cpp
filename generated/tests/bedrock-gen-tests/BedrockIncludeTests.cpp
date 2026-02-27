@@ -427,6 +427,7 @@
 #include <aws/bedrock/model/ModelInvocationJobS3OutputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobStatus.h>
 #include <aws/bedrock/model/ModelInvocationJobSummary.h>
+#include <aws/bedrock/model/ModelInvocationType.h>
 #include <aws/bedrock/model/ModelModality.h>
 #include <aws/bedrock/model/ModelStatus.h>
 #include <aws/bedrock/model/Offer.h>

@@ -222,6 +222,24 @@ class GetPlanExecutionResult {
 
   ///@{
   /**
+   * <p>The unique identifier of the most recent recovery execution. Required when
+   * starting a post-recovery execution.</p>
+   */
+  inline const Aws::String& GetRecoveryExecutionId() const { return m_recoveryExecutionId; }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  void SetRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    m_recoveryExecutionIdHasBeenSet = true;
+    m_recoveryExecutionId = std::forward<RecoveryExecutionIdT>(value);
+  }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  GetPlanExecutionResult& WithRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    SetRecoveryExecutionId(std::forward<RecoveryExecutionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The states of the steps in the plan execution.</p>
    */
   inline const Aws::Vector<StepState>& GetStepStates() const { return m_stepStates; }
@@ -364,6 +382,8 @@ class GetPlanExecutionResult {
 
   Aws::String m_executionRegion;
 
+  Aws::String m_recoveryExecutionId;
+
   Aws::Vector<StepState> m_stepStates;
 
   Plan m_plan;
@@ -387,6 +407,7 @@ class GetPlanExecutionResult {
   bool m_executionStateHasBeenSet = false;
   bool m_executionActionHasBeenSet = false;
   bool m_executionRegionHasBeenSet = false;
+  bool m_recoveryExecutionIdHasBeenSet = false;
   bool m_stepStatesHasBeenSet = false;
   bool m_planHasBeenSet = false;
   bool m_actualRecoveryTimeHasBeenSet = false;

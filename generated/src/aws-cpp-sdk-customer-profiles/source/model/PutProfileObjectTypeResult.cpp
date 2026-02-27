@@ -58,6 +58,10 @@ PutProfileObjectTypeResult& PutProfileObjectTypeResult::operator=(const Aws::Ama
     m_maxAvailableProfileObjectCount = jsonValue.GetInteger("MaxAvailableProfileObjectCount");
     m_maxAvailableProfileObjectCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourcePriority")) {
+    m_sourcePriority = jsonValue.GetInteger("SourcePriority");
+    m_sourcePriorityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Fields")) {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("Fields").GetAllObjects();
     for (auto& fieldsItem : fieldsJsonMap) {

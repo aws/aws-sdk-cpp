@@ -61,6 +61,10 @@ ResourceShare& ResourceShare::operator=(JsonView jsonValue) {
     m_featureSet = ResourceShareFeatureSetMapper::GetResourceShareFeatureSetForName(jsonValue.GetString("featureSet"));
     m_featureSetHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourceShareConfiguration")) {
+    m_resourceShareConfiguration = jsonValue.GetObject("resourceShareConfiguration");
+    m_resourceShareConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +113,10 @@ JsonValue ResourceShare::Jsonize() const {
 
   if (m_featureSetHasBeenSet) {
     payload.WithString("featureSet", ResourceShareFeatureSetMapper::GetNameForResourceShareFeatureSet(m_featureSet));
+  }
+
+  if (m_resourceShareConfigurationHasBeenSet) {
+    payload.WithObject("resourceShareConfiguration", m_resourceShareConfiguration.Jsonize());
   }
 
   return payload;

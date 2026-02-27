@@ -66,6 +66,10 @@ GetPlanExecutionResult& GetPlanExecutionResult::operator=(const Aws::AmazonWebSe
     m_executionRegion = jsonValue.GetString("executionRegion");
     m_executionRegionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recoveryExecutionId")) {
+    m_recoveryExecutionId = jsonValue.GetString("recoveryExecutionId");
+    m_recoveryExecutionIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("stepStates")) {
     Aws::Utils::Array<JsonView> stepStatesJsonList = jsonValue.GetArray("stepStates");
     for (unsigned stepStatesIndex = 0; stepStatesIndex < stepStatesJsonList.GetLength(); ++stepStatesIndex) {

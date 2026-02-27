@@ -92,6 +92,8 @@
 #include <aws/arc-region-switch/model/MinimalWorkflow.h>
 #include <aws/arc-region-switch/model/ParallelExecutionBlockConfiguration.h>
 #include <aws/arc-region-switch/model/Plan.h>
+#include <aws/arc-region-switch/model/RdsCreateCrossRegionReplicaConfiguration.h>
+#include <aws/arc-region-switch/model/RdsPromoteReadReplicaConfiguration.h>
 #include <aws/arc-region-switch/model/RecoveryApproach.h>
 #include <aws/arc-region-switch/model/RegionSwitchPlanConfiguration.h>
 #include <aws/arc-region-switch/model/RegionToRunIn.h>

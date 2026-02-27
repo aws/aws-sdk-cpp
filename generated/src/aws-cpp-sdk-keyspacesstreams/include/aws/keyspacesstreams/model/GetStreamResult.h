@@ -90,7 +90,7 @@ class GetStreamResult {
   ///@{
   /**
    * <p> The format of the data records in this stream. Currently, this can be one of
-   * the following options:</p> <ul> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both
+   * the following options: </p> <ul> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both
    * versions of the row, before and after the change. This is the default.</p> </li>
    * <li> <p> <code>NEW_IMAGE</code> - the version of the row after the change.</p>
    * </li> <li> <p> <code>OLD_IMAGE</code> - the version of the row before the

@@ -17,6 +17,7 @@ namespace ExecutionActionMapper {
 
 static const int activate_HASH = HashingUtils::HashString("activate");
 static const int deactivate_HASH = HashingUtils::HashString("deactivate");
+static const int postRecovery_HASH = HashingUtils::HashString("postRecovery");
 
 ExecutionAction GetExecutionActionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ExecutionAction GetExecutionActionForName(const Aws::String& name) {
     return ExecutionAction::activate;
   } else if (hashCode == deactivate_HASH) {
     return ExecutionAction::deactivate;
+  } else if (hashCode == postRecovery_HASH) {
+    return ExecutionAction::postRecovery;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForExecutionAction(ExecutionAction enumValue) {
       return "activate";
     case ExecutionAction::deactivate:
       return "deactivate";
+    case ExecutionAction::postRecovery:
+      return "postRecovery";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

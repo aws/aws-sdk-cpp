@@ -42,6 +42,10 @@ ListProfileObjectTypeItem& ListProfileObjectTypeItem::operator=(JsonView jsonVal
     m_maxAvailableProfileObjectCount = jsonValue.GetInteger("MaxAvailableProfileObjectCount");
     m_maxAvailableProfileObjectCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourcePriority")) {
+    m_sourcePriority = jsonValue.GetInteger("SourcePriority");
+    m_sourcePriorityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -77,6 +81,10 @@ JsonValue ListProfileObjectTypeItem::Jsonize() const {
 
   if (m_maxAvailableProfileObjectCountHasBeenSet) {
     payload.WithInteger("MaxAvailableProfileObjectCount", m_maxAvailableProfileObjectCount);
+  }
+
+  if (m_sourcePriorityHasBeenSet) {
+    payload.WithInteger("SourcePriority", m_sourcePriority);
   }
 
   if (m_tagsHasBeenSet) {

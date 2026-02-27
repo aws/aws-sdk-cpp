@@ -18,6 +18,8 @@ namespace StandardIdentifierMapper {
 static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
 static const int ASSET_HASH = HashingUtils::HashString("ASSET");
 static const int CASE_HASH = HashingUtils::HashString("CASE");
+static const int DEVICE_HASH = HashingUtils::HashString("DEVICE");
+static const int WEB_ANALYTICS_HASH = HashingUtils::HashString("WEB_ANALYTICS");
 static const int ORDER_HASH = HashingUtils::HashString("ORDER");
 static const int COMMUNICATION_RECORD_HASH = HashingUtils::HashString("COMMUNICATION_RECORD");
 static const int AIR_PREFERENCE_HASH = HashingUtils::HashString("AIR_PREFERENCE");
@@ -42,6 +44,10 @@ StandardIdentifier GetStandardIdentifierForName(const Aws::String& name) {
     return StandardIdentifier::ASSET;
   } else if (hashCode == CASE_HASH) {
     return StandardIdentifier::CASE;
+  } else if (hashCode == DEVICE_HASH) {
+    return StandardIdentifier::DEVICE;
+  } else if (hashCode == WEB_ANALYTICS_HASH) {
+    return StandardIdentifier::WEB_ANALYTICS;
   } else if (hashCode == ORDER_HASH) {
     return StandardIdentifier::ORDER;
   } else if (hashCode == COMMUNICATION_RECORD_HASH) {
@@ -92,6 +98,10 @@ Aws::String GetNameForStandardIdentifier(StandardIdentifier enumValue) {
       return "ASSET";
     case StandardIdentifier::CASE:
       return "CASE";
+    case StandardIdentifier::DEVICE:
+      return "DEVICE";
+    case StandardIdentifier::WEB_ANALYTICS:
+      return "WEB_ANALYTICS";
     case StandardIdentifier::ORDER:
       return "ORDER";
     case StandardIdentifier::COMMUNICATION_RECORD:

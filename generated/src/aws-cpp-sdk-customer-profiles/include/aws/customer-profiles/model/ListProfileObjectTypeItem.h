@@ -139,6 +139,24 @@ class ListProfileObjectTypeItem {
 
   ///@{
   /**
+   * <p>An integer that determines the priority of this object type when data from
+   * multiple sources is ingested. Lower values take priority. Object types without a
+   * specified source priority default to the lowest priority.</p>
+   */
+  inline int GetSourcePriority() const { return m_sourcePriority; }
+  inline bool SourcePriorityHasBeenSet() const { return m_sourcePriorityHasBeenSet; }
+  inline void SetSourcePriority(int value) {
+    m_sourcePriorityHasBeenSet = true;
+    m_sourcePriority = value;
+  }
+  inline ListProfileObjectTypeItem& WithSourcePriority(int value) {
+    SetSourcePriority(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -173,6 +191,8 @@ class ListProfileObjectTypeItem {
 
   int m_maxAvailableProfileObjectCount{0};
 
+  int m_sourcePriority{0};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_objectTypeNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -180,6 +200,7 @@ class ListProfileObjectTypeItem {
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_maxProfileObjectCountHasBeenSet = false;
   bool m_maxAvailableProfileObjectCountHasBeenSet = false;
+  bool m_sourcePriorityHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

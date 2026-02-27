@@ -39,6 +39,10 @@ Aws::String StartPlanExecutionRequest::SerializePayload() const {
     payload.WithString("latestVersion", m_latestVersion);
   }
 
+  if (m_recoveryExecutionIdHasBeenSet) {
+    payload.WithString("recoveryExecutionId", m_recoveryExecutionId);
+  }
+
   return payload.View().WriteReadable();
 }
 

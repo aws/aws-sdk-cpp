@@ -82,6 +82,10 @@ GetModelInvocationJobResult& GetModelInvocationJobResult::operator=(const Aws::A
     m_jobExpirationTime = jsonValue.GetString("jobExpirationTime");
     m_jobExpirationTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("modelInvocationType")) {
+    m_modelInvocationType = ModelInvocationTypeMapper::GetModelInvocationTypeForName(jsonValue.GetString("modelInvocationType"));
+    m_modelInvocationTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

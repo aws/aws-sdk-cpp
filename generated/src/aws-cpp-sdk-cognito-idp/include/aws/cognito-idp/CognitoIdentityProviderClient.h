@@ -153,6 +153,35 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Creates a new client secret for an existing confidential user pool app
+   * client. Supports up to 2 active secrets per app client for zero-downtime
+   * credential rotation workflows.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddUserPoolClientSecret">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AddUserPoolClientSecretOutcome AddUserPoolClientSecret(const Model::AddUserPoolClientSecretRequest& request) const;
+
+  /**
+   * A Callable wrapper for AddUserPoolClientSecret that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AddUserPoolClientSecretRequestT = Model::AddUserPoolClientSecretRequest>
+  Model::AddUserPoolClientSecretOutcomeCallable AddUserPoolClientSecretCallable(const AddUserPoolClientSecretRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::AddUserPoolClientSecret, request);
+  }
+
+  /**
+   * An Async wrapper for AddUserPoolClientSecret that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AddUserPoolClientSecretRequestT = Model::AddUserPoolClientSecretRequest>
+  void AddUserPoolClientSecretAsync(const AddUserPoolClientSecretRequestT& request,
+                                    const AddUserPoolClientSecretResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::AddUserPoolClientSecret, request, handler, context);
+  }
+
+  /**
    * <p>Adds a user to a group. A user who is in a group can present a preferred-role
    * claim to an identity pool, and populates a <code>cognito:groups</code> claim to
    * their access and identity tokens.</p>  <p>Amazon Cognito evaluates
@@ -2308,6 +2337,37 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Deletes a specific client secret from a user pool app client. You cannot
+   * delete the last remaining secret for an app client.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClientSecret">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteUserPoolClientSecretOutcome DeleteUserPoolClientSecret(
+      const Model::DeleteUserPoolClientSecretRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteUserPoolClientSecret that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteUserPoolClientSecretRequestT = Model::DeleteUserPoolClientSecretRequest>
+  Model::DeleteUserPoolClientSecretOutcomeCallable DeleteUserPoolClientSecretCallable(
+      const DeleteUserPoolClientSecretRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::DeleteUserPoolClientSecret, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteUserPoolClientSecret that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteUserPoolClientSecretRequestT = Model::DeleteUserPoolClientSecretRequest>
+  void DeleteUserPoolClientSecretAsync(const DeleteUserPoolClientSecretRequestT& request,
+                                       const DeleteUserPoolClientSecretResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::DeleteUserPoolClientSecret, request, handler, context);
+  }
+
+  /**
    * <p>Given a user pool ID and domain identifier, deletes a user pool domain. After
    * you delete a user pool domain, your managed login pages and authorization server
    * are no longer available.</p><p><h3>See Also:</h3>   <a
@@ -3626,6 +3686,38 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Lists all client secrets associated with a user pool app client. Returns
+   * metadata about the secrets. The response does not include pagination tokens as
+   * there are only 2 secrets at any given time and we return both with every
+   * ListUserPoolClientSecrets call. For security reasons, the response never reveals
+   * the actual secret value in ClientSecretValue.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientSecrets">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListUserPoolClientSecretsOutcome ListUserPoolClientSecrets(const Model::ListUserPoolClientSecretsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListUserPoolClientSecrets that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListUserPoolClientSecretsRequestT = Model::ListUserPoolClientSecretsRequest>
+  Model::ListUserPoolClientSecretsOutcomeCallable ListUserPoolClientSecretsCallable(
+      const ListUserPoolClientSecretsRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::ListUserPoolClientSecrets, request);
+  }
+
+  /**
+   * An Async wrapper for ListUserPoolClientSecrets that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListUserPoolClientSecretsRequestT = Model::ListUserPoolClientSecretsRequest>
+  void ListUserPoolClientSecretsAsync(const ListUserPoolClientSecretsRequestT& request,
+                                      const ListUserPoolClientSecretsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::ListUserPoolClientSecrets, request, handler, context);
+  }
+
+  /**
    * <p>Given a user pool ID, lists app clients. App clients are sets of rules for
    * the access that you want a user pool to grant to one application. For more
    * information, see <a
@@ -3701,11 +3793,14 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
 
   /**
    * <p>Given a user pool ID, returns a list of users and their basic details in a
-   * user pool.</p>  <p>Amazon Cognito evaluates Identity and Access Management
-   * (IAM) policies in requests for this API operation. For this operation, you must
-   * use IAM credentials to authorize requests, and you must grant yourself the
-   * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
-   * more</b> </p> <ul> <li> <p> <a
+   * user pool.</p> <p>This operation is eventually consistent. You might experience
+   * a delay before results are up-to-date. To validate the existence or
+   * configuration of an individual user, use <code>AdminGetUser</code>.</p>
+   * <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in
+   * requests for this API operation. For this operation, you must use IAM
+   * credentials to authorize requests, and you must grant yourself the corresponding
+   * IAM permission in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul>
+   * <li> <p> <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
    * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -4771,18 +4866,19 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
    * <p>Updates the configuration of a user pool. To avoid setting parameters to
    * Amazon Cognito defaults, construct this API request to pass the existing
    * configuration of your user pool, modified to include the changes that you want
-   * to make.</p>  <p>If you don't provide a value for an attribute,
-   * Amazon Cognito sets it to its default value.</p>   <p>This
-   * action might generate an SMS text message. Starting June 1, 2021, US telecom
-   * carriers require you to register an origination phone number before you can send
-   * SMS messages to US phone numbers. If you use SMS text messages in Amazon
-   * Cognito, you must register a phone number with <a
-   * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
-   * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
-   * users who must receive SMS messages might not be able to sign up, activate their
-   * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-   * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
-   * Notification Service might place your account in the SMS sandbox. In <i> <a
+   * to make.</p>  <p>With the exception of <code>UserPoolTier</code>, if
+   * you don't provide a value for an attribute, Amazon Cognito sets it to its
+   * default value.</p>   <p>This action might generate an SMS text
+   * message. Starting June 1, 2021, US telecom carriers require you to register an
+   * origination phone number before you can send SMS messages to US phone numbers.
+   * If you use SMS text messages in Amazon Cognito, you must register a phone number
+   * with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+   * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
+   * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
+   * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
+   * SMS text messages with Amazon Cognito or any other Amazon Web Services service,
+   * Amazon Simple Notification Service might place your account in the SMS sandbox.
+   * In <i> <a
    * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
    * mode</a> </i>, you can send messages only to verified phone numbers. After you
    * test your app while in the sandbox environment, you can move out of the sandbox

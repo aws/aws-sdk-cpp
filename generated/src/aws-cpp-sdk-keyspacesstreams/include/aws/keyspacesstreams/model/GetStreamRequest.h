@@ -54,8 +54,8 @@ class GetStreamRequest : public KeyspacesStreamsRequest {
   ///@{
   /**
    * <p> The maximum number of shard objects to return in a single
-   * <code>GetStream</code> request. Default value is 100. The minimum value is 1 and
-   * the maximum value is 100. </p>
+   * <code>GetStream</code> request. The default value is 100. The minimum value is 1
+   * and the maximum value is 100. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -72,8 +72,9 @@ class GetStreamRequest : public KeyspacesStreamsRequest {
   ///@{
   /**
    * <p> Optional filter criteria to apply when retrieving shards. You can filter
-   * shards based on their state or other attributes to narrow down the results
-   * returned by the <code>GetStream</code> operation. </p>
+   * shards based on their parent <code>shardID</code> to get a list of children
+   * shards to narrow down the results returned by the <code>GetStream</code>
+   * operation. </p>
    */
   inline const ShardFilter& GetShardFilter() const { return m_shardFilter; }
   inline bool ShardFilterHasBeenSet() const { return m_shardFilterHasBeenSet; }
@@ -93,7 +94,7 @@ class GetStreamRequest : public KeyspacesStreamsRequest {
   /**
    * <p> An optional pagination token provided by a previous <code>GetStream</code>
    * operation. If this parameter is specified, the response includes only records
-   * beyond the token, up to the value specified by <code>maxResults</code>. </p>
+   * beyond the token, up to the value specified by <code>MaxResults</code>. </p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

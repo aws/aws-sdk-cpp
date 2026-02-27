@@ -36,7 +36,11 @@ class ListUsersResult {
 
   ///@{
   /**
-   * <p>An array of user pool users who match your query, and their attributes.</p>
+   * <p>An array of user pool users who match your query, and their attributes.
+   * Between different requests, you might observe variations in the sequence that
+   * users in this response object are sorted into. The sort order of users isn't
+   * guaranteed to follow a single pattern, but the paginated list from a single
+   * chain of requests won't return duplicates.</p>
    */
   inline const Aws::Vector<UserType>& GetUsers() const { return m_users; }
   template <typename UsersT = Aws::Vector<UserType>>

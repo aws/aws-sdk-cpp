@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ARCRegionswitch {
 namespace Model {
-enum class ExecutionAction { NOT_SET, activate, deactivate };
+enum class ExecutionAction { NOT_SET, activate, deactivate, postRecovery };
 
 namespace ExecutionActionMapper {
 AWS_ARCREGIONSWITCH_API ExecutionAction GetExecutionActionForName(const Aws::String& name);

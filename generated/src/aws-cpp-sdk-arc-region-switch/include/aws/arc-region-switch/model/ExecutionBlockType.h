@@ -22,7 +22,9 @@ enum class ExecutionBlockType {
   ECSServiceScaling,
   EKSResourceScaling,
   Route53HealthCheck,
-  DocumentDb
+  DocumentDb,
+  RdsPromoteReadReplica,
+  RdsCreateCrossRegionReplica
 };
 
 namespace ExecutionBlockTypeMapper {

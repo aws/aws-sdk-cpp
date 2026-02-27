@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/CRAllocationStrategy.h>
 #include <aws/batch/model/CRType.h>
+#include <aws/batch/model/ComputeScalingPolicy.h>
 #include <aws/batch/model/Ec2Configuration.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -539,6 +540,26 @@ class ComputeResource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scaling policy configuration for the compute environment.</p>
+   * <p>This parameter isn't applicable to jobs that are running on Fargate
+   * resources. Don't specify it.</p>
+   */
+  inline const ComputeScalingPolicy& GetScalingPolicy() const { return m_scalingPolicy; }
+  inline bool ScalingPolicyHasBeenSet() const { return m_scalingPolicyHasBeenSet; }
+  template <typename ScalingPolicyT = ComputeScalingPolicy>
+  void SetScalingPolicy(ScalingPolicyT&& value) {
+    m_scalingPolicyHasBeenSet = true;
+    m_scalingPolicy = std::forward<ScalingPolicyT>(value);
+  }
+  template <typename ScalingPolicyT = ComputeScalingPolicy>
+  ComputeResource& WithScalingPolicy(ScalingPolicyT&& value) {
+    SetScalingPolicy(std::forward<ScalingPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CRType m_type{CRType::NOT_SET};
 
@@ -571,6 +592,8 @@ class ComputeResource {
   LaunchTemplateSpecification m_launchTemplate;
 
   Aws::Vector<Ec2Configuration> m_ec2Configuration;
+
+  ComputeScalingPolicy m_scalingPolicy;
   bool m_typeHasBeenSet = false;
   bool m_allocationStrategyHasBeenSet = false;
   bool m_minvCpusHasBeenSet = false;
@@ -587,6 +610,7 @@ class ComputeResource {
   bool m_spotIamFleetRoleHasBeenSet = false;
   bool m_launchTemplateHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
+  bool m_scalingPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

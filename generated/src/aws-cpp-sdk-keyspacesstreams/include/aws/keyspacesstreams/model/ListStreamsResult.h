@@ -58,7 +58,7 @@ class ListStreamsResult {
   /**
    * <p> A pagination token that can be used in a subsequent <code>ListStreams</code>
    * request. This token is returned if the response contains more streams than can
-   * be returned in a single response based on the <code>MaxResults</code> parameter.
+   * be returned in a single response based on the <code>maxResults</code> parameter.
    * </p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }

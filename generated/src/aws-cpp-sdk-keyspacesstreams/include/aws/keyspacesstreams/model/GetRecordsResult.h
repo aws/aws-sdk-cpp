@@ -58,7 +58,7 @@ class GetRecordsResult {
   ///@{
   /**
    * <p> The next position in the shard from which to start sequentially reading data
-   * records. If null, the shard has been closed and the requested iterator doesn't
+   * records. If null, the shard has been closed and the requested iterator will not
    * return any more data. </p>
    */
   inline const Aws::String& GetNextShardIterator() const { return m_nextShardIterator; }

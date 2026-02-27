@@ -97,6 +97,10 @@ ComputeResource& ComputeResource::operator=(JsonView jsonValue) {
     }
     m_ec2ConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scalingPolicy")) {
+    m_scalingPolicy = jsonValue.GetObject("scalingPolicy");
+    m_scalingPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -185,6 +189,10 @@ JsonValue ComputeResource::Jsonize() const {
       ec2ConfigurationJsonList[ec2ConfigurationIndex].AsObject(m_ec2Configuration[ec2ConfigurationIndex].Jsonize());
     }
     payload.WithArray("ec2Configuration", std::move(ec2ConfigurationJsonList));
+  }
+
+  if (m_scalingPolicyHasBeenSet) {
+    payload.WithObject("scalingPolicy", m_scalingPolicy.Jsonize());
   }
 
   return payload;
