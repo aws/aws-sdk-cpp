@@ -254,7 +254,7 @@ DataZoneClient::DataZoneClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-DataZoneClient::DataZoneClient(const Client::ClientConfiguration& clientConfiguration)
+DataZoneClient::DataZoneClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -266,7 +266,7 @@ DataZoneClient::DataZoneClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-DataZoneClient::DataZoneClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+DataZoneClient::DataZoneClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -278,7 +278,7 @@ DataZoneClient::DataZoneClient(const AWSCredentials& credentials, const Client::
 }
 
 DataZoneClient::DataZoneClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -105,7 +105,7 @@ SnowballClient::SnowballClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-SnowballClient::SnowballClient(const Client::ClientConfiguration& clientConfiguration)
+SnowballClient::SnowballClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -117,7 +117,7 @@ SnowballClient::SnowballClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-SnowballClient::SnowballClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SnowballClient::SnowballClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -128,7 +128,7 @@ SnowballClient::SnowballClient(const AWSCredentials& credentials, const Client::
 }
 
 SnowballClient::SnowballClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -109,7 +109,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const std::shared_ptr<AWSCr
 }
 
 /* Legacy constructors due deprecation */
-CodeStarconnectionsClient::CodeStarconnectionsClient(const Client::ClientConfiguration& clientConfiguration)
+CodeStarconnectionsClient::CodeStarconnectionsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -122,7 +122,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const Client::ClientConfigu
 }
 
 CodeStarconnectionsClient::CodeStarconnectionsClient(const AWSCredentials& credentials,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -133,7 +133,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const AWSCredentials& crede
 }
 
 CodeStarconnectionsClient::CodeStarconnectionsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

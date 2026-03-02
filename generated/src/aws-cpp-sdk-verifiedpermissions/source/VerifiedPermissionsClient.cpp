@@ -112,7 +112,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const std::shared_ptr<AWSCr
 }
 
 /* Legacy constructors due deprecation */
-VerifiedPermissionsClient::VerifiedPermissionsClient(const Client::ClientConfiguration& clientConfiguration)
+VerifiedPermissionsClient::VerifiedPermissionsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -125,7 +125,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const Client::ClientConfigu
 }
 
 VerifiedPermissionsClient::VerifiedPermissionsClient(const AWSCredentials& credentials,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -136,7 +136,7 @@ VerifiedPermissionsClient::VerifiedPermissionsClient(const AWSCredentials& crede
 }
 
 VerifiedPermissionsClient::VerifiedPermissionsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

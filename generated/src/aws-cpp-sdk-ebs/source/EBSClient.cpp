@@ -83,7 +83,7 @@ EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 }
 
 /* Legacy constructors due deprecation */
-EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration)
+EBSClient::EBSClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -95,7 +95,7 @@ EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-EBSClient::EBSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+EBSClient::EBSClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -107,7 +107,7 @@ EBSClient::EBSClient(const AWSCredentials& credentials, const Client::ClientConf
 }
 
 EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                     const Client::ClientConfiguration& clientConfiguration)
+                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

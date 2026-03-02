@@ -113,7 +113,7 @@ ElasticLoadBalancingClient::ElasticLoadBalancingClient(
 }
 
 /* Legacy constructors due deprecation */
-ElasticLoadBalancingClient::ElasticLoadBalancingClient(const Client::ClientConfiguration& clientConfiguration)
+ElasticLoadBalancingClient::ElasticLoadBalancingClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -126,7 +126,7 @@ ElasticLoadBalancingClient::ElasticLoadBalancingClient(const Client::ClientConfi
 }
 
 ElasticLoadBalancingClient::ElasticLoadBalancingClient(const AWSCredentials& credentials,
-                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -137,7 +137,7 @@ ElasticLoadBalancingClient::ElasticLoadBalancingClient(const AWSCredentials& cre
 }
 
 ElasticLoadBalancingClient::ElasticLoadBalancingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

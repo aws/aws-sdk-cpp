@@ -105,7 +105,7 @@ ApplicationSignalsClient::ApplicationSignalsClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-ApplicationSignalsClient::ApplicationSignalsClient(const Client::ClientConfiguration& clientConfiguration)
+ApplicationSignalsClient::ApplicationSignalsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -118,7 +118,7 @@ ApplicationSignalsClient::ApplicationSignalsClient(const Client::ClientConfigura
 }
 
 ApplicationSignalsClient::ApplicationSignalsClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -129,7 +129,7 @@ ApplicationSignalsClient::ApplicationSignalsClient(const AWSCredentials& credent
 }
 
 ApplicationSignalsClient::ApplicationSignalsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

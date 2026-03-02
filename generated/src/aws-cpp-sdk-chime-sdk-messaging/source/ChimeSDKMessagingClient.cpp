@@ -133,7 +133,7 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-ChimeSDKMessagingClient::ChimeSDKMessagingClient(const Client::ClientConfiguration& clientConfiguration)
+ChimeSDKMessagingClient::ChimeSDKMessagingClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -145,7 +145,8 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -156,7 +157,7 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentia
 }
 
 ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

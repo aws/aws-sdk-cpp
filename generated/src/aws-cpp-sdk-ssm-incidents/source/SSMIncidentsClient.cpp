@@ -110,7 +110,7 @@ SSMIncidentsClient::SSMIncidentsClient(const std::shared_ptr<AWSCredentialsProvi
 }
 
 /* Legacy constructors due deprecation */
-SSMIncidentsClient::SSMIncidentsClient(const Client::ClientConfiguration& clientConfiguration)
+SSMIncidentsClient::SSMIncidentsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -122,7 +122,7 @@ SSMIncidentsClient::SSMIncidentsClient(const Client::ClientConfiguration& client
   init(m_clientConfiguration);
 }
 
-SSMIncidentsClient::SSMIncidentsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SSMIncidentsClient::SSMIncidentsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -133,7 +133,7 @@ SSMIncidentsClient::SSMIncidentsClient(const AWSCredentials& credentials, const 
 }
 
 SSMIncidentsClient::SSMIncidentsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                       const Client::ClientConfiguration& clientConfiguration)
+                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

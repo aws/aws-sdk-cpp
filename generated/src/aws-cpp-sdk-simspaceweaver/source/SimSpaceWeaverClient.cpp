@@ -95,7 +95,7 @@ SimSpaceWeaverClient::SimSpaceWeaverClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-SimSpaceWeaverClient::SimSpaceWeaverClient(const Client::ClientConfiguration& clientConfiguration)
+SimSpaceWeaverClient::SimSpaceWeaverClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -107,7 +107,7 @@ SimSpaceWeaverClient::SimSpaceWeaverClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-SimSpaceWeaverClient::SimSpaceWeaverClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SimSpaceWeaverClient::SimSpaceWeaverClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -118,7 +118,7 @@ SimSpaceWeaverClient::SimSpaceWeaverClient(const AWSCredentials& credentials, co
 }
 
 SimSpaceWeaverClient::SimSpaceWeaverClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

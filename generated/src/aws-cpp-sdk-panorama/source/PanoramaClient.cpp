@@ -112,7 +112,7 @@ PanoramaClient::PanoramaClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-PanoramaClient::PanoramaClient(const Client::ClientConfiguration& clientConfiguration)
+PanoramaClient::PanoramaClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -124,7 +124,7 @@ PanoramaClient::PanoramaClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-PanoramaClient::PanoramaClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+PanoramaClient::PanoramaClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -135,7 +135,7 @@ PanoramaClient::PanoramaClient(const AWSCredentials& credentials, const Client::
 }
 
 PanoramaClient::PanoramaClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -87,7 +87,7 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const Client::ClientConfiguration& clientConfiguration)
+IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -99,7 +99,8 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -110,7 +111,7 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const AWSCredentials& credentials
 }
 
 IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

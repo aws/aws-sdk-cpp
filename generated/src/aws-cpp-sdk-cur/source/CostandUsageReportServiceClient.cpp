@@ -91,7 +91,7 @@ CostandUsageReportServiceClient::CostandUsageReportServiceClient(
 }
 
 /* Legacy constructors due deprecation */
-CostandUsageReportServiceClient::CostandUsageReportServiceClient(const Client::ClientConfiguration& clientConfiguration)
+CostandUsageReportServiceClient::CostandUsageReportServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -104,7 +104,7 @@ CostandUsageReportServiceClient::CostandUsageReportServiceClient(const Client::C
 }
 
 CostandUsageReportServiceClient::CostandUsageReportServiceClient(const AWSCredentials& credentials,
-                                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -115,7 +115,7 @@ CostandUsageReportServiceClient::CostandUsageReportServiceClient(const AWSCreden
 }
 
 CostandUsageReportServiceClient::CostandUsageReportServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

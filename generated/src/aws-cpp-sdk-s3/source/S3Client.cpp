@@ -246,7 +246,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
 }
 
 /* Legacy constructors due deprecation */
-S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
+S3Client::S3Client(const Aws::Client::ClientConfiguration& clientConfiguration,
                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
                    Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
     : BASECLASS(clientConfiguration,
@@ -262,7 +262,7 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
   init(m_clientConfiguration);
 }
 
-S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration,
+S3Client::S3Client(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration,
                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
                    Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
     : BASECLASS(clientConfiguration,
@@ -278,7 +278,7 @@ S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfig
 }
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                   const Client::ClientConfiguration& clientConfiguration,
+                   const Aws::Client::ClientConfiguration& clientConfiguration,
                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
                    Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
     : BASECLASS(clientConfiguration,

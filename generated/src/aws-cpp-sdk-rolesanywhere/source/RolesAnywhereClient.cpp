@@ -109,7 +109,7 @@ RolesAnywhereClient::RolesAnywhereClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-RolesAnywhereClient::RolesAnywhereClient(const Client::ClientConfiguration& clientConfiguration)
+RolesAnywhereClient::RolesAnywhereClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -121,7 +121,7 @@ RolesAnywhereClient::RolesAnywhereClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-RolesAnywhereClient::RolesAnywhereClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+RolesAnywhereClient::RolesAnywhereClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -132,7 +132,7 @@ RolesAnywhereClient::RolesAnywhereClient(const AWSCredentials& credentials, cons
 }
 
 RolesAnywhereClient::RolesAnywhereClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

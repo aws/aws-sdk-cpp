@@ -117,7 +117,7 @@ ConnectCampaignsV2Client::ConnectCampaignsV2Client(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-ConnectCampaignsV2Client::ConnectCampaignsV2Client(const Client::ClientConfiguration& clientConfiguration)
+ConnectCampaignsV2Client::ConnectCampaignsV2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -130,7 +130,7 @@ ConnectCampaignsV2Client::ConnectCampaignsV2Client(const Client::ClientConfigura
 }
 
 ConnectCampaignsV2Client::ConnectCampaignsV2Client(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -141,7 +141,7 @@ ConnectCampaignsV2Client::ConnectCampaignsV2Client(const AWSCredentials& credent
 }
 
 ConnectCampaignsV2Client::ConnectCampaignsV2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

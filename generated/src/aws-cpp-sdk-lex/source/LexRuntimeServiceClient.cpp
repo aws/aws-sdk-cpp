@@ -88,7 +88,7 @@ LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfiguration& clientConfiguration)
+LexRuntimeServiceClient::LexRuntimeServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -100,7 +100,8 @@ LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -112,7 +113,7 @@ LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentia
 }
 
 LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

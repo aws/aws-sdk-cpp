@@ -80,7 +80,7 @@ InspectorscanClient::InspectorscanClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-InspectorscanClient::InspectorscanClient(const Client::ClientConfiguration& clientConfiguration)
+InspectorscanClient::InspectorscanClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -92,7 +92,7 @@ InspectorscanClient::InspectorscanClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-InspectorscanClient::InspectorscanClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+InspectorscanClient::InspectorscanClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -103,7 +103,7 @@ InspectorscanClient::InspectorscanClient(const AWSCredentials& credentials, cons
 }
 
 InspectorscanClient::InspectorscanClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -86,7 +86,7 @@ KeyspacesStreamsClient::KeyspacesStreamsClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-KeyspacesStreamsClient::KeyspacesStreamsClient(const Client::ClientConfiguration& clientConfiguration)
+KeyspacesStreamsClient::KeyspacesStreamsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -98,7 +98,8 @@ KeyspacesStreamsClient::KeyspacesStreamsClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-KeyspacesStreamsClient::KeyspacesStreamsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+KeyspacesStreamsClient::KeyspacesStreamsClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -109,7 +110,7 @@ KeyspacesStreamsClient::KeyspacesStreamsClient(const AWSCredentials& credentials
 }
 
 KeyspacesStreamsClient::KeyspacesStreamsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

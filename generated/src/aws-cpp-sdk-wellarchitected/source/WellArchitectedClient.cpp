@@ -154,7 +154,7 @@ WellArchitectedClient::WellArchitectedClient(const std::shared_ptr<AWSCredential
 }
 
 /* Legacy constructors due deprecation */
-WellArchitectedClient::WellArchitectedClient(const Client::ClientConfiguration& clientConfiguration)
+WellArchitectedClient::WellArchitectedClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -166,7 +166,7 @@ WellArchitectedClient::WellArchitectedClient(const Client::ClientConfiguration& 
   init(m_clientConfiguration);
 }
 
-WellArchitectedClient::WellArchitectedClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+WellArchitectedClient::WellArchitectedClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -177,7 +177,7 @@ WellArchitectedClient::WellArchitectedClient(const AWSCredentials& credentials, 
 }
 
 WellArchitectedClient::WellArchitectedClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Client::ClientConfiguration& clientConfiguration)
+                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

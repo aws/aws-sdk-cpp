@@ -114,7 +114,7 @@ XRayClient::XRayClient(const std::shared_ptr<AWSCredentialsProvider>& credential
 }
 
 /* Legacy constructors due deprecation */
-XRayClient::XRayClient(const Client::ClientConfiguration& clientConfiguration)
+XRayClient::XRayClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -126,7 +126,7 @@ XRayClient::XRayClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-XRayClient::XRayClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+XRayClient::XRayClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -137,7 +137,7 @@ XRayClient::XRayClient(const AWSCredentials& credentials, const Client::ClientCo
 }
 
 XRayClient::XRayClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                       const Client::ClientConfiguration& clientConfiguration)
+                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

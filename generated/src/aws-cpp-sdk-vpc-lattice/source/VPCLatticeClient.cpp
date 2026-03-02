@@ -151,7 +151,7 @@ VPCLatticeClient::VPCLatticeClient(const std::shared_ptr<AWSCredentialsProvider>
 }
 
 /* Legacy constructors due deprecation */
-VPCLatticeClient::VPCLatticeClient(const Client::ClientConfiguration& clientConfiguration)
+VPCLatticeClient::VPCLatticeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -163,7 +163,7 @@ VPCLatticeClient::VPCLatticeClient(const Client::ClientConfiguration& clientConf
   init(m_clientConfiguration);
 }
 
-VPCLatticeClient::VPCLatticeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+VPCLatticeClient::VPCLatticeClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -174,7 +174,7 @@ VPCLatticeClient::VPCLatticeClient(const AWSCredentials& credentials, const Clie
 }
 
 VPCLatticeClient::VPCLatticeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                   const Client::ClientConfiguration& clientConfiguration)
+                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

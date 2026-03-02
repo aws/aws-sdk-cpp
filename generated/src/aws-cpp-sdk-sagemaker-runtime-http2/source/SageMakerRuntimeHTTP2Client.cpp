@@ -88,7 +88,7 @@ SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(
 }
 
 /* Legacy constructors due deprecation */
-SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(const Client::ClientConfiguration& clientConfiguration)
+SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -101,7 +101,7 @@ SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(const Client::ClientCon
 }
 
 SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(const AWSCredentials& credentials,
-                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -113,7 +113,7 @@ SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(const AWSCredentials& c
 }
 
 SageMakerRuntimeHTTP2Client::SageMakerRuntimeHTTP2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

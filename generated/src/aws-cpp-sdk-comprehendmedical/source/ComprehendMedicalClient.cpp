@@ -107,7 +107,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-ComprehendMedicalClient::ComprehendMedicalClient(const Client::ClientConfiguration& clientConfiguration)
+ComprehendMedicalClient::ComprehendMedicalClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -119,7 +119,8 @@ ComprehendMedicalClient::ComprehendMedicalClient(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-ComprehendMedicalClient::ComprehendMedicalClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ComprehendMedicalClient::ComprehendMedicalClient(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -130,7 +131,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const AWSCredentials& credentia
 }
 
 ComprehendMedicalClient::ComprehendMedicalClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

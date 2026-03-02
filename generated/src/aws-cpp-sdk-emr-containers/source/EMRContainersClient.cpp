@@ -102,7 +102,7 @@ EMRContainersClient::EMRContainersClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-EMRContainersClient::EMRContainersClient(const Client::ClientConfiguration& clientConfiguration)
+EMRContainersClient::EMRContainersClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -114,7 +114,7 @@ EMRContainersClient::EMRContainersClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-EMRContainersClient::EMRContainersClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+EMRContainersClient::EMRContainersClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -125,7 +125,7 @@ EMRContainersClient::EMRContainersClient(const AWSCredentials& credentials, cons
 }
 
 EMRContainersClient::EMRContainersClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

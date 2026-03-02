@@ -110,7 +110,7 @@ ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(
 }
 
 /* Legacy constructors due deprecation */
-ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const Client::ClientConfiguration& clientConfiguration)
+ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -123,7 +123,7 @@ ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const Clien
 }
 
 ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const AWSCredentials& credentials,
-                                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -134,7 +134,7 @@ ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const AWSCr
 }
 
 ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

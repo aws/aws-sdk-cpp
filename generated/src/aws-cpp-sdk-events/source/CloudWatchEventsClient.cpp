@@ -133,7 +133,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-CloudWatchEventsClient::CloudWatchEventsClient(const Client::ClientConfiguration& clientConfiguration)
+CloudWatchEventsClient::CloudWatchEventsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -145,7 +145,8 @@ CloudWatchEventsClient::CloudWatchEventsClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-CloudWatchEventsClient::CloudWatchEventsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CloudWatchEventsClient::CloudWatchEventsClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -156,7 +157,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const AWSCredentials& credentials
 }
 
 CloudWatchEventsClient::CloudWatchEventsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -104,7 +104,7 @@ AppFabricClient::AppFabricClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-AppFabricClient::AppFabricClient(const Client::ClientConfiguration& clientConfiguration)
+AppFabricClient::AppFabricClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -116,7 +116,7 @@ AppFabricClient::AppFabricClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-AppFabricClient::AppFabricClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+AppFabricClient::AppFabricClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -127,7 +127,7 @@ AppFabricClient::AppFabricClient(const AWSCredentials& credentials, const Client
 }
 
 AppFabricClient::AppFabricClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

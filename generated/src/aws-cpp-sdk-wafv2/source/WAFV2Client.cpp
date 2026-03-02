@@ -133,7 +133,7 @@ WAFV2Client::WAFV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
 }
 
 /* Legacy constructors due deprecation */
-WAFV2Client::WAFV2Client(const Client::ClientConfiguration& clientConfiguration)
+WAFV2Client::WAFV2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -145,7 +145,7 @@ WAFV2Client::WAFV2Client(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-WAFV2Client::WAFV2Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+WAFV2Client::WAFV2Client(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -156,7 +156,7 @@ WAFV2Client::WAFV2Client(const AWSCredentials& credentials, const Client::Client
 }
 
 WAFV2Client::WAFV2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                         const Client::ClientConfiguration& clientConfiguration)
+                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
